@@ -1,0 +1,26 @@
+{
+  "name": "kubedb-web",
+  "version": "0.2.0",
+  "description": "KubeDB Website",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kubedb/website.git"
+  },
+  "author": "AppsCode Inc. <kubedb-dev@appscode.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kubedb/project/issues"
+  },
+  "homepage": "https://github.com/kubedb/website#readme",
+  "devDependencies": {
+    "fs-extra": "^7.0.1",
+    "jsonfile": "^5.0.0",
+    "postcss-cli": "^6.1.2",
+    "replace": "^1.1.0",
+    "shelljs": "^0.8.3"
+  },
+  "private": true
+}
