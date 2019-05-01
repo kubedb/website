@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "kubedb-new-e7965"
+  },
+  "targets": {
+    "kubedb-new-e7965": {
+      "hosting": {
+        "hugo": [
+          "kubedb-new-hugo"
+        ]
+      }
+    }
+  }
+}
