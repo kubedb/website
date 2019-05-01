@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#2D9AED">
+    <title>Elasticsearch</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="./../assets/css/font-awesome.min.css">
+    <!-- Bulma Carousel CSS -->
+    <link rel="stylesheet" href="./../assets/css/bulma-carousel.min.css">
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="./../assets/css/bulma.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./../assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="./../assets/css/responsive.css">
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- header area start -->
+    <header>
+        <!-- header bottom area start -->
+        <div class="header-bottom-area header-area documentation-page" id="header">
+            <div class="container section">
+                <nav class="navbar">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="./../index.html">
+                            <img src="./../assets/images/logo-color-kube.png" alt="">
+                        </a>
+
+                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                            data-target="acNav">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+
+                    <div id="acNav" class="navbar-menu main-menu">
+                        <div class="navbar-end">
+                            <!-- nav menu start -->
+                            <div class="navbar-start">
+                                <a href="./../support/index.html" class="navbar-item">
+                                    Commercial Support
+                                </a>
+
+                                <div class="navbar-item has-dropdown is-hoverable">
+                                    <a class="navbar-link">
+                                        Database
+                                    </a>
+
+                                    <div class="navbar-dropdown">
+                                        <a class="navbar-item">
+                                            Item-1
+                                        </a>
+                                        <a class="navbar-item">
+                                            Item-2
+                                        </a>
+                                        <a class="navbar-item">
+                                            Item-3
+                                        </a>
+                                        <hr class="navbar-divider">
+                                        <a class="navbar-item">
+                                            Item-4
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <a href="../documentations/welcome.html" class="navbar-item">
+                                    Documentation
+                                </a>
+                                <a class="navbar-item">
+                                    v 0.110
+                                </a>
+                                <a class="navbar-item">
+                                    Community
+                                </a>
+                            </div>
+                            <!-- nav menu end -->
+                            <div class="navbar-item">
+                                <div class="buttons main-menu-button">
+                                    <a class="button is-small">
+                                        <span><i class="fa fa-github" aria-hidden="true"></i></span>Star
+                                    </a>
+                                    <div class="star-count">
+                                        565
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- documentation menu area start -->
+            <div class="documentation-menu">
+                <div class="container section">
+                    <div class="columns is-centered">
+                        <div class="column is-half has-text-centered">
+                            <!-- responsive menu start -->
+                            <div class="responsive-menu">
+                                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                                    data-target="acNav3">
+                                    <span aria-hidden="true"></span>
+                                    <span aria-hidden="true"></span>
+                                    <span aria-hidden="true"></span>
+                                </a>
+                            </div>
+                            <!-- responsive menu end -->
+                            <!-- start -->
+                            <nav class="documentation-navbar">
+                                <div id="acNav3" class="navbar-menu nav-menu main-menu">
+                                    <div class="navbar-centered">
+                                        <!-- nav menu start -->
+                                        <div class="navbar-start">
+                                            <a href="welcome.html" class="navbar-item">
+                                                Welcome
+                                            </a>
+                                            <a href="concept.html" class="is-active navbar-item">
+                                                Concepts
+                                            </a>
+                                            <a href="#" class="navbar-item">
+                                                Setup
+                                            </a>
+
+                                            <div class="navbar-item has-dropdown is-hoverable">
+                                                <a class="navbar-link">
+                                                    Guides
+                                                </a>
+
+                                                <div class="navbar-dropdown">
+                                                    <a class="navbar-item">
+                                                        Item-1
+                                                    </a>
+                                                    <a class="navbar-item">
+                                                        Item-2
+                                                    </a>
+                                                    <a class="navbar-item">
+                                                        Item-3
+                                                    </a>
+                                                    <hr class="navbar-divider">
+                                                    <a class="navbar-item">
+                                                        Item-4
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <a href="#" class="navbar-item">
+                                                Reference
+                                            </a>
+                                            <div class="navbar-item has-dropdown is-hoverable">
+                                                <a class="navbar-link">
+                                                    0.11.0
+                                                </a>
+
+                                                <div class="navbar-dropdown">
+                                                    <a class="navbar-item">
+                                                        0.10.0
+                                                    </a>
+                                                    <a class="navbar-item">
+                                                        0.9.0
+                                                    </a>
+                                                    <a class="navbar-item">
+                                                        0.8.0
+                                                    </a>
+                                                    <hr class="navbar-divider">
+                                                    <a class="navbar-item">
+                                                        0.6.0
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- nav menu end -->
+                                    </div>
+                                </div>
+                            </nav>
+                            <!-- end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- documentation menu area end -->
+        </div>
+        <!-- header bottom area end -->
+    </header>
+    <!-- header area end -->
+
+    <!-- documentation area start -->
+    <div class="documentation-area">
+        <div class="container section">
+            <div class="columns">
+                <div class="column is-3">
+                    <!-- left sidebar area start -->
+                    <div class="kd-left-sidebar">
+                        <div class="kd-version">
+                            <!-- <p><span><i class="fa fa-sliders" aria-hidden="true"></i></span> 0.11.0</p> -->
+                            <div class="control has-icons-left">
+                                <div class="select">
+                                    <select>
+                                        <option selected>0.11.1</option>
+                                        <option>1.0.0</option>
+                                        <option>1.0.1</option>
+                                    </select>
+                                </div>
+                                <span class="icon is-left">
+                                    <i class="fa fa-globe"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- sidebar menu start -->
+                        <div class="kd-sidebar-menu">
+                            <!-- single menu item start -->
+                            <div class="item">
+                                <input type="checkbox" id="a">
+                                <label for="a"><a>What is KubeDB?</a> <span><i class="fa fa-angle-right"
+                                            aria-hidden="true"></i></span></label>
+                                <ul>
+                                    <li><a href="overview.html">Overview</a></li>
+                                </ul>
+                            </div>
+                            <!-- single menu item end -->
+
+                            <!-- single menu item start -->
+                            <div class="item">
+                                <input type="checkbox" id="b" checked>
+                                <label for="b"><a>Supported Databases</a> <span><i class="fa fa-angle-right"
+                                            aria-hidden="true"></i></span></label>
+                                <div class="item">
+                                    <ul>
+                                        <li><a href="elasticsearch.html">Elasticsearch</a></li>
+                                        <li>
+                                            <!-- dropdown-menu start -->
+                                            <div class="item">
+                                                <input type="checkbox" id="ba" checked>
+                                                <label for="ba"><a>Supported Databases Test</a> <span><i
+                                                            class="fa fa-angle-right"
+                                                            aria-hidden="true"></i></span></label>
+                                                <ul>
+                                                    <li><a href="demo-1.html">Demo Link-1</a></li>
+                                                    <li class="is-active"><a href="demo-2.html">Demo Link-2</a></li>
+                                                    <li>
+                                                        <div class="item">
+                                                            <input type="checkbox" id="bb">
+                                                            <label for="bb"><a>Demo Test-3 </a> <span><i
+                                                                        class="fa fa-angle-right"
+                                                                        aria-hidden="true"></i></span></label>
+                                                            <ul>
+                                                                <li><a href="demo-3.html">Demo Link-3</a></li>
+                                                                <li><a href="demo-4.html">Demo Link-4</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- dropdown-menu end -->
+                                        </li>
+                                        <li><a href="#">MongoDB</a></li>
+                                        <li><a href="#">MySQL</a></li>
+                                        <li><a href="#">Postges</a></li>
+                                        <li><a href="#">Redis</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- single menu item end -->
+
+                            <!-- single menu item start -->
+                            <div class="item">
+                                <input type="checkbox" id="c">
+                                <label for="c"><a>Catalog</a> <span><i class="fa fa-angle-right"
+                                            aria-hidden="true"></i></span></label>
+                                <div class="item">
+                                    <ul>
+                                        <li><a href="#"> ElasticsearchVersion</a></li>
+                                        <li><a href="#"> MemcachedVersion</a></li>
+                                        <li><a href="#"> MongoDBVersion</a></li>
+                                        <li><a href="#"> PostgresVersion</a></li>
+                                        <li><a href="#"> RedisVersion</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- single menu item end -->
+
+                            <!-- single menu item start -->
+                            <div class="item">
+                                <input type="checkbox" id="d">
+                                <label for="d"><a href="#">Catalog</a> <span><i class="fa fa-angle-right"
+                                            aria-hidden="true"></i></span></label>
+                                <div class="item">
+                                    <ul>
+                                        <li><a href="#"> ElasticsearchVersion</a></li>
+                                        <li><a href="#"> MemcachedVersion</a></li>
+                                        <li><a href="#"> MongoDBVersion</a></li>
+                                        <li><a href="#"> PostgresVersion</a></li>
+                                        <li><a href="#"> RedisVersion</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- single menu item end -->
+                        </div>
+                        <!-- sidebar menu end -->
+                    </div>
+                    <!-- left sidebar area end -->
+                </div>
+                <div class="column is-7">
+                    <div class="full-info">
+                        <!-- single information start -->
+                        <div id="kubedb" class="single-info">
+                            <h2>Demo Two Page</h2>
+                            <p>Running production quality databases in Kubernetes can be tricky. KubeDB is a framework
+                                for writing operators for any database that support the following operational
+                                requirements:</p>
+
+                            <ul class="item-list">
+                                <li>Create a database declaratively using CRD.</li>
+
+                                <li>Take one-off backups or period backups to various cloud stores, eg,, S3, GCS, etc.
+                                </li>
+
+                                <li>Restore from backup or clone any database.</li>
+
+                                <li> Native integration with Prometheus for monitoring via CoreOS Prometheus Operator.
+                                </li>
+
+                                <li> Apply deletion lock to avoid accidental deletion of database.
+                                </li>
+
+                                <li> Keep track of deleted databases, cleanup prior snapshots with a single command.
+                                </li>
+
+                                <li> Use cli to manage databases like kubectl for Kubernetes.
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- single information end -->
+                        <div id="step2" class="single-info">
+                            <p>Currently KubeDB includes support for following datastores: - Postgres - Elasticsearch -
+                                MySQL - MongoDB - Redis - Memcached</p>
+                        </div>
+                        <!-- single information end -->
+
+                    </div>
+                </div>
+                <div class="column is-2">
+                    <div class="right-sidebar-area">
+                        <!-- search item -->
+                        <div class="search-area">
+                            <form action="#">
+                                <input type="text" placeholder="Search...">
+                                <button class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                        <!-- search item end -->
+
+                        <!-- table of contents area start -->
+                        <div class="tbl-of-contents">
+                            <h4>Table of Contents</h4>
+                            <ul class="contents-item">
+                                <li class="nav-item active"><a class="nav-link" href="#kubedb">Step 1: What is
+                                        KubeDB</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#step2">Step 2: Database</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#step3">What is AppsCode</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#step4">harness.cpp</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#step5">corpus</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#step6">fuzz.yaml</a></li>
+                            </ul>
+                        </div>
+                        <!-- table of contents area end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- documentation area end -->
+
+
+    <!-- footer area start -->
+    <footer class="footer-area mt-100">
+        <div class="footer-top">
+            <div class="container section">
+                <div class="columns">
+                    <div class="column is-4">
+                        <div class="single-footer-widget">
+                            <!-- logo start -->
+                            <div class="footer-logo">
+                                <a href="#"><img src="./../assets/images/logo-color-appscode.png" alt=""
+                                        class="img"></a>
+                            </div>
+                            <!-- logo end -->
+
+                            <!-- subscription form start -->
+                            <div class="subscription-form">
+                                <form action="#">
+                                    <label for="email">Subscribe Our Newsletter</label>
+                                    <div class="field has-addons">
+                                        <div class="control">
+                                            <input class="input" name="email" id="email" type="email"
+                                                placeholder="info@gmail.com">
+                                        </div>
+                                        <div class="control">
+                                            <a class="button kd-primary">
+                                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- subscription form end -->
+
+                            <!-- contact information start -->
+                            <div class="contact-information">
+                                <h4>Have any Inquiry? </h4>
+                                <ul class="all-contact-info">
+                                    <li><a href="callto:+123456789"><span><i class="fa fa-phone"
+                                                    aria-hidden="true"></i></span>+123 456 789</a></li>
+
+                                    <li><a href="mailto:appscode@gmail.com"><span><i class="fa fa-envelope-o"
+                                                    aria-hidden="true"></i></span>appscode@gmail.com</a></li>
+                                </ul>
+                            </div>
+                            <!-- contact information end -->
+                        </div>
+                    </div>
+
+                    <div class="column is-2">
+                        <div class="single-footer-widget">
+                            <!-- footer menu start -->
+                            <div class="footer-menu">
+                                <h4>Products</h4>
+                                <ul class="footer-link">
+                                    <li><a href="#">Voyager</a></li>
+                                    <li><a href="#">KubeDB</a></li>
+                                    <li><a href="#">Pharmer Stash </a></li>
+                                    <li><a href="#">Service Broker</a></li>
+                                    <li><a href="#">Kubed</a></li>
+                                    <li><a href="#">Guard</a></li>
+                                    <li><a href="#">Swift</a></li>
+                                    <li><a href="#">Searchlight</a></li>
+                                </ul>
+                            </div>
+                            <!-- footer menu end -->
+                        </div>
+                    </div>
+
+                    <div class="column is-2">
+                        <div class="single-footer-widget">
+                            <!-- footer menu start -->
+                            <div class="footer-menu">
+                                <h4>Offerings</h4>
+                                <ul class="footer-link">
+                                    <li><a href="#">Products</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Open source </a></li>
+                                </ul>
+                            </div>
+                            <!-- footer menu end -->
+                        </div>
+                    </div>
+
+                    <div class="column is-2">
+                        <div class="single-footer-widget">
+                            <!-- footer menu start -->
+                            <div class="footer-menu">
+                                <h4>Company</h4>
+                                <ul class="footer-link">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">blog</a></li>
+                                    <li><a href="#">Seles Inquiry</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <!-- footer menu end -->
+                        </div>
+                    </div>
+
+                    <div class="column is-2">
+                        <div class="single-footer-widget">
+                            <!-- footer menu start -->
+                            <div class="footer-menu">
+                                <h4>Legal</h4>
+                                <ul class="footer-link">
+                                    <li><a href="#">Service Level Agreement</a></li>
+                                    <li><a href="#">Security</a></li>
+                                    <li><a href="#">Learn More</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <!-- footer menu end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container section">
+                <div class="columns">
+                    <div class="column is-4">
+                        <p>All rights reserved © 2018. Appscode, Inc..</p>
+                    </div>
+                    <div class="column is-4 is-mobile has-text-centered">
+                        <div class="footer-inline-link">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                        </div>
+                    </div>
+                    <div class="column is-4 is-mobile has-text-right">
+                        <div class="socail-link-inline">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+
+    <!-- Bulma Carousel JS -->
+    <script src="./../assets/js/bulma-carousel.min.js"></script>
+    <!-- Main JS -->
+    <script src="./../assets/js/main.js"></script>
+</body>
+
+</html>
