@@ -1,0 +1,278 @@
+{{ define "header" }}
+<!-- header area start -->
+<header>
+  <!-- header bottom area start -->
+  <div class="header-bottom-area header-area documentation-page" id="header">
+    <div class="container section">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./../index.html">
+            <img src="/assets/images/logo-color-kube.png" alt="" />
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="acNav"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="acNav" class="navbar-menu main-menu">
+          <div class="navbar-end">
+            <!-- nav menu start -->
+            <div class="navbar-start">
+              <a href="./../support/index.html" class="navbar-item">
+                Commercial Support
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Database
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Item-1
+                  </a>
+                  <a class="navbar-item">
+                    Item-2
+                  </a>
+                  <a class="navbar-item">
+                    Item-3
+                  </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item">
+                    Item-4
+                  </a>
+                </div>
+              </div>
+
+              <a href="../documentations/welcome.html" class="navbar-item">
+                Documentation
+              </a>
+              <a class="navbar-item">
+                v 0.110
+              </a>
+              <a class="navbar-item">
+                Community
+              </a>
+            </div>
+            <!-- nav menu end -->
+            <div class="navbar-item">
+              <div class="buttons main-menu-button">
+                <a class="button is-small">
+                  <span><i class="fa fa-github" aria-hidden="true"></i></span
+                  >Star
+                </a>
+                <div class="star-count">
+                  565
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- documentation menu area start -->
+    <div class="documentation-menu">
+      <div class="container section">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            <!-- responsive menu start -->
+            <div class="responsive-menu">
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav3"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- responsive menu end -->
+            <!-- start -->
+            <nav class="documentation-navbar">
+              <div id="acNav3" class="navbar-menu nav-menu main-menu">
+                <div class="navbar-centered">
+                  <!-- nav menu start -->
+                  <div class="navbar-start">
+                    <a href="welcome.html" class="is-active navbar-item">
+                      Welcome
+                    </a>
+                    <a href="concept.html" class="navbar-item">
+                      Concepts
+                    </a>
+                    <a href="#" class="navbar-item">
+                      Setup
+                    </a>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                      <a class="navbar-link">
+                        Guides
+                      </a>
+
+                      <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                          Item-1
+                        </a>
+                        <a class="navbar-item">
+                          Item-2
+                        </a>
+                        <a class="navbar-item">
+                          Item-3
+                        </a>
+                        <hr class="navbar-divider" />
+                        <a class="navbar-item">
+                          Item-4
+                        </a>
+                      </div>
+                    </div>
+
+                    <a href="#" class="navbar-item">
+                      Reference
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                      <a class="navbar-link">
+                        0.11.0
+                      </a>
+
+                      <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                          0.10.0
+                        </a>
+                        <a class="navbar-item">
+                          0.9.0
+                        </a>
+                        <a class="navbar-item">
+                          0.8.0
+                        </a>
+                        <hr class="navbar-divider" />
+                        <a class="navbar-item">
+                          0.6.0
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- nav menu end -->
+                </div>
+              </div>
+            </nav>
+            <!-- end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- documentation menu area end -->
+  </div>
+  <!-- header bottom area end -->
+</header>
+<!-- header area end -->
+{{ end }}
+
+{{ define "main" }}
+<!-- documentation area start -->
+<div class="documentation-area">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-3">
+        <!-- left sidebar area start -->
+        <div class="kd-left-sidebar">
+          <div class="kd-version">
+            <!-- <p><span><i class="fa fa-sliders" aria-hidden="true"></i></span> 0.11.0</p> -->
+            <div class="control has-icons-left">
+              <div class="select">
+                <select>
+                  <option selected>0.11.1</option>
+                  <option>1.0.0</option>
+                  <option>1.0.1</option>
+                </select>
+              </div>
+              <span class="icon is-left">
+                <i class="fa fa-globe"></i>
+              </span>
+            </div>
+          </div>
+          <!-- sidebar menu start -->
+          <div class="kd-sidebar-menu">
+            <!-- single menu item start -->
+            <div class="item">
+              <input type="checkbox" id="a" checked />
+              <label for="a"><a href="#">Welcome</a></label>
+            </div>
+            <!-- single menu item end -->
+
+            <!-- single menu item start -->
+            <div class="item">
+              <input type="checkbox" id="b" />
+              <label for="b"
+                ><a href="contribution.html">Contributing</a></label
+              >
+            </div>
+            <!-- single menu item end -->
+
+            <!-- single menu item start -->
+            <div class="item">
+              <input type="checkbox" id="c" />
+              <label for="c"><a href="#">Support</a></label>
+            </div>
+            <!-- single menu item end -->
+
+            <!-- single menu item start -->
+            <div class="item">
+              <input type="checkbox" id="d" />
+              <label for="d"><a href="#">Status</a></label>
+            </div>
+            <!-- single menu item end -->
+          </div>
+          <!-- sidebar menu end -->
+        </div>
+        <!-- left sidebar area end -->
+      </div>
+      <div class="column is-7">
+        <div class="full-info">
+          {{ .Content }}
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="right-sidebar-area">
+          <!-- search item -->
+          <div class="search-area">
+            <form action="#">
+              <input type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+          <!-- search item end -->
+
+          <!-- table of contents area start -->
+          <div class="tbl-of-contents">
+            <h4>What's on this Page</h4>
+            {{.TableOfContents}}
+          </div>
+          <!-- table of contents area end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- documentation area end -->
+{{ end }}
+
+{{ define "testimonial" }}
+<section></section>
+{{ end }}
+
+{{ define "customer-logos" }}
+<section></section>
+{{ end }}
