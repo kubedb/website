@@ -1,609 +1,198 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#2D9AED">
-    <title>Features</title>
-    <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="./../assets/css/font-awesome.min.css">
-    <!-- Bulma Carousel CSS -->
-    <link rel="stylesheet" href="./../assets/css/bulma-carousel.min.css">
-    <!-- Bulma CSS -->
-    <link rel="stylesheet" href="./../assets/css/bulma.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./../assets/css/style.css">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="./../assets/css/responsive.css">
-</head>
-
-<body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
-
-    <!-- header area start -->
-    <header>
-        <!-- header top start -->
-        <div class="header-top">
-            <div class="container section">
-                <nav class="navbar">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="#">
-                            <img src="./../assets/images/logo-color-appscode.png" alt="">
-                        </a>
-
-                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                            data-target="acNav1">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                        </a>
-                    </div>
-
-                    <div id="acNav1" class="navbar-menu main-menu">
-                        <div class="navbar-end">
-                            <!-- nav menu start -->
-                            <div class="navbar-start">
-                                <div class="navbar-item has-dropdown is-hoverable">
-                                    <a class="navbar-link">
-                                        Products
-                                    </a>
-
-                                    <div class="navbar-dropdown">
-                                        <a class="navbar-item">
-                                            Item-1
-                                        </a>
-                                        <a class="navbar-item">
-                                            Item-2
-                                        </a>
-                                        <a class="navbar-item">
-                                            Item-3
-                                        </a>
-                                        <hr class="navbar-divider">
-                                        <a class="navbar-item">
-                                            Item-4
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <a class="navbar-item">
-                                    Services
-                                </a>
-                                <a class="navbar-item">
-                                    Open Sourcec
-                                </a>
-                                <a class="navbar-item">
-                                    Blog
-                                </a>
-                                <a class="navbar-item">
-                                    Contact
-                                </a>
-                            </div>
-                            <!-- nav menu end -->
-                            <div class="navbar-item">
-                                <div class="buttons main-menu-button-top">
-                                    <a class="button is-small for-support">
-                                        <span><img src="./../assets/images/icon/chat.png" alt=""></span>Forum
-                                    </a>
-                                    <a class="button is-small for-chat">
-                                        <span><img src="./../assets/images/icon/slack.png" alt=""></span>Chat
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+{{ define "main" }}
+<!-- features area start -->
+<section class="hero-features">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-6 is-offset-3 has-text-centered">
+        <!-- hero features text start -->
+        <div class="hero-features-content">
+          <h1>You’re in best cloud solution</h1>
+          <p>Lorem Ipsum is simply dummy text of the printing and it is</p>
+          <div class="hero-area-button">
+            <a href="#" class="button kd-button kd-primary">Install Now FREE</a>
+          </div>
         </div>
-        <!-- header top end -->
+        <!-- hero features text end -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- features area end -->
 
-       <!-- header bottom area start -->
-       <div class="header-bottom-area header-area" id="header">
-            <div class="container section">
-                <nav class="navbar">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href=".././index.html">
-                            <img src="./../assets/images/logo-color-kube.png" alt="">
-                        </a>
-
-                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                            data-target="acNav">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                        </a>
-                    </div>
-
-                    <div id="acNav" class="navbar-menu main-menu">
-                        <div class="navbar-end">
-                            <!-- nav menu start -->
-                            <div class="navbar-start">
-                                <a href="index.html" class="is-active navbar-item">
-                                    Features
-                                </a>
-
-                                <a href="./../support/index.html" class="navbar-item">
-                                    Commercial Support
-                                </a>
-
-                                <div class="navbar-item has-dropdown is-hoverable">
-                                    <a class="navbar-link">
-                                        Database
-                                    </a>
-
-                                    <div class="navbar-dropdown">
-                                        <a class="navbar-item">
-                                            Item-1
-                                        </a>
-                                        <a class="navbar-item">
-                                            Item-2
-                                        </a>
-                                        <a class="navbar-item">
-                                            Item-3
-                                        </a>
-                                        <hr class="navbar-divider">
-                                        <a class="navbar-item">
-                                            Item-4
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <a href="documentations/index.html" class="navbar-item">
-                                    Documentation
-                                </a>
-                                <a class="navbar-item">
-                                    v 0.110
-                                </a>
-                                <a class="navbar-item">
-                                    Community
-                                </a>
-                            </div>
-                            <!-- nav menu end -->
-                            <div class="navbar-item">
-                                <div class="buttons main-menu-button">
-                                    <a class="button is-small">
-                                        <span><i class="fa fa-github" aria-hidden="true"></i></span>Star
-                                    </a>
-                                    <div class="star-count">
-                                        565
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+<!-- all featured section start -->
+<section class="section-padding pt-0">
+  <!-- single feature start -->
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-5 is-offset-1">
+        <div class="feature-wrapper d-table">
+          <div class="feature-content pr-140 d-table-cell">
+            <h2>Easy to administer</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+          </div>
         </div>
-        <!-- header bottom area end -->
-    </header>
-    <!-- header area end -->
-
-    <!-- features area start -->
-    <section class="hero-features">
-        <div class="container section">
-            <div class="columns">
-                <div class="column is-6 is-offset-3 has-text-centered">
-                    <!-- hero features text start -->
-                    <div class="hero-features-content">
-                        <h1>You’re in best cloud solution</h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and it is </p>
-                        <div class="hero-area-button">
-                            <a href="#" class="button kd-button kd-primary">Install Now FREE</a>
-                        </div>
-                    </div>
-                    <!-- hero features text end -->
-                </div>
-            </div>
+      </div>
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-1.png"
+            alt=""
+            class="img"
+          />
         </div>
-    </section>
-    <!-- features area end -->
-
-    <!-- all featured section start -->
-    <section class="section-padding pt-0">
-        <!-- single feature start -->
-        <div class="container section">
-            <div class="columns">
-                <div class="column is-5 is-offset-1">
-                    <div class="feature-wrapper d-table">
-                        <div class="feature-content pr-140 d-table-cell">
-                            <h2>Easy to administer</h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and it is typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-5 is-offset-1">
-                    <div class="single-feature-image">
-                        <img src="./../assets/images/features-page/feature-1.png" alt="" class="img">
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </div>
+  <!-- single feature end -->
+  <!-- single feature start -->
+  <div class="container section">
+    <div class="columns section-padding">
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-2.png"
+            alt=""
+            class="img"
+          />
         </div>
-        <!-- single feature end -->
-        <!-- single feature start -->
-        <div class="container section">
-            <div class="columns section-padding">
-                <div class="column is-5 is-offset-1">
-                    <div class="single-feature-image">
-                        <img src="./../assets/images/features-page/feature-2.png" alt="" class="img">
-                    </div>
-                </div>
-                <div class="column is-5">
-                    <div class="feature-wrapper d-table">
-                        <div class="feature-content pr-45 d-table-cell">
-                            <h2>Highly scalable</h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and it is typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever.
-                            </p>
-                            <p>scrambled it to make a type specimen book. It has survived not only five centuries, but
-                                also the leap into electronic typesetting, remaining essentially unchanged
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="column is-5">
+        <div class="feature-wrapper d-table">
+          <div class="feature-content pr-45 d-table-cell">
+            <h2>Highly scalable</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+            <p>
+              scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged
+            </p>
+          </div>
         </div>
-        <!-- single feature end -->
-        <!-- single feature start -->
-        <div class="container section">
-            <div class="columns">
-                <div class="column is-5 is-offset-1">
-                    <div class="feature-wrapper d-table">
-                        <div class="feature-content pr-140 d-table-cell">
-                            <h2>Reliability & Security</h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and it is typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-5 is-offset-1">
-                    <div class="single-feature-image">
-                        <img src="./../assets/images/features-page/feature-3.png" alt="" class="img">
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </div>
+  <!-- single feature end -->
+  <!-- single feature start -->
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-5 is-offset-1">
+        <div class="feature-wrapper d-table">
+          <div class="feature-content pr-140 d-table-cell">
+            <h2>Reliability & Security</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+          </div>
         </div>
-        <!-- single feature end -->
-        <!-- single feature start -->
-        <div class="container section">
-            <div class="columns section-padding">
-                <div class="column is-5 is-offset-1">
-                    <div class="single-feature-image">
-                        <img src="./../assets/images/features-page/feature-4.png" alt="" class="img">
-                    </div>
-                </div>
-                <div class="column is-5">
-                    <div class="feature-wrapper d-table">
-                        <div class="feature-content pr-45 d-table-cell">
-                            <h2>Fast</h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and it is typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-3.png"
+            alt=""
+            class="img"
+          />
         </div>
-        <!-- single feature end -->
-        <!-- single feature start -->
-        <div class="container section">
-            <div class="columns">
-                <div class="column is-5 is-offset-1">
-                    <div class="feature-wrapper d-table">
-                        <div class="feature-content pr-140 d-table-cell">
-                            <h2>Available and durable</h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and it is typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-5 is-offset-1">
-                    <div class="single-feature-image">
-                        <img src="./../assets/images/features-page/feature-5.png" alt="" class="img">
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </div>
+  <!-- single feature end -->
+  <!-- single feature start -->
+  <div class="container section">
+    <div class="columns section-padding">
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-4.png"
+            alt=""
+            class="img"
+          />
         </div>
-        <!-- single feature end -->
-        <!-- single feature start -->
-        <div class="container section">
-            <div class="columns section-padding pb-0">
-                <div class="column is-5 is-offset-1">
-                    <div class="single-feature-image">
-                        <img src="./../assets/images/features-page/feature-6.png" alt="" class="img">
-                    </div>
-                </div>
-                <div class="column is-5">
-                    <div class="feature-wrapper">
-                        <div class="feature-content pr-45">
-                            <h2>Inexpensive</h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and it is typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever.
-                            </p>
-                            <p>scrambled it to make a type specimen book. It has survived not only five centuries, but
-                                also the leap into electronic typesetting, remaining essentially unchanged
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="column is-5">
+        <div class="feature-wrapper d-table">
+          <div class="feature-content pr-45 d-table-cell">
+            <h2>Fast</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+          </div>
         </div>
-        <!-- single feature end -->
-
-    </section>
-    <!-- all featured section end -->
-
-    <!-- testimonial area start -->
-    <section class="testimonial-area section-padding">
-        <div class="container section">
-            <div class="columns">
-                <div class="column">
-                    <div class="section-title has-text-centered">
-                        <h2>What Our Customers Say </h2>
-                    </div>
-                </div>
-            </div>
-            <div class="columns is-centered">
-                <div class="column is-8">
-                    <div class="carousel-wrapper carousel" id="carousel-demo">
-                        <!-- single testimonial start -->
-                        <div class="carousel-inner">
-                            <div class="single-testimonial-wrapper">
-                                <div class="client-brief has-text-centered">
-                                    <p>My post for a new tool in autumn and were keen to get one in place and optimised
-                                        ahead of the Christmas peak period. Freshdesk ensured that the implementation
-                                        process
-                                        was as
-                                        smooth as possible, and the team were up and running within 48 hours.</p>
-                                </div>
-                                <div class="client-information">
-                                    <div class="client-thumb">
-                                        <img src="./../assets/images/testimonial/client-1.png" alt="">
-                                    </div>
-                                    <div class="client-info">
-                                        <h4>Anup Deb</h4>
-                                        <p>Designer at AppsCode</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single testimonial end -->
-                        <!-- single testimonial start -->
-                        <div class="carousel-inner">
-                            <div class="single-testimonial-wrapper">
-                                <div class="client-brief has-text-centered">
-                                    <p>My post for a new tool in autumn and were keen to get one in place and optimised
-                                        ahead of the Christmas peak period. Freshdesk ensured that the implementation
-                                        process
-                                        was as
-                                        smooth as possible, and the team were up and running within 48 hours.</p>
-                                </div>
-                                <div class="client-information">
-                                    <div class="client-thumb">
-                                        <img src="./../assets/images/testimonial/client-1.png" alt="">
-                                    </div>
-                                    <div class="client-info">
-                                        <h4>Anup Deb</h4>
-                                        <p>Designer at AppsCode</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single testimonial end -->
-                        <!-- single testimonial start -->
-                        <div class="carousel-inner">
-                            <div class="single-testimonial-wrapper">
-                                <div class="client-brief has-text-centered">
-                                    <p>My post for a new tool in autumn and were keen to get one in place and optimised
-                                        ahead of the Christmas peak period. Freshdesk ensured that the implementation
-                                        process
-                                        was as
-                                        smooth as possible, and the team were up and running within 48 hours.</p>
-                                </div>
-                                <div class="client-information">
-                                    <div class="client-thumb">
-                                        <img src="./../assets/images/testimonial/client-1.png" alt="">
-                                    </div>
-                                    <div class="client-info">
-                                        <h4>Anup Deb</h4>
-                                        <p>Designer at AppsCode</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single testimonial end -->
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </div>
+  <!-- single feature end -->
+  <!-- single feature start -->
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-5 is-offset-1">
+        <div class="feature-wrapper d-table">
+          <div class="feature-content pr-140 d-table-cell">
+            <h2>Available and durable</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+          </div>
         </div>
-    </section>
-    <!-- testimonial area end -->
-
-    <!-- call to action area start -->
-    <section class="cta-area section-padding">
-        <div class="container section">
-            <div class="cta-padding">
-                <div class="columns">
-                    <div class="column is-6">
-                        <!-- cta text strat -->
-                        <div class="cta-text">
-                            <h2>Ready to get Start?</h2>
-                            <p>Create a Free Account and refer your friend</p>
-                        </div>
-                        <!-- cta text end -->
-                    </div>
-                    <div class="column is-6 has-text-right is-mobile">
-                        <div class="cta-button d-table">
-                            <!-- cta button start -->
-                            <div class="cta-button-inner d-table-cell">
-                                <a href="#" class="button kd-button kd-primary">Try Now for FREE</a>
-                            </div>
-                            <!-- cta button end -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-5.png"
+            alt=""
+            class="img"
+          />
         </div>
-    </section>
-    <!-- call to action area end -->
-
-    <!-- footer area start -->
-    <footer class="footer-area">
-        <div class="footer-top">
-            <div class="container section">
-                <div class="columns">
-                    <div class="column is-4">
-                        <div class="single-footer-widget">
-                            <!-- logo start -->
-                            <div class="footer-logo">
-                                <a href="#"><img src="./../assets/images/logo-color-appscode.png" alt="" class="img"></a>
-                            </div>
-                            <!-- logo end -->
-
-                            <!-- subscription form start -->
-                            <div class="subscription-form">
-                                <form action="#">
-                                    <label for="email">Subscribe Our Newsletter</label>
-                                    <div class="field has-addons">
-                                        <div class="control">
-                                            <input class="input" name="email" id="email" type="email"
-                                                placeholder="info@gmail.com">
-                                        </div>
-                                        <div class="control">
-                                            <a class="button kd-primary">
-                                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- subscription form end -->
-
-                            <!-- contact information start -->
-                            <div class="contact-information">
-                                <h4>Have any Inquiry? </h4>
-                                <ul class="all-contact-info">
-                                    <li><a href="callto:+123456789"><span><i class="fa fa-phone"
-                                                    aria-hidden="true"></i></span>+123 456 789</a></li>
-
-                                    <li><a href="mailto:appscode@gmail.com"><span><i class="fa fa-envelope-o"
-                                                    aria-hidden="true"></i></span>appscode@gmail.com</a></li>
-                                </ul>
-                            </div>
-                            <!-- contact information end -->
-                        </div>
-                    </div>
-
-                    <div class="column is-2">
-                        <div class="single-footer-widget">
-                            <!-- footer menu start -->
-                            <div class="footer-menu">
-                                <h4>Products</h4>
-                                <ul class="footer-link">
-                                    <li><a href="#">Voyager</a></li>
-                                    <li><a href="#">KubeDB</a></li>
-                                    <li><a href="#">Pharmer Stash </a></li>
-                                    <li><a href="#">Service Broker</a></li>
-                                    <li><a href="#">Kubed</a></li>
-                                    <li><a href="#">Guard</a></li>
-                                    <li><a href="#">Swift</a></li>
-                                    <li><a href="#">Searchlight</a></li>
-                                </ul>
-                            </div>
-                            <!-- footer menu end -->
-                        </div>
-                    </div>
-
-                    <div class="column is-2">
-                        <div class="single-footer-widget">
-                            <!-- footer menu start -->
-                            <div class="footer-menu">
-                                <h4>Offerings</h4>
-                                <ul class="footer-link">
-                                    <li><a href="#">Products</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Open source </a></li>
-                                </ul>
-                            </div>
-                            <!-- footer menu end -->
-                        </div>
-                    </div>
-
-                    <div class="column is-2">
-                        <div class="single-footer-widget">
-                            <!-- footer menu start -->
-                            <div class="footer-menu">
-                                <h4>Company</h4>
-                                <ul class="footer-link">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">blog</a></li>
-                                    <li><a href="#">Seles Inquiry</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
-                            </div>
-                            <!-- footer menu end -->
-                        </div>
-                    </div>
-
-                    <div class="column is-2">
-                        <div class="single-footer-widget">
-                            <!-- footer menu start -->
-                            <div class="footer-menu">
-                                <h4>Legal</h4>
-                                <ul class="footer-link">
-                                    <li><a href="#">Service Level Agreement</a></li>
-                                    <li><a href="#">Security</a></li>
-                                    <li><a href="#">Learn More</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
-                            </div>
-                            <!-- footer menu end -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </div>
+  <!-- single feature end -->
+  <!-- single feature start -->
+  <div class="container section">
+    <div class="columns section-padding pb-0">
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-6.png"
+            alt=""
+            class="img"
+          />
         </div>
-        <div class="footer-bottom">
-            <div class="container section">
-                <div class="columns">
-                    <div class="column is-4">
-                        <p>All rights reserved © 2018. Appscode, Inc..</p>
-                    </div>
-                    <div class="column is-4 is-mobile has-text-centered">
-                        <div class="footer-inline-link">
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Terms of Service</a>
-                        </div>
-                    </div>
-                    <div class="column is-4 is-mobile has-text-right">
-                        <div class="socail-link-inline">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="column is-5">
+        <div class="feature-wrapper">
+          <div class="feature-content pr-45">
+            <h2>Inexpensive</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+            <p>
+              scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged
+            </p>
+          </div>
         </div>
-    </footer>
-    <!-- footer area end -->
-    
-    <!-- Bulma Carousel JS -->
-    <script src="./../assets/js/bulma-carousel.min.js"></script>
-    <!-- Main JS -->
-    <script src="./../assets/js/main.js"></script>
-</body>
-
-</html>
+      </div>
+    </div>
+  </div>
+  <!-- single feature end -->
+</section>
+<!-- all featured section end -->
+{{ end }}
