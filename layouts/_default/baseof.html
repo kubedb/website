@@ -141,45 +141,27 @@
               <div class="navbar-end">
                 <!-- nav menu start -->
                 <div class="navbar-start">
-                  <a href="features/index.html" class="navbar-item">
-                    Features
-                  </a>
-
-                  <a href="support/index.html" class="navbar-item">
-                    Commercial Support
-                  </a>
-
-                  <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                      Database
-                    </a>
-
-                    <div class="navbar-dropdown">
-                      <a class="navbar-item">
-                        Item-1
-                      </a>
-                      <a class="navbar-item">
-                        Item-2
-                      </a>
-                      <a class="navbar-item">
-                        Item-3
-                      </a>
-                      <hr class="navbar-divider" />
-                      <a class="navbar-item">
-                        Item-4
-                      </a>
-                    </div>
-                  </div>
-
-                  <a href="documentations/welcome.html" class="navbar-item">
-                    Documentation
-                  </a>
-                  <a class="navbar-item">
-                    v 0.110
-                  </a>
-                  <a class="navbar-item">
-                    Community
-                  </a>
+                  {{ $latestVersion:= (index $.Site.Data.products.products.cli "latestVersion") }}
+                  {{ $currentNode := . }}
+                  {{ range .Site.Menus.main }}
+                    {{ if .HasChildren }}
+                      <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">{{ .Name }}</a>
+                        <div class="navbar-dropdown">
+                          {{ range .Children }}
+                            <!-- <hr class="navbar-divider" />-->
+                            <a class="navbar-item" href="/docs/{{ $latestVersion }}/guides/{{ .Identifier }}/ ">{{ .Name }}</a>
+                          {{ end }}
+                        </div>
+                      </div>
+                    {{else}}
+                      {{ if eq .Name "Documentation" }}
+                        <a href="/docs/{{ $latestVersion }}/welcome/">{{ .Name }}</a>
+                      {{ else }}
+                        <a href="{{.URL}}" class="navbar-item">{{ .Name }}</a>
+                      {{ end }}
+                    {{ end }}
+                  {{end}}
                 </div>
                 <!-- nav menu end -->
                 <div class="navbar-item">

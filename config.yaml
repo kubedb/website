@@ -1,3 +1,37 @@
-baseURL: http://example.org/
+title: Run production-grade databases easily on Kubernetes
+baseurl: https://kubedb.com
 languageCode: en-us
-title: My New Hugo Site
+menu:
+  main:
+    - Name: "Database"
+      identifier: database
+      Weight: 15
+      URL: https://kubedb.com/docs/latest/setup/install/
+    - Name: "Documentation"
+      Weight: 20
+    - Name: "Community"
+      Weight: 25
+    - Name: Elasticsearch
+      identifier: elasticsearch
+      parent: database
+      weight: 10
+    - Name: Memcached
+      identifier: memcached
+      parent: database
+      weight: 20
+    - Name: MongoDB
+      identifier: mongodb
+      parent: database
+      weight: 30
+    - Name: MySQL
+      identifier: mysql
+      parent: database
+      weight: 40
+    - Name: PostgreSQL
+      identifier: postgres
+      parent: database
+      weight: 50
+    - Name: Redis
+      identifier: redis
+      parent: database
+      weight: 60

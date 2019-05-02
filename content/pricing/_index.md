@@ -2,6 +2,7 @@
 title: Support
 menu:
   main:
-    identifier: support
-    name: Support
+    identifier: pricing
+    name: Commercial Support
+    weight: 10
 ---
