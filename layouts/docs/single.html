@@ -1,6 +1,6 @@
 {{ define "header" }}
 
-{{ $currentNode := . }}
+{{ $currentPage := . }}
 {{ $menu := .Params.menu_name }}
 
 <!-- header area start -->
@@ -120,7 +120,7 @@
                             <div class="navbar-dropdown">
                               {{ range .Children }}
                                 <!--
-                                {{ if $currentNode.HasMenuCurrent $menu . }}
+                                {{ if $currentPage.HasMenuCurrent $menu . }}
                                   <hr class="navbar-divider" />
                                 {{ end }}
                                 -->
@@ -157,6 +157,8 @@
 
 {{ define "main" }}
 
+{{ $currentPage := . }}
+{{ $menu := .Params.menu_name }}
 {{ $productJson := (index $.Site.Data.products.products "cli" ) }}
 
 <!-- documentation area start -->
@@ -194,12 +196,14 @@
           <div class="kd-sidebar-menu">
             <!-- single menu item start -->
             <div class="item">
-                <input type="checkbox" id="a">
-                <label for="a"><a>What is KubeDB?</a> <span><i class="fa fa-angle-right"
-                            aria-hidden="true"></i></span></label>
+              <input type="checkbox" id="a">
+              <label for="a"><a>What is KubeDB?</a> <span><i class="fa fa-angle-right"
+                          aria-hidden="true"></i></span></label>
+              <div class="item">
                 <ul>
-                    <li><a href="overview.html">Overview</a></li>
+                  <li><a href="overview.html">Overview</a></li>
                 </ul>
+              </div>
             </div>
             <!-- single menu item end -->
 
@@ -280,6 +284,162 @@
             </div>
             <!-- single menu item end -->
           </div>
+
+
+          {{ if isset .Params "menu_name" }}
+            {{ $sectionMenuId := .Params.section_menu_id }}
+            {{ range (index .Site.Menus .Params.menu_name) }}
+              {{ if eq $sectionMenuId .Identifier }}
+                {{ if .HasChildren }}
+                  {{ $hasPreDropdown := eq (string .Pre) "dropdown" }}
+
+                  {{ $.Scratch.Set "leftMenuHeadline" .Name }}
+                  {{ range .Children }}
+                    {{ if and ( and .HasChildren $hasPreDropdown) ($currentPage.HasMenuCurrent $menu .)  }}
+
+                      {{ $.Scratch.Set "leftMenuHeadline" .Name }}
+
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+
+
+          <!-- sidebar menu start -->
+          <div class="kd-sidebar-menu">
+            {{ if isset .Params "menu_name" }}
+              {{ $sectionMenuId := .Params.section_menu_id }}
+
+              <!-- first child -> section menu -->
+              {{ range (index .Site.Menus .Params.menu_name ) }}
+
+                {{ if eq $sectionMenuId .Identifier }}
+                  {{ $hasPreDropdown := eq (string .Pre) "dropdown" }}
+
+                  <!-- second child -> left menu level 1-->
+                  {{ range .Children }}
+
+                    {{ if .HasChildren }}
+                      {{ if $hasPreDropdown }}
+                        {{ if $currentPage.HasMenuCurrent $menu . }}
+                          <ul class="sub-nav">
+
+                            {{ range .Children }}
+                              {{ if .HasChildren }}
+                                <li>
+
+                                  <!-- third child -> left menu level 1  -->
+                                  <a href="#{{ .Identifier }}" data-toggle="collapse" aria-expanded="false" aria-controls="{{ .Identifier }}">
+                                    <i class="fa fa-angle-double-right"></i>{{ .Name }}
+                                  </a>
+
+                                  <ul class="sub-nav collapse in {{if $currentPage.HasMenuCurrent $menu . }} show {{end}}" id="{{ .Identifier }}">
+
+                                    <!-- fourth child -> left menu level 2 -->
+                                    {{ range .Children }}
+
+                                      {{ if ne .Weight -1 }}
+                                        <li><a href="{{ .URL }}" {{if $currentPage.IsMenuCurrent $menu . }}class="active"{{end}}><i class="fa fa-stop"></i> {{ .Name }}</a></li>
+                                      {{ end }}
+
+                                    {{ end }}
+
+                                  </ul>
+
+                                </li>
+                              {{ else }}
+                                <!-- third child -> left menu level 1  -->
+                                {{ if ne .Weight -1 }}
+                                <li><a href="{{ .URL }}" {{if $currentPage.IsMenuCurrent $menu . }}class="active"{{end}}>{{ .Name }}</a></li>
+                                {{ end }}
+                              {{ end }}
+                            {{ end }}
+
+                          </ul>
+                        {{ end }}
+                      {{ else }}
+                        <!-- single menu item start -->
+                        <div class="item">
+                          {{ $.Scratch.Add "idx" 1 }}
+                          <input type="checkbox" id="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}" {{if $currentPage.HasMenuCurrent $menu . }}checked{{end}}>
+                          <label for="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}"><a>{{ .Name }}</a> <span><i class="fa fa-angle-right"
+                                      aria-hidden="true"></i></span></label>
+                          <div class="item">
+                            <ul>
+                              {{ range .Children }}
+                                {{ if ne .Weight -1 }}
+                                  <li{{if $currentPage.IsMenuCurrent $menu . }} class="is-active"{{end}}><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                {{ end }}
+                              {{ end }}
+                            </ul>
+                          </div>
+                        </div>
+                        <!-- single menu item end -->
+                      {{ end }}
+
+                    {{ else if eq .Weight -1 }}
+                      <!-- single menu item start -->
+                      <div class="item">
+                          {{ $.Scratch.Add "idx" 1 }}
+                          <input type="checkbox" id="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}" {{if $currentPage.IsMenuCurrent $menu . }}checked{{end}}>
+                          <label for="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}"><a href="{{ .URL }}">{{ $.Scratch.Get "leftMenuHeadline" }}</a></label>
+                      </div>
+                      <!-- single menu item end -->
+                    {{ else }}
+                      <!-- single menu item start -->
+                      <div class="item">
+                        {{ $.Scratch.Add "idx" 1 }}
+                        <input type="checkbox" id="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}" {{if $currentPage.IsMenuCurrent $menu . }}checked{{end}}>
+                        <label for="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}"><a href="{{ .URL }}">{{ .Name }}</a></label>
+                      </div>
+                      <!-- single menu item end -->
+                    {{ end }}
+                    <!-- end of menu item rendering -->
+                  {{ end }}
+                  <!-- end second child -> left level 1-->
+
+                {{ end }}
+              {{ end }}
+              <!-- end first child -> section menu -->
+            {{ end }}
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <!-- sidebar menu end -->
         </div>
         <!-- left sidebar area end -->

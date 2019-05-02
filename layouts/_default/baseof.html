@@ -142,7 +142,6 @@
                 <!-- nav menu start -->
                 <div class="navbar-start">
                   {{ $latestVersion:= (index $.Site.Data.products.products.cli "latestVersion") }}
-                  {{ $currentNode := . }}
                   {{ range .Site.Menus.main }}
                     {{ if .HasChildren }}
                       <div class="navbar-item has-dropdown is-hoverable">
