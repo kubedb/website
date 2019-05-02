@@ -1,4 +1,8 @@
 {{ define "header" }}
+
+{{ $currentNode := . }}
+{{ $menu := .Params.menu_name }}
+
 <!-- header area start -->
 <header>
   <!-- header bottom area start -->
@@ -105,62 +109,35 @@
                 <div class="navbar-centered">
                   <!-- nav menu start -->
                   <div class="navbar-start">
-                    <a href="welcome.html" class="is-active navbar-item">
-                      Welcome
-                    </a>
-                    <a href="concept.html" class="navbar-item">
-                      Concepts
-                    </a>
-                    <a href="#" class="navbar-item">
-                      Setup
-                    </a>
-
-                    <div class="navbar-item has-dropdown is-hoverable">
-                      <a class="navbar-link">
-                        Guides
-                      </a>
-
-                      <div class="navbar-dropdown">
-                        <a class="navbar-item">
-                          Item-1
-                        </a>
-                        <a class="navbar-item">
-                          Item-2
-                        </a>
-                        <a class="navbar-item">
-                          Item-3
-                        </a>
-                        <hr class="navbar-divider" />
-                        <a class="navbar-item">
-                          Item-4
-                        </a>
-                      </div>
-                    </div>
-
-                    <a href="#" class="navbar-item">
-                      Reference
-                    </a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                      <a class="navbar-link">
-                        0.11.0
-                      </a>
-
-                      <div class="navbar-dropdown">
-                        <a class="navbar-item">
-                          0.10.0
-                        </a>
-                        <a class="navbar-item">
-                          0.9.0
-                        </a>
-                        <a class="navbar-item">
-                          0.8.0
-                        </a>
-                        <hr class="navbar-divider" />
-                        <a class="navbar-item">
-                          0.6.0
-                        </a>
-                      </div>
-                    </div>
+                    {{ $sectionMenuId := .Params.section_menu_id }}
+                    {{ if isset .Params "menu_name" }}
+                      {{ range (index .Site.Menus .Params.menu_name) }}
+                        {{ if eq (string .Pre) "dropdown" }}
+                          <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                              {{ .Name }}
+                            </a>
+                            <div class="navbar-dropdown">
+                              {{ range .Children }}
+                                <!--
+                                {{ if $currentNode.HasMenuCurrent $menu . }}
+                                  <hr class="navbar-divider" />
+                                {{ end }}
+                                -->
+                              <!-- <hr class="navbar-divider" />-->
+                                <a href="{{ .URL }}" class="navbar-item">
+                                  {{ .Name }}
+                                </a>
+                              {{ end }}
+                            </div>
+                          </div>
+                        {{ else }}
+                          <a href="{{ .URL }}" class="{{ if eq $sectionMenuId .Identifier }} is-active {{ end }} navbar-item">
+                            {{ .Name }}
+                          </a>
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
                   </div>
                   <!-- nav menu end -->
                 </div>
@@ -179,6 +156,7 @@
 {{ end }}
 
 {{ define "main" }}
+
 {{ $productJson := (index $.Site.Data.products.products "cli" ) }}
 
 <!-- documentation area start -->
@@ -216,31 +194,89 @@
           <div class="kd-sidebar-menu">
             <!-- single menu item start -->
             <div class="item">
-              <input type="checkbox" id="a" checked />
-              <label for="a"><a href="#">Welcome</a></label>
+                <input type="checkbox" id="a">
+                <label for="a"><a>What is KubeDB?</a> <span><i class="fa fa-angle-right"
+                            aria-hidden="true"></i></span></label>
+                <ul>
+                    <li><a href="overview.html">Overview</a></li>
+                </ul>
             </div>
             <!-- single menu item end -->
 
             <!-- single menu item start -->
             <div class="item">
-              <input type="checkbox" id="b" />
-              <label for="b"
-                ><a href="contribution.html">Contributing</a></label
-              >
+                <input type="checkbox" id="b" checked>
+                <label for="b"><a>Supported Databases</a> <span><i class="fa fa-angle-right"
+                            aria-hidden="true"></i></span></label>
+                <div class="item">
+                    <ul>
+                        <li><a href="elasticsearch.html">Elasticsearch</a></li>
+                        <li>
+                            <!-- dropdown-menu start -->
+                            <div class="item">
+                                <input type="checkbox" id="ba" checked>
+                                <label for="ba"><a>Supported Databases Test</a> <span><i
+                                            class="fa fa-angle-right"
+                                            aria-hidden="true"></i></span></label>
+                                <ul>
+                                    <li><a href="demo-1.html">Demo Link-1</a></li>
+                                    <li><a href="demo-2.html">Demo Link-2</a></li>
+                                    <li>
+                                        <div class="item">
+                                            <input type="checkbox" id="bb" checked>
+                                            <label for="bb"><a>Demo Test-3 </a> <span><i
+                                                        class="fa fa-angle-right"
+                                                        aria-hidden="true"></i></span></label>
+                                            <ul>
+                                                <li><a href="demo-3.html">Demo Link-3</a></li>
+                                                <li class="is-active"><a href="demo-4.html">Demo Link-4</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- dropdown-menu end -->
+                        </li>
+                        <li><a href="#">MongoDB</a></li>
+                        <li><a href="#">MySQL</a></li>
+                        <li><a href="#">Postges</a></li>
+                        <li><a href="#">Redis</a></li>
+                    </ul>
+                </div>
             </div>
             <!-- single menu item end -->
 
             <!-- single menu item start -->
             <div class="item">
-              <input type="checkbox" id="c" />
-              <label for="c"><a href="#">Support</a></label>
+              <input type="checkbox" id="c">
+              <label for="c"><a>Catalog</a> <span><i class="fa fa-angle-right"
+                          aria-hidden="true"></i></span></label>
+              <div class="item">
+                  <ul>
+                      <li><a href="#"> ElasticsearchVersion</a></li>
+                      <li><a href="#"> MemcachedVersion</a></li>
+                      <li><a href="#"> MongoDBVersion</a></li>
+                      <li><a href="#"> PostgresVersion</a></li>
+                      <li><a href="#"> RedisVersion</a></li>
+                  </ul>
+              </div>
             </div>
             <!-- single menu item end -->
 
             <!-- single menu item start -->
             <div class="item">
-              <input type="checkbox" id="d" />
-              <label for="d"><a href="#">Status</a></label>
+                <input type="checkbox" id="d">
+                <label for="d"><a href="#">Catalog</a> <span><i class="fa fa-angle-right"
+                            aria-hidden="true"></i></span></label>
+                <div class="item">
+                    <ul>
+                        <li><a href="#"> ElasticsearchVersion</a></li>
+                        <li><a href="#"> MemcachedVersion</a></li>
+                        <li><a href="#"> MongoDBVersion</a></li>
+                        <li><a href="#"> PostgresVersion</a></li>
+                        <li><a href="#"> RedisVersion</a></li>
+                    </ul>
+                </div>
             </div>
             <!-- single menu item end -->
           </div>
