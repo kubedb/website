@@ -148,8 +148,11 @@
                         <a class="navbar-link">{{ .Name }}</a>
                         <div class="navbar-dropdown">
                           {{ range .Children }}
-                            <!-- <hr class="navbar-divider" />-->
-                            <a class="navbar-item" href="/docs/{{ $latestVersion }}/guides/{{ .Identifier }}/ ">{{ .Name }}</a>
+                            {{ if eq .Parent "database" }}
+                              <a class="navbar-item" href="/docs/{{ $latestVersion }}/guides/{{ .Identifier }}/">{{ .Name }}</a>
+                            {{ else }}
+                              <a href="{{.URL}}" class="navbar-item">{{ .Name }}</a>
+                            {{ end }}
                           {{ end }}
                         </div>
                       </div>

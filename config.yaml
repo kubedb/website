@@ -3,35 +3,61 @@ baseurl: https://kubedb-v2-hugo.firebaseapp.com
 languageCode: en-us
 menu:
   main:
-    - Name: "Database"
+    - name: "Database"
       identifier: database
-      Weight: 15
-      URL: https://kubedb.com/docs/latest/setup/install/
-    - Name: "Documentation"
-      Weight: 20
-    - Name: "Community"
-      Weight: 25
-    - Name: Elasticsearch
+      weight: 15
+      url: https://kubedb.com/docs/latest/setup/install/
+    - name: "Documentation"
+      weight: 20
+    - name: "Community"
+      identifier: community
+      weight: 25
+    - name: Elasticsearch
       identifier: elasticsearch
       parent: database
       weight: 10
-    - Name: Memcached
+    - name: Memcached
       identifier: memcached
       parent: database
       weight: 20
-    - Name: MongoDB
+    - name: MongoDB
       identifier: mongodb
       parent: database
       weight: 30
-    - Name: MySQL
+    - name: MySQL
       identifier: mysql
       parent: database
       weight: 40
-    - Name: PostgreSQL
+    - name: PostgreSQL
       identifier: postgres
       parent: database
       weight: 50
-    - Name: Redis
+    - name: Redis
       identifier: redis
       parent: database
       weight: 60
+    - name: GitHub
+      identifier: github
+      parent: community
+      url: "https://github.com/kubedb"
+      weight: 3
+    - name: Twitter
+      identifier: twitter
+      parent: community
+      url: "https://twitter.com/KubeDB"
+      weight: 4
+    - name: Groups
+      identifier: groups
+      parent: community
+      url: "https://groups.google.com/forum/#!forum/kubedb"
+      weight: 5
+    - name: Slack
+      identifier: slack
+      parent: community
+      url: "http://slack.kubernetes.io/"
+      weight: 6
+    - name: Forum
+      identifier: forum
+      parent: community
+      url: "http://discourse.appscode.com"
+      weight: 7
