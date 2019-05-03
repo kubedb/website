@@ -1,6 +1,9 @@
 title: Run production-grade databases easily on Kubernetes
 baseurl: https://kubedb-v2-hugo.firebaseapp.com
 languageCode: en-us
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
 menu:
   main:
     - name: "Database"

@@ -8,7 +8,7 @@
 
 <!-- single menu item start -->
 <div class="item">
-  <input type="checkbox" id="{{ $id }}" {{if .page.IsMenuCurrent .menu .entry }}checked{{end}}>
+  <input type="checkbox" id="{{ $id }}" {{if .page.HasMenuCurrent .menu .entry }}checked{{end}}>
   <label for="{{ $id }}"><a>{{ $name }}</a> <span><i class="fa fa-angle-right"
               aria-hidden="true"></i></span></label>
   <div class="item">

@@ -159,7 +159,7 @@
 
 {{ $currentPage := . }}
 {{ $menu := .Params.menu_name }}
-{{ $productJson := (index $.Site.Data.products.products "cli" ) }}
+{{ $productJson := (index $.Site.Data.products.products "docs" ) }}
 
 <!-- init idx -->
 {{ .Scratch.Add "idx" 0 }}

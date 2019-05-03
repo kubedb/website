@@ -1,6 +1,6 @@
 {
   "products": {
-    "cli": {
+    "docs": {
       "url": "https://github.com/kubedb/cli.git",
       "versions": [
           { "branch": "master", "hostDocs": false, "v-dropdown": true },
