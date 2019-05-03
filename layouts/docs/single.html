@@ -161,6 +161,9 @@
 {{ $menu := .Params.menu_name }}
 {{ $productJson := (index $.Site.Data.products.products "cli" ) }}
 
+<!-- init idx -->
+{{ .Scratch.Add "idx" 0 }}
+
 <!-- documentation area start -->
 <div class="documentation-area">
   <div class="container section">
@@ -192,99 +195,6 @@
               </span>
             </div>
           </div>
-          <!-- sidebar menu start -->
-          <div class="kd-sidebar-menu">
-            <!-- single menu item start -->
-            <div class="item">
-              <input type="checkbox" id="a">
-              <label for="a"><a>What is KubeDB?</a> <span><i class="fa fa-angle-right"
-                          aria-hidden="true"></i></span></label>
-              <div class="item">
-                <ul>
-                  <li><a href="overview.html">Overview</a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- single menu item end -->
-
-            <!-- single menu item start -->
-            <div class="item">
-                <input type="checkbox" id="b" checked>
-                <label for="b"><a>Supported Databases</a> <span><i class="fa fa-angle-right"
-                            aria-hidden="true"></i></span></label>
-                <div class="item">
-                    <ul>
-                        <li><a href="elasticsearch.html">Elasticsearch</a></li>
-                        <li>
-                            <!-- dropdown-menu start -->
-                            <div class="item">
-                                <input type="checkbox" id="ba" checked>
-                                <label for="ba"><a>Supported Databases Test</a> <span><i
-                                            class="fa fa-angle-right"
-                                            aria-hidden="true"></i></span></label>
-                                <ul>
-                                    <li><a href="demo-1.html">Demo Link-1</a></li>
-                                    <li><a href="demo-2.html">Demo Link-2</a></li>
-                                    <li>
-                                        <div class="item">
-                                            <input type="checkbox" id="bb" checked>
-                                            <label for="bb"><a>Demo Test-3 </a> <span><i
-                                                        class="fa fa-angle-right"
-                                                        aria-hidden="true"></i></span></label>
-                                            <ul>
-                                                <li><a href="demo-3.html">Demo Link-3</a></li>
-                                                <li class="is-active"><a href="demo-4.html">Demo Link-4</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- dropdown-menu end -->
-                        </li>
-                        <li><a href="#">MongoDB</a></li>
-                        <li><a href="#">MySQL</a></li>
-                        <li><a href="#">Postges</a></li>
-                        <li><a href="#">Redis</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- single menu item end -->
-
-            <!-- single menu item start -->
-            <div class="item">
-              <input type="checkbox" id="c">
-              <label for="c"><a>Catalog</a> <span><i class="fa fa-angle-right"
-                          aria-hidden="true"></i></span></label>
-              <div class="item">
-                  <ul>
-                      <li><a href="#"> ElasticsearchVersion</a></li>
-                      <li><a href="#"> MemcachedVersion</a></li>
-                      <li><a href="#"> MongoDBVersion</a></li>
-                      <li><a href="#"> PostgresVersion</a></li>
-                      <li><a href="#"> RedisVersion</a></li>
-                  </ul>
-              </div>
-            </div>
-            <!-- single menu item end -->
-
-            <!-- single menu item start -->
-            <div class="item">
-                <input type="checkbox" id="d">
-                <label for="d"><a href="#">Catalog</a> <span><i class="fa fa-angle-right"
-                            aria-hidden="true"></i></span></label>
-                <div class="item">
-                    <ul>
-                        <li><a href="#"> ElasticsearchVersion</a></li>
-                        <li><a href="#"> MemcachedVersion</a></li>
-                        <li><a href="#"> MongoDBVersion</a></li>
-                        <li><a href="#"> PostgresVersion</a></li>
-                        <li><a href="#"> RedisVersion</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- single menu item end -->
-          </div>
-
 
           {{ if isset .Params "menu_name" }}
             {{ $sectionMenuId := .Params.section_menu_id }}
@@ -306,7 +216,6 @@
             {{ end }}
           {{ end }}
 
-
           <!-- sidebar menu start -->
           <div class="kd-sidebar-menu">
             {{ if isset .Params "menu_name" }}
@@ -324,77 +233,22 @@
                     {{ if .HasChildren }}
                       {{ if $hasPreDropdown }}
                         {{ if $currentPage.HasMenuCurrent $menu . }}
-                          <ul class="sub-nav">
 
                             {{ range .Children }}
                               {{ if .HasChildren }}
-                                <li>
-
-                                  <!-- third child -> left menu level 1  -->
-                                  <a href="#{{ .Identifier }}" data-toggle="collapse" aria-expanded="false" aria-controls="{{ .Identifier }}">
-                                    <i class="fa fa-angle-double-right"></i>{{ .Name }}
-                                  </a>
-
-                                  <ul class="sub-nav collapse in {{if $currentPage.HasMenuCurrent $menu . }} show {{end}}" id="{{ .Identifier }}">
-
-                                    <!-- fourth child -> left menu level 2 -->
-                                    {{ range .Children }}
-
-                                      {{ if ne .Weight -1 }}
-                                        <li><a href="{{ .URL }}" {{if $currentPage.IsMenuCurrent $menu . }}class="active"{{end}}><i class="fa fa-stop"></i> {{ .Name }}</a></li>
-                                      {{ end }}
-
-                                    {{ end }}
-
-                                  </ul>
-
-                                </li>
+                                {{ partial "menu/group.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
                               {{ else }}
-                                <!-- third child -> left menu level 1  -->
-                                {{ if ne .Weight -1 }}
-                                <li><a href="{{ .URL }}" {{if $currentPage.IsMenuCurrent $menu . }}class="active"{{end}}>{{ .Name }}</a></li>
-                                {{ end }}
+                                {{ partial "menu/leaf.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
                               {{ end }}
                             {{ end }}
 
-                          </ul>
                         {{ end }}
                       {{ else }}
-                        <!-- single menu item start -->
-                        <div class="item">
-                          {{ $.Scratch.Add "idx" 1 }}
-                          <input type="checkbox" id="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}" {{if $currentPage.HasMenuCurrent $menu . }}checked{{end}}>
-                          <label for="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}"><a>{{ .Name }}</a> <span><i class="fa fa-angle-right"
-                                      aria-hidden="true"></i></span></label>
-                          <div class="item">
-                            <ul>
-                              {{ range .Children }}
-                                {{ if ne .Weight -1 }}
-                                  <li{{if $currentPage.IsMenuCurrent $menu . }} class="is-active"{{end}}><a href="{{ .URL }}">{{ .Name }}</a></li>
-                                {{ end }}
-                              {{ end }}
-                            </ul>
-                          </div>
-                        </div>
-                        <!-- single menu item end -->
+                        {{ partial "menu/group.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
                       {{ end }}
 
-                    {{ else if eq .Weight -1 }}
-                      <!-- single menu item start -->
-                      <div class="item">
-                          {{ $.Scratch.Add "idx" 1 }}
-                          <input type="checkbox" id="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}" {{if $currentPage.IsMenuCurrent $menu . }}checked{{end}}>
-                          <label for="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}"><a href="{{ .URL }}">{{ $.Scratch.Get "leftMenuHeadline" }}</a></label>
-                      </div>
-                      <!-- single menu item end -->
                     {{ else }}
-                      <!-- single menu item start -->
-                      <div class="item">
-                        {{ $.Scratch.Add "idx" 1 }}
-                        <input type="checkbox" id="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}" {{if $currentPage.IsMenuCurrent $menu . }}checked{{end}}>
-                        <label for="{{ $.Page.UniqueID }}-{{ $.Scratch.Get `idx` }}"><a href="{{ .URL }}">{{ .Name }}</a></label>
-                      </div>
-                      <!-- single menu item end -->
+                      {{ partial "menu/leaf.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
                     {{ end }}
                     <!-- end of menu item rendering -->
                   {{ end }}
