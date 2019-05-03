@@ -119,22 +119,14 @@
                             </a>
                             <div class="navbar-dropdown">
                               {{ range .Children }}
-                                <!--
-                                {{ if $currentPage.HasMenuCurrent $menu . }}
-                                  <hr class="navbar-divider" />
+                                {{ if ne .Weight -1 }}
+                                  <a href="{{ .URL }}" class="navbar-item">{{ .Name }}</a>
                                 {{ end }}
-                                -->
-                              <!-- <hr class="navbar-divider" />-->
-                                <a href="{{ .URL }}" class="navbar-item">
-                                  {{ .Name }}
-                                </a>
                               {{ end }}
                             </div>
                           </div>
                         {{ else }}
-                          <a href="{{ .URL }}" class="{{ if eq $sectionMenuId .Identifier }} is-active {{ end }} navbar-item">
-                            {{ .Name }}
-                          </a>
+                          <a href="{{ .URL }}" class="{{ if eq $sectionMenuId .Identifier }} is-active {{ end }} navbar-item">{{ .Name }}</a>
                         {{ end }}
                       {{ end }}
                     {{ end }}
