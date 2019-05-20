@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2D9AED" />
+    <title>KubeDB Home</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+
+  <body>
+    
+
+    
+    
+
+
+
+
+
+<header>
+  
+  <div class="header-bottom-area header-area documentation-page" id="header">
+    <div class="container section">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./../index.html">
+            <img src="/assets/images/logo-color-kube.png" alt="" />
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="acNav"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="acNav" class="navbar-menu main-menu">
+          <div class="navbar-end">
+            
+            <div class="navbar-start">
+              <a href="./../pricing/index.html" class="navbar-item">
+                Commercial Support
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Database
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Item-1
+                  </a>
+                  <a class="navbar-item">
+                    Item-2
+                  </a>
+                  <a class="navbar-item">
+                    Item-3
+                  </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item">
+                    Item-4
+                  </a>
+                </div>
+              </div>
+
+              <a href="../documentations/welcome.html" class="navbar-item">
+                Documentation
+              </a>
+              <a class="navbar-item">
+                v 0.110
+              </a>
+              <a class="navbar-item">
+                Community
+              </a>
+            </div>
+            
+            <div class="navbar-item">
+              <div class="buttons main-menu-button">
+                <a class="button is-small">
+                  <span><i class="fa fa-github" aria-hidden="true"></i></span
+                  >Star
+                </a>
+                <div class="star-count">
+                  565
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="documentation-menu">
+      <div class="container section">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            
+            <div class="responsive-menu">
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav3"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            
+            
+            <nav class="documentation-navbar">
+              <div id="acNav3" class="navbar-menu nav-menu main-menu">
+                <div class="navbar-centered">
+                  
+                  <div class="navbar-start">
+                    
+                    
+                      
+                        
+                          <a href="/docs/0.9.0-rc.1/" class=" navbar-item">Welcome</a>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0-rc.1/concepts/" class=" navbar-item">Concepts</a>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0-rc.1/setup/" class=" navbar-item">Setup</a>
+                        
+                      
+                        
+                          <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                              Guides
+                            </a>
+                            <div class="navbar-dropdown">
+                              
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.1/guides/elasticsearch/" class="navbar-item">Elasticsearch</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.1/guides/memcached/" class="navbar-item">Memcached</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.1/guides/mongodb/" class="navbar-item">MongoDB</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.1/guides/mysql/" class="navbar-item">MySQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.1/guides/postgres/" class="navbar-item">PostgreSQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.1/guides/redis/" class="navbar-item">Redis</a>
+                                
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0-rc.1/reference/" class=" navbar-item">Reference</a>
+                        
+                      
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </nav>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</header>
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+<div class="documentation-area">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-3">
+        
+        <div class="kd-left-sidebar">
+          <div class="kd-version">
+            
+            <div class="control has-icons-left">
+              <div class="select">
+                
+                
+                <select>
+                  
+                    
+                    
+                      
+                        <option>master</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.11.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.10.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.9.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option >0.8.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option>0.6.0</option>
+                      
+                    
+                  
+                </select>
+              </div>
+              <span class="icon is-left">
+                <i class="fa fa-globe"></i>
+              </span>
+            </div>
+          </div>
+
+          
+            
+            
+              
+            
+              
+            
+              
+            
+              
+                
+                  
+
+                  
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+
+                      
+
+                    
+                  
+                    
+                  
+                    
+                  
+                
+              
+            
+              
+            
+          
+
+          
+          <div class="kd-sidebar-menu">
+            
+              
+
+              
+              
+
+                
+              
+
+                
+              
+
+                
+              
+
+                
+                  
+
+                  
+                  
+
+                    
+                      
+
+
+
+
+  
+
+
+
+<div class="item">
+  <input type="checkbox" id="9e0619fef9dc00015eff3a9ece05d191-1" >
+  <label for="9e0619fef9dc00015eff3a9ece05d191-1"><a href="/docs/0.9.0-rc.1/guides/">MySQL</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="9e0619fef9dc00015eff3a9ece05d191-2" >
+  <label for="9e0619fef9dc00015eff3a9ece05d191-2"><a href="/docs/0.9.0-rc.1/guides/mysql/">MySQL</a></label>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="9e0619fef9dc00015eff3a9ece05d191-3" >
+  <label for="9e0619fef9dc00015eff3a9ece05d191-3"><a>Quickstart</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0-rc.1/guides/mysql/quickstart/quickstart/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="9e0619fef9dc00015eff3a9ece05d191-4" >
+  <label for="9e0619fef9dc00015eff3a9ece05d191-4"><a>Snapshotting</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0-rc.1/guides/mysql/snapshot/backup-and-restore/">Instant Backup</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.1/guides/mysql/snapshot/scheduled-backup/">Scheduled Backup</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="9e0619fef9dc00015eff3a9ece05d191-5" >
+  <label for="9e0619fef9dc00015eff3a9ece05d191-5"><a>Initialization</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0-rc.1/guides/mysql/initialization/using-script/">Using Script</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.1/guides/mysql/initialization/using-snapshot/">From Snapshot</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="9e0619fef9dc00015eff3a9ece05d191-6" >
+  <label for="9e0619fef9dc00015eff3a9ece05d191-6"><a>Private Registry</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0-rc.1/guides/mysql/private-registry/using-private-registry/">Quickstart</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="9e0619fef9dc00015eff3a9ece05d191-7" checked>
+  <label for="9e0619fef9dc00015eff3a9ece05d191-7"><a>Monitoring</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li class="is-active"><a href="/docs/0.9.0-rc.1/guides/mysql/monitoring/using-builtin-prometheus/">Builtin Prometheus Discovery</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.1/guides/mysql/monitoring/using-coreos-prometheus-operator/">Coreos Prometheus Operator</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="9e0619fef9dc00015eff3a9ece05d191-8" >
+  <label for="9e0619fef9dc00015eff3a9ece05d191-8"><a>Cli</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0-rc.1/guides/mysql/cli/cli/">Quickstart</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="9e0619fef9dc00015eff3a9ece05d191-9" >
+  <label for="9e0619fef9dc00015eff3a9ece05d191-9"><a>Custom Configuration</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0-rc.1/guides/mysql/configuration/using-custom-config/">Using Config File</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.1/guides/mysql/configuration/using-crd-configuration/">Using CRD Config</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+                  
+
+                
+              
+
+                
+              
+              
+            
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </div>
+        
+      </div>
+      <div class="column is-7">
+        <div class="full-info">
+          
+
+<blockquote>
+<p>New to KubeDB? Please start <a href="/docs/0.9.0-rc.1/concepts/README">here</a>.</p>
+</blockquote>
+
+<h1 id="using-prometheus-with-kubedb">Using Prometheus with KubeDB</h1>
+
+<p>This tutorial will show you how to monitor KubeDB databases using <a href="https://prometheus.io/">Prometheus</a>.</p>
+
+<h2 id="before-you-begin">Before You Begin</h2>
+
+<ul>
+<li><p>At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using <a href="https://github.com/kubernetes/minikube">Minikube</a>.</p></li>
+
+<li><p>Now, install KubeDB cli on your workstation and KubeDB operator in your cluster following the steps <a href="/docs/0.9.0-rc.1/setup/install">here</a>.</p></li>
+
+<li><p>To keep things isolated, this tutorial uses a separate namespace called <code>demo</code> throughout this tutorial. Run the following command to prepare your cluster for this tutorial:</p></li>
+</ul>
+
+<pre><code class="language-console">  $ kubectl create ns demo
+  namespace &quot;demo&quot; created
+
+  $ kubectl get ns
+  NAME          STATUS    AGE
+  demo          Active    10s
+</code></pre>
+
+<blockquote>
+<p>Note: The yaml files that are used in this tutorial are stored in <a href="https://github.com/kubedb/cli/tree/master/docs/examples">docs/examples</a> folder in GitHub repository <a href="https://github.com/kubedb/cli">kubedb/cli</a>.</p>
+</blockquote>
+
+<h2 id="monitor-with-builtin-prometheus">Monitor with builtin Prometheus</h2>
+
+<p>User can define <code>spec.monitor</code> either while creating the CRD object, Or can update the spec of existing CRD object to add the <code>spec.monitor</code> part. Below is the <code>MySQL</code> object created in this tutorial.</p>
+
+<pre><code class="language-yaml">apiVersion: kubedb.com/v1alpha1
+kind: MySQL
+metadata:
+  name: mysql-mon-prometheus
+  namespace: demo
+spec:
+  version: &quot;8.0-v1&quot;
+  storage:
+    storageClassName: &quot;standard&quot;
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 50Mi
+  monitor:
+    agent: prometheus.io/builtin
+</code></pre>
+
+<pre><code class="language-console">$ kubedb create -f https://raw.githubusercontent.com/kubedb/cli/0.9.0-rc.1/docs/examples/mysql/monitoring/builtin-prometheus/demo-1.yaml
+mysql.kubedb.com/mysql-mon-prometheus created
+</code></pre>
+
+<p>Here,</p>
+
+<ul>
+<li><code>spec.monitor</code> specifies that built-in <a href="https://github.com/prometheus/prometheus">Prometheus</a> is used to monitor this database instance. KubeDB operator will configure the service of this database in a way that the Prometheus server will automatically find out the service endpoint aka <code>MySQL Exporter</code> and will receive metrics from exporter.</li>
+</ul>
+
+<p>KubeDB will create a separate stats service with name <code>&lt;mysql-crd-name&gt;-stats</code> for monitoring purpose. KubeDB operator will configure this monitoring service once the MySQL is successfully running.</p>
+
+<pre><code class="language-console">$ kubedb get my -n demo
+NAME                   VERSION   STATUS    AGE
+mysql-mon-prometheus   8.0-v1    Running   13m
+
+$ kubedb describe my -n demo mysql-mon-prometheus
+Name:               mysql-mon-prometheus
+Namespace:          demo
+CreationTimestamp:  Thu, 27 Sep 2018 16:02:43 +0600
+Labels:             &lt;none&gt;
+Annotations:        &lt;none&gt;
+Replicas:           1  total
+Status:             Running
+  StorageType:      Durable
+Volume:
+  StorageClass:  standard
+  Capacity:      50Mi
+  Access Modes:  RWO
+
+StatefulSet:          
+  Name:               mysql-mon-prometheus
+  CreationTimestamp:  Thu, 27 Sep 2018 16:02:45 +0600
+  Labels:               kubedb.com/kind=MySQL
+                        kubedb.com/name=mysql-mon-prometheus
+  Annotations:        &lt;none&gt;
+  Replicas:           824639361756 desired | 1 total
+  Pods Status:        1 Running / 0 Waiting / 0 Succeeded / 0 Failed
+
+Service:        
+  Name:         mysql-mon-prometheus
+  Labels:         kubedb.com/kind=MySQL
+                  kubedb.com/name=mysql-mon-prometheus
+  Annotations:  &lt;none&gt;
+  Type:         ClusterIP
+  IP:           10.105.118.238
+  Port:         db  3306/TCP
+  TargetPort:   db/TCP
+  Endpoints:    172.17.0.5:3306
+
+Service:        
+  Name:         mysql-mon-prometheus-stats
+  Labels:         kubedb.com/kind=MySQL
+                  kubedb.com/name=mysql-mon-prometheus
+  Annotations:    monitoring.appscode.com/agent=prometheus.io/builtin
+                  prometheus.io/path=/metrics
+                  prometheus.io/port=56790
+                  prometheus.io/scrape=true
+  Type:         ClusterIP
+  IP:           10.110.18.171
+  Port:         prom-http  56790/TCP
+  TargetPort:   prom-http/TCP
+  Endpoints:    172.17.0.5:56790
+
+Database Secret:
+  Name:         mysql-mon-prometheus-auth
+  Labels:         kubedb.com/kind=MySQL
+                  kubedb.com/name=mysql-mon-prometheus
+  Annotations:  &lt;none&gt;
+  
+Type:  Opaque
+  
+Data
+====
+  password:  16 bytes
+  user:      4 bytes
+
+Monitoring System:
+  Agent:  prometheus.io/builtin
+  Prometheus:
+    Port:  56790
+
+No Snapshots.
+
+Events:
+  Type    Reason      Age   From            Message
+  ----    ------      ----  ----            -------
+  Normal  Successful  13m   MySQL operator  Successfully created Service
+  Normal  Successful  13m   MySQL operator  Successfully created StatefulSet
+  Normal  Successful  13m   MySQL operator  Successfully created MySQL
+  Normal  Successful  13m   MySQL operator  Successfully created stats service
+  Normal  Successful  12m   MySQL operator  Successfully patched StatefulSet
+  Normal  Successful  12m   MySQL operator  Successfully patched MySQL
+  Normal  Successful  12m   MySQL operator  Successfully patched StatefulSet
+  Normal  Successful  12m   MySQL operator  Successfully patched MySQL
+</code></pre>
+
+<p>Since <code>spec.monitoring</code> was configured, the database monitoring service object is configured accordingly. You can verify it running the following commands:</p>
+
+<pre><code class="language-console">$ kubectl get services -n demo
+NAME                         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)     AGE
+kubedb                       ClusterIP   None             &lt;none&gt;        &lt;none&gt;      31m
+mysql-mon-prometheus         ClusterIP   10.105.118.238   &lt;none&gt;        3306/TCP    14m
+mysql-mon-prometheus-stats   ClusterIP   10.110.18.171    &lt;none&gt;        56790/TCP   13m
+</code></pre>
+
+<pre><code class="language-yaml">$ kubectl get services mysql-mon-prometheus-stats -n demo -o yaml
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    monitoring.appscode.com/agent: prometheus.io/builtin
+    prometheus.io/path: /metrics
+    prometheus.io/port: &quot;56790&quot;
+    prometheus.io/scrape: &quot;true&quot;
+  creationTimestamp: 2018-09-27T10:03:36Z
+  labels:
+    kubedb.com/kind: MySQL
+    kubedb.com/name: mysql-mon-prometheus
+  name: mysql-mon-prometheus-stats
+  namespace: demo
+  ownerReferences:
+  - apiVersion: kubedb.com/v1alpha1
+    blockOwnerDeletion: false
+    kind: MySQL
+    name: mysql-mon-prometheus
+    uid: 7a30757a-c23c-11e8-b2cc-080027d9f35e
+  resourceVersion: &quot;4015&quot;
+  selfLink: /api/v1/namespaces/demo/services/mysql-mon-prometheus-stats
+  uid: 99cdcd40-c23c-11e8-b2cc-080027d9f35e
+spec:
+  clusterIP: 10.110.18.171
+  ports:
+  - name: prom-http
+    port: 56790
+    protocol: TCP
+    targetPort: prom-http
+  selector:
+    kubedb.com/kind: MySQL
+    kubedb.com/name: mysql-mon-prometheus
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+</code></pre>
+
+<p>We can see that the service contains these specific annotations. The Prometheus server will discover the exporter using these specifications.</p>
+
+<pre><code class="language-yaml">prometheus.io/path: ...
+prometheus.io/port: ...
+prometheus.io/scrape: ...
+</code></pre>
+
+<h2 id="deploy-and-configure-prometheus-server">Deploy and configure Prometheus Server</h2>
+
+<p>The Prometheus server is needed to configure so that it can discover endpoints of services. If a Prometheus server is already running in cluster and if it is configured in a way that it can discover service endpoints, no extra configuration will be needed. If there is no existing Prometheus server running, rest of this tutorial will create a Prometheus server with appropriate configuration.</p>
+
+<p>The configuration file to <code>Prometheus-Server</code> will be provided by <code>ConfigMap</code>. The below config map will be created:</p>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-server-conf
+  labels:
+    name: prometheus-server-conf
+  namespace: demo
+data:
+  prometheus.yml: |-
+    global:
+      scrape_interval: 5s
+      evaluation_interval: 5s
+    scrape_configs:
+    - job_name: 'kubernetes-service-endpoints'
+
+      kubernetes_sd_configs:
+      - role: endpoints
+
+      relabel_configs:
+      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]
+        action: keep
+        regex: true
+      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scheme]
+        action: replace
+        target_label: __scheme__
+        regex: (https?)
+      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_path]
+        action: replace
+        target_label: __metrics_path__
+        regex: (.+)
+      - source_labels: [__address__, __meta_kubernetes_service_annotation_prometheus_io_port]
+        action: replace
+        target_label: __address__
+        regex: ([^:]+)(?::\d+)?;(\d+)
+        replacement: $1:$2
+      - action: labelmap
+        regex: __meta_kubernetes_service_label_(.+)
+      - source_labels: [__meta_kubernetes_namespace]
+        action: replace
+        target_label: kubernetes_namespace
+      - source_labels: [__meta_kubernetes_service_name]
+        action: replace
+        target_label: kubernetes_name
+</code></pre>
+
+<p>Create above ConfigMap</p>
+
+<pre><code class="language-console">$ kubectl create -f https://raw.githubusercontent.com/kubedb/cli/0.9.0-rc.1/docs/examples/monitoring/builtin-prometheus/demo-1.yaml
+configmap/prometheus-server-conf created
+</code></pre>
+
+<p>Now, the below yaml is used to deploy Prometheus in kubernetes :</p>
+
+<pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus-server
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus-server
+  template:
+    metadata:
+      labels:
+        app: prometheus-server
+    spec:
+      containers:
+        - name: prometheus
+          image: prom/prometheus:v2.1.0
+          args:
+            - &quot;--config.file=/etc/prometheus/prometheus.yml&quot;
+            - &quot;--storage.tsdb.path=/prometheus/&quot;
+          ports:
+            - containerPort: 9090
+          volumeMounts:
+            - name: prometheus-config-volume
+              mountPath: /etc/prometheus/
+            - name: prometheus-storage-volume
+              mountPath: /prometheus/
+      volumes:
+        - name: prometheus-config-volume
+          configMap:
+            defaultMode: 420
+            name: prometheus-server-conf
+        - name: prometheus-storage-volume
+          emptyDir: {}
+</code></pre>
+
+<p>Run the following command to deploy prometheus-server</p>
+
+<pre><code class="language-console">$ kubectl create -f https://raw.githubusercontent.com/kubedb/cli/0.9.0-rc.1/docs/examples/monitoring/builtin-prometheus/demo-2.yaml
+clusterrole.rbac.authorization.k8s.io/prometheus-server created
+serviceaccount/prometheus-server created
+clusterrolebinding.rbac.authorization.k8s.io/prometheus-server created
+deployment.apps/prometheus-server created
+service/prometheus-service created
+
+# Verify RBAC stuffs
+$ kubectl get clusterroles prometheus-server
+NAME                AGE
+prometheus-server   28s
+
+$ kubectl get clusterrolebindings prometheus-server
+NAME                AGE
+prometheus-server   59s
+
+$ kubectl get serviceaccounts -n demo
+NAME                SECRETS   AGE
+default             1         52m
+prometheus-server   1         1m
+</code></pre>
+
+<h3 id="prometheus-dashboard">Prometheus Dashboard</h3>
+
+<p>Now to open prometheus dashboard on Browser:</p>
+
+<pre><code class="language-console">$ kubectl get svc -n demo
+NAME                         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+kubedb                       ClusterIP   None             &lt;none&gt;        &lt;none&gt;           34m
+mysql-mon-prometheus         ClusterIP   10.105.118.238   &lt;none&gt;        3306/TCP         17m
+mysql-mon-prometheus-stats   ClusterIP   10.110.18.171    &lt;none&gt;        56790/TCP        16m
+prometheus-service           NodePort    10.100.155.55    &lt;none&gt;        9090:30901/TCP   1m
+
+$ minikube ip
+192.168.99.100
+
+$ minikube service prometheus-service -n demo --url
+http://192.168.99.100:30901
+</code></pre>
+
+<p>Now, open your browser and go to the following URL: <em>http://{minikube-ip}:{prometheus-svc-nodeport}</em> to visit Prometheus Dashboard. According to the above example, this URL will be <a href="http://192.168.99.100:30901">http://192.168.99.100:30901</a>.</p>
+
+<p>If you are not using minikube, browse prometheus dashboard using following address <code>http://{Node's ExternalIP}:{NodePort of prometheus-service}</code>.</p>
+
+<p>Now, if you go the Prometheus Dashboard, you should see that this database endpoint as one of the targets.
+<img src="/docs/0.9.0-rc.1/images/mysql/mysql-builtin.png" alt="prometheus-builtin" /></p>
+
+<h2 id="cleaning-up">Cleaning up</h2>
+
+<p>To cleanup the Kubernetes resources created by this tutorial, run:</p>
+
+<pre><code class="language-console">kubectl patch -n demo mysql/mysql-mon-prometheus -p '{&quot;spec&quot;:{&quot;terminationPolicy&quot;:&quot;WipeOut&quot;}}' --type=&quot;merge&quot;
+kubectl delete -n demo mysql/mysql-mon-prometheus
+
+kubectl patch -n demo drmn/mysql-mon-prometheus -p '{&quot;spec&quot;:{&quot;wipeOut&quot;:true}}' --type=&quot;merge&quot;
+kubectl delete -n demo drmn/mysql-mon-prometheus
+
+kubectl delete -f https://raw.githubusercontent.com/kubedb/cli/0.9.0-rc.1/docs/examples/monitoring/builtin-prometheus/demo-2.yaml
+
+kubectl delete ns demo
+</code></pre>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ul>
+<li>Monitor your MySQL database with KubeDB using <a href="/docs/0.9.0-rc.1/guides/mysql/monitoring/using-coreos-prometheus-operator">out-of-the-box CoreOS Prometheus Operator</a>.</li>
+<li>Detail concepts of <a href="/docs/0.9.0-rc.1/concepts/databases/mysql">MySQL object</a>.</li>
+<li>Detail concepts of <a href="/docs/0.9.0-rc.1/concepts/catalog/mysql">MySQLVersion object</a>.</li>
+<li><a href="/docs/0.9.0-rc.1/guides/mysql/snapshot/backup-and-restore">Snapshot and Restore</a> process of MySQL databases using KubeDB.</li>
+<li>Take <a href="/docs/0.9.0-rc.1/guides/mysql/snapshot/scheduled-backup">Scheduled Snapshot</a> of MySQL databases using KubeDB.</li>
+<li>Initialize <a href="/docs/0.9.0-rc.1/guides/mysql/initialization/using-script">MySQL with Script</a>.</li>
+<li>Initialize <a href="/docs/0.9.0-rc.1/guides/mysql/initialization/using-snapshot">MySQL with Snapshot</a>.</li>
+<li>Use <a href="/docs/0.9.0-rc.1/guides/mysql/private-registry/using-private-registry">private Docker registry</a> to deploy MySQL with KubeDB.</li>
+<li>Want to hack on KubeDB? Check our <a href="/docs/0.9.0-rc.1/CONTRIBUTING">contribution guidelines</a>.</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="right-sidebar-area">
+          
+          <div class="search-area">
+            <form action="#">
+              <input type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+          
+
+          
+          <div class="tbl-of-contents">
+            <h4>What's on this Page</h4>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#using-prometheus-with-kubedb">Using Prometheus with KubeDB</a>
+<ul>
+<li><a href="#before-you-begin">Before You Begin</a></li>
+<li><a href="#monitor-with-builtin-prometheus">Monitor with builtin Prometheus</a></li>
+<li><a href="#deploy-and-configure-prometheus-server">Deploy and configure Prometheus Server</a>
+<ul>
+<li><a href="#prometheus-dashboard">Prometheus Dashboard</a></li>
+</ul></li>
+<li><a href="#cleaning-up">Cleaning up</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+    <section class="cta-area section-padding pt-0">
+      <div class="container section">
+        <div class="cta-padding">
+          <div class="columns">
+            <div class="column is-6">
+              
+              <div class="cta-text">
+                <h2>Ready to get Start?</h2>
+                <p>Create a Free Account and refer your friend</p>
+              </div>
+              
+            </div>
+            <div class="column is-6 has-text-right is-mobile">
+              <div class="cta-button d-table">
+                
+                <div class="cta-button-inner d-table-cell">
+                  <a href="#" class="button kd-button kd-primary"
+                    >Try Now for FREE</a
+                  >
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+    
+    <footer class="footer-area">
+      <div class="footer-top">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="single-footer-widget">
+                
+                <div class="footer-logo">
+                  <a href="#"
+                    ><img
+                      src="/assets/images/logo-color-appscode.png"
+                      alt=""
+                      class="img"
+                  /></a>
+                </div>
+                
+
+                
+                <div class="subscription-form">
+                  <form action="#">
+                    <label for="email">Subscribe Our Newsletter</label>
+                    <div class="field has-addons">
+                      <div class="control">
+                        <input
+                          class="input"
+                          name="email"
+                          id="email"
+                          type="email"
+                          placeholder="info@gmail.com"
+                        />
+                      </div>
+                      <div class="control">
+                        <a class="button kd-primary">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+
+                
+                <div class="contact-information">
+                  <h4>Have any Inquiry?</h4>
+                  <ul class="all-contact-info">
+                    <li>
+                      <a href="callto:+123456789"
+                        ><span
+                          ><i class="fa fa-phone" aria-hidden="true"></i></span
+                        >+123 456 789</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="mailto:appscode@gmail.com"
+                        ><span
+                          ><i
+                            class="fa fa-envelope-o"
+                            aria-hidden="true"
+                          ></i></span
+                        >appscode@gmail.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Products</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Voyager</a></li>
+                    <li><a href="#">KubeDB</a></li>
+                    <li><a href="#">Pharmer Stash </a></li>
+                    <li><a href="#">Service Broker</a></li>
+                    <li><a href="#">Kubed</a></li>
+                    <li><a href="#">Guard</a></li>
+                    <li><a href="#">Swift</a></li>
+                    <li><a href="#">Searchlight</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Offerings</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Open source </a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Company</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">Seles Inquiry</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Legal</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Service Level Agreement</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <p>All rights reserved © 2018. Appscode, Inc..</p>
+            </div>
+            <div class="column is-4 is-mobile has-text-centered">
+              <div class="footer-inline-link">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+              </div>
+            </div>
+            <div class="column is-4 is-mobile has-text-right">
+              <div class="socail-link-inline">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-github" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+    
+    <script src="/assets/js/bulma-carousel.min.js"></script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

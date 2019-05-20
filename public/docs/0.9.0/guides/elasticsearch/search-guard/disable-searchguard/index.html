@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2D9AED" />
+    <title>KubeDB Home</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+
+  <body>
+    
+
+    
+    
+
+
+
+
+
+<header>
+  
+  <div class="header-bottom-area header-area documentation-page" id="header">
+    <div class="container section">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./../index.html">
+            <img src="/assets/images/logo-color-kube.png" alt="" />
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="acNav"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="acNav" class="navbar-menu main-menu">
+          <div class="navbar-end">
+            
+            <div class="navbar-start">
+              <a href="./../pricing/index.html" class="navbar-item">
+                Commercial Support
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Database
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Item-1
+                  </a>
+                  <a class="navbar-item">
+                    Item-2
+                  </a>
+                  <a class="navbar-item">
+                    Item-3
+                  </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item">
+                    Item-4
+                  </a>
+                </div>
+              </div>
+
+              <a href="../documentations/welcome.html" class="navbar-item">
+                Documentation
+              </a>
+              <a class="navbar-item">
+                v 0.110
+              </a>
+              <a class="navbar-item">
+                Community
+              </a>
+            </div>
+            
+            <div class="navbar-item">
+              <div class="buttons main-menu-button">
+                <a class="button is-small">
+                  <span><i class="fa fa-github" aria-hidden="true"></i></span
+                  >Star
+                </a>
+                <div class="star-count">
+                  565
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="documentation-menu">
+      <div class="container section">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            
+            <div class="responsive-menu">
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav3"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            
+            
+            <nav class="documentation-navbar">
+              <div id="acNav3" class="navbar-menu nav-menu main-menu">
+                <div class="navbar-centered">
+                  
+                  <div class="navbar-start">
+                    
+                    
+                      
+                        
+                          <a href="/docs/0.9.0/" class=" navbar-item">Welcome</a>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0/concepts/" class=" navbar-item">Concepts</a>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0/setup/" class=" navbar-item">Setup</a>
+                        
+                      
+                        
+                          <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                              Guides
+                            </a>
+                            <div class="navbar-dropdown">
+                              
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/elasticsearch/" class="navbar-item">Elasticsearch</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/memcached/" class="navbar-item">Memcached</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/mongodb/" class="navbar-item">MongoDB</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/mysql/" class="navbar-item">MySQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/postgres/" class="navbar-item">PostgreSQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/redis/" class="navbar-item">Redis</a>
+                                
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0/reference/" class=" navbar-item">Reference</a>
+                        
+                      
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </nav>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</header>
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+<div class="documentation-area">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-3">
+        
+        <div class="kd-left-sidebar">
+          <div class="kd-version">
+            
+            <div class="control has-icons-left">
+              <div class="select">
+                
+                
+                <select>
+                  
+                    
+                    
+                      
+                        <option>master</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.11.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.10.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option  selected >0.9.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option >0.8.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option>0.6.0</option>
+                      
+                    
+                  
+                </select>
+              </div>
+              <span class="icon is-left">
+                <i class="fa fa-globe"></i>
+              </span>
+            </div>
+          </div>
+
+          
+            
+            
+              
+            
+              
+            
+              
+            
+              
+                
+                  
+
+                  
+                  
+                    
+                  
+                    
+
+                      
+
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+              
+            
+              
+            
+          
+
+          
+          <div class="kd-sidebar-menu">
+            
+              
+
+              
+              
+
+                
+              
+
+                
+              
+
+                
+              
+
+                
+                  
+
+                  
+                  
+
+                    
+                      
+
+
+
+
+  
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-1" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-1"><a href="/docs/0.9.0/guides/">Elasticsearch</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-2" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-2"><a href="/docs/0.9.0/guides/elasticsearch/">Elasticsearch</a></label>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-3" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-3"><a>Quickstart</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/quickstart/quickstart/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-4" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-4"><a>Clustering</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/clustering/topology/">Topology</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-5" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-5"><a>Snapshotting</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/snapshot/instant_backup/">Instant Backup</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/snapshot/scheduled_backup/">Scheduled Backup</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-6" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-6"><a>Initialization</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/initialization/snapshot_source/">Using Snapshot</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-7" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-7"><a>Private Registry</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/private-registry/using-private-registry/">Quickstart</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-8" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-8"><a>Custom Configuration</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/custom-config/overview/">Overview</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/custom-config/with-topology/">With Topology</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/custom-config/without-topology/">Without Topology</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-9" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-9"><a>Monitoring</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/monitoring/using-builtin-prometheus/">Builtin Prometheus Discovery</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/monitoring/using-coreos-prometheus-operator/">Coreos Prometheus Operator</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-10" checked>
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-10"><a>Search Guard</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/search-guard/overview/">Overview</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/search-guard/configuration/">Configuration</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/search-guard/use-tls/">Use TLS</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/search-guard/issue-certificate/">Issue Certificate</a></li>
+        
+      
+        
+          <li class="is-active"><a href="/docs/0.9.0/guides/elasticsearch/search-guard/disable-searchguard/">Disable Search Guard</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-11" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-11"><a>Kibana</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/kibana/connect-kibana/">Use Kibana</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-12" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-12"><a>X-Pack</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/x-pack/x-pack-monitoring/">Monitoring</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="adadee40f231afd00266ce3b8bbf4a3a-13" >
+  <label for="adadee40f231afd00266ce3b8bbf4a3a-13"><a>CLI</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/elasticsearch/cli/cli/">Quickstart</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+                  
+
+                
+              
+
+                
+              
+              
+            
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </div>
+        
+      </div>
+      <div class="column is-7">
+        <div class="full-info">
+          
+
+<blockquote>
+<p>New to KubeDB? Please start <a href="/docs/0.9.0/concepts/README">here</a>.</p>
+</blockquote>
+
+<h1 id="disable-search-guard-plugin">Disable Search Guard Plugin</h1>
+
+<p>Databases are precious. Definitely, you will not want to left your production database unprotected. Hence, KubeDB ship with Search Guard plugin integrated with it. It provides you authentication, authorization and TLS security. However, you can disable Search Guard plugin. You have to set <code>spec.authPlugin</code> field of Elasticsearch object to <code>None</code>.</p>
+
+<p>This tutorial will show you how to disable Search Guard plugin for Elasticsearch database in KubeDB.</p>
+
+<h2 id="before-you-begin">Before You Begin</h2>
+
+<p>At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using <a href="https://github.com/kubernetes/minikube">Minikube</a>.</p>
+
+<p>Now, install KubeDB cli on your workstation and KubeDB operator in your cluster following the steps <a href="/docs/0.9.0/setup/install">here</a>.</p>
+
+<p>To keep things isolated, this tutorial uses a separate namespace called <code>demo</code> throughout this tutorial.</p>
+
+<pre><code class="language-console">$ kubectl create ns demo
+namespace &quot;demo&quot; created
+
+$ kubectl get ns demo
+NAME    STATUS  AGE
+demo    Active  5s
+</code></pre>
+
+<blockquote>
+<p>Note: Yaml files used in this tutorial are stored in <a href="https://github.com/kubedb/cli/tree/master/docs/examples/elasticsearch">docs/examples/elasticsearch</a> folder in GitHub repository <a href="https://github.com/kubedb/cli">kubedb/cli</a>.</p>
+</blockquote>
+
+<h2 id="create-elasticsearch">Create Elasticsearch</h2>
+
+<p>In order to disable Search Guard, you have to set <code>spec.authPlugin</code> field of Elasticsearch object to <code>None</code>. Below is the YAML of Elasticsearch object that will be created in this tutorial.</p>
+
+<pre><code class="language-yaml">apiVersion: kubedb.com/v1alpha1
+kind: Elasticsearch
+metadata:
+  name: es-sg-disabled
+  namespace: demo
+spec:
+  version: &quot;6.3-v1&quot;
+  authPlugin: &quot;None&quot;
+  storage:
+    storageClassName: &quot;standard&quot;
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 50Mi
+</code></pre>
+
+<p>Let&rsquo;s create the Elasticsearch object we have shown above,</p>
+
+<pre><code class="language-console">$ kubectl create -f https://raw.githubusercontent.com/kubedb/cli/0.9.0/docs/examples/elasticsearch/search-guard/es-sg-disabled.yaml 
+elasticsearch.kubedb.com/es-sg-disabled created
+</code></pre>
+
+<p>Wait for Elasticsearch to be ready,</p>
+
+<pre><code class="language-console">$ kubectl get es -n demo es-sg-disabled
+NAME             VERSION   STATUS    AGE
+es-sg-disabled   6.3-v1    Running   27m
+</code></pre>
+
+<h2 id="connect-to-elasticsearch-database">Connect to Elasticsearch Database</h2>
+
+<p>As we have disabled Search Guard plugin, we no longer require <em>username</em> and <em>password</em> to connect with our Elasticsearch database.</p>
+
+<p>At first, forward port 9200 of <code>es-sg-disabled-0</code> pod. Run following command in a separate terminal,</p>
+
+<pre><code class="language-console">$ kubectl port-forward -n demo es-sg-disabled-0 9200
+Forwarding from 127.0.0.1:9200 -&gt; 9200
+Forwarding from [::1]:9200 -&gt; 9200
+</code></pre>
+
+<p>Now, we can connect with the database at <code>localhost:9200</code>.</p>
+
+<p>Let&rsquo;s check health of our Elasticsearch database.</p>
+
+<pre><code class="language-console">$ curl &quot;localhost:9200/_cluster/health?pretty&quot;
+</code></pre>
+
+<pre><code class="language-json">{
+  &quot;cluster_name&quot; : &quot;es-sg-disabled&quot;,
+  &quot;status&quot; : &quot;green&quot;,
+  &quot;timed_out&quot; : false,
+  &quot;number_of_nodes&quot; : 1,
+  &quot;number_of_data_nodes&quot; : 1,
+  &quot;active_primary_shards&quot; : 0,
+  &quot;active_shards&quot; : 0,
+  &quot;relocating_shards&quot; : 0,
+  &quot;initializing_shards&quot; : 0,
+  &quot;unassigned_shards&quot; : 0,
+  &quot;delayed_unassigned_shards&quot; : 0,
+  &quot;number_of_pending_tasks&quot; : 0,
+  &quot;number_of_in_flight_fetch&quot; : 0,
+  &quot;task_max_waiting_in_queue_millis&quot; : 0,
+  &quot;active_shards_percent_as_number&quot; : 100.0
+}
+</code></pre>
+
+<h2 id="cleaning-up">Cleaning up</h2>
+
+<p>To cleanup the Kubernetes resources created by this tutorial, run:</p>
+
+<pre><code class="language-console">$ kubectl patch -n demo es/es-sg-disabled -p '{&quot;spec&quot;:{&quot;terminationPolicy&quot;:&quot;WipeOut&quot;}}' --type=&quot;merge&quot;
+$ kubectl delete -n demo es/es-sg-disabled
+
+$ kubectl delete ns demo
+</code></pre>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ul>
+<li>Learn how to <a href="/docs/0.9.0/guides/elasticsearch/search-guard/issue-certificate">create TLS certificates</a>.</li>
+<li>Learn how to generate <a href="/docs/0.9.0/guides/elasticsearch/search-guard/configuration">search-guard configuration</a>.</li>
+<li>Want to hack on KubeDB? Check our <a href="/docs/0.9.0/CONTRIBUTING">contribution guidelines</a>.</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="right-sidebar-area">
+          
+          <div class="search-area">
+            <form action="#">
+              <input type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+          
+
+          
+          <div class="tbl-of-contents">
+            <h4>What's on this Page</h4>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#disable-search-guard-plugin">Disable Search Guard Plugin</a>
+<ul>
+<li><a href="#before-you-begin">Before You Begin</a></li>
+<li><a href="#create-elasticsearch">Create Elasticsearch</a></li>
+<li><a href="#connect-to-elasticsearch-database">Connect to Elasticsearch Database</a></li>
+<li><a href="#cleaning-up">Cleaning up</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+    <section class="cta-area section-padding pt-0">
+      <div class="container section">
+        <div class="cta-padding">
+          <div class="columns">
+            <div class="column is-6">
+              
+              <div class="cta-text">
+                <h2>Ready to get Start?</h2>
+                <p>Create a Free Account and refer your friend</p>
+              </div>
+              
+            </div>
+            <div class="column is-6 has-text-right is-mobile">
+              <div class="cta-button d-table">
+                
+                <div class="cta-button-inner d-table-cell">
+                  <a href="#" class="button kd-button kd-primary"
+                    >Try Now for FREE</a
+                  >
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+    
+    <footer class="footer-area">
+      <div class="footer-top">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="single-footer-widget">
+                
+                <div class="footer-logo">
+                  <a href="#"
+                    ><img
+                      src="/assets/images/logo-color-appscode.png"
+                      alt=""
+                      class="img"
+                  /></a>
+                </div>
+                
+
+                
+                <div class="subscription-form">
+                  <form action="#">
+                    <label for="email">Subscribe Our Newsletter</label>
+                    <div class="field has-addons">
+                      <div class="control">
+                        <input
+                          class="input"
+                          name="email"
+                          id="email"
+                          type="email"
+                          placeholder="info@gmail.com"
+                        />
+                      </div>
+                      <div class="control">
+                        <a class="button kd-primary">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+
+                
+                <div class="contact-information">
+                  <h4>Have any Inquiry?</h4>
+                  <ul class="all-contact-info">
+                    <li>
+                      <a href="callto:+123456789"
+                        ><span
+                          ><i class="fa fa-phone" aria-hidden="true"></i></span
+                        >+123 456 789</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="mailto:appscode@gmail.com"
+                        ><span
+                          ><i
+                            class="fa fa-envelope-o"
+                            aria-hidden="true"
+                          ></i></span
+                        >appscode@gmail.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Products</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Voyager</a></li>
+                    <li><a href="#">KubeDB</a></li>
+                    <li><a href="#">Pharmer Stash </a></li>
+                    <li><a href="#">Service Broker</a></li>
+                    <li><a href="#">Kubed</a></li>
+                    <li><a href="#">Guard</a></li>
+                    <li><a href="#">Swift</a></li>
+                    <li><a href="#">Searchlight</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Offerings</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Open source </a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Company</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">Seles Inquiry</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Legal</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Service Level Agreement</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <p>All rights reserved © 2018. Appscode, Inc..</p>
+            </div>
+            <div class="column is-4 is-mobile has-text-centered">
+              <div class="footer-inline-link">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+              </div>
+            </div>
+            <div class="column is-4 is-mobile has-text-right">
+              <div class="socail-link-inline">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-github" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+    
+    <script src="/assets/js/bulma-carousel.min.js"></script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2D9AED" />
+    <title>KubeDB Home</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+
+  <body>
+    
+
+    
+    
+
+
+
+
+
+<header>
+  
+  <div class="header-bottom-area header-area documentation-page" id="header">
+    <div class="container section">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./../index.html">
+            <img src="/assets/images/logo-color-kube.png" alt="" />
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="acNav"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="acNav" class="navbar-menu main-menu">
+          <div class="navbar-end">
+            
+            <div class="navbar-start">
+              <a href="./../pricing/index.html" class="navbar-item">
+                Commercial Support
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Database
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Item-1
+                  </a>
+                  <a class="navbar-item">
+                    Item-2
+                  </a>
+                  <a class="navbar-item">
+                    Item-3
+                  </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item">
+                    Item-4
+                  </a>
+                </div>
+              </div>
+
+              <a href="../documentations/welcome.html" class="navbar-item">
+                Documentation
+              </a>
+              <a class="navbar-item">
+                v 0.110
+              </a>
+              <a class="navbar-item">
+                Community
+              </a>
+            </div>
+            
+            <div class="navbar-item">
+              <div class="buttons main-menu-button">
+                <a class="button is-small">
+                  <span><i class="fa fa-github" aria-hidden="true"></i></span
+                  >Star
+                </a>
+                <div class="star-count">
+                  565
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="documentation-menu">
+      <div class="container section">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            
+            <div class="responsive-menu">
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav3"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            
+            
+            <nav class="documentation-navbar">
+              <div id="acNav3" class="navbar-menu nav-menu main-menu">
+                <div class="navbar-centered">
+                  
+                  <div class="navbar-start">
+                    
+                    
+                      
+                        
+                          <a href="/docs/0.8.0-beta.0/" class=" navbar-item">Welcome</a>
+                        
+                      
+                        
+                          <a href="/docs/0.8.0-beta.0/concepts/" class=" navbar-item">Concepts</a>
+                        
+                      
+                        
+                          <a href="/docs/0.8.0-beta.0/setup/" class=" navbar-item">Setup</a>
+                        
+                      
+                        
+                          <a href="/docs/0.8.0-beta.0/guides/" class=" is-active  navbar-item">Guides</a>
+                        
+                      
+                        
+                          <a href="/docs/0.8.0-beta.0/reference/" class=" navbar-item">Reference</a>
+                        
+                      
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </nav>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</header>
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+<div class="documentation-area">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-3">
+        
+        <div class="kd-left-sidebar">
+          <div class="kd-version">
+            
+            <div class="control has-icons-left">
+              <div class="select">
+                
+                
+                <select>
+                  
+                    
+                    
+                      
+                        <option>master</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.11.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.10.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.9.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option >0.8.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option>0.6.0</option>
+                      
+                    
+                  
+                </select>
+              </div>
+              <span class="icon is-left">
+                <i class="fa fa-globe"></i>
+              </span>
+            </div>
+          </div>
+
+          
+            
+            
+              
+            
+              
+            
+              
+            
+              
+                
+                  
+
+                  
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+              
+            
+              
+            
+          
+
+          
+          <div class="kd-sidebar-menu">
+            
+              
+
+              
+              
+
+                
+              
+
+                
+              
+
+                
+              
+
+                
+                  
+
+                  
+                  
+
+                    
+                      
+
+
+
+
+  
+
+
+
+<div class="item">
+  <input type="checkbox" id="552756f7d1d5fc1ceb2b858c2220e76c-1" >
+  <label for="552756f7d1d5fc1ceb2b858c2220e76c-1"><a href="/docs/0.8.0-beta.0/guides/">Guides</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="552756f7d1d5fc1ceb2b858c2220e76c-2" >
+  <label for="552756f7d1d5fc1ceb2b858c2220e76c-2"><a>Elasticsearch</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.8.0-beta.0/guides/elasticsearch/overview/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="552756f7d1d5fc1ceb2b858c2220e76c-3" >
+  <label for="552756f7d1d5fc1ceb2b858c2220e76c-3"><a>Memcached</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.8.0-beta.0/guides/memcached/overview/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="552756f7d1d5fc1ceb2b858c2220e76c-4" >
+  <label for="552756f7d1d5fc1ceb2b858c2220e76c-4"><a>MongoDB</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.8.0-beta.0/guides/mongodb/overview/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="552756f7d1d5fc1ceb2b858c2220e76c-5" >
+  <label for="552756f7d1d5fc1ceb2b858c2220e76c-5"><a>MySQL</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.8.0-beta.0/guides/mysql/overview/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="552756f7d1d5fc1ceb2b858c2220e76c-6" >
+  <label for="552756f7d1d5fc1ceb2b858c2220e76c-6"><a>PostgreSQL</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.8.0-beta.0/guides/postgres/overview/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="552756f7d1d5fc1ceb2b858c2220e76c-7" >
+  <label for="552756f7d1d5fc1ceb2b858c2220e76c-7"><a>Redis</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.8.0-beta.0/guides/redis/overview/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="552756f7d1d5fc1ceb2b858c2220e76c-8" >
+  <label for="552756f7d1d5fc1ceb2b858c2220e76c-8"><a href="/docs/0.8.0-beta.0/guides/cli/">CLI</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="552756f7d1d5fc1ceb2b858c2220e76c-9" >
+  <label for="552756f7d1d5fc1ceb2b858c2220e76c-9"><a href="/docs/0.8.0-beta.0/guides/monitoring/">Monitoring</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="552756f7d1d5fc1ceb2b858c2220e76c-10" checked>
+  <label for="552756f7d1d5fc1ceb2b858c2220e76c-10"><a href="/docs/0.8.0-beta.0/guides/rbac/">RBAC</a></label>
+</div>
+
+
+                    
+                    
+                  
+                  
+
+                
+              
+
+                
+              
+              
+            
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </div>
+        
+      </div>
+      <div class="column is-7">
+        <div class="full-info">
+          
+
+<blockquote>
+<p>New to KubeDB? Please start <a href="/docs/0.8.0-beta.0/guides/README">here</a>.</p>
+</blockquote>
+
+<h1 id="using-rbac-with-kubedb">Using RBAC with KubeDB</h1>
+
+<p>This tutorial will show you how to use KubeDB in a <a href="https://kubernetes.io/docs/admin/authorization/rbac/">RBAC</a> enabled cluster.</p>
+
+<h2 id="before-you-begin">Before You Begin</h2>
+
+<p>At first, you need to have a RBAC enabled Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using <a href="https://github.com/kubernetes/minikube">Minikube</a>. To create a RBAC enabled cluster using MiniKube, follow the instructions below:</p>
+
+<ol>
+<li><p>If you are currently running a Minukube cluster without RBAC, delete the cluster. This will delete any objects running in the cluster.</p>
+
+<pre><code class="language-console">$ minikube delete
+</code></pre>
+
+<ol>
+<li>Now, create a RBAC cluster with RBAC enabled.
+<code>console
+$ minikube start --extra-config=apiserver.Authorization.Mode=RBAC
+</code></li>
+</ol></li>
+
+<li><p>Once the cluster is up and running, you need to set ServiceAccount for the <code>kube-dns</code> addon to successfully run it.
+```console</p>
+
+<h1 id="wait-for-kube-dns-deployment-to-be-created">Wait for kube-dns deployment to be created.</h1>
+
+<p>$  kubectl get deployment -n kube-system &ndash;watch</p></li>
+</ol>
+
+<h1 id="create-kube-dns-serviceaccount">create kube-dns ServiceAccount</h1>
+
+<p>$ kubectl create serviceaccount kube-dns -n kube-system</p>
+
+<h1 id="patch-kube-dns-deployment-to-set-service-account-for-pods">Patch kube-dns Deployment to set service account for pods.</h1>
+
+<p>$ kubectl patch deployment kube-dns -n kube-system -p &lsquo;{&ldquo;spec&rdquo;:{&ldquo;template&rdquo;:{&ldquo;spec&rdquo;:{&ldquo;serviceAccountName&rdquo;:&ldquo;kube-dns&rdquo;}}}}&rsquo;</p>
+
+<h1 id="wait-for-kube-dns-pods-to-start-running">Wait for kube-dns pods to start running</h1>
+
+<p>$ kubectl get pods -n kube-system &ndash;watch</p>
+
+<pre><code>
+Now, install KubeDB cli on your workstation and KubeDB operator in your cluster following the steps [here](/docs/0.8.0-beta.0/setup/install).
+</code></pre>
+
+<p>$ kubedb init &ndash;rbac</p>
+
+<pre><code>
+To keep things isolated, this tutorial uses a separate namespace called `demo` throughout this tutorial. This tutorial will also use a PGAdmin to connect and test PostgreSQL database, once it is running. Run the following command to prepare your cluster for this tutorial:
+
+```console
+$ kubectl create -f ./docs/examples/rbac/demo-0.yaml
+namespace &quot;demo&quot; created
+deployment &quot;pgadmin&quot; created
+service &quot;pgadmin&quot; created
+
+$ kubectl get pods -n demo --watch
+NAME                      READY     STATUS              RESTARTS   AGE
+pgadmin-538449054-s046r   0/1       ContainerCreating   0          13s
+pgadmin-538449054-s046r   1/1       Running   0          1m
+^C⏎                                                                                                                                                             
+
+$ kubectl get service -n demo
+NAME      CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
+pgadmin   10.0.0.92    &lt;pending&gt;     80:31188/TCP   1m
+
+$ minikube ip
+192.168.99.100
+</code></pre>
+
+<p>Now, open your browser and go to the following URL: <em>http://{minikube-ip}:{pgadmin-svc-nodeport}</em>. According to the above example, this URL will be <a href="http://192.168.99.100:31188">http://192.168.99.100:31188</a>. To log into the PGAdmin, use username <code>admin</code> and password <code>admin</code>.</p>
+
+<h2 id="create-a-postgresql-database">Create a PostgreSQL database</h2>
+
+<p>KubeDB implements a <code>Postgres</code> CRD to define the specification of a PostgreSQL database. Below is the <code>Postgres</code> object created in this tutorial.</p>
+
+<pre><code class="language-yaml">apiVersion: kubedb.com/v1alpha1
+kind: Postgres
+metadata:
+  name: p1
+  namespace: demo
+spec:
+  version: 9.5
+  doNotPause: true
+  storage:
+    storageClassName: &quot;standard&quot;
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 50Mi
+
+$ kubedb create -f ./docs/examples/rbac/demo-1.yaml
+validating &quot;./docs/examples/rbac/demo-1.yaml&quot;
+postgres &quot;p1&quot; created
+</code></pre>
+
+<p>Here,
+ - <code>spec.version</code> is the version of PostgreSQL database. In this tutorial, a PostgreSQL 9.5 database is going to be created.</p>
+
+<ul>
+<li><p><code>spec.doNotPause</code> tells KubeDB operator that if this tpr is deleted, it should be automatically reverted. This should be set to true for production databases to avoid accidental deletion.</p></li>
+
+<li><p><code>spec.storage</code> specifies the StorageClass of PVC dynamically allocated to store data for this database. This storage spec will be passed to the StatefulSet created by KubeDB operator to run database pods. You can specify any StorageClass available in your cluster with appropriate resource requests. If no storage spec is given, an <code>emptyDir</code> is used.</p></li>
+</ul>
+
+<p>KubeDB operator watches for <code>Postgres</code> objects using Kubernetes api. When a <code>Postgres</code> object is created, KubeDB operator will create a new StatefulSet and a ClusterIP Service with the matching tpr name. KubeDB operator will also create a governing service for StatefulSets with the name <code>kubedb</code>, if one is not already present.</p>
+
+<pre><code class="language-console">$ kubedb describe pg -n demo p1
+Name:		p1
+Namespace:	demo
+StartTimestamp:	Mon, 17 Jul 2017 15:31:34 -0700
+Status:		Running
+Volume:
+  StorageClass:	standard
+  Capacity:	50Mi
+  Access Modes:	RWO
+
+Service:	
+  Name:		p1
+  Type:		ClusterIP
+  IP:		10.0.0.161
+  Port:		db	5432/TCP
+
+Database Secret:
+  Name:	p1-admin-auth
+  Type:	Opaque
+  Data
+  ====
+  .admin:	35 bytes
+
+No Snapshots.
+
+Events:
+  FirstSeen   LastSeen   Count     From                Type       Reason               Message
+  ---------   --------   -----     ----                --------   ------               -------
+  2m          2m         1         Postgres operator   Normal     SuccessfulValidate   Successfully validate Postgres
+  2m          2m         1         Postgres operator   Normal     SuccessfulCreate     Successfully created Postgres
+  2m          2m         1         Postgres operator   Normal     SuccessfulCreate     Successfully created StatefulSet
+  3m          3m         1         Postgres operator   Normal     SuccessfulValidate   Successfully validate Postgres
+  3m          3m         1         Postgres operator   Normal     Creating             Creating Kubernetes objects
+
+
+$ kubectl get statefulset -n demo
+NAME      DESIRED   CURRENT   AGE
+p1        1         1         1m
+
+$ kubectl get pvc -n demo
+NAME        STATUS    VOLUME                                     CAPACITY   ACCESSMODES   STORAGECLASS   AGE
+data-p1-0   Bound     pvc-e90b87d4-6b5a-11e7-b9ca-080027f73ab7   50Mi RWO           standard       1m
+
+$ kubectl get pv -n demo
+NAME                                       CAPACITY   ACCESSMODES   RECLAIMPOLICY   STATUS    CLAIM            STORAGECLASS   REASON    AGE
+pvc-e90b87d4-6b5a-11e7-b9ca-080027f73ab7   50Mi RWO           Delete          Bound     demo/data-p1-0   standard                 1m
+
+$ kubectl get service -n demo
+NAME      CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
+kubedb    None         &lt;none&gt;                       3m
+p1        10.0.0.143   &lt;none&gt;        5432/TCP       3m
+pgadmin   10.0.0.120   &lt;pending&gt;     80:30576/TCP   6m
+</code></pre>
+
+<p>Since RBAC is enabled, a ClusterRole, ServiceAccount and ClusterRoleBinding with the matching tpr name is also created and used as the service account name for the corresponding StatefulSet. This Role is used by Prometheus exporter sidecar container to connect to the database.</p>
+
+<pre><code class="language-yaml">$ kubectl get role -n demo p1 -o yaml
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: Role
+metadata:
+  creationTimestamp: 2017-07-18T20:35:43Z
+  name: p1
+  namespace: demo
+  resourceVersion: &quot;1308&quot;
+  selfLink: /apis/rbac.authorization.k8s.io/v1beta1/namespaces/demo/roles/p1
+  uid: ab72299c-6bf8-11e7-ab55-080027815c31
+rules:
+- apiGroups:
+  - kubedb.com
+  resourceNames:
+  - p1
+  resources:
+  - postgreses
+  verbs:
+  - get
+- apiGroups:
+  - &quot;&quot;
+  resourceNames:
+  - p1-admin-auth
+  resources:
+  - secrets
+  verbs:
+  - get
+
+$ kubectl get serviceaccount -n demo p1 -o yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  creationTimestamp: 2017-07-18T20:35:43Z
+  name: p1
+  namespace: demo
+  resourceVersion: &quot;1317&quot;
+  selfLink: /api/v1/namespaces/demo/serviceaccounts/p1
+  uid: ab73147f-6bf8-11e7-ab55-080027815c31
+secrets:
+- name: p1-token-qxdtf
+
+$ kubectl get rolebindings -n demo p1 -o yaml
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  creationTimestamp: 2017-07-18T20:35:43Z
+  name: p1
+  namespace: demo
+  resourceVersion: &quot;1310&quot;
+  selfLink: /apis/rbac.authorization.k8s.io/v1beta1/namespaces/demo/rolebindings/p1
+  uid: ab7d1eb4-6bf8-11e7-ab55-080027815c31
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: p1
+subjects:
+- kind: ServiceAccount
+  name: p1
+  namespace: demo
+</code></pre>
+
+<p>KubeDB operator sets the <code>status.phase</code> to <code>Running</code> once the database is successfully created. Run the following command to see the modified tpr:</p>
+
+<pre><code class="language-yaml">$ kubedb get pg -n demo p1 -o yaml
+apiVersion: kubedb.com/v1alpha1
+kind: Postgres
+metadata:
+  creationTimestamp: 2017-07-17T22:31:34Z
+  name: p1
+  namespace: demo
+  resourceVersion: &quot;2677&quot;
+  selfLink: /apis/kubedb.com/v1alpha1/namespaces/demo/postgreses/p1
+  uid: b02ccec1-6b3f-11e7-bdc0-080027aa4456
+spec:
+  databaseSecret:
+    secretName: p1-admin-auth
+  doNotPause: true
+  init:
+    scriptSource:
+      gitRepo:
+        repository: https://github.com/kubedb/postgres-init-scripts.git
+      scriptPath: postgres-init-scripts/run.sh
+  resources: {}
+  storage:
+    accessModes:
+    - ReadWriteOnce
+    storageClassName: standard
+    resources:
+      requests:
+        storage: 50Mi
+  version: &quot;9.5&quot;
+status:
+  creationTime: 2017-07-17T22:31:34Z
+  phase: Running
+</code></pre>
+
+<p>Please note that KubeDB operator has created a new Secret called <code>p1-admin-auth</code> (format: {tpr-name}-admin-auth) for storing the password for <code>postgres</code> superuser. This secret contains a <code>.admin</code> key with a ini formatted key-value pairs. If you want to use an existing secret please specify that when creating the tpr using <code>spec.databaseSecret.secretName</code>.</p>
+
+<p>Now, you can connect to this database from the PGAdmin dashboard using the database pod IP and <code>postgres</code> user password.</p>
+
+<pre><code class="language-console">$ kubectl get pods p1-0 -n demo -o yaml | grep IP
+  hostIP: 192.168.99.100
+  podIP: 172.17.0.6
+
+$ kubectl get secrets -n demo p1-admin-auth -o jsonpath='{.data.\.admin}' | base64 -d
+POSTGRES_PASSWORD=R9keKKRTqSJUPtNC
+</code></pre>
+
+<h2 id="cleaning-up">Cleaning up</h2>
+
+<p>To cleanup the Kubernetes resources created by this tutorial, run:</p>
+
+<pre><code class="language-console">$ kubectl delete ns demo
+</code></pre>
+
+<p>If you would like to uninstall KubeDB operator, please follow the steps <a href="/docs/0.8.0-beta.0/setup/uninstall">here</a>.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ul>
+<li>Learn how to use KubeDB to run a PostgreSQL database <a href="/docs/0.8.0-beta.0/guides/postgres/overview">here</a>.</li>
+<li>Learn how to use KubeDB to run an Elasticsearch database <a href="/docs/0.8.0-beta.0/guides/elasticsearch/overview">here</a>.</li>
+<li>Wondering what features are coming next? Please visit <a href="/docs/0.8.0-beta.0/roadmap">here</a>.</li>
+<li>Want to hack on KubeDB? Check our <a href="/docs/0.8.0-beta.0/CONTRIBUTING">contribution guidelines</a>.</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="right-sidebar-area">
+          
+          <div class="search-area">
+            <form action="#">
+              <input type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+          
+
+          
+          <div class="tbl-of-contents">
+            <h4>What's on this Page</h4>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#using-rbac-with-kubedb">Using RBAC with KubeDB</a>
+<ul>
+<li><a href="#before-you-begin">Before You Begin</a></li>
+</ul></li>
+<li><a href="#wait-for-kube-dns-deployment-to-be-created">Wait for kube-dns deployment to be created.</a></li>
+<li><a href="#create-kube-dns-serviceaccount">create kube-dns ServiceAccount</a></li>
+<li><a href="#patch-kube-dns-deployment-to-set-service-account-for-pods">Patch kube-dns Deployment to set service account for pods.</a></li>
+<li><a href="#wait-for-kube-dns-pods-to-start-running">Wait for kube-dns pods to start running</a>
+<ul>
+<li><a href="#create-a-postgresql-database">Create a PostgreSQL database</a></li>
+<li><a href="#cleaning-up">Cleaning up</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+    <section class="cta-area section-padding pt-0">
+      <div class="container section">
+        <div class="cta-padding">
+          <div class="columns">
+            <div class="column is-6">
+              
+              <div class="cta-text">
+                <h2>Ready to get Start?</h2>
+                <p>Create a Free Account and refer your friend</p>
+              </div>
+              
+            </div>
+            <div class="column is-6 has-text-right is-mobile">
+              <div class="cta-button d-table">
+                
+                <div class="cta-button-inner d-table-cell">
+                  <a href="#" class="button kd-button kd-primary"
+                    >Try Now for FREE</a
+                  >
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+    
+    <footer class="footer-area">
+      <div class="footer-top">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="single-footer-widget">
+                
+                <div class="footer-logo">
+                  <a href="#"
+                    ><img
+                      src="/assets/images/logo-color-appscode.png"
+                      alt=""
+                      class="img"
+                  /></a>
+                </div>
+                
+
+                
+                <div class="subscription-form">
+                  <form action="#">
+                    <label for="email">Subscribe Our Newsletter</label>
+                    <div class="field has-addons">
+                      <div class="control">
+                        <input
+                          class="input"
+                          name="email"
+                          id="email"
+                          type="email"
+                          placeholder="info@gmail.com"
+                        />
+                      </div>
+                      <div class="control">
+                        <a class="button kd-primary">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+
+                
+                <div class="contact-information">
+                  <h4>Have any Inquiry?</h4>
+                  <ul class="all-contact-info">
+                    <li>
+                      <a href="callto:+123456789"
+                        ><span
+                          ><i class="fa fa-phone" aria-hidden="true"></i></span
+                        >+123 456 789</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="mailto:appscode@gmail.com"
+                        ><span
+                          ><i
+                            class="fa fa-envelope-o"
+                            aria-hidden="true"
+                          ></i></span
+                        >appscode@gmail.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Products</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Voyager</a></li>
+                    <li><a href="#">KubeDB</a></li>
+                    <li><a href="#">Pharmer Stash </a></li>
+                    <li><a href="#">Service Broker</a></li>
+                    <li><a href="#">Kubed</a></li>
+                    <li><a href="#">Guard</a></li>
+                    <li><a href="#">Swift</a></li>
+                    <li><a href="#">Searchlight</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Offerings</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Open source </a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Company</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">Seles Inquiry</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Legal</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Service Level Agreement</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <p>All rights reserved © 2018. Appscode, Inc..</p>
+            </div>
+            <div class="column is-4 is-mobile has-text-centered">
+              <div class="footer-inline-link">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+              </div>
+            </div>
+            <div class="column is-4 is-mobile has-text-right">
+              <div class="socail-link-inline">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-github" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+    
+    <script src="/assets/js/bulma-carousel.min.js"></script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

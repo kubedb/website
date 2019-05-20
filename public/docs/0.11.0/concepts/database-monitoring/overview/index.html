@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2D9AED" />
+    <title>KubeDB Home</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+
+  <body>
+    
+
+    
+    
+
+
+
+
+
+<header>
+  
+  <div class="header-bottom-area header-area documentation-page" id="header">
+    <div class="container section">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./../index.html">
+            <img src="/assets/images/logo-color-kube.png" alt="" />
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="acNav"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="acNav" class="navbar-menu main-menu">
+          <div class="navbar-end">
+            
+            <div class="navbar-start">
+              <a href="./../pricing/index.html" class="navbar-item">
+                Commercial Support
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Database
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Item-1
+                  </a>
+                  <a class="navbar-item">
+                    Item-2
+                  </a>
+                  <a class="navbar-item">
+                    Item-3
+                  </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item">
+                    Item-4
+                  </a>
+                </div>
+              </div>
+
+              <a href="../documentations/welcome.html" class="navbar-item">
+                Documentation
+              </a>
+              <a class="navbar-item">
+                v 0.110
+              </a>
+              <a class="navbar-item">
+                Community
+              </a>
+            </div>
+            
+            <div class="navbar-item">
+              <div class="buttons main-menu-button">
+                <a class="button is-small">
+                  <span><i class="fa fa-github" aria-hidden="true"></i></span
+                  >Star
+                </a>
+                <div class="star-count">
+                  565
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="documentation-menu">
+      <div class="container section">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            
+            <div class="responsive-menu">
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav3"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            
+            
+            <nav class="documentation-navbar">
+              <div id="acNav3" class="navbar-menu nav-menu main-menu">
+                <div class="navbar-centered">
+                  
+                  <div class="navbar-start">
+                    
+                    
+                      
+                        
+                          <a href="/docs/0.11.0/" class=" navbar-item">Welcome</a>
+                        
+                      
+                        
+                          <a href="/docs/0.11.0/concepts/" class=" is-active  navbar-item">Concepts</a>
+                        
+                      
+                        
+                          <a href="/docs/0.11.0/setup/" class=" navbar-item">Setup</a>
+                        
+                      
+                        
+                          <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                              Guides
+                            </a>
+                            <div class="navbar-dropdown">
+                              
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/elasticsearch/" class="navbar-item">Elasticsearch</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/memcached/" class="navbar-item">Memcached</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/mongodb/" class="navbar-item">MongoDB</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/mysql/" class="navbar-item">MySQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/postgres/" class="navbar-item">PostgreSQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/redis/" class="navbar-item">Redis</a>
+                                
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                          <a href="/docs/0.11.0/reference/" class=" navbar-item">Reference</a>
+                        
+                      
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </nav>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</header>
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+<div class="documentation-area">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-3">
+        
+        <div class="kd-left-sidebar">
+          <div class="kd-version">
+            
+            <div class="control has-icons-left">
+              <div class="select">
+                
+                
+                <select>
+                  
+                    
+                    
+                      
+                        <option>master</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option  selected >0.11.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.10.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.9.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option >0.8.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option>0.6.0</option>
+                      
+                    
+                  
+                </select>
+              </div>
+              <span class="icon is-left">
+                <i class="fa fa-globe"></i>
+              </span>
+            </div>
+          </div>
+
+          
+            
+            
+              
+            
+              
+                
+                  
+
+                  
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+              
+            
+              
+            
+              
+            
+              
+            
+          
+
+          
+          <div class="kd-sidebar-menu">
+            
+              
+
+              
+              
+
+                
+              
+
+                
+                  
+
+                  
+                  
+
+                    
+                      
+
+
+
+
+  
+
+
+
+<div class="item">
+  <input type="checkbox" id="89bd204eebcc82be2d32911cd5031cd8-1" >
+  <label for="89bd204eebcc82be2d32911cd5031cd8-1"><a href="/docs/0.11.0/concepts/">Concepts</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="89bd204eebcc82be2d32911cd5031cd8-2" >
+  <label for="89bd204eebcc82be2d32911cd5031cd8-2"><a>What is KubeDB</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/what-is-kubedb/overview/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="89bd204eebcc82be2d32911cd5031cd8-3" >
+  <label for="89bd204eebcc82be2d32911cd5031cd8-3"><a>Supported Databases</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/databases/elasticsearch/">Elasticsearch</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/databases/memcached/">Memcached</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/databases/mongodb/">MongoDB</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/databases/mysql/">MySQL</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/databases/postgres/">Postgres</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/databases/redis/">Redis</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="89bd204eebcc82be2d32911cd5031cd8-4" >
+  <label for="89bd204eebcc82be2d32911cd5031cd8-4"><a>Catalog</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/catalog/elasticsearch/">ElasticsearchVersion</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/catalog/memcached/">MemcachedVersion</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/catalog/mongodb/">MongoDBVersion</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/catalog/mysql/">MySQLVersion</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/catalog/postgres/">PostgresVersion</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/concepts/catalog/redis/">RedisVersion</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="89bd204eebcc82be2d32911cd5031cd8-5" checked>
+  <label for="89bd204eebcc82be2d32911cd5031cd8-5"><a>Database Monitoring</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li class="is-active"><a href="/docs/0.11.0/concepts/database-monitoring/overview/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="89bd204eebcc82be2d32911cd5031cd8-6" >
+  <label for="89bd204eebcc82be2d32911cd5031cd8-6"><a href="/docs/0.11.0/concepts/snapshot/">Snapshot</a></label>
+</div>
+
+
+                    
+                    
+                  
+                  
+
+                
+              
+
+                
+              
+
+                
+              
+
+                
+              
+              
+            
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </div>
+        
+      </div>
+      <div class="column is-7">
+        <div class="full-info">
+          
+
+<h1 id="monitoring-database-with-kubedb">Monitoring Database with KubeDB</h1>
+
+<p>KubeDB has native support for monitoring via <a href="https://prometheus.io/">Prometheus</a>. You can use builtin <a href="https://github.com/prometheus/prometheus">Prometheus</a> scrapper or <a href="https://github.com/coreos/prometheus-operator">CoreOS Prometheus Operator</a> to monitor KubeDB managed databases. This tutorial will show you how database monitoring works with KubeDB and how to configure Database crd to enable monitoring.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>KubeDB uses Prometheus <a href="https://prometheus.io/docs/instrumenting/exporters/#databases">exporter</a> images to export Prometheus metrics for respective databases. Following diagram shows the logical flow of database monitoring with KubeDB.</p>
+
+<p align="center">
+  <img alt="Database Monitoring Flow"  src="/docs/0.11.0/images/concepts/monitoring/database-monitoring-overview.svg">
+</p>
+
+<p>When a user creates a database crd with <code>spec.monitor</code> section configured, KubeDB operator provisions the respective database and injects an exporter image as sidecar to the database pod. It also creates a dedicated stats service with name <code>{database-crd-name}-stats</code> for monitoring. Prometheus server can scrape metrics using this stats service.</p>
+
+<h2 id="configure-monitoring">Configure Monitoring</h2>
+
+<p>In order to enable monitoring for a database, you have to configure <code>spec.monitor</code> section. KubeDB provides following options to configure <code>spec.monitor</code> section:</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Uses</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>spec.monitor.agent</code></td>
+<td><code>Required</code></td>
+<td>Type of the monitoring agent that will be used to monitor this database. It can be <code>prometheus.io/builtin</code> or <code>prometheus.io/coreos-operator</code>.</td>
+</tr>
+
+<tr>
+<td><code>spec.monitor.prometheus.namespace</code></td>
+<td><code>Optional</code></td>
+<td>Namespace where the Prometheus server is running or will be deployed. For agent type <code>prometheus.io/coreos-operator</code>, <code>ServiceMonitor</code> crd will be created in this namespace.</td>
+</tr>
+
+<tr>
+<td><code>spec.monitor.prometheus.labels</code></td>
+<td><code>Optional</code></td>
+<td>Labels for <code>ServiceMonitor</code>  crd.</td>
+</tr>
+
+<tr>
+<td><code>spec.monitor.prometheus.port</code></td>
+<td><code>Optional</code></td>
+<td>Port number where the exporter side car will serve metrics.</td>
+</tr>
+
+<tr>
+<td><code>spec.monitor.prometheus.interval</code></td>
+<td><code>Optional</code></td>
+<td>Interval at which metrics should be scraped.</td>
+</tr>
+
+<tr>
+<td><code>spec.monitor.args</code></td>
+<td><code>Optional</code></td>
+<td>Arguments to pass to the exporter sidecar.</td>
+</tr>
+
+<tr>
+<td><code>spec.monitor.env</code></td>
+<td><code>Optional</code></td>
+<td>List of environment variables to set in the exporter sidecar container.</td>
+</tr>
+
+<tr>
+<td><code>spec.monitor.resources</code></td>
+<td><code>Optional</code></td>
+<td>Resources required by exporter sidecar container.</td>
+</tr>
+
+<tr>
+<td><code>spec.monitor.securityContext</code></td>
+<td><code>Optional</code></td>
+<td>Security options the exporter should run with.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="sample-configuration">Sample Configuration</h2>
+
+<p>A sample YAML for Redis crd with <code>spec.monitor</code> section configured to enable monitoring with CoreOS <a href="https://github.com/coreos/prometheus-operator">prometheus-operator</a> is shown below.</p>
+
+<pre><code class="language-yaml">apiVersion: kubedb.com/v1alpha1
+kind: Redis
+metadata:
+  name: sample-redis
+  namespace: databases
+spec:
+  version: &quot;4.0-v1&quot;
+  terminationPolicy: WipeOut
+  configSource: # configure Redis to use password for authentication
+    configMap:
+      name: redis-config
+  storageType: Durable
+  storage:
+    storageClassName: default
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 5Gi
+  monitor:
+    agent: prometheus.io/coreos-operator
+    prometheus:
+      namespace: monitoring
+      labels:
+        k8s-app: prometheus
+    args:
+    - --redis.password=$(REDIS_PASSWORD)
+    env:
+    - name: REDIS_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: _name_of_secret_with_redis_password
+          key: password # key with the password
+    resources:
+      requests:
+        memory: 512Mi
+        cpu: 200m
+      limits:
+        memory: 512Mi
+        cpu: 250m
+    securityContext:
+      runAsUser: 2000
+      allowPrivilegeEscalation: false
+</code></pre>
+
+<p>Assume that above Redis is configured to use basic authentication. So, exporter image also need to provide password to collect metrics. We have provided it through <code>spec.monitor.args</code> field.</p>
+
+<p>Here, we have specified that we are going to monitor this server using CoreOS prometheus-operator through <code>spec.monitor.agent: prometheus.io/coreos-operator</code>. KubeDB will create a <code>ServiceMonitor</code> crd in <code>monitoring</code> namespace and this <code>ServiceMonitor</code> will have <code>k8s-app: prometheus</code> label.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ul>
+<li>Learn how to monitor Elasticsearch database with KubeDB using <a href="/docs/0.11.0/guides/elasticsearch/monitoring/using-builtin-prometheus">builtin-Prometheus</a> and using <a href="/docs/0.11.0/guides/elasticsearch/monitoring/using-coreos-prometheus-operator">CoreOS Prometheus Operator</a>.</li>
+<li>Learn how to monitor PostgreSQL database with KubeDB using <a href="/docs/0.11.0/guides/postgres/monitoring/using-builtin-prometheus">builtin-Prometheus</a> and using <a href="/docs/0.11.0/guides/postgres/monitoring/using-coreos-prometheus-operator">CoreOS Prometheus Operator</a>.</li>
+<li>Learn how to monitor MySQL database with KubeDB using <a href="/docs/0.11.0/guides/mysql/monitoring/using-builtin-prometheus">builtin-Prometheus</a> and using <a href="/docs/0.11.0/guides/mysql/monitoring/using-coreos-prometheus-operator">CoreOS Prometheus Operator</a>.</li>
+<li>Learn how to monitor MongoDB database with KubeDB using <a href="/docs/0.11.0/guides/mongodb/monitoring/using-builtin-prometheus">builtin-Prometheus</a> and using <a href="/docs/0.11.0/guides/mongodb/monitoring/using-coreos-prometheus-operator">CoreOS Prometheus Operator</a>.</li>
+<li>Learn how to monitor Redis server with KubeDB using <a href="/docs/0.11.0/guides/redis/monitoring/using-builtin-prometheus">builtin-Prometheus</a> and using <a href="/docs/0.11.0/guides/redis/monitoring/using-coreos-prometheus-operator">CoreOS Prometheus Operator</a>.</li>
+<li>Learn how to monitor Memcached server with KubeDB using <a href="/docs/0.11.0/guides/memcached/monitoring/using-builtin-prometheus">builtin-Prometheus</a> and using <a href="/docs/0.11.0/guides/memcached/monitoring/using-coreos-prometheus-operator">CoreOS Prometheus Operator</a>.</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="right-sidebar-area">
+          
+          <div class="search-area">
+            <form action="#">
+              <input type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+          
+
+          
+          <div class="tbl-of-contents">
+            <h4>What's on this Page</h4>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#monitoring-database-with-kubedb">Monitoring Database with KubeDB</a>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#configure-monitoring">Configure Monitoring</a></li>
+<li><a href="#sample-configuration">Sample Configuration</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+    <section class="cta-area section-padding pt-0">
+      <div class="container section">
+        <div class="cta-padding">
+          <div class="columns">
+            <div class="column is-6">
+              
+              <div class="cta-text">
+                <h2>Ready to get Start?</h2>
+                <p>Create a Free Account and refer your friend</p>
+              </div>
+              
+            </div>
+            <div class="column is-6 has-text-right is-mobile">
+              <div class="cta-button d-table">
+                
+                <div class="cta-button-inner d-table-cell">
+                  <a href="#" class="button kd-button kd-primary"
+                    >Try Now for FREE</a
+                  >
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+    
+    <footer class="footer-area">
+      <div class="footer-top">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="single-footer-widget">
+                
+                <div class="footer-logo">
+                  <a href="#"
+                    ><img
+                      src="/assets/images/logo-color-appscode.png"
+                      alt=""
+                      class="img"
+                  /></a>
+                </div>
+                
+
+                
+                <div class="subscription-form">
+                  <form action="#">
+                    <label for="email">Subscribe Our Newsletter</label>
+                    <div class="field has-addons">
+                      <div class="control">
+                        <input
+                          class="input"
+                          name="email"
+                          id="email"
+                          type="email"
+                          placeholder="info@gmail.com"
+                        />
+                      </div>
+                      <div class="control">
+                        <a class="button kd-primary">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+
+                
+                <div class="contact-information">
+                  <h4>Have any Inquiry?</h4>
+                  <ul class="all-contact-info">
+                    <li>
+                      <a href="callto:+123456789"
+                        ><span
+                          ><i class="fa fa-phone" aria-hidden="true"></i></span
+                        >+123 456 789</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="mailto:appscode@gmail.com"
+                        ><span
+                          ><i
+                            class="fa fa-envelope-o"
+                            aria-hidden="true"
+                          ></i></span
+                        >appscode@gmail.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Products</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Voyager</a></li>
+                    <li><a href="#">KubeDB</a></li>
+                    <li><a href="#">Pharmer Stash </a></li>
+                    <li><a href="#">Service Broker</a></li>
+                    <li><a href="#">Kubed</a></li>
+                    <li><a href="#">Guard</a></li>
+                    <li><a href="#">Swift</a></li>
+                    <li><a href="#">Searchlight</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Offerings</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Open source </a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Company</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">Seles Inquiry</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Legal</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Service Level Agreement</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <p>All rights reserved © 2018. Appscode, Inc..</p>
+            </div>
+            <div class="column is-4 is-mobile has-text-centered">
+              <div class="footer-inline-link">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+              </div>
+            </div>
+            <div class="column is-4 is-mobile has-text-right">
+              <div class="socail-link-inline">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-github" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+    
+    <script src="/assets/js/bulma-carousel.min.js"></script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

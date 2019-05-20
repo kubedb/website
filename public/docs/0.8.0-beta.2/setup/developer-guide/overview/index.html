@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2D9AED" />
+    <title>KubeDB Home</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+
+  <body>
+    
+
+    
+    
+
+
+
+
+
+<header>
+  
+  <div class="header-bottom-area header-area documentation-page" id="header">
+    <div class="container section">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./../index.html">
+            <img src="/assets/images/logo-color-kube.png" alt="" />
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="acNav"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="acNav" class="navbar-menu main-menu">
+          <div class="navbar-end">
+            
+            <div class="navbar-start">
+              <a href="./../pricing/index.html" class="navbar-item">
+                Commercial Support
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Database
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Item-1
+                  </a>
+                  <a class="navbar-item">
+                    Item-2
+                  </a>
+                  <a class="navbar-item">
+                    Item-3
+                  </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item">
+                    Item-4
+                  </a>
+                </div>
+              </div>
+
+              <a href="../documentations/welcome.html" class="navbar-item">
+                Documentation
+              </a>
+              <a class="navbar-item">
+                v 0.110
+              </a>
+              <a class="navbar-item">
+                Community
+              </a>
+            </div>
+            
+            <div class="navbar-item">
+              <div class="buttons main-menu-button">
+                <a class="button is-small">
+                  <span><i class="fa fa-github" aria-hidden="true"></i></span
+                  >Star
+                </a>
+                <div class="star-count">
+                  565
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="documentation-menu">
+      <div class="container section">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            
+            <div class="responsive-menu">
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav3"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            
+            
+            <nav class="documentation-navbar">
+              <div id="acNav3" class="navbar-menu nav-menu main-menu">
+                <div class="navbar-centered">
+                  
+                  <div class="navbar-start">
+                    
+                    
+                      
+                        
+                          <a href="/docs/0.8.0-beta.2/" class=" navbar-item">Welcome</a>
+                        
+                      
+                        
+                          <a href="/docs/0.8.0-beta.2/concepts/" class=" navbar-item">Concepts</a>
+                        
+                      
+                        
+                          <a href="/docs/0.8.0-beta.2/setup/" class=" is-active  navbar-item">Setup</a>
+                        
+                      
+                        
+                          <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                              Guides
+                            </a>
+                            <div class="navbar-dropdown">
+                              
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-beta.2/guides/elasticsearch/" class="navbar-item">Elasticsearch</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-beta.2/guides/memcached/" class="navbar-item">Memcached</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-beta.2/guides/mongodb/" class="navbar-item">MongoDB</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-beta.2/guides/mysql/" class="navbar-item">MySQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-beta.2/guides/postgres/" class="navbar-item">PostgreSQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-beta.2/guides/redis/" class="navbar-item">Redis</a>
+                                
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                          <a href="/docs/0.8.0-beta.2/reference/" class=" navbar-item">Reference</a>
+                        
+                      
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </nav>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</header>
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+<div class="documentation-area">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-3">
+        
+        <div class="kd-left-sidebar">
+          <div class="kd-version">
+            
+            <div class="control has-icons-left">
+              <div class="select">
+                
+                
+                <select>
+                  
+                    
+                    
+                      
+                        <option>master</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.11.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.10.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.9.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option >0.8.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option>0.6.0</option>
+                      
+                    
+                  
+                </select>
+              </div>
+              <span class="icon is-left">
+                <i class="fa fa-globe"></i>
+              </span>
+            </div>
+          </div>
+
+          
+            
+            
+              
+            
+              
+            
+              
+                
+                  
+
+                  
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+              
+            
+              
+            
+              
+            
+          
+
+          
+          <div class="kd-sidebar-menu">
+            
+              
+
+              
+              
+
+                
+              
+
+                
+              
+
+                
+                  
+
+                  
+                  
+
+                    
+                      
+
+
+
+
+  
+
+
+
+<div class="item">
+  <input type="checkbox" id="fcc72f4c084080f757469cde4d186694-1" >
+  <label for="fcc72f4c084080f757469cde4d186694-1"><a href="/docs/0.8.0-beta.2/setup/">Setup</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="fcc72f4c084080f757469cde4d186694-2" >
+  <label for="fcc72f4c084080f757469cde4d186694-2"><a href="/docs/0.8.0-beta.2/setup/install/">Install</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="fcc72f4c084080f757469cde4d186694-3" >
+  <label for="fcc72f4c084080f757469cde4d186694-3"><a href="/docs/0.8.0-beta.2/setup/uninstall/">Uninstall</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="fcc72f4c084080f757469cde4d186694-4" checked>
+  <label for="fcc72f4c084080f757469cde4d186694-4"><a>Developer Guide</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li class="is-active"><a href="/docs/0.8.0-beta.2/setup/developer-guide/overview/">Overview</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.8.0-beta.2/setup/developer-guide/release/">Release Process</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+                  
+
+                
+              
+
+                
+              
+
+                
+              
+              
+            
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </div>
+        
+      </div>
+      <div class="column is-7">
+        <div class="full-info">
+          
+
+<h1 id="development-guide">Development Guide</h1>
+
+<p>This document is intended to be the canonical source of truth for things like supported toolchain versions for building KubeDB.
+If you find a requirement that this doc does not capture, please submit an issue on github.</p>
+
+<p>This document is intended to be relative to the branch in which it is found. It is guaranteed that requirements will change over time
+for the development branch, but release branches of KubeDB should not change.</p>
+
+<h2 id="build-kubedb">Build KubeDB</h2>
+
+<p>Some of the KubeDB development helper scripts rely on a fairly up-to-date GNU tools environment, so most recent Linux distros should
+work just fine out-of-the-box.</p>
+
+<h3 id="setup-go">Setup GO</h3>
+
+<p>KubeDB is written in Google&rsquo;s GO programming language. Currently, KubeDB is developed and tested on <strong>go 1.8.3</strong>. If you haven&rsquo;t set up a GO
+development environment, please follow <a href="https://golang.org/doc/code.html">these instructions</a> to install GO.</p>
+
+<h3 id="code-organization">Code Organization</h3>
+
+<p>KubeDB codebase is across various repositories under github.com/kubedb organization. There are 5 categories of git repositories:</p>
+
+<table>
+<thead>
+<tr>
+<th>Repository</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="https://github.com/kubedb/apimachinery">https://github.com/kubedb/apimachinery</a></td>
+<td>Contains api types, clientset and KubeDB framework interfaces.</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubedb/xdb">https://github.com/kubedb/xdb</a></td>
+<td>This repository contains operator for <code>db</code>, eg, <a href="https://github.com/kubedb/postgres">https://github.com/kubedb/postgres</a></td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubedb/db_exporter">https://github.com/kubedb/db_exporter</a></td>
+<td>This repository contains Prometheus exporter for <code>db</code>, eg, <a href="https://github.com/kubedb/postgres_exporter">https://github.com/kubedb/postgres_exporter</a> .</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubedb/operator">https://github.com/kubedb/operator</a></td>
+<td>This repository contains the combined operator for all databases supported by KubeDB.</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubedb/cli">https://github.com/kubedb/cli</a></td>
+<td>This repository contains CLI for KubeDB.</td>
+</tr>
+</tbody>
+</table>
+
+<p>For each of these repositories, you can get source code and build code using the following steps:</p>
+
+<h3 id="download-source">Download Source</h3>
+
+<pre><code class="language-console">$ go get github.com/kubedb/operator
+$ cd $(go env GOPATH)/src/github.com/kubedb/operator
+</code></pre>
+
+<h3 id="install-dev-tools">Install Dev tools</h3>
+
+<p>To install various dev tools for KubeDB, run the following command:</p>
+
+<pre><code class="language-console">$ ./hack/builddeps.sh
+</code></pre>
+
+<h3 id="build-binary">Build Binary</h3>
+
+<pre><code class="language-console">$ ./hack/make.py
+</code></pre>
+
+<h3 id="dependency-management">Dependency management</h3>
+
+<p>For KubeDB original repositories, we use <a href="https://github.com/Masterminds/glide">Glide</a> to manage dependencies. Dependencies are already checked in the <code>vendor</code> folder. If you want to update/add dependencies, run:</p>
+
+<pre><code class="language-console">$ glide slow
+</code></pre>
+
+<h3 id="build-docker-images">Build Docker images</h3>
+
+<p>For unified operator or db specific operators, we support building Docker images. To build and push your custom Docker image, follow the steps below. To release a new version of KubeDB, please follow the <a href="/docs/0.8.0-beta.2/setup/developer-guide/release">release guide</a>.</p>
+
+<pre><code class="language-console"># Build Docker image
+$ ./hack/docker/operator/setup.sh; ./hack/docker/operator/setup.sh push
+
+# Add docker tag for your repository
+$ docker tag kubedb/operator:&lt;tag&gt; &lt;image&gt;:&lt;tag&gt;
+
+# Push Image
+$ docker push &lt;image&gt;:&lt;tag&gt;
+
+# Example:
+$ docker tag kubedb/operator:default aerokite/operator:default
+$ docker push aerokite/operator:default
+</code></pre>
+
+<h3 id="generate-cli-reference-docs">Generate CLI Reference Docs</h3>
+
+<pre><code class="language-console">$ cd ~/go/src/github.com/kubedb/cli
+$ ./hack/gendocs/make.sh
+</code></pre>
+
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="right-sidebar-area">
+          
+          <div class="search-area">
+            <form action="#">
+              <input type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+          
+
+          
+          <div class="tbl-of-contents">
+            <h4>What's on this Page</h4>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#development-guide">Development Guide</a>
+<ul>
+<li><a href="#build-kubedb">Build KubeDB</a>
+<ul>
+<li><a href="#setup-go">Setup GO</a></li>
+<li><a href="#code-organization">Code Organization</a></li>
+<li><a href="#download-source">Download Source</a></li>
+<li><a href="#install-dev-tools">Install Dev tools</a></li>
+<li><a href="#build-binary">Build Binary</a></li>
+<li><a href="#dependency-management">Dependency management</a></li>
+<li><a href="#build-docker-images">Build Docker images</a></li>
+<li><a href="#generate-cli-reference-docs">Generate CLI Reference Docs</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+    <section class="cta-area section-padding pt-0">
+      <div class="container section">
+        <div class="cta-padding">
+          <div class="columns">
+            <div class="column is-6">
+              
+              <div class="cta-text">
+                <h2>Ready to get Start?</h2>
+                <p>Create a Free Account and refer your friend</p>
+              </div>
+              
+            </div>
+            <div class="column is-6 has-text-right is-mobile">
+              <div class="cta-button d-table">
+                
+                <div class="cta-button-inner d-table-cell">
+                  <a href="#" class="button kd-button kd-primary"
+                    >Try Now for FREE</a
+                  >
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+    
+    <footer class="footer-area">
+      <div class="footer-top">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="single-footer-widget">
+                
+                <div class="footer-logo">
+                  <a href="#"
+                    ><img
+                      src="/assets/images/logo-color-appscode.png"
+                      alt=""
+                      class="img"
+                  /></a>
+                </div>
+                
+
+                
+                <div class="subscription-form">
+                  <form action="#">
+                    <label for="email">Subscribe Our Newsletter</label>
+                    <div class="field has-addons">
+                      <div class="control">
+                        <input
+                          class="input"
+                          name="email"
+                          id="email"
+                          type="email"
+                          placeholder="info@gmail.com"
+                        />
+                      </div>
+                      <div class="control">
+                        <a class="button kd-primary">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+
+                
+                <div class="contact-information">
+                  <h4>Have any Inquiry?</h4>
+                  <ul class="all-contact-info">
+                    <li>
+                      <a href="callto:+123456789"
+                        ><span
+                          ><i class="fa fa-phone" aria-hidden="true"></i></span
+                        >+123 456 789</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="mailto:appscode@gmail.com"
+                        ><span
+                          ><i
+                            class="fa fa-envelope-o"
+                            aria-hidden="true"
+                          ></i></span
+                        >appscode@gmail.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Products</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Voyager</a></li>
+                    <li><a href="#">KubeDB</a></li>
+                    <li><a href="#">Pharmer Stash </a></li>
+                    <li><a href="#">Service Broker</a></li>
+                    <li><a href="#">Kubed</a></li>
+                    <li><a href="#">Guard</a></li>
+                    <li><a href="#">Swift</a></li>
+                    <li><a href="#">Searchlight</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Offerings</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Open source </a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Company</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">Seles Inquiry</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Legal</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Service Level Agreement</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <p>All rights reserved © 2018. Appscode, Inc..</p>
+            </div>
+            <div class="column is-4 is-mobile has-text-centered">
+              <div class="footer-inline-link">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+              </div>
+            </div>
+            <div class="column is-4 is-mobile has-text-right">
+              <div class="socail-link-inline">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-github" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+    
+    <script src="/assets/js/bulma-carousel.min.js"></script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
