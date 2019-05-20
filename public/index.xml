@@ -1588,6 +1588,15 @@ When you install KubeDB, ElasticsearchVersion crd will be created automatically 
     </item>
     
     <item>
+      <title>Features</title>
+      <link>https://kubedb-v2-hugo.firebaseapp.com/features/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubedb-v2-hugo.firebaseapp.com/features/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Guides | KubeDB</title>
       <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/guides/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -10343,6 +10352,15 @@ In master mode, server that can modify data. In standby mode, the server continu
       <guid>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0/concepts/snapshot/</guid>
       <description>New to KubeDB? Please start here.
  Snapshot What is Snapshot A Snapshot is a Kubernetes Custom Resource Definitions (CRD). It provides declarative configuration for database snapshots in a Kubernetes native way. You only need to describe the desired backup behavior in a Snapshot object. KubeDB operator will launch a Job to perform backup operation. Once the snapshot process is complete, it uploads the snapshot data to various cloud providers S3, GCS, Azure, OpenStack Swift and/or locally mounted volumes using osm.</description>
+    </item>
+    
+    <item>
+      <title>Support</title>
+      <link>https://kubedb-v2-hugo.firebaseapp.com/pricing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubedb-v2-hugo.firebaseapp.com/pricing/</guid>
+      <description></description>
     </item>
     
     <item>

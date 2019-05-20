@@ -1,5 +1,6 @@
 ---
 title: Support
+layout: pricing
 menu:
   main:
     identifier: pricing
