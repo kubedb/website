@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2D9AED" />
+    <title>KubeDB Home</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+
+  <body>
+    
+
+    
+    
+
+
+
+
+
+<header>
+  
+  <div class="header-bottom-area header-area documentation-page" id="header">
+    <div class="container section">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./../index.html">
+            <img src="/assets/images/logo-color-kube.png" alt="" />
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="acNav"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="acNav" class="navbar-menu main-menu">
+          <div class="navbar-end">
+            
+            <div class="navbar-start">
+              <a href="./../pricing/index.html" class="navbar-item">
+                Commercial Support
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Database
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Item-1
+                  </a>
+                  <a class="navbar-item">
+                    Item-2
+                  </a>
+                  <a class="navbar-item">
+                    Item-3
+                  </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item">
+                    Item-4
+                  </a>
+                </div>
+              </div>
+
+              <a href="../documentations/welcome.html" class="navbar-item">
+                Documentation
+              </a>
+              <a class="navbar-item">
+                v 0.110
+              </a>
+              <a class="navbar-item">
+                Community
+              </a>
+            </div>
+            
+            <div class="navbar-item">
+              <div class="buttons main-menu-button">
+                <a class="button is-small">
+                  <span><i class="fa fa-github" aria-hidden="true"></i></span
+                  >Star
+                </a>
+                <div class="star-count">
+                  565
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="documentation-menu">
+      <div class="container section">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            
+            <div class="responsive-menu">
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav3"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            
+            
+            <nav class="documentation-navbar">
+              <div id="acNav3" class="navbar-menu nav-menu main-menu">
+                <div class="navbar-centered">
+                  
+                  <div class="navbar-start">
+                    
+                    
+                      
+                        
+                          <a href="/docs/0.9.0/" class=" navbar-item">Welcome</a>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0/concepts/" class=" navbar-item">Concepts</a>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0/setup/" class=" navbar-item">Setup</a>
+                        
+                      
+                        
+                          <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                              Guides
+                            </a>
+                            <div class="navbar-dropdown">
+                              
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/elasticsearch/" class="navbar-item">Elasticsearch</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/memcached/" class="navbar-item">Memcached</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/mongodb/" class="navbar-item">MongoDB</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/mysql/" class="navbar-item">MySQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/postgres/" class="navbar-item">PostgreSQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0/guides/redis/" class="navbar-item">Redis</a>
+                                
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0/reference/" class=" navbar-item">Reference</a>
+                        
+                      
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </nav>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</header>
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+<div class="documentation-area">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-3">
+        
+        <div class="kd-left-sidebar">
+          <div class="kd-version">
+            
+            <div class="control has-icons-left">
+              <div class="select">
+                
+                
+                <select>
+                  
+                    
+                    
+                      
+                        <option>master</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.11.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.10.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option  selected >0.9.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option >0.8.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option>0.6.0</option>
+                      
+                    
+                  
+                </select>
+              </div>
+              <span class="icon is-left">
+                <i class="fa fa-globe"></i>
+              </span>
+            </div>
+          </div>
+
+          
+            
+            
+              
+            
+              
+            
+              
+            
+              
+                
+                  
+
+                  
+                  
+                    
+                  
+                    
+                  
+                    
+
+                      
+
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+              
+            
+              
+            
+          
+
+          
+          <div class="kd-sidebar-menu">
+            
+              
+
+              
+              
+
+                
+              
+
+                
+              
+
+                
+              
+
+                
+                  
+
+                  
+                  
+
+                    
+                      
+
+
+
+
+  
+
+
+
+<div class="item">
+  <input type="checkbox" id="f5692bc021a714cac3f3f6eca8335cb9-1" >
+  <label for="f5692bc021a714cac3f3f6eca8335cb9-1"><a href="/docs/0.9.0/guides/">Memcached</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="f5692bc021a714cac3f3f6eca8335cb9-2" >
+  <label for="f5692bc021a714cac3f3f6eca8335cb9-2"><a href="/docs/0.9.0/guides/memcached/">Memcached</a></label>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="f5692bc021a714cac3f3f6eca8335cb9-3" >
+  <label for="f5692bc021a714cac3f3f6eca8335cb9-3"><a>Quickstart</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/memcached/quickstart/quickstart/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="f5692bc021a714cac3f3f6eca8335cb9-4" >
+  <label for="f5692bc021a714cac3f3f6eca8335cb9-4"><a>Private Registry</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/memcached/private-registry/using-private-registry/">Quickstart</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="f5692bc021a714cac3f3f6eca8335cb9-5" >
+  <label for="f5692bc021a714cac3f3f6eca8335cb9-5"><a>Monitoring</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/memcached/monitoring/using-builtin-prometheus/">Builtin Prometheus Discovery</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0/guides/memcached/monitoring/using-coreos-prometheus-operator/">Coreos Prometheus Operator</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="f5692bc021a714cac3f3f6eca8335cb9-6" checked>
+  <label for="f5692bc021a714cac3f3f6eca8335cb9-6"><a>Cli</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li class="is-active"><a href="/docs/0.9.0/guides/memcached/cli/cli/">Quickstart</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+                              
+                                
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="f5692bc021a714cac3f3f6eca8335cb9-7" >
+  <label for="f5692bc021a714cac3f3f6eca8335cb9-7"><a>Custom Configuration</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0/guides/memcached/custom-config/using-custom-config/">Quickstart</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                              
+                            
+
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+                      
+
+                    
+                    
+                  
+                  
+
+                
+              
+
+                
+              
+              
+            
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </div>
+        
+      </div>
+      <div class="column is-7">
+        <div class="full-info">
+          
+
+<blockquote>
+<p>New to KubeDB? Please start <a href="/docs/0.9.0/concepts/README">here</a>.</p>
+</blockquote>
+
+<h1 id="manage-kubedb-objects-using-clis">Manage KubeDB objects using CLIs</h1>
+
+<h2 id="kubedb-cli">KubeDB CLI</h2>
+
+<p>KubeDB comes with its own cli. It is called <code>kubedb</code> cli. <code>kubedb</code> can be used to manage any KubeDB object. <code>kubedb</code> cli also performs various validations to improve ux. To install KubeDB cli on your workstation, follow the steps <a href="/docs/0.9.0/setup/install">here</a>.</p>
+
+<h3 id="how-to-create-objects">How to Create objects</h3>
+
+<p><code>kubedb create</code> creates a database CRD object in <code>default</code> namespace by default. Following command will create a Memcached object as specified in <code>memcached.yaml</code>.</p>
+
+<pre><code class="language-console">$ kubedb create -f memcached-demo.yaml
+memcached.kubedb.com/memcached-demo created
+</code></pre>
+
+<p>You can provide namespace as a flag <code>--namespace</code>. Provided namespace should match with namespace specified in input file.</p>
+
+<pre><code class="language-console">$ kubedb create -f memcached-demo.yaml --namespace=kube-system
+memcached.kubedb.com/memcached-demo created
+</code></pre>
+
+<p><code>kubedb create</code> command also considers <code>stdin</code> as input.</p>
+
+<pre><code class="language-console">cat memcached-demo.yaml | kubedb create -f -
+</code></pre>
+
+<p>To learn about various options of <code>create</code> command, please visit <a href="/docs/0.9.0/reference/kubedb_create">here</a>.</p>
+
+<h3 id="how-to-list-objects">How to List Objects</h3>
+
+<p><code>kubedb get</code> command allows users to list or find any KubeDB object. To list all Memcached objects in <code>default</code> namespace, run the following command:</p>
+
+<pre><code class="language-console">$ kubedb get memcached
+NAME             VERSION    STATUS    AGE
+memcached-demo   1.5.4-v1   Running   40s
+memcached-dev    1.5.4-v1   Running   40s
+memcached-prod   1.5.4-v1   Running   40s
+memcached-qa     1.5.4-v1   Running   40s
+</code></pre>
+
+<p>To get YAML of an object, use <code>--output=yaml</code> flag.</p>
+
+<pre><code class="language-yaml">$ kubedb get memcached memcached-demo --output=yaml
+apiVersion: kubedb.com/v1alpha1
+kind: Memcached
+metadata:
+  creationTimestamp: 2018-10-04T05:58:57Z
+  finalizers:
+  - kubedb.com
+  generation: 1
+  labels:
+    kubedb: cli-demo
+  name: memcached-demo
+  namespace: default
+  resourceVersion: &quot;6883&quot;
+  selfLink: /apis/kubedb.com/v1alpha1/namespaces/default/memcacheds/memcached-demo
+  uid: 953df4d1-c79a-11e8-bb11-0800272ad446
+spec:
+  podTemplate:
+    controller: {}
+    metadata: {}
+    spec:
+      resources:
+        limits:
+          cpu: 500m
+          memory: 128Mi
+        requests:
+          cpu: 250m
+          memory: 64Mi
+  replicas: 3
+  serviceTemplate:
+    metadata: {}
+    spec: {}
+  strategy:
+    type: RollingUpdate
+  terminationPolicy: Pause
+  version: 1.5.4-v1
+status:
+  observedGeneration: 1$7916315637361465932
+  phase: Running
+</code></pre>
+
+<p>To get JSON of an object, use <code>--output=json</code> flag.</p>
+
+<pre><code class="language-console">kubedb get memcached memcached-demo --output=json
+</code></pre>
+
+<p>To list all KubeDB objects, use following command:</p>
+
+<pre><code class="language-console">$ kubedb get all -o wide
+NAME                    VERSION     STATUS   AGE
+mc/memcached-demo       1.5.4-v1    Running  3h
+mc/memcached-dev        1.5.4-v1    Running  3h
+mc/memcached-prod       1.5.4-v1    Running  3h
+mc/memcached-qa         1.5.4-v1    Running  3h
+</code></pre>
+
+<p>Flag <code>--output=wide</code> is used to print additional information.</p>
+
+<p>List command supports short names for each object types. You can use it like <code>kubedb get &lt;short-name&gt;</code>. Below are the short name for KubeDB objects:</p>
+
+<ul>
+<li>Memcached: <code>mc</code></li>
+<li>DormantDatabase: <code>drmn</code></li>
+</ul>
+
+<p>You can print labels with objects. The following command will list all Memcached with their corresponding labels.</p>
+
+<pre><code class="language-console">$ kubedb get mc --show-labels
+NAME             VERSION    STATUS    AGE       LABELS
+memcached-demo   1.5.4-v1   Running   2m        kubedb=cli-demo
+</code></pre>
+
+<p>To print only object name, run the following command:</p>
+
+<pre><code class="language-console">$ kubedb get all -o name
+memcached/memcached-demo
+memcached/memcached-dev
+memcached/memcached-prod
+memcached/memcached-qa
+</code></pre>
+
+<p>To learn about various options of <code>get</code> command, please visit <a href="/docs/0.9.0/reference/kubedb_get">here</a>.</p>
+
+<h3 id="how-to-describe-objects">How to Describe Objects</h3>
+
+<p><code>kubedb describe</code> command allows users to describe any KubeDB object. The following command will describe Memcached database <code>memcached-demo</code> with relevant information.</p>
+
+<pre><code class="language-console">$ kubedb describe mc memcached-demo
+Name:               memcached-demo
+Namespace:          default
+CreationTimestamp:  Thu, 04 Oct 2018 11:58:57 +0600
+Labels:             kubedb=cli-demo
+Annotations:        &lt;none&gt;
+Replicas:           3  total
+Status:             Running
+
+Deployment:
+  Name:               memcached-demo
+  CreationTimestamp:  Thu, 04 Oct 2018 11:58:59 +0600
+  Labels:               kubedb=cli-demo
+                        kubedb.com/kind=Memcached
+                        kubedb.com/name=memcached-demo
+  Annotations:          deployment.kubernetes.io/revision=1
+  Replicas:           3 desired | 3 updated | 3 total | 3 available | 0 unavailable
+  Pods Status:        3 Running / 0 Waiting / 0 Succeeded / 0 Failed
+
+Service:
+  Name:         memcached-demo
+  Labels:         kubedb=cli-demo
+                  kubedb.com/kind=Memcached
+                  kubedb.com/name=memcached-demo
+  Annotations:  &lt;none&gt;
+  Type:         ClusterIP
+  IP:           10.102.208.191
+  Port:         db  11211/TCP
+  TargetPort:   db/TCP
+  Endpoints:    172.17.0.4:11211,172.17.0.5:11211,172.17.0.6:11211
+
+No Snapshots.
+
+Events:
+  Type    Reason      Age   From                Message
+  ----    ------      ----  ----                -------
+  Normal  Successful  2m    Memcached operator  Successfully created Service
+  Normal  Successful  2m    Memcached operator  Successfully created StatefulSet
+  Normal  Successful  2m    Memcached operator  Successfully created Memcached
+  Normal  Successful  2m    Memcached operator  Successfully patched StatefulSet
+  Normal  Successful  2m    Memcached operator  Successfully patched Memcached
+</code></pre>
+
+<p><code>kubedb describe</code> command provides following basic information about a Memcached database.</p>
+
+<ul>
+<li>Deployment</li>
+<li>Service</li>
+<li>Monitoring system (If available)</li>
+</ul>
+
+<p>To hide events on KubeDB object, use flag <code>--show-events=false</code></p>
+
+<p>To describe all Memcached objects in <code>default</code> namespace, use following command</p>
+
+<pre><code class="language-console">kubedb describe mc
+</code></pre>
+
+<p>To describe all Memcached objects from every namespace, provide <code>--all-namespaces</code> flag.</p>
+
+<pre><code class="language-console">kubedb describe mc --all-namespaces
+</code></pre>
+
+<p>To describe all KubeDB objects from every namespace, use the following command:</p>
+
+<pre><code class="language-console">kubedb describe all --all-namespaces
+</code></pre>
+
+<p>You can also describe KubeDB objects with matching labels. The following command will describe all Memcached objects with specified labels from every namespace.</p>
+
+<pre><code class="language-console">kubedb describe mc --all-namespaces --selector='group=dev'
+</code></pre>
+
+<p>To learn about various options of <code>describe</code> command, please visit <a href="/docs/0.9.0/reference/kubedb_describe">here</a>.</p>
+
+<h3 id="how-to-edit-objects">How to Edit Objects</h3>
+
+<p><code>kubedb edit</code> command allows users to directly edit any KubeDB object. It will open the editor defined by _KUBEDB<em>EDITOR</em>, or <em>EDITOR</em> environment variables, or fall back to <code>nano</code>.</p>
+
+<p>Lets edit an existing running Memcached object to setup <a href="/docs/0.9.0/guides/memcached/monitoring/using-builtin-prometheus">Monitoring</a>. The following command will open Memcached <code>memcached-demo</code> in editor.</p>
+
+<pre><code class="language-console">$ kubedb edit mc memcached-demo
+
+#spec:
+#  monitor:
+#    agent: prometheus.io/builtin
+
+memcached &quot;memcached-demo&quot; edited
+</code></pre>
+
+<h4 id="edit-restrictions">Edit Restrictions</h4>
+
+<p>Various fields of a KubeDB object can&rsquo;t be edited using <code>edit</code> command. The following fields are restricted from updates for all KubeDB objects:</p>
+
+<ul>
+<li>apiVersion</li>
+<li>kind</li>
+<li>metadata.name</li>
+<li>metadata.namespace</li>
+<li>status</li>
+</ul>
+
+<p>If Deployment exists for a Memcached database, following fields can&rsquo;t be modified as well.</p>
+
+<ul>
+<li>spec.nodeSelector</li>
+<li>spec.podTemplate.spec.nodeSelector</li>
+<li>spec.podTemplate.spec.env</li>
+</ul>
+
+<p>For DormantDatabase, <code>spec.origin</code> can&rsquo;t be edited using <code>kubedb edit</code></p>
+
+<p>To learn about various options of <code>edit</code> command, please visit <a href="/docs/0.9.0/reference/kubedb_edit">here</a>.</p>
+
+<h3 id="how-to-delete-objects">How to Delete Objects</h3>
+
+<p><code>kubedb delete</code> command will delete an object in <code>default</code> namespace by default unless namespace is provided. The following command will delete a Memcached <code>memcached-dev</code> in default namespace</p>
+
+<pre><code class="language-console">$ kubedb delete memcached memcached-dev
+memcached.kubedb.com &quot;memcached-dev&quot; deleted
+</code></pre>
+
+<p>You can also use YAML files to delete objects. The following command will delete a memcached using the type and name specified in <code>memcached.yaml</code>.</p>
+
+<pre><code class="language-console">$ kubedb delete -f memcached-demo.yaml
+memcached.kubedb.com &quot;memcached-dev&quot; deleted
+</code></pre>
+
+<p><code>kubedb delete</code> command also takes input from <code>stdin</code>.</p>
+
+<pre><code class="language-console">cat memcached-demo.yaml | kubedb delete -f -
+</code></pre>
+
+<p>To delete database with matching labels, use <code>--selector</code> flag. The following command will delete memcached with label <code>memcached.kubedb.com/name=memcached-demo</code>.</p>
+
+<pre><code class="language-console">kubedb delete memcached -l memcached.kubedb.com/name=memcached-demo
+</code></pre>
+
+<p>To learn about various options of <code>delete</code> command, please visit <a href="/docs/0.9.0/reference/kubedb_delete">here</a>.</p>
+
+<h2 id="using-kubectl">Using Kubectl</h2>
+
+<p>You can use Kubectl with KubeDB objects like any other CRDs. Below are some common examples of using Kubectl with KubeDB objects.</p>
+
+<pre><code class="language-console"># List objects
+$ kubectl get memcached
+$ kubectl get memcached.kubedb.com
+
+# Delete objects
+$ kubectl delete memcached &lt;name&gt;
+</code></pre>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ul>
+<li>Learn how to use KubeDB to run a Memcached database <a href="/docs/0.9.0/guides/memcached/README">here</a>.</li>
+<li>Want to hack on KubeDB? Check our <a href="/docs/0.9.0/CONTRIBUTING">contribution guidelines</a>.</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="right-sidebar-area">
+          
+          <div class="search-area">
+            <form action="#">
+              <input type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+          
+
+          
+          <div class="tbl-of-contents">
+            <h4>What's on this Page</h4>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#manage-kubedb-objects-using-clis">Manage KubeDB objects using CLIs</a>
+<ul>
+<li><a href="#kubedb-cli">KubeDB CLI</a>
+<ul>
+<li><a href="#how-to-create-objects">How to Create objects</a></li>
+<li><a href="#how-to-list-objects">How to List Objects</a></li>
+<li><a href="#how-to-describe-objects">How to Describe Objects</a></li>
+<li><a href="#how-to-edit-objects">How to Edit Objects</a>
+<ul>
+<li><a href="#edit-restrictions">Edit Restrictions</a></li>
+</ul></li>
+<li><a href="#how-to-delete-objects">How to Delete Objects</a></li>
+</ul></li>
+<li><a href="#using-kubectl">Using Kubectl</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+    <section class="cta-area section-padding pt-0">
+      <div class="container section">
+        <div class="cta-padding">
+          <div class="columns">
+            <div class="column is-6">
+              
+              <div class="cta-text">
+                <h2>Ready to get Start?</h2>
+                <p>Create a Free Account and refer your friend</p>
+              </div>
+              
+            </div>
+            <div class="column is-6 has-text-right is-mobile">
+              <div class="cta-button d-table">
+                
+                <div class="cta-button-inner d-table-cell">
+                  <a href="#" class="button kd-button kd-primary"
+                    >Try Now for FREE</a
+                  >
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+    
+    <footer class="footer-area">
+      <div class="footer-top">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="single-footer-widget">
+                
+                <div class="footer-logo">
+                  <a href="#"
+                    ><img
+                      src="/assets/images/logo-color-appscode.png"
+                      alt=""
+                      class="img"
+                  /></a>
+                </div>
+                
+
+                
+                <div class="subscription-form">
+                  <form action="#">
+                    <label for="email">Subscribe Our Newsletter</label>
+                    <div class="field has-addons">
+                      <div class="control">
+                        <input
+                          class="input"
+                          name="email"
+                          id="email"
+                          type="email"
+                          placeholder="info@gmail.com"
+                        />
+                      </div>
+                      <div class="control">
+                        <a class="button kd-primary">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+
+                
+                <div class="contact-information">
+                  <h4>Have any Inquiry?</h4>
+                  <ul class="all-contact-info">
+                    <li>
+                      <a href="callto:+123456789"
+                        ><span
+                          ><i class="fa fa-phone" aria-hidden="true"></i></span
+                        >+123 456 789</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="mailto:appscode@gmail.com"
+                        ><span
+                          ><i
+                            class="fa fa-envelope-o"
+                            aria-hidden="true"
+                          ></i></span
+                        >appscode@gmail.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Products</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Voyager</a></li>
+                    <li><a href="#">KubeDB</a></li>
+                    <li><a href="#">Pharmer Stash </a></li>
+                    <li><a href="#">Service Broker</a></li>
+                    <li><a href="#">Kubed</a></li>
+                    <li><a href="#">Guard</a></li>
+                    <li><a href="#">Swift</a></li>
+                    <li><a href="#">Searchlight</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Offerings</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Open source </a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Company</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">Seles Inquiry</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Legal</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Service Level Agreement</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <p>All rights reserved © 2018. Appscode, Inc..</p>
+            </div>
+            <div class="column is-4 is-mobile has-text-centered">
+              <div class="footer-inline-link">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+              </div>
+            </div>
+            <div class="column is-4 is-mobile has-text-right">
+              <div class="socail-link-inline">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-github" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+    
+    <script src="/assets/js/bulma-carousel.min.js"></script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

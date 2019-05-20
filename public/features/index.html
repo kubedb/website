@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2D9AED" />
+    <title>KubeDB Home</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+
+  <body>
+    
+
+    
+    
+    <header>
+      
+      <div class="header-top">
+        <div class="container section">
+          <nav class="navbar">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="#">
+                <img src="/assets/images/logo-color-appscode.png" alt="" />
+              </a>
+
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav1"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+
+            <div id="acNav1" class="navbar-menu main-menu">
+              <div class="navbar-end">
+                
+                <div class="navbar-start">
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                      Products
+                    </a>
+
+                    <div class="navbar-dropdown">
+                      <a class="navbar-item">
+                        Item-1
+                      </a>
+                      <a class="navbar-item">
+                        Item-2
+                      </a>
+                      <a class="navbar-item">
+                        Item-3
+                      </a>
+                      <hr class="navbar-divider" />
+                      <a class="navbar-item">
+                        Item-4
+                      </a>
+                    </div>
+                  </div>
+
+                  <a class="navbar-item">
+                    Services
+                  </a>
+                  <a class="navbar-item">
+                    Open Source
+                  </a>
+                  <a class="navbar-item">
+                    Blog
+                  </a>
+                  <a class="navbar-item">
+                    Contact
+                  </a>
+                </div>
+                
+                <div class="navbar-item">
+                  <div class="buttons main-menu-button-top">
+                    <a class="button is-small for-support">
+                      <span
+                        ><img src="/assets/images/icon/chat.png" alt=""/></span
+                      >Forum
+                    </a>
+                    <a class="button is-small for-chat">
+                      <span
+                        ><img src="/assets/images/icon/slack.png" alt=""/></span
+                      >Chat
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      
+
+      
+      <div class="header-bottom-area header-area" id="header">
+        <div class="container section">
+          <nav class="navbar">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="index.html">
+                <img src="/assets/images/logo-color-kube.png" alt="" />
+              </a>
+
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+
+            <div id="acNav" class="navbar-menu main-menu">
+              <div class="navbar-end">
+                
+                <div class="navbar-start">
+                  
+                  
+                    
+                      
+                        <a href="/features/" class="navbar-item">Features</a>
+                      
+                    
+                  
+                    
+                      
+                        <a href="/pricing/" class="navbar-item">Commercial Support</a>
+                      
+                    
+                  
+                    
+                      <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">Database</a>
+                        <div class="navbar-dropdown">
+                          
+                            
+                              <a class="navbar-item" href="/docs/0.11.0/guides/elasticsearch/">Elasticsearch</a>
+                            
+                          
+                            
+                              <a class="navbar-item" href="/docs/0.11.0/guides/memcached/">Memcached</a>
+                            
+                          
+                            
+                              <a class="navbar-item" href="/docs/0.11.0/guides/mongodb/">MongoDB</a>
+                            
+                          
+                            
+                              <a class="navbar-item" href="/docs/0.11.0/guides/mysql/">MySQL</a>
+                            
+                          
+                            
+                              <a class="navbar-item" href="/docs/0.11.0/guides/postgres/">PostgreSQL</a>
+                            
+                          
+                            
+                              <a class="navbar-item" href="/docs/0.11.0/guides/redis/">Redis</a>
+                            
+                          
+                        </div>
+                      </div>
+                    
+                  
+                    
+                      
+                        <a href="/docs/0.11.0/welcome/">Documentation</a>
+                      
+                    
+                  
+                    
+                      <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">Community</a>
+                        <div class="navbar-dropdown">
+                          
+                            
+                              <a href="https://github.com/kubedb" class="navbar-item">GitHub</a>
+                            
+                          
+                            
+                              <a href="https://twitter.com/KubeDB" class="navbar-item">Twitter</a>
+                            
+                          
+                            
+                              <a href="https://groups.google.com/forum/#!forum/kubedb" class="navbar-item">Groups</a>
+                            
+                          
+                            
+                              <a href="http://slack.kubernetes.io/" class="navbar-item">Slack</a>
+                            
+                          
+                            
+                              <a href="http://discourse.appscode.com" class="navbar-item">Forum</a>
+                            
+                          
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+                
+                <div class="navbar-item">
+                  <div class="buttons main-menu-button">
+                    <a class="button is-small">
+                      <span
+                        ><i class="fa fa-github" aria-hidden="true"></i></span
+                      >Star
+                    </a>
+                    <div class="star-count">
+                      565
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      
+    </header>
+    
+    
+
+    
+    
+
+<section class="hero-features">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-6 is-offset-3 has-text-centered">
+        
+        <div class="hero-features-content">
+          <h1>You’re in best cloud solution</h1>
+          <p>Lorem Ipsum is simply dummy text of the printing and it is</p>
+          <div class="hero-area-button">
+            <a href="#" class="button kd-button kd-primary">Install Now FREE</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section-padding pt-0">
+  
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-5 is-offset-1">
+        <div class="feature-wrapper d-table">
+          <div class="feature-content pr-140 d-table-cell">
+            <h2>Easy to administer</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-1.png"
+            alt=""
+            class="img"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="container section">
+    <div class="columns section-padding">
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-2.png"
+            alt=""
+            class="img"
+          />
+        </div>
+      </div>
+      <div class="column is-5">
+        <div class="feature-wrapper d-table">
+          <div class="feature-content pr-45 d-table-cell">
+            <h2>Highly scalable</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+            <p>
+              scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-5 is-offset-1">
+        <div class="feature-wrapper d-table">
+          <div class="feature-content pr-140 d-table-cell">
+            <h2>Reliability & Security</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-3.png"
+            alt=""
+            class="img"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="container section">
+    <div class="columns section-padding">
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-4.png"
+            alt=""
+            class="img"
+          />
+        </div>
+      </div>
+      <div class="column is-5">
+        <div class="feature-wrapper d-table">
+          <div class="feature-content pr-45 d-table-cell">
+            <h2>Fast</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-5 is-offset-1">
+        <div class="feature-wrapper d-table">
+          <div class="feature-content pr-140 d-table-cell">
+            <h2>Available and durable</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-5.png"
+            alt=""
+            class="img"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="container section">
+    <div class="columns section-padding pb-0">
+      <div class="column is-5 is-offset-1">
+        <div class="single-feature-image">
+          <img
+            src="/assets/images/features-page/feature-6.png"
+            alt=""
+            class="img"
+          />
+        </div>
+      </div>
+      <div class="column is-5">
+        <div class="feature-wrapper">
+          <div class="feature-content pr-45">
+            <h2>Inexpensive</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and it is
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever.
+            </p>
+            <p>
+              scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
+
+    
+    
+    <section class="testimonial-area section-padding">
+      <div class="container section">
+        <div class="columns">
+          <div class="column">
+            <div class="section-title has-text-centered">
+              <h2>What Our Customers Say</h2>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="carousel-wrapper carousel" id="carousel-demo">
+              
+              <div class="carousel-inner">
+                <div class="single-testimonial-wrapper">
+                  <div class="client-brief has-text-centered">
+                    <p>
+                      My post for a new tool in autumn and were keen to get one
+                      in place and optimised ahead of the Christmas peak period.
+                      Freshdesk ensured that the implementation process was as
+                      smooth as possible, and the team were up and running
+                      within 48 hours.
+                    </p>
+                  </div>
+                  <div class="client-information">
+                    <div class="client-thumb">
+                      <img
+                        src="/assets/images/testimonial/client-1.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="client-info">
+                      <h4>Anup Deb</h4>
+                      <p>Designer at AppsCode</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+              <div class="carousel-inner">
+                <div class="single-testimonial-wrapper">
+                  <div class="client-brief has-text-centered">
+                    <p>
+                      My post for a new tool in autumn and were keen to get one
+                      in place and optimised ahead of the Christmas peak period.
+                      Freshdesk ensured that the implementation process was as
+                      smooth as possible, and the team were up and running
+                      within 48 hours.
+                    </p>
+                  </div>
+                  <div class="client-information">
+                    <div class="client-thumb">
+                      <img
+                        src="/assets/images/testimonial/client-1.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="client-info">
+                      <h4>Anup Deb</h4>
+                      <p>Designer at AppsCode</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+              <div class="carousel-inner">
+                <div class="single-testimonial-wrapper">
+                  <div class="client-brief has-text-centered">
+                    <p>
+                      My post for a new tool in autumn and were keen to get one
+                      in place and optimised ahead of the Christmas peak period.
+                      Freshdesk ensured that the implementation process was as
+                      smooth as possible, and the team were up and running
+                      within 48 hours.
+                    </p>
+                  </div>
+                  <div class="client-information">
+                    <div class="client-thumb">
+                      <img
+                        src="/assets/images/testimonial/client-1.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="client-info">
+                      <h4>Anup Deb</h4>
+                      <p>Designer at AppsCode</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+    
+    <div class="logo-carusal-area section-padding">
+      <div class="container section">
+        <div class="columns is-centered">
+          
+          <div class="column has-text-centered">
+            <a class="single-brand-logo">
+              <img
+                src="/assets/images/brand-logo/brand-etsy.png"
+                alt=""
+                class="img"
+              />
+            </a>
+          </div>
+          
+          
+          <div class="column has-text-centered">
+            <a class="single-brand-logo">
+              <img
+                src="/assets/images/brand-logo/brand-vaio.png"
+                alt=""
+                class="img"
+              />
+            </a>
+          </div>
+          
+          
+          <div class="column has-text-centered">
+            <a class="single-brand-logo">
+              <img
+                src="/assets/images/brand-logo/google.png"
+                alt=""
+                class="img"
+              />
+            </a>
+          </div>
+          
+          
+          <div class="column has-text-centered">
+            <a class="single-brand-logo">
+              <img
+                src="/assets/images/brand-logo/brand-audi.png"
+                alt=""
+                class="img"
+              />
+            </a>
+          </div>
+          
+          
+          <div class="column has-text-centered">
+            <a class="single-brand-logo">
+              <img
+                src="/assets/images/brand-logo/brand-ebay.png"
+                alt=""
+                class="img"
+              />
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    
+
+    
+    
+    <section class="cta-area section-padding pt-0">
+      <div class="container section">
+        <div class="cta-padding">
+          <div class="columns">
+            <div class="column is-6">
+              
+              <div class="cta-text">
+                <h2>Ready to get Start?</h2>
+                <p>Create a Free Account and refer your friend</p>
+              </div>
+              
+            </div>
+            <div class="column is-6 has-text-right is-mobile">
+              <div class="cta-button d-table">
+                
+                <div class="cta-button-inner d-table-cell">
+                  <a href="#" class="button kd-button kd-primary"
+                    >Try Now for FREE</a
+                  >
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+    
+    <footer class="footer-area">
+      <div class="footer-top">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="single-footer-widget">
+                
+                <div class="footer-logo">
+                  <a href="#"
+                    ><img
+                      src="/assets/images/logo-color-appscode.png"
+                      alt=""
+                      class="img"
+                  /></a>
+                </div>
+                
+
+                
+                <div class="subscription-form">
+                  <form action="#">
+                    <label for="email">Subscribe Our Newsletter</label>
+                    <div class="field has-addons">
+                      <div class="control">
+                        <input
+                          class="input"
+                          name="email"
+                          id="email"
+                          type="email"
+                          placeholder="info@gmail.com"
+                        />
+                      </div>
+                      <div class="control">
+                        <a class="button kd-primary">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+
+                
+                <div class="contact-information">
+                  <h4>Have any Inquiry?</h4>
+                  <ul class="all-contact-info">
+                    <li>
+                      <a href="callto:+123456789"
+                        ><span
+                          ><i class="fa fa-phone" aria-hidden="true"></i></span
+                        >+123 456 789</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="mailto:appscode@gmail.com"
+                        ><span
+                          ><i
+                            class="fa fa-envelope-o"
+                            aria-hidden="true"
+                          ></i></span
+                        >appscode@gmail.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Products</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Voyager</a></li>
+                    <li><a href="#">KubeDB</a></li>
+                    <li><a href="#">Pharmer Stash </a></li>
+                    <li><a href="#">Service Broker</a></li>
+                    <li><a href="#">Kubed</a></li>
+                    <li><a href="#">Guard</a></li>
+                    <li><a href="#">Swift</a></li>
+                    <li><a href="#">Searchlight</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Offerings</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Open source </a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Company</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">Seles Inquiry</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Legal</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Service Level Agreement</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <p>All rights reserved © 2018. Appscode, Inc..</p>
+            </div>
+            <div class="column is-4 is-mobile has-text-centered">
+              <div class="footer-inline-link">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+              </div>
+            </div>
+            <div class="column is-4 is-mobile has-text-right">
+              <div class="socail-link-inline">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-github" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+    
+    <script src="/assets/js/bulma-carousel.min.js"></script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

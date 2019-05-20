@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2D9AED" />
+    <title>KubeDB Home</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+
+  <body>
+    
+
+    
+    
+
+
+
+
+
+<header>
+  
+  <div class="header-bottom-area header-area documentation-page" id="header">
+    <div class="container section">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./../index.html">
+            <img src="/assets/images/logo-color-kube.png" alt="" />
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="acNav"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="acNav" class="navbar-menu main-menu">
+          <div class="navbar-end">
+            
+            <div class="navbar-start">
+              <a href="./../pricing/index.html" class="navbar-item">
+                Commercial Support
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Database
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Item-1
+                  </a>
+                  <a class="navbar-item">
+                    Item-2
+                  </a>
+                  <a class="navbar-item">
+                    Item-3
+                  </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item">
+                    Item-4
+                  </a>
+                </div>
+              </div>
+
+              <a href="../documentations/welcome.html" class="navbar-item">
+                Documentation
+              </a>
+              <a class="navbar-item">
+                v 0.110
+              </a>
+              <a class="navbar-item">
+                Community
+              </a>
+            </div>
+            
+            <div class="navbar-item">
+              <div class="buttons main-menu-button">
+                <a class="button is-small">
+                  <span><i class="fa fa-github" aria-hidden="true"></i></span
+                  >Star
+                </a>
+                <div class="star-count">
+                  565
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="documentation-menu">
+      <div class="container section">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            
+            <div class="responsive-menu">
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav3"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            
+            
+            <nav class="documentation-navbar">
+              <div id="acNav3" class="navbar-menu nav-menu main-menu">
+                <div class="navbar-centered">
+                  
+                  <div class="navbar-start">
+                    
+                    
+                      
+                        
+                          <a href="/docs/0.8.0-rc.0/" class=" navbar-item">Welcome</a>
+                        
+                      
+                        
+                          <a href="/docs/0.8.0-rc.0/concepts/" class=" is-active  navbar-item">Concepts</a>
+                        
+                      
+                        
+                          <a href="/docs/0.8.0-rc.0/setup/" class=" navbar-item">Setup</a>
+                        
+                      
+                        
+                          <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                              Guides
+                            </a>
+                            <div class="navbar-dropdown">
+                              
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-rc.0/guides/elasticsearch/" class="navbar-item">Elasticsearch</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-rc.0/guides/memcached/" class="navbar-item">Memcached</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-rc.0/guides/mongodb/" class="navbar-item">MongoDB</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-rc.0/guides/mysql/" class="navbar-item">MySQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-rc.0/guides/postgres/" class="navbar-item">PostgreSQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.8.0-rc.0/guides/redis/" class="navbar-item">Redis</a>
+                                
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                          <a href="/docs/0.8.0-rc.0/reference/" class=" navbar-item">Reference</a>
+                        
+                      
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </nav>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</header>
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+<div class="documentation-area">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-3">
+        
+        <div class="kd-left-sidebar">
+          <div class="kd-version">
+            
+            <div class="control has-icons-left">
+              <div class="select">
+                
+                
+                <select>
+                  
+                    
+                    
+                      
+                        <option>master</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.11.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.10.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.9.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option >0.8.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option>0.6.0</option>
+                      
+                    
+                  
+                </select>
+              </div>
+              <span class="icon is-left">
+                <i class="fa fa-globe"></i>
+              </span>
+            </div>
+          </div>
+
+          
+            
+            
+              
+            
+              
+                
+                  
+
+                  
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+              
+            
+              
+            
+              
+            
+              
+            
+          
+
+          
+          <div class="kd-sidebar-menu">
+            
+              
+
+              
+              
+
+                
+              
+
+                
+                  
+
+                  
+                  
+
+                    
+                      
+
+
+
+
+  
+
+
+
+<div class="item">
+  <input type="checkbox" id="1f0df72f4fb7db940cc51a82b4e239ac-1" >
+  <label for="1f0df72f4fb7db940cc51a82b4e239ac-1"><a href="/docs/0.8.0-rc.0/concepts/">Concepts</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="1f0df72f4fb7db940cc51a82b4e239ac-2" >
+  <label for="1f0df72f4fb7db940cc51a82b4e239ac-2"><a>What is KubeDB</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.8.0-rc.0/concepts/what-is-kubedb/overview/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="1f0df72f4fb7db940cc51a82b4e239ac-3" checked>
+  <label for="1f0df72f4fb7db940cc51a82b4e239ac-3"><a>Supported Databases</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.8.0-rc.0/concepts/databases/elasticsearch/">Elasticsearch</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.8.0-rc.0/concepts/databases/memcached/">Memcached</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.8.0-rc.0/concepts/databases/mongodb/">MongoDB</a></li>
+        
+      
+        
+          <li class="is-active"><a href="/docs/0.8.0-rc.0/concepts/databases/mysql/">MySQL</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.8.0-rc.0/concepts/databases/postgres/">Postgres</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.8.0-rc.0/concepts/databases/redis/">Redis</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="1f0df72f4fb7db940cc51a82b4e239ac-4" >
+  <label for="1f0df72f4fb7db940cc51a82b4e239ac-4"><a href="/docs/0.8.0-rc.0/concepts/snapshot/">Snapshot</a></label>
+</div>
+
+
+                    
+                    
+                  
+                  
+
+                
+              
+
+                
+              
+
+                
+              
+
+                
+              
+              
+            
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </div>
+        
+      </div>
+      <div class="column is-7">
+        <div class="full-info">
+          
+
+<blockquote>
+<p>New to KubeDB? Please start <a href="/docs/0.8.0-rc.0/concepts/README">here</a>.</p>
+</blockquote>
+
+<h1 id="mysql">MySQL</h1>
+
+<h2 id="what-is-mysql">What is MySQL</h2>
+
+<p><code>MySQL</code> is a Kubernetes <code>Custom Resource Definitions</code> (CRD). It provides declarative configuration for <a href="https://www.mysql.com/">MySQL</a> in a Kubernetes native way. You only need to describe the desired database configuration in a MySQL object, and the KubeDB operator will create Kubernetes objects in the desired state for you.</p>
+
+<h2 id="mysql-spec">MySQL Spec</h2>
+
+<p>As with all other Kubernetes objects, a MySQL needs <code>apiVersion</code>, <code>kind</code>, and <code>metadata</code> fields. It also needs a <code>.spec</code> section. Below is an example MySQL object.</p>
+
+<pre><code class="language-yaml">apiVersion: kubedb.com/v1alpha1
+kind: MySQL
+metadata:
+  name: m1
+  namespace: demo
+spec:
+  version: 8.0
+  storage:
+    storageClassName: &quot;standard&quot;
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 50Mi
+  databaseSecret:
+    secretName: m1-auth
+  nodeSelector:
+    disktype: ssd
+  init:
+    scriptSource:
+      gitRepo:
+        repository: &quot;https://github.com/kubedb/mysql-init-scripts.git&quot;
+        directory: .
+  backupSchedule:
+    cronExpression: &quot;@every 6h&quot;
+    storageSecretName: ms-snap-secret
+    gcs:
+      bucket: restic
+      prefix: demo
+    resources:
+      requests:
+        memory: &quot;64Mi&quot;
+        cpu: &quot;250m&quot;
+      limits:
+        memory: &quot;128Mi&quot;
+        cpu: &quot;500m&quot;
+  doNotPause: true
+  monitor:
+    agent: prometheus.io/coreos-operator
+    prometheus:
+      namespace: demo
+      labels:
+        app: kubedb
+      interval: 10s
+  resources:
+    requests:
+      memory: &quot;64Mi&quot;
+      cpu: &quot;250m&quot;
+    limits:
+      memory: &quot;128Mi&quot;
+      cpu: &quot;500m&quot;
+</code></pre>
+
+<h3 id="spec-version">spec.version</h3>
+
+<p><code>spec.version</code> is a required field specifying the version of MySQL database. Official <a href="https://hub.docker.com/r/library/mysql/tags/">mysql docker images</a> will be used for the specific version.</p>
+
+<h3 id="spec-storage">spec.storage</h3>
+
+<p>Since 0.8.0-rc.0, <code>spec.storage</code> is a required field that specifies the StorageClass of PVCs dynamically allocated to store data for the database. This storage spec will be passed to the StatefulSet created by KubeDB operator to run database pods. You can specify any StorageClass available in your cluster with appropriate resource requests.</p>
+
+<ul>
+<li><code>spec.storage.storageClassName</code> is the name of the StorageClass used to provision PVCs. PVCs don’t necessarily have to request a class. A PVC with its storageClassName set equal to &ldquo;&rdquo; is always interpreted to be requesting a PV with no class, so it can only be bound to PVs with no class (no annotation or one set equal to &ldquo;&rdquo;). A PVC with no storageClassName is not quite the same and is treated differently by the cluster depending on whether the DefaultStorageClass admission plugin is turned on.</li>
+<li><code>spec.storage.accessModes</code> uses the same conventions as Kubernetes PVCs when requesting storage with specific access modes.</li>
+<li><code>spec.storage.resources</code> can be used to request specific quantities of storage. This follows the same resource model used by PVCs.</li>
+</ul>
+
+<p>To learn how to configure <code>spec.storage</code>, please visit the links below:</p>
+
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims">https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims</a></li>
+</ul>
+
+<h3 id="spec-databasesecret">spec.databaseSecret</h3>
+
+<p><code>spec.databaseSecret</code> is an optional field that points to a Secret used to hold credentials for <code>mysql</code> super user. If not set, KubeDB operator creates a new Secret <code>{mysql-object-name}-auth</code> for storing the password for <code>mysql</code> superuser for each MySQL object. If you want to use an existing secret please specify that when creating the MySQL object using <code>spec.databaseSecret.secretName</code>.</p>
+
+<p>This secret contains a <code>user</code> key and a <code>password</code> key which contains the <code>username</code> and <code>password</code> respectively for <code>mysql</code> root user. Here the value of <code>user</code> key is fixed to be <code>root</code>. Example:</p>
+
+<pre><code class="language-ini">apiVersion: v1
+data:
+  password: NnE4dV8yak1PVy1PT1pYaw==
+  user: cm9vdA==
+kind: Secret
+metadata:
+  ...
+  name: m1-auth
+  namespace: demo
+  ...
+type: Opaque
+</code></pre>
+
+<h3 id="spec-nodeselector">spec.nodeSelector</h3>
+
+<p><code>spec.nodeSelector</code> is an optional field that specifies a map of key-value pairs. For the pod to be eligible to run on a node, the node must have each of the indicated key-value pairs as labels (it can have additional labels as well). To learn more, see <a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector">here</a> .</p>
+
+<h3 id="spec-init">spec.init</h3>
+
+<p><code>spec.init</code> is an optional section that can be used to initialize a newly created MySQL database. MySQL databases can be initialized in one of two ways:</p>
+
+<h4 id="initialize-via-script">Initialize via Script</h4>
+
+<p>To initialize a MySQL database using a script (shell script, sql script etc.), set the <code>spec.init.scriptSource</code> section when creating a MySQL object. It will execute files alphabetically with extensions <code>.sh</code> , <code>.sql</code>  and <code>.sql.gz</code> that are found in the repository. ScriptSource must have following information:</p>
+
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/storage/volumes/#types-of-volumes">VolumeSource</a>: Where your script is loaded from.</li>
+</ul>
+
+<p>Below is an example showing how a shell script from a git repository can be used to initialize a MySQL database.</p>
+
+<pre><code class="language-yaml">apiVersion: kubedb.com/v1alpha1
+kind: MySQL
+metadata:
+  name: m1
+spec:
+  version: 8.0
+  init:
+    scriptSource:
+      gitRepo:
+        repository: &quot;https://github.com/kubedb/mysql-init-scripts.git&quot;
+        directory: .
+</code></pre>
+
+<p>In the above example, KubeDB operator will launch a Job to execute all sql script of <code>mysql-init-script</code> repo in alphabetical  order once StatefulSet pods are running.</p>
+
+<h4 id="initialize-from-snapshots">Initialize from Snapshots</h4>
+
+<p>To initialize from prior snapshots, set the <code>spec.init.snapshotSource</code> section when creating a MySQL object. In this case, SnapshotSource must have following information:</p>
+
+<ul>
+<li><code>name:</code> Name of the Snapshot</li>
+</ul>
+
+<pre><code class="language-yaml">apiVersion: kubedb.com/v1alpha1
+kind: MySQL
+metadata:
+  name: m1
+spec:
+  version: 8.0
+  init:
+    snapshotSource:
+      name: &quot;snapshot-xyz&quot;
+</code></pre>
+
+<p>In the above example, MySQL database will be initialized from Snapshot <code>snapshot-xyz</code> in <code>default</code> namespace. Here, KubeDB operator will launch a Job to initialize MySQL once StatefulSet pods are running.</p>
+
+<h3 id="spec-backupschedule">spec.backupSchedule</h3>
+
+<p>KubeDB supports taking periodic snapshots for MySQL database. This is an optional section in <code>.spec</code>. When <code>spec.backupSchedule</code> section is added, KubeDB operator immediately takes a backup to validate this information. After that, at each tick kubeDB operator creates a <a href="/docs/0.8.0-rc.0/concepts/snapshot">Snapshot</a> object. This triggers operator to create a Job to take backup. If used, set the various sub-fields accordingly.</p>
+
+<ul>
+<li><code>spec.backupSchedule.cronExpression</code> is a required <a href="https://github.com/robfig/cron/blob/v2/doc.go#L26">cron expression</a>. This specifies the schedule for backup operations.</li>
+<li><code>spec.backupSchedule.{storage}</code> is a required field that is used as the destination for storing snapshot data. KubeDB supports cloud storage providers like S3, GCS, Azure and OpenStack Swift. It also supports any locally mounted Kubernetes volumes, like NFS, Ceph , etc. Only one backend can be used at a time. To learn how to configure this, please visit <a href="/docs/0.8.0-rc.0/concepts/snapshot">here</a>.</li>
+<li><code>spec.backupSchedule.resources</code> is an optional field that can request compute resources required by Jobs used to take snapshot or initialize databases from snapshot.  To learn more, visit <a href="http://kubernetes.io/docs/user-guide/compute-resources/">here</a>.</li>
+</ul>
+
+<h3 id="spec-donotpause">spec.doNotPause</h3>
+
+<p><code>spec.doNotPause</code> is an optional field that tells KubeDB operator that if this MySQL object is deleted, whether it should be reverted automatically. This should be set to <code>true</code> for production databases to avoid accidental deletion. If not set or set to false, deleting a MySQL object put the database into a dormant state. THe StatefulSet for a DormantDatabase is deleted but the underlying PVCs are left intact. This allows user to resume the database later.</p>
+
+<h3 id="spec-imagepullsecret">spec.imagePullSecret</h3>
+
+<p><code>KubeDB</code> provides the flexibility of deploying MySQL database from a private Docker registry. To learn how to deploym MySQL from a private registry, please visit <a href="/docs/0.8.0-rc.0/guides/mysql/private-registry/using-private-registry">here</a>.</p>
+
+<h3 id="spec-monitor">spec.monitor</h3>
+
+<p>MySQL managed by KubeDB can be monitored with builtin-Prometheus and CoreOS-Prometheus operator out-of-the-box. To learn more,</p>
+
+<ul>
+<li><a href="/docs/0.8.0-rc.0/guides/mysql/monitoring/using-builtin-prometheus">Monitor MySQL with builtin Prometheus</a></li>
+<li><a href="/docs/0.8.0-rc.0/guides/mysql/monitoring/using-coreos-prometheus-operator">Monitor MySQL with CoreOS Prometheus Operator</a></li>
+</ul>
+
+<h3 id="spec-resources">spec.resources</h3>
+
+<p><code>spec.resources</code> is an optional field. This can be used to request compute resources required by the database pods. To learn more, visit <a href="http://kubernetes.io/docs/user-guide/compute-resources/">here</a>.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ul>
+<li>Learn how to use KubeDB to run a MySQL database <a href="/docs/0.8.0-rc.0/guides/mysql/README">here</a>.</li>
+<li>See the list of supported storage providers for snapshots <a href="/docs/0.8.0-rc.0/concepts/snapshot">here</a>.</li>
+<li>Wondering what features are coming next? Please visit <a href="/docs/0.8.0-rc.0/roadmap">here</a>.</li>
+<li>Want to hack on KubeDB? Check our <a href="/docs/0.8.0-rc.0/CONTRIBUTING">contribution guidelines</a>.</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="right-sidebar-area">
+          
+          <div class="search-area">
+            <form action="#">
+              <input type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+          
+
+          
+          <div class="tbl-of-contents">
+            <h4>What's on this Page</h4>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#mysql">MySQL</a>
+<ul>
+<li><a href="#what-is-mysql">What is MySQL</a></li>
+<li><a href="#mysql-spec">MySQL Spec</a>
+<ul>
+<li><a href="#spec-version">spec.version</a></li>
+<li><a href="#spec-storage">spec.storage</a></li>
+<li><a href="#spec-databasesecret">spec.databaseSecret</a></li>
+<li><a href="#spec-nodeselector">spec.nodeSelector</a></li>
+<li><a href="#spec-init">spec.init</a>
+<ul>
+<li><a href="#initialize-via-script">Initialize via Script</a></li>
+<li><a href="#initialize-from-snapshots">Initialize from Snapshots</a></li>
+</ul></li>
+<li><a href="#spec-backupschedule">spec.backupSchedule</a></li>
+<li><a href="#spec-donotpause">spec.doNotPause</a></li>
+<li><a href="#spec-imagepullsecret">spec.imagePullSecret</a></li>
+<li><a href="#spec-monitor">spec.monitor</a></li>
+<li><a href="#spec-resources">spec.resources</a></li>
+</ul></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+    <section class="cta-area section-padding pt-0">
+      <div class="container section">
+        <div class="cta-padding">
+          <div class="columns">
+            <div class="column is-6">
+              
+              <div class="cta-text">
+                <h2>Ready to get Start?</h2>
+                <p>Create a Free Account and refer your friend</p>
+              </div>
+              
+            </div>
+            <div class="column is-6 has-text-right is-mobile">
+              <div class="cta-button d-table">
+                
+                <div class="cta-button-inner d-table-cell">
+                  <a href="#" class="button kd-button kd-primary"
+                    >Try Now for FREE</a
+                  >
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+    
+    <footer class="footer-area">
+      <div class="footer-top">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="single-footer-widget">
+                
+                <div class="footer-logo">
+                  <a href="#"
+                    ><img
+                      src="/assets/images/logo-color-appscode.png"
+                      alt=""
+                      class="img"
+                  /></a>
+                </div>
+                
+
+                
+                <div class="subscription-form">
+                  <form action="#">
+                    <label for="email">Subscribe Our Newsletter</label>
+                    <div class="field has-addons">
+                      <div class="control">
+                        <input
+                          class="input"
+                          name="email"
+                          id="email"
+                          type="email"
+                          placeholder="info@gmail.com"
+                        />
+                      </div>
+                      <div class="control">
+                        <a class="button kd-primary">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+
+                
+                <div class="contact-information">
+                  <h4>Have any Inquiry?</h4>
+                  <ul class="all-contact-info">
+                    <li>
+                      <a href="callto:+123456789"
+                        ><span
+                          ><i class="fa fa-phone" aria-hidden="true"></i></span
+                        >+123 456 789</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="mailto:appscode@gmail.com"
+                        ><span
+                          ><i
+                            class="fa fa-envelope-o"
+                            aria-hidden="true"
+                          ></i></span
+                        >appscode@gmail.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Products</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Voyager</a></li>
+                    <li><a href="#">KubeDB</a></li>
+                    <li><a href="#">Pharmer Stash </a></li>
+                    <li><a href="#">Service Broker</a></li>
+                    <li><a href="#">Kubed</a></li>
+                    <li><a href="#">Guard</a></li>
+                    <li><a href="#">Swift</a></li>
+                    <li><a href="#">Searchlight</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Offerings</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Open source </a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Company</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">Seles Inquiry</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Legal</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Service Level Agreement</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <p>All rights reserved © 2018. Appscode, Inc..</p>
+            </div>
+            <div class="column is-4 is-mobile has-text-centered">
+              <div class="footer-inline-link">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+              </div>
+            </div>
+            <div class="column is-4 is-mobile has-text-right">
+              <div class="socail-link-inline">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-github" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+    
+    <script src="/assets/js/bulma-carousel.min.js"></script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

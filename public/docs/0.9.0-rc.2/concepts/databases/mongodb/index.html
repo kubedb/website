@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2D9AED" />
+    <title>KubeDB Home</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+
+  <body>
+    
+
+    
+    
+
+
+
+
+
+<header>
+  
+  <div class="header-bottom-area header-area documentation-page" id="header">
+    <div class="container section">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./../index.html">
+            <img src="/assets/images/logo-color-kube.png" alt="" />
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="acNav"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="acNav" class="navbar-menu main-menu">
+          <div class="navbar-end">
+            
+            <div class="navbar-start">
+              <a href="./../pricing/index.html" class="navbar-item">
+                Commercial Support
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Database
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Item-1
+                  </a>
+                  <a class="navbar-item">
+                    Item-2
+                  </a>
+                  <a class="navbar-item">
+                    Item-3
+                  </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item">
+                    Item-4
+                  </a>
+                </div>
+              </div>
+
+              <a href="../documentations/welcome.html" class="navbar-item">
+                Documentation
+              </a>
+              <a class="navbar-item">
+                v 0.110
+              </a>
+              <a class="navbar-item">
+                Community
+              </a>
+            </div>
+            
+            <div class="navbar-item">
+              <div class="buttons main-menu-button">
+                <a class="button is-small">
+                  <span><i class="fa fa-github" aria-hidden="true"></i></span
+                  >Star
+                </a>
+                <div class="star-count">
+                  565
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="documentation-menu">
+      <div class="container section">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            
+            <div class="responsive-menu">
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav3"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            
+            
+            <nav class="documentation-navbar">
+              <div id="acNav3" class="navbar-menu nav-menu main-menu">
+                <div class="navbar-centered">
+                  
+                  <div class="navbar-start">
+                    
+                    
+                      
+                        
+                          <a href="/docs/0.9.0-rc.2/" class=" navbar-item">Welcome</a>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0-rc.2/concepts/" class=" is-active  navbar-item">Concepts</a>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0-rc.2/setup/" class=" navbar-item">Setup</a>
+                        
+                      
+                        
+                          <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                              Guides
+                            </a>
+                            <div class="navbar-dropdown">
+                              
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.2/guides/elasticsearch/" class="navbar-item">Elasticsearch</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.2/guides/memcached/" class="navbar-item">Memcached</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.2/guides/mongodb/" class="navbar-item">MongoDB</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.2/guides/mysql/" class="navbar-item">MySQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.2/guides/postgres/" class="navbar-item">PostgreSQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.9.0-rc.2/guides/redis/" class="navbar-item">Redis</a>
+                                
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                          <a href="/docs/0.9.0-rc.2/reference/" class=" navbar-item">Reference</a>
+                        
+                      
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </nav>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</header>
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+<div class="documentation-area">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-3">
+        
+        <div class="kd-left-sidebar">
+          <div class="kd-version">
+            
+            <div class="control has-icons-left">
+              <div class="select">
+                
+                
+                <select>
+                  
+                    
+                    
+                      
+                        <option>master</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.11.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.10.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.9.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option >0.8.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option>0.6.0</option>
+                      
+                    
+                  
+                </select>
+              </div>
+              <span class="icon is-left">
+                <i class="fa fa-globe"></i>
+              </span>
+            </div>
+          </div>
+
+          
+            
+            
+              
+            
+              
+                
+                  
+
+                  
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+              
+            
+              
+            
+              
+            
+              
+            
+          
+
+          
+          <div class="kd-sidebar-menu">
+            
+              
+
+              
+              
+
+                
+              
+
+                
+                  
+
+                  
+                  
+
+                    
+                      
+
+
+
+
+  
+
+
+
+<div class="item">
+  <input type="checkbox" id="2246438c68f05dd9a999ece15d8b4a3d-1" >
+  <label for="2246438c68f05dd9a999ece15d8b4a3d-1"><a href="/docs/0.9.0-rc.2/concepts/">Concepts</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="2246438c68f05dd9a999ece15d8b4a3d-2" >
+  <label for="2246438c68f05dd9a999ece15d8b4a3d-2"><a>What is KubeDB</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/what-is-kubedb/overview/">Overview</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="2246438c68f05dd9a999ece15d8b4a3d-3" checked>
+  <label for="2246438c68f05dd9a999ece15d8b4a3d-3"><a>Supported Databases</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/databases/elasticsearch/">Elasticsearch</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/databases/memcached/">Memcached</a></li>
+        
+      
+        
+          <li class="is-active"><a href="/docs/0.9.0-rc.2/concepts/databases/mongodb/">MongoDB</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/databases/mysql/">MySQL</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/databases/postgres/">Postgres</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/databases/redis/">Redis</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="2246438c68f05dd9a999ece15d8b4a3d-4" >
+  <label for="2246438c68f05dd9a999ece15d8b4a3d-4"><a>Catalog</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/catalog/elasticsearch/">ElasticsearchVersion</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/catalog/memcached/">MemcachedVersion</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/catalog/mongodb/">MongoDBVersion</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/catalog/mysql/">MySQLVersion</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/catalog/postgres/">PostgresVersion</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.9.0-rc.2/concepts/catalog/redis/">RedisVersion</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="2246438c68f05dd9a999ece15d8b4a3d-5" >
+  <label for="2246438c68f05dd9a999ece15d8b4a3d-5"><a href="/docs/0.9.0-rc.2/concepts/snapshot/">Snapshot</a></label>
+</div>
+
+
+                    
+                    
+                  
+                  
+
+                
+              
+
+                
+              
+
+                
+              
+
+                
+              
+              
+            
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </div>
+        
+      </div>
+      <div class="column is-7">
+        <div class="full-info">
+          
+
+<blockquote>
+<p>New to KubeDB? Please start <a href="/docs/0.9.0-rc.2/concepts/README">here</a>.</p>
+</blockquote>
+
+<h1 id="mongodb">MongoDB</h1>
+
+<h2 id="what-is-mongodb">What is MongoDB</h2>
+
+<p><code>MongoDB</code> is a Kubernetes <code>Custom Resource Definitions</code> (CRD). It provides declarative configuration for <a href="https://www.mongodb.com/">MongoDB</a> in a Kubernetes native way. You only need to describe the desired database configuration in a MongoDB object, and the KubeDB operator will create Kubernetes objects in the desired state for you.</p>
+
+<h2 id="mongodb-spec">MongoDB Spec</h2>
+
+<p>As with all other Kubernetes objects, a MongoDB needs <code>apiVersion</code>, <code>kind</code>, and <code>metadata</code> fields. It also needs a <code>.spec</code> section. Below is an example MongoDB object.</p>
+
+<pre><code class="language-yaml">apiVersion: kubedb.com/v1alpha1
+kind: MongoDB
+metadata:
+  name: mgo1
+  namespace: demo
+spec:
+  version: &quot;3.4-v1&quot;
+  replicas: 3
+    replicaSet:
+      name: rs0
+      keyFile:
+        secretName: mgo-replicaset-keyfile
+  databaseSecret:
+    secretName: mgo1-auth
+  storageType: &quot;Durable&quot;
+  storage:
+    storageClassName: &quot;standard&quot;
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 50Mi
+  init:
+    scriptSource:
+      configMap:
+        name: mg-init-script
+  backupSchedule:
+    cronExpression: &quot;@every 6h&quot;
+    storageSecretName: mg-snap-secret
+    gcs:
+      bucket: kubedb
+      prefix: demo
+  monitor:
+    agent: prometheus.io/coreos-operator
+    prometheus:
+      namespace: demo
+      labels:
+        app: kubedb
+      interval: 10s
+  configSource:
+    configMap:
+      name: mg-custom-config
+  podTemplate:
+    annotation:
+      passMe: ToDatabasePod
+    controller:
+      annotation:
+        passMe: ToStatefulSet
+    spec:
+      schedulerName: my-scheduler
+      nodeSelector:
+        disktype: ssd
+      imagePullSecrets:
+      - name: myregistrykey
+      args:
+      - --maxConns=100
+      env:
+      - name: MONGO_INITDB_DATABASE
+        value: myDB
+      resources:
+        requests:
+          memory: &quot;64Mi&quot;
+          cpu: &quot;250m&quot;
+        limits:
+          memory: &quot;128Mi&quot;
+          cpu: &quot;500m&quot;
+  serviceTemplate:
+    annotation:
+      passMe: ToService
+    spec:
+      type: NodePort
+      ports:
+      - name:  http
+        port:  9200
+        targetPort: http
+  terminationPolicy: Pause
+  updateStrategy:
+    type: RollingUpdate
+</code></pre>
+
+<h3 id="spec-version">spec.version</h3>
+
+<p><code>spec.version</code> is a required field specifying the name of the <a href="/docs/0.9.0-rc.2/concepts/catalog/mongodb">MongoDBVersion</a> crd where the docker images are specified. Currently, when you install KubeDB, it creates the following <code>MongoDBVersion</code> crd,</p>
+
+<ul>
+<li><code>3.4-v1</code>, <code>3.4</code></li>
+<li><code>3.6-v1</code>, <code>3.6</code></li>
+</ul>
+
+<h3 id="spec-replicas">spec.replicas</h3>
+
+<p><code>spec.replicas</code> the number of members in <code>rs0</code> mongodb replicaset.</p>
+
+<h3 id="spec-replicaset">spec.replicaSet</h3>
+
+<p><code>spec.replicaSet</code> represents the configuration for replicaset.</p>
+
+<ul>
+<li><p><code>name</code> denotes the name of mongodb replicaset.</p></li>
+
+<li><p><code>KeyFileSecret</code> (optional) is a secret name that contains keyfile (a random string)against <code>key.txt</code> key. Each mongod instances in the replica set uses the contents of the keyfile as the shared password for authenticating other members in the deployment. Only mongod instances with the correct keyfile can join the replica set. <em>User can provide the <code>KeyFileSecret</code> by creating a secret with key <code>key.txt</code>. See <a href="https://docs.mongodb.com/manual/tutorial/enforce-keyfile-access-control-in-existing-replica-set/#create-a-keyfile">here</a> to create the string for <code>KeyFileSecret</code>.</em> If <code>KeyFileSecret</code> is not given, KubeDB operator will generate a <code>KeyFileSecret</code> itself.</p></li>
+</ul>
+
+<h3 id="spec-databasesecret">spec.databaseSecret</h3>
+
+<p><code>spec.databaseSecret</code> is an optional field that points to a Secret used to hold credentials for <code>mongodb</code> superuser. If not set, KubeDB operator creates a new Secret <code>{mongodb-object-name}-auth</code> for storing the password for <code>mongodb</code> superuser for each MongoDB object. If you want to use an existing secret please specify that when creating the MongoDB object using <code>spec.databaseSecret.secretName</code>.</p>
+
+<p>This secret contains a <code>user</code> key and a <code>password</code> key which contains the <code>username</code> and <code>password</code> respectively for <code>mongodb</code> superuser.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-console">$ kubectl create secret generic mgo1-auth -n demo \
+--from-literal=user=jhon-doe \
+--from-literal=password=6q8u_2jMOW-OOZXk
+secret &quot;mgo1-auth&quot; created
+</code></pre>
+
+<pre><code class="language-yaml">apiVersion: v1
+data:
+  password: NnE4dV8yak1PVy1PT1pYaw==
+  user: amhvbi1kb2U=
+kind: Secret
+metadata:
+  ...
+  name: mgo1-auth
+  namespace: demo
+  ...
+type: Opaque
+</code></pre>
+
+<h3 id="spec-storagetype">spec.storageType</h3>
+
+<p><code>spec.storageType</code> is an optional field that specifies the type of storage to use for database. It can be either <code>Durable</code> or <code>Ephemeral</code>. The default value of this field is <code>Durable</code>. If <code>Ephemeral</code> is used then KubeDB will create MongoDB database using <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> volume. In this case, you don&rsquo;t have to specify <code>spec.storage</code> field.</p>
+
+<h3 id="spec-storage">spec.storage</h3>
+
+<p>Since 0.9.0-rc.0, If you set <code>spec.storageType:</code> to <code>Durable</code>, then  <code>spec.storage</code> is a required field that specifies the StorageClass of PVCs dynamically allocated to store data for the database. This storage spec will be passed to the StatefulSet created by KubeDB operator to run database pods. You can specify any StorageClass available in your cluster with appropriate resource requests.</p>
+
+<ul>
+<li><code>spec.storage.storageClassName</code> is the name of the StorageClass used to provision PVCs. PVCs don’t necessarily have to request a class. A PVC with its storageClassName set equal to &ldquo;&rdquo; is always interpreted to be requesting a PV with no class, so it can only be bound to PVs with no class (no annotation or one set equal to &ldquo;&rdquo;). A PVC with no storageClassName is not quite the same and is treated differently by the cluster depending on whether the DefaultStorageClass admission plugin is turned on.</li>
+<li><code>spec.storage.accessModes</code> uses the same conventions as Kubernetes PVCs when requesting storage with specific access modes.</li>
+<li><code>spec.storage.resources</code> can be used to request specific quantities of storage. This follows the same resource model used by PVCs.</li>
+</ul>
+
+<p>To learn how to configure <code>spec.storage</code>, please visit the links below:</p>
+
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims">https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims</a></li>
+</ul>
+
+<h3 id="spec-init">spec.init</h3>
+
+<p><code>spec.init</code> is an optional section that can be used to initialize a newly created MongoDB database. MongoDB databases can be initialized in one of two ways:</p>
+
+<ol>
+<li>Initialize from Script</li>
+<li>Initialize from Snapshot</li>
+</ol>
+
+<h4 id="initialize-via-script">Initialize via Script</h4>
+
+<p>To initialize a MongoDB database using a script (shell script, js script), set the <code>spec.init.scriptSource</code> section when creating a MongoDB object. It will execute files alphabetically with extensions <code>.sh</code>  and <code>.js</code> that are found in the repository. ScriptSource must have following information:</p>
+
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/storage/volumes/#types-of-volumes">VolumeSource</a>: Where your script is loaded from.</li>
+</ul>
+
+<p>Below is an example showing how a script from a configMap can be used to initialize a MongoDB database.</p>
+
+<pre><code class="language-yaml">apiVersion: kubedb.com/v1alpha1
+kind: MongoDB
+metadata:
+  name: mgo1
+spec:
+  version: 3.4
+  init:
+    scriptSource:
+      configMap:
+        name: mongodb-init-script
+</code></pre>
+
+<p>In the above example, KubeDB operator will launch a Job to execute all js script of <code>mongodb-init-script</code> in alphabetical order once StatefulSet pods are running. For more details tutorial on how to initialize from script, please visit <a href="/docs/0.9.0-rc.2/guides/mongodb/initialization/script_source">here</a>.</p>
+
+<h4 id="initialize-from-snapshots">Initialize from Snapshots</h4>
+
+<p>To initialize from prior snapshots, set the <code>spec.init.snapshotSource</code> section when creating a MongoDB object. In this case, SnapshotSource must have following information:</p>
+
+<ul>
+<li><code>name:</code> Name of the Snapshot</li>
+<li><code>namespace:</code> Namespace of the Snapshot</li>
+</ul>
+
+<pre><code class="language-yaml">apiVersion: kubedb.com/v1alpha1
+kind: MongoDB
+metadata:
+  name: mgo1
+spec:
+  version: 3.4
+  init:
+    snapshotSource:
+      name: &quot;snapshot-xyz&quot;
+      namespace: &quot;demo&quot;
+</code></pre>
+
+<p>In the above example, MongoDB database will be initialized from Snapshot <code>snapshot-xyz</code> in <code>demo</code> namespace. Here, KubeDB operator will launch a Job to initialize MongoDB once StatefulSet pods are running.</p>
+
+<p>For more details tutorial on how to initialize from snapshot, please visit <a href="/docs/0.9.0-rc.2/guides/mongodb/initialization/snapshot_source">here</a>.</p>
+
+<h3 id="spec-backupschedule">spec.backupSchedule</h3>
+
+<p>KubeDB supports taking periodic snapshots for MongoDB database. This is an optional section in <code>.spec</code>. When <code>spec.backupSchedule</code> section is added, KubeDB operator immediately takes a backup to validate this information. After that, at each tick kubeDB operator creates a <a href="/docs/0.9.0-rc.2/concepts/snapshot">Snapshot</a> object. This triggers operator to create a Job to take backup. I
+f used, set the various sub-fields accordingly.</p>
+
+<ul>
+<li><code>spec.backupSchedule.cronExpression</code> is a required <a href="https://github.com/robfig/cron/blob/v2/doc.go#L26">cron expression</a>. This specifies the schedule for backup operations.</li>
+<li><code>spec.backupSchedule.{storage}</code> is a required field that is used as the destination for storing snapshot data. KubeDB supports cloud storage providers like S3, GCS, Azure and OpenStack Swift. It also supports any locally mounted Kubernetes volumes, like NFS, Ceph, etc. Only one backend can be used at a time. To learn how to configure this, please visit <a href="/docs/0.9.0-rc.2/concepts/snapshot">here</a>.</li>
+</ul>
+
+<p>You can also specify a template for pod of backup job through <code>spec.backupSchedule.podTemplate</code>. KubeDB will use the information you have provided in <code>podTemplate</code> to create the backup job. KubeDB accept following fields to set in <code>spec.backupSchedule.podTemplate</code>:</p>
+
+<ul>
+<li>metadata:
+
+<ul>
+<li>annotations (pod&rsquo;s annotation)</li>
+</ul></li>
+<li>controller:
+
+<ul>
+<li>annotations (job&rsquo;s annotation)</li>
+</ul></li>
+<li>spec:
+
+<ul>
+<li>args</li>
+<li>env</li>
+<li>resources</li>
+<li>imagePullSecrets</li>
+<li>initContainers</li>
+<li>nodeSelector</li>
+<li>affinity</li>
+<li>schedulerName</li>
+<li>tolerations</li>
+<li>priorityClassName</li>
+<li>priority</li>
+<li>securityContext</li>
+<li>livenessProbe</li>
+<li>readinessProbe</li>
+<li>lifecycle</li>
+</ul></li>
+</ul>
+
+<h3 id="spec-monitor">spec.monitor</h3>
+
+<p>MongoDB managed by KubeDB can be monitored with builtin-Prometheus and CoreOS-Prometheus operator out-of-the-box. To learn more,</p>
+
+<ul>
+<li><a href="/docs/0.9.0-rc.2/guides/mongodb/monitoring/using-builtin-prometheus">Monitor MongoDB with builtin Prometheus</a></li>
+<li><a href="/docs/0.9.0-rc.2/guides/mongodb/monitoring/using-coreos-prometheus-operator">Monitor MongoDB with CoreOS Prometheus operator</a></li>
+</ul>
+
+<h3 id="spec-configsource">spec.configSource</h3>
+
+<p><code>spec.configSource</code> is an optional field that allows users to provide custom configuration for MongoDB. This field accepts a <a href="https://github.com/kubernetes/api/blob/release-1.11/core/v1/types.go#L47"><code>VolumeSource</code></a>. You can use any kubernetes supported volume source such as <code>configMap</code>, <code>secret</code>, <code>azureDisk</code> etc.</p>
+
+<blockquote>
+<p>Please note that, the configfile name needs to be <code>mongod.conf</code> for mongodb.</p>
+</blockquote>
+
+<p>To learn more about how to use a custom configuration file see <a href="/docs/0.9.0-rc.2/guides/mongodb/custom-config/using-custom-config">here</a>.</p>
+
+<h3 id="spec-podtemplate">spec.podTemplate</h3>
+
+<p>KubeDB allows providing a template for database pod through <code>spec.podTemplate</code>. KubeDB operator will pass the information provided in <code>spec.podTemplate</code> to the StatefulSet created for MongoDB database.</p>
+
+<p>KubeDB accept following fields to set in <code>spec.podTemplate:</code></p>
+
+<ul>
+<li>metadata:
+
+<ul>
+<li>annotations (pod&rsquo;s annotation)</li>
+</ul></li>
+<li>controller:
+
+<ul>
+<li>annotations (statefulset&rsquo;s annotation)</li>
+</ul></li>
+<li>spec:
+
+<ul>
+<li>args</li>
+<li>env</li>
+<li>resources</li>
+<li>initContainers</li>
+<li>imagePullSecrets</li>
+<li>nodeSelector</li>
+<li>affinity</li>
+<li>schedulerName</li>
+<li>tolerations</li>
+<li>priorityClassName</li>
+<li>priority</li>
+<li>securityContext</li>
+<li>livenessProbe</li>
+<li>readinessProbe</li>
+<li>lifecycle</li>
+</ul></li>
+</ul>
+
+<p>Uses of some field of <code>spec.podTemplate</code> is described below,</p>
+
+<h4 id="spec-podtemplate-spec-args">spec.podTemplate.spec.args</h4>
+
+<p><code>spec.podTemplate.spec.args</code> is an optional field. This can be used to provide additional arguments to database installation. To learn about available args of <code>mongod</code>, visit <a href="https://docs.mongodb.com/manual/reference/program/mongod/">here</a>.</p>
+
+<h4 id="spec-podtemplate-spec-env">spec.podTemplate.spec.env</h4>
+
+<p><code>spec.podTemplate.spec.env</code> is an optional field that specifies the environment variables to pass to the MongoDB docker image. To know about supported environment variables, please visit <a href="https://hub.docker.com/r/_/mongo/">here</a>.</p>
+
+<p>Note that, Kubedb does not allow <code>MONGO_INITDB_ROOT_USERNAME</code> and <code>MONGO_INITDB_ROOT_PASSWORD</code> environment variables to set in <code>spec.podTemplate.spec.env</code>. If you want to use custom superuser and password, please use <code>spec.databaseSecret</code> instead described earlier.</p>
+
+<p>If you try to set <code>MONGO_INITDB_ROOT_USERNAME</code> or <code>MONGO_INITDB_ROOT_PASSWORD</code> environment variable in MongoDB crd, Kubed operator will reject the request with following error,</p>
+
+<pre><code class="language-ini">Error from server (Forbidden): error when creating &quot;./mongodb.yaml&quot;: admission webhook &quot;mongodb.validators.kubedb.com&quot; denied the request: environment variable MONGO_INITDB_ROOT_USERNAME is forbidden to use in MongoDB spec
+</code></pre>
+
+<p>Also, note that Kubedb does not allow to update the environment variables as updating them does not have any effect once the database is created.  If you try to update environment variables, Kubedb operator will reject the request with following error,</p>
+
+<pre><code class="language-ini">Error from server (BadRequest): error when applying patch:
+...
+for: &quot;./mongodb.yaml&quot;: admission webhook &quot;mongodb.validators.kubedb.com&quot; denied the request: precondition failed for:
+...At least one of the following was changed:
+    apiVersion
+    kind
+    name
+    namespace
+    spec.ReplicaSet
+    spec.databaseSecret
+    spec.init
+    spec.storageType
+    spec.storage
+    spec.podTemplate.spec.nodeSelector
+    spec.podTemplate.spec.env
+</code></pre>
+
+<h4 id="spec-podtemplate-spec-imagepullsecret">spec.podTemplate.spec.imagePullSecret</h4>
+
+<p><code>KubeDB</code> provides the flexibility of deploying MongoDB database from a private Docker registry. <code>spec.podTemplate.spec.imagePullSecrets</code> is an optional field that points to secrets to be used for pulling docker image if you are using a private docker registry. To learn how to deploy MongoDB from a private registry, please visit <a href="/docs/0.9.0-rc.2/guides/mongodb/private-registry/using-private-registry">here</a>.</p>
+
+<h4 id="spec-podtemplate-spec-nodeselector">spec.podTemplate.spec.nodeSelector</h4>
+
+<p><code>spec.podTemplate.spec.nodeSelector</code> is an optional field that specifies a map of key-value pairs. For the pod to be eligible to run on a node, the node must have each of the indicated key-value pairs as labels (it can have additional labels as well). To learn more, see <a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector">here</a> .</p>
+
+<h4 id="spec-podtemplate-spec-resources">spec.podTemplate.spec.resources</h4>
+
+<p><code>spec.podTemplate.spec.resources</code> is an optional field. This can be used to request compute resources required by the database pods. To learn more, visit <a href="http://kubernetes.io/docs/user-guide/compute-resources/">here</a>.</p>
+
+<h3 id="spec-servicetemplate">spec.serviceTemplate</h3>
+
+<p>You can also provide a template for the services created by KubeDB operator for MongoDB database through <code>spec.serviceTemplate</code>. This will allow you to set the type and other properties of the services.</p>
+
+<p>KubeDB allows following fields to set in <code>spec.serviceTemplate</code>:</p>
+
+<ul>
+<li>metadata:
+
+<ul>
+<li>annotations</li>
+</ul></li>
+<li>spec:
+
+<ul>
+<li>type</li>
+<li>ports</li>
+<li>clusterIP</li>
+<li>externalIPs</li>
+<li>loadBalancerIP</li>
+<li>loadBalancerSourceRanges</li>
+<li>externalTrafficPolicy</li>
+<li>healthCheckNodePort</li>
+</ul></li>
+</ul>
+
+<h3 id="spec-updatestrategy">spec.updateStrategy</h3>
+
+<p>You can specify <a href="https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#update-strategies">update strategy</a> of StatefulSet created by KubeDB for MongoDB database thorough <code>spec.updateStrategy</code> field. The default value of this field is <code>RollingUpdate</code>. In future, we will use this field to determine how automatic migration from old KubeDB version to new one should behave.</p>
+
+<h3 id="spec-terminationpolicy">spec.terminationPolicy</h3>
+
+<p><code>terminationPolicy</code> gives flexibility whether to <code>nullify</code>(reject) the delete operation of <code>MongoDB</code> crd or which resources KubeDB should keep or delete when you delete <code>MongoDB</code> crd. KubeDB provides following four termination policies:</p>
+
+<ul>
+<li>DoNotTerminate</li>
+<li>Pause (<code>Default</code>)</li>
+<li>Delete</li>
+<li>WipeOut</li>
+</ul>
+
+<p>When, <code>terminationPolicy</code> is <code>DoNotTerminate</code>, KubeDB takes advantage of <code>ValidationWebhook</code> feature in Kubernetes 1.9.0 or later clusters to implement <code>DoNotTerminate</code> feature. If admission webhook is enabled, <code>DoNotTerminate</code> prevents users from deleting the database as long as the <code>spec.terminationPolicy</code> is set to <code>DoNotTerminate</code>.</p>
+
+<p>Following table show what KubeDB does when you delete MongoDB crd for different termination policies,</p>
+
+<table>
+<thead>
+<tr>
+<th>Behaviour</th>
+<th align="center">DoNotTerminate</th>
+<th align="center">Pause</th>
+<th align="center">Delete</th>
+<th align="center">WipeOut</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1. Block Delete operation</td>
+<td align="center">&#10003;</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10007;</td>
+</tr>
+
+<tr>
+<td>2. Create Dormant Database</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10003;</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10007;</td>
+</tr>
+
+<tr>
+<td>3. Delete StatefulSet</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10003;</td>
+<td align="center">&#10003;</td>
+<td align="center">&#10003;</td>
+</tr>
+
+<tr>
+<td>4. Delete Services</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10003;</td>
+<td align="center">&#10003;</td>
+<td align="center">&#10003;</td>
+</tr>
+
+<tr>
+<td>5. Delete PVCs</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10003;</td>
+<td align="center">&#10003;</td>
+</tr>
+
+<tr>
+<td>6. Delete Secrets</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10003;</td>
+</tr>
+
+<tr>
+<td>7. Delete Snapshots</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10003;</td>
+</tr>
+
+<tr>
+<td>8. Delete Snapshot data from bucket</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10007;</td>
+<td align="center">&#10003;</td>
+</tr>
+</tbody>
+</table>
+
+<p>If you don&rsquo;t specify <code>spec.terminationPolicy</code> KubeDB uses <code>Pause</code> termination policy by default.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ul>
+<li>Learn how to use KubeDB to run a MongoDB database <a href="/docs/0.9.0-rc.2/guides/mongodb/README">here</a>.</li>
+<li>See the list of supported storage providers for snapshots <a href="/docs/0.9.0-rc.2/concepts/snapshot">here</a>.</li>
+<li>Want to hack on KubeDB? Check our <a href="/docs/0.9.0-rc.2/CONTRIBUTING">contribution guidelines</a>.</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="right-sidebar-area">
+          
+          <div class="search-area">
+            <form action="#">
+              <input type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+          
+
+          
+          <div class="tbl-of-contents">
+            <h4>What's on this Page</h4>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#mongodb">MongoDB</a>
+<ul>
+<li><a href="#what-is-mongodb">What is MongoDB</a></li>
+<li><a href="#mongodb-spec">MongoDB Spec</a>
+<ul>
+<li><a href="#spec-version">spec.version</a></li>
+<li><a href="#spec-replicas">spec.replicas</a></li>
+<li><a href="#spec-replicaset">spec.replicaSet</a></li>
+<li><a href="#spec-databasesecret">spec.databaseSecret</a></li>
+<li><a href="#spec-storagetype">spec.storageType</a></li>
+<li><a href="#spec-storage">spec.storage</a></li>
+<li><a href="#spec-init">spec.init</a>
+<ul>
+<li><a href="#initialize-via-script">Initialize via Script</a></li>
+<li><a href="#initialize-from-snapshots">Initialize from Snapshots</a></li>
+</ul></li>
+<li><a href="#spec-backupschedule">spec.backupSchedule</a></li>
+<li><a href="#spec-monitor">spec.monitor</a></li>
+<li><a href="#spec-configsource">spec.configSource</a></li>
+<li><a href="#spec-podtemplate">spec.podTemplate</a>
+<ul>
+<li><a href="#spec-podtemplate-spec-args">spec.podTemplate.spec.args</a></li>
+<li><a href="#spec-podtemplate-spec-env">spec.podTemplate.spec.env</a></li>
+<li><a href="#spec-podtemplate-spec-imagepullsecret">spec.podTemplate.spec.imagePullSecret</a></li>
+<li><a href="#spec-podtemplate-spec-nodeselector">spec.podTemplate.spec.nodeSelector</a></li>
+<li><a href="#spec-podtemplate-spec-resources">spec.podTemplate.spec.resources</a></li>
+</ul></li>
+<li><a href="#spec-servicetemplate">spec.serviceTemplate</a></li>
+<li><a href="#spec-updatestrategy">spec.updateStrategy</a></li>
+<li><a href="#spec-terminationpolicy">spec.terminationPolicy</a></li>
+</ul></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+    <section class="cta-area section-padding pt-0">
+      <div class="container section">
+        <div class="cta-padding">
+          <div class="columns">
+            <div class="column is-6">
+              
+              <div class="cta-text">
+                <h2>Ready to get Start?</h2>
+                <p>Create a Free Account and refer your friend</p>
+              </div>
+              
+            </div>
+            <div class="column is-6 has-text-right is-mobile">
+              <div class="cta-button d-table">
+                
+                <div class="cta-button-inner d-table-cell">
+                  <a href="#" class="button kd-button kd-primary"
+                    >Try Now for FREE</a
+                  >
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+    
+    <footer class="footer-area">
+      <div class="footer-top">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="single-footer-widget">
+                
+                <div class="footer-logo">
+                  <a href="#"
+                    ><img
+                      src="/assets/images/logo-color-appscode.png"
+                      alt=""
+                      class="img"
+                  /></a>
+                </div>
+                
+
+                
+                <div class="subscription-form">
+                  <form action="#">
+                    <label for="email">Subscribe Our Newsletter</label>
+                    <div class="field has-addons">
+                      <div class="control">
+                        <input
+                          class="input"
+                          name="email"
+                          id="email"
+                          type="email"
+                          placeholder="info@gmail.com"
+                        />
+                      </div>
+                      <div class="control">
+                        <a class="button kd-primary">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+
+                
+                <div class="contact-information">
+                  <h4>Have any Inquiry?</h4>
+                  <ul class="all-contact-info">
+                    <li>
+                      <a href="callto:+123456789"
+                        ><span
+                          ><i class="fa fa-phone" aria-hidden="true"></i></span
+                        >+123 456 789</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="mailto:appscode@gmail.com"
+                        ><span
+                          ><i
+                            class="fa fa-envelope-o"
+                            aria-hidden="true"
+                          ></i></span
+                        >appscode@gmail.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Products</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Voyager</a></li>
+                    <li><a href="#">KubeDB</a></li>
+                    <li><a href="#">Pharmer Stash </a></li>
+                    <li><a href="#">Service Broker</a></li>
+                    <li><a href="#">Kubed</a></li>
+                    <li><a href="#">Guard</a></li>
+                    <li><a href="#">Swift</a></li>
+                    <li><a href="#">Searchlight</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Offerings</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Open source </a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Company</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">Seles Inquiry</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Legal</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Service Level Agreement</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <p>All rights reserved © 2018. Appscode, Inc..</p>
+            </div>
+            <div class="column is-4 is-mobile has-text-centered">
+              <div class="footer-inline-link">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+              </div>
+            </div>
+            <div class="column is-4 is-mobile has-text-right">
+              <div class="socail-link-inline">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-github" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+    
+    <script src="/assets/js/bulma-carousel.min.js"></script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

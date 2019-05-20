@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2D9AED" />
+    <title>KubeDB Home</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/bulma.min.css" />
+    
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+
+  <body>
+    
+
+    
+    
+
+
+
+
+
+<header>
+  
+  <div class="header-bottom-area header-area documentation-page" id="header">
+    <div class="container section">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./../index.html">
+            <img src="/assets/images/logo-color-kube.png" alt="" />
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="acNav"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="acNav" class="navbar-menu main-menu">
+          <div class="navbar-end">
+            
+            <div class="navbar-start">
+              <a href="./../pricing/index.html" class="navbar-item">
+                Commercial Support
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Database
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Item-1
+                  </a>
+                  <a class="navbar-item">
+                    Item-2
+                  </a>
+                  <a class="navbar-item">
+                    Item-3
+                  </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item">
+                    Item-4
+                  </a>
+                </div>
+              </div>
+
+              <a href="../documentations/welcome.html" class="navbar-item">
+                Documentation
+              </a>
+              <a class="navbar-item">
+                v 0.110
+              </a>
+              <a class="navbar-item">
+                Community
+              </a>
+            </div>
+            
+            <div class="navbar-item">
+              <div class="buttons main-menu-button">
+                <a class="button is-small">
+                  <span><i class="fa fa-github" aria-hidden="true"></i></span
+                  >Star
+                </a>
+                <div class="star-count">
+                  565
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="documentation-menu">
+      <div class="container section">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            
+            <div class="responsive-menu">
+              <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="acNav3"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            
+            
+            <nav class="documentation-navbar">
+              <div id="acNav3" class="navbar-menu nav-menu main-menu">
+                <div class="navbar-centered">
+                  
+                  <div class="navbar-start">
+                    
+                    
+                      
+                        
+                          <a href="/docs/0.11.0/" class=" navbar-item">Welcome</a>
+                        
+                      
+                        
+                          <a href="/docs/0.11.0/concepts/" class=" navbar-item">Concepts</a>
+                        
+                      
+                        
+                          <a href="/docs/0.11.0/setup/" class=" is-active  navbar-item">Setup</a>
+                        
+                      
+                        
+                          <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                              Guides
+                            </a>
+                            <div class="navbar-dropdown">
+                              
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/elasticsearch/" class="navbar-item">Elasticsearch</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/memcached/" class="navbar-item">Memcached</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/mongodb/" class="navbar-item">MongoDB</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/mysql/" class="navbar-item">MySQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/postgres/" class="navbar-item">PostgreSQL</a>
+                                
+                              
+                                
+                                  <a href="/docs/0.11.0/guides/redis/" class="navbar-item">Redis</a>
+                                
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                          <a href="/docs/0.11.0/reference/" class=" navbar-item">Reference</a>
+                        
+                      
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </nav>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</header>
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+<div class="documentation-area">
+  <div class="container section">
+    <div class="columns">
+      <div class="column is-3">
+        
+        <div class="kd-left-sidebar">
+          <div class="kd-version">
+            
+            <div class="control has-icons-left">
+              <div class="select">
+                
+                
+                <select>
+                  
+                    
+                    
+                      
+                        <option>master</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option  selected >0.11.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.10.0</option>
+                      
+                    
+                  
+                    
+                    
+                      
+                        <option >0.9.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option >0.8.0</option>
+                      
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                  
+                    
+                    
+                      
+                        <option>0.6.0</option>
+                      
+                    
+                  
+                </select>
+              </div>
+              <span class="icon is-left">
+                <i class="fa fa-globe"></i>
+              </span>
+            </div>
+          </div>
+
+          
+            
+            
+              
+            
+              
+            
+              
+                
+                  
+
+                  
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+              
+            
+              
+            
+              
+            
+          
+
+          
+          <div class="kd-sidebar-menu">
+            
+              
+
+              
+              
+
+                
+              
+
+                
+              
+
+                
+                  
+
+                  
+                  
+
+                    
+                      
+
+
+
+
+  
+
+
+
+<div class="item">
+  <input type="checkbox" id="39a0a1b9e0b6aa9fdf156009e7b9e648-1" >
+  <label for="39a0a1b9e0b6aa9fdf156009e7b9e648-1"><a href="/docs/0.11.0/setup/">Setup</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="39a0a1b9e0b6aa9fdf156009e7b9e648-2" >
+  <label for="39a0a1b9e0b6aa9fdf156009e7b9e648-2"><a href="/docs/0.11.0/setup/install/">Install</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="39a0a1b9e0b6aa9fdf156009e7b9e648-3" >
+  <label for="39a0a1b9e0b6aa9fdf156009e7b9e648-3"><a href="/docs/0.11.0/setup/uninstall/">Uninstall</a></label>
+</div>
+
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="39a0a1b9e0b6aa9fdf156009e7b9e648-4" checked>
+  <label for="39a0a1b9e0b6aa9fdf156009e7b9e648-4"><a>Operator Monitoring</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li class="is-active"><a href="/docs/0.11.0/setup/monitoring/overview/">Overview</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/setup/monitoring/builtin/">Builtin Prometheus</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/setup/monitoring/coreos/">Prometheus Operator</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+
+                    
+                      
+                        
+
+
+
+
+
+
+<div class="item">
+  <input type="checkbox" id="39a0a1b9e0b6aa9fdf156009e7b9e648-5" >
+  <label for="39a0a1b9e0b6aa9fdf156009e7b9e648-5"><a>Developer Guide</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      
+        
+          <li ><a href="/docs/0.11.0/setup/developer-guide/overview/">Overview</a></li>
+        
+      
+        
+          <li ><a href="/docs/0.11.0/setup/developer-guide/release/">Release Process</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+
+                      
+
+                    
+                    
+                  
+                  
+
+                
+              
+
+                
+              
+
+                
+              
+              
+            
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </div>
+        
+      </div>
+      <div class="column is-7">
+        <div class="full-info">
+          
+
+<h1 id="monitoring-kubedb-operator">Monitoring KubeDB Operator</h1>
+
+<p>KubeDB has native support for monitoring via <a href="https://prometheus.io/">Prometheus</a>. You can use builtin <a href="https://github.com/prometheus/prometheus">Prometheus</a> scrapper or <a href="https://github.com/coreos/prometheus-operator">CoreOS Prometheus Operator</a> to monitor KubeDB supported databases as well as KubeDB operator itself. This tutorial will show you what metrics KubeDB operator exports and how to enable monitoring for the operator itself.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>KubeDB operator pod runs an <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/setup-extension-api-server/">Extension API Server</a> which self hosts <a href="https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks">admission webhooks</a> such as <a href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook">MutatingAdmissionWebhook</a> and <a href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#validatingadmissionwebhook">ValidatingAdmissionWebhook</a>. The extension API server exports some metrics in <code>/metrics</code> path of TLS secured <code>8443</code> port. KubeDB installation process creates a service with same name as KubeDB operator (i.e. <code>kubedb-operator</code>) in same namespace as the operator pod. Prometheus server can use <code>api</code> endpoint of this service to scrape those metrics.</p>
+
+<h3 id="exported-metrics">Exported Metrics</h3>
+
+<p>KubeDB operator exports following metrics.</p>
+
+<p><strong>API Server Metrics:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Metric Name</th>
+<th>Uses</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>apiserver_audit_event_total</td>
+<td>Counter of audit events generated and sent to the audit backend.</td>
+</tr>
+
+<tr>
+<td>apiserver_client_certificate_expiration_seconds</td>
+<td>Distribution of the remaining lifetime on the certificate used to authenticate a request.</td>
+</tr>
+
+<tr>
+<td>apiserver_current_inflight_requests</td>
+<td>Maximal number of currently used inflight request limit of this apiserver per request kind in last second.</td>
+</tr>
+
+<tr>
+<td>apiserver_request_count</td>
+<td>Counter of apiserver requests broken out for each verb, API resource, client, and HTTP response contentType and code.</td>
+</tr>
+
+<tr>
+<td>apiserver_request_latencies</td>
+<td>Response latency distribution in microseconds for each verb, resource and subresource.</td>
+</tr>
+
+<tr>
+<td>apiserver_request_latencies_summary</td>
+<td>Response latency summary in microseconds for each verb, resource and subresource.</td>
+</tr>
+
+<tr>
+<td>authenticated_user_requests</td>
+<td>Counter of authenticated requests broken out by username.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Go Metrics:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Metric Name</th>
+<th>Uses</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>go_gc_duration_seconds</td>
+<td>A summary of the GC invocation durations.</td>
+</tr>
+
+<tr>
+<td>go_goroutines</td>
+<td>Number of goroutines that currently exist.</td>
+</tr>
+
+<tr>
+<td>go_memstats_alloc_bytes</td>
+<td>Number of bytes allocated and still in use.</td>
+</tr>
+
+<tr>
+<td>go_memstats_alloc_bytes_total</td>
+<td>Total number of bytes allocated, even if freed.</td>
+</tr>
+
+<tr>
+<td>go_memstats_buck_hash_sys_bytes</td>
+<td>Number of bytes used by the profiling bucket hash table.</td>
+</tr>
+
+<tr>
+<td>go_memstats_frees_total</td>
+<td>Total number of frees.</td>
+</tr>
+
+<tr>
+<td>go_memstats_gc_sys_bytes</td>
+<td>Number of bytes used for garbage collection system metadata.</td>
+</tr>
+
+<tr>
+<td>go_memstats_heap_alloc_bytes</td>
+<td>Number of heap bytes allocated and still in use.</td>
+</tr>
+
+<tr>
+<td>go_memstats_heap_idle_bytes</td>
+<td>Number of heap bytes waiting to be used.</td>
+</tr>
+
+<tr>
+<td>go_memstats_heap_inuse_bytes</td>
+<td>Number of heap bytes that are in use.</td>
+</tr>
+
+<tr>
+<td>go_memstats_heap_objects</td>
+<td>Number of allocated objects.</td>
+</tr>
+
+<tr>
+<td>go_memstats_heap_released_bytes_total</td>
+<td>Total number of heap bytes released to OS.</td>
+</tr>
+
+<tr>
+<td>go_memstats_heap_sys_bytes</td>
+<td>Number of heap bytes obtained from system.</td>
+</tr>
+
+<tr>
+<td>go_memstats_last_gc_time_seconds</td>
+<td>Number of seconds since 1970 of last garbage collection.</td>
+</tr>
+
+<tr>
+<td>go_memstats_lookups_total</td>
+<td>Total number of pointer lookups.</td>
+</tr>
+
+<tr>
+<td>go_memstats_mallocs_total</td>
+<td>Total number of mallocs.</td>
+</tr>
+
+<tr>
+<td>go_memstats_mcache_inuse_bytes</td>
+<td>Number of bytes in use by mcache structures.</td>
+</tr>
+
+<tr>
+<td>go_memstats_mcache_sys_bytes</td>
+<td>Number of bytes used for mcache structures obtained from system.</td>
+</tr>
+
+<tr>
+<td>go_memstats_mspan_inuse_bytes</td>
+<td>Number of bytes in use by mspan structures.</td>
+</tr>
+
+<tr>
+<td>go_memstats_mspan_sys_bytes</td>
+<td>Number of bytes used for mspan structures obtained from system.</td>
+</tr>
+
+<tr>
+<td>go_memstats_next_gc_bytes</td>
+<td>Number of heap bytes when next garbage collection will take place.</td>
+</tr>
+
+<tr>
+<td>go_memstats_other_sys_bytes</td>
+<td>Number of bytes used for other system allocations.</td>
+</tr>
+
+<tr>
+<td>go_memstats_stack_inuse_bytes</td>
+<td>Number of bytes in use by the stack allocator.</td>
+</tr>
+
+<tr>
+<td>go_memstats_stack_sys_bytes</td>
+<td>Number of bytes obtained from system for stack allocator.</td>
+</tr>
+
+<tr>
+<td>go_memstats_sys_bytes</td>
+<td>Number of bytes obtained by system. Sum of all system allocations.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>HTTP Metrics:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Metrics</th>
+<th>Uses</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>http_request_duration_microseconds</td>
+<td>The HTTP request latencies in microseconds.</td>
+</tr>
+
+<tr>
+<td>http_request_size_bytes</td>
+<td>The HTTP request sizes in bytes.</td>
+</tr>
+
+<tr>
+<td>http_requests_total</td>
+<td>Total number of HTTP requests made.</td>
+</tr>
+
+<tr>
+<td>http_response_size_bytes</td>
+<td>The HTTP response sizes in bytes.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Process Metrics:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Metric Name</th>
+<th>Uses</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>process_cpu_seconds_total</td>
+<td>Total user and system CPU time spent in seconds.</td>
+</tr>
+
+<tr>
+<td>process_max_fds</td>
+<td>Maximum number of open file descriptors.</td>
+</tr>
+
+<tr>
+<td>process_open_fds</td>
+<td>Number of open file descriptors.</td>
+</tr>
+
+<tr>
+<td>process_resident_memory_bytes</td>
+<td>Resident memory size in bytes.</td>
+</tr>
+
+<tr>
+<td>process_start_time_seconds</td>
+<td>Start time of the process since unix epoch in seconds.</td>
+</tr>
+
+<tr>
+<td>process_virtual_memory_bytes</td>
+<td>Virtual memory size in bytes.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="how-to-enable-monitoring">How to Enable Monitoring</h2>
+
+<p>You can enable operator monitoring through some flags while installing or upgrading or updating KubeDB via both <a href="/docs/0.11.0/setup/install#using-script">script</a> and <a href="/docs/0.11.0/setup/install#using-helm">Helm</a>. You can also choose which monitoring agent to use for monitoring. KubeDB will configure respective resources accordingly. Here, are the list of available flags and their uses,</p>
+
+<table>
+<thead>
+<tr>
+<th>Script Flag</th>
+<th>Helm Values</th>
+<th>Acceptable Values</th>
+<th>Default</th>
+<th>Uses</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>--monitoring-enable</code></td>
+<td><code>monitoring.enabled</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>false</code></td>
+<td>Specify whether to monitor KubeDB operator.</td>
+</tr>
+
+<tr>
+<td><code>--monitoring-agent</code></td>
+<td><code>monitoring.agent</code></td>
+<td><code>prometheus.io/builtin</code> or <code>prometheus.io/coreos-operator</code></td>
+<td><code>none</code></td>
+<td>Specify which monitoring agent to use for monitoring KubeDB operator.</td>
+</tr>
+
+<tr>
+<td><code>--prometheus-namespace</code></td>
+<td><code>monitoring.prometheus.namespace</code></td>
+<td>any namespace</td>
+<td>same namespace as KubeDB operator</td>
+<td>Specify the namespace where Prometheus server is running or will be deployed</td>
+</tr>
+
+<tr>
+<td><code>--servicemonitor-label</code></td>
+<td><code>monitoring.serviceMonitor.labels</code></td>
+<td>any label</td>
+<td>For Helm installation, <code>app: &lt;generated app name&gt;</code> and <code>release: &lt;release name&gt;</code>. For script installation, <code>app: kubedb</code></td>
+<td>Specify the labels for ServiceMonitor. Prometheus crd will select ServiceMonitor using these labels. Only usable when monitoring agent is <code>prometheus.io/coreos-operator</code>.</td>
+</tr>
+</tbody>
+</table>
+
+<p>You have to provides these flags while installing or upgrading or updating KubeDB operator. Here, are examples for both script and Helm installation process are given which enable monitoring with <code>prometheus.io/coreos-operator</code> Prometheuse server for <code>operator</code> metrics.</p>
+
+<p><strong>Helm:</strong></p>
+
+<pre><code class="language-console">$ helm install appscode/kubedb --name kubedb-operator --version 0.11.0 --namespace kube-system \
+  --set monitoring.enabled=true \
+  --set monitoring.agent=prometheus.io/coreos-operator \
+  --set monitoring.prometheus.namespace=monitoring \
+  --set monitoring.serviceMonitor.labels.k8s-app=prometheus
+</code></pre>
+
+<p><strong>Script:</strong></p>
+
+<pre><code class="language-console">$ curl -fsSL https://raw.githubusercontent.com/kubedb/cli/0.11.0/hack/deploy/kubedb.sh | bash -s -- \
+  --monitoring-enable=true \
+  --monitoring-agent=prometheus.io/coreos-operator \
+  --prometheus-namespace=monitoring \
+  --servicemonitor-label=k8s-app=prometheus
+</code></pre>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ul>
+<li>Learn how to monitor KubeDB operator using built-in Prometheus from <a href="/docs/0.11.0/setup/monitoring/builtin">here</a>.</li>
+<li>Learn how to monitor KubeDB operator using CoreOS Prometheus operator from <a href="/docs/0.11.0/setup/monitoring/coreos">here</a>.</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="right-sidebar-area">
+          
+          <div class="search-area">
+            <form action="#">
+              <input type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+          
+
+          
+          <div class="tbl-of-contents">
+            <h4>What's on this Page</h4>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#monitoring-kubedb-operator">Monitoring KubeDB Operator</a>
+<ul>
+<li><a href="#overview">Overview</a>
+<ul>
+<li><a href="#exported-metrics">Exported Metrics</a></li>
+</ul></li>
+<li><a href="#how-to-enable-monitoring">How to Enable Monitoring</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+<section></section>
+
+    
+
+    
+    
+    <section class="cta-area section-padding pt-0">
+      <div class="container section">
+        <div class="cta-padding">
+          <div class="columns">
+            <div class="column is-6">
+              
+              <div class="cta-text">
+                <h2>Ready to get Start?</h2>
+                <p>Create a Free Account and refer your friend</p>
+              </div>
+              
+            </div>
+            <div class="column is-6 has-text-right is-mobile">
+              <div class="cta-button d-table">
+                
+                <div class="cta-button-inner d-table-cell">
+                  <a href="#" class="button kd-button kd-primary"
+                    >Try Now for FREE</a
+                  >
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    
+    
+    <footer class="footer-area">
+      <div class="footer-top">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="single-footer-widget">
+                
+                <div class="footer-logo">
+                  <a href="#"
+                    ><img
+                      src="/assets/images/logo-color-appscode.png"
+                      alt=""
+                      class="img"
+                  /></a>
+                </div>
+                
+
+                
+                <div class="subscription-form">
+                  <form action="#">
+                    <label for="email">Subscribe Our Newsletter</label>
+                    <div class="field has-addons">
+                      <div class="control">
+                        <input
+                          class="input"
+                          name="email"
+                          id="email"
+                          type="email"
+                          placeholder="info@gmail.com"
+                        />
+                      </div>
+                      <div class="control">
+                        <a class="button kd-primary">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+
+                
+                <div class="contact-information">
+                  <h4>Have any Inquiry?</h4>
+                  <ul class="all-contact-info">
+                    <li>
+                      <a href="callto:+123456789"
+                        ><span
+                          ><i class="fa fa-phone" aria-hidden="true"></i></span
+                        >+123 456 789</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="mailto:appscode@gmail.com"
+                        ><span
+                          ><i
+                            class="fa fa-envelope-o"
+                            aria-hidden="true"
+                          ></i></span
+                        >appscode@gmail.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Products</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Voyager</a></li>
+                    <li><a href="#">KubeDB</a></li>
+                    <li><a href="#">Pharmer Stash </a></li>
+                    <li><a href="#">Service Broker</a></li>
+                    <li><a href="#">Kubed</a></li>
+                    <li><a href="#">Guard</a></li>
+                    <li><a href="#">Swift</a></li>
+                    <li><a href="#">Searchlight</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Offerings</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Open source </a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Company</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">Seles Inquiry</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="single-footer-widget">
+                
+                <div class="footer-menu">
+                  <h4>Legal</h4>
+                  <ul class="footer-link">
+                    <li><a href="#">Service Level Agreement</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container section">
+          <div class="columns">
+            <div class="column is-4">
+              <p>All rights reserved © 2018. Appscode, Inc..</p>
+            </div>
+            <div class="column is-4 is-mobile has-text-centered">
+              <div class="footer-inline-link">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+              </div>
+            </div>
+            <div class="column is-4 is-mobile has-text-right">
+              <div class="socail-link-inline">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-github" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+    
+    <script src="/assets/js/bulma-carousel.min.js"></script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
