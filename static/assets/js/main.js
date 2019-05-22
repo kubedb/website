@@ -71,23 +71,24 @@ const init = () => {
 
 document.addEventListener("DOMContentLoaded", init);
 
-// Right sidebar SpyScrolling
-const makeNavLinksSmooth = () => {
-  const navLinks = document.querySelectorAll(".nav-link");
 
-  // for (let n in navLinks) {
-  //   if (navLinks.hasOwnProperty(n)) {
-  //     navLinks[n].addEventListener("click", e => {
-  //       e.preventDefault();
-  //       const el = document.querySelector(navLinks[n].hash);
-  //       const pos = el.offsetTop;
-  //       window.scrollTo({
-  //         top: pos,
-  //         behavior: "smooth"
-  //       });
-  //     });
-  //   }
-  // }
+// Table Of Content
+// go the the section smoothly when click on a table-of-content item
+const goToASectionSmoothly = () => {
+  const tocItems = document.querySelectorAll("#TableOfContents a");
+  tocItems.forEach(item => {
+    item.addEventListener("click", e => {
+      e.preventDefault();
+      // go to the target section smoothly
+      const targetEl = document.querySelector(e.currentTarget.hash);
+      const pos = targetEl.offsetTop;
+      window.scrollTo({
+        top: pos,
+        behavior: "smooth"
+      });
+
+    });
+  });
 };
 const spyScrolling = () => {
   const sections = document.querySelectorAll(".single-info");
@@ -107,11 +108,10 @@ const spyScrolling = () => {
   };
 };
 
-makeNavLinksSmooth();
+goToASectionSmoothly();
 spyScrolling();
 
 // tabs active class add script - setup | install page
-
 const tabItems = document.querySelectorAll(".nav-item .nav-link");
 tabItems.forEach(tab => {
   tab.addEventListener("click", e => {
@@ -138,3 +138,5 @@ tabItems.forEach(tab => {
     tabPane.classList.add("show");
   });
 });
+
+
