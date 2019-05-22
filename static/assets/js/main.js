@@ -71,7 +71,6 @@ const init = () => {
 
 document.addEventListener("DOMContentLoaded", init);
 
-
 // Table Of Content
 // go the the section smoothly when click on a table-of-content item
 const goToASectionSmoothly = () => {
@@ -86,25 +85,36 @@ const goToASectionSmoothly = () => {
         top: pos,
         behavior: "smooth"
       });
-
     });
   });
 };
+
+// add .active dynamically to TOC
 const spyScrolling = () => {
-  const sections = document.querySelectorAll(".single-info");
+  const allHeaders = document.querySelectorAll("h1, h2, h3, h4");
 
   window.onscroll = () => {
     const scrollPos =
       document.documentElement.scrollTop || document.body.scrollTop;
-
-    for (let s in sections)
-      if (sections.hasOwnProperty(s) && sections[s].offsetTop <= scrollPos) {
-        const id = sections[s].id;
-        document.querySelector(".active").classList.remove("active");
-        document
-          .querySelector(`a[href*=${id}]`)
-          .parentNode.classList.add("active");
+    for (let s in allHeaders) {
+      if (
+        allHeaders.hasOwnProperty(s) &&
+        allHeaders[s].offsetTop <= scrollPos
+      ) {
+        const id = allHeaders[s].id;
+        if (id) {
+          document.querySelectorAll("#TableOfContents a").forEach(a => {
+            console.log("id: ", id);
+            if (`#${id}` === a.hash) {
+              a.classList.add("active");
+            } else {
+              a.classList.remove("active");
+            }
+          });
+        }
+        
       }
+    }
   };
 };
 
@@ -138,5 +148,3 @@ tabItems.forEach(tab => {
     tabPane.classList.add("show");
   });
 });
-
-
