@@ -190,7 +190,7 @@ h6 {
 }
 
 .main-menu-button a {
-  padding: 6px 25px;
+  padding: 4px 11px;
   border-radius: 2px;
   box-shadow: none;
   border: none;
@@ -254,11 +254,12 @@ a.navbar-item:hover {
 .star-count {
   border: 1px solid #ddd;
   display: block;
-  padding: 4px 20px;
+  padding: 3px 14px;
   border-radius: 2px;
   margin-top: -8px;
-  height: 33px;
+  height: 28px;
   position: relative;
+  line-height: 17px;
 }
 
 .star-count::after,
@@ -310,7 +311,7 @@ body.fixed-nav #header {
   top: 0;
   margin-top: 0;
   z-index: 99;
-  padding: 12px 0;
+  padding: 10px 0;
   width: 100%;
 }
 
@@ -652,6 +653,14 @@ a.play-icon .fa {
   border: 1px solid #4d4dcb;
   box-shadow: none;
   padding: 7px 15px;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+.subscription-form .button:hover {
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
 }
 
 .subscription-form {
@@ -688,7 +697,7 @@ a.play-icon .fa {
   color: #6b6b6b;
   font-size: 14px;
   display: block;
-  padding: 5px 0;
+  padding: 8px 0;
   transition: 0.3s linear;
 }
 
@@ -1178,7 +1187,7 @@ a.play-icon .fa {
 }
 
 .documentation-area {
-  margin-top: 50px;
+  margin-top: 35px;
   margin-bottom: 100px;
 }
 
@@ -1296,7 +1305,7 @@ ul li b {
 .search-area {
   position: relative;
   z-index: 1;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .search-area input {
@@ -1326,7 +1335,7 @@ ul li b {
   font-size: 14px;
   font-weight: 700;
   color: #242a31;
-  margin-bottom: 25px;
+  margin-bottom: 18px;
   line-height: 1;
 }
 
@@ -1373,7 +1382,7 @@ li.nav-item.active a {
 .right-sidebar-area {
   position: sticky;
   position: -webkit-sticky;
-  top: 200px;
+  top: 187px;
   max-width: 215px;
   z-index: 9;
   padding: 0 18px;
@@ -1387,6 +1396,7 @@ li.nav-item.active a {
   width: 100%;
   border: none;
   font-weight: 500;
+  background: transparent;
 }
 
 .select select.is-active,
@@ -1412,7 +1422,7 @@ li.nav-item.active a {
 
 .kd-version {
   border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
 }
 
 /* version section style end */
@@ -1494,7 +1504,7 @@ li.nav-item.active a {
   margin-right: 30px;
   position: sticky;
   position: -webkit-sticky;
-  top: 200px;
+  top: 187px;
 }
 
 .kd-sidebar-menu .item label {
@@ -1530,12 +1540,13 @@ table td,
 table th {
   border-right: 1px solid #a9e9e9;
   border-bottom: 1px solid #a9e9e9;
-  padding: 10px 20px;
+  padding: 8px 20px;
   vertical-align: middle;
   text-align: center;
+  font-size: 15px;
 }
 table tr:nth-child(even) {
-  background-color: #f1f1f1;
+  background-color: #F6F8FA;
   border-top: transparent;
 }
 table td:first-child,
