@@ -1576,6 +1576,13 @@ li.nav-item:before {
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;
 }
+.tab-pane {
+  display: none;
+}
+.tab-pane.show {
+  display: block;
+}
+
 .nav-tabs a{
   align-items: center;
   border-bottom-color: #dbdbdb;

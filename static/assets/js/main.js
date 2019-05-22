@@ -75,19 +75,19 @@ document.addEventListener("DOMContentLoaded", init);
 const makeNavLinksSmooth = () => {
   const navLinks = document.querySelectorAll(".nav-link");
 
-  for (let n in navLinks) {
-    if (navLinks.hasOwnProperty(n)) {
-      navLinks[n].addEventListener("click", e => {
-        e.preventDefault();
-        const el = document.querySelector(navLinks[n].hash);
-        const pos = el.offsetTop;
-        window.scrollTo({
-          top: pos,
-          behavior: "smooth"
-        });
-      });
-    }
-  }
+  // for (let n in navLinks) {
+  //   if (navLinks.hasOwnProperty(n)) {
+  //     navLinks[n].addEventListener("click", e => {
+  //       e.preventDefault();
+  //       const el = document.querySelector(navLinks[n].hash);
+  //       const pos = el.offsetTop;
+  //       window.scrollTo({
+  //         top: pos,
+  //         behavior: "smooth"
+  //       });
+  //     });
+  //   }
+  // }
 };
 const spyScrolling = () => {
   const sections = document.querySelectorAll(".single-info");
@@ -110,17 +110,31 @@ const spyScrolling = () => {
 makeNavLinksSmooth();
 spyScrolling();
 
-// tabs active class add script
-//var tabPane = document.querySelector(".tab-pane");
-var btns = document.querySelectorAll(".nav-link");
-var sbtn = Array.prototype.slice.call(btns);
-sbtn.forEach(el => {
-  el.addEventListener("click", function() {
-    Object.values(btns).forEach(btn => {
-      if (btn !== el) {
-        btn.classList.remove("active");
-      }
+// tabs active class add script - setup | install page
+
+const tabItems = document.querySelectorAll(".nav-item .nav-link");
+tabItems.forEach(tab => {
+  tab.addEventListener("click", e => {
+    e.preventDefault();
+    const el = e.currentTarget;
+
+    // add .active class to the clicked item, remove .active from others
+    document.querySelectorAll(".nav-item .nav-link").forEach(navLink => {
+      navLink === el
+        ? navLink.classList.add("active")
+        : navLink.classList.remove("active");
     });
-    el.classList.toggle("active");
+
+    // add .show class to the target tab-pane, remove from others
+    const elHref = el.getAttribute("href");
+    const tabPaneTarget = document.querySelector(elHref);
+
+    document.querySelectorAll(".tab-pane").forEach(tabPane => {
+      tabPane === tabPaneTarget
+        ? tabPane.classList.add("show")
+        : tabPane.classList.remove("show");
+    });
+
+    tabPane.classList.add("show");
   });
 });
