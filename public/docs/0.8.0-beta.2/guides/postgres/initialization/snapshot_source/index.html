@@ -682,41 +682,6 @@
               
             
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
         </div>
         
@@ -781,17 +746,15 @@ $ kubectl create secret -n demo generic gcs-secret \
     --from-file=./GOOGLE_PROJECT_ID \
     --from-file=./GOOGLE_SERVICE_ACCOUNT_JSON_KEY
 secret &quot;gcs-secret&quot; created
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>Take an instant backup, if not available. Follow <a href="/docs/0.8.0-beta.2/guides/postgres/snapshot/instant_backup#instant-backup">this</a>.</li>
+<li><p>Take an instant backup, if not available. Follow <a href="/docs/0.8.0-beta.2/guides/postgres/snapshot/instant_backup#instant-backup">this</a>.</p></li>
 </ul>
 
 <pre><code class="language-console">$ kubedb get snap -n demo --selector=&quot;kubedb.com/kind=Postgres,kubedb.com/name=script-postgres&quot;
 NAME               DATABASE             STATUS      AGE
 instant-snapshot   pg/script-postgres   Succeeded   39s
-</code></pre></li>
-</ul>
+</code></pre>
 
 <h2 id="create-postgresql-with-snapshot-source">Create PostgreSQL with Snapshot source</h2>
 

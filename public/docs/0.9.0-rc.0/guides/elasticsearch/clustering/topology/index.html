@@ -799,41 +799,6 @@
               
             
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
         </div>
         
@@ -1111,11 +1076,10 @@ master-topology-es   1         1         1m        kubedb.com/kind=Elasticsearch
 <ul>
 <li><code>spec.replicas</code> is set to <code>2</code>. Two dedicated nodes is created as client.</li>
 <li>Label <code>node.role.client: set</code> is added in Pods</li>
+<li>Each Pod will receive a single PersistentVolume with a StorageClass of <strong>standard</strong> and <strong>50Mi</strong> of provisioned storage.</li>
+</ul></li>
 
-<li><p>Each Pod will receive a single PersistentVolume with a StorageClass of <strong>standard</strong> and <strong>50Mi</strong> of provisioned storage.</p></li>
-
-<li><p>data-topology-es</p></li>
-</ul>
+<li><p>data-topology-es</p>
 
 <pre><code class="language-yaml">spec:
   topology:
@@ -1162,6 +1126,7 @@ master-topology-es   1         1         1m        kubedb.com/kind=Elasticsearch
 <li><code>spec.replicas</code> is set to <code>1</code>. One dedicated node is created as master.</li>
 <li>Label <code>node.role.master: set</code> is added in Pods</li>
 <li>Each Pod will receive a single PersistentVolume with a StorageClass of <strong>standard</strong> and <strong>1Gi</strong> of provisioned storage.</li>
+</ul></li>
 </ul>
 
 <blockquote>
@@ -1177,117 +1142,116 @@ CreationTimestamp:  Fri, 05 Oct 2018 14:40:24 +0600
 Labels:             &lt;none&gt;
 Annotations:        kubectl.kubernetes.io/last-applied-configuration={&quot;apiVersion&quot;:&quot;kubedb.com/v1alpha1&quot;,&quot;kind&quot;:&quot;Elasticsearch&quot;,&quot;metadata&quot;:{&quot;annotations&quot;:{},&quot;name&quot;:&quot;topology-es&quot;,&quot;namespace&quot;:&quot;demo&quot;},&quot;spec&quot;:{&quot;storageType&quot;:...
 Status:             Creating
-StorageType:      Durable
+  StorageType:      Durable
 No volumes.
 
 StatefulSet:          
-Name:               client-topology-es
-CreationTimestamp:  Fri, 05 Oct 2018 14:40:26 +0600
-Labels:               kubedb.com/kind=Elasticsearch
-                    kubedb.com/name=topology-es
-                    node.role.client=set
-Annotations:        &lt;none&gt;
-Replicas:           824640231228 desired | 2 total
-Pods Status:        2 Running / 0 Waiting / 0 Succeeded / 0 Failed
+  Name:               client-topology-es
+  CreationTimestamp:  Fri, 05 Oct 2018 14:40:26 +0600
+  Labels:               kubedb.com/kind=Elasticsearch
+                        kubedb.com/name=topology-es
+                        node.role.client=set
+  Annotations:        &lt;none&gt;
+  Replicas:           824640231228 desired | 2 total
+  Pods Status:        2 Running / 0 Waiting / 0 Succeeded / 0 Failed
 
 StatefulSet:          
-Name:               data-topology-es
-CreationTimestamp:  Fri, 05 Oct 2018 14:41:21 +0600
-Labels:               kubedb.com/kind=Elasticsearch
-                    kubedb.com/name=topology-es
-                    node.role.data=set
-Annotations:        &lt;none&gt;
-Replicas:           824640232652 desired | 2 total
-Pods Status:        2 Running / 0 Waiting / 0 Succeeded / 0 Failed
+  Name:               data-topology-es
+  CreationTimestamp:  Fri, 05 Oct 2018 14:41:21 +0600
+  Labels:               kubedb.com/kind=Elasticsearch
+                        kubedb.com/name=topology-es
+                        node.role.data=set
+  Annotations:        &lt;none&gt;
+  Replicas:           824640232652 desired | 2 total
+  Pods Status:        2 Running / 0 Waiting / 0 Succeeded / 0 Failed
 
 StatefulSet:          
-Name:               master-topology-es
-CreationTimestamp:  Fri, 05 Oct 2018 14:41:00 +0600
-Labels:               kubedb.com/kind=Elasticsearch
-                    kubedb.com/name=topology-es
-                    node.role.master=set
-Annotations:        &lt;none&gt;
-Replicas:           824641372604 desired | 1 total
-Pods Status:        1 Running / 0 Waiting / 0 Succeeded / 0 Failed
+  Name:               master-topology-es
+  CreationTimestamp:  Fri, 05 Oct 2018 14:41:00 +0600
+  Labels:               kubedb.com/kind=Elasticsearch
+                        kubedb.com/name=topology-es
+                        node.role.master=set
+  Annotations:        &lt;none&gt;
+  Replicas:           824641372604 desired | 1 total
+  Pods Status:        1 Running / 0 Waiting / 0 Succeeded / 0 Failed
 
 Service:        
-Name:         topology-es
-Labels:         kubedb.com/kind=Elasticsearch
-              kubedb.com/name=topology-es
-Annotations:  &lt;none&gt;
-Type:         ClusterIP
-IP:           10.98.164.122
-Port:         http  9200/TCP
-TargetPort:   http/TCP
-Endpoints:    192.168.1.26:9200,192.168.1.27:9200
+  Name:         topology-es
+  Labels:         kubedb.com/kind=Elasticsearch
+                  kubedb.com/name=topology-es
+  Annotations:  &lt;none&gt;
+  Type:         ClusterIP
+  IP:           10.98.164.122
+  Port:         http  9200/TCP
+  TargetPort:   http/TCP
+  Endpoints:    192.168.1.26:9200,192.168.1.27:9200
 
 Service:        
-Name:         topology-es-master
-Labels:         kubedb.com/kind=Elasticsearch
-              kubedb.com/name=topology-es
-Annotations:  &lt;none&gt;
-Type:         ClusterIP
-IP:           10.111.168.40
-Port:         transport  9300/TCP
-TargetPort:   transport/TCP
-Endpoints:    192.168.1.28:9300
+  Name:         topology-es-master
+  Labels:         kubedb.com/kind=Elasticsearch
+                  kubedb.com/name=topology-es
+  Annotations:  &lt;none&gt;
+  Type:         ClusterIP
+  IP:           10.111.168.40
+  Port:         transport  9300/TCP
+  TargetPort:   transport/TCP
+  Endpoints:    192.168.1.28:9300
 
 Database Secret:
-Name:         topology-es-auth
-Labels:         kubedb.com/kind=Elasticsearch
-              kubedb.com/name=topology-es
-Annotations:  &lt;none&gt;
+  Name:         topology-es-auth
+  Labels:         kubedb.com/kind=Elasticsearch
+                  kubedb.com/name=topology-es
+  Annotations:  &lt;none&gt;
   
 Type:  Opaque
   
 Data
 ====
-ADMIN_USERNAME:         5 bytes
-READALL_PASSWORD:       8 bytes
-sg_internal_users.yml:  156 bytes
-ADMIN_PASSWORD:         8 bytes
-READALL_USERNAME:       7 bytes
-sg_action_groups.yml:   430 bytes
-sg_config.yml:          242 bytes
-sg_roles.yml:           312 bytes
-sg_roles_mapping.yml:   73 bytes
+  ADMIN_USERNAME:         5 bytes
+  READALL_PASSWORD:       8 bytes
+  sg_internal_users.yml:  156 bytes
+  ADMIN_PASSWORD:         8 bytes
+  READALL_USERNAME:       7 bytes
+  sg_action_groups.yml:   430 bytes
+  sg_config.yml:          242 bytes
+  sg_roles.yml:           312 bytes
+  sg_roles_mapping.yml:   73 bytes
 
 Certificate Secret:
-Name:         topology-es-cert
-Labels:         kubedb.com/kind=Elasticsearch
-              kubedb.com/name=topology-es
-Annotations:  &lt;none&gt;
+  Name:         topology-es-cert
+  Labels:         kubedb.com/kind=Elasticsearch
+                  kubedb.com/name=topology-es
+  Annotations:  &lt;none&gt;
   
 Type:  Opaque
   
 Data
 ====
-key_pass:     6 bytes
-node.jks:     3008 bytes
-root.jks:     864 bytes
-sgadmin.jks:  3010 bytes
+  key_pass:     6 bytes
+  node.jks:     3008 bytes
+  root.jks:     864 bytes
+  sgadmin.jks:  3010 bytes
 
 Topology:
-Type    Pod                   StartTime                      Phase
-----    ---                   ---------                      -----
-client  client-topology-es-0  2018-10-05 14:40:27 +0600 +06  Running
-client  client-topology-es-1  2018-10-05 14:40:44 +0600 +06  Running
-data    data-topology-es-0    2018-10-05 14:41:22 +0600 +06  Running
-data    data-topology-es-1    2018-10-05 14:41:49 +0600 +06  Running
-master  master-topology-es-0  2018-10-05 14:41:01 +0600 +06  Running
+  Type    Pod                   StartTime                      Phase
+  ----    ---                   ---------                      -----
+  client  client-topology-es-0  2018-10-05 14:40:27 +0600 +06  Running
+  client  client-topology-es-1  2018-10-05 14:40:44 +0600 +06  Running
+  data    data-topology-es-0    2018-10-05 14:41:22 +0600 +06  Running
+  data    data-topology-es-1    2018-10-05 14:41:49 +0600 +06  Running
+  master  master-topology-es-0  2018-10-05 14:41:01 +0600 +06  Running
 
 No Snapshots.
 
 Events:
-Type    Reason      Age   From                    Message
-----    ------      ----  ----                    -------
-Normal  Successful  2m    Elasticsearch operator  Successfully created Service
-Normal  Successful  2m    Elasticsearch operator  Successfully created Service
-Normal  Successful  1m    Elasticsearch operator  Successfully created StatefulSet
-Normal  Successful  1m    Elasticsearch operator  Successfully created StatefulSet
-Normal  Successful  18s   Elasticsearch operator  Successfully created StatefulSet
-</code></pre></li>
-</ul>
+  Type    Reason      Age   From                    Message
+  ----    ------      ----  ----                    -------
+  Normal  Successful  2m    Elasticsearch operator  Successfully created Service
+  Normal  Successful  2m    Elasticsearch operator  Successfully created Service
+  Normal  Successful  1m    Elasticsearch operator  Successfully created StatefulSet
+  Normal  Successful  1m    Elasticsearch operator  Successfully created StatefulSet
+  Normal  Successful  18s   Elasticsearch operator  Successfully created StatefulSet
+</code></pre>
 
 <p>Here, we can see from <code>Topology</code> section that 2 pods working as <em>client</em>, 2 pods working as <em>data</em> and 1 pod working as <em>master</em>.</p>
 

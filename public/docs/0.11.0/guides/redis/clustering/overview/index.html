@@ -636,41 +636,6 @@
               
             
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
         </div>
         
@@ -862,10 +827,9 @@
 <li><p>If a node presents itself with a <code>MEET</code> message. A meet message is exactly like a <a href="https://redis.io/commands/ping">PING</a> message but forces the receiver to accept the node as part of the cluster. Nodes will send <code>MEET</code> messages to other nodes <strong>only if</strong> the system administrator requests this via the following command:</p>
 
 <pre><code class="language-console">$ CLUSTER MEET ip port
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>A node will also register another node as part of the cluster if a node that is already trusted will gossip about this other node. So if A knows B, and B knows C, eventually B will send gossip messages to A about C. When this happens, A will register C as part of the network, and will try to connect with C.</li>
+<li><p>A node will also register another node as part of the cluster if a node that is already trusted will gossip about this other node. So if A knows B, and B knows C, eventually B will send gossip messages to A about C. When this happens, A will register C as part of the network, and will try to connect with C.</p></li>
 </ul>
 
 <p>Reference: <a href="https://redis.io/topics/cluster-spec#nodes-handshake">https://redis.io/topics/cluster-spec#nodes-handshake</a></p>
@@ -877,7 +841,6 @@
 <li>Detail concepts of <a href="/docs/0.11.0/concepts/databases/redis">Redis object</a>.</li>
 <li>Detail concepts of <a href="/docs/0.11.0/concepts/catalog/redis">RedisVersion object</a>.</li>
 <li>Want to hack on KubeDB? Check our <a href="/docs/0.11.0/CONTRIBUTING">contribution guidelines</a>.</li>
-</ul></li>
 </ul>
 
         </div>

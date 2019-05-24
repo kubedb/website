@@ -700,41 +700,6 @@
               
             
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
         </div>
         
@@ -799,17 +764,15 @@ $ kubectl create secret -n demo generic gcs-secret \
     --from-file=./GOOGLE_PROJECT_ID \
     --from-file=./GOOGLE_SERVICE_ACCOUNT_JSON_KEY
 secret &quot;gcs-secret&quot; created
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>Take an instant backup, if not available. Follow <a href="https://github.com/kubedb/cli/blob/master/docs/guides/elasticsearch/snapshot/instant_backup.md#instant-backup">this</a>.</li>
+<li><p>Take an instant backup, if not available. Follow <a href="https://github.com/kubedb/cli/blob/master/docs/guides/elasticsearch/snapshot/instant_backup.md#instant-backup">this</a>.</p></li>
 </ul>
 
 <pre><code class="language-console">$ kubedb get snap -n demo --selector=&quot;kubedb.com/kind=Elasticsearch,kubedb.com/name=infant-elasticsearch&quot;
 NAME               DATABASE                  STATUS      AGE
 instant-snapshot   es/infant-elasticsearch   Succeeded   39s
-</code></pre></li>
-</ul>
+</code></pre>
 
 <h2 id="initialize-with-snapshot-source">Initialize with Snapshot source</h2>
 

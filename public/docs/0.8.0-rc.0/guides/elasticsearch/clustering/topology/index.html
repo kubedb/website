@@ -700,41 +700,6 @@
               
             
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
         </div>
         
@@ -928,6 +893,7 @@ master-topology-es   1         1         2m        kubedb.com/kind=Elasticsearch
 <li><code>spec.replicas</code> is set to <code>2</code>. Two dedicated nodes is created as client.</li>
 <li>Label <code>node.role.client: set</code> is added in Pods</li>
 <li>Each Pod will receive a single PersistentVolume with a StorageClass of <strong>standard</strong> and <strong>50Mi</strong> of provisioned storage.</li>
+</ul></li>
 </ul>
 
 <blockquote>
@@ -935,8 +901,7 @@ master-topology-es   1         1         2m        kubedb.com/kind=Elasticsearch
 </blockquote>
 
 <ul>
-<li>data-topology-es</li>
-</ul>
+<li><p>data-topology-es</p>
 
 <pre><code class="language-yaml">spec:
   topology:
@@ -976,6 +941,7 @@ master-topology-es   1         1         2m        kubedb.com/kind=Elasticsearch
 <li><code>spec.replicas</code> is set to <code>1</code>. One dedicated node is created as master.</li>
 <li>Label <code>node.role.master: set</code> is added in Pods</li>
 <li>Each Pod will receive a single PersistentVolume with a StorageClass of <strong>standard</strong> and <strong>50Mi</strong> of provisioned storage.</li>
+</ul></li>
 </ul>
 
 <blockquote>
@@ -991,39 +957,38 @@ CreationTimestamp:	Tue, 20 Feb 2018 16:34:43 +0600
 Status:			Running
 Replicas:		0  total
 Volume:
-StorageClass:	standard
-Capacity:	50Mi
-Access Modes:	RWO
+  StorageClass:	standard
+  Capacity:	50Mi
+  Access Modes:	RWO
 StatefulSet:	client-topology-es, data-topology-es, master-topology-es
 Service:	topology-es, topology-es-master
 Secrets:	topology-es-auth, topology-es-cert
 
 Topology:
-Type     Pod                    StartTime                       Phase
-----     ---                    ---------                       -----
-client   client-topology-es-0   2018-02-20 16:34:50 +0600 +06   Running
-client   client-topology-es-1   2018-02-20 16:38:23 +0600 +06   Running
-data     data-topology-es-0     2018-02-20 16:39:12 +0600 +06   Running
-data     data-topology-es-1     2018-02-20 16:39:40 +0600 +06   Running
-master   master-topology-es-0   2018-02-20 16:38:44 +0600 +06   Running
+  Type     Pod                    StartTime                       Phase
+  ----     ---                    ---------                       -----
+  client   client-topology-es-0   2018-02-20 16:34:50 +0600 +06   Running
+  client   client-topology-es-1   2018-02-20 16:38:23 +0600 +06   Running
+  data     data-topology-es-0     2018-02-20 16:39:12 +0600 +06   Running
+  data     data-topology-es-1     2018-02-20 16:39:40 +0600 +06   Running
+  master   master-topology-es-0   2018-02-20 16:38:44 +0600 +06   Running
 
 No Snapshots.
 
 Events:
-FirstSeen   LastSeen   Count     From                     Type       Reason       Message
----------   --------   -----     ----                     --------   ------       -------
-23m         23m        1         Elasticsearch operator   Normal     Successful   Successfully patched Elasticsearch
-24m         24m        1         Elasticsearch operator   Normal     Successful   Successfully patched StatefulSet
-24m         24m        1         Elasticsearch operator   Normal     Successful   Successfully patched StatefulSet
-24m         24m        1         Elasticsearch operator   Normal     Successful   Successfully patched StatefulSet
-24m         24m        1         Elasticsearch operator   Normal     Successful   Successfully created Elasticsearch
-25m         25m        1         Elasticsearch operator   Normal     Successful   Successfully created StatefulSet
-26m         26m        1         Elasticsearch operator   Normal     Successful   Successfully created StatefulSet
-26m         26m        1         Elasticsearch operator   Normal     Successful   Successfully created StatefulSet
-30m         30m        1         Elasticsearch operator   Normal     Successful   Successfully created Service
-30m         30m        1         Elasticsearch operator   Normal     Successful   Successfully created Service
-</code></pre></li>
-</ul>
+  FirstSeen   LastSeen   Count     From                     Type       Reason       Message
+  ---------   --------   -----     ----                     --------   ------       -------
+  23m         23m        1         Elasticsearch operator   Normal     Successful   Successfully patched Elasticsearch
+  24m         24m        1         Elasticsearch operator   Normal     Successful   Successfully patched StatefulSet
+  24m         24m        1         Elasticsearch operator   Normal     Successful   Successfully patched StatefulSet
+  24m         24m        1         Elasticsearch operator   Normal     Successful   Successfully patched StatefulSet
+  24m         24m        1         Elasticsearch operator   Normal     Successful   Successfully created Elasticsearch
+  25m         25m        1         Elasticsearch operator   Normal     Successful   Successfully created StatefulSet
+  26m         26m        1         Elasticsearch operator   Normal     Successful   Successfully created StatefulSet
+  26m         26m        1         Elasticsearch operator   Normal     Successful   Successfully created StatefulSet
+  30m         30m        1         Elasticsearch operator   Normal     Successful   Successfully created Service
+  30m         30m        1         Elasticsearch operator   Normal     Successful   Successfully created Service
+</code></pre>
 
 <p>We can see in Topology section that</p>
 

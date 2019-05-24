@@ -790,41 +790,6 @@
               
             
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
         </div>
         
@@ -936,11 +901,9 @@ CN = KubeDB Com. Root CA
 
 <blockquote>
 <p>Note: You need to provide this KEY_PASS in your Secret as <code>key_pass</code></p>
-</blockquote>
+</blockquote></li>
 
-<ol>
-<li>Generate private key and certificate</li>
-</ol>
+<li><p>Generate private key and certificate</p>
 
 <pre><code class="language-console">$ openssl req -x509 -config openssl-ca.ini -newkey rsa:4096 -sha256 -nodes -out root.pem -keyout root-key.pem -batch -passin &quot;pass:$KEY_PASS&quot;
 </code></pre>
@@ -961,7 +924,8 @@ CN = KubeDB Com. Root CA
 
 <ul>
 <li><code>root.jks</code> is truststore for Elasticsearch</li>
-</ul>
+</ul></li>
+</ol>
 
 <h2 id="generate-keystore">Generate keystore</h2>
 
@@ -980,8 +944,7 @@ CN = KubeDB Com. Root CA
 <p>To sign certificate, we need another configuration file.</p>
 
 <pre><code class="language-console">$ wget https://raw.githubusercontent.com/kubedb/cli/0.9.0-rc.2/docs/examples/elasticsearch/search-guard/openssl-config/openssl-sign.ini
-</code></pre></li>
-</ol>
+</code></pre>
 
 <pre><code class="language-ini">[ ca ]
 default_ca = CA_default

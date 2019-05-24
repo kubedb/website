@@ -426,41 +426,6 @@
               
             
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
         </div>
         
@@ -503,24 +468,21 @@ $ kubectl get pods --all-namespaces -l app=kubedb
 kubectl get elasticsearch.kubedb.com --all-namespaces -o yaml &gt; elastic.yaml
 kubectl get snapshot.kubedb.com --all-namespaces -o yaml &gt; snapshot.yaml
 kubectl get dormant-database.kubedb.com --all-namespaces -o yaml &gt; data.yaml
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>To delete existing KubeDB objects from all namespaces, run the following command in each namespace one by one.
-```</li>
-</ol></li>
+<li><p>To delete existing KubeDB objects from all namespaces, run the following command in each namespace one by one.</p>
+
+<pre><code>kubectl delete postgres.kubedb.com --all --cascade=false
+kubectl delete elasticsearch.kubedb.com --all --cascade=false
+kubectl delete snapshot.kubedb.com --all --cascade=false
+kubectl delete dormant-database.kubedb.com --all --cascade=false
+</code></pre></li>
+
+<li><p>Delete the old CRD-registration.</p>
+
+<pre><code class="language-console">kubectl delete crd -l app=kubedb
+</code></pre></li>
 </ol>
-
-<p>kubectl delete postgres.kubedb.com &ndash;all &ndash;cascade=false
-kubectl delete elasticsearch.kubedb.com &ndash;all &ndash;cascade=false
-kubectl delete snapshot.kubedb.com &ndash;all &ndash;cascade=false
-kubectl delete dormant-database.kubedb.com &ndash;all &ndash;cascade=false</p>
-
-<pre><code>
-5. Delete the old CRD-registration.
-```console
-kubectl delete crd -l app=kubedb
-</code></pre>
 
         </div>
       </div>

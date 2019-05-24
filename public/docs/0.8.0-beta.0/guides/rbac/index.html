@@ -607,41 +607,6 @@
               
             
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
         </div>
         
@@ -666,14 +631,12 @@
 <li><p>If you are currently running a Minukube cluster without RBAC, delete the cluster. This will delete any objects running in the cluster.</p>
 
 <pre><code class="language-console">$ minikube delete
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>Now, create a RBAC cluster with RBAC enabled.
-<code>console
-$ minikube start --extra-config=apiserver.Authorization.Mode=RBAC
-</code></li>
-</ol></li>
+<li><p>Now, create a RBAC cluster with RBAC enabled.</p>
+
+<pre><code class="language-console">$ minikube start --extra-config=apiserver.Authorization.Mode=RBAC
+</code></pre></li>
 
 <li><p>Once the cluster is up and running, you need to set ServiceAccount for the <code>kube-dns</code> addon to successfully run it.
 ```console</p>
