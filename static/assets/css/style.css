@@ -124,6 +124,8 @@ h6 {
   color: #fff;
   transition: 0.3s;
   -webkit-transition: 0.3s;
+  font-family: roboto;
+  font-size: 16px;
 }
 
 .kd-button:hover {
@@ -1894,3 +1896,83 @@ a.nav-link.active:after {
   margin-top: 0;
 }
 /* tabs style end */
+
+/* whitepapper style start */
+.download-question h4 {
+  font-size: 18px;
+  color: #242A31;
+  font-weight: 700;
+}
+
+.download-question p {
+  color: #32325D;
+  font-size: 16px;
+  font-family: roboto;
+}
+
+.download-question p strong {
+  color: #32325D;
+  font-weight: 500;
+  font-family: roboto;
+  margin: 10px 0;
+  display: block;
+}
+
+.download-question a {
+  font-family: roboto;
+  font-size: 16px;
+}
+.form-area h4 {
+  font-size: 18px;
+  color: #242A31;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.single-input-field label {
+  display: block;
+  color: #32325D;
+  font-family: roboto;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.single-input-field input {
+  padding: 12px 15px;
+  border: 1px solid #C4CBD3;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: roboto;
+  color: #242A31;
+  width: 100%;
+}
+
+.single-input-field input::placeholder {
+  color: #E2E2E2;
+}
+.single-input-field .select, select {
+  width: 100%;
+  height: 48px !important;
+}
+
+
+
+.single-input-field .select select:not([multiple]) {
+  padding-left: 15px;
+  color: #E2E2E2;
+}
+.download-button .icon {
+  padding-right: 25px;
+}
+/* whitepapper style end */
+
+/* Hard css */
+.mb-30 {
+  margin-bottom: 30px;
+}
+.mt-15{
+  margin-top: 15px;
+}
+.mt-30{
+  margin-top: 30px;
+}
