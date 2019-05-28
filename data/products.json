@@ -18,7 +18,7 @@
           { "branch": "0.7.1", "hostDocs": false },
           { "branch": "0.6.0", "hostDocs": false, "v-dropdown": true }
       ],
-      "latestVersion": "0.11.0",
+      "latestVersion": "0.12.0",
       "githubUrl": "https://github.com/kubedb/docs"
     }
   }
