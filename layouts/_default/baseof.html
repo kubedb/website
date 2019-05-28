@@ -32,13 +32,14 @@
     <!-- header area start -->
     {{ block "header" . }}
     <header>
+      {{ block "header-top" . }}
       <!-- header top start -->
       <div class="header-top">
         <div class="container section">
           <nav class="navbar">
             <div class="navbar-brand">
               <a class="navbar-item" href="#">
-                <img src="./../assets/images/logo-color-appscode.png" alt="" />
+                <img src="/assets/images/logo-color-appscode.png" alt="" />
               </a>
 
               <a
@@ -77,7 +78,7 @@
                                 <div class="menu-header">
                                   <div class="menu-logo">
                                     <img
-                                      src="/src/assets/images/product-logo/appscode.png"
+                                      src="/assets/images/product-logo/appscode.png"
                                       alt=""
                                     />
                                   </div>
@@ -95,7 +96,7 @@
                                 <div class="menu-header">
                                   <div class="menu-logo">
                                     <img
-                                      src="/src/assets/images/product-logo/kubedb.png"
+                                      src="/assets/images/product-logo/kubedb.png"
                                       alt=""
                                     />
                                   </div>
@@ -113,7 +114,7 @@
                                 <div class="menu-header">
                                   <div class="menu-logo">
                                     <img
-                                      src="/src/assets/images/product-logo/appscode.png"
+                                      src="/assets/images/product-logo/appscode.png"
                                       alt=""
                                     />
                                   </div>
@@ -134,7 +135,7 @@
                                 <div class="menu-header">
                                   <div class="menu-logo">
                                     <img
-                                      src="/src/assets/images/product-logo/appscode.png"
+                                      src="/assets/images/product-logo/appscode.png"
                                       alt=""
                                     />
                                   </div>
@@ -157,7 +158,7 @@
                                 <div class="menu-header">
                                   <div class="menu-logo">
                                     <img
-                                      src="/src/assets/images/product-logo/appscode.png"
+                                      src="/assets/images/product-logo/appscode.png"
                                       alt=""
                                     />
                                   </div>
@@ -175,7 +176,7 @@
                                 <div class="menu-header">
                                   <div class="menu-logo">
                                     <img
-                                      src="/src/assets/images/product-logo/appscode.png"
+                                      src="/assets/images/product-logo/appscode.png"
                                       alt=""
                                     />
                                   </div>
@@ -193,7 +194,7 @@
                                 <div class="menu-header">
                                   <div class="menu-logo">
                                     <img
-                                      src="/src/assets/images/product-logo/kubedb.png"
+                                      src="/assets/images/product-logo/kubedb.png"
                                       alt=""
                                     />
                                   </div>
@@ -214,7 +215,7 @@
                                 <div class="menu-header">
                                   <div class="menu-logo">
                                     <img
-                                      src="/src/assets/images/product-logo/appscode.png"
+                                      src="/assets/images/product-logo/appscode.png"
                                       alt=""
                                     />
                                   </div>
@@ -263,7 +264,7 @@
                             <div class="menu-header">
                               <div class="menu-logo">
                                 <img
-                                  src="/src/assets/images/product-logo/appscode.png"
+                                  src="/assets/images/product-logo/appscode.png"
                                   alt=""
                                 />
                               </div>
@@ -281,7 +282,7 @@
                             <div class="menu-header">
                               <div class="menu-logo">
                                 <img
-                                  src="/src/assets/images/product-logo/appscode.png"
+                                  src="/assets/images/product-logo/appscode.png"
                                   alt=""
                                 />
                               </div>
@@ -336,14 +337,14 @@
                     <a class="button is-small for-support">
                       <span
                         ><img
-                          src="./../assets/images/icon/chat.png"
+                          src="/assets/images/icon/chat.png"
                           alt=""/></span
                       >Forum
                     </a>
                     <a class="button is-small for-chat">
                       <span
                         ><img
-                          src="./../assets/images/icon/slack.png"
+                          src="/assets/images/icon/slack.png"
                           alt=""/></span
                       >Chat
                     </a>
@@ -355,14 +356,19 @@
         </div>
       </div>
       <!-- header top end -->
+      {{ end }}
 
+      {{ block "header-bottom" . }}
       <!-- header bottom area start -->
-      <div class="header-bottom-area header-area" id="header">
+      <div
+        class="header-bottom-area header-area kubedb-primary-bg customize-kubedb"
+        id="header"
+      >
         <div class="container section">
           <nav class="navbar">
             <div class="navbar-brand">
               <a class="navbar-item" href="index.html">
-                <img src="/assets/images/logo-color-kube.png" alt="" />
+                <img src="/assets/images/kubedb-white.png" alt="" />
               </a>
 
               <a
@@ -385,9 +391,9 @@
                   {{ $latestVersion:= (index $.Site.Data.products.products.docs "latestVersion") }}
                   {{ range .Site.Menus.main }}
                     {{ if .HasChildren }}
-                      <div class="navbar-item has-dropdown is-hoverable">
+                      <div class="navbar-item has-dropdown ac-is-hoverable">
                         <a class="navbar-link">{{ .Name }}</a>
-                        <div class="navbar-dropdown">
+                        <div class="ac-dropdown">
                           {{ range .Children }}
                             {{ if eq .Parent "database" }}
                               <a class="navbar-item" href="/docs/{{ $latestVersion }}/guides/{{ .Identifier }}/">{{ .Name }}</a>
@@ -425,6 +431,11 @@
         </div>
       </div>
       <!-- header bottom area end -->
+      {{ end }}
+
+      {{ block "documentation-menu" . }}
+      {{ end }}
+
     </header>
     {{ end }}
     <!-- header area end -->
