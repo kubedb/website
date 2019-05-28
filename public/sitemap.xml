@@ -99,6 +99,54 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/cli/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/cli/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/cli/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/cli/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/cli/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/cli/cli/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.0/guides/cli/</loc>
   </url>
   
@@ -407,6 +455,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.0/concepts/</loc>
   </url>
   
@@ -444,6 +496,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/concepts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/</loc>
   </url>
   
   <url>
@@ -487,6 +543,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/snapshot/continuous_archiving/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/postgres/snapshot/continuous_archiving/</loc>
   </url>
   
@@ -519,7 +579,23 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/snapshot/archiving_to_azure/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/snapshot/archiving_to_gcs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/snapshot/archiving_to_gcs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/snapshot/archiving_to_local/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/snapshot/archiving_to_minio/</loc>
   </url>
   
   <url>
@@ -527,7 +603,15 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/snapshot/archiving_to_s3/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/snapshot/archiving_to_swift/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/snapshot/archiving_to_swift/</loc>
   </url>
   
   <url>
@@ -536,6 +620,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/welcome/contributing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/welcome/contributing/</loc>
   </url>
   
   <url>
@@ -579,11 +667,19 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/database-monitoring/overview/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/concepts/database-monitoring/</loc>
   </url>
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/concepts/database-monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/database-monitoring/</loc>
   </url>
   
   <url>
@@ -600,6 +696,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/setup/developer-guide/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/setup/developer-guide/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/setup/developer-guide/overview/</loc>
   </url>
   
   <url>
@@ -675,6 +779,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/search-guard/disable-searchguard/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/elasticsearch/search-guard/disable-searchguard/</loc>
   </url>
   
@@ -717,6 +825,18 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/databases/elasticsearch/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/</loc>
   </url>
   
   <url>
@@ -824,6 +944,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/clustering/topology/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/elasticsearch/clustering/topology/</loc>
   </url>
   
@@ -857,6 +981,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/clustering/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/clustering/</loc>
   </url>
   
   <url>
@@ -896,6 +1024,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/initialization/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/elasticsearch/initialization/</loc>
   </url>
   
@@ -929,6 +1061,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/monitoring/</loc>
   </url>
   
   <url>
@@ -973,6 +1109,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/quickstart/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/quickstart/quickstart/</loc>
   </url>
   
   <url>
@@ -1040,6 +1184,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/snapshot/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/elasticsearch/snapshot/</loc>
   </url>
   
@@ -1073,6 +1221,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/concepts/catalog/elasticsearch/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/catalog/elasticsearch/</loc>
   </url>
   
   <url>
@@ -1113,6 +1265,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/</loc>
   </url>
   
   <url>
@@ -1180,6 +1340,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/initialization/snapshot_source/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/elasticsearch/initialization/snapshot_source/</loc>
   </url>
   
@@ -1213,6 +1377,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mongodb/initialization/using-snapshot/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/initialization/using-snapshot/</loc>
   </url>
   
   <url>
@@ -1252,6 +1420,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/initialization/using-script/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/mongodb/initialization/using-script/</loc>
   </url>
   
@@ -1285,6 +1457,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mysql/initialization/using-snapshot/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/initialization/using-snapshot/</loc>
   </url>
   
   <url>
@@ -1324,6 +1500,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/initialization/using-script/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/mysql/initialization/using-script/</loc>
   </url>
   
@@ -1356,7 +1536,19 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/initialization/replay_from_azure/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/initialization/replay_from_gcs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/initialization/replay_from_gcs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/initialization/replay_from_minio/</loc>
   </url>
   
   <url>
@@ -1364,7 +1556,15 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/initialization/replay_from_s3/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/initialization/replay_from_swift/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/initialization/replay_from_swift/</loc>
   </url>
   
   <url>
@@ -1373,6 +1573,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/initialization/wal_source/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/initialization/wal_source/</loc>
   </url>
   
   <url>
@@ -1404,11 +1608,19 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/initialization/replay_from_local/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/guides/postgres/initialization/script_source/</loc>
   </url>
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/initialization/script_source/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/initialization/script_source/</loc>
   </url>
   
   <url>
@@ -1448,6 +1660,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/initialization/snapshot_source/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/postgres/initialization/snapshot_source/</loc>
   </url>
   
@@ -1481,6 +1697,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/setup/install/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/setup/install/</loc>
   </url>
   
   <url>
@@ -1524,6 +1744,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/snapshot/instant_backup/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/elasticsearch/snapshot/instant_backup/</loc>
   </url>
   
@@ -1557,6 +1781,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mongodb/snapshot/backup-and-restore/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/snapshot/backup-and-restore/</loc>
   </url>
   
   <url>
@@ -1596,6 +1824,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/snapshot/backup-and-restore/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/mysql/snapshot/backup-and-restore/</loc>
   </url>
   
@@ -1632,6 +1864,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/snapshot/instant_backup/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/postgres/snapshot/instant_backup/</loc>
   </url>
   
@@ -1665,6 +1901,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/</loc>
   </url>
   
   <url>
@@ -1708,6 +1948,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/catalog/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/concepts/catalog/</loc>
   </url>
   
@@ -1729,6 +1973,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/what-is-kubedb/overview/</loc>
   </url>
   
   <url>
@@ -1772,6 +2020,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/setup/uninstall/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.0/setup/uninstall/</loc>
   </url>
   
@@ -1809,6 +2061,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/reference/kubedb/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/reference/kubedb/</loc>
   </url>
   
   <url>
@@ -1852,6 +2108,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/reference/kubedb_api-resources/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/reference/kubedb_api-resources/</loc>
   </url>
   
@@ -1889,6 +2149,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/reference/kubedb_create/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/reference/kubedb_create/</loc>
   </url>
   
   <url>
@@ -1932,6 +2196,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/reference/kubedb_delete/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.0/reference/kubedb_delete/</loc>
   </url>
   
@@ -1969,6 +2237,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/reference/kubedb_describe/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/reference/kubedb_describe/</loc>
   </url>
   
   <url>
@@ -2012,6 +2284,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/reference/kubedb_edit/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.0/reference/kubedb_edit/</loc>
   </url>
   
@@ -2049,6 +2325,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/reference/kubedb_get/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/reference/kubedb_get/</loc>
   </url>
   
   <url>
@@ -2112,6 +2392,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/reference/kubedb_version/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.0/reference/kubedb_version/</loc>
   </url>
   
@@ -2165,6 +2449,18 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/memcached/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/databases/memcached/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/</loc>
   </url>
   
   <url>
@@ -2280,6 +2576,14 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/quickstart/quickstart/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/memcached/quickstart/</loc>
   </url>
   
@@ -2344,6 +2648,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/catalog/memcached/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/concepts/catalog/memcached/</loc>
   </url>
   
@@ -2381,6 +2689,18 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mongodb/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/databases/mongodb/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/</loc>
   </url>
   
   <url>
@@ -2488,6 +2808,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/clustering/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/mongodb/clustering/</loc>
   </url>
   
@@ -2509,6 +2833,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mongodb/initialization/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/initialization/</loc>
   </url>
   
   <url>
@@ -2553,6 +2881,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mongodb/quickstart/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/quickstart/quickstart/</loc>
   </url>
   
   <url>
@@ -2620,6 +2956,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/clustering/replication_concept/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/mongodb/clustering/replication_concept/</loc>
   </url>
   
@@ -2644,6 +2984,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/clustering/replicaset/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/mongodb/clustering/replicaset/</loc>
   </url>
   
@@ -2660,11 +3004,23 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/clustering/sharding_concept/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/clustering/sharding/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/guides/mongodb/snapshot/</loc>
   </url>
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mongodb/snapshot/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/snapshot/</loc>
   </url>
   
   <url>
@@ -2704,6 +3060,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/catalog/mongodb/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/concepts/catalog/mongodb/</loc>
   </url>
   
@@ -2725,6 +3085,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/monitoring/using-builtin-prometheus/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/monitoring/using-builtin-prometheus/</loc>
   </url>
   
   <url>
@@ -2764,6 +3128,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/monitoring/using-builtin-prometheus/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/memcached/monitoring/using-builtin-prometheus/</loc>
   </url>
   
@@ -2797,6 +3165,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/memcached/monitoring/using-coreos-prometheus-operator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/monitoring/using-coreos-prometheus-operator/</loc>
   </url>
   
   <url>
@@ -2836,6 +3208,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/monitoring/using-builtin-prometheus/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/mongodb/monitoring/using-builtin-prometheus/</loc>
   </url>
   
@@ -2869,6 +3245,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mongodb/monitoring/using-coreos-prometheus-operator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/monitoring/using-coreos-prometheus-operator/</loc>
   </url>
   
   <url>
@@ -2908,6 +3288,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/monitoring/using-builtin-prometheus/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/mysql/monitoring/using-builtin-prometheus/</loc>
   </url>
   
@@ -2941,6 +3325,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mysql/monitoring/using-coreos-prometheus-operator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/monitoring/using-coreos-prometheus-operator/</loc>
   </url>
   
   <url>
@@ -2980,6 +3368,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/monitoring/using-builtin-prometheus/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/postgres/monitoring/using-builtin-prometheus/</loc>
   </url>
   
@@ -3013,6 +3405,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/monitoring/using-coreos-prometheus-operator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/monitoring/using-coreos-prometheus-operator/</loc>
   </url>
   
   <url>
@@ -3060,6 +3456,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/monitoring/using-coreos-prometheus-operator/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/elasticsearch/monitoring/using-coreos-prometheus-operator/</loc>
   </url>
   
@@ -3096,11 +3496,19 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/setup/monitoring/overview/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/setup/monitoring/coreos/</loc>
   </url>
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/setup/monitoring/coreos/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/setup/monitoring/coreos/</loc>
   </url>
   
   <url>
@@ -3112,6 +3520,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/setup/monitoring/builtin/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/setup/monitoring/</loc>
   </url>
   
@@ -3120,11 +3532,19 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/setup/monitoring/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/guides/memcached/monitoring/</loc>
   </url>
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/memcached/monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/monitoring/</loc>
   </url>
   
   <url>
@@ -3164,6 +3584,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/monitoring/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/mongodb/monitoring/</loc>
   </url>
   
@@ -3197,6 +3621,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mysql/monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/monitoring/</loc>
   </url>
   
   <url>
@@ -3236,6 +3664,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/monitoring/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/postgres/monitoring/</loc>
   </url>
   
@@ -3269,6 +3701,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/redis/monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/monitoring/</loc>
   </url>
   
   <url>
@@ -3308,6 +3744,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/monitoring/using-builtin-prometheus/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/redis/monitoring/using-builtin-prometheus/</loc>
   </url>
   
@@ -3341,6 +3781,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/redis/monitoring/using-coreos-prometheus-operator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/monitoring/using-coreos-prometheus-operator/</loc>
   </url>
   
   <url>
@@ -3393,6 +3837,18 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mysql/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/databases/mysql/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/</loc>
   </url>
   
   <url>
@@ -3492,11 +3948,27 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/clustering/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/clustering/group_replication_single_primary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/clustering/overview/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/guides/mysql/initialization/</loc>
   </url>
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mysql/initialization/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/initialization/</loc>
   </url>
   
   <url>
@@ -3541,6 +4013,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mysql/quickstart/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/quickstart/quickstart/</loc>
   </url>
   
   <url>
@@ -3608,6 +4088,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/snapshot/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/mysql/snapshot/</loc>
   </url>
   
@@ -3644,6 +4128,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/catalog/mysql/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/concepts/catalog/mysql/</loc>
   </url>
   
@@ -3668,11 +4156,19 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/initialization/point-in-time-recovery/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/guides/postgres/</loc>
   </url>
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/</loc>
   </url>
   
   <url>
@@ -3712,6 +4208,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/clustering/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/postgres/clustering/</loc>
   </url>
   
@@ -3748,6 +4248,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/custom-versions/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/postgres/custom-versions/</loc>
   </url>
   
@@ -3769,6 +4273,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/initialization/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/initialization/</loc>
   </url>
   
   <url>
@@ -3813,6 +4321,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/quickstart/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/quickstart/quickstart/</loc>
   </url>
   
   <url>
@@ -3880,6 +4396,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/snapshot/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/postgres/snapshot/</loc>
   </url>
   
@@ -3921,6 +4441,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/</loc>
   </url>
   
   <url>
@@ -4000,6 +4528,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/catalog/postgres/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/concepts/catalog/postgres/</loc>
   </url>
   
@@ -4024,6 +4556,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/welcome/status/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.1/welcome/status/</loc>
   </url>
   
@@ -4045,6 +4581,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/quickstart/rbac/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/quickstart/rbac/</loc>
   </url>
   
   <url>
@@ -4097,6 +4637,18 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/redis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/databases/redis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/</loc>
   </url>
   
   <url>
@@ -4204,6 +4756,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/clustering/redis-cluster/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/guides/redis/clustering/overview/</loc>
   </url>
   
@@ -4212,11 +4768,19 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/clustering/overview/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/guides/redis/clustering/</loc>
   </url>
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/redis/clustering/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/clustering/</loc>
   </url>
   
   <url>
@@ -4233,6 +4797,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/redis/quickstart/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/quickstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/quickstart/quickstart/</loc>
   </url>
   
   <url>
@@ -4300,6 +4872,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/catalog/redis/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/concepts/catalog/redis/</loc>
   </url>
   
@@ -4321,6 +4897,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/reference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/reference/</loc>
   </url>
   
   <url>
@@ -4361,6 +4941,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/setup/developer-guide/release/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/setup/developer-guide/release/</loc>
   </url>
   
   <url>
@@ -4424,6 +5008,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/private-registry/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/elasticsearch/private-registry/</loc>
   </url>
   
@@ -4457,6 +5045,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/private-registry/using-private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/private-registry/using-private-registry/</loc>
   </url>
   
   <url>
@@ -4501,6 +5093,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/custom-config/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/custom-config/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/custom-config/overview/</loc>
   </url>
   
   <url>
@@ -4549,6 +5149,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/memcached/private-registry/using-private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/private-registry/using-private-registry/</loc>
   </url>
   
   <url>
@@ -4624,6 +5232,14 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/custom-config/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/memcached/custom-config/using-custom-config/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/memcached/custom-config/</loc>
   </url>
   
@@ -4669,6 +5285,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mongodb/private-registry/using-private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/private-registry/using-private-registry/</loc>
   </url>
   
   <url>
@@ -4744,6 +5368,14 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/configuration/using-crd-configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/configuration/using-custom-config/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/mongodb/configuration/using-crd-configuration/</loc>
   </url>
   
@@ -4789,6 +5421,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mysql/private-registry/using-private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/private-registry/using-private-registry/</loc>
   </url>
   
   <url>
@@ -4872,6 +5512,18 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/configuration/using-crd-configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/configuration/using-custom-config/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/mysql/configuration/</loc>
   </url>
   
@@ -4933,6 +5585,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/private-registry/using-private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/private-registry/using-private-registry/</loc>
   </url>
   
   <url>
@@ -5008,6 +5668,14 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/custom-config/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/custom-config/using-custom-config/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/postgres/custom-config/</loc>
   </url>
   
@@ -5053,6 +5721,14 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/redis/private-registry/using-private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/private-registry/using-private-registry/</loc>
   </url>
   
   <url>
@@ -5128,6 +5804,14 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/custom-config/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/redis/custom-config/using-custom-config/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/redis/custom-config/</loc>
   </url>
   
@@ -5168,6 +5852,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/search-guard/use-tls/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/elasticsearch/search-guard/use-tls/</loc>
   </url>
   
@@ -5189,6 +5877,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mongodb/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/configuration/</loc>
   </url>
   
   <url>
@@ -5218,6 +5910,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/snapshot/scheduled_backup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/snapshot/scheduled_backup/</loc>
   </url>
   
   <url>
@@ -5257,6 +5953,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mongodb/snapshot/scheduled-backup/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/mongodb/snapshot/scheduled-backup/</loc>
   </url>
   
@@ -5290,6 +5990,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/mysql/snapshot/scheduled-backup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/snapshot/scheduled-backup/</loc>
   </url>
   
   <url>
@@ -5329,6 +6033,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/snapshot/scheduled_backup/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/postgres/snapshot/scheduled_backup/</loc>
   </url>
   
@@ -5362,6 +6070,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/search-guard/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/search-guard/overview/</loc>
   </url>
   
   <url>
@@ -5401,6 +6113,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/search-guard/issue-certificate/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/guides/elasticsearch/search-guard/certificate/</loc>
   </url>
   
@@ -5434,6 +6150,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/search-guard/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/search-guard/configuration/</loc>
   </url>
   
   <url>
@@ -5485,6 +6205,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/custom-versions/setup/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/postgres/custom-versions/setup/</loc>
   </url>
   
@@ -5506,6 +6230,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/clustering/ha_cluster/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/clustering/ha_cluster/</loc>
   </url>
   
   <url>
@@ -5542,6 +6270,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/setup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/setup/</loc>
   </url>
   
   <url>
@@ -5582,6 +6314,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/concepts/snapshot/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/snapshot/</loc>
   </url>
   
   <url>
@@ -5629,6 +6365,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/welcome/support/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.0/welcome/support/</loc>
   </url>
   
@@ -5669,6 +6409,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/databases/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.0/concepts/databases/</loc>
   </url>
   
@@ -5706,6 +6450,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/setup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/setup/</loc>
   </url>
   
   <url>
@@ -5757,11 +6505,27 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/upgrading/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/mysql/upgrading/manual/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/upgrading/manual/</loc>
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/upgrading/manual/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/upgrading/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/upgrading/</loc>
   </url>
   
   <url>
@@ -5770,6 +6534,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/kibana/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/kibana/</loc>
   </url>
   
   <url>
@@ -5797,6 +6565,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/x-pack/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/elasticsearch/x-pack/</loc>
   </url>
   
@@ -5818,6 +6590,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/custom-config/with-topology/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/custom-config/with-topology/</loc>
   </url>
   
   <url>
@@ -5845,6 +6621,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/custom-config/without-topology/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/elasticsearch/custom-config/without-topology/</loc>
   </url>
   
@@ -5869,6 +6649,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/kibana/connect-kibana/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/guides/elasticsearch/kibana/connect-kibana/</loc>
   </url>
   
@@ -5890,6 +6674,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/postgres/clustering/streaming_replication/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/postgres/clustering/streaming_replication/</loc>
   </url>
   
   <url>
@@ -5926,6 +6714,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/search-guard/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/search-guard/</loc>
   </url>
   
   <url>
@@ -5981,6 +6773,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/welcome/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.0/welcome/</loc>
   </url>
   
@@ -6002,6 +6798,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/concepts/what-is-kubedb/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/concepts/what-is-kubedb/</loc>
   </url>
   
   <url>
@@ -6042,6 +6842,10 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.11.0/guides/elasticsearch/x-pack/x-pack-monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.12.0/guides/elasticsearch/x-pack/x-pack-monitoring/</loc>
   </url>
   
   <url>
