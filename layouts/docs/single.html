@@ -223,6 +223,14 @@
       </div>
     </div>
   </div>
+  <script>
+    // kd version dropdown js
+    var kdDropdown = document.querySelector(".dropdown");
+    var kdDropdownBtn = document.querySelector(".dropdown-trigger");
+      kdDropdownBtn.addEventListener("click", function(){
+        kdDropdown.classList.toggle("is-active");
+      })
+  </script>
 </div>
 <!-- documentation area end -->
 {{ end }}
