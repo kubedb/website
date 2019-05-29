@@ -804,6 +804,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/whitepaper/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/docs/0.10.0/concepts/databases/elasticsearch/</loc>
   </url>
   
@@ -5902,6 +5906,10 @@
   <url>
     <loc>https://kubedb-v2-hugo.firebaseapp.com/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.firebaseapp.com/schedule-demo/</loc>
   </url>
   
   <url>
