@@ -40,12 +40,7 @@ function fixNav() {
 
 window.addEventListener('scroll', fixNav);
 
-// kd version dropdown js
-var kdDropdown = document.querySelector(".dropdown");
-var kdDropdownBtn = document.querySelector(".dropdown-trigger");
-kdDropdownBtn.addEventListener("click", function(){
-  kdDropdown.classList.toggle("is-active");
-});
+
 
 
 //bulma carousel
