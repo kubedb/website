@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reference on Run production-grade databases easily on Kubernetes</title>
-    <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/</link>
+    <link>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/</link>
     <description>Recent content in Reference on Run production-grade databases easily on Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kubedb</title>
-      <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb/</link>
+      <link>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb/</guid>
+      <guid>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb/</guid>
       <description>kubedb Command line interface for KubeDB
 Synopsis KubeDB by AppsCode - Kubernetes ready production-grade Databases
 Find more information at https://github.com/kubedb/cli.
@@ -24,10 +24,10 @@ kubedb [flags]  Options  --analytics Send analytical events to Google Analytics 
     
     <item>
       <title>Kubedb Compare</title>
-      <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_compare/</link>
+      <link>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_compare/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_compare/</guid>
+      <guid>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_compare/</guid>
       <description> kubedb compare Compare summary reports
 Synopsis Compare summary reports
 kubedb compare [flags]  Options  -h, --help help for compare --output string Directory used to store summary report --show If true, comparison result will be printed. (default true)  Options inherited from parent commands  --analytics Send analytical events to Google Analytics (default true) --kube-context string name of the kubeconfig context to use  SEE ALSO  kubedb - Command line interface for KubeDB  </description>
@@ -35,10 +35,10 @@ kubedb compare [flags]  Options  -h, --help help for compare --output string Dir
     
     <item>
       <title>Kubedb Create</title>
-      <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_create/</link>
+      <link>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_create/</guid>
+      <guid>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_create/</guid>
       <description>kubedb create Create a resource by filename or stdin
 Synopsis Create a resource by filename or stdin.
 JSON and YAML formats are accepted.
@@ -47,10 +47,10 @@ kubedb create [flags]  Examples  # Create a elasticsearch using the data in elas
     
     <item>
       <title>Kubedb Delete</title>
-      <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_delete/</link>
+      <link>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_delete/</guid>
+      <guid>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_delete/</guid>
       <description>kubedb delete Delete resources by filenames, stdin, resources and names, or by resources and label selector
 Synopsis Delete resources by filenames, stdin, resources and names, or by resources and label selector. JSON and YAML formats are accepted.
 Note that the delete command does NOT do resource version checks
@@ -59,10 +59,10 @@ kubedb delete ([-f FILENAME] | TYPE [(NAME | -l label | --all)]) [flags]  Exampl
     
     <item>
       <title>Kubedb Describe</title>
-      <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_describe/</link>
+      <link>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_describe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_describe/</guid>
+      <guid>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_describe/</guid>
       <description>kubedb describe Show details of a specific resource or group of resources
 Synopsis Show details of a specific resource or group of resources. This command joins many API calls together to form a detailed description of a given resource or group of resources.Valid resource types include:
  all
@@ -78,10 +78,10 @@ Synopsis Show details of a specific resource or group of resources. This command
     
     <item>
       <title>Kubedb Edit</title>
-      <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_edit/</link>
+      <link>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_edit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_edit/</guid>
+      <guid>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_edit/</guid>
       <description>kubedb edit Edit a resource on the server
 Synopsis Edit a resource from the default editor.
 The edit command allows you to directly edit any API resource you can retrieve via the command line tools. It will open the editor defined by your KUBEDB _EDITOR, or EDITOR environment variables, or fall back to &amp;lsquo;nano&amp;rsquo;
@@ -90,10 +90,10 @@ kubedb edit (RESOURCE/NAME) [flags]  Examples  # Edit the elasticsearch named &#
     
     <item>
       <title>Kubedb Get</title>
-      <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_get/</link>
+      <link>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_get/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_get/</guid>
+      <guid>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_get/</guid>
       <description>kubedb get Display one or many resources
 Synopsis Display one or many resources.
 Valid resource types include:
@@ -110,10 +110,10 @@ Valid resource types include:
     
     <item>
       <title>Kubedb Summarize</title>
-      <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_summarize/</link>
+      <link>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_summarize/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_summarize/</guid>
+      <guid>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_summarize/</guid>
       <description> kubedb summarize Export summary report
 Synopsis Export summary report
 kubedb summarize [flags]  Options  -h, --help help for summarize --index string Export summary report for this only. -n, --namespace string Export summary report of the requested object from this namespace. (default &amp;quot;default&amp;quot;) --operator-namespace string Name of namespace where operator is running (default &amp;quot;kube-system&amp;quot;) --output string Directory used to store summary report  Options inherited from parent commands  --analytics Send analytical events to Google Analytics (default true) --kube-context string name of the kubeconfig context to use  SEE ALSO  kubedb - Command line interface for KubeDB  </description>
@@ -121,10 +121,10 @@ kubedb summarize [flags]  Options  -h, --help help for summarize --index string 
     
     <item>
       <title>Kubedb Version</title>
-      <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_version/</link>
+      <link>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_version/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubedb-v2-hugo.firebaseapp.com/docs/0.8.0-beta.2/reference/kubedb_version/</guid>
+      <guid>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/reference/kubedb_version/</guid>
       <description> kubedb version Prints binary version number.
 Synopsis Prints binary version number.
 kubedb version [flags]  Options  -h, --help help for version  Options inherited from parent commands  --analytics Send analytical events to Google Analytics (default true) --kube-context string name of the kubeconfig context to use  SEE ALSO  kubedb - Command line interface for KubeDB  </description>

@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Download Datasheet on Run production-grade databases easily on Kubernetes</title>
-    <link>https://kubedb-v2-hugo.firebaseapp.com/datasheet/</link>
+    <link>https://kubedb-v2-hugo.web.app/datasheet/</link>
     <description>Recent content in Download Datasheet on Run production-grade databases easily on Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://kubedb-v2-hugo.firebaseapp.com/datasheet/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedb-v2-hugo.web.app/datasheet/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

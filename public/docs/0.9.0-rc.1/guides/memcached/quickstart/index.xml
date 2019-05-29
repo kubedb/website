@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Memcached Quickstart on Run production-grade databases easily on Kubernetes</title>
-    <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.1/guides/memcached/quickstart/</link>
+    <link>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/guides/memcached/quickstart/</link>
     <description>Recent content in Memcached Quickstart on Run production-grade databases easily on Kubernetes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.1/guides/memcached/quickstart/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/guides/memcached/quickstart/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Memcached Quickstart</title>
-      <link>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.1/guides/memcached/quickstart/quickstart/</link>
+      <link>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/guides/memcached/quickstart/quickstart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kubedb-v2-hugo.firebaseapp.com/docs/0.9.0-rc.1/guides/memcached/quickstart/quickstart/</guid>
+      <guid>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/guides/memcached/quickstart/quickstart/</guid>
       <description>New to KubeDB? Please start here.
  Memcached QuickStart This tutorial will show you how to use KubeDB to run a Memcached database.
  Note: The yaml files used in this tutorial are stored in docs/examples/memcached folder in GitHub repository kubedb/cli.
