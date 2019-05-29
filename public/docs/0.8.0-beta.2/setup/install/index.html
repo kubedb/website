@@ -1148,6 +1148,14 @@ $ helm install stable/kubedb --name my-release \
       </div>
     </div>
   </div>
+  <script>
+    
+    var kdDropdown = document.querySelector(".dropdown");
+    var kdDropdownBtn = document.querySelector(".dropdown-trigger");
+      kdDropdownBtn.addEventListener("click", function(){
+        kdDropdown.classList.toggle("is-active");
+      })
+  </script>
 </div>
 
 

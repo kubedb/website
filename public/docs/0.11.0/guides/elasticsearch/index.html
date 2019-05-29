@@ -15,13 +15,19 @@
     
     <link rel="stylesheet" href="/assets/css/bulma.min.css" />
     
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
     
     <link rel="stylesheet" href="/assets/css/responsive.css" />
   </head>
 
   <body>
+    
+
+    
+    
     <header>
+      
+      
       <div class="header-top">
         <div class="container section">
           <nav class="navbar">
@@ -1632,6 +1638,14 @@
       </div>
     </div>
   </div>
+  <script>
+    
+    var kdDropdown = document.querySelector(".dropdown");
+    var kdDropdownBtn = document.querySelector(".dropdown-trigger");
+      kdDropdownBtn.addEventListener("click", function(){
+        kdDropdown.classList.toggle("is-active");
+      })
+  </script>
 </div>
 
 
