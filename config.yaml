@@ -4,6 +4,12 @@ languageCode: en-us
 disableKinds:
   - taxonomy
   - taxonomyTerm
+params:
+  domain_appscode: https://appscode-v3-hugo.web.app
+  domain_kubedb: https://kubedb-v2-hugo.firebaseapp.com
+  domain_kubevault: https://kubevault-v1-hugo.firebaseapp.com
+  domain_bytebuilders: https://byte.builders
+  domain_marketplace: https://marketplace.byte.builders
 menu:
   main:
     - name: "Database"
