@@ -117,7 +117,7 @@ h6 {
 .kd-button {
   border: none;
   border-radius: 4px;
-  padding: 12px 50px;
+  padding: 12px 40px;
   display: inline-block;
   font-weight: 500;
   margin: 0;
@@ -175,14 +175,14 @@ h6 {
 	Header area start
 ========================*/
 .header-area {
-  padding: 10px 0;
+  padding: 3px 0;
   position: relative;
 }
 
 .header-top {
   position: relative;
   z-index: 99;
-  padding: 12px 0px;
+  padding: 6px 0px;
 }
 
 .main-menu a {
@@ -190,6 +190,11 @@ h6 {
   font-size: 14px;
   color: #32325d;
   font-weight: 600;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
 }
 
 .main-menu-button a {
@@ -206,10 +211,6 @@ h6 {
 .main-menu-button .button:hover {
   color: #fff;
   background: #affafe;
-}
-
-.main-menu-button span {
-  padding-right: 5px;
 }
 
 .button.for-support {
@@ -319,7 +320,9 @@ a.navbar-item:hover {
   margin-top: -6px;
   border-width: 6px 6px 6px 0;
 }
-
+.customize-kubedb .main-menu a:hover {
+  color: #ddd;
+}
 /* fixd nav */
 
 body.fixed-nav #header {
@@ -329,9 +332,26 @@ body.fixed-nav #header {
   top: 0;
   margin-top: 0;
   z-index: 99;
-  padding: 12px 0;
+  padding: 3px 0;
   width: 100%;
 }
+
+/* github button style start */
+.lg .btn,
+.lg .social-count {
+  height: 16px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 16px;
+  box-shadow: none;
+  border: none;
+  padding: 7px 19px;
+}
+.main-menu-button {
+  min-width: 110px;
+  min-height: 10px;
+}
+/* github button style end */
 
 /* ======================
 	Header area End
@@ -347,7 +367,7 @@ body.fixed-nav #header {
 .hero-content-inner h4 {
   font-size: 14px;
   color: #00a651;
-  letter-spacing: 3px;
+  letter-spacing: 7px;
   font-weight: 700;
   margin-bottom: 22px;
 }
@@ -376,12 +396,15 @@ body.fixed-nav #header {
 }
 
 .hero-area-button {
-  margin-top: 50px;
+  margin-top: 56px;
 }
 
 /* Feature area start */
 .feature-area {
-  background: #fbfdff;
+  background-image: url(../images/bg-image/about.png);
+  background-size: cover;
+  background-position: center;
+  background-color: #FBFCFE;
 }
 
 a.play-icon {
@@ -525,11 +548,8 @@ a.play-icon .fa {
 
 /* testimonial area start */
 .testimonial-area {
-  background: #fbfdff;
-}
-
-.section-title h2 {
-  margin-bottom: 40px;
+  background-image: url(../images/bg-image/testimonia.png);
+  background: #F9FAFB;
 }
 
 .carousel-wrapper {
@@ -586,9 +606,19 @@ a.play-icon .fa {
 .client-information {
   overflow: hidden;
   width: 30%;
-  margin: 0 auto;
+  margin: 30px auto 0;
 }
-
+.slider:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.slider-navigation-next,
+.slider-navigation-previous {
+  background: transparent;
+  box-shadow: none;
+  top: 80%;
+}
 /* slider css */
 .slider {
   overflow: hidden;
@@ -639,7 +669,7 @@ a.play-icon .fa {
 }
 
 .subscription-form input {
-  background: #a9e9e9;
+  background: #e6e6e6;
   border: none;
   box-shadow: none;
   font-size: 16px;
@@ -679,6 +709,7 @@ a.play-icon .fa {
   display: inline-block;
   font-size: 14px;
   font-family: roboto;
+  padding: 5px 0;
 }
 
 .all-contact-info li a span {
@@ -686,13 +717,13 @@ a.play-icon .fa {
 }
 
 .contact-information {
-  margin-top: 20px;
+  margin-top: 28px;
 }
 
 .footer-menu h4 {
   font-size: 18px;
   color: #32325d;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .footer-link li a {
@@ -762,7 +793,7 @@ a.play-icon .fa {
 }
 
 .socail-link-inline li a:hover {
-  background: #87c7c7;
+  background: #4d4dcb;
   color: #fff;
   border: 1px solid transparent;
 }
@@ -830,7 +861,7 @@ a.play-icon .fa {
     Support page CSS 
 ====================================*/
 .pricing-plan-area {
-  background-color: #fbfcfe;
+  background-color: #F9F9F9;
 }
 
 .support-page .hero-content-inner h1 {
@@ -991,7 +1022,7 @@ a.play-icon .fa {
 
 .single-pricing-table.details .pricing-body {
   border-radius: 8px;
-  margin-top: 234px;
+  margin-top: 242px;
   margin-right: 10px;
   padding-bottom: 70px;
 }
@@ -999,7 +1030,7 @@ a.play-icon .fa {
 .single-pricing-table.free,
 .single-pricing-table.gold,
 .single-pricing-table.plutinum {
-  margin-top: 73px;
+  margin-top: 81px;
 }
 
 .single-pricing-table.plutinum {
@@ -1187,18 +1218,20 @@ a.play-icon .fa {
 .documentation-page {
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.12);
 }
-
+.documentation-navbar .main-menu a {
+  padding: 10px 30px;
+}
 .kubedb-documentation-menu {
   background: #dcdcff;
-	height: 100%;
-	box-shadow: 0px 5px 34px rgba(0,0,0,.12);
+  height: 100%;
+  box-shadow: 0px 5px 34px rgba(0, 0, 0, 0.12);
 }
 body.fixed-nav .kubedb-documentation-menu {
   position: fixed;
   width: 100%;
   height: auto;
   z-index: 90;
-  top: 75px;
+  top: 58px;
 }
 
 .documentation-area {
@@ -1260,6 +1293,10 @@ body.fixed-nav .kubedb-documentation-menu {
 
 .single-info {
   margin-bottom: 40px;
+}
+blockquote {
+  border-left: 4px solid #4d4dcb;
+  padding-left: 15px;
 }
 
 .full-info ul li,
@@ -1380,6 +1417,7 @@ ul li b {
 .tbl-of-contents ul a.active {
   position: relative;
   z-index: 1;
+  color: #4d4dcb;
 }
 
 li.nav-item.active a {
@@ -1390,10 +1428,10 @@ li.nav-item.active a {
 .right-sidebar-area {
   position: sticky;
   position: -webkit-sticky;
-  top: 187px;
+  top: 140px;
   max-width: 215px;
   z-index: 9;
-  padding: 0 18px;
+  padding: 0 0 0 20px;
 }
 
 /* Sidebar menu */
@@ -1555,7 +1593,7 @@ button.button.is-fullwidth {
   margin-right: 30px;
   position: sticky;
   position: -webkit-sticky;
-  top: 187px;
+  top: 140px;
 }
 
 .kd-sidebar-menu .item label {
@@ -1602,16 +1640,17 @@ button.button.is-fullwidth {
   background: #fff;
   position: absolute;
   min-width: 730px;
-  top: 100px;
+  top: 40px;
   transform: translateX(-50%);
   left: 50%;
   opacity: 0;
   visibility: hidden;
-  transition: 0.2s ease-in;
-  -webkit-transition: 0.2s ease-in;
-  -moz-transition: 0.2s ease-in;
-  -ms-transition: 0.2s ease-in;
-  -o-transition: 0.2s ease-in;
+  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.1s ease-in-out;
+  -moz-transition: 0.1s ease-in-out;
+  -ms-transition: 0.1s ease-in-out;
+  -o-transition: 0.1s ease-in-out;
+  display: none;
 }
 .ac-dropdown {
   z-index: 99;
@@ -1621,7 +1660,7 @@ button.button.is-fullwidth {
   background: #fff;
   position: absolute;
   min-width: 200px;
-  top: 100px;
+  top: 40px;
   transform: translateX(-50%);
   left: 50%;
   opacity: 0;
@@ -1658,11 +1697,17 @@ button.button.is-fullwidth {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-.ac-is-hoverable:hover .ac-megamenu,
-.ac-is-hoverable:hover .ac-dropdown {
+.ac-is-hoverable:hover > .ac-megamenu,
+.ac-is-hoverable:hover > .ac-dropdown {
   opacity: 1;
   visibility: visible;
-  top: 55px;
+  top: 52px;
+  max-height: none;
+  display: block;
+  overflow: hidden;
+}
+.documentation-menu .ac-is-hoverable:hover .ac-dropdown {
+  top: 41px;
 }
 p.intro {
   font-size: 12px;
@@ -1737,6 +1782,17 @@ p.intro {
   padding: 5px;
   color: #6b6b6b;
   border-radius: 4px;
+  position: relative;
+  z-index: 1;
+}
+.menu-bottom:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: -20px;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
 }
 
 .menu-bottom a {
@@ -1898,20 +1954,23 @@ a.nav-link.active:after {
 /* tabs style end */
 
 /* whitepapper style start */
+.whitepaper-wrapper {
+  padding: 0 100px;
+}
 .download-question h4 {
   font-size: 18px;
-  color: #242A31;
+  color: #242a31;
   font-weight: 700;
 }
 
 .download-question p {
-  color: #32325D;
+  color: #32325d;
   font-size: 16px;
   font-family: roboto;
 }
 
 .download-question p strong {
-  color: #32325D;
+  color: #32325d;
   font-weight: 500;
   font-family: roboto;
   margin: 10px 0;
@@ -1924,14 +1983,14 @@ a.nav-link.active:after {
 }
 .form-area h4 {
   font-size: 18px;
-  color: #242A31;
+  color: #242a31;
   font-weight: 700;
   margin-bottom: 30px;
 }
 
 .single-input-field label {
   display: block;
-  color: #32325D;
+  color: #32325d;
   font-family: roboto;
   font-size: 16px;
   margin-bottom: 5px;
@@ -1939,40 +1998,55 @@ a.nav-link.active:after {
 
 .single-input-field input {
   padding: 12px 15px;
-  border: 1px solid #C4CBD3;
+  border: 1px solid #c4cbd3;
   border-radius: 4px;
   font-size: 16px;
   font-family: roboto;
-  color: #242A31;
+  color: #242a31;
   width: 100%;
 }
 
 .single-input-field input::placeholder {
-  color: #E2E2E2;
+  color: #e2e2e2;
 }
-.single-input-field .select, select {
+.single-input-field .select,
+select {
   width: 100%;
   height: 48px !important;
 }
 
-
-
 .single-input-field .select select:not([multiple]) {
   padding-left: 15px;
-  color: #E2E2E2;
+  color: #e2e2e2;
 }
 .download-button .icon {
   padding-right: 25px;
 }
 /* whitepapper style end */
 
+/* schedule-demo start */
+embed,
+iframe,
+object,
+video {
+  height: 100%;
+  max-width: 100%;
+}
+.schedule-title {
+  margin-top: 65px;
+  color: #242a31;
+  margin-bottom: 30px;
+}
+/* not working custom css in schedule-demo page */
+/* schedule-demo end */
+
 /* Hard css */
 .mb-30 {
   margin-bottom: 30px;
 }
-.mt-15{
+.mt-15 {
   margin-top: 15px;
 }
-.mt-30{
+.mt-30 {
   margin-top: 30px;
 }
