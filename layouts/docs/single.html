@@ -119,7 +119,7 @@
                       {{ if (index $version "hostDocs") }}
                         <a href="/docs/{{ $branch }}/" class="dropdown-item">{{ $branch }}  {{ if eq $branch $latestVersion }} <div class="tag">New</div> {{ end }}</a>
                       {{ else }}
-                        <a href="{{ index $productJson "githubUrl" }}/tree/{{ $branch }}/docs" target="_blank" class="dropdown-item">{{ $branch }}</a>
+                        <a href="https://github.com/{{ index $productJson "docRepo" }}/tree/{{ $branch }}/docs" target="_blank" class="dropdown-item">{{ $branch }}</a>
                       {{ end }}
                     {{ end }}
                   {{ end }}
