@@ -1953,8 +1953,8 @@ a.nav-link.active:after {
 }
 /* tabs style end */
 
-/* whitepapper style start */
-.whitepaper-wrapper {
+/* datasheet style start */
+.datasheet-wrapper {
   padding: 0 100px;
 }
 .download-question h4 {
@@ -2022,7 +2022,7 @@ select {
 .download-button .icon {
   padding-right: 25px;
 }
-/* whitepapper style end */
+/* datasheet style end */
 
 /* schedule-demo start */
 embed,
