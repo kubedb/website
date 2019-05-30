@@ -197,6 +197,9 @@
       </div>
       <div class="column is-7">
         <div class="full-info">
+          <gcse:search></gcse:search>
+        </div>
+        <div class="full-info">
           {{ .Content }}
         </div>
       </div>
@@ -204,12 +207,14 @@
         <div class="right-sidebar-area">
           <!-- search item -->
           <div class="search-area">
-            <form action="#">
+
+
+            <!-- <form action="#">
               <input type="text" placeholder="Search..." />
               <button class="search-button">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
-            </form>
+            </form> -->
           </div>
           <!-- search item end -->
 
@@ -231,6 +236,18 @@
         kdDropdown.classList.toggle("is-active");
       })
   </script>
+
+<script>
+  (function() {
+    var cx = '015199383701854252104:8mvwy0fek2e';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
 </div>
 <!-- documentation area end -->
 {{ end }}
