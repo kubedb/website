@@ -1704,7 +1704,13 @@ button.button.is-fullwidth {
   top: 52px;
   max-height: none;
   display: block;
-  overflow: hidden;
+}
+.ac-dropdown a.navbar-item:last-child:hover {
+  border-radius: 0 0 4px 4px;
+}
+
+.ac-dropdown a.navbar-item:first-child:hover {
+  border-radius: 4px 4px 0 0;
 }
 .documentation-menu .ac-is-hoverable:hover .ac-dropdown {
   top: 41px;
