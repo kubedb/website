@@ -21,7 +21,7 @@ p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
-  color: #6b6b6b;
+  color: #393E46;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -52,6 +52,7 @@ h6 a {
 pre {
   margin-bottom: 15px;
 }
+
 footer li a {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -654,7 +655,7 @@ a.play-icon .fa {
 
 .cta-text p {
   font-size: 26px;
-  color: #32325d;
+  color: #393E46;
   margin-top: 10px;
   margin-bottom: 0;
 }
@@ -705,7 +706,7 @@ a.play-icon .fa {
 }
 
 .all-contact-info li a {
-  color: #959595;
+  color: #4a4a4a;
   display: inline-block;
   font-size: 14px;
   font-family: roboto;
@@ -727,7 +728,7 @@ a.play-icon .fa {
 }
 
 .footer-link li a {
-  color: #6b6b6b;
+  color: #4a4a4a;
   font-size: 14px;
   display: block;
   padding: 8px 0;
@@ -756,12 +757,12 @@ a.play-icon .fa {
 
 .footer-bottom p {
   font-size: 14px;
-  color: #8a8a8a;
+  color: #393E46;
   margin-bottom: 0;
 }
 
 .footer-inline-link a {
-  color: #8a8a8a;
+  color: #4a4a4a;
   font-size: 14px;
   margin-right: 30px;
 }
@@ -1243,7 +1244,7 @@ body.fixed-nav .kubedb-documentation-menu {
 }
 
 .info-title p {
-  color: #74818d;
+  color: #393E46;
   padding: 0 20px;
 }
 
@@ -1301,7 +1302,7 @@ blockquote {
 
 .full-info ul li,
 .full-info ol li {
-  color: #74818d;
+  color: #4a4a4a;
   display: block;
   padding-bottom: 8px;
   line-height: 1.8;
@@ -1343,7 +1344,7 @@ ul li b {
 }
 .full-info p {
   margin-bottom: 15px;
-  color: #74818d;
+  color: #393E46;
 }
 
 /* Right Sidebar For Documentation page */
@@ -1385,10 +1386,10 @@ ul li b {
 }
 
 .tbl-of-contents ul li a {
-  color: #b1bbc5;
+  color: #777;;
   font-size: 14px;
   font-family: roboto;
-  font-weight: 500;
+  font-weight: 400;
   display: block;
   padding-left: 20px;
   padding-bottom: 10px;
@@ -1465,6 +1466,7 @@ li.nav-item.active a {
 .kd-version .dropdown,
 .kd-version .dropdown-menu {
   width: 100%;
+  padding-top: 0;
 }
 .dropdown.is-active .dropdown-trigger button {
   background: #f5f7f9;
@@ -1503,7 +1505,20 @@ button.button.is-fullwidth {
   background: #4d4dcb;
   color: #fff;
 }
-
+.kd-version a.dropdown-item:first-child:hover {
+  border-radius: 4px 4px 0 0;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
+}
+.kd-version a.dropdown-item:last-child:hover {
+  border-radius: 0 0 4px 4px;
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  -ms-border-radius: 0 0 4px 4px;
+  -o-border-radius: 0 0 4px 4px;
+}
 .kd-version a.dropdown-item .tag {
   float: right;
   overflow: hidden;
@@ -1512,7 +1527,15 @@ button.button.is-fullwidth {
 .kd-version {
   margin-bottom: 50px;
 }
-
+.dropdown-trigger .button {
+  background: transparent;
+}
+.dropdown.is-active .button .icon:last-child:not(:first-child) {
+  transform: rotate(180deg);
+}
+.kd-version .dropdown {
+  border-bottom: 1px solid #E6E7E7;
+}
 /* version section style end */
 
 .item ul,
@@ -1525,7 +1548,7 @@ button.button.is-fullwidth {
   font-weight: 600;
   color: #333;
   padding: 10px 17px;
-  display: inline-block;
+  display: block;
 }
 .item ul li.is-active a {
   color: #4d4dcb;
@@ -1540,17 +1563,14 @@ button.button.is-fullwidth {
 .item input:checked ~ .item > label span {
   transform: rotate(90deg);
   margin-top: 0;
-  margin-right: 10px;
+  transform-origin: 0;
 }
 
 .item label span {
   position: absolute;
-  right: 35px;
+  right: 15px;
   transition: 0.3s;
-  height: 100%;
-  margin-top: 5px;
-  transform: translateY(50%);
-  margin-top: -10px;
+  top: 9px;
 }
 .item ul li a {
   display: block;
@@ -1567,7 +1587,7 @@ button.button.is-fullwidth {
 .kd-sidebar-menu li a {
   font-size: 14px;
   font-weight: 500;
-  color: #6b6b6b;
+  color: #4a4a4a;
   display: block;
   cursor: pointer;
   user-select: none;
@@ -1587,18 +1607,36 @@ button.button.is-fullwidth {
 .item input:checked ~ label,
 .item input:checked ~ .item > label {
   border: 1px solid #e2e2e2;
+  background: #fff;
 }
 
 .kd-left-sidebar {
   margin-right: 30px;
   position: sticky;
   position: -webkit-sticky;
-  top: 140px;
+  top: 130px;
+  padding-bottom: 100%;
+}
+.kd-left-sidebar:before {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: -35px;
+  width: 230%;
+  height:100%;
+  background: #F5F7F9;
+  z-index: -1;
 }
 
 .kd-sidebar-menu .item label {
-  border-radius: 3px;
   border: 1px solid transparent;
+  position: relative;
+  z-index: 1;
+  border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  -ms-border-radius: 3px 0 0 3px;
+  -o-border-radius: 3px 0 0 3px;
 }
 /* dropdown mega menu start */
 .menu-header {
@@ -1621,7 +1659,7 @@ button.button.is-fullwidth {
 
 .menu-body p {
   font-size: 12px;
-  color: #707070;
+  color: #393E46;
 }
 
 .single-product-item {
@@ -1970,7 +2008,7 @@ a.nav-link.active:after {
 }
 
 .download-question p {
-  color: #32325d;
+  color: #393E46;
   font-size: 16px;
   font-family: roboto;
 }
