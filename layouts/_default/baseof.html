@@ -728,29 +728,71 @@
                 </div>
                 <!-- logo end -->
 
-                <!-- subscription form start -->
-                <div class="subscription-form">
-                  <form action="#">
-                    <label for="email">Subscribe Our Newsletter</label>
-                    <div class="field has-addons">
-                      <div class="control">
-                        <input
-                          class="input"
-                          name="email"
-                          id="email"
-                          type="email"
-                          placeholder="info@gmail.com"
-                        />
-                      </div>
-                      <div class="control">
-                        <a class="button kd-primary">
-                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-                        </a>
+                <!-- single modal start -->
+                <div class="modal-div">
+                  <!-- subscription button start -->
+                  <div class="subscription-form modal-button">
+                    <a class="button kd-primary">
+                      Subscribe Our Newsletter
+                      <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                   <!-- subscription button end -->
+
+                  <!-- modal start -->
+                  <div class="modal">
+                      <div class="modal-background"></div>
+                      <div class="modal-card">
+                        <header class="modal-card-head">
+                          <p class="modal-card-title">Modal title</p>
+                          <button class="delete modal-cancel" aria-label="close"></button>
+                        </header>
+                        <section class="modal-card-body">
+                          <!-- Content ... -->
+                        </section>
+                        <footer class="modal-card-foot">
+                          <button class="button kd-primary">Save changes</button>
+                          <button class="button modal-cancel">Cancel</button>
+                        </footer>
                       </div>
                     </div>
-                  </form>
+                  <!-- modal end -->
                 </div>
-                <!-- subscription form end -->
+                <!-- single modal end -->
+               <script type="text/javascript">
+                  // Modal javascript start
+                  var modalButtons = document.querySelectorAll(".modal-button");
+                  var modalCloseBtns = document.querySelectorAll(".mod-close");
+                  var modalCancelBtns = document.querySelectorAll(".modal-cancel");
+                  var modal = document.querySelector(".modal");
+
+                  // .modal event listeners,
+                  modalButtons.forEach(button => {
+                    button.addEventListener("click", function(e) {
+                      modal.classList.remove("is-active");
+                      e.currentTarget.parentNode.querySelectorAll(".modal").forEach(m => {
+                        m.classList.add("is-active");
+                      });
+                    });
+                  });
+
+                  modalCloseBtns.forEach(mcb => {
+                    mcb.addEventListener("click", function(e) {
+                      e.currentTarget.parentNode.parentNode.parentNode.classList.remove(
+                        "is-active"
+                      );
+                    });
+                  });
+
+                  modalCancelBtns.forEach(mcb => {
+                    mcb.addEventListener("click", function(e) {
+                      e.currentTarget.parentNode.parentNode.parentNode.classList.remove(
+                        "is-active"
+                      );
+                    });
+                  });
+                  // Modal javascript end
+               </script>
 
                 <!-- contact information start -->
                 <div class="contact-information">
