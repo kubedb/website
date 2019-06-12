@@ -85,6 +85,13 @@
       <div class="column is-3">
         <!-- left sidebar area start -->
         <div class="kd-left-sidebar">
+
+          <div class="trial-button">
+            <a href="/docs/{{ $latestVersion }}/setup/" class="button is-fullwidth">
+              Try Now for FREE!
+            </a>
+          </div>
+
           <div class="kd-version">
             {{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
             {{ $versions := (index $productJson "versions" ) }}
