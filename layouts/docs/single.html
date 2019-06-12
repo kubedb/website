@@ -106,6 +106,7 @@
                     {{ end }}
                   {{ end }}
 
+                  <span class="new-item">Latest</span>
                   <span class="icon is-small">
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                   </span>
@@ -117,7 +118,7 @@
                     {{ $branch := (index $version "branch") }}
                     {{ if (index $version "v-dropdown") }}
                       {{ if (index $version "hostDocs") }}
-                        <a href="/docs/{{ $branch }}/" class="dropdown-item">{{ $branch }}  {{ if eq $branch $latestVersion }} <div class="tag">New</div> {{ end }}</a>
+                        <a href="/docs/{{ $branch }}/" class="dropdown-item">{{ $branch }}  {{ if eq $branch $latestVersion }} <div class="tag">Latest</div> {{ end }}</a>
                       {{ else }}
                         <a href="https://github.com/{{ index $productJson "docRepo" }}/tree/{{ $branch }}/docs" target="_blank" class="dropdown-item">{{ $branch }}</a>
                       {{ end }}
