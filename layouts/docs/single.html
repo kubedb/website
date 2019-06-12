@@ -101,12 +101,14 @@
                     {{ $branch := (index $version "branch") }}
                     {{ if (index $version "v-dropdown") }}
                       {{ if and (index $version "hostDocs") (eq $branch $currentBranch) }}
-                  <span><strong class="icon"><i class="fa fa-cog" aria-hidden="true"></i></strong>{{ $branch }}</span>
+                        <span><strong class="icon"><i class="fa fa-cog" aria-hidden="true"></i></strong>{{ $branch }}</span>
+                      {{ if eq $branch $latestVersion }}
+                        <span class="new-item">Latest</span>
+                      {{ end }}
                       {{ end }}
                     {{ end }}
                   {{ end }}
 
-                  <span class="new-item">Latest</span>
                   <span class="icon is-small">
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                   </span>
