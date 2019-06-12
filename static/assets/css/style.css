@@ -21,7 +21,7 @@ p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
-  color: #393E46;
+  color: #393e46;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -94,6 +94,7 @@ h6 {
 
 .kd-primary {
   background-color: #4d4dcb !important;
+  color: #fff !important;
 }
 
 .kd-green {
@@ -405,7 +406,7 @@ body.fixed-nav #header {
   background-image: url(../images/bg-image/about.png);
   background-size: cover;
   background-position: center;
-  background-color: #FBFCFE;
+  background-color: #fbfcfe;
 }
 
 a.play-icon {
@@ -550,7 +551,7 @@ a.play-icon .fa {
 /* testimonial area start */
 .testimonial-area {
   background-image: url(../images/bg-image/testimonia.png);
-  background: #F9FAFB;
+  background: #f9fafb;
 }
 
 .carousel-wrapper {
@@ -655,31 +656,15 @@ a.play-icon .fa {
 
 .cta-text p {
   font-size: 26px;
-  color: #393E46;
+  color: #393e46;
   margin-top: 10px;
   margin-bottom: 0;
 }
 
 /* footer area start */
-.subscription-form label {
-  font-size: 18px;
-  font-weight: 500;
-  color: #32325d;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.subscription-form input {
-  background: #e6e6e6;
-  border: none;
-  box-shadow: none;
-  font-size: 16px;
-  border-radius: 4px;
-  padding: 10px 20px;
-  height: 40px;
-}
 
 .subscription-form .button {
+  font-family: roboto;
   color: #fff;
   font-size: 16px;
   height: 40px;
@@ -691,6 +676,9 @@ a.play-icon .fa {
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
+}
+.subscription-form i {
+  padding-left: 15px;
 }
 .subscription-form .button:hover {
   box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
@@ -757,7 +745,7 @@ a.play-icon .fa {
 
 .footer-bottom p {
   font-size: 14px;
-  color: #393E46;
+  color: #393e46;
   margin-bottom: 0;
 }
 
@@ -859,10 +847,10 @@ a.play-icon .fa {
 }
 
 /*====================================
-    Support page CSS 
+    Support page CSS
 ====================================*/
 .pricing-plan-area {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 
 .support-page .hero-content-inner h1 {
@@ -1212,7 +1200,7 @@ a.play-icon .fa {
   transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
 }
 
-/*============================================================== 
+/*==============================================================
     Documentation page style
 ==============================================================*/
 
@@ -1244,7 +1232,7 @@ body.fixed-nav .kubedb-documentation-menu {
 }
 
 .info-title p {
-  color: #393E46;
+  color: #393e46;
   padding: 0 20px;
 }
 
@@ -1344,7 +1332,7 @@ ul li b {
 }
 .full-info p {
   margin-bottom: 15px;
-  color: #393E46;
+  color: #393e46;
 }
 
 /* Right Sidebar For Documentation page */
@@ -1386,7 +1374,7 @@ ul li b {
 }
 
 .tbl-of-contents ul li a {
-  color: #777;;
+  color: #777;
   font-size: 14px;
   font-family: roboto;
   font-weight: 400;
@@ -1437,7 +1425,218 @@ li.nav-item.active a {
 
 /* Sidebar menu */
 
+/* right sidebar search start */
+.overlay-bg {
+  position: relative;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-bg {
+  position: fixed;
+  content: "";
+  background: #000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  display: none;
+}
+.sidebar-search-area {
+  background: #fff;
+  width: 585px;
+  z-index: 999;
+  right: -50%;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  overflow-y: scroll;
+  transition: 0.3s linear;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -ms-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+}
+.sidebar-search-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.sidebar-search-area::-webkit-scrollbar-track {
+  background: #e2e2e2;
+}
+
+/* Handle */
+.sidebar-search-area::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+/* Handle on hover */
+.sidebar-search-area::-webkit-scrollbar-thumb:hover {
+  background: #818181;
+}
+/* body::-webkit-scrollbar {
+  display: none;
+}  */
+
+.search-area-top {
+  padding: 20px;
+}
+.searchbar-area input {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #e2e2e2;
+  height: 40px;
+  border-radius: 3px;
+  width: 86.6%;
+}
+
+.searchbar-area {
+  position: relative;
+  z-index: 1;
+}
+
+.searchbar-area button {
+  position: absolute;
+  height: 100%;
+  width: 60px;
+  background: #4d4dcb;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.sidebar-search-area h3 {
+  font-family: roboto;
+  color: #393e46;
+  margin-bottom: 10px;
+}
+
+.search-meta-information p,
+.search-meta-information label,
+.shorting-data select {
+  font-size: 12px;
+  color: #6b6b6b;
+  margin-top: 14px;
+}
+
+.shorting-data select {
+  border-radius: 3px;
+  width: 60px;
+  background: #f2f2f2;
+  border-color: #e2e2e2;
+  color: #393e46;
+  font-family: roboto;
+}
+.single-search-result h3 a {
+  color: #4d4dcb;
+  font-size: 16px;
+  font-family: roboto;
+  line-height: 26px;
+}
+
+.single-search-result h3 {
+  margin-bottom: 0;
+  line-height: 0;
+}
+
+.single-search-result a {
+  color: #00a651;
+  font-size: 12px;
+  font-family: roboto;
+  display: block;
+}
+
+.result-thumb {
+  width: 60px;
+  float: left;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.result-description-wrapper {
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.result-description {
+  overflow: hidden;
+}
+
+.result-description p {
+  overflow: hidden;
+  font-size: 12px;
+}
+
+.single-search-result {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 8px 20px;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+}
+.single-search-result:last-child {
+  border-bottom: none;
+}
+.single-search-result:hover {
+  background: #f2f2f2;
+}
+
+.single-search-result:hover.single-search-result h3 a {
+  text-decoration: underline;
+}
+/* pagination start */
+.pagination-list ul li {
+  display: inline-block;
+}
+
+.pagination-list li a {
+  display: block;
+  padding: 5px;
+  border: 1px solid #ddd;
+  min-width: 30px;
+  height: 30px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.pagination-list {
+  text-align: center;
+  display: block;
+  margin: 20px;
+}
+.pagination-list li a.is-active {
+  background: #4d4dcb;
+  color: #fff;
+}
+/* pagination end */
+/* right sidebar search end */
+
 /* version section style start */
+
+.trial-button .button {
+  background-color: #f99a00;
+  color: #fff;
+  font-size: 14px;
+  height: 40px;
+}
+.trial-button {
+  margin-bottom: 15px;
+}
 
 .select select.is-active,
 .select select.is-focused,
@@ -1454,7 +1653,17 @@ li.nav-item.active a {
   font-size: 15px;
   margin-top: 2px;
 }
-
+span.new-item {
+  color: #9d0a0e;
+  font-size: 12px;
+  font-weight: 500;
+  background: #e3d4d4;
+  padding: 3px 10px;
+  border-radius: 50px;
+  line-height: 12px;
+  height: 20px;
+  margin-left: 100px;
+}
 .navbar-link:not(.is-arrowless)::after,
 .select:not(.is-multiple):not(.is-loading)::after {
   border-color: #999;
@@ -1476,6 +1685,8 @@ li.nav-item.active a {
 }
 .kd-version .button {
   padding-left: 30px;
+  height: 38px;
+  background: #ebebeb;
 }
 button.button.is-fullwidth {
   justify-content: space-between;
@@ -1525,17 +1736,13 @@ button.button.is-fullwidth {
 }
 
 .kd-version {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
-.dropdown-trigger .button {
-  background: transparent;
-}
+
 .dropdown.is-active .button .icon:last-child:not(:first-child) {
   transform: rotate(180deg);
 }
-.kd-version .dropdown {
-  border-bottom: 1px solid #E6E7E7;
-}
+
 /* version section style end */
 
 .item ul,
@@ -1547,7 +1754,7 @@ button.button.is-fullwidth {
 .kd-sidebar-menu .item label a {
   font-weight: 600;
   color: #333;
-  padding: 10px 17px;
+  padding: 8px 17px;
   display: block;
 }
 .item ul li.is-active a {
@@ -1648,7 +1855,7 @@ button.button.is-fullwidth {
 
 .menu-body p {
   font-size: 12px;
-  color: #393E46;
+  color: #393e46;
 }
 
 .single-product-item {
@@ -1997,7 +2204,7 @@ a.nav-link.active:after {
 }
 
 .download-question p {
-  color: #393E46;
+  color: #393e46;
   font-size: 16px;
   font-family: roboto;
 }
