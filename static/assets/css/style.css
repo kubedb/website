@@ -1738,15 +1738,7 @@ button.button.is-fullwidth {
 .kd-version {
   margin-bottom: 15px;
 }
-.dropdown-trigger .button {
-  background: transparent;
-}
-.dropdown.is-active .button .icon:last-child:not(:first-child) {
-  transform: rotate(180deg);
-}
-.kd-version .dropdown {
-  border-bottom: 1px solid #e6e7e7;
-}
+
 /* version section style end */
 
 .item ul,
