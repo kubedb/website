@@ -1615,17 +1615,6 @@ button.button.is-fullwidth {
   position: sticky;
   position: -webkit-sticky;
   top: 130px;
-  padding-bottom: 100%;
-}
-.kd-left-sidebar:before {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: -35px;
-  width: 230%;
-  height:100%;
-  background: #F5F7F9;
-  z-index: -1;
 }
 
 .kd-sidebar-menu .item label {
