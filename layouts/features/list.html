@@ -1,4 +1,8 @@
 {{ define "main" }}
+
+{{ $productJson := (index $.Site.Data.products.products "docs" ) }}
+{{ $latestVersion:= (index $.Site.Data.products.products.docs "latestVersion") }}
+
 <!-- features area start -->
 <section class="hero-features">
   <div class="container section">
@@ -9,7 +13,7 @@
           <h1>You’re in best cloud solution</h1>
           <p>Lorem Ipsum is simply dummy text of the printing and it is</p>
           <div class="hero-area-button">
-            <a href="#" class="button kd-button kd-primary">Install Now FREE</a>
+            <a href="/docs/{{ $latestVersion }}/setup/" class="button kd-button kd-primary">Install Now FREE</a>
           </div>
         </div>
         <!-- hero features text end -->
