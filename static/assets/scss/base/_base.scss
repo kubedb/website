@@ -1510,6 +1510,8 @@ li.nav-item.active a {
   margin-left: 115px;
   background: #F4E5E5;
   color: #9D0A0E;
+  font-weight: 500;
+  font-family: $font-link;
 }
 .dropdown-trigger span strong {
   padding-right: 15px;
@@ -1568,6 +1570,8 @@ button.button.is-fullwidth {
 .kd-version a.dropdown-item .tag {
   float: right;
   overflow: hidden;
+  background: #F4E5E5;
+  color: #9D0A0E;
 }
 
 .kd-version {
