@@ -110,7 +110,7 @@
                       {{ if and (index $version "hostDocs") (eq $branch $currentBranch) }}
                         <span><strong class="icon"><i class="fa fa-cog" aria-hidden="true"></i></strong>{{ $branch }}</span>
                       {{ if eq $branch $latestVersion }}
-                        <span class="new-item">Latest</span>
+                        <span class="tag">Latest</span>
                       {{ end }}
                       {{ end }}
                     {{ end }}
