@@ -1,0 +1,53 @@
+// Colour variable
+
+$swift-primary: #e67e22;
+
+/*==================================================
+           Theme Swift start
+====================================================*/
+//background colour
+body.swift .kubedb-primary-bg,
+body.swift .kd-primary,
+body.swift.fixed-nav #header,
+body.swift .socail-link-inline li a:hover,
+body.swift .tbl-of-contents ul a.active:before,
+body.swift .kd-version a.dropdown-item:hover,
+body.swift .ac-dropdown a.navbar-item:hover,
+body.swift a.nav-link.active:after,
+body.swift .trial-button .button {
+  background-color: $swift-primary;
+}
+//Font-colour
+body.swift .kd-transparent-btn,
+body.swift .carousel-wrapper:after,
+body.swift .cta-text h2,
+body.swift .main-menu-button a,
+body.swift .navbar-link.is-active,
+body.swift .navbar-link:hover,
+body.swift a.navbar-item.is-active,
+body.swift a.navbar-item:hover,
+body.swift .customize-kubedb .navbar-dropdown .navbar-item,
+body.swift .carousel-wrapper:after,
+body.swift .footer-link li a:hover,
+body.swift .accordion-item.active .accordion-header h2,
+body.swift ul li b,
+body.swift .full-info p b,
+body.swift .full-info ul li p a,
+body.swift .full-info p a,
+body.swift .full-info a,
+body.swift .tbl-of-contents ul a.active,
+body.swift li.nav-item.active a,
+body.swift .item ul li.is-active a,
+body.swift .kd-sidebar-menu li a:hover {
+  color: $swift-primary;
+}
+//Border-colour
+body.swift .star-count::before,
+body.swift .subscription-form .button,
+body.swift .accordion-item.active,
+body.swift blockquote {
+  border-color: $swift-primary;
+}
+/*==================================================
+           Theme Swift End
+====================================================*/
