@@ -1,0 +1,53 @@
+// Colour variable
+
+$guard-primary: #3498db;
+
+/*==================================================
+           Theme guard start
+====================================================*/
+//background colour
+body.guard .kubedb-primary-bg,
+body.guard .kd-primary,
+body.guard.fixed-nav #header,
+body.guard .socail-link-inline li a:hover,
+body.guard .tbl-of-contents ul a.active:before,
+body.guard .kd-version a.dropdown-item:hover,
+body.guard .ac-dropdown a.navbar-item:hover,
+body.guard a.nav-link.active:after,
+body.guard .trial-button .button {
+  background-color: $guard-primary;
+}
+//Font-colour
+body.guard .kd-transparent-btn,
+body.guard .carousel-wrapper:after,
+body.guard .cta-text h2,
+body.guard .main-menu-button a,
+body.guard .navbar-link.is-active,
+body.guard .navbar-link:hover,
+body.guard a.navbar-item.is-active,
+body.guard a.navbar-item:hover,
+body.guard .customize-kubedb .navbar-dropdown .navbar-item,
+body.guard .carousel-wrapper:after,
+body.guard .footer-link li a:hover,
+body.guard .accordion-item.active .accordion-header h2,
+body.guard ul li b,
+body.guard .full-info p b,
+body.guard .full-info ul li p a,
+body.guard .full-info p a,
+body.guard .full-info a,
+body.guard .tbl-of-contents ul a.active,
+body.guard li.nav-item.active a,
+body.guard .item ul li.is-active a,
+body.guard .kd-sidebar-menu li a:hover {
+  color: $guard-primary;
+}
+//Border-colour
+body.guard .star-count::before,
+body.guard .subscription-form .button,
+body.guard .accordion-item.active,
+body.guard blockquote {
+  border-color: $guard-primary;
+}
+/*==================================================
+           Theme guard End
+====================================================*/

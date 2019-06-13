@@ -1,0 +1,53 @@
+// Colour variable
+
+$voyager-primary: #f1c40f;
+
+/*==================================================
+           Theme Voyager start
+====================================================*/
+//background colour
+body.voyager .kubedb-primary-bg,
+body.voyager .kd-primary,
+body.voyager.fixed-nav #header,
+body.voyager .socail-link-inline li a:hover,
+body.voyager .tbl-of-contents ul a.active:before,
+body.voyager .kd-version a.dropdown-item:hover,
+body.voyager .ac-dropdown a.navbar-item:hover,
+body.voyager a.nav-link.active:after,
+body.voyager .trial-button .button {
+  background-color: $voyager-primary;
+}
+//Font-colour
+body.voyager .kd-transparent-btn,
+body.voyager .carousel-wrapper:after,
+body.voyager .cta-text h2,
+body.voyager .main-menu-button a,
+body.voyager .navbar-link.is-active,
+body.voyager .navbar-link:hover,
+body.voyager a.navbar-item.is-active,
+body.voyager a.navbar-item:hover,
+body.voyager .customize-kubedb .navbar-dropdown .navbar-item,
+body.voyager .carousel-wrapper:after,
+body.voyager .footer-link li a:hover,
+body.voyager .accordion-item.active .accordion-header h2,
+body.voyager ul li b,
+body.voyager .full-info p b,
+body.voyager .full-info ul li p a,
+body.voyager .full-info p a,
+body.voyager .full-info a,
+body.voyager .tbl-of-contents ul a.active,
+body.voyager li.nav-item.active a,
+body.voyager .item ul li.is-active a,
+body.voyager .kd-sidebar-menu li a:hover {
+  color: $voyager-primary;
+}
+//Border-colour
+body.voyager .star-count::before,
+body.voyager .subscription-form .button,
+body.voyager .accordion-item.active,
+body.voyager blockquote {
+  border-color: $voyager-primary;
+}
+/*==================================================
+           Theme Voyager End
+====================================================*/
