@@ -1,180 +1,5 @@
 /* ======================
-  Global CSS start
-========================*/
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,500i,600,600i,700,700i,800,800i,900|Roboto:400,400i,500,500i,700");
-
-body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-li b {
-  font-family: roboto;
-}
-a {
-  font-weight: 500;
-  -webkit-font-smoothing: antialiased;
-}
-
-p {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.8;
-  color: #393e46;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Raleway", sans-serif;
-  font-weight: normal;
-  text-transform: normal;
-  font-style: normal;
-  margin-top: 0px;
-  color: #242a31;
-  font-weight: 600;
-}
-
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-  font-family: "Roboto", sans-serif;
-  color: inherit;
-}
-pre {
-  margin-bottom: 15px;
-}
-
-footer li a {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-}
-
-a {
-  font-family: "Raleway", sans-serif;
-}
-
-h1 {
-  font-size: 36px;
-  line-height: 46px;
-}
-
-h2 {
-  font-size: 28px;
-  line-height: 38px;
-}
-
-h3 {
-  font-size: 24px;
-  line-height: 34px;
-}
-
-h4 {
-  font-size: 18px;
-  line-height: 32px;
-}
-
-h5 {
-  font-size: 16px;
-  line-height: 26px;
-}
-
-h6 {
-  font-size: 14px;
-  line-height: 24px;
-}
-
-.kd-primary {
-  background-color: #4d4dcb !important;
-  color: #fff !important;
-}
-
-.kd-green {
-  background-color: #00a651 !important;
-}
-
-.kd-orange {
-  background-color: #f99a00 !important;
-}
-
-.kd-red {
-  background-color: #e03056 !important;
-}
-.kubedb-primary-bg {
-  background-color: #4d4dcb;
-}
-/* button style */
-.button {
-  height: auto;
-}
-
-.kd-button {
-  border: none;
-  border-radius: 4px;
-  padding: 12px 40px;
-  display: inline-block;
-  font-weight: 500;
-  margin: 0;
-  color: #fff;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  font-family: roboto;
-  font-size: 16px;
-}
-
-.kd-button:hover {
-  background-color: rgb(62, 62, 161);
-  color: #fff;
-  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
-}
-
-.kd-button span {
-  padding-left: 10px;
-}
-
-.img {
-  max-width: 100%;
-  height: auto;
-}
-
-.d-table {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-
-.d-table-cell {
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.section-padding {
-  padding: 120px 0;
-}
-
-.container.section {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.section-title {
-  margin-bottom: 80px;
-}
-
-/* ======================
-  Global CSS End
-========================*/
-/* ======================
-  Header area start
+	Header area start
 ========================*/
 .header-area {
   padding: 3px 0;
@@ -190,13 +15,9 @@ h6 {
 .main-menu a {
   padding: 15px 15px;
   font-size: 14px;
-  color: #32325d;
+  color: $link-color;
   font-weight: 600;
-  transition: 0.3s ease-in-out;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -ms-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
+  @include transition(0.3s);
 }
 
 .main-menu-button a {
@@ -205,9 +26,9 @@ h6 {
   box-shadow: none;
   border: none;
   background: #fff;
-  color: #4d4dcb !important;
+  color: $primary-color !important;
   font-size: 14px !important;
-  transition: 0.3s;
+  @include transition(0.3s);
 }
 
 .main-menu-button .button:hover {
@@ -219,7 +40,7 @@ h6 {
   background: #f4e5e5;
   border: none;
   color: #9d0a0e;
-  transition: 0.3s;
+  @include transition(0.3s);
 }
 
 .button.for-support:hover {
@@ -231,7 +52,7 @@ h6 {
   background: #affafe;
   border: none;
   color: #36c5f0;
-  transition: 0.3s;
+  @include transition(0.3s);
 }
 
 .button.for-chat:hover {
@@ -254,7 +75,7 @@ h6 {
 a.navbar-item.is-active,
 a.navbar-item:hover {
   background: transparent;
-  color: #4d4dcb;
+  color: $primary-color;
 }
 .customize-kubedb .navbar-item.has-dropdown.is-active .navbar-link,
 .customize-kubedb .navbar-item.has-dropdown:hover .navbar-link {
@@ -267,7 +88,7 @@ a.navbar-item:hover {
   color: #fff;
 }
 .customize-kubedb .navbar-dropdown .navbar-item {
-  color: #4c4cc9;
+  color: $primary-color;
 }
 .navbar-dropdown {
   border-top: none;
@@ -308,7 +129,7 @@ a.navbar-item:hover {
   left: -3px;
   margin-top: -4px;
   border-width: 4px 4px 4px 0;
-  border-right-color: #4d4dca;
+  border-right-color: $primary-color;
 }
 
 .main-menu-button .star-count::after {
@@ -323,13 +144,13 @@ a.navbar-item:hover {
   border-width: 6px 6px 6px 0;
 }
 .customize-kubedb .main-menu a:hover {
-  color: #ddd;
+  color: #ddd !important;
 }
 /* fixd nav */
 
 body.fixed-nav #header {
   position: fixed;
-  background: #4d4dcb;
+  background: $primary-color;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.12);
   top: 0;
   margin-top: 0;
@@ -343,7 +164,7 @@ body.fixed-nav #header {
 .lg .social-count {
   height: 16px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: $font-small;
   line-height: 16px;
   box-shadow: none;
   border: none;
@@ -356,7 +177,7 @@ body.fixed-nav #header {
 /* github button style end */
 
 /* ======================
-  Header area End
+	Header area End
 ========================*/
 
 /* ============================
@@ -377,7 +198,7 @@ body.fixed-nav #header {
 .hero-content-inner h1 {
   font-size: 36px;
   font-weight: 400;
-  color: #242a31;
+  color: $heading-color;
   line-height: 58px;
 }
 
@@ -390,7 +211,7 @@ body.fixed-nav #header {
 }
 
 .kd-transparent-btn {
-  color: #4d4dcb;
+  color: $primary-color;
   font-weight: 600;
   border: none;
   background: transparent;
@@ -486,7 +307,7 @@ a.play-icon .fa {
   font-size: 28px;
   line-height: 46px;
   font-weight: 500;
-  color: #242a31;
+  color: $heading-color;
   margin-bottom: 30px;
 }
 
@@ -511,8 +332,7 @@ a.play-icon .fa {
   margin: 0 100px 50px 0;
   text-align: center;
   padding: 25px;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
+  @include transition(0.3s);
 }
 
 .single-db-logo:nth-child(even) {
@@ -569,14 +389,15 @@ a.play-icon .fa {
   right: 50%;
   font-size: 64px;
   z-index: 9;
-  color: #8f8fef;
+  color: $primary-color;
+  opacity: 0.6;
   width: 60px;
   padding-left: 30px;
 }
 
 .client-info p {
   margin: 0;
-  font-size: 13px;
+  font-size: $font-small;
   font-style: italic;
   color: Designer at AppsCode;
 }
@@ -650,13 +471,13 @@ a.play-icon .fa {
 
 .cta-text h2 {
   font-size: 36px;
-  color: #4d4dcb;
+  color: $primary-color;
   line-height: 42px;
 }
 
 .cta-text p {
   font-size: 26px;
-  color: #393e46;
+  color: $paragraph-color;
   margin-top: 10px;
   margin-bottom: 0;
 }
@@ -664,21 +485,14 @@ a.play-icon .fa {
 /* footer area start */
 
 .subscription-form .button {
-  font-family: roboto;
+  font-family: $font-link;
   color: #fff;
   font-size: 16px;
   height: 40px;
-  border: 1px solid #4d4dcb;
+  border: 1px solid $primary-color;
   box-shadow: none;
   padding: 7px 15px;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-}
-.subscription-form i {
-  padding-left: 15px;
+  @include transition(0.3s);
 }
 .subscription-form .button:hover {
   box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
@@ -687,17 +501,19 @@ a.play-icon .fa {
 .subscription-form {
   margin-top: 20px;
 }
-
+.subscription-form i {
+  padding-left: 15px;
+}
 .contact-information h4 {
   font-size: 18px;
-  color: #32325d;
+  color: $heading-color;
 }
 
 .all-contact-info li a {
-  color: #4a4a4a;
+  color: $link-color;
   display: inline-block;
   font-size: 14px;
-  font-family: roboto;
+  font-family: $font-paragraph;
   padding: 5px 0;
 }
 
@@ -711,16 +527,20 @@ a.play-icon .fa {
 
 .footer-menu h4 {
   font-size: 18px;
-  color: #32325d;
+  color: $heading-color;
   margin-bottom: 14px;
 }
 
 .footer-link li a {
-  color: #4a4a4a;
+  color: $link-color;
   font-size: 14px;
   display: block;
   padding: 8px 0;
   transition: 0.3s linear;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -ms-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
 }
 
 .footer-link li a:last-child {
@@ -728,7 +548,7 @@ a.play-icon .fa {
 }
 
 .footer-link li a:hover {
-  color: #4d4dcb;
+  color: $primary-color;
   padding-left: 5px;
 }
 
@@ -745,12 +565,12 @@ a.play-icon .fa {
 
 .footer-bottom p {
   font-size: 14px;
-  color: #393e46;
+  color: $paragraph-color;
   margin-bottom: 0;
 }
 
 .footer-inline-link a {
-  color: #4a4a4a;
+  color: $link-color;
   font-size: 14px;
   margin-right: 30px;
 }
@@ -769,7 +589,7 @@ a.play-icon .fa {
   line-height: 30px;
   border: 1px solid #8a8a8a;
   border-radius: 50%;
-  transition: 0.3s;
+  @include transition(0.3s);
 }
 
 .socail-link-inline li:last-child {
@@ -782,7 +602,7 @@ a.play-icon .fa {
 }
 
 .socail-link-inline li a:hover {
-  background: #4d4dcb;
+  background: $primary-color;
   color: #fff;
   border: 1px solid transparent;
 }
@@ -847,7 +667,7 @@ a.play-icon .fa {
 }
 
 /*====================================
-    Support page CSS
+    Support page CSS 
 ====================================*/
 .pricing-plan-area {
   background-color: #f9f9f9;
@@ -855,7 +675,7 @@ a.play-icon .fa {
 
 .support-page .hero-content-inner h1 {
   margin-bottom: 30px;
-  color: #32325d;
+  color: $heading-color;
   font-weight: 600;
   line-height: 58px;
 }
@@ -934,7 +754,7 @@ a.play-icon .fa {
 
 .package-price span {
   display: block;
-  font-size: 13px;
+  font-size: $font-small;
   font-weight: 400;
 }
 
@@ -1063,7 +883,7 @@ a.play-icon .fa {
 }
 
 .payment-methode-innner-text h2 {
-  color: #32325d;
+  color: $heading-color;
   margin-bottom: 20px;
 }
 
@@ -1105,15 +925,23 @@ a.play-icon .fa {
 
 .accordion-item.active {
   transition: background-color 0.2s ease-in 0s;
+  -webkit-transition: background-color 0.2s ease-in 0s;
+  -moz-transition: background-color 0.2s ease-in 0s;
+  -ms-transition: background-color 0.2s ease-in 0s;
+  -o-transition: background-color 0.2s ease-in 0s;
 }
 
 .accordion-item.active {
-  border: 1px solid #4d4dcb;
+  border: 1px solid $primary-color;
 }
 
 .accordion-item.active .accordion-header {
   color: #242a31;
   transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
+  -webkit-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
+  -moz-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
+  -ms-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
+  -o-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
 }
 
 .accordion-item.active .accordion-header h2:before,
@@ -1124,6 +952,10 @@ a.play-icon .fa {
   transition: background-color 0.2s ease-in 0.2s, transform 0.2s ease 0.1s;
   transition: background-color 0.2s ease-in 0.2s, transform 0.2s ease 0.1s,
     -webkit-transform 0.2s ease 0.1s;
+  -webkit-transition: background-color 0.2s ease-in 0.2s;
+  -moz-transition: background-color 0.2s ease-in 0.2s;
+  -ms-transition: background-color 0.2s ease-in 0.2s;
+  -o-transition: background-color 0.2s ease-in 0.2s;
 }
 
 .accordion-item.active .accordion-header h2:before {
@@ -1144,26 +976,35 @@ a.play-icon .fa {
 .accordion-item.active .accordion-body p {
   opacity: 1;
   transition: opacity 0.2s ease-in 0.2s;
+  -webkit-transition: opacity 0.2s ease-in 0.2s;
+  -moz-transition: opacity 0.2s ease-in 0.2s;
+  -ms-transition: opacity 0.2s ease-in 0.2s;
+  -o-transition: opacity 0.2s ease-in 0.2s;
 }
 
 .accordion-header {
   padding: 10px 15px;
   cursor: pointer;
   transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
+  -webkit-transition: background-color 0.2s ease-out 0.3s,
+    color 0.2s ease-out 0s;
+  -moz-transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
+  -ms-transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
+  -o-transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
 }
 
 .accordion-header h2 {
   position: relative;
   font-size: 16px;
   font-weight: 500;
-  color: #242a31;
+  color: $heading-color;
   margin: 0;
   user-select: none;
   line-height: 26px;
 }
 
 .accordion-item.active .accordion-header h2 {
-  color: #4d4dcb;
+  color: $primary-color;
 }
 
 .accordion-header h2:before,
@@ -1198,9 +1039,13 @@ a.play-icon .fa {
   padding: 0 15px;
   overflow: hidden;
   transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
+  -webkit-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
+  -moz-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
+  -ms-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
+  -o-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
 }
 
-/*==============================================================
+/*============================================================== 
     Documentation page style
 ==============================================================*/
 
@@ -1232,13 +1077,13 @@ body.fixed-nav .kubedb-documentation-menu {
 }
 
 .info-title p {
-  color: #393e46;
+  color: $paragraph-color;
   padding: 0 20px;
 }
 
 .full-info h1 {
   font-size: 32px;
-  color: #242a31;
+  color: $heading-color;
   margin-bottom: 18px;
   font-weight: 700;
   border-bottom: 1px solid #ebebeb;
@@ -1248,21 +1093,21 @@ body.fixed-nav .kubedb-documentation-menu {
 .full-info h2 {
   font-size: 24px;
   font-weight: 700;
-  color: #242a31;
+  color: $heading-color;
   margin-bottom: 16px;
   margin-top: 40px;
 }
 .full-info h3 {
   font-size: 18px;
   font-weight: 700;
-  color: #242a31;
+  color: $heading-color;
   margin-bottom: 16px;
   margin-top: 40px;
 }
 .full-info h4 {
   font-size: 16px;
   font-weight: 700;
-  color: #242a31;
+  color: $heading-color;
   margin-bottom: 16px;
   margin-top: 40px;
 }
@@ -1272,7 +1117,7 @@ body.fixed-nav .kubedb-documentation-menu {
   margin-left: 10px;
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s;
+  @include transition(0.3s);
 }
 
 .full-info h2:hover span.share-icon {
@@ -1284,7 +1129,7 @@ body.fixed-nav .kubedb-documentation-menu {
   margin-bottom: 40px;
 }
 blockquote {
-  border-left: 4px solid #4d4dcb;
+  border-left: 4px solid $primary-color;
   padding-left: 15px;
 }
 
@@ -1309,7 +1154,7 @@ blockquote {
 }
 
 ul li b {
-  color: #4d4dcb;
+  color: $primary-color;
   font-weight: 500;
 }
 
@@ -1321,18 +1166,18 @@ ul li b {
   display: inline;
 }
 .full-info p b {
-  color: #4d4dcb;
+  color: $primary-color;
 }
 .full-info ul li p a,
 .full-info p a,
 .full-info a {
-  color: #4d4dcb;
+  color: $primary-color;
   font-weight: 500;
-  font-family: roboto;
+  font-family: $font-paragraph;
 }
 .full-info p {
   margin-bottom: 15px;
-  color: #393e46;
+  color: $paragraph-color;
 }
 
 /* Right Sidebar For Documentation page */
@@ -1368,15 +1213,16 @@ ul li b {
 .tbl-of-contents h4 {
   font-size: 14px;
   font-weight: 700;
-  color: #242a31;
+  color: $heading-color;
   margin-bottom: 18px;
   line-height: 1;
 }
 
 .tbl-of-contents ul li a {
-  color: #777;
+  color: $link-color;
+  opacity: 0.7;
   font-size: 14px;
-  font-family: roboto;
+  font-family: $font-paragraph;
   font-weight: 400;
   display: block;
   padding-left: 20px;
@@ -1394,23 +1240,23 @@ ul li b {
 .tbl-of-contents ul a.active:before {
   width: 3px;
   height: 100%;
-  background: #3a7ad8;
+  background: $primary-color;
   content: "";
   left: -2px;
   top: 0;
   position: absolute;
   border-radius: 50px;
-  transition: 0.3s;
+  @include transition(0.3s);
 }
 
 .tbl-of-contents ul a.active {
   position: relative;
   z-index: 1;
-  color: #4d4dcb;
+  color: $primary-color;
 }
 
 li.nav-item.active a {
-  color: #3a7ad8;
+  color: $primary-color;
 }
 
 /* Fixed Sidebar */
@@ -1628,16 +1474,6 @@ li.nav-item.active a {
 
 /* version section style start */
 
-.trial-button .button {
-  background-color: #f99a00;
-  color: #fff;
-  font-size: 14px;
-  height: 40px;
-}
-.trial-button {
-  margin-bottom: 15px;
-}
-
 .select select.is-active,
 .select select.is-focused,
 .select select:active,
@@ -1650,20 +1486,10 @@ li.nav-item.active a {
 
 .kd-version .icon {
   color: #32325d !important;
-  font-size: 15px;
+  font-size: $font-regular;
   margin-top: 2px;
 }
-span.new-item {
-  color: #9d0a0e;
-  font-size: 12px;
-  font-weight: 500;
-  background: #e3d4d4;
-  padding: 3px 10px;
-  border-radius: 50px;
-  line-height: 12px;
-  height: 20px;
-  margin-left: 100px;
-}
+
 .navbar-link:not(.is-arrowless)::after,
 .select:not(.is-multiple):not(.is-loading)::after {
   border-color: #999;
@@ -1679,6 +1505,13 @@ span.new-item {
 }
 .dropdown.is-active .dropdown-trigger button {
   background: #f5f7f9;
+}
+.dropdown-trigger button.button .tag {
+  margin-left: 115px;
+  background: #F4E5E5;
+  color: #9D0A0E;
+  font-weight: 500;
+  font-family: $font-link;
 }
 .dropdown-trigger span strong {
   padding-right: 15px;
@@ -1702,10 +1535,14 @@ button.button.is-fullwidth {
 .kd-version a.dropdown-item {
   padding: 7px 30px;
   border-bottom: 1px solid #ececec;
-  font-family: roboto;
+  font-family: $font-paragraph;
   color: #32325d;
   transition: 0.2s ease-in-out;
   overflow: hidden;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 }
 
 .kd-version a.dropdown-item:last-child {
@@ -1713,7 +1550,7 @@ button.button.is-fullwidth {
 }
 
 .kd-version a.dropdown-item:hover {
-  background: #4d4dcb;
+  background: $primary-color;
   color: #fff;
 }
 .kd-version a.dropdown-item:first-child:hover {
@@ -1733,16 +1570,16 @@ button.button.is-fullwidth {
 .kd-version a.dropdown-item .tag {
   float: right;
   overflow: hidden;
+  background: #F4E5E5;
+  color: #9D0A0E;
 }
 
 .kd-version {
   margin-bottom: 15px;
 }
-
 .dropdown.is-active .button .icon:last-child:not(:first-child) {
-  transform: rotate(180deg);
+  @include transform(rotate(180deg));
 }
-
 /* version section style end */
 
 .item ul,
@@ -1753,12 +1590,12 @@ button.button.is-fullwidth {
 }
 .kd-sidebar-menu .item label a {
   font-weight: 600;
-  color: #333;
+  color: $link-color;
   padding: 8px 17px;
   display: block;
 }
 .item ul li.is-active a {
-  color: #4d4dcb;
+  color: $primary-color;
 }
 .item input:checked ~ ul,
 .item input:checked ~ .item > ul {
@@ -1768,7 +1605,7 @@ button.button.is-fullwidth {
 
 .item input:checked ~ label span,
 .item input:checked ~ .item > label span {
-  transform: rotate(90deg);
+  @include transform(rotate(90deg));
   margin-top: 0;
   transform-origin: 0;
 }
@@ -1776,13 +1613,13 @@ button.button.is-fullwidth {
 .item label span {
   position: absolute;
   right: 15px;
-  transition: 0.3s;
+  @include transition(0.3s);
   top: 9px;
 }
 .item ul li a {
   display: block;
   padding: 6px 0;
-  font-family: roboto;
+  font-family: $font-paragraph;
   font-weight: 400;
 }
 .item label {
@@ -1794,17 +1631,21 @@ button.button.is-fullwidth {
 .kd-sidebar-menu li a {
   font-size: 14px;
   font-weight: 500;
-  color: #4a4a4a;
+  color: $link-color;
   display: block;
   cursor: pointer;
   user-select: none;
   margin-top: 10px;
   margin-top: 5px;
   transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 
 .kd-sidebar-menu li a:hover {
-  color: #4d4dcb;
+  color: $primary-color;
 }
 .kd-sidebar-menu .item ul {
   margin-left: 20px;
@@ -1834,6 +1675,26 @@ button.button.is-fullwidth {
   -ms-border-radius: 3px 0 0 3px;
   -o-border-radius: 3px 0 0 3px;
 }
+.trial-button .button {
+  background-color: $primary-color;
+  color: #fff;
+  font-size: 14px;
+  height: 40px;
+}
+.trial-button {
+  margin-bottom: 15px;
+}
+span.new-item {
+  color: #9d0a0e;
+  font-size: 12px;
+  font-weight: 500;
+  background: #e3d4d4;
+  padding: 3px 10px;
+  border-radius: 50px;
+  line-height: 12px;
+  height: 20px;
+  margin-left: 100px;
+}
 /* dropdown mega menu start */
 .menu-header {
   overflow: hidden;
@@ -1849,13 +1710,13 @@ button.button.is-fullwidth {
 .menu-header h5 {
   float: left;
   font-size: 16px;
-  color: #242a31;
+  color: $heading-color;
   font-weight: 700;
 }
 
 .menu-body p {
-  font-size: 12px;
-  color: #393e46;
+  font-size: $font-small;
+  color: $paragraph-color;
 }
 
 .single-product-item {
@@ -1879,12 +1740,12 @@ button.button.is-fullwidth {
   left: 50%;
   opacity: 0;
   visibility: hidden;
-  transition: 0.1s ease-in-out;
-  -webkit-transition: 0.1s ease-in-out;
-  -moz-transition: 0.1s ease-in-out;
-  -ms-transition: 0.1s ease-in-out;
-  -o-transition: 0.1s ease-in-out;
+  @include transition(0.1s);
   display: none;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 .ac-dropdown {
   z-index: 99;
@@ -1899,24 +1760,16 @@ button.button.is-fullwidth {
   left: 50%;
   opacity: 0;
   visibility: hidden;
-  transition: 0.2s ease-in;
-  -webkit-transition: 0.2s ease-in;
-  -moz-transition: 0.2s ease-in;
-  -ms-transition: 0.2s ease-in;
-  -o-transition: 0.2s ease-in;
+  @include transition(0.2s);
 }
 .ac-dropdown a.navbar-item {
   color: #333;
   padding: 10px 20px;
-  transition: 0.2s ease-in-out;
-  -webkit-transition: 0.2s ease-in-out;
-  -moz-transition: 0.2s ease-in-out;
-  -ms-transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
+  @include transition(0.2s);
 }
 .ac-dropdown a.navbar-item:hover {
-  background: #4d4dcb;
-  color: #fff;
+  background: $primary-color;
+  color: #fff !important;
 }
 .ac-megamenu:before,
 .ac-dropdown:before {
@@ -1950,8 +1803,8 @@ button.button.is-fullwidth {
   top: 41px;
 }
 p.intro {
-  font-size: 12px;
-  font-family: roboto;
+  font-size: $font-small;
+  font-family: $font-paragraph;
   color: #242a31;
   margin-top: -5px;
   margin-bottom: 10px;
@@ -1961,16 +1814,12 @@ p.intro {
   padding: 10px 12px !important;
   min-height: 75px;
   overflow: hidden;
-  transition: 0.3s ease-in-out;
+  @include transition(0.3s);
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -ms-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
 }
 .single-product-item:hover {
   background: #e4e4f7;
@@ -2010,9 +1859,9 @@ p.intro {
 }
 .single-product-item .learn-more-btn {
   padding: 0;
-  font-size: 12px;
+  font-size: $font-small;
   color: #242a31;
-  font-family: roboto;
+  font-family: $font-paragraph;
   margin-top: 20px;
   font-weight: 600;
   display: block;
@@ -2088,7 +1937,7 @@ table th {
   padding: 8px 20px;
   vertical-align: middle;
   text-align: center;
-  font-size: 15px;
+  font-size: $font-regular;
 }
 table tr:nth-child(even) {
   background-color: #f6f8fa;
@@ -2132,7 +1981,7 @@ li.nav-item:before {
   border-bottom-color: #dbdbdb;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  color: #4a4a4a;
+  color: $link-color;
   display: flex;
   justify-content: center;
   margin-bottom: -1px;
@@ -2161,7 +2010,7 @@ a.nav-link.active {
 a.nav-link.active:after {
   position: absolute;
   content: "";
-  background: #4949a3;
+  background: $primary-color;
   top: 0;
   left: 0;
   width: 100%;
@@ -2199,31 +2048,31 @@ a.nav-link.active:after {
 }
 .download-question h4 {
   font-size: 18px;
-  color: #242a31;
+  color: $heading-color;
   font-weight: 700;
 }
 
 .download-question p {
-  color: #393e46;
+  color: $paragraph-color;
   font-size: 16px;
-  font-family: roboto;
+  font-family: $font-paragraph;
 }
 
 .download-question p strong {
   color: #32325d;
   font-weight: 500;
-  font-family: roboto;
+  font-family: $font-paragraph;
   margin: 10px 0;
   display: block;
 }
 
 .download-question a {
-  font-family: roboto;
+  font-family: $font-paragraph;
   font-size: 16px;
 }
 .form-area h4 {
   font-size: 18px;
-  color: #242a31;
+  color: $heading-color;
   font-weight: 700;
   margin-bottom: 30px;
 }
@@ -2231,7 +2080,7 @@ a.nav-link.active:after {
 .single-input-field label {
   display: block;
   color: #32325d;
-  font-family: roboto;
+  font-family: $font-paragraph;
   font-size: 16px;
   margin-bottom: 5px;
 }
@@ -2241,7 +2090,7 @@ a.nav-link.active:after {
   border: 1px solid #c4cbd3;
   border-radius: 4px;
   font-size: 16px;
-  font-family: roboto;
+  font-family: $font-paragraph;
   color: #242a31;
   width: 100%;
 }
