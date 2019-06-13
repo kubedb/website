@@ -1,0 +1,551 @@
+// Colour variable
+$voyager-primary: #f1c40f;
+$searchlight-primary: #2ecc71;
+$swift-primary: #e67e22;
+$stash-primary: #f39c12;
+$guard-primary: #3498db;
+$kubeci-primary: #2c3e50;
+$kubesheild-primary: #95a5a6;
+$pharmer-primary: #8e44ad;
+$kubevault-primary: #0fb9b1;
+$kubed-primary: #8854d0;
+$service-broker-primary: #a5b1c2;
+
+/*==================================================
+           Theme Voyager start
+====================================================*/
+//background colour
+body.voyager .kubedb-primary-bg,
+body.voyager .kd-primary,
+body.voyager.fixed-nav #header,
+body.voyager .socail-link-inline li a:hover,
+body.voyager .tbl-of-contents ul a.active:before,
+body.voyager .kd-version a.dropdown-item:hover,
+body.voyager .ac-dropdown a.navbar-item:hover,
+body.voyager a.nav-link.active:after {
+  background-color: $voyager-primary;
+}
+//Font-colour
+body.voyager .kd-transparent-btn,
+body.voyager .carousel-wrapper:after,
+body.voyager .cta-text h2,
+body.voyager .main-menu-button a,
+body.voyager .navbar-link.is-active,
+body.voyager .navbar-link:hover,
+body.voyager a.navbar-item.is-active,
+body.voyager a.navbar-item:hover,
+body.voyager .customize-kubedb .navbar-dropdown .navbar-item,
+body.voyager .carousel-wrapper:after,
+body.voyager .footer-link li a:hover,
+body.voyager .accordion-item.active .accordion-header h2,
+body.voyager ul li b,
+body.voyager .full-info p b,
+body.voyager .full-info ul li p a,
+body.voyager .full-info p a,
+body.voyager .full-info a,
+body.voyager .tbl-of-contents ul a.active,
+body.voyager li.nav-item.active a,
+body.voyager .item ul li.is-active a,
+body.voyager .kd-sidebar-menu li a:hover {
+  color: $voyager-primary;
+}
+//Border-colour
+body.voyager .star-count::before,
+body.voyager .subscription-form .button,
+body.voyager .accordion-item.active,
+body.voyager blockquote {
+  border-color: $voyager-primary;
+}
+/*==================================================
+           Theme Voyager End
+====================================================*/
+
+/*==================================================
+           Theme Searchlight start
+====================================================*/
+//background colour
+body.searchlight .kubedb-primary-bg,
+body.searchlight .kd-primary,
+body.searchlight.fixed-nav #header,
+body.searchlight .socail-link-inline li a:hover,
+body.searchlight .tbl-of-contents ul a.active:before,
+body.searchlight .kd-version a.dropdown-item:hover,
+body.searchlight .ac-dropdown a.navbar-item:hover,
+body.searchlight a.nav-link.active:after {
+  background-color: $searchlight-primary;
+}
+//Font-colour
+body.searchlight .kd-transparent-btn,
+body.searchlight .carousel-wrapper:after,
+body.searchlight .cta-text h2,
+body.searchlight .main-menu-button a,
+body.searchlight .navbar-link.is-active,
+body.searchlight .navbar-link:hover,
+body.searchlight a.navbar-item.is-active,
+body.searchlight a.navbar-item:hover,
+body.searchlight .customize-kubedb .navbar-dropdown .navbar-item,
+body.searchlight .carousel-wrapper:after,
+body.searchlight .footer-link li a:hover,
+body.searchlight .accordion-item.active .accordion-header h2,
+body.searchlight ul li b,
+body.searchlight .full-info p b,
+body.searchlight .full-info ul li p a,
+body.searchlight .full-info p a,
+body.searchlight .full-info a,
+body.searchlight .tbl-of-contents ul a.active,
+body.searchlight li.nav-item.active a,
+body.searchlight .item ul li.is-active a,
+body.searchlight .kd-sidebar-menu li a:hover {
+  color: $searchlight-primary;
+}
+//Border-colour
+body.searchlight .star-count::before,
+body.searchlight .subscription-form .button,
+body.searchlight .accordion-item.active,
+body.searchlight blockquote {
+  border-color: $searchlight-primary;
+}
+/*==================================================
+           Theme Searchlight End
+====================================================*/
+
+/*==================================================
+           Theme Swift start
+====================================================*/
+//background colour
+body.swift .kubedb-primary-bg,
+body.swift .kd-primary,
+body.swift.fixed-nav #header,
+body.swift .socail-link-inline li a:hover,
+body.swift .tbl-of-contents ul a.active:before,
+body.swift .kd-version a.dropdown-item:hover,
+body.swift .ac-dropdown a.navbar-item:hover,
+body.swift a.nav-link.active:after {
+  background-color: $swift-primary;
+}
+//Font-colour
+body.swift .kd-transparent-btn,
+body.swift .carousel-wrapper:after,
+body.swift .cta-text h2,
+body.swift .main-menu-button a,
+body.swift .navbar-link.is-active,
+body.swift .navbar-link:hover,
+body.swift a.navbar-item.is-active,
+body.swift a.navbar-item:hover,
+body.swift .customize-kubedb .navbar-dropdown .navbar-item,
+body.swift .carousel-wrapper:after,
+body.swift .footer-link li a:hover,
+body.swift .accordion-item.active .accordion-header h2,
+body.swift ul li b,
+body.swift .full-info p b,
+body.swift .full-info ul li p a,
+body.swift .full-info p a,
+body.swift .full-info a,
+body.swift .tbl-of-contents ul a.active,
+body.swift li.nav-item.active a,
+body.swift .item ul li.is-active a,
+body.swift .kd-sidebar-menu li a:hover {
+  color: $swift-primary;
+}
+//Border-colour
+body.swift .star-count::before,
+body.swift .subscription-form .button,
+body.swift .accordion-item.active,
+body.swift blockquote {
+  border-color: $swift-primary;
+}
+/*==================================================
+           Theme Swift End
+====================================================*/
+
+/*==================================================
+           Theme stash start
+====================================================*/
+//background colour
+body.stash .kubedb-primary-bg,
+body.stash .kd-primary,
+body.stash.fixed-nav #header,
+body.stash .socail-link-inline li a:hover,
+body.stash .tbl-of-contents ul a.active:before,
+body.stash .kd-version a.dropdown-item:hover,
+body.stash .ac-dropdown a.navbar-item:hover,
+body.stash a.nav-link.active:after {
+  background-color: $stash-primary;
+}
+//Font-colour
+body.stash .kd-transparent-btn,
+body.stash .carousel-wrapper:after,
+body.stash .cta-text h2,
+body.stash .main-menu-button a,
+body.stash .navbar-link.is-active,
+body.stash .navbar-link:hover,
+body.stash a.navbar-item.is-active,
+body.stash a.navbar-item:hover,
+body.stash .customize-kubedb .navbar-dropdown .navbar-item,
+body.stash .carousel-wrapper:after,
+body.stash .footer-link li a:hover,
+body.stash .accordion-item.active .accordion-header h2,
+body.stash ul li b,
+body.stash .full-info p b,
+body.stash .full-info ul li p a,
+body.stash .full-info p a,
+body.stash .full-info a,
+body.stash .tbl-of-contents ul a.active,
+body.stash li.nav-item.active a,
+body.stash .item ul li.is-active a,
+body.stash .kd-sidebar-menu li a:hover {
+  color: $stash-primary;
+}
+//Border-colour
+body.stash .star-count::before,
+body.stash .subscription-form .button,
+body.stash .accordion-item.active,
+body.stash blockquote {
+  border-color: $stash-primary;
+}
+/*==================================================
+           Theme stash End
+====================================================*/
+
+/*==================================================
+           Theme guard start
+====================================================*/
+//background colour
+body.guard .kubedb-primary-bg,
+body.guard .kd-primary,
+body.guard.fixed-nav #header,
+body.guard .socail-link-inline li a:hover,
+body.guard .tbl-of-contents ul a.active:before,
+body.guard .kd-version a.dropdown-item:hover,
+body.guard .ac-dropdown a.navbar-item:hover,
+body.guard a.nav-link.active:after {
+  background-color: $guard-primary;
+}
+//Font-colour
+body.guard .kd-transparent-btn,
+body.guard .carousel-wrapper:after,
+body.guard .cta-text h2,
+body.guard .main-menu-button a,
+body.guard .navbar-link.is-active,
+body.guard .navbar-link:hover,
+body.guard a.navbar-item.is-active,
+body.guard a.navbar-item:hover,
+body.guard .customize-kubedb .navbar-dropdown .navbar-item,
+body.guard .carousel-wrapper:after,
+body.guard .footer-link li a:hover,
+body.guard .accordion-item.active .accordion-header h2,
+body.guard ul li b,
+body.guard .full-info p b,
+body.guard .full-info ul li p a,
+body.guard .full-info p a,
+body.guard .full-info a,
+body.guard .tbl-of-contents ul a.active,
+body.guard li.nav-item.active a,
+body.guard .item ul li.is-active a,
+body.guard .kd-sidebar-menu li a:hover {
+  color: $guard-primary;
+}
+//Border-colour
+body.guard .star-count::before,
+body.guard .subscription-form .button,
+body.guard .accordion-item.active,
+body.guard blockquote {
+  border-color: $guard-primary;
+}
+/*==================================================
+           Theme guard End
+====================================================*/
+
+/*==================================================
+           Theme kubeci start
+====================================================*/
+//background colour
+body.kubeci .kubedb-primary-bg,
+body.kubeci .kd-primary,
+body.kubeci.fixed-nav #header,
+body.kubeci .socail-link-inline li a:hover,
+body.kubeci .tbl-of-contents ul a.active:before,
+body.kubeci .kd-version a.dropdown-item:hover,
+body.kubeci .ac-dropdown a.navbar-item:hover,
+body.kubeci a.nav-link.active:after {
+  background-color: $kubeci-primary;
+}
+//Font-colour
+body.kubeci .kd-transparent-btn,
+body.kubeci .carousel-wrapper:after,
+body.kubeci .cta-text h2,
+body.kubeci .main-menu-button a,
+body.kubeci .navbar-link.is-active,
+body.kubeci .navbar-link:hover,
+body.kubeci a.navbar-item.is-active,
+body.kubeci a.navbar-item:hover,
+body.kubeci .customize-kubedb .navbar-dropdown .navbar-item,
+body.kubeci .carousel-wrapper:after,
+body.kubeci .footer-link li a:hover,
+body.kubeci .accordion-item.active .accordion-header h2,
+body.kubeci ul li b,
+body.kubeci .full-info p b,
+body.kubeci .full-info ul li p a,
+body.kubeci .full-info p a,
+body.kubeci .full-info a,
+body.kubeci .tbl-of-contents ul a.active,
+body.kubeci li.nav-item.active a,
+body.kubeci .item ul li.is-active a,
+body.kubeci .kd-sidebar-menu li a:hover {
+  color: $kubeci-primary;
+}
+//Border-colour
+body.kubeci .star-count::before,
+body.kubeci .subscription-form .button,
+body.kubeci .accordion-item.active,
+body.kubeci blockquote {
+  border-color: $kubeci-primary;
+}
+/*==================================================
+           Theme kubeci End
+====================================================*/
+
+/*==================================================
+           Theme kubesheild start
+====================================================*/
+//background colour
+body.kubesheild .kubedb-primary-bg,
+body.kubesheild .kd-primary,
+body.kubesheild.fixed-nav #header,
+body.kubesheild .socail-link-inline li a:hover,
+body.kubesheild .tbl-of-contents ul a.active:before,
+body.kubesheild .kd-version a.dropdown-item:hover,
+body.kubesheild .ac-dropdown a.navbar-item:hover,
+body.kubesheild a.nav-link.active:after {
+  background-color: $kubesheild-primary;
+}
+//Font-colour
+body.kubesheild .kd-transparent-btn,
+body.kubesheild .carousel-wrapper:after,
+body.kubesheild .cta-text h2,
+body.kubesheild .main-menu-button a,
+body.kubesheild .navbar-link.is-active,
+body.kubesheild .navbar-link:hover,
+body.kubesheild a.navbar-item.is-active,
+body.kubesheild a.navbar-item:hover,
+body.kubesheild .customize-kubedb .navbar-dropdown .navbar-item,
+body.kubesheild .carousel-wrapper:after,
+body.kubesheild .footer-link li a:hover,
+body.kubesheild .accordion-item.active .accordion-header h2,
+body.kubesheild ul li b,
+body.kubesheild .full-info p b,
+body.kubesheild .full-info ul li p a,
+body.kubesheild .full-info p a,
+body.kubesheild .full-info a,
+body.kubesheild .tbl-of-contents ul a.active,
+body.kubesheild li.nav-item.active a,
+body.kubesheild .item ul li.is-active a,
+body.kubesheild .kd-sidebar-menu li a:hover {
+  color: $kubesheild-primary;
+}
+//Border-colour
+body.kubesheild .star-count::before,
+body.kubesheild .subscription-form .button,
+body.kubesheild .accordion-item.active,
+body.kubesheild blockquote {
+  border-color: $kubesheild-primary;
+}
+/*==================================================
+           Theme kubesheild End
+====================================================*/
+
+/*==================================================
+           Theme pharmer start
+====================================================*/
+//background colour
+body.pharmer .kubedb-primary-bg,
+body.pharmer .kd-primary,
+body.pharmer.fixed-nav #header,
+body.pharmer .socail-link-inline li a:hover,
+body.pharmer .tbl-of-contents ul a.active:before,
+body.pharmer .kd-version a.dropdown-item:hover,
+body.pharmer .ac-dropdown a.navbar-item:hover,
+body.pharmer a.nav-link.active:after {
+  background-color: $pharmer-primary;
+}
+//Font-colour
+body.pharmer .kd-transparent-btn,
+body.pharmer .carousel-wrapper:after,
+body.pharmer .cta-text h2,
+body.pharmer .main-menu-button a,
+body.pharmer .navbar-link.is-active,
+body.pharmer .navbar-link:hover,
+body.pharmer a.navbar-item.is-active,
+body.pharmer a.navbar-item:hover,
+body.pharmer .customize-kubedb .navbar-dropdown .navbar-item,
+body.pharmer .carousel-wrapper:after,
+body.pharmer .footer-link li a:hover,
+body.pharmer .accordion-item.active .accordion-header h2,
+body.pharmer ul li b,
+body.pharmer .full-info p b,
+body.pharmer .full-info ul li p a,
+body.pharmer .full-info p a,
+body.pharmer .full-info a,
+body.pharmer .tbl-of-contents ul a.active,
+body.pharmer li.nav-item.active a,
+body.pharmer .item ul li.is-active a,
+body.pharmer .kd-sidebar-menu li a:hover {
+  color: $pharmer-primary;
+}
+//Border-colour
+body.pharmer .star-count::before,
+body.pharmer .subscription-form .button,
+body.pharmer .accordion-item.active,
+body.pharmer blockquote {
+  border-color: $pharmer-primary;
+}
+/*==================================================
+           Theme pharmer End
+====================================================*/
+
+/*==================================================
+           Theme kubevault start
+====================================================*/
+//background colour
+body.kubevault .kubedb-primary-bg,
+body.kubevault .kd-primary,
+body.kubevault.fixed-nav #header,
+body.kubevault .socail-link-inline li a:hover,
+body.kubevault .tbl-of-contents ul a.active:before,
+body.kubevault .kd-version a.dropdown-item:hover,
+body.kubevault .ac-dropdown a.navbar-item:hover,
+body.kubevault a.nav-link.active:after {
+  background-color: $kubevault-primary;
+}
+//Font-colour
+body.kubevault .kd-transparent-btn,
+body.kubevault .carousel-wrapper:after,
+body.kubevault .cta-text h2,
+body.kubevault .main-menu-button a,
+body.kubevault .navbar-link.is-active,
+body.kubevault .navbar-link:hover,
+body.kubevault a.navbar-item.is-active,
+body.kubevault a.navbar-item:hover,
+body.kubevault .customize-kubedb .navbar-dropdown .navbar-item,
+body.kubevault .carousel-wrapper:after,
+body.kubevault .footer-link li a:hover,
+body.kubevault .accordion-item.active .accordion-header h2,
+body.kubevault ul li b,
+body.kubevault .full-info p b,
+body.kubevault .full-info ul li p a,
+body.kubevault .full-info p a,
+body.kubevault .full-info a,
+body.kubevault .tbl-of-contents ul a.active,
+body.kubevault li.nav-item.active a,
+body.kubevault .item ul li.is-active a,
+body.kubevault .kd-sidebar-menu li a:hover {
+  color: $kubevault-primary;
+}
+//Border-colour
+body.kubevault .star-count::before,
+body.kubevault .subscription-form .button,
+body.kubevault .accordion-item.active,
+body.kubevault blockquote {
+  border-color: $kubevault-primary;
+}
+/*==================================================
+           Theme kubevault End
+====================================================*/
+
+/*==================================================
+           Theme kubed start
+====================================================*/
+//background colour
+body.kubed .kubedb-primary-bg,
+body.kubed .kd-primary,
+body.kubed.fixed-nav #header,
+body.kubed .socail-link-inline li a:hover,
+body.kubed .tbl-of-contents ul a.active:before,
+body.kubed .kd-version a.dropdown-item:hover,
+body.kubed .ac-dropdown a.navbar-item:hover,
+body.kubed a.nav-link.active:after {
+  background-color: $kubed-primary;
+}
+//Font-colour
+body.kubed .kd-transparent-btn,
+body.kubed .carousel-wrapper:after,
+body.kubed .cta-text h2,
+body.kubed .main-menu-button a,
+body.kubed .navbar-link.is-active,
+body.kubed .navbar-link:hover,
+body.kubed a.navbar-item.is-active,
+body.kubed a.navbar-item:hover,
+body.kubed .customize-kubedb .navbar-dropdown .navbar-item,
+body.kubed .carousel-wrapper:after,
+body.kubed .footer-link li a:hover,
+body.kubed .accordion-item.active .accordion-header h2,
+body.kubed ul li b,
+body.kubed .full-info p b,
+body.kubed .full-info ul li p a,
+body.kubed .full-info p a,
+body.kubed .full-info a,
+body.kubed .tbl-of-contents ul a.active,
+body.kubed li.nav-item.active a,
+body.kubed .item ul li.is-active a,
+body.kubed .kd-sidebar-menu li a:hover {
+  color: $kubed-primary;
+}
+//Border-colour
+body.kubed .star-count::before,
+body.kubed .subscription-form .button,
+body.kubed .accordion-item.active,
+body.kubed blockquote {
+  border-color: $kubed-primary;
+}
+/*==================================================
+           Theme kubed End
+====================================================*/
+
+/*==================================================
+           Theme service-broker start
+====================================================*/
+//background colour
+body.service-broker .kubedb-primary-bg,
+body.service-broker .kd-primary,
+body.service-broker.fixed-nav #header,
+body.service-broker .socail-link-inline li a:hover,
+body.service-broker .tbl-of-contents ul a.active:before,
+body.service-broker .kd-version a.dropdown-item:hover,
+body.service-broker .ac-dropdown a.navbar-item:hover,
+body.service-broker a.nav-link.active:after {
+  background-color: $service-broker-primary;
+}
+//Font-colour
+body.service-broker .kd-transparent-btn,
+body.service-broker .carousel-wrapper:after,
+body.service-broker .cta-text h2,
+body.service-broker .main-menu-button a,
+body.service-broker .navbar-link.is-active,
+body.service-broker .navbar-link:hover,
+body.service-broker a.navbar-item.is-active,
+body.service-broker a.navbar-item:hover,
+body.service-broker .customize-kubedb .navbar-dropdown .navbar-item,
+body.service-broker .carousel-wrapper:after,
+body.service-broker .footer-link li a:hover,
+body.service-broker .accordion-item.active .accordion-header h2,
+body.service-broker ul li b,
+body.service-broker .full-info p b,
+body.service-broker .full-info ul li p a,
+body.service-broker .full-info p a,
+body.service-broker .full-info a,
+body.service-broker .tbl-of-contents ul a.active,
+body.service-broker li.nav-item.active a,
+body.service-broker .item ul li.is-active a,
+body.service-broker .kd-sidebar-menu li a:hover {
+  color: $service-broker-primary;
+}
+//Border-colour
+body.service-broker .star-count::before,
+body.service-broker .subscription-form .button,
+body.service-broker .accordion-item.active,
+body.service-broker blockquote {
+  border-color: $service-broker-primary;
+}
+/*==================================================
+           Theme service-broker End
+====================================================*/

@@ -93,20 +93,9 @@ h6 {
 }
 
 .kd-primary {
-  background-color: $primary-color !important;
+  background-color: $primary-color;
 }
 
-.kd-green {
-  background-color: $green-color !important;
-}
-
-.kd-orange {
-  background-color: $orange-color !important;
-}
-
-.kd-red {
-  background-color: $danger-color !important;
-}
 .kubedb-primary-bg {
   background-color: $primary-color;
 }
