@@ -1,0 +1,53 @@
+// Colour variable
+
+$searchlight-primary: #2ecc71;
+
+/*==================================================
+           Theme Searchlight start
+====================================================*/
+//background colour
+body.searchlight .kubedb-primary-bg,
+body.searchlight .kd-primary,
+body.searchlight.fixed-nav #header,
+body.searchlight .socail-link-inline li a:hover,
+body.searchlight .tbl-of-contents ul a.active:before,
+body.searchlight .kd-version a.dropdown-item:hover,
+body.searchlight .ac-dropdown a.navbar-item:hover,
+body.searchlight a.nav-link.active:after,
+body.searchlight .trial-button .button{
+  background-color: $searchlight-primary;
+}
+//Font-colour
+body.searchlight .kd-transparent-btn,
+body.searchlight .carousel-wrapper:after,
+body.searchlight .cta-text h2,
+body.searchlight .main-menu-button a,
+body.searchlight .navbar-link.is-active,
+body.searchlight .navbar-link:hover,
+body.searchlight a.navbar-item.is-active,
+body.searchlight a.navbar-item:hover,
+body.searchlight .customize-kubedb .navbar-dropdown .navbar-item,
+body.searchlight .carousel-wrapper:after,
+body.searchlight .footer-link li a:hover,
+body.searchlight .accordion-item.active .accordion-header h2,
+body.searchlight ul li b,
+body.searchlight .full-info p b,
+body.searchlight .full-info ul li p a,
+body.searchlight .full-info p a,
+body.searchlight .full-info a,
+body.searchlight .tbl-of-contents ul a.active,
+body.searchlight li.nav-item.active a,
+body.searchlight .item ul li.is-active a,
+body.searchlight .kd-sidebar-menu li a:hover {
+  color: $searchlight-primary;
+}
+//Border-colour
+body.searchlight .star-count::before,
+body.searchlight .subscription-form .button,
+body.searchlight .accordion-item.active,
+body.searchlight blockquote {
+  border-color: $searchlight-primary;
+}
+/*==================================================
+           Theme Searchlight End
+====================================================*/

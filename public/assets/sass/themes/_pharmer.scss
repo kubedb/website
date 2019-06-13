@@ -1,0 +1,53 @@
+// Colour variable
+
+$pharmer-primary: #8e44ad;
+
+/*==================================================
+           Theme pharmer start
+====================================================*/
+//background colour
+body.pharmer .kubedb-primary-bg,
+body.pharmer .kd-primary,
+body.pharmer.fixed-nav #header,
+body.pharmer .socail-link-inline li a:hover,
+body.pharmer .tbl-of-contents ul a.active:before,
+body.pharmer .kd-version a.dropdown-item:hover,
+body.pharmer .ac-dropdown a.navbar-item:hover,
+body.pharmer a.nav-link.active:after,
+body.pharmer .trial-button .button {
+  background-color: $pharmer-primary;
+}
+//Font-colour
+body.pharmer .kd-transparent-btn,
+body.pharmer .carousel-wrapper:after,
+body.pharmer .cta-text h2,
+body.pharmer .main-menu-button a,
+body.pharmer .navbar-link.is-active,
+body.pharmer .navbar-link:hover,
+body.pharmer a.navbar-item.is-active,
+body.pharmer a.navbar-item:hover,
+body.pharmer .customize-kubedb .navbar-dropdown .navbar-item,
+body.pharmer .carousel-wrapper:after,
+body.pharmer .footer-link li a:hover,
+body.pharmer .accordion-item.active .accordion-header h2,
+body.pharmer ul li b,
+body.pharmer .full-info p b,
+body.pharmer .full-info ul li p a,
+body.pharmer .full-info p a,
+body.pharmer .full-info a,
+body.pharmer .tbl-of-contents ul a.active,
+body.pharmer li.nav-item.active a,
+body.pharmer .item ul li.is-active a,
+body.pharmer .kd-sidebar-menu li a:hover {
+  color: $pharmer-primary;
+}
+//Border-colour
+body.pharmer .star-count::before,
+body.pharmer .subscription-form .button,
+body.pharmer .accordion-item.active,
+body.pharmer blockquote {
+  border-color: $pharmer-primary;
+}
+/*==================================================
+           Theme pharmer End
+====================================================*/

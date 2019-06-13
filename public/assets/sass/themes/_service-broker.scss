@@ -1,0 +1,53 @@
+// Colour variable
+
+$service-broker-primary: #a5b1c2;
+
+/*==================================================
+           Theme service-broker start
+====================================================*/
+//background colour
+body.service-broker .kubedb-primary-bg,
+body.service-broker .kd-primary,
+body.service-broker.fixed-nav #header,
+body.service-broker .socail-link-inline li a:hover,
+body.service-broker .tbl-of-contents ul a.active:before,
+body.service-broker .kd-version a.dropdown-item:hover,
+body.service-broker .ac-dropdown a.navbar-item:hover,
+body.service-broker a.nav-link.active:after,
+body.service-broker .trial-button .button {
+  background-color: $service-broker-primary;
+}
+//Font-colour
+body.service-broker .kd-transparent-btn,
+body.service-broker .carousel-wrapper:after,
+body.service-broker .cta-text h2,
+body.service-broker .main-menu-button a,
+body.service-broker .navbar-link.is-active,
+body.service-broker .navbar-link:hover,
+body.service-broker a.navbar-item.is-active,
+body.service-broker a.navbar-item:hover,
+body.service-broker .customize-kubedb .navbar-dropdown .navbar-item,
+body.service-broker .carousel-wrapper:after,
+body.service-broker .footer-link li a:hover,
+body.service-broker .accordion-item.active .accordion-header h2,
+body.service-broker ul li b,
+body.service-broker .full-info p b,
+body.service-broker .full-info ul li p a,
+body.service-broker .full-info p a,
+body.service-broker .full-info a,
+body.service-broker .tbl-of-contents ul a.active,
+body.service-broker li.nav-item.active a,
+body.service-broker .item ul li.is-active a,
+body.service-broker .kd-sidebar-menu li a:hover {
+  color: $service-broker-primary;
+}
+//Border-colour
+body.service-broker .star-count::before,
+body.service-broker .subscription-form .button,
+body.service-broker .accordion-item.active,
+body.service-broker blockquote {
+  border-color: $service-broker-primary;
+}
+/*==================================================
+           Theme service-broker End
+====================================================*/
