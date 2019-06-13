@@ -2323,7 +2323,7 @@ button.button.is-fullwidth {
   -o-border-radius: 3px 0 0 3px; }
 
 .trial-button .button {
-  background-color: #f99a00;
+  background-color: #4D4DCB;
   color: #fff;
   font-size: 14px;
   height: 40px; }
@@ -2786,7 +2786,8 @@ body.voyager .socail-link-inline li a:hover,
 body.voyager .tbl-of-contents ul a.active:before,
 body.voyager .kd-version a.dropdown-item:hover,
 body.voyager .ac-dropdown a.navbar-item:hover,
-body.voyager a.nav-link.active:after {
+body.voyager a.nav-link.active:after,
+body.voyager .trial-button .button {
   background-color: #f1c40f; }
 
 body.voyager .kd-transparent-btn,
@@ -2831,7 +2832,8 @@ body.searchlight .socail-link-inline li a:hover,
 body.searchlight .tbl-of-contents ul a.active:before,
 body.searchlight .kd-version a.dropdown-item:hover,
 body.searchlight .ac-dropdown a.navbar-item:hover,
-body.searchlight a.nav-link.active:after {
+body.searchlight a.nav-link.active:after,
+body.searchlight .trial-button .button {
   background-color: #2ecc71; }
 
 body.searchlight .kd-transparent-btn,
@@ -2876,7 +2878,8 @@ body.swift .socail-link-inline li a:hover,
 body.swift .tbl-of-contents ul a.active:before,
 body.swift .kd-version a.dropdown-item:hover,
 body.swift .ac-dropdown a.navbar-item:hover,
-body.swift a.nav-link.active:after {
+body.swift a.nav-link.active:after,
+body.swift .trial-button .button {
   background-color: #e67e22; }
 
 body.swift .kd-transparent-btn,
@@ -2921,7 +2924,8 @@ body.stash .socail-link-inline li a:hover,
 body.stash .tbl-of-contents ul a.active:before,
 body.stash .kd-version a.dropdown-item:hover,
 body.stash .ac-dropdown a.navbar-item:hover,
-body.stash a.nav-link.active:after {
+body.stash a.nav-link.active:after,
+body.stash .trial-button .button {
   background-color: #f39c12; }
 
 body.stash .kd-transparent-btn,
@@ -2966,7 +2970,8 @@ body.guard .socail-link-inline li a:hover,
 body.guard .tbl-of-contents ul a.active:before,
 body.guard .kd-version a.dropdown-item:hover,
 body.guard .ac-dropdown a.navbar-item:hover,
-body.guard a.nav-link.active:after {
+body.guard a.nav-link.active:after,
+body.guard .trial-button .button {
   background-color: #3498db; }
 
 body.guard .kd-transparent-btn,
@@ -3011,7 +3016,8 @@ body.kubeci .socail-link-inline li a:hover,
 body.kubeci .tbl-of-contents ul a.active:before,
 body.kubeci .kd-version a.dropdown-item:hover,
 body.kubeci .ac-dropdown a.navbar-item:hover,
-body.kubeci a.nav-link.active:after {
+body.kubeci a.nav-link.active:after,
+body.kubeci .trial-button .button {
   background-color: #2c3e50; }
 
 body.kubeci .kd-transparent-btn,
@@ -3056,7 +3062,8 @@ body.kubesheild .socail-link-inline li a:hover,
 body.kubesheild .tbl-of-contents ul a.active:before,
 body.kubesheild .kd-version a.dropdown-item:hover,
 body.kubesheild .ac-dropdown a.navbar-item:hover,
-body.kubesheild a.nav-link.active:after {
+body.kubesheild a.nav-link.active:after,
+body.kubesheild .trial-button .button {
   background-color: #95a5a6; }
 
 body.kubesheild .kd-transparent-btn,
@@ -3101,7 +3108,8 @@ body.pharmer .socail-link-inline li a:hover,
 body.pharmer .tbl-of-contents ul a.active:before,
 body.pharmer .kd-version a.dropdown-item:hover,
 body.pharmer .ac-dropdown a.navbar-item:hover,
-body.pharmer a.nav-link.active:after {
+body.pharmer a.nav-link.active:after,
+body.pharmer .trial-button .button {
   background-color: #8e44ad; }
 
 body.pharmer .kd-transparent-btn,
@@ -3146,7 +3154,8 @@ body.kubevault .socail-link-inline li a:hover,
 body.kubevault .tbl-of-contents ul a.active:before,
 body.kubevault .kd-version a.dropdown-item:hover,
 body.kubevault .ac-dropdown a.navbar-item:hover,
-body.kubevault a.nav-link.active:after {
+body.kubevault a.nav-link.active:after,
+body.kubevault .trial-button .button {
   background-color: #0fb9b1; }
 
 body.kubevault .kd-transparent-btn,
@@ -3191,7 +3200,8 @@ body.kubed .socail-link-inline li a:hover,
 body.kubed .tbl-of-contents ul a.active:before,
 body.kubed .kd-version a.dropdown-item:hover,
 body.kubed .ac-dropdown a.navbar-item:hover,
-body.kubed a.nav-link.active:after {
+body.kubed a.nav-link.active:after,
+body.kubed .trial-button .button {
   background-color: #8854d0; }
 
 body.kubed .kd-transparent-btn,
@@ -3236,7 +3246,8 @@ body.service-broker .socail-link-inline li a:hover,
 body.service-broker .tbl-of-contents ul a.active:before,
 body.service-broker .kd-version a.dropdown-item:hover,
 body.service-broker .ac-dropdown a.navbar-item:hover,
-body.service-broker a.nav-link.active:after {
+body.service-broker a.nav-link.active:after,
+body.service-broker .trial-button .button {
   background-color: #a5b1c2; }
 
 body.service-broker .kd-transparent-btn,

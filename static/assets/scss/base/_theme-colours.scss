@@ -22,7 +22,9 @@ body.voyager .socail-link-inline li a:hover,
 body.voyager .tbl-of-contents ul a.active:before,
 body.voyager .kd-version a.dropdown-item:hover,
 body.voyager .ac-dropdown a.navbar-item:hover,
-body.voyager a.nav-link.active:after {
+body.voyager a.nav-link.active:after,
+body.voyager .trial-button .button
+ {
   background-color: $voyager-primary;
 }
 //Font-colour
@@ -71,7 +73,8 @@ body.searchlight .socail-link-inline li a:hover,
 body.searchlight .tbl-of-contents ul a.active:before,
 body.searchlight .kd-version a.dropdown-item:hover,
 body.searchlight .ac-dropdown a.navbar-item:hover,
-body.searchlight a.nav-link.active:after {
+body.searchlight a.nav-link.active:after,
+body.searchlight .trial-button .button{
   background-color: $searchlight-primary;
 }
 //Font-colour
@@ -120,7 +123,8 @@ body.swift .socail-link-inline li a:hover,
 body.swift .tbl-of-contents ul a.active:before,
 body.swift .kd-version a.dropdown-item:hover,
 body.swift .ac-dropdown a.navbar-item:hover,
-body.swift a.nav-link.active:after {
+body.swift a.nav-link.active:after,
+body.swift .trial-button .button{
   background-color: $swift-primary;
 }
 //Font-colour
@@ -169,7 +173,8 @@ body.stash .socail-link-inline li a:hover,
 body.stash .tbl-of-contents ul a.active:before,
 body.stash .kd-version a.dropdown-item:hover,
 body.stash .ac-dropdown a.navbar-item:hover,
-body.stash a.nav-link.active:after {
+body.stash a.nav-link.active:after,
+body.stash .trial-button .button {
   background-color: $stash-primary;
 }
 //Font-colour
@@ -218,7 +223,8 @@ body.guard .socail-link-inline li a:hover,
 body.guard .tbl-of-contents ul a.active:before,
 body.guard .kd-version a.dropdown-item:hover,
 body.guard .ac-dropdown a.navbar-item:hover,
-body.guard a.nav-link.active:after {
+body.guard a.nav-link.active:after,
+body.guard .trial-button .button {
   background-color: $guard-primary;
 }
 //Font-colour
@@ -267,7 +273,8 @@ body.kubeci .socail-link-inline li a:hover,
 body.kubeci .tbl-of-contents ul a.active:before,
 body.kubeci .kd-version a.dropdown-item:hover,
 body.kubeci .ac-dropdown a.navbar-item:hover,
-body.kubeci a.nav-link.active:after {
+body.kubeci a.nav-link.active:after,
+body.kubeci .trial-button .button{
   background-color: $kubeci-primary;
 }
 //Font-colour
@@ -316,7 +323,8 @@ body.kubesheild .socail-link-inline li a:hover,
 body.kubesheild .tbl-of-contents ul a.active:before,
 body.kubesheild .kd-version a.dropdown-item:hover,
 body.kubesheild .ac-dropdown a.navbar-item:hover,
-body.kubesheild a.nav-link.active:after {
+body.kubesheild a.nav-link.active:after,
+body.kubesheild .trial-button .button {
   background-color: $kubesheild-primary;
 }
 //Font-colour
@@ -365,7 +373,8 @@ body.pharmer .socail-link-inline li a:hover,
 body.pharmer .tbl-of-contents ul a.active:before,
 body.pharmer .kd-version a.dropdown-item:hover,
 body.pharmer .ac-dropdown a.navbar-item:hover,
-body.pharmer a.nav-link.active:after {
+body.pharmer a.nav-link.active:after,
+body.pharmer .trial-button .button {
   background-color: $pharmer-primary;
 }
 //Font-colour
@@ -414,7 +423,8 @@ body.kubevault .socail-link-inline li a:hover,
 body.kubevault .tbl-of-contents ul a.active:before,
 body.kubevault .kd-version a.dropdown-item:hover,
 body.kubevault .ac-dropdown a.navbar-item:hover,
-body.kubevault a.nav-link.active:after {
+body.kubevault a.nav-link.active:after,
+body.kubevault .trial-button .button {
   background-color: $kubevault-primary;
 }
 //Font-colour
@@ -463,7 +473,8 @@ body.kubed .socail-link-inline li a:hover,
 body.kubed .tbl-of-contents ul a.active:before,
 body.kubed .kd-version a.dropdown-item:hover,
 body.kubed .ac-dropdown a.navbar-item:hover,
-body.kubed a.nav-link.active:after {
+body.kubed a.nav-link.active:after,
+body.kubed .trial-button .button {
   background-color: $kubed-primary;
 }
 //Font-colour
@@ -512,7 +523,8 @@ body.service-broker .socail-link-inline li a:hover,
 body.service-broker .tbl-of-contents ul a.active:before,
 body.service-broker .kd-version a.dropdown-item:hover,
 body.service-broker .ac-dropdown a.navbar-item:hover,
-body.service-broker a.nav-link.active:after {
+body.service-broker a.nav-link.active:after,
+body.service-broker .trial-button .button {
   background-color: $service-broker-primary;
 }
 //Font-colour
