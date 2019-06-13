@@ -18,11 +18,7 @@
   font-size: 14px;
   color: $link-color;
   font-weight: 600;
-  transition: 0.3s ease-in-out;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -ms-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
+  @include transition(.3s);
 }
 
 .main-menu-button a {
@@ -33,7 +29,7 @@
   background: #fff;
   color: $primary-color !important;
   font-size: 14px !important;
-  transition: 0.3s;
+  @include transition(.3s);
 }
 
 .main-menu-button .button:hover {
@@ -45,7 +41,7 @@
   background: #f4e5e5;
   border: none;
   color: #9d0a0e;
-  transition: 0.3s;
+  @include transition(.3s);
 }
 
 .button.for-support:hover {
@@ -57,7 +53,7 @@
   background: #affafe;
   border: none;
   color: #36c5f0;
-  transition: 0.3s;
+  @include transition(.3s);
 }
 
 .button.for-chat:hover {
@@ -337,8 +333,7 @@ a.play-icon .fa {
   margin: 0 100px 50px 0;
   text-align: center;
   padding: 25px;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
+  @include transition(.3s);
 }
 
 .single-db-logo:nth-child(even) {
@@ -514,11 +509,7 @@ a.play-icon .fa {
   border: 1px solid $primary-color;
   box-shadow: none;
   padding: 7px 15px;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
+  @include transition(.3s);
 }
 .subscription-form .button:hover {
   box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
@@ -561,6 +552,10 @@ a.play-icon .fa {
   display: block;
   padding: 8px 0;
   transition: 0.3s linear;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -ms-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
 }
 
 .footer-link li a:last-child {
@@ -609,7 +604,7 @@ a.play-icon .fa {
   line-height: 30px;
   border: 1px solid #8a8a8a;
   border-radius: 50%;
-  transition: 0.3s;
+  @include transition(.3s);
 }
 
 .socail-link-inline li:last-child {
@@ -945,6 +940,10 @@ a.play-icon .fa {
 
 .accordion-item.active {
   transition: background-color 0.2s ease-in 0s;
+  -webkit-transition: background-color 0.2s ease-in 0s;
+  -moz-transition: background-color 0.2s ease-in 0s;
+  -ms-transition: background-color 0.2s ease-in 0s;
+  -o-transition: background-color 0.2s ease-in 0s;
 }
 
 .accordion-item.active {
@@ -954,16 +953,22 @@ a.play-icon .fa {
 .accordion-item.active .accordion-header {
   color: #242a31;
   transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
+  -webkit-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
+  -moz-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
+  -ms-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
+  -o-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
 }
 
 .accordion-item.active .accordion-header h2:before,
 .accordion-item.active .accordion-header h2:after {
   background-color: black;
-  transition: background-color 0.2s ease-in 0.2s,
-    -webkit-transform 0.2s ease 0.1s;
+  transition: background-color 0.2s ease-in 0.2s,    -webkit-transform 0.2s ease 0.1s;
   transition: background-color 0.2s ease-in 0.2s, transform 0.2s ease 0.1s;
-  transition: background-color 0.2s ease-in 0.2s, transform 0.2s ease 0.1s,
-    -webkit-transform 0.2s ease 0.1s;
+  transition: background-color 0.2s ease-in 0.2s, transform 0.2s ease 0.1s,    -webkit-transform 0.2s ease 0.1s;
+  -webkit-transition: background-color 0.2s ease-in 0.2s,;
+  -moz-transition: background-color 0.2s ease-in 0.2s,;
+  -ms-transition: background-color 0.2s ease-in 0.2s,;
+  -o-transition: background-color 0.2s ease-in 0.2s,;
 }
 
 .accordion-item.active .accordion-header h2:before {
@@ -984,12 +989,20 @@ a.play-icon .fa {
 .accordion-item.active .accordion-body p {
   opacity: 1;
   transition: opacity 0.2s ease-in 0.2s;
+  -webkit-transition: opacity 0.2s ease-in 0.2s;
+  -moz-transition: opacity 0.2s ease-in 0.2s;
+  -ms-transition: opacity 0.2s ease-in 0.2s;
+  -o-transition: opacity 0.2s ease-in 0.2s;
 }
 
 .accordion-header {
   padding: 10px 15px;
   cursor: pointer;
   transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
+  -webkit-transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
+  -moz-transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
+  -ms-transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
+  -o-transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
 }
 
 .accordion-header h2 {
@@ -1038,6 +1051,10 @@ a.play-icon .fa {
   padding: 0 15px;
   overflow: hidden;
   transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
+  -webkit-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
+  -moz-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
+  -ms-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
+  -o-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
 }
 
 /*============================================================== 
@@ -1112,7 +1129,7 @@ body.fixed-nav .kubedb-documentation-menu {
   margin-left: 10px;
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s;
+  @include transition(.3s);
 }
 
 .full-info h2:hover span.share-icon {
@@ -1241,7 +1258,7 @@ ul li b {
   top: 0;
   position: absolute;
   border-radius: 50px;
-  transition: 0.3s;
+  @include transition(.3s);
 }
 
 .tbl-of-contents ul a.active {
@@ -1324,6 +1341,10 @@ button.button.is-fullwidth {
   color: #32325d;
   transition: 0.2s ease-in-out;
   overflow: hidden;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 }
 
 .kd-version a.dropdown-item:last-child {
@@ -1360,7 +1381,7 @@ button.button.is-fullwidth {
   background: transparent;
 }
 .dropdown.is-active .button .icon:last-child:not(:first-child) {
-  transform: rotate(180deg);
+  @include transform(rotate(180deg));
 }
 .kd-version .dropdown {
   border-bottom: 1px solid #E6E7E7;
@@ -1390,15 +1411,16 @@ button.button.is-fullwidth {
 
 .item input:checked ~ label span,
 .item input:checked ~ .item > label span {
-  transform: rotate(90deg);
+  @include transform(rotate(90deg));
   margin-top: 0;
   transform-origin: 0;
+
 }
 
 .item label span {
   position: absolute;
   right: 15px;
-  transition: 0.3s;
+  @include transition(.3s);
   top: 9px;
 }
 .item ul li a {
@@ -1422,7 +1444,11 @@ button.button.is-fullwidth {
   user-select: none;
   margin-top: 10px;
   margin-top: 5px;
-  transition: 0.3s;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
 }
 
 .kd-sidebar-menu li a:hover {
@@ -1501,12 +1527,12 @@ button.button.is-fullwidth {
   left: 50%;
   opacity: 0;
   visibility: hidden;
-  transition: 0.1s ease-in-out;
-  -webkit-transition: 0.1s ease-in-out;
-  -moz-transition: 0.1s ease-in-out;
-  -ms-transition: 0.1s ease-in-out;
-  -o-transition: 0.1s ease-in-out;
+  @include transition(.1s);
   display: none;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 .ac-dropdown {
   z-index: 99;
@@ -1521,20 +1547,12 @@ button.button.is-fullwidth {
   left: 50%;
   opacity: 0;
   visibility: hidden;
-  transition: 0.2s ease-in;
-  -webkit-transition: 0.2s ease-in;
-  -moz-transition: 0.2s ease-in;
-  -ms-transition: 0.2s ease-in;
-  -o-transition: 0.2s ease-in;
+  @include transition(.2s);
 }
 .ac-dropdown a.navbar-item {
   color: #333;
   padding: 10px 20px;
-  transition: 0.2s ease-in-out;
-  -webkit-transition: 0.2s ease-in-out;
-  -moz-transition: 0.2s ease-in-out;
-  -ms-transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
+  @include transition(.2s);
 }
 .ac-dropdown a.navbar-item:hover {
   background: $primary-color;
@@ -1583,16 +1601,13 @@ p.intro {
   padding: 10px 12px !important;
   min-height: 75px;
   overflow: hidden;
-  transition: 0.3s ease-in-out;
+  @include transition(.3s);
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -ms-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
+  
 }
 .single-product-item:hover {
   background: #e4e4f7;
