@@ -1,6 +1,7 @@
 title: Run production-grade databases easily on Kubernetes
 baseurl: https://kubedb-v2-hugo.web.app
 languageCode: en-us
+assetDir: static
 disableKinds:
   - taxonomy
   - taxonomyTerm

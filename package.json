@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/kubedb/website#readme",
   "devDependencies": {
+    "autoprefixer": "^9.6.0",
     "fs-extra": "^7.0.1",
     "jsonfile": "^5.0.0",
     "postcss-cli": "^6.1.2",

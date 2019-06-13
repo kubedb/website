@@ -1,6 +1,6 @@
-.firebase/
-content/docs/
-node_modules/
-repos/
-resources/
+/.firebase
+/content/docs
+/node_modules
+/repos
+/resources
 .sass-cache
