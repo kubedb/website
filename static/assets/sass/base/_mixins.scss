@@ -14,10 +14,10 @@
   -o-transform: $deg;
 }
 
-@mixin  transition($sec) {
-  transition: $sec ease-in-out  ;
-  -webkit-transition: $sec ease-in-out  ;
-  -moz-transition: $sec ease-in-out  ;
-  -ms-transition: $sec ease-in-out  ;
-  -o-transition: $sec ease-in-out  ;
+@mixin transition($sec) {
+  transition: $sec ease-in-out;
+  -webkit-transition: $sec ease-in-out;
+  -moz-transition: $sec ease-in-out;
+  -ms-transition: $sec ease-in-out;
+  -o-transition: $sec ease-in-out;
 }
