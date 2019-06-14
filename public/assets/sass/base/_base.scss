@@ -17,7 +17,7 @@
   font-size: 14px;
   color: $link-color;
   font-weight: 600;
-  @include transition(0.3s);
+  transition: 0.3s ease-in-out;
 }
 
 .main-menu-button a {
@@ -28,7 +28,7 @@
   background: #fff;
   color: $primary-color !important;
   font-size: 14px !important;
-  @include transition(0.3s);
+  transition: 0.3s ease-in-out;
 }
 
 .main-menu-button .button:hover {
@@ -40,7 +40,7 @@
   background: #f4e5e5;
   border: none;
   color: #9d0a0e;
-  @include transition(0.3s);
+  transition: 0.3s ease-in-out;
 }
 
 .button.for-support:hover {
@@ -52,7 +52,7 @@
   background: #affafe;
   border: none;
   color: #36c5f0;
-  @include transition(0.3s);
+  transition: 0.3s ease-in-out;
 }
 
 .button.for-chat:hover {
@@ -266,12 +266,10 @@ a.play-icon .fa {
 @keyframes grow {
   from {
     transform: scale(1);
-    -webkit-transform: scale(1);
   }
 
   to {
     transform: scale(2);
-    -webkit-transform: scale(2);
     opacity: 0;
   }
 }
@@ -332,7 +330,7 @@ a.play-icon .fa {
   margin: 0 100px 50px 0;
   text-align: center;
   padding: 25px;
-  @include transition(0.3s);
+  transition: 0.3s ease-in-out;
 }
 
 .single-db-logo:nth-child(even) {
@@ -483,6 +481,24 @@ a.play-icon .fa {
 }
 
 /* footer area start */
+.subscription-form label {
+  font-size: 18px;
+  font-weight: 600;
+  color: $heading-color;
+  display: block;
+  margin-bottom: 10px;
+  font-family: $font-heading;
+}
+
+.subscription-form input {
+  background: #f8f8f8;
+  border: 1px solid #e3e3e3;
+  box-shadow: none;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 8px 30px 8px 10px;
+  height: 40px;
+}
 
 .subscription-form .button {
   font-family: $font-link;
@@ -492,24 +508,29 @@ a.play-icon .fa {
   border: 1px solid $primary-color;
   box-shadow: none;
   padding: 7px 15px;
-  @include transition(0.3s);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 .subscription-form .button:hover {
-  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
+  background-color: darken($primary-color, 15%);
 }
-
 .subscription-form {
   margin-top: 20px;
 }
-.subscription-form i {
-  padding-left: 15px;
+
+.subscription-form input[type="email"]:focus,
+.subscription-form input[type="email"]:hover {
+  outline: none;
+  box-shadow: none;
 }
+
 .contact-information h4 {
   font-size: 18px;
   color: $heading-color;
 }
 
-.all-contact-info li a {
+.all-contact-info li a,
+p.spam-message {
   color: $link-color;
   display: inline-block;
   font-size: 14px;
@@ -537,10 +558,6 @@ a.play-icon .fa {
   display: block;
   padding: 8px 0;
   transition: 0.3s linear;
-  -webkit-transition: 0.3s linear;
-  -moz-transition: 0.3s linear;
-  -ms-transition: 0.3s linear;
-  -o-transition: 0.3s linear;
 }
 
 .footer-link li a:last-child {
@@ -589,7 +606,7 @@ a.play-icon .fa {
   line-height: 30px;
   border: 1px solid #8a8a8a;
   border-radius: 50%;
-  @include transition(0.3s);
+  transition: 0.3s ease-in-out;
 }
 
 .socail-link-inline li:last-child {
@@ -667,7 +684,7 @@ a.play-icon .fa {
 }
 
 /*====================================
-    Support page CSS 
+    Support page CSS
 ====================================*/
 .pricing-plan-area {
   background-color: #f9f9f9;
@@ -691,7 +708,7 @@ a.play-icon .fa {
 /* pricing section style */
 .pricing-button .kd-button {
   padding: 8px 40px;
-  background: #3f19ad;
+  background: $primary-color;
   width: 180px;
 }
 
@@ -728,9 +745,20 @@ a.play-icon .fa {
   border-radius: 0 0 8px 8px;
   border: 1px solid #dedede;
 }
-
+.pricing-top.kd-green,
+.kd-button.kd-green {
+  background: $green-color !important;
+}
+.pricing-top.kd-orange,
+.kd-button.kd-orange {
+  background-color: $orange-color !important;
+}
+.pricing-top.kd-red,
+.kd-button.kd-red {
+  background-color: $red-color !important;
+}
 .pricing-top {
-  background: #3f19ad;
+  background: $primary-color;
   box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
   color: #fff;
   padding: 20px;
@@ -763,7 +791,7 @@ a.play-icon .fa {
   content: "";
   left: -12px;
   top: 0;
-  border-right: 12px solid #220181;
+  border-right: 12px solid darken($primary-color, 15%);
   border-top: 22px solid transparent;
 }
 
@@ -925,10 +953,6 @@ a.play-icon .fa {
 
 .accordion-item.active {
   transition: background-color 0.2s ease-in 0s;
-  -webkit-transition: background-color 0.2s ease-in 0s;
-  -moz-transition: background-color 0.2s ease-in 0s;
-  -ms-transition: background-color 0.2s ease-in 0s;
-  -o-transition: background-color 0.2s ease-in 0s;
 }
 
 .accordion-item.active {
@@ -938,24 +962,12 @@ a.play-icon .fa {
 .accordion-item.active .accordion-header {
   color: #242a31;
   transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
-  -webkit-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
-  -moz-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
-  -ms-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
-  -o-transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
 }
 
 .accordion-item.active .accordion-header h2:before,
 .accordion-item.active .accordion-header h2:after {
   background-color: black;
-  transition: background-color 0.2s ease-in 0.2s,
-    -webkit-transform 0.2s ease 0.1s;
   transition: background-color 0.2s ease-in 0.2s, transform 0.2s ease 0.1s;
-  transition: background-color 0.2s ease-in 0.2s, transform 0.2s ease 0.1s,
-    -webkit-transform 0.2s ease 0.1s;
-  -webkit-transition: background-color 0.2s ease-in 0.2s;
-  -moz-transition: background-color 0.2s ease-in 0.2s;
-  -ms-transition: background-color 0.2s ease-in 0.2s;
-  -o-transition: background-color 0.2s ease-in 0.2s;
 }
 
 .accordion-item.active .accordion-header h2:before {
@@ -963,7 +975,6 @@ a.play-icon .fa {
 }
 
 .accordion-item.active .accordion-header h2:after {
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
@@ -976,21 +987,12 @@ a.play-icon .fa {
 .accordion-item.active .accordion-body p {
   opacity: 1;
   transition: opacity 0.2s ease-in 0.2s;
-  -webkit-transition: opacity 0.2s ease-in 0.2s;
-  -moz-transition: opacity 0.2s ease-in 0.2s;
-  -ms-transition: opacity 0.2s ease-in 0.2s;
-  -o-transition: opacity 0.2s ease-in 0.2s;
 }
 
 .accordion-header {
   padding: 10px 15px;
   cursor: pointer;
   transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
-  -webkit-transition: background-color 0.2s ease-out 0.3s,
-    color 0.2s ease-out 0s;
-  -moz-transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
-  -ms-transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
-  -o-transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
 }
 
 .accordion-header h2 {
@@ -1012,10 +1014,7 @@ a.play-icon .fa {
   content: "";
   position: absolute;
   background-color: #333;
-  transition: background-color 0.2s ease-in 0s, -webkit-transform 0.2s ease 0s;
   transition: background-color 0.2s ease-in 0s, transform 0.2s ease 0s;
-  transition: background-color 0.2s ease-in 0s, transform 0.2s ease 0s,
-    -webkit-transform 0.2s ease 0s;
 }
 
 .accordion-header h2:before {
@@ -1030,7 +1029,6 @@ a.play-icon .fa {
   height: 10px;
   right: 4px;
   top: calc(50% - 5px);
-  -webkit-transform: none;
   transform: none;
 }
 
@@ -1039,13 +1037,9 @@ a.play-icon .fa {
   padding: 0 15px;
   overflow: hidden;
   transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
-  -webkit-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
-  -moz-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
-  -ms-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
-  -o-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
 }
 
-/*============================================================== 
+/*==============================================================
     Documentation page style
 ==============================================================*/
 
@@ -1117,7 +1111,7 @@ body.fixed-nav .kubedb-documentation-menu {
   margin-left: 10px;
   opacity: 0;
   visibility: hidden;
-  @include transition(0.3s);
+  transition: 0.3s ease-in-out;
 }
 
 .full-info h2:hover span.share-icon {
@@ -1246,7 +1240,7 @@ ul li b {
   top: 0;
   position: absolute;
   border-radius: 50px;
-  @include transition(0.3s);
+  transition: 0.3s ease-in-out;
 }
 
 .tbl-of-contents ul a.active {
@@ -1262,7 +1256,6 @@ li.nav-item.active a {
 /* Fixed Sidebar */
 .right-sidebar-area {
   position: sticky;
-  position: -webkit-sticky;
   top: 140px;
   max-width: 215px;
   z-index: 9;
@@ -1300,10 +1293,6 @@ li.nav-item.active a {
   height: 100%;
   overflow-y: scroll;
   transition: 0.3s linear;
-  -webkit-transition: 0.3s linear;
-  -moz-transition: 0.3s linear;
-  -ms-transition: 0.3s linear;
-  -o-transition: 0.3s linear;
 }
 .sidebar-search-area::-webkit-scrollbar {
   width: 8px;
@@ -1318,10 +1307,6 @@ li.nav-item.active a {
 .sidebar-search-area::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
 }
 
 /* Handle on hover */
@@ -1427,10 +1412,6 @@ li.nav-item.active a {
   border-bottom: 1px solid #f2f2f2;
   padding: 8px 20px;
   transition: 0.3s ease-in-out;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -ms-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
 }
 .single-search-result:last-child {
   border-bottom: none;
@@ -1508,8 +1489,8 @@ li.nav-item.active a {
 }
 .dropdown-trigger button.button .tag {
   margin-left: 115px;
-  background: #F4E5E5;
-  color: #9D0A0E;
+  background: #f4e5e5;
+  color: #9d0a0e;
   font-weight: 500;
   font-family: $font-link;
 }
@@ -1539,10 +1520,6 @@ button.button.is-fullwidth {
   color: #32325d;
   transition: 0.2s ease-in-out;
   overflow: hidden;
-  -webkit-transition: 0.2s ease-in-out;
-  -moz-transition: 0.2s ease-in-out;
-  -ms-transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
 }
 
 .kd-version a.dropdown-item:last-child {
@@ -1555,30 +1532,22 @@ button.button.is-fullwidth {
 }
 .kd-version a.dropdown-item:first-child:hover {
   border-radius: 4px 4px 0 0;
-  -webkit-border-radius: 4px 4px 0 0;
-  -moz-border-radius: 4px 4px 0 0;
-  -ms-border-radius: 4px 4px 0 0;
-  -o-border-radius: 4px 4px 0 0;
 }
 .kd-version a.dropdown-item:last-child:hover {
   border-radius: 0 0 4px 4px;
-  -webkit-border-radius: 0 0 4px 4px;
-  -moz-border-radius: 0 0 4px 4px;
-  -ms-border-radius: 0 0 4px 4px;
-  -o-border-radius: 0 0 4px 4px;
 }
 .kd-version a.dropdown-item .tag {
   float: right;
   overflow: hidden;
-  background: #F4E5E5;
-  color: #9D0A0E;
+  background: #f4e5e5;
+  color: #9d0a0e;
 }
 
 .kd-version {
   margin-bottom: 15px;
 }
 .dropdown.is-active .button .icon:last-child:not(:first-child) {
-  @include transform(rotate(180deg));
+  transform: rotate(180deg);
 }
 /* version section style end */
 
@@ -1605,7 +1574,7 @@ button.button.is-fullwidth {
 
 .item input:checked ~ label span,
 .item input:checked ~ .item > label span {
-  @include transform(rotate(90deg));
+  transform: rotate(90deg);
   margin-top: 0;
   transform-origin: 0;
 }
@@ -1613,7 +1582,7 @@ button.button.is-fullwidth {
 .item label span {
   position: absolute;
   right: 15px;
-  @include transition(0.3s);
+  transition: 0.3s ease-in-out;
   top: 9px;
 }
 .item ul li a {
@@ -1638,10 +1607,6 @@ button.button.is-fullwidth {
   margin-top: 10px;
   margin-top: 5px;
   transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
 }
 
 .kd-sidebar-menu li a:hover {
@@ -1661,7 +1626,6 @@ button.button.is-fullwidth {
 .kd-left-sidebar {
   margin-right: 30px;
   position: sticky;
-  position: -webkit-sticky;
   top: 130px;
 }
 
@@ -1670,10 +1634,6 @@ button.button.is-fullwidth {
   position: relative;
   z-index: 1;
   border-radius: 3px 0 0 3px;
-  -webkit-border-radius: 3px 0 0 3px;
-  -moz-border-radius: 3px 0 0 3px;
-  -ms-border-radius: 3px 0 0 3px;
-  -o-border-radius: 3px 0 0 3px;
 }
 .trial-button .button {
   background-color: $primary-color;
@@ -1740,12 +1700,8 @@ span.new-item {
   left: 50%;
   opacity: 0;
   visibility: hidden;
-  @include transition(0.1s);
+  transition: 0.1s ease-in-out;
   display: none;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
 }
 .ac-dropdown {
   z-index: 99;
@@ -1760,12 +1716,12 @@ span.new-item {
   left: 50%;
   opacity: 0;
   visibility: hidden;
-  @include transition(0.2s);
+  transition: 0.2s ease-in-out;
 }
 .ac-dropdown a.navbar-item {
   color: #333;
   padding: 10px 20px;
-  @include transition(0.2s);
+  transition: 0.2s ease-in-out;
 }
 .ac-dropdown a.navbar-item:hover {
   background: $primary-color;
@@ -1814,12 +1770,8 @@ p.intro {
   padding: 10px 12px !important;
   min-height: 75px;
   overflow: hidden;
-  @include transition(0.3s);
+  transition: 0.3s ease-in-out;
   border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
 }
 .single-product-item:hover {
   background: #e4e4f7;
@@ -1919,10 +1871,6 @@ table {
   overflow-x: auto;
   margin-bottom: 15px;
   border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
 }
 
 table tr {
@@ -2000,10 +1948,6 @@ a.nav-link.active {
   border-top: 1px solid #dbdbdb;
   border-bottom-color: transparent !important;
   border-radius: 4px 4px 0 0;
-  -webkit-border-radius: 4px 4px 0 0;
-  -moz-border-radius: 4px 4px 0 0;
-  -ms-border-radius: 4px 4px 0 0;
-  -o-border-radius: 4px 4px 0 0;
   position: relative;
   z-index: 1;
 }
@@ -2017,10 +1961,6 @@ a.nav-link.active:after {
   height: 4px;
   z-index: -1;
   border-radius: 4px 4px 0 0;
-  -webkit-border-radius: 4px 4px 0 0;
-  -moz-border-radius: 4px 4px 0 0;
-  -ms-border-radius: 4px 4px 0 0;
-  -o-border-radius: 4px 4px 0 0;
 }
 
 .nav-tabs {
