@@ -494,7 +494,7 @@ a.play-icon .fa {
 
 .subscription-form input {
   background: #f8f8f8;
-  border: 1px solid #E3E3E3;
+  border: 1px solid #e3e3e3;
   box-shadow: none;
   font-size: 16px;
   border-radius: 4px;
@@ -513,14 +513,15 @@ a.play-icon .fa {
   @include transition(0.3s);
   cursor: pointer;
 }
-.subscription-form .button:hover{
-  background-color: darken($primary-color , 15%);
+.subscription-form .button:hover {
+  background-color: darken($primary-color, 15%);
 }
 .subscription-form {
   margin-top: 20px;
 }
 
-.subscription-form input[type="email"]:focus, .subscription-form input[type="email"]:hover {
+.subscription-form input[type="email"]:focus,
+.subscription-form input[type="email"]:hover {
   outline: none;
   box-shadow: none;
 }
@@ -530,7 +531,8 @@ a.play-icon .fa {
   color: $heading-color;
 }
 
-.all-contact-info li a, p.spam-message {
+.all-contact-info li a,
+p.spam-message {
   color: $link-color;
   display: inline-block;
   font-size: 14px;
@@ -688,7 +690,7 @@ a.play-icon .fa {
 }
 
 /*====================================
-    Support page CSS 
+    Support page CSS
 ====================================*/
 .pricing-plan-area {
   background-color: #f9f9f9;
@@ -749,13 +751,16 @@ a.play-icon .fa {
   border-radius: 0 0 8px 8px;
   border: 1px solid #dedede;
 }
-.pricing-top.kd-green,.kd-button.kd-green{
+.pricing-top.kd-green,
+.kd-button.kd-green {
   background: $green-color !important;
 }
-.pricing-top.kd-orange, .kd-button.kd-orange{
+.pricing-top.kd-orange,
+.kd-button.kd-orange {
   background-color: $orange-color !important;
 }
-.pricing-top.kd-red, .kd-button.kd-red{
+.pricing-top.kd-red,
+.kd-button.kd-red {
   background-color: $red-color !important;
 }
 .pricing-top {
@@ -1074,7 +1079,7 @@ a.play-icon .fa {
   -o-transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
 }
 
-/*============================================================== 
+/*==============================================================
     Documentation page style
 ==============================================================*/
 
@@ -1537,8 +1542,8 @@ li.nav-item.active a {
 }
 .dropdown-trigger button.button .tag {
   margin-left: 115px;
-  background: #F4E5E5;
-  color: #9D0A0E;
+  background: #f4e5e5;
+  color: #9d0a0e;
   font-weight: 500;
   font-family: $font-link;
 }
@@ -1599,8 +1604,8 @@ button.button.is-fullwidth {
 .kd-version a.dropdown-item .tag {
   float: right;
   overflow: hidden;
-  background: #F4E5E5;
-  color: #9D0A0E;
+  background: #f4e5e5;
+  color: #9d0a0e;
 }
 
 .kd-version {
