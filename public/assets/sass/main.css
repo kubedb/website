@@ -2791,8 +2791,8 @@ video {
   margin-top: 30px; }
 
 /*==================================================
-           Theme guard start
-====================================================*/
+                  Theme guard Start
+  ====================================================*/
 body.guard .kubedb-primary-bg,
 body.guard .kd-primary,
 body.guard.fixed-nav #header,
@@ -2850,11 +2850,11 @@ body.guard .pricing-top:before {
   border-right-color: #1d6fa5; }
 
 /*==================================================
-           Theme guard End
-====================================================*/
+                  Theme guard End
+  ====================================================*/
 /*==================================================
-           Theme kubeci start
-====================================================*/
+                  Theme kubeci Start
+  ====================================================*/
 body.kubeci .kubedb-primary-bg,
 body.kubeci .kd-primary,
 body.kubeci.fixed-nav #header,
@@ -2863,7 +2863,10 @@ body.kubeci .tbl-of-contents ul a.active:before,
 body.kubeci .kd-version a.dropdown-item:hover,
 body.kubeci .ac-dropdown a.navbar-item:hover,
 body.kubeci a.nav-link.active:after,
-body.kubeci .trial-button .button {
+body.kubeci .trial-button .button,
+body.kubeci .pricing-top,
+body.kubeci .pricing-button .kd-button,
+body.kubeci .subscription-form .button:hover {
   background-color: #2c3e50; }
 
 body.kubeci .kd-transparent-btn,
@@ -2892,15 +2895,28 @@ body.kubeci .kd-sidebar-menu li a:hover {
 body.kubeci .star-count::before,
 body.kubeci .subscription-form .button,
 body.kubeci .accordion-item.active,
-body.kubeci blockquote {
+body.kubeci blockquote,
+body.kubeci .input.is-active,
+body.kubeci .input.is-focused,
+body.kubeci .input:active,
+body.kubeci .input:focus,
+body.kubeci .textarea.is-active,
+body.kubeci .textarea.is-focused,
+body.kubeci .textarea:active,
+body.kubeci .textarea:focus,
+body.kubeci .subscription-form .input.is-hovered,
+body.kubeci .subscription-form .input:hover {
   border-color: #2c3e50; }
 
+body.kubeci .pricing-top:before {
+  border-right-color: #11181f; }
+
 /*==================================================
-           Theme kubeci End
-====================================================*/
+                  Theme kubeci End
+  ====================================================*/
 /*==================================================
-           Theme kubed start
-====================================================*/
+                  Theme kubed Start
+  ====================================================*/
 body.kubed .kubedb-primary-bg,
 body.kubed .kd-primary,
 body.kubed.fixed-nav #header,
@@ -2909,7 +2925,10 @@ body.kubed .tbl-of-contents ul a.active:before,
 body.kubed .kd-version a.dropdown-item:hover,
 body.kubed .ac-dropdown a.navbar-item:hover,
 body.kubed a.nav-link.active:after,
-body.kubed .trial-button .button {
+body.kubed .trial-button .button,
+body.kubed .pricing-top,
+body.kubed .pricing-button .kd-button,
+body.kubed .subscription-form .button:hover {
   background-color: #8854d0; }
 
 body.kubed .kd-transparent-btn,
@@ -2938,15 +2957,28 @@ body.kubed .kd-sidebar-menu li a:hover {
 body.kubed .star-count::before,
 body.kubed .subscription-form .button,
 body.kubed .accordion-item.active,
-body.kubed blockquote {
+body.kubed blockquote,
+body.kubed .input.is-active,
+body.kubed .input.is-focused,
+body.kubed .input:active,
+body.kubed .input:focus,
+body.kubed .textarea.is-active,
+body.kubed .textarea.is-focused,
+body.kubed .textarea:active,
+body.kubed .textarea:focus,
+body.kubed .subscription-form .input.is-hovered,
+body.kubed .subscription-form .input:hover {
   border-color: #8854d0; }
 
+body.kubed .pricing-top:before {
+  border-right-color: #622ea9; }
+
 /*==================================================
-           Theme kubed End
-====================================================*/
+                  Theme kubed End
+  ====================================================*/
 /*==================================================
-           Theme kubesheild start
-====================================================*/
+                  Theme kubesheild Start
+  ====================================================*/
 body.kubesheild .kubedb-primary-bg,
 body.kubesheild .kd-primary,
 body.kubesheild.fixed-nav #header,
@@ -2955,7 +2987,10 @@ body.kubesheild .tbl-of-contents ul a.active:before,
 body.kubesheild .kd-version a.dropdown-item:hover,
 body.kubesheild .ac-dropdown a.navbar-item:hover,
 body.kubesheild a.nav-link.active:after,
-body.kubesheild .trial-button .button {
+body.kubesheild .trial-button .button,
+body.kubesheild .pricing-top,
+body.kubesheild .pricing-button .kd-button,
+body.kubesheild .subscription-form .button:hover {
   background-color: #95a5a6; }
 
 body.kubesheild .kd-transparent-btn,
@@ -2984,15 +3019,28 @@ body.kubesheild .kd-sidebar-menu li a:hover {
 body.kubesheild .star-count::before,
 body.kubesheild .subscription-form .button,
 body.kubesheild .accordion-item.active,
-body.kubesheild blockquote {
+body.kubesheild blockquote,
+body.kubesheild .input.is-active,
+body.kubesheild .input.is-focused,
+body.kubesheild .input:active,
+body.kubesheild .input:focus,
+body.kubesheild .textarea.is-active,
+body.kubesheild .textarea.is-focused,
+body.kubesheild .textarea:active,
+body.kubesheild .textarea:focus,
+body.kubesheild .subscription-form .input.is-hovered,
+body.kubesheild .subscription-form .input:hover {
   border-color: #95a5a6; }
 
+body.kubesheild .pricing-top:before {
+  border-right-color: #6d8082; }
+
 /*==================================================
-           Theme kubesheild End
-====================================================*/
+                  Theme kubesheild End
+  ====================================================*/
 /*==================================================
-           Theme kubevault start
-====================================================*/
+                  Theme kubevault Start
+  ====================================================*/
 body.kubevault .kubedb-primary-bg,
 body.kubevault .kd-primary,
 body.kubevault.fixed-nav #header,
@@ -3001,7 +3049,10 @@ body.kubevault .tbl-of-contents ul a.active:before,
 body.kubevault .kd-version a.dropdown-item:hover,
 body.kubevault .ac-dropdown a.navbar-item:hover,
 body.kubevault a.nav-link.active:after,
-body.kubevault .trial-button .button {
+body.kubevault .trial-button .button,
+body.kubevault .pricing-top,
+body.kubevault .pricing-button .kd-button,
+body.kubevault .subscription-form .button:hover {
   background-color: #0fb9b1; }
 
 body.kubevault .kd-transparent-btn,
@@ -3030,15 +3081,28 @@ body.kubevault .kd-sidebar-menu li a:hover {
 body.kubevault .star-count::before,
 body.kubevault .subscription-form .button,
 body.kubevault .accordion-item.active,
-body.kubevault blockquote {
+body.kubevault blockquote,
+body.kubevault .input.is-active,
+body.kubevault .input.is-focused,
+body.kubevault .input:active,
+body.kubevault .input:focus,
+body.kubevault .textarea.is-active,
+body.kubevault .textarea.is-focused,
+body.kubevault .textarea:active,
+body.kubevault .textarea:focus,
+body.kubevault .subscription-form .input.is-hovered,
+body.kubevault .subscription-form .input:hover {
   border-color: #0fb9b1; }
 
+body.kubevault .pricing-top:before {
+  border-right-color: #09726d; }
+
 /*==================================================
-           Theme kubevault End
-====================================================*/
+                  Theme kubevault End
+  ====================================================*/
 /*==================================================
-           Theme pharmer start
-====================================================*/
+                  Theme pharmer Start
+  ====================================================*/
 body.pharmer .kubedb-primary-bg,
 body.pharmer .kd-primary,
 body.pharmer.fixed-nav #header,
@@ -3047,7 +3111,10 @@ body.pharmer .tbl-of-contents ul a.active:before,
 body.pharmer .kd-version a.dropdown-item:hover,
 body.pharmer .ac-dropdown a.navbar-item:hover,
 body.pharmer a.nav-link.active:after,
-body.pharmer .trial-button .button {
+body.pharmer .trial-button .button,
+body.pharmer .pricing-top,
+body.pharmer .pricing-button .kd-button,
+body.pharmer .subscription-form .button:hover {
   background-color: #8e44ad; }
 
 body.pharmer .kd-transparent-btn,
@@ -3076,15 +3143,28 @@ body.pharmer .kd-sidebar-menu li a:hover {
 body.pharmer .star-count::before,
 body.pharmer .subscription-form .button,
 body.pharmer .accordion-item.active,
-body.pharmer blockquote {
+body.pharmer blockquote,
+body.pharmer .input.is-active,
+body.pharmer .input.is-focused,
+body.pharmer .input:active,
+body.pharmer .input:focus,
+body.pharmer .textarea.is-active,
+body.pharmer .textarea.is-focused,
+body.pharmer .textarea:active,
+body.pharmer .textarea:focus,
+body.pharmer .subscription-form .input.is-hovered,
+body.pharmer .subscription-form .input:hover {
   border-color: #8e44ad; }
 
+body.pharmer .pricing-top:before {
+  border-right-color: #612e76; }
+
 /*==================================================
-           Theme pharmer End
-====================================================*/
+                  Theme pharmer End
+  ====================================================*/
 /*==================================================
-           Theme Searchlight start
-====================================================*/
+                  Theme searchlight Start
+  ====================================================*/
 body.searchlight .kubedb-primary-bg,
 body.searchlight .kd-primary,
 body.searchlight.fixed-nav #header,
@@ -3093,7 +3173,10 @@ body.searchlight .tbl-of-contents ul a.active:before,
 body.searchlight .kd-version a.dropdown-item:hover,
 body.searchlight .ac-dropdown a.navbar-item:hover,
 body.searchlight a.nav-link.active:after,
-body.searchlight .trial-button .button {
+body.searchlight .trial-button .button,
+body.searchlight .pricing-top,
+body.searchlight .pricing-button .kd-button,
+body.searchlight .subscription-form .button:hover {
   background-color: #2ecc71; }
 
 body.searchlight .kd-transparent-btn,
@@ -3122,15 +3205,28 @@ body.searchlight .kd-sidebar-menu li a:hover {
 body.searchlight .star-count::before,
 body.searchlight .subscription-form .button,
 body.searchlight .accordion-item.active,
-body.searchlight blockquote {
+body.searchlight blockquote,
+body.searchlight .input.is-active,
+body.searchlight .input.is-focused,
+body.searchlight .input:active,
+body.searchlight .input:focus,
+body.searchlight .textarea.is-active,
+body.searchlight .textarea.is-focused,
+body.searchlight .textarea:active,
+body.searchlight .textarea:focus,
+body.searchlight .subscription-form .input.is-hovered,
+body.searchlight .subscription-form .input:hover {
   border-color: #2ecc71; }
 
+body.searchlight .pricing-top:before {
+  border-right-color: #208e4e; }
+
 /*==================================================
-           Theme Searchlight End
-====================================================*/
+                  Theme searchlight End
+  ====================================================*/
 /*==================================================
-           Theme service-broker start
-====================================================*/
+                  Theme service-broker Start
+  ====================================================*/
 body.service-broker .kubedb-primary-bg,
 body.service-broker .kd-primary,
 body.service-broker.fixed-nav #header,
@@ -3139,7 +3235,10 @@ body.service-broker .tbl-of-contents ul a.active:before,
 body.service-broker .kd-version a.dropdown-item:hover,
 body.service-broker .ac-dropdown a.navbar-item:hover,
 body.service-broker a.nav-link.active:after,
-body.service-broker .trial-button .button {
+body.service-broker .trial-button .button,
+body.service-broker .pricing-top,
+body.service-broker .pricing-button .kd-button,
+body.service-broker .subscription-form .button:hover {
   background-color: #a5b1c2; }
 
 body.service-broker .kd-transparent-btn,
@@ -3168,15 +3267,28 @@ body.service-broker .kd-sidebar-menu li a:hover {
 body.service-broker .star-count::before,
 body.service-broker .subscription-form .button,
 body.service-broker .accordion-item.active,
-body.service-broker blockquote {
+body.service-broker blockquote,
+body.service-broker .input.is-active,
+body.service-broker .input.is-focused,
+body.service-broker .input:active,
+body.service-broker .input:focus,
+body.service-broker .textarea.is-active,
+body.service-broker .textarea.is-focused,
+body.service-broker .textarea:active,
+body.service-broker .textarea:focus,
+body.service-broker .subscription-form .input.is-hovered,
+body.service-broker .subscription-form .input:hover {
   border-color: #a5b1c2; }
 
+body.service-broker .pricing-top:before {
+  border-right-color: #7789a3; }
+
 /*==================================================
-           Theme service-broker End
-====================================================*/
+                  Theme service-broker End
+  ====================================================*/
 /*==================================================
-           Theme stash start
-====================================================*/
+                  Theme stash Start
+  ====================================================*/
 body.stash .kubedb-primary-bg,
 body.stash .kd-primary,
 body.stash.fixed-nav #header,
@@ -3185,7 +3297,10 @@ body.stash .tbl-of-contents ul a.active:before,
 body.stash .kd-version a.dropdown-item:hover,
 body.stash .ac-dropdown a.navbar-item:hover,
 body.stash a.nav-link.active:after,
-body.stash .trial-button .button {
+body.stash .trial-button .button,
+body.stash .pricing-top,
+body.stash .pricing-button .kd-button,
+body.stash .subscription-form .button:hover {
   background-color: #f39c12; }
 
 body.stash .kd-transparent-btn,
@@ -3214,15 +3329,28 @@ body.stash .kd-sidebar-menu li a:hover {
 body.stash .star-count::before,
 body.stash .subscription-form .button,
 body.stash .accordion-item.active,
-body.stash blockquote {
+body.stash blockquote,
+body.stash .input.is-active,
+body.stash .input.is-focused,
+body.stash .input:active,
+body.stash .input:focus,
+body.stash .textarea.is-active,
+body.stash .textarea.is-focused,
+body.stash .textarea:active,
+body.stash .textarea:focus,
+body.stash .subscription-form .input.is-hovered,
+body.stash .subscription-form .input:hover {
   border-color: #f39c12; }
 
+body.stash .pricing-top:before {
+  border-right-color: #b06f09; }
+
 /*==================================================
-           Theme stash End
-====================================================*/
+                  Theme stash End
+  ====================================================*/
 /*==================================================
-           Theme Swift start
-====================================================*/
+                  Theme swift Start
+  ====================================================*/
 body.swift .kubedb-primary-bg,
 body.swift .kd-primary,
 body.swift.fixed-nav #header,
@@ -3231,7 +3359,10 @@ body.swift .tbl-of-contents ul a.active:before,
 body.swift .kd-version a.dropdown-item:hover,
 body.swift .ac-dropdown a.navbar-item:hover,
 body.swift a.nav-link.active:after,
-body.swift .trial-button .button {
+body.swift .trial-button .button,
+body.swift .pricing-top,
+body.swift .pricing-button .kd-button,
+body.swift .subscription-form .button:hover {
   background-color: #e67e22; }
 
 body.swift .kd-transparent-btn,
@@ -3260,15 +3391,28 @@ body.swift .kd-sidebar-menu li a:hover {
 body.swift .star-count::before,
 body.swift .subscription-form .button,
 body.swift .accordion-item.active,
-body.swift blockquote {
+body.swift blockquote,
+body.swift .input.is-active,
+body.swift .input.is-focused,
+body.swift .input:active,
+body.swift .input:focus,
+body.swift .textarea.is-active,
+body.swift .textarea.is-focused,
+body.swift .textarea:active,
+body.swift .textarea:focus,
+body.swift .subscription-form .input.is-hovered,
+body.swift .subscription-form .input:hover {
   border-color: #e67e22; }
 
+body.swift .pricing-top:before {
+  border-right-color: #a85913; }
+
 /*==================================================
-           Theme Swift End
-====================================================*/
+                  Theme swift End
+  ====================================================*/
 /*==================================================
-           Theme Voyager start
-====================================================*/
+                  Theme voyager Start
+  ====================================================*/
 body.voyager .kubedb-primary-bg,
 body.voyager .kd-primary,
 body.voyager.fixed-nav #header,
@@ -3277,7 +3421,10 @@ body.voyager .tbl-of-contents ul a.active:before,
 body.voyager .kd-version a.dropdown-item:hover,
 body.voyager .ac-dropdown a.navbar-item:hover,
 body.voyager a.nav-link.active:after,
-body.voyager .trial-button .button {
+body.voyager .trial-button .button,
+body.voyager .pricing-top,
+body.voyager .pricing-button .kd-button,
+body.voyager .subscription-form .button:hover {
   background-color: #f1c40f; }
 
 body.voyager .kd-transparent-btn,
@@ -3306,9 +3453,22 @@ body.voyager .kd-sidebar-menu li a:hover {
 body.voyager .star-count::before,
 body.voyager .subscription-form .button,
 body.voyager .accordion-item.active,
-body.voyager blockquote {
+body.voyager blockquote,
+body.voyager .input.is-active,
+body.voyager .input.is-focused,
+body.voyager .input:active,
+body.voyager .input:focus,
+body.voyager .textarea.is-active,
+body.voyager .textarea.is-focused,
+body.voyager .textarea:active,
+body.voyager .textarea:focus,
+body.voyager .subscription-form .input.is-hovered,
+body.voyager .subscription-form .input:hover {
   border-color: #f1c40f; }
 
+body.voyager .pricing-top:before {
+  border-right-color: #aa8a0a; }
+
 /*==================================================
-           Theme Voyager End
-====================================================*/
+                  Theme voyager End
+  ====================================================*/
