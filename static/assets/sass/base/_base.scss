@@ -485,19 +485,20 @@ a.play-icon .fa {
 /* footer area start */
 .subscription-form label {
   font-size: 18px;
-  font-weight: 500;
-  color: #32325d;
+  font-weight: 600;
+  color: $heading-color;
   display: block;
   margin-bottom: 10px;
+  font-family: $font-heading;
 }
 
 .subscription-form input {
-  background: #a9e9e9;
-  border: none;
+  background: #f8f8f8;
+  border: 1px solid #E3E3E3;
   box-shadow: none;
   font-size: 16px;
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 8px 30px 8px 10px;
   height: 40px;
 }
 
@@ -510,23 +511,26 @@ a.play-icon .fa {
   box-shadow: none;
   padding: 7px 15px;
   @include transition(0.3s);
+  cursor: pointer;
 }
-.subscription-form .button:hover {
-  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
+.subscription-form .button:hover{
+  background-color: darken($primary-color , 15%);
 }
-
 .subscription-form {
   margin-top: 20px;
 }
-.subscription-form i {
-  padding-left: 15px;
+
+.subscription-form input[type="email"]:focus, .subscription-form input[type="email"]:hover {
+  outline: none;
+  box-shadow: none;
 }
+
 .contact-information h4 {
   font-size: 18px;
   color: $heading-color;
 }
 
-.all-contact-info li a {
+.all-contact-info li a, p.spam-message {
   color: $link-color;
   display: inline-block;
   font-size: 14px;
@@ -708,7 +712,7 @@ a.play-icon .fa {
 /* pricing section style */
 .pricing-button .kd-button {
   padding: 8px 40px;
-  background: #3f19ad;
+  background: $primary-color;
   width: 180px;
 }
 
@@ -745,9 +749,17 @@ a.play-icon .fa {
   border-radius: 0 0 8px 8px;
   border: 1px solid #dedede;
 }
-
+.pricing-top.kd-green,.kd-button.kd-green{
+  background: $green-color !important;
+}
+.pricing-top.kd-orange, .kd-button.kd-orange{
+  background-color: $orange-color !important;
+}
+.pricing-top.kd-red, .kd-button.kd-red{
+  background-color: $red-color !important;
+}
 .pricing-top {
-  background: #3f19ad;
+  background: $primary-color;
   box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
   color: #fff;
   padding: 20px;
@@ -780,7 +792,7 @@ a.play-icon .fa {
   content: "";
   left: -12px;
   top: 0;
-  border-right: 12px solid #220181;
+  border-right: 12px solid darken($primary-color, 15%);
   border-top: 22px solid transparent;
 }
 
