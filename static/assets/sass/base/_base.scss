@@ -483,6 +483,23 @@ a.play-icon .fa {
 }
 
 /* footer area start */
+.subscription-form label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #32325d;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.subscription-form input {
+  background: #a9e9e9;
+  border: none;
+  box-shadow: none;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  height: 40px;
+}
 
 .subscription-form .button {
   font-family: $font-link;
