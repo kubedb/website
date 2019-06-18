@@ -362,6 +362,10 @@
         '</p>'+
       '</div>';
 
+    if (!response.items) {
+      return;
+    }
+
     var searchResultWrapper = document.querySelector(".search-result-wrapper");
     searchResultWrapper.innerHTML = "";
 
