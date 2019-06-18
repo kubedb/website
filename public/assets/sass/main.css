@@ -2804,7 +2804,9 @@ body.guard a.nav-link.active:after,
 body.guard .trial-button .button,
 body.guard .pricing-top,
 body.guard .pricing-button .kd-button,
-body.guard .subscription-form .button:hover {
+body.guard .subscription-form .button:hover,
+body.guard .searchbar-area button,
+body.guard .pagination-list li a.is-active {
   background-color: #3498db; }
 
 body.guard .kd-transparent-btn,
@@ -2827,7 +2829,8 @@ body.guard .full-info a,
 body.guard .tbl-of-contents ul a.active,
 body.guard li.nav-item.active a,
 body.guard .item ul li.is-active a,
-body.guard .kd-sidebar-menu li a:hover {
+body.guard .kd-sidebar-menu li a:hover,
+body.guard .single-search-result h3 a {
   color: #3498db; }
 
 body.guard .star-count::before,
@@ -2866,7 +2869,9 @@ body.kubeci a.nav-link.active:after,
 body.kubeci .trial-button .button,
 body.kubeci .pricing-top,
 body.kubeci .pricing-button .kd-button,
-body.kubeci .subscription-form .button:hover {
+body.kubeci .subscription-form .button:hover,
+body.kubeci .searchbar-area button,
+body.kubeci .pagination-list li a.is-active {
   background-color: #2c3e50; }
 
 body.kubeci .kd-transparent-btn,
@@ -2889,7 +2894,8 @@ body.kubeci .full-info a,
 body.kubeci .tbl-of-contents ul a.active,
 body.kubeci li.nav-item.active a,
 body.kubeci .item ul li.is-active a,
-body.kubeci .kd-sidebar-menu li a:hover {
+body.kubeci .kd-sidebar-menu li a:hover,
+body.kubeci .single-search-result h3 a {
   color: #2c3e50; }
 
 body.kubeci .star-count::before,
@@ -2928,7 +2934,9 @@ body.kubed a.nav-link.active:after,
 body.kubed .trial-button .button,
 body.kubed .pricing-top,
 body.kubed .pricing-button .kd-button,
-body.kubed .subscription-form .button:hover {
+body.kubed .subscription-form .button:hover,
+body.kubed .searchbar-area button,
+body.kubed .pagination-list li a.is-active {
   background-color: #8854d0; }
 
 body.kubed .kd-transparent-btn,
@@ -2951,7 +2959,8 @@ body.kubed .full-info a,
 body.kubed .tbl-of-contents ul a.active,
 body.kubed li.nav-item.active a,
 body.kubed .item ul li.is-active a,
-body.kubed .kd-sidebar-menu li a:hover {
+body.kubed .kd-sidebar-menu li a:hover,
+body.kubed .single-search-result h3 a {
   color: #8854d0; }
 
 body.kubed .star-count::before,
@@ -2990,7 +2999,9 @@ body.kubesheild a.nav-link.active:after,
 body.kubesheild .trial-button .button,
 body.kubesheild .pricing-top,
 body.kubesheild .pricing-button .kd-button,
-body.kubesheild .subscription-form .button:hover {
+body.kubesheild .subscription-form .button:hover,
+body.kubesheild .searchbar-area button,
+body.kubesheild .pagination-list li a.is-active {
   background-color: #95a5a6; }
 
 body.kubesheild .kd-transparent-btn,
@@ -3013,7 +3024,8 @@ body.kubesheild .full-info a,
 body.kubesheild .tbl-of-contents ul a.active,
 body.kubesheild li.nav-item.active a,
 body.kubesheild .item ul li.is-active a,
-body.kubesheild .kd-sidebar-menu li a:hover {
+body.kubesheild .kd-sidebar-menu li a:hover,
+body.kubesheild .single-search-result h3 a {
   color: #95a5a6; }
 
 body.kubesheild .star-count::before,
@@ -3052,7 +3064,9 @@ body.kubevault a.nav-link.active:after,
 body.kubevault .trial-button .button,
 body.kubevault .pricing-top,
 body.kubevault .pricing-button .kd-button,
-body.kubevault .subscription-form .button:hover {
+body.kubevault .subscription-form .button:hover,
+body.kubevault .searchbar-area button,
+body.kubevault .pagination-list li a.is-active {
   background-color: #0fb9b1; }
 
 body.kubevault .kd-transparent-btn,
@@ -3075,7 +3089,8 @@ body.kubevault .full-info a,
 body.kubevault .tbl-of-contents ul a.active,
 body.kubevault li.nav-item.active a,
 body.kubevault .item ul li.is-active a,
-body.kubevault .kd-sidebar-menu li a:hover {
+body.kubevault .kd-sidebar-menu li a:hover,
+body.kubevault .single-search-result h3 a {
   color: #0fb9b1; }
 
 body.kubevault .star-count::before,
@@ -3114,7 +3129,9 @@ body.pharmer a.nav-link.active:after,
 body.pharmer .trial-button .button,
 body.pharmer .pricing-top,
 body.pharmer .pricing-button .kd-button,
-body.pharmer .subscription-form .button:hover {
+body.pharmer .subscription-form .button:hover,
+body.pharmer .searchbar-area button,
+body.pharmer .pagination-list li a.is-active {
   background-color: #8e44ad; }
 
 body.pharmer .kd-transparent-btn,
@@ -3137,7 +3154,8 @@ body.pharmer .full-info a,
 body.pharmer .tbl-of-contents ul a.active,
 body.pharmer li.nav-item.active a,
 body.pharmer .item ul li.is-active a,
-body.pharmer .kd-sidebar-menu li a:hover {
+body.pharmer .kd-sidebar-menu li a:hover,
+body.pharmer .single-search-result h3 a {
   color: #8e44ad; }
 
 body.pharmer .star-count::before,
@@ -3176,7 +3194,9 @@ body.searchlight a.nav-link.active:after,
 body.searchlight .trial-button .button,
 body.searchlight .pricing-top,
 body.searchlight .pricing-button .kd-button,
-body.searchlight .subscription-form .button:hover {
+body.searchlight .subscription-form .button:hover,
+body.searchlight .searchbar-area button,
+body.searchlight .pagination-list li a.is-active {
   background-color: #2ecc71; }
 
 body.searchlight .kd-transparent-btn,
@@ -3199,7 +3219,8 @@ body.searchlight .full-info a,
 body.searchlight .tbl-of-contents ul a.active,
 body.searchlight li.nav-item.active a,
 body.searchlight .item ul li.is-active a,
-body.searchlight .kd-sidebar-menu li a:hover {
+body.searchlight .kd-sidebar-menu li a:hover,
+body.searchlight .single-search-result h3 a {
   color: #2ecc71; }
 
 body.searchlight .star-count::before,
@@ -3238,7 +3259,9 @@ body.service-broker a.nav-link.active:after,
 body.service-broker .trial-button .button,
 body.service-broker .pricing-top,
 body.service-broker .pricing-button .kd-button,
-body.service-broker .subscription-form .button:hover {
+body.service-broker .subscription-form .button:hover,
+body.service-broker .searchbar-area button,
+body.service-broker .pagination-list li a.is-active {
   background-color: #a5b1c2; }
 
 body.service-broker .kd-transparent-btn,
@@ -3261,7 +3284,8 @@ body.service-broker .full-info a,
 body.service-broker .tbl-of-contents ul a.active,
 body.service-broker li.nav-item.active a,
 body.service-broker .item ul li.is-active a,
-body.service-broker .kd-sidebar-menu li a:hover {
+body.service-broker .kd-sidebar-menu li a:hover,
+body.service-broker .single-search-result h3 a {
   color: #a5b1c2; }
 
 body.service-broker .star-count::before,
@@ -3300,7 +3324,9 @@ body.stash a.nav-link.active:after,
 body.stash .trial-button .button,
 body.stash .pricing-top,
 body.stash .pricing-button .kd-button,
-body.stash .subscription-form .button:hover {
+body.stash .subscription-form .button:hover,
+body.stash .searchbar-area button,
+body.stash .pagination-list li a.is-active {
   background-color: #f39c12; }
 
 body.stash .kd-transparent-btn,
@@ -3323,7 +3349,8 @@ body.stash .full-info a,
 body.stash .tbl-of-contents ul a.active,
 body.stash li.nav-item.active a,
 body.stash .item ul li.is-active a,
-body.stash .kd-sidebar-menu li a:hover {
+body.stash .kd-sidebar-menu li a:hover,
+body.stash .single-search-result h3 a {
   color: #f39c12; }
 
 body.stash .star-count::before,
@@ -3362,7 +3389,9 @@ body.swift a.nav-link.active:after,
 body.swift .trial-button .button,
 body.swift .pricing-top,
 body.swift .pricing-button .kd-button,
-body.swift .subscription-form .button:hover {
+body.swift .subscription-form .button:hover,
+body.swift .searchbar-area button,
+body.swift .pagination-list li a.is-active {
   background-color: #e67e22; }
 
 body.swift .kd-transparent-btn,
@@ -3385,7 +3414,8 @@ body.swift .full-info a,
 body.swift .tbl-of-contents ul a.active,
 body.swift li.nav-item.active a,
 body.swift .item ul li.is-active a,
-body.swift .kd-sidebar-menu li a:hover {
+body.swift .kd-sidebar-menu li a:hover,
+body.swift .single-search-result h3 a {
   color: #e67e22; }
 
 body.swift .star-count::before,
@@ -3424,7 +3454,9 @@ body.voyager a.nav-link.active:after,
 body.voyager .trial-button .button,
 body.voyager .pricing-top,
 body.voyager .pricing-button .kd-button,
-body.voyager .subscription-form .button:hover {
+body.voyager .subscription-form .button:hover,
+body.voyager .searchbar-area button,
+body.voyager .pagination-list li a.is-active {
   background-color: #f1c40f; }
 
 body.voyager .kd-transparent-btn,
@@ -3447,7 +3479,8 @@ body.voyager .full-info a,
 body.voyager .tbl-of-contents ul a.active,
 body.voyager li.nav-item.active a,
 body.voyager .item ul li.is-active a,
-body.voyager .kd-sidebar-menu li a:hover {
+body.voyager .kd-sidebar-menu li a:hover,
+body.voyager .single-search-result h3 a {
   color: #f1c40f; }
 
 body.voyager .star-count::before,

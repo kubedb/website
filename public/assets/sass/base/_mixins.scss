@@ -15,7 +15,9 @@
   body.#{$name} .trial-button .button,
   body.#{$name} .pricing-top,
   body.#{$name} .pricing-button .kd-button,
-  body.#{$name} .subscription-form .button:hover {
+  body.#{$name} .subscription-form .button:hover,
+  body.#{$name} .searchbar-area button,
+  body.#{$name} .pagination-list li a.is-active {
     background-color: #{$color};
   }
   // font-color
@@ -39,7 +41,8 @@
   body.#{$name} .tbl-of-contents ul a.active,
   body.#{$name} li.nav-item.active a,
   body.#{$name} .item ul li.is-active a,
-  body.#{$name} .kd-sidebar-menu li a:hover {
+  body.#{$name} .kd-sidebar-menu li a:hover,
+  body.#{$name} .single-search-result h3 a {
     color: #{$color};
   }
   // border-color
