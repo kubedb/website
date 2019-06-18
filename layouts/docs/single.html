@@ -336,20 +336,23 @@
   }
 
   function renderSearchResultEntry(e) {
-    return '<div class="single-search-result">' +
+    var out = '<div class="single-search-result">' +
       '<h3><a href="' + e.link + '">' + e.title + '</a></h3>' +
       '<a>' + e.formattedUrl + '</a>' +
-      '<div class="result-description-wrapper">' +
-        '<div class="result-thumb">' +
-          '<img src="' + e.pagemap.cse_thumbnail[0].src + '" alt="" />' +
-        '</div>' +
-        '<div class="result-description">' +
+      '<div class="result-description-wrapper">';
+      if (e.pagemap && e.pagemap.cse_thumbnail) {
+        out += '<div class="result-thumb">' +
+            '<img src="' + e.pagemap.cse_thumbnail[0].src + '" alt="" />' +
+          '</div>';
+      }
+      out += '<div class="result-description">' +
           '<p>'+
             e.snippet +
           '</p>' +
         '</div>' +
       '</div>' +
     '</div>';
+    return out;
   }
 
   function renderResult(response) {
@@ -383,6 +386,8 @@
     document.querySelector(".pagination-area .pagination-list").innerHTML = pager;
   }
 </script>
+
+<!-- sidebar search area end -->
 
 {{ end }}
 
