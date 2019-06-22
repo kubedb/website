@@ -338,7 +338,7 @@
   function renderSearchResultEntry(e) {
     var out = '<div class="single-search-result">' +
       '<h3><a href="' + e.link + '">' + e.title + '</a></h3>' +
-      '<a href="' + e.formattedUrl + '">' + e.htmlFormattedUrl + '</a>' +
+      '<a href="' + e.link + '">' + e.htmlFormattedUrl + '</a>' +
       '<div class="result-description-wrapper">';
       if (e.pagemap && e.pagemap.cse_thumbnail) {
         out += '<div class="result-thumb">' +
