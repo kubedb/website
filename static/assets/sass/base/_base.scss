@@ -346,7 +346,7 @@ body.fixed-nav #header {
   width: 30%;
   margin: 30px auto 0;
 }
-.slider:focus {
+.slider:focus, button:focus {
   outline: none;
   border: none;
   box-shadow: none;
