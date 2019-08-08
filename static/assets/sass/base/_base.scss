@@ -408,28 +408,35 @@ body.fixed-nav #header {
 }
 
 .subscription-form input {
-  background: #f8f8f8;
+  background: #F9F9F9;
   border: 1px solid #e3e3e3;
   box-shadow: none;
   font-size: 16px;
   border-radius: 4px;
-  padding: 8px 30px 8px 10px;
+  padding: 8px 50px 8px 10px;
   height: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .subscription-form .button {
   font-family: $font-link;
-  color: #fff;
+  color: $primary-color;
   font-size: 16px;
   height: 40px;
-  border: 1px solid $primary-color;
   box-shadow: none;
-  padding: 7px 15px;
   transition: 0.3s ease-in-out;
   cursor: pointer;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index:9;
+  background: transparent;
 }
 .subscription-form .button:hover {
   background-color: darken($primary-color, 15%);
+  color: $white-color !important;
 }
 .subscription-form {
   margin-top: 20px;
