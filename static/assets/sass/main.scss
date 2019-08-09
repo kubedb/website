@@ -8,6 +8,7 @@
 @import "base/_mixins";
 @import "base/_base";
 
+//Theme SCSS
 @import "themes/_guard";
 @import "themes/_kubeci";
 @import "themes/_kubed";
@@ -19,3 +20,6 @@
 @import "themes/_stash";
 @import "themes/_swift";
 @import "themes/_voyager";
+
+//Responsive SCSS
+@import "layouts/_responsive";
