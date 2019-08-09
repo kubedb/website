@@ -6,7 +6,7 @@
   // background color
   body.#{$name} .kubedb-primary-bg,
   body.#{$name} .kd-primary,
-  body.#{$name} .fixed-nav #header,
+  body.#{$name}.fixed-nav #header,
   body.#{$name} .socail-link-inline li a:hover,
   body.#{$name} .tbl-of-contents ul a.active:before,
   body.#{$name} .kd-version a.dropdown-item:hover,
@@ -42,6 +42,7 @@
   body.#{$name} li.nav-item.active a,
   body.#{$name} .item ul li.is-active a,
   body.#{$name} .kd-sidebar-menu li a:hover,
+  body.#{$name} .hero-content-inner h4,
   body.#{$name} .single-search-result h3 a {
     color: #{$color};
   }
@@ -65,7 +66,9 @@
   body.#{$name} .pricing-top:before {
     border-right-color: darken($color, 15%);
   }
-
+  body.#{$name} .go-to-top {
+    background-color: rgba($color, 0.8);
+  }
   /*==================================================
                   Theme #{$name} End
   ====================================================*/
