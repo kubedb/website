@@ -2,70 +2,64 @@
 
 {{ $currentPage := . }}
 {{ $menu := .Params.menu_name }}
-<!-- kubeDB bottom menu start -->
-<div class="kubedb-documentation-menu">
+<!-- documentation menu area start -->
+<div class="documentation-menu">
   <div class="container section">
-    <!-- documentation menu area start -->
-    <div class="documentation-menu">
-      <div class="container section">
-        <div class="columns is-centered">
-          <div class="column is-half has-text-centered">
-            <!-- responsive menu start -->
-            <div class="responsive-menu">
-              <a
-                role="button"
-                class="navbar-burger burger"
-                aria-label="menu"
-                aria-expanded="false"
-                data-target="acNav3"
-              >
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- responsive menu end -->
-            <!-- start -->
-            <nav class="documentation-navbar">
-              <div id="acNav3" class="navbar-menu nav-menu main-menu">
-                <div class="navbar-centered">
-                  <!-- nav menu start -->
-                  <div class="navbar-start">
-                    {{ $sectionMenuId := .Params.section_menu_id }}
-                    {{ if isset .Params "menu_name" }}
-                      {{ range (index .Site.Menus .Params.menu_name) }}
-                        {{ if eq (string .Pre) "dropdown" }}
-                          <div class="navbar-item has-dropdown ac-is-hoverable">
-                            <a class="navbar-link">
-                              {{ .Name }}
-                            </a>
-                            <div class="ac-dropdown">
-                              {{ range .Children }}
-                                {{ if ne .Weight -1 }}
-                                  <a href="{{ .URL }}" class="navbar-item">{{ .Name }}</a>
-                                {{ end }}
-                              {{ end }}
-                            </div>
-                          </div>
-                        {{ else }}
-                          <a href="{{ .URL }}" class="{{ if eq $sectionMenuId .Identifier }} is-active {{ end }} navbar-item">{{ .Name }}</a>
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
-                  </div>
-                  <!-- nav menu end -->
-                </div>
-              </div>
-            </nav>
-            <!-- end -->
-          </div>
+    <div class="columns is-centered">
+      <div class="column is-half has-text-centered">
+        <!-- responsive menu start -->
+        <div class="responsive-menu">
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="acNav3"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
+        <!-- responsive menu end -->
+        <!-- start -->
+        <nav class="documentation-navbar">
+          <div id="acNav3" class="navbar-menu nav-menu main-menu">
+            <div class="navbar-centered">
+              <!-- nav menu start -->
+              <div class="navbar-start">
+                {{ $sectionMenuId := .Params.section_menu_id }}
+                {{ if isset .Params "menu_name" }}
+                  {{ range (index .Site.Menus .Params.menu_name) }}
+                    {{ if eq (string .Pre) "dropdown" }}
+                      <div class="navbar-item has-dropdown ac-is-hoverable">
+                        <a class="navbar-link">
+                          {{ .Name }}
+                        </a>
+                        <div class="ac-dropdown">
+                          {{ range .Children }}
+                            {{ if ne .Weight -1 }}
+                              <a href="{{ .URL }}" class="navbar-item">{{ .Name }}</a>
+                            {{ end }}
+                          {{ end }}
+                        </div>
+                      </div>
+                    {{ else }}
+                      <a href="{{ .URL }}" class="{{ if eq $sectionMenuId .Identifier }} is-active {{ end }} navbar-item">{{ .Name }}</a>
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              </div>
+              <!-- nav menu end -->
+            </div>
+          </div>
+        </nav>
+        <!-- end -->
       </div>
     </div>
-    <!-- documentation menu area end -->
   </div>
 </div>
-<!-- kubeDB bottom menu end -->
+<!-- documentation menu area end -->
 {{ end }}
 
 {{ define "main" }}
