@@ -34,7 +34,7 @@
     <header>
       {{ block "header-top" . }}
       <!-- header top start -->
-      <div class="header-top">
+      <div class="header-top fixed-menu-z-index">
         <div class="container section">
           <nav class="navbar">
             <div class="navbar-brand">
@@ -427,10 +427,7 @@
 
       {{ block "header-bottom" . }}
       <!-- header bottom area start -->
-      <div
-        class="header-bottom-area header-area kubedb-primary-bg customize-kubedb"
-        id="header"
-      >
+      <div class="header-bottom-area header-area kubedb-primary-bg customize-kubedb fixed-menu">
         <div class="container section">
           <nav class="navbar">
             <div class="navbar-brand">
