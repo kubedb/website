@@ -73,7 +73,8 @@ Synopsis Show details of a specific resource or group of resources. This command
  redises
  memcacheds
  snapshots
- dormantdatabases  kubedb describe (TYPE [NAME_PREFIX] | TYPE/NAME) [flags]  Examples  # Describe a elasticsearch kubedb describe elasticsearches elasticsearch-demo # Describe a postgres kubedb describe pg/postgres-demo # Describe all dormantdatabases kubedb describe drmn  Options  --all-namespaces If present, describe the requested object(s) across all namespaces.</description>
+ dormantdatabases
+kubedb describe (TYPE [NAME_PREFIX] | TYPE/NAME) [flags]   Examples  # Describe a elasticsearch kubedb describe elasticsearches elasticsearch-demo # Describe a postgres kubedb describe pg/postgres-demo # Describe all dormantdatabases kubedb describe drmn  Options  --all-namespaces If present, describe the requested object(s) across all namespaces.</description>
     </item>
     
     <item>
@@ -105,7 +106,8 @@ Valid resource types include:
  redises
  memcacheds
  snapshots
- dormantdatabases  kubedb get [flags]  Examples  # List all elasticsearch in ps output format. kubedb get es # List all elasticsearch in ps output format with more information (such as version). kubedb get elasticsearches -o wide # List a single postgres with specified NAME in ps output format.</description>
+ dormantdatabases
+kubedb get [flags]   Examples  # List all elasticsearch in ps output format. kubedb get es # List all elasticsearch in ps output format with more information (such as version). kubedb get elasticsearches -o wide # List a single postgres with specified NAME in ps output format.</description>
     </item>
     
     <item>

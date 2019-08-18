@@ -800,7 +800,6 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1944,122 +1943,6 @@
   </url>
   
   <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/concepts/catalog/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/concepts/catalog/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/concepts/catalog/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/concepts/catalog/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/concepts/catalog/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/concepts/catalog/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/concepts/catalog/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/concepts/what-is-kubedb/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/concepts/what-is-kubedb/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/concepts/what-is-kubedb/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/concepts/what-is-kubedb/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/concepts/what-is-kubedb/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-rc.0/concepts/what-is-kubedb/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0/concepts/what-is-kubedb/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/concepts/what-is-kubedb/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/concepts/what-is-kubedb/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/concepts/what-is-kubedb/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/concepts/what-is-kubedb/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/setup/uninstall/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/setup/uninstall/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/setup/uninstall/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/setup/uninstall/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/setup/uninstall/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-rc.0/setup/uninstall/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0/setup/uninstall/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/setup/uninstall/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/setup/uninstall/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/setup/uninstall/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/setup/uninstall/</loc>
-  </url>
-  
-  <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/reference/kubedb/</loc>
   </url>
   
@@ -2129,6 +2012,34 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/reference/kubedb_api-resources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/concepts/catalog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/concepts/catalog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/concepts/catalog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/concepts/catalog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/concepts/catalog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/concepts/catalog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/concepts/catalog/</loc>
   </url>
   
   <url>
@@ -2372,6 +2283,50 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-rc.0/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/concepts/what-is-kubedb/overview/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/reference/kubedb_summarize/</loc>
   </url>
   
@@ -2385,6 +2340,50 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0/reference/kubedb_summarize/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/setup/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/setup/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/setup/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/setup/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/setup/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-rc.0/setup/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0/setup/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/setup/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/setup/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/setup/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/setup/uninstall/</loc>
   </url>
   
   <url>
@@ -3504,6 +3503,18 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/setup/monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/setup/monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/setup/monitoring/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/setup/monitoring/coreos/</loc>
   </url>
   
@@ -3525,18 +3536,6 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/setup/monitoring/builtin/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/setup/monitoring/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/setup/monitoring/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/setup/monitoring/</loc>
   </url>
   
   <url>
@@ -4164,6 +4163,98 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/guides/postgres/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-rc.0/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-rc.0/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/guides/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/concepts/databases/postgres/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/guides/postgres/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/guides/postgres/</loc>
   </url>
   
@@ -4429,98 +4520,6 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/guides/postgres/snapshot/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/concepts/databases/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/guides/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/concepts/databases/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/guides/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/concepts/databases/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/guides/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/concepts/databases/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/guides/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/guides/postgres/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/concepts/databases/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.2/guides/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-rc.0/concepts/databases/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0-rc.0/guides/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0/concepts/databases/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.8.0/guides/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/concepts/databases/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/guides/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/concepts/databases/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/guides/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/concepts/databases/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/guides/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/concepts/databases/postgres/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/guides/postgres/</loc>
   </url>
   
   <url>
@@ -5412,6 +5411,34 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/guides/mongodb/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/guides/mongodb/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/guides/mongodb/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/guides/mongodb/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/guides/mongodb/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/guides/mongodb/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/guides/mongodb/configuration/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/guides/mysql/private-registry/</loc>
   </url>
   
@@ -5712,6 +5739,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb-v2-hugo.web.app/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/guides/redis/private-registry/</loc>
   </url>
   
@@ -5873,39 +5904,6 @@
   
   <url>
     <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/guides/elasticsearch/search-guard/use-tls/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.10.0/guides/mongodb/configuration/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.11.0/guides/mongodb/configuration/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.12.0/guides/mongodb/configuration/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.0/guides/mongodb/configuration/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.1/guides/mongodb/configuration/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0-rc.2/guides/mongodb/configuration/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/docs/0.9.0/guides/mongodb/configuration/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kubedb-v2-hugo.web.app/</loc>
-    <priority>0</priority>
   </url>
   
   <url>

@@ -29,7 +29,8 @@
       <guid>https://kubedb-v2-hugo.web.app/docs/0.8.0-beta.0/setup/uninstall/</guid>
       <description>New to KubeDB? Please start here.
  Uninstall KubeDB Please follow the steps below to uninstall KubeDB:
- Delete the deployment and service used for KubeDB operator. ```console $ kubectl delete deployment -l app=kubedb -n  $ kubectl delete service -l app=kubedb -n   Delete RBAC objects, if &amp;ndash;rbac flag was used. $ kubectl delete serviceaccount -l app=kubedb -n  $ kubectl delete clusterrolebindings -l app=kubedb -n  $ kubectl delete clusterrole -l app=kubedb -n</description>
+ Delete the deployment and service used for KubeDB operator.
+$ kubectl delete deployment -l app=kubedb -n &amp;lt;operator-namespace&amp;gt; $ kubectl delete service -l app=kubedb -n &amp;lt;operator-namespace&amp;gt; # Delete RBAC objects, if --rbac flag was used. $ kubectl delete serviceaccount -l app=kubedb -n &amp;lt;operator-namespace&amp;gt; $ kubectl delete clusterrolebindings -l app=kubedb -n &amp;lt;operator-namespace&amp;gt; $ kubectl delete clusterrole -l app=kubedb -n &amp;lt;operator-namespace&amp;gt;  Now, wait several seconds for KubeDB to stop running.</description>
     </item>
     
     <item>
