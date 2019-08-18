@@ -978,7 +978,7 @@ p.spam-message {
   padding: 10px 30px;
 }
 .documentation-menu {
-  background: #fff;
+  background-color: scale-color($primary-color, $lightness: 80%);
   height: 100%;
   box-shadow: 0px 5px 34px rgba(0, 0, 0, 0.12);
 }

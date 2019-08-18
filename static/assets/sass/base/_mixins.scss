@@ -72,6 +72,9 @@
   body.#{$name} .go-to-top {
     background-color: rgba($color, 0.8);
   }
+  body.#{$name} .documentation-menu {
+    background-color: scale-color($color, $lightness: 80%);
+  }
   /*==================================================
                   Theme #{$name} End
   ====================================================*/
