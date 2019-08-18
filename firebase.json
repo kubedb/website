@@ -2,8 +2,53 @@
   "hosting": [
     {
       "target": "hugo",
+      "headers": [
+        {
+          "headers": [
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            }
+          ],
+          "source": "**"
+        },
+        {
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=360000"
+            }
+          ],
+          "source": "@(images|fonts|js_global)/**"
+        },
+        {
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=300"
+            }
+          ],
+          "source": "404.html"
+        }
+      ],
       "public": "public",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "redirects": [
+        {
+          "source": "/docs/latest/",
+          "destination": "/docs/0.12.0/",
+          "type": 302
+        },
+        {
+          "source": "/docs/latest/:rest*",
+          "destination": "/docs/0.12.0/:rest",
+          "type": 302
+        }
+      ]
     }
   ]
 }
