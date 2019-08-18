@@ -148,7 +148,7 @@ a.navbar-item:hover {
 }
 /* fixd nav */
 
-body.fixed-nav #header {
+body.fixed-nav .fixed-menu {
   position: fixed;
   background: $primary-color;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.12);
@@ -157,6 +157,10 @@ body.fixed-nav #header {
   z-index: 99;
   padding: 3px 0;
   width: 100%;
+}
+
+.fixed-menu-z-index {
+  z-index: 9999;
 }
 
 /* github button style start */
@@ -973,12 +977,12 @@ p.spam-message {
 .documentation-navbar .main-menu a {
   padding: 10px 30px;
 }
-.kubedb-documentation-menu {
+.documentation-menu {
   background: #fff;
   height: 100%;
   box-shadow: 0px 5px 34px rgba(0, 0, 0, 0.12);
 }
-body.fixed-nav .kubedb-documentation-menu {
+body.fixed-nav .documentation-menu {
   position: fixed;
   width: 100%;
   height: auto;

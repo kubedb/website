@@ -6,7 +6,7 @@
   // background color
   body.#{$name} .kubedb-primary-bg,
   body.#{$name} .kd-primary,
-  body.#{$name}.fixed-nav #header,
+  body.#{$name}.fixed-nav .fixed-menu,
   body.#{$name} .socail-link-inline li a:hover,
   body.#{$name} .tbl-of-contents ul a.active:before,
   body.#{$name} .kd-version a.dropdown-item:hover,
@@ -17,7 +17,8 @@
   body.#{$name} .pricing-button .kd-button,
   body.#{$name} .subscription-form .button:hover,
   body.#{$name} .searchbar-area button,
-  body.#{$name} .pagination-list li a.is-active {
+  body.#{$name} .pagination-list li a.is-active,
+  body.#{$name} .single-product-feature-wrapper:after {
     background-color: #{$color};
   }
   // font-color
@@ -32,6 +33,7 @@
   body.#{$name} .customize-kubedb .navbar-dropdown .navbar-item,
   body.#{$name} .carousel-wrapper:after,
   body.#{$name} .footer-link li a:hover,
+  body.#{$name} .footer-inline-link a:hover,
   body.#{$name} .accordion-item.active .accordion-header h2,
   body.#{$name} ul li b,
   body.#{$name} .full-info p b,
@@ -42,6 +44,7 @@
   body.#{$name} li.nav-item.active a,
   body.#{$name} .item ul li.is-active a,
   body.#{$name} .kd-sidebar-menu li a:hover,
+  body.#{$name} .section-title h4,
   body.#{$name} .hero-content-inner h4,
   body.#{$name} .single-search-result h3 a {
     color: #{$color};

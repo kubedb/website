@@ -15,9 +15,10 @@
     <!-- Bulma CSS -->
     <link rel="stylesheet" href="/assets/css/bulma.min.css" />
     <!-- Custom CSS -->
-    {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS }}
+    {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
     {{ end }}
+    <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
   </head>
 
   <body class="{{.Site.Data.products.products.docs.key}}">
@@ -34,7 +35,7 @@
     <header>
       {{ block "header-top" . }}
       <!-- header top start -->
-      <div class="header-top">
+      <div class="header-top fixed-menu-z-index">
         <div class="container section">
           <nav class="navbar">
             <div class="navbar-brand">
@@ -427,10 +428,7 @@
 
       {{ block "header-bottom" . }}
       <!-- header bottom area start -->
-      <div
-        class="header-bottom-area header-area kubedb-primary-bg customize-kubedb"
-        id="header"
-      >
+      <div class="header-bottom-area header-area kubedb-primary-bg customize-kubedb fixed-menu">
         <div class="container section">
           <nav class="navbar">
             <div class="navbar-brand">
@@ -801,7 +799,8 @@
                   <ul class="footer-link">
                     <li><a href="#">Voyager</a></li>
                     <li><a href="#">KubeDB</a></li>
-                    <li><a href="#">Pharmer Stash </a></li>
+                    <li><a href="#">Stash</a></li>
+                    <li><a href="#">Pharmer</a></li>
                     <li><a href="#">Service Broker</a></li>
                     <li><a href="#">Kubed</a></li>
                     <li><a href="#">Guard</a></li>
@@ -834,8 +833,8 @@
                 <div class="footer-menu">
                   <h4>Company</h4>
                   <ul class="footer-link">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">blog</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
                     <li><a href="#">Seles Inquiry</a></li>
                     <li><a href="#">Contact Us</a></li>
                   </ul>
@@ -850,10 +849,10 @@
                 <div class="footer-menu">
                   <h4>Legal</h4>
                   <ul class="footer-link">
-                    <li><a href="#">Service Level Agreement</a></li>
-                    <li><a href="#">Security</a></li>
-                    <li><a href="#">Learn More</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="/legal/tos/">Terms of Sevice</a></li>
+                    <li><a href="/legal/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="/legal/security/">Security</a></li>
+                    <li><a href="/legal/sla/">Service Level Agreement</a></li>
                   </ul>
                 </div>
                 <!-- footer menu end -->
@@ -870,8 +869,8 @@
             </div>
             <div class="column is-4 is-mobile has-text-centered">
               <div class="footer-inline-link">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <a href="/legal/privacy-policy/">Privacy Policy</a>
+                <a href="/legal/tos/">Terms of Service</a>
               </div>
             </div>
             <div class="column is-4 is-mobile has-text-right">
