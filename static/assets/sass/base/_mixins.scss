@@ -44,6 +44,7 @@
   body.#{$name} li.nav-item.active a,
   body.#{$name} .item ul li.is-active a,
   body.#{$name} .kd-sidebar-menu li a:hover,
+  body.#{$name} .subscription-form .button,
   body.#{$name} .section-title h4,
   body.#{$name} .hero-content-inner h4,
   body.#{$name} .single-search-result h3 a {
@@ -51,7 +52,6 @@
   }
   // border-color
   body.#{$name} .star-count::before,
-  body.#{$name} .subscription-form .button,
   body.#{$name} .accordion-item.active,
   body.#{$name} blockquote,
   body.#{$name} .input.is-active,
@@ -62,7 +62,6 @@
   body.#{$name} .textarea.is-focused,
   body.#{$name} .textarea:active,
   body.#{$name} .textarea:focus,
-  body.#{$name} .subscription-form .input.is-hovered,
   body.#{$name} .subscription-form .input:hover {
     border-color: #{$color};
   }
