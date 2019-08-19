@@ -2,7 +2,7 @@
   "key": "stash",
   "name": "Stash",
   "tagline": "Backup your Kubernetes Stateful Applications",
-  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+  "summary": "",
   "website": {
     "domainKey": "domain_appscode",
     "path": "/products/stash/"
@@ -29,58 +29,58 @@
   "datasheetFormID": "9d6f5a4d3fe306ecf3b9ca3c8e121265bcf355b2c3f198a8439cf9035bbda0e7",
   "features": [
     {
-      "title": "HTTP & TCP",
+      "title": "Declarative API",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/stash/features/declarative-api.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Fast, secure, efficient backup and recovery of any Kubernetes volumes"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Kubernetes Workload",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/stash/features/kub-workload.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Works with Deployment, DaemonSet, StatefulSet, ReplicaSet & ReplicationController"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Restic",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/stash/features/restic.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Built-in on top of open source backup program Restic"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Platform Support",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/stash/features/platform-support.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Store backups in S3, GCS, Azure, OpenStack Swift, DigitalOcean Spaces and others"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Prometheus",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/stash/features/prometheus.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Comes with built-in support for Prometheus"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "RBAC",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/stash/features/rback.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Pre-defined ClusterRole for RBAC enabled clusters."
     }
   ],
   "versions": [

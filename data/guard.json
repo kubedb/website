@@ -2,7 +2,7 @@
   "key": "guard",
   "name": "Guard",
   "tagline": "Kubernetes Authentication WebHook Server",
-  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+  "summary": "",
   "website": {
     "domainKey": "domain_appscode",
     "path": "/products/guard/"
@@ -29,58 +29,31 @@
   "datasheetFormID": "9d6f5a4d3fe306ecf3b9ca3c8e121265bcf355b2c3f198a8439cf9035bbda0e7",
   "features": [
     {
-      "title": "HTTP & TCP",
+      "title": "Identity Providers",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/guard/features/identity-providers.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Guard supports Github and Google as identity providers"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "CLI",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/guard/features/cli.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Guard comes with a cli to easily deploy in any Kubernetes cluster."
     },
     {
-      "title": "HTTP & TCP",
+      "title": "RBAC",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/guard/features/rbac.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
-    },
-    {
-      "title": "HTTP & TCP",
-      "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
-        "alt": "http"
-      },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
-    },
-    {
-      "title": "HTTP & TCP",
-      "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
-        "alt": "http"
-      },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
-    },
-    {
-      "title": "HTTP & TCP",
-      "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
-        "alt": "http"
-      },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "This tutorial will show you how to use KubeDB in a RBAC enabled cluster."
     }
   ],
   "versions": [

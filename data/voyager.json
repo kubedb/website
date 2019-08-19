@@ -2,7 +2,7 @@
   "key": "voyager",
   "name": "Voyager",
   "tagline": "Secure HAProxy Ingress Controller for<br /> <strong>Kubernetes</strong>",
-  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+  "summary": "",
   "website": {
     "domainKey": "domain_appscode",
     "path": "/products/voyager/"
@@ -31,56 +31,56 @@
     {
       "title": "HTTP & TCP",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/voyager/features/http.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Supports HTTP and TCP load balancing."
     },
     {
-      "title": "HTTP & TCP",
+      "title": "SSL",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/voyager/features/ssl.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Supports SANS certificates, TLS-SNI, AWS Certificate Manager"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Platform support",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/voyager/features/platform.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Works in cloud or bare metal clusters"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "HAProxy",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/voyager/features/haproxy.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Built on top of battle tested open source load balancer"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Prometheus",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/voyager/features/prometheus.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Comes with built-in support for Prometheus"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Let's Encryp",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/voyager/features/encrypt.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Issue free SSL certificates from Let's Encrypt via HTTP or DNS challenge"
     }
   ],
   "versions": [
