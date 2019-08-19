@@ -2,6 +2,12 @@
   "hosting": [
     {
       "target": "hugo",
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
       "headers": [
         {
           "headers": [
@@ -35,8 +41,6 @@
           "source": "404.html"
         }
       ],
-      "public": "public",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "redirects": [
         {
           "source": "/docs/latest/",
