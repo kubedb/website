@@ -2,7 +2,7 @@
   "key": "kubed",
   "name": "Kubed",
   "tagline": "Kubernetes cluster manager daemon",
-  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+  "summary": "",
   "website": {
     "domainKey": "domain_appscode",
     "path": "/products/kubed/"
@@ -29,58 +29,58 @@
   "datasheetFormID": "9d6f5a4d3fe306ecf3b9ca3c8e121265bcf355b2c3f198a8439cf9035bbda0e7",
   "features": [
     {
-      "title": "HTTP & TCP",
+      "title": "Disaster Recovery",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/kubed/features/backup.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Takes periodic snapshot of a Kubernetes cluster objects"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Event Forwarder",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/kubed/features/event.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Forward cluster events to various destinations"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Configuration Syncer",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/kubed/features/configuration.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Keeps ConfigMaps and Secrets synchronized across Namespaces or Clusters"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Recycle Bin",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/kubed/features/recycle.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Acts like a recycle bin for deleted and/or updated Kubernetes objects"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Event Notifiers",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/kubed/features/event-notifiers.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Sends event notifications via Email, SMS or Chat"
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Janitor",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/kubed/features/janitor.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Setup janitors for Elasticsearch and InfluxDB"
     }
   ],
   "versions": [
