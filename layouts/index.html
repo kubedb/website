@@ -1,4 +1,7 @@
 {{ define "main" }}
+
+{{ $p := (index .Site.Data .Site.Params.product_key) }}
+
 <!-- hero area start -->
 <section class="hero-area">
   <div class="container section">
@@ -8,15 +11,15 @@
           <!-- hero content start -->
           <div class="hero-area-content d-table">
             <div class="hero-content-inner d-table-cell">
-              <h4>{{.Site.Data.products.products.docs.name}}</h4>
+              <h4>{{$p.name}}</h4>
               <h1>
-                Run production-grade databases <br />
-                easily on <strong>Kubernetes</strong>
+                {{ $p.tagline | safeHTML }}
               </h1>
               <div class="hero-area-button buttons">
                 <a href="/schedule-demo" class="button kd-button kd-primary"
                   >Schedule a Demo</a
                 >
+                {{ if $p.datasheetFormID }}
                 <a href="/datasheet" class="button kd-transparent-btn"
                   ><span
                     ><i
@@ -25,6 +28,7 @@
                     ></i></span
                   >Download Datasheet</a
                 >
+                {{ end }}
               </div>
             </div>
           </div>
@@ -33,7 +37,7 @@
         <div class="column is-6">
           <!-- hero image start -->
           <div class="hero-area-img">
-            <img src="/assets/images/hero-img.png" alt="" class="img" />
+            <img src="{{ $p.heroImage.src }}" alt="{{ $p.heroImage.alt }}" class="img" />
           </div>
           <!-- hero image end -->
         </div>
