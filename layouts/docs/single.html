@@ -66,8 +66,7 @@
 
 {{ $currentPage := . }}
 {{ $menu := .Params.menu_name }}
-{{ $productJson := (index $.Site.Data.products.products "docs" ) }}
-{{ $latestVersion:= (index $.Site.Data.products.products.docs "latestVersion") }}
+{{ $p := (index .Site.Data .Site.Params.product_key) }}
 
 <!-- init idx -->
 {{ .Scratch.Add "idx" 0 }}
@@ -81,14 +80,14 @@
         <div class="kd-left-sidebar">
 
           <div class="trial-button">
-            <a href="/docs/{{ $latestVersion }}/setup/" class="button is-fullwidth">
+            <a href="/docs/{{ $p.latestVersion }}/setup/" class="button is-fullwidth">
               Try Now for FREE!
             </a>
           </div>
 
           <div class="kd-version">
             {{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
-            {{ $versions := (index $productJson "versions" ) }}
+            {{ $versions := (index $p "versions" ) }}
 
             <div class="dropdown">
               <div class="dropdown-trigger">
@@ -103,7 +102,7 @@
                     {{ if (index $version "v-dropdown") }}
                       {{ if and (index $version "hostDocs") (eq $branch $currentBranch) }}
                         <span><strong class="icon"><i class="fa fa-cog" aria-hidden="true"></i></strong>{{ $branch }}</span>
-                      {{ if eq $branch $latestVersion }}
+                      {{ if eq $branch $p.latestVersion }}
                         <span class="tag">Latest</span>
                       {{ end }}
                       {{ end }}
@@ -121,9 +120,9 @@
                     {{ $branch := (index $version "branch") }}
                     {{ if (index $version "v-dropdown") }}
                       {{ if (index $version "hostDocs") }}
-                        <a href="/docs/{{ $branch }}/" class="dropdown-item">{{ $branch }}  {{ if eq $branch $latestVersion }} <div class="tag">Latest</div> {{ end }}</a>
+                        <a href="/docs/{{ $branch }}/" class="dropdown-item">{{ $branch }}  {{ if eq $branch $p.latestVersion }} <div class="tag">Latest</div> {{ end }}</a>
                       {{ else }}
-                        <a href="https://github.com/{{ index $productJson "docRepo" }}/tree/{{ $branch }}/docs" target="_blank" class="dropdown-item">{{ $branch }}</a>
+                        <a href="https://github.com/{{ index $p "docRepo" }}/tree/{{ $branch }}/docs" target="_blank" class="dropdown-item">{{ $branch }}</a>
                       {{ end }}
                     {{ end }}
                   {{ end }}

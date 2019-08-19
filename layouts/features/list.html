@@ -1,7 +1,6 @@
 {{ define "main" }}
 
-{{ $productJson := (index $.Site.Data.products.products "docs" ) }}
-{{ $latestVersion:= (index $.Site.Data.products.products.docs "latestVersion") }}
+{{ $p := (index .Site.Data .Site.Params.product_key) }}
 
 <!-- features area start -->
 <section class="hero-features">
@@ -13,7 +12,7 @@
           <h1>You’re in best cloud solution</h1>
           <p>Lorem Ipsum is simply dummy text of the printing and it is</p>
           <div class="hero-area-button">
-            <a href="/docs/{{ $latestVersion }}/setup/" class="button kd-button kd-primary">Install Now FREE</a>
+            <a href="/docs/{{ $p.latestVersion }}/setup/" class="button kd-button kd-primary">Install Now FREE</a>
           </div>
         </div>
         <!-- hero features text end -->
