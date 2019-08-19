@@ -2,7 +2,7 @@
   "key": "searchlight",
   "name": "Searchlight",
   "tagline": "Alerts for Kubernetes",
-  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+  "summary": "",
   "website": {
     "domainKey": "domain_appscode",
     "path": "/products/searchlight/"
@@ -29,58 +29,31 @@
   "datasheetFormID": "9d6f5a4d3fe306ecf3b9ca3c8e121265bcf355b2c3f198a8439cf9035bbda0e7",
   "features": [
     {
-      "title": "HTTP & TCP",
+      "title": "Monitor Kubernetes",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/searchlight/features/monitor-kubernetes.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Periodically run various checks on a Kubernetes cluster and its nodes or pods."
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Icinga 2",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/searchlight/features/icinga.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Includes a suite of Icinga2 check commands written specifically for Kubernetes."
     },
     {
-      "title": "HTTP & TCP",
+      "title": "Notifier Support",
       "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
+        "src": "/assets/images/products/searchlight/features/notifier.svg",
         "alt": "http"
       },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
-    },
-    {
-      "title": "HTTP & TCP",
-      "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
-        "alt": "http"
-      },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
-    },
-    {
-      "title": "HTTP & TCP",
-      "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
-        "alt": "http"
-      },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
-    },
-    {
-      "title": "HTTP & TCP",
-      "icon": {
-        "src": "/assets/images/icon/feature-icon/http.png",
-        "alt": "http"
-      },
-      "summary": "Supports HTTP and TCP load balancing.",
-      "description": "This will create a load balancer forwarding all traffic to test-service service, unconditionally. The loadbalancer ip can be found inside Status Field of the loadbalancer described response. If there are other rules defined in Ingress then the loadbalancer will forward traffic to the test-service when no other rule is matched."
+      "summary": "",
+      "description": "Searchlight can send alert notifications via Email, SMS or Chat"
     }
   ],
   "versions": [

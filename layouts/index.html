@@ -55,164 +55,38 @@
         <!-- section-title start -->
         <div class="section-title is-main-title">
           <h2>Product Features</h2>
+          {{ if $p.summary }}
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt
+            {{ $p.summary }}
           </p>
+          {{ end }}
         </div>
         <!-- section-title end -->
       </div>
     </div>
     <div class="columns is-multiline">
+      {{ range $f := $p.features }}
       <!-- single feature area start -->
       <div class="column is-6">
-        <div class="single-product-feature-wrapper">
-          <div class="product-feature-icon">
-            <img src="/assets/images/icon/feature-icon/http.png" alt="" />
+      <div class="single-product-feature-wrapper">
+        <div class="product-feature-icon">
+          <img src="{{ $f.icon.src }}" alt="{{ $f.icon.alt }}" />
+        </div>
+        <div class="product-feature-content">
+          <div class="product-feature-title">
+            <h3>{{ $f.title }}</h3>
+            <p>{{ $f.summary }}</p>
           </div>
-          <div class="product-feature-content">
-            <div class="product-feature-title">
-              <h3>HTTP & TCP</h3>
-              <p>Supports HTTP and TCP load balancing.</p>
-            </div>
-            <div class="product-feature-description">
-              <p>
-                This will create a load balancer forwarding all traffic to
-                test-service service, unconditionally. The loadbalancer ip can
-                be found inside Status Field of the loadbalancer described
-                response. If there are other rules defined in Ingress then the
-                loadbalancer will forward traffic to the test-service when no
-                other rule is matched.
-              </p>
-            </div>
+          <div class="product-feature-description">
+            <p>
+              {{ $f.description }}
+            </p>
           </div>
         </div>
       </div>
-      <!-- single feature area end -->
-      <!-- single feature area start -->
-      <div class="column is-6">
-        <div class="single-product-feature-wrapper">
-          <div class="product-feature-icon">
-            <img src="/assets/images/icon/feature-icon/ssl.png" alt="" />
-          </div>
-          <div class="product-feature-content">
-            <div class="product-feature-title">
-              <h3>SSL</h3>
-              <p>Supports SANS certificates, TLS-SNI, AWS Certificate Manager</p>
-            </div>
-            <div class="product-feature-description">
-              <p>
-                This will create a load balancer forwarding all traffic to
-                test-service service, unconditionally. The loadbalancer ip can
-                be found inside Status Field of the loadbalancer described
-                response. If there are other rules defined in Ingress then the
-                loadbalancer will forward traffic to the test-service when no
-                other rule is matched.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
       <!-- single feature area end -->
-      <!-- single feature area start -->
-      <div class="column is-6">
-        <div class="single-product-feature-wrapper">
-          <div class="product-feature-icon">
-            <img src="/assets/images/icon/feature-icon/platform.png" alt="" />
-          </div>
-          <div class="product-feature-content">
-            <div class="product-feature-title">
-              <h3>Platform Support</h3>
-              <p>Works in cloud or bare metal clusters</p>
-            </div>
-            <div class="product-feature-description">
-              <p>
-                This will create a load balancer forwarding all traffic to
-                test-service service, unconditionally. The loadbalancer ip can
-                be found inside Status Field of the loadbalancer described
-                response. If there are other rules defined in Ingress then the
-                loadbalancer will forward traffic to the test-service when no
-                other rule is matched.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- single feature area end -->
-      <!-- single feature area start -->
-      <div class="column is-6">
-        <div class="single-product-feature-wrapper">
-          <div class="product-feature-icon">
-            <img src="/assets/images/icon/feature-icon/haproxy.png" alt="" />
-          </div>
-          <div class="product-feature-content">
-            <div class="product-feature-title">
-              <h3>Haproxy</h3>
-              <p>Built on top of battle tested open source load balancer</p>
-            </div>
-            <div class="product-feature-description">
-              <p>
-                This will create a load balancer forwarding all traffic to
-                test-service service, unconditionally. The loadbalancer ip can
-                be found inside Status Field of the loadbalancer described
-                response. If there are other rules defined in Ingress then the
-                loadbalancer will forward traffic to the test-service when no
-                other rule is matched.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- single feature area end -->
-      <!-- single feature area start -->
-      <div class="column is-6">
-        <div class="single-product-feature-wrapper">
-          <div class="product-feature-icon">
-            <img src="/assets/images/icon/feature-icon/prometheus.png" alt="" />
-          </div>
-          <div class="product-feature-content">
-            <div class="product-feature-title">
-              <h3>Prometheus</h3>
-              <p>Comes with built-in support for Prometheus</p>
-            </div>
-            <div class="product-feature-description">
-              <p>
-                This will create a load balancer forwarding all traffic to
-                test-service service, unconditionally. The loadbalancer ip can
-                be found inside Status Field of the loadbalancer described
-                response. If there are other rules defined in Ingress then the
-                loadbalancer will forward traffic to the test-service when no
-                other rule is matched.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- single feature area end -->
-      <!-- single feature area start -->
-      <div class="column is-6">
-        <div class="single-product-feature-wrapper">
-          <div class="product-feature-icon">
-            <img src="/assets/images/icon/feature-icon/encrypt.png" alt="" />
-          </div>
-          <div class="product-feature-content">
-            <div class="product-feature-title">
-              <h3>Let's Encrypt</h3>
-              <p>Issue free SSL certificates from Let's Encrypt via HTTP or DNS challenge</p>
-            </div>
-            <div class="product-feature-description">
-              <p>
-                This will create a load balancer forwarding all traffic to
-                test-service service, unconditionally. The loadbalancer ip can
-                be found inside Status Field of the loadbalancer described
-                response. If there are other rules defined in Ingress then the
-                loadbalancer will forward
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- single feature area end -->
+      {{ end }}
     </div>
   </div>
 </section>
