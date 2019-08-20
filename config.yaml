@@ -62,24 +62,14 @@ menu:
       identifier: github
       parent: community
       url: "https://github.com/kubedb"
-      weight: 3
+      weight: 1
     - name: Twitter
       identifier: twitter
       parent: community
       url: "https://twitter.com/KubeDB"
-      weight: 4
-    - name: Groups
-      identifier: groups
-      parent: community
-      url: "https://groups.google.com/forum/#!forum/kubedb"
-      weight: 5
+      weight: 2
     - name: Slack
       identifier: slack
       parent: community
       url: "http://slack.kubernetes.io/"
-      weight: 6
-    - name: Forum
-      identifier: forum
-      parent: community
-      url: "http://discourse.appscode.com"
-      weight: 7
+      weight: 3
