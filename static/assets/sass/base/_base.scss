@@ -52,9 +52,6 @@ body.fixed-nav header{
 }
 
 .button.for-chat:hover {
-  img{
-    filter: invert(1);
-  }
   background-color: #36C6F0;
   color: $white-color;
 }
@@ -162,12 +159,13 @@ nav.navbar{
 
 body.fixed-nav .fixed-menu {
   position: fixed;
-  background-color: $white-color;
+  background-color: $primary-color;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.12);
   top: 0;
   margin-top: 0;
   padding: 3px 0;
   width: 100%;
+  z-index: 99;
 }
 .fixed-menu-z-index{
   z-index: 9999;
@@ -202,7 +200,7 @@ body.fixed-nav .fixed-menu {
 
 .hero-content-inner h4 {
   font-size: 14px;
-  color: #00a651;
+  color: $primary-color;
   letter-spacing: 7px;
   font-weight: 700;
   margin-bottom: 22px;
@@ -242,6 +240,68 @@ body.fixed-nav .fixed-menu {
 }
 
 /* Feature area start */
+.section-title h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  line-height: 50px;
+  font-weight: 400;
+}
+// product page feature area start
+.single-product-feature-wrapper {
+  overflow: hidden;
+  background-color: $white-color;
+  box-shadow: 0px 1px 4px rgba(50, 112, 128, 0.16);
+  border-radius: 4px;
+  padding: 20px;
+  transition: .3s ease-in-out;
+  position: relative;
+  min-height: 280px;
+  z-index: 1;
+  &:after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+    transition: .3s ease-in-out;
+    background-color: $primary-color;
+  }
+  z-index: 1;
+  &:hover{
+    box-shadow: 0px 3px 28px rgba(50,152,128, .16);
+    &:after{
+      height: 5px;
+    }
+  }
+  .product-feature-icon {
+    width: 55px;
+    float: left;
+    margin-right: 25px;
+  }
+  .product-feature-content {
+    float: left;
+    width: 85%;
+  }
+  .product-feature-title {
+    margin-bottom: 10px;
+    h3 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 40px;
+    }
+    p {
+      font-size: 16px;
+      font-family: raleway;
+      font-weight: 600;
+    }
+  }
+  .product-feature-description {
+    p {
+      font-size: 16px;
+    }
+  }
+}
 .feature-area {
   background-image: url(../images/bg-image/about.png);
   background-size: cover;
@@ -759,6 +819,8 @@ p.spam-message {
 
 .single-pricing-table {
   border-radius: 8px;
+  position: relative;
+  z-index: 1;
 }
 
 .single-pricing-table.gold {
@@ -812,13 +874,13 @@ p.spam-message {
   background-color: $orange-color !important;
 }
 .pricing-button .kubedb-transparent-btn{
-  color: $kubedb-primary;
-  border: 1px solid $kubedb-primary;
+  color:$primary-color;
+  border: 1px solid$primary-color;
 }
 .pricing-button .kubedb-transparent-btn:hover{
   color: $white-color !important;
-  border: 1px solid $kubedb-primary;
-  background-color: $kubedb-primary;
+  border: 1px solid$primary-color;
+  background-color:$primary-color;
 }
 .pricing-button .primary-transparent-btn{
   color: $primary-color;
@@ -854,7 +916,7 @@ p.spam-message {
   position: relative;
   z-index: 1;
   margin-top: -32px;
-  min-height: 140px;
+  min-height: 164px;
 }
 .round-shape {
   background: #fff;
@@ -865,14 +927,29 @@ p.spam-message {
   font-weight: 500;
   padding: 2px;
   line-height: 1.5;
+  margin-bottom: 10px;
 }
-.recommended-text {
+.discount-text {
   position: absolute;
-  top: -50px;
+  top: -60px;
   width: 100%;
-  color: $orange-color;
-  font-size: 16px;
-  font-weight: 500;
+  color: #242A31;
+  font-size: 18px;
+  font-weight: 600;
+  transition: .3s ease-in-out;
+}
+.discount-text.is-hide{
+  top: 0;
+}
+.single-pricing-table.silver{
+  .discount-text{
+    color: $primary-color;
+  }
+}
+.single-pricing-table.gold{
+  .discount-text{
+    color: $orange-color;
+  }
 }
 .single-pricing-table.silver .pricing-top{
   min-height: 100px;
@@ -883,14 +960,18 @@ p.spam-message {
 .pricing-top h4 {
   font-size: 20px;
   color: $white-color;
+  font-weight: 700;
 }
 
 .package-price {
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 400;
   sup,sub{
     font-size: 14px;
     font-weight: 400;
+  }
+  strong{
+    color: $white-color;
   }
 }
 
@@ -965,6 +1046,10 @@ p.spam-message {
   display: table-cell;
   vertical-align: middle;
 }
+.pricing-body li span.tooltip{
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
 .pricing-body li:last-child {
   border-bottom: none;
 }
@@ -983,7 +1068,7 @@ p.spam-message {
 .single-pricing-table.free,
 .single-pricing-table.silver,
 .single-pricing-table.plutinum {
-  margin-top: 50px;
+  margin-top: 34px;
 }
 
 .single-pricing-table.free {
@@ -1631,7 +1716,7 @@ li.nav-item.active a {
   padding-right: 15px;
 }
 .kd-version .button {
-  padding-left: 30px;
+  padding-left: 20px;
   height: 38px;
   background: #ebebeb;
 }
@@ -1785,10 +1870,11 @@ span.new-item {
   font-weight: 500;
   background: #e3d4d4;
   padding: 3px 10px;
-  border-radius: 50px;
+  border-radius: 4px;
   line-height: 12px;
   height: 20px;
-  margin-left: 100px;
+  position: absolute;
+  right: 30px;
 }
 /* dropdown mega menu start */
 .menu-header {
@@ -2231,7 +2317,7 @@ video {
   line-height: 30px;
   border-radius: 50%;
   color: #fff;
-  background: rgba($primary-color, 0.5);
+  background: rgba($primary-color, 0.9);
   border: none;
   opacity: 0;
   cursor: pointer;

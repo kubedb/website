@@ -37,7 +37,7 @@
     <header>
       {{ block "header-top" . }}
       <!-- header top start -->
-      <div class="header-top fixed-menu-z-index">
+      <div class="header-top">
         <div class="container section">
           <nav class="navbar">
             <div class="navbar-brand">
@@ -203,7 +203,7 @@
                           Services
                       </a>
 
-                      <div class="navbar-dropdown">
+                      <div class="ac-dropdown">
                           <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/consulting/" >
                               Consulting
                           </a>
@@ -226,15 +226,6 @@
                 <!-- nav menu end -->
                 <div class="navbar-item">
                   <div class="buttons main-menu-button-top">
-                    <!--
-                    <a class="button is-small for-support">
-                      <span
-                        ><img
-                          src="/assets/images/icon/chat.png"
-                          alt=""/></span
-                      >Forum
-                    </a>
-                    -->
                     <a class="button is-small for-chat" href="{{.Site.Params.slack_url}}">
                       <span
                         ><img
@@ -242,6 +233,13 @@
                           alt=""/></span
                       >Slack
                     </a>
+                    <!-- <a class="button is-small for-support" href="https://appscode.freshdesk.com">
+                      <span
+                        ><img
+                          src="/assets/images/icon/chat.png"
+                          alt=""/></span
+                      >Support
+                    </a> -->
                   </div>
                 </div>
               </div>
@@ -365,17 +363,16 @@
                     </p>
                   </div>
                   <div class="client-information">
+                    <div class="client-info-inner">
                     <div class="client-thumb">
-                      <img
-                        src="/assets/images/testimonial/client-1.png"
-                        alt=""
-                      />
+                      <img src="/assets/images/testimonial/client-1.png" alt="Mario Kozjak">
                     </div>
                     <div class="client-info">
-                      <h4>Anup Deb</h4>
-                      <p>Designer at AppsCode</p>
+                      <h4>Mario Kozjak</h4>
+                      <p>Solutions Architect at Elpheria</p>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
               <!-- single testimonial end -->
@@ -392,17 +389,16 @@
                     </p>
                   </div>
                   <div class="client-information">
+                    <div class="client-info-inner">
                     <div class="client-thumb">
-                      <img
-                        src="/assets/images/testimonial/client-1.png"
-                        alt=""
-                      />
+                      <img src="/assets/images/testimonial/client-2.png" alt="Mario Kozjak">
                     </div>
                     <div class="client-info">
-                      <h4>Anup Deb</h4>
-                      <p>Designer at AppsCode</p>
+                      <h4>Mario Kozjak</h4>
+                      <p>Solutions Architect at Elpheria</p>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
               <!-- single testimonial end -->
@@ -419,17 +415,16 @@
                     </p>
                   </div>
                   <div class="client-information">
+                    <div class="client-info-inner">
                     <div class="client-thumb">
-                      <img
-                        src="/assets/images/testimonial/client-1.png"
-                        alt=""
-                      />
+                      <img src="/assets/images/testimonial/client-3.png" alt="Mario Kozjak">
                     </div>
                     <div class="client-info">
-                      <h4>Anup Deb</h4>
-                      <p>Designer at AppsCode</p>
+                      <h4>Mario Kozjak</h4>
+                      <p>Solutions Architect at Elpheria</p>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
               <!-- single testimonial end -->
@@ -446,61 +441,57 @@
     <div class="logo-carusal-area section-padding">
       <div class="container section">
         <div class="columns is-centered">
-          <!-- single brand start -->
-          <div class="column has-text-centered">
-            <a class="single-brand-logo">
-              <img
-                src="/assets/images/brand-logo/brand-etsy.png"
-                alt=""
-                class="img"
-              />
-            </a>
+          <div class="column is-10 is-offset-1 has-text-centered">
+            
+            <div class="brand-logo-wrapper mt-10">
+                
+                  
+                    <a class="single-brand-logo">
+                      <img src="/assets/images/customers/astarte/astarte.png" alt="Astarte" class="img">
+                    </a>
+                  
+                
+                  
+                    <a class="single-brand-logo">
+                      <img src="/assets/images/customers/birdi/BIRDI-Logo_Retina.png" alt="BIRDI Pty Ltd" class="img">
+                    </a>
+                  
+                
+                  
+                
+                  
+                    <a class="single-brand-logo">
+                      <img src="/assets/images/customers/elpheria/logo.png" alt="Elpheria" class="img">
+                    </a>
+                  
+                
+                  
+                    <a class="single-brand-logo">
+                      <img src="/assets/images/customers/liveramp/logo.png" alt="LiveRamp" class="img">
+                    </a>
+                  
+                
+                  
+                    <a class="single-brand-logo">
+                      <img src="/assets/images/customers/pricehubble/logo.svg" alt="PriceHubble AG" class="img">
+                    </a>
+                  
+                
+                  
+                    <a class="single-brand-logo">
+                      <img src="/assets/images/customers/rungway/logo.png" alt="Rungway" class="img">
+                    </a>
+                  
+                
+                  
+                    <a class="single-brand-logo">
+                      <img src="/assets/images/customers/zebra/logo.png" alt="Zebra" class="img">
+                    </a>
+                  
+                
+              </div>
+            
           </div>
-          <!-- single brand end-->
-          <!-- single brand start -->
-          <div class="column has-text-centered">
-            <a class="single-brand-logo">
-              <img
-                src="/assets/images/brand-logo/brand-vaio.png"
-                alt=""
-                class="img"
-              />
-            </a>
-          </div>
-          <!-- single brand end-->
-          <!-- single brand start -->
-          <div class="column has-text-centered">
-            <a class="single-brand-logo">
-              <img
-                src="/assets/images/brand-logo/google.png"
-                alt=""
-                class="img"
-              />
-            </a>
-          </div>
-          <!-- single brand end-->
-          <!-- single brand start -->
-          <div class="column has-text-centered">
-            <a class="single-brand-logo">
-              <img
-                src="/assets/images/brand-logo/brand-audi.png"
-                alt=""
-                class="img"
-              />
-            </a>
-          </div>
-          <!-- single brand end-->
-          <!-- single brand start -->
-          <div class="column has-text-centered">
-            <a class="single-brand-logo">
-              <img
-                src="/assets/images/brand-logo/brand-ebay.png"
-                alt=""
-                class="img"
-              />
-            </a>
-          </div>
-          <!-- single brand end-->
         </div>
       </div>
     </div>
