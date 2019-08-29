@@ -1263,7 +1263,7 @@ p.spam-message {
   padding: 10px 30px;
 }
 .documentation-menu {
-  background: $white-color;
+  background: scale-color($primary-color, $lightness: 80%);
   height: 100%;
 }
 body.fixed-nav .documentation-menu {

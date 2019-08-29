@@ -1957,7 +1957,7 @@ p.spam-message {
   padding: 10px 30px; }
 
 .documentation-menu {
-  background: #ffffff;
+  background: #dbdbf5;
   height: 100%; }
 
 body.fixed-nav .documentation-menu {
@@ -3148,7 +3148,10 @@ video {
     margin-top: 10px; }
   .single-product-feature-wrapper .product-feature-title h3 {
     font-size: 22px;
-    line-height: 40px; } }
+    line-height: 40px; }
+
+  .sidebar-search-area {
+    position: inherit; } }
 /*  tablet :769px. */
 @media (min-width: 769px) and (max-width: 1023px) {
   p {
@@ -3459,6 +3462,9 @@ video {
 
   .section-title {
     margin-bottom: 30px; }
+
+  .sidebar-search-area {
+    position: inherit; }
 
   .reverse-row-order {
     display: flex;
@@ -3776,6 +3782,9 @@ video {
 
   .single-testimonial-wrapper .testimonial-msg p {
     font-size: 15px; }
+
+  .sidebar-search-area {
+    position: inherit; }
 
   .reverse-row-order {
     display: flex;
