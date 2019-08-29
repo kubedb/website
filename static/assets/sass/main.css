@@ -3151,7 +3151,8 @@ video {
     line-height: 40px; }
 
   .sidebar-search-area {
-    position: inherit; } }
+    position: inherit;
+    width: 100%; } }
 /*  tablet :769px. */
 @media (min-width: 769px) and (max-width: 1023px) {
   p {
@@ -3464,7 +3465,8 @@ video {
     margin-bottom: 30px; }
 
   .sidebar-search-area {
-    position: inherit; }
+    position: inherit;
+    width: 100%; }
 
   .reverse-row-order {
     display: flex;
@@ -3784,7 +3786,8 @@ video {
     font-size: 15px; }
 
   .sidebar-search-area {
-    position: inherit; }
+    position: inherit;
+    width: 100%; }
 
   .reverse-row-order {
     display: flex;
