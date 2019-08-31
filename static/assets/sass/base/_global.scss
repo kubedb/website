@@ -36,7 +36,7 @@ h6 {
   text-transform: normal;
   font-style: normal;
   margin-top: 0px;
-  color: #242a31;
+  color: $heading-color;
   font-weight: 600;
 }
 
@@ -52,7 +52,6 @@ h6 a {
 pre {
   margin-bottom: 15px;
 }
-
 footer li a {
   font-family: $font-paragraph;
   font-weight: 400;
@@ -94,34 +93,57 @@ h6 {
 
 .kd-primary {
   background-color: $primary-color;
-  color: #fff !important;
+  color: $white-color !important;
 }
-
+.ac-primary{
+  background-color: $primary-color;
+  color: $white-color !important;
+}
+.ac-primary-color {
+  color: $primary-color;
+}
 .kubedb-primary-bg {
   background-color: $primary-color;
 }
-
+.tooltip.is-tooltip-primary::before{
+  background-color:#32325D;
+  color: $white-color;
+  min-width: 200px;
+  padding: 15px;
+  font-weight: 400;
+  font-style: normal;
+}
+.tooltip.is-tooltip-primary:not(.is-loading)::after{
+  border-color: #32325D transparent transparent transparent;
+}
 /* button style */
 .button {
   height: auto;
 }
 
-.kd-button {
+.kd-button, .ac-button {
   border: none;
   border-radius: 4px;
   padding: 12px 40px;
   display: inline-block;
   font-weight: 500;
   margin: 0;
-  color: #fff;
+  color: $white-color;
   transition: 0.3s;
   font-family: $font-paragraph;
   font-size: 16px;
+  min-width: 190px;
 }
 
 .kd-button:hover {
-  background-color: rgb(62, 62, 161);
-  color: #fff;
+  background-color: darken($primary-color, 3%);
+  color: $white-color;
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+.ac-button:hover {
+  background-color: darken($primary-color, 3%);
+  color: $white-color;
   box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
 }
 
@@ -160,7 +182,7 @@ h6 {
 }
 .subscription-form .input.is-hovered,
 .subscription-form .input:hover {
-  border-color: #4d4dcb;
+  border-color: $primary-color;
 }
 .input.is-active,
 .input.is-focused,
@@ -182,17 +204,17 @@ h6 {
 }
 
 .is-info {
-  background-color: #1da1f2;
+  background-color: #1da1f2 !important;
 }
 
 .is-blue {
   background-color: #3f19ad !important;
-  color: #fff;
+  color: $white-color;
 }
 
 .is-gold {
   background-color: #f99a00 !important;
-  color: #fff !important;
+  color: $white-color !important;
 }
 
 .is-marked {
@@ -205,12 +227,12 @@ h6 {
 
 .is-red {
   background-color: #e03056 !important;
-  color: #fff !important;
+  color: $white-color !important;
 }
 
 .is-dark-red {
   background-color: #8e2c4a !important;
-  color: #fff !important;
+  color: $white-color !important;
 }
 
 .is-light-blue {
@@ -219,7 +241,7 @@ h6 {
 }
 
 .is-white {
-  background-color: #fff !important;
+  background-color: $white-color !important;
   color: #4d4f5c !important;
   border: 1px solid #e9e9f0;
 }

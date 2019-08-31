@@ -112,7 +112,6 @@ const spyScrolling = () => {
         const id = allHeaders[s].id;
         if (id) {
           document.querySelectorAll("#TableOfContents a").forEach(a => {
-            console.log("id: ", id);
             if (`#${id}` === a.hash) {
               a.classList.add("active");
             } else {

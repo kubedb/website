@@ -31,7 +31,7 @@
     {
       "title": "Automatic Initialization & Unsealing",
       "icon": {
-        "src": "/assets/images/products/kubevault/features/http.png",
+        "src": "/assets/images/products/kubevault/features/http.svg",
         "alt": "http"
       },
       "summary": "",
@@ -40,7 +40,7 @@
     {
       "title": "Manage Vault Policy",
       "icon": {
-        "src": "/assets/images/products/kubevault/features/http.png",
+        "src": "/assets/images/products/kubevault/features/http.svg",
         "alt": "http"
       },
       "summary": "",
@@ -49,7 +49,7 @@
     {
       "title": "AWS Secret Engine",
       "icon": {
-        "src": "/assets/images/products/kubevault/features/http.png",
+        "src": "/assets/images/products/kubevault/features/http.svg",
         "alt": "http"
       },
       "summary": "",
@@ -58,7 +58,7 @@
     {
       "title": "Azure Secret Engine",
       "icon": {
-        "src": "/assets/images/products/kubevault/features/http.png",
+        "src": "/assets/images/products/kubevault/features/http.svg",
         "alt": "http"
       },
       "summary": "",
@@ -67,7 +67,7 @@
     {
       "title": "GCP Secret Engine",
       "icon": {
-        "src": "/assets/images/products/kubevault/features/http.png",
+        "src": "/assets/images/products/kubevault/features/http.svg",
         "alt": "http"
       },
       "summary": "",
@@ -76,7 +76,7 @@
     {
       "title": "Database Secret Engine",
       "icon": {
-        "src": "/assets/images/products/kubevault/features/http.png",
+        "src": "/assets/images/products/kubevault/features/http.svg",
         "alt": "http"
       },
       "summary": "",
