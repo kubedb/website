@@ -18,6 +18,7 @@ params:
   search_api_key: "AIzaSyBo15AW3hatf4fO8actJUZ_d5qZJpx0rXM"
   blog_url: https://blog.byte.builders
   slack_url: https://slack.appscode.com
+  github_url: https://github.com/appscode
   twitter_url: https://twitter.com/AppsCodeHQ
   facebook_url: https://www.facebook.com/appscode
   youtube_url: https://www.youtube.com/c/AppsCodeInc
