@@ -258,6 +258,12 @@
     }
   }
   //feature page style end
+
+  //docs page search
+  .sidebar-search-area{
+    position: inherit;
+    width: 100%;
+  }
 }
 
 /*  tablet :769px. */
@@ -621,6 +627,12 @@
 
   .section-title {
     margin-bottom: 30px;
+  }
+
+  //docs page search
+  .sidebar-search-area{
+    position: inherit;
+    width: 100%;
   }
 
   //reverse order css
@@ -1002,6 +1014,11 @@
   }
   // contact form style
 
+  //docs page search
+  .sidebar-search-area{
+    position: inherit;
+    width: 100%;
+  }
   //reverse order css
   .reverse-row-order {
     display: flex;
