@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{ $p := (index .Site.Data .Site.Params.product_key) }}
+{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 
 <!-- hero area start -->
 <section class="hero-area">
