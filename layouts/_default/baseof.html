@@ -1,4 +1,4 @@
-{{ $p := (index .Site.Data .Site.Params.product_key) }}
+{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +17,10 @@
     <!-- Bulma CSS -->
     <link rel="stylesheet" href="/assets/css/bulma.min.css" />
     <!-- Custom CSS -->
-    <!-- {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+    {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-    {{ end }} -->
-    <link rel="stylesheet" href="/assets/sass/main.css" />
+    {{ end }}
+    <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
   </head>
 
   <body class="{{$p.key}}">
@@ -42,7 +42,7 @@
           <nav class="navbar">
             <div class="navbar-brand">
               <a class="navbar-item" href="{{.Site.Params.domain_appscode}}">
-                <img src="{{$.Site.Data.appscode.logo.src}}" alt="{{$.Site.Data.appscode.logo.alt}}" />
+                <img src="{{$.Site.Data.products.appscode.logo.src}}" alt="{{$.Site.Data.products.appscode.logo.alt}}" />
               </a>
 
               <a
@@ -74,7 +74,7 @@
                           <div class="columns">
                             <div class="column is-6 br-1">
                               {{ range $item := $.Site.Data.config.mainMenu.c0 }}
-                              {{ $p := (index $.Site.Data $item) }}
+                              {{ $p := (index $.Site.Data.products $item) }}
                               <!-- single menu item start -->
                               <a
                                 href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
@@ -98,7 +98,7 @@
                             </div>
                             <div class="column is-6 br-1">
                               {{ range $item := $.Site.Data.config.mainMenu.c1 }}
-                              {{ $p := (index $.Site.Data $item) }}
+                              {{ $p := (index $.Site.Data.products $item) }}
                               <!-- single menu item start -->
                               <a
                                 href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
@@ -152,7 +152,7 @@
                               <!-- single menu item end -->
 
                               {{ range $item := $.Site.Data.config.mainMenu.c2 }}
-                              {{ $p := (index $.Site.Data $item) }}
+                              {{ $p := (index $.Site.Data.products $item) }}
                               <!-- single menu item start -->
                               <a
                                 href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
@@ -233,13 +233,13 @@
                           alt=""/></span
                       >Slack
                     </a>
-                    <!-- <a class="button is-small for-support" href="https://appscode.freshdesk.com">
+                    <a class="button is-small for-support" href="https://appscode.freshdesk.com">
                       <span
                         ><img
                           src="/assets/images/icon/chat.png"
                           alt=""/></span
                       >Support
-                    </a> -->
+                    </a>
                   </div>
                 </div>
               </div>
@@ -251,7 +251,7 @@
       {{ end }}
 
       {{ block "header-bottom" . }}
-      {{ $p := (index .Site.Data .Site.Params.product_key) }}
+      {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
       <!-- header bottom area start -->
       <div class="header-bottom-area header-area kubedb-primary-bg customize-kubedb fixed-menu">
         <div class="container section">
@@ -350,84 +350,33 @@
         <div class="columns is-centered">
           <div class="column is-8">
             <div class="carousel-wrapper carousel" id="carousel-demo">
+              {{ range $user := $.Site.Data.testimonials }}
               <!-- single testimonial start -->
               <div class="carousel-inner">
                 <div class="single-testimonial-wrapper">
                   <div class="client-brief has-text-centered">
                     <p>
-                      My post for a new tool in autumn and were keen to get one
-                      in place and optimised ahead of the Christmas peak period.
-                      Freshdesk ensured that the implementation process was as
-                      smooth as possible, and the team were up and running
-                      within 48 hours.
+                      {{ $user.testimonial | safeHTML }}
                     </p>
                   </div>
                   <div class="client-information">
                     <div class="client-info-inner">
                     <div class="client-thumb">
-                      <img src="/assets/images/testimonial/client-1.png" alt="Mario Kozjak">
+                      <img
+                          src="{{ $user.profile }}"
+                          alt="{{ $user.name }}"
+                        />
                     </div>
                     <div class="client-info">
-                      <h4>Mario Kozjak</h4>
-                      <p>Solutions Architect at Elpheria</p>
+                      <h4>{{ $user.name }}</h4>
+                      <p>{{ $user.job }}{{ if $user.companyKey }} at {{ index $.Site.Data.customers $user.companyKey "name" }}{{ end }}</p>
                     </div>
                   </div>
                 </div>
                 </div>
               </div>
               <!-- single testimonial end -->
-              <!-- single testimonial start -->
-              <div class="carousel-inner">
-                <div class="single-testimonial-wrapper">
-                  <div class="client-brief has-text-centered">
-                    <p>
-                      My post for a new tool in autumn and were keen to get one
-                      in place and optimised ahead of the Christmas peak period.
-                      Freshdesk ensured that the implementation process was as
-                      smooth as possible, and the team were up and running
-                      within 48 hours.
-                    </p>
-                  </div>
-                  <div class="client-information">
-                    <div class="client-info-inner">
-                    <div class="client-thumb">
-                      <img src="/assets/images/testimonial/client-2.png" alt="Mario Kozjak">
-                    </div>
-                    <div class="client-info">
-                      <h4>Mario Kozjak</h4>
-                      <p>Solutions Architect at Elpheria</p>
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-              <!-- single testimonial end -->
-              <!-- single testimonial start -->
-              <div class="carousel-inner">
-                <div class="single-testimonial-wrapper">
-                  <div class="client-brief has-text-centered">
-                    <p>
-                      My post for a new tool in autumn and were keen to get one
-                      in place and optimised ahead of the Christmas peak period.
-                      Freshdesk ensured that the implementation process was as
-                      smooth as possible, and the team were up and running
-                      within 48 hours.
-                    </p>
-                  </div>
-                  <div class="client-information">
-                    <div class="client-info-inner">
-                    <div class="client-thumb">
-                      <img src="/assets/images/testimonial/client-3.png" alt="Mario Kozjak">
-                    </div>
-                    <div class="client-info">
-                      <h4>Mario Kozjak</h4>
-                      <p>Solutions Architect at Elpheria</p>
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-              <!-- single testimonial end -->
+              {{ end }}
             </div>
           </div>
         </div>
@@ -442,55 +391,21 @@
       <div class="container section">
         <div class="columns is-centered">
           <div class="column is-10 is-offset-1 has-text-centered">
-            
+            <!-- brand logo start -->
             <div class="brand-logo-wrapper mt-10">
-                
-                  
+                {{ range $customer := $.Site.Data.customers }}
+                  {{ if $customer.show }}
                     <a class="single-brand-logo">
-                      <img src="/assets/images/customers/astarte/astarte.png" alt="Astarte" class="img">
+                      <img
+                        src="{{ $customer.logo }}"
+                        alt="{{ $customer.name }}"
+                        class="img"
+                      />
                     </a>
-                  
-                
-                  
-                    <a class="single-brand-logo">
-                      <img src="/assets/images/customers/birdi/BIRDI-Logo_Retina.png" alt="BIRDI Pty Ltd" class="img">
-                    </a>
-                  
-                
-                  
-                
-                  
-                    <a class="single-brand-logo">
-                      <img src="/assets/images/customers/elpheria/logo.png" alt="Elpheria" class="img">
-                    </a>
-                  
-                
-                  
-                    <a class="single-brand-logo">
-                      <img src="/assets/images/customers/liveramp/logo.png" alt="LiveRamp" class="img">
-                    </a>
-                  
-                
-                  
-                    <a class="single-brand-logo">
-                      <img src="/assets/images/customers/pricehubble/logo.svg" alt="PriceHubble AG" class="img">
-                    </a>
-                  
-                
-                  
-                    <a class="single-brand-logo">
-                      <img src="/assets/images/customers/rungway/logo.png" alt="Rungway" class="img">
-                    </a>
-                  
-                
-                  
-                    <a class="single-brand-logo">
-                      <img src="/assets/images/customers/zebra/logo.png" alt="Zebra" class="img">
-                    </a>
-                  
-                
+                  {{ end }}
+                {{ end }}
               </div>
-            
+            <!-- brand logo end -->
           </div>
         </div>
       </div>
@@ -500,7 +415,7 @@
 
     <!-- call to action area start -->
     {{ block "cta-install" . }}
-    {{ $p := (index .Site.Data .Site.Params.product_key) }}
+    {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
     <section class="cta-area section-padding pt-0">
       <div class="container section">
         <div class="cta-padding">
@@ -508,8 +423,8 @@
             <div class="column is-6">
               <!-- cta text strat -->
               <div class="cta-text">
-                <h2>Ready to get Start?</h2>
-                <p>Create a Free Account and refer your friend</p>
+                <h2>Ready to Get Started?</h2>
+                <p>Install now in your Kubernetes cluster</p>
               </div>
               <!-- cta text end -->
             </div>
@@ -518,7 +433,7 @@
                 <!-- cta button start -->
                 <div class="cta-button-inner d-table-cell">
                   <a href="/docs/{{ $p.latestVersion }}/setup/" class="button kd-button kd-primary"
-                    >Try Now for FREE</a
+                    >Try Now for FREE!</a
                   >
                 </div>
                 <!-- cta button end -->
@@ -547,8 +462,8 @@
                 <div class="footer-logo">
                   <a href="{{.Site.Params.domain_appscode}}"
                     ><img
-                      src="{{$.Site.Data.appscode.logo.src}}"
-                      alt="{{$.Site.Data.appscode.logo.alt}}"
+                      src="{{$.Site.Data.products.appscode.logo.src}}"
+                      alt="{{$.Site.Data.products.appscode.logo.alt}}"
                       class="img"
                   /></a>
                 </div>
@@ -613,7 +528,7 @@
                   <h4>Products</h4>
                   <ul class="footer-link">
                     {{ range $item := $.Site.Data.config.footerLinks }}
-                    {{ $p := (index $.Site.Data $item) }}
+                    {{ $p := (index $.Site.Data.products $item) }}
                     <li><a href="{{index $.Site.Params $p.website.domainKey}}{{$p.website.path}}">{{$p.name}}</a></li>
                     {{ end }}
                   </ul>
@@ -674,7 +589,7 @@
         <div class="container section">
           <div class="columns">
             <div class="column is-4">
-              <p>All rights reserved © {{ now.Format "2006" }}. Appscode, Inc.</p>
+              <p>© {{ now.Format "2006" }} AppsCode Inc. All rights reserved.</p>
             </div>
             <div class="column is-4 is-mobile has-text-centered">
               <div class="footer-inline-link">
