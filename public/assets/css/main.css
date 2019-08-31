@@ -1656,12 +1656,12 @@ p.spam-message {
 .documentation-navbar .main-menu a {
   padding: 10px 30px; }
 
-.kubedb-documentation-menu {
+.documentation-menu {
   background: #fff;
   height: 100%;
   box-shadow: 0px 5px 34px rgba(0, 0, 0, 0.12); }
 
-body.fixed-nav .kubedb-documentation-menu {
+body.fixed-nav .documentation-menu {
   position: fixed;
   width: 100%;
   height: auto;

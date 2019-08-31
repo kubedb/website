@@ -22,14 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // menu sticky
 // Not a ton of code, but hard to
-const nav = document.querySelector('#header, .kubedb-documentation-menu');
+const nav = document.querySelector('.fixed-menu, .documentation-menu');
 let topOfNav = nav.offsetTop;
 function fixNav() {
   if (window.scrollY > topOfNav) {
     document.body.classList.add('fixed-nav');
   } else {
     document.body.classList.remove('fixed-nav');
-    document.body.style.paddingTop = 0;
   }
 }
 window.addEventListener('scroll', fixNav);
@@ -113,7 +112,6 @@ const spyScrolling = () => {
         const id = allHeaders[s].id;
         if (id) {
           document.querySelectorAll("#TableOfContents a").forEach(a => {
-            console.log("id: ", id);
             if (`#${id}` === a.hash) {
               a.classList.add("active");
             } else {
