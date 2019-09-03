@@ -1,15 +1,15 @@
 {
   "key": "bytebuilders",
   "name": "ByteBuilders",
-  "tagline": "Cloud reimagined for the age of Kubernetes",
-  "summary": "",
+  "tagline": "Cloud reimagined <br />for the age of Kubernetes",
+  "summary": "Deploy, manage, upgrade Kubernetes on any cloud and automate deployment, <br />scaling, and management of containerized applications.",
   "published": true,
   "website": {
     "domainKey": "domain_bytebuilders",
     "path": ""
   },
   "heroImage": {
-    "src": "https://cdn.appscode.com/images/products/bytebuilders/bytebuilders-hero.png",
+    "src": "https://cdn.appscode.com/images/products/bytebuilders/bytebuilders-hero.gif",
     "alt": "ByteBuilders"
   },
   "logo": {
@@ -135,8 +135,8 @@
   ],
   "solutions": [
     {
-      "title": "Machine Learning",
-      "link": "https://appscode-v3-hugo.web.app/products/stash/v0.9.0-rc.0/guides/latest/platforms/eks/",
+      "title": "Stash with Amazon EKS",
+      "link": "https://appscode.com/products/stash/latest/guides/latest/platforms/eks/",
       "image": {
         "src": "",
         "alt": ""
@@ -145,11 +145,11 @@
         "src": "https://cdn.appscode.com/images/products/bytebuilders/solutions/leave-2.png",
         "alt": ""
       },
-      "summary": "Build self-managed multi-host cloud contianer in minutes just with a single",
+      "summary": "Use Stash to backup and restore volumes of a Kubernetes workload running in Amazon EKS",
       "description": ""
     },
     {
-      "title": "Data Analytics",
+      "title": "Auto Backup with Stash",
       "link": "https://appscode-v3-hugo.web.app/products/stash/v0.9.0-rc.0/guides/latest/platforms/eks/",
       "image": {
         "src": "",
