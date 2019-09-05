@@ -1,0 +1,49 @@
+[debug] [2019-09-05T06:15:41.533Z] ----------------------------------------------------------------------
+[debug] [2019-09-05T06:15:41.538Z] Command:       /home/tamal/.nvm/versions/node/v11.11.0/bin/node /home/tamal/.nvm/versions/node/v11.11.0/bin/firebase deploy
+[debug] [2019-09-05T06:15:41.539Z] CLI Version:   7.3.1
+[debug] [2019-09-05T06:15:41.539Z] Platform:      linux
+[debug] [2019-09-05T06:15:41.539Z] Node Version:  v11.11.0
+[debug] [2019-09-05T06:15:41.540Z] Time:          Wed Sep 04 2019 23:15:41 GMT-0700 (Pacific Daylight Time)
+[debug] [2019-09-05T06:15:41.540Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-09-05T06:15:41.558Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-09-05T06:15:41.558Z] > authorizing via signed-in user
+[debug] [2019-09-05T06:15:41.559Z] [iam] checking project appscode-domains for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-09-05T06:15:41.563Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/appscode-domains:testIamPermissions  
+
+[debug] [2019-09-05T06:15:41.795Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-05T06:15:41.803Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/appscode-domains  
+ 
+[debug] [2019-09-05T06:15:42.023Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'appscode-domains'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-09-05T06:15:42.032Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/kubedb-prod/versions  
+
+[debug] [2019-09-05T06:15:42.927Z] <<< HTTP RESPONSE 200
+[info] i  hosting[kubedb-prod]: beginning deploy...
+[info] i  hosting[kubedb-prod]: found 5096 files in public
+[debug] [2019-09-05T06:15:45.007Z] [hosting] hash cache [cHVibGlj] load error: lines is not defined
+[debug] [2019-09-05T06:15:47.212Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/kubedb-prod/versions/6c15e3d126443f20:populateFiles  
+ <request body omitted>
+[debug] [2019-09-05T06:15:48.672Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/kubedb-prod/versions/6c15e3d126443f20:populateFiles  
+ <request body omitted>
+[debug] [2019-09-05T06:15:50.603Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/kubedb-prod/versions/6c15e3d126443f20:populateFiles  
+ <request body omitted>
+[debug] [2019-09-05T06:15:52.248Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/kubedb-prod/versions/6c15e3d126443f20:populateFiles  
+ <request body omitted>
+[debug] [2019-09-05T06:15:53.857Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/kubedb-prod/versions/6c15e3d126443f20:populateFiles  
+ <request body omitted>
+[debug] [2019-09-05T06:15:54.719Z] [hosting] hash cache [cHVibGlj] stored for 5096 files
+[debug] [2019-09-05T06:15:54.720Z] [hosting][hash queue][FINAL]
+[debug] [2019-09-05T06:15:54.720Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/kubedb-prod/versions/6c15e3d126443f20:populateFiles  
+ <request body omitted>
+[debug] [2019-09-05T06:15:55.706Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-05T06:15:56.282Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-05T06:15:57.526Z] [hosting][upload]
+[debug] [2019-09-05T06:15:57.570Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-05T06:15:58.373Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-05T06:15:58.492Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-05T06:15:58.681Z] [hosting][upload]
+[debug] [2019-09-05T06:15:59.984Z] [hosting][upload]
