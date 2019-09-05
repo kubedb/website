@@ -865,6 +865,60 @@ h6 {
 .f-300 {
   font-weight: 300; }
 
+.lightbox {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  display: none;
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0; }
+  .lightbox-container {
+    position: relative;
+    max-width: 1080px;
+    margin: 7% auto;
+    display: block;
+    padding: 0 3%;
+    height: auto;
+    z-index: 10; }
+    @media screen and (max-width: 768px) {
+      .lightbox-container {
+        margin-top: 10%; } }
+    @media screen and (max-width: 414px) {
+      .lightbox-container {
+        margin-top: 13%; } }
+  .lightbox-content {
+    box-shadow: 0 1px 6px fade(black, 70%); }
+  .lightbox-close {
+    text-transform: uppercase;
+    background: transparent;
+    position: absolute;
+    font-weight: 300;
+    font-size: 32px;
+    display: block;
+    border: none;
+    color: white;
+    top: -52px;
+    right: 3%;
+    cursor: pointer; }
+
+.video-container {
+  padding-bottom: 56.25%;
+  position: relative;
+  padding-top: 30px;
+  overflow: hidden;
+  height: 0; }
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0; }
+
 /* ======================
 	Header area start
 ========================*/
@@ -1080,6 +1134,26 @@ body.fixed-nav .fixed-menu {
 
 .hero-area-button {
   margin-top: 56px; }
+
+.play-buttons {
+  margin-top: 30px; }
+  .play-buttons a {
+    color: #4d4dcb;
+    font-size: 16px;
+    font-weight: 600; }
+    .play-buttons a span.video-icon {
+      height: 54px;
+      width: 54px;
+      border: 1px solid #4d4dcb;
+      display: inline-block;
+      font-size: 14px;
+      color: #4d4dcb;
+      text-align: center;
+      line-height: 54px;
+      margin-right: 20px;
+      border-radius: 50%; }
+      .play-buttons a span.video-icon i.fa {
+        padding-left: 5px; }
 
 /* Feature area start */
 .section-title h2 {

@@ -239,6 +239,29 @@ body.fixed-nav .fixed-menu {
   margin-top: 56px;
 }
 
+.play-buttons {
+  margin-top: 30px;
+  a {
+    color: $primary-color;
+    font-size: 16px;
+    font-weight: 600;
+    span.video-icon {
+      height: 54px;
+      width: 54px;
+      border: 1px solid $primary-color;
+      display: inline-block;
+      font-size: 14px;
+      color: $primary-color;
+      text-align: center;
+      line-height: 54px;
+      margin-right: 20px;
+      border-radius: 50%;
+      i.fa {
+        padding-left: 5px;
+      }
+    }
+  }
+}
 /* Feature area start */
 .section-title h2 {
   font-size: 36px;
