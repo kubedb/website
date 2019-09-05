@@ -46,7 +46,8 @@ h6 a {
   color: inherit; }
 
 pre {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  padding: 10px 15px; }
 
 footer li a {
   font-family: "Roboto", sans-serif;
@@ -1977,35 +1978,38 @@ body.fixed-nav .documentation-menu {
   color: #393e46;
   padding: 0 20px; }
 
+.full-info h1,
+.full-info h2,
+.full-info h3,
+.full-info h4,
+.full-info h5,
+.full-info h6 {
+  margin-top: 40px;
+  font-weight: 700;
+  color: #242a31;
+  margin-bottom: 10px; }
+  .full-info h1:first-child,
+  .full-info h2:first-child,
+  .full-info h3:first-child,
+  .full-info h4:first-child,
+  .full-info h5:first-child,
+  .full-info h6:first-child {
+    margin-top: 0; }
 .full-info h1 {
   font-size: 32px;
-  color: #242a31;
-  margin-bottom: 18px;
-  font-weight: 700;
   border-bottom: 1px solid #ebebeb;
-  padding-bottom: 40px;
-  margin-bottom: 40px; }
-
+  padding-bottom: 10px;
+  margin-bottom: 20px; }
 .full-info h2 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #242a31;
-  margin-bottom: 16px;
-  margin-top: 40px; }
-
+  font-size: 24px; }
 .full-info h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: #242a31;
-  margin-bottom: 16px;
-  margin-top: 40px; }
-
+  font-size: 18px; }
 .full-info h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: #242a31;
-  margin-bottom: 16px;
-  margin-top: 40px; }
+  font-size: 16px; }
+.full-info h5 {
+  font-size: 15px; }
+.full-info h6 {
+  font-size: 13px; }
 
 .full-info h2 span.share-icon {
   color: #6b6b6b;
@@ -2112,7 +2116,7 @@ ul li b {
   opacity: 0.7;
   font-size: 14px;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   display: block;
   padding-left: 20px;
   padding-bottom: 10px; }
@@ -2711,7 +2715,7 @@ p.intro {
 /* image style start */
 .full-info img {
   border: 1px solid #a9e9e9;
-  padding: 50px;
+  padding: 20px;
   border-radius: 4px; }
 
 /* image style end */
@@ -2732,7 +2736,7 @@ table th {
   border-bottom: 1px solid #a9e9e9;
   padding: 8px 20px;
   vertical-align: middle;
-  text-align: center;
+  text-align: left;
   font-size: 15px; }
 
 table tr:nth-child(even) {
