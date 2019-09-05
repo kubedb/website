@@ -30,7 +30,7 @@ params:
   contact_phone: +1(650)241-8486
 menu:
   main:
-  - name: Database
+  - name: Databases
     identifier: database
     weight: 15
     url: https://kubedb.com/docs/latest/setup/install/
