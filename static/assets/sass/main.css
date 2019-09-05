@@ -911,14 +911,14 @@ body.fixed-nav header {
   color: #9D0A0E; }
 
 .button.for-chat:hover {
-  background-color: #36C6F0;
+  background-color: #4A154B;
   color: #ffffff; }
 
 .button.for-support:hover {
   background-color: #9D0A0E;
   color: #ffffff; }
   .button.for-support:hover img {
-    filter: invert(1); }
+    filter: brightness(100); }
 
 .main-menu-button-top .button {
   padding: 7px 16px; }
@@ -1367,7 +1367,6 @@ a.play-icon .fa {
   font-weight: 600;
   color: #242a31;
   display: block;
-  margin-bottom: 10px;
   font-family: "Raleway", sans-serif; }
 
 .subscription-form input {
@@ -1401,7 +1400,7 @@ a.play-icon .fa {
   color: #ffffff !important; }
 
 .subscription-form {
-  margin-top: 20px; }
+  margin-top: 12px; }
 
 .subscription-form input[type="email"]:focus,
 .subscription-form input[type="email"]:hover {
@@ -1550,7 +1549,7 @@ p.spam-message {
   margin-bottom: 30px;
   color: #242a31;
   font-weight: 600;
-  line-height: 58px; }
+  line-height: 68px; }
 
 .support-page .section-title h2 {
   margin-bottom: 20px; }

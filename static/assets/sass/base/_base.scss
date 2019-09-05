@@ -52,14 +52,14 @@ body.fixed-nav header{
 }
 
 .button.for-chat:hover {
-  background-color: #36C6F0;
+  background-color: #4A154B;
   color: $white-color;
 }
 .button.for-support:hover{
   background-color: #9D0A0E;
   color: $white-color;
   img{
-    filter: invert(1);
+    filter: brightness(100);
   }
 }
 
@@ -580,7 +580,6 @@ a.play-icon .fa {
   font-weight: 600;
   color: $heading-color;
   display: block;
-  margin-bottom: 10px;
   font-family: $font-heading;
 }
 
@@ -616,7 +615,7 @@ a.play-icon .fa {
   color: $white-color !important;
 }
 .subscription-form {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .subscription-form input[type="email"]:focus,
@@ -799,7 +798,7 @@ p.spam-message {
   margin-bottom: 30px;
   color: $heading-color;
   font-weight: 600;
-  line-height: 58px;
+  line-height: 68px;
 }
 
 .support-page .section-title h2 {
