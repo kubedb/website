@@ -9,10 +9,20 @@ docs:
 .PHONY: gen
 gen:
 	rm -rf public
+	hugo --config=config.dev.yaml
+
+.PHONY: qa
+qa: gen
+	firebase use default
+	firebase deploy
+
+.PHONY: gen-prod
+gen-prod:
+	rm -rf public
 	hugo --minify --config=config.yaml
 
-.PHONY: deploy
-deploy: gen
+.PHONY: release
+release: gen-prod
 	firebase use prod
 	firebase deploy
 	firebase use default
