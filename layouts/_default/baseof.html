@@ -344,10 +344,10 @@
 
                 <div class="navbar-item">
                   <div class="buttons main-menu-button">
-                    <img style="height:24px" alt="Docker Pulls" src="https://img.shields.io/github/stars/kubedb/cli?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github">
-                    &nbsp;&nbsp;&nbsp;
-
-                    <img style="height:24px;" alt="Docker Pulls" src="https://img.shields.io/docker/pulls/kubedb/operator?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=docker">
+                    {{ range $idx, $badge := $p.badges }}
+                      {{if gt $idx 0}} &nbsp;&nbsp;&nbsp; {{end}}
+                      <img style="height:24px" alt="{{ $badge.alt }}" src="https://img.shields.io/{{ $badge.url }}?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo={{ $badge.logo }}">
+                    {{ end }}
                   </div>
                 </div>
 

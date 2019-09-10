@@ -31,6 +31,18 @@
   "starRepo": "appscode/voyager",
   "docRepo": "appscode/voyager",
   "datasheetFormID": "",
+  "badges": [
+    {
+      "url" : "github/stars/appscode/voyager",
+      "alt": "GitHub Stars",
+      "logo": "github"
+    },
+    {
+      "url" : "docker/pulls/appscode/voyager",
+      "alt": "Docker Pulls",
+      "logo": "docker"
+    }
+  ],
   "features": [
     {
       "title": "HTTP & TCP",
@@ -113,6 +125,7 @@
   ],
   "versions": [
     { "version": "master", "hostDocs": false, "show": true },
+    { "version": "v11.0.0", "hostDocs": true, "show": true },
     { "version": "10.0.0", "hostDocs": true, "show": true },
     { "version": "9.0.0", "hostDocs": true, "show": true },
     { "version": "8.0.1", "hostDocs": true, "show": true },
@@ -143,7 +156,7 @@
     { "version": "3.1.0", "hostDocs": false },
     { "version": "3.0.0", "hostDocs": false }
   ],
-  "latestVersion": "10.0.0",
+  "latestVersion": "v11.0.0",
   "socialLinks": {
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/appscode/voyager",
