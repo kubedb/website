@@ -953,6 +953,9 @@ body.fixed-nav header {
   font-size: 14px !important;
   transition: 0.3s ease-in-out; }
 
+.buttons.main-menu-button {
+  margin-bottom: 0; }
+
 .button.for-support, .button.for-chat {
   background: #ffffff;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.17);
