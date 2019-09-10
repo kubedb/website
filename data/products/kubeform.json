@@ -1,7 +1,7 @@
 {
   "key": "kubeform",
   "name": "Kubeform",
-  "tagline": "Provision and manage any cloud provider resource using <strong>Kubernetes</strong> CRDs & <strong>Terraform</strong>",
+  "tagline": "Provision cloud resources <br /> using <strong>Kubernetes</strong> CRDs <br />& <strong>Terraform</strong>",
   "summary": "",
   "published": true,
   "website": {
@@ -30,6 +30,18 @@
   "repoURL": "https://github.com/kubeform/docs",
   "starRepo": "kubeform/kubeform",
   "docRepo": "kubeform/docs",
+  "badges": [
+    {
+      "url" : "github/stars/kubeform/kubeform",
+      "alt": "GitHub Stars",
+      "logo": "github"
+    },
+    {
+      "url" : "docker/pulls/kubeform/kfc",
+      "alt": "Docker Pulls",
+      "logo": "docker"
+    }
+  ],
   "features": [
     {
       "title": "Native Kubernetes Support",
