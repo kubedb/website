@@ -1,5 +1,9 @@
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
+  .pricing-area-wrapper {
+    overflow-x: scroll;
+    padding-top: 64px;
+  }
 }
 
 /* Normal desktop :992px. */
@@ -276,11 +280,11 @@
     }
   }
   //feature page style end
-// customer carousel start
-.carousel-wrapper{
-  padding: 30px;
-}
-// customer carousel end
+  // customer carousel start
+  .carousel-wrapper {
+    padding: 30px;
+  }
+  // customer carousel end
   // docs page style start
   .sidebar-search-area {
     right: -100%;
@@ -685,7 +689,10 @@
 
 /* small Mobile :768px. */
 @media only screen and (min-width: 320px) and (max-width: 768px) {
-  .navbar-menu.is-active{
+  .main-menu-button img {
+    margin-bottom: 10px;
+  }
+  .navbar-menu.is-active {
     border-radius: 4px;
   }
   p {
