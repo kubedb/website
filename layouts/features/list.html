@@ -3,72 +3,66 @@
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 
 <!-- features area start -->
-<section class="hero-features">
-  <div class="container section">
-    <div class="columns">
-      <div class="column is-6 is-offset-3 has-text-centered">
-        <!-- hero features text start -->
-        <div class="hero-features-content">
-          <h1>You’re in best cloud solution</h1>
-          <p>Lorem Ipsum is simply dummy text of the printing and it is</p>
-          <div class="hero-area-button">
-            <a href="/docs/{{ $p.latestVersion }}/setup/" class="button kd-button kd-primary">Install Now FREE</a>
-          </div>
-        </div>
-        <!-- hero features text end -->
-      </div>
+<section class="hero-features d-table">
+  <!-- hero features text start -->
+  <div class="hero-features-content d-table-cell has-text-centered">
+    <h1>You’re in best cloud solution</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and it is</p>
+    <div class="hero-area-button">
+      <a
+        href="/docs/{{ $p.latestVersion }}/setup/"
+        class="button kd-button kd-primary"
+        >Install Now FREE</a
+      >
     </div>
   </div>
+  <!-- hero features text end -->
 </section>
 <!-- features area end -->
 
 <!-- all featured section start -->
-<section class="section-padding">
+<section class="">
   {{ range $idx, $f := $p.features }}
   <!-- single feature start -->
   <div class="container section">
-    <div class="columns">
-      {{ if (modBool $idx 2) }}
-      <div class="column is-5 is-offset-1">
-        <div class="feature-wrapper d-table">
-          <div class="feature-content pr-140 d-table-cell">
-            <h2>{{ $f.title }}</h2>
-            <p>
-              {{ $f.description }}
-            </p>
+    <div class="feature-section-gap pb-100">
+          {{ if (modBool $idx 2) }}
+          <div class="columns">
+            <div class="column is-5 is-offset-1">
+              <div class="feature-wrapper d-table">
+                <div class="feature-content pr-140 d-table-cell">
+                  <h2>{{ $f.title }}</h2>
+                  <p>
+                    {{ $f.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-5 is-offset-1">
+              <div class="single-feature-image">
+                <img src="{{ $f.image.src }}" alt="{{ $f.image.alt }}" class="img" />
+              </div>
+              </div>
+            </div>
+            {{ else }}
+            <div class="columns reverse-row-order">
+            <div class="column is-5 is-offset-1">
+              <div class="single-feature-image">
+                <img src="{{ $f.image.src }}" alt="{{ $f.image.alt }}" class="img" />
+              </div>
+            </div>
+            <div class="column is-5">
+              <div class="feature-wrapper d-table">
+                <div class="feature-content pr-45 d-table-cell">
+                  <h2>{{ $f.title }}</h2>
+                  <p>
+                    {{ $f.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {{ end }}
           </div>
-        </div>
-      </div>
-      <div class="column is-5 is-offset-1">
-        <div class="single-feature-image">
-          <img
-            src="{{ $f.image.src }}"
-            alt="{{ $f.image.alt }}"
-            class="img"
-          />
-        </div>
-      </div>
-      {{ else }}
-      <div class="column is-5 is-offset-1">
-        <div class="single-feature-image">
-          <img
-            src="{{ $f.image.src }}"
-            alt="{{ $f.image.alt }}"
-            class="img"
-          />
-        </div>
-      </div>
-      <div class="column is-5">
-        <div class="feature-wrapper d-table">
-          <div class="feature-content pr-45 d-table-cell">
-            <h2>{{ $f.title }}</h2>
-            <p>
-              {{ $f.description }}
-            </p>
-          </div>
-        </div>
-      </div>
-      {{ end }}
     </div>
   </div>
   <!-- single feature end -->

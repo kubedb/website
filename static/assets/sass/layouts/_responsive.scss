@@ -1,5 +1,8 @@
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
+  .feature-content.pr-140 {
+    padding-right: 0;
+  }
 }
 
 /* Normal desktop :992px. */
@@ -61,6 +64,10 @@
   }
   .pricing-body li {
     font-size: 13px;
+  }
+  //feature content padding-right reset for i-pad pro
+  .feature-content.pr-140 {
+    padding-right: 0;
   }
 }
 
@@ -274,6 +281,9 @@
       font-size: 22px;
       line-height: 40px;
     }
+  }
+  .feature-content.pr-140 {
+    padding-right: 0;
   }
   //feature page style end
 // customer carousel start
@@ -833,10 +843,12 @@
         Feature Page Responsive Code
 ============================================*/
   .hero-features {
-    min-height: auto;
-    padding: 70px 0;
+    height: 400px;
+    padding: 0px 20px;
   }
-
+  .feature-section-gap.pb-100 {
+    padding-bottom: 50px;
+  }
   .pr-140 {
     padding-right: 0;
   }

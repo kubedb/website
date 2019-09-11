@@ -796,13 +796,15 @@ p.spam-message {
 }
 
 .hero-features {
-  background-image: url(../images/features-page/feature-bg.png);
-  background-size: auto;
+  background-image: url(../images/products/kubedb/features/feature-bg.png);
+  background-size: cover;
   background-position: top;
-  padding: 140px 0;
-  min-height: 600px;
+  height: 500px;
+  padding: 0 20px;
 }
-
+.single-feature-image {
+  max-width: 450px;
+}
 .hero-features-content h1 {
   margin-bottom: 12px;
 }
