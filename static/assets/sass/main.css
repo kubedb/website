@@ -3625,7 +3625,7 @@ video {
     flex-direction: column-reverse; } }
 /* small Mobile :768px. */
 @media only screen and (min-width: 320px) and (max-width: 768px) {
-  .main-menu-button img:not(:last-child) {
+  .main-menu-button img {
     margin-bottom: 10px; }
 
   .navbar-menu.is-active {
