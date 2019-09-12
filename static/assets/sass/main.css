@@ -1610,7 +1610,7 @@ p.spam-message {
   background-position: center; }
   .features-area .hero-features {
     height: 500px;
-    padding: 0 20px;
+    padding: 50px 20px;
     max-width: 940px;
     margin: 0 auto; }
 
@@ -3769,7 +3769,7 @@ video {
 ============================================*/
   .hero-features {
     height: 400px;
-    padding: 20px 20px; }
+    padding: 50px 20px; }
 
   .feature-section-gap.pb-100 {
     padding-bottom: 50px; }
