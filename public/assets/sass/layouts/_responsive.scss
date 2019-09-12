@@ -1,5 +1,12 @@
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
+  .feature-content.pr-140 {
+    padding-right: 0;
+  }
+  .pricing-area-wrapper {
+    overflow-x: scroll;
+    padding-top: 64px;
+  }
 }
 
 /* Normal desktop :992px. */
@@ -61,6 +68,10 @@
   }
   .pricing-body li {
     font-size: 13px;
+  }
+  //feature content padding-right reset for i-pad pro
+  .feature-content.pr-140 {
+    padding-right: 0;
   }
 }
 
@@ -275,12 +286,15 @@
       line-height: 40px;
     }
   }
+  .feature-content.pr-140 {
+    padding-right: 0;
+  }
   //feature page style end
-// customer carousel start
-.carousel-wrapper{
-  padding: 30px;
-}
-// customer carousel end
+  // customer carousel start
+  .carousel-wrapper {
+    padding: 30px;
+  }
+  // customer carousel end
   // docs page style start
   .sidebar-search-area {
     right: -100%;
@@ -684,8 +698,11 @@
 }
 
 /* small Mobile :768px. */
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  .navbar-menu.is-active{
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+  .main-menu-button img {
+    margin-bottom: 10px;
+  }
+  .navbar-menu.is-active {
     border-radius: 4px;
   }
   p {
@@ -833,10 +850,12 @@
         Feature Page Responsive Code
 ============================================*/
   .hero-features {
-    min-height: auto;
-    padding: 70px 0;
+    height: 400px;
+    padding: 50px 20px;
   }
-
+  .feature-section-gap.pb-100 {
+    padding-bottom: 50px;
+  }
   .pr-140 {
     padding-right: 0;
   }
