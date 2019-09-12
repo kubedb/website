@@ -1668,7 +1668,7 @@ p.spam-message {
   border-radius: 7px 7px 0 0;
   position: relative;
   z-index: 1;
-  min-height: 202px; }
+  min-height: 230px; }
 
 .pricing-heading:after {
   position: absolute;
@@ -1741,7 +1741,7 @@ p.spam-message {
   position: relative;
   z-index: 1;
   margin-top: -32px;
-  min-height: 164px; }
+  height: 164px; }
 
 .round-shape {
   background: #fff;
@@ -1773,7 +1773,7 @@ p.spam-message {
   color: #f99a00; }
 
 .single-pricing-table.silver .pricing-top {
-  min-height: 100px; }
+  height: 100px; }
 
 .single-pricing-table.free .pricing-top, .single-pricing-table.plutinum .pricing-top {
   margin-bottom: 30px; }
@@ -1863,11 +1863,12 @@ p.spam-message {
 
 .single-pricing-table.details .pricing-body {
   border-radius: 8px;
-  margin-top: 252px;
+  margin-top: 264px;
   margin-right: 10px;
   padding-bottom: 70px;
   background-color: #ffffff;
-  padding-top: 5px; }
+  padding-top: 5px;
+  min-width: 196px; }
 
 .single-pricing-table.details .pricing-body ul li:first-child {
   padding: 5px; }
@@ -3054,7 +3055,11 @@ video {
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
   .feature-content.pr-140 {
-    padding-right: 0; } }
+    padding-right: 0; }
+
+  .pricing-area-wrapper {
+    overflow-x: scroll;
+    padding-top: 64px; } }
 /* Normal desktop :992px. */
 @media (min-width: 992px) and (max-width: 1087px) {
   .single-db-logo {
@@ -3632,6 +3637,9 @@ video {
     flex-direction: column-reverse; } }
 /* small Mobile :768px. */
 @media only screen and (min-width: 320px) and (max-width: 768px) {
+  .main-menu-button img {
+    margin-bottom: 10px; }
+
   .navbar-menu.is-active {
     border-radius: 4px; }
 
