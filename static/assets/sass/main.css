@@ -1604,12 +1604,15 @@ p.spam-message {
 .mt-100 {
   margin-top: 100px; }
 
-.hero-features {
+.features-area {
   background-image: url(../images/products/kubedb/features/feature-bg.png);
   background-size: cover;
-  background-position: top;
-  height: 500px;
-  padding: 0 20px; }
+  background-position: center; }
+  .features-area .hero-features {
+    height: 500px;
+    padding: 0 20px;
+    max-width: 940px;
+    margin: 0 auto; }
 
 .single-feature-image {
   max-width: 450px; }
@@ -3636,7 +3639,7 @@ video {
     display: flex;
     flex-direction: column-reverse; } }
 /* small Mobile :768px. */
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+@media only screen and (min-width: 300px) and (max-width: 768px) {
   .main-menu-button img {
     margin-bottom: 10px; }
 
@@ -3766,7 +3769,7 @@ video {
 ============================================*/
   .hero-features {
     height: 400px;
-    padding: 0px 20px; }
+    padding: 20px 20px; }
 
   .feature-section-gap.pb-100 {
     padding-bottom: 50px; }
