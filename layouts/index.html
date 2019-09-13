@@ -49,7 +49,9 @@
         <div class="column is-6">
           <!-- hero image start -->
           <div class="hero-area-img">
-            <img src="{{ $p.heroImage.src }}" alt="{{ $p.heroImage.alt }}" class="img" />
+            <!-- <img src="{{ $p.heroImage.src }}" alt="{{ $p.heroImage.alt }}" class="img" /> -->
+
+            <object id="my-svg" type="image/svg+xml" data="{{ $p.heroImage.src }}"></object>
           </div>
           <!-- hero image end -->
         </div>
@@ -58,6 +60,15 @@
   </div>
 </section>
 <!-- hero area end -->
+
+            <script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+            <script>
+  new Vivus('my-svg', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false}, function () {
+          if (window.console) {
+            console.log('Animation finished. [log triggered from callback]');
+          }
+        });
+</script>
 
 {{ if $p.videos.intro }}
 <!-- video player frame and scripts start -->

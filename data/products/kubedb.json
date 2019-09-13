@@ -9,7 +9,7 @@
     "path": ""
   },
   "heroImage": {
-    "src": "https://cdn.appscode.com/images/products/kubedb/kubedb-hero.png",
+    "src": "/assets/images/products/kubedb/abc.svg",
     "alt": "KubeDB"
   },
   "logo": {
