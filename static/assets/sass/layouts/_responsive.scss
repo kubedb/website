@@ -877,6 +877,13 @@
     text-align: left;
     font-weight: 500;
     font-size: 14px;
+    margin-right: 20px;
+  }
+  .pricing-body li span {
+    text-indent: -20px;
+    br{
+      display: none;
+    }
   }
   .pricing-body li {
     display: inline-block;
@@ -900,7 +907,10 @@
     border-radius: 8px;
   }
   .pricing-body {
-    margin-bottom: 20px !important;
+    margin-bottom: 40px !important;
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
   .single-pricing-table.free,
   .single-pricing-table.gold,
@@ -916,6 +926,9 @@
   }
   .hero-area-content.pr-115 {
     padding-right: 0;
+  }
+  .single-payment-method {
+    margin-bottom: 5px;
   }
 
   /* ==============================================
