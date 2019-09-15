@@ -12,6 +12,8 @@ section_menu_id: welcome
 url: /docs/0.9.0-rc.1/welcome/contributing/
 aliases:
 - /docs/0.9.0-rc.1/CONTRIBUTING/
+info:
+  version: 0.9.0-rc.1
 ---
 
 # Contribution Guidelines

@@ -7,6 +7,8 @@ menu:
     parent: reference
 menu_name: docs_0.8.0
 section_menu_id: reference
+info:
+  version: 0.8.0
 ---
 
 ## kubedb get

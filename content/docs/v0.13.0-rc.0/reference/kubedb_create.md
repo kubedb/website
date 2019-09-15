@@ -7,6 +7,8 @@ menu:
     parent: reference
 menu_name: docs_v0.13.0-rc.0
 section_menu_id: reference
+info:
+  version: v0.13.0-rc.0
 ---
 
 ## kubedb create

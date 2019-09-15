@@ -11,6 +11,8 @@ section_menu_id: guides
 url: /docs/0.11.0/guides/redis/
 aliases:
 - /docs/0.11.0/guides/redis/README/
+info:
+  version: 0.11.0
 ---
 
 > New to KubeDB? Please start [here](/docs/0.11.0/concepts/README).

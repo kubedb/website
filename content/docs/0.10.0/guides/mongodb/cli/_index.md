@@ -7,5 +7,7 @@ menu:
     parent: mg-mongodb-guides
     weight: 45
 menu_name: docs_0.10.0
+info:
+  version: 0.10.0
 ---
 

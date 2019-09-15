@@ -10,6 +10,8 @@ menu_name: docs_0.8.0-beta.2
 section_menu_id: reference
 aliases:
 - /docs/0.8.0-beta.2/reference/
+info:
+  version: 0.8.0-beta.2
 ---
 
 ## kubedb

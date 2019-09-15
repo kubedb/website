@@ -7,5 +7,7 @@ menu:
     weight: 40
     pre: dropdown
 menu_name: docs_0.11.0
+info:
+  version: 0.11.0
 ---
 

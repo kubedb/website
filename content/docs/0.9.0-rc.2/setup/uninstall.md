@@ -8,6 +8,8 @@ menu:
     weight: 20
 menu_name: docs_0.9.0-rc.2
 section_menu_id: setup
+info:
+  version: 0.9.0-rc.2
 ---
 
 > New to KubeDB? Please start [here](/docs/0.9.0-rc.2/concepts/README).

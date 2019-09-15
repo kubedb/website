@@ -10,6 +10,8 @@ menu_name: docs_0.8.0-beta.0
 section_menu_id: setup
 aliases:
 - /docs/0.8.0-beta.0/setup/developer-guide/
+info:
+  version: 0.8.0-beta.0
 ---
 
 # Development Guide

@@ -12,6 +12,8 @@ section_menu_id: welcome
 url: /docs/0.8.0-beta.2/welcome/roadmap/
 aliases:
 - /docs/0.8.0-beta.2/roadmap/
+info:
+  version: 0.8.0-beta.2
 ---
 
 # Project Status

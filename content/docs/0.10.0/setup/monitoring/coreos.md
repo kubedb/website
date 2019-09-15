@@ -10,6 +10,8 @@ menu_name: docs_0.10.0
 section_menu_id: setup
 aliases:
 - /docs/0.10.0/setup/operator-monitoring/
+info:
+  version: 0.10.0
 ---
 
 # Monitoring KubeDB Operator Using CoreOS Prometheus Operator

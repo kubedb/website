@@ -8,6 +8,8 @@ menu:
     weight: 15
 menu_name: docs_0.9.0-rc.1
 section_menu_id: guides
+info:
+  version: 0.9.0-rc.1
 ---
 
 > Don't know how backup works?  Check [tutorial](/docs/0.9.0-rc.1/guides/postgres/snapshot/instant_backup) on Instant Backup.

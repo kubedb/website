@@ -8,6 +8,8 @@ menu:
     weight: 20
 menu_name: docs_0.11.0
 section_menu_id: setup
+info:
+  version: 0.11.0
 ---
 
 # Release Process

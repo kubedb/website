@@ -10,6 +10,8 @@ menu_name: docs_0.9.0-rc.2
 section_menu_id: reference
 aliases:
 - /docs/0.9.0-rc.2/reference/
+info:
+  version: 0.9.0-rc.2
 ---
 
 ## kubedb

@@ -7,5 +7,7 @@ menu:
     parent: es-elasticsearch-guides
     weight: 30
 menu_name: docs_0.10.0
+info:
+  version: 0.10.0
 ---
 

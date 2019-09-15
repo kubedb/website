@@ -8,6 +8,8 @@ menu:
     weight: 30
 menu_name: docs_0.11.0
 section_menu_id: concepts
+info:
+  version: 0.11.0
 ---
 
 # MemcachedVersion

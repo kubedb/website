@@ -11,6 +11,8 @@ section_menu_id: guides
 url: /docs/0.9.0-rc.0/guides/memcached/
 aliases:
 - /docs/0.9.0-rc.0/guides/memcached/README/
+info:
+  version: 0.9.0-rc.0
 ---
 
 > New to KubeDB? Please start [here](/docs/0.9.0-rc.0/concepts/README).

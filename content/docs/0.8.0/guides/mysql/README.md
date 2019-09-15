@@ -11,6 +11,8 @@ section_menu_id: guides
 url: /docs/0.8.0/guides/mysql/
 aliases:
 - /docs/0.8.0/guides/mysql/README/
+info:
+  version: 0.8.0
 ---
 
 > New to KubeDB? Please start [here](/docs/0.8.0/concepts/README).

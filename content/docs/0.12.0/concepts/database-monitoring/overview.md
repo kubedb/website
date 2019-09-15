@@ -9,6 +9,8 @@ menu:
     weight: 10
 menu_name: docs_0.12.0
 section_menu_id: concepts
+info:
+  version: 0.12.0
 ---
 
 # Monitoring Database with KubeDB
