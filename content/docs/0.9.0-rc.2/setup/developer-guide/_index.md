@@ -7,5 +7,7 @@ menu:
     parent: setup
     weight: 40
 menu_name: docs_0.9.0-rc.2
+info:
+  version: 0.9.0-rc.2
 ---
 

@@ -11,6 +11,8 @@ section_menu_id: guides
 url: /docs/0.9.0-rc.2/guides/postgres/
 aliases:
 - /docs/0.9.0-rc.2/guides/postgres/README/
+info:
+  version: 0.9.0-rc.2
 ---
 
 > New to KubeDB? Please start [here](/docs/0.9.0-rc.2/concepts/README).

@@ -12,6 +12,8 @@ section_menu_id: welcome
 url: /docs/0.12.0/welcome/support/
 aliases:
 - /docs/0.12.0/support/
+info:
+  version: 0.12.0
 ---
 
 # Support

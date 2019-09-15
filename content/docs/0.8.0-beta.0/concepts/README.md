@@ -11,6 +11,8 @@ section_menu_id: concepts
 url: /docs/0.8.0-beta.0/concepts/
 aliases:
 - /docs/0.8.0-beta.0/concepts/README/
+info:
+  version: 0.8.0-beta.0
 ---
 
 # Concepts

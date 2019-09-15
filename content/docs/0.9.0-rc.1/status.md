@@ -12,6 +12,8 @@ section_menu_id: welcome
 url: /docs/0.9.0-rc.1/welcome/status/
 aliases:
 - /docs/0.9.0-rc.1/status/
+info:
+  version: 0.9.0-rc.1
 ---
 
 # Project Status

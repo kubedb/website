@@ -8,6 +8,8 @@ menu:
     weight: 10
 menu_name: docs_0.9.0-rc.1
 section_menu_id: guides
+info:
+  version: 0.9.0-rc.1
 ---
 
 > New to KubeDB? Please start [here](/docs/0.9.0-rc.1/concepts/README).

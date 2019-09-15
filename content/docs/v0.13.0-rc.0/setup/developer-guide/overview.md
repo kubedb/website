@@ -10,6 +10,8 @@ menu_name: docs_v0.13.0-rc.0
 section_menu_id: setup
 aliases:
 - /docs/v0.13.0-rc.0/setup/developer-guide/
+info:
+  version: v0.13.0-rc.0
 ---
 
 # Development Guide

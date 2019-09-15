@@ -8,6 +8,8 @@ menu:
     weight: 35
 menu_name: docs_v0.13.0-rc.0
 section_menu_id: concepts
+info:
+  version: v0.13.0-rc.0
 ---
 
 > New to KubeDB? Please start [here](/docs/v0.13.0-rc.0/concepts/README).

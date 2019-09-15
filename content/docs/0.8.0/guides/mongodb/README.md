@@ -11,6 +11,8 @@ section_menu_id: guides
 url: /docs/0.8.0/guides/mongodb/
 aliases:
 - /docs/0.8.0/guides/mongodb/README/
+info:
+  version: 0.8.0
 ---
 
 > New to KubeDB? Please start [here](/docs/0.8.0/concepts/README).

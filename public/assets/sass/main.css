@@ -1874,7 +1874,7 @@ p.spam-message {
   min-width: 196px; }
 
 .single-pricing-table.details .pricing-body ul li:first-child {
-  padding: 5px; }
+  padding: 5px 20px; }
 
 .single-pricing-table.free,
 .single-pricing-table.silver,
@@ -2604,7 +2604,8 @@ button.button.is-fullwidth {
 .kd-left-sidebar {
   margin-right: 30px;
   position: sticky;
-  top: 130px; }
+  top: 130px;
+  z-index: 9; }
 
 .kd-sidebar-menu .item label {
   border: 1px solid transparent;
@@ -3792,7 +3793,13 @@ video {
     width: 50%;
     text-align: left;
     font-weight: 500;
-    font-size: 14px; }
+    font-size: 14px;
+    margin-right: 20px; }
+
+  .pricing-body li span {
+    text-indent: -20px; }
+    .pricing-body li span br {
+      display: none; }
 
   .pricing-body li {
     display: inline-block;
@@ -3815,7 +3822,9 @@ video {
     border-radius: 8px; }
 
   .pricing-body {
-    margin-bottom: 20px !important; }
+    margin-bottom: 40px !important; }
+    .pricing-body:last-child {
+      margin-bottom: 0; }
 
   .single-pricing-table.free,
   .single-pricing-table.gold,
@@ -3831,6 +3840,9 @@ video {
 
   .hero-area-content.pr-115 {
     padding-right: 0; }
+
+  .single-payment-method {
+    margin-bottom: 5px; }
 
   /* ==============================================
    Product page  start

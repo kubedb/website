@@ -11,6 +11,8 @@ section_menu_id: guides
 url: /docs/v0.13.0-rc.0/guides/elasticsearch/
 aliases:
 - /docs/v0.13.0-rc.0/guides/elasticsearch/README/
+info:
+  version: v0.13.0-rc.0
 ---
 
 > New to KubeDB? Please start [here](/docs/v0.13.0-rc.0/concepts/README).

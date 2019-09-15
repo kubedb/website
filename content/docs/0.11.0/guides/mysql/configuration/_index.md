@@ -7,5 +7,7 @@ menu:
     parent: my-mysql-guides
     weight: 50
 menu_name: docs_0.11.0
+info:
+  version: 0.11.0
 ---
 

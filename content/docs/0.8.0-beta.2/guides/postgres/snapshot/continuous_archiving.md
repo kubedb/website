@@ -8,6 +8,8 @@ menu:
     weight: 20
 menu_name: docs_0.8.0-beta.2
 section_menu_id: guides
+info:
+  version: 0.8.0-beta.2
 ---
 
 > New to KubeDB? Please start [here](/docs/0.8.0-beta.2/concepts/README).

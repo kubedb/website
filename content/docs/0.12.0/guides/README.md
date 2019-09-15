@@ -11,6 +11,8 @@ section_menu_id: guides
 url: /docs/0.12.0/guides/
 aliases:
 - /docs/0.12.0/guides/README/
+info:
+  version: 0.12.0
 ---
 
 # Guides

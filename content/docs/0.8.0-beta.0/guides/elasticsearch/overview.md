@@ -10,6 +10,8 @@ menu_name: docs_0.8.0-beta.0
 section_menu_id: guides
 aliases:
 - /docs/0.8.0-beta.0/guides/elasticsearch/
+info:
+  version: 0.8.0-beta.0
 ---
 
 > New to KubeDB? Please start [here](/docs/0.8.0-beta.0/guides/README).

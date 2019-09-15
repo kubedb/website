@@ -8,6 +8,8 @@ menu:
     weight: 15
 menu_name: docs_0.9.0
 section_menu_id: guides
+info:
+  version: 0.9.0
 ---
 
 > Don't know how backup works?  Check [tutorial](/docs/0.9.0/guides/elasticsearch/snapshot/instant_backup) on Instant Backup.

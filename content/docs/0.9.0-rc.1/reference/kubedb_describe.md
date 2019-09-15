@@ -7,6 +7,8 @@ menu:
     parent: reference
 menu_name: docs_0.9.0-rc.1
 section_menu_id: reference
+info:
+  version: 0.9.0-rc.1
 ---
 
 ## kubedb describe

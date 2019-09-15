@@ -13,6 +13,8 @@ url: /docs/0.8.0-beta.0/welcome/
 aliases:
 - /docs/0.8.0-beta.0/
 - /docs/0.8.0-beta.0/README/
+info:
+  version: 0.8.0-beta.0
 ---
 
 # Welcome

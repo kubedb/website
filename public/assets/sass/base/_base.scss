@@ -1097,7 +1097,7 @@ p.spam-message {
   min-width: 196px;
 }
 .single-pricing-table.details .pricing-body ul li:first-child {
-  padding: 5px;
+  padding: 5px 20px;
 }
 .single-pricing-table.free,
 .single-pricing-table.silver,
@@ -1923,6 +1923,7 @@ button.button.is-fullwidth {
   margin-right: 30px;
   position: sticky;
   top: 130px;
+  z-index: 9;
 }
 
 .kd-sidebar-menu .item label {

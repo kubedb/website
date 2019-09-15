@@ -8,6 +8,8 @@ menu:
     weight: 20
 menu_name: docs_0.8.0-beta.2
 section_menu_id: setup
+info:
+  version: 0.8.0-beta.2
 ---
 
 # Release Process
