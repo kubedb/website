@@ -56,7 +56,7 @@
     {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
     {{ end }}
-    <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
+    <link rel="stylesheet" href="/assets/sass/main.css" />
   </head>
 
   <body class="{{$p.key}}">
