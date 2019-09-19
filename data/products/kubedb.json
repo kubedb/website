@@ -50,7 +50,7 @@
     {
       "title": "Lower administrative burden",
       "image": {
-        "src": "/assets/images/products/kubedb/features/easy-lg.png",
+        "src": "https://cdn.appscode.com/images/products/kubedb/features/easy-lg.png",
         "alt": "http"
       },
       "icon": {
@@ -63,7 +63,7 @@
     {
       "title": "Native Kubernetes Support",
       "image": {
-        "src": "/assets/images/products/kubedb/features/multi-cloud-lg.png",
+        "src": "https://cdn.appscode.com/images/products/kubedb/features/multi-cloud-lg.png",
         "alt": "http"
       },
       "icon": {
@@ -76,7 +76,7 @@
     {
       "title": "Performance",
       "image": {
-        "src": "/assets/images/products/kubedb/features/performance-lg.png",
+        "src": "https://cdn.appscode.com/images/products/kubedb/features/performance-lg.png",
         "alt": "http"
       },
       "icon": {
@@ -89,7 +89,7 @@
     {
       "title": "Availability and durability",
       "image": {
-        "src": "/assets/images/products/kubedb/features/availability-lg.png",
+        "src": "https://cdn.appscode.com/images/products/kubedb/features/availability-lg.png",
         "alt": "http"
       },
       "icon": {
@@ -106,7 +106,7 @@
         "alt": "http"
       },
       "icon": {
-        "src": "/assets/images/products/kubedb/features/security-lock.png",
+        "src": "https://cdn.appscode.com/images/products/kubedb/features/security-lock.png",
         "alt": "http"
       },
       "summary": "",
@@ -115,7 +115,7 @@
     {
       "title": "Manageability",
       "image": {
-        "src": "/assets/images/products/kubedb/features/monitoring-lg.png",
+        "src": "https://cdn.appscode.com/images/products/kubedb/features/monitoring-lg.png",
         "alt": "http"
       },
       "icon": {
@@ -128,7 +128,7 @@
     {
       "title": "Cost-effectiveness",
       "image": {
-        "src": "/assets/images/products/kubedb/features/low-price-lg.png",
+        "src": "https://cdn.appscode.com/images/products/kubedb/features/low-price-lg.png",
         "alt": "http"
       },
       "icon": {
@@ -141,7 +141,7 @@
     {
       "title": "Open Source",
       "image": {
-        "src": "/assets/images/products/kubedb/features/open-source-lg.png",
+        "src": "https://cdn.appscode.com/images/products/kubedb/features/open-source-lg.png",
         "alt": "http"
       },
       "icon": {
