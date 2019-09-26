@@ -2,7 +2,7 @@ title: Run production-grade databases easily on Kubernetes
 baseurl: https://kubedb-v2-hugo.web.app
 languageCode: en-us
 assetDir: static
-googleAnalytics: UA-62096468-12
+googleAnalytics: UA-62096468-4
 disableKinds:
 - taxonomy
 - taxonomyTerm
