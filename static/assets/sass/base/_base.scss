@@ -1925,6 +1925,9 @@ button.button.is-fullwidth {
 .appscode-style .item input:checked ~ label > a{
   color: $primary-color;
 }
+.item input:checked~ul, .item input:checked~.item>ul>.item{
+  margin-left: -20px;
+}
 .kd-left-sidebar {
   margin-right: 30px;
   position: sticky;
