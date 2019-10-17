@@ -2416,3 +2416,21 @@ video {
   opacity: 1;
 }
 //  go to top area end
+
+// improve section start
+.improve-section-area{
+  padding-bottom: 80px;
+} 
+.improve-bg-color{
+  background-color: #FBFDFF;
+  padding: 0 20px !important;
+  a{
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    font-family: $font-heading;
+  }
+  p{
+    font-size: 16px !important;
+    color: #74818D !important;
+  }
+}

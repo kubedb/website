@@ -174,15 +174,6 @@ h6 {
   border-color: #4d4dcb;
   box-shadow: none; }
 
-.is-dark {
-  background-color: #32325d; }
-
-.is-success {
-  background-color: #00a651 !important; }
-
-.is-info {
-  background-color: #1da1f2 !important; }
-
 .is-blue {
   background-color: #3f19ad !important;
   color: #ffffff; }
@@ -193,9 +184,6 @@ h6 {
 
 .is-marked {
   background-color: #fff5e5 !important; }
-
-.is-danger {
-  background-color: #e01563; }
 
 .is-red {
   background-color: #e03056 !important;
@@ -2604,6 +2592,9 @@ button.button.is-fullwidth {
 .appscode-style .item input:checked ~ label > a {
   color: #4d4dcb; }
 
+.item input:checked ~ ul, .item input:checked ~ .item > ul > .item {
+  margin-left: -20px; }
+
 .kd-left-sidebar {
   margin-right: 30px;
   position: sticky;
@@ -3062,6 +3053,20 @@ video {
 
 .go-to-top.is-visible {
   opacity: 1; }
+
+.improve-section-area {
+  padding-bottom: 80px; }
+
+.improve-bg-color {
+  background-color: #FBFDFF;
+  padding: 0 20px !important; }
+  .improve-bg-color a {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    font-family: "Raleway", sans-serif; }
+  .improve-bg-color p {
+    font-size: 16px !important;
+    color: #74818D !important; }
 
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
