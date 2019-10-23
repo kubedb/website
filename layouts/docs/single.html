@@ -305,12 +305,13 @@
   <div class="container section">
       <div class="improve-bg-color">
       <div class="columns">
+          {{ $urlToken := (split .File.Path "/") }}
           <div class="column is-6">
-            <a href="#">Improve This Page</a>
+            <a href="{{ $p.repoURL }}/edit/master/docs/{{ if (gt $urlToken 2) }} {{- range after 2 $urlToken -}}{{.}}/{{- end -}}{{ end }}">Improve This Page</a>
           </div>
-          <div class="column is-6 has-text-right">
+          <!-- <div class="column is-6 has-text-right">
             <p>Last Update 3 days ago</p>
-          </div>
+          </div> -->
       </div>
     </div>
   </div>
