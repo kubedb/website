@@ -2072,6 +2072,14 @@ body.fixed-nav .documentation-menu {
     .full-info h5:first-child,
     .full-info h6:first-child {
       margin-top: 0; }
+    .full-info h1 a,
+    .full-info h2 a,
+    .full-info h3 a,
+    .full-info h4 a,
+    .full-info h5 a,
+    .full-info h6 a {
+      padding-right: 10px;
+      font-size: 16px; }
   .full-info h1 {
     font-size: 32px;
     border-bottom: 1px solid #ebebeb;
@@ -2618,6 +2626,9 @@ button.button.is-fullwidth {
 .item input:checked ~ .item > label {
   border: 1px solid #e2e2e2;
   background: #ffffff; }
+
+.item:first-child input:checked ~ label, .item:first-child input:checked ~ .item:first-child > label {
+  border: 1px solid transparent; }
 
 .appscode-style .item input:checked ~ label > a {
   color: #4d4dcb; }

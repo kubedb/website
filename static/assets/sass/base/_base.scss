@@ -1339,6 +1339,10 @@ body.fixed-nav .documentation-menu {
     &:first-child{
       margin-top: 0;
     }
+    a{
+      padding-right: 10px;
+      font-size: 16px;
+    }
   }
   h1 {
     font-size: 32px;
@@ -1958,6 +1962,9 @@ button.button.is-fullwidth {
 .item input:checked ~ .item > label {
   border: 1px solid #e2e2e2;
   background: $white-color;
+}
+.item:first-child input:checked ~ label, .item:first-child input:checked ~ .item:first-child > label {
+  border: 1px solid transparent;
 }
 .appscode-style .item input:checked ~ label > a{
   color: $primary-color;
