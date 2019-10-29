@@ -2246,8 +2246,23 @@ ul li b {
   cursor: pointer;
   display: block; }
 
-.tbl-of-contents {
-  overflow: hidden; }
+.tbl-of-contents #TableOfContents {
+  max-height: 70vh;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */ }
+  .tbl-of-contents #TableOfContents:hover {
+    overflow-y: auto; }
+  .tbl-of-contents #TableOfContents::-webkit-scrollbar {
+    width: 4px;
+    height: 4px; }
+  .tbl-of-contents #TableOfContents::-webkit-scrollbar-track {
+    background: #F1F1F1; }
+  .tbl-of-contents #TableOfContents::-webkit-scrollbar-thumb {
+    background: #C1C1C1; }
+  .tbl-of-contents #TableOfContents::-webkit-scrollbar-thumb:hover {
+    background: #555; }
 
 .tbl-of-contents h4 {
   font-size: 14px;

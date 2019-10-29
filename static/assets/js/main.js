@@ -129,35 +129,48 @@ const spyScrolling = () => {
 goToASectionSmoothly();
 spyScrolling();
 
-// docs page header link create
-const allHeaders = document.querySelectorAll(
-  ".full-info > h2,.full-info > h3,.full-info > h4"
-);
-Array.from(allHeaders).forEach(el => {
-  const id = el.id;
-  const anchorTag = document.createElement("a");
-  anchorTag.setAttribute("href", "#" + id);
-  anchorTag.innerHTML = '<i class="fa fa-link" aria-hidden="true"></i>';
-  el.appendChild(anchorTag);
-  el.insertBefore(anchorTag, el.childNodes[0]);
-
-  // Please uncomment "e.preventDefault();" and look the change
-  anchorTag.addEventListener("click", e => {
-    e.preventDefault();
-    const targetEl = document.querySelector(e.currentTarget.hash);
-    window.history.pushState(id, "title", "#" + id);
-    const pos = targetEl.offsetTop - 35;
-    window.scrollTo({
-      top: pos,
-      behavior: "smooth"
+// docs page left sidebar first item font-size
+document.addEventListener("DOMContentLoaded", () => {
+  // left sidebar menu fontSize
+  const sidebarMenu = document.querySelector(".kd-sidebar-menu");
+  sidebarMenu.children[0].children[1].children[0].style.fontSize = "22px";
+  // docs page header link create
+  const allHeaders = document.querySelectorAll(
+    ".full-info > h2,.full-info > h3,.full-info > h4"
+  );
+  Array.from(allHeaders).forEach(el => {
+    const id = el.id;
+    const anchorTag = document.createElement("a");
+    anchorTag.setAttribute("href", "#" + id);
+    anchorTag.innerHTML = '<i class="fa fa-link" aria-hidden="true"></i>';
+    el.appendChild(anchorTag);
+    el.insertBefore(anchorTag, el.childNodes[0]);
+    
+    //insert hash tag when click anchorTag
+    anchorTag.addEventListener("click", e => {
+      e.preventDefault()
+      const targetEl = document.querySelector(e.currentTarget.hash);
+      window.history.pushState(id, "title", "#" + id);
+      const pos1 = targetEl.offsetTop - 35;
+      window.scrollTo({
+        top: pos1,
+        behavior: "smooth"
+      });
     });
   });
-});
 
-// docs page left sidebar first item font-size
-const sidebarMenu = document.querySelector(".kd-sidebar-menu");
-document.addEventListener("DOMContentLoaded", () => {
-  sidebarMenu.children[0].children[1].children[0].style.fontSize = "22px";
+  //docs page heading content on reload
+  setTimeout(function(){ 
+    let getHash = location.hash;
+    if (getHash) {
+      const targetE2 = document.querySelector(getHash);
+      const pos2 = targetE2.offsetTop - 35;
+      scrollTo({
+        top: pos2,
+        behavior: "smooth"
+      });
+    }
+   }, 0);
 });
 
 // tabs active class add script - setup | install page
