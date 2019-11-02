@@ -209,10 +209,13 @@ Array.from(codeHeading).forEach(heading => {
   const pre = heading.nextElementSibling;
   const code = pre.querySelector("code");
   const codeContent = code.textContent;
-  let fileType = code.dataset.lang;
-  let fileName = heading
-    .querySelector(".code-title > h4")
-    .textContent.replace(" ", "_");
+  let fileType = code.getAttribute("class");
+  if (fileType) {
+    fileType = fileType.replace("language-", "");
+  } else {
+    fileType = "txt";
+  }
+  let fileName = heading.querySelector('.code-title > h4').textContent.replace(" ", "_");
 
   // download js //
   var downloadBtn = heading.querySelector(".download-here");

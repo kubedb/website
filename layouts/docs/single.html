@@ -197,40 +197,6 @@
       </div>
       <div class="column is-7">
         <div class="full-info">
-          <!-- static code start  -->
-          <div class="highlight">
-              <!-- code title start -->
-              <div class="code-block-heading">
-                <div class="code-title">
-                  <h4>PostgreSQL database</h4>
-                </div>
-                <div class="copy-and-download">
-                  <button class="download-here"><i class="fa fa-download" title="Download file" aria-hidden="true"></i></button>
-                  <button class="copy-here" data-clipboard-target="#copyHere" title="Copy"><i class="fa fa-clone" aria-hidden="true"></i></button>
-                </div>
-              </div>
-              <!-- code title end -->
-              <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-                <code class="language-yaml" data-lang="yaml" id="copyHere">
-apiVersion: kubedb.com/v1alpha1
-kind: Postgres
-metadata:
-  name: quick-postgres
-  namespace: demo
-spec:
-  version: <span style="color:#e6db74">"10.2-v1"</span>
-  storageType: Durable
-  storage:
-    storageClassName: <span style="color:#e6db74">"standard"</span>
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
-        storage: 1Gi
-  terminationPolicy: DoNotTerminate
-                </code></pre>
-            </div>
-          <!-- static code end -->
           {{ .Content }}
         </div>
       </div>
