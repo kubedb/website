@@ -22,22 +22,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // menu sticky
 // Not a ton of code, but hard to
-const nav = document.querySelector('.fixed-menu, .documentation-menu');
+const nav = document.querySelector(".fixed-menu, .documentation-menu");
 let topOfNav = nav.offsetTop;
 function fixNav() {
   if (window.scrollY > topOfNav) {
-    document.body.classList.add('fixed-nav');
+    document.body.classList.add("fixed-nav");
   } else {
-    document.body.classList.remove('fixed-nav');
+    document.body.classList.remove("fixed-nav");
   }
 }
-window.addEventListener('scroll', fixNav);
+window.addEventListener("scroll", fixNav);
 
 // mega menu active class
 var navbarItems = document.querySelectorAll(".navbar-item");
 navbarItems.forEach(navbarItem => {
   navbarItem.addEventListener("click", function() {
-    var megamenues = document.querySelectorAll(".navbar-item > .ac-megamenu , .navbar-item > .ac-dropdown");
+    var megamenues = document.querySelectorAll(
+      ".navbar-item > .ac-megamenu , .navbar-item > .ac-dropdown"
+    );
     // remove is-active class from all the megamenus except the navbar item that was clicked
     megamenues.forEach(megamenu => {
       // toggle classes
@@ -103,11 +105,11 @@ const spyScrolling = () => {
 
   window.onscroll = () => {
     const scrollPos =
-      document.documentElement.scrollTop || document.body.scrollTop + 100;
+      document.documentElement.scrollTop || document.body.scrollTop;
     for (let s in allHeaders) {
       if (
         allHeaders.hasOwnProperty(s) &&
-        allHeaders[s].offsetTop <= scrollPos
+        allHeaders[s].offsetTop <= scrollPos + 100
       ) {
         const id = allHeaders[s].id;
         if (id) {
@@ -119,7 +121,6 @@ const spyScrolling = () => {
             }
           });
         }
-        
       }
     }
   };
@@ -127,6 +128,52 @@ const spyScrolling = () => {
 
 goToASectionSmoothly();
 spyScrolling();
+
+// docs page left sidebar first item font-size
+document.addEventListener("DOMContentLoaded", () => {
+  // left sidebar menu fontSize
+  const sidebarMenu = document.querySelector(".kd-sidebar-menu");
+  if(sidebarMenu){
+    sidebarMenu.children[0].children[1].children[0].style.fontSize = "22px";
+  }
+  // docs page header link create
+  const allHeaders = document.querySelectorAll(
+    ".full-info > h2,.full-info > h3,.full-info > h4"
+  );
+  Array.from(allHeaders).forEach(el => {
+    const id = el.id;
+    const anchorTag = document.createElement("a");
+    anchorTag.setAttribute("href", "#" + id);
+    anchorTag.innerHTML = '<i class="fa fa-link" aria-hidden="true"></i>';
+    el.appendChild(anchorTag);
+    el.insertBefore(anchorTag, el.childNodes[0]);
+    
+    //insert hash tag when click anchorTag
+    anchorTag.addEventListener("click", e => {
+      e.preventDefault()
+      const targetEl = document.querySelector(e.currentTarget.hash);
+      window.history.pushState(id, "title", "#" + id);
+      const pos1 = targetEl.offsetTop - 35;
+      window.scrollTo({
+        top: pos1,
+        behavior: "smooth"
+      });
+    });
+  });
+
+  //docs page heading content on reload
+  setTimeout(function(){ 
+    let getHash = location.hash;
+    if (getHash) {
+      const targetE2 = document.querySelector(getHash);
+      const pos2 = targetE2.offsetTop - 35;
+      scrollTo({
+        top: pos2,
+        behavior: "smooth"
+      });
+    }
+   }, 0);
+});
 
 // tabs active class add script - setup | install page
 const tabItems = document.querySelectorAll(".nav-item .nav-link");
@@ -156,6 +203,41 @@ tabItems.forEach(tab => {
   });
 });
 
+// code download and copy function //
+var codeHeading = document.querySelectorAll(".code-block-heading");
+Array.from(codeHeading).forEach(heading => {
+  const pre = heading.nextElementSibling;
+  const code = pre.querySelector("code");
+  const codeContent = code.textContent;
+  let fileType = code.getAttribute("class");
+  if (fileType) {
+    fileType = fileType.replace("language-", "");
+  } else {
+    fileType = "txt";
+  }
+  let fileName = heading.querySelector('.code-title > h4').textContent.replace(" ", "_");
+
+  // download js //
+  var downloadBtn = heading.querySelector(".download-here");
+  if (downloadBtn) {
+    downloadBtn.addEventListener("click", function() {
+      return download(codeContent, `${fileName}.${fileType}`, "text/plain");
+    });
+  }
+
+  //clipboard js
+  var copyBtn = heading.querySelector(".copy-here");
+  if (copyBtn) {
+    new ClipboardJS(copyBtn);
+    copyBtn.addEventListener("click", function() {
+      copyBtn.setAttribute("title", "copied!");
+      setTimeout(()=>{
+      copyBtn.setAttribute("title", "copy");
+      },5000)
+
+    });
+  }
+});
 
 // scroll to top
 var basicScrollTop = function() {
@@ -181,7 +263,7 @@ var basicScrollTop = function() {
     };
     // Listeners
     window.addEventListener("scroll", btnReveal);
-    btnTop.addEventListener("click", TopscrollTo); 
+    btnTop.addEventListener("click", TopscrollTo);
   }
 };
 basicScrollTop();
