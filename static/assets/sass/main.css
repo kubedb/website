@@ -2078,8 +2078,25 @@ body.fixed-nav .documentation-menu {
     .full-info h4 a,
     .full-info h5 a,
     .full-info h6 a {
-      padding-right: 10px;
-      font-size: 16px; }
+      font-size: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s ease-in-out; }
+      .full-info h1 a svg,
+      .full-info h2 a svg,
+      .full-info h3 a svg,
+      .full-info h4 a svg,
+      .full-info h5 a svg,
+      .full-info h6 a svg {
+        padding-left: 10px; }
+    .full-info h1:hover a,
+    .full-info h2:hover a,
+    .full-info h3:hover a,
+    .full-info h4:hover a,
+    .full-info h5:hover a,
+    .full-info h6:hover a {
+      opacity: 1;
+      visibility: visible; }
   .full-info h1 {
     font-size: 32px;
     border-bottom: 1px solid #ebebeb;
@@ -2095,6 +2112,8 @@ body.fixed-nav .documentation-menu {
     font-size: 15px; }
   .full-info h6 {
     font-size: 13px; }
+  .full-info .highlight pre code {
+    color: #f1f1f1; }
 
 .full-info h2 span.share-icon {
   color: #6b6b6b;
