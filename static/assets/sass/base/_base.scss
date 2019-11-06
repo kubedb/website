@@ -1340,8 +1340,17 @@ body.fixed-nav .documentation-menu {
       margin-top: 0;
     }
     a{
-      padding-right: 10px;
+      svg{
+        padding-left: 10px;
+      }
       font-size: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s ease-in-out;
+    }
+    &:hover a{
+      opacity: 1;
+      visibility: visible;
     }
   }
   h1 {
@@ -1364,6 +1373,13 @@ body.fixed-nav .documentation-menu {
   }
   h6 {
     font-size: 13px;
+  }
+  .highlight{
+    pre{
+      code{
+        color: #f1f1f1;
+      }
+    }
   }
 }
 .full-info h2 span.share-icon {
