@@ -2272,8 +2272,6 @@ ul li b {
   /* Track */
   /* Handle */
   /* Handle on hover */ }
-  .tbl-of-contents #TableOfContents:hover {
-    overflow-y: auto; }
   .tbl-of-contents #TableOfContents::-webkit-scrollbar {
     width: 4px;
     height: 4px; }
@@ -4120,4 +4118,4 @@ video {
     display: flex;
     flex-direction: column-reverse; } }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=style.css.map */

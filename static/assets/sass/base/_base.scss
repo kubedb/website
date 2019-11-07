@@ -1556,6 +1556,7 @@ ul li b {
 .tbl-of-contents {
   #TableOfContents{
     max-height: 70vh;
+    overflow-y: hidden;
     &:hover{
       overflow-y: auto;
     }
