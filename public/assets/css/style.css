@@ -2267,6 +2267,7 @@ ul li b {
 
 .tbl-of-contents #TableOfContents {
   max-height: 70vh;
+  overflow-y: hidden;
   /* width */
   /* Track */
   /* Handle */
@@ -4117,4 +4118,4 @@ video {
     display: flex;
     flex-direction: column-reverse; } }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=style.css.map */
