@@ -2272,6 +2272,8 @@ ul li b {
   /* Track */
   /* Handle */
   /* Handle on hover */ }
+  .tbl-of-contents #TableOfContents:hover {
+    overflow-y: auto; }
   .tbl-of-contents #TableOfContents::-webkit-scrollbar {
     width: 4px;
     height: 4px; }
