@@ -2267,13 +2267,10 @@ ul li b {
 
 .tbl-of-contents #TableOfContents {
   max-height: 70vh;
-  overflow-y: hidden;
   /* width */
   /* Track */
   /* Handle */
   /* Handle on hover */ }
-  .tbl-of-contents #TableOfContents:hover {
-    overflow-y: auto; }
   .tbl-of-contents #TableOfContents::-webkit-scrollbar {
     width: 4px;
     height: 4px; }
