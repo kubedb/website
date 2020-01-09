@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // AOS Animation 
-  AOS.init();
-  
+  // AOS Animation
+  AOS.init({
+    once: true
+  });
+
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
     document.querySelectorAll(".navbar-burger"),
@@ -136,16 +138,18 @@ spyScrolling();
 document.addEventListener("DOMContentLoaded", () => {
   // left sidebar menu fontSize
   const sidebarMenu = document.querySelector(".kd-sidebar-menu");
-  if(sidebarMenu){
+  if (sidebarMenu) {
     sidebarMenu.children[0].children[1].children[0].style.fontSize = "22px";
   }
-  // docs-page -> right sidebar (content > 20) then show a scroll 
-  const allHeaders = document.querySelectorAll(".full-info > h2,.full-info > h3,.full-info > h4");
-  if((allHeaders.length) > 20){
-    let rightSidebarArea =  document.querySelector('.right-sidebar-area');
-    rightSidebarArea.style.position = 'inherit'
+  // docs-page -> right sidebar (content > 20) then show a scroll
+  const allHeaders = document.querySelectorAll(
+    ".full-info > h2,.full-info > h3,.full-info > h4"
+  );
+  if (allHeaders.length > 20) {
+    let rightSidebarArea = document.querySelector(".right-sidebar-area");
+    rightSidebarArea.style.position = "inherit";
   }
-  
+
   // docs page header link create
   Array.from(allHeaders).forEach(el => {
     const id = el.id;
@@ -164,10 +168,10 @@ document.addEventListener("DOMContentLoaded", () => {
     </g>
    </svg>`;
     el.appendChild(anchorTag);
-    
+
     //insert hash tag when click anchorTag
     anchorTag.addEventListener("click", e => {
-      e.preventDefault()
+      e.preventDefault();
       const targetEl = document.querySelector(e.currentTarget.hash);
       window.history.pushState(id, "title", "#" + id);
       const pos1 = targetEl.offsetTop - 35;
@@ -179,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //docs page heading content on reload
-  setTimeout(function(){ 
+  setTimeout(function() {
     let getHash = location.hash;
     if (getHash) {
       const targetE2 = document.querySelector(getHash);
@@ -189,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
         behavior: "smooth"
       });
     }
-   }, 0);
+  }, 0);
 });
 
 // tabs active class add script - setup | install page
@@ -232,7 +236,9 @@ Array.from(codeHeading).forEach(heading => {
   } else {
     fileType = "txt";
   }
-  let fileName = heading.querySelector('.code-title > h4').textContent.replace(" ", "_");
+  let fileName = heading
+    .querySelector(".code-title > h4")
+    .textContent.replace(" ", "_");
 
   // download js //
   var downloadBtn = heading.querySelector(".download-here");
@@ -248,10 +254,9 @@ Array.from(codeHeading).forEach(heading => {
     new ClipboardJS(copyBtn);
     copyBtn.addEventListener("click", function() {
       copyBtn.setAttribute("title", "copied!");
-      setTimeout(()=>{
-      copyBtn.setAttribute("title", "copy");
-      },5000)
-
+      setTimeout(() => {
+        copyBtn.setAttribute("title", "copy");
+      }, 5000);
     });
   }
 });
