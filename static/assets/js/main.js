@@ -219,8 +219,6 @@ tabItems.forEach(tab => {
         ? tabPane.classList.add("show")
         : tabPane.classList.remove("show");
     });
-
-    tabPane.classList.add("show");
   });
 });
 

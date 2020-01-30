@@ -79,3 +79,7 @@ menu:
     parent: community
     url: http://slack.kubernetes.io/
     weight: 3
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
