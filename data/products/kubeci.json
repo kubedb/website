@@ -1,13 +1,17 @@
 {
   "key": "kubeci",
   "name": "KubeCI",
+  "fullname": "KubeCI by AppsCode",
   "tagline": "Run production-grade databases easily on <strong>Kubernetes</strong>",
   "summary": "",
   "published": false,
+  "author": "AppsCode Inc.",
   "website": {
     "domainKey": "domain_kubeci",
-    "path": ""
+    "path": "",
+    "themeColor": "#2C3E50"
   },
+  "keywords": "kubernetes appscode ci",
   "heroImage": {
     "src": "/assets/images/products/kubeci/kubeci-hero.png",
     "alt": "KubeCI"
