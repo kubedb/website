@@ -59,7 +59,7 @@ serviceaccount/my-custom-serviceaccount created
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;21657&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /api/v1/namespaces/demo/serviceaccounts/myserviceaccount
-  <span style=color:#66d9ef>uid</span>: b2ec2b05<span style=color:#ae81ff>-8292</span><span style=color:#ae81ff>-11e9</span>-8d10-080027a8b217
+  <span style=color:#66d9ef>uid</span>: b2ec2b05<span style=color:#ae81ff>-8292-11e9</span>-8d10-080027a8b217
 <span style=color:#66d9ef>secrets</span>:
 - <span style=color:#66d9ef>name</span>: myserviceaccount-token-t8zxd
 </code></pre></div><p>Now, we need to create a role that has necessary access permissions for the MySQL instance named <code>quick-mysql</code>.</p><pre><code class=language-console data-lang=console>$ kubectl apply -f https://github.com/kubedb/docs/raw/v0.13.0-rc.0/docs/examples/mysql/custom-rbac/my-custom-role.yaml
@@ -90,7 +90,7 @@ rolebinding.rbac.authorization.k8s.io/my-custom-rolebinding created
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;1405&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /apis/rbac.authorization.k8s.io/v1/namespaces/demo/rolebindings/my-custom-rolebinding
-  <span style=color:#66d9ef>uid</span>: 123afc02<span style=color:#ae81ff>-8297</span><span style=color:#ae81ff>-11e9</span>-8d10-080027a8b217
+  <span style=color:#66d9ef>uid</span>: 123afc02<span style=color:#ae81ff>-8297-11e9</span>-8d10-080027a8b217
 <span style=color:#66d9ef>roleRef</span>:
   <span style=color:#66d9ef>apiGroup</span>: rbac.authorization.k8s.io
   <span style=color:#66d9ef>kind</span>: Role

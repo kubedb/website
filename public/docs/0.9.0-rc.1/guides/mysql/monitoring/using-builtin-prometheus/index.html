@@ -178,7 +178,7 @@ mysql-mon-prometheus-stats   ClusterIP   10.110.18.171    &lt;none&gt;        56
   <span style=color:#66d9ef>selfLink</span>: /api/v1/namespaces/demo/services/mysql-mon-prometheus-stats
   <span style=color:#66d9ef>uid</span>: 99cdcd40-c23c<span style=color:#ae81ff>-11e8</span>-b2cc-080027d9f35e
 <span style=color:#66d9ef>spec</span>:
-  <span style=color:#66d9ef>clusterIP</span>: <span style=color:#ae81ff>10.110</span><span style=color:#ae81ff>.18</span><span style=color:#ae81ff>.171</span>
+  <span style=color:#66d9ef>clusterIP</span>: <span style=color:#ae81ff>10.110.18.171</span>
   <span style=color:#66d9ef>ports</span>:
   - <span style=color:#66d9ef>name</span>: prom-http
     <span style=color:#66d9ef>port</span>: <span style=color:#ae81ff>56790</span>
@@ -203,7 +203,7 @@ mysql-mon-prometheus-stats   ClusterIP   10.110.18.171    &lt;none&gt;        56
   <span style=color:#66d9ef>namespace</span>: demo
 <span style=color:#66d9ef>data</span>:
   <span style=color:#66d9ef>prometheus.yml</span>: |<span style=color:#e6db74>-
-</span><span style=color:#e6db74>   </span><span style=color:#e6db74> </span><span style=color:#e6db74>global:</span>
+</span><span style=color:#e6db74>    global:</span>
       <span style=color:#66d9ef>scrape_interval</span>: 5s
       <span style=color:#66d9ef>evaluation_interval</span>: 5s
     <span style=color:#66d9ef>scrape_configs</span>:
@@ -256,7 +256,7 @@ configmap/prometheus-server-conf created
     <span style=color:#66d9ef>spec</span>:
       <span style=color:#66d9ef>containers</span>:
         - <span style=color:#66d9ef>name</span>: prometheus
-          <span style=color:#66d9ef>image</span>: prom/prometheus:v2<span style=color:#ae81ff>.1</span><span style=color:#ae81ff>.0</span>
+          <span style=color:#66d9ef>image</span>: prom/prometheus:v2<span style=color:#ae81ff>.1.0</span>
           <span style=color:#66d9ef>args</span>:
             - <span style=color:#e6db74>&#34;--config.file=/etc/prometheus/prometheus.yml&#34;</span>
             - <span style=color:#e6db74>&#34;--storage.tsdb.path=/prometheus/&#34;</span>

@@ -83,7 +83,7 @@ Annotations:  &lt;none&gt;
 Type:  Opaque
 
 Data
-<span style=color:#f92672>=</span><span style=color:#f92672>=</span><span style=color:#f92672>=</span><span style=color:#f92672>=</span>
+<span style=color:#f92672>====</span>
 ca.cert:     <span style=color:#ae81ff>1058</span> bytes
 ca.key:      <span style=color:#ae81ff>1679</span> bytes
 client.pem:  <span style=color:#ae81ff>2859</span> bytes
@@ -108,7 +108,7 @@ MongoDB server version: 3.6.13
 Welcome to the MongoDB shell.
 &gt; <span style=color:#75715e>#you are connected to mongo cli</span>
 
-&gt; db.adminCommand<span style=color:#f92672>(</span><span style=color:#f92672>{</span> getParameter:1, sslMode:1 <span style=color:#f92672>}</span><span style=color:#f92672>)</span>
+&gt; db.adminCommand<span style=color:#f92672>({</span> getParameter:1, sslMode:1 <span style=color:#f92672>})</span>
 <span style=color:#f92672>{</span> <span style=color:#e6db74>&#34;sslMode&#34;</span> : <span style=color:#e6db74>&#34;requireSSL&#34;</span>, <span style=color:#e6db74>&#34;ok&#34;</span> : <span style=color:#ae81ff>1</span> <span style=color:#f92672>}</span>
 
 &gt; use $external
@@ -116,7 +116,7 @@ switched to db $external
 
 &gt; show users
 <span style=color:#f92672>{</span>
-	<span style=color:#e6db74>&#34;_id&#34;</span> : <span style=color:#e6db74>&#34;</span>$external<span style=color:#e6db74>.CN=root,O=kubedb:client</span><span style=color:#e6db74>&#34;</span>,
+	<span style=color:#e6db74>&#34;_id&#34;</span> : <span style=color:#e6db74>&#34;</span>$external<span style=color:#e6db74>.CN=root,O=kubedb:client&#34;</span>,
 	<span style=color:#e6db74>&#34;userId&#34;</span> : UUID<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;3c0a008e-f1db-4412-b993-996eb0937554&#34;</span><span style=color:#f92672>)</span>,
 	<span style=color:#e6db74>&#34;user&#34;</span> : <span style=color:#e6db74>&#34;CN=root,O=kubedb:client&#34;</span>,
 	<span style=color:#e6db74>&#34;db&#34;</span> : <span style=color:#e6db74>&#34;</span>$external<span style=color:#e6db74>&#34;</span>,
@@ -170,7 +170,7 @@ Annotations:  &lt;none&gt;
 Type:  Opaque
 
 Data
-<span style=color:#f92672>=</span><span style=color:#f92672>=</span><span style=color:#f92672>=</span><span style=color:#f92672>=</span>
+<span style=color:#f92672>====</span>
 ca.cert:     <span style=color:#ae81ff>1058</span> bytes
 ca.key:      <span style=color:#ae81ff>1675</span> bytes
 client.pem:  <span style=color:#ae81ff>2867</span> bytes
@@ -194,7 +194,7 @@ MongoDB server version: 3.6.13
 Welcome to the MongoDB shell.
 rs0:PRIMARY&gt; <span style=color:#75715e>#you are connected to mongo cli</span>
 
-rs0:PRIMARY&gt; db.adminCommand<span style=color:#f92672>(</span><span style=color:#f92672>{</span> getParameter:1, sslMode:1 <span style=color:#f92672>}</span><span style=color:#f92672>)</span>
+rs0:PRIMARY&gt; db.adminCommand<span style=color:#f92672>({</span> getParameter:1, sslMode:1 <span style=color:#f92672>})</span>
 <span style=color:#f92672>{</span>
 	<span style=color:#e6db74>&#34;sslMode&#34;</span> : <span style=color:#e6db74>&#34;requireSSL&#34;</span>,
 	<span style=color:#e6db74>&#34;ok&#34;</span> : 1,
@@ -208,7 +208,7 @@ rs0:PRIMARY&gt; db.adminCommand<span style=color:#f92672>(</span><span style=col
 	<span style=color:#f92672>}</span>
 <span style=color:#f92672>}</span>
 
-rs0:PRIMARY&gt; db.adminCommand<span style=color:#f92672>(</span><span style=color:#f92672>{</span> getParameter:1, clusterAuthMode:1 <span style=color:#f92672>}</span><span style=color:#f92672>)</span>
+rs0:PRIMARY&gt; db.adminCommand<span style=color:#f92672>({</span> getParameter:1, clusterAuthMode:1 <span style=color:#f92672>})</span>
 <span style=color:#f92672>{</span>
 	<span style=color:#e6db74>&#34;clusterAuthMode&#34;</span> : <span style=color:#e6db74>&#34;x509&#34;</span>,
 	<span style=color:#e6db74>&#34;ok&#34;</span> : 1,
@@ -228,7 +228,7 @@ switched to db $external
 
 rs0:PRIMARY&gt; show users
 <span style=color:#f92672>{</span>
-	<span style=color:#e6db74>&#34;_id&#34;</span> : <span style=color:#e6db74>&#34;</span>$external<span style=color:#e6db74>.CN=root,O=kubedb:client</span><span style=color:#e6db74>&#34;</span>,
+	<span style=color:#e6db74>&#34;_id&#34;</span> : <span style=color:#e6db74>&#34;</span>$external<span style=color:#e6db74>.CN=root,O=kubedb:client&#34;</span>,
 	<span style=color:#e6db74>&#34;userId&#34;</span> : UUID<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;a7f56f70-cd90-4ea8-846a-1a64736d44c8&#34;</span><span style=color:#f92672>)</span>,
 	<span style=color:#e6db74>&#34;user&#34;</span> : <span style=color:#e6db74>&#34;CN=root,O=kubedb:client&#34;</span>,
 	<span style=color:#e6db74>&#34;db&#34;</span> : <span style=color:#e6db74>&#34;</span>$external<span style=color:#e6db74>&#34;</span>,
@@ -295,7 +295,7 @@ Annotations:  &lt;none&gt;
 Type:  Opaque
 
 Data
-<span style=color:#f92672>=</span><span style=color:#f92672>=</span><span style=color:#f92672>=</span><span style=color:#f92672>=</span>
+<span style=color:#f92672>====</span>
 ca.cert:     <span style=color:#ae81ff>1058</span> bytes
 ca.key:      <span style=color:#ae81ff>1675</span> bytes
 client.pem:  <span style=color:#ae81ff>2879</span> bytes
@@ -324,7 +324,7 @@ MongoDB server version: 3.6.13
 Welcome to the MongoDB shell.
 mongos&gt; <span style=color:#75715e>#you are connected to mongo cli</span>
 
-mongos&gt; db.adminCommand<span style=color:#f92672>(</span><span style=color:#f92672>{</span> getParameter:1, sslMode:1 <span style=color:#f92672>}</span><span style=color:#f92672>)</span>
+mongos&gt; db.adminCommand<span style=color:#f92672>({</span> getParameter:1, sslMode:1 <span style=color:#f92672>})</span>
 <span style=color:#f92672>{</span>
 	<span style=color:#e6db74>&#34;sslMode&#34;</span> : <span style=color:#e6db74>&#34;requireSSL&#34;</span>,
 	<span style=color:#e6db74>&#34;ok&#34;</span> : 1,
@@ -338,7 +338,7 @@ mongos&gt; db.adminCommand<span style=color:#f92672>(</span><span style=color:#f
 	<span style=color:#f92672>}</span>
 <span style=color:#f92672>}</span>
 
-mongos&gt; db.adminCommand<span style=color:#f92672>(</span><span style=color:#f92672>{</span> getParameter:1, clusterAuthMode:1 <span style=color:#f92672>}</span><span style=color:#f92672>)</span>
+mongos&gt; db.adminCommand<span style=color:#f92672>({</span> getParameter:1, clusterAuthMode:1 <span style=color:#f92672>})</span>
 <span style=color:#f92672>{</span>
 	<span style=color:#e6db74>&#34;clusterAuthMode&#34;</span> : <span style=color:#e6db74>&#34;x509&#34;</span>,
 	<span style=color:#e6db74>&#34;ok&#34;</span> : 1,
@@ -357,7 +357,7 @@ switched to db $external
 
 mongos&gt; show users
 <span style=color:#f92672>{</span>
-	<span style=color:#e6db74>&#34;_id&#34;</span> : <span style=color:#e6db74>&#34;</span>$external<span style=color:#e6db74>.CN=root,O=kubedb:client</span><span style=color:#e6db74>&#34;</span>,
+	<span style=color:#e6db74>&#34;_id&#34;</span> : <span style=color:#e6db74>&#34;</span>$external<span style=color:#e6db74>.CN=root,O=kubedb:client&#34;</span>,
 	<span style=color:#e6db74>&#34;userId&#34;</span> : UUID<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;37703dcf-a71f-4611-b15f-7a2726921a25&#34;</span><span style=color:#f92672>)</span>,
 	<span style=color:#e6db74>&#34;user&#34;</span> : <span style=color:#e6db74>&#34;CN=root,O=kubedb:client&#34;</span>,
 	<span style=color:#e6db74>&#34;db&#34;</span> : <span style=color:#e6db74>&#34;</span>$external<span style=color:#e6db74>&#34;</span>,

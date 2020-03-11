@@ -56,7 +56,7 @@ monitoring   prometheus   18m
 <span style=color:#66d9ef>metadata</span>:
   <span style=color:#66d9ef>annotations</span>:
     <span style=color:#66d9ef>kubectl.kubernetes.io/last-applied-configuration</span>: <span style=color:#e6db74>|
-</span><span style=color:#e6db74>     </span><span style=color:#e6db74> </span><span style=color:#e6db74>{&#34;apiVersion&#34;:&#34;monitoring.coreos.com/v1&#34;,&#34;kind&#34;:&#34;Prometheus&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;labels&#34;:{&#34;prometheus&#34;:&#34;prometheus&#34;},&#34;name&#34;:&#34;prometheus&#34;,&#34;namespace&#34;:&#34;monitoring&#34;},&#34;spec&#34;:{&#34;replicas&#34;:1,&#34;resources&#34;:{&#34;requests&#34;:{&#34;memory&#34;:&#34;400Mi&#34;}},&#34;serviceAccountName&#34;:&#34;prometheus&#34;,&#34;serviceMonitorSelector&#34;:{&#34;matchLabels&#34;:{&#34;k8s-app&#34;:&#34;prometheus&#34;}}}}</span>
+</span><span style=color:#e6db74>      {&#34;apiVersion&#34;:&#34;monitoring.coreos.com/v1&#34;,&#34;kind&#34;:&#34;Prometheus&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;labels&#34;:{&#34;prometheus&#34;:&#34;prometheus&#34;},&#34;name&#34;:&#34;prometheus&#34;,&#34;namespace&#34;:&#34;monitoring&#34;},&#34;spec&#34;:{&#34;replicas&#34;:1,&#34;resources&#34;:{&#34;requests&#34;:{&#34;memory&#34;:&#34;400Mi&#34;}},&#34;serviceAccountName&#34;:&#34;prometheus&#34;,&#34;serviceMonitorSelector&#34;:{&#34;matchLabels&#34;:{&#34;k8s-app&#34;:&#34;prometheus&#34;}}}}</span>
   <span style=color:#66d9ef>creationTimestamp</span>: <span style=color:#e6db74>2019-01-03T13:41:51Z</span>
   <span style=color:#66d9ef>generation</span>: <span style=color:#ae81ff>1</span>
   <span style=color:#66d9ef>labels</span>:
@@ -114,10 +114,10 @@ coreos-prom-mysql-stats   ClusterIP   10.111.190.240   &lt;none&gt;        56790
 <span style=color:#66d9ef>Annotations:       monitoring.appscode.com/agent</span>: prometheus.io/coreos-operator
 <span style=color:#66d9ef>Selector</span>:          kubedb.com/kind=MySQL,kubedb.com/name=coreos-prom-mysql
 <span style=color:#66d9ef>Type</span>:              ClusterIP
-<span style=color:#66d9ef>IP</span>:                <span style=color:#ae81ff>10.111</span><span style=color:#ae81ff>.190</span><span style=color:#ae81ff>.240</span>
+<span style=color:#66d9ef>IP</span>:                <span style=color:#ae81ff>10.111.190.240</span>
 <span style=color:#66d9ef>Port</span>:              prom-http  <span style=color:#ae81ff>56790</span>/TCP
 <span style=color:#66d9ef>TargetPort</span>:        prom-http/TCP
-<span style=color:#66d9ef>Endpoints</span>:         <span style=color:#ae81ff>172.17</span><span style=color:#ae81ff>.0</span><span style=color:#ae81ff>.7</span>:<span style=color:#ae81ff>56790</span>
+<span style=color:#66d9ef>Endpoints</span>:         <span style=color:#ae81ff>172.17.0.7</span>:<span style=color:#ae81ff>56790</span>
 <span style=color:#66d9ef>Session Affinity</span>:  None
 <span style=color:#66d9ef>Events</span>:            &lt;none&gt;
 </code></pre></div><p>Notice the <code>Labels</code> and <code>Port</code> fields. <code>ServiceMonitor</code> will use these information to target its endpoints.</p><p>KubeDB will also create a <code>ServiceMonitor</code> crd in <code>monitoring</code> namespace that select the endpoints of <code>coreos-prom-mysql-stats</code> service. Verify that the <code>ServiceMonitor</code> crd has been created.</p><pre><code class=language-console data-lang=console>$ kubectl get servicemonitor -n monitoring

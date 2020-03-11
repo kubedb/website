@@ -112,7 +112,7 @@ secret &quot;s3-secret&quot; created
   <span style=color:#66d9ef>namespace</span>: storage
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;27413&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /api/v1/namespaces/storage/secrets/s3-secret
-  <span style=color:#66d9ef>uid</span>: b6a58c8e<span style=color:#ae81ff>-6689</span><span style=color:#ae81ff>-11e9</span>-9a61-0800275cdf2b
+  <span style=color:#66d9ef>uid</span>: b6a58c8e<span style=color:#ae81ff>-6689-11e9</span>-9a61-0800275cdf2b
 <span style=color:#66d9ef>type</span>: Opaque
 </code></pre></div><p><strong>Archiver Storage Backend</strong></p><p>To configure s3 backend, following parameters are available:</p><table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>spec.archiver.storage.s3.endpoint</code></td><td><code>Required</code>. For MinIO, use the URL to your server</td></tr><tr><td><code>spec.archiver.storage.s3.bucket</code></td><td><code>Required</code>. Name of Bucket</td></tr><tr><td><code>spec.archiver.storage.s3.prefix</code></td><td><code>Optional</code>. Path prefix into bucket where WAL files will be stored</td></tr></tbody></table><p>Now create this Postgres object with continuous archiving support.</p><pre><code class=language-console data-lang=console>$ kubectl create -f https://raw.githubusercontent.com/kubedb/cli/0.12.0/docs/examples/postgres/snapshot/wal-postgres-minio.yaml
 postgres.kubedb.com/wal-postgres created

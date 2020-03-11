@@ -55,7 +55,7 @@ kube-system   Active    1h
   <span style=color:#66d9ef>namespace</span>: demo
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>replicas</span>: <span style=color:#ae81ff>3</span>
-  <span style=color:#66d9ef>version</span>: <span style=color:#ae81ff>1.5</span><span style=color:#ae81ff>.3</span>-alpine
+  <span style=color:#66d9ef>version</span>: <span style=color:#ae81ff>1.5.3</span>-alpine
   <span style=color:#66d9ef>doNotPause</span>: <span style=color:#66d9ef>true</span>
   <span style=color:#66d9ef>resources</span>:
     <span style=color:#66d9ef>requests</span>:
@@ -116,7 +116,7 @@ mc1       ClusterIP   10.109.15.232   &lt;none&gt;        11211/TCP   58s
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;3850&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /apis/kubedb.com/v1alpha1/namespaces/demo/memcacheds/mc1
-  <span style=color:#66d9ef>uid</span>: <span style=color:#ae81ff>99541538</span>-dbfb<span style=color:#ae81ff>-11e7</span><span style=color:#ae81ff>-8116</span>-080027da1cc3
+  <span style=color:#66d9ef>uid</span>: <span style=color:#ae81ff>99541538</span>-dbfb<span style=color:#ae81ff>-11e7-8116</span>-080027da1cc3
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>doNotPause</span>: <span style=color:#66d9ef>true</span>
   <span style=color:#66d9ef>replicas</span>: <span style=color:#ae81ff>3</span>
@@ -127,7 +127,7 @@ mc1       ClusterIP   10.109.15.232   &lt;none&gt;        11211/TCP   58s
     <span style=color:#66d9ef>requests</span>:
       <span style=color:#66d9ef>cpu</span>: 250m
       <span style=color:#66d9ef>memory</span>: 64Mi
-  <span style=color:#66d9ef>version</span>: <span style=color:#ae81ff>1.5</span><span style=color:#ae81ff>.3</span>-alpine
+  <span style=color:#66d9ef>version</span>: <span style=color:#ae81ff>1.5.3</span>-alpine
 <span style=color:#66d9ef>status</span>:
   <span style=color:#66d9ef>creationTime</span>: <span style=color:#e6db74>2017-12-08T09:38:51Z</span>
   <span style=color:#66d9ef>phase</span>: Running
@@ -200,7 +200,7 @@ $ kubedb get drmn -n demo mc1 -o yaml
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;4351&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /apis/kubedb.com/v1alpha1/namespaces/demo/dormantdatabases/mc1
-  <span style=color:#66d9ef>uid</span>: 86597e7c-dbfc<span style=color:#ae81ff>-11e7</span><span style=color:#ae81ff>-8116</span>-080027da1cc3
+  <span style=color:#66d9ef>uid</span>: 86597e7c-dbfc<span style=color:#ae81ff>-11e7-8116</span>-080027da1cc3
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>origin</span>:
     <span style=color:#66d9ef>metadata</span>:
@@ -217,7 +217,7 @@ $ kubedb get drmn -n demo mc1 -o yaml
           <span style=color:#66d9ef>requests</span>:
             <span style=color:#66d9ef>cpu</span>: 250m
             <span style=color:#66d9ef>memory</span>: 64Mi
-        <span style=color:#66d9ef>version</span>: <span style=color:#ae81ff>1.5</span><span style=color:#ae81ff>.3</span>-alpine
+        <span style=color:#66d9ef>version</span>: <span style=color:#ae81ff>1.5.3</span>-alpine
 <span style=color:#66d9ef>status</span>:
   <span style=color:#66d9ef>creationTime</span>: <span style=color:#e6db74>2017-12-08T09:45:29Z</span>
   <span style=color:#66d9ef>pausingTime</span>: <span style=color:#e6db74>2017-12-08T09:45:59Z</span>
@@ -238,7 +238,7 @@ $ kubedb get drmn -n demo mc1 -o yaml
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;4351&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /apis/kubedb.com/v1alpha1/namespaces/demo/dormantdatabases/mc1
-  <span style=color:#66d9ef>uid</span>: 86597e7c-dbfc<span style=color:#ae81ff>-11e7</span><span style=color:#ae81ff>-8116</span>-080027da1cc3
+  <span style=color:#66d9ef>uid</span>: 86597e7c-dbfc<span style=color:#ae81ff>-11e7-8116</span>-080027da1cc3
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>resume</span>: <span style=color:#66d9ef>true</span>
   <span style=color:#66d9ef>origin</span>:
@@ -256,7 +256,7 @@ $ kubedb get drmn -n demo mc1 -o yaml
           <span style=color:#66d9ef>requests</span>:
             <span style=color:#66d9ef>cpu</span>: 250m
             <span style=color:#66d9ef>memory</span>: 64Mi
-        <span style=color:#66d9ef>version</span>: <span style=color:#ae81ff>1.5</span><span style=color:#ae81ff>.3</span>-alpine
+        <span style=color:#66d9ef>version</span>: <span style=color:#ae81ff>1.5.3</span>-alpine
 <span style=color:#66d9ef>status</span>:
   <span style=color:#66d9ef>creationTime</span>: <span style=color:#e6db74>2017-12-08T09:45:29Z</span>
   <span style=color:#66d9ef>pausingTime</span>: <span style=color:#e6db74>2017-12-08T09:45:59Z</span>
@@ -278,7 +278,7 @@ $ kubedb get drmn -n demo mc1 -o yaml
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;4650&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /apis/kubedb.com/v1alpha1/namespaces/demo/dormantdatabases/mc1
-  <span style=color:#66d9ef>uid</span>: c2fde8cc-dbfc<span style=color:#ae81ff>-11e7</span><span style=color:#ae81ff>-8116</span>-080027da1cc3
+  <span style=color:#66d9ef>uid</span>: c2fde8cc-dbfc<span style=color:#ae81ff>-11e7-8116</span>-080027da1cc3
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>origin</span>:
     <span style=color:#66d9ef>metadata</span>:
@@ -295,7 +295,7 @@ $ kubedb get drmn -n demo mc1 -o yaml
           <span style=color:#66d9ef>requests</span>:
             <span style=color:#66d9ef>cpu</span>: 250m
             <span style=color:#66d9ef>memory</span>: 64Mi
-        <span style=color:#66d9ef>version</span>: <span style=color:#ae81ff>1.5</span><span style=color:#ae81ff>.3</span>-alpine
+        <span style=color:#66d9ef>version</span>: <span style=color:#ae81ff>1.5.3</span>-alpine
   <span style=color:#66d9ef>wipeOut</span>: <span style=color:#66d9ef>true</span>
 <span style=color:#66d9ef>status</span>:
   <span style=color:#66d9ef>creationTime</span>: <span style=color:#e6db74>2017-12-08T09:47:10Z</span>

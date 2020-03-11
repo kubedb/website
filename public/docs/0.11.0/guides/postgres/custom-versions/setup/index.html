@@ -46,9 +46,9 @@ Kubernetes</p></div></a><a href=https://appscode.com/products/swift/ class="sing
 <label for=d29fe03ca657d7430451d4a2e4f04626-10><a>Monitoring</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/0.11.0/guides/postgres/monitoring/using-builtin-prometheus/>Builtin Prometheus Discovery</a></li><li><a href=/docs/0.11.0/guides/postgres/monitoring/using-coreos-prometheus-operator/>Coreos Prometheus Operator</a></li></ul></div></div><div class=item><input type=checkbox id=d29fe03ca657d7430451d4a2e4f04626-11>
 <label for=d29fe03ca657d7430451d4a2e4f04626-11><a>CLI</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/0.11.0/guides/postgres/cli/cli/>Quickstart</a></li></ul></div></div><div class=item><input type=checkbox id=d29fe03ca657d7430451d4a2e4f04626-12>
 <label for=d29fe03ca657d7430451d4a2e4f04626-12><a>Upgrading PostgreSQL</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/0.11.0/guides/postgres/upgrading/manual/>Manual</a></li></ul></div></div></div></div></div><div class="column is-7"><div class=full-info><blockquote><p>New to KubeDB? Please start <a href=/docs/0.11.0/concepts/README>here</a>.</p></blockquote><h2 id=setting-up-custom-postgresversions>Setting up Custom PostgresVersions</h2><p>PostgresVersions are KubeDB crds that define the docker images KubeDB will use when deploying a postgres database. For more details about PostgresVersion crd, please visit <a href=/docs/0.11.0/concepts/catalog/postgres>here</a>.</p><h2 id=creating-a-custom-postgres-database-image-for-kubedb>Creating a Custom Postgres Database Image for KubeDB</h2><p>The best way to create a custom image is to build on top of the existing kubedb image.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-docker data-lang=docker><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> kubedb/postgres:10.2-v3</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010>
 </span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ENV</span> TIMESCALEDB_VERSION 0.9.1<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010>
 </span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> set -ex <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    <span style=color:#f92672>&amp;&amp;</span> apk add --no-cache --virtual .fetch-deps <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    ca-certificates <span style=color:#ae81ff>\
@@ -75,12 +75,12 @@ Kubernetes</p></div></a><a href=https://appscode.com/products/swift/ class="sing
 </span><span style=color:#ae81ff></span>    <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    <span style=color:#f92672>&amp;&amp;</span> apk del .fetch-deps .build-deps <span style=color:#ae81ff>\
 </span><span style=color:#ae81ff></span>    <span style=color:#f92672>&amp;&amp;</span> rm -rf /build<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010>
 </span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> sed -r -i <span style=color:#e6db74>&#34;s/[#]*\s*(shared_preload_libraries)\s*=\s*&#39;(.*)&#39;/\1 = &#39;timescaledb,\2&#39;/;s/,&#39;/&#39;/&#34;</span> /scripts/primary/postgresql.conf<span style=color:#960050;background-color:#1e0010>
 </span></code></pre></div><p>From there, we would define a PostgresVersion that contains this new image. Lets say we tagged it as <code>myco/postgres:timescale-0.9.1</code></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#66d9ef>apiVersion</span>: catalog.kubedb.com/v1alpha1
 <span style=color:#66d9ef>kind</span>: PostgresVersion
 <span style=color:#66d9ef>metadata</span>:
-  <span style=color:#66d9ef>name</span>: timescale<span style=color:#ae81ff>-0.9</span><span style=color:#ae81ff>.1</span>
+  <span style=color:#66d9ef>name</span>: timescale<span style=color:#ae81ff>-0.9.1</span>
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>version</span>: <span style=color:#ae81ff>10.2</span>
   <span style=color:#66d9ef>db</span>:

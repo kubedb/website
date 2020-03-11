@@ -57,7 +57,7 @@ namespace/monitoring created
 <span style=color:#66d9ef>metadata</span>:
   <span style=color:#66d9ef>annotations</span>:
     <span style=color:#66d9ef>kubectl.kubernetes.io/last-applied-configuration</span>: <span style=color:#e6db74>|
-</span><span style=color:#e6db74>     </span><span style=color:#e6db74> </span><span style=color:#e6db74>{&#34;apiVersion&#34;:&#34;v1&#34;,&#34;kind&#34;:&#34;Service&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;labels&#34;:{&#34;app&#34;:&#34;kubedb&#34;},&#34;name&#34;:&#34;kubedb-operator&#34;,&#34;namespace&#34;:&#34;kube-system&#34;},&#34;spec&#34;:{&#34;ports&#34;:[{&#34;name&#34;:&#34;api&#34;,&#34;port&#34;:443,&#34;targetPort&#34;:8443}],&#34;selector&#34;:{&#34;app&#34;:&#34;kubedb&#34;}}}</span>
+</span><span style=color:#e6db74>      {&#34;apiVersion&#34;:&#34;v1&#34;,&#34;kind&#34;:&#34;Service&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;labels&#34;:{&#34;app&#34;:&#34;kubedb&#34;},&#34;name&#34;:&#34;kubedb-operator&#34;,&#34;namespace&#34;:&#34;kube-system&#34;},&#34;spec&#34;:{&#34;ports&#34;:[{&#34;name&#34;:&#34;api&#34;,&#34;port&#34;:443,&#34;targetPort&#34;:8443}],&#34;selector&#34;:{&#34;app&#34;:&#34;kubedb&#34;}}}</span>
     <span style=color:#66d9ef>prometheus.io/path</span>: /metrics
     <span style=color:#66d9ef>prometheus.io/port</span>: <span style=color:#e6db74>&#34;8443&#34;</span>
     <span style=color:#66d9ef>prometheus.io/scheme</span>: https
@@ -69,9 +69,9 @@ namespace/monitoring created
   <span style=color:#66d9ef>namespace</span>: kube-system
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;22287&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /api/v1/namespaces/kube-system/services/kubedb-operator
-  <span style=color:#66d9ef>uid</span>: 3af092c3-0cd8<span style=color:#ae81ff>-11e9</span><span style=color:#ae81ff>-9662</span>-080027e8eafe
+  <span style=color:#66d9ef>uid</span>: 3af092c3-0cd8<span style=color:#ae81ff>-11e9-9662</span>-080027e8eafe
 <span style=color:#66d9ef>spec</span>:
-  <span style=color:#66d9ef>clusterIP</span>: <span style=color:#ae81ff>10.108</span><span style=color:#ae81ff>.131</span><span style=color:#ae81ff>.64</span>
+  <span style=color:#66d9ef>clusterIP</span>: <span style=color:#ae81ff>10.108.131.64</span>
   <span style=color:#66d9ef>ports</span>:
   - <span style=color:#66d9ef>name</span>: api
     <span style=color:#66d9ef>port</span>: <span style=color:#ae81ff>443</span>
@@ -165,7 +165,7 @@ kubedb-operator-apiserver-cert   kubernetes.io/tls   2      3h33m
   <span style=color:#66d9ef>namespace</span>: monitoring
 <span style=color:#66d9ef>data</span>:
   <span style=color:#66d9ef>prometheus.yml</span>: |<span style=color:#e6db74>-
-</span><span style=color:#e6db74>   </span><span style=color:#e6db74> </span><span style=color:#e6db74>global:</span>
+</span><span style=color:#e6db74>    global:</span>
       <span style=color:#66d9ef>scrape_interval</span>: 30s
       <span style=color:#66d9ef>scrape_timeout</span>: 10s
       <span style=color:#66d9ef>evaluation_interval</span>: 30s
@@ -250,7 +250,7 @@ clusterrolebinding.rbac.authorization.k8s.io/prometheus created
       <span style=color:#66d9ef>serviceAccountName</span>: prometheus
       <span style=color:#66d9ef>containers</span>:
       - <span style=color:#66d9ef>name</span>: prometheus
-        <span style=color:#66d9ef>image</span>: prom/prometheus:v2<span style=color:#ae81ff>.4</span><span style=color:#ae81ff>.3</span>
+        <span style=color:#66d9ef>image</span>: prom/prometheus:v2<span style=color:#ae81ff>.4.3</span>
         <span style=color:#66d9ef>args</span>:
         - <span style=color:#e6db74>&#34;--config.file=/etc/prometheus/prometheus.yml&#34;</span>
         - <span style=color:#e6db74>&#34;--storage.tsdb.path=/prometheus/&#34;</span>

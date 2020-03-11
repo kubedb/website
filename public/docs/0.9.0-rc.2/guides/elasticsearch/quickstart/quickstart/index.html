@@ -226,7 +226,7 @@ quick-elasticsearch-master   ClusterIP   10.99.42.193     &lt;none&gt;        93
 <span style=color:#66d9ef>data</span>:
   <span style=color:#66d9ef>key_pass</span>: ZWR0aGd3
   <span style=color:#66d9ef>node.jks</span>: &lt;base64 encoded node certificate in jks format<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74> </span><span style=color:#e6db74> </span><span style=color:#e6db74>root.jks: &lt;base64 encoded root CA in jks format&gt;</span>
+</span><span style=color:#e6db74>  root.jks: &lt;base64 encoded root CA in jks format&gt;</span>
   <span style=color:#66d9ef>sgadmin.jks</span>: &lt;base64 encoded admin certificate used to change the Search Guard configuration&gt;
 <span style=color:#66d9ef>kind</span>: Secret
 <span style=color:#66d9ef>metadata</span>:
@@ -293,7 +293,7 @@ quick-elasticsearch   Paused    29s
     <span style=color:#66d9ef>metadata</span>:
       <span style=color:#66d9ef>annotations</span>:
         <span style=color:#66d9ef>kubectl.kubernetes.io/last-applied-configuration</span>: <span style=color:#e6db74>|
-</span><span style=color:#e6db74>         </span><span style=color:#e6db74> </span><span style=color:#e6db74>{&#34;apiVersion&#34;:&#34;kubedb.com/v1alpha1&#34;,&#34;kind&#34;:&#34;Elasticsearch&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;name&#34;:&#34;quick-elasticsearch&#34;,&#34;namespace&#34;:&#34;demo&#34;},&#34;spec&#34;:{&#34;terminationPolicy&#34;:true,&#34;storage&#34;:{&#34;accessModes&#34;:[&#34;ReadWriteOnce&#34;],&#34;resources&#34;:{&#34;requests&#34;:{&#34;storage&#34;:&#34;50Mi&#34;}},&#34;storageClassName&#34;:&#34;standard&#34;},&#34;storageType&#34;:&#34;Durable&#34;,&#34;version&#34;:&#34;6.3-v1&#34;}}</span>
+</span><span style=color:#e6db74>          {&#34;apiVersion&#34;:&#34;kubedb.com/v1alpha1&#34;,&#34;kind&#34;:&#34;Elasticsearch&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;name&#34;:&#34;quick-elasticsearch&#34;,&#34;namespace&#34;:&#34;demo&#34;},&#34;spec&#34;:{&#34;terminationPolicy&#34;:true,&#34;storage&#34;:{&#34;accessModes&#34;:[&#34;ReadWriteOnce&#34;],&#34;resources&#34;:{&#34;requests&#34;:{&#34;storage&#34;:&#34;50Mi&#34;}},&#34;storageClassName&#34;:&#34;standard&#34;},&#34;storageType&#34;:&#34;Durable&#34;,&#34;version&#34;:&#34;6.3-v1&#34;}}</span>
       <span style=color:#66d9ef>creationTimestamp</span>: <span style=color:#e6db74>2018-09-28T05:33:29Z</span>
       <span style=color:#66d9ef>name</span>: quick-elasticsearch
       <span style=color:#66d9ef>namespace</span>: demo

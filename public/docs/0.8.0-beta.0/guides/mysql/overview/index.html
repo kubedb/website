@@ -155,7 +155,7 @@ myadmin   LoadBalancer   10.96.229.237   &lt;pending&gt;     80:32746/TCP   22m
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;7504&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /apis/kubedb.com/v1alpha1/namespaces/demo/mysqls/m1
-  <span style=color:#66d9ef>uid</span>: 2fed837e-dc02<span style=color:#ae81ff>-11e7</span><span style=color:#ae81ff>-8116</span>-080027da1cc3
+  <span style=color:#66d9ef>uid</span>: 2fed837e-dc02<span style=color:#ae81ff>-11e7-8116</span>-080027da1cc3
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>databaseSecret</span>:
     <span style=color:#66d9ef>secretName</span>: m1-admin-auth
@@ -200,7 +200,7 @@ secret &quot;ms-snap-secret&quot; created
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;8109&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /api/v1/namespaces/demo/secrets/ms-snap-secret
-  <span style=color:#66d9ef>uid</span>: bd94d6b6-dc03<span style=color:#ae81ff>-11e7</span><span style=color:#ae81ff>-8116</span>-080027da1cc3
+  <span style=color:#66d9ef>uid</span>: bd94d6b6-dc03<span style=color:#ae81ff>-11e7-8116</span>-080027da1cc3
 <span style=color:#66d9ef>type</span>: Opaque
 </code></pre></div><p>To lean how to configure other storage destinations for Snapshots, please visit <a href=/docs/0.8.0-beta.0/concepts/snapshot>here</a>. Now, create the Snapshot object.</p><pre><code class=language-console data-lang=console>$ kubedb create -f ./docs/examples/mysql/demo-2.yaml
 validating &quot;./docs/examples/mysql/demo-2.yaml&quot;
@@ -227,7 +227,7 @@ m1-xyz    ms/m1      Running   46s
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;8296&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /apis/kubedb.com/v1alpha1/namespaces/demo/snapshots/m1-xyz
-  <span style=color:#66d9ef>uid</span>: 203340d0-dc04<span style=color:#ae81ff>-11e7</span><span style=color:#ae81ff>-8116</span>-080027da1cc3
+  <span style=color:#66d9ef>uid</span>: 203340d0-dc04<span style=color:#ae81ff>-11e7-8116</span>-080027da1cc3
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>databaseName</span>: m1
   <span style=color:#66d9ef>gcs</span>:
@@ -413,7 +413,7 @@ $ kubedb get drmn -n demo m1 -o yaml
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;10960&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /apis/kubedb.com/v1alpha1/namespaces/demo/dormantdatabases/m1
-  <span style=color:#66d9ef>uid</span>: e93f5266-dc08<span style=color:#ae81ff>-11e7</span><span style=color:#ae81ff>-8116</span>-080027da1cc3
+  <span style=color:#66d9ef>uid</span>: e93f5266-dc08<span style=color:#ae81ff>-11e7-8116</span>-080027da1cc3
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>origin</span>:
     <span style=color:#66d9ef>metadata</span>:
@@ -455,7 +455,7 @@ $ kubedb get drmn -n demo m1 -o yaml
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;10960&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /apis/kubedb.com/v1alpha1/namespaces/demo/dormantdatabases/m1
-  <span style=color:#66d9ef>uid</span>: e93f5266-dc08<span style=color:#ae81ff>-11e7</span><span style=color:#ae81ff>-8116</span>-080027da1cc3
+  <span style=color:#66d9ef>uid</span>: e93f5266-dc08<span style=color:#ae81ff>-11e7-8116</span>-080027da1cc3
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>resume</span>: <span style=color:#66d9ef>true</span>
   <span style=color:#66d9ef>origin</span>:
@@ -497,7 +497,7 @@ $ kubedb get drmn -n demo m1 -o yaml
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;11259&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /apis/kubedb.com/v1alpha1/namespaces/demo/dormantdatabases/m1
-  <span style=color:#66d9ef>uid</span>: 576b0d8a-dc09<span style=color:#ae81ff>-11e7</span><span style=color:#ae81ff>-8116</span>-080027da1cc3
+  <span style=color:#66d9ef>uid</span>: 576b0d8a-dc09<span style=color:#ae81ff>-11e7-8116</span>-080027da1cc3
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>origin</span>:
     <span style=color:#66d9ef>metadata</span>:

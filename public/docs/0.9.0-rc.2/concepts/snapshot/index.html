@@ -292,11 +292,11 @@ secret &quot;swift-secret&quot; created
 <span style=color:#66d9ef>apiVersion</span>: v1
 <span style=color:#66d9ef>data</span>:
   <span style=color:#66d9ef>OS_AUTH_URL</span>: PHlvdXItYXV0aC11cmw<span style=color:#e6db74>+
-</span><span style=color:#e6db74> </span><span style=color:#e6db74> </span><span style=color:#e6db74>OS_PASSWORD: PHlvdXItcGFzc3dvcmQ+</span>
+</span><span style=color:#e6db74>  OS_PASSWORD: PHlvdXItcGFzc3dvcmQ+</span>
   <span style=color:#66d9ef>OS_REGION_NAME</span>: PHlvdXItcmVnaW9uPg==
   <span style=color:#66d9ef>OS_TENANT_ID</span>: PHlvdXItdGVuYW50LWlkPg==
   <span style=color:#66d9ef>OS_TENANT_NAME</span>: PHlvdXItdGVuYW50LW5hbWU<span style=color:#e6db74>+
-</span><span style=color:#e6db74> </span><span style=color:#e6db74> </span><span style=color:#e6db74>OS_USERNAME: PHlvdXItdXNlcm5hbWU+</span>
+</span><span style=color:#e6db74>  OS_USERNAME: PHlvdXItdXNlcm5hbWU+</span>
 <span style=color:#66d9ef>kind</span>: Secret
 <span style=color:#66d9ef>metadata</span>:
   <span style=color:#66d9ef>creationTimestamp</span>: <span style=color:#e6db74>2017-07-03T19:17:39Z</span>
@@ -304,7 +304,7 @@ secret &quot;swift-secret&quot; created
   <span style=color:#66d9ef>namespace</span>: default
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;36381&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /api/v1/namespaces/default/secrets/swift-secret
-  <span style=color:#66d9ef>uid</span>: 47b4bcab<span style=color:#ae81ff>-6024</span><span style=color:#ae81ff>-11e7</span>-879a-080027726d6b
+  <span style=color:#66d9ef>uid</span>: 47b4bcab<span style=color:#ae81ff>-6024-11e7</span>-879a-080027726d6b
 <span style=color:#66d9ef>type</span>: Opaque
 </code></pre></div><p>Now, you can create a Snapshot object using this secret. Following parameters are available for <code>Swift</code> backend.</p><table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>spec.databaseName</code></td><td><code>Required</code>. Name of database</td></tr><tr><td><code>spec.storageSecretName</code></td><td><code>Required</code>. Name of storage secret</td></tr><tr><td><code>spec.swift.container</code></td><td><code>Required</code>. Name of Storage container</td></tr><tr><td><code>spec.swift.prefix</code></td><td><code>Optional</code>. Path prefix into container where snapshot will be stored</td></tr><tr><td><code>spec.podTemplate</code></td><td><code>Optional</code>. KubeDB provides a template for database Backup pod through <code>spec.podTemplate</code>.</td></tr></tbody></table><pre><code class=language-console data-lang=console>$ kubectl create -f ./docs/examples/snapshot/swift/swift-snapshot.yaml
 snapshot &quot;swift-snapshot&quot; created

@@ -186,9 +186,9 @@ secret/es-auth created
 <span style=color:#66d9ef>apiVersion</span>: v1
 <span style=color:#66d9ef>data</span>:
   <span style=color:#66d9ef>sg_action_groups.yml</span>: &lt;base64 encoded content<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74> </span><span style=color:#e6db74> </span><span style=color:#e6db74>sg_config.yml: &lt;base64 encoded content&gt;</span>
+</span><span style=color:#e6db74>  sg_config.yml: &lt;base64 encoded content&gt;</span>
   <span style=color:#66d9ef>sg_internal_users.yml</span>: &lt;base64 encoded content<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74> </span><span style=color:#e6db74> </span><span style=color:#e6db74>sg_roles.yml: &lt;base64 encoded content&gt;</span>
+</span><span style=color:#e6db74>  sg_roles.yml: &lt;base64 encoded content&gt;</span>
   <span style=color:#66d9ef>sg_roles_mapping.yml</span>: &lt;base64 encoded content&gt;
 <span style=color:#66d9ef>kind</span>: Secret
 <span style=color:#66d9ef>metadata</span>:
@@ -214,7 +214,7 @@ configmap/es-custom-config created
 <span style=color:#66d9ef>apiVersion</span>: v1
 <span style=color:#66d9ef>data</span>:
   <span style=color:#66d9ef>common-config.yaml</span>: |<span style=color:#e6db74>-
-</span><span style=color:#e6db74>   </span><span style=color:#e6db74> </span><span style=color:#e6db74>xpack.security.enabled: false</span>
+</span><span style=color:#e6db74>    xpack.security.enabled: false</span>
     <span style=color:#66d9ef>xpack.monitoring.enabled</span>: <span style=color:#66d9ef>true</span>
     <span style=color:#66d9ef>xpack.monitoring.collection.enabled</span>: <span style=color:#66d9ef>true</span>
     <span style=color:#66d9ef>xpack.monitoring.exporters</span>:
@@ -285,7 +285,7 @@ Done with success
 <span style=color:#66d9ef>xpack.monitoring.kibana.collection.enabled</span>: <span style=color:#66d9ef>true</span>
 <span style=color:#66d9ef>xpack.monitoring.ui.enabled</span>: <span style=color:#66d9ef>true</span>
 
-<span style=color:#66d9ef>server.host</span>: <span style=color:#ae81ff>0.0</span><span style=color:#ae81ff>.0</span><span style=color:#ae81ff>.0</span>
+<span style=color:#66d9ef>server.host</span>: <span style=color:#ae81ff>0.0.0.0</span>
 
 <span style=color:#66d9ef>elasticsearch.url</span>: <span style=color:#e6db74>&#34;http://es-mon-demo.demo.svc:9200&#34;</span>
 <span style=color:#66d9ef>elasticsearch.username</span>: <span style=color:#e6db74>&#34;monitor&#34;</span>
@@ -316,7 +316,7 @@ deployment.apps/kibana created
     <span style=color:#66d9ef>spec</span>:
       <span style=color:#66d9ef>containers</span>:
       - <span style=color:#66d9ef>name</span>: kibana
-        <span style=color:#66d9ef>image</span>: kubedb/kibana:<span style=color:#ae81ff>6.3</span><span style=color:#ae81ff>.0</span>
+        <span style=color:#66d9ef>image</span>: kubedb/kibana:<span style=color:#ae81ff>6.3.0</span>
         <span style=color:#66d9ef>volumeMounts</span>:
         - <span style=color:#66d9ef>name</span>:  kibana-config
           <span style=color:#66d9ef>mountPath</span>: /usr/share/kibana/config

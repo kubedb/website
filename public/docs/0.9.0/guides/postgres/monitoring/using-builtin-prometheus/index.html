@@ -127,7 +127,7 @@ prometheus.io/scrape=true
   <span style=color:#66d9ef>namespace</span>: demo
 <span style=color:#66d9ef>data</span>:
   <span style=color:#66d9ef>prometheus.yml</span>: |<span style=color:#e6db74>-
-</span><span style=color:#e6db74>   </span><span style=color:#e6db74> </span><span style=color:#e6db74>global:</span>
+</span><span style=color:#e6db74>    global:</span>
       <span style=color:#66d9ef>scrape_interval</span>: 5s
       <span style=color:#66d9ef>evaluation_interval</span>: 5s
     <span style=color:#66d9ef>scrape_configs</span>:
@@ -180,7 +180,7 @@ configmap/prometheus-server-conf created
     <span style=color:#66d9ef>spec</span>:
       <span style=color:#66d9ef>containers</span>:
         - <span style=color:#66d9ef>name</span>: prometheus
-          <span style=color:#66d9ef>image</span>: prom/prometheus:v2<span style=color:#ae81ff>.1</span><span style=color:#ae81ff>.0</span>
+          <span style=color:#66d9ef>image</span>: prom/prometheus:v2<span style=color:#ae81ff>.1.0</span>
           <span style=color:#66d9ef>args</span>:
             - <span style=color:#e6db74>&#34;--config.file=/etc/prometheus/prometheus.yml&#34;</span>
             - <span style=color:#e6db74>&#34;--storage.tsdb.path=/prometheus/&#34;</span>

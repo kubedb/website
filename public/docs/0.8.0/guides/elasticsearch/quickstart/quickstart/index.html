@@ -167,7 +167,7 @@ quick-elasticsearch-master   ClusterIP   10.105.209.152   &lt;none&gt;        93
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;4376&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /api/v1/namespaces/demo/secrets/quick-elasticsearch-auth
-  <span style=color:#66d9ef>uid</span>: 6baf55bd<span style=color:#ae81ff>-1160</span><span style=color:#ae81ff>-11e8</span>-a344-08002716e6a0
+  <span style=color:#66d9ef>uid</span>: 6baf55bd<span style=color:#ae81ff>-1160-11e8</span>-a344-08002716e6a0
 <span style=color:#66d9ef>type</span>: Opaque
 </code></pre></div><blockquote><p>Note: Auth Secret name format: <code>{elasticsearch-name}-auth</code></p></blockquote><p>This Secret contains:</p><ul><li><code>ADMIN_PASSWORD</code> password for <code>admin</code> user used in search-guard configuration as internal user.</li><li><code>READALL_PASSWORD</code> password for <code>readall</code> user with read-only permission only.</li><li>Followings are used as search-guard configuration<ul><li><code>sg_action_groups.yml</code></li><li><code>sg_config.yml</code></li><li><code>sg_internal_users.yml</code></li><li><code>sg_roles.yml</code></li><li><code>sg_roles_mapping.yml</code></li></ul></li></ul><p>See details about <a href=/docs/0.8.0/guides/elasticsearch/search-guard/configuration>search-guard configuration</a></p><h5 id=secret-for-certificates>Secret for certificates</h5><pre><code class=language-console data-lang=console>$ kubectl get secret -n demo quick-elasticsearch-cert -o yaml
 </code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#66d9ef>apiVersion</span>: v1
@@ -245,7 +245,7 @@ quick-elasticsearch   Paused    1m
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;2072&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /apis/kubedb.com/v1alpha1/namespaces/demo/dormantdatabases/quick-elasticsearch
-  <span style=color:#66d9ef>uid</span>: 9624f877<span style=color:#ae81ff>-1080</span><span style=color:#ae81ff>-11e8</span><span style=color:#ae81ff>-9e42</span>-0800271bdbb6
+  <span style=color:#66d9ef>uid</span>: 9624f877<span style=color:#ae81ff>-1080-11e8-9e42</span>-0800271bdbb6
 <span style=color:#66d9ef>spec</span>:
   <span style=color:#66d9ef>origin</span>:
     <span style=color:#66d9ef>metadata</span>:

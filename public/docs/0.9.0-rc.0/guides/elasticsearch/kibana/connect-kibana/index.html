@@ -167,9 +167,9 @@ secret/es-auth created
 <span style=color:#66d9ef>apiVersion</span>: v1
 <span style=color:#66d9ef>data</span>:
   <span style=color:#66d9ef>sg_action_groups.yml</span>: &lt;base64 encoded content<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74> </span><span style=color:#e6db74> </span><span style=color:#e6db74>sg_config.yml: &lt;base64 encoded content&gt;</span>
+</span><span style=color:#e6db74>  sg_config.yml: &lt;base64 encoded content&gt;</span>
   <span style=color:#66d9ef>sg_internal_users.yml</span>: &lt;base64 encoded content<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74> </span><span style=color:#e6db74> </span><span style=color:#e6db74>sg_roles.yml: &lt;base64 encoded content&gt;</span>
+</span><span style=color:#e6db74>  sg_roles.yml: &lt;base64 encoded content&gt;</span>
   <span style=color:#66d9ef>sg_roles_mapping.yml</span>: &lt;base64 encoded content&gt;
 <span style=color:#66d9ef>kind</span>: Secret
 <span style=color:#66d9ef>metadata</span>:
@@ -187,7 +187,7 @@ configmap/es-custom-config created
 <span style=color:#66d9ef>apiVersion</span>: v1
 <span style=color:#66d9ef>data</span>:
   <span style=color:#66d9ef>common-config.yaml</span>: |<span style=color:#e6db74>-
-</span><span style=color:#e6db74>   </span><span style=color:#e6db74> </span><span style=color:#e6db74>xpack.security.enabled: false</span>
+</span><span style=color:#e6db74>    xpack.security.enabled: false</span>
     <span style=color:#66d9ef>searchguard.restapi.roles_enabled</span>: [<span style=color:#e6db74>&#34;sg_all_access&#34;</span>,<span style=color:#e6db74>&#34;sg_kibana_user&#34;</span>]
 <span style=color:#66d9ef>kind</span>: ConfigMap
 <span style=color:#66d9ef>metadata</span>:
@@ -248,7 +248,7 @@ Number of data nodes: 1
 Done with success
 ...
 </code></pre><p>Once you see <code>Done with success</code> success line in the log, the cluster is ready to accept requests. Now, it is time to connect with Kibana.</p><h2 id=deploy-kibana>Deploy Kibana</h2><p>In order to connect the Elasticsearch cluster that we have just deployed, we need to configure <code>kibana.yml</code> with appropriate configuration.</p><p>KubeDB has created a service with name<code>es-kibana-demo</code> in <code>demo</code> namespace for the Elasticsearch cluster. We will use this service in <code>elasticsearch.url</code> field. Kibana will use this service to connect with the Elasticsearch cluster.</p><p>Let&rsquo;s, configure <code>kibana.yml</code> as below,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#66d9ef>xpack.security.enabled</span>: <span style=color:#66d9ef>false</span>
-<span style=color:#66d9ef>server.host</span>: <span style=color:#ae81ff>0.0</span><span style=color:#ae81ff>.0</span><span style=color:#ae81ff>.0</span>
+<span style=color:#66d9ef>server.host</span>: <span style=color:#ae81ff>0.0.0.0</span>
 
 <span style=color:#66d9ef>elasticsearch.url</span>: <span style=color:#e6db74>&#34;http://es-kibana-demo.demo.svc:9200&#34;</span>
 <span style=color:#66d9ef>elasticsearch.username</span>: <span style=color:#e6db74>&#34;kibanauser&#34;</span>
@@ -279,7 +279,7 @@ deployment.apps/kibana created
     <span style=color:#66d9ef>spec</span>:
       <span style=color:#66d9ef>containers</span>:
       - <span style=color:#66d9ef>name</span>: kibana
-        <span style=color:#66d9ef>image</span>: kubedb/kibana:<span style=color:#ae81ff>6.3</span><span style=color:#ae81ff>.0</span>
+        <span style=color:#66d9ef>image</span>: kubedb/kibana:<span style=color:#ae81ff>6.3.0</span>
         <span style=color:#66d9ef>volumeMounts</span>:
         - <span style=color:#66d9ef>name</span>:  kibana-config
           <span style=color:#66d9ef>mountPath</span>: /usr/share/kibana/config
@@ -296,7 +296,7 @@ kibana-84b8cbcf7c-mg699   1/1       Running   0          3m
 </code></pre><p>Once you see <code>"message":"Server running at http://0.0.0.0:5601"</code> in the log, Kibana is ready. Now it is time to access Kibana UI.</p><p>Kibana is running on port <code>5601</code> in of <code>kibana-84b8cbcf7c-mg699</code> pod. In order to access Kibana UI from outside of the cluster, we will use <a href=https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster>port forwarding</a>.</p><p>First, open a new terminal and run,</p><pre><code class=language-console data-lang=console>$ kubectl port-forward -n demo kibana-84b8cbcf7c-mg699 5601
 Forwarding from 127.0.0.1:5601 -&gt; 5601
 Forwarding from [::1]:5601 -&gt; 5601
-</code></pre><p>Now, open <code>localhost:5601</code> in your browser. When you open the address, you will be greeted with Search Guard login UI.</p><p><img src=/docs/0.9.0-rc.0/images/elasticsearch/kibana/search-guard-login-ui.png alt="Search Guard Login UI"></p><p>Login with following credentials: <code>username: kibanauser</code> and <code>password: kibana@secret</code>.</p><p>After login, you will be redirected to Kibana Home UI.</p><p><img src=/docs/0.9.0-rc.0/images/elasticsearch/kibana/kibana-home.png alt="Kibana Home"></p><p>Now, it is time to perform some operations on our cluster from the Kibana UI.</p><h2 id=use-kibana>Use Kibana</h2><p>We can use Dev Tool&rsquo;s console of Kibana UI to create Index and insert data in the index. Let&rsquo;s create an Index,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=color:#960050;background-color:#1e0010>P</span><span style=color:#960050;background-color:#1e0010>U</span><span style=color:#960050;background-color:#1e0010>T</span> <span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>s</span><span style=color:#960050;background-color:#1e0010>h</span><span style=color:#960050;background-color:#1e0010>a</span><span style=color:#960050;background-color:#1e0010>k</span><span style=color:#960050;background-color:#1e0010>e</span><span style=color:#960050;background-color:#1e0010>s</span><span style=color:#960050;background-color:#1e0010>p</span><span style=color:#960050;background-color:#1e0010>e</span><span style=color:#960050;background-color:#1e0010>a</span><span style=color:#960050;background-color:#1e0010>r</span><span style=color:#960050;background-color:#1e0010>e</span>
+</code></pre><p>Now, open <code>localhost:5601</code> in your browser. When you open the address, you will be greeted with Search Guard login UI.</p><p><img src=/docs/0.9.0-rc.0/images/elasticsearch/kibana/search-guard-login-ui.png alt="Search Guard Login UI"></p><p>Login with following credentials: <code>username: kibanauser</code> and <code>password: kibana@secret</code>.</p><p>After login, you will be redirected to Kibana Home UI.</p><p><img src=/docs/0.9.0-rc.0/images/elasticsearch/kibana/kibana-home.png alt="Kibana Home"></p><p>Now, it is time to perform some operations on our cluster from the Kibana UI.</p><h2 id=use-kibana>Use Kibana</h2><p>We can use Dev Tool&rsquo;s console of Kibana UI to create Index and insert data in the index. Let&rsquo;s create an Index,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=color:#960050;background-color:#1e0010>PUT</span> <span style=color:#960050;background-color:#1e0010>/shakespeare</span>
 {
  <span style=color:#f92672>&#34;mappings&#34;</span>: {
   <span style=color:#f92672>&#34;doc&#34;</span>: {
@@ -309,8 +309,8 @@ Forwarding from [::1]:5601 -&gt; 5601
   }
  }
 }
-</code></pre></div><p>Now, insert some demo data in the Index,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>/</span>  <span style=color:#960050;background-color:#1e0010>d</span><span style=color:#960050;background-color:#1e0010>e</span><span style=color:#960050;background-color:#1e0010>m</span><span style=color:#960050;background-color:#1e0010>o</span> <span style=color:#960050;background-color:#1e0010>d</span><span style=color:#960050;background-color:#1e0010>a</span><span style=color:#960050;background-color:#1e0010>t</span><span style=color:#960050;background-color:#1e0010>a</span><span style=color:#ae81ff>-1</span>
-<span style=color:#960050;background-color:#1e0010>P</span><span style=color:#960050;background-color:#1e0010>O</span><span style=color:#960050;background-color:#1e0010>S</span><span style=color:#960050;background-color:#1e0010>T</span> <span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>s</span><span style=color:#960050;background-color:#1e0010>h</span><span style=color:#960050;background-color:#1e0010>a</span><span style=color:#960050;background-color:#1e0010>k</span><span style=color:#960050;background-color:#1e0010>e</span><span style=color:#960050;background-color:#1e0010>s</span><span style=color:#960050;background-color:#1e0010>p</span><span style=color:#960050;background-color:#1e0010>e</span><span style=color:#960050;background-color:#1e0010>a</span><span style=color:#960050;background-color:#1e0010>r</span><span style=color:#960050;background-color:#1e0010>e</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>d</span><span style=color:#960050;background-color:#1e0010>o</span><span style=color:#960050;background-color:#1e0010>c</span>
+</code></pre></div><p>Now, insert some demo data in the Index,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=color:#960050;background-color:#1e0010>//</span>  <span style=color:#960050;background-color:#1e0010>demo</span> <span style=color:#960050;background-color:#1e0010>data</span><span style=color:#ae81ff>-1</span>
+<span style=color:#960050;background-color:#1e0010>POST</span> <span style=color:#960050;background-color:#1e0010>/shakespeare/doc</span>
 {
     <span style=color:#f92672>&#34;index&#34;</span>: {
         <span style=color:#f92672>&#34;_index&#34;</span>: <span style=color:#e6db74>&#34;shakespeare&#34;</span>,
@@ -325,9 +325,9 @@ Forwarding from [::1]:5601 -&gt; 5601
     <span style=color:#f92672>&#34;text_entry&#34;</span>: <span style=color:#e6db74>&#34;SCENE I. London. The palace.&#34;</span>
 }
 
-<span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>/</span> <span style=color:#960050;background-color:#1e0010>d</span><span style=color:#960050;background-color:#1e0010>e</span><span style=color:#960050;background-color:#1e0010>m</span><span style=color:#960050;background-color:#1e0010>o</span> <span style=color:#960050;background-color:#1e0010>d</span><span style=color:#960050;background-color:#1e0010>a</span><span style=color:#960050;background-color:#1e0010>t</span><span style=color:#960050;background-color:#1e0010>a</span><span style=color:#ae81ff>-2</span>
+<span style=color:#960050;background-color:#1e0010>//</span> <span style=color:#960050;background-color:#1e0010>demo</span> <span style=color:#960050;background-color:#1e0010>data</span><span style=color:#ae81ff>-2</span>
 
-<span style=color:#960050;background-color:#1e0010>P</span><span style=color:#960050;background-color:#1e0010>O</span><span style=color:#960050;background-color:#1e0010>S</span><span style=color:#960050;background-color:#1e0010>T</span> <span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>s</span><span style=color:#960050;background-color:#1e0010>h</span><span style=color:#960050;background-color:#1e0010>a</span><span style=color:#960050;background-color:#1e0010>k</span><span style=color:#960050;background-color:#1e0010>e</span><span style=color:#960050;background-color:#1e0010>s</span><span style=color:#960050;background-color:#1e0010>p</span><span style=color:#960050;background-color:#1e0010>e</span><span style=color:#960050;background-color:#1e0010>a</span><span style=color:#960050;background-color:#1e0010>r</span><span style=color:#960050;background-color:#1e0010>e</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>d</span><span style=color:#960050;background-color:#1e0010>o</span><span style=color:#960050;background-color:#1e0010>c</span>
+<span style=color:#960050;background-color:#1e0010>POST</span> <span style=color:#960050;background-color:#1e0010>/shakespeare/doc</span>
 {
     <span style=color:#f92672>&#34;index&#34;</span>: {
         <span style=color:#f92672>&#34;_index&#34;</span>: <span style=color:#e6db74>&#34;shakespeare&#34;</span>,

@@ -75,7 +75,7 @@ secret &quot;gcs-secret&quot; created
 <span style=color:#66d9ef>apiVersion</span>: v1
 <span style=color:#66d9ef>data</span>:
   <span style=color:#66d9ef>GOOGLE_PROJECT_ID</span>: &lt;base64 encoded project id<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74> </span><span style=color:#e6db74> </span><span style=color:#e6db74>GOOGLE_SERVICE_ACCOUNT_JSON_KEY: &lt;base64 encoded service-account-json-key&gt;</span>
+</span><span style=color:#e6db74>  GOOGLE_SERVICE_ACCOUNT_JSON_KEY: &lt;base64 encoded service-account-json-key&gt;</span>
 <span style=color:#66d9ef>kind</span>: Secret
 <span style=color:#66d9ef>metadata</span>:
   <span style=color:#66d9ef>creationTimestamp</span>: <span style=color:#e6db74>2018-09-04T06:08:01Z</span>
@@ -83,7 +83,7 @@ secret &quot;gcs-secret&quot; created
   <span style=color:#66d9ef>namespace</span>: demo
   <span style=color:#66d9ef>resourceVersion</span>: <span style=color:#e6db74>&#34;11716&#34;</span>
   <span style=color:#66d9ef>selfLink</span>: /api/v1/namespaces/demo/secrets/gcs-secret
-  <span style=color:#66d9ef>uid</span>: e0aef5a7-b008<span style=color:#ae81ff>-11e8</span><span style=color:#ae81ff>-9990</span>-0800279292a5
+  <span style=color:#66d9ef>uid</span>: e0aef5a7-b008<span style=color:#ae81ff>-11e8-9990</span>-0800279292a5
 <span style=color:#66d9ef>type</span>: Opaque
 
 </code></pre></div><h3 id=snapshot-storage-backend>Snapshot Storage Backend</h3><p>KubeDB supports various cloud providers (<em>S3</em>, <em>GCS</em>, <em>Azure</em>, <em>OpenStack</em> <em>Swift</em> and/or locally mounted volumes) as snapshot storage backend. In this tutorial, <em>GCS</em> backend is used.</p><p>To configure this backend, following parameters are available:</p><table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>spec.gcs.bucket</code></td><td><code>Required</code>. Name of bucket</td></tr><tr><td><code>spec.gcs.prefix</code></td><td><code>Optional</code>. Path prefix into bucket where snapshot data will be stored</td></tr></tbody></table><p>To learn how to configure other storage destinations for snapshot data, please visit <a href=/docs/v0.13.0-rc.0/concepts/snapshot>here</a>.</p><p>Now, let&rsquo;s create a Snapshot object.</p><pre><code class=language-console data-lang=console>$ kubectl create -f https://github.com/kubedb/docs/raw/v0.13.0-rc.0/docs/examples/postgres/snapshot/instant-snapshot.yaml

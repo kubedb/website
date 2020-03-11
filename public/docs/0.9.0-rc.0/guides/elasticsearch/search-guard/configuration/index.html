@@ -75,9 +75,9 @@ cd /tmp/kubedb/sg
 </code></pre></div><pre><code class=language-console data-lang=console>$ wget https://raw.githubusercontent.com/kubedb/cli/0.9.0-rc.0/docs/examples/elasticsearch/search-guard/sg-config/sg_config.yml
 </code></pre><h3 id=sg_internal_usersyml>sg_internal_users.yml</h3><p>Internal users are configured in <code>sg_internal_users.yml</code>.</p><p>Syntax:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#66d9ef>&lt;username&gt;</span>:
   <span style=color:#66d9ef>hash</span>: &lt;hashed password<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74> </span><span style=color:#e6db74> </span><span style=color:#e6db74>roles:</span>
+</span><span style=color:#e6db74>  roles:</span>
     - &lt;rolename<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74>   </span><span style=color:#e6db74> </span><span style=color:#e6db74>- &lt;rolename&gt;</span>
+</span><span style=color:#e6db74>    - &lt;rolename&gt;</span>
 </code></pre></div><p>See details about <a href=http://docs.search-guard.com/v5/internal-users-database>internal users</a> in Search Guard documentation.</p><p>KubeDB needs user <code>admin</code> and <code>readall</code> for backup and restore process.</p><p>Create two hashed password for user <code>admin</code> and <code>readall</code></p><pre><code class=language-console data-lang=console>export ADMIN_PASSWORD=admin-password
 export READALL_PASSWORD=readall-password
 
@@ -133,7 +133,7 @@ and can be referred to in <code>sg_roles.yml</code>.</p><p>The file structure is
         - ...
     <span style=color:#66d9ef>tenants</span>:
       <span style=color:#66d9ef>&lt;tenantname&gt;</span>: &lt;RW|RO<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74>     </span><span style=color:#e6db74> </span><span style=color:#e6db74>&lt;tenantname&gt;: &lt;RW|RO&gt;</span>
+</span><span style=color:#e6db74>      &lt;tenantname&gt;: &lt;RW|RO&gt;</span>
 </code></pre></div><p>See details about <a href=http://docs.search-guard.com/v5/roles-permissions>roles and permissions</a> in Search Guard documentation.</p><p>We will use following roles for Search Guard users.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#66d9ef>sg_all_access</span>:
   <span style=color:#66d9ef>cluster</span>:
     - UNLIMITED
@@ -158,13 +158,13 @@ and can be referred to in <code>sg_roles.yml</code>.</p><p>The file structure is
 </code></pre><h3 id=sg_roles_mappingyml>sg_roles_mapping.yml</h3><p>Backend roles are roles that Search Guard retrieves during the authentication and authorization process. These roles are then mapped to the roles Search Guard uses to define which permissions a given user or host possesses.</p><p>In configuration, KubeDB sets for Search Guard, backend roles comes from:</p><ul><li>Roles defined in sg_internal_users.yml for particular users</li><li>A JSON web token, if you’re using JWT authentication</li><li>HTTP headers, if you’re using Proxy authentication</li></ul><h4 id=mapping>Mapping</h4><p>Backend users, roles and hosts are mapped to Search Guard roles in the file <code>sg_roles_mapping.yml</code>.</p><p>Syntax:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#66d9ef>&lt;Search Guard role name&gt;</span>:
   <span style=color:#66d9ef>users</span>:
     - &lt;username<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74>   </span><span style=color:#e6db74> </span><span style=color:#e6db74>- ...</span>
+</span><span style=color:#e6db74>    - ...</span>
   <span style=color:#66d9ef>backendroles</span>:
     - &lt;rolename<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74>   </span><span style=color:#e6db74> </span><span style=color:#e6db74>- ...</span>
+</span><span style=color:#e6db74>    - ...</span>
   <span style=color:#66d9ef>hosts</span>:
     - &lt;hostname<span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74>   </span><span style=color:#e6db74> </span><span style=color:#e6db74>- ...</span>
+</span><span style=color:#e6db74>    - ...</span>
 </code></pre></div><p>See details about <a href=http://docs.search-guard.com/v5/mapping-users-roles>backend roles mapping</a> in Search Guard documentation.</p><p>Get roles mapping by running</p><pre><code class=language-console data-lang=console>$ wget https://raw.githubusercontent.com/kubedb/cli/0.9.0-rc.0/docs/examples/elasticsearch/search-guard/sg-config/sg_roles_mapping.yml
 </code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#66d9ef>sg_all_access</span>:
   <span style=color:#66d9ef>users</span>:

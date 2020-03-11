@@ -59,7 +59,7 @@ configmap/pg-custom-config created
 <span style=color:#66d9ef>apiVersion</span>: v1
 <span style=color:#66d9ef>data</span>:
   <span style=color:#66d9ef>user.conf</span>: <span style=color:#e6db74>|
-</span><span style=color:#e6db74>   </span><span style=color:#e6db74> </span><span style=color:#e6db74>max_connections=300</span>
+</span><span style=color:#e6db74>    max_connections=300</span>
     shared_buffers=256MB
 <span style=color:#66d9ef>kind</span>: ConfigMap
 <span style=color:#66d9ef>metadata</span>:
@@ -143,7 +143,7 @@ postgres=# \q
 
 </code></pre><p>You can also connect to this database from pgAdmin and use following SQL query to check these configuration.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> name,setting
 <span style=color:#66d9ef>FROM</span> pg_settings
-<span style=color:#66d9ef>WHERE</span> name<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>max_connections</span><span style=color:#e6db74>&#39;</span> <span style=color:#66d9ef>OR</span> name<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>shared_buffers</span><span style=color:#e6db74>&#39;</span>;
+<span style=color:#66d9ef>WHERE</span> name<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;max_connections&#39;</span> <span style=color:#66d9ef>OR</span> name<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;shared_buffers&#39;</span>;
 </code></pre></div><h2 id=cleaning-up>Cleaning up</h2><p>To cleanup the Kubernetes resources created by this tutorial, run:</p><pre><code class=language-console data-lang=console>$ kubectl patch -n demo pg/custom-postgres -p '{&quot;spec&quot;:{&quot;terminationPolicy&quot;:&quot;WipeOut&quot;}}' --type=&quot;merge&quot;
 $ kubectl delete -n demo pg/custom-postgres
 
