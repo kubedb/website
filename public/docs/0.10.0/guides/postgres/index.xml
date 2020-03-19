@@ -1,5 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PostgreSQL on Run production-grade databases easily on Kubernetes</title><link>https://kubedb.com/docs/0.10.0/guides/postgres/</link><description>Recent content in PostgreSQL on Run production-grade databases easily on Kubernetes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://kubedb.com/docs/0.10.0/guides/postgres/index.xml" rel="self" type="application/rss+xml"/><item><title>Postgres</title><link>https://kubedb.com/docs/0.10.0/guides/postgres/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kubedb.com/docs/0.10.0/guides/postgres/</guid><description>New to KubeDB? Please start here.
-Supported PostgreSQL Features Features Availability Clustering ✓ Warm Standby ✓ Hot Standby ✓ Synchronous Replication ✗ Streaming Replication ✓ Automatic Failover ✓ Continuous Archiving using wal-g ✓ Initialization from WAL archive ✓ Persistent Volume ✓ Instant Backup ✓ Scheduled Backup ✓ Initialization from Snapshot ✓ Initialization using Script ✓ Builtin Prometheus Discovery ✓ Using CoreOS Prometheus Operator ✓ Custom Configuration ✓ Using Custom docker image ✓ Life Cycle of a PostgreSQL Object Supported PostgreSQL Versions KubeDB Version Postgres:9.</description></item><item><title>Upgrade Manual</title><link>https://kubedb.com/docs/0.10.0/guides/postgres/upgrade-manual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kubedb.com/docs/0.10.0/guides/postgres/upgrade-manual/</guid><description>New to KubeDB? Please start here.
-KubeDB Upgrade Manual This tutorial will show you how to upgrade KubeDB from previous version to 0.10.0.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PostgreSQL on Run production-grade databases easily on Kubernetes</title>
+    <link>https://kubedb.com/docs/0.10.0/guides/postgres/</link>
+    <description>Recent content in PostgreSQL on Run production-grade databases easily on Kubernetes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://kubedb.com/docs/0.10.0/guides/postgres/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Postgres</title>
+      <link>https://kubedb.com/docs/0.10.0/guides/postgres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubedb.com/docs/0.10.0/guides/postgres/</guid>
+      <description>New to KubeDB? Please start here.
+ Supported PostgreSQL Features    Features Availability     Clustering ✓   Warm Standby ✓   Hot Standby ✓   Synchronous Replication ✗   Streaming Replication ✓   Automatic Failover ✓   Continuous Archiving using wal-g ✓   Initialization from WAL archive ✓   Persistent Volume ✓   Instant Backup ✓   Scheduled Backup ✓   Initialization from Snapshot ✓   Initialization using Script ✓   Builtin Prometheus Discovery ✓   Using CoreOS Prometheus Operator ✓   Custom Configuration ✓   Using Custom docker image ✓    Life Cycle of a PostgreSQL Object Supported PostgreSQL Versions    KubeDB Version Postgres:9.</description>
+    </item>
+    
+    <item>
+      <title>Upgrade Manual</title>
+      <link>https://kubedb.com/docs/0.10.0/guides/postgres/upgrade-manual/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubedb.com/docs/0.10.0/guides/postgres/upgrade-manual/</guid>
+      <description>New to KubeDB? Please start here.
+ KubeDB Upgrade Manual This tutorial will show you how to upgrade KubeDB from previous version to 0.10.0.
 Before You Begin At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using minikube.
-Now, install KubeDB 0.9.0 cli on your workstation and KubeDB operator in your cluster following the steps here.</description></item></channel></rss>
+Now, install KubeDB 0.9.0 cli on your workstation and KubeDB operator in your cluster following the steps here.</description>
+    </item>
+    
+  </channel>
+</rss>
