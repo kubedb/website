@@ -10,6 +10,7 @@ params:
   product_key: kubedb
   main_menu_dropdown_item: database
   domain_appscode: https://appscode.com
+  domain_voyagermesh: https://voyagermesh.com
   domain_stash: https://stash.run
   domain_kubedb: https://kubedb.com
   domain_kubevault: https://kubevault.com
