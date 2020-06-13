@@ -1,8 +1,8 @@
 ---
-title: Support
+title: Pricing
 menu:
   main:
     identifier: pricing
-    name: Commercial Support
+    name: Pricing
     weight: 10
 ---
