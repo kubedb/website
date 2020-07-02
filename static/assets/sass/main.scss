@@ -9,6 +9,8 @@
 @import "base/_mixins";
 @import "base/_base";
 
+// Components SCSS 
+@import "components/buttons";
 // Theme SCSS
 // @import "themes/_guard";
 // @import "themes/_kubeci";
@@ -21,6 +23,9 @@
 // @import "themes/_stash";
 // @import "themes/_swift";
 // @import "themes/_voyager";
+
+// Page SCSS 
+@import "page/features-plan";
 
 //Responsive SCSS
 @import "layouts/_responsive";

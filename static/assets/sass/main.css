@@ -95,7 +95,7 @@ h6 {
   background-color: #4d4dcb; }
 
 .tooltip.is-tooltip-primary::before {
-  background-color: #32325D;
+  background-color: #32325d;
   color: #ffffff;
   min-width: 200px;
   padding: 15px;
@@ -103,13 +103,14 @@ h6 {
   font-style: normal; }
 
 .tooltip.is-tooltip-primary:not(.is-loading)::after {
-  border-color: #32325D transparent transparent transparent; }
+  border-color: #32325d transparent transparent transparent; }
 
 /* button style */
 .button {
   height: auto; }
 
-.kd-button, .ac-button {
+.kd-button,
+.ac-button {
   border: none;
   border-radius: 4px;
   padding: 12px 40px;
@@ -3140,6 +3141,164 @@ video {
   .improve-bg-color p {
     font-size: 16px !important;
     color: #74818D !important; }
+
+.button.ac-button {
+  border-radius: 4px; }
+  .button.ac-button.is-secondary {
+    background: #00a651;
+    color: #fff; }
+    .button.ac-button.is-secondary:hover {
+      background-color: #00a551; }
+
+.features-plan .hero-area-content .hero-content-inner h1 {
+  font-size: 36px;
+  line-height: 140%;
+  font-weight: 500;
+  margin-bottom: 30px; }
+  .features-plan .hero-area-content .hero-content-inner h1 b {
+    font-weight: 700; }
+
+.bgc-2 {
+  background-color: #f9f9f9; }
+
+.features-cta-area .features-plan-cta-wrapper {
+  background-color: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .features-cta-area .features-plan-cta-wrapper .cta-left {
+    width: 50%;
+    padding: 90px 20px; }
+    .features-cta-area .features-plan-cta-wrapper .cta-left.fp-cta-bg {
+      background-image: url(../images/features-plan/features-plan-cta-bg.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center; }
+    .features-cta-area .features-plan-cta-wrapper .cta-left h2 {
+      font-size: 36px;
+      line-height: 140%;
+      font-weight: 700;
+      color: #32325d;
+      margin-bottom: 20px;
+      text-transform: capitalize; }
+    .features-cta-area .features-plan-cta-wrapper .cta-left p {
+      font-size: 16px;
+      line-height: 160%;
+      color: #54657e; }
+  .features-cta-area .features-plan-cta-wrapper .cta-right {
+    width: 50%;
+    display: flex; }
+    .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta {
+      padding: 40px 20px 115px 20px;
+      border-left: 1px solid #eceff4;
+      position: relative;
+      z-index: 1;
+      min-height: 290px;
+      width: 50%; }
+      .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.enterprise .button.ac-button.is-secondary {
+        background-color: #ff8000; }
+      .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta h3 {
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 140%;
+        margin-bottom: 20px;
+        text-transform: capitalize; }
+      .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta p {
+        font-size: 16px;
+        color: #54657e;
+        line-height: 1.6; }
+      .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta p.is-trial {
+        font-size: 12px;
+        color: #ff8000;
+        margin-bottom: 10px;
+        line-height: 1;
+        font-weight: 500; }
+      .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content {
+        position: absolute;
+        bottom: 40px;
+        left: 20px;
+        width: calc(100% - 40px); }
+        .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .button {
+          width: 100%; }
+
+.single-features-area {
+  margin-bottom: 30px; }
+
+.table.ac-features-table {
+  display: table;
+  border-radius: 4px; }
+  .table.ac-features-table thead tr th {
+    font-size: 18px;
+    font-weight: 700;
+    border-color: transparent;
+    border: 1px solid transparent; }
+  .table.ac-features-table tbody tr td {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    color: #393e46;
+    border-color: #eceff4;
+    border: 1px solid #eceff4; }
+    .table.ac-features-table tbody tr td p,
+    .table.ac-features-table tbody tr td a {
+      font-size: 16px;
+      font-family: "Roboto", sans-serif;
+      color: #393e46;
+      font-weight: 400; }
+    .table.ac-features-table tbody tr td a {
+      color: #1971bd; }
+    .table.ac-features-table tbody tr td span.t-icon {
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      overflow: hidden; }
+    .table.ac-features-table tbody tr td:first-child {
+      width: 50%;
+      text-align: left; }
+    .table.ac-features-table tbody tr td:nth-child(2) {
+      width: 25%; }
+    .table.ac-features-table tbody tr td:nth-child(3) {
+      width: 25%; }
+  .table.ac-features-table tbody tr:nth-child(odd) td:first-child {
+    background-color: #f7f9fb; }
+  .table.ac-features-table tbody tr:nth-child(odd) td:nth-child(2) {
+    background-color: #e6f3ef; }
+  .table.ac-features-table tbody tr:nth-child(odd) td:nth-child(3) {
+    background-color: #f8f1e9; }
+  .table.ac-features-table tbody tr:nth-child(even) td:first-child {
+    background-color: #ffffff; }
+  .table.ac-features-table tbody tr:nth-child(even) td:nth-child(2) {
+    background-color: #edf9f3; }
+  .table.ac-features-table tbody tr:nth-child(even) td:nth-child(3) {
+    background-color: #fff6ed; }
+
+.single-assistance {
+  background: #ffffff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  transition: 0.3s ease-in-out; }
+  .single-assistance:hover {
+    box-shadow: 0px 8px 57px rgba(0, 0, 0, 0.16); }
+  .single-assistance .ass-top {
+    display: flex;
+    align-items: center;
+    padding: 40px 30px;
+    border-bottom: 1px solid #ECEFF4; }
+    .single-assistance .ass-top .ass-icon {
+      margin-right: 30px;
+      max-width: 60px; }
+    .single-assistance .ass-top .ass-title h3 {
+      font-size: 18px;
+      line-height: 120%;
+      font-weight: 500;
+      font-family: "Roboto", sans-serif; }
+  .single-assistance .ass-bottom {
+    padding: 20px 30px 40px; }
+    .single-assistance .ass-bottom p {
+      color: #54657e;
+      font-size: 16px; }
 
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
