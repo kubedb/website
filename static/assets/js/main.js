@@ -287,3 +287,54 @@ var basicScrollTop = function() {
   }
 };
 basicScrollTop();
+
+
+// custom accordion 
+function acAccordion(actionBtn) {
+  let accordionHeadingAll = document.querySelectorAll(actionBtn);
+  // Create event listeners for each accordion heading
+  Array.from(accordionHeadingAll).forEach(accordionHeading => {
+    accordionHeading.addEventListener("click", function() {
+      let singleAcc = accordionHeading.closest(".single-accordion-item");
+
+      let isOpen = singleAcc.classList.contains("open");
+
+      // select all accordion
+      let accordionItems = document.querySelectorAll(
+        ".single-accordion-item"
+      );
+      Array.from(accordionItems).forEach(accordionItem => {
+        // close all item
+        accordionItem.className = "single-accordion-item closed";
+        let icon = accordionItem.querySelector(".icon .fa");
+        if (icon) {
+          icon.classList.replace("fa-minus", "fa-plus");
+        }
+        let accordionBody = accordionItem.querySelector(".accordion-body");
+        accordionBody.style.maxHeight = null;
+      });
+
+      // get single element icon
+      let icon = singleAcc.querySelector(".icon .fa");
+      if (isOpen) {
+        singleAcc.className = "single-accordion-item closed";
+        let accordionBody = singleAcc.querySelector(".accordion-body");
+        accordionBody.style.maxHeight = null;
+        if (icon) {
+          icon.classList.replace("fa-minus", "fa-plus");
+        }
+      } else {
+        singleAcc.className = "single-accordion-item open";
+        let accordionBody = singleAcc.querySelector(".accordion-body");
+        accordionBody.style.maxHeight = accordionBody.scrollHeight + "px";
+        if (icon) {
+          icon.classList.replace("fa-plus", "fa-minus");
+        }
+      }
+    });
+  });
+}
+
+acAccordion(".accordion-heading h3");
+acAccordion(".accordion-heading .icon");
+// accordion end 
