@@ -114,11 +114,12 @@
     }
   }
 }
-.single-features-area {
+.single-features-area:not(:last-child) {
   margin-bottom: 30px;
 }
 .table {
   &.ac-features-table {
+    margin-bottom: 0;
     display: table;
     border-radius: 4px;
 
