@@ -38,7 +38,7 @@ jobs:
       - name: Build
         run: make gen-prod
 
-      - name: Check links
-        run: |
-          hugo server --minify --config=config.yaml &>/dev/null &
-          make check-links
+      # - name: Check links
+      #   run: |
+      #     hugo server --minify --config=config.yaml &>/dev/null &
+      #     make check-links
