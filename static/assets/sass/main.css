@@ -2,6 +2,7 @@
   Global CSS start
 ========================*/
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,500i,600,600i,700,700i,800,800i,900|Roboto:400,400i,500,500i,700");
+@import "https://vjs.zencdn.net/7.0.3/video-js.css";
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -3513,6 +3514,19 @@ Responsive Classes
           margin-bottom: 10px; }
   .features-cta-area .single-features-area {
     margin-bottom: 10px; } }
+.video-js .vjs-big-play-button {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%; }
+  .video-js .vjs-big-play-button:focus {
+    outline: none; }
+
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before,
+.vjs-button > .vjs-icon-placeholder:before,
+.video-js .vjs-modal-dialog,
+.vjs-modal-dialog .vjs-modal-dialog-content {
+  top: 7px; }
+
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
   .feature-content.pr-140 {
