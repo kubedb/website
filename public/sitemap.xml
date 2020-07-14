@@ -1407,6 +1407,10 @@
   </url>
   
   <url>
+    <loc>https://kubedb.com/gallery/</loc>
+  </url>
+  
+  <url>
     <loc>https://kubedb.com/docs/0.8.0-beta.0/guides/</loc>
   </url>
   

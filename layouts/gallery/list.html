@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+
+<!-- hero area for page start -->
+<section class="hero-area gallery-page">
+  <div class="container section">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <!-- hero content start -->
+        <div class="single-video-wrapper">
+          <video id="hls-video" class="video-js vjs-default-skin vjs-big-play-centered vjs-show-big-play-button-on-pause" preload="auto" playsinline height=400 controls></video>
+        </div>
+        <!-- hero content end -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- hero area for page end -->
+
+<script src="https://vjs.zencdn.net/7.0.3/video.js"></script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.5.0/Youtube.min.js"></script>
+
+<script>
+  const player = videojs('hls-video', {}, () => {
+    player.src({ type: 'video/youtube', src: 'https://youtu.be/8az5rYUxyGs' })
+    // player.play()
+  })
+</script>
+
+{{ end }}
