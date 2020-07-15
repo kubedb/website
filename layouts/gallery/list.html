@@ -2,31 +2,157 @@
 
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 
-<!-- hero area for page start -->
+<!-- large video area for page start -->
 <section class="hero-area gallery-page">
   <div class="container section">
     <div class="columns is-centered">
       <div class="column is-6">
         <!-- hero content start -->
         <div class="single-video-wrapper">
-          <video id="hls-video" class="video-js vjs-default-skin vjs-big-play-centered vjs-show-big-play-button-on-pause" preload="auto" playsinline height=400 controls></video>
+          <video id="hls-video"
+            class="video-js vjs-default-skin vjs-big-play-centered vjs-show-big-play-button-on-pause" preload="auto"
+            playsinline height=400 controls></video>
+          <h3>Enabling Prometheus Agent for KubeDB operators</h3>
         </div>
         <!-- hero content end -->
       </div>
     </div>
   </div>
 </section>
-<!-- hero area for page end -->
+<!-- large video area for page end -->
+
+<!-- gallery area start  -->
+<section class="gallery-area pb-100">
+  <div class="container section">
+    <!-- title and search start -->
+    <div class="columns is-gapless is-vcentered">
+      <div class="column is-6">
+        <!-- title start  -->
+        <div class="gallery-title">
+          <h2>Video Gallery</h2>
+        </div>
+        <!-- title end -->
+      </div>
+      <div class="column is-6">
+        <!-- search area start  -->
+        <div class="search-area">
+          <form action="#">
+            <input type="text" placeholder="Search...">
+            <button class="search-button">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+        <!-- search area end  -->
+      </div>
+    </div>
+    <!-- title and search end -->
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <!-- filter button start  -->
+        <div class="filter-buttons">
+          <div class="buttons">
+            <button class="button is-active">Development</button>
+            <button class="button">Snapshot demo</button>
+            <button class="button is-active">Development</button>
+            <button class="button is-active">Installing</button>
+            <button class="button">Snapshot demo</button>
+            <button class="button is-active">Installing</button>
+          </div>
+        </div>
+        <!-- filter button end -->
+      </div>
+      <!-- single gallery-item start  -->
+      <div
+        class="column is-full-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+        <div class="single-gallery-item">
+          <div class="gallery-thumbnail">
+            <img src="/assets/images/gallery/thumbnail-1.jpg" alt="thumbnail-1">
+            <button onclick="revealVideo('video','https://www.youtube.com/embed/8az5rYUxyGs')" class="play-button"><i
+                class="fa fa-play" aria-hidden="true"></i></button>
+          </div>
+          <h4>NOW PLAYING KubeDB planning - 2019 Q2</h4>
+        </div>
+      </div>
+      <!-- single gallery-item end -->
+      <!-- single gallery-item start  -->
+      <div
+        class="column is-full-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+        <div class="single-gallery-item">
+          <div class="gallery-thumbnail">
+            <img src="/assets/images/gallery/thumbnail-1.jpg" alt="thumbnail-1">
+            <button onclick="revealVideo('video','https://www.youtube.com/embed/_C1qoRZJ-fc')" class="play-button"><i
+                class="fa fa-play" aria-hidden="true"></i></button>
+          </div>
+          <h4>NOW PLAYING KubeDB planning - 2019 Q2</h4>
+        </div>
+      </div>
+      <!-- single gallery-item end -->
+      <!-- single gallery-item start  -->
+      <div
+        class="column is-full-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+        <div class="single-gallery-item">
+          <div class="gallery-thumbnail">
+            <img src="/assets/images/gallery/thumbnail-1.jpg" alt="thumbnail-1">
+            <button onclick="revealVideo('video','https://www.youtube.com/embed/_C1qoRZJ-fc')" class="play-button"><i class="fa fa-play" aria-hidden="true"></i></button>
+          </div>
+          <h4>NOW PLAYING KubeDB planning - 2019 Q2</h4>
+        </div>
+      </div>
+      <!-- single gallery-item end -->
+
+    </div>
+  </div>
+</section>
+<!-- gallery area end -->
+
 
 <script src="https://vjs.zencdn.net/7.0.3/video.js"></script>
-  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.5.0/Youtube.min.js"></script>
-
 <script>
   const player = videojs('hls-video', {}, () => {
-    player.src({ type: 'video/youtube', src: 'https://youtu.be/8az5rYUxyGs' })
+    player.src({
+      type: 'video/youtube',
+      src: 'https://youtu.be/8az5rYUxyGs'
+    })
     // player.play()
   })
 </script>
+
+<!-- video player frame and scripts start -->
+<!-- video-player start  -->
+<div id="video" class="lightbox" onclick="hideVideo('video')">
+  <div class="lightbox-container">
+    <div class="lightbox-content">
+      <button onclick="hideVideo('video')" class="lightbox-close">
+        X
+      </button>
+      <div class="video-container">
+        <iframe id="youtubeVideo" width="1080" height="540" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- video-player start  -->
+<script>
+  // Function to reveal lightbox and adding YouTube autoplay
+  function revealVideo(div, video_link) {
+    let youtubeVideo = document.getElementById("youtubeVideo");
+    youtubeVideo.src = video_link;
+    let video = youtubeVideo;
+    video_link = video + '?&autoplay=1'; // adding autoplay to the URL
+    document.getElementById(div).style.display = 'block';
+  }
+
+  // Hiding the lightbox and removing YouTube autoplay
+  function hideVideo(div) {
+    let youtubeVideo = document.getElementById("youtubeVideo");
+    var video = youtubeVideo.src;
+    var cleaned = video.replace('?&autoplay=1', ''); // removing autoplay form url
+    video = cleaned;
+    document.getElementById(div).style.display = 'none';
+  }
+</script>
+<!-- video player frame and scripts end -->
 
 {{ end }}
