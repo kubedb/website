@@ -26,10 +26,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    z-index: 9;
+    top: 50px;
 
     .cta-left {
       width: 50%;
-      padding: 90px 20px;
+      padding: 40px 20px;
 
       &.fp-cta-bg {
         background-image: url(../images/features-plan/features-plan-cta-bg.svg);
@@ -59,11 +62,11 @@
       display: flex;
 
       .single-cta {
-        padding: 40px 20px 115px 20px;
+        padding: 20px 20px 85px 20px;
         border-left: 1px solid #eceff4;
         position: relative;
         z-index: 1;
-        min-height: 290px;
+        min-height: 200px;
         width: 50%;
 
         &.enterprise {
@@ -78,31 +81,33 @@
 
         h3 {
           font-weight: 700;
-          font-size: 26px;
-          line-height: 140%;
-          margin-bottom: 20px;
+          font-size: 22px;
+          line-height: 1.2;
+          margin-bottom: 6px;
           text-transform: capitalize;
         }
 
         p {
           font-size: 16px;
           color: #54657e;
-          line-height: 1.6;
+          line-height: 1.5;
         }
 
-        p {
+        a {
           &.is-trial {
             font-size: 12px;
             color: #ff8000;
             margin-bottom: 10px;
             line-height: 1;
             font-weight: 500;
+            display: block;
+            font-family: roboto;
           }
         }
 
         .bottom-content {
           position: absolute;
-          bottom: 40px;
+          bottom: 20px;
           left: 20px;
           width: calc(100% - 40px);
 
@@ -150,7 +155,7 @@
             display: inline-block;
             max-width: 23px;
             padding-left: 10px;
-            line-height: 1;
+            line-height: 1.5;
           }
           p,
           a {
@@ -303,6 +308,7 @@ Responsive Classes
     .features-plan-cta-wrapper {
       align-items: flex-start;
       flex-direction: column;
+      position: static;
       .cta-left {
         width: 100%;
         padding: 20px 20px;
@@ -388,6 +394,7 @@ Responsive Classes
     .features-plan-cta-wrapper {
       align-items: flex-start;
       flex-direction: column;
+      position: static;
       .cta-left {
         width: 100%;
         padding: 50px 20px;
@@ -441,6 +448,7 @@ Responsive Classes
     .features-plan-cta-wrapper {
       align-items: flex-start;
       flex-direction: column;
+      position: static;
       .cta-left {
         width: 100%;
         padding: 50px 20px;

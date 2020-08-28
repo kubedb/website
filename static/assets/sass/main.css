@@ -98,6 +98,7 @@ h6 {
 .tooltip.is-tooltip-primary::before {
   background-color: #32325d;
   color: #ffffff;
+  line-height: 1.5;
   min-width: 200px;
   padding: 15px;
   font-weight: 400;
@@ -3242,10 +3243,13 @@ video {
   border-radius: 4px;
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  position: sticky;
+  z-index: 9;
+  top: 50px; }
   .features-cta-area .features-plan-cta-wrapper .cta-left {
     width: 50%;
-    padding: 90px 20px; }
+    padding: 40px 20px; }
     .features-cta-area .features-plan-cta-wrapper .cta-left.fp-cta-bg {
       background-image: url(../images/features-plan/features-plan-cta-bg.svg);
       background-repeat: no-repeat;
@@ -3266,33 +3270,35 @@ video {
     width: 50%;
     display: flex; }
     .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta {
-      padding: 40px 20px 115px 20px;
+      padding: 20px 20px 85px 20px;
       border-left: 1px solid #eceff4;
       position: relative;
       z-index: 1;
-      min-height: 290px;
+      min-height: 200px;
       width: 50%; }
       .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.enterprise .button.ac-button.is-secondary {
         background-color: #ff8000; }
       .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta h3 {
         font-weight: 700;
-        font-size: 26px;
-        line-height: 140%;
-        margin-bottom: 20px;
+        font-size: 22px;
+        line-height: 1.2;
+        margin-bottom: 6px;
         text-transform: capitalize; }
       .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta p {
         font-size: 16px;
         color: #54657e;
-        line-height: 1.6; }
-      .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta p.is-trial {
+        line-height: 1.5; }
+      .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta a.is-trial {
         font-size: 12px;
         color: #ff8000;
         margin-bottom: 10px;
         line-height: 1;
-        font-weight: 500; }
+        font-weight: 500;
+        display: block;
+        font-family: roboto; }
       .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content {
         position: absolute;
-        bottom: 40px;
+        bottom: 20px;
         left: 20px;
         width: calc(100% - 40px); }
         .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .button {
@@ -3324,7 +3330,7 @@ video {
       display: inline-block;
       max-width: 23px;
       padding-left: 10px;
-      line-height: 1; }
+      line-height: 1.5; }
     .table.ac-features-table tbody tr td p,
     .table.ac-features-table tbody tr td a {
       font-size: 16px;
@@ -3415,7 +3421,8 @@ Responsive Classes
 
   .features-cta-area .features-plan-cta-wrapper {
     align-items: flex-start;
-    flex-direction: column; }
+    flex-direction: column;
+    position: static; }
     .features-cta-area .features-plan-cta-wrapper .cta-left {
       width: 100%;
       padding: 20px 20px; }
@@ -3464,7 +3471,8 @@ Responsive Classes
 
   .features-cta-area .features-plan-cta-wrapper {
     align-items: flex-start;
-    flex-direction: column; }
+    flex-direction: column;
+    position: static; }
     .features-cta-area .features-plan-cta-wrapper .cta-left {
       width: 100%;
       padding: 50px 20px; }
@@ -3496,7 +3504,8 @@ Responsive Classes
 
   .features-cta-area .features-plan-cta-wrapper {
     align-items: flex-start;
-    flex-direction: column; }
+    flex-direction: column;
+    position: static; }
     .features-cta-area .features-plan-cta-wrapper .cta-left {
       width: 100%;
       padding: 50px 20px; }
