@@ -61,6 +61,7 @@
     {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
     {{ end }}
+    <!-- sass --watch main.scss:main.css -->
     <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
   </head>
 
