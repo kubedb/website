@@ -28,9 +28,28 @@
       "show": true
     },
     {
+      "version": "5.7-v1",
+      "hostDocs": true,
+      "show": true
+    },
+    {
       "version": "5.7",
       "hostDocs": true,
       "show": true
+    },
+    {
+      "version": "5.7-rc.20200827",
+      "hostDocs": true,
+      "show": true
+    },
+    {
+      "version": "5.7-rc.20200826",
+      "hostDocs": true,
+      "show": true
+    },
+    {
+      "version": "5.7-beta.20200826",
+      "hostDocs": true
     },
     {
       "version": "5.7-beta.20200709",
@@ -41,5 +60,5 @@
       "hostDocs": true
     }
   ],
-  "latestVersion": "5.7"
+  "latestVersion": "5.7-v1"
 }

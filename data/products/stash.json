@@ -289,6 +289,46 @@
       "show": true
     },
     {
+      "version": "v2020.08.27",
+      "hostDocs": true,
+      "show": true,
+      "info": {
+        "catalog": "v2020.08.27",
+        "cli": "v0.10.0",
+        "community": "v0.10.0",
+        "enterprise": "v0.10.0"
+      }
+    },
+    {
+      "version": "v2020.08.27-rc.0",
+      "hostDocs": true,
+      "show": false,
+      "info": {
+        "catalog": "v2020.08.27-rc.0",
+        "cli": "v0.10.0-rc.2",
+        "community": "v0.10.0-rc.2",
+        "enterprise": "v0.10.0-rc.2"
+      }
+    },
+    {
+      "version": "v2020.08.26-rc.1",
+      "hostDocs": true,
+      "show": false,
+      "info": {
+        "catalog": "v2020.08.26-rc.1",
+        "cli": "v0.10.0-rc.1"
+      }
+    },
+    {
+      "version": "v2020.08.26-rc.0",
+      "hostDocs": true,
+      "show": false,
+      "info": {
+        "catalog": "v2020.08.26-rc.0",
+        "cli": "v0.10.0-rc.0"
+      }
+    },
+    {
       "version": "v2020.07.09-beta.0",
       "hostDocs": true,
       "info": {
@@ -316,7 +356,7 @@
     {
       "version": "v0.9.0-rc.4",
       "hostDocs": true,
-      "show": true,
+      "show": false,
       "info": {
         "catalog": "v0.2.0",
         "cli": "v0.3.0"
@@ -325,7 +365,7 @@
     {
       "version": "v0.9.0-rc.2",
       "hostDocs": true,
-      "show": true,
+      "show": false,
       "info": {
         "catalog": "v0.1.0",
         "cli": "v0.2.0"
@@ -334,7 +374,7 @@
     {
       "version": "v0.9.0-rc.1",
       "hostDocs": true,
-      "show": true,
+      "show": false,
       "info": {
         "catalog": "v0.1.0",
         "cli": "v0.1.0"
@@ -343,7 +383,7 @@
     {
       "version": "v0.9.0-rc.0",
       "hostDocs": true,
-      "show": true
+      "show": false
     },
     {
       "version": "0.8.3",
@@ -425,7 +465,7 @@
       "show": true
     }
   ],
-  "latestVersion": "v0.9.0-rc.6",
+  "latestVersion": "v2020.08.27",
   "socialLinks": {
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/stashed/stash",
@@ -502,6 +542,66 @@
       "mappings": [
         {
           "versions": [
+            "v2020.08.27"
+          ],
+          "subProjectVersions": [
+            "5.6.4-v1",
+            "6.2.4-v1",
+            "6.3.0-v1",
+            "6.4.0-v1",
+            "6.5.3-v1",
+            "6.8.0-v1",
+            "7.2.0-v1",
+            "7.3.2-v1"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.27-rc.0"
+          ],
+          "subProjectVersions": [
+            "5.6.4-rc.20200827",
+            "6.2.4-rc.20200827",
+            "6.3.0-rc.20200827",
+            "6.4.0-rc.20200827",
+            "6.5.3-rc.20200827",
+            "6.8.0-rc.20200827",
+            "7.2.0-rc.20200827",
+            "7.3.2-rc.20200827"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.26-rc.1"
+          ],
+          "subProjectVersions": [
+            "5.6.4-rc.20200826",
+            "6.2.4-rc.20200826",
+            "6.3.0-rc.20200826",
+            "6.4.0-rc.20200826",
+            "6.5.3-rc.20200826",
+            "6.8.0-rc.20200826",
+            "7.2.0-rc.20200826",
+            "7.3.2-rc.20200826"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.26-rc.0"
+          ],
+          "subProjectVersions": [
+            "5.6.4-beta.20200826",
+            "6.2.4-beta.20200826",
+            "6.3.0-beta.20200826",
+            "6.4.0-beta.20200826",
+            "6.5.3-beta.20200826",
+            "6.8.0-beta.20200826",
+            "7.2.0-beta.20200826",
+            "7.3.2-beta.20200826"
+          ]
+        },
+        {
+          "versions": [
             "v2020.07.09-beta.0"
           ],
           "subProjectVersions": [
@@ -553,6 +653,78 @@
     "stash-mongodb": {
       "dir": "addons/mongodb/guides",
       "mappings": [
+        {
+          "versions": [
+            "v2020.08.27"
+          ],
+          "subProjectVersions": [
+            "3.4.1-v1",
+            "3.4.2-v1",
+            "3.6.1-v1",
+            "3.6.8-v1",
+            "4.0.3-v1",
+            "4.0.5-v1",
+            "4.0.11-v1",
+            "4.1.1-v1",
+            "4.1.4-v1",
+            "4.1.7-v1",
+            "4.2.3-v1"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.27-rc.0"
+          ],
+          "subProjectVersions": [
+            "3.4.1-rc.20200827",
+            "3.4.2-rc.20200827",
+            "3.6.1-rc.20200827",
+            "3.6.8-rc.20200827",
+            "4.0.3-rc.20200827",
+            "4.0.5-rc.20200827",
+            "4.0.11-rc.20200827",
+            "4.1.1-rc.20200827",
+            "4.1.4-rc.20200827",
+            "4.1.7-rc.20200827",
+            "4.2.3-rc.20200827"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.26-rc.1"
+          ],
+          "subProjectVersions": [
+            "3.4.1-rc.20200826",
+            "3.4.2-rc.20200826",
+            "3.6.1-rc.20200826",
+            "3.6.8-rc.20200826",
+            "4.0.3-rc.20200826",
+            "4.0.5-rc.20200826",
+            "4.0.11-rc.20200826",
+            "4.1.1-rc.20200826",
+            "4.1.4-rc.20200826",
+            "4.1.7-rc.20200826",
+            "4.2.3-rc.20200826"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.26-rc.0"
+          ],
+          "subProjectVersions": [
+            "3.4.1-beta.20200826",
+            "3.4.2-beta.20200826",
+            "3.6.1-beta.20200826",
+            "3.6.8-beta.20200826",
+            "4.0.1-beta.20200826",
+            "4.0.3-beta.20200826",
+            "4.0.5-beta.20200826",
+            "4.1.1-beta.20200826",
+            "4.1.4-beta.20200826",
+            "4.1.7-beta.20200826",
+            "4.2.3-beta.20200826"
+          ]
+        },
         {
           "versions": [
             "v2020.07.09-beta.0"
@@ -617,6 +789,46 @@
       "mappings": [
         {
           "versions": [
+            "v2020.08.27"
+          ],
+          "subProjectVersions": [
+            "5.7.25-v1",
+            "8.0.3-v1",
+            "8.0.14-v1"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.27-rc.0"
+          ],
+          "subProjectVersions": [
+            "5.7.25-rc.20200827",
+            "8.0.3-rc.20200827",
+            "8.0.14-rc.20200827"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.26-rc.1"
+          ],
+          "subProjectVersions": [
+            "5.7.25-rc.20200826",
+            "8.0.3-rc.20200826",
+            "8.0.14-rc.20200826"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.26-rc.0"
+          ],
+          "subProjectVersions": [
+            "5.7.25-beta.20200826",
+            "8.0.3-beta.20200826",
+            "8.0.14-beta.20200826"
+          ]
+        },
+        {
+          "versions": [
             "v2020.07.09-beta.0"
           ],
           "subProjectVersions": [
@@ -655,6 +867,38 @@
       "mappings": [
         {
           "versions": [
+            "v2020.08.27"
+          ],
+          "subProjectVersions": [
+            "5.7-v1"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.27-rc.0"
+          ],
+          "subProjectVersions": [
+            "5.7-rc.20200827"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.26-rc.1"
+          ],
+          "subProjectVersions": [
+            "5.7-rc.20200826"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.26-rc.0"
+          ],
+          "subProjectVersions": [
+            "5.7-beta.20200826"
+          ]
+        },
+        {
+          "versions": [
             "v2020.07.09-beta.0"
           ],
           "subProjectVersions": [
@@ -683,6 +927,54 @@
     "stash-postgres": {
       "dir": "addons/postgres/guides",
       "mappings": [
+        {
+          "versions": [
+            "v2020.08.27"
+          ],
+          "subProjectVersions": [
+            "9.6-v1",
+            "10.2-v1",
+            "10.6-v1",
+            "11.1-v1",
+            "11.2-v1"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.27-rc.0"
+          ],
+          "subProjectVersions": [
+            "9.6-rc.20200827",
+            "10.2-rc.20200827",
+            "10.6-rc.20200827",
+            "11.1-rc.20200827",
+            "11.2-rc.20200827"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.26-rc.1"
+          ],
+          "subProjectVersions": [
+            "9.6-rc.20200826",
+            "10.2-rc.20200826",
+            "10.6-rc.20200826",
+            "11.1-rc.20200826",
+            "11.2-rc.20200826"
+          ]
+        },
+        {
+          "versions": [
+            "v2020.08.26-rc.0"
+          ],
+          "subProjectVersions": [
+            "9.6-beta.20200826",
+            "10.2-beta.20200826",
+            "10.6-beta.20200826",
+            "11.1-beta.20200826",
+            "11.2-beta.20200826"
+          ]
+        },
         {
           "versions": [
             "v2020.07.09-beta.0"
