@@ -355,7 +355,7 @@
                     {{ end }}
                     {{ range where $p.badges "logo" "docker" }}
                       &nbsp;&nbsp;&nbsp;
-                      <img style="height:24px" alt="{{ .alt }}" src="https://img.shields.io/{{ .url }}?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo={{ .logo }}">
+                      <img style="height:24px" alt="{{ .alt }}" src="https://img.shields.io/{{ .url }}?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo={{ .logo }}&label=pulls">
                     {{ end }}
                   </div>
                 </div>
