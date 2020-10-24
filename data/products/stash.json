@@ -12,10 +12,20 @@
     "themeColor": "#5E2DEA"
   },
   "keywords": "kubernetes appscode backup disaster recovery volume",
-  "heroImage": {
-    "src": "/assets/images/products/stash/stash-hero.png",
-    "alt": "Stash"
-  },
+  "heroSlider": [
+    {
+      "src": "/assets/images/products/stash/slider/applications.jpg",
+      "alt": "Supported Applications"
+    },
+    {
+      "src": "/assets/images/products/stash/slider/platforms.jpg",
+      "alt": "Supported Platforms"
+    },
+    {
+      "src": "/assets/images/products/stash/slider/storage.jpg",
+      "alt": "Supported Storage"
+    }
+  ],
   "logo": {
     "src": "/assets/images/products/stash/stash.png",
     "alt": "Stash"
@@ -58,7 +68,7 @@
         "alt": "http"
       },
       "summary": "",
-      "description": "Backup your data in Kubernetes native way. Stash uses Custom Resorece Definition (CRD) to specify targets and behaviors of backup and restore process. Schedule a backup for your workloads in the same way you deployed them into Kubernetes."
+      "description": "Backup your data in Kubernetes native way. Stash uses Custom Resource Definition (CRD) to specify targets and behaviors of backup and restore process. Schedule a backup for your workloads in the same way you deployed them into Kubernetes."
     },
     {
       "title": "Restic",
@@ -287,6 +297,55 @@
       "version": "master",
       "hostDocs": false,
       "show": true
+    },
+    {
+      "version": "v2020.10.21",
+      "hostDocs": true,
+      "show": true,
+      "info": {
+        "catalog": "v2020.10.21",
+        "cli": "v0.11.3",
+        "community": "v0.11.3",
+        "elasticsearch": [
+          "5.6.4-v3",
+          "6.2.4-v3",
+          "6.3.0-v3",
+          "6.4.0-v3",
+          "6.5.3-v3",
+          "6.8.0-v3",
+          "7.2.0-v3",
+          "7.3.2-v3"
+        ],
+        "enterprise": "v0.11.3",
+        "installer": "v0.11.3",
+        "mongodb": [
+          "3.4.17-v3",
+          "3.4.22-v3",
+          "3.6.13-v3",
+          "3.6.8-v3",
+          "4.0.11-v3",
+          "4.0.3-v3",
+          "4.0.5-v3",
+          "4.1.13-v3",
+          "4.1.4-v3",
+          "4.1.7-v3",
+          "4.2.3-v3"
+        ],
+        "mysql": [
+          "5.7.25-v3",
+          "8.0.14-v3",
+          "8.0.3-v3"
+        ],
+        "percona-xtradb": [
+          "5.7-v3"
+        ],
+        "postgres": [
+          "10.14.0-v1",
+          "11.9.0-v1",
+          "12.4.0-v1",
+          "9.6.19-v1"
+        ]
+      }
     },
     {
       "version": "v2020.09.29",
@@ -547,7 +606,7 @@
       "hostDocs": false
     }
   ],
-  "latestVersion": "v2020.09.29",
+  "latestVersion": "v2020.10.21",
   "socialLinks": {
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/stashed/stash",
@@ -622,6 +681,21 @@
     "stash-elasticsearch": {
       "dir": "addons/elasticsearch/guides",
       "mappings": [
+        {
+          "versions": [
+            "v2020.10.21"
+          ],
+          "subProjectVersions": [
+            "5.6.4-v3",
+            "6.2.4-v3",
+            "6.3.0-v3",
+            "6.4.0-v3",
+            "6.5.3-v3",
+            "6.8.0-v3",
+            "7.2.0-v3",
+            "7.3.2-v3"
+          ]
+        },
         {
           "versions": [
             "v2020.09.16",
@@ -751,6 +825,24 @@
     "stash-mongodb": {
       "dir": "addons/mongodb/guides",
       "mappings": [
+        {
+          "versions": [
+            "v2020.10.21"
+          ],
+          "subProjectVersions": [
+            "3.4.17-v3",
+            "3.4.22-v3",
+            "3.6.8-v3",
+            "3.6.13-v3",
+            "4.0.3-v3",
+            "4.0.5-v3",
+            "4.0.11-v3",
+            "4.1.4-v3",
+            "4.1.7-v3",
+            "4.1.13-v3",
+            "4.2.3-v3"
+          ]
+        },
         {
           "versions": [
             "v2020.09.16",
@@ -906,6 +998,16 @@
       "mappings": [
         {
           "versions": [
+            "v2020.10.21"
+          ],
+          "subProjectVersions": [
+            "5.7.25-v3",
+            "8.0.3-v3",
+            "8.0.14-v3"
+          ]
+        },
+        {
+          "versions": [
             "v2020.09.16",
             "v2020.09.29"
           ],
@@ -995,6 +1097,14 @@
       "mappings": [
         {
           "versions": [
+            "v2020.10.21"
+          ],
+          "subProjectVersions": [
+            "5.7-v3"
+          ]
+        },
+        {
+          "versions": [
             "v2020.09.16",
             "v2020.09.29"
           ],
@@ -1064,6 +1174,17 @@
     "stash-postgres": {
       "dir": "addons/postgres/guides",
       "mappings": [
+        {
+          "versions": [
+            "v2020.10.21"
+          ],
+          "subProjectVersions": [
+            "9.6.19-v1",
+            "10.14.0-v1",
+            "11.9.0-v1",
+            "12.4.0-v1"
+          ]
+        },
         {
           "versions": [
             "v2020.09.16",
