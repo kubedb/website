@@ -1,0 +1,66 @@
+---
+title: ProxySQL
+menu:
+  docs_v2020.10.24-beta.0:
+    identifier: prx-readme-proxysql
+    name: ProxySQL
+    parent: prx-proxysql-guides
+    weight: 10
+menu_name: docs_v2020.10.24-beta.0
+section_menu_id: guides
+url: /docs/v2020.10.24-beta.0/guides/proxysql/
+aliases:
+- /docs/v2020.10.24-beta.0/guides/proxysql/README/
+info:
+  cli: v0.14.0-beta.4
+  community: v0.14.0-beta.4
+  enterprise: v0.1.0-beta.4
+  installer: v0.14.0-beta.4
+  version: v2020.10.24-beta.0
+---
+
+> New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
+
+## Supported ProxySQL Features
+
+|                        Features                         | Availability |
+| ------------------------------------------------------- | :----------: |
+| Load balance MySQL Group Replication                    |   &#10003;   |
+| Load balance PerconaXtraDB Cluster                      |   &#10007;   |
+| Custom Configuration                                    |   &#10003;   |
+| Using Custom docker image                               |   &#10003;   |
+| Builtin Prometheus Discovery                            |   &#10003;   |
+| Using Prometheus operator                               |   &#10003;   |
+
+## Supported ProxySQL Versions
+
+| KubeDB Version | ProxySQL:2.0.4 |
+| :------------: | :------------: |
+|  v0.13.0-rc.1  |    &#10003;    |
+
+## Supported ProxySQLVersion CRD
+
+Here, &#10003; means supported and &#10007; means deprecated.
+
+|  NAME  | VERSION | KubeDB: v0.13.0-rc.0 | KubeDB: v0.13.0-rc.0 |
+| :----: | :-----: | :-----------: | :------------: |
+|   2.0.4    |    2.0.4    |   &#10007;    |    &#10003;    |
+
+## External tools dependency
+
+|                                Tool                               | Version |
+| :---------------------------------------------------------------: | :-----: |
+| [proxysql-exporter](https://github.com/percona/proxysql_exporter) | latest  |
+
+## User Guide
+
+- Overview of ProxySQL [here](/docs/v2020.10.24-beta.0/guides/proxysql/overview/overview).
+- Configure ProxySQL for Group Replication [here](/docs/v2020.10.24-beta.0/guides/proxysql/overview/configure-proxysql).
+- Learn to use ProxySQL to Load Balance MySQL Group Replication with KubeDB Operator [here](/docs/v2020.10.24-beta.0/guides/proxysql/quickstart/load-balance-mysql-group-replication).
+- Monitor your ProxySQL with KubeDB using [out-of-the-box builtin-Prometheus](/docs/v2020.10.24-beta.0/guides/proxysql/monitoring/using-builtin-prometheus).
+- Monitor your ProxySQL with KubeDB using [out-of-the-box Prometheus operator](/docs/v2020.10.24-beta.0/guides/proxysql/monitoring/using-prometheus-operator).
+- Use private Docker registry to deploy ProxySQL with KubeDB [here](/docs/v2020.10.24-beta.0/guides/proxysql/private-registry/using-private-registry).
+- Use custom config file to configure ProxySQL [here](/docs/v2020.10.24-beta.0/guides/proxysql/configuration/using-config-file).
+- Detail concepts of ProxySQL CRD [here](/docs/v2020.10.24-beta.0/guides/proxysql/concepts/proxysql).
+- Detail concepts of ProxySQLVersion CRD [here](/docs/v2020.10.24-beta.0/guides/proxysql/concepts/catalog).
+- Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2020.10.24-beta.0/CONTRIBUTING).
