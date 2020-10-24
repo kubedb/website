@@ -47,17 +47,119 @@
           <!-- hero content end -->
         </div>
         <div class="column is-6">
+          {{ with $p.heroImage }}
           <!-- hero image start -->
           <div class="hero-area-img" data-aos="fade-up" data-aos-duration="1000">
-            <img src="{{ $p.heroImage.src }}" alt="{{ $p.heroImage.alt }}" class="img" />
+            <img src="{{ .src }}" alt="{{ .alt }}" class="img" />
           </div>
           <!-- hero image end -->
+          {{ end }}
+          {{ with $p.heroSlider }}
+          <!-- hero slider start -->
+          <div class="image-carousel-wrapper">
+            <!-- shape start  -->
+            <img class="shape-1" src="/assets/images/slider/s-1.png" alt="">
+            <img class="shape-2" src="/assets/images/slider/s-2.png" alt="">
+            <img class="shape-3" src="/assets/images/slider/s-3.png" alt="">
+            <!-- shape end  -->
+            <!-- carousel start  -->
+            <div class="carousel-inner keen-slider" id="hero-area-carousel">
+              {{ range . }}
+              <div class="single-slider-wrapper keen-slider__slide">
+               <a href="#"><img src="{{ .src }}" alt="{{ .alt }}"></a>
+              </div>
+              {{ end }}
+            </div>
+            <!-- carousel end -->
+            <div id="dots" class="dots"></div>
+          </div>
+          <!-- hero slider end -->
+          {{ end }}
         </div>
       </div>
     </div>
   </div>
 </section>
 <!-- hero area end -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/keen-slider@5.0.2/keen-slider.min.js"></script>
+<script>
+  // initilize keen slider 
+  var slider = new KeenSlider("#hero-area-carousel", {
+    spacing: 10,
+    slidesPerView: 1,
+    centered: true,
+    loop: true,
+    mode: "snap",
+    duration: 1000,
+    dragStart: () => {
+      autoplay(false);
+    },
+    dragEnd: () => {
+      autoplay(true);
+    },
+    slideChanged(instance) {
+      updateClasses(instance);
+    },
+    created: function(instance) {
+     
+      var dots_wrapper = document.getElementById("dots");
+      var slides = document.querySelectorAll(".keen-slider__slide");
+      slides.forEach(function(t, idx) {
+        var dot = document.createElement("button");
+        dot.classList.add("dot");
+        dots_wrapper.appendChild(dot);
+        dot.addEventListener("click", function() {
+          instance.moveToSlide(idx);
+        });
+      });
+      updateClasses(instance);
+    },
+    slideChanged(instance) {
+      updateClasses(instance);
+    }
+  });
+
+  // For auto-play 
+  var sliderElement = document.getElementById("hero-area-carousel");
+  var interval = 0;
+  function autoplay(run) {
+    clearInterval(interval);
+    interval = setInterval(() => {
+      if (run && slider) {
+        slider.next();
+      }
+    }, 2000);
+  }
+  // when hover slider element autoPlay off 
+  sliderElement.addEventListener("mouseover", () => {
+    autoplay(false);
+  });
+  sliderElement.addEventListener("mouseout", () => {
+    autoplay(true);
+  });
+  let dots_wrapper = document.getElementById("dots");
+  dots_wrapper.addEventListener("mouseover", () => {
+    autoplay(false);
+  });
+  dots_wrapper.addEventListener("mouseout", () => {
+    autoplay(true);
+  });
+  
+  autoplay(true);
+
+  // For dots 
+  function updateClasses(instance) {
+    var slide = instance.details().relativeSlide;
+    var dots = document.querySelectorAll(".dot");
+    dots.forEach(function(dot, idx) {
+      idx === slide
+        ? dot.classList.add("dot--active")
+        : dot.classList.remove("dot--active");
+  });
+}
+</script>
 
 {{ if $p.videos.intro }}
 <!-- video player frame and scripts start -->
