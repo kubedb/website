@@ -26,10 +26,10 @@
           "headers": [
             {
               "key": "Cache-Control",
-              "value": "max-age=360000"
+              "value": "public, max-age=86400"
             }
           ],
-          "source": "@(images|fonts|js_global)/**"
+          "source": "**"
         },
         {
           "headers": [
@@ -44,12 +44,12 @@
       "redirects": [
         {
           "source": "/docs/latest/",
-          "destination": "/docs/v2020.10.24-beta.0/",
+          "destination": "/docs/v0.13.0-rc.0/",
           "type": 302
         },
         {
           "source": "/docs/latest/:rest*",
-          "destination": "/docs/v2020.10.24-beta.0/:rest",
+          "destination": "/docs/v0.13.0-rc.0/:rest",
           "type": 302
         }
       ]
