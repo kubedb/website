@@ -23,7 +23,7 @@ info:
 
 ## Supported PerconaXtraDB Features
 
-|                        Features                         | Availability |
+| Features                                                | Availability |
 | ------------------------------------------------------- | :----------: |
 | Clustering                                              |   &#10003;   |
 | Persistent Volume                                       |   &#10003;   |
@@ -34,34 +34,13 @@ info:
 | Custom Configuration                                    |   &#10003;   |
 | Using Custom docker image                               |   &#10003;   |
 | Builtin Prometheus Discovery                            |   &#10003;   |
-| Using Prometheus operator                        |   &#10003;   |
+| Using Prometheus operator                               |   &#10003;   |
 
 ## Life Cycle of a PerconaXtraDB Object
 
 <p align="center">
   <img alt="lifecycle" src="/docs/v2020.10.24-beta.0/images/percona-xtradb/Lifecycle_of_a_PerconaXtraDB.svg" >
 </p>
-
-## Supported PerconaXtraDB Versions
-
-| KubeDB Version | PerconaXtraDB:5.7 | PerconaXtraDB:5.7-cluster |
-| :------------: | :---------------: | :-----------------------: |
-|  v0.13.0-rc.1  |      &#10003;     |         &#10003;          |
-
-## Supported PerconaXtraDBVersion CRD
-
-Here, &#10003; means supported and &#10007; means deprecated.
-
-|    NAME     | VERSION | KubeDB: v0.13.0-rc.0 | KubeDB: v0.13.0-rc.1 |
-| :---------: | :-----: | :------------------: | :------------------: |
-|     5.7     |   5.7   |       &#10007;       |       &#10003;       |
-| 5.7-cluster |   5.7   |       &#10007;       |       &#10003;       |
-
-## External tools dependency
-
-|                                      Tool                                      | Version |
-| :----------------------------------------------------------------------------: | :-----: |
-| [peer-finder](https://github.com/kubernetes/contrib/tree/master/peer-finder)   | latest  |
 
 ## User Guide
 

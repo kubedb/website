@@ -18,6 +18,8 @@ info:
 
 > New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
 
+{{< notice type="warning" message="This is an Enterprise-only feature. Please install [KubeDB Enterprise Edition](/docs/v2020.10.24-beta.0/setup/install/enterprise) to try this feature." >}}
+
 # Monitoring ProxySQL with builtin Prometheus
 
 This tutorial will show you how to monitor ProxySQL using builtin [Prometheus](https://github.com/prometheus/prometheus) scraper.

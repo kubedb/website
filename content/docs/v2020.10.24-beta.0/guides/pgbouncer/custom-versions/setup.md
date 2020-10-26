@@ -18,6 +18,8 @@ info:
 
 > New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
 
+{{< notice type="warning" message="This is an Enterprise-only feature. Please install [KubeDB Enterprise Edition](/docs/v2020.10.24-beta.0/setup/install/enterprise) to try this feature." >}}
+
 ## Setting up Custom PgBouncerVersions
 
 PgBouncerVersions are KubeDB crds that define the docker images KubeDB will use when deploying a pgbouncer server. For more details about PgBouncerVersion crd, please visit [here](/docs/v2020.10.24-beta.0/guides/pgbouncer/concepts/catalog).

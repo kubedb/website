@@ -1,11 +1,12 @@
 ---
 title: Reference
-description: KubeDB Reference
+description: KubeDB CLI Reference
 menu:
   docs_v2020.10.24-beta.0:
     identifier: reference
     name: Reference
     weight: 1000
+    pre: dropdown
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

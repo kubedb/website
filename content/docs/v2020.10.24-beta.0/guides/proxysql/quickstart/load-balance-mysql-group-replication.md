@@ -16,6 +16,10 @@ info:
   version: v2020.10.24-beta.0
 ---
 
+> New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
+
+{{< notice type="warning" message="This is an Enterprise-only feature. Please install [KubeDB Enterprise Edition](/docs/v2020.10.24-beta.0/setup/install/enterprise) to try this feature." >}}
+
 # Load Balance MySQL Group Replication Using ProxySQL
 
 ProxySQL supports load balancing for MySQL Group Replication. This guide will show you how you can load balance MySQL Group Replication using ProxySQL.

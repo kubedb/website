@@ -16,7 +16,9 @@ info:
   version: v2020.10.24-beta.0
 ---
 
-{{< notice type="warning" message="Horizontal scaling is an Enterprise feature of KubeDB. You must have a KubeDB Enterprise operator installed to test this feature." >}}
+> New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
+
+{{< notice type="warning" message="This is an Enterprise-only feature. Please install [KubeDB Enterprise Edition](/docs/v2020.10.24-beta.0/setup/install/enterprise) to try this feature." >}}
 
 # Horizontal Scale MySQL Group Replication
 
@@ -26,7 +28,7 @@ This guide will show you how to use `KubeDB` enterprise operator to increase/dec
 
 - At first, you need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
 
-- Install `KubeDB` community and enterprise operator in your cluster following the steps [here]().
+- Install `KubeDB` community and enterprise operator in your cluster following the steps [here](/docs/v2020.10.24-beta.0/setup/README).
 
 - You should be familiar with the following `KubeDB` concepts:
   - [MySQL](/docs/v2020.10.24-beta.0/guides/mysql/concepts/mysql)
@@ -40,7 +42,7 @@ $ kubectl create ns demo
 namespace/demo created
 ```
 
-> **Note:** YAML files used in this tutorial are stored in [docs/examples/day-2-operations/mysql](/docs/v2020.10.24-beta.0/examples/day-2-operations/mysql) directory of [kubedb/doc](https://github.com/kubedb/docs) repository.
+> **Note:** YAML files used in this tutorial are stored in [docs/examples/mysql](/docs/v2020.10.24-beta.0/examples/mysql) directory of [kubedb/doc](https://github.com/kubedb/docs) repository.
 
 ### Apply Horizontal Scaling on MySQL Group Replication
 
@@ -116,7 +118,7 @@ spec:
 Let's create the `MySQL` cr we have shown above,
 
 ```bash
-$ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/day-2-operations/mysql/horizontalscaling/group_replication.yaml
+$ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/mysql/horizontalscaling/group_replication.yaml
 mysql.kubedb.com/my-group created
 ```
 
@@ -200,7 +202,7 @@ Here,
 Let's create the `MySQLOpsRequest` cr we have shown above,
 
 ```bash
-$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/day-2-operations/mysql/horizontalscaling/scale_up.yaml
+$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/mysql/horizontalscaling/scale_up.yaml
 mysqlopsrequest.ops.kubedb.com/my-scale-up created
 ```
 
@@ -344,7 +346,7 @@ spec:
 Let's create the `MySQLOpsRequest` cr we have shown above,
 
 ```bash
-$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/docs/examples/day-2-operations/mysql/horizontalscaling/scale_down.yaml
+$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/docs/examples/mysql/horizontalscaling/scale_down.yaml
 mysqlopsrequest.ops.kubedb.com/my-scale-down created
 ```
 

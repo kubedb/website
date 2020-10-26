@@ -5,7 +5,7 @@ menu:
     identifier: mc-private-registry-memcached
     name: Private Registry
     parent: mc-memcached-guides
-    weight: 20
+    weight: 35
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

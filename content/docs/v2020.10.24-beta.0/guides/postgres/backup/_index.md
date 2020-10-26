@@ -5,7 +5,7 @@ menu:
     identifier: pg-backup
     name: Backup & Restore
     parent: pg-postgres-guides
-    weight: 25
+    weight: 40
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

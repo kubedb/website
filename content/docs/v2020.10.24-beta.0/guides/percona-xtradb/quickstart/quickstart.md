@@ -18,7 +18,7 @@ info:
 
 > New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
 
-# PerconaXtraDB QuickStart
+# Percona XtraDB QuickStart
 
 This tutorial will show you how to use KubeDB to run a PerconaXtraDB database.
 

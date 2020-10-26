@@ -5,7 +5,7 @@ menu:
     identifier: es-clustering-elasticsearch
     name: Clustering
     parent: es-elasticsearch-guides
-    weight: 20
+    weight: 25
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

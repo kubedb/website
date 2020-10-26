@@ -5,7 +5,7 @@ menu:
     identifier: mg-configuration
     name: Custom Configuration
     parent: mg-mongodb-guides
-    weight: 27
+    weight: 30
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

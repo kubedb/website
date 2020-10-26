@@ -16,7 +16,9 @@ info:
   version: v2020.10.24-beta.0
 ---
 
-{{< notice type="warning" message="MySQL TSL/SSL encryption is an Enterprise feature of KubeDB. You must have a KubeDB Enterprise operator installed to test this feature." >}}
+> New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
+
+{{< notice type="warning" message="This is an Enterprise-only feature. Please install [KubeDB Enterprise Edition](/docs/v2020.10.24-beta.0/setup/install/enterprise) to try this feature." >}}
 
 # Configure TLS/SSL in MySQL
 
@@ -26,9 +28,9 @@ info:
 
 - At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
 
-- Install `cert-manger operator` (v0.12.0 or later) to your cluster to manage your SSL/TLS certificates.
+- Install [`cert-manger`](https://cert-manager.io/docs/installation/) v1.0.0 or later to your cluster to manage your SSL/TLS certificates.
 
-- Install `KubeDB` community and enterprise operator in your cluster following the steps [here]().
+- Install `KubeDB` community and enterprise operator in your cluster following the steps [here](/docs/v2020.10.24-beta.0/setup/README).
 
 - To keep things isolated, this tutorial uses a separate namespace called `demo` throughout this tutorial.
 
@@ -79,7 +81,7 @@ spec:
 Let’s create the `Issuer` cr we have shown above,
 
 ```bash
-kubectl apply -f ./docs/examples/my/day-2-operations/mysql/issuer.yaml
+kubectl apply -f ./docs/examples/my/mysql/issuer.yaml
 issuer.cert-manager.io/mysql-issuer created
 ```
 
@@ -135,7 +137,7 @@ You can found more details from [here](/docs/v2020.10.24-beta.0/guides/mysql/con
 Let’s create the `MySQL` cr we have shown above,
 
 ```bash
-$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/day-2-operations/mysql/tls-ssl/tls-standalone.yaml
+$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/mysql/tls/tls-standalone.yaml
 mysql.kubedb.com/my-standalone-tls created
 ```
 
@@ -365,7 +367,7 @@ spec:
 **Deploy MySQL group replication:**
 
 ```bash
-kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/day-2-operations/mysql/tls-ssl/tls-group.yaml
+kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/mysql/tls/tls-group.yaml
 mysql.kubedb.com/my-group-tls created
 ```
 

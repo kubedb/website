@@ -3,9 +3,9 @@ title: PerconaXtraDB
 menu:
   docs_v2020.10.24-beta.0:
     identifier: px-percona-xtradb-guides
-    name: PerconaXtraDB
+    name: Percona XtraDB
     parent: guides
-    weight: 40
+    weight: 10
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

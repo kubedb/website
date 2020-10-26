@@ -16,6 +16,8 @@ info:
   version: v2020.10.24-beta.0
 ---
 
+> New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
+
 # PerconaXtraDBVersion
 
 ## What is PerconaXtraDBVersion
@@ -26,7 +28,7 @@ When you install KubeDB, a `PerconaXtraDBVersion` custom resource will be create
 
 Using a separate object for specifying respective docker images, and pod security policy names allow us to modify the images, and policies independent of KubeDB operator. This will also allow the users to use a custom image for the database.
 
-## PerconaXtraDBVersion Specification
+## PerconaXtraDBVersion Spec
 
 As with all other Kubernetes objects, a PerconaXtraDBVersion needs `apiVersion`, `kind`, and `metadata` fields. It also needs a `.spec` section.
 

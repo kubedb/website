@@ -16,6 +16,8 @@ info:
   version: v2020.10.24-beta.0
 ---
 
+> New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
+
 {{< notice type="warning" message="This is an Enterprise-only feature. Please install [KubeDB Enterprise Edition](/docs/v2020.10.24-beta.0/setup/install/enterprise) to try this feature." >}}
 
 # MongoDB Standalone Volume Expansion
@@ -28,7 +30,7 @@ This guide will show you how to use `KubeDB` Enterprise operator to expand the v
 
 - You must have a `StorageClass` that supports volume expansion.
 
-- Install `KubeDB` Community and Enterprise operator in your cluster following the steps [here]().
+- Install `KubeDB` Community and Enterprise operator in your cluster following the steps [here](/docs/v2020.10.24-beta.0/setup/README).
 
 - You should be familiar with the following `KubeDB` concepts:
   - [MongoDB](/docs/v2020.10.24-beta.0/guides/mongodb/concepts/mongodb)

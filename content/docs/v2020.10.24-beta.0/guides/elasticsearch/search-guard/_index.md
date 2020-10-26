@@ -5,7 +5,7 @@ menu:
     identifier: es-search-guard-elasticsearch
     name: Search Guard
     parent: es-elasticsearch-guides
-    weight: 50
+    weight: 60
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

@@ -5,7 +5,7 @@ menu:
     identifier: es-x-pack
     name: X-Pack
     parent: es-elasticsearch-guides
-    weight: 60
+    weight: 55
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

@@ -27,5 +27,8 @@ Guides show you how to perform tasks with KubeDB.
 - [Memcached](/docs/v2020.10.24-beta.0/guides/memcached/README). Shows how to manage Memcached using KubeDB.
 - [MongoDB](/docs/v2020.10.24-beta.0/guides/mongodb/README). Shows how to manage MongoDB using KubeDB.
 - [MySQL](/docs/v2020.10.24-beta.0/guides/mysql/README). Shows how to manage MySQL using KubeDB.
+- [Percona XtraDB](/docs/v2020.10.24-beta.0/guides/percona-xtradb/README). Shows how to manage Percona XtraDB using KubeDB.
+- [PgBouncer](/docs/v2020.10.24-beta.0/guides/pgbouncer/README). Shows how to manage PgBouncer using KubeDB.
 - [PostgreSQL](/docs/v2020.10.24-beta.0/guides/postgres/README). Shows how to manage PostgreSQL using KubeDB.
+- [ProxySQL](/docs/v2020.10.24-beta.0/guides/proxysql/README). Shows how to manage ProxySQL using KubeDB.
 - [Redis](/docs/v2020.10.24-beta.0/guides/redis/README). Shows how to manage Redis using KubeDB.

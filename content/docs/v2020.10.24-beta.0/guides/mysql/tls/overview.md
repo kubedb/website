@@ -16,7 +16,9 @@ info:
   version: v2020.10.24-beta.0
 ---
 
-{{< notice type="warning" message="MySQL TSL/SSL encryption is an Enterprise feature of KubeDB. You must have a KubeDB Enterprise operator installed to test this feature." >}}
+> New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
+
+{{< notice type="warning" message="This is an Enterprise-only feature. Please install [KubeDB Enterprise Edition](/docs/v2020.10.24-beta.0/setup/install/enterprise) to try this feature." >}}
 
 # MySQL TLS/SSL Encryption
 
