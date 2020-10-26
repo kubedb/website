@@ -18,6 +18,8 @@ info:
 
 > New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
 
+{{< notice type="warning" message="This is an Enterprise-only feature. Please install [KubeDB Enterprise Edition](/docs/v2020.10.24-beta.0/setup/install/enterprise) to try this feature." >}}
+
 # Visualize PgBouncer Using Grafana Dashboard
 
 [Grafana](https://github.com/grafana/grafana) is an open source, feature rich metrics dashboard and graph editor for Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB. PgBouncer comes with a Grafana dashboard designed to monitor real-time updates of PgBouncer servers using Prometheus metrics.

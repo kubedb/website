@@ -5,7 +5,7 @@ menu:
     identifier: mg-clustering-mongodb
     name: Clustering
     parent: mg-mongodb-guides
-    weight: 17
+    weight: 25
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

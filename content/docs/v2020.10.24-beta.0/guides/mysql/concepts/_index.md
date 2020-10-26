@@ -5,7 +5,7 @@ menu:
     identifier: my-concepts-mysql
     name: Concepts
     parent: my-mysql-guides
-    weight: 1
+    weight: 20
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

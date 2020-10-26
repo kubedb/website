@@ -16,9 +16,9 @@ info:
   version: v2020.10.24-beta.0
 ---
 
-{{< notice type="warning" message="This is an Enterprise-only feature. Please install [KubeDB Enterprise Edition](/docs/v2020.10.24-beta.0/setup/install/enterprise) to try this feature." >}}
-
 > New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
+
+{{< notice type="warning" message="This is an Enterprise-only feature. Please install [KubeDB Enterprise Edition](/docs/v2020.10.24-beta.0/setup/install/enterprise) to try this feature." >}}
 
 # MongoDBOpsRequest
 

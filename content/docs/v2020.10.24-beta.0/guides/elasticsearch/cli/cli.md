@@ -5,7 +5,7 @@ menu:
     identifier: es-cli-cli
     name: Quickstart
     parent: es-cli-elasticsearch
-    weight: 10
+    weight: 100
 menu_name: docs_v2020.10.24-beta.0
 section_menu_id: guides
 info:

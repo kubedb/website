@@ -5,7 +5,7 @@ menu:
     identifier: es-kibana
     name: Kibana
     parent: es-elasticsearch-guides
-    weight: 55
+    weight: 65
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

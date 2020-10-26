@@ -1,10 +1,10 @@
 ---
-title: Connecting with MySQL Primary and Secondary Replicas
+title: Connecting to a MySQL Cluster
 menu:
   docs_v2020.10.24-beta.0:
-    identifier: connecting-primary-secondary-replicas-cluster
-    name: Connecting with MySQL Primary and Secondary Replicas
-    parent: connecting-primary-secondary-replicas
+    identifier: my-mysql-cluster-clients
+    name: Connecting to a MySQL Cluster
+    parent: my-clients-mysql
     weight: 10
 menu_name: docs_v2020.10.24-beta.0
 section_menu_id: guides
@@ -18,7 +18,7 @@ info:
 
 > New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
 
-# Connecting with Primary and Secondary Replicas
+# Connecting to a MySQL Cluster
 
 KubeDB creates separate services for primary and secondary replicas. In this tutorial, we are going to show you how to connect your application with primary or secondary replicas using those services.
 

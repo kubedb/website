@@ -17,6 +17,7 @@ info:
 ---
 
 > New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
+
 > Don't know how to take continuous backup?  Check this [tutorial](/docs/v2020.10.24-beta.0/guides/postgres/backup/wal/continuous_archiving) on Continuous Archiving.
 
 # PostgreSQL Initialization from WAL files

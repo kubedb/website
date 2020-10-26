@@ -16,6 +16,8 @@ info:
   version: v2020.10.24-beta.0
 ---
 
+> New to KubeDB? Please start [here](/docs/v2020.10.24-beta.0/README).
+
 # PostgresVersion
 
 ## What is PostgresVersion

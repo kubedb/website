@@ -5,7 +5,7 @@ menu:
     identifier: mc-cli-memcached
     name: Cli
     parent: mc-memcached-guides
-    weight: 45
+    weight: 100
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

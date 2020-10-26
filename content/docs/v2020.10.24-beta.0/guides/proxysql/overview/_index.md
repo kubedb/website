@@ -5,7 +5,7 @@ menu:
     identifier: prx-overview-proxysql
     name: Overview
     parent: prx-proxysql-guides
-    weight: 15
+    weight: 11
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

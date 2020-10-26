@@ -5,7 +5,7 @@ menu:
     identifier: mg-volume-expansion
     name: Volume Expansion
     parent: mg-mongodb-guides
-    weight: 90
+    weight: 44
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

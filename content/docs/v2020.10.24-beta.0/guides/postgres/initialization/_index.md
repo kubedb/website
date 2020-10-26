@@ -5,7 +5,7 @@ menu:
     identifier: pg-initialization-postgres
     name: Initialization
     parent: pg-postgres-guides
-    weight: 30
+    weight: 41
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

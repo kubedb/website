@@ -5,7 +5,7 @@ menu:
     identifier: pg-custom-versions-postgres
     name: Custom Versions
     parent: pg-postgres-guides
-    weight: 45
+    weight: 36
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4

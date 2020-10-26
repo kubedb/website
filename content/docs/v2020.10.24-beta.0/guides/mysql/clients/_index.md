@@ -1,11 +1,11 @@
 ---
-title: Connecting MySQL Clustering
+title: MySQL Clients
 menu:
   docs_v2020.10.24-beta.0:
-    identifier: connecting-primary-secondary-replicas
-    name: Connecting MySQL Clustering
+    identifier: my-clients-mysql
+    name: MySQL Clients
     parent: my-mysql-guides
-    weight: 12
+    weight: 105
 menu_name: docs_v2020.10.24-beta.0
 info:
   cli: v0.14.0-beta.4
