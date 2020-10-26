@@ -2,7 +2,7 @@
 title: PgBouncerVersion CRD
 menu:
   docs_v2020.10.24-beta.0:
-    identifier: pb-pgbouncer-concepts
+    identifier: pb-catalog-concepts
     name: PgBouncerVersion
     parent: pb-concepts-pgbouncer
     weight: 15
