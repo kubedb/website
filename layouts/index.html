@@ -16,19 +16,17 @@
                 {{ $p.tagline | safeHTML }}
               </h1>
               <div class="hero-area-button buttons">
-                <a href="meet-expert" class="button kd-button kd-primary"
-                  >Schedule a Demo</a
+                <a href="/docs/latest/setup/" class="button kd-button kd-primary"
+                  >Try Now for FREE!</a
                 >
-                {{ if $p.datasheetFormID }}
-                <a href="/datasheet" class="button kd-transparent-btn"
+                <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button kd-transparent-btn"
                   ><span
                     ><i
-                      class="fa fa-cloud-download"
+                      class="fa fa-envelope"
                       aria-hidden="true"
                     ></i></span
-                  >Download Whitepaper</a
+                  >Get In Touch</a
                 >
-                {{ end }}
               </div>
               {{ if $p.videos.intro }}
               <!-- video player button start -->
