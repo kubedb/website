@@ -35,7 +35,7 @@ menu:
   - name: Databases
     identifier: database
     weight: 15
-    url: https://kubedb.com/docs/latest/setup/install/
+    url: https://kubedb.com/docs/latest/setup/
   - name: Documentation
     weight: 20
   - name: Community
@@ -57,14 +57,26 @@ menu:
     identifier: mysql
     parent: database
     weight: 40
+  - name: Percona XtraDB
+    identifier: percona-xtradb
+    parent: database
+    weight: 50
+  - name: PgBouncer
+    identifier: pgbouncer
+    parent: database
+    weight: 60
   - name: PostgreSQL
     identifier: postgres
     parent: database
-    weight: 50
+    weight: 70
+  - name: ProxySQL
+    identifier: proxysql
+    parent: database
+    weight: 80
   - name: Redis
     identifier: redis
     parent: database
-    weight: 60
+    weight: 90
   - name: GitHub
     identifier: github
     parent: community
