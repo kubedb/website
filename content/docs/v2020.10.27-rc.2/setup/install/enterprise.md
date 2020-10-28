@@ -99,7 +99,7 @@ appscode/kubedb-catalog     {{< param "info.community" >}}  {{< param "info.comm
 appscode/kubedb-enterprise  {{< param "info.enterprise" >}}  {{< param "info.enterprise" >}}  KubeDB Enterprise by AppsCode - Enterprise features for KubeDB
 
 # Step 1: Install KubeDB Community operator chart
-$ helm install kubedb appscode/kubedb           \
+$ helm install kubedb-community kubedb appscode/kubedb \
   --version {{< param "info.community" >}}      \
   --namespace kube-system                       \
   --set-file license=/path/to/the/license.txt
@@ -158,7 +158,7 @@ appscode/kubedb-catalog     {{< param "info.community" >}}  {{< param "info.comm
 appscode/kubedb-enterprise  {{< param "info.enterprise" >}}  {{< param "info.enterprise" >}}  KubeDB Enterprise by AppsCode - Enterprise features for KubeDB
 
 # Step 1: Install KubeDB Community operator chart
-$ helm install appscode/kubedb --name kubedb   \
+$ helm install appscode/kubedb --name kubedb-community \
   --version {{< param "info.community" >}}     \
   --namespace kube-system                      \
   --set-file license=/path/to/the/license.txt
@@ -217,7 +217,7 @@ appscode/kubedb-catalog     {{< param "info.community" >}}  {{< param "info.comm
 appscode/kubedb-enterprise  {{< param "info.enterprise" >}}  {{< param "info.enterprise" >}}  KubeDB Enterprise by AppsCode - Enterprise features for KubeDB
 
 # Step 1: Install KubeDB Community operator chart
-$ helm template kubedb appscode/kubedb          \
+$ helm template kubedb-community appscode/kubedb \
   --version {{< param "info.community" >}}      \
   --namespace kube-system                       \
   --set-file license=/path/to/the/license.txt   \
