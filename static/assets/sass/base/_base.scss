@@ -1625,6 +1625,15 @@ blockquote {
   margin-left: -30px;
 }
 
+.full-info ul li,
+.full-info ol li {
+  .highlight{
+    pre{
+      margin-left: 0px;
+    }
+  }
+}
+
 .full-info ul li:before {
   content: "\f10c";
   font-family: fontawesome;
