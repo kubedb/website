@@ -2815,10 +2815,6 @@ body.fixed-nav .documentation-menu {
 .full-info h5 a,
 .full-info h6 a {
   font-size: 16px;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 
 .full-info h1 a svg,
@@ -2828,14 +2824,18 @@ body.fixed-nav .documentation-menu {
 .full-info h5 a svg,
 .full-info h6 a svg {
   padding-left: 10px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-.full-info h1:hover a,
-.full-info h2:hover a,
-.full-info h3:hover a,
-.full-info h4:hover a,
-.full-info h5:hover a,
-.full-info h6:hover a {
+.full-info h1:hover a svg,
+.full-info h2:hover a svg,
+.full-info h3:hover a svg,
+.full-info h4:hover a svg,
+.full-info h5:hover a svg,
+.full-info h6:hover a svg {
   opacity: 1;
   visibility: visible;
 }
@@ -2851,7 +2851,15 @@ body.fixed-nav .documentation-menu {
   font-size: 24px;
 }
 
+.full-info h2 a {
+  font-size: 24px;
+}
+
 .full-info h3 {
+  font-size: 18px;
+}
+
+.full-info h3 a {
   font-size: 18px;
 }
 
@@ -2859,11 +2867,23 @@ body.fixed-nav .documentation-menu {
   font-size: 16px;
 }
 
+.full-info h4 a {
+  font-size: 16px;
+}
+
 .full-info h5 {
   font-size: 15px;
 }
 
+.full-info h5 a {
+  font-size: 15px;
+}
+
 .full-info h6 {
+  font-size: 13px;
+}
+
+.full-info h6 a {
   font-size: 13px;
 }
 

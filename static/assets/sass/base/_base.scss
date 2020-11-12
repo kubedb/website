@@ -1531,17 +1531,19 @@ body.fixed-nav .documentation-menu {
     a {
       svg {
         padding-left: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
       }
 
       font-size: 16px;
-      opacity: 0;
-      visibility: hidden;
-      transition: 0.3s ease-in-out;
     }
 
     &:hover a {
-      opacity: 1;
-      visibility: visible;
+      svg{
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 
@@ -1554,22 +1556,37 @@ body.fixed-nav .documentation-menu {
 
   h2 {
     font-size: 24px;
+    a {
+      font-size: 24px;
+    }
   }
 
   h3 {
     font-size: 18px;
+    a {
+      font-size: 18px;
+    }
   }
 
   h4 {
     font-size: 16px;
+    a {
+      font-size: 16px;
+    }
   }
 
   h5 {
     font-size: 15px;
+    a {
+      font-size: 15px;
+    }
   }
 
   h6 {
     font-size: 13px;
+    a {
+      font-size: 13px;
+    }
   }
 
   .highlight {
