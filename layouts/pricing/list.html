@@ -1302,8 +1302,9 @@
       </div>
      <!-- single card end -->
 
-       <!-- single card start  -->
-       <div class="column is-one-quarter-fullhd is-one-third-widescreen is-half-desktop is-two-thirds-tablet is-three-full-mobile">
+    {{ if $p.datasheetFormID }}
+      <!-- single card start  -->
+      <div class="column is-one-quarter-fullhd is-one-third-widescreen is-half-desktop is-two-thirds-tablet is-three-full-mobile">
         <div class="single-card">
         <!-- card head start  -->
         <div class="card-head">
@@ -1321,7 +1322,8 @@
         <!-- card body end -->
         </div>
       </div>
-       <!-- single card end -->
+      <!-- single card end -->
+    {{ end }}
 
        <!-- single card start  -->
        <div class="column is-one-quarter-fullhd is-one-third-widescreen is-half-desktop is-two-thirds-tablet is-three-full-mobile">
