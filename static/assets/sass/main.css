@@ -2,6 +2,7 @@
   Global CSS start
 ========================*/
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,500i,600,600i,700,700i,800,800i,900|Roboto:400,400i,500,500i,700");
+@import url(/assets/css/calendly.css);
 @import url(/home/mohin/hugo-project/kubedb/website/static/assets/css/video-js.css);
 body {
   font-family: "Roboto", sans-serif;
@@ -4691,7 +4692,10 @@ Responsive Classes
           justify-content: center;
 }
 
-.single-assistance {
+.assistance-card-wrapper {
+}
+
+.assistance-card-wrapper .single-card {
   background: #ffffff;
   -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
@@ -4700,12 +4704,12 @@ Responsive Classes
   transition: 0.3s ease-in-out;
 }
 
-.single-assistance:hover {
+.assistance-card-wrapper .single-card:hover {
   -webkit-box-shadow: 0px 8px 57px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 8px 57px rgba(0, 0, 0, 0.16);
 }
 
-.single-assistance .ass-top {
+.assistance-card-wrapper .single-card .card-head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4716,25 +4720,80 @@ Responsive Classes
   border-bottom: 1px solid #eceff4;
 }
 
-.single-assistance .ass-top .ass-icon {
-  margin-right: 30px;
-  max-width: 60px;
+.assistance-card-wrapper .single-card .card-head .ass-icon {
+  width: 56px;
+  margin-right: 28px;
 }
 
-.single-assistance .ass-top .ass-title h3 {
+.assistance-card-wrapper .single-card .card-head .ass-title {
+  font-style: normal;
+  font-weight: 500;
   font-size: 18px;
   line-height: 120%;
-  font-weight: 500;
-  font-family: "Roboto", sans-serif;
+  color: #1c1c1c;
 }
 
-.single-assistance .ass-bottom {
-  padding: 20px 30px 40px;
+.assistance-card-wrapper .single-card .card-body {
+  padding: 30px 20px;
 }
 
-.single-assistance .ass-bottom p {
-  color: #54657e;
+.assistance-card-wrapper .single-card .card-body p {
+  font-style: normal;
+  font-weight: normal;
   font-size: 16px;
+  line-height: 100%;
+  color: #54657e;
+  margin-bottom: 15px;
+}
+
+.assistance-card-wrapper .single-card .card-body .button {
+  background: rgba(77, 77, 203, 0.1);
+  border: 1px solid #4d4dcb;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #4d4dcb;
+  font-weight: 500;
+  font-family: Roboto;
+  height: 41px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.assistance-card-wrapper .single-card .card-body .button:hover {
+  background-color: #4d4dcb;
+  color: #fff;
+}
+
+.assistance-card-wrapper .single-card .card-body .subscription-form {
+  position: relative;
+  z-index: 1;
+}
+
+.assistance-card-wrapper .single-card .card-body .subscription-form input {
+  border: none;
+  background-color: #e2e2e2;
+  height: 41px;
+}
+
+.assistance-card-wrapper .single-card .card-body .subscription-form input:focus {
+  border: 1px solid #4d4dcb;
+  border-radius: 4px;
+}
+
+.assistance-card-wrapper .single-card .card-body .subscription-form button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #4d4dcb;
+  color: #fff;
+  border: none;
+  z-index: 9;
+}
+
+.assistance-card-wrapper .single-card .card-body .subscription-form button:hover {
+  background-color: #3636b9;
 }
 
 .assistance-area .section-title,
