@@ -203,7 +203,7 @@
           <h2>Product Features</h2>
           {{ if $p.summary }}
           <p>
-            {{ $p.summary }}
+            {{ $p.summary | plainify }}
           </p>
           {{ end }}
         </div>
