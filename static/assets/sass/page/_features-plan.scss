@@ -366,43 +366,91 @@
 }
 
 // assistance section start
-.single-assistance {
-  background: #ffffff;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
-  border-radius: 4px;
-  transition: 0.3s ease-in-out;
-
-  &:hover {
-    box-shadow: 0px 8px 57px rgba(0, 0, 0, 0.16);
-  }
-
-  .ass-top {
-    display: flex;
-    align-items: center;
-    padding: 40px 30px;
-    border-bottom: 1px solid #eceff4;
-
-    .ass-icon {
-      margin-right: 30px;
-      max-width: 60px;
+.assistance-card-wrapper {
+  @import url(/assets/css/calendly.css);
+  .single-card {
+    background: #ffffff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      box-shadow: 0px 8px 57px rgba(0, 0, 0, 0.16);
     }
 
-    .ass-title {
-      h3 {
+    .card-head {
+      display: flex;
+      align-items: center;
+      padding: 40px 30px;
+      border-bottom: 1px solid #eceff4;
+
+      .ass-icon {
+        width: 56px;
+        margin-right: 28px;
+      }
+
+      .ass-title {
+        font-style: normal;
+        font-weight: 500;
         font-size: 18px;
         line-height: 120%;
-        font-weight: 500;
-        font-family: $font-paragraph;
+        color: #1c1c1c;
       }
     }
-  }
 
-  .ass-bottom {
-    padding: 20px 30px 40px;
+    .card-body {
+      padding: 30px 20px;
 
-    p {
-      color: #54657e;
-      font-size: 16px;
+      p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 100%;
+        color: #54657e;
+        margin-bottom: 15px;
+      }
+
+      .button {
+        background: rgba(77, 77, 203, 0.1);
+        border: 1px solid #4d4dcb;
+        box-sizing: border-box;
+        border-radius: 4px;
+        font-size: 16px;
+        color: #4d4dcb;
+        font-weight: 500;
+        font-family: Roboto;
+        height: 41px;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          background-color: #4d4dcb;
+          color: #fff;
+        }
+      }
+      .subscription-form {
+        position: relative;
+        z-index: 1;
+        input {
+          border: none;
+          background-color: #e2e2e2;
+          height: 41px;
+          &:focus {
+            border: 1px solid #4d4dcb;
+            border-radius: 4px;
+          }
+        }
+        button {
+          position: absolute;
+          right: 0;
+          top: 0;
+          background-color: #4d4dcb;
+          color: #fff;
+          border: none;
+          z-index: 9;
+          &:hover {
+            background-color: darken($color: #4d4dcb, $amount: 8);
+          }
+        }
+      }
     }
   }
 }
