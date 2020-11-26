@@ -423,7 +423,7 @@
 
         &:hover {
           background-color: #4d4dcb;
-          color: #fff;
+          color: #fff !important;
         }
       }
       .subscription-form {
@@ -446,8 +446,12 @@
           color: #fff;
           border: none;
           z-index: 9;
+          i.fa{
+            color: #fff;
+          }
           &:hover {
-            background-color: darken($color: #4d4dcb, $amount: 8);
+            background-color: darken($color: #4d4dcb, $amount: 20);
+            color: #fff;
           }
         }
       }

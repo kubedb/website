@@ -73,6 +73,9 @@
   body.#{$name} .pricing-top:before {
     border-right-color: darken($color, 15%);
   }
+  body.#{$name} .assistance-card-wrapper .single-card .card-body .subscription-form .button:hover{
+    background-color: darken($color, 15%);
+  }
   body.#{$name} .go-to-top {
     background-color: rgba($color, 0.8);
   }
