@@ -14,7 +14,7 @@ url: /docs/v2021.01.02-rc.0/welcome/changelog-v2020.12.10/
 aliases:
 - /docs/v2021.01.02-rc.0/CHANGELOG-v2020.12.10/
 info:
-  autocaler: v0.1.0-rc.0
+  autoscaler: v0.1.0-rc.0
   cli: v0.16.0-rc.0
   community: v0.16.0-rc.0
   enterprise: v0.3.0-rc.0
