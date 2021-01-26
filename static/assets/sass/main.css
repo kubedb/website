@@ -4355,12 +4355,12 @@ Responsive Classes
 
 .features-cta-area .features-plan-cta-wrapper.support-section .cta-left,
 .features-cta-area .features-plan-cta-wrapper.support-section .cta-right {
-  height: 167px;
+  height: 177px;
 }
 
 .features-cta-area .features-plan-cta-wrapper.support-section .cta-left .single-cta,
 .features-cta-area .features-plan-cta-wrapper.support-section .cta-right .single-cta {
-  min-height: 167px;
+  min-height: 177px;
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-left {
@@ -4425,16 +4425,21 @@ Responsive Classes
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.communiry-support .button, .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.basic .button, .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.gold .button, .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.platinum .button {
-  width: 100%;
+  width: calc(100% - 30px);
   position: absolute;
-  bottom: 0;
-  left: 0;
-  border-radius: 0;
+  bottom: 15px;
+  left: 15px;
+  border-radius: 4px;
   height: 42px;
   border: none;
   color: #fff;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+}
+
+.features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.communiry-support .button:hover, .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.basic .button:hover, .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.gold .button:hover, .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.platinum .button:hover {
+  -webkit-box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.communiry-support .button {
@@ -4502,6 +4507,13 @@ Responsive Classes
   font-size: 16px;
   color: #54657e;
   line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta a.is-trial {
@@ -4527,42 +4539,40 @@ Responsive Classes
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons {
-  background: #dfe3eb;
   display: inline-block;
+  position: relative;
+  z-index: 1;
+  background: #dfe3eb;
   border-radius: 50px;
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .button {
-  background: transparent;
+  background-color: transparent;
   border: none;
   height: 44px;
-  font-size: 14px;
-  padding: 0 20px;
-  color: #54657e;
-  font-family: "Raleway";
-  font-weight: 500;
-}
-
-.features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .button.is-active {
+  padding: 10px 30px;
   border-radius: 50px;
-  color: #0071bd;
-  position: relative;
-  z-index: 1;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  width: 49.1%;
 }
 
-.features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .button.is-active:after {
+.features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .is-active-bg {
   position: absolute;
-  content: "";
+  background-color: #fff;
+  height: calc(100% + 4px);
+  width: 50%;
   left: 0;
-  top: -4px;
-  width: 100%;
-  height: calc(100% + 8px);
-  border: 1px solid #0071bd;
+  top: 0;
   border-radius: 50px;
-  background: #fff;
   z-index: -1;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  border: 1px solid #0071bd;
+  -webkit-transition: 0.3s cubic-bezier(0.73, -0.09, 0.76, 0.71);
+  transition: 0.3s cubic-bezier(0.73, -0.09, 0.76, 0.71);
+}
+
+.features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .is-active-bg.left-50 {
+  left: 50%;
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .button.ac-button.is-secondary.is-outlined {
@@ -4841,6 +4851,18 @@ Responsive Classes
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.features-plan-area .single-features-area .single-features .features-plan-wrapper .features-plan .e-plan span.t-icon .is-kubedb-cloud {
+  display: none;
+}
+
+.features-plan-area .single-features-area.active-kubedb-cloud .single-features .features-plan-wrapper .features-plan .e-plan span.t-icon .is-kubedb-cloud {
+  display: block;
+}
+
+.features-plan-area .single-features-area.active-kubedb-cloud .single-features .features-plan-wrapper .features-plan.enterprise .e-plan span.t-icon img:not(.is-kubedb-cloud) {
+  display: none;
 }
 
 .assistance-card-wrapper {
