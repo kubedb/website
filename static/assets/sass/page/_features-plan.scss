@@ -256,45 +256,7 @@
               }
             }
           }
-
-          .switch-buttons {
-            // background: #dfe3eb;
-            // display: inline-block;
-            // border-radius: 50px;
-
-            // .button {
-            //   background: transparent;
-            //   border: none;
-            //   height: 44px;
-            //   font-size: 14px;
-            //   padding: 0 20px;
-            //   color: #54657e;
-            //   font-family: "Raleway";
-            //   font-weight: 500;
-
-            //   &.is-active {
-            //     border-radius: 50px;
-            //     color: #0071bd;
-            //     position: relative;
-            //     z-index: 1;
-            //     transition: 0.3s ease;
-
-            //     &:after {
-            //       position: absolute;
-            //       content: "";
-            //       left: 0;
-            //       top: -4px;
-            //       width: 100%;
-            //       height: calc(100% + 8px);
-            //       border: 1px solid #0071bd;
-            //       border-radius: 50px;
-            //       background: #fff;
-            //       z-index: -1;
-            //     }
-            //   }
-            // }
-          }
-
+          
           .button.ac-button.is-secondary.is-outlined {
             background: #fff !important;
             color: #ff8000;
