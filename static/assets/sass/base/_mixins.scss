@@ -20,6 +20,7 @@
   body.#{$name} .pagination-list li a.is-active,
   body.#{$name} .single-product-feature-wrapper:after,
   body.#{$name} .assistance-card-wrapper .single-card .card-body .subscription-form .button,
+  body.#{$name} .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .is-active-bg,
   body.#{$name} .assistance-card-wrapper .single-card .card-body .button:hover {
     background-color: #{$color};
   }
@@ -82,6 +83,9 @@
   body.#{$name} .documentation-menu,
   body.#{$name} .assistance-card-wrapper .single-card .card-body .button {
     background-color: scale-color($color, $lightness: 80%);
+  }
+  body.#{$name} .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons {
+    background-color: scale-color($color, $lightness: 85%);
   }
   /*==================================================
                   Theme #{$name} End

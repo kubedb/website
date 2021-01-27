@@ -1016,25 +1016,27 @@
     let featuresArea = document.querySelector('.single-features-area');
 
     if (switchBG.classList.contains('left-50')) {
-      enterpriseTitle.innerHTML = 'KubeDB Cloud';
-      enterpriseDescription.innerHTML = 'Something here';
-      trialBtn.innerHTML = 'Trial 30days';
-      trialBtn.href = 'http://14-days-trial-url';
-      talkBtn.innerHTML = 'Send Message';
-      talkBtn.href = 'http://send-message-url';
-      featuresArea.classList.add('active-kubedb-cloud');
-      switchBtn.querySelector('.kdb-on-prem').style.color = "#363636";
-      switchBtn.querySelector('.kdb-cloud').style.color = "#fff";
+      setTimeout(() => {
+        enterpriseTitle.innerHTML = 'KubeDB Cloud';
+        enterpriseDescription.innerHTML = 'Something here';
+        trialBtn.innerHTML = 'Trial 30days';
+        trialBtn.href = 'http://14-days-trial-url';
+        talkBtn.innerHTML = 'Send Message';
+        talkBtn.href = 'http://send-message-url';
+        featuresArea.classList.add('active-kubedb-cloud');
+        switchBtn.classList.add('change-color');
+      }, 200);
     } else {
-      enterpriseTitle.innerHTML = 'KubeDB On-prem';
-      enterpriseDescription.innerHTML = 'Open Core KubeDB for production databases';
-      trialBtn.innerHTML = 'Start a free 14-day trial';
-      trialBtn.href = 'http://30-days-trial-url';
-      talkBtn.innerHTML = 'Talk to sales';
-      trialBtn.href = 'http://talk-to-sale-url';
-      featuresArea.classList.remove('active-kubedb-cloud');
-      switchBtn.querySelector('.kdb-on-prem').style.color = "#fff";
-      switchBtn.querySelector('.kdb-cloud').style.color = "#363636";
+      setTimeout(() => {
+        enterpriseTitle.innerHTML = 'KubeDB On-prem';
+        enterpriseDescription.innerHTML = 'Open Core KubeDB for production databases';
+        trialBtn.innerHTML = 'Start a free 14-day trial';
+        trialBtn.href = 'http://30-days-trial-url';
+        talkBtn.innerHTML = 'Talk to sales';
+        trialBtn.href = 'http://talk-to-sale-url';
+        featuresArea.classList.remove('active-kubedb-cloud');
+        switchBtn.classList.remove('change-color');
+      }, 200);
     }
   })
 </script>
