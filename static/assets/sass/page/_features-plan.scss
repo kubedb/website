@@ -236,11 +236,14 @@
               padding: 10px 30px;
               border-radius: 50px;
               width: 49.1%;
+              &.kdb-on-prem{
+                color: #fff;
+              }
             }
 
             .is-active-bg {
               position: absolute;
-              background-color: #fff;
+              background-color: #4d4dcb;
               height: calc(100% + 4px);
               width: 50%;
               left: 0;
@@ -248,7 +251,8 @@
               border-radius: 50px;
               z-index: -1;
               transform: translateY(-2px);
-              border: 1px solid #0071bd;
+              border: 1px solid #4d4dcb;
+              color: #fff;
               transition: 0.3s cubic-bezier(0.73, -0.09, 0.76, 0.71);
 
               &.left-50 {

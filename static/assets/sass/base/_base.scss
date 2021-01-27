@@ -2383,8 +2383,8 @@ span.new-item {
   left: 50%;
   opacity: 0;
   visibility: hidden;
-  transition: 0.1s ease-in-out;
-  display: none;
+  transition: 0.2s ease-in-out;
+  transition-delay: 0.4s;
 }
 
 .ac-dropdown {
@@ -2401,6 +2401,7 @@ span.new-item {
   opacity: 0;
   visibility: hidden;
   transition: 0.2s ease-in-out;
+  transition-delay: 0.4s;
 }
 
 .ac-dropdown a.navbar-item {
