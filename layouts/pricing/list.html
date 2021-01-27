@@ -69,8 +69,8 @@
           <div class="bottom-content">
             <!-- switch buttons start  -->
             <div class="switch-buttons mb-20">
-              <div class="button">KubeDB On-prem</div>
-              <div class="button">KubeDB Cloud</div>
+              <div class="button kdb-on-prem">KubeDB On-prem</div>
+              <div class="button kdb-cloud">KubeDB Cloud</div>
               <div class="is-active-bg"></div>
             </div>
             <!-- switch buttons end -->
@@ -1023,6 +1023,8 @@
       talkBtn.innerHTML = 'Send Message';
       talkBtn.href = 'http://send-message-url';
       featuresArea.classList.add('active-kubedb-cloud');
+      switchBtn.querySelector('.kdb-on-prem').style.color = "#363636";
+      switchBtn.querySelector('.kdb-cloud').style.color = "#fff";
     } else {
       enterpriseTitle.innerHTML = 'KubeDB On-prem';
       enterpriseDescription.innerHTML = 'Open Core KubeDB for production databases';
@@ -1031,6 +1033,8 @@
       talkBtn.innerHTML = 'Talk to sales';
       trialBtn.href = 'http://talk-to-sale-url';
       featuresArea.classList.remove('active-kubedb-cloud');
+      switchBtn.querySelector('.kdb-on-prem').style.color = "#fff";
+      switchBtn.querySelector('.kdb-cloud').style.color = "#363636";
     }
   })
 </script>

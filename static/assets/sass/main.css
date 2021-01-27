@@ -3688,9 +3688,10 @@ span.new-item {
   left: 50%;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
-  display: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
 }
 
 .ac-dropdown {
@@ -3710,6 +3711,8 @@ span.new-item {
   visibility: hidden;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
 }
 
 .ac-dropdown a.navbar-item {
@@ -4555,9 +4558,13 @@ Responsive Classes
   width: 49.1%;
 }
 
+.features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .button.kdb-on-prem {
+  color: #fff;
+}
+
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .is-active-bg {
   position: absolute;
-  background-color: #fff;
+  background-color: #4d4dcb;
   height: calc(100% + 4px);
   width: 50%;
   left: 0;
@@ -4566,7 +4573,8 @@ Responsive Classes
   z-index: -1;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
-  border: 1px solid #0071bd;
+  border: 1px solid #4d4dcb;
+  color: #fff;
   -webkit-transition: 0.3s cubic-bezier(0.73, -0.09, 0.76, 0.71);
   transition: 0.3s cubic-bezier(0.73, -0.09, 0.76, 0.71);
 }
