@@ -31,7 +31,6 @@
     top: 50px;
 
     &.support-section {
-
       .cta-left,
       .cta-right {
         height: 177px;
@@ -226,8 +225,20 @@
             display: inline-block;
             position: relative;
             z-index: 1;
-            background: #dfe3eb;
+            background-color: scale-color(#4d4dcb, $lightness: 85%);
             border-radius: 50px;
+
+            &.change-color {
+              .button {
+                &.kdb-on-prem {
+                  color: #363636;
+                }
+
+                &.kdb-cloud {
+                  color: #fff;
+                }
+              }
+            }
 
             .button {
               background-color: transparent;
@@ -235,8 +246,9 @@
               height: 44px;
               padding: 10px 30px;
               border-radius: 50px;
-              width: 49.1%;
-              &.kdb-on-prem{
+              width: calc(50% - 2px);
+
+              &.kdb-on-prem {
                 color: #fff;
               }
             }
@@ -244,23 +256,22 @@
             .is-active-bg {
               position: absolute;
               background-color: #4d4dcb;
-              height: calc(100% + 4px);
+              height: calc(100% + 6px);
               width: 50%;
               left: 0;
               top: 0;
               border-radius: 50px;
               z-index: -1;
-              transform: translateY(-2px);
-              border: 1px solid #4d4dcb;
-              color: #fff;
-              transition: 0.3s cubic-bezier(0.73, -0.09, 0.76, 0.71);
+              transform: translateY(-3px);
+              border: none;
+              transition: 0.3s ease-in-out;
 
               &.left-50 {
                 left: 50%;
               }
             }
           }
-          
+
           .button.ac-button.is-secondary.is-outlined {
             background: #fff !important;
             color: #ff8000;
@@ -541,11 +552,25 @@
   }
 }
 
-.features-plan-area .single-features-area.active-kubedb-cloud .single-features .features-plan-wrapper .features-plan .e-plan span.t-icon .is-kubedb-cloud {
+.features-plan-area
+  .single-features-area.active-kubedb-cloud
+  .single-features
+  .features-plan-wrapper
+  .features-plan
+  .e-plan
+  span.t-icon
+  .is-kubedb-cloud {
   display: block;
 }
 
-.features-plan-area .single-features-area.active-kubedb-cloud .single-features .features-plan-wrapper .features-plan.enterprise .e-plan span.t-icon img:not(.is-kubedb-cloud) {
+.features-plan-area
+  .single-features-area.active-kubedb-cloud
+  .single-features
+  .features-plan-wrapper
+  .features-plan.enterprise
+  .e-plan
+  span.t-icon
+  img:not(.is-kubedb-cloud) {
   display: none;
 }
 
@@ -908,7 +933,9 @@ Responsive Classes
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199.98px) {}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}

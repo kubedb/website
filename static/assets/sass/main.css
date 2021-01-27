@@ -4545,8 +4545,16 @@ Responsive Classes
   display: inline-block;
   position: relative;
   z-index: 1;
-  background: #dfe3eb;
+  background-color: #e4e4f7;
   border-radius: 50px;
+}
+
+.features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons.change-color .button.kdb-on-prem {
+  color: #363636;
+}
+
+.features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons.change-color .button.kdb-cloud {
+  color: #fff;
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .button {
@@ -4555,7 +4563,7 @@ Responsive Classes
   height: 44px;
   padding: 10px 30px;
   border-radius: 50px;
-  width: 49.1%;
+  width: calc(50% - 2px);
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .button.kdb-on-prem {
@@ -4565,18 +4573,17 @@ Responsive Classes
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .is-active-bg {
   position: absolute;
   background-color: #4d4dcb;
-  height: calc(100% + 4px);
+  height: calc(100% + 6px);
   width: 50%;
   left: 0;
   top: 0;
   border-radius: 50px;
   z-index: -1;
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
-  border: 1px solid #4d4dcb;
-  color: #fff;
-  -webkit-transition: 0.3s cubic-bezier(0.73, -0.09, 0.76, 0.71);
-  transition: 0.3s cubic-bezier(0.73, -0.09, 0.76, 0.71);
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  border: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta .bottom-content .switch-buttons .is-active-bg.left-50 {
@@ -4865,11 +4872,25 @@ Responsive Classes
   display: none;
 }
 
-.features-plan-area .single-features-area.active-kubedb-cloud .single-features .features-plan-wrapper .features-plan .e-plan span.t-icon .is-kubedb-cloud {
+.features-plan-area
+.single-features-area.active-kubedb-cloud
+.single-features
+.features-plan-wrapper
+.features-plan
+.e-plan
+span.t-icon
+.is-kubedb-cloud {
   display: block;
 }
 
-.features-plan-area .single-features-area.active-kubedb-cloud .single-features .features-plan-wrapper .features-plan.enterprise .e-plan span.t-icon img:not(.is-kubedb-cloud) {
+.features-plan-area
+.single-features-area.active-kubedb-cloud
+.single-features
+.features-plan-wrapper
+.features-plan.enterprise
+.e-plan
+span.t-icon
+img:not(.is-kubedb-cloud) {
   display: none;
 }
 
