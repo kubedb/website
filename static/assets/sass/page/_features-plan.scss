@@ -727,7 +727,7 @@ Responsive Classes
 
     .features-plan-cta-wrapper {
       position: static;
-      min-width: 1344px;
+      min-width: 1200px;
 
       .cta-left {
         width: 30%;
@@ -742,7 +742,6 @@ Responsive Classes
         width: 70%;
 
         .single-cta {
-          width: 100%;
           padding: 20px 20px 108px 20px;
 
           h3 {
@@ -754,7 +753,7 @@ Responsive Classes
     }
 
     .features-plan-area {
-      min-width: 1344px;
+      min-width: 1200px;
     }
 
     .single-features-area {
@@ -826,10 +825,10 @@ Responsive Classes
 
     .features-plan-cta-wrapper {
       position: static;
-      min-width: 1344px;
+      min-width: 1200px;
 
       .cta-left {
-        width: 100%;
+        width: 30%;
 
         h2 {
           font-size: 26px;
@@ -838,16 +837,22 @@ Responsive Classes
       }
 
       .cta-right {
-        width: 100%;
+        width: 70%;
 
         .single-cta {
-          width: 100%;
           padding: 40px 20px 108px 20px;
           height: 200px;
 
           h3 {
             font-size: 20px;
             margin-bottom: 10px;
+          }
+          .bottom-content {
+            .switch-buttons {
+              .button {
+                height: 36px;
+              }
+            }
           }
         }
       }
@@ -859,7 +864,7 @@ Responsive Classes
   }
 
   .features-plan-area {
-    width: 1344px;
+    width: 1200px;
   }
 
   .assistance-area,
@@ -891,13 +896,13 @@ Responsive Classes
     overflow-y: auto;
 
     .features-plan-cta-wrapper {
-      min-width: 1344px;
+      min-width: 1200px;
       position: static;
 
       .cta-left {
         width: 30%;
         padding: 50px 20px;
-        height: 266px;
+        height: 224px;
 
         h2 {
           font-size: 26px;
@@ -910,9 +915,8 @@ Responsive Classes
 
         // flex-direction: column;
         .single-cta {
-          width: 100%;
-          padding: 40px 20px 108px 20px;
-          min-height: 240px;
+          padding: 20px 20px 108px 20px;
+          min-height: 220px;
 
           h3 {
             font-size: 20px;
@@ -927,15 +931,67 @@ Responsive Classes
     }
 
     .features-plan-area {
-      min-width: 1344px;
+      min-width: 1200px;
     }
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .features-cta-area {
+    .features-plan-cta-wrapper {
+      .cta-left {
+        h2 {
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+      }
+      .cta-right {
+        .single-cta {
+          padding: 15px 20px 15px 20px;
+          .bottom-content {
+            .switch-buttons .button {
+              height: 36px;
+            }
+
+            .buttons.kubedb-cloud-btns .button {
+              width: 210px;
+              padding: 10px 0;
+              letter-spacing: 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1450px) {
+  .features-cta-area {
+    .features-plan-cta-wrapper {
+      .cta-left {
+        h2 {
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+      }
+      .cta-right {
+        .single-cta {
+          padding: 15px 20px 15px 20px;
+          .bottom-content {
+            .switch-buttons .button {
+              height: 36px;
+            }
+
+            .buttons.kubedb-cloud-btns .button {
+              width: 210px;
+              padding: 10px 0;
+              letter-spacing: 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }
