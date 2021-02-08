@@ -68,17 +68,20 @@
           <p class="description">Open Core KubeDB for production databases</p>
           <div class="bottom-content">
             <!-- switch buttons start  -->
-            <div class="switch-buttons mb-20">
+            <div class="switch-buttons mb-10">
               <div class="button kdb-on-prem">KubeDB On-prem</div>
               <div class="button kdb-cloud">KubeDB Cloud</div>
               <div class="is-active-bg"></div>
+            </div>
+            <div class="is-flex is-justify-content-center">
+              <a href="#" class="orange-underlinebtn is-block mb-10">What’s different?</a>
             </div>
             <!-- switch buttons end -->
             <!-- <a href="/docs/latest/setup/install/enterprise" class="is-trial">Try for Free!</a> -->
             <div class="buttons kubedb-cloud-btns is-block">
               <a href="http://14-days-trial-url" class="button ac-button is-secondary is-outlined trial-btn">Start a
                 free 14-day trial</a>
-              <a href="http://talk-to-sale-url" class="button ac-button is-secondary talk-btn">Talk to sales</a>
+              <button onclick="showModal()" class="button ac-button is-secondary talk-btn">Talk to sales</button>
             </div>
           </div>
         </div>
@@ -456,28 +459,24 @@
             <div class="single-cta community communiry-support has-text-centered">
               <h3>KubeDB Community</h3>
               <p>Open source KubeDB Free for everyone</p>
-              <a href="/docs/latest/setup" class="button">Install Now!</a>
             </div>
             <!-- single cta end -->
             <!-- single cta start  -->
             <div class="single-cta basic has-text-centered">
               <h3>Basic</h3>
               <p>Open Core KubeDB for production databases</p>
-              <a href="#" class="button">Install Now!</a>
             </div>
             <!-- single cta end -->
             <!-- single cta start  -->
             <div class="single-cta gold has-text-centered">
               <h3>Gold</h3>
               <p>Open Core KubeDB for production databases</p>
-              <a href="#" class="button">Install Now!</a>
             </div>
             <!-- single cta end -->
             <!-- single cta start  -->
             <div class="single-cta platinum has-text-centered">
               <h3>Platinum</h3>
               <p>Open Core KubeDB for production databases</p>
-              <a href="#" class="button">Install Now!</a>
             </div>
             <!-- single cta end -->
           </div>
@@ -763,7 +762,89 @@
   </div>
 </section>
 <!-- support area end -->
+<!-- contact modal area start  -->
+<div class="is-hidden contact-us-modal ac-modal is-medium">
+  <div class="ac-modal-inner">
+    <!-- header start  -->
+    <div class="ac-modal-header">
+      <h4>AppsCode Product Pricing List</h4>
+      <div class="ms-close-button">
+        <button class="is-transparent" onclick="closeModal()"><img src="/assets/images/icon/close-icon.svg" alt="close-icon"></button>
+      </div>
+    </div>
+    <!-- header end -->
+    <!-- body start  -->
+    <div class="ac-modal-body">
+      <form action="/_/pricing" method="post">
+        <div class="form-content">
+          <div class="single-input-form">
+            <label class="label" for="fname">FIRST NAME <span class="is-require" title="Require field">*</span></label>
+            <input name="name" id="fname" type="text" placeholder="Jhon" required />
+          </div>
 
+          <div class="single-input-form">
+            <label class="label" for="lname">LAST NAME <span class="is-require" title="Require field">*</span></label>
+            <input name="name" id="lname" type="text" placeholder="Haris" required />
+          </div>
+
+          <div class="single-input-form">
+            <label class="label" for="w-email">WORK EMAIL <span class="is-require"
+                title="Require field">*</span></label>
+            <input name="email" id="w-email" type="email" placeholder="name@domain.com" value="" required />
+          </div>
+
+          <div class="single-input-form">
+            <label class="label" for="job-title">JOB TITLE <span class="is-require"
+                title="Require field">*</span></label>
+            <input name="title" id="job-title" type="text" placeholder="Software Engineer" required />
+          </div>
+
+          <div class="single-input-form">
+            <label class="label" for="phone">PHONE <span class="is-require" title="Require field">*</span></label>
+            <span class="country-code-wrapper">
+              <input class="country-code" type="text" value="+88">
+            </span>
+            <input class="pl-50" name="telephone" id="phone" type="tel" placeholder="018 6484 1998"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+          </div>
+
+          <div class="single-input-form">
+            <label class="label" for="company-name">COMPANY NAME <span class="is-require"
+                title="Require field">*</span></label>
+            <input name="company" id="company-name" type="text" placeholder="AppsCode Inc" />
+          </div>
+        </div>
+        <div class="term-and-condition">
+          <input name="tos" id="checkbox" type="checkbox" value="true" />
+          <label class="checkbox" for="checkbox">
+            I agree to the <a href="https://appscode.com/legal/tos/">terms and conditions</a>
+          </label>
+        </div>
+        <button class="button ac-primary send-message">Send</button>
+      </form>
+    </div>
+    <!-- body end  -->
+  </div>
+</div>
+<!-- contact modal area end  -->
+<!-- for modal show hide script start -->
+<script type="text/javascript">
+  // modal show 
+  function showModal(){
+    let modal = document.querySelector(".ac-modal");
+    if(modal.classList.contains('is-hidden')){
+      modal.classList.remove('is-hidden')
+    }
+  }
+  // modal hide 
+  function closeModal(){
+    let modal = document.querySelector(".ac-modal");
+    if(!(modal.classList.contains('is-hidden'))){
+      modal.classList.add('is-hidden')
+    }
+  }
+</script>
+<!-- for modal show hide script end -->
 <!-- assistance area start  -->
 <section class="assistance-area section-padding-100">
   <div class="container section">
