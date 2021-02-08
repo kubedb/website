@@ -31,20 +31,27 @@
     top: 50px;
 
     &.support-section {
+      .cta-left {
+        h2 {
+          font-size: 30px;
+          margin-bottom: 5px;
+        }
+      }
+
       .cta-left,
       .cta-right {
-        height: 177px;
+        height: 140px;
 
         .single-cta {
-          min-height: 177px;
+          min-height: 140px;
         }
       }
     }
 
     .cta-left {
       width: 30%;
-      padding: 40px 20px;
-      height: 225px;
+      padding: 20px 20px;
+      height: 245px;
 
       &.fp-cta-bg {
         background-image: url(../images/features-plan/features-plan-cta-bg.svg);
@@ -72,7 +79,7 @@
     .cta-right {
       width: 70%;
       display: flex;
-      height: 225px;
+      height: 245px;
 
       .single-cta {
         padding: 25px 20px 25px 20px;
@@ -270,6 +277,17 @@
                 left: 50%;
               }
             }
+          }
+
+          .orange-underlinebtn {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 130%;
+            text-align: center;
+            text-decoration-line: underline;
+            color: #ff8000;
           }
 
           .button.ac-button.is-secondary.is-outlined {
@@ -574,6 +592,195 @@
   display: none;
 }
 
+// form start
+.contact-us-modal {
+  form {
+    .form-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .single-input-form {
+        width: calc(50% - 15px);
+        margin-bottom: 20px;
+        position: relative;
+        &.is-fullwidth {
+          width: 100%;
+        }
+
+        label {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          display: block;
+          color: #393e46;
+          margin-bottom: 6px;
+          text-transform: uppercase;
+
+          .is-require {
+            color: #ea3d2f;
+            padding-left: 5px;
+          }
+        }
+      }
+      .country-code-wrapper {
+        .country-code {
+          position: absolute;
+          background: #a6abbd;
+          height: 40px;
+          width: 45px;
+          border-radius: 4px;
+          top: 22px;
+          left: 2.5px;
+          color: #fff;
+          font-size: 14px;
+          padding: 10px;
+          border: none;
+          &:focus {
+            outline: none;
+            border: none;
+          }
+        }
+      }
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="number"],
+      .textarea-wrapper,
+      .select {
+        border: 1px solid #a6abbd;
+        border-radius: 4px;
+        height: 45px;
+        width: 100%;
+        padding: 0 15px;
+        font-weight: 500;
+        font-size: 15px;
+        background-color: transparent;
+
+        &:focus {
+          outline: none !important;
+          border: 1px solid #0071bd;
+        }
+
+        &::placeholder {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 16px;
+          color: #a6abbd;
+        }
+      }
+
+      .select {
+        border-color: #a6abbd;
+
+        &:hover {
+          border-color: #a6abbd;
+        }
+
+        select {
+          background-color: transparent;
+          border: none;
+          font-weight: 500;
+          height: 45px !important;
+          padding-left: 15px !important;
+          color: #a6abbd;
+
+          option[selected] {
+            color: #333;
+          }
+        }
+      }
+
+      .textarea-wrapper {
+        height: 100px;
+      }
+
+      .textarea-wrapper {
+        padding: 10px 10px 10px 15px;
+
+        &:focus {
+          outline: none !important;
+          border: 1px solid #0071bd;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        height: calc(100% - 0px);
+        border: none;
+        font-weight: 500;
+        font-size: 15px;
+
+        &::placeholder {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 16px;
+          color: #a6abbd;
+        }
+
+        &:focus {
+          outline: none;
+          border: none;
+        }
+      }
+
+      input[type="submit"] {
+        width: 230px;
+        background-color: #0071bd;
+        color: #fff;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken(#0071bd, $amount: 5);
+        }
+      }
+
+      p.is-error {
+        color: #ea3d2f;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+    }
+    .term-and-condition {
+      label,
+      a {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #32325d;
+      }
+      label {
+        padding-left: 7px;
+        user-select: none;
+      }
+      a {
+        color: #4d4dcb;
+      }
+    }
+    .send-message {
+      width: 136px;
+      margin: 20px 0 0 0;
+      height: 45px;
+      font-weight: 500;
+      box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.16);
+      border: none;
+      &:hover{
+        border: none;
+        background-color: darken($color: #4d4dcb, $amount: 10%);
+      }
+    }
+  }
+}
+
+// form end
 // assistance section start
 .assistance-card-wrapper {
   @import url(/assets/css/calendly.css);
@@ -698,6 +905,52 @@
   }
 }
 
+// for modal css start
+.modal-medium {
+  min-height: 100vh;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  .modal-wrapper {
+    border-radius: 4px;
+    width: 446px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .modal-header {
+      background: #e8e8e8;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-body {
+      padding: 20px;
+      max-height: calc(100vh - 230px);
+      overflow-y: auto;
+    }
+  }
+}
+
+// for modal css end
 /****************************************
 Responsive Classes
 *****************************************/
@@ -847,6 +1100,7 @@ Responsive Classes
             font-size: 20px;
             margin-bottom: 10px;
           }
+
           .bottom-content {
             .switch-buttons {
               .button {
@@ -946,9 +1200,11 @@ Responsive Classes
           margin-bottom: 10px;
         }
       }
+
       .cta-right {
         .single-cta {
           padding: 15px 20px 15px 20px;
+
           .bottom-content {
             .switch-buttons .button {
               height: 36px;
@@ -976,9 +1232,11 @@ Responsive Classes
           margin-bottom: 10px;
         }
       }
+
       .cta-right {
         .single-cta {
           padding: 15px 20px 15px 20px;
+
           .bottom-content {
             .switch-buttons .button {
               height: 36px;
