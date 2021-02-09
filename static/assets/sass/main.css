@@ -12542,7 +12542,7 @@ Responsive Classes
 .features-cta-area .features-plan-cta-wrapper .cta-left {
   width: 30%;
   padding: 20px 20px;
-  height: 245px;
+  height: 225px;
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-left.fp-cta-bg {
@@ -12572,7 +12572,7 @@ Responsive Classes
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 245px;
+  height: 225px;
 }
 
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta {
@@ -13117,23 +13117,88 @@ img:not(.is-kubedb-cloud) {
   padding-left: 5px;
 }
 
-.contact-us-modal form .form-content .country-code-wrapper .country-code {
+.contact-us-modal form .form-content .optional-num {
   position: absolute;
-  background: #a6abbd;
-  height: 40px;
-  width: 45px;
-  border-radius: 4px;
-  top: 22px;
-  left: 2.5px;
-  color: #fff;
-  font-size: 14px;
-  padding: 10px;
-  border: none;
+  right: 0;
+  z-index: 9;
+  width: 140px !important;
+  border: none !important;
 }
 
-.contact-us-modal form .form-content .country-code-wrapper .country-code:focus {
-  outline: none;
-  border: none;
+.contact-us-modal form .form-content .country-code-wrapper {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  /*style the arrow inside the select element:*/
+  /*point the arrow upwards when the select box is open (active):*/
+  /*style the items (options), including the selected item:*/
+  /*style items (options):*/
+  /*hide the items when the select box is closed:*/
+}
+
+.contact-us-modal form .form-content .country-code-wrapper .custom-select {
+  position: relative;
+  width: 70px;
+}
+
+.contact-us-modal form .form-content .country-code-wrapper .custom-select select {
+  display: none;
+  /*hide original SELECT element:*/
+}
+
+.contact-us-modal form .form-content .country-code-wrapper .select-selected {
+  background-color: #a6abbd;
+}
+
+.contact-us-modal form .form-content .country-code-wrapper .select-selected:after {
+  position: absolute;
+  content: "";
+  top: 16px;
+  right: 7px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.contact-us-modal form .form-content .country-code-wrapper .select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 9px;
+  right: 8px;
+}
+
+.contact-us-modal form .form-content .country-code-wrapper .select-items div,
+.contact-us-modal form .form-content .country-code-wrapper .select-selected {
+  color: #ffffff;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 4px;
+  height: 39px;
+  font-size: 13px;
+}
+
+.contact-us-modal form .form-content .country-code-wrapper .select-items {
+  position: absolute;
+  background-color: #a6abbd;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.contact-us-modal form .form-content .country-code-wrapper .select-hide {
+  display: none;
+}
+
+.contact-us-modal form .form-content .country-code-wrapper .select-items div:hover,
+.contact-us-modal form .form-content .country-code-wrapper .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .contact-us-modal form .form-content input[type="text"],

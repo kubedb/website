@@ -51,7 +51,7 @@
     .cta-left {
       width: 30%;
       padding: 20px 20px;
-      height: 245px;
+      height: 225px;
 
       &.fp-cta-bg {
         background-image: url(../images/features-plan/features-plan-cta-bg.svg);
@@ -79,7 +79,7 @@
     .cta-right {
       width: 70%;
       display: flex;
-      height: 245px;
+      height: 225px;
 
       .single-cta {
         padding: 25px 20px 25px 20px;
@@ -625,23 +625,80 @@
           }
         }
       }
+      .optional-num {
+        position: absolute;
+        right: 0;
+        z-index: 9;
+        width: 140px !important;
+        border: none !important;
+      }
       .country-code-wrapper {
-        .country-code {
-          position: absolute;
-          background: #a6abbd;
-          height: 40px;
-          width: 45px;
-          border-radius: 4px;
-          top: 22px;
-          left: 2.5px;
-          color: #fff;
-          font-size: 14px;
-          padding: 10px;
-          border: none;
-          &:focus {
-            outline: none;
-            border: none;
+        position: absolute;
+        bottom: 3px;
+        left: 3px;
+        .custom-select {
+          position: relative;
+          width: 70px;
+          select {
+            display: none; /*hide original SELECT element:*/
           }
+        }
+
+        .select-selected {
+          background-color: #a6abbd;
+        }
+
+        /*style the arrow inside the select element:*/
+        .select-selected:after {
+          position: absolute;
+          content: "";
+          top: 16px;
+          right: 7px;
+          width: 0;
+          height: 0;
+          border: 5px solid transparent;
+          border-color: #fff transparent transparent transparent;
+        }
+
+        /*point the arrow upwards when the select box is open (active):*/
+        .select-selected.select-arrow-active:after {
+          border-color: transparent transparent #fff transparent;
+          top: 9px;
+          right: 8px;
+        }
+
+        /*style the items (options), including the selected item:*/
+        .select-items div,
+        .select-selected {
+          color: #ffffff;
+          padding: 8px 10px;
+          border: 1px solid transparent;
+          border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+          cursor: pointer;
+          user-select: none;
+          border-radius: 4px;
+          height: 39px;
+          font-size: 13px;
+        }
+
+        /*style items (options):*/
+        .select-items {
+          position: absolute;
+          background-color: #a6abbd;
+          top: 100%;
+          left: 0;
+          right: 0;
+          z-index: 99;
+        }
+
+        /*hide the items when the select box is closed:*/
+        .select-hide {
+          display: none;
+        }
+
+        .select-items div:hover,
+        .same-as-selected {
+          background-color: rgba(0, 0, 0, 0.1);
         }
       }
       input[type="text"],
@@ -772,7 +829,7 @@
       font-weight: 500;
       box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.16);
       border: none;
-      &:hover{
+      &:hover {
         border: none;
         background-color: darken($color: #4d4dcb, $amount: 10%);
       }
