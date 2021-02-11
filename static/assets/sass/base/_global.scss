@@ -266,6 +266,41 @@ h6 {
   background-color: #e9e9f0;
   border: none;
 }
+.ac-single-radio {
+  .is-checkradio[type="radio"] {
+    & + label {
+      padding-left: 25px;
+
+      &::after {
+        background-color: $primary-color;
+        width: 16px;
+        height: 16px;
+        top: 5px;
+      }
+
+      &:after {
+        background-color: $primary-color;
+      }
+
+      &:before {
+        border-color: $primary-color;
+        width: 16px;
+        height: 16px;
+        top: 5px;
+      }
+    }
+
+    &:hover {
+      &:not([disabled]) {
+        & + label {
+          &:before {
+            border-color: $primary-color !important;
+          }
+        }
+      }
+    }
+  }
+}
 
 /* Deafult Margin & Padding view-height & view-width */
 @for $i from 0 through 200 {

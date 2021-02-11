@@ -291,6 +291,32 @@ h6 {
   border: none;
 }
 
+.ac-single-radio .is-checkradio[type="radio"] + label {
+  padding-left: 25px;
+}
+
+.ac-single-radio .is-checkradio[type="radio"] + label::after {
+  background-color: #4d4dcb;
+  width: 16px;
+  height: 16px;
+  top: 5px;
+}
+
+.ac-single-radio .is-checkradio[type="radio"] + label:after {
+  background-color: #4d4dcb;
+}
+
+.ac-single-radio .is-checkradio[type="radio"] + label:before {
+  border-color: #4d4dcb;
+  width: 16px;
+  height: 16px;
+  top: 5px;
+}
+
+.ac-single-radio .is-checkradio[type="radio"]:hover:not([disabled]) + label:before {
+  border-color: #4d4dcb !important;
+}
+
 /* Deafult Margin & Padding view-height & view-width */
 .mt-0 {
   margin-top: 0px !important;
@@ -12384,8 +12410,6 @@ Responsive Classes
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
 }
 
 .ac-modal .ac-modal-inner .ac-modal-header {
@@ -13154,7 +13178,7 @@ img:not(.is-kubedb-cloud) {
   position: absolute;
   content: "";
   top: 16px;
-  right: 7px;
+  right: 10px;
   width: 0;
   height: 0;
   border: 5px solid transparent;
@@ -13164,7 +13188,7 @@ img:not(.is-kubedb-cloud) {
 .contact-us-modal form .form-content .country-code-wrapper .select-selected.select-arrow-active:after {
   border-color: transparent transparent #fff transparent;
   top: 9px;
-  right: 8px;
+  right: 10px;
 }
 
 .contact-us-modal form .form-content .country-code-wrapper .select-items div,
@@ -13181,6 +13205,7 @@ img:not(.is-kubedb-cloud) {
   border-radius: 4px;
   height: 39px;
   font-size: 13px;
+  font-weight: 500;
 }
 
 .contact-us-modal form .form-content .country-code-wrapper .select-items {
@@ -13190,6 +13215,13 @@ img:not(.is-kubedb-cloud) {
   left: 0;
   right: 0;
   z-index: 99;
+  max-height: 120px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.contact-us-modal form .form-content .country-code-wrapper .select-items::-webkit-scrollbar {
+  width: 0;
 }
 
 .contact-us-modal form .form-content .country-code-wrapper .select-hide {
@@ -13418,6 +13450,52 @@ img:not(.is-kubedb-cloud) {
 .contact-us-modal form .send-message:hover {
   border: none;
   background-color: #3434b1;
+}
+
+.ac-modal .ac-modal-inner .ac-modal-body p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 130%;
+  color: #333333;
+  padding: 0 30px;
+}
+
+.ac-modal .ac-modal-inner .ac-modal-body .ac-single-radio {
+  padding: 20px 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.ac-modal .ac-modal-inner .ac-modal-body .button-next {
+  width: 171px;
+  height: 45px;
+  background: #4d4dcb;
+  border-radius: 4px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: #ffffff;
+}
+
+.recommendetion-modal {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.ac-modal-header .button-back {
+  background: transparent;
+  border: none;
+  color: #3f444a;
+  cursor: pointer;
+  padding: 0 5px;
+  margin-right: 10px;
 }
 
 .assistance-card-wrapper {

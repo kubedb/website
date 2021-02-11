@@ -760,19 +760,43 @@
 </section>
 <!-- support area end -->
 <!-- contact modal area start  -->
-<div class="is-hidden contact-us-modal ac-modal is-medium">
+<section class="is-hidden contact-us-modal ac-modal is-medium pt-100">
   <div class="ac-modal-inner">
     <!-- header start  -->
     <div class="ac-modal-header">
-      <h4>AppsCode Product Pricing List</h4>
+      <h4><span class="pricing-title is-flex is-align-items-center"><button onclick="gotoBack()" class="button-back is-hidden"><i
+              class="fa fa-chevron-left" aria-hidden="true"></i></button>Send us a message</span></h4>
       <div class="ms-close-button">
         <button class="is-transparent" onclick="closeModal()"><img src="/assets/images/icon/close-icon.svg"
             alt="close-icon"></button>
       </div>
     </div>
     <!-- header end -->
-    <!-- body start  -->
-    <div class="ac-modal-body">
+    <!-- modal body for option start  -->
+    <div class="ac-modal-body recommendetion-modal">
+      <div class="has-text-centered">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
+          pulvinar facilisis justo mollis, auctor consequat urna. </p>
+        <!-- input field start -->
+        <div class="ac-single-radio">
+          <input class="is-checkradio ac-radio" id="kubedbonprem" type="radio" name="exampleRadioInline"
+            checked="checked" />
+          <label for="kubedbonprem">KubeDB On-prem</label>
+          <input class="is-checkradio ac-radio" id="kubedbcloud" type="radio" name="exampleRadioInline" />
+          <label for="kubedbcloud">KubeDB Cloud</label>
+        </div>
+        <!-- input field end -->
+
+        <!-- button next start  -->
+        <div class="button ac-primary button-next" onclick="gotoNext()">NEXT <i class="fa fa-long-arrow-right pl-10"
+            aria-hidden="true"></i></button>
+          <!-- button next end -->
+        </div>
+      </div>
+      <!-- modal body for option end  -->
+    </div>
+    <!-- modal body for form start -->
+    <div class="ac-modal-body form-modal is-hidden">
       <form action="/_/pricing" method="post">
         <div class="form-content">
           <div class="single-input-form">
@@ -1022,8 +1046,8 @@
                 </select>
               </div>
             </span>
-            <input class="pl-80 pr-130" name="telephone" id="phone" type="tel" placeholder="018 6484 1998"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+            <!-- If we need, we can use pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" -->
+            <input class="pl-80 pr-130" name="telephone" id="phone" type="tel" placeholder="018 6484 1998" required />
             <input type="text" class="optional-num" placeholder="optional-num">
           </div>
 
@@ -1042,25 +1066,70 @@
         <button class="button ac-primary send-message">Send</button>
       </form>
     </div>
-    <!-- body end  -->
-  </div>
-</div>
+    <!-- modal body for form end -->
+</section>
 <!-- contact modal area end  -->
 <!-- for modal show hide script start -->
 <script type="text/javascript">
+  var modal = document.querySelector(".ac-modal");
   // modal show 
   function showModal() {
-    let modal = document.querySelector(".ac-modal");
     if (modal.classList.contains('is-hidden')) {
       modal.classList.remove('is-hidden')
     }
   }
   // modal hide 
   function closeModal() {
-    let modal = document.querySelector(".ac-modal");
     if (!(modal.classList.contains('is-hidden'))) {
       modal.classList.add('is-hidden')
     }
+    gotoBack()
+  }
+
+  // nextbutton modal content 
+  function gotoNext() {
+    let nextBtn = modal.querySelector('.button-next');
+    let recModal = modal.querySelector('.recommendetion-modal');
+    let formModal = modal.querySelector('.form-modal');
+    let backButton = modal.querySelector('.button-back');
+    if (!(recModal.classList.contains('is-hidden'))) {
+      recModal.classList.add('is-hidden')
+      let modalHeader = modal.querySelector('.ac-modal-header h4');
+      if (formModal.classList.contains('is-hidden')) {
+        formModal.classList.remove('is-hidden')
+        // active back button
+        backButton.classList.remove('is-hidden')
+
+      } else {
+        formModal.classList.add('is-hidden')
+        backButton.classList.add('is-hidden')
+      }
+    } else {
+      recModal.classList.remove('is-hidden')
+    }
+  }
+
+  function gotoBack() {
+    // backButton Action 
+    let formModal = modal.querySelector('.form-modal');
+    let recModal = modal.querySelector('.recommendetion-modal');
+    let backButton = modal.querySelector('.button-back');
+    if (!(formModal.classList.contains('is-hidden'))) {
+      formModal.classList.add('is-hidden');
+      if (recModal.classList.contains('is-hidden')) {
+        recModal.classList.remove('is-hidden')
+      } else {
+        recModal.classList.add('is-hidden')
+      }
+      if (!(backButton.classList.contains('.is-hidden'))) {
+        backButton.classList.add('is-hidden')
+      } else {
+        backButton.classList.remove('is-hidden')
+      }
+    } else {
+      formModal.classList.remove('is-hidden');
+    }
+
   }
 
   // for selectbox JS 
