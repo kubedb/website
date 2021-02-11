@@ -604,6 +604,7 @@
         width: calc(50% - 15px);
         margin-bottom: 20px;
         position: relative;
+
         &.is-fullwidth {
           width: 100%;
         }
@@ -625,6 +626,7 @@
           }
         }
       }
+
       .optional-num {
         position: absolute;
         right: 0;
@@ -632,15 +634,19 @@
         width: 140px !important;
         border: none !important;
       }
+
       .country-code-wrapper {
         position: absolute;
         bottom: 3px;
         left: 3px;
+
         .custom-select {
           position: relative;
           width: 70px;
+
           select {
-            display: none; /*hide original SELECT element:*/
+            display: none;
+            /*hide original SELECT element:*/
           }
         }
 
@@ -653,7 +659,7 @@
           position: absolute;
           content: "";
           top: 16px;
-          right: 7px;
+          right: 10px;
           width: 0;
           height: 0;
           border: 5px solid transparent;
@@ -664,7 +670,7 @@
         .select-selected.select-arrow-active:after {
           border-color: transparent transparent #fff transparent;
           top: 9px;
-          right: 8px;
+          right: 10px;
         }
 
         /*style the items (options), including the selected item:*/
@@ -679,6 +685,7 @@
           border-radius: 4px;
           height: 39px;
           font-size: 13px;
+          font-weight: 500;
         }
 
         /*style items (options):*/
@@ -689,6 +696,13 @@
           left: 0;
           right: 0;
           z-index: 99;
+          max-height: 120px;
+          overflow-y: auto;
+          overflow-x: hidden;
+
+          &::-webkit-scrollbar {
+            width: 0;
+          }
         }
 
         /*hide the items when the select box is closed:*/
@@ -701,6 +715,7 @@
           background-color: rgba(0, 0, 0, 0.1);
         }
       }
+
       input[type="text"],
       input[type="tel"],
       input[type="email"],
@@ -804,6 +819,7 @@
         line-height: 1.4;
       }
     }
+
     .term-and-condition {
       label,
       a {
@@ -814,14 +830,17 @@
         line-height: 16px;
         color: #32325d;
       }
+
       label {
         padding-left: 7px;
         user-select: none;
       }
+
       a {
         color: #4d4dcb;
       }
     }
+
     .send-message {
       width: 136px;
       margin: 20px 0 0 0;
@@ -829,6 +848,7 @@
       font-weight: 500;
       box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.16);
       border: none;
+
       &:hover {
         border: none;
         background-color: darken($color: #4d4dcb, $amount: 10%);
@@ -838,6 +858,58 @@
 }
 
 // form end
+// recomendation modal start
+.ac-modal .ac-modal-inner .ac-modal-body {
+  p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 130%;
+    color: #333333;
+    padding: 0 30px;
+  }
+
+  .ac-single-radio {
+    padding: 20px 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  .button-next {
+    width: 171px;
+    height: 45px;
+    background: #4d4dcb;
+    border-radius: 4px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #ffffff;
+  }
+}
+
+.recommendetion-modal {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.ac-modal-header {
+  .button-back {
+    background: transparent;
+    border: none;
+    color: #3f444a;
+    cursor: pointer;
+    padding: 0 5px;
+    margin-right: 10px;
+  }
+}
+
+// recomendation end start
 // assistance section start
 .assistance-card-wrapper {
   @import url(/assets/css/calendly.css);
