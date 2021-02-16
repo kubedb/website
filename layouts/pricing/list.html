@@ -1077,6 +1077,8 @@
     if (modal.classList.contains('is-hidden')) {
       modal.classList.remove('is-hidden')
     }
+    let formModal = modal.querySelector('.form-modal');
+    formModal.classList.add('is-hidden')
   }
   // modal hide 
   function closeModal() {
