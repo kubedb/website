@@ -13149,88 +13149,67 @@ img:not(.is-kubedb-cloud) {
   border: none !important;
 }
 
-.contact-us-modal form .form-content .country-code-wrapper {
-  position: absolute;
-  bottom: 3px;
-  left: 3px;
-  /*style the arrow inside the select element:*/
-  /*point the arrow upwards when the select box is open (active):*/
-  /*style the items (options), including the selected item:*/
-  /*style items (options):*/
-  /*hide the items when the select box is closed:*/
-}
-
 .contact-us-modal form .form-content .country-code-wrapper .custom-select {
-  position: relative;
-  width: 70px;
-}
-
-.contact-us-modal form .form-content .country-code-wrapper .custom-select select {
-  display: none;
-  /*hide original SELECT element:*/
-}
-
-.contact-us-modal form .form-content .country-code-wrapper .select-selected {
-  background-color: #a6abbd;
-}
-
-.contact-us-modal form .form-content .country-code-wrapper .select-selected:after {
+  width: 75px;
   position: absolute;
-  content: "";
-  top: 16px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 5px solid transparent;
-  border-color: #fff transparent transparent transparent;
+  height: 45px;
+  top: 22px;
+  left: 2px;
+  border: none;
 }
 
-.contact-us-modal form .form-content .country-code-wrapper .select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 9px;
-  right: 10px;
+.contact-us-modal form .form-content .country-code-wrapper .custom-select .ss-single-selected {
+  height: 41px;
+  background-color: #a6abbd;
+  font-size: 14px;
 }
 
-.contact-us-modal form .form-content .country-code-wrapper .select-items div,
-.contact-us-modal form .form-content .country-code-wrapper .select-selected {
-  color: #ffffff;
-  padding: 8px 10px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  border-radius: 4px;
-  height: 39px;
+.contact-us-modal form .form-content .country-code-wrapper .custom-select .ss-single-selected span.placeholder {
+  color: #ffff;
   font-size: 13px;
   font-weight: 500;
+  font-family: "Roboto";
 }
 
-.contact-us-modal form .form-content .country-code-wrapper .select-items {
-  position: absolute;
-  background-color: #a6abbd;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  max-height: 120px;
-  overflow-y: auto;
-  overflow-x: hidden;
+.contact-us-modal form .form-content .country-code-wrapper .custom-select .ss-single-selected .ss-arrow span {
+  border: solid #fff;
+  border-top-color: #fff;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-right-color: #fff;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-bottom-color: #fff;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-left-color: #fff;
+  border-left-style: solid;
+  border-left-width: 0px;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
 }
 
-.contact-us-modal form .form-content .country-code-wrapper .select-items::-webkit-scrollbar {
-  width: 0;
+.contact-us-modal form .form-content .country-code-wrapper .custom-select .ss-content .ss-search input {
+  font-size: 12px !important;
+  padding: 4px;
 }
 
-.contact-us-modal form .form-content .country-code-wrapper .select-hide {
-  display: none;
+.contact-us-modal form .form-content .country-code-wrapper .custom-select .ss-content .ss-search input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  border-radius: 1px solid #4d4dcb;
 }
 
-.contact-us-modal form .form-content .country-code-wrapper .select-items div:hover,
-.contact-us-modal form .form-content .country-code-wrapper .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+.contact-us-modal form .form-content .country-code-wrapper .custom-select .ss-content .ss-list .ss-option {
+  font-size: 12px;
+}
+
+.contact-us-modal form .form-content .country-code-wrapper .custom-select .ss-content .ss-list .ss-option:hover {
+  background-color: #4d4dcb;
 }
 
 .contact-us-modal form .form-content input[type="text"],
