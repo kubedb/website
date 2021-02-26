@@ -690,7 +690,29 @@
     // for slimselect 
     new SlimSelect({
       select: '#countryCode',
-    })
+      searchPlaceholder: "Country Name",
+      beforeOpen: function () {
+        placeHolderReplace()
+      },
+      beforeClose: function () {
+        placeHolderReplace()
+      },
+      afterOpen: function () {
+        placeHolderReplace()
+      },
+      afterClose: function () {
+        placeHolderReplace()
+      }
+    });
+    // show only country code 
+    function placeHolderReplace() {
+      let placeholder = document.querySelector('.ss-single-selected .placeholder');
+      if (placeholder) {
+        let replace = placeholder.innerHTML.replace(/([A-Z])/gi, "");
+        placeholder.innerHTML = replace;
+      }
+    }
+    placeHolderReplace()
   </script>
 </body>
 
