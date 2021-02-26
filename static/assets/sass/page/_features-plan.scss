@@ -643,6 +643,9 @@
           top: 22px;
           left: 2px;
           border: none;
+          .ss-content.ss-open{
+            width: 200px;
+          }
           .ss-single-selected {
             height: 41px;
             background-color: #a6abbd;

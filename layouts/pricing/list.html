@@ -1108,13 +1108,6 @@
     } else {
       recModal.classList.remove('is-hidden')
     }
-
-    // show only country code 
-    let placeholder = document.querySelector('.ss-single-selected .placeholder');
-    if (placeholder) {
-      let replace = placeholder.innerHTML.replace(/([A-Z])/gi, "");
-      placeholder.innerHTML = replace;
-    }
   }
   // Go back modal 
   function gotoBack() {
