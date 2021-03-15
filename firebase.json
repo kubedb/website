@@ -51,6 +51,11 @@
           "source": "/docs/latest/:rest*",
           "destination": "/docs/v2021.03.11/:rest",
           "type": 302
+        },
+        {
+          "source": "/docs",
+          "destination": "/docs/latest/",
+          "type": 302
         }
       ]
     }
