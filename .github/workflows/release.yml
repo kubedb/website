@@ -23,6 +23,12 @@ jobs:
         with:
           node-version: 10.x
 
+      - name: Install yq
+        run: |
+          curl -fsSL -o yq https://github.com/mikefarah/yq/releases/download/3.3.0/yq_linux_amd64
+          chmod +x yq
+          sudo mv yq /usr/local/bin/yq
+
       - name: Install Hugo
         run: |
           curl -fsSL -o hugo_extended.deb https://github.com/gohugoio/hugo/releases/download/v0.71.1/hugo_extended_0.71.1_Linux-64bit.deb
@@ -41,6 +47,7 @@ jobs:
       - name: QA
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          GOOGLE_CUSTOM_SEARCH_API_KEY: ${{ secrets.GOOGLE_CUSTOM_SEARCH_API_KEY }}
         if: startsWith(github.event.ref, 'refs/tags/') && (contains(github.ref, '-alpha.') || contains(github.ref, '-beta.'))
         run: |
           npm install
@@ -50,6 +57,7 @@ jobs:
       - name: Release
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          GOOGLE_CUSTOM_SEARCH_API_KEY: ${{ secrets.GOOGLE_CUSTOM_SEARCH_API_KEY }}
         if: startsWith(github.event.ref, 'refs/tags/') && (contains(github.ref, '-alpha.') || contains(github.ref, '-beta.')) == false
         run: |
           npm install
