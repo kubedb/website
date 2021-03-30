@@ -84,7 +84,7 @@
           {{ if fileExists $nf }}
           {{ $nurl = replace $url.Path (print "/" $currentBranch) (print "/" $p.latestVersion) }}
           {{ end }}
-          You are looking at the documentation of a prior release. To read, the the documentation of the latest release, please visit <a href="{{ $nurl }}">here</a>.
+          You are looking at the documentation of a prior release. To read the documentation of the latest release, please visit <a href="{{ $nurl }}">here</a>.
         </div>
     </article>
     {{ end }}
