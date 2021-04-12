@@ -1,0 +1,480 @@
+<!doctype html><html lang=en><head><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-62096468-4','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=theme-color content="#4D4DCB"><title>KubeDB by AppsCode</title><meta name=description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta name=author content="AppsCode Inc."><meta name=keywords content="kubernetes appscode databsse high availability postgres elasticsearch etcd memecached mongodb mysql percona xtradb redis"><link rel=apple-touch-icon sizes=57x57 href=/assets/images/products/kubedb/icons/apple-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=/assets/images/products/kubedb/icons/apple-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=/assets/images/products/kubedb/icons/apple-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=/assets/images/products/kubedb/icons/apple-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=/assets/images/products/kubedb/icons/apple-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=/assets/images/products/kubedb/icons/apple-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=/assets/images/products/kubedb/icons/apple-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=/assets/images/products/kubedb/icons/apple-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=/assets/images/products/kubedb/icons/apple-icon-180x180.png><link rel=icon type=image/png sizes=192x192 href=/assets/images/products/kubedb/icons/android-icon-192x192.png><link rel=icon type=image/png sizes=32x32 href=/assets/images/products/kubedb/icons/favicon-32x32.png><link rel=icon type=image/png sizes=96x96 href=/assets/images/products/kubedb/icons/favicon-96x96.png><link rel=icon type=image/png sizes=16x16 href=/assets/images/products/kubedb/icons/favicon-16x16.png><link rel=manifest href=/assets/images/products/kubedb/icons/manifest.json><meta name=msapplication-TileColor content="#ffffff"><meta name=msapplication-TileImage content="/assets/images/products/kubedb/icons/ms-icon-144x144.png"><meta itemprop=name content="KubeDB by AppsCode"><meta itemprop=description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta itemprop=image content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeDB"><meta name=twitter:title content="KubeDB by AppsCode"><meta name=twitter:creator content="@KubeDB"><meta name=twitter:description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta name=twitter:image:src content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta property="og:url" content="https://kubedb.com"><meta property="og:title" content="KubeDB by AppsCode"><meta property="og:description" content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta property="og:site_name" content="KubeDB by AppsCode"><meta property="og:image" content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta property="og:type" content="article"><link rel=stylesheet href=/assets/css/font-awesome.min.css><link href=https://unpkg.com/aos@2.3.1/dist/aos.css rel=stylesheet><link rel=stylesheet href=/assets/css/bulma-carousel.min.css><link rel=stylesheet href=/assets/css/bulma-tooltip.min.css><link rel=stylesheet href=/assets/css/bulma.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css><link rel=stylesheet href=/assets/sass/main.min.8104f72db8562f10721a9230f1af455fd8fbae1add95d0b79fe1a11519a4eb6d.css></head><body class=kubedb><header><div class=header-top><div class="container section"><nav class=navbar><div class=navbar-brand><a class=navbar-item href=https://appscode.com><img src=/assets/images/products/appscode/appscode.png alt=AppsCode></a>
+<a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav1><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=acNav1 class="navbar-menu main-menu"><div class=navbar-end><div class=navbar-start><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Products</a><div class=ac-megamenu><div class=columns><div class="column is-6"><div class=columns><div class="column is-12 br-1"><a href=https://kubedb.com class="single-product-item is-kubedb"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubedb/kubedb-icon.png alt=KubeDB></div><h5>KubeDB</h5></div><div class=menu-body><p>Run production-grade Databases on Kubernetes</p></div></a><a href=https://stash.run class="single-product-item is-stash"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/stash/stash-icon.png alt=Stash></div><h5>Stash</h5></div><div class=menu-body><p>Backup your Kubernetes Stateful Applications</p></div></a><a href=https://kubevault.com class="single-product-item is-kubevault"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubevault/kubevault-icon.png alt=KubeVault></div><h5>KubeVault</h5></div><div class=menu-body><p>Tools for running HashiCorp Vault on Kubernetes</p></div></a></div></div></div><div class="column is-6"><div class=columns><div class="column is-12"><a href=https://byte.builders class="single-product-item byte-builder kd-orange"><div class=menu-header><p class=intro>Introducing....</p><h5>ByteBuilders</h5></div><div class=menu-body><p>Cloud reimagined for the age of Kubernetes</p></div><p class=learn-more-btn>Learn more
+<span class=icon><i class="fa fa-long-arrow-right" aria-hidden=true></i></span></p></a><a href=https://kubeform.com class="single-product-item is-kubeform"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubeform/kubeform-icon.png alt=Kubeform></div><h5>Kubeform</h5></div><div class=menu-body><p>Provision cloud resources using Kubernetes CRDs & Terraform</p></div></a></div></div></div></div></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Open Source</a><div class=ac-megamenu><div class=columns><div class="column is-6"><div class=columns><div class="column is-12 br-1"><a href=https://voyagermesh.com class="single-product-item is-voyager"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/voyager/voyager-icon.png alt=Voyager></div><h5>Voyager</h5></div><div class=menu-body><p>Secure HAProxy Ingress Controller for
+Kubernetes</p></div></a><a href=https://appscode.com/products/guard/ class="single-product-item is-guard"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/guard/guard-icon.png alt=Guard></div><h5>Guard</h5></div><div class=menu-body><p>Kubernetes Authentication WebHook Server</p></div></a><a href=https://appscode.com/products/kubed/ class="single-product-item is-kubed"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubed/kubed-icon.png alt=Kubed></div><h5>Kubed</h5></div><div class=menu-body><p>Kubernetes cluster manager daemon</p></div></a></div></div></div><div class="column is-6"><div class=columns><div class="column is-12"><a href=https://pharmer.cloud class="single-product-item is-pharmer"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/pharmer/pharmer-icon.png alt=Pharmer></div><h5>Pharmer</h5></div><div class=menu-body><p>Kubernetes Cluster Manager using Kubeadm & Cluster API</p></div></a><a href=https://appscode.com/products/swift/ class="single-product-item is-swift"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/swift/swift-icon.png alt=Swift></div><h5>Swift</h5></div><div class=menu-body><p>Ajax friendly Helm Tiller Proxy</p></div></a><a href=https://appscode.com/products/searchlight/ class="single-product-item is-searchlight"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/searchlight/searchlight-icon.png alt=Searchlight></div><h5>Searchlight</h5></div><div class=menu-body><p>Alerts for Kubernetes</p></div></a></div></div></div></div></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Services</a><div class=ac-dropdown><a class=navbar-item href=https://appscode.com/consulting/>Consulting</a>
+<a class=navbar-item href=https://appscode.com/training/>Training</a>
+<a class=navbar-item href=https://appscode.com/support/>Support</a></div></div><a class=navbar-item href=https://blog.byte.builders>Blog</a>
+<a class=navbar-item href=https://appscode.com/contact/>Contact Us</a></div><div class=navbar-item><div class="buttons main-menu-button-top"><a class="button is-small for-chat" href=https://slack.appscode.com><span><img src=/assets/images/icon/slack.png alt></span>Slack</a>
+<a class="button is-small for-support" href=https://appscode.freshdesk.com><span><img src=/assets/images/icon/chat.png alt></span>Support Portal</a></div></div></div></div></nav></div></div><div class="header-bottom-area header-area kubedb-primary-bg customize-kubedb fixed-menu"><div class="container section"><nav class=navbar><div class=navbar-brand><a class=navbar-item href=https://kubedb.com><img src=/assets/images/products/kubedb/kubedb-white.png alt=KubeDB></a>
+<a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=acNav class="navbar-menu main-menu"><div class=navbar-end><div class=navbar-start><a href=/features/ class=navbar-item>Features</a>
+<a href=/pricing/ class=navbar-item>Pricing</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Databases</a><div class=ac-dropdown><a class=navbar-item href=/docs/v2021.03.17/guides/elasticsearch/>Elasticsearch</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/mariadb/>MariaDB</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/memcached/>Memcached</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/mongodb/>MongoDB</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/mysql/>MySQL</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/percona-xtradb/>Percona XtraDB</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/pgbouncer/>PgBouncer</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/postgres/>PostgreSQL</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/proxysql/>ProxySQL</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/redis/>Redis</a></div></div><a href=/docs/v2021.03.17/welcome/ class=navbar-item>Documentation</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Community</a><div class=ac-dropdown><a href=https://github.com/kubedb class=navbar-item>GitHub</a>
+<a href=https://twitter.com/KubeDB class=navbar-item>Twitter</a>
+<a href=http://slack.kubernetes.io/ class=navbar-item>Slack</a></div></div></div><div class=navbar-item><div class="buttons main-menu-button"><img style=height:24px alt="GitHub Stars" src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github&label=stars&query=%24.stars&url=https://github-stars.appscode.workers.dev/user/kubedb">
+&nbsp;&nbsp;&nbsp;
+<img style=height:24px alt="GitHub Forks" src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github&label=forks&query=%24.forks&url=https://github-stars.appscode.workers.dev/user/kubedb">
+&nbsp;&nbsp;&nbsp;
+<img style=height:24px alt="Docker Pulls" src="https://img.shields.io/docker/pulls/kubedb/operator?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=docker&label=pulls"></div></div></div></div></nav></div></div><div class=documentation-menu><div class="container section"><div class=is-centered><div class="is-half has-text-centered-desktop"><div class=responsive-menu><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav3><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><nav class=documentation-navbar><div id=acNav3 class="navbar-menu nav-menu main-menu"><div class=navbar-centered><div class=navbar-start><a href=/docs/v2020.11.08/ class=navbar-item>Welcome</a>
+<a href=/docs/v2020.11.08/overview/ class=navbar-item>Overview</a>
+<a href=/docs/v2020.11.08/setup/ class=navbar-item>Setup</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Guides</a><div class=ac-dropdown><a href=/docs/v2020.11.08/guides/elasticsearch/ class=navbar-item>Elasticsearch</a>
+<a href=/docs/v2020.11.08/guides/memcached/ class=navbar-item>Memcached</a>
+<a href=/docs/v2020.11.08/guides/mongodb/ class=navbar-item>MongoDB</a>
+<a href=/docs/v2020.11.08/guides/mysql/ class=navbar-item>MySQL</a>
+<a href=/docs/v2020.11.08/guides/percona-xtradb/ class=navbar-item>Percona XtraDB</a>
+<a href=/docs/v2020.11.08/guides/pgbouncer/ class=navbar-item>PgBouncer</a>
+<a href=/docs/v2020.11.08/guides/postgres/ class=navbar-item>PostgreSQL</a>
+<a href=/docs/v2020.11.08/guides/proxysql/ class=navbar-item>ProxySQL</a>
+<a href=/docs/v2020.11.08/guides/redis/ class=navbar-item>Redis</a></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Reference</a><div class=ac-dropdown><a href=/docs/v2020.11.08/reference/operator/ class=navbar-item>KubeDB Operator</a>
+<a href=/docs/v2020.11.08/reference/cli/ class=navbar-item>KubeDB CLI</a></div></div></div></div></div></nav></div></div></div></div></header><div class=documentation-area><div class="container section"><article class="message is-danger"><div class=message-body>You are looking at the documentation of a prior release. To read the documentation of the latest release, please visit <a href=/docs/latest/>here</a>.</div></article><div class=columns><div class="column is-3"><div class=kd-left-sidebar><div class=trial-button><a href=/docs/v2021.03.17/setup/ class="button is-fullwidth">Try Now for FREE!</a></div><div class=kd-version><div class=dropdown><div class=dropdown-trigger><button class="button is-fullwidth" aria-haspopup=true aria-controls=dropdown-menu3>
+<span><strong class=icon><i class="fa fa-cog" aria-hidden=true></i></strong>v2020.11.08</span>
+<span class="icon is-small"><i class="fa fa-angle-down" aria-hidden=true></i></span></button></div><div class=dropdown-menu id=dropdown-menu3 role=menu><div class=dropdown-content><a href=https://github.com/kubedb/docs/tree/master/docs target=_blank class=dropdown-item>master</a>
+<a href=/docs/v2021.03.17/ class=dropdown-item>v2021.03.17<div class=tag>Latest</div></a><a href=/docs/v2021.01.26/ class=dropdown-item>v2021.01.26</a>
+<a href=/docs/v2021.01.15/ class=dropdown-item>v2021.01.15</a>
+<a href=/docs/v2021.01.02-rc.0/ class=dropdown-item>v2021.01.02-rc.0</a>
+<a href=/docs/v2020.12.10/ class=dropdown-item>v2020.12.10</a>
+<a href=/docs/v2020.11.12/ class=dropdown-item>v2020.11.12</a>
+<a href=/docs/v2020.11.11/ class=dropdown-item>v2020.11.11</a>
+<a href=/docs/v2020.11.08/ class=dropdown-item>v2020.11.08</a>
+<a href=/docs/v2020.10.28/ class=dropdown-item>v2020.10.28</a>
+<a href=/docs/v0.13.0-rc.0/ class=dropdown-item>v0.13.0-rc.0</a>
+<a href=/docs/0.12.0/ class=dropdown-item>0.12.0</a></div></div></div></div><div class=kd-sidebar-menu><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-1>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-1><a href=/docs/v2020.11.08/guides/>Elasticsearch</a></label></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-2>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-2><a href=/docs/v2020.11.08/guides/elasticsearch/>Elasticsearch</a></label></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-3>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-3><a>Quickstart</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.11.08/guides/elasticsearch/quickstart/quickstart/>Overview</a></li></ul></div></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-4>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-4><a>Concepts</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.11.08/guides/elasticsearch/concepts/elasticsearch/>Elasticsearch</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/concepts/catalog/>ElasticsearchVersion</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/concepts/appbinding/>AppBinding</a></li></ul></div></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-5 checked>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-5><a>Clustering</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li class=is-active><a href=/docs/v2020.11.08/guides/elasticsearch/clustering/topology/>Topology</a></li></ul></div></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-6>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-6><a>Custom Configuration</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.11.08/guides/elasticsearch/configuration/overview/>Overview</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/configuration/with-topology/>With Topology</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/configuration/without-topology/>Without Topology</a></li></ul></div></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-7>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-7><a>Custom RBAC</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.11.08/guides/elasticsearch/custom-rbac/using-custom-rbac/>Custom RBAC</a></li></ul></div></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-8>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-8><a>Private Registry</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.11.08/guides/elasticsearch/private-registry/using-private-registry/>Quickstart</a></li></ul></div></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-9>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-9><a>Backup & Restore</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.11.08/guides/elasticsearch/backup/stash/>Using Stash</a></li></ul></div></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-10>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-10><a>Monitoring</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.11.08/guides/elasticsearch/monitoring/overview/>Overview</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/monitoring/using-prometheus-operator/>Prometheus Operator</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/monitoring/using-builtin-prometheus/>Builtin Prometheus</a></li></ul></div></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-11>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-11><a>X-Pack</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.11.08/guides/elasticsearch/x-pack/configuration/>X-Pack Configuration</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/x-pack/use-tls/>Use TLS</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/x-pack/issue-certificate/>Issue Certificate</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/x-pack/disable-xpack/>Disable X-Pack</a></li></ul></div></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-12>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-12><a>Search Guard</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.11.08/guides/elasticsearch/search-guard/overview/>Overview</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/search-guard/configuration/>Configuration</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/search-guard/use-tls/>Use TLS</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/search-guard/issue-certificate/>Issue Certificate</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/search-guard/disable-searchguard/>Disable Search Guard</a></li><li><a href=/docs/v2020.11.08/guides/elasticsearch/search-guard/x-pack-monitoring/>Monitoring</a></li></ul></div></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-13>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-13><a>Kibana</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.11.08/guides/elasticsearch/kibana/connect-kibana/>Use Kibana</a></li></ul></div></div><div class=item><input type=checkbox id=a00a5e99f61329c0c9141c49ffc58adc-14>
+<label for=a00a5e99f61329c0c9141c49ffc58adc-14><a>CLI</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.11.08/guides/elasticsearch/cli/cli/>Quickstart</a></li></ul></div></div></div></div></div><div class="column is-7"><div class=full-info><blockquote><p>New to KubeDB? Please start <a href=/docs/v2020.11.08/README>here</a>.</p></blockquote><h1 id=elasticsearch-topology>Elasticsearch Topology</h1><p>KubeDB Elasticsearch supports multi-node database cluster.</p><h2 id=before-you-begin>Before You Begin</h2><p>At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using <a href=https://kind.sigs.k8s.io/docs/user/quick-start/>kind</a>.</p><p>Now, install KubeDB cli on your workstation and KubeDB operator in your cluster following the steps <a href=/docs/v2020.11.08/setup/README>here</a>.</p><p>To keep things isolated, this tutorial uses a separate namespace called <code>demo</code> throughout this tutorial.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl create ns demo
+namespace/demo created
+
+$ kubectl get ns demo
+NAME    STATUS  AGE
+demo    Active  5s
+</code></pre></div><blockquote><p>Note: YAML files used in this tutorial are stored in <a href=https://github.com/kubedb/docs/tree/v2020.11.08/docs/examples/elasticsearch>docs/examples/elasticsearch</a> folder in GitHub repository <a href=https://github.com/kubedb/docs>kubedb/docs</a>.</p></blockquote><h2 id=create-multi-node-elasticsearch>Create multi-node Elasticsearch</h2><p>Elasticsearch can be created with multiple nodes. If you want to create an Elasticsearch cluster with three nodes, you need to set <code>spec.replicas</code> to <code>3</code>. In this case, all of these three nodes will act as <em>master</em>, <em>data</em> and <em>client</em>.</p><p>Check following Elasticsearch object</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>kubedb.com/v1alpha2</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Elasticsearch</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>multi-node-es</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>version</span>: <span style=color:#ae81ff>7.3.2</span>
+  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>3</span>
+  <span style=color:#f92672>storageType</span>: <span style=color:#ae81ff>Durable</span>
+  <span style=color:#f92672>storage</span>:
+    <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+    <span style=color:#f92672>accessModes</span>:
+    - <span style=color:#ae81ff>ReadWriteOnce</span>
+    <span style=color:#f92672>resources</span>:
+      <span style=color:#f92672>requests</span>:
+        <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+</code></pre></div><p>Here,</p><ul><li><code>spec.replicas</code> is the number of nodes in the Elasticsearch cluster. Here, we are creating a three node Elasticsearch cluster.</li></ul><blockquote><p>Note: If <code>spec.topology</code> is set, you won&rsquo;t able to <code>spec.replicas</code>. KubeDB will reject the create request for Elasticsearch crd from validating webhook.</p></blockquote><p>Create example above with following command</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl create -f https://github.com/kubedb/docs/raw/v2020.11.08/docs/examples/elasticsearch/clustering/multi-node-es.yaml
+elasticsearch.kubedb.com/multi-node-es created
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get es -n demo
+NAME            VERSION   STATUS    AGE
+multi-node-es   7.3.2     Running   7m38s
+</code></pre></div><p>Let&rsquo;s describe Elasticsearch object <code>multi-node-es</code> while Running</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ae81ff>$ kubectl dba describe es -n demo multi-node-es</span>
+<span style=color:#f92672>Name</span>:               <span style=color:#ae81ff>multi-node-es</span>
+<span style=color:#f92672>Namespace</span>:          <span style=color:#ae81ff>demo</span>
+<span style=color:#f92672>CreationTimestamp</span>:  <span style=color:#ae81ff>Wed, 02 Oct 2019 10:37:14 +0600</span>
+<span style=color:#f92672>Labels</span>:             <span style=color:#ae81ff>&lt;none&gt;</span>
+<span style=color:#f92672>Annotations</span>:        <span style=color:#ae81ff>&lt;none&gt;</span>
+<span style=color:#f92672>Status</span>:             <span style=color:#ae81ff>Running</span>
+<span style=color:#f92672>Replicas</span>:           <span style=color:#ae81ff>3</span>  <span style=color:#ae81ff>total</span>
+  <span style=color:#f92672>StorageType</span>:      <span style=color:#ae81ff>Durable</span>
+<span style=color:#f92672>Volume</span>:
+  <span style=color:#f92672>StorageClass</span>:  <span style=color:#ae81ff>standard</span>
+  <span style=color:#f92672>Capacity</span>:      <span style=color:#ae81ff>1Gi</span>
+  <span style=color:#f92672>Access Modes</span>:  <span style=color:#ae81ff>RWO</span>
+
+<span style=color:#f92672>StatefulSet</span>:          
+  <span style=color:#f92672>Name</span>:               <span style=color:#ae81ff>multi-node-es</span>
+  <span style=color:#f92672>CreationTimestamp</span>:  <span style=color:#ae81ff>Wed, 02 Oct 2019 10:37:15 +0600</span>
+  <span style=color:#f92672>Labels</span>:               <span style=color:#ae81ff>app.kubernetes.io/component=database</span>
+                        <span style=color:#ae81ff>app.kubernetes.io/instance=multi-node-es</span>
+                        <span style=color:#ae81ff>app.kubernetes.io/managed-by=kubedb.com</span>
+                        <span style=color:#ae81ff>app.kubernetes.io/name=elasticsearch</span>
+                        <span style=color:#ae81ff>app.kubernetes.io/version=7.3.2</span>
+                        <span style=color:#ae81ff>kubedb.com/kind=Elasticsearch</span>
+                        <span style=color:#ae81ff>kubedb.com/name=multi-node-es</span>
+                        <span style=color:#ae81ff>node.role.client=set</span>
+                        <span style=color:#ae81ff>node.role.data=set</span>
+                        <span style=color:#ae81ff>node.role.master=set</span>
+  <span style=color:#f92672>Annotations</span>:        <span style=color:#ae81ff>&lt;none&gt;</span>
+  <span style=color:#f92672>Replicas</span>:           <span style=color:#ae81ff>824641370200</span> <span style=color:#ae81ff>desired | 3 total</span>
+  <span style=color:#f92672>Pods Status</span>:        <span style=color:#ae81ff>3</span> <span style=color:#ae81ff>Running / 0 Waiting / 0 Succeeded / 0 Failed</span>
+
+<span style=color:#f92672>Service</span>:        
+  <span style=color:#f92672>Name</span>:         <span style=color:#ae81ff>multi-node-es</span>
+  <span style=color:#f92672>Labels</span>:         <span style=color:#ae81ff>app.kubernetes.io/component=database</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/instance=multi-node-es</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/managed-by=kubedb.com</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/name=elasticsearch</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/version=7.3.2</span>
+                  <span style=color:#ae81ff>kubedb.com/kind=Elasticsearch</span>
+                  <span style=color:#ae81ff>kubedb.com/name=multi-node-es</span>
+  <span style=color:#f92672>Annotations</span>:  <span style=color:#ae81ff>&lt;none&gt;</span>
+  <span style=color:#f92672>Type</span>:         <span style=color:#ae81ff>ClusterIP</span>
+  <span style=color:#f92672>IP</span>:           <span style=color:#ae81ff>10.0.13.4</span>
+  <span style=color:#f92672>Port</span>:         <span style=color:#ae81ff>http  9200/TCP</span>
+  <span style=color:#f92672>TargetPort</span>:   <span style=color:#ae81ff>http/TCP</span>
+  <span style=color:#f92672>Endpoints</span>:    <span style=color:#ae81ff>10.4.0.10</span>:<span style=color:#ae81ff>9200</span>,<span style=color:#ae81ff>10.4.1.7</span>:<span style=color:#ae81ff>9200</span>,<span style=color:#ae81ff>10.4.1.8</span>:<span style=color:#ae81ff>9200</span>
+
+<span style=color:#f92672>Service</span>:        
+  <span style=color:#f92672>Name</span>:         <span style=color:#ae81ff>multi-node-es-master</span>
+  <span style=color:#f92672>Labels</span>:         <span style=color:#ae81ff>app.kubernetes.io/component=database</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/instance=multi-node-es</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/managed-by=kubedb.com</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/name=elasticsearch</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/version=7.3.2</span>
+                  <span style=color:#ae81ff>kubedb.com/kind=Elasticsearch</span>
+                  <span style=color:#ae81ff>kubedb.com/name=multi-node-es</span>
+  <span style=color:#f92672>Annotations</span>:  <span style=color:#ae81ff>&lt;none&gt;</span>
+  <span style=color:#f92672>Type</span>:         <span style=color:#ae81ff>ClusterIP</span>
+  <span style=color:#f92672>IP</span>:           <span style=color:#ae81ff>10.0.11.165</span>
+  <span style=color:#f92672>Port</span>:         <span style=color:#ae81ff>transport  9300/TCP</span>
+  <span style=color:#f92672>TargetPort</span>:   <span style=color:#ae81ff>transport/TCP</span>
+  <span style=color:#f92672>Endpoints</span>:    <span style=color:#ae81ff>10.4.0.10</span>:<span style=color:#ae81ff>9300</span>,<span style=color:#ae81ff>10.4.1.7</span>:<span style=color:#ae81ff>9300</span>,<span style=color:#ae81ff>10.4.1.8</span>:<span style=color:#ae81ff>9300</span>
+
+<span style=color:#f92672>Database Secret</span>:
+  <span style=color:#f92672>Name</span>:         <span style=color:#ae81ff>multi-node-es-auth</span>
+  <span style=color:#f92672>Labels</span>:         <span style=color:#ae81ff>app.kubernetes.io/component=database</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/instance=multi-node-es</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/managed-by=kubedb.com</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/name=elasticsearch</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/version=7.3.2</span>
+                  <span style=color:#ae81ff>kubedb.com/kind=Elasticsearch</span>
+                  <span style=color:#ae81ff>kubedb.com/name=multi-node-es</span>
+  <span style=color:#f92672>Annotations</span>:  <span style=color:#ae81ff>&lt;none&gt;</span>
+  
+<span style=color:#f92672>Type</span>:  <span style=color:#ae81ff>Opaque</span>
+  
+<span style=color:#ae81ff>Data</span>
+<span style=color:#ae81ff>====</span>
+  <span style=color:#f92672>ADMIN_PASSWORD</span>:  <span style=color:#ae81ff>8</span> <span style=color:#ae81ff>bytes</span>
+  <span style=color:#f92672>ADMIN_USERNAME</span>:  <span style=color:#ae81ff>7</span> <span style=color:#ae81ff>bytes</span>
+
+<span style=color:#f92672>Certificate Secret</span>:
+  <span style=color:#f92672>Name</span>:         <span style=color:#ae81ff>multi-node-es-cert</span>
+  <span style=color:#f92672>Labels</span>:         <span style=color:#ae81ff>app.kubernetes.io/component=database</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/instance=multi-node-es</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/managed-by=kubedb.com</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/name=elasticsearch</span>
+                  <span style=color:#ae81ff>app.kubernetes.io/version=7.3.2</span>
+                  <span style=color:#ae81ff>kubedb.com/kind=Elasticsearch</span>
+                  <span style=color:#ae81ff>kubedb.com/name=multi-node-es</span>
+  <span style=color:#f92672>Annotations</span>:  <span style=color:#ae81ff>&lt;none&gt;</span>
+  
+<span style=color:#f92672>Type</span>:  <span style=color:#ae81ff>Opaque</span>
+  
+<span style=color:#ae81ff>Data</span>
+<span style=color:#ae81ff>====</span>
+  <span style=color:#f92672>node.jks</span>:    <span style=color:#ae81ff>3007</span> <span style=color:#ae81ff>bytes</span>
+  <span style=color:#f92672>root.jks</span>:    <span style=color:#ae81ff>863</span> <span style=color:#ae81ff>bytes</span>
+  <span style=color:#f92672>root.pem</span>:    <span style=color:#ae81ff>1139</span> <span style=color:#ae81ff>bytes</span>
+  <span style=color:#f92672>client.jks</span>:  <span style=color:#ae81ff>3038</span> <span style=color:#ae81ff>bytes</span>
+  <span style=color:#f92672>key_pass</span>:    <span style=color:#ae81ff>6</span> <span style=color:#ae81ff>bytes</span>
+
+<span style=color:#f92672>Topology</span>:
+  <span style=color:#ae81ff>Type                Pod              StartTime                      Phase</span>
+  ----                ---              ---------                      -----
+  <span style=color:#ae81ff>master|client|data  multi-node-es-0  2019-10-02 10:41:16 +0600 +06  Running</span>
+  <span style=color:#ae81ff>client|data|master  multi-node-es-1  2019-10-02 10:41:36 +0600 +06  Running</span>
+  <span style=color:#ae81ff>master|client|data  multi-node-es-2  2019-10-02 10:42:04 +0600 +06  Running</span>
+
+<span style=color:#66d9ef>No</span> <span style=color:#ae81ff>Snapshots.</span>
+
+<span style=color:#f92672>Events</span>:
+  <span style=color:#ae81ff>Type    Reason      Age   From                    Message</span>
+  ----    ------      ----  ----                    -------
+  <span style=color:#ae81ff>Normal  Successful  7m    Elasticsearch operator  Successfully created Service</span>
+  <span style=color:#ae81ff>Normal  Successful  7m    Elasticsearch operator  Successfully created Service</span>
+  <span style=color:#ae81ff>Normal  Successful  2m    Elasticsearch operator  Successfully created StatefulSet</span>
+  <span style=color:#ae81ff>Normal  Successful  1m    Elasticsearch operator  Successfully created Elasticsearch</span>
+  <span style=color:#ae81ff>Normal  Successful  1m    Elasticsearch operator  Successfully created appbinding</span>
+  <span style=color:#ae81ff>Normal  Successful  1m    Elasticsearch operator  Successfully patched StatefulSet</span>
+  <span style=color:#ae81ff>Normal  Successful  1m    Elasticsearch operator  Successfully patched Elasticsearch</span>
+</code></pre></div><p>Here, we can see in <code>Topology</code> section that all three Pods are acting as <em>master</em>, <em>data</em> and <em>client</em>.</p><h2 id=create-elasticsearch-with-dedicated-node>Create Elasticsearch with dedicated node</h2><p>If you want to use separate node for <em>master</em>, <em>data</em> and <em>client</em> role, you need to configure <code>spec.topology</code> field of Elasticsearch crd.</p><p>In this tutorial, we will create following Elasticsearch with topology</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>kubedb.com/v1alpha2</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Elasticsearch</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>topology-es</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>version</span>: <span style=color:#ae81ff>7.3.2</span>
+  <span style=color:#f92672>storageType</span>: <span style=color:#ae81ff>Durable</span>
+  <span style=color:#f92672>topology</span>:
+    <span style=color:#f92672>master</span>:
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>master</span>
+      <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+      <span style=color:#f92672>storage</span>:
+        <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+        <span style=color:#f92672>accessModes</span>:
+        - <span style=color:#ae81ff>ReadWriteOnce</span>
+        <span style=color:#f92672>resources</span>:
+          <span style=color:#f92672>requests</span>:
+            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+    <span style=color:#f92672>data</span>:
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>data</span>
+      <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>2</span>
+      <span style=color:#f92672>storage</span>:
+        <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+        <span style=color:#f92672>accessModes</span>:
+        - <span style=color:#ae81ff>ReadWriteOnce</span>
+        <span style=color:#f92672>resources</span>:
+          <span style=color:#f92672>requests</span>:
+            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+    <span style=color:#f92672>client</span>:
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>client</span>
+      <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>2</span>
+      <span style=color:#f92672>storage</span>:
+        <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+        <span style=color:#f92672>accessModes</span>:
+        - <span style=color:#ae81ff>ReadWriteOnce</span>
+        <span style=color:#f92672>resources</span>:
+          <span style=color:#f92672>requests</span>:
+            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+</code></pre></div><p>Here,</p><ul><li><code>spec.topology</code> point to the number of pods we want as dedicated <code>master</code>, <code>client</code> and <code>data</code> nodes and also specify prefix, storage, resources for the pods.</li></ul><p>Let&rsquo;s create this Elasticsearch object</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl create -f https://github.com/kubedb/docs/raw/v2020.11.08/docs/examples/elasticsearch/clustering/topology-es.yaml
+elasticsearch.kubedb.com/topology-es created
+</code></pre></div><p>When this object is created, Elasticsearch database has started with 5 pods under 3 different StatefulSets.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get statefulset -n demo --show-labels --selector<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;kubedb.com/kind=Elasticsearch,kubedb.com/name=topology-es&#34;</span>
+NAME                 READY   AGE     LABELS
+client-topology-es   2/2     2m44s   app.kubernetes.io/component<span style=color:#f92672>=</span>database,app.kubernetes.io/instance<span style=color:#f92672>=</span>topology-es,app.kubernetes.io/managed-by<span style=color:#f92672>=</span>kubedb.com,app.kubernetes.io/name<span style=color:#f92672>=</span>elasticsearch,app.kubernetes.io/version<span style=color:#f92672>=</span>7.3.2,kubedb.com/kind<span style=color:#f92672>=</span>Elasticsearch,kubedb.com/name<span style=color:#f92672>=</span>topology-es,node.role.client<span style=color:#f92672>=</span>set
+data-topology-es     2/2     81s     app.kubernetes.io/component<span style=color:#f92672>=</span>database,app.kubernetes.io/instance<span style=color:#f92672>=</span>topology-es,app.kubernetes.io/managed-by<span style=color:#f92672>=</span>kubedb.com,app.kubernetes.io/name<span style=color:#f92672>=</span>elasticsearch,app.kubernetes.io/version<span style=color:#f92672>=</span>7.3.2,kubedb.com/kind<span style=color:#f92672>=</span>Elasticsearch,kubedb.com/name<span style=color:#f92672>=</span>topology-es,node.role.data<span style=color:#f92672>=</span>set
+master-topology-es   1/1     109s    app.kubernetes.io/component<span style=color:#f92672>=</span>database,app.kubernetes.io/instance<span style=color:#f92672>=</span>topology-es,app.kubernetes.io/managed-by<span style=color:#f92672>=</span>kubedb.com,app.kubernetes.io/name<span style=color:#f92672>=</span>elasticsearch,app.kubernetes.io/version<span style=color:#f92672>=</span>7.3.2,kubedb.com/kind<span style=color:#f92672>=</span>Elasticsearch,kubedb.com/name<span style=color:#f92672>=</span>topology-es,node.role.master<span style=color:#f92672>=</span>set
+</code></pre></div><p>Three StatefulSets are created for <em>client</em>, <em>data</em> and <em>master</em> node respectively.</p><ul><li><p>client-topology-es</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>topology</span>:
+    <span style=color:#f92672>client</span>:
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>client</span>
+      <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>2</span>
+      <span style=color:#f92672>storage</span>:
+        <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+        <span style=color:#f92672>accessModes</span>:
+        - <span style=color:#ae81ff>ReadWriteOnce</span>
+        <span style=color:#f92672>resources</span>:
+          <span style=color:#f92672>requests</span>:
+            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+</code></pre></div><p>This configuration creates a StatefulSet named <code>client-topology-es</code> for client node</p><ul><li><code>spec.replicas</code> is set to <code>2</code>. Two dedicated nodes is created as client.</li><li>Label <code>node.role.client: set</code> is added in Pods</li><li>Each Pod will receive a single PersistentVolume with a StorageClass of <strong>standard</strong> and <strong>1Gi</strong> of provisioned storage.</li></ul></li><li><p>data-topology-es</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>topology</span>:
+    <span style=color:#f92672>data</span>:
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>data</span>
+      <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>2</span>
+      <span style=color:#f92672>storage</span>:
+        <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+        <span style=color:#f92672>accessModes</span>:
+        - <span style=color:#ae81ff>ReadWriteOnce</span>
+        <span style=color:#f92672>resources</span>:
+          <span style=color:#f92672>requests</span>:
+            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+</code></pre></div><p>This configuration creates a StatefulSet named <code>data-topology-es</code> for data node.</p><ul><li><code>spec.replicas</code> is set to <code>2</code>. Two dedicated nodes is created for data.</li><li>Label <code>node.role.data: set</code> is added in Pods</li><li>Each Pod will receive a single PersistentVolume with a StorageClass of <strong>standard</strong> and <strong>1 Gib</strong> of provisioned storage.</li></ul></li><li><p>master-topology-es</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>topology</span>:
+    <span style=color:#f92672>master</span>:
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>master</span>
+      <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+      <span style=color:#f92672>storage</span>:
+        <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+        <span style=color:#f92672>accessModes</span>:
+        - <span style=color:#ae81ff>ReadWriteOnce</span>
+        <span style=color:#f92672>resources</span>:
+          <span style=color:#f92672>requests</span>:
+            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+</code></pre></div><p>This configuration creates a StatefulSet named <code>data-topology-es</code> for master node</p><ul><li><code>spec.replicas</code> is set to <code>1</code>. One dedicated node is created as master.</li><li>Label <code>node.role.master: set</code> is added in Pods</li><li>Each Pod will receive a single PersistentVolume with a StorageClass of <strong>standard</strong> and <strong>1Gi</strong> of provisioned storage.</li></ul></li></ul><blockquote><p>Note: StatefulSet name format: <code>{topology-prefix}-{elasticsearch-name}</code></p></blockquote><p>Let&rsquo;s describe this Elasticsearch</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl dba describe es -n demo topology-es
+Name:               topology-es
+Namespace:          demo
+CreationTimestamp:  Wed, <span style=color:#ae81ff>02</span> Oct <span style=color:#ae81ff>2019</span> 10:46:12 +0600
+Labels:             &lt;none&gt;
+Annotations:        &lt;none&gt;
+Status:             Running
+  StorageType:      Durable
+No volumes.
+
+StatefulSet:          
+  Name:               client-topology-es
+  CreationTimestamp:  Wed, <span style=color:#ae81ff>02</span> Oct <span style=color:#ae81ff>2019</span> 10:46:13 +0600
+  Labels:               app.kubernetes.io/component<span style=color:#f92672>=</span>database
+                        app.kubernetes.io/instance<span style=color:#f92672>=</span>topology-es
+                        app.kubernetes.io/managed-by<span style=color:#f92672>=</span>kubedb.com
+                        app.kubernetes.io/name<span style=color:#f92672>=</span>elasticsearch
+                        app.kubernetes.io/version<span style=color:#f92672>=</span>7.3.2
+                        kubedb.com/kind<span style=color:#f92672>=</span>Elasticsearch
+                        kubedb.com/name<span style=color:#f92672>=</span>topology-es
+                        node.role.client<span style=color:#f92672>=</span>set
+  Annotations:        &lt;none&gt;
+  Replicas:           <span style=color:#ae81ff>824638512252</span> desired | <span style=color:#ae81ff>2</span> total
+  Pods Status:        <span style=color:#ae81ff>2</span> Running / <span style=color:#ae81ff>0</span> Waiting / <span style=color:#ae81ff>0</span> Succeeded / <span style=color:#ae81ff>0</span> Failed
+
+StatefulSet:          
+  Name:               data-topology-es
+  CreationTimestamp:  Wed, <span style=color:#ae81ff>02</span> Oct <span style=color:#ae81ff>2019</span> 10:47:36 +0600
+  Labels:               app.kubernetes.io/component<span style=color:#f92672>=</span>database
+                        app.kubernetes.io/instance<span style=color:#f92672>=</span>topology-es
+                        app.kubernetes.io/managed-by<span style=color:#f92672>=</span>kubedb.com
+                        app.kubernetes.io/name<span style=color:#f92672>=</span>elasticsearch
+                        app.kubernetes.io/version<span style=color:#f92672>=</span>7.3.2
+                        kubedb.com/kind<span style=color:#f92672>=</span>Elasticsearch
+                        kubedb.com/name<span style=color:#f92672>=</span>topology-es
+                        node.role.data<span style=color:#f92672>=</span>set
+  Annotations:        &lt;none&gt;
+  Replicas:           <span style=color:#ae81ff>824639227260</span> desired | <span style=color:#ae81ff>2</span> total
+  Pods Status:        <span style=color:#ae81ff>2</span> Running / <span style=color:#ae81ff>0</span> Waiting / <span style=color:#ae81ff>0</span> Succeeded / <span style=color:#ae81ff>0</span> Failed
+
+StatefulSet:          
+  Name:               master-topology-es
+  CreationTimestamp:  Wed, <span style=color:#ae81ff>02</span> Oct <span style=color:#ae81ff>2019</span> 10:47:08 +0600
+  Labels:               app.kubernetes.io/component<span style=color:#f92672>=</span>database
+                        app.kubernetes.io/instance<span style=color:#f92672>=</span>topology-es
+                        app.kubernetes.io/managed-by<span style=color:#f92672>=</span>kubedb.com
+                        app.kubernetes.io/name<span style=color:#f92672>=</span>elasticsearch
+                        app.kubernetes.io/version<span style=color:#f92672>=</span>7.3.2
+                        kubedb.com/kind<span style=color:#f92672>=</span>Elasticsearch
+                        kubedb.com/name<span style=color:#f92672>=</span>topology-es
+                        node.role.master<span style=color:#f92672>=</span>set
+  Annotations:        &lt;none&gt;
+  Replicas:           <span style=color:#ae81ff>824639229484</span> desired | <span style=color:#ae81ff>1</span> total
+  Pods Status:        <span style=color:#ae81ff>1</span> Running / <span style=color:#ae81ff>0</span> Waiting / <span style=color:#ae81ff>0</span> Succeeded / <span style=color:#ae81ff>0</span> Failed
+
+Service:        
+  Name:         topology-es
+  Labels:         app.kubernetes.io/component<span style=color:#f92672>=</span>database
+                  app.kubernetes.io/instance<span style=color:#f92672>=</span>topology-es
+                  app.kubernetes.io/managed-by<span style=color:#f92672>=</span>kubedb.com
+                  app.kubernetes.io/name<span style=color:#f92672>=</span>elasticsearch
+                  app.kubernetes.io/version<span style=color:#f92672>=</span>7.3.2
+                  kubedb.com/kind<span style=color:#f92672>=</span>Elasticsearch
+                  kubedb.com/name<span style=color:#f92672>=</span>topology-es
+  Annotations:  &lt;none&gt;
+  Type:         ClusterIP
+  IP:           10.0.0.102
+  Port:         http  9200/TCP
+  TargetPort:   http/TCP
+  Endpoints:    10.4.0.11:9200,10.4.1.9:9200
+
+Service:        
+  Name:         topology-es-master
+  Labels:         app.kubernetes.io/component<span style=color:#f92672>=</span>database
+                  app.kubernetes.io/instance<span style=color:#f92672>=</span>topology-es
+                  app.kubernetes.io/managed-by<span style=color:#f92672>=</span>kubedb.com
+                  app.kubernetes.io/name<span style=color:#f92672>=</span>elasticsearch
+                  app.kubernetes.io/version<span style=color:#f92672>=</span>7.3.2
+                  kubedb.com/kind<span style=color:#f92672>=</span>Elasticsearch
+                  kubedb.com/name<span style=color:#f92672>=</span>topology-es
+  Annotations:  &lt;none&gt;
+  Type:         ClusterIP
+  IP:           10.0.12.178
+  Port:         transport  9300/TCP
+  TargetPort:   transport/TCP
+  Endpoints:    10.4.1.10:9300
+
+Database Secret:
+  Name:         topology-es-auth
+  Labels:         app.kubernetes.io/component<span style=color:#f92672>=</span>database
+                  app.kubernetes.io/instance<span style=color:#f92672>=</span>topology-es
+                  app.kubernetes.io/managed-by<span style=color:#f92672>=</span>kubedb.com
+                  app.kubernetes.io/name<span style=color:#f92672>=</span>elasticsearch
+                  app.kubernetes.io/version<span style=color:#f92672>=</span>7.3.2
+                  kubedb.com/kind<span style=color:#f92672>=</span>Elasticsearch
+                  kubedb.com/name<span style=color:#f92672>=</span>topology-es
+  Annotations:  &lt;none&gt;
+  
+Type:  Opaque
+  
+Data
+<span style=color:#f92672>====</span>
+  ADMIN_PASSWORD:  <span style=color:#ae81ff>8</span> bytes
+  ADMIN_USERNAME:  <span style=color:#ae81ff>7</span> bytes
+
+Certificate Secret:
+  Name:         topology-es-cert
+  Labels:         app.kubernetes.io/component<span style=color:#f92672>=</span>database
+                  app.kubernetes.io/instance<span style=color:#f92672>=</span>topology-es
+                  app.kubernetes.io/managed-by<span style=color:#f92672>=</span>kubedb.com
+                  app.kubernetes.io/name<span style=color:#f92672>=</span>elasticsearch
+                  app.kubernetes.io/version<span style=color:#f92672>=</span>7.3.2
+                  kubedb.com/kind<span style=color:#f92672>=</span>Elasticsearch
+                  kubedb.com/name<span style=color:#f92672>=</span>topology-es
+  Annotations:  &lt;none&gt;
+  
+Type:  Opaque
+  
+Data
+<span style=color:#f92672>====</span>
+  client.jks:  <span style=color:#ae81ff>3032</span> bytes
+  key_pass:    <span style=color:#ae81ff>6</span> bytes
+  node.jks:    <span style=color:#ae81ff>3005</span> bytes
+  root.jks:    <span style=color:#ae81ff>863</span> bytes
+  root.pem:    <span style=color:#ae81ff>1139</span> bytes
+
+Topology:
+  Type    Pod                   StartTime                      Phase
+  ----    ---                   ---------                      -----
+  client  client-topology-es-0  2019-10-02 10:46:19 +0600 +06  Running
+  client  client-topology-es-1  2019-10-02 10:46:47 +0600 +06  Running
+  data    data-topology-es-0    2019-10-02 10:47:42 +0600 +06  Running
+  data    data-topology-es-1    2019-10-02 10:48:02 +0600 +06  Running
+  master  master-topology-es-0  2019-10-02 10:47:14 +0600 +06  Running
+
+No Snapshots.
+
+Events:
+  Type    Reason      Age   From                    Message
+  ----    ------      ----  ----                    -------
+  Normal  Successful  3m    Elasticsearch operator  Successfully created Service
+  Normal  Successful  3m    Elasticsearch operator  Successfully created Service
+  Normal  Successful  2m    Elasticsearch operator  Successfully created StatefulSet
+  Normal  Successful  1m    Elasticsearch operator  Successfully created StatefulSet
+  Normal  Successful  1m    Elasticsearch operator  Successfully created StatefulSet
+  Normal  Successful  48s   Elasticsearch operator  Successfully created Elasticsearch
+  Normal  Successful  48s   Elasticsearch operator  Successfully created appbinding
+  Normal  Successful  47s   Elasticsearch operator  Successfully patched StatefulSet
+  Normal  Successful  47s   Elasticsearch operator  Successfully patched StatefulSet
+  Normal  Successful  47s   Elasticsearch operator  Successfully patched StatefulSet
+  Normal  Successful  17s   Elasticsearch operator  Successfully patched Elasticsearch
+</code></pre></div><p>Here, we can see from <code>Topology</code> section that 2 pods working as <em>client</em>, 2 pods working as <em>data</em> and 1 pod working as <em>master</em>.</p><p>Two services are also created for this Elasticsearch object.</p><ul><li>Service <em><code>quick-elasticsearch</code></em> targets all Pods which are acting as <em>client</em> node</li><li>Service <em><code>quick-elasticsearch-master</code></em> targets all Pods which are acting as <em>master</em> node</li></ul><h2 id=cleaning-up>Cleaning up</h2><p>To cleanup the Kubernetes resources created by this tutorial, run:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>kubectl patch -n demo es/multi-node-es es/topology-es -p <span style=color:#e6db74>&#39;{&#34;spec&#34;:{&#34;terminationPolicy&#34;: &#34;WipeOut&#34;}}&#39;</span> --type<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;merge&#34;</span>
+kubectl delete -n demo es/multi-node-es es/topology-es
+
+kubectl delete ns demo
+</code></pre></div><h2 id=next-steps>Next Steps</h2><ul><li>Learn about <a href=/docs/v2020.11.08/guides/elasticsearch/backup/stash>taking backup</a> of Elasticsearch database using Stash.</li><li>Monitor your Elasticsearch database with KubeDB using <a href=/docs/v2020.11.08/guides/elasticsearch/monitoring/using-builtin-prometheus><code>out-of-the-box</code> builtin-Prometheus</a>.</li><li>Monitor your Elasticsearch database with KubeDB using <a href=/docs/v2020.11.08/guides/elasticsearch/monitoring/using-prometheus-operator><code>out-of-the-box</code> Prometheus operator</a>.</li><li>Detail concepts of <a href=/docs/v2020.11.08/guides/elasticsearch/concepts/elasticsearch>Elasticsearch object</a>.</li><li>Use <a href=/docs/v2020.11.08/guides/elasticsearch/private-registry/using-private-registry>private Docker registry</a> to deploy Elasticsearch with KubeDB.</li><li>Want to hack on KubeDB? Check our <a href=/docs/v2020.11.08/CONTRIBUTING>contribution guidelines</a>.</li></ul></div></div><div class="column is-2"><div class=right-sidebar-area><div class=search-area><form action=#><input id=acSearch type=text placeholder=Search...>
+<button class=search-button>
+<i class="fa fa-search" aria-hidden=true></i></button></form></div><div class=tbl-of-contents><h4>What's on this Page</h4><nav id=TableOfContents><ul><li><a href=#before-you-begin>Before You Begin</a></li><li><a href=#create-multi-node-elasticsearch>Create multi-node Elasticsearch</a></li><li><a href=#create-elasticsearch-with-dedicated-node>Create Elasticsearch with dedicated node</a></li><li><a href=#cleaning-up>Cleaning up</a></li><li><a href=#next-steps>Next Steps</a></li></ul></nav></div></div></div></div></div><script>var kdDropdown=document.querySelector(".dropdown");var kdDropdownBtn=document.querySelector(".dropdown-trigger");kdDropdownBtn.addEventListener("click",function(){kdDropdown.classList.toggle("is-active");})</script></div><div class=overlay-bg></div><div class=sidebar-search-area><div class=search-area-top><h3>Search</h3><div class=searchbar-area><input type=search name=search id=searchbox placeholder=Search...>
+<button onclick=queryPage(1)><i class="fa fa-search" aria-hidden=true></i></button></div><span id=searchbar-script-container style=display:none></span><div class="search-meta-information level"><div class=level-left></div></div></div><div class=search-result-wrapper></div><div class=pagination-area><div class=pagination-list></div></div></div><div class=improve-section-area><div class="container section"><div class=improve-bg-color><div class=columns><div class="column is-6"><a href=https://github.com/kubedb/docs/edit/master/docs/guides/elasticsearch/clustering/topology.md/>Improve This Page</a></div></div></div></div></div><script type=text/javascript>var pageSize=5;var acSearch=document.querySelector("#acSearch");var bodyOverlay=document.querySelector(".overlay-bg");var sidebarSearch=document.querySelector(".sidebar-search-area");acSearch.addEventListener("click",function(){bodyOverlay.style.display="block";sidebarSearch.style.right="0";document.getElementById("searchbox").focus();bodyOverlay.addEventListener("click",function(){bodyOverlay.style.display="none";sidebarSearch.style.right="-80%";});});function encodeQueryData(data){var ret=[];for(var d in data)
+ret.push(encodeURIComponent(d)+'='+encodeURIComponent(data[d]));return ret.join('&');}
+document.querySelector(".searchbar-area input[type=search]").addEventListener("keyup",function(event){event.preventDefault();if(event.keyCode===13){queryPage(1);}});function queryPage(idx){var q=document.getElementById("searchbox").value;var cx="015199383701854252104:8mvwy0fek2e";var key="AIzaSyBrcwLTnL09geNrFMUx1kpL--dT1379aag";var imgSize="small";var callback="renderResult";var src="https://www.googleapis.com/customsearch/v1?"+encodeQueryData({q:q,cx:cx,key:key,imgSize:imgSize,callback:callback,start:(idx-1)*pageSize+1,num:pageSize,});var newScript=document.createElement("script");newScript.src=src;e=document.getElementById("searchbar-script-container");var child=e.lastElementChild;if(child){e.removeChild(child);}
+e.appendChild(newScript);}
+function renderSearchResultEntry(e){var out='<div class="single-search-result">'+
+'<h3><a href="'+e.link+'">'+e.title+'</a></h3>'+
+'<a href="'+e.link+'">'+e.htmlFormattedUrl+'</a>'+
+'<div class="result-description-wrapper">';if(e.pagemap&&e.pagemap.cse_thumbnail){out+='<div class="result-thumb">'+
+'<img src="'+e.pagemap.cse_thumbnail[0].src+'" alt="" />'+
+'</div>';}
+out+='<div class="result-description">'+
+'<p>'+
+e.snippet+
+'</p>'+
+'</div>'+
+'</div>'+
+'</div>';return out;}
+function renderResult(response){document.querySelector(".search-meta-information .level-left").innerHTML='<div class="level-left">'+
+'<p>'+
+'About <span class="search-count">'+response.searchInformation.formattedTotalResults+'</span> results (<span class="time-count">'+response.searchInformation.formattedSearchTime+' </span>seconds)'+
+'</p>'+
+'</div>';if(!response.items){return;}
+var searchResultWrapper=document.querySelector(".search-result-wrapper");searchResultWrapper.innerHTML="";for(var i=0;i<response.items.length;i++){searchResultWrapper.innerHTML+=renderSearchResultEntry(response.items[i]);}
+var pager='<ul>';if(response.queries.previousPage){var pageIndex=Math.floor(response.queries.previousPage[0].startIndex/pageSize)+1;pager+='<li><a href="#" onclick="queryPage('+pageIndex+')">Previous</a></li>';}
+if(response.queries.request){var pageIndex=Math.floor(response.queries.request[0].startIndex/pageSize)+1;pager+='<li><a href="#" onclick="queryPage('+pageIndex+')" class="is-active">'+pageIndex+'</a></li>';}
+if(response.queries.nextPage){var pageIndex=Math.floor(response.queries.nextPage[0].startIndex/pageSize)+1;pager+='<li><a href="#" onclick="queryPage('+pageIndex+')">Next</a></li>';}
+pager+='</ul>';document.querySelector(".pagination-area .pagination-list").innerHTML=pager;}</script><section></section><section></section><section></section><button class=go-to-top id=goTop>
+<i class="fa fa-angle-up" aria-hidden=true></i></button><footer class=footer-area><div class=footer-top><div class="container section"><div class="columns is-mobile is-multiline"><div class="column is-full-mobile is-one-third-desktop is-one-third-widescreen is-one-third-tablet" data-aos=fade-up><div class=single-footer-widget><div class=footer-logo><a href=https://appscode.com><img src=/assets/images/products/appscode/appscode.png alt=AppsCode class=img></a></div><div class=subscription-form><form action="https://appscode.us17.list-manage.com/subscribe/post?u=feb2bf31969a951e7449048a3&id=82fb19acb9" method=post id=mc-embedded-subscribe-form name=mc-embedded-subscribe-form class=navbar-form target=_blank novalidate role=email role=email><label for=email>Subscribe to Our Newsletter</label><p class=spam-message>No spam, we promise. Your mail address is secure</p><div class="field has-addons"><div class=control><input class=input name=EMAIL id=mce-EMAIL type=email placeholder="Your work email address" required>
+<button id=mc-embedded-subscribe type=submit name=subscribe class=button>
+<i class="fa fa-paper-plane-o" aria-hidden=true></i></button></div></div></form></div><div class=contact-information><h4>Have any Inquiry?</h4><ul class=all-contact-info><li><a href=callto:+1%28650%29241-8486><span><i class="fa fa-phone" aria-hidden=true></i></span>+1(650)241-8486</a></li><li><a href=mailto:support@appscode.com><span><i class="fa fa-envelope-o" aria-hidden=true></i></span>support@appscode.com</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=500><div class=single-footer-widget><div class=footer-menu><h4>Products</h4><ul class=footer-link><li><a href=https://kubedb.com>KubeDB</a></li><li><a href=https://stash.run>Stash</a></li><li><a href=https://kubevault.com>KubeVault</a></li><li><a href=https://kubeform.com>Kubeform</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=600><div class=single-footer-widget><div class=footer-menu><h4>Services</h4><ul class=footer-link><li><a href=https://appscode.com/pricing/>Pricing</a></li><li><a href=https://appscode.com/consulting/>Consulting</a></li><li><a href=https://appscode.com/training/>Training</a></li><li><a href=https://appscode.com/support/>Support</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=700><div class=single-footer-widget><div class=footer-menu><h4>Company</h4><ul class=footer-link><li><a href=https://appscode.com/about/>About Us</a></li><li><a href=https://blog.byte.builders>Blog</a></li><li><a href=https://appscode.com/contact/>Contact Us</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=800><div class=single-footer-widget><div class=footer-menu><h4>Legal</h4><ul class=footer-link><li><a href=https://appscode.com/legal/tos/>Terms of Sevice</a></li><li><a href=https://appscode.com/legal/privacy-policy/>Privacy Policy</a></li><li><a href=https://appscode.com/legal/security/>Security</a></li><li><a href=https://appscode.com/legal/sla/>Service Level Agreement</a></li></ul></div></div></div></div></div></div><div class=footer-bottom><div class="container section"><div class=columns><div class="column is-4"><p>© 2021 AppsCode Inc. All rights reserved.</p></div><div class="column is-4 is-mobile has-text-centered"><div class=footer-inline-link><a href=https://appscode.com/legal/privacy-policy/>Privacy Policy</a>
+<a href=https://appscode.com/legal/tos/>Terms of Service</a></div></div><div class="column is-4 is-mobile has-text-right"><div class=socail-link-inline><ul><li><a href=https://twitter.com/AppsCodeHQ><i class="fa fa-twitter" aria-hidden=true></i></a></li><li><a href=https://www.facebook.com/appscode><i class="fa fa-facebook" aria-hidden=true></i></a></li><li><a href=https://www.youtube.com/c/AppsCodeInc><i class="fa fa-youtube" aria-hidden=true></i></a></li></ul></div></div></div></div></div></footer><script src=/assets/js/bulma-carousel.min.js></script><script src=https://unpkg.com/aos@2.3.1/dist/aos.js></script><script src=https://unpkg.com/downloadjs@1.4.7/download.min.js></script><script src=https://unpkg.com/clipboard@2/dist/clipboard.min.js></script><script src=/assets/js/main.js></script><script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/9255943.js></script><script type=text/javascript>var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/5821e34b18d9f16af02864b7/default';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();</script></body></html>

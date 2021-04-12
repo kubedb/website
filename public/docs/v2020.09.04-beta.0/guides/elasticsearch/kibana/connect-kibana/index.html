@@ -1,0 +1,400 @@
+<!doctype html><html lang=en><head><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-62096468-4','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=theme-color content="#4D4DCB"><title>KubeDB by AppsCode</title><meta name=description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta name=author content="AppsCode Inc."><meta name=keywords content="kubernetes appscode databsse high availability postgres elasticsearch etcd memecached mongodb mysql percona xtradb redis"><link rel=apple-touch-icon sizes=57x57 href=/assets/images/products/kubedb/icons/apple-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=/assets/images/products/kubedb/icons/apple-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=/assets/images/products/kubedb/icons/apple-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=/assets/images/products/kubedb/icons/apple-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=/assets/images/products/kubedb/icons/apple-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=/assets/images/products/kubedb/icons/apple-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=/assets/images/products/kubedb/icons/apple-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=/assets/images/products/kubedb/icons/apple-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=/assets/images/products/kubedb/icons/apple-icon-180x180.png><link rel=icon type=image/png sizes=192x192 href=/assets/images/products/kubedb/icons/android-icon-192x192.png><link rel=icon type=image/png sizes=32x32 href=/assets/images/products/kubedb/icons/favicon-32x32.png><link rel=icon type=image/png sizes=96x96 href=/assets/images/products/kubedb/icons/favicon-96x96.png><link rel=icon type=image/png sizes=16x16 href=/assets/images/products/kubedb/icons/favicon-16x16.png><link rel=manifest href=/assets/images/products/kubedb/icons/manifest.json><meta name=msapplication-TileColor content="#ffffff"><meta name=msapplication-TileImage content="/assets/images/products/kubedb/icons/ms-icon-144x144.png"><meta itemprop=name content="KubeDB by AppsCode"><meta itemprop=description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta itemprop=image content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeDB"><meta name=twitter:title content="KubeDB by AppsCode"><meta name=twitter:creator content="@KubeDB"><meta name=twitter:description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta name=twitter:image:src content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta property="og:url" content="https://kubedb.com"><meta property="og:title" content="KubeDB by AppsCode"><meta property="og:description" content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta property="og:site_name" content="KubeDB by AppsCode"><meta property="og:image" content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta property="og:type" content="article"><link rel=stylesheet href=/assets/css/font-awesome.min.css><link href=https://unpkg.com/aos@2.3.1/dist/aos.css rel=stylesheet><link rel=stylesheet href=/assets/css/bulma-carousel.min.css><link rel=stylesheet href=/assets/css/bulma-tooltip.min.css><link rel=stylesheet href=/assets/css/bulma.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css><link rel=stylesheet href=/assets/sass/main.min.8104f72db8562f10721a9230f1af455fd8fbae1add95d0b79fe1a11519a4eb6d.css></head><body class=kubedb><header><div class=header-top><div class="container section"><nav class=navbar><div class=navbar-brand><a class=navbar-item href=https://appscode.com><img src=/assets/images/products/appscode/appscode.png alt=AppsCode></a>
+<a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav1><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=acNav1 class="navbar-menu main-menu"><div class=navbar-end><div class=navbar-start><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Products</a><div class=ac-megamenu><div class=columns><div class="column is-6"><div class=columns><div class="column is-12 br-1"><a href=https://kubedb.com class="single-product-item is-kubedb"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubedb/kubedb-icon.png alt=KubeDB></div><h5>KubeDB</h5></div><div class=menu-body><p>Run production-grade Databases on Kubernetes</p></div></a><a href=https://stash.run class="single-product-item is-stash"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/stash/stash-icon.png alt=Stash></div><h5>Stash</h5></div><div class=menu-body><p>Backup your Kubernetes Stateful Applications</p></div></a><a href=https://kubevault.com class="single-product-item is-kubevault"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubevault/kubevault-icon.png alt=KubeVault></div><h5>KubeVault</h5></div><div class=menu-body><p>Tools for running HashiCorp Vault on Kubernetes</p></div></a></div></div></div><div class="column is-6"><div class=columns><div class="column is-12"><a href=https://byte.builders class="single-product-item byte-builder kd-orange"><div class=menu-header><p class=intro>Introducing....</p><h5>ByteBuilders</h5></div><div class=menu-body><p>Cloud reimagined for the age of Kubernetes</p></div><p class=learn-more-btn>Learn more
+<span class=icon><i class="fa fa-long-arrow-right" aria-hidden=true></i></span></p></a><a href=https://kubeform.com class="single-product-item is-kubeform"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubeform/kubeform-icon.png alt=Kubeform></div><h5>Kubeform</h5></div><div class=menu-body><p>Provision cloud resources using Kubernetes CRDs & Terraform</p></div></a></div></div></div></div></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Open Source</a><div class=ac-megamenu><div class=columns><div class="column is-6"><div class=columns><div class="column is-12 br-1"><a href=https://voyagermesh.com class="single-product-item is-voyager"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/voyager/voyager-icon.png alt=Voyager></div><h5>Voyager</h5></div><div class=menu-body><p>Secure HAProxy Ingress Controller for
+Kubernetes</p></div></a><a href=https://appscode.com/products/guard/ class="single-product-item is-guard"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/guard/guard-icon.png alt=Guard></div><h5>Guard</h5></div><div class=menu-body><p>Kubernetes Authentication WebHook Server</p></div></a><a href=https://appscode.com/products/kubed/ class="single-product-item is-kubed"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubed/kubed-icon.png alt=Kubed></div><h5>Kubed</h5></div><div class=menu-body><p>Kubernetes cluster manager daemon</p></div></a></div></div></div><div class="column is-6"><div class=columns><div class="column is-12"><a href=https://pharmer.cloud class="single-product-item is-pharmer"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/pharmer/pharmer-icon.png alt=Pharmer></div><h5>Pharmer</h5></div><div class=menu-body><p>Kubernetes Cluster Manager using Kubeadm & Cluster API</p></div></a><a href=https://appscode.com/products/swift/ class="single-product-item is-swift"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/swift/swift-icon.png alt=Swift></div><h5>Swift</h5></div><div class=menu-body><p>Ajax friendly Helm Tiller Proxy</p></div></a><a href=https://appscode.com/products/searchlight/ class="single-product-item is-searchlight"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/searchlight/searchlight-icon.png alt=Searchlight></div><h5>Searchlight</h5></div><div class=menu-body><p>Alerts for Kubernetes</p></div></a></div></div></div></div></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Services</a><div class=ac-dropdown><a class=navbar-item href=https://appscode.com/consulting/>Consulting</a>
+<a class=navbar-item href=https://appscode.com/training/>Training</a>
+<a class=navbar-item href=https://appscode.com/support/>Support</a></div></div><a class=navbar-item href=https://blog.byte.builders>Blog</a>
+<a class=navbar-item href=https://appscode.com/contact/>Contact Us</a></div><div class=navbar-item><div class="buttons main-menu-button-top"><a class="button is-small for-chat" href=https://slack.appscode.com><span><img src=/assets/images/icon/slack.png alt></span>Slack</a>
+<a class="button is-small for-support" href=https://appscode.freshdesk.com><span><img src=/assets/images/icon/chat.png alt></span>Support Portal</a></div></div></div></div></nav></div></div><div class="header-bottom-area header-area kubedb-primary-bg customize-kubedb fixed-menu"><div class="container section"><nav class=navbar><div class=navbar-brand><a class=navbar-item href=https://kubedb.com><img src=/assets/images/products/kubedb/kubedb-white.png alt=KubeDB></a>
+<a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=acNav class="navbar-menu main-menu"><div class=navbar-end><div class=navbar-start><a href=/features/ class=navbar-item>Features</a>
+<a href=/pricing/ class=navbar-item>Pricing</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Databases</a><div class=ac-dropdown><a class=navbar-item href=/docs/v2021.03.17/guides/elasticsearch/>Elasticsearch</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/mariadb/>MariaDB</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/memcached/>Memcached</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/mongodb/>MongoDB</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/mysql/>MySQL</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/percona-xtradb/>Percona XtraDB</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/pgbouncer/>PgBouncer</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/postgres/>PostgreSQL</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/proxysql/>ProxySQL</a>
+<a class=navbar-item href=/docs/v2021.03.17/guides/redis/>Redis</a></div></div><a href=/docs/v2021.03.17/welcome/ class=navbar-item>Documentation</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Community</a><div class=ac-dropdown><a href=https://github.com/kubedb class=navbar-item>GitHub</a>
+<a href=https://twitter.com/KubeDB class=navbar-item>Twitter</a>
+<a href=http://slack.kubernetes.io/ class=navbar-item>Slack</a></div></div></div><div class=navbar-item><div class="buttons main-menu-button"><img style=height:24px alt="GitHub Stars" src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github&label=stars&query=%24.stars&url=https://github-stars.appscode.workers.dev/user/kubedb">
+&nbsp;&nbsp;&nbsp;
+<img style=height:24px alt="GitHub Forks" src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github&label=forks&query=%24.forks&url=https://github-stars.appscode.workers.dev/user/kubedb">
+&nbsp;&nbsp;&nbsp;
+<img style=height:24px alt="Docker Pulls" src="https://img.shields.io/docker/pulls/kubedb/operator?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=docker&label=pulls"></div></div></div></div></nav></div></div><div class=documentation-menu><div class="container section"><div class=is-centered><div class="is-half has-text-centered-desktop"><div class=responsive-menu><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav3><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><nav class=documentation-navbar><div id=acNav3 class="navbar-menu nav-menu main-menu"><div class=navbar-centered><div class=navbar-start><a href=/docs/v2020.09.04-beta.0/ class=navbar-item>Welcome</a>
+<a href=/docs/v2020.09.04-beta.0/concepts/ class=navbar-item>Concepts</a>
+<a href=/docs/v2020.09.04-beta.0/setup/ class=navbar-item>Setup</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Guides</a><div class=ac-dropdown><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/ class=navbar-item>Elasticsearch</a>
+<a href=/docs/v2020.09.04-beta.0/guides/memcached/ class=navbar-item>Memcached</a>
+<a href=/docs/v2020.09.04-beta.0/guides/mongodb/ class=navbar-item>MongoDB</a>
+<a href=/docs/v2020.09.04-beta.0/guides/mysql/ class=navbar-item>MySQL</a>
+<a href=/docs/v2020.09.04-beta.0/guides/pgbouncer/ class=navbar-item>PgBouncer</a>
+<a href=/docs/v2020.09.04-beta.0/guides/postgres/ class=navbar-item>PostgreSQL</a>
+<a href=/docs/v2020.09.04-beta.0/guides/proxysql/ class=navbar-item>ProxySQL</a>
+<a href=/docs/v2020.09.04-beta.0/guides/redis/ class=navbar-item>Redis</a>
+<a href=/docs/v2020.09.04-beta.0/guides/percona-xtradb/ class=navbar-item>PerconaXtraDB</a></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Reference</a><div class=ac-dropdown><a href=/docs/v2020.09.04-beta.0/reference/operator/ class=navbar-item>KubeDB Operator</a>
+<a href=/docs/v2020.09.04-beta.0/reference/cli/ class=navbar-item>KubeDB CLI</a></div></div><a href class=navbar-item>es-x-pack-elasticsearch</a></div></div></div></nav></div></div></div></div></header><div class=documentation-area><div class="container section"><article class="message is-danger"><div class=message-body>You are looking at the documentation of a prior release. To read the documentation of the latest release, please visit <a href=/docs/v2021.03.17/guides/elasticsearch/kibana/connect-kibana/>here</a>.</div></article><div class=columns><div class="column is-3"><div class=kd-left-sidebar><div class=trial-button><a href=/docs/v2021.03.17/setup/ class="button is-fullwidth">Try Now for FREE!</a></div><div class=kd-version><div class=dropdown><div class=dropdown-trigger><button class="button is-fullwidth" aria-haspopup=true aria-controls=dropdown-menu3>
+<span class="icon is-small"><i class="fa fa-angle-down" aria-hidden=true></i></span></button></div><div class=dropdown-menu id=dropdown-menu3 role=menu><div class=dropdown-content><a href=https://github.com/kubedb/docs/tree/master/docs target=_blank class=dropdown-item>master</a>
+<a href=/docs/v2021.03.17/ class=dropdown-item>v2021.03.17<div class=tag>Latest</div></a><a href=/docs/v2021.01.26/ class=dropdown-item>v2021.01.26</a>
+<a href=/docs/v2021.01.15/ class=dropdown-item>v2021.01.15</a>
+<a href=/docs/v2021.01.02-rc.0/ class=dropdown-item>v2021.01.02-rc.0</a>
+<a href=/docs/v2020.12.10/ class=dropdown-item>v2020.12.10</a>
+<a href=/docs/v2020.11.12/ class=dropdown-item>v2020.11.12</a>
+<a href=/docs/v2020.11.11/ class=dropdown-item>v2020.11.11</a>
+<a href=/docs/v2020.11.08/ class=dropdown-item>v2020.11.08</a>
+<a href=/docs/v2020.10.28/ class=dropdown-item>v2020.10.28</a>
+<a href=/docs/v0.13.0-rc.0/ class=dropdown-item>v0.13.0-rc.0</a>
+<a href=/docs/0.12.0/ class=dropdown-item>0.12.0</a></div></div></div></div><div class=kd-sidebar-menu><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-1>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-1><a href=/docs/v2020.09.04-beta.0/guides/>Elasticsearch</a></label></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-2>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-2><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/>Elasticsearch</a></label></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-3>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-3><a>Quickstart</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/quickstart/quickstart/>Overview</a></li></ul></div></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-4>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-4><a>Clustering</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/clustering/topology/>Topology</a></li></ul></div></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-5>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-5><a>Snapshotting</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/snapshot/stash/>Using Stash</a></li><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/snapshot/instant_backup/>Instant Backup</a></li><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/snapshot/scheduled_backup/>Scheduled Backup</a></li></ul></div></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-6>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-6><a>Initialization</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/initialization/snapshot_source/>Using Snapshot</a></li></ul></div></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-7>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-7><a>Private Registry</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/private-registry/using-private-registry/>Quickstart</a></li></ul></div></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-8>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-8><a>Custom Configuration</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/custom-config/overview/>Overview</a></li><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/custom-config/with-topology/>With Topology</a></li><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/custom-config/without-topology/>Without Topology</a></li></ul></div></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-9>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-9><a>Monitoring</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/monitoring/using-builtin-prometheus/>Builtin Prometheus Discovery</a></li><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/monitoring/using-coreos-prometheus-operator/>Prometheus Operator</a></li></ul></div></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-10>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-10><a>Search Guard</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/search-guard/overview/>Overview</a></li><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/search-guard/configuration/>Configuration</a></li><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/search-guard/use-tls/>Use TLS</a></li><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/search-guard/issue-certificate/>Issue Certificate</a></li><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/search-guard/disable-searchguard/>Disable Search Guard</a></li><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/search-guard/x-pack-monitoring/>Monitoring</a></li></ul></div></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-11 checked>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-11><a>Kibana</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li class=is-active><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/kibana/connect-kibana/>Use Kibana</a></li></ul></div></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-12>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-12><a>X-Pack</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/x-pack/configuration/>X-Pack Configuration</a></li><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/x-pack/disable-xpack/>Disable X-Pack</a></li></ul></div></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-13>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-13><a>CLI</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/cli/cli/>Quickstart</a></li></ul></div></div><div class=item><input type=checkbox id=7c0a0ee0c5fed198d1793f4f94086605-14>
+<label for=7c0a0ee0c5fed198d1793f4f94086605-14><a>Custom RBAC</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/custom-rbac/using-custom-rbac/>Custom RBAC</a></li></ul></div></div></div></div></div><div class="column is-7"><div class=full-info><blockquote><p>New to KubeDB? Please start <a href=/docs/v2020.09.04-beta.0/concepts/README>here</a>.</p></blockquote><h1 id=using-kibana-with-kubedb-elasticsearch>Using Kibana with KubeDB Elasticsearch</h1><p>This tutorial will show you how to connect Kibana with an Elasticsearch cluster deployed with KubeDB.</p><p>If you don&rsquo;t know how to use Kibana, please visit <a href=https://www.elastic.co/guide/en/kibana/current/introduction.html>here</a>.</p><h2 id=before-you-begin>Before You Begin</h2><p>At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using <a href=https://kind.sigs.k8s.io/docs/user/quick-start/>kind</a>.</p><p>Now, install KubeDB cli on your workstation and KubeDB operator in your cluster following the steps <a href=/docs/v2020.09.04-beta.0/setup/README>here</a>.</p><p>As KubeDB uses <a href=https://search-guard.com/>Search Guard</a> plugin for authentication and authorization, you have to know how to configure Search Guard for both Elasticsearch cluster and Kibana. If you don&rsquo;t know, please visit <a href=https://docs.search-guard.com/latest/main-concepts>here</a>.</p><p>To keep things isolated, this tutorial uses a separate namespace called <code>demo</code> throughout this tutorial.</p><pre><code class=language-console data-lang=console>$ kubectl create ns demo
+namespace/demo created
+
+$ kubectl get ns demo
+NAME    STATUS  AGE
+demo    Active  5s
+</code></pre><blockquote><p>Note: YAML files used in this tutorial are stored in <a href=https://github.com/kubedb/docs/tree/v2020.09.04-beta.0/docs/examples/elasticsearch>docs/examples/elasticsearch</a> folder in GitHub repository <a href=https://github.com/kubedb/docs>kubedb/docs</a>.</p></blockquote><h2 id=overview>Overview</h2><p>At first, we will create some necessary Search Guard configuration and roles to give a user access to an Elasticsearch cluster from Kibana. We will create a secret with this configuration files. Then we will provide this secret in <code>spec.databaseSecret</code> field of Elasticsearch crd so that our Elasticsearch cluster start with this configuration. We will also configure Elasticsearch cluster with a <a href=/docs/v2020.09.04-beta.0/guides/elasticsearch/custom-config/overview>custom configuration</a> file.</p><p>Then, we will deploy Kibana with Search Guard plugin installed. We will configure Kibana to connect with our Elasticsearch cluster.</p><p>Finally, we will perform some operation from Kibana UI to ensure that Kibana is working well with our Elasticsearch cluster.</p><p>For this tutorial, we will use Elasticsearch 6.3.0 with Search Guard plugin 23.1 and Kibana 6.3.0 with Search Guard plugin 14 installed.</p><h2 id=deploy-elasticsearch-cluster>Deploy Elasticsearch Cluster</h2><p>Let&rsquo;s create necessary Search Guard configuration files. Here, we will create two users <code>admin</code> and <code>kibanauser</code>. User <code>admin</code> will have all permissions on the cluster and user <code>kibanauser</code> will have some limited permission. Here, are the contents of Search Guard configuration files,</p><p><strong>sg_action_groups.yml:</strong></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>UNLIMITED</span>:
+  <span style=color:#f92672>readonly</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>permissions</span>:
+    - <span style=color:#e6db74>&#34;*&#34;</span>
+
+<span style=color:#75715e>###### INDEX LEVEL ######</span>
+
+<span style=color:#f92672>INDICES_ALL</span>:
+  <span style=color:#f92672>readonly</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>permissions</span>:
+    - <span style=color:#e6db74>&#34;indices:*&#34;</span>
+
+<span style=color:#75715e>###### CLUSTER LEVEL ######</span>
+<span style=color:#f92672>CLUSTER_MONITOR</span>:
+  <span style=color:#f92672>readonly</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>permissions</span>:
+    - <span style=color:#e6db74>&#34;cluster:monitor/*&#34;</span>
+
+<span style=color:#f92672>CLUSTER_COMPOSITE_OPS_RO</span>:
+  <span style=color:#f92672>readonly</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>permissions</span>:
+    - <span style=color:#e6db74>&#34;indices:data/read/mget&#34;</span>
+    - <span style=color:#e6db74>&#34;indices:data/read/msearch&#34;</span>
+    - <span style=color:#e6db74>&#34;indices:data/read/mtv&#34;</span>
+    - <span style=color:#e6db74>&#34;indices:data/read/coordinate-msearch*&#34;</span>
+    - <span style=color:#e6db74>&#34;indices:admin/aliases/exists*&#34;</span>
+    - <span style=color:#e6db74>&#34;indices:admin/aliases/get*&#34;</span>
+    - <span style=color:#e6db74>&#34;indices:data/read/scroll&#34;</span>
+
+<span style=color:#f92672>CLUSTER_COMPOSITE_OPS</span>:
+  <span style=color:#f92672>readonly</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>permissions</span>:
+    - <span style=color:#e6db74>&#34;indices:data/write/bulk&#34;</span>
+    - <span style=color:#e6db74>&#34;indices:admin/aliases*&#34;</span>
+    - <span style=color:#e6db74>&#34;indices:data/write/reindex&#34;</span>
+    - <span style=color:#ae81ff>CLUSTER_COMPOSITE_OPS_RO</span>
+</code></pre></div><p><strong>sg_roles.yml:</strong></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>sg_all_access</span>:
+  <span style=color:#f92672>readonly</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>cluster</span>:
+    - <span style=color:#ae81ff>UNLIMITED</span>
+  <span style=color:#f92672>indices</span>:
+    <span style=color:#f92672>&#39;*&#39;</span>:
+      <span style=color:#f92672>&#39;*&#39;</span>:
+        - <span style=color:#ae81ff>UNLIMITED</span>
+  <span style=color:#f92672>tenants</span>:
+    <span style=color:#f92672>admin_tenant</span>: <span style=color:#ae81ff>RW</span>
+
+<span style=color:#75715e># For the kibana user</span>
+<span style=color:#f92672>sg_kibana_user</span>:
+  <span style=color:#f92672>readonly</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>cluster</span>:
+      - <span style=color:#ae81ff>CLUSTER_MONITOR</span>
+      - <span style=color:#ae81ff>CLUSTER_COMPOSITE_OPS</span>
+      - <span style=color:#ae81ff>cluster:admin/xpack/monitoring*</span>
+      - <span style=color:#ae81ff>indices:admin/template*</span>
+  <span style=color:#f92672>indices</span>:
+    <span style=color:#f92672>&#39;*&#39;</span>:
+      <span style=color:#f92672>&#39;*&#39;</span>:
+        - <span style=color:#ae81ff>INDICES_ALL</span>
+</code></pre></div><p><strong>sg_internal_users.yml:</strong></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#75715e>#password is: admin@secret</span>
+<span style=color:#f92672>admin</span>:
+  <span style=color:#f92672>readonly</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>hash</span>: <span style=color:#ae81ff>$2y$12$skma87wuFFtxtGWegeAiIeTtUH1nnOfIRZzwwhBlzXjg0DdM4gLeG</span>
+  <span style=color:#f92672>roles</span>:
+    - <span style=color:#ae81ff>admin</span>
+
+<span style=color:#75715e>#password is: kibana@secret</span>
+<span style=color:#f92672>kibanauser</span>:
+  <span style=color:#f92672>readonly</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>hash</span>: <span style=color:#ae81ff>$2y$12$dk2UrPTjhgCRbFOm/gThX.aJ47yH0zyQcYEuWiNiyw6NlVmeOjM7a</span>
+  <span style=color:#f92672>roles</span>:
+    - <span style=color:#ae81ff>kibanauser</span>
+</code></pre></div><p>Here, we have used <code>admin@secret</code> password for <code>admin</code> user and <code>kibana@secret</code> password for <code>kibanauser</code> user. You can use <code>htpasswd</code> to generate the bcrypt encrypted password hashes.</p><pre><code class=language-console data-lang=console>$htpasswd -bnBC 12 &quot;&quot; &lt;password_here&gt;| tr -d ':\n'
+</code></pre><p><strong>sg_roles_mapping.yml:</strong></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>sg_all_access</span>:
+  <span style=color:#f92672>readonly</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>backendroles</span>:
+    - <span style=color:#ae81ff>admin</span>
+
+<span style=color:#f92672>sg_kibana_user</span>:
+  <span style=color:#f92672>readonly</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>backendroles</span>:
+    - <span style=color:#ae81ff>kibanauser</span>
+</code></pre></div><p><strong>sg_config.yml:</strong></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>searchguard</span>:
+  <span style=color:#f92672>dynamic</span>:
+    <span style=color:#f92672>authc</span>:
+      <span style=color:#f92672>kibana_auth_domain</span>:
+        <span style=color:#f92672>enabled</span>: <span style=color:#66d9ef>true</span>
+        <span style=color:#f92672>order</span>: <span style=color:#ae81ff>0</span>
+        <span style=color:#f92672>http_authenticator</span>:
+          <span style=color:#f92672>type</span>: <span style=color:#ae81ff>basic</span>
+          <span style=color:#f92672>challenge</span>: <span style=color:#66d9ef>false</span>
+        <span style=color:#f92672>authentication_backend</span>:
+          <span style=color:#f92672>type</span>: <span style=color:#ae81ff>internal</span>
+      <span style=color:#f92672>basic_internal_auth_domain</span>: 
+        <span style=color:#f92672>http_enabled</span>: <span style=color:#66d9ef>true</span>
+        <span style=color:#f92672>transport_enabled</span>: <span style=color:#66d9ef>true</span>
+        <span style=color:#f92672>order</span>: <span style=color:#ae81ff>1</span>
+        <span style=color:#f92672>http_authenticator</span>:
+          <span style=color:#f92672>type</span>: <span style=color:#ae81ff>basic</span>
+          <span style=color:#f92672>challenge</span>: <span style=color:#66d9ef>true</span>
+        <span style=color:#f92672>authentication_backend</span>:
+          <span style=color:#f92672>type</span>: <span style=color:#ae81ff>internal</span>
+</code></pre></div><p>Now, create a secret with these Search Guard configuration files.</p><pre><code class=language-console data-lang=console> $ kubectl create secret generic -n demo es-auth \
+	--from-literal=ADMIN_USERNAME=admin \
+	--from-literal=ADMIN_PASSWORD=admin@secret \
+	--from-file=./sg_action_groups.yml \
+	--from-file=./sg_config.yml \
+	--from-file=./sg_internal_users.yml \
+	--from-file=./sg_roles_mapping.yml \
+	--from-file=./sg_roles.yml
+secret/es-auth created
+</code></pre><p>Verify that the secret has desired configuration files,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ae81ff>$ kubectl get secret -n demo es-auth -o yaml</span>
+<span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+<span style=color:#f92672>data</span>:
+  <span style=color:#f92672>sg_action_groups.yml</span>: <span style=color:#ae81ff>&lt;base64 encoded content&gt;</span>
+  <span style=color:#f92672>sg_config.yml</span>: <span style=color:#ae81ff>&lt;base64 encoded content&gt;</span>
+  <span style=color:#f92672>sg_internal_users.yml</span>: <span style=color:#ae81ff>&lt;base64 encoded content&gt;</span>
+  <span style=color:#f92672>sg_roles.yml</span>: <span style=color:#ae81ff>&lt;base64 encoded content&gt;</span>
+  <span style=color:#f92672>sg_roles_mapping.yml</span>: <span style=color:#ae81ff>&lt;base64 encoded content&gt;</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Secret</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#ae81ff>...</span>
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-auth</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+  <span style=color:#ae81ff>...</span>
+<span style=color:#f92672>type</span>: <span style=color:#ae81ff>Opaque</span>
+</code></pre></div><p>As we are using Search Guard plugin for authentication, we need to ensure that <code>x-pack</code> security is not enabled. We will ensure that by providing <code>xpack.security.enabled: false</code> in <code>common-config.yml</code> file and we will use this file to configure our Elasticsearch cluster. We will also configure <code>searchguard.restapi</code> to ensure that <code>kibanauser</code> can use REST API on the cluster.</p><p>Content of <code>common-config.yml</code>,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>xpack.security.enabled</span>: <span style=color:#66d9ef>false</span>
+<span style=color:#f92672>searchguard.restapi.roles_enabled</span>: [<span style=color:#e6db74>&#34;sg_all_access&#34;</span>,<span style=color:#e6db74>&#34;sg_kibana_user&#34;</span>]
+</code></pre></div><p>Create a ConfigMap using this file,</p><pre><code class=language-console data-lang=console>$ kubectl create configmap -n demo es-custom-config \
+                        --from-file=./common-config.yml
+configmap/es-custom-config created
+</code></pre><p>Verify that the ConfigMap has desired configuration,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ae81ff>$ kubectl get configmap -n demo es-custom-config -o yaml</span>
+<span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+<span style=color:#f92672>data</span>:
+  <span style=color:#f92672>common-config.yml</span>: |-<span style=color:#e6db74>
+</span><span style=color:#e6db74>    xpack.security.enabled: false
+</span><span style=color:#e6db74>    searchguard.restapi.roles_enabled: [&#34;sg_all_access&#34;,&#34;sg_kibana_user&#34;]</span>    
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ConfigMap</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>creationTimestamp</span>: <span style=color:#e6db74>2018-08-18T06:53:04Z</span>
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-custom-config</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+  <span style=color:#f92672>resourceVersion</span>: <span style=color:#e6db74>&#34;12171&#34;</span>
+  <span style=color:#f92672>selfLink</span>: <span style=color:#ae81ff>/api/v1/namespaces/demo/configmaps/es-custom-config</span>
+  <span style=color:#f92672>uid</span>: <span style=color:#ae81ff>5b2adaeb-a2b3-11e8-ba38-080027975c84</span>
+</code></pre></div><p>Now, create Elasticsearch crd specifying <code>spec.databaseSecret</code> and <code>spec.configSource</code> field.</p><pre><code class=language-console data-lang=console>$ kubectl apply -f https://github.com/kubedb/docs/raw/v2020.09.04-beta.0/docs/examples/elasticsearch/kibana/es-kibana-demo.yaml
+elasticsearch.kubedb.com/es-kibana-demo created
+</code></pre><p>Below is the YAML for the Elasticsearch crd we just created.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>kubedb.com/v1alpha1</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Elasticsearch</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-kibana-demo</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>version</span>: <span style=color:#e6db74>&#34;6.3.0-v1&#34;</span>
+  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+  <span style=color:#f92672>databaseSecret</span>:
+    <span style=color:#f92672>secretName</span>: <span style=color:#ae81ff>es-auth</span>
+  <span style=color:#f92672>configSource</span>:
+    <span style=color:#f92672>configMap</span>:
+      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-custom-config</span>
+  <span style=color:#f92672>storage</span>:
+    <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+    <span style=color:#f92672>accessModes</span>:
+    - <span style=color:#ae81ff>ReadWriteOnce</span>
+    <span style=color:#f92672>resources</span>:
+      <span style=color:#f92672>requests</span>:
+        <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+</code></pre></div><p>Now, wait for few minutes. KubeDB will create necessary secrets, services, and statefulsets.</p><p>Check resources created in demo namespace by KubeDB,</p><pre><code class=language-console data-lang=console>$ kubectl get all -n demo -l=kubedb.com/name=es-kibana-demo
+NAME                   READY     STATUS    RESTARTS   AGE
+pod/es-kibana-demo-0   1/1       Running   0          39s
+
+NAME                            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+service/es-kibana-demo          ClusterIP   10.104.1.206    &lt;none&gt;        9200/TCP   44s
+service/es-kibana-demo-master   ClusterIP   10.111.58.230   &lt;none&gt;        9300/TCP   44s
+
+NAME                              DESIRED   CURRENT   AGE
+statefulset.apps/es-kibana-demo   1         1         42s
+</code></pre><p>Once everything is created, Elasticsearch will go to Running state. Check that Elasticsearch is in running state.</p><pre><code class=language-console data-lang=console>$ kubectl get es -n demo es-kibana-demo
+NAME             VERSION    STATUS    AGE
+es-kibana-demo   6.3.0-v1   Running   1m
+</code></pre><p>Now, check elasticsearch log to see if the cluster is ready to accept requests,</p><pre><code class=language-console data-lang=console>$ kubectl logs -n demo es-kibana-demo-0 -f
+...
+Starting runit...
+...
+Elasticsearch Version: 6.3.0
+Search Guard Version: 6.3.0-23.1
+Connected as CN=sgadmin,O=Elasticsearch Operator
+Contacting elasticsearch cluster 'elasticsearch' and wait for YELLOW clusterstate ...
+Clustername: es-kibana-demo
+Clusterstate: GREEN
+Number of nodes: 1
+Number of data nodes: 1
+...
+Done with success
+...
+</code></pre><p>Once you see <code>Done with success</code> success line in the log, the cluster is ready to accept requests. Now, it is time to connect with Kibana.</p><h2 id=deploy-kibana>Deploy Kibana</h2><p>In order to connect the Elasticsearch cluster that we have just deployed, we need to configure <code>kibana.yml</code> with appropriate configuration.</p><p>KubeDB has created a service with name<code>es-kibana-demo</code> in <code>demo</code> namespace for the Elasticsearch cluster. We will use this service in <code>elasticsearch.url</code> field. Kibana will use this service to connect with the Elasticsearch cluster.</p><p>Let&rsquo;s, configure <code>kibana.yml</code> as below,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>xpack.security.enabled</span>: <span style=color:#66d9ef>false</span>
+<span style=color:#f92672>server.host</span>: <span style=color:#ae81ff>0.0.0.0</span>
+
+<span style=color:#f92672>elasticsearch.url</span>: <span style=color:#e6db74>&#34;http://es-kibana-demo.demo.svc:9200&#34;</span>
+<span style=color:#f92672>elasticsearch.username</span>: <span style=color:#e6db74>&#34;kibanauser&#34;</span>
+<span style=color:#f92672>elasticsearch.password</span>: <span style=color:#e6db74>&#34;kibana@secret&#34;</span>
+
+<span style=color:#f92672>searchguard.auth.type</span>: <span style=color:#e6db74>&#34;basicauth&#34;</span>
+<span style=color:#f92672>searchguard.cookie.secure</span>: <span style=color:#66d9ef>false</span>
+
+</code></pre></div><p>Notice the <code>elasticsearch.username</code> and <code>elasticsearch.password</code> field. Kibana will connect to Elasticsearch cluster with this credentials. They must match with the credentials we have provided in <code>sg_internal_users.yml</code> file while creating the cluster.</p><p>Now, create a ConfigMap with <code>kibana.yml</code> file. We will mount this ConfigMap in Kibana deployment so that Kibana starts with this configuration.</p><pre><code class=language-console data-lang=console>$ kubectl create configmap -n demo kibana-config \
+                        --from-file=./kibana.yml
+configmap/kibana-config created
+</code></pre><p>Finally, deploy Kibana deployment,</p><pre><code class=language-console data-lang=console>$ kubectl apply -f https://github.com/kubedb/docs/raw/v2020.09.04-beta.0/docs/examples/elasticsearch/kibana/kibana-deployment.yaml
+deployment.apps/kibana created
+</code></pre><p>Below is the YAML for the Kibana deployment we just created.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>apps/v1</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Deployment</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>kibana</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+  <span style=color:#f92672>selector</span>:
+    <span style=color:#f92672>matchLabels</span>:
+      <span style=color:#f92672>app</span>: <span style=color:#ae81ff>kibana</span>
+  <span style=color:#f92672>template</span>:
+    <span style=color:#f92672>metadata</span>:
+      <span style=color:#f92672>labels</span>:
+        <span style=color:#f92672>app</span>: <span style=color:#ae81ff>kibana</span>
+    <span style=color:#f92672>spec</span>:
+      <span style=color:#f92672>containers</span>:
+      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>kibana</span>
+        <span style=color:#f92672>image</span>: <span style=color:#ae81ff>kubedb/kibana:6.3.0</span>
+        <span style=color:#f92672>volumeMounts</span>:
+        - <span style=color:#f92672>name</span>:  <span style=color:#ae81ff>kibana-config</span>
+          <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/usr/share/kibana/config</span>
+      <span style=color:#f92672>volumes</span>:
+      - <span style=color:#f92672>name</span>:  <span style=color:#ae81ff>kibana-config</span>
+        <span style=color:#f92672>configMap</span>:
+          <span style=color:#f92672>name</span>: <span style=color:#ae81ff>kibana-config</span>
+</code></pre></div><p>Now, wait for few minutes. Let the Kibana pod go in<code>Running</code> state. Check pod is in <code>Running</code> using this command,</p><pre><code class=language-console data-lang=console> $ kubectl get pods -n demo -l app=kibana
+NAME                      READY     STATUS    RESTARTS   AGE
+kibana-84b8cbcf7c-mg699   1/1       Running   0          3m
+</code></pre><p>Now, watch the Kibana pod&rsquo;s log to see if Kibana is ready to access,</p><pre><code class=language-console data-lang=console>$ kubectl logs -n demo kibana-84b8cbcf7c-mg699 -f
+...
+{&quot;type&quot;:&quot;log&quot;,&quot;@timestamp&quot;:&quot;2018-08-18T07:22:16Z&quot;,&quot;tags&quot;:[&quot;listening&quot;,&quot;info&quot;],&quot;pid&quot;:1,&quot;message&quot;:&quot;Server running at http://0.0.0.0:5601&quot;}
+</code></pre><p>Once you see <code>"message":"Server running at http://0.0.0.0:5601"</code> in the log, Kibana is ready. Now it is time to access Kibana UI.</p><p>Kibana is running on port <code>5601</code> in of <code>kibana-84b8cbcf7c-mg699</code> pod. In order to access Kibana UI from outside of the cluster, we will use <a href=https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster>port forwarding</a>.</p><p>First, open a new terminal and run,</p><pre><code class=language-console data-lang=console>$ kubectl port-forward -n demo kibana-84b8cbcf7c-mg699 5601
+Forwarding from 127.0.0.1:5601 -&gt; 5601
+Forwarding from [::1]:5601 -&gt; 5601
+</code></pre><p>Now, open <code>localhost:5601</code> in your browser. When you open the address, you will be greeted with Search Guard login UI.</p><p><img src=/docs/v2020.09.04-beta.0/images/elasticsearch/kibana/search-guard-login-ui.png alt="Search Guard Login UI"></p><p>Login with following credentials: <code>username: kibanauser</code> and <code>password: kibana@secret</code>.</p><p>After login, you will be redirected to Kibana Home UI.</p><p><img src=/docs/v2020.09.04-beta.0/images/elasticsearch/kibana/kibana-home.png alt="Kibana Home"></p><p>Now, it is time to perform some operations on our cluster from the Kibana UI.</p><h2 id=use-kibana>Use Kibana</h2><p>We can use Dev Tool&rsquo;s console of Kibana UI to create Index and insert data in the index. Let&rsquo;s create an Index,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=color:#960050;background-color:#1e0010>PUT</span> <span style=color:#960050;background-color:#1e0010>/shakespeare</span>
+{
+ <span style=color:#f92672>&#34;mappings&#34;</span>: {
+  <span style=color:#f92672>&#34;doc&#34;</span>: {
+   <span style=color:#f92672>&#34;properties&#34;</span>: {
+    <span style=color:#f92672>&#34;speaker&#34;</span>: {<span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;keyword&#34;</span>},
+    <span style=color:#f92672>&#34;play_name&#34;</span>: {<span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;keyword&#34;</span>},
+    <span style=color:#f92672>&#34;line_id&#34;</span>: {<span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;integer&#34;</span>},
+    <span style=color:#f92672>&#34;speech_number&#34;</span>: {<span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;integer&#34;</span>}
+   }
+  }
+ }
+}
+</code></pre></div><p>Now, insert some demo data in the Index,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=color:#960050;background-color:#1e0010>//</span>  <span style=color:#960050;background-color:#1e0010>demo</span> <span style=color:#960050;background-color:#1e0010>data</span><span style=color:#ae81ff>-1</span>
+<span style=color:#960050;background-color:#1e0010>POST</span> <span style=color:#960050;background-color:#1e0010>/shakespeare/doc</span>
+{
+    <span style=color:#f92672>&#34;index&#34;</span>: {
+        <span style=color:#f92672>&#34;_index&#34;</span>: <span style=color:#e6db74>&#34;shakespeare&#34;</span>,
+        <span style=color:#f92672>&#34;_id&#34;</span>: <span style=color:#ae81ff>1</span>
+    },
+    <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;scene&#34;</span>,
+    <span style=color:#f92672>&#34;line_id&#34;</span>: <span style=color:#ae81ff>2</span>,
+    <span style=color:#f92672>&#34;play_name&#34;</span>: <span style=color:#e6db74>&#34;Henry IV&#34;</span>,
+    <span style=color:#f92672>&#34;speech_number&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+    <span style=color:#f92672>&#34;line_number&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+    <span style=color:#f92672>&#34;speaker&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+    <span style=color:#f92672>&#34;text_entry&#34;</span>: <span style=color:#e6db74>&#34;SCENE I. London. The palace.&#34;</span>
+}
+
+<span style=color:#960050;background-color:#1e0010>//</span> <span style=color:#960050;background-color:#1e0010>demo</span> <span style=color:#960050;background-color:#1e0010>data</span><span style=color:#ae81ff>-2</span>
+
+<span style=color:#960050;background-color:#1e0010>POST</span> <span style=color:#960050;background-color:#1e0010>/shakespeare/doc</span>
+{
+    <span style=color:#f92672>&#34;index&#34;</span>: {
+        <span style=color:#f92672>&#34;_index&#34;</span>: <span style=color:#e6db74>&#34;shakespeare&#34;</span>,
+        <span style=color:#f92672>&#34;_id&#34;</span>: <span style=color:#ae81ff>2</span>
+    },
+    <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;line&#34;</span>,
+    <span style=color:#f92672>&#34;line_id&#34;</span>: <span style=color:#ae81ff>3</span>,
+    <span style=color:#f92672>&#34;play_name&#34;</span>: <span style=color:#e6db74>&#34;Henry IV&#34;</span>,
+    <span style=color:#f92672>&#34;speech_number&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+    <span style=color:#f92672>&#34;line_number&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+    <span style=color:#f92672>&#34;speaker&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+    <span style=color:#f92672>&#34;text_entry&#34;</span>: <span style=color:#e6db74>&#34;Enter KING HENRY, LORD JOHN OF LANCASTER, the EARL of WESTMORELAND, SIR WALTER BLUNT, and others&#34;</span>
+}
+</code></pre></div><p>Now, let&rsquo;s create index_pattern.</p><p><img src=/docs/v2020.09.04-beta.0/images/elasticsearch/kibana/kibana-create-index.png alt="Create Index_Pattern"></p><p>Once we have created an index_pattern, we can use the Discovery UI.</p><p><img src=/docs/v2020.09.04-beta.0/images/elasticsearch/kibana/kibana-discovery-ui.png alt></p><h2 id=cleanup>Cleanup</h2><p>To cleanup the Kubernetes resources created by this tutorial, run:</p><pre><code class=language-console data-lang=console>$ kubectl patch -n demo es/es-kibana-demo -p '{&quot;spec&quot;:{&quot;terminationPolicy&quot;:&quot;WipeOut&quot;}}' --type=&quot;merge&quot;
+
+$ kubectl delete -n demo es/es-kibana-demo
+
+$ kubectl delete  -n demo configmap/es-custom-config
+
+$ kubectl delete -n demo configmap/kibana-config
+
+$ kubectl delete -n demo deployment/kibana
+
+$ kubectl delete ns demo
+</code></pre><p>To uninstall KubeDB follow this <a href=/docs/v2020.09.04-beta.0/setup/operator/uninstall>guide</a>.</p></div></div><div class="column is-2"><div class=right-sidebar-area><div class=search-area><form action=#><input id=acSearch type=text placeholder=Search...>
+<button class=search-button>
+<i class="fa fa-search" aria-hidden=true></i></button></form></div><div class=tbl-of-contents><h4>What's on this Page</h4><nav id=TableOfContents><ul><li><a href=#before-you-begin>Before You Begin</a></li><li><a href=#overview>Overview</a></li><li><a href=#deploy-elasticsearch-cluster>Deploy Elasticsearch Cluster</a></li><li><a href=#deploy-kibana>Deploy Kibana</a></li><li><a href=#use-kibana>Use Kibana</a></li><li><a href=#cleanup>Cleanup</a></li></ul></nav></div></div></div></div></div><script>var kdDropdown=document.querySelector(".dropdown");var kdDropdownBtn=document.querySelector(".dropdown-trigger");kdDropdownBtn.addEventListener("click",function(){kdDropdown.classList.toggle("is-active");})</script></div><div class=overlay-bg></div><div class=sidebar-search-area><div class=search-area-top><h3>Search</h3><div class=searchbar-area><input type=search name=search id=searchbox placeholder=Search...>
+<button onclick=queryPage(1)><i class="fa fa-search" aria-hidden=true></i></button></div><span id=searchbar-script-container style=display:none></span><div class="search-meta-information level"><div class=level-left></div></div></div><div class=search-result-wrapper></div><div class=pagination-area><div class=pagination-list></div></div></div><div class=improve-section-area><div class="container section"><div class=improve-bg-color><div class=columns><div class="column is-6"><a href=https://github.com/kubedb/docs/edit/master/docs/guides/elasticsearch/kibana/connect-kibana.md/>Improve This Page</a></div></div></div></div></div><script type=text/javascript>var pageSize=5;var acSearch=document.querySelector("#acSearch");var bodyOverlay=document.querySelector(".overlay-bg");var sidebarSearch=document.querySelector(".sidebar-search-area");acSearch.addEventListener("click",function(){bodyOverlay.style.display="block";sidebarSearch.style.right="0";document.getElementById("searchbox").focus();bodyOverlay.addEventListener("click",function(){bodyOverlay.style.display="none";sidebarSearch.style.right="-80%";});});function encodeQueryData(data){var ret=[];for(var d in data)
+ret.push(encodeURIComponent(d)+'='+encodeURIComponent(data[d]));return ret.join('&');}
+document.querySelector(".searchbar-area input[type=search]").addEventListener("keyup",function(event){event.preventDefault();if(event.keyCode===13){queryPage(1);}});function queryPage(idx){var q=document.getElementById("searchbox").value;var cx="015199383701854252104:8mvwy0fek2e";var key="AIzaSyBrcwLTnL09geNrFMUx1kpL--dT1379aag";var imgSize="small";var callback="renderResult";var src="https://www.googleapis.com/customsearch/v1?"+encodeQueryData({q:q,cx:cx,key:key,imgSize:imgSize,callback:callback,start:(idx-1)*pageSize+1,num:pageSize,});var newScript=document.createElement("script");newScript.src=src;e=document.getElementById("searchbar-script-container");var child=e.lastElementChild;if(child){e.removeChild(child);}
+e.appendChild(newScript);}
+function renderSearchResultEntry(e){var out='<div class="single-search-result">'+
+'<h3><a href="'+e.link+'">'+e.title+'</a></h3>'+
+'<a href="'+e.link+'">'+e.htmlFormattedUrl+'</a>'+
+'<div class="result-description-wrapper">';if(e.pagemap&&e.pagemap.cse_thumbnail){out+='<div class="result-thumb">'+
+'<img src="'+e.pagemap.cse_thumbnail[0].src+'" alt="" />'+
+'</div>';}
+out+='<div class="result-description">'+
+'<p>'+
+e.snippet+
+'</p>'+
+'</div>'+
+'</div>'+
+'</div>';return out;}
+function renderResult(response){document.querySelector(".search-meta-information .level-left").innerHTML='<div class="level-left">'+
+'<p>'+
+'About <span class="search-count">'+response.searchInformation.formattedTotalResults+'</span> results (<span class="time-count">'+response.searchInformation.formattedSearchTime+' </span>seconds)'+
+'</p>'+
+'</div>';if(!response.items){return;}
+var searchResultWrapper=document.querySelector(".search-result-wrapper");searchResultWrapper.innerHTML="";for(var i=0;i<response.items.length;i++){searchResultWrapper.innerHTML+=renderSearchResultEntry(response.items[i]);}
+var pager='<ul>';if(response.queries.previousPage){var pageIndex=Math.floor(response.queries.previousPage[0].startIndex/pageSize)+1;pager+='<li><a href="#" onclick="queryPage('+pageIndex+')">Previous</a></li>';}
+if(response.queries.request){var pageIndex=Math.floor(response.queries.request[0].startIndex/pageSize)+1;pager+='<li><a href="#" onclick="queryPage('+pageIndex+')" class="is-active">'+pageIndex+'</a></li>';}
+if(response.queries.nextPage){var pageIndex=Math.floor(response.queries.nextPage[0].startIndex/pageSize)+1;pager+='<li><a href="#" onclick="queryPage('+pageIndex+')">Next</a></li>';}
+pager+='</ul>';document.querySelector(".pagination-area .pagination-list").innerHTML=pager;}</script><section></section><section></section><section></section><button class=go-to-top id=goTop>
+<i class="fa fa-angle-up" aria-hidden=true></i></button><footer class=footer-area><div class=footer-top><div class="container section"><div class="columns is-mobile is-multiline"><div class="column is-full-mobile is-one-third-desktop is-one-third-widescreen is-one-third-tablet" data-aos=fade-up><div class=single-footer-widget><div class=footer-logo><a href=https://appscode.com><img src=/assets/images/products/appscode/appscode.png alt=AppsCode class=img></a></div><div class=subscription-form><form action="https://appscode.us17.list-manage.com/subscribe/post?u=feb2bf31969a951e7449048a3&id=82fb19acb9" method=post id=mc-embedded-subscribe-form name=mc-embedded-subscribe-form class=navbar-form target=_blank novalidate role=email role=email><label for=email>Subscribe to Our Newsletter</label><p class=spam-message>No spam, we promise. Your mail address is secure</p><div class="field has-addons"><div class=control><input class=input name=EMAIL id=mce-EMAIL type=email placeholder="Your work email address" required>
+<button id=mc-embedded-subscribe type=submit name=subscribe class=button>
+<i class="fa fa-paper-plane-o" aria-hidden=true></i></button></div></div></form></div><div class=contact-information><h4>Have any Inquiry?</h4><ul class=all-contact-info><li><a href=callto:+1%28650%29241-8486><span><i class="fa fa-phone" aria-hidden=true></i></span>+1(650)241-8486</a></li><li><a href=mailto:support@appscode.com><span><i class="fa fa-envelope-o" aria-hidden=true></i></span>support@appscode.com</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=500><div class=single-footer-widget><div class=footer-menu><h4>Products</h4><ul class=footer-link><li><a href=https://kubedb.com>KubeDB</a></li><li><a href=https://stash.run>Stash</a></li><li><a href=https://kubevault.com>KubeVault</a></li><li><a href=https://kubeform.com>Kubeform</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=600><div class=single-footer-widget><div class=footer-menu><h4>Services</h4><ul class=footer-link><li><a href=https://appscode.com/pricing/>Pricing</a></li><li><a href=https://appscode.com/consulting/>Consulting</a></li><li><a href=https://appscode.com/training/>Training</a></li><li><a href=https://appscode.com/support/>Support</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=700><div class=single-footer-widget><div class=footer-menu><h4>Company</h4><ul class=footer-link><li><a href=https://appscode.com/about/>About Us</a></li><li><a href=https://blog.byte.builders>Blog</a></li><li><a href=https://appscode.com/contact/>Contact Us</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=800><div class=single-footer-widget><div class=footer-menu><h4>Legal</h4><ul class=footer-link><li><a href=https://appscode.com/legal/tos/>Terms of Sevice</a></li><li><a href=https://appscode.com/legal/privacy-policy/>Privacy Policy</a></li><li><a href=https://appscode.com/legal/security/>Security</a></li><li><a href=https://appscode.com/legal/sla/>Service Level Agreement</a></li></ul></div></div></div></div></div></div><div class=footer-bottom><div class="container section"><div class=columns><div class="column is-4"><p>© 2021 AppsCode Inc. All rights reserved.</p></div><div class="column is-4 is-mobile has-text-centered"><div class=footer-inline-link><a href=https://appscode.com/legal/privacy-policy/>Privacy Policy</a>
+<a href=https://appscode.com/legal/tos/>Terms of Service</a></div></div><div class="column is-4 is-mobile has-text-right"><div class=socail-link-inline><ul><li><a href=https://twitter.com/AppsCodeHQ><i class="fa fa-twitter" aria-hidden=true></i></a></li><li><a href=https://www.facebook.com/appscode><i class="fa fa-facebook" aria-hidden=true></i></a></li><li><a href=https://www.youtube.com/c/AppsCodeInc><i class="fa fa-youtube" aria-hidden=true></i></a></li></ul></div></div></div></div></div></footer><script src=/assets/js/bulma-carousel.min.js></script><script src=https://unpkg.com/aos@2.3.1/dist/aos.js></script><script src=https://unpkg.com/downloadjs@1.4.7/download.min.js></script><script src=https://unpkg.com/clipboard@2/dist/clipboard.min.js></script><script src=/assets/js/main.js></script><script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/9255943.js></script><script type=text/javascript>var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/5821e34b18d9f16af02864b7/default';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();</script></body></html>
