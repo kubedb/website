@@ -1,0 +1,378 @@
+<!doctype html><html lang=en><head><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-62096468-4','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=theme-color content="#4D4DCB"><title>KubeDB by AppsCode</title><meta name=description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta name=author content="AppsCode Inc."><meta name=keywords content="kubernetes appscode databsse high availability postgres elasticsearch etcd memecached mongodb mysql percona xtradb redis"><link rel=apple-touch-icon sizes=57x57 href=/assets/images/products/kubedb/icons/apple-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=/assets/images/products/kubedb/icons/apple-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=/assets/images/products/kubedb/icons/apple-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=/assets/images/products/kubedb/icons/apple-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=/assets/images/products/kubedb/icons/apple-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=/assets/images/products/kubedb/icons/apple-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=/assets/images/products/kubedb/icons/apple-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=/assets/images/products/kubedb/icons/apple-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=/assets/images/products/kubedb/icons/apple-icon-180x180.png><link rel=icon type=image/png sizes=192x192 href=/assets/images/products/kubedb/icons/android-icon-192x192.png><link rel=icon type=image/png sizes=32x32 href=/assets/images/products/kubedb/icons/favicon-32x32.png><link rel=icon type=image/png sizes=96x96 href=/assets/images/products/kubedb/icons/favicon-96x96.png><link rel=icon type=image/png sizes=16x16 href=/assets/images/products/kubedb/icons/favicon-16x16.png><link rel=manifest href=/assets/images/products/kubedb/icons/manifest.json><meta name=msapplication-TileColor content="#ffffff"><meta name=msapplication-TileImage content="/assets/images/products/kubedb/icons/ms-icon-144x144.png"><meta itemprop=name content="KubeDB by AppsCode"><meta itemprop=description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta itemprop=image content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeDB"><meta name=twitter:title content="KubeDB by AppsCode"><meta name=twitter:creator content="@KubeDB"><meta name=twitter:description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta name=twitter:image:src content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta property="og:url" content="https://kubedb.com"><meta property="og:title" content="KubeDB by AppsCode"><meta property="og:description" content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta property="og:site_name" content="KubeDB by AppsCode"><meta property="og:image" content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta property="og:type" content="article"><link rel=stylesheet href=/assets/css/font-awesome.min.css><link href=https://unpkg.com/aos@2.3.1/dist/aos.css rel=stylesheet><link rel=stylesheet href=/assets/css/bulma-carousel.min.css><link rel=stylesheet href=/assets/css/bulma-tooltip.min.css><link rel=stylesheet href=/assets/css/bulma.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css><link rel=stylesheet href=/assets/sass/main.min.5d2c0297a6ff960daed9d0bfe02ddc681d62b160aafc866ad48d2745f78048d9.css></head><body class=kubedb><header><div class=header-top><div class="container section"><nav class=navbar><div class=navbar-brand><a class=navbar-item href=https://appscode.com><img src=/assets/images/products/appscode/appscode.png alt=AppsCode></a>
+<a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav1><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=acNav1 class="navbar-menu main-menu"><div class=navbar-end><div class=navbar-start><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Products</a><div class=ac-megamenu><div class=columns><div class="column is-6"><div class=columns><div class="column is-12 br-1"><a href=https://kubedb.com class="single-product-item is-kubedb"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubedb/kubedb-icon.png alt=KubeDB></div><h5>KubeDB</h5></div><div class=menu-body><p>Run production-grade Databases on Kubernetes</p></div></a><a href=https://stash.run class="single-product-item is-stash"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/stash/stash-icon.png alt=Stash></div><h5>Stash</h5></div><div class=menu-body><p>Backup your Kubernetes Stateful Applications</p></div></a><a href=https://kubevault.com class="single-product-item is-kubevault"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubevault/kubevault-icon.png alt=KubeVault></div><h5>KubeVault</h5></div><div class=menu-body><p>Tools for running HashiCorp Vault on Kubernetes</p></div></a></div></div></div><div class="column is-6"><div class=columns><div class="column is-12"><a href=https://byte.builders class="single-product-item byte-builder kd-orange"><div class=menu-header><p class=intro>Introducing....</p><h5>ByteBuilders</h5></div><div class=menu-body><p>Cloud reimagined for the age of Kubernetes</p></div><p class=learn-more-btn>Learn more
+<span class=icon><i class="fa fa-long-arrow-right" aria-hidden=true></i></span></p></a><a href=https://kubeform.com class="single-product-item is-kubeform"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubeform/kubeform-icon.png alt=Kubeform></div><h5>Kubeform</h5></div><div class=menu-body><p>Provision cloud resources using Kubernetes CRDs & Terraform</p></div></a></div></div></div></div></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Open Source</a><div class=ac-megamenu><div class=columns><div class="column is-6"><div class=columns><div class="column is-12 br-1"><a href=https://voyagermesh.com class="single-product-item is-voyager"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/voyager/voyager-icon.png alt=Voyager></div><h5>Voyager</h5></div><div class=menu-body><p>Secure HAProxy Ingress Controller for
+Kubernetes</p></div></a><a href=https://appscode.com/products/guard/ class="single-product-item is-guard"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/guard/guard-icon.png alt=Guard></div><h5>Guard</h5></div><div class=menu-body><p>Kubernetes Authentication WebHook Server</p></div></a><a href=https://appscode.com/products/kubed/ class="single-product-item is-kubed"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubed/kubed-icon.png alt=Kubed></div><h5>Kubed</h5></div><div class=menu-body><p>Kubernetes cluster manager daemon</p></div></a></div></div></div><div class="column is-6"><div class=columns><div class="column is-12"><a href=https://pharmer.cloud class="single-product-item is-pharmer"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/pharmer/pharmer-icon.png alt=Pharmer></div><h5>Pharmer</h5></div><div class=menu-body><p>Kubernetes Cluster Manager using Kubeadm & Cluster API</p></div></a><a href=https://appscode.com/products/swift/ class="single-product-item is-swift"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/swift/swift-icon.png alt=Swift></div><h5>Swift</h5></div><div class=menu-body><p>Ajax friendly Helm Tiller Proxy</p></div></a><a href=https://appscode.com/products/searchlight/ class="single-product-item is-searchlight"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/searchlight/searchlight-icon.png alt=Searchlight></div><h5>Searchlight</h5></div><div class=menu-body><p>Alerts for Kubernetes</p></div></a></div></div></div></div></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Services</a><div class=ac-dropdown><a class=navbar-item href=https://appscode.com/consulting/>Consulting</a>
+<a class=navbar-item href=https://appscode.com/training/>Training</a>
+<a class=navbar-item href=https://appscode.com/support/>Support</a></div></div><a class=navbar-item href=https://blog.byte.builders>Blog</a>
+<a class=navbar-item href=https://appscode.com/contact/>Contact Us</a></div><div class=navbar-item><div class="buttons main-menu-button-top"><a class="button is-small for-chat" href=https://slack.appscode.com><span><img src=/assets/images/icon/slack.png alt></span>Slack</a>
+<a class="button is-small for-support" href=https://appscode.freshdesk.com><span><img src=/assets/images/icon/chat.png alt></span>Support Portal</a></div></div></div></div></nav></div></div><div class="header-bottom-area header-area kubedb-primary-bg customize-kubedb fixed-menu"><div class="container section"><nav class=navbar><div class=navbar-brand><a class=navbar-item href=https://kubedb.com><img src=/assets/images/products/kubedb/kubedb-white.png alt=KubeDB></a>
+<a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=acNav class="navbar-menu main-menu"><div class=navbar-end><div class=navbar-start><a href=/features/ class=navbar-item>Features</a>
+<a href=/pricing/ class=navbar-item>Pricing</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Databases</a><div class=ac-dropdown><a class=navbar-item href=/docs/v2021.04.16/guides/elasticsearch/>Elasticsearch</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/mariadb/>MariaDB</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/memcached/>Memcached</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/mongodb/>MongoDB</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/mysql/>MySQL</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/percona-xtradb/>Percona XtraDB</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/pgbouncer/>PgBouncer</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/postgres/>PostgreSQL</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/proxysql/>ProxySQL</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/redis/>Redis</a></div></div><a href=/docs/v2021.04.16/welcome/ class=navbar-item>Documentation</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Community</a><div class=ac-dropdown><a href=https://github.com/kubedb class=navbar-item>GitHub</a>
+<a href=https://twitter.com/KubeDB class=navbar-item>Twitter</a>
+<a href=http://slack.kubernetes.io/ class=navbar-item>Slack</a></div></div></div><div class=navbar-item><div class="buttons main-menu-button"><img style=height:24px alt="GitHub Stars" src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github&label=stars&query=%24.stars&url=https://github-stars.appscode.workers.dev/user/kubedb">
+&nbsp;&nbsp;&nbsp;
+<img style=height:24px alt="GitHub Forks" src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github&label=forks&query=%24.forks&url=https://github-stars.appscode.workers.dev/user/kubedb">
+&nbsp;&nbsp;&nbsp;
+<img style=height:24px alt="Docker Pulls" src="https://img.shields.io/docker/pulls/kubedb/operator?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=docker&label=pulls"></div></div></div></div></nav></div></div><div class=documentation-menu><div class="container section"><div class=is-centered><div class="is-half has-text-centered-desktop"><div class=responsive-menu><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav3><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><nav class=documentation-navbar><div id=acNav3 class="navbar-menu nav-menu main-menu"><div class=navbar-centered><div class=navbar-start><a href=/docs/v2021.04.16/ class=navbar-item>Welcome</a>
+<a href=/docs/v2021.04.16/overview/ class=navbar-item>Overview</a>
+<a href=/docs/v2021.04.16/setup/ class=navbar-item>Setup</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Guides</a><div class=ac-dropdown><a href=/docs/v2021.04.16/guides/elasticsearch/ class=navbar-item>Elasticsearch</a>
+<a href=/docs/v2021.04.16/guides/mariadb/ class=navbar-item>MariaDB</a>
+<a href=/docs/v2021.04.16/guides/memcached/ class=navbar-item>Memcached</a>
+<a href=/docs/v2021.04.16/guides/mongodb/ class=navbar-item>MongoDB</a>
+<a href=/docs/v2021.04.16/guides/mysql/ class=navbar-item>MySQL</a>
+<a href=/docs/v2021.04.16/guides/percona-xtradb/ class=navbar-item>Percona XtraDB</a>
+<a href=/docs/v2021.04.16/guides/pgbouncer/ class=navbar-item>PgBouncer</a>
+<a href=/docs/v2021.04.16/guides/postgres/ class=navbar-item>PostgreSQL</a>
+<a href=/docs/v2021.04.16/guides/proxysql/ class=navbar-item>ProxySQL</a>
+<a href=/docs/v2021.04.16/guides/redis/ class=navbar-item>Redis</a></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Reference</a><div class=ac-dropdown><a href=/docs/v2021.04.16/reference/operator/ class=navbar-item>KubeDB Operator</a>
+<a href=/docs/v2021.04.16/reference/cli/ class=navbar-item>KubeDB CLI</a></div></div></div></div></div></nav></div></div></div></div></header><div class=documentation-area><div class="container section"><div class=columns><div class="column is-3"><div class=kd-left-sidebar><div class=trial-button><a href=/docs/v2021.04.16/setup/ class="button is-fullwidth">Try Now for FREE!</a></div><div class=kd-version><div class=dropdown><div class=dropdown-trigger><button class="button is-fullwidth" aria-haspopup=true aria-controls=dropdown-menu3>
+<span><strong class=icon><i class="fa fa-cog" aria-hidden=true></i></strong>v2021.04.16</span>
+<span class=new-item>Latest</span>
+<span class="icon is-small"><i class="fa fa-angle-down" aria-hidden=true></i></span></button></div><div class=dropdown-menu id=dropdown-menu3 role=menu><div class=dropdown-content><a href=https://github.com/kubedb/docs/tree/master/docs target=_blank class=dropdown-item>master</a>
+<a href=/docs/v2021.04.16/ class=dropdown-item>v2021.04.16<div class=tag>Latest</div></a><a href=/docs/v2021.03.17/ class=dropdown-item>v2021.03.17</a>
+<a href=/docs/v2021.01.26/ class=dropdown-item>v2021.01.26</a>
+<a href=/docs/v2021.01.15/ class=dropdown-item>v2021.01.15</a>
+<a href=/docs/v2021.01.02-rc.0/ class=dropdown-item>v2021.01.02-rc.0</a>
+<a href=/docs/v2020.12.10/ class=dropdown-item>v2020.12.10</a>
+<a href=/docs/v2020.11.12/ class=dropdown-item>v2020.11.12</a>
+<a href=/docs/v2020.11.11/ class=dropdown-item>v2020.11.11</a>
+<a href=/docs/v2020.11.08/ class=dropdown-item>v2020.11.08</a>
+<a href=/docs/v2020.10.28/ class=dropdown-item>v2020.10.28</a>
+<a href=/docs/v0.13.0-rc.0/ class=dropdown-item>v0.13.0-rc.0</a>
+<a href=/docs/0.12.0/ class=dropdown-item>0.12.0</a></div></div></div></div><div class=kd-sidebar-menu><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-1>
+<label for=6e2d865491e24fac534211c690283b4c-1><a href=/docs/v2021.04.16/guides/>Elasticsearch</a></label></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-2>
+<label for=6e2d865491e24fac534211c690283b4c-2><a href=/docs/v2021.04.16/guides/elasticsearch/>Elasticsearch</a></label></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-3 checked>
+<label for=6e2d865491e24fac534211c690283b4c-3><a>Quickstart</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li class=is-active><a href=/docs/v2021.04.16/guides/elasticsearch/quickstart/overview/>Overview</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-4>
+<label for=6e2d865491e24fac534211c690283b4c-4><a>Concepts</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/concepts/elasticsearch/>Elasticsearch</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/concepts/elasticsearch-ops-request/>ElasticsearchOpsRequest</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/concepts/catalog/>ElasticsearchVersion</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/concepts/appbinding/>AppBinding</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/concepts/autoscaler/>ElasticsearchAutoscaler</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-5>
+<label for=6e2d865491e24fac534211c690283b4c-5><a>Clustering</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/clustering/combined-cluster/>Combined Cluster</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/clustering/topology-cluster/>Topology Cluster</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-6>
+<label for=6e2d865491e24fac534211c690283b4c-6><a>Custom Configuration</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/configuration/overview/>Overview</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/configuration/combined-cluster/>Combined Cluster</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/configuration/topology-cluster/>Topology Cluster</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-7>
+<label for=6e2d865491e24fac534211c690283b4c-7><a>Custom RBAC</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/custom-rbac/using-custom-rbac/>Custom RBAC</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-8>
+<label for=6e2d865491e24fac534211c690283b4c-8><a>Private Registry</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/private-registry/using-private-registry/>Quickstart</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-9>
+<label for=6e2d865491e24fac534211c690283b4c-9><a>Backup & Restore</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/backup/overview/>Overview</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/backup/kubedb/>Scheduled Backup</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/backup/auto-backup/>Auto-Backup</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/backup/customization/>Customizing Backup & Restore Process</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-10>
+<label for=6e2d865491e24fac534211c690283b4c-10><a>Autoscaling</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-11>
+<label for=6e2d865491e24fac534211c690283b4c-11><a>Compute Autoscaling</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/autoscaler/compute/overview/>Overview</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/autoscaler/compute/combined/>Combined</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/autoscaler/compute/topology/>Topology Cluster</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-12>
+<label for=6e2d865491e24fac534211c690283b4c-12><a>Storage Autoscaling</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/autoscaler/storage/overview/>Overview</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/autoscaler/storage/combined/>Combined Cluster</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/autoscaler/storage/topology/>Topology Cluster</a></li></ul></div></div></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-13>
+<label for=6e2d865491e24fac534211c690283b4c-13><a>Monitoring</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/monitoring/overview/>Overview</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/monitoring/using-prometheus-operator/>Prometheus Operator</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/monitoring/using-builtin-prometheus/>Builtin Prometheus</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-14>
+<label for=6e2d865491e24fac534211c690283b4c-14><a>X-Pack</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/x-pack/configuration/>X-Pack Configuration</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/x-pack/use-tls/>Use TLS</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/x-pack/issue-certificate/>Issue Certificate</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/x-pack/disable-xpack/>Disable X-Pack</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-15>
+<label for=6e2d865491e24fac534211c690283b4c-15><a>Search Guard</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/search-guard/overview/>Overview</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/search-guard/configuration/>Configuration</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/search-guard/use-tls/>Use TLS</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/search-guard/issue-certificate/>Issue Certificate</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/search-guard/disable-searchguard/>Disable Search Guard</a></li><li><a href=/docs/v2021.04.16/guides/elasticsearch/search-guard/x-pack-monitoring/>Monitoring</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-16>
+<label for=6e2d865491e24fac534211c690283b4c-16><a>Kibana</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/kibana/connect-kibana/>Use Kibana</a></li></ul></div></div><div class=item><input type=checkbox id=6e2d865491e24fac534211c690283b4c-17>
+<label for=6e2d865491e24fac534211c690283b4c-17><a>CLI</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.04.16/guides/elasticsearch/cli/cli/>Quickstart</a></li></ul></div></div></div></div></div><div class="column is-7"><div class=full-info><blockquote><p>New to KubeDB? Please start <a href=/docs/v2021.04.16/README>here</a>.</p></blockquote><h1 id=elasticsearch-quickstart>Elasticsearch QuickStart</h1><p>This tutorial will show you how to use KubeDB to run an Elasticsearch database.</p><p align=center>  <img alt=lifecycle src=/docs/v2021.04.16/guides/elasticsearch/quickstart/overview/images/Lifecycle-of-an-Elasticsearch-CRD.svg></p><h2 id=before-you-begin>Before You Begin</h2><p>At first, you need to have a Kubernetes cluster, and the <code>kubectl</code> command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using <a href=https://kind.sigs.k8s.io/docs/user/quick-start/>kind</a>.</p><p>Now, install the KubeDB operator in your cluster following the steps <a href=/docs/v2021.04.16/setup/install/_index>here</a>.</p><p>To keep things isolated, this tutorial uses a separate namespace called <code>demo</code> throughout this tutorial.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl create namespace demo
+namespace/demo created
+
+$ kubectl get namespace
+NAME                 STATUS   AGE
+demo                 Active   9s
+</code></pre></div><blockquote><p>Note: YAML files used in this tutorial are stored in <a href=https://github.com/kubedb/docs/tree/v2021.04.16/docs/guides/elasticsearch/quickstart/overview/yamls>guides/elasticsearch/quickstart/overview/yamls</a> folder in GitHub repository <a href=https://github.com/kubedb/docs>kubedb/docs</a>.</p></blockquote><blockquote><p>We have designed this tutorial to demonstrate a production setup of KubeDB managed Elasticsearch. If you just want to try out KubeDB, you can bypass some of the safety features following the tips <a href=/docs/v2021.04.16/guides/elasticsearch/quickstart/overview/#tips-for-testing>here</a>.</p></blockquote><h2 id=find-available-storageclass>Find Available StorageClass</h2><p>We will have to provide <code>StorageClass</code> in Elasticsearch CRD specification. Check available <code>StorageClass</code> in your cluster using the following command,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get storageclass
+NAME                 PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+standard <span style=color:#f92672>(</span>default<span style=color:#f92672>)</span>   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  14h
+</code></pre></div><p>Here, we have <code>standard</code> StorageClass in our cluster from <a href=https://github.com/rancher/local-path-provisioner>Local Path Provisioner</a>.</p><h2 id=find-available-elasticsearchversion>Find Available ElasticsearchVersion</h2><p>When you install the KubeDB operator, it registers a CRD named <a href=/docs/v2021.04.16/guides/elasticsearch/concepts/catalog/>ElasticsearchVersion</a>. The installation process comes with a set of tested ElasticsearchVersion objects. Let&rsquo;s check available ElasticsearchVersions by,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get elasticsearchversions
+NAME                   VERSION   DB_IMAGE                                 AUTH_PLUGIN   DEPRECATED   AGE
+opendistro-1.0.2       7.0.1     kubedb/elasticsearch:1.0.2-opendistro    OpenDistro                 5m17s
+opendistro-1.0.2-v1    7.0.1     kubedb/elasticsearch:1.0.2-opendistro    OpenDistro                 5m17s
+opendistro-1.1.0       7.1.1     kubedb/elasticsearch:1.1.0-opendistro    OpenDistro                 5m17s
+opendistro-1.1.0-v1    7.1.1     kubedb/elasticsearch:1.1.0-opendistro    OpenDistro                 5m17s
+opendistro-1.10.1      7.9.1     kubedb/elasticsearch:1.10.1-opendistro   OpenDistro                 5m17s
+opendistro-1.11.0      7.9.1     kubedb/elasticsearch:1.11.0-opendistro   OpenDistro                 5m17s
+opendistro-1.12.0      7.10.0    kubedb/elasticsearch:1.12.0-opendistro   OpenDistro                 5m17s
+opendistro-1.2.1       7.2.1     kubedb/elasticsearch:1.2.1-opendistro    OpenDistro                 5m17s
+opendistro-1.2.1-v1    7.2.1     kubedb/elasticsearch:1.2.1-opendistro    OpenDistro                 5m17s
+opendistro-1.3.0       7.3.2     kubedb/elasticsearch:1.3.0-opendistro    OpenDistro                 5m17s
+opendistro-1.3.0-v1    7.3.2     kubedb/elasticsearch:1.3.0-opendistro    OpenDistro                 5m17s
+opendistro-1.4.0       7.4.2     kubedb/elasticsearch:1.4.0-opendistro    OpenDistro                 5m17s
+opendistro-1.4.0-v1    7.4.2     kubedb/elasticsearch:1.4.0-opendistro    OpenDistro                 5m17s
+opendistro-1.6.0       7.6.1     kubedb/elasticsearch:1.6.0-opendistro    OpenDistro                 5m17s
+opendistro-1.6.0-v1    7.6.1     kubedb/elasticsearch:1.6.0-opendistro    OpenDistro                 5m17s
+opendistro-1.7.0       7.6.1     kubedb/elasticsearch:1.7.0-opendistro    OpenDistro                 5m17s
+opendistro-1.7.0-v1    7.6.1     kubedb/elasticsearch:1.7.0-opendistro    OpenDistro                 5m17s
+opendistro-1.8.0       7.7.0     kubedb/elasticsearch:1.8.0-opendistro    OpenDistro                 5m17s
+opendistro-1.8.0-v1    7.7.0     kubedb/elasticsearch:1.8.0-opendistro    OpenDistro                 5m17s
+opendistro-1.9.0       7.8.0     kubedb/elasticsearch:1.9.0-opendistro    OpenDistro                 5m17s
+opendistro-1.9.0-v1    7.8.0     kubedb/elasticsearch:1.9.0-opendistro    OpenDistro                 5m17s
+searchguard-6.8.1      6.8.1     kubedb/elasticsearch:6.8.1-searchguard   SearchGuard                5m17s
+searchguard-6.8.1-v1   6.8.1     kubedb/elasticsearch:6.8.1-searchguard   SearchGuard                5m17s
+searchguard-7.0.1      7.0.1     kubedb/elasticsearch:7.0.1-searchguard   SearchGuard                5m17s
+searchguard-7.0.1-v1   7.0.1     kubedb/elasticsearch:7.0.1-searchguard   SearchGuard                5m17s
+searchguard-7.1.1      7.1.1     kubedb/elasticsearch:7.1.1-searchguard   SearchGuard                5m17s
+searchguard-7.1.1-v1   7.1.1     kubedb/elasticsearch:7.1.1-searchguard   SearchGuard                5m17s
+searchguard-7.3.2      7.3.2     kubedb/elasticsearch:7.3.2-searchguard   SearchGuard                5m17s
+searchguard-7.5.2      7.5.2     kubedb/elasticsearch:7.5.2-searchguard   SearchGuard                5m17s
+searchguard-7.5.2-v1   7.5.2     kubedb/elasticsearch:7.5.2-searchguard   SearchGuard                5m17s
+searchguard-7.8.1      7.8.1     kubedb/elasticsearch:7.8.1-searchguard   SearchGuard                5m17s
+searchguard-7.9.3      7.9.3     kubedb/elasticsearch:7.9.3-searchguard   SearchGuard                5m17s
+xpack-6.8.10           6.8.10    kubedb/elasticsearch:6.8.10-xpack        X-Pack                     5m17s
+xpack-6.8.10-v1        6.8.10    kubedb/elasticsearch:6.8.10-xpack        X-Pack                     5m17s
+xpack-7.0.1            7.0.1     kubedb/elasticsearch:7.0.1-xpack         X-Pack                     5m17s
+xpack-7.0.1-v1         7.0.1     kubedb/elasticsearch:7.0.1-xpack         X-Pack                     5m17s
+xpack-7.1.1            7.1.1     kubedb/elasticsearch:7.1.1-xpack         X-Pack                     5m17s
+xpack-7.1.1-v1         7.1.1     kubedb/elasticsearch:7.1.1-xpack         X-Pack                     5m17s
+xpack-7.2.1            7.2.1     kubedb/elasticsearch:7.2.1-xpack         X-Pack                     5m17s
+xpack-7.2.1-v1         7.2.1     kubedb/elasticsearch:7.2.1-xpack         X-Pack                     5m17s
+xpack-7.3.2            7.3.2     kubedb/elasticsearch:7.3.2-xpack         X-Pack                     5m17s
+xpack-7.3.2-v1         7.3.2     kubedb/elasticsearch:7.3.2-xpack         X-Pack                     5m17s
+xpack-7.4.2            7.4.2     kubedb/elasticsearch:7.4.2-xpack         X-Pack                     5m17s
+xpack-7.4.2-v1         7.4.2     kubedb/elasticsearch:7.4.2-xpack         X-Pack                     5m17s
+xpack-7.5.2            7.5.2     kubedb/elasticsearch:7.5.2-xpack         X-Pack                     5m17s
+xpack-7.5.2-v1         7.5.2     kubedb/elasticsearch:7.5.2-xpack         X-Pack                     5m17s
+xpack-7.6.2            7.6.2     kubedb/elasticsearch:7.6.2-xpack         X-Pack                     5m17s
+xpack-7.6.2-v1         7.6.2     kubedb/elasticsearch:7.6.2-xpack         X-Pack                     5m17s
+xpack-7.7.1            7.7.1     kubedb/elasticsearch:7.7.1-xpack         X-Pack                     5m17s
+xpack-7.7.1-v1         7.7.1     kubedb/elasticsearch:7.7.1-xpack         X-Pack                     5m17s
+xpack-7.8.0            7.8.0     kubedb/elasticsearch:7.8.0-xpack         X-Pack                     5m17s
+xpack-7.8.0-v1         7.8.0     kubedb/elasticsearch:7.8.0-xpack         X-Pack                     5m17s
+xpack-7.9.1            7.9.1     kubedb/elasticsearch:7.9.1-xpack         X-Pack                     5m17s
+xpack-7.9.1-v1         7.9.1     kubedb/elasticsearch:7.9.1-xpack         X-Pack                     5m17s
+</code></pre></div><p>Notice the <code>DEPRECATED</code> column. Here, <code>true</code> means that this ElasticsearchVersion is deprecated for the current KubeDB version. KubeDB will not work for deprecated ElasticsearchVersion.</p><p>In this tutorial, we will use <code>xpack-7.9.1-v1</code> ElasticsearchVersion CR to create an Elasticsearch cluster.</p><blockquote><p>Note: An image with a higher modification tag will have more features and fixes than an image with a lower modification tag. Hence, it is recommended to use ElasticsearchVersion CRD with the highest modification tag to take advantage of the latest features. For example, we are using <code>xpack-7.9.1-v1</code> over <code>7.9.1-xpack</code>.</p></blockquote><h2 id=create-an-elasticsearch-cluster>Create an Elasticsearch Cluster</h2><p>The KubeDB operator implements an Elasticsearch CRD to define the specification of an Elasticsearch database.</p><p>The Elasticsearch instance used for this tutorial:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>kubedb.com/v1alpha2</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Elasticsearch</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-quickstart</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>version</span>: <span style=color:#ae81ff>xpack-7.9.1-v1</span>
+  <span style=color:#f92672>enableSSL</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>3</span>
+  <span style=color:#f92672>storageType</span>: <span style=color:#ae81ff>Durable</span>
+  <span style=color:#f92672>storage</span>:
+    <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+    <span style=color:#f92672>accessModes</span>:
+    - <span style=color:#ae81ff>ReadWriteOnce</span>
+    <span style=color:#f92672>resources</span>:
+      <span style=color:#f92672>requests</span>:
+        <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+  <span style=color:#f92672>terminationPolicy</span>: <span style=color:#ae81ff>DoNotTerminate</span>
+</code></pre></div><p>Here,</p><ul><li><code>spec.version</code> - is the name of the ElasticsearchVersion CR. Here, an Elasticsearch of version <code>7.9.1</code> will be created with <code>x-pack</code> security plugin.</li><li><code>spec.enableSSL</code> - specifies whether the HTTP layer is secured with certificates or not.</li><li><code>spec.replicas</code> - specifies the number of Elasticsearch nodes.</li><li><code>spec.storageType</code> - specifies the type of storage that will be used for Elasticsearch database. It can be <code>Durable</code> or <code>Ephemeral</code>. The default value of this field is <code>Durable</code>. If <code>Ephemeral</code> is used then KubeDB will create the Elasticsearch database using <code>EmptyDir</code> volume. In this case, you don&rsquo;t have to specify <code>spec.storage</code> field. This is useful for testing purposes.</li><li><code>spec.storage</code> specifies the StorageClass of PVC dynamically allocated to store data for this database. This storage spec will be passed to the StatefulSet created by the KubeDB operator to run database pods. You can specify any StorageClass available in your cluster with appropriate resource requests. If you don&rsquo;t specify <code>spec.storageType: Ephemeral</code>, then this field is required.</li><li><code>spec.terminationPolicy</code> specifies what KubeDB should do when a user try to delete Elasticsearch CR. Termination policy <code>DoNotTerminate</code> prevents a user from deleting this object if the admission webhook is enabled.</li></ul><blockquote><p>Note: <code>spec.storage</code> section is used to create PVC for database pod. It will create PVC with storage size specified in the <code>storage.resources.requests</code> field. Don&rsquo;t specify <code>limits</code> here. PVC does not get resized automatically.</p></blockquote><p>Let&rsquo;s create the Elasticsearch CR that is shown above:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl apply -f https://github.com/kubedb/docs/raw/v2021.04.16/docs/guides/elasticsearch/quickstart/overview/yamls/elasticsearch.yaml
+elasticsearch.kubedb.com/es-quickstart created
+</code></pre></div><p>The Elasticsearch&rsquo;s <code>STATUS</code> will go from <code>Provisioning</code> to <code>Ready</code> state within few minutes. Once the <code>STATUS</code> is <code>Ready</code>, you are ready to use the database.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get elasticsearch -n demo -w
+NAME            VERSION          STATUS         AGE
+es-quickstart   xpack-7.9.1-v1   Provisioning   1m34s
+... ...
+es-quickstart   xpack-7.9.1-v1   Ready          2m6s
+</code></pre></div><p>Describe the Elasticsearch object to observe the progress if something goes wrong or the status is not changing for a long period of time:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl describe elasticsearch -n demo  es-quickstart
+Name:         es-quickstart
+Namespace:    demo
+Labels:       &lt;none&gt;
+Annotations:  &lt;none&gt;
+API Version:  kubedb.com/v1alpha2
+Kind:         Elasticsearch
+Metadata:
+  Creation Timestamp:  2021-02-26T05:29:30Z
+  Finalizers:
+    kubedb.com
+  Generation:  <span style=color:#ae81ff>2</span>
+  Resource Version:  <span style=color:#ae81ff>13279</span>
+  UID:               04715366-cda8-4e44-b63b-8e722b986bbd
+Spec:
+  Auth Secret:
+    Name:      es-quickstart-elastic-cred
+  Enable SSL:  true
+  Kernel Settings:
+    Privileged:  true
+    Sysctls:
+      Name:   vm.max_map_count
+      Value:  <span style=color:#ae81ff>262144</span>
+  Pod Template:
+    Controller:
+    Metadata:
+    Spec:
+      Affinity:
+        Pod Anti Affinity:
+          Preferred During Scheduling Ignored During Execution:
+            Pod Affinity Term:
+              Label Selector:
+                Match Labels:
+                  app.kubernetes.io/instance:    es-quickstart
+                  app.kubernetes.io/managed-by:  kubedb.com
+                  app.kubernetes.io/name:        elasticsearches.kubedb.com
+              Namespaces:
+                demo
+              Topology Key:  kubernetes.io/hostname
+            Weight:          <span style=color:#ae81ff>100</span>
+            Pod Affinity Term:
+              Label Selector:
+                Match Labels:
+                  app.kubernetes.io/instance:    es-quickstart
+                  app.kubernetes.io/managed-by:  kubedb.com
+                  app.kubernetes.io/name:        elasticsearches.kubedb.com
+              Namespaces:
+                demo
+              Topology Key:  failure-domain.beta.kubernetes.io/zone
+            Weight:          <span style=color:#ae81ff>50</span>
+      Resources:
+        Limits:
+          Cpu:     500m
+          Memory:  1Gi
+        Requests:
+          Cpu:               500m
+          Memory:            1Gi
+      Service Account Name:  es-quickstart
+  Replicas:                  <span style=color:#ae81ff>3</span>
+  Storage:
+    Access Modes:
+      ReadWriteOnce
+    Resources:
+      Requests:
+        Storage:         1Gi
+    Storage Class Name:  standard
+  Storage Type:          Durable
+  Termination Policy:    DoNotTerminate
+  Tls:
+    Certificates:
+      Alias:  ca
+      Private Key:
+        Encoding:   PKCS8
+      Secret Name:  es-quickstart-ca-cert
+      Subject:
+        Organizations:
+          kubedb
+      Alias:  transport
+      Private Key:
+        Encoding:   PKCS8
+      Secret Name:  es-quickstart-transport-cert
+      Subject:
+        Organizations:
+          kubedb
+      Alias:  http
+      Private Key:
+        Encoding:   PKCS8
+      Secret Name:  es-quickstart-http-cert
+      Subject:
+        Organizations:
+          kubedb
+      Alias:  archiver
+      Private Key:
+        Encoding:   PKCS8
+      Secret Name:  es-quickstart-archiver-cert
+      Subject:
+        Organizations:
+          kubedb
+  Version:  xpack-7.9.1-v1
+Status:
+  Conditions:
+    Last Transition Time:  2021-02-26T05:29:30Z
+    Message:               The KubeDB operator has started the provisioning of Elasticsearch: demo/es-quickstart
+    Reason:                DatabaseProvisioningStartedSuccessfully
+    Status:                True
+    Type:                  ProvisioningStarted
+    Last Transition Time:  2021-02-26T05:32:44Z
+    Message:               All desired replicas are ready.
+    Reason:                AllReplicasReady
+    Status:                True
+    Type:                  ReplicaReady
+    Last Transition Time:  2021-02-26T05:34:35Z
+    Message:               The Elasticsearch: demo/es-quickstart is accepting client requests.
+    Observed Generation:   <span style=color:#ae81ff>2</span>
+    Reason:                DatabaseAcceptingConnectionRequest
+    Status:                True
+    Type:                  AcceptingConnection
+    Last Transition Time:  2021-02-26T05:34:36Z
+    Message:               The Elasticsearch: demo/es-quickstart is ready.
+    Observed Generation:   <span style=color:#ae81ff>2</span>
+    Reason:                ReadinessCheckSucceeded
+    Status:                True
+    Type:                  Ready
+    Last Transition Time:  2021-02-26T05:34:36Z
+    Message:               The Elasticsearch: demo/es-quickstart is successfully provisioned.
+    Observed Generation:   <span style=color:#ae81ff>2</span>
+    Reason:                DatabaseSuccessfullyProvisioned
+    Status:                True
+    Type:                  Provisioned
+  Observed Generation:     <span style=color:#ae81ff>2</span>
+  Phase:                   Ready
+Events:
+  Type    Reason      Age    From                    Message
+  ----    ------      ----   ----                    -------
+  Normal  Successful  54m    Elasticsearch operator  Successfully  governing service
+  Normal  Successful  54m    Elasticsearch operator  Successfully patched Elasticsearch
+</code></pre></div><h3 id=kubedb-operator-generated-resources>KubeDB Operator Generated Resources</h3><p>On deployment of an Elasticsearch CR, the operator creates the following resources:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get all,secret -n demo -l <span style=color:#e6db74>&#39;app.kubernetes.io/instance=es-quickstart&#39;</span>
+NAME                  READY   STATUS    RESTARTS   AGE
+pod/es-quickstart-0   1/1     Running   <span style=color:#ae81ff>0</span>          3h42m
+pod/es-quickstart-1   1/1     Running   <span style=color:#ae81ff>0</span>          3h39m
+pod/es-quickstart-2   1/1     Running   <span style=color:#ae81ff>0</span>          3h39m
+
+NAME                           TYPE        CLUSTER-IP     EXTERNAL-IP   PORT<span style=color:#f92672>(</span>S<span style=color:#f92672>)</span>    AGE
+service/es-quickstart          ClusterIP   10.96.239.14   &lt;none&gt;        9200/TCP   3h42m
+service/es-quickstart-master   ClusterIP   None           &lt;none&gt;        9300/TCP   3h42m
+service/es-quickstart-pods     ClusterIP   None           &lt;none&gt;        9200/TCP   3h42m
+
+NAME                             READY   AGE
+statefulset.apps/es-quickstart   3/3     3h42m
+
+NAME                                               TYPE                       VERSION   AGE
+appbinding.appcatalog.appscode.com/es-quickstart   kubedb.com/elasticsearch   7.9.1     3h42m
+
+NAME                                  TYPE                       DATA   AGE
+secret/es-quickstart-archiver-cert    kubernetes.io/tls          <span style=color:#ae81ff>3</span>      3h42m
+secret/es-quickstart-ca-cert          kubernetes.io/tls          <span style=color:#ae81ff>2</span>      3h42m
+secret/es-quickstart-config           Opaque                     <span style=color:#ae81ff>1</span>      3h42m
+secret/es-quickstart-elastic-cred     kubernetes.io/basic-auth   <span style=color:#ae81ff>2</span>      3h42m
+secret/es-quickstart-http-cert        kubernetes.io/tls          <span style=color:#ae81ff>3</span>      3h42m
+secret/es-quickstart-transport-cert   kubernetes.io/tls          <span style=color:#ae81ff>3</span>      3h42m
+</code></pre></div><ul><li><code>StatefulSet</code> - a StatefulSet named after the Elasticsearch instance. In topology mode, the operator creates 3 statefulSets with name <code>{Elasticsearch-Name}-{Sufix}</code>.</li><li><code>Services</code> - 3 services are generated for each Elasticsearch database.<ul><li><code>{Elasticsearch-Name}</code> - the client service which is used to connect to the database. It points to the <code>ingest</code> nodes.</li><li><code>{Elasticsearch-Name}-master</code> - the master service which is used to connect to the master nodes. It is a headless service.</li><li><code>{Elasticsearch-Name}-pods</code> - the node discovery service which is used by the Elasticsearch nodes to communicate each other. It is a headless service.</li></ul></li><li><code>AppBinding</code> - an <a href=/docs/v2021.04.16/guides/elasticsearch/concepts/appbinding/>AppBinding</a> which hold the connect information for the database. It is also named after the Elastics</li><li><code>Secrets</code> - 3 types of secrets are generated for each Elasticsearch database.<ul><li><code>{Elasticsearch-Name}-{username}-cred</code> - the auth secrets which hold the <code>username</code> and <code>password</code> for the Elasticsearch users.</li><li><code>{Elasticsearch-Name}-{alias}-cert</code> - the certificate secrets which hold <code>tls.crt</code>, <code>tls.key</code>, and <code>ca.crt</code> for configuring the Elasticsearch database.</li><li><code>{Elasticsearch-Name}-config</code> - the default configuration secret created by the operator.</li></ul></li></ul><h2 id=connect-with-elasticsearch-database>Connect with Elasticsearch Database</h2><p>We will use <a href=https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/>port forwarding</a> to connect with our Elasticsearch database. Then we will use <code>curl</code> to send <code>HTTP</code> requests to check cluster health to verify that our Elasticsearch database is working well.</p><p>Let&rsquo;s port-forward the port <code>9200</code> to local machine:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl port-forward -n demo svc/es-quickstart <span style=color:#ae81ff>9200</span>
+Forwarding from 127.0.0.1:9200 -&gt; <span style=color:#ae81ff>9200</span>
+Forwarding from <span style=color:#f92672>[</span>::1<span style=color:#f92672>]</span>:9200 -&gt; <span style=color:#ae81ff>9200</span>
+</code></pre></div><p>Now, our Elasticsearch cluster is accessible at <code>localhost:9200</code>.</p><p><strong>Connection information:</strong></p><ul><li><p>Address: <code>localhost:9200</code></p></li><li><p>Username:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get secret -n demo es-quickstart-elastic-cred -o jsonpath<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;{.data.username}&#39;</span> | base64 -d
+elastic
+</code></pre></div></li><li><p>Password:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get secret -n demo es-quickstart-elastic-cred -o jsonpath<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;{.data.password}&#39;</span> | base64 -d
+q6XreFWkWi$;BsQy
+</code></pre></div></li></ul><p>Now let&rsquo;s check the health of our Elasticsearch database.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ curl -XGET -k -u <span style=color:#e6db74>&#39;elastic:q6XreFWkWi$;BsQy&#39;</span> <span style=color:#e6db74>&#34;https://localhost:9200/_cluster/health?pretty&#34;</span>
+
+<span style=color:#f92672>{</span>
+  <span style=color:#e6db74>&#34;cluster_name&#34;</span> : <span style=color:#e6db74>&#34;es-quickstart&#34;</span>,
+  <span style=color:#e6db74>&#34;status&#34;</span> : <span style=color:#e6db74>&#34;green&#34;</span>,
+  <span style=color:#e6db74>&#34;timed_out&#34;</span> : false,
+  <span style=color:#e6db74>&#34;number_of_nodes&#34;</span> : 3,
+  <span style=color:#e6db74>&#34;number_of_data_nodes&#34;</span> : 3,
+  <span style=color:#e6db74>&#34;active_primary_shards&#34;</span> : 0,
+  <span style=color:#e6db74>&#34;active_shards&#34;</span> : 0,
+  <span style=color:#e6db74>&#34;relocating_shards&#34;</span> : 0,
+  <span style=color:#e6db74>&#34;initializing_shards&#34;</span> : 0,
+  <span style=color:#e6db74>&#34;unassigned_shards&#34;</span> : 0,
+  <span style=color:#e6db74>&#34;delayed_unassigned_shards&#34;</span> : 0,
+  <span style=color:#e6db74>&#34;number_of_pending_tasks&#34;</span> : 0,
+  <span style=color:#e6db74>&#34;number_of_in_flight_fetch&#34;</span> : 0,
+  <span style=color:#e6db74>&#34;task_max_waiting_in_queue_millis&#34;</span> : 0,
+  <span style=color:#e6db74>&#34;active_shards_percent_as_number&#34;</span> : 100.0
+<span style=color:#f92672>}</span>
+</code></pre></div><p>From the health information above, we can see that our Elasticsearch cluster&rsquo;s status is <code>green</code> which means the cluster is healthy.</p><h2 id=halt-elasticsearch>Halt Elasticsearch</h2><p>KubeDB takes advantage of <code>ValidationWebhook</code> feature in Kubernetes 1.9.0 or later clusters to implement <code>DoNotTerminate</code> termination policy. If admission webhook is enabled, it prevents the user from deleting the database as long as the <code>spec.terminationPolicy</code> is set <code>DoNotTerminate</code>.</p><p>In this tutorial, Elasticsearch <code>es-quickstart</code> is created with <code>spec.terminationPolicy: DoNotTerminate</code>. So if you try to delete this Elasticsearch object, the admission webhook will nullify the delete operation.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl delete elasticsearch -n demo es-quickstart 
+Error from server <span style=color:#f92672>(</span>BadRequest<span style=color:#f92672>)</span>: admission webhook <span style=color:#e6db74>&#34;elasticsearch.validators.kubedb.com&#34;</span> denied the request: elasticsearch <span style=color:#e6db74>&#34;demo/es-quickstart&#34;</span> can<span style=color:#960050;background-color:#1e0010>&#39;</span>t be terminated. To delete, change spec.terminationPolicy
+</code></pre></div><p>To halt the database, we have to set <code>spec.terminationPolicy:</code> to <code>Halt</code> by updating it,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl edit elasticsearch -n demo es-quickstart
+
+&gt;&gt; spec:
+&gt;&gt;   terminationPolicy: Halt
+</code></pre></div><p>Now, if you delete the Elasticsearch object, the KubeDB operator will delete every resource created for this Elasticsearch CR, but leaves the auth secrets, and PVCs.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$  kubectl delete elasticsearch -n demo es-quickstart 
+elasticsearch.kubedb.com <span style=color:#e6db74>&#34;es-quickstart&#34;</span> deleted
+</code></pre></div><p>Check resources:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get all,secret,pvc -n demo -l <span style=color:#e6db74>&#39;app.kubernetes.io/instance=es-quickstart&#39;</span>
+NAME                                TYPE                       DATA   AGE
+secret/es-quickstart-elastic-cred   kubernetes.io/basic-auth   <span style=color:#ae81ff>2</span>      6h48m
+
+NAME                                         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+persistentvolumeclaim/data-es-quickstart-0   Bound    pvc-9208f770-7308-45b3-a23e-233590087f45   1Gi        RWO            standard       6h48m
+persistentvolumeclaim/data-es-quickstart-1   Bound    pvc-0f12a74e-ba80-4e67-bece-3a00c3fcd28f   1Gi        RWO            standard       6h45m
+persistentvolumeclaim/data-es-quickstart-2   Bound    pvc-6609582b-8988-4efb-8a4b-5b2757fd6066   1Gi        RWO            standard       6h45m
+</code></pre></div><h2 id=resume-elasticsearch>Resume Elasticsearch</h2><p>Say, the Elasticsearch CR was deleted with <code>spec.terminationPolicy</code> to <code>Halt</code> and you want to re-create the Elasticsearch cluster using the existing auth secrets and the PVCs.</p><p>You can do it by simpily re-deploying the original Elasticsearch object:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl apply -f https://github.com/kubedb/docs/raw/v2021.04.16/docs/guides/elasticsearch/quickstart/overview/yamls/elasticsearch.yaml
+elasticsearch.kubedb.com/es-quickstart created
+</code></pre></div><h2 id=cleaning-up>Cleaning up</h2><p>To cleanup the Kubernetes resources created by this tutorial, run:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl patch -n demo elasticsearch es-quickstart -p <span style=color:#e6db74>&#39;{&#34;spec&#34;:{&#34;terminationPolicy&#34;:&#34;WipeOut&#34;}}&#39;</span> --type<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;merge&#34;</span>
+elasticsearch.kubedb.com/es-quickstart patched
+
+$ kubectl delete -n demo es/quick-elasticsearch
+elasticsearch.kubedb.com <span style=color:#e6db74>&#34;es-quickstart&#34;</span> deleted
+
+$  kubectl delete namespace demo
+namespace <span style=color:#e6db74>&#34;demo&#34;</span> deleted
+</code></pre></div><h2 id=tips-for-testing>Tips for Testing</h2><p>If you are just testing some basic functionalities, you might want to avoid additional hassles due to some safety features that are great for the production environment. You can follow these tips to avoid them.</p><ol><li><strong>Use <code>storageType: Ephemeral</code></strong>. Databases are precious. You might not want to lose your data in your production environment if the database pod fails. So, we recommend to use <code>spec.storageType: Durable</code> and provide storage spec in <code>spec.storage</code> section. For testing purposes, you can just use <code>spec.storageType: Ephemeral</code>. KubeDB will use <a href=https://kubernetes.io/docs/concepts/storage/volumes/#emptydir>emptyDir</a> for storage. You will not require to provide <code>spec.storage</code> section.</li><li><strong>Use <code>terminationPolicy: WipeOut</code></strong>. It is nice to be able to resume the database from the previous one. So, we preserve all your <code>PVCs</code> and auth <code>Secrets</code>. If you don&rsquo;t want to resume the database, you can just use <code>spec.terminationPolicy: WipeOut</code>. It will clean up every resouce that was created with the Elasticsearch CR. For more details, please visit <a href=/docs/v2021.04.16/guides/elasticsearch/concepts/elasticsearch/#specterminationpolicy>here</a>.</li></ol><h2 id=next-steps>Next Steps</h2><ul><li>Learn about <a href=/docs/v2021.04.16/guides/elasticsearch/backup/overview/>backup & restore</a> Elasticsearch database using Stash.</li><li>Learn how to configure <a href=/docs/v2021.04.16/guides/elasticsearch/clustering/topology-cluster/>Elasticsearch Topology</a>.</li><li>Monitor your Elasticsearch database with KubeDB using <a href=/docs/v2021.04.16/guides/elasticsearch/monitoring/using-builtin-prometheus><code>out-of-the-box</code> builtin-Prometheus</a>.</li><li>Monitor your Elasticsearch database with KubeDB using <a href=/docs/v2021.04.16/guides/elasticsearch/monitoring/using-prometheus-operator><code>out-of-the-box</code> Prometheus operator</a>.</li><li>Detail concepts of <a href=/docs/v2021.04.16/guides/elasticsearch/concepts/elasticsearch/>Elasticsearch object</a>.</li><li>Use <a href=/docs/v2021.04.16/guides/elasticsearch/private-registry/using-private-registry>private Docker registry</a> to deploy Elasticsearch with KubeDB.</li><li>Want to hack on KubeDB? Check our <a href=/docs/v2021.04.16/CONTRIBUTING>contribution guidelines</a>.</li></ul></div></div><div class="column is-2"><div class=right-sidebar-area><div class=search-area><form action=#><input id=acSearch type=text placeholder=Search...>
+<button class=search-button>
+<i class="fa fa-search" aria-hidden=true></i></button></form></div><div class=tbl-of-contents><h4>What's on this Page</h4><nav id=TableOfContents><ul><li><a href=#before-you-begin>Before You Begin</a></li><li><a href=#find-available-storageclass>Find Available StorageClass</a></li><li><a href=#find-available-elasticsearchversion>Find Available ElasticsearchVersion</a></li><li><a href=#create-an-elasticsearch-cluster>Create an Elasticsearch Cluster</a><ul><li><a href=#kubedb-operator-generated-resources>KubeDB Operator Generated Resources</a></li></ul></li><li><a href=#connect-with-elasticsearch-database>Connect with Elasticsearch Database</a></li><li><a href=#halt-elasticsearch>Halt Elasticsearch</a></li><li><a href=#resume-elasticsearch>Resume Elasticsearch</a></li><li><a href=#cleaning-up>Cleaning up</a></li><li><a href=#tips-for-testing>Tips for Testing</a></li><li><a href=#next-steps>Next Steps</a></li></ul></nav></div></div></div></div></div><script>var kdDropdown=document.querySelector(".dropdown"),kdDropdownBtn=document.querySelector(".dropdown-trigger");kdDropdownBtn.addEventListener("click",function(){kdDropdown.classList.toggle("is-active")})</script></div><div class=overlay-bg></div><div class=sidebar-search-area><div class=search-area-top><h3>Search</h3><div class=searchbar-area><input type=search name=search id=searchbox placeholder=Search...>
+<button onclick=queryPage(1)><i class="fa fa-search" aria-hidden=true></i></button></div><span id=searchbar-script-container style=display:none></span><div class="search-meta-information level"><div class=level-left></div></div></div><div class=search-result-wrapper></div><div class=pagination-area><div class=pagination-list></div></div></div><div class=improve-section-area><div class="container section"><div class=improve-bg-color><div class=columns><div class="column is-6"><a href=https://github.com/kubedb/docs/edit/master/docs/guides/elasticsearch/quickstart/overview/index.md/>Improve This Page</a></div></div></div></div></div><script type=text/javascript>var pageSize=5,acSearch=document.querySelector("#acSearch"),bodyOverlay=document.querySelector(".overlay-bg"),sidebarSearch=document.querySelector(".sidebar-search-area");acSearch.addEventListener("click",function(){bodyOverlay.style.display="block",sidebarSearch.style.right="0",document.getElementById("searchbox").focus(),bodyOverlay.addEventListener("click",function(){bodyOverlay.style.display="none",sidebarSearch.style.right="-80%"})});function encodeQueryData(a){var b=[],c;for(c in a)b.push(encodeURIComponent(c)+'='+encodeURIComponent(a[c]));return b.join('&')}document.querySelector(".searchbar-area input[type=search]").addEventListener("keyup",function(a){a.preventDefault(),a.keyCode===13&&queryPage(1)});function queryPage(c){var i=document.getElementById("searchbox").value,j="015199383701854252104:8mvwy0fek2e",d="AIzaSyBrcwLTnL09geNrFMUx1kpL--dT1379aag",f="small",g="renderResult",h="https://www.googleapis.com/customsearch/v1?"+encodeQueryData({q:i,cx:j,key:d,imgSize:f,callback:g,start:(c-1)*pageSize+1,num:pageSize}),a=document.createElement("script"),b;a.src=h,e=document.getElementById("searchbar-script-container"),b=e.lastElementChild,b&&e.removeChild(b),e.appendChild(a)}function renderSearchResultEntry(a){var b='<div class="single-search-result"><h3><a href="'+a.link+'">'+a.title+'</a></h3>'+'<a href="'+a.link+'">'+a.htmlFormattedUrl+'</a>'+'<div class="result-description-wrapper">';return a.pagemap&&a.pagemap.cse_thumbnail&&(b+='<div class="result-thumb"><img src="'+a.pagemap.cse_thumbnail[0].src+'" alt="" />'+'</div>'),b+='<div class="result-description"><p>'+a.snippet+'</p>'+'</div>'+'</div>'+'</div>',b}function renderResult(a){var e,d,c,b;if(document.querySelector(".search-meta-information .level-left").innerHTML='<div class="level-left"><p>About <span class="search-count">'+a.searchInformation.formattedTotalResults+'</span> results (<span class="time-count">'+a.searchInformation.formattedSearchTime+' </span>seconds)'+'</p>'+'</div>',!a.items)return;e=document.querySelector(".search-result-wrapper"),e.innerHTML="";for(d=0;d<a.items.length;d++)e.innerHTML+=renderSearchResultEntry(a.items[d]);c='<ul>',a.queries.previousPage&&(b=Math.floor(a.queries.previousPage[0].startIndex/pageSize)+1,c+='<li><a href="#" onclick="queryPage('+b+')">Previous</a></li>'),a.queries.request&&(b=Math.floor(a.queries.request[0].startIndex/pageSize)+1,c+='<li><a href="#" onclick="queryPage('+b+')" class="is-active">'+b+'</a></li>'),a.queries.nextPage&&(b=Math.floor(a.queries.nextPage[0].startIndex/pageSize)+1,c+='<li><a href="#" onclick="queryPage('+b+')">Next</a></li>'),c+='</ul>',document.querySelector(".pagination-area .pagination-list").innerHTML=c}</script><section></section><section></section><section></section><button class=go-to-top id=goTop>
+<i class="fa fa-angle-up" aria-hidden=true></i></button><footer class=footer-area><div class=footer-top><div class="container section"><div class="columns is-mobile is-multiline"><div class="column is-full-mobile is-one-third-desktop is-one-third-widescreen is-one-third-tablet" data-aos=fade-up><div class=single-footer-widget><div class=footer-logo><a href=https://appscode.com><img src=/assets/images/products/appscode/appscode.png alt=AppsCode class=img></a></div><div class=subscription-form><form method=post action=https://listmonk.appscode.com/subscription/form id=mc-embedded-subscribe-form name=mc-embedded-subscribe-form class=navbar-form target=_blank novalidate role=email role=email><label for=email>Subscribe to Our Newsletter</label><p class=spam-message>No spam, we promise. Your mail address is secure</p><div class="field has-addons"><div class=control><input type=hidden id=afbbc name=l value=afbbc974-e163-4467-be49-040e399520f3>
+<input class=input name=email id=mce-EMAIL type=email placeholder="Your work email address" required>
+<button id=mc-embedded-subscribe type=submit name=subscribe class=button>
+<i class="fa fa-paper-plane-o" aria-hidden=true></i></button></div></div></form></div><div class=contact-information><h4>Have any Inquiry?</h4><ul class=all-contact-info><li><a href=callto:+1%28650%29241-8486><span><i class="fa fa-phone" aria-hidden=true></i></span>+1(650)241-8486</a></li><li><a href=mailto:support@appscode.com><span><i class="fa fa-envelope-o" aria-hidden=true></i></span>support@appscode.com</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=500><div class=single-footer-widget><div class=footer-menu><h4>Products</h4><ul class=footer-link><li><a href=https://kubedb.com>KubeDB</a></li><li><a href=https://stash.run>Stash</a></li><li><a href=https://kubevault.com>KubeVault</a></li><li><a href=https://kubeform.com>Kubeform</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=600><div class=single-footer-widget><div class=footer-menu><h4>Services</h4><ul class=footer-link><li><a href=https://appscode.com/pricing/>Pricing</a></li><li><a href=https://appscode.com/consulting/>Consulting</a></li><li><a href=https://appscode.com/training/>Training</a></li><li><a href=https://appscode.com/support/>Support</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=700><div class=single-footer-widget><div class=footer-menu><h4>Company</h4><ul class=footer-link><li><a href=https://appscode.com/about/>About Us</a></li><li><a href=https://blog.byte.builders>Blog</a></li><li><a href=https://appscode.com/contact/>Contact Us</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=800><div class=single-footer-widget><div class=footer-menu><h4>Legal</h4><ul class=footer-link><li><a href=https://appscode.com/legal/tos/>Terms of Sevice</a></li><li><a href=https://appscode.com/legal/privacy-policy/>Privacy Policy</a></li><li><a href=https://appscode.com/legal/security/>Security</a></li><li><a href=https://appscode.com/legal/sla/>Service Level Agreement</a></li></ul></div></div></div></div></div></div><div class=footer-bottom><div class="container section"><div class=columns><div class="column is-4"><p>© 2021 AppsCode Inc. All rights reserved.</p></div><div class="column is-4 is-mobile has-text-centered"><div class=footer-inline-link><a href=https://appscode.com/legal/privacy-policy/>Privacy Policy</a>
+<a href=https://appscode.com/legal/tos/>Terms of Service</a></div></div><div class="column is-4 is-mobile has-text-right"><div class=socail-link-inline><ul><li><a href=https://twitter.com/AppsCodeHQ><i class="fa fa-twitter" aria-hidden=true></i></a></li><li><a href=https://www.facebook.com/appscode><i class="fa fa-facebook" aria-hidden=true></i></a></li><li><a href=https://www.youtube.com/c/AppsCodeInc><i class="fa fa-youtube" aria-hidden=true></i></a></li></ul></div></div></div></div></div></footer><script src=/assets/js/bulma-carousel.min.js></script><script src=https://unpkg.com/aos@2.3.1/dist/aos.js></script><script src=https://unpkg.com/downloadjs@1.4.7/download.min.js></script><script src=https://unpkg.com/clipboard@2/dist/clipboard.min.js></script><script src=/assets/js/main.js></script><script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/9255943.js></script><script type=text/javascript>var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date;(function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0,a.src='https://embed.tawk.to/5821e34b18d9f16af02864b7/default',a.charset='UTF-8',a.setAttribute('crossorigin','*'),b.parentNode.insertBefore(a,b)})()</script></body></html>

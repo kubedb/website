@@ -1,0 +1,299 @@
+<!doctype html><html lang=en><head><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-62096468-4','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=theme-color content="#4D4DCB"><title>KubeDB by AppsCode</title><meta name=description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta name=author content="AppsCode Inc."><meta name=keywords content="kubernetes appscode databsse high availability postgres elasticsearch etcd memecached mongodb mysql percona xtradb redis"><link rel=apple-touch-icon sizes=57x57 href=/assets/images/products/kubedb/icons/apple-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=/assets/images/products/kubedb/icons/apple-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=/assets/images/products/kubedb/icons/apple-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=/assets/images/products/kubedb/icons/apple-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=/assets/images/products/kubedb/icons/apple-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=/assets/images/products/kubedb/icons/apple-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=/assets/images/products/kubedb/icons/apple-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=/assets/images/products/kubedb/icons/apple-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=/assets/images/products/kubedb/icons/apple-icon-180x180.png><link rel=icon type=image/png sizes=192x192 href=/assets/images/products/kubedb/icons/android-icon-192x192.png><link rel=icon type=image/png sizes=32x32 href=/assets/images/products/kubedb/icons/favicon-32x32.png><link rel=icon type=image/png sizes=96x96 href=/assets/images/products/kubedb/icons/favicon-96x96.png><link rel=icon type=image/png sizes=16x16 href=/assets/images/products/kubedb/icons/favicon-16x16.png><link rel=manifest href=/assets/images/products/kubedb/icons/manifest.json><meta name=msapplication-TileColor content="#ffffff"><meta name=msapplication-TileImage content="/assets/images/products/kubedb/icons/ms-icon-144x144.png"><meta itemprop=name content="KubeDB by AppsCode"><meta itemprop=description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta itemprop=image content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeDB"><meta name=twitter:title content="KubeDB by AppsCode"><meta name=twitter:creator content="@KubeDB"><meta name=twitter:description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta name=twitter:image:src content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta property="og:url" content="https://kubedb.com"><meta property="og:title" content="KubeDB by AppsCode"><meta property="og:description" content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta property="og:site_name" content="KubeDB by AppsCode"><meta property="og:image" content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta property="og:type" content="article"><link rel=stylesheet href=/assets/css/font-awesome.min.css><link href=https://unpkg.com/aos@2.3.1/dist/aos.css rel=stylesheet><link rel=stylesheet href=/assets/css/bulma-carousel.min.css><link rel=stylesheet href=/assets/css/bulma-tooltip.min.css><link rel=stylesheet href=/assets/css/bulma.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css><link rel=stylesheet href=/assets/sass/main.min.5d2c0297a6ff960daed9d0bfe02ddc681d62b160aafc866ad48d2745f78048d9.css></head><body class=kubedb><header><div class=header-top><div class="container section"><nav class=navbar><div class=navbar-brand><a class=navbar-item href=https://appscode.com><img src=/assets/images/products/appscode/appscode.png alt=AppsCode></a>
+<a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav1><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=acNav1 class="navbar-menu main-menu"><div class=navbar-end><div class=navbar-start><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Products</a><div class=ac-megamenu><div class=columns><div class="column is-6"><div class=columns><div class="column is-12 br-1"><a href=https://kubedb.com class="single-product-item is-kubedb"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubedb/kubedb-icon.png alt=KubeDB></div><h5>KubeDB</h5></div><div class=menu-body><p>Run production-grade Databases on Kubernetes</p></div></a><a href=https://stash.run class="single-product-item is-stash"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/stash/stash-icon.png alt=Stash></div><h5>Stash</h5></div><div class=menu-body><p>Backup your Kubernetes Stateful Applications</p></div></a><a href=https://kubevault.com class="single-product-item is-kubevault"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubevault/kubevault-icon.png alt=KubeVault></div><h5>KubeVault</h5></div><div class=menu-body><p>Tools for running HashiCorp Vault on Kubernetes</p></div></a></div></div></div><div class="column is-6"><div class=columns><div class="column is-12"><a href=https://byte.builders class="single-product-item byte-builder kd-orange"><div class=menu-header><p class=intro>Introducing....</p><h5>ByteBuilders</h5></div><div class=menu-body><p>Cloud reimagined for the age of Kubernetes</p></div><p class=learn-more-btn>Learn more
+<span class=icon><i class="fa fa-long-arrow-right" aria-hidden=true></i></span></p></a><a href=https://kubeform.com class="single-product-item is-kubeform"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubeform/kubeform-icon.png alt=Kubeform></div><h5>Kubeform</h5></div><div class=menu-body><p>Provision cloud resources using Kubernetes CRDs & Terraform</p></div></a></div></div></div></div></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Open Source</a><div class=ac-megamenu><div class=columns><div class="column is-6"><div class=columns><div class="column is-12 br-1"><a href=https://voyagermesh.com class="single-product-item is-voyager"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/voyager/voyager-icon.png alt=Voyager></div><h5>Voyager</h5></div><div class=menu-body><p>Secure HAProxy Ingress Controller for
+Kubernetes</p></div></a><a href=https://appscode.com/products/guard/ class="single-product-item is-guard"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/guard/guard-icon.png alt=Guard></div><h5>Guard</h5></div><div class=menu-body><p>Kubernetes Authentication WebHook Server</p></div></a><a href=https://appscode.com/products/kubed/ class="single-product-item is-kubed"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubed/kubed-icon.png alt=Kubed></div><h5>Kubed</h5></div><div class=menu-body><p>Kubernetes cluster manager daemon</p></div></a></div></div></div><div class="column is-6"><div class=columns><div class="column is-12"><a href=https://pharmer.cloud class="single-product-item is-pharmer"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/pharmer/pharmer-icon.png alt=Pharmer></div><h5>Pharmer</h5></div><div class=menu-body><p>Kubernetes Cluster Manager using Kubeadm & Cluster API</p></div></a><a href=https://appscode.com/products/swift/ class="single-product-item is-swift"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/swift/swift-icon.png alt=Swift></div><h5>Swift</h5></div><div class=menu-body><p>Ajax friendly Helm Tiller Proxy</p></div></a><a href=https://appscode.com/products/searchlight/ class="single-product-item is-searchlight"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/searchlight/searchlight-icon.png alt=Searchlight></div><h5>Searchlight</h5></div><div class=menu-body><p>Alerts for Kubernetes</p></div></a></div></div></div></div></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Services</a><div class=ac-dropdown><a class=navbar-item href=https://appscode.com/consulting/>Consulting</a>
+<a class=navbar-item href=https://appscode.com/training/>Training</a>
+<a class=navbar-item href=https://appscode.com/support/>Support</a></div></div><a class=navbar-item href=https://blog.byte.builders>Blog</a>
+<a class=navbar-item href=https://appscode.com/contact/>Contact Us</a></div><div class=navbar-item><div class="buttons main-menu-button-top"><a class="button is-small for-chat" href=https://slack.appscode.com><span><img src=/assets/images/icon/slack.png alt></span>Slack</a>
+<a class="button is-small for-support" href=https://appscode.freshdesk.com><span><img src=/assets/images/icon/chat.png alt></span>Support Portal</a></div></div></div></div></nav></div></div><div class="header-bottom-area header-area kubedb-primary-bg customize-kubedb fixed-menu"><div class="container section"><nav class=navbar><div class=navbar-brand><a class=navbar-item href=https://kubedb.com><img src=/assets/images/products/kubedb/kubedb-white.png alt=KubeDB></a>
+<a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=acNav class="navbar-menu main-menu"><div class=navbar-end><div class=navbar-start><a href=/features/ class=navbar-item>Features</a>
+<a href=/pricing/ class=navbar-item>Pricing</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Databases</a><div class=ac-dropdown><a class=navbar-item href=/docs/v2021.04.16/guides/elasticsearch/>Elasticsearch</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/mariadb/>MariaDB</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/memcached/>Memcached</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/mongodb/>MongoDB</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/mysql/>MySQL</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/percona-xtradb/>Percona XtraDB</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/pgbouncer/>PgBouncer</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/postgres/>PostgreSQL</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/proxysql/>ProxySQL</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/redis/>Redis</a></div></div><a href=/docs/v2021.04.16/welcome/ class=navbar-item>Documentation</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Community</a><div class=ac-dropdown><a href=https://github.com/kubedb class=navbar-item>GitHub</a>
+<a href=https://twitter.com/KubeDB class=navbar-item>Twitter</a>
+<a href=http://slack.kubernetes.io/ class=navbar-item>Slack</a></div></div></div><div class=navbar-item><div class="buttons main-menu-button"><img style=height:24px alt="GitHub Stars" src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github&label=stars&query=%24.stars&url=https://github-stars.appscode.workers.dev/user/kubedb">
+&nbsp;&nbsp;&nbsp;
+<img style=height:24px alt="GitHub Forks" src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github&label=forks&query=%24.forks&url=https://github-stars.appscode.workers.dev/user/kubedb">
+&nbsp;&nbsp;&nbsp;
+<img style=height:24px alt="Docker Pulls" src="https://img.shields.io/docker/pulls/kubedb/operator?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=docker&label=pulls"></div></div></div></div></nav></div></div><div class=documentation-menu><div class="container section"><div class=is-centered><div class="is-half has-text-centered-desktop"><div class=responsive-menu><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav3><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><nav class=documentation-navbar><div id=acNav3 class="navbar-menu nav-menu main-menu"><div class=navbar-centered><div class=navbar-start><a href=/docs/v2020.12.10/ class=navbar-item>Welcome</a>
+<a href=/docs/v2020.12.10/overview/ class=navbar-item>Overview</a>
+<a href=/docs/v2020.12.10/setup/ class=navbar-item>Setup</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Guides</a><div class=ac-dropdown><a href=/docs/v2020.12.10/guides/elasticsearch/ class=navbar-item>Elasticsearch</a>
+<a href=/docs/v2020.12.10/guides/memcached/ class=navbar-item>Memcached</a>
+<a href=/docs/v2020.12.10/guides/mongodb/ class=navbar-item>MongoDB</a>
+<a href=/docs/v2020.12.10/guides/mysql/ class=navbar-item>MySQL</a>
+<a href=/docs/v2020.12.10/guides/percona-xtradb/ class=navbar-item>Percona XtraDB</a>
+<a href=/docs/v2020.12.10/guides/pgbouncer/ class=navbar-item>PgBouncer</a>
+<a href=/docs/v2020.12.10/guides/postgres/ class=navbar-item>PostgreSQL</a>
+<a href=/docs/v2020.12.10/guides/proxysql/ class=navbar-item>ProxySQL</a>
+<a href=/docs/v2020.12.10/guides/redis/ class=navbar-item>Redis</a></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Reference</a><div class=ac-dropdown><a href=/docs/v2020.12.10/reference/operator/ class=navbar-item>KubeDB Operator</a>
+<a href=/docs/v2020.12.10/reference/cli/ class=navbar-item>KubeDB CLI</a></div></div></div></div></div></nav></div></div></div></div></header><div class=documentation-area><div class="container section"><article class="message is-danger"><div class=message-body>You are looking at the documentation of a prior release. To read the documentation of the latest release, please visit <a href=/docs/latest/>here</a>.</div></article><div class=columns><div class="column is-3"><div class=kd-left-sidebar><div class=trial-button><a href=/docs/v2021.04.16/setup/ class="button is-fullwidth">Try Now for FREE!</a></div><div class=kd-version><div class=dropdown><div class=dropdown-trigger><button class="button is-fullwidth" aria-haspopup=true aria-controls=dropdown-menu3>
+<span><strong class=icon><i class="fa fa-cog" aria-hidden=true></i></strong>v2020.12.10</span>
+<span class="icon is-small"><i class="fa fa-angle-down" aria-hidden=true></i></span></button></div><div class=dropdown-menu id=dropdown-menu3 role=menu><div class=dropdown-content><a href=https://github.com/kubedb/docs/tree/master/docs target=_blank class=dropdown-item>master</a>
+<a href=/docs/v2021.04.16/ class=dropdown-item>v2021.04.16<div class=tag>Latest</div></a><a href=/docs/v2021.03.17/ class=dropdown-item>v2021.03.17</a>
+<a href=/docs/v2021.01.26/ class=dropdown-item>v2021.01.26</a>
+<a href=/docs/v2021.01.15/ class=dropdown-item>v2021.01.15</a>
+<a href=/docs/v2021.01.02-rc.0/ class=dropdown-item>v2021.01.02-rc.0</a>
+<a href=/docs/v2020.12.10/ class=dropdown-item>v2020.12.10</a>
+<a href=/docs/v2020.11.12/ class=dropdown-item>v2020.11.12</a>
+<a href=/docs/v2020.11.11/ class=dropdown-item>v2020.11.11</a>
+<a href=/docs/v2020.11.08/ class=dropdown-item>v2020.11.08</a>
+<a href=/docs/v2020.10.28/ class=dropdown-item>v2020.10.28</a>
+<a href=/docs/v0.13.0-rc.0/ class=dropdown-item>v0.13.0-rc.0</a>
+<a href=/docs/0.12.0/ class=dropdown-item>0.12.0</a></div></div></div></div><div class=kd-sidebar-menu><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-1>
+<label for=b770505df8b5345aa375480b2131f48f-1><a href=/docs/v2020.12.10/guides/>Elasticsearch</a></label></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-2>
+<label for=b770505df8b5345aa375480b2131f48f-2><a href=/docs/v2020.12.10/guides/elasticsearch/>Elasticsearch</a></label></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-3>
+<label for=b770505df8b5345aa375480b2131f48f-3><a>Quickstart</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/quickstart/quickstart/>Overview</a></li></ul></div></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-4>
+<label for=b770505df8b5345aa375480b2131f48f-4><a>Concepts</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/concepts/elasticsearch/>Elasticsearch</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/concepts/catalog/>ElasticsearchVersion</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/concepts/appbinding/>AppBinding</a></li></ul></div></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-5>
+<label for=b770505df8b5345aa375480b2131f48f-5><a>Clustering</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/clustering/topology/>Topology</a></li></ul></div></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-6 checked>
+<label for=b770505df8b5345aa375480b2131f48f-6><a>Custom Configuration</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/configuration/overview/>Overview</a></li><li class=is-active><a href=/docs/v2020.12.10/guides/elasticsearch/configuration/with-topology/>With Topology</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/configuration/without-topology/>Without Topology</a></li></ul></div></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-7>
+<label for=b770505df8b5345aa375480b2131f48f-7><a>Custom RBAC</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/custom-rbac/using-custom-rbac/>Custom RBAC</a></li></ul></div></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-8>
+<label for=b770505df8b5345aa375480b2131f48f-8><a>Private Registry</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/private-registry/using-private-registry/>Quickstart</a></li></ul></div></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-9>
+<label for=b770505df8b5345aa375480b2131f48f-9><a>Backup & Restore</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/backup/stash/>Using Stash</a></li></ul></div></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-10>
+<label for=b770505df8b5345aa375480b2131f48f-10><a>Monitoring</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/monitoring/overview/>Overview</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/monitoring/using-prometheus-operator/>Prometheus Operator</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/monitoring/using-builtin-prometheus/>Builtin Prometheus</a></li></ul></div></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-11>
+<label for=b770505df8b5345aa375480b2131f48f-11><a>X-Pack</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/x-pack/configuration/>X-Pack Configuration</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/x-pack/use-tls/>Use TLS</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/x-pack/issue-certificate/>Issue Certificate</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/x-pack/disable-xpack/>Disable X-Pack</a></li></ul></div></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-12>
+<label for=b770505df8b5345aa375480b2131f48f-12><a>Search Guard</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/search-guard/overview/>Overview</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/search-guard/configuration/>Configuration</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/search-guard/use-tls/>Use TLS</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/search-guard/issue-certificate/>Issue Certificate</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/search-guard/disable-searchguard/>Disable Search Guard</a></li><li><a href=/docs/v2020.12.10/guides/elasticsearch/search-guard/x-pack-monitoring/>Monitoring</a></li></ul></div></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-13>
+<label for=b770505df8b5345aa375480b2131f48f-13><a>Kibana</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/kibana/connect-kibana/>Use Kibana</a></li></ul></div></div><div class=item><input type=checkbox id=b770505df8b5345aa375480b2131f48f-14>
+<label for=b770505df8b5345aa375480b2131f48f-14><a>CLI</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2020.12.10/guides/elasticsearch/cli/cli/>Quickstart</a></li></ul></div></div></div></div></div><div class="column is-7"><div class=full-info><blockquote><p>New to KubeDB? Please start <a href=/docs/v2020.12.10/README>here</a>.</p></blockquote><h1 id=using-custom-configuration-in-elasticsearch-with-topology>Using Custom Configuration in Elasticsearch with Topology</h1><p>This tutorial will show you how to use custom configuration in an Elasticsearch cluster in KubeDB specifying <code>spec.topology</code> field.</p><p>If you don&rsquo;t know how KubeDB handles custom configuration for an Elasticsearch cluster, please visit <a href=/docs/v2020.12.10/guides/elasticsearch/configuration/overview>here</a>.</p><h2 id=before-you-begin>Before You Begin</h2><p>At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using <a href=https://kind.sigs.k8s.io/docs/user/quick-start/>kind</a>.</p><p>Now, install KubeDB cli on your workstation and KubeDB operator in your cluster following the steps <a href=/docs/v2020.12.10/setup/README>here</a>.</p><p>To keep things isolated, this tutorial uses a separate namespace called <code>demo</code> throughout this tutorial.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl create ns demo
+namespace/demo created
+
+$ kubectl get ns demo
+NAME    STATUS  AGE
+demo    Active  5s
+</code></pre></div><blockquote><p>Note: YAML files used in this tutorial are stored in <a href=https://github.com/kubedb/docs/tree/v2020.12.10/docs/examples/elasticsearch>docs/examples/elasticsearch</a> folder in GitHub repository <a href=https://github.com/kubedb/docs>kubedb/docs</a>.</p></blockquote><h2 id=use-custom-configuration>Use Custom Configuration</h2><p>At first, let&rsquo;s create four configuration files namely <code>master-config.yml</code>, <code>client-config.yml</code>, <code>data-config.yml</code> and <code>common-config.yalm</code>.</p><p>Content of <code>master-config.yml</code>,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>node</span>:
+  <span style=color:#f92672>name</span>:  <span style=color:#ae81ff>es-node-master</span>
+<span style=color:#f92672>path</span>:
+  <span style=color:#f92672>data</span>: [<span style=color:#e6db74>&#34;/usr/share/elasticsearch/data/master-datadir&#34;</span>]
+</code></pre></div><p>Content of <code>client-config.yml</code>,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>node</span>:
+  <span style=color:#f92672>name</span>:  <span style=color:#ae81ff>es-node-client</span>
+<span style=color:#f92672>path</span>:
+  <span style=color:#f92672>data</span>: [<span style=color:#e6db74>&#34;/usr/share/elasticsearch/data/client-datadir&#34;</span>]
+</code></pre></div><p>Content of <code>data-config.yml</code>,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>node</span>:
+  <span style=color:#f92672>name</span>:  <span style=color:#ae81ff>es-node-data</span>
+<span style=color:#f92672>path</span>:
+  <span style=color:#f92672>data</span>: [<span style=color:#e6db74>&#34;/usr/share/elasticsearch/data/data-datadir&#34;</span>]
+</code></pre></div><p>Content of <code>common-config.yml</code>,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>path</span>:
+  <span style=color:#f92672>logs</span>: <span style=color:#ae81ff>/usr/share/elasticsearch/data/common-logdir</span>
+</code></pre></div><p>Now, let&rsquo;s create a configMap with these configuration files,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash> $ kubectl create configmap -n demo es-configuration <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>                        --from-file<span style=color:#f92672>=</span>./common-config.yml <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>                        --from-file<span style=color:#f92672>=</span>./master-config.yml <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>                        --from-file<span style=color:#f92672>=</span>./data-config.yml <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>                        --from-file<span style=color:#f92672>=</span>./client-config.yml
+configmap/es-configuration created
+</code></pre></div><p>Check that the configMap has these configuration files,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ae81ff>$ kubectl get configmap -n demo es-configuration -o yaml</span>
+<span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+<span style=color:#f92672>data</span>:
+  <span style=color:#f92672>client-config.yml</span>: |-<span style=color:#e6db74>
+</span><span style=color:#e6db74>    node:
+</span><span style=color:#e6db74>      name:  es-node-client
+</span><span style=color:#e6db74>    path:
+</span><span style=color:#e6db74>      data: [&#34;/usr/share/elasticsearch/data/client-datadir&#34;]</span>    
+  <span style=color:#f92672>common-config.yml</span>: |<span style=color:#e6db74>
+</span><span style=color:#e6db74>    path:
+</span><span style=color:#e6db74>      logs: /usr/share/elasticsearch/data/common-logdir</span>    
+  <span style=color:#f92672>data-config.yml</span>: |-<span style=color:#e6db74>
+</span><span style=color:#e6db74>    node:
+</span><span style=color:#e6db74>      name:  es-node-data
+</span><span style=color:#e6db74>    path:
+</span><span style=color:#e6db74>      data: [&#34;/usr/share/elasticsearch/data/data-datadir&#34;]</span>    
+  <span style=color:#f92672>master-config.yml</span>: |-<span style=color:#e6db74>
+</span><span style=color:#e6db74>    node:
+</span><span style=color:#e6db74>      name:  es-node-master
+</span><span style=color:#e6db74>    path:
+</span><span style=color:#e6db74>      data: [&#34;/usr/share/elasticsearch/data/master-datadir&#34;]</span>    
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ConfigMap</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#ae81ff>...</span>
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-configuration</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+  <span style=color:#ae81ff>...</span>
+</code></pre></div><p>Now, create an Elasticsearch crd with topology specified,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl apply -f https://github.com/kubedb/docs/raw/v2020.12.10/docs/examples/elasticsearch/configuration/es-custom-with-topology.yaml
+elasticsearch.kubedb.com/custom-elasticsearch created
+</code></pre></div><p>Below is the YAML for the Elasticsearch crd we just created.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>kubedb.com/v1alpha2</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Elasticsearch</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>custom-elasticsearch</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>version</span>: <span style=color:#ae81ff>7.3.2</span>
+  <span style=color:#f92672>configSecret</span>:
+    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-configuration</span>
+  <span style=color:#f92672>topology</span>:
+    <span style=color:#f92672>master</span>:
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>master</span>
+      <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+      <span style=color:#f92672>storage</span>:
+        <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+        <span style=color:#f92672>accessModes</span>:
+        - <span style=color:#ae81ff>ReadWriteOnce</span>
+        <span style=color:#f92672>resources</span>:
+          <span style=color:#f92672>requests</span>:
+            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+    <span style=color:#f92672>data</span>:
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>data</span>
+      <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+      <span style=color:#f92672>storage</span>:
+        <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+        <span style=color:#f92672>accessModes</span>:
+        - <span style=color:#ae81ff>ReadWriteOnce</span>
+        <span style=color:#f92672>resources</span>:
+          <span style=color:#f92672>requests</span>:
+            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+    <span style=color:#f92672>client</span>:
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>client</span>
+      <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>2</span>
+      <span style=color:#f92672>storage</span>:
+        <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+        <span style=color:#f92672>accessModes</span>:
+        - <span style=color:#ae81ff>ReadWriteOnce</span>
+        <span style=color:#f92672>resources</span>:
+          <span style=color:#f92672>requests</span>:
+            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+</code></pre></div><p>Now, wait for few minutes. KubeDB will create necessary secrets, services, and statefulsets.</p><p>Check resources created in <code>demo</code> namespace by KubeDB,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get all -n demo -l<span style=color:#f92672>=</span>kubedb.com/name<span style=color:#f92672>=</span>custom-elasticsearch
+NAME                                READY   STATUS    RESTARTS   AGE
+pod/client-custom-elasticsearch-0   1/1     Running   <span style=color:#ae81ff>0</span>          2m5s
+pod/client-custom-elasticsearch-1   1/1     Running   <span style=color:#ae81ff>0</span>          98s
+pod/data-custom-elasticsearch-0     1/1     Running   <span style=color:#ae81ff>0</span>          61s
+pod/master-custom-elasticsearch-0   1/1     Running   <span style=color:#ae81ff>0</span>          79s
+
+NAME                                  TYPE        CLUSTER-IP    EXTERNAL-IP   PORT<span style=color:#f92672>(</span>S<span style=color:#f92672>)</span>    AGE
+service/custom-elasticsearch          ClusterIP   10.0.12.187   &lt;none&gt;        9200/TCP   2m6s
+service/custom-elasticsearch-master   ClusterIP   10.0.12.200   &lt;none&gt;        9300/TCP   2m6s
+
+NAME                                           READY   AGE
+statefulset.apps/client-custom-elasticsearch   2/2     2m6s
+statefulset.apps/data-custom-elasticsearch     1/1     62s
+statefulset.apps/master-custom-elasticsearch   1/1     80s
+
+NAME                                                      AGE
+appbinding.appcatalog.appscode.com/custom-elasticsearch   14s
+</code></pre></div><p>Check secrets created by KubeDB,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get secret -n demo -l<span style=color:#f92672>=</span>kubedb.com/name<span style=color:#f92672>=</span>custom-elasticsearch
+NAME                        TYPE     DATA   AGE
+custom-elasticsearch-auth   Opaque   <span style=color:#ae81ff>2</span>      2m35s
+custom-elasticsearch-cert   Opaque   <span style=color:#ae81ff>5</span>      2m35s
+</code></pre></div><p>Once everything is created, Elasticsearch will go to <code>Running</code> state. Check that Elasticsearch is in running state.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get es -n demo custom-elasticsearch
+NAME                   VERSION   STATUS    AGE
+custom-elasticsearch   7.3.2     Running   2m51s
+</code></pre></div><h2 id=verify-configuration>Verify Configuration</h2><p>Now, we will connect with the Elasticsearch cluster we have created. We will query for nodes settings to verify that the cluster is using the custom configuration we have provided.</p><p>At first, forward <code>9200</code> port of <code>client-custom-elasticsearch-0</code> pod. Run following command on a separate terminal,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl port-forward -n demo client-custom-elasticsearch-0 <span style=color:#ae81ff>9200</span>
+Forwarding from 127.0.0.1:9200 -&gt; <span style=color:#ae81ff>9200</span>
+Forwarding from <span style=color:#f92672>[</span>::1<span style=color:#f92672>]</span>:9200 -&gt; <span style=color:#ae81ff>9200</span>
+</code></pre></div><p>Now, we can connect to the database at <code>localhost:9200</code>. Let&rsquo;s find out necessary connection information first.</p><p><strong>Connection information:</strong></p><ul><li><p>Address: <code>localhost:9200</code></p></li><li><p>Username: Run following command to get <em>username</em></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get secrets -n demo custom-elasticsearch-auth -o jsonpath<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;{.data.\ADMIN_USERNAME}&#39;</span> | base64 -d
+  elastic
+</code></pre></div></li><li><p>Password: Run following command to get <em>password</em></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kubectl get secrets -n demo custom-elasticsearch-auth -o jsonpath<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;{.data.\ADMIN_PASSWORD}&#39;</span> | base64 -d
+  h4tcobpx
+</code></pre></div></li></ul><p>Now, we will query for settings of all nodes in an Elasticsearch cluster,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ curl --user <span style=color:#e6db74>&#34;elastic:h4tcobpx&#34;</span> <span style=color:#e6db74>&#34;localhost:9200/_nodes/_all/settings?pretty&#34;</span>
+</code></pre></div><p>This will return a large JSON with nodes settings information. Here is the prettified JSON response,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+    <span style=color:#f92672>&#34;_nodes&#34;</span>: {
+        <span style=color:#f92672>&#34;total&#34;</span>: <span style=color:#ae81ff>4</span>,
+        <span style=color:#f92672>&#34;successful&#34;</span>: <span style=color:#ae81ff>4</span>,
+        <span style=color:#f92672>&#34;failed&#34;</span>: <span style=color:#ae81ff>0</span>
+    },
+    <span style=color:#f92672>&#34;cluster_name&#34;</span>: <span style=color:#e6db74>&#34;custom-elasticsearch&#34;</span>,
+    <span style=color:#f92672>&#34;nodes&#34;</span>: {
+        <span style=color:#f92672>&#34;fA7g2r7rTV--FZzusuctww&#34;</span>: {
+            <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;es-node-client&#34;</span>,
+            <span style=color:#f92672>&#34;roles&#34;</span>: [
+                <span style=color:#e6db74>&#34;ingest&#34;</span>
+            ],
+            <span style=color:#f92672>&#34;settings&#34;</span>: {
+                <span style=color:#f92672>&#34;node&#34;</span>: {
+                    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;es-node-client&#34;</span>,
+                    <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;false&#34;</span>,
+                    <span style=color:#f92672>&#34;ingest&#34;</span>: <span style=color:#e6db74>&#34;true&#34;</span>,
+                    <span style=color:#f92672>&#34;master&#34;</span>: <span style=color:#e6db74>&#34;false&#34;</span>
+                },
+                <span style=color:#f92672>&#34;path&#34;</span>: {
+                    <span style=color:#f92672>&#34;data&#34;</span>: [
+                        <span style=color:#e6db74>&#34;/usr/share/elasticsearch/data/client-datadir&#34;</span>
+                    ],
+                    <span style=color:#f92672>&#34;logs&#34;</span>: <span style=color:#e6db74>&#34;/usr/share/elasticsearch/data/common-logdir&#34;</span>,
+                    <span style=color:#f92672>&#34;home&#34;</span>: <span style=color:#e6db74>&#34;/elasticsearch&#34;</span>
+                },
+            }
+        },
+        <span style=color:#f92672>&#34;_8HsT6oZTAGf9Gmz0kInsA&#34;</span>: {
+            <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;es-node-client&#34;</span>,
+            <span style=color:#f92672>&#34;roles&#34;</span>: [
+                <span style=color:#e6db74>&#34;ingest&#34;</span>
+            ],
+            <span style=color:#f92672>&#34;settings&#34;</span>: {
+                <span style=color:#f92672>&#34;node&#34;</span>: {
+                    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;es-node-client&#34;</span>,
+                    <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;false&#34;</span>,
+                    <span style=color:#f92672>&#34;ingest&#34;</span>: <span style=color:#e6db74>&#34;true&#34;</span>,
+                    <span style=color:#f92672>&#34;master&#34;</span>: <span style=color:#e6db74>&#34;false&#34;</span>
+                },
+                <span style=color:#f92672>&#34;path&#34;</span>: {
+                    <span style=color:#f92672>&#34;data&#34;</span>: [
+                        <span style=color:#e6db74>&#34;/usr/share/elasticsearch/data/client-datadir&#34;</span>
+                    ],
+                    <span style=color:#f92672>&#34;logs&#34;</span>: <span style=color:#e6db74>&#34;/usr/share/elasticsearch/data/common-logdir&#34;</span>,
+                    <span style=color:#f92672>&#34;home&#34;</span>: <span style=color:#e6db74>&#34;/elasticsearch&#34;</span>
+                },
+            }
+        },
+        <span style=color:#f92672>&#34;pT1cxPVNQU-UBkjcj6JSzw&#34;</span>: {
+            <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;es-node-master&#34;</span>,
+            <span style=color:#f92672>&#34;roles&#34;</span>: [
+                <span style=color:#e6db74>&#34;master&#34;</span>
+            ],
+            <span style=color:#f92672>&#34;settings&#34;</span>: {
+                <span style=color:#f92672>&#34;node&#34;</span>: {
+                    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;es-node-master&#34;</span>,
+                    <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;false&#34;</span>,
+                    <span style=color:#f92672>&#34;ingest&#34;</span>: <span style=color:#e6db74>&#34;false&#34;</span>,
+                    <span style=color:#f92672>&#34;master&#34;</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+                },
+                <span style=color:#f92672>&#34;path&#34;</span>: {
+                    <span style=color:#f92672>&#34;data&#34;</span>: [
+                        <span style=color:#e6db74>&#34;/usr/share/elasticsearch/data/master-datadir&#34;</span>
+                    ],
+                    <span style=color:#f92672>&#34;logs&#34;</span>: <span style=color:#e6db74>&#34;/usr/share/elasticsearch/data/common-logdir&#34;</span>,
+                    <span style=color:#f92672>&#34;home&#34;</span>: <span style=color:#e6db74>&#34;/elasticsearch&#34;</span>
+                },
+            }
+        },
+        <span style=color:#f92672>&#34;tBecrUhUTlO9x5kXlPAR5A&#34;</span>: {
+            <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;es-node-data&#34;</span>,
+            <span style=color:#f92672>&#34;roles&#34;</span>: [
+                <span style=color:#e6db74>&#34;data&#34;</span>
+            ],
+            <span style=color:#f92672>&#34;settings&#34;</span>: {
+                <span style=color:#f92672>&#34;node&#34;</span>: {
+                    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;es-node-data&#34;</span>,
+                    <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;true&#34;</span>,
+                    <span style=color:#f92672>&#34;ingest&#34;</span>: <span style=color:#e6db74>&#34;false&#34;</span>,
+                    <span style=color:#f92672>&#34;master&#34;</span>: <span style=color:#e6db74>&#34;false&#34;</span>
+                },
+                <span style=color:#f92672>&#34;path&#34;</span>: {
+                    <span style=color:#f92672>&#34;data&#34;</span>: [
+                        <span style=color:#e6db74>&#34;/usr/share/elasticsearch/data/data-datadir&#34;</span>
+                    ],
+                    <span style=color:#f92672>&#34;logs&#34;</span>: <span style=color:#e6db74>&#34;/usr/share/elasticsearch/data/common-logdir&#34;</span>,
+                    <span style=color:#f92672>&#34;home&#34;</span>: <span style=color:#e6db74>&#34;/elasticsearch&#34;</span>
+                },
+            }
+        }
+    }
+}
+</code></pre></div><p>We have total four (1 master + 2 client + 1 data) nodes in our Elasticsearch cluster. Here, we have an array of these node&rsquo;s settings information. Here, <code>"roles"</code> field represents if the node is working as either a master, ingest/client or data node.</p><p>From the response above, we can see that <code>"node.name"</code> and <code>"path.data"</code> fields are set according to node rules to the value we have specified in configuration files.</p><p>Note that, the <code>"path.logs"</code> field of each node is set to the value we have specified in <code>common-config.yml</code> file.</p><h2 id=cleanup>Cleanup</h2><p>To cleanup the Kubernetes resources created by this tutorial, run:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>kubectl patch -n demo es/custom-elasticsearch -p <span style=color:#e6db74>&#39;{&#34;spec&#34;:{&#34;terminationPolicy&#34;:&#34;WipeOut&#34;}}&#39;</span> --type<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;merge&#34;</span>
+kubectl delete -n demo es/custom-elasticsearch
+
+kubectl delete  -n demo configmap/es-configuration
+
+kubectl delete ns demo
+</code></pre></div><p>To uninstall KubeDB follow this <a href=/docs/v2020.12.10/setup/README>guide</a>.</p></div></div><div class="column is-2"><div class=right-sidebar-area><div class=search-area><form action=#><input id=acSearch type=text placeholder=Search...>
+<button class=search-button>
+<i class="fa fa-search" aria-hidden=true></i></button></form></div><div class=tbl-of-contents><h4>What's on this Page</h4><nav id=TableOfContents><ul><li><a href=#before-you-begin>Before You Begin</a></li><li><a href=#use-custom-configuration>Use Custom Configuration</a></li><li><a href=#verify-configuration>Verify Configuration</a></li><li><a href=#cleanup>Cleanup</a></li></ul></nav></div></div></div></div></div><script>var kdDropdown=document.querySelector(".dropdown"),kdDropdownBtn=document.querySelector(".dropdown-trigger");kdDropdownBtn.addEventListener("click",function(){kdDropdown.classList.toggle("is-active")})</script></div><div class=overlay-bg></div><div class=sidebar-search-area><div class=search-area-top><h3>Search</h3><div class=searchbar-area><input type=search name=search id=searchbox placeholder=Search...>
+<button onclick=queryPage(1)><i class="fa fa-search" aria-hidden=true></i></button></div><span id=searchbar-script-container style=display:none></span><div class="search-meta-information level"><div class=level-left></div></div></div><div class=search-result-wrapper></div><div class=pagination-area><div class=pagination-list></div></div></div><div class=improve-section-area><div class="container section"><div class=improve-bg-color><div class=columns><div class="column is-6"><a href=https://github.com/kubedb/docs/edit/master/docs/guides/elasticsearch/configuration/with-topology.md/>Improve This Page</a></div></div></div></div></div><script type=text/javascript>var pageSize=5,acSearch=document.querySelector("#acSearch"),bodyOverlay=document.querySelector(".overlay-bg"),sidebarSearch=document.querySelector(".sidebar-search-area");acSearch.addEventListener("click",function(){bodyOverlay.style.display="block",sidebarSearch.style.right="0",document.getElementById("searchbox").focus(),bodyOverlay.addEventListener("click",function(){bodyOverlay.style.display="none",sidebarSearch.style.right="-80%"})});function encodeQueryData(a){var b=[],c;for(c in a)b.push(encodeURIComponent(c)+'='+encodeURIComponent(a[c]));return b.join('&')}document.querySelector(".searchbar-area input[type=search]").addEventListener("keyup",function(a){a.preventDefault(),a.keyCode===13&&queryPage(1)});function queryPage(c){var i=document.getElementById("searchbox").value,j="015199383701854252104:8mvwy0fek2e",d="AIzaSyBrcwLTnL09geNrFMUx1kpL--dT1379aag",f="small",g="renderResult",h="https://www.googleapis.com/customsearch/v1?"+encodeQueryData({q:i,cx:j,key:d,imgSize:f,callback:g,start:(c-1)*pageSize+1,num:pageSize}),a=document.createElement("script"),b;a.src=h,e=document.getElementById("searchbar-script-container"),b=e.lastElementChild,b&&e.removeChild(b),e.appendChild(a)}function renderSearchResultEntry(a){var b='<div class="single-search-result"><h3><a href="'+a.link+'">'+a.title+'</a></h3>'+'<a href="'+a.link+'">'+a.htmlFormattedUrl+'</a>'+'<div class="result-description-wrapper">';return a.pagemap&&a.pagemap.cse_thumbnail&&(b+='<div class="result-thumb"><img src="'+a.pagemap.cse_thumbnail[0].src+'" alt="" />'+'</div>'),b+='<div class="result-description"><p>'+a.snippet+'</p>'+'</div>'+'</div>'+'</div>',b}function renderResult(a){var e,d,c,b;if(document.querySelector(".search-meta-information .level-left").innerHTML='<div class="level-left"><p>About <span class="search-count">'+a.searchInformation.formattedTotalResults+'</span> results (<span class="time-count">'+a.searchInformation.formattedSearchTime+' </span>seconds)'+'</p>'+'</div>',!a.items)return;e=document.querySelector(".search-result-wrapper"),e.innerHTML="";for(d=0;d<a.items.length;d++)e.innerHTML+=renderSearchResultEntry(a.items[d]);c='<ul>',a.queries.previousPage&&(b=Math.floor(a.queries.previousPage[0].startIndex/pageSize)+1,c+='<li><a href="#" onclick="queryPage('+b+')">Previous</a></li>'),a.queries.request&&(b=Math.floor(a.queries.request[0].startIndex/pageSize)+1,c+='<li><a href="#" onclick="queryPage('+b+')" class="is-active">'+b+'</a></li>'),a.queries.nextPage&&(b=Math.floor(a.queries.nextPage[0].startIndex/pageSize)+1,c+='<li><a href="#" onclick="queryPage('+b+')">Next</a></li>'),c+='</ul>',document.querySelector(".pagination-area .pagination-list").innerHTML=c}</script><section></section><section></section><section></section><button class=go-to-top id=goTop>
+<i class="fa fa-angle-up" aria-hidden=true></i></button><footer class=footer-area><div class=footer-top><div class="container section"><div class="columns is-mobile is-multiline"><div class="column is-full-mobile is-one-third-desktop is-one-third-widescreen is-one-third-tablet" data-aos=fade-up><div class=single-footer-widget><div class=footer-logo><a href=https://appscode.com><img src=/assets/images/products/appscode/appscode.png alt=AppsCode class=img></a></div><div class=subscription-form><form method=post action=https://listmonk.appscode.com/subscription/form id=mc-embedded-subscribe-form name=mc-embedded-subscribe-form class=navbar-form target=_blank novalidate role=email role=email><label for=email>Subscribe to Our Newsletter</label><p class=spam-message>No spam, we promise. Your mail address is secure</p><div class="field has-addons"><div class=control><input type=hidden id=afbbc name=l value=afbbc974-e163-4467-be49-040e399520f3>
+<input class=input name=email id=mce-EMAIL type=email placeholder="Your work email address" required>
+<button id=mc-embedded-subscribe type=submit name=subscribe class=button>
+<i class="fa fa-paper-plane-o" aria-hidden=true></i></button></div></div></form></div><div class=contact-information><h4>Have any Inquiry?</h4><ul class=all-contact-info><li><a href=callto:+1%28650%29241-8486><span><i class="fa fa-phone" aria-hidden=true></i></span>+1(650)241-8486</a></li><li><a href=mailto:support@appscode.com><span><i class="fa fa-envelope-o" aria-hidden=true></i></span>support@appscode.com</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=500><div class=single-footer-widget><div class=footer-menu><h4>Products</h4><ul class=footer-link><li><a href=https://kubedb.com>KubeDB</a></li><li><a href=https://stash.run>Stash</a></li><li><a href=https://kubevault.com>KubeVault</a></li><li><a href=https://kubeform.com>Kubeform</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=600><div class=single-footer-widget><div class=footer-menu><h4>Services</h4><ul class=footer-link><li><a href=https://appscode.com/pricing/>Pricing</a></li><li><a href=https://appscode.com/consulting/>Consulting</a></li><li><a href=https://appscode.com/training/>Training</a></li><li><a href=https://appscode.com/support/>Support</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=700><div class=single-footer-widget><div class=footer-menu><h4>Company</h4><ul class=footer-link><li><a href=https://appscode.com/about/>About Us</a></li><li><a href=https://blog.byte.builders>Blog</a></li><li><a href=https://appscode.com/contact/>Contact Us</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=800><div class=single-footer-widget><div class=footer-menu><h4>Legal</h4><ul class=footer-link><li><a href=https://appscode.com/legal/tos/>Terms of Sevice</a></li><li><a href=https://appscode.com/legal/privacy-policy/>Privacy Policy</a></li><li><a href=https://appscode.com/legal/security/>Security</a></li><li><a href=https://appscode.com/legal/sla/>Service Level Agreement</a></li></ul></div></div></div></div></div></div><div class=footer-bottom><div class="container section"><div class=columns><div class="column is-4"><p>© 2021 AppsCode Inc. All rights reserved.</p></div><div class="column is-4 is-mobile has-text-centered"><div class=footer-inline-link><a href=https://appscode.com/legal/privacy-policy/>Privacy Policy</a>
+<a href=https://appscode.com/legal/tos/>Terms of Service</a></div></div><div class="column is-4 is-mobile has-text-right"><div class=socail-link-inline><ul><li><a href=https://twitter.com/AppsCodeHQ><i class="fa fa-twitter" aria-hidden=true></i></a></li><li><a href=https://www.facebook.com/appscode><i class="fa fa-facebook" aria-hidden=true></i></a></li><li><a href=https://www.youtube.com/c/AppsCodeInc><i class="fa fa-youtube" aria-hidden=true></i></a></li></ul></div></div></div></div></div></footer><script src=/assets/js/bulma-carousel.min.js></script><script src=https://unpkg.com/aos@2.3.1/dist/aos.js></script><script src=https://unpkg.com/downloadjs@1.4.7/download.min.js></script><script src=https://unpkg.com/clipboard@2/dist/clipboard.min.js></script><script src=/assets/js/main.js></script><script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/9255943.js></script><script type=text/javascript>var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date;(function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0,a.src='https://embed.tawk.to/5821e34b18d9f16af02864b7/default',a.charset='UTF-8',a.setAttribute('crossorigin','*'),b.parentNode.insertBefore(a,b)})()</script></body></html>

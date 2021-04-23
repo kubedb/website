@@ -1,0 +1,466 @@
+<!doctype html><html lang=en><head><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-62096468-4','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=theme-color content="#4D4DCB"><title>KubeDB by AppsCode</title><meta name=description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta name=author content="AppsCode Inc."><meta name=keywords content="kubernetes appscode databsse high availability postgres elasticsearch etcd memecached mongodb mysql percona xtradb redis"><link rel=apple-touch-icon sizes=57x57 href=/assets/images/products/kubedb/icons/apple-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=/assets/images/products/kubedb/icons/apple-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=/assets/images/products/kubedb/icons/apple-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=/assets/images/products/kubedb/icons/apple-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=/assets/images/products/kubedb/icons/apple-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=/assets/images/products/kubedb/icons/apple-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=/assets/images/products/kubedb/icons/apple-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=/assets/images/products/kubedb/icons/apple-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=/assets/images/products/kubedb/icons/apple-icon-180x180.png><link rel=icon type=image/png sizes=192x192 href=/assets/images/products/kubedb/icons/android-icon-192x192.png><link rel=icon type=image/png sizes=32x32 href=/assets/images/products/kubedb/icons/favicon-32x32.png><link rel=icon type=image/png sizes=96x96 href=/assets/images/products/kubedb/icons/favicon-96x96.png><link rel=icon type=image/png sizes=16x16 href=/assets/images/products/kubedb/icons/favicon-16x16.png><link rel=manifest href=/assets/images/products/kubedb/icons/manifest.json><meta name=msapplication-TileColor content="#ffffff"><meta name=msapplication-TileImage content="/assets/images/products/kubedb/icons/ms-icon-144x144.png"><meta itemprop=name content="KubeDB by AppsCode"><meta itemprop=description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta itemprop=image content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeDB"><meta name=twitter:title content="KubeDB by AppsCode"><meta name=twitter:creator content="@KubeDB"><meta name=twitter:description content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta name=twitter:image:src content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta property="og:url" content="https://kubedb.com"><meta property="og:title" content="KubeDB by AppsCode"><meta property="og:description" content="KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds"><meta property="og:site_name" content="KubeDB by AppsCode"><meta property="og:image" content="https://kubedb.com/assets/images/products/kubedb/kubedb-1280x640.png"><meta property="og:type" content="article"><link rel=stylesheet href=/assets/css/font-awesome.min.css><link href=https://unpkg.com/aos@2.3.1/dist/aos.css rel=stylesheet><link rel=stylesheet href=/assets/css/bulma-carousel.min.css><link rel=stylesheet href=/assets/css/bulma-tooltip.min.css><link rel=stylesheet href=/assets/css/bulma.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css><link rel=stylesheet href=/assets/sass/main.min.5d2c0297a6ff960daed9d0bfe02ddc681d62b160aafc866ad48d2745f78048d9.css></head><body class=kubedb><header><div class=header-top><div class="container section"><nav class=navbar><div class=navbar-brand><a class=navbar-item href=https://appscode.com><img src=/assets/images/products/appscode/appscode.png alt=AppsCode></a>
+<a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav1><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=acNav1 class="navbar-menu main-menu"><div class=navbar-end><div class=navbar-start><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Products</a><div class=ac-megamenu><div class=columns><div class="column is-6"><div class=columns><div class="column is-12 br-1"><a href=https://kubedb.com class="single-product-item is-kubedb"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubedb/kubedb-icon.png alt=KubeDB></div><h5>KubeDB</h5></div><div class=menu-body><p>Run production-grade Databases on Kubernetes</p></div></a><a href=https://stash.run class="single-product-item is-stash"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/stash/stash-icon.png alt=Stash></div><h5>Stash</h5></div><div class=menu-body><p>Backup your Kubernetes Stateful Applications</p></div></a><a href=https://kubevault.com class="single-product-item is-kubevault"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubevault/kubevault-icon.png alt=KubeVault></div><h5>KubeVault</h5></div><div class=menu-body><p>Tools for running HashiCorp Vault on Kubernetes</p></div></a></div></div></div><div class="column is-6"><div class=columns><div class="column is-12"><a href=https://byte.builders class="single-product-item byte-builder kd-orange"><div class=menu-header><p class=intro>Introducing....</p><h5>ByteBuilders</h5></div><div class=menu-body><p>Cloud reimagined for the age of Kubernetes</p></div><p class=learn-more-btn>Learn more
+<span class=icon><i class="fa fa-long-arrow-right" aria-hidden=true></i></span></p></a><a href=https://kubeform.com class="single-product-item is-kubeform"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubeform/kubeform-icon.png alt=Kubeform></div><h5>Kubeform</h5></div><div class=menu-body><p>Provision cloud resources using Kubernetes CRDs & Terraform</p></div></a></div></div></div></div></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Open Source</a><div class=ac-megamenu><div class=columns><div class="column is-6"><div class=columns><div class="column is-12 br-1"><a href=https://voyagermesh.com class="single-product-item is-voyager"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/voyager/voyager-icon.png alt=Voyager></div><h5>Voyager</h5></div><div class=menu-body><p>Secure HAProxy Ingress Controller for
+Kubernetes</p></div></a><a href=https://appscode.com/products/guard/ class="single-product-item is-guard"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/guard/guard-icon.png alt=Guard></div><h5>Guard</h5></div><div class=menu-body><p>Kubernetes Authentication WebHook Server</p></div></a><a href=https://appscode.com/products/kubed/ class="single-product-item is-kubed"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/kubed/kubed-icon.png alt=Kubed></div><h5>Kubed</h5></div><div class=menu-body><p>Kubernetes cluster manager daemon</p></div></a></div></div></div><div class="column is-6"><div class=columns><div class="column is-12"><a href=https://pharmer.cloud class="single-product-item is-pharmer"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/pharmer/pharmer-icon.png alt=Pharmer></div><h5>Pharmer</h5></div><div class=menu-body><p>Kubernetes Cluster Manager using Kubeadm & Cluster API</p></div></a><a href=https://appscode.com/products/swift/ class="single-product-item is-swift"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/swift/swift-icon.png alt=Swift></div><h5>Swift</h5></div><div class=menu-body><p>Ajax friendly Helm Tiller Proxy</p></div></a><a href=https://appscode.com/products/searchlight/ class="single-product-item is-searchlight"><div class=menu-header><div class=menu-logo><img src=/assets/images/products/searchlight/searchlight-icon.png alt=Searchlight></div><h5>Searchlight</h5></div><div class=menu-body><p>Alerts for Kubernetes</p></div></a></div></div></div></div></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Services</a><div class=ac-dropdown><a class=navbar-item href=https://appscode.com/consulting/>Consulting</a>
+<a class=navbar-item href=https://appscode.com/training/>Training</a>
+<a class=navbar-item href=https://appscode.com/support/>Support</a></div></div><a class=navbar-item href=https://blog.byte.builders>Blog</a>
+<a class=navbar-item href=https://appscode.com/contact/>Contact Us</a></div><div class=navbar-item><div class="buttons main-menu-button-top"><a class="button is-small for-chat" href=https://slack.appscode.com><span><img src=/assets/images/icon/slack.png alt></span>Slack</a>
+<a class="button is-small for-support" href=https://appscode.freshdesk.com><span><img src=/assets/images/icon/chat.png alt></span>Support Portal</a></div></div></div></div></nav></div></div><div class="header-bottom-area header-area kubedb-primary-bg customize-kubedb fixed-menu"><div class="container section"><nav class=navbar><div class=navbar-brand><a class=navbar-item href=https://kubedb.com><img src=/assets/images/products/kubedb/kubedb-white.png alt=KubeDB></a>
+<a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=acNav class="navbar-menu main-menu"><div class=navbar-end><div class=navbar-start><a href=/features/ class=navbar-item>Features</a>
+<a href=/pricing/ class=navbar-item>Pricing</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Databases</a><div class=ac-dropdown><a class=navbar-item href=/docs/v2021.04.16/guides/elasticsearch/>Elasticsearch</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/mariadb/>MariaDB</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/memcached/>Memcached</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/mongodb/>MongoDB</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/mysql/>MySQL</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/percona-xtradb/>Percona XtraDB</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/pgbouncer/>PgBouncer</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/postgres/>PostgreSQL</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/proxysql/>ProxySQL</a>
+<a class=navbar-item href=/docs/v2021.04.16/guides/redis/>Redis</a></div></div><a href=/docs/v2021.04.16/welcome/ class=navbar-item>Documentation</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Community</a><div class=ac-dropdown><a href=https://github.com/kubedb class=navbar-item>GitHub</a>
+<a href=https://twitter.com/KubeDB class=navbar-item>Twitter</a>
+<a href=http://slack.kubernetes.io/ class=navbar-item>Slack</a></div></div></div><div class=navbar-item><div class="buttons main-menu-button"><img style=height:24px alt="GitHub Stars" src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github&label=stars&query=%24.stars&url=https://github-stars.appscode.workers.dev/user/kubedb">
+&nbsp;&nbsp;&nbsp;
+<img style=height:24px alt="GitHub Forks" src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github&label=forks&query=%24.forks&url=https://github-stars.appscode.workers.dev/user/kubedb">
+&nbsp;&nbsp;&nbsp;
+<img style=height:24px alt="Docker Pulls" src="https://img.shields.io/docker/pulls/kubedb/operator?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=docker&label=pulls"></div></div></div></div></nav></div></div><div class=documentation-menu><div class="container section"><div class=is-centered><div class="is-half has-text-centered-desktop"><div class=responsive-menu><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=acNav3><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><nav class=documentation-navbar><div id=acNav3 class="navbar-menu nav-menu main-menu"><div class=navbar-centered><div class=navbar-start><a href=/docs/v2021.03.17/ class=navbar-item>Welcome</a>
+<a href=/docs/v2021.03.17/overview/ class=navbar-item>Overview</a>
+<a href=/docs/v2021.03.17/setup/ class=navbar-item>Setup</a><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Guides</a><div class=ac-dropdown><a href=/docs/v2021.03.17/guides/elasticsearch/ class=navbar-item>Elasticsearch</a>
+<a href=/docs/v2021.03.17/guides/mariadb/ class=navbar-item>MariaDB</a>
+<a href=/docs/v2021.03.17/guides/memcached/ class=navbar-item>Memcached</a>
+<a href=/docs/v2021.03.17/guides/mongodb/ class=navbar-item>MongoDB</a>
+<a href=/docs/v2021.03.17/guides/mysql/ class=navbar-item>MySQL</a>
+<a href=/docs/v2021.03.17/guides/percona-xtradb/ class=navbar-item>Percona XtraDB</a>
+<a href=/docs/v2021.03.17/guides/pgbouncer/ class=navbar-item>PgBouncer</a>
+<a href=/docs/v2021.03.17/guides/postgres/ class=navbar-item>PostgreSQL</a>
+<a href=/docs/v2021.03.17/guides/proxysql/ class=navbar-item>ProxySQL</a>
+<a href=/docs/v2021.03.17/guides/redis/ class=navbar-item>Redis</a></div></div><div class="navbar-item has-dropdown ac-is-hoverable"><a class=navbar-link>Reference</a><div class=ac-dropdown><a href=/docs/v2021.03.17/reference/operator/ class=navbar-item>KubeDB Operator</a>
+<a href=/docs/v2021.03.17/reference/cli/ class=navbar-item>KubeDB CLI</a></div></div></div></div></div></nav></div></div></div></div></header><div class=documentation-area><div class="container section"><article class="message is-danger"><div class=message-body>You are looking at the documentation of a prior release. To read the documentation of the latest release, please visit <a href=/docs/v2021.04.16/guides/elasticsearch/backup/auto-backup/>here</a>.</div></article><div class=columns><div class="column is-3"><div class=kd-left-sidebar><div class=trial-button><a href=/docs/v2021.04.16/setup/ class="button is-fullwidth">Try Now for FREE!</a></div><div class=kd-version><div class=dropdown><div class=dropdown-trigger><button class="button is-fullwidth" aria-haspopup=true aria-controls=dropdown-menu3>
+<span><strong class=icon><i class="fa fa-cog" aria-hidden=true></i></strong>v2021.03.17</span>
+<span class="icon is-small"><i class="fa fa-angle-down" aria-hidden=true></i></span></button></div><div class=dropdown-menu id=dropdown-menu3 role=menu><div class=dropdown-content><a href=https://github.com/kubedb/docs/tree/master/docs target=_blank class=dropdown-item>master</a>
+<a href=/docs/v2021.04.16/ class=dropdown-item>v2021.04.16<div class=tag>Latest</div></a><a href=/docs/v2021.03.17/ class=dropdown-item>v2021.03.17</a>
+<a href=/docs/v2021.01.26/ class=dropdown-item>v2021.01.26</a>
+<a href=/docs/v2021.01.15/ class=dropdown-item>v2021.01.15</a>
+<a href=/docs/v2021.01.02-rc.0/ class=dropdown-item>v2021.01.02-rc.0</a>
+<a href=/docs/v2020.12.10/ class=dropdown-item>v2020.12.10</a>
+<a href=/docs/v2020.11.12/ class=dropdown-item>v2020.11.12</a>
+<a href=/docs/v2020.11.11/ class=dropdown-item>v2020.11.11</a>
+<a href=/docs/v2020.11.08/ class=dropdown-item>v2020.11.08</a>
+<a href=/docs/v2020.10.28/ class=dropdown-item>v2020.10.28</a>
+<a href=/docs/v0.13.0-rc.0/ class=dropdown-item>v0.13.0-rc.0</a>
+<a href=/docs/0.12.0/ class=dropdown-item>0.12.0</a></div></div></div></div><div class=kd-sidebar-menu><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-1>
+<label for=65525cf2f3186b675dbf9a704ed06d32-1><a href=/docs/v2021.03.17/guides/>Elasticsearch</a></label></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-2>
+<label for=65525cf2f3186b675dbf9a704ed06d32-2><a href=/docs/v2021.03.17/guides/elasticsearch/>Elasticsearch</a></label></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-3>
+<label for=65525cf2f3186b675dbf9a704ed06d32-3><a>Quickstart</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/quickstart/overview/>Overview</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-4>
+<label for=65525cf2f3186b675dbf9a704ed06d32-4><a>Concepts</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/concepts/elasticsearch/>Elasticsearch</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/concepts/elasticsearch-ops-request/>ElasticsearchOpsRequest</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/concepts/catalog/>ElasticsearchVersion</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/concepts/appbinding/>AppBinding</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/concepts/autoscaler/>ElasticsearchAutoscaler</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-5>
+<label for=65525cf2f3186b675dbf9a704ed06d32-5><a>Clustering</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/clustering/combined-cluster/>Combined Cluster</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/clustering/topology-cluster/>Topology Cluster</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-6>
+<label for=65525cf2f3186b675dbf9a704ed06d32-6><a>Custom Configuration</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/configuration/overview/>Overview</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/configuration/combined-cluster/>Combined Cluster</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/configuration/topology-cluster/>Topology Cluster</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-7>
+<label for=65525cf2f3186b675dbf9a704ed06d32-7><a>Custom RBAC</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/custom-rbac/using-custom-rbac/>Custom RBAC</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-8>
+<label for=65525cf2f3186b675dbf9a704ed06d32-8><a>Private Registry</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/private-registry/using-private-registry/>Quickstart</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-9 checked>
+<label for=65525cf2f3186b675dbf9a704ed06d32-9><a>Backup & Restore</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/backup/overview/>Overview</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/backup/kubedb/>Scheduled Backup</a></li><li class=is-active><a href=/docs/v2021.03.17/guides/elasticsearch/backup/auto-backup/>Auto-Backup</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/backup/customization/>Customizing Backup & Restore Process</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-10>
+<label for=65525cf2f3186b675dbf9a704ed06d32-10><a>Autoscaling</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-11>
+<label for=65525cf2f3186b675dbf9a704ed06d32-11><a>Compute Autoscaling</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/autoscaler/compute/overview/>Overview</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/autoscaler/compute/combined/>Combined</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/autoscaler/compute/topology/>Topology Cluster</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-12>
+<label for=65525cf2f3186b675dbf9a704ed06d32-12><a>Storage Autoscaling</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/autoscaler/storage/overview/>Overview</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/autoscaler/storage/combined/>Combined Cluster</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/autoscaler/storage/topology/>Topology Cluster</a></li></ul></div></div></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-13>
+<label for=65525cf2f3186b675dbf9a704ed06d32-13><a>Monitoring</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/monitoring/overview/>Overview</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/monitoring/using-prometheus-operator/>Prometheus Operator</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/monitoring/using-builtin-prometheus/>Builtin Prometheus</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-14>
+<label for=65525cf2f3186b675dbf9a704ed06d32-14><a>X-Pack</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/x-pack/configuration/>X-Pack Configuration</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/x-pack/use-tls/>Use TLS</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/x-pack/issue-certificate/>Issue Certificate</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/x-pack/disable-xpack/>Disable X-Pack</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-15>
+<label for=65525cf2f3186b675dbf9a704ed06d32-15><a>Search Guard</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/search-guard/overview/>Overview</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/search-guard/configuration/>Configuration</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/search-guard/use-tls/>Use TLS</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/search-guard/issue-certificate/>Issue Certificate</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/search-guard/disable-searchguard/>Disable Search Guard</a></li><li><a href=/docs/v2021.03.17/guides/elasticsearch/search-guard/x-pack-monitoring/>Monitoring</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-16>
+<label for=65525cf2f3186b675dbf9a704ed06d32-16><a>Kibana</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/kibana/connect-kibana/>Use Kibana</a></li></ul></div></div><div class=item><input type=checkbox id=65525cf2f3186b675dbf9a704ed06d32-17>
+<label for=65525cf2f3186b675dbf9a704ed06d32-17><a>CLI</a> <span><i class="fa fa-angle-right" aria-hidden=true></i></span></label><div class=item><ul><li><a href=/docs/v2021.03.17/guides/elasticsearch/cli/cli/>Quickstart</a></li></ul></div></div></div></div></div><div class="column is-7"><div class=full-info><h1 id=backup-elasticsearch-using-stash-auto-backup>Backup Elasticsearch using Stash Auto-Backup</h1><p>Stash can be configured to automatically backup any Elasticsearch database in your cluster. Stash enables cluster administrators to deploy backup blueprints ahead of time so that the database owners can easily backup their database with just a few annotations.</p><p>In this tutorial, we are going to show how you can configure a backup blueprint for Elasticsearch databases in your cluster and backup them with few annotations.</p><h2 id=before-you-begin>Before You Begin</h2><ul><li>At first, you need to have a Kubernetes cluster, and the <code>kubectl</code> command-line tool must be configured to communicate with your cluster.</li><li>Install KubeDB in your cluster following the steps <a href=/docs/v2021.03.17/setup/README>here</a>.</li><li>Install Stash Enterprise in your cluster following the steps <a href=https://stash.run/docs/latest/setup/install/enterprise/>here</a>.</li><li>If you are not familiar with how Stash backup and restore Elasticsearch databases, please check the following guide <a href=/docs/v2021.03.17/guides/elasticsearch/backup/overview/>here</a>.</li><li>If you are not familiar with how auto-backup works in Stash, please check the following guide <a href=https://stash.run/docs/latest/guides/latest/auto-backup/overview/>here</a>.</li><li>If you are not familiar with the available auto-backup options for databases in Stash, please check the following guide <a href=https://stash.run/docs/latest/guides/latest/auto-backup/database/>here</a>.</li></ul><p>You should be familiar with the following <code>Stash</code> concepts:</p><ul><li><a href=https://stash.run/docs/latest/concepts/crds/backupblueprint/>BackupBlueprint</a></li><li><a href=https://stash.run/docs/latest/concepts/crds/backupconfiguration/>BackupConfiguration</a></li><li><a href=https://stash.run/docs/latest/concepts/crds/backupsession/>BackupSession</a></li><li><a href=https://stash.run/docs/latest/concepts/crds/repository/>Repository</a></li><li><a href=https://stash.run/docs/latest/concepts/crds/function/>Function</a></li><li><a href=https://stash.run/docs/latest/concepts/crds/task/>Task</a></li></ul><p>In this tutorial, we are going to show backup of three different Elasticsearch databases on three different namespaces named <code>demo</code>, <code>demo-2</code>, and <code>demo-3</code>. Create the namespaces as below if you haven&rsquo;t done it already.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl create ns demo
+namespace/demo created
+
+❯ kubectl create ns demo-2
+namespace/demo-2 created
+
+❯ kubectl create ns demo-3
+namespace/demo-3 created
+</code></pre></div><p>When you install the Stash Enterprise edition, it automatically installs all the official database addons. Verify that it has installed the Elasticsearch addons using the following command.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl get tasks.stash.appscode.com | grep elasticsearch
+elasticsearch-backup-5.6.4    4d4h
+elasticsearch-backup-6.2.4    4d4h
+elasticsearch-backup-6.3.0    4d4h
+elasticsearch-backup-6.4.0    4d4h
+elasticsearch-backup-6.5.3    4d4h
+elasticsearch-backup-6.8.0    4d4h
+elasticsearch-backup-7.2.0    4d4h
+elasticsearch-backup-7.3.2    4d4h
+elasticsearch-restore-5.6.4   4d4h
+elasticsearch-restore-6.2.4   4d4h
+elasticsearch-restore-6.3.0   4d4h
+elasticsearch-restore-6.4.0   4d4h
+elasticsearch-restore-6.5.3   4d4h
+elasticsearch-restore-6.8.0   4d4h
+elasticsearch-restore-7.2.0   4d4h
+elasticsearch-restore-7.3.2   4d4h
+</code></pre></div><h2 id=prepare-backup-blueprint>Prepare Backup Blueprint</h2><p>To backup an Elasticsearch database using Stash, you have to create a <code>Secret</code> containing the backend credentials, a <code>Repository</code> containing the backend information, and a <code>BackupConfiguration</code> containing the schedule and target information. A <code>BackupBlueprint</code> allows you to specify a template for the <code>Repository</code> and the <code>BackupConfiguration</code>.</p><p>The <code>BackupBlueprint</code> is a non-namespaced CRD. So, once you have created a <code>BackupBlueprint</code>, you can use it to backup any Elasticsearch database of any namespace just by creating the storage <code>Secret</code> in that namespace and adding few annotations to your Elasticsearch CRO. Then, Stash will automatically create a <code>Repository</code> and a <code>BackupConfiguration</code> according to the template to backup the database.</p><p>Below is the <code>BackupBlueprint</code> object that we are going to use in this tutorial,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>stash.appscode.com/v1beta1</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>BackupBlueprint</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>elasticsearch-backup-template</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#75715e># ============== Blueprint for Repository ==========================</span>
+  <span style=color:#f92672>backend</span>:
+    <span style=color:#f92672>gcs</span>:
+      <span style=color:#f92672>bucket</span>: <span style=color:#ae81ff>stash-testing</span>
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>stash-backup/${TARGET_NAMESPACE}/${TARGET_APP_RESOURCE}/${TARGET_NAME}</span>
+    <span style=color:#f92672>storageSecretName</span>: <span style=color:#ae81ff>gcs-secret</span>
+  <span style=color:#75715e># ============== Blueprint for BackupConfiguration =================</span>
+<span style=color:#75715e>#  task: # Uncomment if you are not using KubeDB to deploy your database.</span>
+<span style=color:#75715e>#    name: elasticsearch-backup-7.3.2</span>
+  <span style=color:#f92672>schedule</span>: <span style=color:#e6db74>&#34;*/5 * * * *&#34;</span>
+  <span style=color:#f92672>interimVolumeTemplate</span>:
+    <span style=color:#f92672>metadata</span>:
+      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>${TARGET_APP_RESOURCE}-${TARGET_NAME}</span> <span style=color:#75715e># To ensure that the PVC names are unique for different database</span>
+    <span style=color:#f92672>spec</span>:
+      <span style=color:#f92672>accessModes</span>: [ <span style=color:#e6db74>&#34;ReadWriteOnce&#34;</span> ]
+      <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;standard&#34;</span>
+      <span style=color:#f92672>resources</span>:
+        <span style=color:#f92672>requests</span>:
+          <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+  <span style=color:#f92672>retentionPolicy</span>:
+    <span style=color:#f92672>name</span>: <span style=color:#e6db74>&#39;keep-last-5&#39;</span>
+    <span style=color:#f92672>keepLast</span>: <span style=color:#ae81ff>5</span>
+    <span style=color:#f92672>prune</span>: <span style=color:#66d9ef>true</span>
+</code></pre></div><p>Here, we are using a GCS bucket as our backend. We are providing <code>gcs-secret</code> at the <code>storageSecretName</code> field. Hence, we have to create a secret named <code>gcs-secret</code> with the access credentials of our bucket in every namespace where we want to enable backup through this blueprint.</p><p>Notice the <code>prefix</code> field of <code>backend</code> section. We have used some variables in form of <code>${VARIABLE_NAME}</code>. Stash will automatically resolve those variables from the database information to make the backend prefix unique for each database instance.</p><p>We have also used some variables in <code>name</code> field of the <code>interimVolumeTemplate</code> section. This is to ensure that the generated PVC name becomes unique for the database instances.</p><p>Let&rsquo;s create the <code>BackupBlueprint</code> we have shown above,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl apply -f https://github.com/kubedb/docs/raw/v2021.03.17/docs/guides/elasticsearch/backup/auto-backup/examples/backupblueprint.yaml
+backupblueprint.stash.appscode.com/elasticsearch-backup-template created
+</code></pre></div><p>Now, we are ready to backup our Elasticsearch databases using few annotations. You can check available auto-backup annotations for a databases from <a href=https://stash.run/docs/latest/guides/latest/auto-backup/database/#available-auto-backup-annotations-for-database>here</a>.</p><h2 id=auto-backup-with-default-configurations>Auto-backup with default configurations</h2><p>In this section, we are going to backup an Elasticsearch database of <code>demo</code> namespace. We are going to use the default configurations specified in the <code>BackupBlueprint</code>.</p><h3 id=create-storage-secret>Create Storage Secret</h3><p>At first, let&rsquo;s create the <code>gcs-secret</code> in <code>demo</code> namespace with the access credentials to our GCS bucket.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ echo -n <span style=color:#e6db74>&#39;changeit&#39;</span> &gt; RESTIC_PASSWORD
+❯ echo -n <span style=color:#e6db74>&#39;&lt;your-project-id&gt;&#39;</span> &gt; GOOGLE_PROJECT_ID
+❯ cat downloaded-sa-json.key &gt; GOOGLE_SERVICE_ACCOUNT_JSON_KEY
+❯ kubectl create secret generic -n demo gcs-secret <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --from-file<span style=color:#f92672>=</span>./RESTIC_PASSWORD <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --from-file<span style=color:#f92672>=</span>./GOOGLE_PROJECT_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --from-file<span style=color:#f92672>=</span>./GOOGLE_SERVICE_ACCOUNT_JSON_KEY
+secret/gcs-secret created
+</code></pre></div><h3 id=create-database>Create Database</h3><p>Now, we are going to create an Elasticsearch CRO in <code>demo</code> namespace. Below is the YAML of the Elasticsearch object that we are going to create,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>kubedb.com/v1alpha2</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Elasticsearch</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-demo</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+  <span style=color:#f92672>annotations</span>:
+    <span style=color:#f92672>stash.appscode.com/backup-blueprint</span>: <span style=color:#ae81ff>elasticsearch-backup-template</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>version</span>: <span style=color:#ae81ff>xpack-7.9.1-v1</span>
+  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+  <span style=color:#f92672>storageType</span>: <span style=color:#ae81ff>Durable</span>
+  <span style=color:#f92672>storage</span>:
+    <span style=color:#f92672>resources</span>:
+      <span style=color:#f92672>requests</span>:
+        <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+    <span style=color:#f92672>storageClassName</span>: <span style=color:#ae81ff>standard</span>
+  <span style=color:#f92672>terminationPolicy</span>: <span style=color:#ae81ff>WipeOut</span>
+</code></pre></div><p>Notice the <code>annotations</code> section. We are pointing to the <code>BackupBlueprint</code> that we have created earlier though <code>stash.appscode.com/backup-blueprint</code> annotation. Stash will watch this annotation and create a <code>Repository</code> and a <code>BackupConfiguration</code> according to the <code>BackupBlueprint</code>.</p><p>Let&rsquo;s create the above Elasticsearch CRO,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl apply -f https://github.com/kubedb/docs/raw/v2021.03.17/docs/guides/elasticsearch/backup/auto-backup/examples/es-demo.yaml
+elasticsearch.kubedb.com/sample-elasticsearch created
+</code></pre></div><h3 id=verify-auto-backup-configured>Verify Auto-backup configured</h3><p>In this section, we are going to verify whether Stash has created the respective <code>Repository</code> and <code>BackupConfiguration</code> for our Elasticsearch database we have just deployed or not.</p><h4 id=verify-repository>Verify Repository</h4><p>At first, let&rsquo;s verify whether Stash has created a <code>Repository</code> for our Elasticsearch or not.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl get repository -n demo
+NAME          INTEGRITY   SIZE   SNAPSHOT-COUNT   LAST-SUCCESSFUL-BACKUP   AGE
+app-es-demo                                                                5s
+</code></pre></div><p>Now, let&rsquo;s check the YAML of the <code>Repository</code>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ae81ff>❯ kubectl get repository -n demo app-es-demo -o yaml</span>
+<span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>stash.appscode.com/v1alpha1</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Repository</span>
+<span style=color:#f92672>metadata</span>:
+...
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-es-demo</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>backend</span>:
+    <span style=color:#f92672>gcs</span>:
+      <span style=color:#f92672>bucket</span>: <span style=color:#ae81ff>stash-testing</span>
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>stash-backup/demo/elasticsearch/es-demo</span>
+    <span style=color:#f92672>storageSecretName</span>: <span style=color:#ae81ff>gcs-secret</span>
+</code></pre></div><p>Here, you can see that Stash has resolved the variables in <code>prefix</code> field and substituted them with the equivalent information from this database.</p><h4 id=verify-backupconfiguration>Verify BackupConfiguration</h4><p>Now, let&rsquo;s verify whether Stash has created a <code>BackupConfiguration</code> for our Elasticsearch or not.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl get backupconfiguration -n demo
+NAME          TASK                         SCHEDULE      PAUSED   AGE
+app-es-demo   elasticsearch-backup-7.3.2   */5 * * * *            12s
+</code></pre></div><p>Now, let&rsquo;s check the YAML of the <code>BackupConfiguration</code>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ae81ff>❯ kubectl get backupconfiguration -n demo app-es-demo -o yaml</span>
+<span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>stash.appscode.com/v1beta1</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>BackupConfiguration</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-es-demo</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo</span>
+  <span style=color:#ae81ff>...</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>driver</span>: <span style=color:#ae81ff>Restic</span>
+  <span style=color:#f92672>interimVolumeTemplate</span>:
+    <span style=color:#f92672>metadata</span>:
+      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>elasticsearch-es-demo</span>
+    <span style=color:#f92672>spec</span>:
+      <span style=color:#f92672>accessModes</span>:
+      - <span style=color:#ae81ff>ReadWriteOnce</span>
+      <span style=color:#f92672>resources</span>:
+        <span style=color:#f92672>requests</span>:
+          <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+      <span style=color:#f92672>storageClassName</span>: <span style=color:#ae81ff>standard</span>
+    <span style=color:#f92672>status</span>: {}
+  <span style=color:#f92672>repository</span>:
+    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-es-demo</span>
+  <span style=color:#f92672>retentionPolicy</span>:
+    <span style=color:#f92672>keepLast</span>: <span style=color:#ae81ff>5</span>
+    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>keep-last-5</span>
+    <span style=color:#f92672>prune</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>runtimeSettings</span>: {}
+  <span style=color:#f92672>schedule</span>: <span style=color:#e6db74>&#39;*/5 * * * *&#39;</span>
+  <span style=color:#f92672>target</span>:
+    <span style=color:#f92672>ref</span>:
+      <span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>appcatalog.appscode.com/v1alpha1</span>
+      <span style=color:#f92672>kind</span>: <span style=color:#ae81ff>AppBinding</span>
+      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-demo</span>
+  <span style=color:#f92672>tempDir</span>: {}
+<span style=color:#f92672>status</span>:
+  <span style=color:#f92672>conditions</span>:
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T11:46:53Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Repository demo/app-es-demo exist.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>RepositoryAvailable</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>RepositoryFound</span>
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T11:46:53Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Backend Secret demo/gcs-secret exist.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>BackendSecretAvailable</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>BackendSecretFound</span>
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T11:46:53Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Backup target appcatalog.appscode.com/v1alpha1 appbinding/es-demo found.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>TargetAvailable</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>BackupTargetFound</span>
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T11:46:53Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Successfully created backup triggering CronJob.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>CronJobCreationSucceeded</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>CronJobCreated</span>
+  <span style=color:#f92672>observedGeneration</span>: <span style=color:#ae81ff>1</span>
+</code></pre></div><p>Notice the <code>interimVolumeTemplate</code> section. The variables of <code>name</code> field have been substituted by the equivalent information from the database.</p><p>Also, notice the <code>target</code> section. Stash has automatically added the Elasticsearch as the target of this <code>BackupConfiguration</code>.</p><h4 id=verify-backup>Verify Backup</h4><p>Now, let&rsquo;s wait for a backup run to complete. You can watch for <code>BackupSession</code> as below,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl get backupsession -n demo -w
+NAME                     INVOKER-TYPE          INVOKER-NAME   PHASE       AGE
+app-es-demo-1613130605   BackupConfiguration   app-es-demo                0s
+app-es-demo-1613130605   BackupConfiguration   app-es-demo    Running     10s
+app-es-demo-1613130605   BackupConfiguration   app-es-demo    Succeeded   46s
+</code></pre></div><p>Once the backup has been completed successfully, you should see the backed up data has been stored in the bucket at the directory pointed by the <code>prefix</code> field of the <code>Repository</code>.</p><figure align=center><img alt="Backup data in GCS Bucket" src=/docs/v2021.03.17/guides/elasticsearch/backup/auto-backup/images/es-demo.png><figcaption align=center>Fig: Backup data in GCS Bucket</figcaption></figure><h2 id=auto-backup-with-a-custom-schedule>Auto-backup with a custom schedule</h2><p>In this section, we are going to backup an Elasticsearch database of <code>demo-2</code> namespace. This time, we are going to overwrite the default schedule used in the <code>BackupBlueprint</code>.</p><h3 id=create-storage-secret-1>Create Storage Secret</h3><p>At first, let&rsquo;s create the <code>gcs-secret</code> in <code>demo-2</code> namespace with the access credentials to our GCS bucket.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl create secret generic -n demo-2 gcs-secret <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --from-file<span style=color:#f92672>=</span>./RESTIC_PASSWORD <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --from-file<span style=color:#f92672>=</span>./GOOGLE_PROJECT_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --from-file<span style=color:#f92672>=</span>./GOOGLE_SERVICE_ACCOUNT_JSON_KEY
+secret/gcs-secret created
+</code></pre></div><h3 id=create-database-1>Create Database</h3><p>Now, we are going to create an Elasticsearch CRO in <code>demo-2</code> namespace. Below is the YAML of the Elasticsearch object that we are going to create,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>kubedb.com/v1alpha2</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Elasticsearch</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-demo-2</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo-2</span>
+  <span style=color:#f92672>annotations</span>:
+    <span style=color:#f92672>stash.appscode.com/backup-blueprint</span>: <span style=color:#ae81ff>elasticsearch-backup-template</span>
+    <span style=color:#f92672>stash.appscode.com/schedule</span>: <span style=color:#e6db74>&#34;*/3 * * * *&#34;</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>version</span>: <span style=color:#ae81ff>xpack-7.9.1-v1</span>
+  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+  <span style=color:#f92672>storageType</span>: <span style=color:#ae81ff>Durable</span>
+  <span style=color:#f92672>storage</span>:
+    <span style=color:#f92672>resources</span>:
+      <span style=color:#f92672>requests</span>:
+        <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+    <span style=color:#f92672>storageClassName</span>: <span style=color:#ae81ff>standard</span>
+  <span style=color:#f92672>terminationPolicy</span>: <span style=color:#ae81ff>WipeOut</span>
+</code></pre></div><p>Notice the <code>annotations</code> section. This time, we have passed a schedule via <code>stash.appscode.com/schedule</code> annotation along with the <code>stash.appscode.com/backup-blueprint</code> annotation.</p><p>Let&rsquo;s create the above Elasticsearch CRO,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl apply -f https://github.com/kubedb/docs/raw/v2021.03.17/docs/guides/elasticsearch/backup/auto-backup/examples/es-demo-2.yaml
+elasticsearch.kubedb.com/es-demo-2 created
+</code></pre></div><h3 id=verify-auto-backup-configured-1>Verify Auto-backup configured</h3><p>Now, let&rsquo;s verify whether the auto-backup has been configured properly or not.</p><h4 id=verify-repository-1>Verify Repository</h4><p>At first, let&rsquo;s verify whether Stash has created a <code>Repository</code> for our Elasticsearch or not.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl get repository -n demo-2
+NAME            INTEGRITY   SIZE   SNAPSHOT-COUNT   LAST-SUCCESSFUL-BACKUP   AGE
+app-es-demo-2                                                                25s
+</code></pre></div><p>Now, let&rsquo;s check the YAML of the <code>Repository</code>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ae81ff>❯ kubectl get repository -n demo-2 app-es-demo-2 -o yaml</span>
+<span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>stash.appscode.com/v1alpha1</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Repository</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-es-demo-2</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo-2</span>
+  <span style=color:#ae81ff>...</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>backend</span>:
+    <span style=color:#f92672>gcs</span>:
+      <span style=color:#f92672>bucket</span>: <span style=color:#ae81ff>stash-testing</span>
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>stash-backup/demo-2/elasticsearch/es-demo-2</span>
+    <span style=color:#f92672>storageSecretName</span>: <span style=color:#ae81ff>gcs-secret</span>
+</code></pre></div><p>Here, you can see that Stash has resolved the variables in <code>prefix</code> field and substituted them with the equivalent information from this new database.</p><h4 id=verify-backupconfiguration-1>Verify BackupConfiguration</h4><p>Now, let&rsquo;s verify whether Stash has created a <code>BackupConfiguration</code> for our Elasticsearch or not.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl get backupconfiguration -n demo-2
+NAME            TASK                         SCHEDULE      PAUSED   AGE
+app-es-demo-2   elasticsearch-backup-7.3.2   */3 * * * *            77s
+</code></pre></div><p>Now, let&rsquo;s check the YAML of the <code>BackupConfiguration</code>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ae81ff>❯ kubectl get backupconfiguration -n demo-2 app-es-demo-2 -o yaml</span>
+<span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>stash.appscode.com/v1beta1</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>BackupConfiguration</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-es-demo-2</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo-2</span>
+  <span style=color:#ae81ff>...</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>driver</span>: <span style=color:#ae81ff>Restic</span>
+  <span style=color:#f92672>interimVolumeTemplate</span>:
+    <span style=color:#f92672>metadata</span>:
+      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>elasticsearch-es-demo-2</span>
+    <span style=color:#f92672>spec</span>:
+      <span style=color:#f92672>accessModes</span>:
+      - <span style=color:#ae81ff>ReadWriteOnce</span>
+      <span style=color:#f92672>resources</span>:
+        <span style=color:#f92672>requests</span>:
+          <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+      <span style=color:#f92672>storageClassName</span>: <span style=color:#ae81ff>standard</span>
+    <span style=color:#f92672>status</span>: {}
+  <span style=color:#f92672>repository</span>:
+    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-es-demo-2</span>
+  <span style=color:#f92672>retentionPolicy</span>:
+    <span style=color:#f92672>keepLast</span>: <span style=color:#ae81ff>5</span>
+    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>keep-last-5</span>
+    <span style=color:#f92672>prune</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>runtimeSettings</span>: {}
+  <span style=color:#f92672>schedule</span>: <span style=color:#e6db74>&#39;*/3 * * * *&#39;</span>
+  <span style=color:#f92672>target</span>:
+    <span style=color:#f92672>ref</span>:
+      <span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>appcatalog.appscode.com/v1alpha1</span>
+      <span style=color:#f92672>kind</span>: <span style=color:#ae81ff>AppBinding</span>
+      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-demo-2</span>
+  <span style=color:#f92672>tempDir</span>: {}
+<span style=color:#f92672>status</span>:
+  <span style=color:#f92672>conditions</span>:
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T12:24:07Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Repository demo-2/app-es-demo-2 exist.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>RepositoryAvailable</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>RepositoryFound</span>
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T12:24:07Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Backend Secret demo-2/gcs-secret exist.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>BackendSecretAvailable</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>BackendSecretFound</span>
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T12:24:07Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Backup target appcatalog.appscode.com/v1alpha1 appbinding/es-demo-2 found.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>TargetAvailable</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>BackupTargetFound</span>
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T12:24:07Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Successfully created backup triggering CronJob.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>CronJobCreationSucceeded</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>CronJobCreated</span>
+  <span style=color:#f92672>observedGeneration</span>: <span style=color:#ae81ff>1</span>
+</code></pre></div><p>Notice the <code>schedule</code> section. This time the <code>BackupConfiguration</code> has been created with the schedule we have provided via annotation.</p><p>Also, notice the <code>target</code> section. Stash has automatically added the new Elasticsearch as the target of this <code>BackupConfiguration</code>.</p><h4 id=verify-backup-1>Verify Backup</h4><p>Now, let&rsquo;s wait for a backup run to complete. You can watch for <code>BackupSession</code> as below,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl get backupsession -n demo-2 -w
+NAME                       INVOKER-TYPE          INVOKER-NAME    PHASE       AGE
+app-es-demo-2-1613132831   BackupConfiguration   app-es-demo-2               0s
+app-es-demo-2-1613132831   BackupConfiguration   app-es-demo-2   Running     17s
+app-es-demo-2-1613132831   BackupConfiguration   app-es-demo-2   Succeeded   41s
+</code></pre></div><p>Once the backup has been completed successfully, you should see that Stash has created a new directory as pointed by the <code>prefix</code> field of the new <code>Repository</code> and stored the backed up data there.</p><figure align=center><img alt="Backup data in GCS Bucket" src=/docs/v2021.03.17/guides/elasticsearch/backup/auto-backup/images/es-demo-2.png><figcaption align=center>Fig: Backup data in GCS Bucket</figcaption></figure><h2 id=auto-backup-with-custom-parameters>Auto-backup with custom parameters</h2><p>In this section, we are going to backup an Elasticsearch database of <code>demo-3</code> namespace. This time, we are going to pass some parameters for the Task through the annotations.</p><h3 id=create-storage-secret-2>Create Storage Secret</h3><p>At first, let&rsquo;s create the <code>gcs-secret</code> in <code>demo-3</code> namespace with the access credentials to our GCS bucket.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl create secret generic -n demo-3 gcs-secret <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --from-file<span style=color:#f92672>=</span>./RESTIC_PASSWORD <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --from-file<span style=color:#f92672>=</span>./GOOGLE_PROJECT_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --from-file<span style=color:#f92672>=</span>./GOOGLE_SERVICE_ACCOUNT_JSON_KEY
+secret/gcs-secret created
+</code></pre></div><h3 id=create-database-2>Create Database</h3><p>Now, we are going to create an Elasticsearch CRO in <code>demo-3</code> namespace. Below is the YAML of the Elasticsearch object that we are going to create,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>kubedb.com/v1alpha2</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Elasticsearch</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-demo-3</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo-3</span>
+  <span style=color:#f92672>annotations</span>:
+    <span style=color:#f92672>stash.appscode.com/backup-blueprint</span>: <span style=color:#ae81ff>elasticsearch-backup-template</span>
+    <span style=color:#f92672>params.stash.appscode.com/args</span>: --<span style=color:#ae81ff>ignoreType=settings,template</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>version</span>: <span style=color:#ae81ff>xpack-7.9.1-v1</span>
+  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+  <span style=color:#f92672>storageType</span>: <span style=color:#ae81ff>Durable</span>
+  <span style=color:#f92672>storage</span>:
+    <span style=color:#f92672>resources</span>:
+      <span style=color:#f92672>requests</span>:
+        <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+    <span style=color:#f92672>storageClassName</span>: <span style=color:#ae81ff>standard</span>
+  <span style=color:#f92672>terminationPolicy</span>: <span style=color:#ae81ff>WipeOut</span>
+</code></pre></div><p>Notice the <code>annotations</code> section. This time, we have passed an argument via <code>params.stash.appscode.com/args</code> annotation along with the <code>stash.appscode.com/backup-blueprint</code> annotation.</p><p>Let&rsquo;s create the above Elasticsearch CRO,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl apply -f https://github.com/kubedb/docs/raw/v2021.03.17/docs/guides/elasticsearch/backup/auto-backup/examples/es-demo-3.yaml
+elasticsearch.kubedb.com/es-demo-3 created
+</code></pre></div><h3 id=verify-auto-backup-configured-2>Verify Auto-backup configured</h3><p>Now, let&rsquo;s verify whether the auto-backup resources has been created or not.</p><h4 id=verify-repository-2>Verify Repository</h4><p>At first, let&rsquo;s verify whether Stash has created a <code>Repository</code> for our Elasticsearch or not.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl get repository -n demo-3
+NAME            INTEGRITY   SIZE   SNAPSHOT-COUNT   LAST-SUCCESSFUL-BACKUP   AGE
+app-es-demo-3                                                                23s
+</code></pre></div><p>Now, let&rsquo;s check the YAML of the <code>Repository</code>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ae81ff>❯ kubectl get repository -n demo-3 app-es-demo-3 -o yaml</span>
+<span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>stash.appscode.com/v1alpha1</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Repository</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-es-demo-3</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo-3</span>
+  <span style=color:#ae81ff>...</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>backend</span>:
+    <span style=color:#f92672>gcs</span>:
+      <span style=color:#f92672>bucket</span>: <span style=color:#ae81ff>stash-testing</span>
+      <span style=color:#f92672>prefix</span>: <span style=color:#ae81ff>stash-backup/demo-3/elasticsearch/es-demo-3</span>
+    <span style=color:#f92672>storageSecretName</span>: <span style=color:#ae81ff>gcs-secret</span>
+</code></pre></div><p>Here, you can see that Stash has resolved the variables in <code>prefix</code> field and substituted them with the equivalent information from this new database.</p><h4 id=verify-backupconfiguration-2>Verify BackupConfiguration</h4><p>Now, let&rsquo;s verify whether Stash has created a <code>BackupConfiguration</code> for our Elasticsearch or not.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl get backupconfiguration -n demo-3
+NAME            TASK                         SCHEDULE      PAUSED   AGE
+app-es-demo-3   elasticsearch-backup-7.3.2   */5 * * * *            84s
+</code></pre></div><p>Now, let&rsquo;s check the YAML of the <code>BackupConfiguration</code>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ae81ff>❯ kubectl get backupconfiguration -n demo-3 app-es-demo-3 -o yaml</span>
+<span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>stash.appscode.com/v1beta1</span>
+<span style=color:#f92672>kind</span>: <span style=color:#ae81ff>BackupConfiguration</span>
+<span style=color:#f92672>metadata</span>:
+  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-es-demo-3</span>
+  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>demo-3</span>
+  <span style=color:#ae81ff>...</span>
+<span style=color:#f92672>spec</span>:
+  <span style=color:#f92672>driver</span>: <span style=color:#ae81ff>Restic</span>
+  <span style=color:#f92672>interimVolumeTemplate</span>:
+    <span style=color:#f92672>metadata</span>:
+      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>elasticsearch-es-demo-3</span>
+    <span style=color:#f92672>spec</span>:
+      <span style=color:#f92672>accessModes</span>:
+      - <span style=color:#ae81ff>ReadWriteOnce</span>
+      <span style=color:#f92672>resources</span>:
+        <span style=color:#f92672>requests</span>:
+          <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>1Gi</span>
+      <span style=color:#f92672>storageClassName</span>: <span style=color:#ae81ff>standard</span>
+    <span style=color:#f92672>status</span>: {}
+  <span style=color:#f92672>repository</span>:
+    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>app-es-demo-3</span>
+  <span style=color:#f92672>retentionPolicy</span>:
+    <span style=color:#f92672>keepLast</span>: <span style=color:#ae81ff>5</span>
+    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>keep-last-5</span>
+    <span style=color:#f92672>prune</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>runtimeSettings</span>: {}
+  <span style=color:#f92672>schedule</span>: <span style=color:#e6db74>&#39;*/5 * * * *&#39;</span>
+  <span style=color:#f92672>target</span>:
+    <span style=color:#f92672>ref</span>:
+      <span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>appcatalog.appscode.com/v1alpha1</span>
+      <span style=color:#f92672>kind</span>: <span style=color:#ae81ff>AppBinding</span>
+      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es-demo-3</span>
+  <span style=color:#f92672>task</span>:
+    <span style=color:#f92672>params</span>:
+    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>args</span>
+      <span style=color:#f92672>value</span>: --<span style=color:#ae81ff>ignoreType=settings,template</span>
+  <span style=color:#f92672>tempDir</span>: {}
+<span style=color:#f92672>status</span>:
+  <span style=color:#f92672>conditions</span>:
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T12:39:14Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Repository demo-3/app-es-demo-3 exist.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>RepositoryAvailable</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>RepositoryFound</span>
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T12:39:14Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Backend Secret demo-3/gcs-secret exist.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>BackendSecretAvailable</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>BackendSecretFound</span>
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T12:39:14Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Backup target appcatalog.appscode.com/v1alpha1 appbinding/es-demo-3 found.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>TargetAvailable</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>BackupTargetFound</span>
+  - <span style=color:#f92672>lastTransitionTime</span>: <span style=color:#e6db74>&#34;2021-02-12T12:39:14Z&#34;</span>
+    <span style=color:#f92672>message</span>: <span style=color:#ae81ff>Successfully created backup triggering CronJob.</span>
+    <span style=color:#f92672>reason</span>: <span style=color:#ae81ff>CronJobCreationSucceeded</span>
+    <span style=color:#f92672>status</span>: <span style=color:#e6db74>&#34;True&#34;</span>
+    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>CronJobCreated</span>
+  <span style=color:#f92672>observedGeneration</span>: <span style=color:#ae81ff>1</span>
+</code></pre></div><p>Notice the <code>task</code> section. The <code>args</code> parameter that we had passed via annotations has been added to the <code>params</code> section.</p><p>Also, notice the <code>target</code> section. Stash has automatically added the new Elasticsearch as the target of this <code>BackupConfiguration</code>.</p><h4 id=verify-backup-2>Verify Backup</h4><p>Now, let&rsquo;s wait for a backup run to complete. You can watch for <code>BackupSession</code> as below,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl get backupsession -n demo-3 -w
+NAME                       INVOKER-TYPE          INVOKER-NAME    PHASE       AGE
+app-es-demo-3-1613133604   BackupConfiguration   app-es-demo-3               0s
+app-es-demo-3-1613133604   BackupConfiguration   app-es-demo-3   Running     5s
+app-es-demo-3-1613133604   BackupConfiguration   app-es-demo-3   Succeeded   48s
+</code></pre></div><p>Once the backup has been completed successfully, you should see that Stash has created a new directory as pointed by the <code>prefix</code> field of the new <code>Repository</code> and stored the backed up data there.</p><figure align=center><img alt="Backup data in GCS Bucket" src=/docs/v2021.03.17/guides/elasticsearch/backup/auto-backup/images/es-demo-3.png><figcaption align=center>Fig: Backup data in GCS Bucket</figcaption></figure><h2 id=cleanup>Cleanup</h2><p>To cleanup the resources crated by this tutorial, run the following commands,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>❯ kubectl delete -f https://github.com/kubedb/docs/raw/v2021.03.17/docs/guides/elasticsearch/backup/auto-backup/examples/
+backupblueprint.stash.appscode.com <span style=color:#e6db74>&#34;elasticsearch-backup-template&#34;</span> deleted
+elasticsearch.kubedb.com <span style=color:#e6db74>&#34;es-demo-2&#34;</span> deleted
+elasticsearch.kubedb.com <span style=color:#e6db74>&#34;es-demo-3&#34;</span> deleted
+elasticsearch.kubedb.com <span style=color:#e6db74>&#34;es-demo&#34;</span> deleted
+
+❯ kubectl delete repository -n demo --all
+repository.stash.appscode.com <span style=color:#e6db74>&#34;app-es-demo&#34;</span> deleted
+❯ kubectl delete repository -n demo-2 --all
+repository.stash.appscode.com <span style=color:#e6db74>&#34;app-es-demo-2&#34;</span> deleted
+❯ kubectl delete repository -n demo-3 --all
+repository.stash.appscode.com <span style=color:#e6db74>&#34;app-es-demo-3&#34;</span> deleted
+</code></pre></div></div></div><div class="column is-2"><div class=right-sidebar-area><div class=search-area><form action=#><input id=acSearch type=text placeholder=Search...>
+<button class=search-button>
+<i class="fa fa-search" aria-hidden=true></i></button></form></div><div class=tbl-of-contents><h4>What's on this Page</h4><nav id=TableOfContents><ul><li><a href=#before-you-begin>Before You Begin</a></li><li><a href=#prepare-backup-blueprint>Prepare Backup Blueprint</a></li><li><a href=#auto-backup-with-default-configurations>Auto-backup with default configurations</a><ul><li><a href=#create-storage-secret>Create Storage Secret</a></li><li><a href=#create-database>Create Database</a></li><li><a href=#verify-auto-backup-configured>Verify Auto-backup configured</a></li></ul></li><li><a href=#auto-backup-with-a-custom-schedule>Auto-backup with a custom schedule</a><ul><li><a href=#create-storage-secret-1>Create Storage Secret</a></li><li><a href=#create-database-1>Create Database</a></li><li><a href=#verify-auto-backup-configured-1>Verify Auto-backup configured</a></li></ul></li><li><a href=#auto-backup-with-custom-parameters>Auto-backup with custom parameters</a><ul><li><a href=#create-storage-secret-2>Create Storage Secret</a></li><li><a href=#create-database-2>Create Database</a></li><li><a href=#verify-auto-backup-configured-2>Verify Auto-backup configured</a></li></ul></li><li><a href=#cleanup>Cleanup</a></li></ul></nav></div></div></div></div></div><script>var kdDropdown=document.querySelector(".dropdown"),kdDropdownBtn=document.querySelector(".dropdown-trigger");kdDropdownBtn.addEventListener("click",function(){kdDropdown.classList.toggle("is-active")})</script></div><div class=overlay-bg></div><div class=sidebar-search-area><div class=search-area-top><h3>Search</h3><div class=searchbar-area><input type=search name=search id=searchbox placeholder=Search...>
+<button onclick=queryPage(1)><i class="fa fa-search" aria-hidden=true></i></button></div><span id=searchbar-script-container style=display:none></span><div class="search-meta-information level"><div class=level-left></div></div></div><div class=search-result-wrapper></div><div class=pagination-area><div class=pagination-list></div></div></div><div class=improve-section-area><div class="container section"><div class=improve-bg-color><div class=columns><div class="column is-6"><a href=https://github.com/kubedb/docs/edit/master/docs/guides/elasticsearch/backup/auto-backup/index.md/>Improve This Page</a></div></div></div></div></div><script type=text/javascript>var pageSize=5,acSearch=document.querySelector("#acSearch"),bodyOverlay=document.querySelector(".overlay-bg"),sidebarSearch=document.querySelector(".sidebar-search-area");acSearch.addEventListener("click",function(){bodyOverlay.style.display="block",sidebarSearch.style.right="0",document.getElementById("searchbox").focus(),bodyOverlay.addEventListener("click",function(){bodyOverlay.style.display="none",sidebarSearch.style.right="-80%"})});function encodeQueryData(a){var b=[],c;for(c in a)b.push(encodeURIComponent(c)+'='+encodeURIComponent(a[c]));return b.join('&')}document.querySelector(".searchbar-area input[type=search]").addEventListener("keyup",function(a){a.preventDefault(),a.keyCode===13&&queryPage(1)});function queryPage(c){var i=document.getElementById("searchbox").value,j="015199383701854252104:8mvwy0fek2e",d="AIzaSyBrcwLTnL09geNrFMUx1kpL--dT1379aag",f="small",g="renderResult",h="https://www.googleapis.com/customsearch/v1?"+encodeQueryData({q:i,cx:j,key:d,imgSize:f,callback:g,start:(c-1)*pageSize+1,num:pageSize}),a=document.createElement("script"),b;a.src=h,e=document.getElementById("searchbar-script-container"),b=e.lastElementChild,b&&e.removeChild(b),e.appendChild(a)}function renderSearchResultEntry(a){var b='<div class="single-search-result"><h3><a href="'+a.link+'">'+a.title+'</a></h3>'+'<a href="'+a.link+'">'+a.htmlFormattedUrl+'</a>'+'<div class="result-description-wrapper">';return a.pagemap&&a.pagemap.cse_thumbnail&&(b+='<div class="result-thumb"><img src="'+a.pagemap.cse_thumbnail[0].src+'" alt="" />'+'</div>'),b+='<div class="result-description"><p>'+a.snippet+'</p>'+'</div>'+'</div>'+'</div>',b}function renderResult(a){var e,d,c,b;if(document.querySelector(".search-meta-information .level-left").innerHTML='<div class="level-left"><p>About <span class="search-count">'+a.searchInformation.formattedTotalResults+'</span> results (<span class="time-count">'+a.searchInformation.formattedSearchTime+' </span>seconds)'+'</p>'+'</div>',!a.items)return;e=document.querySelector(".search-result-wrapper"),e.innerHTML="";for(d=0;d<a.items.length;d++)e.innerHTML+=renderSearchResultEntry(a.items[d]);c='<ul>',a.queries.previousPage&&(b=Math.floor(a.queries.previousPage[0].startIndex/pageSize)+1,c+='<li><a href="#" onclick="queryPage('+b+')">Previous</a></li>'),a.queries.request&&(b=Math.floor(a.queries.request[0].startIndex/pageSize)+1,c+='<li><a href="#" onclick="queryPage('+b+')" class="is-active">'+b+'</a></li>'),a.queries.nextPage&&(b=Math.floor(a.queries.nextPage[0].startIndex/pageSize)+1,c+='<li><a href="#" onclick="queryPage('+b+')">Next</a></li>'),c+='</ul>',document.querySelector(".pagination-area .pagination-list").innerHTML=c}</script><section></section><section></section><section></section><button class=go-to-top id=goTop>
+<i class="fa fa-angle-up" aria-hidden=true></i></button><footer class=footer-area><div class=footer-top><div class="container section"><div class="columns is-mobile is-multiline"><div class="column is-full-mobile is-one-third-desktop is-one-third-widescreen is-one-third-tablet" data-aos=fade-up><div class=single-footer-widget><div class=footer-logo><a href=https://appscode.com><img src=/assets/images/products/appscode/appscode.png alt=AppsCode class=img></a></div><div class=subscription-form><form method=post action=https://listmonk.appscode.com/subscription/form id=mc-embedded-subscribe-form name=mc-embedded-subscribe-form class=navbar-form target=_blank novalidate role=email role=email><label for=email>Subscribe to Our Newsletter</label><p class=spam-message>No spam, we promise. Your mail address is secure</p><div class="field has-addons"><div class=control><input type=hidden id=afbbc name=l value=afbbc974-e163-4467-be49-040e399520f3>
+<input class=input name=email id=mce-EMAIL type=email placeholder="Your work email address" required>
+<button id=mc-embedded-subscribe type=submit name=subscribe class=button>
+<i class="fa fa-paper-plane-o" aria-hidden=true></i></button></div></div></form></div><div class=contact-information><h4>Have any Inquiry?</h4><ul class=all-contact-info><li><a href=callto:+1%28650%29241-8486><span><i class="fa fa-phone" aria-hidden=true></i></span>+1(650)241-8486</a></li><li><a href=mailto:support@appscode.com><span><i class="fa fa-envelope-o" aria-hidden=true></i></span>support@appscode.com</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=500><div class=single-footer-widget><div class=footer-menu><h4>Products</h4><ul class=footer-link><li><a href=https://kubedb.com>KubeDB</a></li><li><a href=https://stash.run>Stash</a></li><li><a href=https://kubevault.com>KubeVault</a></li><li><a href=https://kubeform.com>Kubeform</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=600><div class=single-footer-widget><div class=footer-menu><h4>Services</h4><ul class=footer-link><li><a href=https://appscode.com/pricing/>Pricing</a></li><li><a href=https://appscode.com/consulting/>Consulting</a></li><li><a href=https://appscode.com/training/>Training</a></li><li><a href=https://appscode.com/support/>Support</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=700><div class=single-footer-widget><div class=footer-menu><h4>Company</h4><ul class=footer-link><li><a href=https://appscode.com/about/>About Us</a></li><li><a href=https://blog.byte.builders>Blog</a></li><li><a href=https://appscode.com/contact/>Contact Us</a></li></ul></div></div></div><div class="column is-half-mobile" data-aos=fade-up data-aos-duration=800><div class=single-footer-widget><div class=footer-menu><h4>Legal</h4><ul class=footer-link><li><a href=https://appscode.com/legal/tos/>Terms of Sevice</a></li><li><a href=https://appscode.com/legal/privacy-policy/>Privacy Policy</a></li><li><a href=https://appscode.com/legal/security/>Security</a></li><li><a href=https://appscode.com/legal/sla/>Service Level Agreement</a></li></ul></div></div></div></div></div></div><div class=footer-bottom><div class="container section"><div class=columns><div class="column is-4"><p>© 2021 AppsCode Inc. All rights reserved.</p></div><div class="column is-4 is-mobile has-text-centered"><div class=footer-inline-link><a href=https://appscode.com/legal/privacy-policy/>Privacy Policy</a>
+<a href=https://appscode.com/legal/tos/>Terms of Service</a></div></div><div class="column is-4 is-mobile has-text-right"><div class=socail-link-inline><ul><li><a href=https://twitter.com/AppsCodeHQ><i class="fa fa-twitter" aria-hidden=true></i></a></li><li><a href=https://www.facebook.com/appscode><i class="fa fa-facebook" aria-hidden=true></i></a></li><li><a href=https://www.youtube.com/c/AppsCodeInc><i class="fa fa-youtube" aria-hidden=true></i></a></li></ul></div></div></div></div></div></footer><script src=/assets/js/bulma-carousel.min.js></script><script src=https://unpkg.com/aos@2.3.1/dist/aos.js></script><script src=https://unpkg.com/downloadjs@1.4.7/download.min.js></script><script src=https://unpkg.com/clipboard@2/dist/clipboard.min.js></script><script src=/assets/js/main.js></script><script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/9255943.js></script><script type=text/javascript>var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date;(function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0,a.src='https://embed.tawk.to/5821e34b18d9f16af02864b7/default',a.charset='UTF-8',a.setAttribute('crossorigin','*'),b.parentNode.insertBefore(a,b)})()</script></body></html>
