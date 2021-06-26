@@ -80,6 +80,58 @@
     <header>
       {{ block "header-top" . }}
       <!-- header top start -->
+      <!-- notification start  -->
+      <div onclick="goToWebinarPage()" class="notification-area notification is-primary" style="display: none" id="notification-area"
+        >
+        <div class="container section">
+          <div class="notification-inner is-flex is-align-items-center is-justify-content-center">
+            <p>Join our upcoming webinar! Get your seat right now! <a href="https://appscode.com/webinar" target="_blank">Click</a> to register.</p>
+          </div>
+        </div>
+        <button class="delete" onclick="event.stopPropagation(); closeItem('#notification-area')"></button>
+      </div>
+      <script type="text/javascript">
+        // close action start
+        function closeItem(item) {
+          const selcetedItem = document.querySelector(item);
+          const headerTop = document.querySelector(".header-top");
+          const headerBottom = document.querySelector(".header-bottom-area");
+          const documentationMenu = document.querySelector(".documentation-menu");
+          selcetedItem.style.display = 'none'
+          headerTop.style.marginTop = "0px";
+          headerBottom.style.top = "0px";
+          documentationMenu.style.top = "56px";
+        }
+        // close action end
+
+        // redirect to webinar pagte
+        function goToWebinarPage() {
+          window.open("/webinar/", "_blank");
+        }
+
+        (function () {
+          var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              if (xhr.status === 200) {
+                var result = JSON.parse(xhr.responseText);
+                if (result.schedules) {
+                  let endDate = new Date(result.schedules[0]).getTime();
+                  let startDate = new Date().getTime();
+                  let timeRemaining = parseInt((endDate - startDate) / 1000);
+                  if (timeRemaining >= 0) {
+                    document.querySelector('#notification-area').style.display = 'block';
+                  }
+                }
+              }
+            }
+          }
+          // console.log('GET', 'https://license-issuer.appscode.com/_/webinars/');
+          xhr.open('GET', 'https://license-issuer.appscode.com/_/webinars/');
+          xhr.send();
+        }());
+      </script>
+      <!-- notification end -->
       <div class="header-top">
         <div class="container section">
           <nav class="navbar">
