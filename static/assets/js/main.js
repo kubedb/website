@@ -28,12 +28,34 @@ document.addEventListener("DOMContentLoaded", () => {
 // menu sticky
 // Not a ton of code, but hard to
 const nav = document.querySelector(".fixed-menu, .documentation-menu");
+const notificationArea = document.querySelector(".notification-area");
+const headerBottom = document.querySelector(".header-bottom-area");
+const documentationMenu = document.querySelector(".documentation-menu");
+const leftSidebar = document.querySelector(".kd-left-sidebar");
+const rightSidebar = document.querySelector(".right-sidebar-area");
+
 let topOfNav = nav.offsetTop;
 function fixNav() {
   if (window.scrollY > topOfNav) {
     document.body.classList.add("fixed-nav");
+
+    if (notificationArea.style.display === "block") {
+      if (window.innerWidth <= 550) {
+        headerBottom.style.top = "72px";
+        documentationMenu.style.top = "130px";
+      } else {
+        headerBottom.style.top = "45px";
+        documentationMenu.style.top = "103px";
+        leftSidebar.style.top = "150px";
+        rightSidebar.style.top = "150px";
+      }
+    }
   } else {
     document.body.classList.remove("fixed-nav");
+    headerBottom.style.top = "0px";
+    if(documentationMenu) documentationMenu.style.top = "56px";
+    leftSidebar.style.top = "130px";
+    rightSidebar.style.top = "140px";
   }
 }
 window.addEventListener("scroll", fixNav);
@@ -62,7 +84,6 @@ bulmaCarousel.attach("#carousel-demo", {
   infinite: true,
   autoplay: false,
 });
-
 
 // For FAQ Collaps Page
 const accordionItem = document.querySelectorAll(".accordion-item");
