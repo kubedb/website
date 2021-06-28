@@ -790,8 +790,10 @@
     <!-- clipboard js  -->
     <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
     <!-- Main JS -->
-    <script src="/assets/js/main.js"></script>
-
+    {{ with $style := resources.Get "assets/js/main.js" | resources.Fingerprint }}
+    <script src="{{ $style.RelPermalink }}"></script>
+    {{ end }}
+    <!-- <script src="/assets/js/main.js"></script> -->
     <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9255943.js"></script>
     <!-- End of HubSpot Embed Code -->
