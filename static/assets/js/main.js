@@ -29,18 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // Not a ton of code, but hard to
 const nav = document.querySelector(".fixed-menu, .documentation-menu");
 const notificationArea = document.querySelector(".notification-area");
-const headerTop = document.querySelector(".header-top");
 const headerBottom = document.querySelector(".header-bottom-area");
 const documentationMenu = document.querySelector(".documentation-menu");
 const leftSidebar = document.querySelector(".kd-left-sidebar");
 const rightSidebar = document.querySelector(".right-sidebar-area");
-if (notificationArea.style.display === "block") {
-  if (window.innerWidth <= 550) {
-    headerTop.style.marginTop = "66px";
-  } else {
-    headerTop.style.marginTop = "45px";
-  }
-}
+
 let topOfNav = nav.offsetTop;
 function fixNav() {
   if (window.scrollY > topOfNav) {
@@ -60,7 +53,7 @@ function fixNav() {
   } else {
     document.body.classList.remove("fixed-nav");
     headerBottom.style.top = "0px";
-    documentationMenu.style.top = "56px";
+    if(documentationMenu) documentationMenu.style.top = "56px";
     leftSidebar.style.top = "130px";
     rightSidebar.style.top = "140px";
   }
