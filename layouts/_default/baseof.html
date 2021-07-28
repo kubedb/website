@@ -123,12 +123,13 @@
                   let startDate = new Date().getTime();
                   let timeRemaining = parseInt((endDate - startDate) / 1000);
                   if (timeRemaining >= 0) {
+                    document.querySelector('#notification-area div div p').innerHTML = "Upcoming Webinar: \""+result.title+"\". <a href=\"webinar\">Register here</a>!";
                     document.querySelector('#notification-area').style.display = 'block';
                     const headerTop = document.querySelector(".header-top");
-                    if (window.innerWidth <= 550) { 
-                      headerTop.style.marginTop="66px" ; 
+                    if (window.innerWidth <= 550) {
+                      headerTop.style.marginTop="66px" ;
                     } else {
-                      headerTop.style.marginTop="45px" ; 
+                      headerTop.style.marginTop="45px" ;
                     }
                   }
                 }
