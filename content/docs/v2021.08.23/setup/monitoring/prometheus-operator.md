@@ -46,7 +46,7 @@ Let's install KubeDB operator with monitoring enabled.
 
 ```bash
 $ helm install kubedb appscode/kubedb --version {{< param "info.version" >}} \
-  --namespace kube-system \
+  --namespace kubedb --create-namespace \
   --no-hooks \
   --set monitoring.enabled=true \
   --set monitoring.agent=prometheus.io/operator \
@@ -58,7 +58,7 @@ $ helm install kubedb appscode/kubedb --version {{< param "info.version" >}} \
 
 ```bash
 $ helm template kubedb appscode/kubedb --version {{< param "info.version" >}} \
-  --namespace kube-system \
+  --namespace kubedb --create-namespace \
   --no-hooks \
   --set monitoring.enabled=true \
   --set monitoring.agent=prometheus.io/operator \
@@ -91,10 +91,10 @@ spec:
     scheme: https
     tlsConfig:
       caFile: /etc/prometheus/secrets/kubedb-apiserver-cert/tls.crt
-      serverName: kubedb.kube-system.svc
+      serverName: kubedb.kubedb.svc
   namespaceSelector:
     matchNames:
-    - kube-system
+    - kubedb
   selector:
     matchLabels:
       app: kubedb
