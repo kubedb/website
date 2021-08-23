@@ -1,16 +1,12 @@
 ---
-title: Kubectl-Dba
+title: Kubectl-Dba Show-Credentials
 menu:
   docs_v2021.08.23:
-    identifier: kubectl-dba
-    name: Kubectl-Dba
+    identifier: kubectl-dba-show-credentials
+    name: Kubectl-Dba Show-Credentials
     parent: reference-cli
-    weight: 0
 menu_name: docs_v2021.08.23
 section_menu_id: reference
-url: /docs/v2021.08.23/reference/cli/
-aliases:
-- /docs/v2021.08.23/reference/cli/kubectl-dba/
 info:
   autoscaler: v0.5.0
   cli: v0.20.0
@@ -20,21 +16,53 @@ info:
   version: v2021.08.23
 ---
 
-## kubectl-dba
+## kubectl-dba show-credentials
 
-kubectl plugin for KubeDB
+Prints credentials of the database.
 
 ### Synopsis
 
-kubectl plugin for KubeDB by AppsCode - Kubernetes ready production-grade Databases
+Prints credentials for the database.
 
- Find more information at https://kubedb.com
+Use "kubectl api-resources" for a complete list of supported resources.
 
 ```
-kubectl-dba [flags]
+kubectl-dba show-credentials (-f FILENAME | TYPE [NAME_PREFIX | -l label] | TYPE/NAME)
+```
+
+### Examples
+
+```
+  # Print credentials of a mongodb database
+  dba show-credentials mongodb mg-demo
+  
+  # Print credentials of all mongodb databases
+  dba show-credentials mongodb
+  
+  # Print credentials of a postgres database
+  dba show-credentials pg/postgres-demo
+  
+  Valid resource types include:
+  * elasticsearch
+  * mongodb
+  * mariadb
+  * mysql
+  * postgres
+  * redis
 ```
 
 ### Options
+
+```
+      --all-namespaces     If present, list the requested object(s) across all namespaces. Namespace in current context is ignored even if specified with --namespace.
+  -f, --filename strings   Filename, directory, or URL to files containing the databases to show credentials
+  -h, --help               help for show-credentials
+  -k, --kustomize string   Process the kustomization directory. This flag can't be used together with -f or -R.
+  -R, --recursive          Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.
+  -l, --selector string    Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2)
+```
+
+### Options inherited from parent commands
 
 ```
       --as string                      Username to impersonate for the operation
@@ -46,7 +74,6 @@ kubectl-dba [flags]
       --cluster string                 The name of the kubeconfig cluster to use
       --context string                 The name of the kubeconfig context to use
       --enable-analytics               Send analytical events to Google Analytics (default true)
-  -h, --help                           help for kubectl-dba
       --insecure-skip-tls-verify       If true, the server's certificate will not be checked for validity. This will make your HTTPS connections insecure
       --kubeconfig string              Path to the kubeconfig file to use for CLI requests.
       --match-server-version           Require server version to match client version
@@ -60,13 +87,5 @@ kubectl-dba [flags]
 
 ### SEE ALSO
 
-* [kubectl-dba completion](/docs/v2021.08.23/reference/cli/kubectl-dba_completion)	 - Generate completion script
-* [kubectl-dba connect](/docs/v2021.08.23/reference/cli/kubectl-dba_connect)	 - Connect to a database.
-* [kubectl-dba describe](/docs/v2021.08.23/reference/cli/kubectl-dba_describe)	 - Show details of a specific resource or group of resources
-* [kubectl-dba exec](/docs/v2021.08.23/reference/cli/kubectl-dba_exec)	 - Execute script or command to a database.
-* [kubectl-dba pause](/docs/v2021.08.23/reference/cli/kubectl-dba_pause)	 - Pause the processing of an object.
-* [kubectl-dba restart](/docs/v2021.08.23/reference/cli/kubectl-dba_restart)	 - Smartly restart the pods of the database.
-* [kubectl-dba resume](/docs/v2021.08.23/reference/cli/kubectl-dba_resume)	 - Resume processing of an object.
-* [kubectl-dba show-credentials](/docs/v2021.08.23/reference/cli/kubectl-dba_show-credentials)	 - Prints credentials of the database.
-* [kubectl-dba version](/docs/v2021.08.23/reference/cli/kubectl-dba_version)	 - Prints binary version number.
+* [kubectl-dba](/docs/v2021.08.23/reference/cli/kubectl-dba)	 - kubectl plugin for KubeDB
 

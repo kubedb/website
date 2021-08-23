@@ -1,16 +1,12 @@
 ---
-title: Kubectl-Dba
+title: Kubectl-Dba Connect
 menu:
   docs_v2021.08.23:
-    identifier: kubectl-dba
-    name: Kubectl-Dba
+    identifier: kubectl-dba-connect
+    name: Kubectl-Dba Connect
     parent: reference-cli
-    weight: 0
 menu_name: docs_v2021.08.23
 section_menu_id: reference
-url: /docs/v2021.08.23/reference/cli/
-aliases:
-- /docs/v2021.08.23/reference/cli/kubectl-dba/
 info:
   autoscaler: v0.5.0
   cli: v0.20.0
@@ -20,21 +16,25 @@ info:
   version: v2021.08.23
 ---
 
-## kubectl-dba
+## kubectl-dba connect
 
-kubectl plugin for KubeDB
+Connect to a database.
 
 ### Synopsis
 
-kubectl plugin for KubeDB by AppsCode - Kubernetes ready production-grade Databases
-
- Find more information at https://kubedb.com
+Connect to a database.
 
 ```
-kubectl-dba [flags]
+kubectl-dba connect
 ```
 
 ### Options
+
+```
+  -h, --help   help for connect
+```
+
+### Options inherited from parent commands
 
 ```
       --as string                      Username to impersonate for the operation
@@ -46,7 +46,6 @@ kubectl-dba [flags]
       --cluster string                 The name of the kubeconfig cluster to use
       --context string                 The name of the kubeconfig context to use
       --enable-analytics               Send analytical events to Google Analytics (default true)
-  -h, --help                           help for kubectl-dba
       --insecure-skip-tls-verify       If true, the server's certificate will not be checked for validity. This will make your HTTPS connections insecure
       --kubeconfig string              Path to the kubeconfig file to use for CLI requests.
       --match-server-version           Require server version to match client version
@@ -60,13 +59,12 @@ kubectl-dba [flags]
 
 ### SEE ALSO
 
-* [kubectl-dba completion](/docs/v2021.08.23/reference/cli/kubectl-dba_completion)	 - Generate completion script
-* [kubectl-dba connect](/docs/v2021.08.23/reference/cli/kubectl-dba_connect)	 - Connect to a database.
-* [kubectl-dba describe](/docs/v2021.08.23/reference/cli/kubectl-dba_describe)	 - Show details of a specific resource or group of resources
-* [kubectl-dba exec](/docs/v2021.08.23/reference/cli/kubectl-dba_exec)	 - Execute script or command to a database.
-* [kubectl-dba pause](/docs/v2021.08.23/reference/cli/kubectl-dba_pause)	 - Pause the processing of an object.
-* [kubectl-dba restart](/docs/v2021.08.23/reference/cli/kubectl-dba_restart)	 - Smartly restart the pods of the database.
-* [kubectl-dba resume](/docs/v2021.08.23/reference/cli/kubectl-dba_resume)	 - Resume processing of an object.
-* [kubectl-dba show-credentials](/docs/v2021.08.23/reference/cli/kubectl-dba_show-credentials)	 - Prints credentials of the database.
-* [kubectl-dba version](/docs/v2021.08.23/reference/cli/kubectl-dba_version)	 - Prints binary version number.
+* [kubectl-dba](/docs/v2021.08.23/reference/cli/kubectl-dba)	 - kubectl plugin for KubeDB
+* [kubectl-dba connect elasticsearch](/docs/v2021.08.23/reference/cli/kubectl-dba_connect_elasticsearch)	 - Connect to a shell to run elasticsearch api calls
+* [kubectl-dba connect mariadb](/docs/v2021.08.23/reference/cli/kubectl-dba_connect_mariadb)	 - Connect to a mariadb object
+* [kubectl-dba connect memcached](/docs/v2021.08.23/reference/cli/kubectl-dba_connect_memcached)	 - Connect to a telnet shell to run command against a memcached database
+* [kubectl-dba connect mongodb](/docs/v2021.08.23/reference/cli/kubectl-dba_connect_mongodb)	 - Connect to a mongodb object
+* [kubectl-dba connect mysql](/docs/v2021.08.23/reference/cli/kubectl-dba_connect_mysql)	 - Connect to a mysql object
+* [kubectl-dba connect postgres](/docs/v2021.08.23/reference/cli/kubectl-dba_connect_postgres)	 - Connect to a postgres object
+* [kubectl-dba connect redis](/docs/v2021.08.23/reference/cli/kubectl-dba_connect_redis)	 - Connect to a redis object's pod
 
