@@ -1,11 +1,11 @@
 ---
-title: Backup & Restore Elasticsearch
+title: Backup & Restore Elasticsearch Using Repository Plugins
 menu:
   docs_v2021.08.23:
-    identifier: guides-es-backup
-    name: Backup & Restore (Stash)
+    identifier: guides-es-plugins-backup
+    name: Snapshot & Restore (Repository Plugins)
     parent: es-elasticsearch-guides
-    weight: 40
+    weight: 41
 menu_name: docs_v2021.08.23
 info:
   autoscaler: v0.5.0
