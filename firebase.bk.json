@@ -26,7 +26,7 @@
           "headers": [
             {
               "key": "Cache-Control",
-              "value": "public, max-age=86400"
+              "value": "public, max-age=3600"
             }
           ],
           "source": "**"
@@ -44,17 +44,17 @@
       "redirects": [
         {
           "source": "/docs/latest/",
-          "destination": "/docs/v2021.06.23/",
+          "destination": "/docs/v2021.08.23/",
           "type": 302
         },
         {
           "source": "/docs/latest/:rest*",
-          "destination": "/docs/v2021.06.23/:rest",
+          "destination": "/docs/v2021.08.23/:rest",
           "type": 302
         },
         {
           "source": "/docs",
-          "destination": "/docs/v2021.06.23/",
+          "destination": "/docs/v2021.08.23/",
           "type": 302
         }
       ]
