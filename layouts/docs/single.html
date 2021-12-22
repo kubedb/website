@@ -73,7 +73,7 @@
 
 <!-- documentation area start -->
 <div class="documentation-area">
-  <div class="container section">
+  <div class="container is-fluid">
     {{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
     {{ if not (eq $p.latestVersion $currentBranch) }}
     <article class="message is-danger">
