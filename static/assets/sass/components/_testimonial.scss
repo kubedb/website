@@ -1,0 +1,146 @@
+
+/* testimonial area start */
+.testimonial-area {
+  background-image: url(../images/bg-image/testimonia.png);
+  background: #f9fafb;
+}
+
+.carousel-wrapper {
+  box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  padding: 60px 100px 30px;
+  position: relative;
+}
+
+.carousel-wrapper:after {
+  content: "\f10e";
+  font-family: fontawesome;
+  position: absolute;
+  top: -50px;
+  right: 50%;
+  font-size: 64px;
+  z-index: 9;
+  color: $ac-primary;
+  opacity: 0.6;
+  width: 60px;
+  padding-left: 30px;
+}
+
+.client-info p {
+  margin: 0;
+  font-size: $font-size-extra-small;
+  font-style: italic;
+  color: $ac-color-text;
+  opacity: 0.6;
+}
+
+.client-info h4 {
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 3px;
+}
+
+.client-thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  margin-right: 20px;
+}
+
+.client-info {
+  float: left;
+  overflow: hidden;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.client-information {
+  overflow: hidden;
+  width: 100%;
+  margin: 30px auto 0;
+  text-align: center;
+}
+.client-info-inner {
+  display: inline-block;
+}
+.slider:focus,
+button:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.slider-navigation-next,
+.slider-navigation-previous {
+  background: transparent;
+  box-shadow: none;
+  top: 80%;
+}
+/* slider css */
+.slider {
+  overflow: hidden;
+}
+
+.slider-pagination {
+  display: none;
+}
+.testimonial-area-2{
+  .slider-pagination {
+    display: block !important;
+    .slider-page{
+      background-color: #e9e9e9;
+      border-radius: 50px;
+      width: 8px;
+      height: 4px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      margin: 0 5px;
+      &.is-active{
+        background-color:$ac-primary;
+        width: 20px;
+      }
+    }
+  }
+}
+/* testimonial area end */
+
+
+
+// testimonial area style start
+.testimonial-area-2{
+  .section-title{
+    margin-bottom: 30px;
+  }
+}
+.single-testimonial-wrapper {
+  margin: 0 15px;
+  .testimonial-msg {
+    background-color: #f5f5f5;
+    padding: 30px 20px;
+    border-radius: 4px;
+    min-height: 210px;
+    p {
+      color: $ac-color-text;
+      font-size: 15px;
+      line-height: 28px;
+    }
+  }
+  .testimonial-client-info {
+    overflow: hidden;
+    padding: 30px 20px 0;
+  }
+}
+.carousel-wrapper1 .slider-navigation-next,
+.carousel-wrapper1 .slider-navigation-previous,
+#logo-area .slider-navigation-next,
+#logo-area .slider-navigation-previous {
+  display: none;
+}
+
+.slider-container {
+  .slider-item{
+    margin-bottom: 30px;
+  }
+}
+// testimonial area style end

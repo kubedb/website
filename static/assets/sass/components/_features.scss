@@ -1,0 +1,174 @@
+
+/* Feature area start */
+.feature-area {
+  background-image: url(../images/bg-image/about.png);
+  background-size: cover;
+  background-position: center;
+  background-color: #fbfcfe;
+}
+
+a.play-icon {
+  width: 70px;
+  height: 70px;
+  background: #838383;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 50%;
+  color: $ac-white;
+  display: inline-block;
+  position: relative;
+}
+
+a.play-icon .fa {
+  margin-left: 5px;
+}
+
+.play-icon:after,
+.play-icon:before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  border: 35px solid rgba(255, 255, 255, 0.1);
+  position: absolute;
+  border-radius: 50px;
+  animation: grow 2s infinite;
+  left: 0;
+  top: 0;
+}
+
+.play-icon:after {
+  animation: grow 1.3s infinite;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.feature-video {
+  background: #999;
+  width: 100%;
+  padding: 60px;
+  text-align: center;
+  border-radius: 4px;
+  background-image: url(../images/video-thumbnail.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+.feature-video:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.feature-content h2 {
+  font-size: 28px;
+  line-height: 46px;
+  font-weight: 500;
+  color: $ac-color-heading;
+  margin-bottom: 20px;
+}
+
+.feature-content p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.feature-area .feature-content {
+  padding: 0 70px;
+}
+
+/* Feature bottom area start */
+.db-logo-area {
+  padding: 0 70px;
+}
+
+.single-db-logo {
+  width: 200px;
+  float: left;
+  border: 1px solid #ebebeb;
+  margin: 0 100px 50px 0;
+  text-align: center;
+  padding: 25px;
+  transition: 0.3s ease-in-out;
+}
+
+.single-db-logo:nth-child(even) {
+  margin-right: 0;
+}
+
+.single-db-logo:nth-last-child(-n + 2) {
+  margin-bottom: 0;
+}
+
+.single-db-logo:nth-child(3),
+.single-db-logo:nth-child(4) {
+  margin-left: 40px;
+}
+
+.single-db-logo:nth-child(4) {
+  margin-left: 0;
+}
+
+.single-db-logo img {
+  max-height: 50px;
+}
+
+.single-db-logo:nth-child(1),
+.single-db-logo:nth-child(4),
+.single-db-logo:nth-child(5) {
+  box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
+  border: 1px solid transparent;
+}
+
+.single-db-logo:hover {
+  box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
+  border: 1px solid transparent;
+}
+
+
+.features-area {
+  background-image: url(../images/products/voyager/features/feature-bg.png);
+  background-size: cover;
+  background-position: center;
+
+  .hero-features {
+    height: 500px;
+    padding: 50 20px;
+    max-width: 940px;
+    margin: 0 auto;
+  }
+}
+
+.single-feature-image {
+  max-width: 450px;
+}
+
+.hero-features-content h1 {
+  margin-bottom: 12px;
+}
+
+.hero-features-content p {
+  margin: 0;
+}
+
+.hero-features-content .hero-area-button {
+  margin-top: 47px;
+}

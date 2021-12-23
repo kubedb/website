@@ -1,0 +1,116 @@
+// Typography
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap");
+
+$ac-font-heading: "Roboto", sans-serif;
+$ac-font-paragraph: "Roboto", sans-serif;
+
+html,
+body {
+  background-color: $ac-bg;
+  font-family: $ac-font-paragraph;
+  font-weight: 400;
+  font-size: 15px;
+  color: $ac-color-text;
+}
+
+p {
+  font-size: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $ac-font-heading;
+  font-weight: 500;
+  color: $ac-color-heading;
+}
+
+h1 {
+  font-size: $ac-size-1;
+  line-height: $ac-size-1 + 10;
+}
+
+h2 {
+  font-size: $ac-size-2;
+  line-height: $ac-size-2 + 10;
+}
+
+h3 {
+  font-size: $ac-size-3;
+  line-height: $ac-size-3 + 10;
+}
+
+h4 {
+  font-size: $ac-size-4;
+  line-height: $ac-size-4 + 10;
+}
+
+h5 {
+  font-size: $ac-size-5;
+  line-height: $ac-size-5 + 10;
+}
+
+h6 {
+  font-size: $ac-size-6;
+  line-height: $ac-size-6 + 10;
+}
+
+h6 {
+  &.is-tiny {
+    font-size: $font-size-tiny;
+    line-height: $font-size-tiny + 10;
+  }
+
+  &.is-extra-small {
+    font-size: $font-size-extra-small;
+    line-height: $font-size-extra-small + 10;
+  }
+
+  &.is-small {
+    font-size: $font-size-small;
+    line-height: $font-size-small + 10;
+  }
+
+  &.is-normal {
+    font-size: $font-size-normal;
+    line-height: $font-size-normal + 10;
+  }
+
+  &.is-semi-normal {
+    font-size: $font-size-semi-normal;
+    line-height: $font-size-semi-normal + 10;
+  }
+
+  &.is-medium {
+    font-size: $font-size-medium;
+    line-height: $font-size-medium + 10;
+  }
+}
+
+a {
+  font-family: $ac-font-paragraph;
+  color: $ac-primary;
+}
+
+hr {
+  background-color: $ac-white-light;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 15px 0;
+}
+
+strong {
+  color: $ac-color-value;
+}
+
+.is-font-medium {
+  font-weight: 500;
+}
+
+.is-font-bold {
+  font-weight: 700;
+}
