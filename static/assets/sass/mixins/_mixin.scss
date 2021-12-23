@@ -1,3 +1,70 @@
+// ac-buttons
+@mixin ac-button($colorName) {
+  background-color: $colorName;
+  color: $ac-white;
+  border: none;
+
+  &:hover {
+    @if (type_of($colorName) == "color") {
+      background-color: darken($colorName, 2%);
+    } @else {
+      background-color: $colorName;
+    }
+
+    box-shadow: 0px 6px 12px scale-color($color: $colorName, $lightness: 70%);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &.is-light {
+    @if (type_of($colorName) == "color") {
+      background-color: scale-color($colorName, $lightness: 90%);
+    } @else {
+      background-color:$colorName;
+    }
+
+    color: $colorName;
+
+    &.is-border {
+      border: 1px solid $colorName;
+    }
+
+    &:hover {
+      @if (type_of($colorName) == "color") {
+        background-color: scale-color($colorName, $lightness: 80%);
+      } @else {
+        background-color: $colorName;
+      }
+    }
+  }
+
+  &.is-outlined {
+    background-color: transparent;
+    border: 1px solid $colorName;
+    color: $colorName;
+
+    &:hover {
+      background-color: $colorName;
+      color: $ac-white;
+    }
+  }
+
+}
+
+// Absulate Shape
+@mixin absulate-shape($colorName, $width, $height) {
+  position: absolute;
+  content: "";
+  width: $width;
+  height: $height;
+  background-color: $colorName;
+  left: 0;
+  top: 0;
+}
+
+
 @mixin colorize-product($name, $color) {
   /*==================================================
                   Theme #{$name} Start
@@ -17,10 +84,10 @@
   body.#{$name} .pricing-button .kd-button,
   body.#{$name} .subscription-form .button:hover,
   body.#{$name} .searchbar-area button,
+  body.#{$name} .countdown-area .right-sidebar-menu ul li a::after,
   body.#{$name} .pagination-list li a.is-active,
-  body.#{$name} .single-product-feature-wrapper:after,
-  body.#{$name} .assistance-card-wrapper .single-card .card-body .subscription-form .button,
-  body.#{$name} .assistance-card-wrapper .single-card .card-body .button:hover {
+  body.#{$name} .pricing-button .kubedb-transparent-btn:hover,
+  body.#{$name} .single-product-feature-wrapper:after {
     background-color: #{$color};
   }
   // font-color
@@ -46,11 +113,19 @@
   body.#{$name} li.nav-item.active a,
   body.#{$name} .item ul li.is-active a,
   body.#{$name} .kd-sidebar-menu li a:hover,
+  body.#{$name} .service-content h5,
+  body.#{$name} .trusted-action a,
+  body.#{$name} .trusted-company a,
+  body.#{$name} .single-count-wrapper:hover .count,
+  body.#{$name} .single-count-wrapper .action-btn,
   body.#{$name} .subscription-form .button,
   body.#{$name} .section-title h4,
   body.#{$name} .hero-content-inner h4,
-  body.#{$name} .single-search-result h3 a,
-  body.#{$name} .assistance-card-wrapper .single-card .card-body .button {
+  body.#{$name} .pricing-button .kubedb-transparent-btn,
+  body.#{$name} .hero-area-content .play-buttons a span.video-icon,
+  body.#{$name} .hero-area-content .play-buttons a,
+  body.#{$name} .single-pricing-table.silver .discount-text,
+  body.#{$name} .single-search-result h3 a {
     color: #{$color};
   }
   // border-color
@@ -65,25 +140,27 @@
   body.#{$name} .textarea.is-focused,
   body.#{$name} .textarea:active,
   body.#{$name} .textarea:focus,
+  body.#{$name} .pricing-button .kubedb-transparent-btn,
+  body.#{$name} .pricing-button .kubedb-transparent-btn:hover,
   body.#{$name} .searchbar-area input:focus,
-  body.#{$name} .subscription-form .input:hover,
-  body.#{$name} .assistance-card-wrapper .single-card .card-body .subscription-form input {
+  body.#{$name} .hero-area-content .play-buttons a span.video-icon,
+  body.#{$name} .subscription-form .input:hover {
     border-color: #{$color};
   }
   body.#{$name} .pricing-top:before {
     border-right-color: darken($color, 15%);
   }
-  body.#{$name} .assistance-card-wrapper .single-card .card-body .subscription-form .button:hover{
-    background-color: darken($color, 15%);
-  }
   body.#{$name} .go-to-top {
     background-color: rgba($color, 0.8);
   }
-  body.#{$name} .documentation-menu,
-  body.#{$name} .assistance-card-wrapper .single-card .card-body .button {
+  body.#{$name} .documentation-menu {
     background-color: scale-color($color, $lightness: 80%);
   }
   /*==================================================
                   Theme #{$name} End
   ====================================================*/
 }
+
+/*==================================================
+                  Theme CSS prefix End
+  ====================================================*/
