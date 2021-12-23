@@ -9,12 +9,12 @@ body {
   background-color: $ac-bg;
   font-family: $ac-font-paragraph;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1rem;
   color: $ac-color-text;
 }
 
 p {
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 h1,
@@ -100,7 +100,7 @@ hr {
   border: none;
   display: block;
   height: 1px;
-  margin: 15px 0;
+  margin: 1rem 0;
 }
 
 strong {

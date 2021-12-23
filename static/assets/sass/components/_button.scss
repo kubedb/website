@@ -2,16 +2,16 @@
   transition: 0.3s ease-in-out;
   &.ac-button {
     border-color: $ac-primary;
-    border-radius: 4px;
-    font-size: 14px;
+    border-radius: 0.125rem;
+    font-size: 0.875rem;
     font-family: $ac-font-paragraph;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.078rem;
+    line-height: 1;
     color: $ac-primary;
     font-weight: 500;
-    height: 48px;
-    padding-left: 35px;
-    padding-right: 35px;
-
+    padding: 1rem 2rem;
+    display: block;
+    height: auto;
     &:focus-visible {
       outline: none;
     }
