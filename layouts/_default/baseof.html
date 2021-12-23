@@ -100,19 +100,19 @@
           <li class="nav-item">
             <button class="link">Products <i class="fa fa-angle-down" aria-hidden="true"></i></button>
             <div class="mega-menu-wrapper">
-              hi, this is megamenu
+              hi, this is Products
             </div>
           </li>
           <li class="nav-item">
             <button class="link">Services <i class="fa fa-angle-down" aria-hidden="true"></i></button>
             <div class="mega-menu-wrapper">
-              hi, this is megamenu
+              hi, this is Services
             </div>
           </li>
           <li class="nav-item">
             <button class="link">Open Source <i class="fa fa-angle-down" aria-hidden="true"></i></button>
             <div class="mega-menu-wrapper">
-              hi, this is megamenu
+              hi, this is Open Source
             </div>
           </li>
           <li class="nav-item">
@@ -123,23 +123,23 @@
 
       </div>
       <div class="navbar-right">
-          <!-- navbar items start -->
-          <ul>
-            <li class="nav-item">
-              <button class="link">Resources <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-              <div class="mega-menu-wrapper">
-                hi, this is megamenu
-              </div>
-            </li>
-            <li class="nav-item">
-              <button class="link">Support <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-              <div class="mega-menu-wrapper">
-                hi, this is megamenu
-              </div>
-            </li>
-          </ul>
-          <!-- navbar items end -->
-          <a href="#" class="button ac-button is-primary">CONTACT SALES</a>
+        <!-- navbar items start -->
+        <ul>
+          <li class="nav-item">
+            <button class="link">Resources <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+            <div class="mega-menu-wrapper">
+              hi, this is Resources
+            </div>
+          </li>
+          <li class="nav-item">
+            <button class="link">Support <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+            <div class="mega-menu-wrapper">
+              hi, this is Support
+            </div>
+          </li>
+        </ul>
+        <!-- navbar items end -->
+        <a href="#" class="button ac-button is-primary">CONTACT SALES</a>
       </div>
     </div>
     <!-- appscode navbar end -->
@@ -152,6 +152,57 @@
     <div class="navbar-docs"></div>
     <!-- docs navbar end -->
 
+
+    <script type="text/javascript">
+      const navItems = document.querySelectorAll(".navbar-appscode .nav-item");
+      Array.from(navItems).forEach(item => {
+
+
+        item.addEventListener('click', function (el) {
+          const megamenu = item.querySelector('.mega-menu-wrapper')
+          if (megamenu.style.display = "none") {
+            megamenu.style.display = "block"
+          } else {
+            if (megamenu.style.display = "block") {
+              megamenu.style.display = "none"
+            }
+          }
+        })
+
+      })
+
+
+      // leftSidebarDropdown() {
+      //   let dropDownBtns = document.querySelectorAll(".ac-dropdown-button");
+      //   Array.from(dropDownBtns).forEach(dropDownBtn => {
+      //     dropDownBtn.addEventListener("click", function () {
+      //       let singleListItem = dropDownBtn.parentElement;
+      //       let isOpen = singleListItem.classList.contains("is-open");
+
+      //       // Add "is-close" class all list element
+      //       let listItems = document.querySelectorAll("li");
+      //       Array.from(listItems).forEach(listItem => {
+      //         let dropDownItem = listItem.querySelector("ul");
+      //         if (dropDownItem) {
+      //           listItem.className = "is-close";
+      //           dropDownItem.style.maxHeight = null;
+      //         }
+      //       });
+
+      //       if (isOpen) {
+      //         singleListItem.className = "is-close";
+      //         let dropDown = singleListItem.querySelector("ul");
+      //         dropDown.style.maxHeight = null;
+      //       } else {
+      //         singleListItem.className = "is-open";
+      //         let dropDown = singleListItem.querySelector("ul");
+      //         dropDown.style.maxHeight = dropDown.scrollHeight + "px";
+      //       }
+      //     });
+      //   });
+      
+      
+    </script>
   </div>
   <!-- new navbar area end -->
   <!-- header area start -->
