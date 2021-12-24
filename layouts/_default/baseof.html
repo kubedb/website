@@ -53,6 +53,8 @@
   <meta property="og:type" content="article">
   <!-- Font Awesome CSS -->
   <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+  <!-- google fonts icon  -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Bulma Carousel CSS -->
@@ -81,130 +83,7 @@
         your experience and security.
       </p>
     <![endif]-->
-  <!-- new navbar area start  -->
-  <div class="navbar-area">
 
-    <!-- appscode navbar start  -->
-    <div class="navbar-appscode">
-      <div class="navbar-left">
-        <!-- brand logo  -->
-        <div class="navbar-brand">
-          <a href="{{.Site.Params.domain_appscode}}">
-            <img src="{{$.Site.Data.products.appscode.logo.src}}" alt="{{$.Site.Data.products.appscode.logo.alt}}" />
-          </a>
-        </div>
-        <!-- brand logo  -->
-
-        <!-- navbar items start -->
-        <ul>
-          <li class="nav-item">
-            <button class="link">Products <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-            <div class="mega-menu-wrapper">
-              hi, this is Products
-            </div>
-          </li>
-          <li class="nav-item">
-            <button class="link">Services <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-            <div class="mega-menu-wrapper">
-              hi, this is Services
-            </div>
-          </li>
-          <li class="nav-item">
-            <button class="link">Open Source <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-            <div class="mega-menu-wrapper">
-              hi, this is Open Source
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="#" target="_blank" class="link">Webinar <spna class="whats-new">New</spna></a>
-          </li>
-        </ul>
-        <!-- navbar items end -->
-
-      </div>
-      <div class="navbar-right">
-        <!-- navbar items start -->
-        <ul>
-          <li class="nav-item">
-            <button class="link">Resources <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-            <div class="mega-menu-wrapper">
-              hi, this is Resources
-            </div>
-          </li>
-          <li class="nav-item">
-            <button class="link">Support <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-            <div class="mega-menu-wrapper">
-              hi, this is Support
-            </div>
-          </li>
-        </ul>
-        <!-- navbar items end -->
-        <a href="#" class="button ac-button is-primary">CONTACT SALES</a>
-      </div>
-    </div>
-    <!-- appscode navbar end -->
-
-    <!-- product navbar start  -->
-    <div class="navbar-product"></div>
-    <!-- product navbar end -->
-
-    <!-- docs navbar start  -->
-    <div class="navbar-docs"></div>
-    <!-- docs navbar end -->
-
-
-    <script type="text/javascript">
-      const navItems = document.querySelectorAll(".navbar-appscode .nav-item");
-      Array.from(navItems).forEach(item => {
-
-
-        item.addEventListener('click', function (el) {
-          const megamenu = item.querySelector('.mega-menu-wrapper')
-          if (megamenu.style.display = "none") {
-            megamenu.style.display = "block"
-          } else {
-            if (megamenu.style.display = "block") {
-              megamenu.style.display = "none"
-            }
-          }
-        })
-
-      })
-
-
-      // leftSidebarDropdown() {
-      //   let dropDownBtns = document.querySelectorAll(".ac-dropdown-button");
-      //   Array.from(dropDownBtns).forEach(dropDownBtn => {
-      //     dropDownBtn.addEventListener("click", function () {
-      //       let singleListItem = dropDownBtn.parentElement;
-      //       let isOpen = singleListItem.classList.contains("is-open");
-
-      //       // Add "is-close" class all list element
-      //       let listItems = document.querySelectorAll("li");
-      //       Array.from(listItems).forEach(listItem => {
-      //         let dropDownItem = listItem.querySelector("ul");
-      //         if (dropDownItem) {
-      //           listItem.className = "is-close";
-      //           dropDownItem.style.maxHeight = null;
-      //         }
-      //       });
-
-      //       if (isOpen) {
-      //         singleListItem.className = "is-close";
-      //         let dropDown = singleListItem.querySelector("ul");
-      //         dropDown.style.maxHeight = null;
-      //       } else {
-      //         singleListItem.className = "is-open";
-      //         let dropDown = singleListItem.querySelector("ul");
-      //         dropDown.style.maxHeight = dropDown.scrollHeight + "px";
-      //       }
-      //     });
-      //   });
-      
-      
-    </script>
-  </div>
-  <!-- new navbar area end -->
   <!-- header area start -->
   {{ block "header" . }}
   <header>
@@ -566,9 +445,213 @@
     {{ block "documentation-menu" . }}
     {{ end }}
 
+
+
+    <!-- new navbar area start  -->
+    <div class="navbar-area">
+
+      <!-- appscode navbar start  -->
+      <div class="navbar-appscode">
+        <div class="navbar-left">
+          <!-- brand logo  -->
+          <div class="navbar-brand">
+            <a href="{{.Site.Params.domain_appscode}}">
+              <img src="{{$.Site.Data.products.appscode.logo.src}}" alt="{{$.Site.Data.products.appscode.logo.alt}}" />
+            </a>
+          </div>
+          <!-- brand logo  -->
+
+          <!-- navbar items start -->
+          <ul>
+            <li class="nav-item">
+              <button class="link">Products <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+              <div class="mega-menu-wrapper">
+                <div class="mega-menu-inner">
+                <!-- product start  -->
+                <div class="product-menu">
+                  <!-- single product start  -->
+                  <div class="single-product">
+                    <div class="product-logo">
+                      <img src="/assets/images/products/kubedb/features/kubernetes.png" alt="">
+                    </div>
+                    <div class="product-info">
+                      <h6>KubeDB</h6>
+                      <p>Run production-grade Databases on
+                        Kubernetes</p>
+                    </div>
+                    <div class="navigate-icon">
+                      <span class="material-icons">
+                        arrow_forward
+                      </span>
+                    </div>
+                  </div>
+                  <!-- single product end -->
+                  <!-- single product start  -->
+                  <div class="single-product">
+                    <div class="product-logo">
+                      <img src="/assets/images/products/kubedb/features/kubernetes.png" alt="">
+                    </div>
+                    <div class="product-info">
+                      <h6>KubeDB</h6>
+                      <p>Run production-grade Databases on
+                        Kubernetes</p>
+                    </div>
+                    <div class="navigate-icon">
+                      <span class="material-icons">
+                        arrow_forward
+                      </span>
+                    </div>
+                  </div>
+                  <!-- single product end -->
+                  <!-- single product start  -->
+                  <div class="single-product">
+                    <div class="product-logo">
+                      <img src="/assets/images/products/kubedb/features/kubernetes.png" alt="">
+                    </div>
+                    <div class="product-info">
+                      <h6>KubeDB</h6>
+                      <p>Run production-grade Databases on
+                        Kubernetes</p>
+                    </div>
+                    <div class="navigate-icon">
+                      <span class="material-icons">
+                        arrow_forward
+                      </span>
+                    </div>
+                  </div>
+                  <!-- single product end -->
+                  <!-- single product start  -->
+                  <div class="single-product">
+                    <div class="product-logo">
+                      <img src="/assets/images/products/kubedb/features/kubernetes.png" alt="">
+                    </div>
+                    <div class="product-info">
+                      <h6>KubeDB</h6>
+                      <p>Run production-grade Databases on
+                        Kubernetes</p>
+                    </div>
+                    <div class="navigate-icon">
+                      <span class="material-icons">
+                        arrow_forward
+                      </span>
+                    </div>
+                  </div>
+                  <!-- single product end -->
+                  <!-- single product start  -->
+                  <div class="single-product">
+                    <div class="product-logo">
+                      <img src="/assets/images/products/kubedb/features/kubernetes.png" alt="">
+                    </div>
+                    <div class="product-info">
+                      <h6>KubeDB</h6>
+                      <p>Run production-grade Databases on
+                        Kubernetes</p>
+                    </div>
+                    <div class="navigate-icon">
+                      <span class="material-icons">
+                        arrow_forward
+                      </span>
+                    </div>
+                  </div>
+                  <!-- single product end -->
+                </div>
+                <!-- product end -->
+
+
+
+                <!-- product description start  -->
+                <div class="product-description">
+                  <div class="brand">
+                    <img src="/assets/images/products/kubedb/kubedb.png" alt="">
+                  </div>
+                  <p>Automates routine database tasks such as provisioning, patching, backup, recovery, failure
+                    detection, and repair for various popular databases on private and public clouds</p>
+
+                  <ul class="features">
+                    <li><span class="material-icons">task_alt</span>Lower administrative burden</li>
+                    <li><span class="material-icons">task_alt</span>Native Kubernetes Support</li>
+                    <li><span class="material-icons">task_alt</span>Performance</li>
+                    <li><span class="material-icons">task_alt</span>Availability and durability</li>
+                    <li><span class="material-icons">task_alt</span>Security</li>
+                    <li><span class="material-icons">task_alt</span>Manageability</li>
+                  </ul>
+                  <a href="#" class="button ac-button inline-button">Learn More <span class="material-icons">arrow_forward</span></a>
+                </div>
+                <!-- product description end -->
+                </div>
+              </div>
+
+            </li>
+            <li class="nav-item">
+              <button class="link">Services <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+              <div class="mega-menu-wrapper">
+                hi, this is Services
+              </div>
+            </li>
+            <li class="nav-item">
+              <button class="link">Open Source <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+              <div class="mega-menu-wrapper">
+                hi, this is Open Source
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" target="_blank" class="link">Webinar <span class="whats-new">New</span></a>
+            </li>
+          </ul>
+          <!-- navbar items end -->
+
+        </div>
+        <div class="navbar-right">
+          <!-- navbar items start -->
+          <ul>
+            <li class="nav-item">
+              <button class="link">Resources <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+              <div class="mega-menu-wrapper">
+                hi, this is Resources
+              </div>
+            </li>
+            <li class="nav-item">
+              <button class="link">Support <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+              <div class="mega-menu-wrapper">
+                hi, this is Support
+              </div>
+            </li>
+          </ul>
+          <!-- navbar items end -->
+          <a href="#" class="button ac-button is-primary">CONTACT SALES</a>
+        </div>
+      </div>
+      <!-- appscode navbar end -->
+
+      <!-- product navbar start  -->
+      <div class="navbar-product"></div>
+      <!-- product navbar end -->
+
+      <!-- docs navbar start  -->
+      <div class="navbar-docs"></div>
+      <!-- docs navbar end -->
+
+      <script type="text/javascript">
+        const navItems = document.querySelectorAll(".navbar-appscode .nav-item");
+        Array.from(navItems).forEach(item => {
+          item.addEventListener('click', function (el) {
+            const megamenu = item.querySelector('.mega-menu-wrapper')
+            item.classList.toggle('is-active')
+            if (!el.target.closest('.mega-menu-wrapper')) {
+              megamenu.classList.toggle('is-block')
+            }
+          })
+        })
+      </script>
+
+    </div>
+    <!-- new navbar area end -->
+
   </header>
   {{ end }}
   <!-- header area end -->
+
+
 
   <!-- Code that all your templates share, like a header -->
   {{ block "main" . }}

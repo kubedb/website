@@ -606,6 +606,16 @@ p {
       .nav-item {
         margin-right: 2.5rem;
 
+        &.is-active {
+          .link {
+            color: $ac-primary;
+
+            i.fa {
+              transform: rotate(-180deg);
+            }
+          }
+        }
+
         &:last-child {
           margin-right: 0;
         }
@@ -623,8 +633,14 @@ p {
           transition: 0.3s ease-in-out;
           position: relative;
           z-index: 1;
+
           &:hover {
             color: $ac-primary;
+          }
+
+          .fa {
+            transition: 0.3s ease-in-out;
+            margin-left: 0.625rem;
           }
 
           .whats-new {
@@ -635,6 +651,7 @@ p {
             color: $ac-white;
             padding: 0.2rem 0.3rem;
             line-height: 1.2;
+
             &:before {
               content: "";
               position: absolute;
@@ -649,6 +666,7 @@ p {
               border-radius: 2px;
               animation: pulse-border 1500ms ease-out infinite;
             }
+
             &:after {
               content: "";
               position: absolute;
@@ -669,6 +687,7 @@ p {
                   scale(1);
                 opacity: 1;
               }
+
               100% {
                 transform: translateX(-50%) translateY(-50%) translateZ(0)
                   scale(1.5);
@@ -676,19 +695,9 @@ p {
               }
             }
           }
-          .fa {
-            margin-left: 0.625rem;
-          }
         }
 
         .mega-menu-wrapper {
-          display: none;
-          background: #fff;
-          border: 1px solid #e7e7e7;
-          min-height: 500px;
-          position: absolute;
-          z-index: 9;
-          width: 300px;
         }
       }
     }
@@ -702,3 +711,144 @@ p {
 }
 
 // new navbar area end
+
+.mega-menu-wrapper {
+  display: none;
+  background: $ac-white;
+  border: 1px solid $ac-white-light;
+  min-height: 400px;
+  position: absolute;
+  z-index: 9;
+  min-width: 300px;
+  padding: 3rem 0;
+
+  .mega-menu-inner {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+
+    // product menu start
+    .product-menu {
+      display: grid;
+      grid-template-columns: auto auto;
+
+      .single-product {
+        display: grid;
+        grid-template-columns: 3.75rem auto 1.5rem;
+        padding: 1rem;
+        align-items: center;
+        width: 24rem;
+        grid-gap: 0.8rem;
+        border-radius: 0.25rem;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:hover,
+        &.is-active {
+          background-color: #e6fff2;
+
+          .navigate-icon {
+            .material-icons {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+
+        .product-logo {
+          height: 60px;
+          width: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #e9e9fc;
+          border-radius: 0.25rem;
+
+          img {
+            height: 2.5rem;
+          }
+        }
+
+        .product-info {
+          h6 {
+            font-size: 1rem;
+            letter-spacing: 0.009rem;
+            color: $ac-color-heading;
+            font-weight: 500;
+          }
+
+          p {
+            font-size: 0.813rem;
+            color: #636363;
+            line-height: 140%;
+            letter-spacing: 0.025rem;
+          }
+        }
+
+        .navigate-icon {
+          text-align: right;
+
+          .material-icons {
+            font-size: 1.5rem;
+            color: $ac-primary;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+    // product menu end
+
+    // description start
+    .product-description {
+      max-width: 25rem;
+      .brand {
+        margin-bottom: 1rem;
+        img {
+          height: 1.1rem;
+        }
+      }
+
+      p {
+        font-size: 0.813rem;
+        color: $ac-color-text;
+        line-height: 150%;
+        margin-bottom: 1.5rem;
+      }
+
+      .features {
+        li {
+          font-size: 0.813rem;
+          color: $ac-color-heading;
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+
+          .material-icons {
+            font-size: 1rem;
+            margin-right: 0.6rem;
+            color: $ac-primary;
+          }
+        }
+      }
+
+      .button {
+        &.ac-button {
+          &.inline-button {
+            border: none;
+            height: auto;
+            margin: 0;
+            padding: 0.5rem 0;
+            text-align: left;
+
+            .material-icons {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+    // description end
+  }
+}
