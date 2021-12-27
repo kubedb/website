@@ -9179,6 +9179,11 @@ p.intro {
   font-size: 14px;
 }
 
+.navbar-area {
+  position: relative;
+  z-index: 99;
+}
+
 .navbar-area .navbar-appscode {
   background-color: #ffffff;
   display: -webkit-box;
@@ -9348,23 +9353,31 @@ p.intro {
   }
 }
 
+.navbar-area .navbar-appscode ul .nav-item .mega-menu-wrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 62px;
+}
+
+.navbar-area .ac-grid-container {
+  max-width: 1344px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
 .mega-menu-wrapper {
   display: none;
   background: #ffffff;
   border: 1px solid #e7e7e7;
-  min-height: 400px;
   position: absolute;
   z-index: 9;
   min-width: 300px;
-  padding: 3rem 0;
+  padding: 2.5rem 0;
 }
 
 .mega-menu-wrapper .mega-menu-inner {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  grid-gap: 1rem;
+  overflow: hidden;
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-menu {
@@ -9372,6 +9385,8 @@ p.intro {
   display: grid;
   -ms-grid-columns: auto auto;
       grid-template-columns: auto auto;
+  width: 48rem;
+  float: left;
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-menu .single-product {
@@ -9448,7 +9463,11 @@ p.intro {
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-description {
-  max-width: 25rem;
+  margin-left: 1rem;
+  float: left;
+  border-left: 1px solid #e7e7e7;
+  padding-left: 5rem;
+  max-width: 30rem;
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-description .brand {
@@ -9460,10 +9479,10 @@ p.intro {
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-description p {
-  font-size: 0.813rem;
+  font-size: 0.875rem;
   color: #3b3030;
-  line-height: 150%;
-  margin-bottom: 1.5rem;
+  line-height: 160%;
+  margin-bottom: 1rem;
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-description .features li {
@@ -9484,16 +9503,106 @@ p.intro {
   color: #00a651;
 }
 
-.mega-menu-wrapper .mega-menu-inner .product-description .button.ac-button.inline-button {
+.button.ac-button.inline-button {
   border: none;
   height: auto;
   margin: 0;
   padding: 0.5rem 0;
-  text-align: left;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-.mega-menu-wrapper .mega-menu-inner .product-description .button.ac-button.inline-button .material-icons {
+.button.ac-button.inline-button:hover {
+  background-color: transparent;
+  border: none;
+  color: #00a651;
+}
+
+.button.ac-button.inline-button:hover .material-icons {
+  margin-left: 1rem;
+}
+
+.button.ac-button.inline-button .material-icons {
   font-size: 1rem;
+  margin-left: 0.5rem;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.linkable-nav-items {
+  width: 500px;
+  float: left;
+}
+
+.linkable-nav-items ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  grid-gap: 0.5rem;
+}
+
+.linkable-nav-items ul li {
+  width: 250px;
+}
+
+.linkable-nav-items ul li a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  letter-spacing: 0.009rem;
+  color: #1c1c1c;
+  font-weight: 500;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.linkable-nav-items ul li a:hover {
+  color: #00a651;
+}
+
+.linkable-nav-items ul li a:hover span:last-child {
+  padding-left: 1rem;
+}
+
+.linkable-nav-items ul li a span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+}
+
+.linkable-nav-items ul li a span:last-child {
+  padding-left: 0.5rem;
+}
+
+.linkable-nav-items ul li a span img {
+  height: 1rem;
+  margin-right: 1rem;
+}
+
+.dark-body.is-show {
+  width: 100%;
+  height: 100%;
+  background: #333;
+  position: fixed;
+  top: 0;
+  opacity: 0.8;
+  z-index: 9;
 }
 
 .notification-area {
