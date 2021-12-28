@@ -651,8 +651,72 @@
               <button class="link">Resources <i class="fa fa-angle-down" aria-hidden="true"></i></button>
               <div class="mega-menu-wrapper">
                 <div class="mega-menu-inner ac-grid-container">
-                 <!-- list menu items start  -->
-                 <!-- list menu items end -->
+                  <!-- list menu items start  -->
+                  <div class="resources-list">
+                    <!-- single resources list  -->
+                    <div class="list-items">
+                      <h6>Resources</h6>
+                      <ul>
+                        <li><a href="#" target="_blank">Blog</a></li>
+                        <li><a href="#" target="_blank">Forum</a></li>
+                        <li><a href="#" target="_blank">Demos</a></li>
+                        <li><a href="#" target="_blank">Tutorials</a></li>
+                        <li><a href="#" target="_blank">Webinars</a></li>
+                        <li><a href="#" target="_blank">Community</a></li>
+                      </ul>
+                    </div>
+                    <!-- single resources list  -->
+
+                    <!-- single resources list  -->
+                    <div class="list-items">
+                      <h6>OPENSOURCE DOCS</h6>
+                      <ul>
+                        <li><a href="#" target="_blank">Voyager</a></li>
+                        <li><a href="#" target="_blank">Guard</a></li>
+                        <li><a href="#" target="_blank">Kubed</a></li>
+                        <li><a href="#" target="_blank">Pharmer</a></li>
+                        <li><a href="#" target="_blank">Swift</a></li>
+                        <li><a href="#" target="_blank">Searchlight</a></li>
+                      </ul>
+                    </div>
+                    <!-- single resources list  -->
+
+                    <!-- single resources list  -->
+                    <div class="list-items">
+                      <h6>PREMIUM DOCS</h6>
+                      <ul>
+                        <li><a href="#" target="_blank">KubeDB</a></li>
+                        <li><a href="#" target="_blank">Stash</a></li>
+                        <li><a href="#" target="_blank">KubeVault</a></li>
+                        <li><a href="#" target="_blank">Kubeform</a></li>
+                      </ul>
+                    </div>
+                    <!-- single resources list  -->
+
+                    <!-- single resources list  -->
+                    <div class="list-items">
+                      <h6>RECENT NEWS/BLOG</h6>
+                      <div class="press-wrapper">
+                        <!-- single press start  -->
+                        <div class="single-press">
+                          <div class="calender">
+                            <span class="date">24</span>
+                            <span class="month">NOV</span>
+                          </div>
+
+                          <div class="description">
+                            <h6>Announcing KubeDB & Stash v2021.11.24</h6>
+                            <span class="author">By Tamal Saha</span>
+                            <p>We now have Grafana Dashboards for all KubeDB and Stash resource types. Please reach</p>
+                          </div>
+                        </div>
+                        <!-- single press end -->
+                      </div>
+                    </div>
+                    <!-- single resources list  -->
+
+                  </div>
+                  <!-- list menu items end -->
                 </div>
               </div>
             </li>
@@ -686,7 +750,7 @@
 
             // to remove active class from previously selected navItem
             const selectedNav = document.querySelector(".nav-item.is-active");
-            if(selectedNav && selectedNav !== item.parentElement) {
+            if (selectedNav && selectedNav !== item.parentElement) {
               selectedNav.classList.toggle('is-active')
             }
 
@@ -700,7 +764,7 @@
             function handleDarkBodyClickEvent(el) {
               el.target.classList.remove('is-show')
               const selectedNavItem = document.querySelector(".nav-item.is-active");
-              selectedNavItem?.classList.toggle('is-active')
+              selectedNavItem ? selectedNavItem.classList.toggle('is-active') : null;
             }
 
             if (hasActiveClass && darkBodyEl.classList.contains("is-show")) {
