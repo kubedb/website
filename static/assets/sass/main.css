@@ -9254,6 +9254,10 @@ p.intro {
           transform: rotate(-180deg);
 }
 
+.navbar-area .navbar-appscode ul .nav-item.is-active .mega-menu-wrapper {
+  display: block !important;
+}
+
 .navbar-area .navbar-appscode ul .nav-item:last-child {
   margin-right: 0;
 }
@@ -9475,7 +9479,7 @@ p.intro {
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-description .brand img {
-  height: 1.1rem;
+  height: 1.5rem;
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-description p {
