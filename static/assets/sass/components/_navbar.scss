@@ -570,6 +570,7 @@ p {
   z-index: 99;
 
   .navbar-appscode {
+    border-bottom: 1px solid #e7e7e7;
     background-color: $ac-white;
     display: flex;
     align-items: center;
@@ -617,7 +618,8 @@ p {
               transform: rotate(-180deg);
             }
           }
-          .mega-menu-wrapper{
+
+          .mega-menu-wrapper {
             display: block !important;
           }
         }
@@ -702,13 +704,6 @@ p {
             }
           }
         }
-
-        .mega-menu-wrapper {
-          position: absolute;
-          width: 100%;
-          left: 0;
-          top: 62px;
-        }
       }
     }
   }
@@ -731,12 +726,14 @@ p {
 .mega-menu-wrapper {
   display: none;
   background: $ac-white;
-  border: 1px solid $ac-white-light;
-  // min-height: 400px;
   position: absolute;
   z-index: 9;
   min-width: 300px;
   padding: 2.5rem 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 63px;
 
   .mega-menu-inner {
     overflow: hidden;
