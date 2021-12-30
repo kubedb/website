@@ -906,7 +906,7 @@ p {
       a {
         display: inline-flex;
         align-items: center;
-        font-size: 1rem;
+        font-size: 0.875rem;
         letter-spacing: 0.009rem;
         color: $ac-color-heading;
         font-weight: 500;
@@ -956,6 +956,140 @@ p {
   .button {
     .material-icons {
     }
+  }
+}
+
+.resources-list {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 2rem;
+
+  .list-items {
+    h6 {
+      font-weight: 400;
+      position: relative;
+      font-size: 0.875rem;
+      z-index: 1;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      letter-spacing: 1.2px;
+
+      &:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 50%;
+        height: 2px;
+        background-color: $ac-primary;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        a {
+          font-size: 0.875rem;
+          padding: 0.6rem 0;
+          color: $ac-color-heading;
+          display: inline-block;
+          line-height: 1;
+          transition: 0.3s ease-in-out;
+          font-weight: 500;
+
+          &:hover {
+            color: $ac-primary;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.press-wrapper {
+  
+  .single-press {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    &:hover{
+      h6{
+        color: $ac-primary;
+      }
+    }
+    .calender {
+      text-align: center;
+      height: 90px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      margin-right: 1rem;
+      border-radius: 4px;
+      .date {
+        width: 84px;
+        height: 45px;
+        background-color: #9dffcd;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 140%;
+        letter-spacing: 0.4px;
+        color: $ac-primary;
+      }
+
+      .month {
+        width: 84px;
+        height: 45px;
+        background: #ccffe5;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 0.4px;
+        color: $ac-primary;
+      }
+    }
+
+    .description {
+      max-width: 327px;
+      h6 {
+        font-size: 1rem;
+        margin-bottom: 0px;
+        letter-spacing: 0;
+        font-weight: 500;
+        display: block;
+        &:after{
+          position: inherit;
+        }
+      }
+
+      .author {
+        font-weight: 400;
+        font-size: 0.875rem;
+        letter-spacing: 0.4px;
+        margin-bottom: 0.5rem;
+        display: block;
+        color: #1c1c1c;
+      }
+
+      p {
+        font-size: 0.875rem;
+        color: #636363;
+        line-height: 150%;
+      }
+    }
+  }
+  .button.inline-button {
+    margin-left: 100px !important;
   }
 }
 
