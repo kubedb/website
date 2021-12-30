@@ -468,118 +468,120 @@
                 <div class="mega-menu-inner ac-grid-container">
                   <!-- product start  -->
                   <div class="product-menu">
+                    {{ range $item := $.Site.Data.config.productMenu.c0 }}
+                    {{ $p := (index $.Site.Data.products $item) }}
                     <!-- single product start  -->
-                    <div class="single-product">
+                    <a class="single-product" href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
                       <div class="product-logo">
-                        <img src="/assets/images/products/kubedb/features/kubernetes.png" alt="">
+                        <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
                       </div>
                       <div class="product-info">
-                        <h6>KubeDB</h6>
-                        <p>Run production-grade Databases on
-                          Kubernetes</p>
+                        <h6>{{ $p.name }}</h6>
+                        <p>{{ $p.tagline | plainify }}</p>
                       </div>
                       <div class="navigate-icon">
                         <span class="material-icons">
                           arrow_forward
                         </span>
                       </div>
-                    </div>
+                    </a>
                     <!-- single product end -->
+                    {{ end }}
+
+                    {{ range $item := $.Site.Data.config.productMenu.c1 }}
+                    {{ $p := (index $.Site.Data.products $item) }}
                     <!-- single product start  -->
-                    <div class="single-product">
+                    <a class="single-product" href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
                       <div class="product-logo">
-                        <img src="/assets/images/products/kubedb/features/kubernetes.png" alt="">
+                        <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
                       </div>
                       <div class="product-info">
-                        <h6>KubeDB</h6>
-                        <p>Run production-grade Databases on
-                          Kubernetes</p>
+                        <h6>{{ $p.name }}</h6>
+                        <p>{{ $p.tagline | plainify }}</p>
                       </div>
                       <div class="navigate-icon">
                         <span class="material-icons">
                           arrow_forward
                         </span>
                       </div>
-                    </div>
+                    </a>
                     <!-- single product end -->
-                    <!-- single product start  -->
-                    <div class="single-product">
-                      <div class="product-logo">
-                        <img src="/assets/images/products/kubedb/features/kubernetes.png" alt="">
-                      </div>
-                      <div class="product-info">
-                        <h6>KubeDB</h6>
-                        <p>Run production-grade Databases on
-                          Kubernetes</p>
-                      </div>
-                      <div class="navigate-icon">
-                        <span class="material-icons">
-                          arrow_forward
-                        </span>
-                      </div>
-                    </div>
-                    <!-- single product end -->
-                    <!-- single product start  -->
-                    <div class="single-product">
-                      <div class="product-logo">
-                        <img src="/assets/images/products/kubedb/features/kubernetes.png" alt="">
-                      </div>
-                      <div class="product-info">
-                        <h6>KubeDB</h6>
-                        <p>Run production-grade Databases on
-                          Kubernetes</p>
-                      </div>
-                      <div class="navigate-icon">
-                        <span class="material-icons">
-                          arrow_forward
-                        </span>
-                      </div>
-                    </div>
-                    <!-- single product end -->
-                    <!-- single product start  -->
-                    <div class="single-product">
-                      <div class="product-logo">
-                        <img src="/assets/images/products/kubedb/features/kubernetes.png" alt="">
-                      </div>
-                      <div class="product-info">
-                        <h6>KubeDB</h6>
-                        <p>Run production-grade Databases on
-                          Kubernetes</p>
-                      </div>
-                      <div class="navigate-icon">
-                        <span class="material-icons">
-                          arrow_forward
-                        </span>
-                      </div>
-                    </div>
-                    <!-- single product end -->
+                    {{ end }}
                   </div>
                   <!-- product end -->
 
 
 
                   <!-- product description start  -->
+                  {{ range $item := $.Site.Data.config.productMenu.c0 }}
+                  {{ $p := (index $.Site.Data.products $item) }}
+                  <!-- single product description start  -->
                   <div class="product-description">
                     <div class="brand">
-                      <img src="/assets/images/products/kubedb/kubedb.png" alt="">
+                      <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
                     </div>
-                    <p>Automates routine database tasks such as provisioning, patching, backup, recovery, failure
-                      detection, and repair for various popular databases on private and public clouds</p>
 
+
+                    <p>{{ $p.summary | safeHTML }}</p>
+                    
                     <ul class="features">
-                      <li><span class="material-icons">task_alt</span>Lower administrative burden</li>
-                      <li><span class="material-icons">task_alt</span>Native Kubernetes Support</li>
-                      <li><span class="material-icons">task_alt</span>Performance</li>
-                      <li><span class="material-icons">task_alt</span>Availability and durability</li>
-                      <li><span class="material-icons">task_alt</span>Security</li>
-                      <li><span class="material-icons">task_alt</span>Manageability</li>
+                      {{ range $item := $p.features }}
+                      <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
+                      {{ end }}
                     </ul>
-                    <a href="#" class="button ac-button inline-button">Learn More <span
+                    <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
+                      class="button ac-button inline-button">Learn More <span
                         class="material-icons">arrow_forward</span></a>
                   </div>
+                  <!-- single product description end  -->
+                  {{ end }}
+
+                  {{ range $item := $.Site.Data.config.productMenu.c1 }}
+                  {{ $p := (index $.Site.Data.products $item) }}
+                  <!-- single product description start  -->
+                  <div class="product-description">
+                    <div class="brand">
+                      <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
+                    </div>
+
+
+                    <p>{{ $p.summary | safeHTML }}</p>
+
+                    <ul class="features">
+                      {{ range $item := $p.features }}
+                      <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
+                      {{ end }}
+                    </ul>
+                    <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
+                      class="button ac-button inline-button">Learn More <span
+                        class="material-icons">arrow_forward</span></a>
+                  </div>
+                  <!-- single product description end  -->
+                  {{ end }}
                   <!-- product description end -->
                 </div>
               </div>
+              <script type="text/javascript">
+                const productDescriptions = document.querySelectorAll(".product-description");
+                const products = document.querySelectorAll(".single-product");
+
+
+                productDescriptions[0].classList.add("is-block");
+                products[0].classList.add('is-active');
+
+                products.forEach((product, index) => {
+                  product.addEventListener("mouseover", function () {
+                    const currentActiveProduct = document.querySelector(".product-description.is-block");
+                    const currentActiveItem = document.querySelector(".single-product.is-active");
+                    
+                    currentActiveProduct.classList.remove("is-block");
+                    currentActiveItem.classList.remove('is-active');
+
+                    productDescriptions[index].classList.add("is-block");
+                    products[index].classList.add("is-active");
+                  });
+                });
+              </script>
 
             </li>
             <li class="nav-item">
@@ -727,14 +729,14 @@
                         </a>
                         <!-- single press end -->
 
-                         <a href="#" class="button ac-button inline-button">Learn More <span
-                             class="material-icons">arrow_forward</span></a>
+                        <a href="#" class="button ac-button inline-button">See More <span
+                            class="material-icons">arrow_forward</span></a>
                       </div>
-                      
+
                     </div>
                     <!-- single resources list  -->
-                   
-                    
+
+
                   </div>
                   <!-- list menu items end -->
                 </div>
