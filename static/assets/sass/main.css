@@ -9469,6 +9469,7 @@ p.intro {
   border-left: 1px solid #e7e7e7;
   padding-left: 5rem;
   max-width: 30rem;
+  display: none;
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-description .brand {
