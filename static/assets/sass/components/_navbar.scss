@@ -655,10 +655,12 @@ p {
             position: absolute;
             z-index: 1;
             top: -0.5rem;
+            right: -2.5rem;
             font-size: 0.8rem;
             color: $ac-white;
             padding: 0.2rem 0.3rem;
             line-height: 1.2;
+            display: none;
 
             &:before {
               content: "";
@@ -1012,7 +1014,6 @@ p {
 }
 
 .press-wrapper {
-  
   .single-press {
     margin: 0;
     padding: 0;
@@ -1020,8 +1021,8 @@ p {
     display: flex;
     align-items: center;
     transition: 0.3s;
-    &:hover{
-      h6{
+    &:hover {
+      h6 {
         color: $ac-primary;
       }
     }
@@ -1044,6 +1045,9 @@ p {
         line-height: 140%;
         letter-spacing: 0.4px;
         color: $ac-primary;
+        align-items: center;
+        display: flex;
+        justify-content: center;
       }
 
       .month {
@@ -1057,6 +1061,9 @@ p {
         line-height: 140%;
         letter-spacing: 0.4px;
         color: $ac-primary;
+        align-items: center;
+        display: flex;
+        justify-content: center;
       }
     }
 
@@ -1068,7 +1075,7 @@ p {
         letter-spacing: 0;
         font-weight: 500;
         display: block;
-        &:after{
+        &:after {
           position: inherit;
         }
       }
