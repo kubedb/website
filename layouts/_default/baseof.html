@@ -345,7 +345,7 @@
             </li>
           </ul>
           <!-- navbar items end -->
-         <!-- if webinar exist script  -->
+          <!-- if webinar exist script  -->
           <script type="text/javascript">
             (function () {
               var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
@@ -480,32 +480,59 @@
             </li>
           </ul>
           <!-- navbar items end -->
-          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-primary is-hidden">CONTACT SALES</a>
+          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-primary is-hidden">CONTACT
+            SALES</a>
         </div>
       </div>
       <!-- appscode navbar end -->
-
+      {{ block "header-bottom" . }}
+      {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
       <!-- product navbar start  -->
       <div class="navbar-appscode navbar-product">
         <!-- navbar left start  -->
         <div class="navbar-left">
           <div class="navbar-brand">
-            <a href="#"><img src="/assets/images/products/kubedb/kubedb.png" alt=""></a>
+            <a href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}"><img
+                src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" alt="{{ $p.logo.alt }}"></a>
           </div>
         </div>
         <!-- navbar left end -->
-       <!-- navbar right start  -->
+        <!-- navbar right start  -->
         <div class="navbar-right">
           <ul>
+            {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
             <li class="nav-item">
-              <a href="#" class="link">Features</a>
+              <button href="#" class="link">{{ .Name }} <i class="fa fa-angle-down"></i></button>
+              <div class="mega-menu-wrapper">
+                <div class="mega-menu-inner ac-grid-container">
+                  <!-- database card start  -->
+                  <div class="databse-list">
+                    {{ range .Children }}
+                    {{ if eq .Parent $.Site.Params.main_menu_dropdown_item }}
+                    <a href="/docs/{{ $p.latestVersion }}/guides/{{ .Identifier }}/"
+                      class="single-database">{{ .Name }}</a>
+                    {{ else }}
+                    <a href="{{.URL}}" class="single-database">{{ .Name }}</a>
+                    {{ end }}
+                    {{ end }}
+                  </div>
+                  <!-- database card end -->
+                </div>
+              </div>
             </li>
+            {{else}}
+            {{ if eq .Name "Documentation" }}
             <li class="nav-item">
-              <a href="#" class="link">Pricing</a>
+              <a href="/docs/{{ $p.latestVersion }}/welcome/" class="link">{{ .Name }}</a>
             </li>
+            {{ else }}
             <li class="nav-item">
-              <a href="#" class="link">Documentation</a>
+              <a href="{{.URL}}" class="link">{{ .Name }}</a>
             </li>
+            {{ end }}
+            {{ end }}
+            {{end}}
           </ul>
 
           <!-- Community link start  -->
@@ -513,139 +540,34 @@
             <a href="#" class="community-item" target="_blank">
               <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon">
             </a>
-             <a href="#" class="community-item" target="_blank">
-               <img src="/assets/images/icon/community/twitter-icon.svg" alt="twitter-icon">
-             </a>
-              <a href="#" class="community-item" target="_blank">
-                <img src="/assets/images/icon/community/slack-icon.svg" alt="slack-icon">
-              </a>
+            <a href="#" class="community-item" target="_blank">
+              <img src="/assets/images/icon/community/twitter-icon.svg" alt="twitter-icon">
+            </a>
+            <a href="#" class="community-item" target="_blank">
+              <img src="/assets/images/icon/community/slack-icon.svg" alt="slack-icon">
+            </a>
           </div>
           <!-- Community link end -->
           <!-- action button start  -->
-          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-primary ml-8">TRY NOW FREE</a>
+          <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary ml-8 height-40">TRY NOW
+            FREE</a>
           <!-- action button end -->
-          
+
         </div>
-       <!-- navbar right end -->
+        <!-- navbar right end -->
       </div>
       <!-- product navbar end -->
-
+      {{ end }}
       <!-- docs navbar start  -->
       <div class="navbar-docs"></div>
       <!-- docs navbar end -->
 
-      <script type="text/javascript">
-        const navItems = document.querySelectorAll(".navbar-appscode .nav-item");
-
-        navItems.forEach(navItem => {
-          const item = navItem.querySelector('.link');
-          item.addEventListener('click', function (el) {
-
-            // to remove active class from previously selected navItem
-            const selectedNav = document.querySelector(".nav-item.is-active");
-            if (selectedNav && selectedNav !== item.parentElement) {
-              selectedNav.classList.toggle('is-active')
-            }
-
-            // handle selected navItem class
-            const hasActiveClass = navItem.classList.contains("is-active");
-            navItem.classList.toggle('is-active')
-
-            // handle background dark-shadow of navItem
-            const darkBodyEl = document.querySelector(".modal-backdrop");
-
-            function handleDarkBodyClickEvent(el) {
-              el.target.classList.remove('is-show')
-              const selectedNavItem = document.querySelector(".nav-item.is-active");
-              selectedNavItem ? selectedNavItem.classList.toggle('is-active') : null;
-            }
-
-            if (hasActiveClass && darkBodyEl.classList.contains("is-show")) {
-              darkBodyEl.classList.toggle("is-show");
-              darkBodyEl.removeEventListener('click', handleDarkBodyClickEvent);
-            } else if (!hasActiveClass && !darkBodyEl.classList.contains("is-show")) {
-              darkBodyEl.classList.toggle("is-show");
-              darkBodyEl.addEventListener('click', handleDarkBodyClickEvent);
-            }
-          })
-        })
-      </script>
+     
 
     </div>
     <!-- new navbar area end -->
     {{ end }}
 
-    {{ block "header-bottom" . }}
-    {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
-    <!-- header bottom area start -->
-    <div class="header-bottom-area header-area kubedb-primary-bg customize-kubedb fixed-menu is-hidden">
-      <div class="container is-fluid">
-        <nav class="navbar">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}">
-              <img src="{{ $p.logoWhite.src }}" alt="{{ $p.logoWhite.alt }}" />
-            </a>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="acNav">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-
-          <div id="acNav" class="navbar-menu main-menu">
-            <div class="navbar-end">
-              <!-- nav menu start -->
-              <div class="navbar-start">
-                {{ range .Site.Menus.main }}
-                {{ if .HasChildren }}
-                <div class="navbar-item has-dropdown ac-is-hoverable">
-                  <a class="navbar-link">{{ .Name }}</a>
-                  <div class="ac-dropdown">
-                    {{ range .Children }}
-                    {{ if eq .Parent $.Site.Params.main_menu_dropdown_item }}
-                    <a class="navbar-item" href="/docs/{{ $p.latestVersion }}/guides/{{ .Identifier }}/">{{ .Name }}</a>
-                    {{ else }}
-                    <a href="{{.URL}}" class="navbar-item">{{ .Name }}</a>
-                    {{ end }}
-                    {{ end }}
-                  </div>
-                </div>
-                {{else}}
-                {{ if eq .Name "Documentation" }}
-                <a href="/docs/{{ $p.latestVersion }}/welcome/" class="navbar-item">{{ .Name }}</a>
-                {{ else }}
-                <a href="{{.URL}}" class="navbar-item">{{ .Name }}</a>
-                {{ end }}
-                {{ end }}
-                {{end}}
-              </div>
-              <!-- nav menu end -->
-
-              <div class="navbar-item">
-                <div class="buttons main-menu-button">
-                  {{ range where $p.badges "logo" "github" }}
-                  <img style="height:24px" alt="{{ .alt }} Stars"
-                    src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo=github&label=stars&query=%24.stars&url=https://github-stars.appscode.workers.dev/user/{{ .url }}">
-                  &nbsp;&nbsp;&nbsp;
-                  <img style="height:24px" alt="{{ .alt }} Forks"
-                    src="https://img.shields.io/badge/dynamic/json?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo={{ .logo }}&label=forks&query=%24.forks&url=https://github-stars.appscode.workers.dev/user/{{ .url }}">
-                  {{ end }}
-                  {{ range where $p.badges "logo" "docker" }}
-                  &nbsp;&nbsp;&nbsp;
-                  <img style="height:24px" alt="{{ .alt }}"
-                    src="https://img.shields.io/{{ .url }}?style=flat&labelColor=1B3D4B&color=06A64F&logoColor=white&logo={{ .logo }}&label=pulls">
-                  {{ end }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <!-- header bottom area end -->
-
-   
-    {{ end }}
 
     {{ block "documentation-menu" . }}
     {{ end }}
@@ -936,10 +858,10 @@
   <!-- clipboard js  -->
   <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
   <!-- Main JS -->
-  {{ with $style := resources.Get "assets/js/main.js" | resources.Fingerprint }}
+  <!-- {{ with $style := resources.Get "assets/js/main.js" | resources.Fingerprint }}
   <script src="{{ $style.RelPermalink }}"></script>
-  {{ end }}
-  <!-- <script src="/assets/js/main.js"></script> -->
+  {{ end }} -->
+  <script src="/assets/js/main.js"></script>
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9255943.js"></script>
   <!-- End of HubSpot Embed Code -->
