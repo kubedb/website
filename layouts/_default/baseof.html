@@ -92,7 +92,7 @@
     <div class="navbar-area">
 
       <!-- appscode navbar start  -->
-      <div class="navbar-appscode">
+      <div class="navbar-appscode height-60">
         <div class="navbar-left">
           <!-- brand logo  -->
           <div class="navbar-brand">
@@ -480,18 +480,21 @@
             </li>
           </ul>
           <!-- navbar items end -->
-          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-primary">CONTACT SALES</a>
+          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-primary is-hidden">CONTACT SALES</a>
         </div>
       </div>
       <!-- appscode navbar end -->
 
       <!-- product navbar start  -->
       <div class="navbar-appscode navbar-product">
+        <!-- navbar left start  -->
         <div class="navbar-left">
           <div class="navbar-brand">
             <a href="#"><img src="/assets/images/products/kubedb/kubedb.png" alt=""></a>
           </div>
         </div>
+        <!-- navbar left end -->
+       <!-- navbar right start  -->
         <div class="navbar-right">
           <ul>
             <li class="nav-item">
@@ -504,7 +507,26 @@
               <a href="#" class="link">Documentation</a>
             </li>
           </ul>
+
+          <!-- Community link start  -->
+          <div class="community-items ml-70">
+            <a href="#" class="community-item" target="_blank">
+              <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon">
+            </a>
+             <a href="#" class="community-item" target="_blank">
+               <img src="/assets/images/icon/community/twitter-icon.svg" alt="twitter-icon">
+             </a>
+              <a href="#" class="community-item" target="_blank">
+                <img src="/assets/images/icon/community/slack-icon.svg" alt="slack-icon">
+              </a>
+          </div>
+          <!-- Community link end -->
+          <!-- action button start  -->
+          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-primary ml-8">TRY NOW FREE</a>
+          <!-- action button end -->
+          
         </div>
+       <!-- navbar right end -->
       </div>
       <!-- product navbar end -->
 
@@ -530,7 +552,7 @@
             navItem.classList.toggle('is-active')
 
             // handle background dark-shadow of navItem
-            const darkBodyEl = document.querySelector(".dark-body");
+            const darkBodyEl = document.querySelector(".modal-backdrop");
 
             function handleDarkBodyClickEvent(el) {
               el.target.classList.remove('is-show')
@@ -635,7 +657,7 @@
   {{ end }}
   <!-- header area end -->
 
-  <div class="dark-body"></div>
+  <div class="modal-backdrop"></div>
 
 
   <!-- Code that all your templates share, like a header -->
