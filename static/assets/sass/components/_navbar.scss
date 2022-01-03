@@ -1,7 +1,3 @@
-header {
-  margin-bottom: 120px;
-}
-
 .fixed-menu {
   position: absolute;
   width: 100%;
@@ -61,12 +57,8 @@ body.fixed-nav .main-menu.is-bg-available .navbar-link:hover {
   border-color: $ac-white;
 }
 
-body.fixed-nav
-  .main-menu.is-bg-available
-  .navbar-link:not(.is-arrowless)::after,
-body.fixed-nav
-  .main-menu.is-bg-available
-  .select:not(.is-multiple):not(.is-loading)::after {
+body.fixed-nav .main-menu.is-bg-available .navbar-link:not(.is-arrowless)::after,
+body.fixed-nav .main-menu.is-bg-available .select:not(.is-multiple):not(.is-loading)::after {
   border-color: $ac-color-link;
 }
 
@@ -507,8 +499,8 @@ nav {
   transform: translateX(-50%);
 }
 
-.ac-is-hoverable:hover > .ac-megamenu,
-.ac-is-hoverable:hover > .ac-dropdown {
+.ac-is-hoverable:hover>.ac-megamenu,
+.ac-is-hoverable:hover>.ac-dropdown {
   opacity: 1;
   visibility: visible;
   top: 52px;
@@ -565,7 +557,7 @@ p {
 }
 
 // new navbar area start
-.navbar-area {
+header {
   position: relative;
   z-index: 99;
 
@@ -693,14 +685,12 @@ p {
 
             @keyframes pulse-border {
               0% {
-                transform: translateX(-50%) translateY(-50%) translateZ(0)
-                  scale(1);
+                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
                 opacity: 1;
               }
 
               100% {
-                transform: translateX(-50%) translateY(-50%) translateZ(0)
-                  scale(1.5);
+                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
                 opacity: 0;
               }
             }
@@ -716,11 +706,9 @@ p {
     padding: 0 0.5rem;
   }
 
-  .navbar-product {
-  }
+  .navbar-product {}
 
-  .navbar-docs {
-  }
+  .navbar-docs {}
 }
 
 // new navbar area end
@@ -827,7 +815,8 @@ p {
       display: none;
       visibility: hidden;
       transition: 0.3s ease-in-out;
-      &.is-block{
+
+      &.is-block {
         opacity: 1;
         visibility: visible;
       }
@@ -947,8 +936,7 @@ p {
           }
         }
 
-        .material-icons {
-        }
+        .material-icons {}
       }
     }
   }
@@ -956,16 +944,13 @@ p {
 
 .product-description {
   .brand {
-    img {
-    }
+    img {}
   }
 
-  p {
-  }
+  p {}
 
   .button {
-    .material-icons {
-    }
+    .material-icons {}
   }
 }
 
@@ -1028,11 +1013,13 @@ p {
     display: flex;
     align-items: center;
     transition: 0.3s;
+
     &:hover {
       h6 {
         color: $ac-primary;
       }
     }
+
     .calender {
       text-align: center;
       height: 90px;
@@ -1042,6 +1029,7 @@ p {
       flex-direction: column;
       margin-right: 1rem;
       border-radius: 4px;
+
       .date {
         width: 84px;
         height: 45px;
@@ -1076,12 +1064,14 @@ p {
 
     .description {
       max-width: 327px;
+
       h6 {
         font-size: 1rem;
         margin-bottom: 0px;
         letter-spacing: 0;
         font-weight: 500;
         display: block;
+
         &:after {
           position: inherit;
         }
@@ -1103,17 +1093,18 @@ p {
       }
     }
   }
+
   .button.inline-button {
     margin-left: 100px !important;
   }
 }
 
-.community-items { 
+.community-items {
   display: flex;
   align-items: center;
 
 
-	.community-item { 
+  .community-item {
     border: 1px solid #636363;
     display: flex;
     align-items: center;
@@ -1124,22 +1115,54 @@ p {
     margin-right: 0.5rem;
     transition: 0.3s;
 
-    &:hover{
+    &:hover {
       background-color: $ac-primary;
       border-color: $ac-primary;
-      img{
+
+      img {
         filter: brightness(10);
       }
     }
-    &:last-child{
+
+    &:last-child {
       margin-right: 0;
     }
 
-		img { 
-
-		}
-	}
+    img {}
+  }
 }
+
+// navbar search start
+.ac-searchbar {
+  position: relative;
+  z-index: 1;
+
+  label {
+
+    .fa {
+      color: $ac-color-heading;
+
+    }
+  }
+
+  input[type="search"] {
+    border: none;
+    background-color: transparent;
+    color: $ac-color-text;
+    font-size: 0.875rem;
+    width: 300px;
+    padding: 0.2rem  0.875rem;
+    &:focus{
+      border: none;
+      outline: none;
+    }
+    &::placeholder {
+      color: #636363;
+    }
+  }
+}
+
+// navbar search end
 
 // modal-backdrop start
 .modal-backdrop {

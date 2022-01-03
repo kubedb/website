@@ -1,3 +1,44 @@
+// navbar area JS v.2022 start
+document.addEventListener("DOMContentLoaded", () => {
+  const navItems = document.querySelectorAll(".navbar-appscode .nav-item");
+
+  navItems.forEach(navItem => {
+    const item = navItem.querySelector('.link');
+    item.addEventListener('click', function (el) {
+
+      // to remove active class from previously selected navItem
+      const selectedNav = document.querySelector(".nav-item.is-active");
+      if (selectedNav && selectedNav !== item.parentElement) {
+        selectedNav.classList.toggle('is-active')
+      }
+
+      // handle selected navItem class
+      const hasActiveClass = navItem.classList.contains("is-active");
+      navItem.classList.toggle('is-active')
+
+      // handle background dark-shadow of navItem
+      const darkBodyEl = document.querySelector(".modal-backdrop");
+
+      function handleDarkBodyClickEvent(el) {
+        el.target.classList.remove('is-show')
+        const selectedNavItem = document.querySelector(".nav-item.is-active");
+        selectedNavItem ? selectedNavItem.classList.toggle('is-active') : null;
+      }
+
+      if (hasActiveClass && darkBodyEl.classList.contains("is-show")) {
+        darkBodyEl.classList.toggle("is-show");
+        darkBodyEl.removeEventListener('click', handleDarkBodyClickEvent);
+      } else if (!hasActiveClass && !darkBodyEl.classList.contains("is-show")) {
+        darkBodyEl.classList.toggle("is-show");
+        darkBodyEl.addEventListener('click', handleDarkBodyClickEvent);
+      }
+    })
+  })
+})
+// navbar area JS v.2022 end
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   // AOS Animation
   AOS.init({
@@ -27,38 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // menu sticky
 // Not a ton of code, but hard to
-const nav = document.querySelector(".fixed-menu, .documentation-menu");
-const notificationArea = document.querySelector(".notification-area");
-const headerBottom = document.querySelector(".header-bottom-area");
-const documentationMenu = document.querySelector(".documentation-menu");
-const leftSidebar = document.querySelector(".kd-left-sidebar");
-const rightSidebar = document.querySelector(".right-sidebar-area");
-
-let topOfNav = nav.offsetTop;
-function fixNav() {
-  if (window.scrollY > topOfNav) {
-    document.body.classList.add("fixed-nav");
-
-    if (notificationArea.style.display === "block") {
-      if (window.innerWidth <= 550) {
-        headerBottom.style.top = "72px";
-        documentationMenu.style.top = "130px";
-      } else {
-        headerBottom.style.top = "45px";
-        documentationMenu.style.top = "103px";
-        leftSidebar.style.top = "150px";
-        rightSidebar.style.top = "150px";
-      }
-    }
-  } else {
-    document.body.classList.remove("fixed-nav");
-    headerBottom.style.top = "0px";
-    if(documentationMenu) documentationMenu.style.top = "56px";
-    leftSidebar.style.top = "130px";
-    rightSidebar.style.top = "140px";
-  }
-}
-window.addEventListener("scroll", fixNav);
 
 // mega menu active class
 var navbarItems = document.querySelectorAll(".navbar-item");
@@ -227,9 +236,9 @@ tabItems.forEach((tab) => {
 
     // add .active class to the clicked item, remove .active from others
     document.querySelectorAll(".nav-item .nav-link").forEach((navLink) => {
-      navLink === el
-        ? navLink.classList.add("active")
-        : navLink.classList.remove("active");
+      navLink === el ?
+        navLink.classList.add("active") :
+        navLink.classList.remove("active");
     });
 
     // add .show class to the target tab-pane, remove from others
@@ -237,9 +246,9 @@ tabItems.forEach((tab) => {
     const tabPaneTarget = document.querySelector(elHref);
 
     document.querySelectorAll(".tab-pane").forEach((tabPane) => {
-      tabPane === tabPaneTarget
-        ? tabPane.classList.add("show")
-        : tabPane.classList.remove("show");
+      tabPane === tabPaneTarget ?
+        tabPane.classList.add("show") :
+        tabPane.classList.remove("show");
     });
   });
 });
