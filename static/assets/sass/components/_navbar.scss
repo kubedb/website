@@ -823,7 +823,14 @@ p {
       border-left: 1px solid #e7e7e7;
       padding-left: 5rem;
       max-width: 30rem;
+      opacity: 0;
       display: none;
+      visibility: hidden;
+      transition: 0.3s ease-in-out;
+      &.is-block{
+        opacity: 1;
+        visibility: visible;
+      }
 
       .brand {
         margin-bottom: 1rem;
@@ -1101,8 +1108,41 @@ p {
   }
 }
 
-// dark-body start
-.dark-body {
+.community-items { 
+  display: flex;
+  align-items: center;
+
+
+	.community-item { 
+    border: 1px solid #636363;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+    transition: 0.3s;
+
+    &:hover{
+      background-color: $ac-primary;
+      border-color: $ac-primary;
+      img{
+        filter: brightness(10);
+      }
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+
+		img { 
+
+		}
+	}
+}
+
+// modal-backdrop start
+.modal-backdrop {
   &.is-show {
     width: 100%;
     height: 100%;
@@ -1114,4 +1154,4 @@ p {
   }
 }
 
-// dark-body end
+// modal-backdrop end
