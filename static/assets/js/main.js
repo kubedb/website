@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (hasActiveClass && darkBodyEl.classList.contains("is-show")) {
         darkBodyEl.classList.toggle("is-show");
         darkBodyEl.removeEventListener('click', handleDarkBodyClickEvent);
-      } else if (!hasActiveClass && !darkBodyEl.classList.contains("is-show")) {
+      } else if (!hasActiveClass && !darkBodyEl.classList.contains("is-show") && !!navItem.querySelector('.mega-menu-wrapper')) {
         darkBodyEl.classList.toggle("is-show");
         darkBodyEl.addEventListener('click', handleDarkBodyClickEvent);
       }

@@ -8535,11 +8535,9 @@ section.our-customer-area {
   position: sticky;
   top: 130px;
   z-index: 9;
-}
-
-.kd-sidebar-menu {
-  max-height: 65vh;
-  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .kd-sidebar-menu .item label {
@@ -8547,30 +8545,6 @@ section.our-customer-area {
   position: relative;
   z-index: 1;
   border-radius: 3px 0 0 3px;
-}
-
-.trial-button .button {
-  background-color: #00a651;
-  color: #ffffff;
-  font-size: 14px;
-  height: 40px;
-}
-
-.trial-button {
-  margin-bottom: 15px;
-}
-
-span.new-item {
-  color: #9d0a0e;
-  font-size: 12px;
-  font-weight: 500;
-  background: #e3d4d4;
-  padding: 3px 10px;
-  border-radius: 4px;
-  line-height: 12px;
-  height: 20px;
-  position: absolute;
-  right: 30px;
 }
 
 /* datasheet style start */
@@ -8694,6 +8668,14 @@ header .navbar-appscode {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0.5rem 1.25rem;
+}
+
+header .navbar-appscode.navbar-product {
+  background-color: #FAFAFD;
+}
+
+header .navbar-appscode.documentation-menu {
+  margin-left: 350px;
 }
 
 header .navbar-appscode .navbar-left {
@@ -9311,6 +9293,41 @@ header .ac-grid-container {
 
 .community-items .community-item:last-child {
   margin-right: 0;
+}
+
+.product-version .dropdown .dropdown-trigger .button {
+  font-size: 0.813rem;
+  width: 190px;
+  height: 2rem;
+  border-radius: 50px;
+  padding: 2px 15px;
+  color: #1c1c1c;
+  border: 1px solid #e7e7e7;
+}
+
+.product-version .dropdown .dropdown-trigger .button .arrow {
+  color: #999999;
+  font-size: 0.9rem;
+}
+
+.product-version .dropdown .dropdown-menu .dropdown-content {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.product-version .dropdown .dropdown-menu .dropdown-content .dropdown-item {
+  font-size: 0.813rem;
+  color: #1c1c1c;
+}
+
+.product-version .new-item {
+  background-color: #00a651;
+  font-size: 0.813rem;
+  color: #ffffff;
+  border-radius: 2px;
+  height: 1.2rem;
+  padding: 2px 5px;
+  line-height: 1.2;
 }
 
 .ac-searchbar {
@@ -11589,35 +11606,46 @@ p.spam-message {
 /*==============================================================
     Documentation page style
 ==============================================================*/
-.documentation-page {
-  -webkit-box-shadow: 0 0 60px rgba(0, 0, 0, 0.12);
-          box-shadow: 0 0 60px rgba(0, 0, 0, 0.12);
-}
-
-.documentation-navbar .main-menu a {
-  padding: 10px 30px;
-}
-
-.documentation-menu {
-  background: #ffffff;
-  height: 100%;
-}
-
-body.fixed-nav .documentation-menu {
-  position: fixed;
-  width: 100%;
-  height: auto;
-  z-index: 90;
-  top: 58px;
-}
-
 .documentation-area {
-  margin-top: 35px;
+  margin-top: 2rem;
   margin-bottom: 100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 350px auto 350px;
+      grid-template-columns: 350px auto 350px;
 }
 
-.navbar-centered {
-  margin: 0 auto;
+.documentation-area .left-sidebar-wrapper {
+  border-right: 1px solid #e7e7e7;
+  margin-top: -79px;
+  background-color: #fafafd;
+  z-index: 1;
+}
+
+.documentation-area .left-sidebar-wrapper .kd-sidebar-menu {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 17px;
+  /* Increase/decrease this value for cross-browser compatibility */
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* So the width will be 100% + 17px */
+  border-right: 1px solid #e7e7e7;
+}
+
+.documentation-area .left-sidebar-wrapper .item label {
+  background: transparent;
+}
+
+.documentation-area .documentation-body {
+  padding: 0 60px;
+}
+
+.documentation-area .right-sidebar {
+  border-left: 1px solid #e7e7e7;
 }
 
 .info-title p {
@@ -11692,7 +11720,6 @@ body.fixed-nav .documentation-menu {
 
 .full-info h1 {
   font-size: 32px;
-  border-bottom: 1px solid #ebebeb;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
@@ -12197,99 +12224,11 @@ li.nav-item.active a {
   border-color: none;
 }
 
-.kd-version .icon {
-  color: #32325d !important;
-  font-size: 15px;
-  margin-top: 2px;
-}
-
 .navbar-link:not(.is-arrowless)::after,
 .select:not(.is-multiple):not(.is-loading)::after {
   border-color: #999;
   height: 8px;
   width: 8px;
-}
-
-.kd-version .dropdown,
-.kd-version .dropdown-trigger,
-.kd-version .dropdown,
-.kd-version .dropdown-menu {
-  width: 100%;
-  padding-top: 0;
-}
-
-.dropdown.is-active .dropdown-trigger button {
-  background: #f5f7f9;
-}
-
-.dropdown-trigger button.button .tag {
-  margin-left: 115px;
-  background: #f4e5e5;
-  color: #9d0a0e;
-  font-weight: 500;
-  font-family: #4a4a4a;
-}
-
-.dropdown-trigger span strong {
-  padding-right: 15px;
-}
-
-.kd-version .button {
-  padding-left: 20px;
-  height: 38px;
-  background: #ebebeb;
-}
-
-button.button.is-fullwidth {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  border: none;
-}
-
-.kd-version .dropdown-content {
-  border-radius: 4px;
-  -webkit-box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.16);
-  padding: 0;
-}
-
-.kd-version a.dropdown-item {
-  padding: 7px 30px;
-  border-bottom: 1px solid #ececec;
-  font-family: "Roboto", sans-serif;
-  color: #32325d;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  overflow: hidden;
-}
-
-.kd-version a.dropdown-item:last-child {
-  border-bottom: none;
-}
-
-.kd-version a.dropdown-item:hover {
-  background: #00a651;
-  color: #ffffff;
-}
-
-.kd-version a.dropdown-item:first-child:hover {
-  border-radius: 4px 4px 0 0;
-}
-
-.kd-version a.dropdown-item:last-child:hover {
-  border-radius: 0 0 4px 4px;
-}
-
-.kd-version a.dropdown-item .tag {
-  float: right;
-  overflow: hidden;
-  background: #f4e5e5;
-  color: #9d0a0e;
-}
-
-.kd-version {
-  margin-bottom: 15px;
 }
 
 .dropdown.is-active .button .icon:last-child:not(:first-child) {
@@ -12303,7 +12242,7 @@ button.button.is-fullwidth {
 }
 
 .improve-bg-color {
-  background-color: #FBFDFF;
+  background-color: #fbfdff;
   padding: 0 20px !important;
 }
 
@@ -12315,7 +12254,7 @@ button.button.is-fullwidth {
 
 .improve-bg-color p {
   font-size: 16px !important;
-  color: #74818D !important;
+  color: #74818d !important;
 }
 
 .full-info table td,

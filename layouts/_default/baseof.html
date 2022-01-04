@@ -492,8 +492,53 @@
         <!-- navbar left start  -->
         <div class="navbar-left">
           <div class="navbar-brand">
-            <a href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}"><img
-                src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" alt="{{ $p.logo.alt }}"></a>
+            <a href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}"><img src="{{ $p.logo.src }}"
+                alt="{{ $p.logo.alt }}" alt="{{ $p.logo.alt }}"></a>
+
+            <!-- version select start  -->
+            {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+            {{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
+            <div class="product-version ml-20">
+              <div class="dropdown">
+                <div class="dropdown-trigger">
+                  <button class="button is-justify-content-space-between" aria-haspopup="true"
+                    aria-controls="dropdown-menu3">
+
+
+                    {{ range $v := $p.versions }}
+                    {{ if $v.show }}
+                    {{ if and $v.hostDocs (eq $v.version $currentBranch) }}
+                    <span>{{ $v.version }}</span>
+                    {{ if eq $v.version $p.latestVersion }}
+                    <span class="new-item">Latest</span>
+                    {{ end }}
+                    {{ end }}
+                    {{ end }}
+                    {{ end }}
+                    <span class="arrow">
+                      <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                  <div class="dropdown-content">
+                    {{ range $v := $p.versions }}
+                    {{ if $v.show }}
+                    {{ if $v.hostDocs }}
+                    <a href="/docs/{{ $v.version }}/" class="dropdown-item">{{ $v.version }}
+                      {{ if eq $v.version $p.latestVersion }} <div class="new-item ml-15">Latest</div> {{ end }}</a>
+                    {{ else }}
+                    <a href="https://github.com/{{ $p.docRepo }}/tree/{{ $v.version }}/docs" target="_blank"
+                      class="dropdown-item">{{ $v.version }}</a>
+                    {{ end }}
+                    {{ end }}
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- version select end -->
+
           </div>
         </div>
         <!-- navbar left end -->
@@ -562,7 +607,7 @@
       <div class="navbar-docs"></div>
       <!-- docs navbar end -->
 
-     
+
 
     </div>
     <!-- new navbar area end -->
