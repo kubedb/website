@@ -10,6 +10,12 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1.25rem;
+    &.navbar-product{
+      background-color: #FAFAFD;
+    }
+    &.documentation-menu{
+      margin-left: 350px;
+    }
 
     .navbar-left {
       display: flex;
@@ -558,6 +564,51 @@ header {
   }
 }
 
+// product version style start
+.product-version {
+  .dropdown {
+    .dropdown-trigger {
+      .button {
+        font-size: 0.813rem;
+        width: 190px;
+        height: 2rem;
+        border-radius: 50px;
+        padding: 2px 15px;
+        color: $ac-color-heading;
+        border: 1px solid $ac-white-light;
+
+        .arrow {
+          color: #999999;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      .dropdown-content {
+        max-height: 420px;
+        overflow-y: auto;
+
+        .dropdown-item {
+          font-size: 0.813rem;
+          color: $ac-color-heading;
+        }
+      }
+    }
+  }
+
+  .new-item {
+    background-color: $ac-primary;
+    font-size: 0.813rem;
+    color: #ffffff;
+    border-radius: 2px;
+    height: 1.2rem;
+    padding: 2px 5px;
+    line-height: 1.2;
+  }
+}
+
+// product version style end
 // navbar search start
 .ac-searchbar {
   position: relative;

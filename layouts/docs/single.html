@@ -2,93 +2,44 @@
 
 {{ $currentPage := . }}
 {{ $menu := .Params.menu_name }}
-<!-- documentation menu area start -->
-<div class="documentation-menu is-hidden">
-  <div class="container section">
-    <div class="is-centered">
-      <div class="is-half has-text-centered-desktop">
-        <!-- responsive menu start -->
-        <div class="responsive-menu">
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="acNav3">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-        <!-- responsive menu end -->
-        <!-- start -->
-        <nav class="documentation-navbar">
-          <div id="acNav3" class="navbar-menu nav-menu main-menu">
-            <div class="navbar-centered">
-              <!-- nav menu start -->
-              <div class="navbar-start">
-                {{ $sectionMenuId := .Params.section_menu_id }}
-                {{ if isset .Params "menu_name" }}
-                {{ range (index .Site.Menus .Params.menu_name) }}
-                {{ if eq (string .Pre) "dropdown" }}
-                <div class="navbar-item has-dropdown ac-is-hoverable">
-                  <a class="navbar-link">
-                    {{ .Name }}
-                  </a>
-                  <div class="ac-dropdown">
-                    {{ range .Children }}
-                    {{ if ne .Weight -1 }}
-                    <a href="{{ .URL }}" class="navbar-item">{{ .Name }}</a>
-                    {{ end }}
-                    {{ end }}
-                  </div>
-                </div>
-                {{ else }}
-                <a href="{{ .URL }}"
-                  class="{{ if eq $sectionMenuId .Identifier }} is-active {{ end }} navbar-item">{{ .Name }}</a>
-                {{ end }}
-                {{ end }}
-                {{ end }}
-              </div>
-              <!-- nav menu end -->
-            </div>
-          </div>
-        </nav>
-        <!-- end -->
-      </div>
-    </div>
-  </div>
-</div>
-<!-- documentation menu area end -->
 
 <!-- documentation and search start   -->
 <div class="navbar-appscode documentation-menu">
-  <div class="navbar-left">
+  <div class="navbar-left ml-40">
     <ul>
+      {{ $sectionMenuId := .Params.section_menu_id }}
+      {{ if isset .Params "menu_name" }}
+      {{ range (index .Site.Menus .Params.menu_name) }}
+      {{ if eq (string .Pre) "dropdown" }}
       <li class="nav-item">
-        <a href="#" class="link">Welcome</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="link">Overview</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="link">Setup</a>
-      </li>
-      <li class="nav-item">
-        <button class="link">Database <i class="fa fa-angle-down"></i></button>
+        <button class="link"> {{ .Name }} <i class="fa fa-angle-down"></i></button>
 
         <!-- mega-menu wrapper start  -->
         <div class="mega-menu-wrapper">
           <div class="mega-menu-inner ac-grid-container">
             <div class="databse-list">
               <ul>
-                <li><a href="#">mongo</a></li>
-                <li><a href="#">mongo</a></li>
-                <li><a href="#">mongo</a></li>
-                <li><a href="#">mongo</a></li>
+                {{ range .Children }}
+                {{ if ne .Weight -1 }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+                {{ end }}
               </ul>
             </div>
           </div>
         </div>
         <!-- mega-menu wrapper end -->
       </li>
+      {{ else }}
+      <li class="nav-item">
+        <a href="{{ .URL }}" class="{{ if eq $sectionMenuId .Identifier }} is-active {{ end }} link">{{ .Name }}</a>
+      </li>
+      {{ end }}
+      {{ end }}
+      {{ end }}
     </ul>
   </div>
+ <!-- searchbar component start  -->
   <div class="navbar-right">
     <div class="ac-searchbar">
       <label for="acSearch">
@@ -97,6 +48,7 @@
       <input id="acSearch" type="search" placeholder="Search kubedb documentation!">
     </div>
   </div>
+ <!-- searchbar component end -->
 </div>
 <!-- documentation and search end  -->
 {{ end }}
@@ -110,10 +62,84 @@
 <!-- init idx -->
 {{ .Scratch.Add "idx" 0 }}
 
+{{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
 <!-- documentation area start -->
 <div class="documentation-area">
-  <div class="container is-fluid">
-    {{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
+  <!-- documentation area start -->
+  <div class="left-sidebar-wrapper">
+    <div class="kd-left-sidebar">
+
+      {{ if isset .Params "menu_name" }}
+      {{ $sectionMenuId := .Params.section_menu_id }}
+      {{ range (index .Site.Menus .Params.menu_name) }}
+      {{ if eq $sectionMenuId .Identifier }}
+      {{ if .HasChildren }}
+      {{ $hasPreDropdown := eq (string .Pre) "dropdown" }}
+
+      {{ $.Scratch.Set "leftMenuHeadline" .Name }}
+      {{ range .Children }}
+      {{ if and ( and .HasChildren $hasPreDropdown) ($currentPage.HasMenuCurrent $menu .)  }}
+
+      {{ $.Scratch.Set "leftMenuHeadline" .Name }}
+
+      {{ end }}
+      {{ end }}
+      {{ end }}
+      {{ end }}
+      {{ end }}
+      {{ end }}
+
+      <!-- sidebar menu start -->
+      <div class="kd-sidebar-menu">
+        {{ if isset .Params "menu_name" }}
+        {{ $sectionMenuId := .Params.section_menu_id }}
+
+        <!-- first child -> section menu -->
+        {{ range (index .Site.Menus .Params.menu_name ) }}
+
+        {{ if eq $sectionMenuId .Identifier }}
+        {{ $hasPreDropdown := eq (string .Pre) "dropdown" }}
+
+        <!-- second child -> left menu level 1-->
+        {{ range .Children }}
+
+        {{ if .HasChildren }}
+        {{ if $hasPreDropdown }}
+        {{ if $currentPage.HasMenuCurrent $menu . }}
+
+        {{ range .Children }}
+        {{ if .HasChildren }}
+        {{ partial "menu/group.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
+        {{ else }}
+        {{ partial "menu/leaf.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
+        {{ end }}
+        {{ end }}
+
+        {{ end }}
+        {{ else }}
+        {{ partial "menu/group.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
+        {{ end }}
+
+        {{ else }}
+        {{ partial "menu/leaf.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
+        {{ end }}
+        <!-- end of menu item rendering -->
+        {{ end }}
+        <!-- end second child -> left level 1-->
+
+        {{ end }}
+        {{ end }}
+        <!-- end first child -> section menu -->
+        {{ end }}
+      </div>
+      <!-- sidebar menu end -->
+    </div>
+  </div>
+  <!-- left sidebar area end -->
+
+
+  <!-- documentation body start  -->
+  <div class="documentation-body">
     {{ if not (eq $p.latestVersion $currentBranch) }}
     <article class="message is-danger">
       <div class="message-body">
@@ -128,152 +154,37 @@
       </div>
     </article>
     {{ end }}
-    <div class="columns">
-      <div class="column is-3">
-        <!-- left sidebar area start -->
-        <div class="kd-left-sidebar">
-
-          <div class="trial-button">
-            <a href="/docs/{{ $p.latestVersion }}/setup/" class="button is-fullwidth">
-              Try Now for FREE!
-            </a>
-          </div>
-
-          <div class="kd-version">
-            <div class="dropdown">
-              <div class="dropdown-trigger">
-                <button class="button is-fullwidth" aria-haspopup="true" aria-controls="dropdown-menu3">
-
-                  {{ range $v := $p.versions }}
-                  {{ if $v.show }}
-                  {{ if and $v.hostDocs (eq $v.version $currentBranch) }}
-                  <span><strong class="icon"><i class="fa fa-cog"
-                        aria-hidden="true"></i></strong>{{ $v.version }}</span>
-                  {{ if eq $v.version $p.latestVersion }}
-                  <span class="new-item">Latest</span>
-                  {{ end }}
-                  {{ end }}
-                  {{ end }}
-                  {{ end }}
-
-                  <span class="icon is-small">
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </div>
-              <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-                <div class="dropdown-content">
-                  {{ range $v := $p.versions }}
-                  {{ if $v.show }}
-                  {{ if $v.hostDocs }}
-                  <a href="/docs/{{ $v.version }}/" class="dropdown-item">{{ $v.version }}
-                    {{ if eq $v.version $p.latestVersion }} <div class="tag">Latest</div> {{ end }}</a>
-                  {{ else }}
-                  <a href="https://github.com/{{ $p.docRepo }}/tree/{{ $v.version }}/docs" target="_blank"
-                    class="dropdown-item">{{ $v.version }}</a>
-                  {{ end }}
-                  {{ end }}
-                  {{ end }}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {{ if isset .Params "menu_name" }}
-          {{ $sectionMenuId := .Params.section_menu_id }}
-          {{ range (index .Site.Menus .Params.menu_name) }}
-          {{ if eq $sectionMenuId .Identifier }}
-          {{ if .HasChildren }}
-          {{ $hasPreDropdown := eq (string .Pre) "dropdown" }}
-
-          {{ $.Scratch.Set "leftMenuHeadline" .Name }}
-          {{ range .Children }}
-          {{ if and ( and .HasChildren $hasPreDropdown) ($currentPage.HasMenuCurrent $menu .)  }}
-
-          {{ $.Scratch.Set "leftMenuHeadline" .Name }}
-
-          {{ end }}
-          {{ end }}
-          {{ end }}
-          {{ end }}
-          {{ end }}
-          {{ end }}
-
-          <!-- sidebar menu start -->
-          <div class="kd-sidebar-menu">
-            {{ if isset .Params "menu_name" }}
-            {{ $sectionMenuId := .Params.section_menu_id }}
-
-            <!-- first child -> section menu -->
-            {{ range (index .Site.Menus .Params.menu_name ) }}
-
-            {{ if eq $sectionMenuId .Identifier }}
-            {{ $hasPreDropdown := eq (string .Pre) "dropdown" }}
-
-            <!-- second child -> left menu level 1-->
-            {{ range .Children }}
-
-            {{ if .HasChildren }}
-            {{ if $hasPreDropdown }}
-            {{ if $currentPage.HasMenuCurrent $menu . }}
-
-            {{ range .Children }}
-            {{ if .HasChildren }}
-            {{ partial "menu/group.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
-            {{ else }}
-            {{ partial "menu/leaf.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
-            {{ end }}
-            {{ end }}
-
-            {{ end }}
-            {{ else }}
-            {{ partial "menu/group.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
-            {{ end }}
-
-            {{ else }}
-            {{ partial "menu/leaf.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
-            {{ end }}
-            <!-- end of menu item rendering -->
-            {{ end }}
-            <!-- end second child -> left level 1-->
-
-            {{ end }}
-            {{ end }}
-            <!-- end first child -> section menu -->
-            {{ end }}
-          </div>
-          <!-- sidebar menu end -->
-        </div>
-        <!-- left sidebar area end -->
-      </div>
-      <div class="column is-7">
-        <div class="full-info">
-          {{ .Content }}
-        </div>
-      </div>
-      <div class="column is-2">
-        <div class="right-sidebar-area">
-          <!-- search item -->
-          <div class="search-area">
-            <form action="#">
-              <input id="acSearch" type="text" placeholder="Search..." />
-              <button class="search-button">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
-          </div>
-          <!-- search item end -->
-
-          <!-- table of contents area start -->
-          <div class="tbl-of-contents">
-            <h4>What's on this Page</h4>
-            {{.TableOfContents}}
-          </div>
-          <!-- table of contents area end -->
-        </div>
-      </div>
+    <div class="full-info">
+      {{ .Content }}
     </div>
   </div>
+  <!-- documentation body end -->
+
+
+  <!-- right sidebar start  -->
+  <div class="right-sidebar">
+    <div class="right-sidebar-area">
+      <!-- search item -->
+      <!-- <div class="search-area">
+        <form action="#">
+          <input id="acSearch" type="text" placeholder="Search..." />
+          <button class="search-button">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div> -->
+      <!-- search item end -->
+
+      <!-- table of contents area start -->
+      <div class="tbl-of-contents">
+        <h4>What's on this Page</h4>
+        {{.TableOfContents}}
+      </div>
+      <!-- table of contents area end -->
+    </div>
+  </div>
+  <!-- right sidebar end  -->
+
   <script>
     // kd version dropdown js
     var kdDropdown = document.querySelector(".dropdown");
