@@ -151,12 +151,12 @@
 .kd-sidebar-menu .item ul {
   margin-left: 20px;
   padding-left: 15px;
-  border-left: 1px solid #e2e2e2;
+  border-left: 1px solid $ac-white-light;
 }
 // border remove style 
 // .item input:checked ~ label,
 // .item input:checked ~ .item > label {
-//   border: 1px solid #e2e2e2;
+//   border: 1px solid $ac-white-light;
 //   background: $ac-white;
 // }
 
@@ -247,7 +247,7 @@
 }
 
 .single-input-field input::placeholder {
-  color: #e2e2e2;
+  color: $ac-white-light;
 }
 
 .single-input-field .select,
@@ -258,7 +258,7 @@ select {
 
 .single-input-field .select select:not([multiple]) {
   padding-left: 15px;
-  color: #e2e2e2;
+  color: $ac-white-light;
 }
 
 .download-button .icon {

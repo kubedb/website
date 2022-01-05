@@ -22,6 +22,7 @@
       padding-right: 17px;
       box-sizing: content-box;
       border-right: 1px solid $ac-white-light;
+
       .item {
         label {
           background: transparent;
@@ -224,7 +225,8 @@ ul li b {
 .full-info p {
   margin-bottom: 0.825rem;
   color: $ac-color-text;
-  
+  line-height: 160%;
+  font-family: $ac-font-paragraph;
 }
 
 .full-info p strong {
@@ -252,7 +254,7 @@ ul li b {
 
   h4 {
     font-size: 16px;
-    font-family: $ac-font-paragraph;
+    font-family: $ac-font-heading;
     font-weight: 400;
     margin-bottom: 0;
   }
@@ -308,7 +310,7 @@ ul li b {
 
 .search-area input {
   background: $ac-white;
-  border: 1px solid #e2e2e2;
+  border: 1px solid $ac-white-light;
   padding: 9px 40px 9px 15px;
   font-size: 15px;
   border-radius: 3px;
@@ -371,7 +373,6 @@ ul li b {
   padding-left: 20px;
   padding-bottom: 10px;
 }
-
 
 .tbl-of-contents ul ul {
   border: none;
@@ -443,7 +444,7 @@ li.nav-item.active a {
 }
 
 .sidebar-search-area::-webkit-scrollbar-track {
-  background: #e2e2e2;
+  background: $ac-white-light;
 }
 
 .sidebar-search-area::-webkit-scrollbar-thumb {
@@ -462,7 +463,7 @@ li.nav-item.active a {
 .searchbar-area input {
   background: $ac-white;
   padding: 10px;
-  border: 1px solid #e2e2e2;
+  border: 1px solid $ac-white-light;
   height: 40px;
   border-radius: 3px;
   width: 86.6%;
@@ -491,7 +492,7 @@ li.nav-item.active a {
 }
 
 .sidebar-search-area h3 {
-  font-family: $ac-font-paragraph;
+  font-family: $ac-font-heading;
   color: #393e46;
   margin-bottom: 10px;
 }
@@ -508,7 +509,7 @@ li.nav-item.active a {
   border-radius: 3px;
   width: 60px;
   background: #f2f2f2;
-  border-color: #e2e2e2;
+  border-color: $ac-white-light;
   color: #393e46;
   font-family: $ac-font-paragraph;
 }
@@ -516,7 +517,7 @@ li.nav-item.active a {
 .single-search-result h3 a {
   color: #4d4dcb;
   font-size: 16px;
-  font-family: $ac-font-paragraph;
+  font-family: $ac-font-heading;
   line-height: 26px;
 }
 
