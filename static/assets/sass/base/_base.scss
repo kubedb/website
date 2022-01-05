@@ -91,8 +91,8 @@
 }
 
 .kd-sidebar-menu .item label a {
-  font-weight: 600;
-  color: $ac-color-link;
+  font-weight: 500;
+  color: $ac-color-heading;
   padding: 8px 17px;
   display: block;
 }
@@ -141,8 +141,6 @@
   display: block;
   cursor: pointer;
   user-select: none;
-  margin-top: 10px;
-  margin-top: 5px;
   transition: 0.3s;
 }
 
