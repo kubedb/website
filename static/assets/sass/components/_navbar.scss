@@ -5,7 +5,7 @@
 }
 
 .navbar-appscode {
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid $ac-white-light;
   background-color: $ac-white;
   display: flex;
   align-items: center;
@@ -294,7 +294,7 @@
     .product-description {
       margin-left: 1rem;
       float: left;
-      border-left: 1px solid #e7e7e7;
+      border-left: 1px solid $ac-white-light;
       padding-left: 5rem;
       max-width: 30rem;
       opacity: 0;
@@ -612,7 +612,7 @@
         font-size: 0.813rem;
         width: 190px;
         height: 2rem;
-        border-radius: 50px;
+        border-radius: 2px;
         padding: 2px 15px;
         color: $ac-color-heading;
         border: 1px solid $ac-white-light;
