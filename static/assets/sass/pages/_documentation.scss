@@ -222,8 +222,9 @@ ul li b {
 }
 
 .full-info p {
-  margin-bottom: 15px;
+  margin-bottom: 0.825rem;
   color: $ac-color-text;
+  
 }
 
 .full-info p strong {
@@ -355,7 +356,8 @@ ul li b {
   font-size: 14px;
   font-weight: 700;
   color: $ac-color-heading;
-  margin-bottom: 18px;
+  margin-left: 20px;
+  margin-bottom: 1.5rem;
   line-height: 1;
 }
 

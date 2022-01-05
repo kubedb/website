@@ -93,7 +93,7 @@
 .kd-sidebar-menu .item label a {
   font-weight: 500;
   color: $ac-color-heading;
-  padding: 8px 17px;
+  padding: 0.5rem 1.25rem;
   display: block;
 }
 
@@ -153,12 +153,12 @@
   padding-left: 15px;
   border-left: 1px solid #e2e2e2;
 }
-
-.item input:checked ~ label,
-.item input:checked ~ .item > label {
-  border: 1px solid #e2e2e2;
-  background: $ac-white;
-}
+// border remove style 
+// .item input:checked ~ label,
+// .item input:checked ~ .item > label {
+//   border: 1px solid #e2e2e2;
+//   background: $ac-white;
+// }
 
 .item:first-child input:checked ~ label,
 .item:first-child input:checked ~ .item:first-child > label {
