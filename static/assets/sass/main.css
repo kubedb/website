@@ -8436,8 +8436,8 @@ section.our-customer-area {
 }
 
 .kd-sidebar-menu .item label a {
-  font-weight: 600;
-  color: #4a4a4a;
+  font-weight: 500;
+  color: #1c1c1c;
   padding: 8px 17px;
   display: block;
 }
@@ -8493,8 +8493,6 @@ section.our-customer-area {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  margin-top: 10px;
-  margin-top: 5px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -8650,12 +8648,12 @@ video {
 }
 
 /* schedule-demo end */
-header {
+.navbar-area {
   position: relative;
   z-index: 99;
 }
 
-header .navbar-appscode {
+.navbar-appscode {
   border-bottom: 1px solid #e7e7e7;
   background-color: #ffffff;
   display: -webkit-box;
@@ -8670,15 +8668,23 @@ header .navbar-appscode {
   padding: 0.5rem 1.25rem;
 }
 
-header .navbar-appscode.navbar-product {
-  background-color: #FAFAFD;
+.navbar-appscode.navbar-product {
+  background-color: #fafafd;
 }
 
-header .navbar-appscode.documentation-menu {
+.navbar-appscode.navbar-product .navbar-left .navbar-brand a img {
+  height: 1.58rem;
+}
+
+.navbar-appscode.documentation-menu {
   margin-left: 350px;
 }
 
-header .navbar-appscode .navbar-left {
+.navbar-appscode.documentation-menu .navbar-right {
+  width: 49%;
+}
+
+.navbar-appscode .navbar-left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8687,15 +8693,15 @@ header .navbar-appscode .navbar-left {
           align-items: center;
 }
 
-header .navbar-appscode .navbar-left .navbar-brand {
+.navbar-appscode .navbar-left .navbar-brand {
   min-height: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 2.5rem;
+  margin-right: 3.8rem;
 }
 
-header .navbar-appscode .navbar-left .navbar-brand a {
+.navbar-appscode .navbar-left .navbar-brand a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8704,11 +8710,11 @@ header .navbar-appscode .navbar-left .navbar-brand a {
           align-items: center;
 }
 
-header .navbar-appscode .navbar-left .navbar-brand a img {
+.navbar-appscode .navbar-left .navbar-brand a img {
   height: 1.875rem;
 }
 
-header .navbar-appscode .navbar-right {
+.navbar-appscode .navbar-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8717,32 +8723,32 @@ header .navbar-appscode .navbar-right {
           align-items: center;
 }
 
-header .navbar-appscode .navbar-right .button {
+.navbar-appscode .navbar-right .button {
   margin-left: 2.5rem;
 }
 
-header .navbar-appscode ul .nav-item {
+.navbar-appscode ul .nav-item {
   margin-right: 2.5rem;
 }
 
-header .navbar-appscode ul .nav-item.is-active .link {
+.navbar-appscode ul .nav-item.is-active .link {
   color: #00a651;
 }
 
-header .navbar-appscode ul .nav-item.is-active .link i.fa {
+.navbar-appscode ul .nav-item.is-active .link i.fa {
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
 
-header .navbar-appscode ul .nav-item.is-active .mega-menu-wrapper {
+.navbar-appscode ul .nav-item.is-active .mega-menu-wrapper {
   display: block !important;
 }
 
-header .navbar-appscode ul .nav-item:last-child {
+.navbar-appscode ul .nav-item:last-child {
   margin-right: 0;
 }
 
-header .navbar-appscode ul .nav-item .link {
+.navbar-appscode ul .nav-item .link {
   font-size: 0.875rem;
   line-height: 1;
   color: #1c1c1c;
@@ -8758,17 +8764,21 @@ header .navbar-appscode ul .nav-item .link {
   z-index: 1;
 }
 
-header .navbar-appscode ul .nav-item .link:hover {
+.navbar-appscode ul .nav-item .link.is-active {
   color: #00a651;
 }
 
-header .navbar-appscode ul .nav-item .link .fa {
+.navbar-appscode ul .nav-item .link:hover {
+  color: #00a651;
+}
+
+.navbar-appscode ul .nav-item .link .fa {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   margin-left: 0.625rem;
 }
 
-header .navbar-appscode ul .nav-item .link .whats-new {
+.navbar-appscode ul .nav-item .link .whats-new {
   position: absolute;
   z-index: 1;
   top: -0.5rem;
@@ -8780,7 +8790,7 @@ header .navbar-appscode ul .nav-item .link .whats-new {
   display: none;
 }
 
-header .navbar-appscode ul .nav-item .link .whats-new:before {
+.navbar-appscode ul .nav-item .link .whats-new:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -8797,7 +8807,7 @@ header .navbar-appscode ul .nav-item .link .whats-new:before {
           animation: pulse-border 1500ms ease-out infinite;
 }
 
-header .navbar-appscode ul .nav-item .link .whats-new:after {
+.navbar-appscode ul .nav-item .link .whats-new:after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -8839,7 +8849,7 @@ header .navbar-appscode ul .nav-item .link .whats-new:after {
   }
 }
 
-header .ac-grid-container {
+.ac-grid-container {
   max-width: 1344px;
   margin: 0 auto;
   padding: 0 0.5rem;
@@ -9333,6 +9343,8 @@ header .ac-grid-container {
 .ac-searchbar {
   position: relative;
   z-index: 1;
+  padding: 0 20px;
+  border-left: 1px solid #e7e7e7;
 }
 
 .ac-searchbar label .fa {
@@ -9344,7 +9356,7 @@ header .ac-grid-container {
   background-color: transparent;
   color: #3b3030;
   font-size: 0.875rem;
-  width: 300px;
+  width: 270px;
   padding: 0.2rem 0.875rem;
 }
 
@@ -11607,45 +11619,45 @@ p.spam-message {
     Documentation page style
 ==============================================================*/
 .documentation-area {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 100px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 350px auto 350px;
-      grid-template-columns: 350px auto 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .documentation-area .left-sidebar-wrapper {
   border-right: 1px solid #e7e7e7;
-  margin-top: -79px;
+  margin-top: -71px;
   background-color: #fafafd;
   z-index: 1;
+  width: 350px;
 }
 
 .documentation-area .left-sidebar-wrapper .kd-sidebar-menu {
-  max-height: calc(100vh - 120px);
+  min-height: calc(100vh - 120px);
   overflow-y: auto;
   width: 100%;
-  height: 100%;
   overflow-y: scroll;
   padding-right: 17px;
-  /* Increase/decrease this value for cross-browser compatibility */
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  /* So the width will be 100% + 17px */
   border-right: 1px solid #e7e7e7;
 }
 
-.documentation-area .left-sidebar-wrapper .item label {
+.documentation-area .left-sidebar-wrapper .kd-sidebar-menu .item label {
   background: transparent;
 }
 
 .documentation-area .documentation-body {
   padding: 0 60px;
+  width: calc(100% - 674px);
 }
 
 .documentation-area .right-sidebar {
   border-left: 1px solid #e7e7e7;
+  margin-top: -50px;
+  width: 324px;
 }
 
 .info-title p {
@@ -11719,9 +11731,9 @@ p.spam-message {
 }
 
 .full-info h1 {
-  font-size: 32px;
+  font-size: 2rem;
   padding-bottom: 10px;
-  margin-bottom: 20px;
+  line-height: 1.3;
 }
 
 .full-info h2 {
@@ -11999,10 +12011,6 @@ ul li b {
   padding-bottom: 10px;
 }
 
-.tbl-of-contents ul {
-  border-left: 1px solid #a9e9e9;
-}
-
 .tbl-of-contents ul ul {
   border: none;
 }
@@ -12033,10 +12041,10 @@ li.nav-item.active a {
 .right-sidebar-area {
   position: -webkit-sticky;
   position: sticky;
-  top: 140px;
+  top: 205px;
   max-width: 215px;
   z-index: 9;
-  padding: 0 0 0 20px;
+  padding: 0;
 }
 
 .overlay-bg {

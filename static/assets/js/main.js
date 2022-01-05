@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebarMenu = document.querySelector(".kd-sidebar-menu");
   if (sidebarMenu) {
     sidebarMenu.children[0].children[1].children[0].style.fontSize = "22px";
+    sidebarMenu.children[0].children[1].children[0].style.fontWeight = "600";
   }
   // docs-page -> right sidebar (content > 20) then show a scroll
   const allHeaders = document.querySelectorAll(

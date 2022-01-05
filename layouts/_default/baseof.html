@@ -604,7 +604,8 @@
       <!-- product navbar end -->
       {{ end }}
       <!-- docs navbar start  -->
-      <div class="navbar-docs"></div>
+      {{ block "documentation-menu" . }}
+      {{ end }}
       <!-- docs navbar end -->
 
 
@@ -612,13 +613,6 @@
     </div>
     <!-- new navbar area end -->
     {{ end }}
-
-
-    {{ block "documentation-menu" . }}
-    {{ end }}
-
-
-
 
   </header>
   {{ end }}
