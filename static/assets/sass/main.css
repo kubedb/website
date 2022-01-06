@@ -9914,150 +9914,80 @@ Responsive Classes
   top: 0;
 }
 
-.hero-area {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-area .hero-shape {
-  position: absolute;
-  background: url(../images/appscode/hero-shape.png);
-  background-repeat: no-repeat;
-  content: "";
-  left: 0;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  background-position-y: top;
-  z-index: -1;
-  min-height: 100%;
-}
-
-.hero-area .trusted-logo {
-  margin-top: 20px;
-}
-
-.is-full-height {
-  min-height: 100vh;
-}
-
-.hero-area.is-full-height {
-  padding: 70px 0 0;
+.hero-area.is-product {
+  padding: 100px 0;
+  height: 70vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.hero-area-content h1 {
-  line-height: 67px;
-}
-
-.hero-area-content .play-buttons {
-  margin-top: 30px;
-}
-
-.hero-area-content .play-buttons a {
-  color: #242a31;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.hero-area-content .play-buttons a span.video-icon {
-  height: 54px;
-  width: 54px;
-  border: 1px solid #00a651;
-  display: inline-block;
-  font-size: 14px;
-  color: #00a651;
-  text-align: center;
-  line-height: 54px;
-  margin-right: 20px;
-  border-radius: 50%;
-}
-
-.hero-area-content .play-buttons a span.video-icon i.fa {
-  padding-left: 5px;
-}
-
-.hero-right-content-wrapper {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-right-content-wrapper .right-side-content-inner {
-  position: absolute;
-  right: -80px;
-  top: 10px;
-  z-index: -1;
-}
-
-.shap-3 {
-  position: relative;
-  z-index: 1;
-}
-
-.shap-3::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 10px;
-  left: 0;
-  z-index: -1;
-  background: url(../images/appscode/shape-3.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.hero-area {
-  padding: 100px 0 80px;
-}
-
-.hero-content-inner h4 {
-  font-size: 14px;
-  color: #00a651;
-  letter-spacing: 7px;
+.hero-area.is-product h1 {
+  font-size: 3rem;
+  line-height: 130%;
   font-weight: 700;
-  margin-bottom: 22px;
+  letter-spacing: -0.57px;
+  margin-bottom: 1rem;
 }
 
-.hero-content-inner h1 {
-  font-size: 44px;
-  font-weight: 400;
-  color: #1c1c1c;
-  line-height: 67px;
+.hero-area.is-product p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 160%;
+  color: #636363;
+  margin-bottom: 2rem;
 }
 
-.hero-content-inner h1 b {
-  font-weight: 600;
+.hero-area.is-product .buttons .button {
+  height: 2.875rem;
+  margin-right: 0.5rem;
+  padding: 0 30px;
 }
 
-.hero-content-inner h1 strong {
-  font-weight: 700;
+.hero-area.is-product .buttons .button .material-icons-outlined {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
 }
 
-.hero-area-button {
-  margin-top: 26px;
+.hero-area.is-product .buttons .button.is-primary {
+  -webkit-box-shadow: 2px 4px 24px rgba(73, 73, 163, 0.15);
+          box-shadow: 2px 4px 24px rgba(73, 73, 163, 0.15);
 }
 
-.hero-area-button a span {
-  padding-right: 10px;
+.hero-area.is-product .buttons .button.is-secondary {
+  background-color: transparent;
 }
 
-.kd-transparent-btn {
-  color: #00a651;
-  font-weight: 600;
-  border: none;
-  background: transparent;
-  margin-left: 15px;
+.hero-area.is-product .buttons .button.is-secondary:hover {
+  background-color: #00a651 !important;
 }
 
-.ac-transparent-btn {
-  color: #00a651;
-  font-weight: 600;
-  border: none;
-  background: transparent;
-  margin-left: 15px;
+.social-prove-brand-area .brand-image-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+}
+
+.social-prove-brand-area .brand-image-wrapper .single-brand img {
+  max-height: 2rem;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.social-prove-brand-area .brand-image-wrapper .single-brand:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 
 /* Feature area start */

@@ -1,0 +1,77 @@
+.hero-area.is-product {
+  padding: 100px 0;
+  height: 70vh;
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+  h1 {
+    font-size: 3rem;
+    line-height: 130%;
+    font-weight: 700;
+    letter-spacing: -0.57px;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-family: $ac-font-inter;
+    font-size: 1rem;
+    line-height: 160%;
+    color: #636363;
+    margin-bottom: 2rem;
+  }
+
+  .buttons {
+    .button {
+      height: 2.875rem;
+      margin-right: 0.5rem;
+      padding: 0 30px;
+      .material-icons-outlined {
+        font-size: 1.3rem;
+        margin-right: 0.5rem;
+      }
+      &.is-primary {
+        box-shadow: 2px 4px 24px rgba(73, 73, 163, 0.15);
+      }
+      &.is-secondary {
+        background-color: transparent;
+        &:hover {
+          background-color: $ac-primary !important;
+        }
+      }
+    }
+  }
+}
+
+.social-prove-brand-area {
+  .brand-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    .single-brand {
+     
+      img {
+        max-height: 2rem;
+        filter: grayscale(1);
+      }
+      &:hover{
+        filter: grayscale(0);
+      }
+    }
+  }
+}
+
+.single-features-item {
+  .feature-icon {
+    img {
+    }
+  }
+
+  .feature-information {
+    h5 {
+    }
+
+    p {
+    }
+  }
+}
