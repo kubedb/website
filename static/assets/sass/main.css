@@ -9915,8 +9915,9 @@ Responsive Classes
 }
 
 .hero-area.is-product {
+  background-color: #f1f1f9;
   padding: 100px 0;
-  height: 70vh;
+  height: calc(100vh - 240px);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -9967,6 +9968,57 @@ Responsive Classes
 }
 
 .social-prove-brand-area .brand-image-wrapper {
+  padding: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.social-prove-brand-area .brand-image-wrapper .single-brand img {
+  max-height: 2rem;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.social-prove-brand-area .brand-image-wrapper .single-brand:hover img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.section-title {
+  margin-bottom: 2rem;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.single-features-item {
+  padding: 30px 20px;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
+  -ms-grid-columns: 3.75rem auto;
+      grid-template-columns: 3.75rem auto;
+  border: 1px solid #dbdbde;
+  border-radius: 2px;
+}
+
+.single-features-item .feature-icon {
+  width: 3.75rem;
+  height: 3.75rem;
+  background-color: #f1f1f9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9976,18 +10028,20 @@ Responsive Classes
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  align-items: center;
+  border-radius: 2px;
 }
 
-.social-prove-brand-area .brand-image-wrapper .single-brand img {
-  max-height: 2rem;
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
+.single-features-item .feature-icon img {
+  height: 30px;
 }
 
-.social-prove-brand-area .brand-image-wrapper .single-brand:hover {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
+.single-features-item .feature-information h5 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.single-features-item .feature-information p {
+  font-size: 0.875rem;
 }
 
 /* Feature area start */

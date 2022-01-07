@@ -1,9 +1,11 @@
 .hero-area.is-product {
+  background-color: #f1f1f9;
   padding: 100px 0;
-  height: 70vh;
+  height: calc(100vh - 240px);
   align-items: center;
   overflow: hidden;
   display: flex;
+
   h1 {
     font-size: 3rem;
     line-height: 130%;
@@ -25,15 +27,19 @@
       height: 2.875rem;
       margin-right: 0.5rem;
       padding: 0 30px;
+
       .material-icons-outlined {
         font-size: 1.3rem;
         margin-right: 0.5rem;
       }
+
       &.is-primary {
         box-shadow: 2px 4px 24px rgba(73, 73, 163, 0.15);
       }
+
       &.is-secondary {
         background-color: transparent;
+
         &:hover {
           background-color: $ac-primary !important;
         }
@@ -44,34 +50,65 @@
 
 .social-prove-brand-area {
   .brand-image-wrapper {
+    padding: 50px 0;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+
     .single-brand {
-     
       img {
         max-height: 2rem;
         filter: grayscale(1);
       }
-      &:hover{
-        filter: grayscale(0);
+
+      &:hover {
+        img {
+          filter: grayscale(0);
+        }
       }
     }
   }
 }
-
+.section-title {
+  margin-bottom: 2rem;
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+}
 .single-features-item {
+  padding: 30px 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 3.75rem auto;
+  border: 1px solid $ac-white-light;
+  border-radius: 2px;
+
   .feature-icon {
+    width: 3.75rem;
+    height: 3.75rem;
+    background-color: #f1f1f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+
     img {
+      height: 30px;
     }
   }
 
   .feature-information {
     h5 {
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
     p {
+      font-size: 0.875rem;
     }
   }
 }
