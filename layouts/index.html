@@ -7,12 +7,14 @@
   <div class="container">
     <div class="columns is-vcentered">
       <div class="column is-6">
-        <h1>Run production-grade Databases on Kubernetes</h1>
+        <!-- <h1> {{ $p.tagline | safeHTML }}</h1> -->
+        <h1> Run production-grade Databases on Kubernetes</h1>
         <p>KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup,
           recovery, failure detection, and repair for various popular databases on private and public clouds</p>
         <div class="buttons">
-          <a href="#" class="button ac-button is-primary">TRY NOW FREE</a>
-          <a href="#" class="button ac-button is-secondary"><span class="material-icons-outlined">mail</span>GET IN
+          <a href="/docs/latest/setup/" class="button ac-button is-primary">TRY NOW FREE</a>
+          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary"><span
+              class="material-icons-outlined">mail</span>GET IN
             TOUCH</a>
         </div>
       </div>
@@ -32,21 +34,11 @@
     <div class="columns">
      <div class="column is-12">
         <div class="brand-image-wrapper">
-          <div class="single-brand"><img src="/assets/images/customers/astarte/astarte.png" alt=""></div>
-
-          <div class="single-brand"><img src="/assets/images/customers/birdi/BIRDI-Logo_Retina.png" alt=""></div>
-
-          <div class="single-brand"><img src="/assets/images/customers/elpheria/logo.png" alt=""></div>
-
-          <div class="single-brand"><img src="/assets/images/customers/intersystems/logo.png" alt=""></div>
-
-          <div class="single-brand"><img src="/assets/images/customers/liveramp/logo.png" alt=""></div>
-
-          <div class="single-brand"><img src="/assets/images/customers/pricehubble/logo.svg" alt=""></div>
-
-          <div class="single-brand"><img src="/assets/images/customers/rungway/logo.png" alt=""></div>
-
-          <div class="single-brand"><img src="/assets/images/customers/zebra/logo.png" alt=""></div>
+          {{ range $customer := $.Site.Data.customers }}
+          {{ if $customer.show }}
+          <div class="single-brand"><img src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
+          {{ end }}
+          {{ end }}
         </div>
      </div>
     </div>
@@ -56,14 +48,17 @@
 
 
 <!-- product features area start  -->
-<section class="product-feaures-area">
+<section class="product-feaures-area mb-50">
   <div class="container">
     <div class="columns">
       <div class="column is-three-fifths is-offset-one-fifth">
         <div class="section-title has-text-centered">
-          <h2>Product Features</h2>
-          <p>KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup,
-            recovery, failure detection, and repair for various popular databases on private and public clouds</p>
+          <h2>Special Features</h2>
+         {{ if $p.summary }}
+         <p>
+           {{ $p.summary | plainify }}
+         </p>
+         {{ end }}
         </div>
       </div>
     </div>
@@ -71,130 +66,20 @@
   <div class="container">
     <div class="columns is-multiline">
       <!-- single feature information start  -->
+      {{ range $f := $p.features }}
       <div class="column is-4">
-        <div class="single-features-item">
+        <a href="#" class="single-features-item">
           <div class="feature-icon">
-            <img src="/assets/images/products/kubedb/features/dumbbell.png" alt="">
+            <img src="{{ $f.icon.src }}" alt="{{ $f.icon.alt }}" />
           </div>
           <div class="feature-information">
-            <h5>Lower administrative burden</h5>
-            <p>KubeDB simplifies many of the difficult or tedious management tasks of running a production grade
-              databases on...</p>
+            <h5>{{ $f.title }}</h5>
+            <p class="is-ellipsis-3">{{ $f.summary }}</p>
+            <p class="is-ellipsis-3">{{ $f.description }}</p>
           </div>
-        </div>
+        </a>
       </div>
-      <!-- single feature information end -->
-      <!-- single feature information start  -->
-      <div class="column is-4">
-        <div class="single-features-item">
-          <div class="feature-icon">
-            <img src="/assets/images/products/kubedb/features/dumbbell.png" alt="">
-          </div>
-          <div class="feature-information">
-            <h5>Lower administrative burden</h5>
-            <p>KubeDB simplifies many of the difficult or tedious management tasks of running a production grade
-              databases on...</p>
-          </div>
-        </div>
-      </div>
-      <!-- single feature information end -->
-      <!-- single feature information start  -->
-      <div class="column is-4">
-        <div class="single-features-item">
-          <div class="feature-icon">
-            <img src="/assets/images/products/kubedb/features/dumbbell.png" alt="">
-          </div>
-          <div class="feature-information">
-            <h5>Lower administrative burden</h5>
-            <p>KubeDB simplifies many of the difficult or tedious management tasks of running a production grade
-              databases on...</p>
-          </div>
-        </div>
-      </div>
-      <!-- single feature information end -->
-      <!-- single feature information start  -->
-      <div class="column is-4">
-        <div class="single-features-item">
-          <div class="feature-icon">
-            <img src="/assets/images/products/kubedb/features/dumbbell.png" alt="">
-          </div>
-          <div class="feature-information">
-            <h5>Lower administrative burden</h5>
-            <p>KubeDB simplifies many of the difficult or tedious management tasks of running a production grade
-              databases on...</p>
-          </div>
-        </div>
-      </div>
-      <!-- single feature information end -->
-      <!-- single feature information start  -->
-      <div class="column is-4">
-        <div class="single-features-item">
-          <div class="feature-icon">
-            <img src="/assets/images/products/kubedb/features/dumbbell.png" alt="">
-          </div>
-          <div class="feature-information">
-            <h5>Lower administrative burden</h5>
-            <p>KubeDB simplifies many of the difficult or tedious management tasks of running a production grade
-              databases on...</p>
-          </div>
-        </div>
-      </div>
-      <!-- single feature information end -->
-      <!-- single feature information start  -->
-      <div class="column is-4">
-        <div class="single-features-item">
-          <div class="feature-icon">
-            <img src="/assets/images/products/kubedb/features/dumbbell.png" alt="">
-          </div>
-          <div class="feature-information">
-            <h5>Lower administrative burden</h5>
-            <p>KubeDB simplifies many of the difficult or tedious management tasks of running a production grade
-              databases on...</p>
-          </div>
-        </div>
-      </div>
-      <!-- single feature information end -->
-      <!-- single feature information start  -->
-      <div class="column is-4">
-        <div class="single-features-item">
-          <div class="feature-icon">
-            <img src="/assets/images/products/kubedb/features/dumbbell.png" alt="">
-          </div>
-          <div class="feature-information">
-            <h5>Lower administrative burden</h5>
-            <p>KubeDB simplifies many of the difficult or tedious management tasks of running a production grade
-              databases on...</p>
-          </div>
-        </div>
-      </div>
-      <!-- single feature information end -->
-      <!-- single feature information start  -->
-      <div class="column is-4">
-        <div class="single-features-item">
-          <div class="feature-icon">
-            <img src="/assets/images/products/kubedb/features/dumbbell.png" alt="">
-          </div>
-          <div class="feature-information">
-            <h5>Lower administrative burden</h5>
-            <p>KubeDB simplifies many of the difficult or tedious management tasks of running a production grade
-              databases on...</p>
-          </div>
-        </div>
-      </div>
-      <!-- single feature information end -->
-      <!-- single feature information start  -->
-      <div class="column is-4">
-        <div class="single-features-item">
-          <div class="feature-icon">
-            <img src="/assets/images/products/kubedb/features/dumbbell.png" alt="">
-          </div>
-          <div class="feature-information">
-            <h5>Lower administrative burden</h5>
-            <p>KubeDB simplifies many of the difficult or tedious management tasks of running a production grade
-              databases on...</p>
-          </div>
-        </div>
-      </div>
+      {{end}}
       <!-- single feature information end -->
     </div>
   </div>
@@ -384,7 +269,7 @@
 {{ end }}
 
 <!-- feature-area start -->
-<section class="product-feature-area section-padding">
+<section class="product-feature-area section-padding is-hidden">
   <div class="container section">
     <div class="columns">
       <div class="column is-8 is-offset-2 has-text-centered">

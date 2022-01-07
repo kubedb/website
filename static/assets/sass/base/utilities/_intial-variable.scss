@@ -1,5 +1,5 @@
 // root colors
-  //  color variable
+//  color variable
 $ac-primary: #00a651;
 $ac-color-text: #3b3030;
 $ac-color-label: #a6abbd;
@@ -15,7 +15,6 @@ $ac-white-lighter: #f1f1f1;
 $ac-gray-dark: #5f5f5f;
 $ac-gray-light: #8d8d8d;
 $ac-gray-lightest: #d1d1d1;
-
 
 // size
 $ac-size-1: 48px;
@@ -55,7 +54,6 @@ $searchlight-primary: #111738;
 $service-broker-primary: #29b4a2;
 $stash-primary: #5e2dea;
 $swift-primary: #3f51b6;
-
 
 /* Deafult Margin & Padding view-height & view-width */
 @for $i from 0 through 100 {
@@ -131,5 +129,17 @@ $swift-primary: #3f51b6;
 
   .font-weight-#{$i*100} {
     font-weight: #{$i * 100} !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .is-ellipsis-#{$i} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: #{$i};
+    -webkit-line-clamp: #{$i};
+    box-orient: vertical;
+    -webkit-box-orient: vertical;
   }
 }

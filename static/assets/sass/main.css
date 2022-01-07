@@ -7751,6 +7751,116 @@
   font-weight: 1000 !important;
 }
 
+.is-ellipsis-0 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 0;
+  -webkit-line-clamp: 0;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.is-ellipsis-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.is-ellipsis-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.is-ellipsis-3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.is-ellipsis-4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.is-ellipsis-5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 5;
+  -webkit-line-clamp: 5;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.is-ellipsis-6 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 6;
+  -webkit-line-clamp: 6;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.is-ellipsis-7 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 7;
+  -webkit-line-clamp: 7;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.is-ellipsis-8 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 8;
+  -webkit-line-clamp: 8;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.is-ellipsis-9 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 9;
+  -webkit-line-clamp: 9;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+.is-ellipsis-10 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 10;
+  -webkit-line-clamp: 10;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
 html,
 body {
   background-color: #ffffff;
@@ -10013,6 +10123,7 @@ Responsive Classes
       grid-template-columns: 3.75rem auto;
   border: 1px solid #dbdbde;
   border-radius: 2px;
+  min-height: 167px;
 }
 
 .single-features-item .feature-icon {
@@ -10042,6 +10153,10 @@ Responsive Classes
 
 .single-features-item .feature-information p {
   font-size: 0.875rem;
+  line-height: 160%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  color: #3b3030;
 }
 
 /* Feature area start */
