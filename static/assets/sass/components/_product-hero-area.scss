@@ -71,14 +71,17 @@
     }
   }
 }
+
 .section-title {
   margin-bottom: 2rem;
+
   h2 {
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 10px;
   }
 }
+
 .single-features-item {
   padding: 30px 20px;
   display: grid;
@@ -86,6 +89,15 @@
   grid-template-columns: 3.75rem auto;
   border: 1px solid $ac-white-light;
   border-radius: 2px;
+  min-height: 167px;
+
+  // &:hover {
+  //   .feature-information {
+  //     a.is-ellipsis-3 {
+  //       display: initial;
+  //     }
+  //   }
+  // }
 
   .feature-icon {
     width: 3.75rem;
@@ -109,6 +121,9 @@
 
     p {
       font-size: 0.875rem;
+      line-height: 160%;
+      transition: 0.3s ease-in-out;
+      color: $ac-color-text;
     }
   }
 }
