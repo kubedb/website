@@ -401,13 +401,24 @@
                     <div class="list-items">
                       <h6>OPENSOURCE DOCS</h6>
                       <ul>
-                        <li><a href="https://voyagermesh.com/docs/v2021.10.18/welcome/" target="_blank">Voyager</a></li>
-                        <li><a href="https://appscode.com/products/guard/v0.7.1/welcome/" target="_blank">Guard</a></li>
-                        <li><a href="https://appscode.com/products/kubed/v0.12.0/welcome/" target="_blank">Kubed</a>
+                        <li><a
+                            href="https://voyagermesh.com/docs/{{ .Site.Data.products.voyager.latestVersion }}/welcome/"
+                            target="_blank">Voyager</a></li>
+                        <li><a
+                            href="https://appscode.com/products/guard/{{ .Site.Data.products.guard.latestVersion }}/welcome/"
+                            target="_blank">Guard</a></li>
+                        <li><a
+                            href="https://appscode.com/products/kubed/{{ .Site.Data.products.kubed.latestVersion }}/welcome/"
+                            target="_blank">Kubed</a>
                         </li>
-                        <li><a href="https://pharmer.dev/docs/v0.5.2/welcome/" target="_blank">Pharmer</a></li>
-                        <li><a href="https://appscode.com/products/swift/" target="_blank">Swift</a></li>
-                        <li><a href="https://appscode.com/products/searchlight/8.0.0/welcome/"
+                        <li><a href="https://pharmer.dev/docs/{{ .Site.Data.products.pharmer.latestVersion }}/welcome/"
+                            target="_blank">Pharmer</a></li>
+                        <li><a
+                            href="https://appscode.com/products/swift/{{ .Site.Data.products.swift.latestVersion }}/welcome/"
+                            target="_blank">Swift</a>
+                        </li>
+                        <li><a
+                            href="https://appscode.com/products/searchlight/{{ .Site.Data.products.searchlight.latestVersion }}/welcome/"
                             target="_blank">Searchlight</a></li>
                       </ul>
                     </div>
@@ -417,10 +428,18 @@
                     <div class="list-items">
                       <h6>PREMIUM DOCS</h6>
                       <ul>
-                        <li><a href="https://kubedb.com/docs/v2021.12.21/welcome/" target="_blank">KubeDB</a></li>
-                        <li><a href="https://stash.run/docs/v2021.11.24/welcome/" target="_blank">Stash</a></li>
-                        <li><a href="https://kubevault.com/docs/v2021.10.11/welcome/" target="_blank">KubeVault</a></li>
-                        <li><a href="https://kubeform.com/docs/v2021.10.29/welcome/" target="_blank">Kubeform</a></li>
+                        <li><a
+                            href="https://kubedb.com/docs/{{ .Site.Data.products.kubedb.latestVersion }}/welcome/"
+                            target="_blank">KubeDB</a></li>
+                        <li><a
+                            href="https://stash.run/docs/{{ .Site.Data.products.stash.latestVersion }}/welcome/"
+                            target="_blank">Stash</a></li>
+                        <li><a
+                            href="https://kubevault.com/docs/{{ .Site.Data.products.kubevault.latestVersion }}/welcome/"
+                            target="_blank">KubeVault</a></li>
+                        <li><a
+                            href="https://kubeform.com/docs/{{ .Site.Data.products.kubeform.latestVersion }}/welcome/"
+                            target="_blank">Kubeform</a></li>
                       </ul>
                     </div>
                     <!-- single resources list  -->
