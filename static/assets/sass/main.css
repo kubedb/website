@@ -8758,9 +8758,21 @@ video {
   z-index: 99;
 }
 
-.navbar-appscode {
-  border-bottom: 1px solid #dbdbde;
+.navbar-appscode-wrapper {
   background-color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border-bottom: 1px solid #dbdbde;
+}
+
+.navbar-appscode-wrapper.navbar-product {
+  background-color: #fafafd;
+}
+
+.navbar-appscode-wrapper.navbar-product .navbar-left .navbar-brand a img {
+  height: 1.58rem;
+}
+
+.navbar-appscode {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8770,19 +8782,12 @@ video {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0.5rem 1.25rem;
-}
-
-.navbar-appscode.navbar-product {
-  background-color: #fafafd;
-}
-
-.navbar-appscode.navbar-product .navbar-left .navbar-brand a img {
-  height: 1.58rem;
 }
 
 .navbar-appscode.documentation-menu {
   margin-left: 350px;
+  border-bottom: 1px solid #dbdbde;
+  padding: 0.5rem 1.25rem;
 }
 
 .navbar-appscode.documentation-menu .navbar-right {
@@ -11766,8 +11771,9 @@ p.spam-message {
 
 .documentation-area .right-sidebar {
   border-left: 1px solid #dbdbde;
-  margin-top: -50px;
+  margin-top: -25px;
   width: 324px;
+  padding-top: 24px;
 }
 
 .info-title p {
