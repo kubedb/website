@@ -2,8 +2,8 @@
 
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 <!-- new hero area start   -->
-<section class="hero-area is-product"
-  style="background-image: url(/assets/images/products/kubedb/hero-product-bg.png);">
+<!-- style="background-image: url(/assets/images/products/kubedb/hero-product-bg-dark.png);" -->
+<section class="hero-area is-product is-dark">
   <div class="container">
     <div class="columns is-vcentered">
       <div class="column is-6">
@@ -54,6 +54,7 @@
       <div class="column is-three-fifths is-offset-one-fifth">
         <div class="section-title has-text-centered">
           <h2>Special Features</h2>
+          <h1>Special Features</h1>
          {{ if $p.summary }}
          <p>
            {{ $p.summary | plainify }}
