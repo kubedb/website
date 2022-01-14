@@ -10042,6 +10042,27 @@ Responsive Classes
   display: flex;
 }
 
+.hero-area.is-product.is-dark {
+  background: linear-gradient(-45deg, #A8356D, #940148, #4C346F, #3334F5);
+  background-size: 600% 600%;
+  -webkit-animation: gradient 15s ease infinite;
+          animation: gradient 15s ease infinite;
+}
+
+.hero-area.is-product.is-dark h1,
+.hero-area.is-product.is-dark p {
+  color: #ffffff;
+}
+
+.hero-area.is-product.is-dark .button.ac-button {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.hero-area.is-product.is-dark .button.ac-button:hover {
+  border-color: #00a651;
+}
+
 .hero-area.is-product h1 {
   font-size: 3rem;
   line-height: 130%;
@@ -10082,6 +10103,30 @@ Responsive Classes
   background-color: #00a651 !important;
 }
 
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .social-prove-brand-area .brand-image-wrapper {
   padding: 50px 0;
   display: -webkit-box;
@@ -10111,6 +10156,14 @@ Responsive Classes
 
 .section-title {
   margin-bottom: 2rem;
+}
+
+.section-title h1 {
+  color: black;
+  -webkit-text-fill-color: white;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;
 }
 
 .section-title h2 {
