@@ -6,7 +6,7 @@
   overflow: hidden;
   display: flex;
   &.is-dark {
-    background: linear-gradient(-45deg, #A8356D, #940148, #4C346F, #3334F5);
+    background: linear-gradient(-45deg, #a8356d, #940148, #4c346f, #3334f5);
     background-size: 600% 600%;
     animation: gradient 15s ease infinite;
     h1,
@@ -16,7 +16,7 @@
     .button.ac-button {
       border-color: $ac-white;
       color: $ac-white;
-      &:hover{
+      &:hover {
         border-color: $ac-primary;
       }
     }
@@ -139,10 +139,15 @@
 .section-title {
   margin-bottom: 2rem;
   h1 {
-    color: black;
+    color: $ac-white-light;
     -webkit-text-fill-color: white; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: $ac-black;
+    -webkit-text-stroke-color: $ac-white-light;
+    position: absolute;
+    font-size: 107px;
+    top: 0;
+    z-index: -1;
+    opacity: 0.5;
   }
   h2 {
     font-size: 32px;

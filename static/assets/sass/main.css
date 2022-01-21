@@ -8768,6 +8768,10 @@ video {
   background-color: #fafafd;
 }
 
+.navbar-appscode-wrapper.navbar-product .mega-menu-wrapper {
+  top: 49px;
+}
+
 .navbar-appscode-wrapper.navbar-product .navbar-left .navbar-brand a img {
   height: 1.58rem;
 }
@@ -8991,7 +8995,7 @@ video {
   position: absolute;
   width: 100%;
   left: 0;
-  top: 63px;
+  top: 52px;
 }
 
 .mega-menu-wrapper .mega-menu-inner {
@@ -9579,9 +9583,9 @@ video {
   color: #00a651;
   font-weight: 500;
   padding: 0.5rem 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -10043,7 +10047,7 @@ Responsive Classes
 }
 
 .hero-area.is-product.is-dark {
-  background: linear-gradient(-45deg, #A8356D, #940148, #4C346F, #3334F5);
+  background: linear-gradient(-45deg, #a8356d, #940148, #4c346f, #3334f5);
   background-size: 600% 600%;
   -webkit-animation: gradient 15s ease infinite;
           animation: gradient 15s ease infinite;
@@ -10159,11 +10163,16 @@ Responsive Classes
 }
 
 .section-title h1 {
-  color: black;
+  color: #dbdbde;
   -webkit-text-fill-color: white;
   /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #000000;
+  -webkit-text-stroke-color: #dbdbde;
+  position: absolute;
+  font-size: 107px;
+  top: 0;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 .section-title h2 {
@@ -13007,4 +13016,3 @@ body.voyager .documentation-menu {
 /*==================================================
                   Theme voyager End
   ====================================================*/
-/*# sourceMappingURL=main.css.map */
