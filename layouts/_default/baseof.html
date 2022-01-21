@@ -472,7 +472,7 @@
                               {{ range $author := $p.Params.authors }}
                               <a href="/authors/{{ $author | urlize }}" class="author"><span>by</span>{{ $author }}</a>
                               {{ end }}
-                              <p class="is-ellipsisis-3">{{ $p.Summary }}</p>
+                              <p class="is-ellipsis-2">{{ $p.Summary }}</p>
                             </div>
                           </a>
                           <!-- <a class="single-press">
@@ -611,13 +611,13 @@
 
           <!-- Community link start  -->
           <div class="community-items ml-70">
-            <a href="#" class="community-item" target="_blank">
+            <a href="{{$.Site.Data.products.kubedb.socialLinks.github}}" class="community-item" target="_blank">
               <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon">
             </a>
-            <a href="#" class="community-item" target="_blank">
+            <a href="{{$.Site.Data.products.kubedb.socialLinks.twitter}}" class="community-item" target="_blank">
               <img src="/assets/images/icon/community/twitter-icon.svg" alt="twitter-icon">
             </a>
-            <a href="#" class="community-item" target="_blank">
+            <a href="http://slack.kubernetes.io/" class="community-item" target="_blank">
               <img src="/assets/images/icon/community/slack-icon.svg" alt="slack-icon">
             </a>
           </div>
@@ -736,7 +736,7 @@
   <section class="cta-area section-padding pt-0" data-aos="fade-up">
     <div class="container section">
       <div class="cta-padding">
-        <div class="columns">
+        <div class="columns is-vcentered">
           <div class="column is-6">
             <!-- cta text strat -->
             <div class="cta-text">
@@ -746,11 +746,9 @@
             <!-- cta text end -->
           </div>
           <div class="column is-6 has-text-right is-mobile">
-            <div class="cta-button d-table">
+            <div class="cta-button">
               <!-- cta button start -->
-              <div class="cta-button-inner d-table-cell">
-                <a href="/docs/{{ $p.latestVersion }}/setup/" class="button kd-button kd-primary">Try Now for FREE!</a>
-              </div>
+              <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary">Try Now for FREE!</a>
               <!-- cta button end -->
             </div>
           </div>

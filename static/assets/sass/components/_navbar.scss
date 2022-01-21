@@ -7,9 +7,11 @@
   background-color: $ac-white;
   padding: 0.5rem 1.25rem;
   border-bottom: 1px solid $ac-white-light;
-   &.navbar-product {
+  &.navbar-product {
     background-color: #fafafd;
-
+    .mega-menu-wrapper {
+      top: 49px;
+    }
     .navbar-left {
       .navbar-brand {
         a img {
@@ -26,8 +28,8 @@
 
   &.documentation-menu {
     margin-left: 350px;
-     border-bottom: 1px solid $ac-white-light;
-     padding: 0.5rem 1.25rem;
+    border-bottom: 1px solid $ac-white-light;
+    padding: 0.5rem 1.25rem;
 
     .navbar-right {
       width: 49%;
@@ -211,7 +213,7 @@
   position: absolute;
   width: 100%;
   left: 0;
-  top: 63px;
+  top: 52px;
 
   .mega-menu-inner {
     overflow: hidden;
