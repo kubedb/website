@@ -708,7 +708,25 @@
       </div>
       {{ end }}
 
+      <script type="text/javascript">
+        const navbarRightAll = document.querySelectorAll(".navbar-right");
+        const navbarBurgerAll = document.querySelectorAll(".navbar-burger");
 
+        // Create event listeners for each navbar-burger button
+        Array.from(navbarBurgerAll).forEach((el, idx) => {
+          el.addEventListener("click", function () {
+
+            // Remove visible class from previous selected navbar right
+            Array.from(navbarRightAll).forEach((rightEl, rightElIdx) => {
+              if (idx !== rightElIdx && navbarRightAll[rightElIdx].classList.contains("is-visible")) {
+                navbarRightAll[rightElIdx].classList.remove("is-visible");
+                navbarBurgerAll[rightElIdx].classList.remove("is-active");
+              }
+            });
+            navbarRightAll[idx].classList.toggle("is-visible");
+          });
+        })
+      </script>
     </div>
     <!-- new navbar area end -->
     {{ end }}
@@ -1004,6 +1022,16 @@
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
     })();
+
+    const backButtonAll = document.querySelectorAll(".back-button");
+    // create click event for all back button
+    Array.from(backButtonAll).forEach((el) => {
+      el.addEventListener("click", () => {
+        // closeset nav item ancestor
+        const activeNavElement = el.closest(".nav-item.is-active");
+        if (activeNavElement) activeNavElement.classList.remove("is-active");
+      })
+    });
   </script>
   <!--End of Tawk.to Script-->
 </body>

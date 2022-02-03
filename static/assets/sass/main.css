@@ -8166,7 +8166,7 @@ Responsive Classes
     font-size: 28px;
   }
   .section-title h1 {
-    font-size: 32px;
+    font-size: 28px;
   }
   .section-title h1.is-outlined-text {
     font-size: 60px;
@@ -8529,6 +8529,7 @@ section.our-customer-area {
   height: 100%;
   overflow-y: auto;
   max-height: calc(100vh - 190px);
+  overflow-x: hidden;
 }
 
 .product-sidebar-menu .item label {
@@ -10574,6 +10575,28 @@ a.play-icon .fa {
   margin-top: 47px;
 }
 
+/****************************************
+Responsive Classes
+*****************************************/
+@media (max-width: 575.98px) {
+  .features-area .features-image .check-list {
+    left: 50%;
+    margin-left: -150px;
+  }
+  .features-area .features-description h2 {
+    margin-bottom: 10px;
+  }
+  .features-area .features-description h1 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-burger {
+    display: none !important;
+  }
+}
+
 li.nav-item {
   display: inline-block !important;
   text-indent: 0 !important;
@@ -11144,6 +11167,9 @@ Responsive Classes
   .testimonial-area .single-testimonial-item {
     padding: 30px;
     min-height: auto;
+  }
+  .testimonial-area .single-testimonial-item .user-info-wrapper .user-info h5 {
+    font-size: 20px;
   }
 }
 
@@ -12038,6 +12064,28 @@ Responsive Classes
   z-index: 1;
   width: 350px;
   padding-top: 1rem;
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  /* Chrome, Edge, and Safari */
+}
+
+.documentation-area .left-sidebar-wrapper * {
+  scrollbar-width: auto;
+  scrollbar-color: #ebebeb #fafafd;
+}
+
+.documentation-area .left-sidebar-wrapper *::-webkit-scrollbar {
+  width: 12px;
+}
+
+.documentation-area .left-sidebar-wrapper *::-webkit-scrollbar-track {
+  background: #fafafd;
+}
+
+.documentation-area .left-sidebar-wrapper *::-webkit-scrollbar-thumb {
+  background-color: #ebebeb;
+  border-radius: 10px;
+  border: 3px solid #fafafd;
 }
 
 .documentation-area .left-sidebar-wrapper .product-sidebar-menu {
