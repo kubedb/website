@@ -103,6 +103,10 @@ Responsive Classes
 *****************************************/
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
+  .is-flex-direction-row-reverse-mobile {
+    flex-direction: column-reverse;
+    display: flex;
+  }
   .container {
     padding: 0 15px;
   }
@@ -111,6 +115,7 @@ Responsive Classes
     margin-bottom: 1rem;
     h2 {
       font-size: 28px;
+      margin-bottom: 0;
     }
     h1 {
       font-size: 28px;
