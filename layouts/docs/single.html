@@ -5,50 +5,96 @@
 
 <!-- documentation and search start   -->
 <div class="navbar-appscode documentation-menu">
-  <div class="navbar-left ml-40">
-    <ul>
-      {{ $sectionMenuId := .Params.section_menu_id }}
-      {{ if isset .Params "menu_name" }}
-      {{ range (index .Site.Menus .Params.menu_name) }}
-      {{ if eq (string .Pre) "dropdown" }}
-      <li class="nav-item">
-        <button class="link"> {{ .Name }} <i class="fa fa-angle-down"></i></button>
+  <!-- <div class="navbar-left ml-40">
 
-        <!-- mega-menu wrapper start  -->
-        <div class="mega-menu-wrapper">
-          <div class="mega-menu-inner ac-grid-container">
-            <div class="databse-list">
-              <ul>
+  </div> -->
+  <!-- searchbar component start  -->
+  <div class="navbar-right">
+      <ul>
+        {{ $sectionMenuId := .Params.section_menu_id }}
+        {{ if isset .Params "menu_name" }}
+        {{ range (index .Site.Menus .Params.menu_name) }}
+        {{ if eq (string .Pre) "dropdown" }}
+        <li class="nav-item">
+          <button class="link"> {{ .Name }} <i class="fa fa-angle-down"></i></button>
+
+
+          <!-- mega-menu wrapper start  -->
+          <div class="mega-menu-wrapper">
+            <div class="mega-menu-inner ac-grid-container">
+              <!-- product start  -->
+              <div class="product-menu database-list">
                 {{ range .Children }}
                 {{ if ne .Weight -1 }}
-                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                <!-- databases  start  -->
+                <a href="{{ .URL }}" class="single-product">
+                  <div class="product-logo">
+                    <img src="/assets/images/products/kubedb/kubedb-icon.png" alt="">
+                  </div>
+                  <div class="product-info">
+                    <h6>{{ .Name }}</h6>
+                    <!-- <p>static content</p> -->
+                  </div>
+                  <div class="navigate-icon">
+                    <span class="material-icons">
+                      arrow_forward
+                    </span>
+                  </div>
+                </a>
+                <!-- databases  end -->
+                {{ else }}
+                <a href="{{.URL}}" class="single-product">
+                  <div class="product-logo">
+                    <img src="/assets/images/products/kubedb/kubedb-icon.png" alt="">
+                  </div>
+                  <div class="product-info">
+                    <h6>{{ .Name }}</h6>
+                    <!-- <p>static content</p> -->
+                  </div>
+                  <div class="navigate-icon">
+                    <span class="material-icons">
+                      arrow_forward
+                    </span>
+                  </div>
+                </a>
                 {{ end }}
                 {{ end }}
-              </ul>
+
+              </div>
+              <!-- product end -->
+
+              <!-- product description start  -->
+              <!-- single product description start  -->
+              <div class="product-description is-block">
+                <div class="video-content">
+                  <iframe width="560" height="415" src="https://www.youtube.com/embed/egzPGc6Yk_A"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+              <!-- single product description end  -->
+              <!-- product description end -->
             </div>
           </div>
-        </div>
-        <!-- mega-menu wrapper end -->
-      </li>
-      {{ else }}
-      <li class="nav-item">
-        <a href="{{ .URL }}" class="{{ if eq $sectionMenuId .Identifier }} is-active {{ end }} link">{{ .Name }}</a>
-      </li>
-      {{ end }}
-      {{ end }}
-      {{ end }}
-    </ul>
+          <!-- mega-menu wrapper end  -->
+        </li>
+        {{ else }}
+        <li class="nav-item">
+          <a href="{{ .URL }}" class="{{ if eq $sectionMenuId .Identifier }} is-active {{ end }} link">{{ .Name }}</a>
+        </li>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+      </ul>
+      <div class="ac-searchbar">
+        <label for="acSearch">
+          <i class="fa fa-search"></i>
+        </label>
+        <input id="acSearch" type="search" placeholder="Search kubedb documentation!">
+      </div>
   </div>
- <!-- searchbar component start  -->
-  <div class="navbar-right">
-    <div class="ac-searchbar">
-      <label for="acSearch">
-        <i class="fa fa-search"></i>
-      </label>
-      <input id="acSearch" type="search" placeholder="Search kubedb documentation!">
-    </div>
-  </div>
- <!-- searchbar component end -->
+  <!-- searchbar component end -->
 </div>
 <!-- documentation and search end  -->
 {{ end }}
@@ -67,7 +113,7 @@
 <div class="documentation-area">
   <!-- documentation area start -->
   <div class="left-sidebar-wrapper">
-    <div class="kd-left-sidebar">
+    <div class="ac-product-left-sidebar">
 
       {{ if isset .Params "menu_name" }}
       {{ $sectionMenuId := .Params.section_menu_id }}
@@ -90,7 +136,7 @@
       {{ end }}
 
       <!-- sidebar menu start -->
-      <div class="kd-sidebar-menu">
+      <div class="product-sidebar-menu">
         {{ if isset .Params "menu_name" }}
         {{ $sectionMenuId := .Params.section_menu_id }}
 

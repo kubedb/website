@@ -2,16 +2,22 @@
 .navbar-area {
   position: relative;
   z-index: 99;
+  background-color: $ac-white;
 }
+
 .navbar-appscode-wrapper {
   background-color: $ac-white;
-  padding: 0.5rem 1.25rem;
   border-bottom: 1px solid $ac-white-light;
+
   &.navbar-product {
     background-color: #fafafd;
+    will-change: transform;
+    transition: transform 200ms linear;
+
     .mega-menu-wrapper {
-      top: 49px;
+      top: 57px;
     }
+
     .navbar-left {
       .navbar-brand {
         a img {
@@ -21,18 +27,38 @@
     }
   }
 }
+
 .navbar-appscode {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.5rem 1.25rem;
+
+  &.container {
+    padding: 0.5rem 0;
+
+    .mega-menu-wrapper {
+      width: calc(100% + 100%);
+      left: -50%;
+    }
+  }
 
   &.documentation-menu {
-    margin-left: 350px;
-    border-bottom: 1px solid $ac-white-light;
-    padding: 0.5rem 1.25rem;
+    margin-left: 349px;
+    background-color: $ac-white;
+    border-left: 1px solid $ac-white-light;
+
+    .mega-menu-wrapper {
+      top: 104px;
+    }
 
     .navbar-right {
-      width: 49%;
+      width: 100%;
+      justify-content: space-between;
+
+      .ac-searchbar {
+        width: 49%;
+      }
     }
 
     ul {
@@ -81,6 +107,8 @@
   .navbar-right {
     display: flex;
     align-items: center;
+    width: calc(100% - 200px);
+    justify-content: flex-end;
 
     .button {
       margin-left: 2.5rem;
@@ -213,7 +241,7 @@
   position: absolute;
   width: 100%;
   left: 0;
-  top: 52px;
+  top: 61px;
 
   .mega-menu-inner {
     overflow: hidden;
@@ -225,13 +253,38 @@
       width: 48rem;
       float: left;
 
+      &.database-list {
+        grid-template-columns: auto auto auto;
+
+        .single-product {
+          grid-template-columns: 40px auto 1.5rem;
+          width: 16rem;
+          padding: 0.7rem;
+
+          .product-logo {
+            height: 40px;
+            width: 40px;
+
+            img {
+              height: 1.5rem;
+            }
+          }
+
+          .navigate-icon {
+            .material-icons {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+
       .single-product {
         display: grid;
         grid-template-columns: 3.75rem auto 1.5rem;
         padding: 1rem;
         align-items: center;
         width: 24rem;
-        grid-gap: 0.8rem;
+        grid-gap: 1rem;
         border-radius: 0.25rem;
         transition: 0.3s ease-in-out;
         cursor: pointer;
@@ -400,6 +453,7 @@
         color: $ac-color-heading;
         font-weight: 500;
         transition: 0.3s;
+        padding-left: 0;
 
         &:hover {
           color: $ac-primary;
@@ -641,7 +695,7 @@
   .new-item {
     background-color: $ac-primary;
     font-size: 0.813rem;
-    color: #ffffff;
+    color: $ac-white;
     border-radius: 2px;
     height: 1.2rem;
     padding: 2px 5px;
@@ -698,3 +752,163 @@
 }
 
 // modal-backdrop end
+.header--fixed {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+
+.headroom--pinned {
+  transform: translateY(0px);
+}
+
+.headroom--unpinned {
+  transform: translateY(-165px);
+
+  .navbar-appscode-wrapper {
+    &.navbar-product {
+      transform: translateY(104px);
+    }
+  }
+}
+
+.navbar-burger {
+  height: 30px;
+  width: 30px;
+
+  span {
+    height: 1.5px;
+  }
+}
+
+/****************************************
+Responsive Classes
+*****************************************/
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .navbar-appscode {
+    &.container {
+      padding: 0.5rem 15px;
+    }
+
+    .navbar-left {
+      width: 100%;
+
+      .navbar-brand {
+        margin: 0;
+        width: 100%;
+      }
+
+      ul {
+        position: absolute;
+        right: 20%;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .navbar-right {
+      position: absolute;
+      z-index: 99;
+      right: 20%;
+      opacity: 0;
+      visibility: hidden;
+      background: $ac-white;
+      width: 100%;
+      left: 0;
+      min-height: 100vh;
+      top: 61px;
+      padding: 15px;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .is-flex.is-justify-content-space-between {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .button {
+        margin-left: 0;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+
+        li.nav-item {
+          margin: 6px 0;
+
+          .link .whats-new {
+            top: -0.2rem;
+            right: 0.5rem;
+          }
+        }
+      }
+
+      .community-items.ml-70 {
+        margin-left: 0 !important;
+        margin-top: 30px;
+      }
+
+      &.is-visible {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .mega-menu-wrapper {
+    width: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    padding-top: 20px !important;
+
+    .mega-menu-inner {
+      .product-menu {
+        &.database-list {
+          grid-template-columns: auto;
+        }
+      }
+
+      .product-description {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 35px;
+        margin-left: 0;
+      }
+    }
+  }
+
+  .navbar-appscode-wrapper.navbar-product {
+    .navbar-appscode .navbar-right {
+      top: 47px;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .navbar-burger {
+    display: none !important;
+  }
+}

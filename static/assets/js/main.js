@@ -92,6 +92,48 @@ bulmaCarousel.attach("#carousel-demo", {
   autoplay: false,
 });
 
+// owl owlCarousel JS 
+var owl = $('.owl-carousel');
+owl.owlCarousel({
+    loop: true,
+    margin: 20,
+    autoplay: false,
+    nav: false,
+    dots: false,
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 1,
+      },
+      1000: {
+        items: 2,
+      }
+    }
+  }
+);
+// Go to the next item
+$('.customNextBtn').click(function () {
+  owl.trigger('next.owl.carousel');
+})
+// Go to the previous item
+$('.customPrevBtn').click(function () {
+  owl.trigger('prev.owl.carousel');
+})
+
+
+
+// headroomjs start
+var myElement = document.querySelector(".active-headroom");
+// construct an instance of Headroom, passing the element
+var headroom  = new Headroom(myElement);
+// initialise
+headroom.init();
+// headroomjs end
+
+
 // For FAQ Collaps Page
 const accordionItem = document.querySelectorAll(".accordion-item");
 const onClickAccordionHeader = (e) => {
@@ -166,7 +208,7 @@ spyScrolling();
 // docs page left sidebar first item font-size
 document.addEventListener("DOMContentLoaded", () => {
   // left sidebar menu fontSize
-  const sidebarMenu = document.querySelector(".kd-sidebar-menu");
+  const sidebarMenu = document.querySelector(".product-sidebar-menu");
   if (sidebarMenu) {
     sidebarMenu.children[0].children[1].children[0].style.fontSize = "22px";
     sidebarMenu.children[0].children[1].children[0].style.fontWeight = "600";

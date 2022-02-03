@@ -1,11 +1,11 @@
 // Typography
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 
 $ac-font-heading: "Roboto", sans-serif;
 $ac-font-paragraph: "Roboto", sans-serif;
-$ac-font-inter: 'Inter', sans-serif;
+$ac-font-inter: "Inter", sans-serif;
 
 html,
 body {
@@ -27,38 +27,60 @@ h4,
 h5,
 h6 {
   font-family: $ac-font-heading;
+  font-style: normal;
   font-weight: 500;
   color: $ac-color-heading;
+  &.is-gradient {
+      background: linear-gradient(
+        -45deg,
+        $ac-primary,
+        #940148,
+        #4c346f,
+        #3334f5
+      );
+      background-size: 300% 300%;
+      animation: gradient 5s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 }
 
 h1 {
-  font-size: $ac-size-1;
-  line-height: $ac-size-1 + 10;
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 130%;
+  letter-spacing: -0.5px;
 }
 
 h2 {
-  font-size: $ac-size-2;
-  line-height: $ac-size-2 + 10;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 130%;
+
+  letter-spacing: -0.57px;
 }
 
 h3 {
-  font-size: $ac-size-3;
-  line-height: $ac-size-3 + 10;
+  font-size: 32px;
+  line-height: 130%;
 }
 
 h4 {
-  font-size: $ac-size-4;
-  line-height: $ac-size-4 + 10;
+  font-size: 24px;
+  line-height: 40px;
+  letter-spacing: 0.25px;
 }
 
 h5 {
-  font-size: $ac-size-5;
-  line-height: $ac-size-5 + 10;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 h6 {
-  font-size: $ac-size-6;
-  line-height: $ac-size-6 + 10;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.15px;
 }
 
 h6 {
