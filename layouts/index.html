@@ -3,7 +3,7 @@
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 <!-- new hero area start   -->
 <!-- style="background-image: url(/assets/images/products/kubedb/hero-product-bg-dark.png);" -->
-<section class="hero-area is-product is-dark">
+<section class="hero-area is-product is-gradient is-dark">
   <div class="container">
     <div class="columns is-vcentered">
       <div class="column is-6">
@@ -32,7 +32,7 @@
 <div class="social-prove-brand-area">
   <div class="container">
     <div class="columns">
-     <div class="column is-12">
+      <div class="column is-12">
         <div class="brand-image-wrapper">
           {{ range $customer := $.Site.Data.customers }}
           {{ if $customer.show }}
@@ -40,7 +40,7 @@
           {{ end }}
           {{ end }}
         </div>
-     </div>
+      </div>
     </div>
   </div>
 </div>
@@ -50,23 +50,23 @@
 <!-- product features area start  -->
 <section class="product-feaures-area mb-50">
   <div class="container">
-    <div class="columns">
-      <div class="column is-three-fifths is-offset-one-fifth">
+    <div class="columns is-centered">
+      <div class="column is-8">
         <div class="section-title has-text-centered">
-          <h2>Special Features</h2>
-          <h1>Special Features</h1>
-         {{ if $p.summary }}
-         <p>
-           {{ $p.summary | plainify }}
-         </p>
-         {{ end }}
+          <h2 class="is-gradient">Special Features</h2>
+          <h1 class="is-outlined-text">Special Features</h1>
+          {{ if $p.summary }}
+          <p>
+            {{ $p.summary | plainify }}
+          </p>
+          {{ end }}
         </div>
       </div>
     </div>
   </div>
   <div class="container">
     <!-- is-centered -->
-    <div class="columns is-multiline">
+    <div class="columns is-multiline is-centered">
       <!-- single feature information start  -->
       {{ range $f := $p.features }}
       <div class="column is-4">
@@ -207,19 +207,19 @@
     }, 2000);
   }
   // when hover slider element autoPlay off 
-  sliderElement.addEventListener("mouseover", () => {
-    autoplay(false);
-  });
-  sliderElement.addEventListener("mouseout", () => {
-    autoplay(true);
-  });
+  // sliderElement.addEventListener("mouseover", () => {
+  //   autoplay(false);
+  // });
+  // sliderElement.addEventListener("mouseout", () => {
+  //   autoplay(true);
+  // });
   let dots_wrapper = document.getElementById("dots");
-  dots_wrapper.addEventListener("mouseover", () => {
-    autoplay(false);
-  });
-  dots_wrapper.addEventListener("mouseout", () => {
-    autoplay(true);
-  });
+  // dots_wrapper.addEventListener("mouseover", () => {
+  //   autoplay(false);
+  // });
+  // dots_wrapper.addEventListener("mouseout", () => {
+  //   autoplay(true);
+  // });
 
   autoplay(true);
 

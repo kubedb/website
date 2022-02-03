@@ -1,14 +1,18 @@
-.features-plan {
-  .hero-area-content {
-    .hero-content-inner {
-      h1 {
-        font-size: 36px;
-        line-height: 140%;
-        font-weight: 500;
-        margin-bottom: 30px;
+.hero-area {
+  &.features-plan {
+    margin-top: 130px;
 
-        b {
-          font-weight: 700;
+    .hero-area-content {
+      .hero-content-inner {
+        h1 {
+          font-size: 36px;
+          line-height: 140%;
+          font-weight: 500;
+          margin-bottom: 30px;
+
+          b {
+            font-weight: 700;
+          }
         }
       }
     }
@@ -20,15 +24,16 @@
 }
 
 .features-cta-area {
+  padding: 80px 0;
   .features-plan-cta-wrapper {
-    background-color: #fff;
+    background-color: $ac-white;
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // position: sticky;
-    // z-index: 9;
-    // top: 50px;
+    position: sticky;
+    z-index: 9;
+    top: 50px;
 
     .cta-left {
       width: 30%;
@@ -81,6 +86,8 @@
             &.ac-button {
               &.is-secondary {
                 background-color: #ff8000;
+                border-color: #ff8000;
+                color: $ac-white;
               }
             }
           }
@@ -112,7 +119,7 @@
             text-decoration: underline;
 
             &:hover {
-              color: $primary-color;
+              color: $ac-primary;
             }
           }
         }
@@ -184,7 +191,7 @@
       grid-template-columns: 30% 70%;
 
       &:nth-child(odd) {
-        background-color: #fff;
+        background-color: $ac-white;
 
         .features-plan {
           &.community {
@@ -299,7 +306,7 @@
         color: #393e46;
 
         a {
-          font-family: $font-paragraph;
+          font-family: $ac-font-paragraph;
           text-decoration: underline;
         }
 
@@ -368,13 +375,15 @@
 // assistance section start
 .assistance-card-wrapper {
   @import url(/assets/css/calendly.css);
+
   .single-card {
-    background: #ffffff;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+    background: $ac-white;
+    box-shadow: 0px 2px 30px rgba(44, 60, 74, 0.08);
     border-radius: 4px;
     transition: 0.3s ease-in-out;
+
     &:hover {
-      box-shadow: 0px 8px 57px rgba(0, 0, 0, 0.16);
+      box-shadow: 0px 2px 30px rgba(44, 60, 74, 0.16);
     }
 
     .card-head {
@@ -423,35 +432,41 @@
 
         &:hover {
           background-color: #4d4dcb;
-          color: #fff !important;
+          color: $ac-white !important;
         }
       }
+
       .subscription-form {
         position: relative;
         z-index: 1;
+
         input {
           border: none;
           background-color: $ac-white-light;
           height: 41px;
+
           &:focus {
             border: 1px solid #4d4dcb;
             border-radius: 4px;
           }
         }
+
         button {
           position: absolute;
           right: 0;
           top: 0;
           background-color: #4d4dcb;
-          color: #fff;
+          color: $ac-white;
           border: none;
           z-index: 9;
-          i.fa{
-            color: #fff;
+
+          i.fa {
+            color: $ac-white;
           }
+
           &:hover {
-            background-color: darken($color: #4d4dcb, $amount: 20);
-            color: #fff;
+            // background-color: darken($color: #4d4dcb, $amount: 20);
+            color: $ac-white;
           }
         }
       }
@@ -460,26 +475,6 @@
 }
 
 // assistance section end
-
-.assistance-area,
-.features-plan-faq-area {
-  .section-title {
-    margin-bottom: 40px;
-
-    h2 {
-      font-size: 36px;
-      line-height: 140%;
-      color: #1c1c1c;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 16px;
-      color: #54657e;
-    }
-  }
-}
 
 /****************************************
 Responsive Classes
@@ -554,16 +549,6 @@ Responsive Classes
   .assistance-area {
     &.section-padding-100 {
       padding: 60px 0;
-    }
-  }
-
-  .assistance-area,
-  .features-plan-faq-area {
-    .section-title {
-      h2 {
-        font-size: 26px;
-        margin-bottom: 10px;
-      }
     }
   }
 
@@ -643,16 +628,6 @@ Responsive Classes
 
   .features-plan-area {
     min-width: 1344px;
-  }
-
-  .assistance-area,
-  .features-plan-faq-area {
-    .section-title {
-      h2 {
-        font-size: 26px;
-        margin-bottom: 10px;
-      }
-    }
   }
 }
 

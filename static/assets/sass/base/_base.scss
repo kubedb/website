@@ -33,14 +33,6 @@
   line-height: 64px;
 }
 
-.support-page .section-title h2 {
-  margin-bottom: 20px;
-}
-
-.support-page .section-title p {
-  margin: 0;
-}
-
 /* Payment Method section style */
 .single-payment-method {
   display: inline-block;
@@ -90,7 +82,7 @@
   transition: 0.3s;
 }
 
-.kd-sidebar-menu .item label a {
+.product-sidebar-menu .item label a {
   font-weight: 500;
   color: $ac-color-heading;
   padding: 0.5rem 1.25rem;
@@ -133,8 +125,8 @@
   z-index: 9;
 }
 
-.kd-sidebar-menu label,
-.kd-sidebar-menu li a {
+.product-sidebar-menu label,
+.product-sidebar-menu li a {
   font-size: 14px;
   font-weight: 500;
   color: $ac-color-link;
@@ -144,16 +136,16 @@
   transition: 0.3s;
 }
 
-.kd-sidebar-menu li a:hover {
+.product-sidebar-menu li a:hover {
   color: $ac-primary;
 }
 
-.kd-sidebar-menu .item ul {
+.product-sidebar-menu .item ul {
   margin-left: 20px;
   padding-left: 15px;
   border-left: 1px solid $ac-white-light;
 }
-// border remove style 
+// border remove style
 // .item input:checked ~ label,
 // .item input:checked ~ .item > label {
 //   border: 1px solid $ac-white-light;
@@ -174,17 +166,18 @@
   margin-left: -20px;
 }
 
-.kd-left-sidebar {
+.ac-product-left-sidebar {
   margin-right: 30px;
   position: sticky;
   top: 130px;
   z-index: 9;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-y: auto;
+  max-height: calc(100vh - 190px);
 }
 
-.kd-sidebar-menu .item label {
+.product-sidebar-menu .item label {
   border: 1px solid transparent;
   position: relative;
   z-index: 1;

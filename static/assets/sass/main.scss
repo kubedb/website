@@ -3,10 +3,12 @@
 // Version: 0.1.0
 
 //BASE - Base styles, variables, mixins
-@import "base/utilities/_intial-variable";
+@import "base/utilities/_initial-variable";
+@import "base/utilities/_default";
+@import "base/utilities/_themes";
 @import "base/utilities/_typography";
 
-// mixins 
+// mixins
 @import "mixins/_mixin";
 
 // @import "base/_variables";
@@ -16,8 +18,7 @@
 @import "base/_innerpage";
 @import "base/_base";
 
-
-// components SCSS 
+// components SCSS
 @import "components/_navbar";
 @import "components/_notificationbar";
 @import "components/_button";
@@ -36,9 +37,9 @@
 @import "components/_cta";
 @import "components/_pricing";
 @import "components/_faq";
+@import "components/_ac-accordion";
 @import "components/_back-to-top";
 @import "components/_footer";
-
 
 // pages SCSS
 // @import "pages/_webinar";
@@ -46,18 +47,19 @@
 // @import "pages/_consulting";
 // @import "pages/_contactus";
 @import "pages/_documentation";
+@import "pages/_features-plan";
 
 
 // @import "themes/_kubeci";
-@import "themes/_kubed";
+// @import "themes/_kubed";
 // @import "themes/_kubeshield";
 // @import "themes/_kubevault";
 // @import "themes/_pharmer";
-@import "themes/_searchlight";
-@import "themes/_service-broker";
-@import "themes/_stash";
-@import "themes/_swift";
-@import "themes/_voyager";
+// @import "themes/_searchlight";
+// @import "themes/_service-broker";
+// @import "themes/_stash";
+// @import "themes/_swift";
+// @import "themes/_voyager";
 
 //Responsive SCSS
 // @import "layouts/_responsive";

@@ -2,19 +2,20 @@
     Documentation page style
 ==============================================================*/
 .documentation-area {
-  margin-top: 1.5rem;
+  margin-top: 190px;
   margin-bottom: 100px;
   display: flex;
 
   // padding: 0 1.25rem;
   .left-sidebar-wrapper {
     border-right: 1px solid $ac-white-light;
-    margin-top: -71px;
+    margin-top: -35px;
     background-color: #fafafd;
     z-index: 1;
     width: 350px;
+    padding-top: 1rem;
 
-    .kd-sidebar-menu {
+    .product-sidebar-menu {
       min-height: calc(100vh - 120px);
       overflow-y: auto;
       width: 100%;
@@ -403,6 +404,8 @@ li.nav-item.active a {
 
 .right-sidebar-area {
   padding: 0 1.25rem 0 0;
+  position: sticky;
+  top: 130px;
 }
 
 .overlay-bg {

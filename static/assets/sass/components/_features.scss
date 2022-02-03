@@ -1,3 +1,74 @@
+// 2022 updated features page scss start
+.features-area {
+  .features-image {
+    position: relative;
+    z-index: 1;
+
+    .check-list {
+      position: absolute;
+      top: 50%;
+      margin-top: -150px;
+      left: -150px;
+    }
+  }
+
+  .features-description {
+    h2 {
+      line-height: 130%;
+    }
+
+    h1 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 34px;
+      line-height: 130%;
+      letter-spacing: -0.57px;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      text-align: justify;
+
+      strong {
+        color: $ac-color-heading;
+        font-weight: 500;
+      }
+    }
+  }
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  .check-list {
+    background-color: $ac-white;
+    padding: 50px 40px;
+    width: 300px;
+
+    box-shadow: 0px 2px 30px rgba(44, 60, 74, 0.08);
+    border-radius: 0.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      span {
+        font-size: 18px;
+        margin-right: 0.8rem;
+        color: $ac-primary;
+      }
+    }
+  }
+}
+
+// 2022 updated features page scss end
 
 /* Feature area start */
 .feature-area {
@@ -143,7 +214,6 @@ a.play-icon .fa {
   border: 1px solid transparent;
 }
 
-
 .features-area {
   background-image: url(../images/products/voyager/features/feature-bg.png);
   background-size: cover;
@@ -151,6 +221,8 @@ a.play-icon .fa {
 
   .hero-features {
     height: 500px;
+    display: flex;
+    align-items: center;
     padding: 50 20px;
     max-width: 940px;
     margin: 0 auto;

@@ -67,6 +67,11 @@
   {{ with $style := resources.Get "assets/css/bulma.min.css" | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
   {{ end }}
+
+  <!-- owl carousel CSS -->
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+
   <!-- <link rel="stylesheet" href="/assets/css/bulma.min.css" /> -->
   <!-- Keen slider CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css" />
@@ -91,11 +96,11 @@
   <header>
     {{ block "header-top" . }}
     <!-- new navbar area start  -->
-    <div class="navbar-area">
-      <div class="navbar-appscode-wrapper">
+    <div class="navbar-area active-headroom header--fixed">
+      <div class="navbar-appscode-wrapper ">
         <!-- appscode navbar start  -->
         {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
-        <div class="navbar-appscode{{ if ne $currentPageType "docs" }} container {{ end }} height-43">
+        <div class="navbar-appscode{{ if ne $currentPageType "docs" }} container {{ end }} height-60">
           <div class="navbar-left">
             <!-- brand logo  -->
             <div class="navbar-brand">
@@ -103,137 +108,150 @@
                 <img src="{{$.Site.Data.products.appscode.logo.src}}"
                   alt="{{$.Site.Data.products.appscode.logo.alt}}" />
               </a>
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
             </div>
             <!-- brand logo  -->
+          </div>
 
-            <!-- navbar items start -->
-            <ul>
-              <li class="nav-item">
-                <button class="link">Products <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-                <div class="mega-menu-wrapper">
-                  <div class="mega-menu-inner ac-grid-container">
-                    <!-- product start  -->
-                    <div class="product-menu">
+
+          <div class="navbar-right">
+            <div class="is-flex is-justify-content-space-between is-fullwidth">
+              <!-- navbar items start -->
+              <ul>
+                <li class="nav-item">
+                  <button class="link">Products <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                  <div class="mega-menu-wrapper">
+
+                    <!-- ac-grid-container -->
+                    <div class="mega-menu-inner container">
+                      <button class="button ac-button inline-button back-button"><span
+                          class="material-icons-outlined">arrow_back</span>Back</button>
+                      <!-- product start  -->
+                      <div class="product-menu">
+                        {{ range $item := $.Site.Data.config.productMenu.c0 }}
+                        {{ $p := (index $.Site.Data.products $item) }}
+                        <!-- single product start  -->
+                        <a class="single-product"
+                          href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
+                          <div class="product-logo">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
+                          </div>
+                          <div class="product-info">
+                            <h6>{{ $p.name }}</h6>
+                            <p>{{ $p.tagline | plainify }}</p>
+                          </div>
+                          <div class="navigate-icon">
+                            <span class="material-icons">
+                              arrow_forward
+                            </span>
+                          </div>
+                        </a>
+                        <!-- single product end -->
+                        {{ end }}
+
+                        {{ range $item := $.Site.Data.config.productMenu.c1 }}
+                        {{ $p := (index $.Site.Data.products $item) }}
+                        <!-- single product start  -->
+                        <a class="single-product"
+                          href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
+                          <div class="product-logo">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
+                          </div>
+                          <div class="product-info">
+                            <h6>{{ $p.name }}</h6>
+                            <p>{{ $p.tagline | plainify }}</p>
+                          </div>
+                          <div class="navigate-icon">
+                            <span class="material-icons">
+                              arrow_forward
+                            </span>
+                          </div>
+                        </a>
+                        <!-- single product end -->
+                        {{ end }}
+                      </div>
+                      <!-- product end -->
+
+                      <!-- product description start  -->
                       {{ range $item := $.Site.Data.config.productMenu.c0 }}
                       {{ $p := (index $.Site.Data.products $item) }}
-                      <!-- single product start  -->
-                      <a class="single-product"
-                        href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
-                        <div class="product-logo">
-                          <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
+                      <!-- single product description start  -->
+                      <div class="product-description">
+                        <div class="brand">
+                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
                         </div>
-                        <div class="product-info">
-                          <h6>{{ $p.name }}</h6>
-                          <p>{{ $p.tagline | plainify }}</p>
-                        </div>
-                        <div class="navigate-icon">
-                          <span class="material-icons">
-                            arrow_forward
-                          </span>
-                        </div>
-                      </a>
-                      <!-- single product end -->
+
+                        <p>{{ $p.summary | safeHTML }}</p>
+
+                        {{ $showAllFeatures := "false" }}
+                        <ul class="features">
+                          {{ range $index, $item := $p.features }}
+                          {{ if lt $index 8 }}
+                          <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
+                          {{ end }}
+                          {{ end }}
+                        </ul>
+                        <!-- <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
+                     class="button ac-button inline-button">Learn More <span
+                       class="material-icons">arrow_forward</span></a> -->
+                      </div>
+                      <!-- single product description end  -->
                       {{ end }}
 
                       {{ range $item := $.Site.Data.config.productMenu.c1 }}
                       {{ $p := (index $.Site.Data.products $item) }}
-                      <!-- single product start  -->
-                      <a class="single-product"
-                        href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
-                        <div class="product-logo">
-                          <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
+                      <!-- single product description start  -->
+                      <div class="product-description">
+                        <div class="brand">
+                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
                         </div>
-                        <div class="product-info">
-                          <h6>{{ $p.name }}</h6>
-                          <p>{{ $p.tagline | plainify }}</p>
-                        </div>
-                        <div class="navigate-icon">
-                          <span class="material-icons">
-                            arrow_forward
-                          </span>
-                        </div>
-                      </a>
-                      <!-- single product end -->
+
+
+                        <p>{{ $p.summary | safeHTML }}</p>
+
+                        <ul class="features">
+                          {{ range $index, $item := $p.features }}
+                          {{ if lt $index 8 }}
+                          <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
+                          {{ end }}
+                          {{ end }}
+                        </ul>
+                        <!-- <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
+                     class="button ac-button inline-button">Learn More <span
+                       class="material-icons">arrow_forward</span></a> -->
+                      </div>
+                      <!-- single product description end  -->
                       {{ end }}
+                      <!-- product description end -->
                     </div>
-                    <!-- product end -->
-
-                    <!-- product description start  -->
-                    {{ range $item := $.Site.Data.config.productMenu.c0 }}
-                    {{ $p := (index $.Site.Data.products $item) }}
-                    <!-- single product description start  -->
-                    <div class="product-description">
-                      <div class="brand">
-                        <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
-                      </div>
-
-                      <p>{{ $p.summary | safeHTML }}</p>
-
-                      {{ $showAllFeatures := "false" }}
-                      <ul class="features">
-                        {{ range $index, $item := $p.features }}
-                        {{ if lt $index 8 }}
-                        <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
-                        {{ end }}
-                        {{ end }}
-                      </ul>
-                      <!-- <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
-                     class="button ac-button inline-button">Learn More <span
-                       class="material-icons">arrow_forward</span></a> -->
-                    </div>
-                    <!-- single product description end  -->
-                    {{ end }}
-
-                    {{ range $item := $.Site.Data.config.productMenu.c1 }}
-                    {{ $p := (index $.Site.Data.products $item) }}
-                    <!-- single product description start  -->
-                    <div class="product-description">
-                      <div class="brand">
-                        <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
-                      </div>
-
-
-                      <p>{{ $p.summary | safeHTML }}</p>
-
-                      <ul class="features">
-                        {{ range $index, $item := $p.features }}
-                        {{ if lt $index 8 }}
-                        <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
-                        {{ end }}
-                        {{ end }}
-                      </ul>
-                      <!-- <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
-                     class="button ac-button inline-button">Learn More <span
-                       class="material-icons">arrow_forward</span></a> -->
-                    </div>
-                    <!-- single product description end  -->
-                    {{ end }}
-                    <!-- product description end -->
                   </div>
-                </div>
-                <script type="text/javascript">
-                  const productDescriptions = document.querySelectorAll(".product-description");
-                  const products = document.querySelectorAll(".single-product");
+                  <script type="text/javascript">
+                    const productDescriptions = document.querySelectorAll(".product-description");
+                    const products = document.querySelectorAll(".single-product");
 
-                  productDescriptions[0].classList.add("is-block");
-                  products[0].classList.add('is-active');
+                    productDescriptions[0].classList.add("is-block");
+                    products[0].classList.add('is-active');
 
-                  products.forEach((product, index) => {
-                    product.addEventListener("mouseover", function () {
-                      const currentActiveProduct = document.querySelector(".product-description.is-block");
-                      const currentActiveItem = document.querySelector(".single-product.is-active");
+                    products.forEach((product, index) => {
+                      product.addEventListener("mouseover", function () {
+                        const currentActiveProduct = document.querySelector(".product-description.is-block");
+                        const currentActiveItem = document.querySelector(".single-product.is-active");
 
-                      currentActiveProduct.classList.remove("is-block");
-                      currentActiveItem.classList.remove('is-active');
+                        currentActiveProduct.classList.remove("is-block");
+                        currentActiveItem.classList.remove('is-active');
 
-                      productDescriptions[index].classList.add("is-block");
-                      products[index].classList.add("is-active");
+                        productDescriptions[index].classList.add("is-block");
+                        products[index].classList.add("is-active");
+                      });
                     });
-                  });
-                </script>
+                  </script>
 
-              </li>
-              <!-- <li class="nav-item">
+                </li>
+                <!-- <li class="nav-item">
               <button class="link">Services <i class="fa fa-angle-down" aria-hidden="true"></i></button>
               <div class="mega-menu-wrapper">
                 <div class="mega-menu-inner ac-grid-container">
@@ -251,258 +269,263 @@
                 </div>
               </div>
             </li> -->
-              <li class="nav-item">
-                <button class="link">Open Source <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-                <!-- mega-menu wrapper start  -->
-                <div class="mega-menu-wrapper">
-                  <div class="mega-menu-inner ac-grid-container">
-                    <!-- open source project items start   -->
-                    <div class="linkable-nav-items">
-                      <ul>
-                        {{ range $item := $.Site.Data.config.ossMenu.c0 }}
-                        {{ $p := (index $.Site.Data.products $item) }}
-                        <li class="open-source-item"><a
-                            href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"><span><img
-                                src="{{ $p.icon.src }}" alt=" {{ $p.icon.alt }}"></span>
-                            {{ $p.name }}<span class="material-icons">arrow_forward </span></a></li>
-                        {{ end }}
+                <li class="nav-item">
+                  <button class="link">Open Source <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                  <!-- mega-menu wrapper start  -->
+                  <div class="mega-menu-wrapper">
 
-                        {{ range $item := $.Site.Data.config.ossMenu.c1 }}
-                        {{ $p := (index $.Site.Data.products $item) }}
-                        <li class="open-source-item"><a
-                            href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"><span><img
-                                src="{{ $p.icon.src }}" alt=" {{ $p.icon.alt }}"></span>
-                            {{ $p.name }}<span class="material-icons">arrow_forward </span></a></li>
-                        {{ end }}
-                      </ul>
-                    </div>
-                    <!-- open source project items end -->
-                    <!-- product description start  -->
-                    {{ range $item := $.Site.Data.config.ossMenu.c0 }}
-                    {{ $p := (index $.Site.Data.products $item) }}
-                    <div class="product-description open-source-description">
-                      <div class="brand">
-                        <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
+                    <!-- ac-grid-container -->
+                    <div class="mega-menu-inner container">
+                      <button class="button ac-button inline-button back-button"><span
+                          class="material-icons-outlined">arrow_back</span>Back</button>
+                      <!-- open source project items start   -->
+                      <div class="linkable-nav-items">
+                        <ul>
+                          {{ range $item := $.Site.Data.config.ossMenu.c0 }}
+                          {{ $p := (index $.Site.Data.products $item) }}
+                          <li class="open-source-item"><a
+                              href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"><span><img
+                                  src="{{ $p.icon.src }}" alt=" {{ $p.icon.alt }}"></span>
+                              {{ $p.name }}<span class="material-icons">arrow_forward </span></a></li>
+                          {{ end }}
+
+                          {{ range $item := $.Site.Data.config.ossMenu.c1 }}
+                          {{ $p := (index $.Site.Data.products $item) }}
+                          <li class="open-source-item"><a
+                              href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"><span><img
+                                  src="{{ $p.icon.src }}" alt=" {{ $p.icon.alt }}"></span>
+                              {{ $p.name }}<span class="material-icons">arrow_forward </span></a></li>
+                          {{ end }}
+                        </ul>
                       </div>
-                      <p>{{ $p.tagline | safeHTML }}
-                      </p>
-                      <ul class="features">
-                        {{ range $index, $item := $p.features }}
-                        {{ if lt $index 8 }}
-                        <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
-                        {{ end }}
-                        {{ end }}
-                      </ul>
-                      <!-- <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
+                      <!-- open source project items end -->
+                      <!-- product description start  -->
+                      {{ range $item := $.Site.Data.config.ossMenu.c0 }}
+                      {{ $p := (index $.Site.Data.products $item) }}
+                      <div class="product-description open-source-description">
+                        <div class="brand">
+                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
+                        </div>
+                        <p>{{ $p.tagline | safeHTML }}
+                        </p>
+                        <ul class="features">
+                          {{ range $index, $item := $p.features }}
+                          {{ if lt $index 8 }}
+                          <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
+                          {{ end }}
+                          {{ end }}
+                        </ul>
+                        <!-- <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
                      class="button ac-button inline-button">Learn More <span
                        class="material-icons">arrow_forward</span></a> -->
-                    </div>
-                    {{ end }}
-                    <!-- product description start  -->
-
-                    <!-- product description start  -->
-                    {{ range $item := $.Site.Data.config.ossMenu.c1 }}
-                    {{ $p := (index $.Site.Data.products $item) }}
-                    <div class="product-description open-source-description">
-                      <div class="brand">
-                        <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
                       </div>
-                      <p>{{ $p.tagline | safeHTML }}
-                      </p>
-                      <ul class="features">
-                        {{ range $index, $item := $p.features }}
-                        {{ if lt $index 8 }}
-                        <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
-                        {{ end }}
-                        {{ end }}
-                      </ul>
-                      <!-- <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
+                      {{ end }}
+                      <!-- product description start  -->
+
+                      <!-- product description start  -->
+                      {{ range $item := $.Site.Data.config.ossMenu.c1 }}
+                      {{ $p := (index $.Site.Data.products $item) }}
+                      <div class="product-description open-source-description">
+                        <div class="brand">
+                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
+                        </div>
+                        <p>{{ $p.tagline | safeHTML }}
+                        </p>
+                        <ul class="features">
+                          {{ range $index, $item := $p.features }}
+                          {{ if lt $index 8 }}
+                          <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
+                          {{ end }}
+                          {{ end }}
+                        </ul>
+                        <!-- <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
                      class="button ac-button inline-button">Learn More <span
                        class="material-icons">arrow_forward</span></a> -->
+                      </div>
+                      {{ end }}
+                      <!-- product description end -->
                     </div>
-                    {{ end }}
-                    <!-- product description end -->
                   </div>
-                </div>
-                <!-- mega-menu wrapper end -->
-                <script type="text/javascript">
-                  const openSourceItemDescriptions = document.querySelectorAll(".open-source-description");
-                  const openSourceItems = document.querySelectorAll(".open-source-item");
+                  <!-- mega-menu wrapper end -->
+                  <script type="text/javascript">
+                    const openSourceItemDescriptions = document.querySelectorAll(".open-source-description");
+                    const openSourceItems = document.querySelectorAll(".open-source-item");
 
-                  openSourceItemDescriptions[0].classList.add("is-block");
-                  openSourceItems[0].classList.add('is-active');
+                    openSourceItemDescriptions[0].classList.add("is-block");
+                    openSourceItems[0].classList.add('is-active');
 
-                  openSourceItems.forEach((product, index) => {
-                    product.addEventListener("mouseover", function () {
-                      const currentActiveProduct = document.querySelector(".open-source-description.is-block");
-                      const currentActiveItem = document.querySelector(".open-source-item.is-active");
+                    openSourceItems.forEach((product, index) => {
+                      product.addEventListener("mouseover", function () {
+                        const currentActiveProduct = document.querySelector(
+                          ".open-source-description.is-block");
+                        const currentActiveItem = document.querySelector(".open-source-item.is-active");
 
-                      currentActiveProduct.classList.remove("is-block");
-                      currentActiveItem.classList.remove('is-active');
-                      openSourceItemDescriptions[index].classList.add("is-block");
-                      openSourceItems[index].classList.add("is-active");
+                        currentActiveProduct.classList.remove("is-block");
+                        currentActiveItem.classList.remove('is-active');
+                        openSourceItemDescriptions[index].classList.add("is-block");
+                        openSourceItems[index].classList.add("is-active");
+                      });
                     });
-                  });
-                </script>
-              </li>
-              <li class="nav-item">
-                <a href="https://appscode.com/webinar" target="_blank" class="link">Webinar <span
-                    class="whats-new">New</span></a>
-              </li>
-            </ul>
-            <!-- navbar items end -->
-            <!-- if webinar exist script  -->
-            <script type="text/javascript">
-              (function () {
-                var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-                xhr.onreadystatechange = function () {
-                  if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                      var result = JSON.parse(xhr.responseText);
-                      if (result.schedules) {
-                        let endDate = new Date(result.schedules[0]).getTime();
-                        let startDate = new Date().getTime();
-                        let timeRemaining = parseInt((endDate - startDate) / 1000);
-                        if (timeRemaining >= 0) {
-                          document.querySelector('.whats-new').classList.add('is-block')
+                  </script>
+                </li>
+                <li class="nav-item">
+                  <a href="https://appscode.com/webinar" target="_blank" class="link">Webinar <span
+                      class="whats-new">New</span></a>
+                </li>
+              </ul>
+              <!-- navbar items end -->
+              <!-- if webinar exist script  -->
+              <script type="text/javascript">
+                (function () {
+                  var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+                  xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                      if (xhr.status === 200) {
+                        var result = JSON.parse(xhr.responseText);
+                        if (result.schedules) {
+                          let endDate = new Date(result.schedules[0]).getTime();
+                          let startDate = new Date().getTime();
+                          let timeRemaining = parseInt((endDate - startDate) / 1000);
+                          if (timeRemaining >= 0) {
+                            document.querySelector('.whats-new').classList.add('is-block')
+                          }
                         }
                       }
                     }
-                  }
-                } //
-                console.log('GET', 'https://license-issuer.appscode.com/_/webinars/');
-                xhr.open('GET', 'https://license-issuer.appscode.com/_/webinars/');
-                xhr.send();
-              }());
-            </script>
-          </div>
+                  } //
+                  console.log('GET', 'https://license-issuer.appscode.com/_/webinars/');
+                  xhr.open('GET', 'https://license-issuer.appscode.com/_/webinars/');
+                  xhr.send();
+                }());
+              </script>
+              <!-- navbar items start -->
+              <ul>
+                <li class="nav-item">
+                  <button class="link">Resources <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                  <div class="mega-menu-wrapper">
+                    <!-- ac-grid-container -->
+                    <div class="mega-menu-inner container">
+                      <!-- list menu items start  -->
+                      <div class="resources-list">
+                        <!-- single resources list  -->
+                        <div class="list-items">
+                          <h6>RESOURCES</h6>
+                          <ul>
+                            <li><a href="{{.Site.Params.blog_url}}" target="_blank">Blog</a></li>
+                            <!-- <li><a href="#" target="_blank">Forum</a></li> -->
+                            <li><a href="{{.Site.Params.youtube_url}}" target="_blank">Demos</a></li>
+                            <li><a href="{{.Site.Params.youtube_url}}" target="_blank">Tutorials</a></li>
+                            <li><a
+                                href="https://www.youtube.com/watch?v=4lkBt5UUEAQ&list=PLoiT1Gv2KR1hAtDDW7fHEi-s2y2H3DOgx"
+                                target="_blank">Webinars</a></li>
+                            <!-- <li><a href="#" target="_blank">Community</a></li> -->
+                          </ul>
+                        </div>
+                        <!-- single resources list  -->
+
+                        <!-- single resources list  -->
+                        <div class="list-items">
+                          <h6>OPENSOURCE DOCS</h6>
+                          <ul>
+                            <li><a
+                                href="https://voyagermesh.com/docs/{{ .Site.Data.products.voyager.latestVersion }}/welcome/"
+                                target="_blank">Voyager</a></li>
+                            <li><a
+                                href="https://appscode.com/products/guard/{{ .Site.Data.products.guard.latestVersion }}/welcome/"
+                                target="_blank">Guard</a></li>
+                            <li><a
+                                href="https://appscode.com/products/kubed/{{ .Site.Data.products.kubed.latestVersion }}/welcome/"
+                                target="_blank">Kubed</a>
+                            </li>
+                            <li><a
+                                href="https://pharmer.dev/docs/{{ .Site.Data.products.pharmer.latestVersion }}/welcome/"
+                                target="_blank">Pharmer</a></li>
+                            <li><a
+                                href="https://appscode.com/products/swift/{{ .Site.Data.products.swift.latestVersion }}/welcome/"
+                                target="_blank">Swift</a>
+                            </li>
+                            <li><a
+                                href="https://appscode.com/products/searchlight/{{ .Site.Data.products.searchlight.latestVersion }}/welcome/"
+                                target="_blank">Searchlight</a></li>
+                          </ul>
+                        </div>
+                        <!-- single resources list  -->
+
+                        <!-- single resources list  -->
+                        <div class="list-items">
+                          <h6>PREMIUM DOCS</h6>
+                          <ul>
+                            <li><a
+                                href="https://kubedb.com/docs/{{ .Site.Data.products.kubedb.latestVersion }}/welcome/"
+                                target="_blank">KubeDB</a></li>
+                            <li><a href="https://stash.run/docs/{{ .Site.Data.products.stash.latestVersion }}/welcome/"
+                                target="_blank">Stash</a></li>
+                            <li><a
+                                href="https://kubevault.com/docs/{{ .Site.Data.products.kubevault.latestVersion }}/welcome/"
+                                target="_blank">KubeVault</a></li>
+                            <li><a
+                                href="https://kubeform.com/docs/{{ .Site.Data.products.kubeform.latestVersion }}/welcome/"
+                                target="_blank">Kubeform</a></li>
+                          </ul>
+                        </div>
+                        <!-- single resources list  -->
+
+                        <!-- single resources list  -->
+                        <div class="list-items">
+                          <h6>RECENT NEWS/BLOG</h6>
+                          {{- $pctx := . -}}
+                          {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+                          {{- $pages := $pctx.RegularPages -}}
 
 
-          <div class="navbar-right">
-            <!-- navbar items start -->
-            <ul>
-              <li class="nav-item">
-                <button class="link">Resources <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-                <div class="mega-menu-wrapper">
-                  <div class="mega-menu-inner ac-grid-container">
-                    <!-- list menu items start  -->
-                    <div class="resources-list">
-                      <!-- single resources list  -->
-                      <div class="list-items">
-                        <h6>RESOURCES</h6>
-                        <ul>
-                          <li><a href="{{.Site.Params.blog_url}}" target="_blank">Blog</a></li>
-                          <!-- <li><a href="#" target="_blank">Forum</a></li> -->
-                          <li><a href="{{.Site.Params.youtube_url}}" target="_blank">Demos</a></li>
-                          <li><a href="{{.Site.Params.youtube_url}}" target="_blank">Tutorials</a></li>
-                          <li><a
-                              href="https://www.youtube.com/watch?v=4lkBt5UUEAQ&list=PLoiT1Gv2KR1hAtDDW7fHEi-s2y2H3DOgx"
-                              target="_blank">Webinars</a></li>
-                          <!-- <li><a href="#" target="_blank">Community</a></li> -->
-                        </ul>
-                      </div>
-                      <!-- single resources list  -->
+                          <div class="press-wrapper">
+                            {{ range $idx, $p := $pages.ByDate.Reverse }}
+                            {{ if lt $idx 2 }}
+                            <!-- single press start  -->
+                            <a class="single-press">
+                              <div class="calender">
+                                <span class="date">{{ $p.Date.Format "2" }}</span>
+                                <span class="month">{{ $p.Date.Format "Jan" }}</span>
+                              </div>
 
-                      <!-- single resources list  -->
-                      <div class="list-items">
-                        <h6>OPENSOURCE DOCS</h6>
-                        <ul>
-                          <li><a
-                              href="https://voyagermesh.com/docs/{{ .Site.Data.products.voyager.latestVersion }}/welcome/"
-                              target="_blank">Voyager</a></li>
-                          <li><a
-                              href="https://appscode.com/products/guard/{{ .Site.Data.products.guard.latestVersion }}/welcome/"
-                              target="_blank">Guard</a></li>
-                          <li><a
-                              href="https://appscode.com/products/kubed/{{ .Site.Data.products.kubed.latestVersion }}/welcome/"
-                              target="_blank">Kubed</a>
-                          </li>
-                          <li><a
-                              href="https://pharmer.dev/docs/{{ .Site.Data.products.pharmer.latestVersion }}/welcome/"
-                              target="_blank">Pharmer</a></li>
-                          <li><a
-                              href="https://appscode.com/products/swift/{{ .Site.Data.products.swift.latestVersion }}/welcome/"
-                              target="_blank">Swift</a>
-                          </li>
-                          <li><a
-                              href="https://appscode.com/products/searchlight/{{ .Site.Data.products.searchlight.latestVersion }}/welcome/"
-                              target="_blank">Searchlight</a></li>
-                        </ul>
-                      </div>
-                      <!-- single resources list  -->
-
-                      <!-- single resources list  -->
-                      <div class="list-items">
-                        <h6>PREMIUM DOCS</h6>
-                        <ul>
-                          <li><a href="https://kubedb.com/docs/{{ .Site.Data.products.kubedb.latestVersion }}/welcome/"
-                              target="_blank">KubeDB</a></li>
-                          <li><a href="https://stash.run/docs/{{ .Site.Data.products.stash.latestVersion }}/welcome/"
-                              target="_blank">Stash</a></li>
-                          <li><a
-                              href="https://kubevault.com/docs/{{ .Site.Data.products.kubevault.latestVersion }}/welcome/"
-                              target="_blank">KubeVault</a></li>
-                          <li><a
-                              href="https://kubeform.com/docs/{{ .Site.Data.products.kubeform.latestVersion }}/welcome/"
-                              target="_blank">Kubeform</a></li>
-                        </ul>
-                      </div>
-                      <!-- single resources list  -->
-
-                      <!-- single resources list  -->
-                      <div class="list-items">
-                        <h6>RECENT NEWS/BLOG</h6>
-                        {{- $pctx := . -}}
-                        {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
-                        {{- $pages := $pctx.RegularPages -}}
-
-
-                        <div class="press-wrapper">
-                          {{ range $idx, $p := $pages.ByDate.Reverse }}
-                          {{ if lt $idx 2 }}
-                          <!-- single press start  -->
-                          <a class="single-press">
-                            <div class="calender">
-                              <span class="date">{{ $p.Date.Format "2" }}</span>
-                              <span class="month">{{ $p.Date.Format "Jan" }}</span>
-                            </div>
-
-                            <div class="description">
-                              <h6>{{ $p.Title }}</h6>
-                              {{ range $author := $p.Params.authors }}
-                              <a href="/authors/{{ $author | urlize }}" class="author"><span>by</span>{{ $author }}</a>
-                              {{ end }}
-                              <p class="is-ellipsis-2">{{ $p.Summary }}</p>
-                            </div>
-                          </a>
-                          <!-- <a class="single-press">
+                              <div class="description">
+                                <h6>{{ $p.Title }}</h6>
+                                {{ range $author := $p.Params.authors }}
+                                <a href="/authors/{{ $author | urlize }}"
+                                  class="author"><span>by</span>{{ $author }}</a>
+                                {{ end }}
+                                <p class="is-ellipsis-2">{{ $p.Summary }}</p>
+                              </div>
+                            </a>
+                            <!-- <a class="single-press">
                           <div class="description">
                             <h6><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h6>
                           </div>
                         </a> -->
-                          <!-- single press end -->
-                          {{ end }}
-                          {{ end }}
+                            <!-- single press end -->
+                            {{ end }}
+                            {{ end }}
 
-                          <a href="#" class="button ac-button inline-button">See More <span
-                              class="material-icons">arrow_forward</span></a>
+                            <a href="#" class="button ac-button inline-button">See More <span
+                                class="material-icons">arrow_forward</span></a>
+                          </div>
+
+
                         </div>
+                        <!-- single resources list  -->
 
 
                       </div>
-                      <!-- single resources list  -->
-
-
+                      <!-- list menu items end -->
                     </div>
-                    <!-- list menu items end -->
                   </div>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a href="{{.Site.Params.domain_appscode}}/support/" class="link">Support</a>
-              </li>
-            </ul>
-            <!-- navbar items end -->
+                </li>
+                <li class="nav-item">
+                  <a href="{{.Site.Params.domain_appscode}}/support/" class="link">Support</a>
+                </li>
+              </ul>
+              <!-- navbar items end -->
+            </div>
             {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
             <a href="{{ $.Site.Params.domain_appscode }}/contact/"
               class="button ac-button is-primary {{ if eq $currentPageType "docs" }} is-hidden {{ end }}">CONTACT
@@ -514,133 +537,176 @@
       {{ block "header-bottom" . }}
       {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
       <div class="navbar-appscode-wrapper navbar-product">
-      <!-- product navbar start  -->
-      {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
-      <div class="navbar-appscode{{ if ne $currentPageType "docs" }} container {{ end }} ">
-        <!-- navbar left start  -->
-        <div class="navbar-left">
-          <div class="navbar-brand">
-            <a href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}"><img src="{{ $p.logo.src }}"
-                alt="{{ $p.logo.alt }}" alt="{{ $p.logo.alt }}"></a>
-            <!-- {{ $currentPageType := index (split .Page.Permalink "/") 3 }} -->
-            {{ if eq $currentPageType "docs" }}
-            <!-- version select start  -->
-            {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
-            {{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
-            <div class="product-version ml-20">
-              <div class="dropdown">
-                <div class="dropdown-trigger">
-                  <button class="button is-justify-content-space-between" aria-haspopup="true"
-                    aria-controls="dropdown-menu3">
+        <!-- product navbar start  -->
+        {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
+        <div class="navbar-appscode{{ if eq $currentPageType "docs" }} bb-1 {{ else }}
+          container{{ end }}">
+          <!-- navbar left start  -->
+          <div class="navbar-left">
+            <div class="navbar-brand">
+              <a href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}"><img src="{{ $p.logo.src }}"
+                  alt="{{ $p.logo.alt }}" alt="{{ $p.logo.alt }}"></a>
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+              <!-- {{ $currentPageType := index (split .Page.Permalink "/") 3 }} -->
+              {{ if eq $currentPageType "docs" }}
+              <!-- version select start  -->
+              {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+              {{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
+              <div class="product-version ml-20">
+                <div class="dropdown">
+                  <div class="dropdown-trigger">
+                    <button class="button is-justify-content-space-between" aria-haspopup="true"
+                      aria-controls="dropdown-menu3">
 
 
-                    {{ range $v := $p.versions }}
-                    {{ if $v.show }}
-                    {{ if and $v.hostDocs (eq $v.version $currentBranch) }}
-                    <span>{{ $v.version }}</span>
-                    {{ if eq $v.version $p.latestVersion }}
-                    <span class="new-item">Latest</span>
-                    {{ end }}
-                    {{ end }}
-                    {{ end }}
-                    {{ end }}
-                    <span class="arrow">
-                      <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                  </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-                  <div class="dropdown-content">
-                    {{ range $v := $p.versions }}
-                    {{ if $v.show }}
-                    {{ if $v.hostDocs }}
-                    <a href="/docs/{{ $v.version }}/" class="dropdown-item">{{ $v.version }}
-                      {{ if eq $v.version $p.latestVersion }} <div class="new-item ml-15">Latest</div> {{ end }}</a>
-                    {{ else }}
-                    <a href="https://github.com/{{ $p.docRepo }}/tree/{{ $v.version }}/docs" target="_blank"
-                      class="dropdown-item">{{ $v.version }}</a>
-                    {{ end }}
-                    {{ end }}
-                    {{ end }}
+                      {{ range $v := $p.versions }}
+                      {{ if $v.show }}
+                      {{ if and $v.hostDocs (eq $v.version $currentBranch) }}
+                      <span>{{ $v.version }}</span>
+                      {{ if eq $v.version $p.latestVersion }}
+                      <span class="new-item">Latest</span>
+                      {{ end }}
+                      {{ end }}
+                      {{ end }}
+                      {{ end }}
+                      <span class="arrow">
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                    <div class="dropdown-content">
+                      {{ range $v := $p.versions }}
+                      {{ if $v.show }}
+                      {{ if $v.hostDocs }}
+                      <a href="/docs/{{ $v.version }}/" class="dropdown-item">{{ $v.version }}
+                        {{ if eq $v.version $p.latestVersion }} <div class="new-item ml-15">Latest</div> {{ end }}</a>
+                      {{ else }}
+                      <a href="https://github.com/{{ $p.docRepo }}/tree/{{ $v.version }}/docs" target="_blank"
+                        class="dropdown-item">{{ $v.version }}</a>
+                      {{ end }}
+                      {{ end }}
+                      {{ end }}
+                    </div>
                   </div>
                 </div>
               </div>
+              <!-- version select end -->
+              {{ end }}
             </div>
-            <!-- version select end -->
-            {{ end }}
           </div>
-        </div>
-        <!-- navbar left end -->
-        <!-- navbar right start  -->
-        <div class="navbar-right">
-          <ul>
-            {{ range .Site.Menus.main }}
-            {{ if .HasChildren }}
-            <li class="nav-item">
-              <button href="#" class="link">{{ .Name }} <i class="fa fa-angle-down"></i></button>
-              <div class="mega-menu-wrapper">
-                <div class="mega-menu-inner ac-grid-container">
-                  <!-- database card start  -->
-                  <div class="databse-list">
-                    {{ range .Children }}
-                    {{ if eq .Parent $.Site.Params.main_menu_dropdown_item }}
-                    <a href="/docs/{{ $p.latestVersion }}/guides/{{ .Identifier }}/"
-                      class="single-database">{{ .Name }}</a>
-                    {{ else }}
-                    <a href="{{.URL}}" class="single-database">{{ .Name }}</a>
-                    {{ end }}
-                    {{ end }}
+          <!-- navbar left end -->
+          <!-- navbar right start  -->
+          <div class="navbar-right">
+            <ul>
+              {{ range .Site.Menus.main }}
+              {{ if .HasChildren }}
+              <li class="nav-item">
+                <button href="#" class="link">{{ .Name }} <i class="fa fa-angle-down"></i></button>
+
+                <!-- mega-menu wrapper -->
+                <div class="mega-menu-wrapper">
+
+                  <!-- ac-grid-container -->
+                  <div class="mega-menu-inner container">
+                    <button class="button ac-button inline-button back-button"><span
+                        class="material-icons-outlined">arrow_back</span>Back</button>
+                    <!-- product start  -->
+                    <div class="product-menu database-list">
+                      {{ range .Children }}
+                      {{ if eq .Parent $.Site.Params.main_menu_dropdown_item }}
+                      <!-- single product start  -->
+                      <a href="/docs/{{ $p.latestVersion }}/guides/{{ .Identifier }}/" class="single-product">
+                        <div class="product-logo">
+                          <img src="/assets/images/products/kubedb/kubedb-icon.png" alt="">
+                        </div>
+                        <div class="product-info">
+                          <h6>{{ .Name }}</h6>
+                          <!-- <p>static content</p> -->
+                        </div>
+                        <div class="navigate-icon">
+                          <span class="material-icons">
+                            arrow_forward
+                          </span>
+                        </div>
+                      </a>
+                      <!-- single product end -->
+                      {{ else }}
+                      <a href="{{.URL}}" class="single-database">{{ .Name }}</a>
+                      {{ end }}
+                      {{ end }}
+
+                    </div>
+                    <!-- product end -->
+
+                    <!-- product description start  -->
+
+                    <!-- single product description start  -->
+                    <div class="product-description is-block">
+                      <div class="video-content">
+                        <iframe width="560" height="415" src="https://www.youtube.com/embed/egzPGc6Yk_A"
+                          title="YouTube video player" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen></iframe>
+                      </div>
+                    </div>
+                    <!-- single product description end  -->
+
+                    <!-- product description end -->
                   </div>
-                  <!-- database card end -->
                 </div>
-              </div>
-            </li>
-            {{else}}
-            {{ if eq .Name "Documentation" }}
-            <li class="nav-item">
-              <a href="/docs/{{ $p.latestVersion }}/welcome/" class="link">{{ .Name }}</a>
-            </li>
-            {{ else }}
-            <li class="nav-item">
-              <a href="{{.URL}}" class="link">{{ .Name }}</a>
-            </li>
-            {{ end }}
-            {{ end }}
-            {{end}}
-          </ul>
+                <!-- mega-menu wrapper -->
+              </li>
+              {{else}}
+              {{ if eq .Name "Documentation" }}
+              <li class="nav-item">
+                <a href="/docs/{{ $p.latestVersion }}/welcome/" class="link">{{ .Name }}</a>
+              </li>
+              {{ else }}
+              <li class="nav-item">
+                <a href="{{.URL}}" class="link">{{ .Name }}</a>
+              </li>
+              {{ end }}
+              {{ end }}
+              {{end}}
+            </ul>
 
-          <!-- Community link start  -->
-          <div class="community-items ml-70">
-            <a href="{{$.Site.Data.products.kubedb.socialLinks.github}}" class="community-item" target="_blank">
-              <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon">
-            </a>
-            <a href="{{$.Site.Data.products.kubedb.socialLinks.twitter}}" class="community-item" target="_blank">
-              <img src="/assets/images/icon/community/twitter-icon.svg" alt="twitter-icon">
-            </a>
-            <a href="http://slack.kubernetes.io/" class="community-item" target="_blank">
-              <img src="/assets/images/icon/community/slack-icon.svg" alt="slack-icon">
-            </a>
+            <!-- Community link start  -->
+            <div class="community-items ml-70">
+              <a href="{{$.Site.Data.products.kubedb.socialLinks.github}}" class="community-item" target="_blank">
+                <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon">
+              </a>
+              <a href="{{$.Site.Data.products.kubedb.socialLinks.twitter}}" class="community-item" target="_blank">
+                <img src="/assets/images/icon/community/twitter-icon.svg" alt="twitter-icon">
+              </a>
+              <a href="http://slack.kubernetes.io/" class="community-item" target="_blank">
+                <img src="/assets/images/icon/community/slack-icon.svg" alt="slack-icon">
+              </a>
+            </div>
+            <!-- Community link end -->
+            <!-- action button start  -->
+            {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
+            {{ if eq $currentPageType "docs" }}
+            <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary ml-8 height-40">TRY NOW
+              FREE</a>
+            {{ end }}
+            <!-- action button end -->
+
           </div>
-          <!-- Community link end -->
-          <!-- action button start  -->
-          {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
-          {{ if eq $currentPageType "docs" }}
-          <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary ml-8 height-40">TRY NOW
-            FREE</a>
-          {{ end }}
-          <!-- action button end -->
-
+          <!-- navbar right end -->
         </div>
-        <!-- navbar right end -->
-      </div>
-      <!-- product navbar end -->
-      </div>
-      {{ end }}
-      <!-- docs navbar start  -->
-      {{ block "documentation-menu" . }}
-      {{ end }}
-      <!-- docs navbar end -->
+        <!-- product navbar end -->
+        <!-- docs navbar start  -->
+        {{ block "documentation-menu" . }}
+        {{ end }}
+        <!-- docs navbar end -->
 
+      </div>
+      {{ end }}
 
 
     </div>
@@ -661,103 +727,86 @@
 
   <!-- testimonial area start -->
   {{ block "testimonial" . }}
-  <section class="testimonial-area section-padding">
-    <div class="container section">
-      <div class="columns">
-        <div class="column">
-          <div class="section-title has-text-centered" data-aos="fade-up">
-            <h2>What Our Customers Say</h2>
+
+  <!-- testimonial area 2022 start  -->
+  <section class="testimonial-area">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-4">
+          <div class="section-title">
+            <h1 class="is-gradient">What They Are <span class="has-text-weight-light"> Talking About us</span></h1>
+            <p>Trusted by top engineers at the most ambitious companies</p>
           </div>
+          <!-- arrows start  -->
+          <div class="arrows">
+            <button class="button arrow is-rounded customPrevBtn"><span
+                class="material-icons-outlined">arrow_back</span></button>
+            <button class="button arrow is-rounded customNextBtn"><span
+                class="material-icons-outlined">arrow_forward</span></button>
+          </div>
+          <!-- arrows end -->
         </div>
-      </div>
-      <div class="columns is-centered">
         <div class="column is-8">
-          <div class="carousel-wrapper carousel" id="carousel-demo" data-aos="fade-up">
+          <!-- owl-carousel -->
+          <div class="testimonial-carousel-wrapper owl-carousel">
             {{ range $user := $.Site.Data.testimonials }}
-            <!-- single testimonial start -->
-            <div class="carousel-inner">
-              <div class="single-testimonial-wrapper">
-                <div class="client-brief has-text-centered">
-                  <p>
-                    {{ $user.testimonial | safeHTML }}
-                  </p>
-                </div>
-                <div class="client-information">
-                  <div class="client-info-inner">
-                    <div class="client-thumb">
-                      <img src="{{ $user.profile }}" alt="{{ $user.name }}" />
-                    </div>
-                    <div class="client-info">
-                      <h4>{{ $user.name }}</h4>
-                      <p>{{ $user.job }}{{ if $user.companyKey }} at
-                        {{ index $.Site.Data.customers $user.companyKey "name" }}{{ end }}</p>
-                    </div>
-                  </div>
+            <!-- single testimonial item start  -->
+            <div class="single-testimonial-item">
+              <!-- user info wrapper start  -->
+              <div class="user-info-wrapper">
+                <figure class="image is-64x64">
+                  <img class="is-rounded" src="{{ $user.profile }}" alt="{{ $user.name }}">
+                </figure>
+                <div class="user-info">
+                  <h5>{{ $user.name }}</h5>
+                  <p>{{ $user.job }}{{ if $user.companyKey }} at
+                    {{ index $.Site.Data.customers $user.companyKey "name" }}{{ end }}</p>
                 </div>
               </div>
+              <!-- user info wrapper end -->
+              <p>{{ $user.testimonial | safeHTML }}</p>
             </div>
-            <!-- single testimonial end -->
             {{ end }}
           </div>
+          <!-- single testimonial item end -->
         </div>
       </div>
     </div>
   </section>
-  {{ end }}
-  <!-- testimonial area end -->
+  <!-- testimonial area 2022 end -->
 
-  <!-- our customer logo area start -->
-  {{ block "customer-logos" . }}
-  <div class="logo-carusal-area section-padding">
-    <div class="container section">
-      <div class="columns is-centered">
-        <div class="column is-10 has-text-centered">
-          <!-- brand logo start -->
-          <div class="brand-logo-wrapper mt-10" data-aos="fade-up">
-            {{ range $customer := $.Site.Data.customers }}
-            {{ if $customer.show }}
-            <a class="single-brand-logo">
-              <img src="{{ $customer.logo }}" alt="{{ $customer.name }}" class="img" />
-            </a>
-            {{ end }}
-            {{ end }}
-          </div>
-          <!-- brand logo end -->
-        </div>
-      </div>
-    </div>
-  </div>
-  {{ end }}
-  <!-- our customer logo area end -->
-
-  <!-- call to action area start -->
   {{ block "cta-install" . }}
   {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
-  <section class="cta-area section-padding pt-0" data-aos="fade-up">
-    <div class="container section">
-      <div class="cta-padding">
-        <div class="columns is-vcentered">
-          <div class="column is-6">
-            <!-- cta text strat -->
-            <div class="cta-text">
-              <h2>Ready to Get Started?</h2>
-              <p>Install <strong>{{ $p.name }}</strong> in your Kubernetes cluster</p>
+  <!-- call to action start  -->
+  <section class="cta-area">
+    <div class="container">
+      <div class="cta-area-inner">
+        <div class="container">
+          <div class="columns is-vcentered">
+            <div class="column is-9">
+              <h3>Run and Manage MySQL Database in Kubernetes FREE !</h3>
+              <p>{{ $p.name }} community edition is FREE to use on any supported Kubernetes engines. You can deploy and
+                manage
+                your MySQL database in Kubernetes using {{ $p.name }}. There is no up-front investment required. We
+                offer a 30 days license FREE
+                of cost to try {{ $p.name }} Enterprise edition.
+              </p>
             </div>
-            <!-- cta text end -->
-          </div>
-          <div class="column is-6 has-text-right is-mobile">
-            <div class="cta-button">
-              <!-- cta button start -->
-              <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary">Try Now for FREE!</a>
-              <!-- cta button end -->
+            <div class="column is-2 is-offset-1 has-text-right-desktop">
+              <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-white">TRY NOW FREE</a>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
+  <!-- call to action end -->
   {{ end }}
-  <!-- call to action area end -->
+  {{ end }}
+
+
+
   <!-- top to button start -->
   <button class="go-to-top" id="goTop">
     <i class="fa fa-angle-up" aria-hidden="true"></i>
@@ -767,7 +816,7 @@
   {{ block "footer" . }}
   <footer class="footer-area">
     <div class="footer-top">
-      <div class="container section">
+      <div class="container">
         <div class="columns is-mobile is-multiline">
           <div class="column is-full-mobile is-one-third-desktop is-one-third-widescreen is-one-third-tablet"
             data-aos="fade-up">
@@ -886,18 +935,18 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="container section">
-        <div class="columns">
+      <div class="container">
+        <div class="columns is-vcentered">
           <div class="column is-4">
             <p>© {{ now.Format "2006" }} AppsCode Inc. All rights reserved.</p>
           </div>
-          <div class="column is-4 is-mobile has-text-centered">
+          <div class="column is-4 is-mobile has-text-centered-desktop">
             <div class="footer-inline-link">
               <a href="{{.Site.Params.domain_appscode}}/legal/privacy-policy/">Privacy Policy</a>
               <a href="{{.Site.Params.domain_appscode}}/legal/tos/">Terms of Service</a>
             </div>
           </div>
-          <div class="column is-4 is-mobile has-text-right">
+          <div class="column is-4 is-mobile has-text-right-desktop">
             <div class="socail-link-inline">
               <ul>
                 <li>
@@ -918,6 +967,12 @@
   </footer>
   {{ end }}
   <!-- footer area end -->
+
+
+  <!-- integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <script src="/assets/js/headroom.min.js"></script>
 
   <!-- Bulma Carousel JS -->
   <script src="/assets/js/bulma-carousel.min.js"></script>

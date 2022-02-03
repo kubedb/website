@@ -81,18 +81,18 @@
 }
 .color-3 {
   &:after {
-    background: lighten($ac-orange, 10%);
+    // background: lighten($ac-orange, 10%);
   }
   .inline-button {
-    background: lighten($ac-orange, 10%);
+    // background: lighten($ac-orange, 10%);
   }
 }
 .color-4 {
   &:after {
-    background: lighten($ac-primary, 10%);
+    // background: lighten($ac-primary, 10%);
   }
   .inline-button {
-    background: lighten($ac-primary, 10%);
+    // background: lighten($ac-primary, 10%);
   }
 }
 // service area end

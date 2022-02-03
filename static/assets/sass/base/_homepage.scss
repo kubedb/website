@@ -24,45 +24,7 @@
   }
 }
 
-.section-title {
-  position: relative;
-  z-index: 1;
-  h4 {
-    color: $ac-primary;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    line-height: 50px;
-    font-weight: 400;
-  }
-  p{
-    a{
-      color: $ac-primary;
-      text-decoration: underline;
-      transition: .3s ease-in-out;
-      &:hover{
-        color: scale-color($ac-primary, $lightness: 10%);
-      }
-    }
-  }
-  .quete-icon {
-    font-size: 120px;
-    position: absolute;
-    width: 100%;
-    top: -60px;
-    z-index: -1;
-    opacity: 0.1;
-  }
-}
-.section-title.is-main-title h2 {
-  margin-bottom: 0;
-}
-.section-title.mb-0 {
-  margin-bottom: 0;
-}
+
 .ac-custom-tabs {
   ul {
     li {
