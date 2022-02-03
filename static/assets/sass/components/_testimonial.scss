@@ -121,9 +121,15 @@ Responsive Classes
     .single-testimonial-item {
       padding: 30px;
       min-height: auto;
+      .user-info-wrapper {
+        .user-info {
+          h5 {
+            font-size: 20px;
+          }
+        }
+      }
     }
   }
-
 }
 
 // Small devices (landscape phones, 576px and up)
