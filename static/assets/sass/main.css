@@ -9532,8 +9532,47 @@ Responsive Classes
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-right {
     top: 55px;
   }
+  .headroom--unpinned .navbar-appscode-wrapper .documentation-menu .navbar-right {
+    top: 57px !important;
+  }
   .navbar-appscode.container {
     padding: 0.5rem 15px;
+  }
+  .navbar-appscode.documentation-menu {
+    margin-left: 0;
+  }
+  .navbar-appscode.documentation-menu .navbar-right {
+    opacity: 1;
+    visibility: visible;
+    top: 49px !important;
+    min-height: auto;
+    overflow-y: inherit;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 1.25rem;
+  }
+  .navbar-appscode.documentation-menu .navbar-right ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .navbar-appscode.documentation-menu .navbar-right .ac-searchbar {
+    width: auto;
+    padding: 0 13px;
+    border-left: none;
+  }
+  .navbar-appscode.documentation-menu .navbar-right .ac-searchbar input {
+    display: none;
   }
   .navbar-appscode .navbar-left {
     width: 100%;
@@ -12458,7 +12497,7 @@ li.nav-item.active a {
   background: #ffffff;
   width: 585px;
   z-index: 9999;
-  right: -80%;
+  right: -100%;
   position: fixed;
   top: 0;
   height: 100%;
@@ -12656,6 +12695,21 @@ li.nav-item.active a {
 .full-info table td,
 .full-info table th {
   text-align: left;
+}
+
+/****************************************
+Responsive Classes
+*****************************************/
+@media (max-width: 575.98px) {
+  .sidebar-search-area {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-burger {
+    display: none !important;
+  }
 }
 
 .hero-area.features-plan {

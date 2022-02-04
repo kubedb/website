@@ -55,6 +55,7 @@
     .navbar-right {
       width: 100%;
       justify-content: space-between;
+
       .ac-searchbar {
         width: 49%;
       }
@@ -244,6 +245,7 @@
 
   .mega-menu-inner {
     overflow: hidden;
+
     .back-button {
       display: none !important;
       color: $ac-color-text;
@@ -801,15 +803,52 @@ Responsive Classes
     .navbar-appscode-wrapper {
       &.navbar-product {
         padding: 0.5rem 0;
+
         .navbar-appscode .navbar-right {
           top: 55px;
         }
       }
+
+      .documentation-menu {
+        .navbar-right {
+          top: 57px !important;
+        }
+      }
     }
   }
+
   .navbar-appscode {
     &.container {
       padding: 0.5rem 15px;
+    }
+
+    &.documentation-menu {
+      margin-left: 0;
+
+      .navbar-right {
+        opacity: 1;
+        visibility: visible;
+        top: 49px !important;
+        min-height: auto;
+        overflow-y: inherit;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 1.25rem;
+        ul {
+          flex-direction: row;
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .ac-searchbar {
+          width: auto;
+          padding: 0 13px;
+          border-left: none;
+          input {
+            display: none;
+          }
+        }
+      }
     }
 
     .navbar-left {
@@ -883,6 +922,7 @@ Responsive Classes
 
   .resources-list {
     grid-template-columns: auto;
+
     .list-items {
       h6 {
         margin-bottom: 0.5rem;
@@ -906,9 +946,11 @@ Responsive Classes
           font-size: 18px;
         }
       }
+
       .product-menu {
         grid-template-columns: auto;
         width: 100%;
+
         &.database-list {
           grid-template-columns: auto;
         }
