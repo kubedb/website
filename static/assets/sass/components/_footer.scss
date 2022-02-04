@@ -113,7 +113,8 @@ p.spam-message {
 }
 
 .footer-bottom {
-  padding: 10px 0;
+  padding: 30px 0;
+  background-color: #fafafd;
 
   p {
     font-size: 14px;
@@ -174,10 +175,32 @@ Responsive Classes
 *****************************************/
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
-  .footer-menu {
-    h4 {
-      margin-bottom: 0;
+  .footer-area {
+    .single-footer-widget {
+      .footer-logo {
+        margin: 0 auto;
+      }
+      .subscription-form {
+        text-align: center;
+      }
+      .field.has-addons {
+        justify-content: center;
+      }
     }
+    .footer-menu {
+      h4 {
+        margin-bottom: 0;
+      }
+    }
+    .contact-information {
+      text-align: center;
+    }
+  }
+  .footer-inline-link {
+    padding: 10px 0;
+  }
+  .footer-bottom {
+    padding: 20px 0;
   }
 }
 
