@@ -548,11 +548,7 @@
             <div class="navbar-brand">
               <a href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}"><img src="{{ $p.logo.src }}"
                   alt="{{ $p.logo.alt }}" alt="{{ $p.logo.alt }}"></a>
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
+
               <!-- {{ $currentPageType := index (split .Page.Permalink "/") 3 }} -->
               {{ if eq $currentPageType "docs" }}
               <!-- version select start  -->
@@ -599,6 +595,12 @@
               </div>
               <!-- version select end -->
               {{ end }}
+
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
             </div>
           </div>
           <!-- navbar left end -->
