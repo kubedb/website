@@ -55,7 +55,6 @@
     .navbar-right {
       width: 100%;
       justify-content: space-between;
-
       .ac-searchbar {
         width: 49%;
       }
@@ -245,6 +244,11 @@
 
   .mega-menu-inner {
     overflow: hidden;
+    .back-button {
+      display: none !important;
+      color: $ac-color-text;
+      margin-bottom: 10px !important;
+    }
 
     // product menu start
     .product-menu {
@@ -793,6 +797,16 @@ Responsive Classes
 *****************************************/
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
+  .headroom--unpinned {
+    .navbar-appscode-wrapper {
+      &.navbar-product {
+        padding: 0.5rem 0;
+        .navbar-appscode .navbar-right {
+          top: 55px;
+        }
+      }
+    }
+  }
   .navbar-appscode {
     &.container {
       padding: 0.5rem 15px;
@@ -824,6 +838,8 @@ Responsive Classes
       width: 100%;
       left: 0;
       min-height: 100vh;
+      overflow-y: auto;
+      transition: 0.3s ease-in-out;
       top: 61px;
       padding: 15px;
       justify-content: flex-start;
@@ -865,6 +881,15 @@ Responsive Classes
     }
   }
 
+  .resources-list {
+    grid-template-columns: auto;
+    .list-items {
+      h6 {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
   .mega-menu-wrapper {
     width: 100% !important;
     left: 0 !important;
@@ -872,7 +897,18 @@ Responsive Classes
     padding-top: 20px !important;
 
     .mega-menu-inner {
+      .back-button {
+        display: flex !important;
+
+        span {
+          color: $ac-primary;
+          padding-right: 15px;
+          font-size: 18px;
+        }
+      }
       .product-menu {
+        grid-template-columns: auto;
+        width: 100%;
         &.database-list {
           grid-template-columns: auto;
         }
