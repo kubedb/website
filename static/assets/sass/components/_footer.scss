@@ -61,7 +61,7 @@
 
 .all-contact-info li a,
 p.spam-message {
-  color: $ac-color-link;
+  color: $ac-color-text;
   display: inline-block;
   font-size: 14px;
   font-family: $ac-font-paragraph;
@@ -89,7 +89,7 @@ p.spam-message {
 .footer-link {
   li {
     a {
-      color: $ac-color-link;
+      color: $ac-color-text;
       font-size: 14px;
       display: block;
       padding: 8px 0;
@@ -108,7 +108,7 @@ p.spam-message {
 }
 
 .footer-top {
-  padding: 50px 0;
+  padding: 50px 0 30px 0;
   border-bottom: 1px solid $ac-white-light;
 }
 
@@ -177,6 +177,8 @@ Responsive Classes
 @media (max-width: 575.98px) {
   .footer-area {
     .single-footer-widget {
+      height: 100%;
+      text-align: center;
       .footer-logo {
         margin: 0 auto;
       }
@@ -188,6 +190,10 @@ Responsive Classes
       }
     }
     .footer-menu {
+      background-color: #4d4dcb0d;
+      height: 100%;
+      padding: 20px 5px;
+      border-radius: 4px;
       h4 {
         margin-bottom: 0;
       }
