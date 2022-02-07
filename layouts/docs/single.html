@@ -4,6 +4,14 @@
 {{ $menu := .Params.menu_name }}
 
 <!-- documentation and search start   -->
+<div class="responsive-menu is-hidden-desktop is-flex is-justify-content-center">
+  <div class="is-flex is-justify-content-space-between is-fullwidth pl-20 pr-20">
+    <button class="button">Sidebar</button>
+    <button class="button">Menu</button>
+    <button class="button">Table of content</button>
+    <button class="button p-10"><i class="fa fa-search"></i></button>
+  </div>
+</div>
 <div class="navbar-appscode documentation-menu">
   <!-- <div class="navbar-left ml-40">
 
@@ -189,10 +197,6 @@
 
   <!-- documentation body start  -->
   <div class="documentation-body">
-    <div class="mobile-docs-sidebar is-hidden-desktop is-flex is-justify-content-space-between mb-15">
-      <button class="button is-extra-tinny is-gray">Show sidebar</button>
-      <button class="button is-extra-tinny is-gray">Show table of content</button>
-    </div>
     {{ if not (eq $p.latestVersion $currentBranch) }}
     <article class="message is-danger">
       <div class="message-body">
@@ -285,7 +289,7 @@
 
 <!-- improve page section start  -->
 <div class="improve-section-area">
-  <div class="container section">
+  <div class="container">
     <div class="improve-bg-color">
       <div class="columns">
         {{ $urlToken := (split .File.Path "/") }}

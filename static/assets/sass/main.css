@@ -8680,6 +8680,10 @@ video {
   height: 1.58rem;
 }
 
+.navbar-appscode-wrapper.navbar-product .buttons.has-addons .button {
+  font-size: 14px;
+}
+
 .navbar-appscode {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9396,6 +9400,14 @@ video {
   margin-right: 0;
 }
 
+.responsive-menu .button {
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .product-version .dropdown .dropdown-trigger .button {
   font-size: 0.813rem;
   width: 190px;
@@ -9409,6 +9421,31 @@ video {
 .product-version .dropdown .dropdown-trigger .button .arrow {
   color: #999999;
   font-size: 0.9rem;
+}
+
+.product-version .dropdown .dropdown-menu {
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  /* Chrome, Edge, and Safari */
+}
+
+.product-version .dropdown .dropdown-menu * {
+  scrollbar-width: auto;
+  scrollbar-color: #ebebeb #fafafd;
+}
+
+.product-version .dropdown .dropdown-menu *::-webkit-scrollbar {
+  width: 12px;
+}
+
+.product-version .dropdown .dropdown-menu *::-webkit-scrollbar-track {
+  background: #fafafd;
+}
+
+.product-version .dropdown .dropdown-menu *::-webkit-scrollbar-thumb {
+  background-color: #ebebeb;
+  border-radius: 10px;
+  border: 3px solid #fafafd;
 }
 
 .product-version .dropdown .dropdown-menu .dropdown-content {
@@ -9527,10 +9564,7 @@ Responsive Classes
 *****************************************/
 @media (max-width: 575.98px) {
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product {
-    padding: 0.5rem 0;
-  }
-  .headroom--unpinned .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-left .navbar-brand a img {
-    height: 1.5rem;
+    padding: 0 0;
   }
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-right {
     top: 55px;
@@ -9544,6 +9578,7 @@ Responsive Classes
   .navbar-appscode.documentation-menu {
     margin-left: 0;
     border-left: none;
+    display: none;
   }
   .navbar-appscode.documentation-menu .navbar-right {
     opacity: 1;
@@ -9594,6 +9629,9 @@ Responsive Classes
     margin: 0;
     width: 100%;
   }
+  .navbar-appscode .navbar-left .navbar-brand a img {
+    height: 1.5rem;
+  }
   .navbar-appscode .navbar-left ul {
     position: absolute;
     right: 20%;
@@ -9635,8 +9673,9 @@ Responsive Classes
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .navbar-appscode .navbar-right .button {
-    margin-left: 0;
+  .navbar-appscode .navbar-right .is-primary.ml-8 {
+    margin-left: 0 !important;
+    margin-top: 15px;
   }
   .navbar-appscode .navbar-right ul {
     display: -webkit-box;
@@ -9702,6 +9741,12 @@ Responsive Classes
   }
   .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-right {
     top: 47px;
+  }
+  .product-version.pl-20 {
+    padding-left: 10px;
+  }
+  .product-version .dropdown .dropdown-trigger .button {
+    width: 170px;
   }
   .product-version .dropdown-menu {
     z-index: 9999;
@@ -11998,9 +12043,6 @@ p.spam-message {
 Responsive Classes
 *****************************************/
 @media (max-width: 575.98px) {
-  .footer-area .footer-top {
-    padding-top: 0;
-  }
   .footer-area .footer-top .is-1-mobile .column {
     padding: 0.25rem;
   }
@@ -12099,10 +12141,6 @@ Responsive Classes
 .documentation-area .documentation-body {
   padding: 0 60px;
   width: calc(100% - 674px);
-}
-
-.documentation-area .documentation-body button.button.is-extra-tinny.is-gray {
-  font-size: 14px;
 }
 
 .documentation-area .right-sidebar {
@@ -12704,7 +12742,6 @@ li.nav-item.active a {
 
 .improve-bg-color {
   background-color: #fbfdff;
-  padding: 0 20px !important;
 }
 
 .improve-bg-color a {
@@ -12734,6 +12771,15 @@ Responsive Classes
   .documentation-area .left-sidebar-wrapper,
   .documentation-area .right-sidebar {
     display: none;
+    position: absolute;
+    top: 180px;
+  }
+  .documentation-area .right-sidebar {
+    right: 0;
+    background: #fff;
+    z-index: 9;
+    top: 171px !important;
+    height: 90vh;
   }
   .documentation-area .documentation-body {
     padding: 0 20px;
@@ -12746,6 +12792,9 @@ Responsive Classes
   }
   .sidebar-search-area {
     width: 100%;
+  }
+  .improve-section-area {
+    padding-bottom: 20px;
   }
 }
 
