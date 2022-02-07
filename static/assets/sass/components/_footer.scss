@@ -176,6 +176,14 @@ Responsive Classes
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
   .footer-area {
+    .footer-top {
+      padding-top: 0;
+      .is-1-mobile {
+        .column {
+          padding: 0.25rem;
+        }
+      }
+    }
     .single-footer-widget {
       height: 100%;
       text-align: center;

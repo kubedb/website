@@ -9529,6 +9529,9 @@ Responsive Classes
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product {
     padding: 0.5rem 0;
   }
+  .headroom--unpinned .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-left .navbar-brand a img {
+    height: 1.5rem;
+  }
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-right {
     top: 55px;
   }
@@ -9540,6 +9543,7 @@ Responsive Classes
   }
   .navbar-appscode.documentation-menu {
     margin-left: 0;
+    border-left: none;
   }
   .navbar-appscode.documentation-menu .navbar-right {
     opacity: 1;
@@ -9555,6 +9559,7 @@ Responsive Classes
         -ms-flex-align: center;
             align-items: center;
     padding: 0 1.25rem;
+    border-bottom: 1px solid #dbdbde;
   }
   .navbar-appscode.documentation-menu .navbar-right ul {
     -webkit-box-orient: horizontal;
@@ -9566,10 +9571,18 @@ Responsive Classes
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .navbar-appscode.documentation-menu .navbar-right ul .nav-item .link {
+    font-size: 13px;
+  }
+  .navbar-appscode.documentation-menu .navbar-right ul .nav-item .link .fa {
+    margin-left: 0;
+  }
   .navbar-appscode.documentation-menu .navbar-right .ac-searchbar {
     width: auto;
     padding: 0 13px;
     border-left: none;
+    font-size: 12px;
+    margin-right: -6px;
   }
   .navbar-appscode.documentation-menu .navbar-right .ac-searchbar input {
     display: none;
@@ -9689,6 +9702,9 @@ Responsive Classes
   }
   .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-right {
     top: 47px;
+  }
+  .product-version .dropdown-menu {
+    z-index: 9999;
   }
 }
 
@@ -11982,6 +11998,12 @@ p.spam-message {
 Responsive Classes
 *****************************************/
 @media (max-width: 575.98px) {
+  .footer-area .footer-top {
+    padding-top: 0;
+  }
+  .footer-area .footer-top .is-1-mobile .column {
+    padding: 0.25rem;
+  }
   .footer-area .single-footer-widget {
     height: 100%;
     text-align: center;
@@ -12077,6 +12099,10 @@ Responsive Classes
 .documentation-area .documentation-body {
   padding: 0 60px;
   width: calc(100% - 674px);
+}
+
+.documentation-area .documentation-body button.button.is-extra-tinny.is-gray {
+  font-size: 14px;
 }
 
 .documentation-area .right-sidebar {
@@ -12701,6 +12727,23 @@ li.nav-item.active a {
 Responsive Classes
 *****************************************/
 @media (max-width: 575.98px) {
+  .documentation-area {
+    margin-top: 160px;
+    margin-bottom: 15px;
+  }
+  .documentation-area .left-sidebar-wrapper,
+  .documentation-area .right-sidebar {
+    display: none;
+  }
+  .documentation-area .documentation-body {
+    padding: 0 20px;
+    width: 100%;
+  }
+  .documentation-area .documentation-body .full-info h1 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
   .sidebar-search-area {
     width: 100%;
   }
