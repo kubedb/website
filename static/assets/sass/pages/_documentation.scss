@@ -57,9 +57,6 @@
   .documentation-body {
     padding: 0 60px;
     width: calc(100% - 674px);
-    button.button.is-extra-tinny.is-gray {
-      font-size: 14px;
-    }
   }
 
   .right-sidebar {
@@ -635,7 +632,6 @@ li.nav-item.active a {
 
 .improve-bg-color {
   background-color: #fbfdff;
-  padding: 0 20px !important;
 
   a {
     font-size: 16px !important;
@@ -669,6 +665,15 @@ Responsive Classes
     .left-sidebar-wrapper,
     .right-sidebar {
       display: none;
+      position: absolute;
+      top: 180px;
+    }
+    .right-sidebar {
+      right: 0;
+      background: #fff;
+      z-index: 9;
+      top: 171px !important;
+      height: 90vh;
     }
 
     .documentation-body {
@@ -687,6 +692,9 @@ Responsive Classes
 
   .sidebar-search-area {
     width: 100%;
+  }
+  .improve-section-area {
+    padding-bottom: 20px;
   }
 }
 

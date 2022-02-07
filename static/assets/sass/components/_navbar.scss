@@ -25,6 +25,12 @@
         }
       }
     }
+
+    .buttons.has-addons {
+      .button {
+        font-size: 14px;
+      }
+    }
   }
 }
 
@@ -206,14 +212,12 @@
 
           @keyframes pulse-border {
             0% {
-              transform: translateX(-50%) translateY(-50%) translateZ(0)
-                scale(1);
+              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
               opacity: 1;
             }
 
             100% {
-              transform: translateX(-50%) translateY(-50%) translateZ(0)
-                scale(1.5);
+              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
               opacity: 0;
             }
           }
@@ -665,6 +669,19 @@
   }
 }
 
+// responsive menu start
+.responsive-menu {
+  .button {
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+// responsive menu end
+
 // product version style start
 .product-version {
   .dropdown {
@@ -686,6 +703,29 @@
     }
 
     .dropdown-menu {
+
+      /* ===== Scrollbar CSS ===== */
+      /* Firefox */
+      * {
+        scrollbar-width: auto;
+        scrollbar-color: #ebebeb #fafafd;
+      }
+
+      /* Chrome, Edge, and Safari */
+      *::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      *::-webkit-scrollbar-track {
+        background: #fafafd;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background-color: #ebebeb;
+        border-radius: 10px;
+        border: 3px solid #fafafd;
+      }
+
       .dropdown-content {
         max-height: 420px;
         overflow-y: auto;
@@ -802,18 +842,9 @@ Responsive Classes
   .headroom--unpinned {
     .navbar-appscode-wrapper {
       &.navbar-product {
-        padding: 0.5rem 0;
+        padding: 0 0;
 
         .navbar-appscode {
-          .navbar-left {
-            .navbar-brand {
-              a {
-                img {
-                  height: 1.5rem;
-                }
-              }
-            }
-          }
           .navbar-right {
             top: 55px;
           }
@@ -836,6 +867,7 @@ Responsive Classes
     &.documentation-menu {
       margin-left: 0;
       border-left: none;
+      display: none;
 
       .navbar-right {
         opacity: 1;
@@ -852,9 +884,11 @@ Responsive Classes
           flex-direction: row;
           width: 100%;
           justify-content: space-between;
+
           .nav-item {
             .link {
               font-size: 13px;
+
               .fa {
                 margin-left: 0;
               }
@@ -868,6 +902,7 @@ Responsive Classes
           border-left: none;
           font-size: 12px;
           margin-right: -6px;
+
           input {
             display: none;
           }
@@ -881,6 +916,12 @@ Responsive Classes
       .navbar-brand {
         margin: 0;
         width: 100%;
+
+        a {
+          img {
+            height: 1.5rem;
+          }
+        }
       }
 
       ul {
@@ -914,8 +955,9 @@ Responsive Classes
         align-items: flex-start;
       }
 
-      .button {
-        margin-left: 0;
+      .is-primary.ml-8 {
+        margin-left: 0 !important;
+        margin-top: 15px;
       }
 
       ul {
@@ -994,7 +1036,20 @@ Responsive Classes
       top: 47px;
     }
   }
+
   .product-version {
+    &.pl-20 {
+      padding-left: 10px;
+    }
+
+    .dropdown {
+      .dropdown-trigger {
+        .button {
+          width: 170px;
+        }
+      }
+    }
+
     .dropdown-menu {
       z-index: 9999;
     }
@@ -1002,16 +1057,13 @@ Responsive Classes
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767.98px) {
-}
+@media (min-width: 576px) and (max-width: 767.98px) {}
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991.98px) {
-}
+@media (min-width: 768px) and (max-width: 991.98px) {}
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199.98px) {
-}
+@media (min-width: 992px) and (max-width: 1199.98px) {}
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
