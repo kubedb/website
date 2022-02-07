@@ -95,6 +95,7 @@
       </label>
       <input id="acSearch" type="search" placeholder="Search kubedb documentation!">
     </div>
+
   </div>
   <!-- searchbar component end -->
 </div>
@@ -188,6 +189,10 @@
 
   <!-- documentation body start  -->
   <div class="documentation-body">
+    <div class="mobile-docs-sidebar is-hidden-desktop is-flex is-justify-content-space-between mb-15">
+      <button class="button is-extra-tinny is-gray">Show sidebar</button>
+      <button class="button is-extra-tinny is-gray">Show table of content</button>
+    </div>
     {{ if not (eq $p.latestVersion $currentBranch) }}
     <article class="message is-danger">
       <div class="message-body">
