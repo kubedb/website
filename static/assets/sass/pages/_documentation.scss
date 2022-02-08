@@ -662,12 +662,16 @@ Responsive Classes
   .documentation-area {
     margin-top: 160px;
     margin-bottom: 15px;
+
     .left-sidebar-wrapper,
     .right-sidebar {
       display: none;
-      position: absolute;
-      top: 180px;
+      position: fixed;
+      top: 120px;
+      z-index: 99;
+      width: 100%;
     }
+
     .right-sidebar {
       right: 0;
       background: #fff;
@@ -690,9 +694,13 @@ Responsive Classes
     }
   }
 
+  .ac-product-left-sidebar {
+    max-height: calc(100vh - 100px);
+  }
   .sidebar-search-area {
     width: 100%;
   }
+
   .improve-section-area {
     padding-bottom: 20px;
   }
