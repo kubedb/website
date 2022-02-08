@@ -252,12 +252,6 @@
   .mega-menu-inner {
     overflow: hidden;
 
-    .back-button {
-      display: none !important;
-      color: $ac-color-text;
-      margin-bottom: 10px !important;
-    }
-
     // product menu start
     .product-menu {
       display: grid;
@@ -413,6 +407,12 @@
 
     // description end
   }
+}
+
+.back-button {
+  display: none !important;
+  color: $ac-color-text;
+  margin-bottom: 10px !important;
 }
 
 // inline button start
@@ -676,12 +676,20 @@
 
 // responsive menu start
 .responsive-menu {
+  background-color: $ac-primary;
+
   .button {
     border: none;
     padding-left: 0;
     padding-right: 0;
     font-size: 14px;
     font-weight: 500;
+    background-color: transparent;
+    color: $ac-white;
+
+    &.is-active {
+      color: #d2d2d2;
+    }
   }
 }
 
@@ -857,7 +865,7 @@ Responsive Classes
 
       .documentation-menu {
         .navbar-right {
-          top: 57px !important;
+          top: 85px !important;
         }
       }
     }
@@ -866,6 +874,15 @@ Responsive Classes
   .navbar-appscode {
     &.container {
       padding: 0.5rem 15px;
+    }
+
+    &.documentation-menu {
+      margin-left: 0;
+      padding: 0;
+
+      .navbar-right {
+        top: 85px !important;
+      }
     }
 
     .navbar-left {
@@ -961,19 +978,28 @@ Responsive Classes
     padding-top: 20px !important;
 
     .mega-menu-inner {
-      .back-button {
-        display: flex !important;
-
-        span {
-          color: $ac-primary;
-          padding-right: 15px;
-          font-size: 18px;
-        }
-      }
-
       .product-menu {
         grid-template-columns: auto;
         width: 100%;
+
+        .single-product {
+          width: 100%;
+
+          .product-logo {
+            height: 50px;
+            width: 50px;
+
+            img {
+              height: 1.8rem;
+            }
+          }
+
+          .navigate-icon {
+            .material-icons {
+              font-size: 16px;
+            }
+          }
+        }
 
         &.database-list {
           grid-template-columns: auto;
@@ -1010,6 +1036,16 @@ Responsive Classes
 
     .dropdown-menu {
       z-index: 9999;
+    }
+  }
+
+  .back-button {
+    display: flex !important;
+
+    span {
+      color: $ac-primary;
+      padding-right: 15px;
+      font-size: 18px;
     }
   }
 }
