@@ -9037,6 +9037,15 @@ video {
 
 .mega-menu-wrapper .mega-menu-inner .product-menu .single-product .navigate-icon {
   text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-menu .single-product .navigate-icon .material-icons {
@@ -9575,53 +9584,6 @@ Responsive Classes
   .navbar-appscode.container {
     padding: 0.5rem 15px;
   }
-  .navbar-appscode.documentation-menu {
-    margin-left: 0;
-    border-left: none;
-    display: none;
-  }
-  .navbar-appscode.documentation-menu .navbar-right {
-    opacity: 1;
-    visibility: visible;
-    top: 49px !important;
-    min-height: auto;
-    overflow-y: inherit;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 0 1.25rem;
-    border-bottom: 1px solid #dbdbde;
-  }
-  .navbar-appscode.documentation-menu .navbar-right ul {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    width: 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .navbar-appscode.documentation-menu .navbar-right ul .nav-item .link {
-    font-size: 13px;
-  }
-  .navbar-appscode.documentation-menu .navbar-right ul .nav-item .link .fa {
-    margin-left: 0;
-  }
-  .navbar-appscode.documentation-menu .navbar-right .ac-searchbar {
-    width: auto;
-    padding: 0 13px;
-    border-left: none;
-    font-size: 12px;
-    margin-right: -6px;
-  }
-  .navbar-appscode.documentation-menu .navbar-right .ac-searchbar input {
-    display: none;
-  }
   .navbar-appscode .navbar-left {
     width: 100%;
   }
@@ -9630,7 +9592,7 @@ Responsive Classes
     width: 100%;
   }
   .navbar-appscode .navbar-left .navbar-brand a img {
-    height: 1.5rem;
+    height: 1.5rem !important;
   }
   .navbar-appscode .navbar-left ul {
     position: absolute;
@@ -11285,12 +11247,10 @@ Responsive Classes
 .cta-area .cta-area-inner h3 {
   color: #ffffff;
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 .cta-area .cta-area-inner p {
   color: #ffffff;
-  text-align: center;
 }
 
 /****************************************
@@ -11303,6 +11263,10 @@ Responsive Classes
   }
   .cta-area .cta-area-inner h3 {
     font-size: 22px;
+    text-align: center;
+  }
+  .cta-area .cta-area-inner p {
+    text-align: center;
   }
 }
 
@@ -12067,6 +12031,18 @@ Responsive Classes
     padding: 20px 5px;
     border-radius: 4px;
   }
+  .footer-area .footer-menu.is-info {
+    background-color: #0aafff2e;
+  }
+  .footer-area .footer-menu.is-danger {
+    background-color: #ea3d2f24;
+  }
+  .footer-area .footer-menu.is-warning {
+    background: #f7ad2a36;
+  }
+  .footer-area .footer-menu.is-success {
+    background-color: #27b06430;
+  }
   .footer-area .footer-menu h4 {
     margin-bottom: 0;
   }
@@ -12771,8 +12747,10 @@ Responsive Classes
   .documentation-area .left-sidebar-wrapper,
   .documentation-area .right-sidebar {
     display: none;
-    position: absolute;
-    top: 180px;
+    position: fixed;
+    top: 120px;
+    z-index: 99;
+    width: 100%;
   }
   .documentation-area .right-sidebar {
     right: 0;
@@ -12789,6 +12767,9 @@ Responsive Classes
     font-size: 1.5rem;
     line-height: 1.3;
     margin-bottom: 0;
+  }
+  .ac-product-left-sidebar {
+    max-height: calc(100vh - 100px);
   }
   .sidebar-search-area {
     width: 100%;

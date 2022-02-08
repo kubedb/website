@@ -212,12 +212,14 @@
 
           @keyframes pulse-border {
             0% {
-              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+              transform: translateX(-50%) translateY(-50%) translateZ(0)
+                scale(1);
               opacity: 1;
             }
 
             100% {
-              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+              transform: translateX(-50%) translateY(-50%) translateZ(0)
+                scale(1.5);
               opacity: 0;
             }
           }
@@ -343,6 +345,9 @@
 
         .navigate-icon {
           text-align: right;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
           .material-icons {
             font-size: 1.5rem;
@@ -703,7 +708,6 @@
     }
 
     .dropdown-menu {
-
       /* ===== Scrollbar CSS ===== */
       /* Firefox */
       * {
@@ -864,52 +868,6 @@ Responsive Classes
       padding: 0.5rem 15px;
     }
 
-    &.documentation-menu {
-      margin-left: 0;
-      border-left: none;
-      display: none;
-
-      .navbar-right {
-        opacity: 1;
-        visibility: visible;
-        top: 49px !important;
-        min-height: auto;
-        overflow-y: inherit;
-        flex-direction: row;
-        align-items: center;
-        padding: 0 1.25rem;
-        border-bottom: 1px solid $ac-white-light;
-
-        ul {
-          flex-direction: row;
-          width: 100%;
-          justify-content: space-between;
-
-          .nav-item {
-            .link {
-              font-size: 13px;
-
-              .fa {
-                margin-left: 0;
-              }
-            }
-          }
-        }
-
-        .ac-searchbar {
-          width: auto;
-          padding: 0 13px;
-          border-left: none;
-          font-size: 12px;
-          margin-right: -6px;
-
-          input {
-            display: none;
-          }
-        }
-      }
-    }
-
     .navbar-left {
       width: 100%;
 
@@ -919,7 +877,7 @@ Responsive Classes
 
         a {
           img {
-            height: 1.5rem;
+            height: 1.5rem !important;
           }
         }
       }
@@ -1057,13 +1015,16 @@ Responsive Classes
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767.98px) {}
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991.98px) {}
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199.98px) {}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {

@@ -12,11 +12,9 @@
     h3 {
       color: $ac-white;
       margin-bottom: 1rem;
-      text-align: center;
     }
     p {
       color: $ac-white;
-      text-align: center;
     }
   }
 }
@@ -32,6 +30,10 @@ Responsive Classes
       padding: 30px 15px;
       h3 {
         font-size: 22px;
+        text-align: center;
+      }
+      p {
+        text-align: center;
       }
     }
   }
