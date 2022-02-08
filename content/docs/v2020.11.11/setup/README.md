@@ -24,8 +24,8 @@ info:
 # Setup
 
 <div style="text-align: center;">
-  <a class="button is-link is-medium is-active has-text-weight-normal" href="/docs/v2020.11.11/setup/install/community" style="background:#00A651; width: 18rem;">Install Community Edition</a>
-  <a class="button is-info is-medium is-active has-text-weight-normal" href="/docs/v2020.11.11/setup/install/enterprise"  style="background:#FC6011; width: 18rem;">Try Enterprise Edition</a>
+  <a class="button ac-button  is-link is-medium is-active has-text-weight-normal" href="/docs/v2020.11.11/setup/install/community" style="background:#00A651; width: 18rem;">Install Community Edition</a>
+  <a class="button ac-button is-info is-medium is-active has-text-weight-normal" href="/docs/v2020.11.11/setup/install/enterprise"  style="background:#FC6011; width: 18rem;">Try Enterprise Edition</a>
   <a style="margin-top: 10px; display: block;" href="/docs/v2020.11.11/overview/README">Compare Editions</a>
 </div>
 <br>
