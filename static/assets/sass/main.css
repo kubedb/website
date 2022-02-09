@@ -8295,7 +8295,7 @@ strong {
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .is-flex-direction-row-reverse-mobile {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -9722,12 +9722,14 @@ video {
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product {
     padding: 0 0;
+    -webkit-transform: translateY(104px);
+            transform: translateY(104px);
   }
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-right {
-    top: 55px;
+    top: 47px;
   }
   .headroom--unpinned .navbar-appscode-wrapper .documentation-menu .navbar-right {
     top: 85px !important;
@@ -9796,6 +9798,9 @@ Responsive Classes
   .navbar-appscode .navbar-right .is-primary.ml-8 {
     margin-left: 0 !important;
     margin-top: 15px;
+  }
+  .navbar-appscode .navbar-right .button.ac-button.is-primary {
+    margin-left: 0;
   }
   .navbar-appscode .navbar-right ul {
     display: -webkit-box;
@@ -10547,6 +10552,66 @@ Responsive Classes
   }
   .hero-area.is-product h1 {
     font-size: 2.1rem;
+    letter-spacing: -0.3px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  .hero-area.is-product p {
+    text-align: center;
+  }
+  .social-prove-brand-area .brand-image-wrapper {
+    padding: 30px 0;
+    padding-bottom: 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .social-prove-brand-area .brand-image-wrapper .single-brand {
+    padding: 5px;
+  }
+  .social-prove-brand-area .brand-image-wrapper .single-brand img {
+    max-height: 1.5rem;
+  }
+  .single-features-item {
+    padding: 15px 15px;
+    grid-gap: 20px;
+    -ms-grid-columns: 3rem auto;
+        grid-template-columns: 3rem auto;
+    min-height: auto;
+    border-radius: 4px;
+  }
+  .single-features-item .feature-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 4px;
+  }
+  .single-features-item .feature-icon img {
+    height: 24px;
+  }
+  .single-features-item .feature-information h5 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-area.is-product {
+    height: 100%;
+    margin-top: 60px;
+    padding-bottom: 60px;
+  }
+  .hero-area.is-product .buttons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .hero-area.is-product .buttons .button {
+    height: 2.5rem;
+    padding: 0 20px;
+  }
+  .hero-area.is-product h1 {
+    font-size: 3rem;
     letter-spacing: -0.3px;
     margin-bottom: 0.5rem;
     text-align: center;
@@ -12178,7 +12243,7 @@ p.spam-message {
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .footer-area .footer-top .is-1-mobile .column {
     padding: 0.25rem;
   }
