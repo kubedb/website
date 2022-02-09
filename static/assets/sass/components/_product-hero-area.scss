@@ -73,6 +73,51 @@
   }
 }
 
+.hero-area-code-editor {
+  border-radius: 4px;
+  overflow: hidden;
+
+  .editor-header {
+    height: 50px;
+    background: #fafbfc;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+
+    span {
+      width: 15px;
+      height: 15px;
+      background-color: #ddd;
+      display: block;
+      border-radius: 50%;
+      margin-right: 8px;
+
+      &.close {
+        background-color: #ff5a52;
+      }
+
+      &.maximize {
+        background-color: #e6c029;
+      }
+
+      &.minimize {
+        background-color: #53c22b;
+      }
+    }
+  }
+
+  pre {
+    padding: 0;
+    background-color: #fff;
+
+    code {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
 @-webkit-keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -214,6 +259,7 @@ Responsive Classes
 
       .buttons {
         justify-content: center;
+
         .button {
           height: 2.5rem;
           padding: 0 20px;
@@ -226,9 +272,19 @@ Responsive Classes
         margin-bottom: 0.5rem;
         text-align: center;
       }
+
       p {
         text-align: center;
       }
+    }
+  }
+
+  .hero-area-code-editor {
+    max-width: calc(100vw - 30px);
+    margin: 0 auto;
+
+    .editor-header {
+      display: none;
     }
   }
 
@@ -254,14 +310,17 @@ Responsive Classes
     grid-template-columns: 3rem auto;
     min-height: auto;
     border-radius: 4px;
+
     .feature-icon {
       width: 3rem;
       height: 3rem;
       border-radius: 4px;
+
       img {
         height: 24px;
       }
     }
+
     .feature-information {
       h5 {
         font-size: 18px;
@@ -282,6 +341,7 @@ Responsive Classes
 
       .buttons {
         justify-content: center;
+
         .button {
           height: 2.5rem;
           padding: 0 20px;
@@ -294,10 +354,16 @@ Responsive Classes
         margin-bottom: 0.5rem;
         text-align: center;
       }
+
       p {
         text-align: center;
       }
     }
+  }
+
+  .hero-area-code-editor {
+    max-width: calc(100vw - 30px);
+    margin: 0 auto;
   }
 
   .social-prove-brand-area {
@@ -322,14 +388,17 @@ Responsive Classes
     grid-template-columns: 3rem auto;
     min-height: auto;
     border-radius: 4px;
+
     .feature-icon {
       width: 3rem;
       height: 3rem;
       border-radius: 4px;
+
       img {
         height: 24px;
       }
     }
+
     .feature-information {
       h5 {
         font-size: 18px;

@@ -37,6 +37,7 @@ navItems.forEach(navItem => {
 
 
 
+
 document.addEventListener("DOMContentLoaded", () => {
   // AOS Animation
   AOS.init({
