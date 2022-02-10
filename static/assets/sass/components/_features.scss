@@ -68,7 +68,51 @@
     }
   }
 }
+.single-features-item {
+  padding: 30px 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 3.75rem auto;
+  border: 1px solid $ac-white-light;
+  border-radius: 2px;
+  min-height: 160px;
 
+  // &:hover {
+  //   .feature-information {
+  //     a.is-ellipsis-3 {
+  //       display: initial;
+  //     }
+  //   }
+  // }
+
+  .feature-icon {
+    width: 3.75rem;
+    height: 3.75rem;
+    background-color: #f1f1f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+
+    img {
+      height: 30px;
+    }
+  }
+
+  .feature-information {
+    h5 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 0.875rem;
+      line-height: 160%;
+      transition: 0.3s ease-in-out;
+      color: $ac-color-text;
+    }
+  }
+}
 // 2022 updated features page scss end
 
 /* Feature area start */
@@ -305,10 +349,50 @@ Responsive Classes
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .single-features-item {
+    padding: 15px 15px;
+    grid-gap: 20px;
+    grid-template-columns: 3rem auto;
+    min-height: auto;
+    border-radius: 4px;
+
+    .feature-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 4px;
+
+      img {
+        height: 24px;
+      }
+    }
+
+    .feature-information {
+      text-align: left;
+      h5 {
+        font-size: 18px;
+        margin-bottom: 5px;
+        line-height: 1.3;
+      }
+    }
+  }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .single-features-item {
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    text-align: center;
+
+    .feature-icon {
+      margin: 0 auto;
+    }
+    .feature-information {
+      h5 {
+        font-size: 18px;
+      }
+    }
+  }
 }
 
 // Large devices (desktops, 992px and up)

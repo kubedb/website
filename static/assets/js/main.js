@@ -38,6 +38,7 @@ navItems.forEach(navItem => {
 
 
 
+
 document.addEventListener("DOMContentLoaded", () => {
   // AOS Animation
   AOS.init({
@@ -109,7 +110,7 @@ owl.owlCarousel({
       600: {
         items: 1,
       },
-      1000: {
+      1400: {
         items: 2,
       }
     }

@@ -200,57 +200,13 @@
   }
 }
 
-.single-features-item {
-  padding: 30px 20px;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 3.75rem auto;
-  border: 1px solid $ac-white-light;
-  border-radius: 2px;
-  min-height: 160px;
 
-  // &:hover {
-  //   .feature-information {
-  //     a.is-ellipsis-3 {
-  //       display: initial;
-  //     }
-  //   }
-  // }
-
-  .feature-icon {
-    width: 3.75rem;
-    height: 3.75rem;
-    background-color: #f1f1f9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px;
-
-    img {
-      height: 30px;
-    }
-  }
-
-  .feature-information {
-    h5 {
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-
-    p {
-      font-size: 0.875rem;
-      line-height: 160%;
-      transition: 0.3s ease-in-out;
-      color: $ac-color-text;
-    }
-  }
-}
 
 /****************************************
 Responsive Classes
 *****************************************/
 // Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {
+@media (max-width: 991.98px) {
   .hero-area {
     &.is-product {
       height: 100%;
@@ -304,114 +260,36 @@ Responsive Classes
     }
   }
 
-  .single-features-item {
-    padding: 15px 15px;
-    grid-gap: 20px;
-    grid-template-columns: 3rem auto;
-    min-height: auto;
-    border-radius: 4px;
-
-    .feature-icon {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 4px;
-
-      img {
-        height: 24px;
-      }
-    }
-
-    .feature-information {
-      h5 {
-        font-size: 18px;
-        margin-bottom: 5px;
-        line-height: 1.3;
-      }
-    }
-  }
+  
 }
 
-// Small devices (landscape phones, 576px and up)
+// // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767.98px) {
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 767.98px) and (max-width: 991.98px) {
   .hero-area {
     &.is-product {
-      height: 100%;
-      margin-top: 60px;
-      padding-bottom: 60px;
-
-      .buttons {
-        justify-content: center;
-
-        .button {
-          height: 2.5rem;
-          padding: 0 20px;
-        }
-      }
-
-      h1 {
-        font-size: 3rem;
-        letter-spacing: -0.3px;
-        margin-bottom: 0.5rem;
-        text-align: center;
-      }
-
       p {
-        text-align: center;
+        padding: 0 100px;
+      }
+      h1 {
+        font-size: 2.5rem;
       }
     }
   }
-
   .hero-area-code-editor {
-    max-width: calc(100vw - 30px);
+    max-width: calc(100vw - 100px);
     margin: 0 auto;
-  }
-
-  .social-prove-brand-area {
-    .brand-image-wrapper {
-      padding: 30px 0;
-      padding-bottom: 0px;
-      justify-content: center;
-
-      .single-brand {
-        padding: 5px;
-
-        img {
-          max-height: 1.5rem;
-        }
-      }
-    }
-  }
-
-  .single-features-item {
-    padding: 15px 15px;
-    grid-gap: 20px;
-    grid-template-columns: 3rem auto;
-    min-height: auto;
-    border-radius: 4px;
-
-    .feature-icon {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 4px;
-
-      img {
-        height: 24px;
-      }
-    }
-
-    .feature-information {
-      h5 {
-        font-size: 18px;
-        margin-bottom: 5px;
-        line-height: 1.3;
-      }
+    .editor-header {
+      display: none;
     }
   }
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991.98px) {
-}
+// @media (min-width: 768px) and (max-width: 991.98px) {
+// }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199.98px) {

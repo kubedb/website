@@ -142,6 +142,17 @@ Responsive Classes
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .testimonial-area {
+    .section-title {
+      h1 {
+        font-size: 38px;
+      }
+    }
+    .single-testimonial-item {
+      padding: 30px 30px;
+      min-height: 370px;
+    }
+  }
 }
 
 // Large devices (desktops, 992px and up)
