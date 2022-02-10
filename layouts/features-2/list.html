@@ -16,9 +16,39 @@
           <a href="/docs/latest/setup/" class="button ac-button is-primary">GET STARTED</a>
         </div>
       </div>
-      <div class="column is-6 has-text-right">
+      <div class="column is-6">
         <div class="hero-area-right">
-          <img src="/assets/images/products/kubedb/hero-right-image.png" alt="">
+           <!-- code editor start  -->
+           <div class="hero-area-code-editor">
+             <div class="editor-header">
+               <span class="action close"></span>
+               <span class="action maximize"></span>
+               <span class="action minimize"></span>
+             </div>
+             <pre>
+<code class="language-javascript">
+import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
+const messages = [];
+const channel = new BroadcastChannel("chat");
+channel.onmessage = (event) => {
+  messages.push(event.data);
+};
+function handler(req: Request): Response {
+  const { searchParams } = new URL(req.url);
+  const msg = searchParams.get("msg");
+  if (msg) channel.postMessage(msg);
+  return new Response(JSON.stringify(messages), {
+    headers: { "content-type": "application/json" }
+  });
+}
+console.log("Listening on http://localhost:8000");
+await serve(handler);
+</code>
+              </pre>
+           </div>
+           </div>
+           <!-- code editor end  -->
+          <!-- <img src="/assets/images/products/kubedb/hero-right-image.png" alt=""> -->
         </div>
       </div>
     </div>

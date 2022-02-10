@@ -54,35 +54,35 @@
   transform-origin: top left;
   transform: scale(0) rotate(0deg) translate(-50%, -50%);
   animation: cube 12s ease-in forwards infinite;
-  
+
   &:nth-child(2n) {
     border-color: lighten(#ffffff, 10%);
   }
-  
+
   &:nth-child(2) {
     animation-delay: 2s;
     left: 5vw;
     top: 30vh;
   }
-  
+
   &:nth-child(3) {
     animation-delay: 4s;
     left: 95vw;
     top: 50vh;
   }
-  
+
   &:nth-child(4) {
     animation-delay: 6s;
     left: 90vw;
     top: 30vh;
   }
-  
+
   &:nth-child(5) {
     animation-delay: 8s;
     left: 10vw;
     top: 75vh;
   }
-  
+
   &:nth-child(6) {
     animation-delay: 10s;
     left: 50vw;
@@ -102,35 +102,35 @@
   transform-origin: top left;
   transform: scale(0) rotate(0deg) translate(-50%, -50%);
   animation: cube 12s ease-in forwards infinite;
-  
+
   &:nth-child(2n) {
     border-color: lighten(#ffffff, 10%);
   }
-  
+
   &:nth-child(2) {
     animation-delay: 0.5s;
     left: 15vw;
     top: 40vh;
   }
-  
+
   &:nth-child(3) {
     animation-delay: 2s;
     left: 100vw;
     top: 60vh;
   }
-  
+
   &:nth-child(4) {
     animation-delay: 3s;
     left: 90vw;
     top: 30vh;
   }
-  
+
   &:nth-child(5) {
     animation-delay: 5s;
     left: 20vw;
     top: 65vh;
   }
-  
+
   &:nth-child(6) {
     animation-delay: 8s;
     left: 60vw;
@@ -138,15 +138,14 @@
   }
 }
 
-
 @keyframes cube {
   from {
-    transform: scale(0) rotate(0deg) translate(-50%, -50%);   
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
     opacity: 2s;
     margin-top: 200px;
   }
   to {
-    transform: scale(5) rotate(960deg) translate(-50%, -50%); 
+    transform: scale(5) rotate(960deg) translate(-50%, -50%);
     opacity: 0;
     margin-top: 0;
   }
@@ -237,15 +236,38 @@ Responsive Classes
 }
 
 // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) and (max-width: 767.98px) {
-// }
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    padding: 0 30px;
+  }
+  .section-title {
+    h1 {
+      &.is-outlined-text {
+        font-size: 70px;
+      }
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    padding: 0 30px;
+  }
+  .section-title {
+    h1 {
+      &.is-outlined-text {
+        font-size: 80px;
+      }
+    }
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)

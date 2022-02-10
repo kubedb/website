@@ -22,8 +22,8 @@
     <div class="circle"></div>
   </div>
   <div class="container">
-    <div class="columns is-vcentered">
-      <div class="column is-6">
+    <div class="columns is-vcentered is-multiline">
+      <div class="column is-6 is-full-touch">
         <!-- <h1> {{ $p.tagline | safeHTML }}</h1> -->
         <h1> Run production-grade Databases on Kubernetes</h1>
         <p>KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup,
@@ -35,7 +35,7 @@
             TOUCH</a>
         </div>
       </div>
-      <div class="column is-6">
+      <div class="column is-6 is-full-touch">
         <div class="hero-area-right">
           <!-- code editor start  -->
           <div class="hero-area-code-editor">
@@ -115,7 +115,7 @@ await serve(handler);
     <div class="columns is-multiline is-centered">
       <!-- single feature information start  -->
       {{ range $f := $p.features }}
-      <div class="column is-4">
+      <div class="column is-half-tablet is-one-third-widescreen">
         <a href="#" class="single-features-item">
           <div class="feature-icon">
             <img src="{{ $f.icon.src }}" alt="{{ $f.icon.alt }}" />
