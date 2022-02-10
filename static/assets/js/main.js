@@ -37,9 +37,17 @@ navItems.forEach(navItem => {
 
 
 
-
+var h_editor = document.querySelector('.hero-area-code-editor');
 
 document.addEventListener("DOMContentLoaded", () => {
+  // highligh js initilization start
+  if (h_editor) {
+    h_editor.classList.add('is-visible')
+  }
+
+  hljs.initHighlightingOnLoad();
+  // highligh js initilization end
+
   // AOS Animation
   AOS.init({
     once: true,
@@ -97,25 +105,24 @@ bulmaCarousel.attach("#carousel-demo", {
 // owl owlCarousel JS 
 var owl = $('.owl-carousel');
 owl.owlCarousel({
-    loop: true,
-    margin: 20,
-    autoplay: false,
-    nav: false,
-    dots: false,
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 1,
-      },
-      1400: {
-        items: 2,
-      }
+  loop: true,
+  margin: 20,
+  autoplay: false,
+  nav: false,
+  dots: false,
+  responsiveClass: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    600: {
+      items: 1,
+    },
+    1400: {
+      items: 2,
     }
   }
-);
+});
 // Go to the next item
 $('.customNextBtn').click(function () {
   owl.trigger('next.owl.carousel');
@@ -130,7 +137,7 @@ $('.customPrevBtn').click(function () {
 // headroomjs start
 var myElement = document.querySelector(".active-headroom");
 // construct an instance of Headroom, passing the element
-var headroom  = new Headroom(myElement);
+var headroom = new Headroom(myElement);
 // initialise
 headroom.init();
 // headroomjs end
@@ -409,3 +416,4 @@ function acAccordion(actionBtn) {
 acAccordion(".accordion-heading h3");
 acAccordion(".accordion-heading .icon");
 // accordion end
+

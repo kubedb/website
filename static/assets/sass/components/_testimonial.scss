@@ -88,8 +88,7 @@
 /****************************************
 Responsive Classes
 *****************************************/
-// Extra small devices (portrait phones, less than 576px)
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .testimonial-area {
     padding-top: 30px;
 
@@ -103,7 +102,7 @@ Responsive Classes
 
     .owl-carousel {
       .owl-stage-outer {
-        padding: 0 !important ;
+        padding: 0 !important;
       }
     }
 
@@ -121,14 +120,17 @@ Responsive Classes
     .single-testimonial-item {
       padding: 30px;
       min-height: auto;
+
       .user-info-wrapper {
         justify-content: center;
+
         .user-info {
           h5 {
             font-size: 20px;
           }
         }
       }
+
       p {
         text-align: center;
       }
@@ -136,31 +138,44 @@ Responsive Classes
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 768px) {
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 769px) and (max-width: 1023.98px) {
   .testimonial-area {
     .section-title {
       h1 {
         font-size: 38px;
       }
     }
+
     .single-testimonial-item {
       padding: 30px 30px;
-      min-height: 370px;
+      min-height: 310px;
     }
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199.98px) {
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .testimonial-area {
+    .section-title {
+      h1 {
+        font-size: 38px;
+      }
+    }
+
+    .single-testimonial-item {
+      min-height: 310px;
+      padding: 30px;
+    }
+  }
 }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@media (min-width: 1216px) and (max-width: 1407px) {
+
+}
+
+@media (min-width: 1408px) {
 }
 
 // /* testimonial area start */

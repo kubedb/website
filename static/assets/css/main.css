@@ -3382,8 +3382,8 @@ body.voyager .go-to-top {
                 Theme voyager End
 ====================================================*/
 /* Normal desktop :1200px. */
-/* Normal desktop :992px. */
-@media (min-width: 992px) and (max-width: 1087px) {
+/* Normal desktop :1024px. */
+@media (min-width: 1024px) and (max-width: 1087px) {
   .single-db-logo {
     margin: 10px;
     padding: 10px;

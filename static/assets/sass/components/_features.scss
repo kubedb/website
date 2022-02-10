@@ -68,6 +68,7 @@
     }
   }
 }
+
 .single-features-item {
   padding: 30px 20px;
   display: grid;
@@ -113,6 +114,7 @@
     }
   }
 }
+
 // 2022 updated features page scss end
 
 /* Feature area start */
@@ -294,7 +296,7 @@
 Responsive Classes
 *****************************************/
 // Extra small devices (portrait phones, less than 576px)
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .features-area {
     .features-image {
       .check-list {
@@ -306,12 +308,14 @@ Responsive Classes
     .buttons {
       justify-content: center;
     }
+
     .features-image {
       .check-list {
         left: 50%;
         margin-left: -150px;
       }
     }
+
     .features-description {
       text-align: center;
 
@@ -322,6 +326,7 @@ Responsive Classes
       h1 {
         font-size: 28px;
       }
+
       p {
         text-align: center;
       }
@@ -332,10 +337,12 @@ Responsive Classes
       margin-bottom: 0.5rem;
       text-align: center;
     }
+
     p {
       text-align: center;
     }
   }
+
   .single-features-item {
     grid-template-columns: auto;
     grid-gap: 10px;
@@ -348,7 +355,7 @@ Responsive Classes
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 768px) {
   .single-features-item {
     padding: 15px 15px;
     grid-gap: 20px;
@@ -368,6 +375,7 @@ Responsive Classes
 
     .feature-information {
       text-align: left;
+
       h5 {
         font-size: 18px;
         margin-bottom: 5px;
@@ -377,8 +385,8 @@ Responsive Classes
   }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991.98px) {
+// Medium devices (tablets, 769px and up)
+@media (min-width: 769px) and (max-width: 1023.98px) {
   .single-features-item {
     grid-template-columns: auto;
     grid-gap: 10px;
@@ -387,21 +395,49 @@ Responsive Classes
     .feature-icon {
       margin: 0 auto;
     }
+
     .feature-information {
       h5 {
         font-size: 18px;
       }
     }
   }
+
+  .features-area {
+    .features-image {
+      .check-list {
+        left: 50%;
+        margin-left: -150px;
+      }
+    }
+  }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199.98px) {
+// Large devices (desktops, 1024px and up)
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .features-area {
+    .features-image {
+      .check-list {
+        left: 50%;
+        margin-left: -150px;
+      }
+    }
+  }
 }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+// Extra large devices (large desktops, 1216px and up)
+@media (min-width: 1216px) {
   .navbar-burger {
     display: none !important;
+  }
+
+  .features-area {
+    .features-description {
+      margin-right: 50px;
+    }
+
+    .features-image {
+      margin-left: 150px;
+    }
   }
 }
