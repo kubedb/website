@@ -7925,6 +7925,7 @@ body {
   font-weight: 400;
   font-size: 1rem;
   color: #3b3030;
+  scroll-behavior: smooth;
 }
 
 p {
@@ -8295,7 +8296,7 @@ strong {
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .is-flex-direction-row-reverse-mobile {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -8327,7 +8328,7 @@ Responsive Classes
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 769px) and (max-width: 1023.98px) {
   .container {
     padding: 0 30px;
   }
@@ -8339,7 +8340,7 @@ Responsive Classes
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199.98px) {
+@media (min-width: 1024px) and (max-width: 1215px) {
   .container {
     padding: 0 30px;
   }
@@ -9743,7 +9744,7 @@ video {
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 991.98px) {
+@media (max-width: 1023.98px) {
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product {
     padding: 0 0;
     -webkit-transform: translateY(104px);
@@ -9912,7 +9913,7 @@ Responsive Classes
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1408px) {
   .navbar-burger {
     display: none !important;
   }
@@ -10454,8 +10455,50 @@ Responsive Classes
 }
 
 .hero-area-code-editor {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(0);
+          transform: scale(0);
   border-radius: 4px;
   overflow: hidden;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.hero-area-code-editor.is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.hero-area-code-editor.is-dark .editor-header {
+  background: #151a21;
+  border-bottom: 1px solid #472f2f;
+}
+
+.hero-area-code-editor.is-dark pre {
+  background-color: #1e242e;
+  color: #f1f1f9;
+}
+
+.hero-area-code-editor.is-dark pre .hljs {
+  background-color: #1e242e;
+  color: #f1f1f9;
+}
+
+.hero-area-code-editor.is-dark pre .hljs .hljs-keyword,
+.hero-area-code-editor.is-dark pre .hljs .hljs-literal,
+.hero-area-code-editor.is-dark pre .hljs .nginx .hljs-title {
+  color: #f410d0;
+}
+
+.hero-area-code-editor.is-dark pre .hljs .hljs-string {
+  color: #f92e29;
+}
+
+.hero-area-code-editor.is-dark pre .hljs .hljs-variable {
+  color: #72ccd7;
 }
 
 .hero-area-code-editor .editor-header {
@@ -10560,7 +10603,7 @@ Responsive Classes
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 991.98px) {
+@media (max-width: 1023.98px) {
   .hero-area.is-product {
     height: 100%;
     margin-top: 60px;
@@ -10606,7 +10649,7 @@ Responsive Classes
   }
 }
 
-@media (min-width: 767.98px) and (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 1023.98px) {
   .hero-area.is-product p {
     padding: 0 100px;
   }
@@ -10622,7 +10665,7 @@ Responsive Classes
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1408px) {
   .navbar-burger {
     display: none !important;
   }
@@ -10747,7 +10790,7 @@ Responsive Classes
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .features-area .features-image .check-list {
     left: 50%;
     margin-left: -150px;
@@ -10792,7 +10835,7 @@ Responsive Classes
   }
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 768px) {
   .single-features-item {
     padding: 15px 15px;
     grid-gap: 20px;
@@ -10819,7 +10862,7 @@ Responsive Classes
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 769px) and (max-width: 1023.98px) {
   .single-features-item {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
@@ -10832,11 +10875,28 @@ Responsive Classes
   .single-features-item .feature-information h5 {
     font-size: 18px;
   }
+  .features-area .features-image .check-list {
+    left: 50%;
+    margin-left: -150px;
+  }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .features-area .features-image .check-list {
+    left: 50%;
+    margin-left: -150px;
+  }
+}
+
+@media (min-width: 1216px) {
   .navbar-burger {
     display: none !important;
+  }
+  .features-area .features-description {
+    margin-right: 50px;
+  }
+  .features-area .features-image {
+    margin-left: 150px;
   }
 }
 
@@ -11386,7 +11446,7 @@ table th:first-child {
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .testimonial-area {
     padding-top: 30px;
   }
@@ -11425,13 +11485,23 @@ Responsive Classes
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 769px) and (max-width: 1023.98px) {
   .testimonial-area .section-title h1 {
     font-size: 38px;
   }
   .testimonial-area .single-testimonial-item {
     padding: 30px 30px;
-    min-height: 370px;
+    min-height: 310px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .testimonial-area .section-title h1 {
+    font-size: 38px;
+  }
+  .testimonial-area .single-testimonial-item {
+    min-height: 310px;
+    padding: 30px;
   }
 }
 
@@ -11557,7 +11627,7 @@ Responsive Classes
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .cta-area .cta-area-inner {
     height: auto !important;
     padding: 30px 15px;
@@ -11568,6 +11638,24 @@ Responsive Classes
   }
   .cta-area .cta-area-inner p {
     text-align: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .cta-area .cta-area-inner {
+    padding: 20px;
+  }
+  .cta-area .cta-area-inner h3 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .cta-area .cta-area-inner {
+    padding: 20px;
+  }
+  .cta-area .cta-area-inner h3 {
+    font-size: 28px;
   }
 }
 
@@ -12307,7 +12395,7 @@ p.spam-message {
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .footer-area .footer-top .is-1-mobile .column {
     padding: 0.25rem;
   }
@@ -13071,7 +13159,7 @@ li.nav-item.active a {
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 767.98px) {
+@media (max-width: 1023.98px) {
   .documentation-area {
     margin-top: 160px;
     margin-bottom: 15px;
@@ -13111,7 +13199,7 @@ Responsive Classes
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1216px) {
   .navbar-burger {
     display: none !important;
   }
@@ -13668,7 +13756,7 @@ Responsive Classes
   }
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 768px) {
   .features-plan .hero-area-img {
     display: none;
   }
@@ -13709,7 +13797,7 @@ Responsive Classes
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 769px) and (max-width: 1023.98px) {
   .features-plan .hero-content-inner {
     padding: 50px 50px 50px 0;
   }

@@ -525,7 +525,7 @@ Responsive Classes
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 768px) {
   .hero-area-2 {
     &.webinar-page {
       .hero-area-inner-2 {
@@ -566,8 +566,8 @@ Responsive Classes
   }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991.98px) {
+// Medium devices (tablets, 769px and up)
+@media (min-width: 769px) and (max-width: 1023.98px) {
   .hero-area-2 {
     &.webinar-page {
       .hero-area-inner-2 {
@@ -608,8 +608,8 @@ Responsive Classes
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199.98px) {
+// Large devices (desktops, 1024px and up)
+@media (min-width: 1024px) and (max-width: 1215px) {
   .webinar-summary-area {
     .webinar-summary {
       .summary-content {
@@ -623,6 +623,6 @@ Responsive Classes
   }
 }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) and (max-width: 1400px) {
+// Extra large devices (large desktops, 1216px and up)
+@media (min-width: 1216px) and (max-width: 1407px) {
 }

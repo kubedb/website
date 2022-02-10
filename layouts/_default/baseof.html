@@ -960,7 +960,7 @@
     <div class="footer-bottom">
       <div class="container">
         <div class="columns is-vcentered">
-          <div class="column is-4 has-text-centered-touch is-paddingless">
+          <div class="column is-4 has-text-centered-mobile  has-text-left-tablet is-paddingless">
             <p>© {{ now.Format "2006" }} AppsCode Inc. All rights reserved.</p>
           </div>
           <div class="column is-4 is-mobile has-text-centered-touch has-text-centered-desktop is-paddingless">
@@ -969,7 +969,7 @@
               <a href="{{.Site.Params.domain_appscode}}/legal/tos/">Terms of Service</a>
             </div>
           </div>
-          <div class="column is-4 is-mobile  has-text-centered-touch has-text-right-desktop is-paddingless">
+          <div class="column is-4 has-text-centered-mobile  has-text-right-tablet is-paddingless">
             <div class="socail-link-inline">
               <ul>
                 <li>
@@ -1007,9 +1007,7 @@
   <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
   <!-- highlight js  -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
+
   <!-- Main JS -->
   <!-- {{ with $style := resources.Get "assets/js/main.js" | resources.Fingerprint }}
   <script src="{{ $style.RelPermalink }}"></script>
