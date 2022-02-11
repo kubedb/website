@@ -728,6 +728,20 @@
                 navbarBurgerAll[rightElIdx].classList.remove("is-active");
               }
             });
+
+            const modalBackdropElement = document.querySelector(".modal-backdrop");
+
+            // if modal backdrop element is visible then hide it
+            if(modalBackdropElement && modalBackdropElement.classList.contains("is-show")) {
+              modalBackdropElement.classList.remove("is-show")
+            }
+
+            // if any nav element is visible then hide it
+            const activeNavItem = document.querySelector(".nav-item.is-active");
+            if(activeNavItem && activeNavItem.classList.contains("is-active")) {
+              activeNavItem.classList.remove("is-active");
+            } 
+
             navbarRightAll[idx].classList.toggle("is-visible");
           });
         })
