@@ -1128,7 +1128,25 @@ Responsive Classes
   .navbar-burger {
     display: none !important;
   }
+  .navbar-appscode {
+    &.documentation-menu {
+      margin-left: 0;
+      border-left: none;
+    }
+    .navbar-right {
+      width: calc(100% - 180px);
 
+      .community-items.ml-70 {
+        margin-left: 10px !important;
+      }
+    }
+
+    ul {
+      .nav-item {
+        margin-right: 1.5rem;
+      }
+    }
+  }
   .mega-menu-wrapper {
     .mega-menu-inner {
       .product-menu {

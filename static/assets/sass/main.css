@@ -8097,6 +8097,22 @@ strong {
   margin-bottom: 3rem;
 }
 
+.left-0 {
+  left: 0 !important;
+}
+
+.right-0 {
+  right: 0 !important;
+}
+
+.top-0 {
+  top: 0 !important;
+}
+
+.bottom-0 {
+  bottom: 0 !important;
+}
+
 .cube {
   position: absolute;
   top: 80vh;
@@ -9969,6 +9985,19 @@ Responsive Classes
 @media (min-width: 1216px) and (max-width: 1407px) {
   .navbar-burger {
     display: none !important;
+  }
+  .navbar-appscode.documentation-menu {
+    margin-left: 0;
+    border-left: none;
+  }
+  .navbar-appscode .navbar-right {
+    width: calc(100% - 180px);
+  }
+  .navbar-appscode .navbar-right .community-items.ml-70 {
+    margin-left: 10px !important;
+  }
+  .navbar-appscode ul .nav-item {
+    margin-right: 1.5rem;
   }
   .mega-menu-wrapper .mega-menu-inner .product-menu {
     -ms-grid-columns: auto;

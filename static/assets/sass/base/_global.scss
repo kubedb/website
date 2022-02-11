@@ -44,7 +44,18 @@
     margin-bottom: 3rem;
   }
 }
-
+.left-0 {
+  left: 0 !important;
+}
+.right-0 {
+  right: 0 !important;
+}
+.top-0 {
+  top: 0 !important;
+}
+.bottom-0 {
+  bottom: 0 !important;
+}
 .cube {
   position: absolute;
   top: 80vh;
@@ -289,7 +300,7 @@ Responsive Classes
 }
 
 @media (min-width: 1216px) and (max-width: 1407px) {
- .section-title {
+  .section-title {
     h1 {
       &.is-outlined-text {
         font-size: 80px;
@@ -308,7 +319,6 @@ Responsive Classes
     }
   }
 }
-
 
 // pre {
 //   margin-bottom: 15px;

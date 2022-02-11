@@ -36,47 +36,47 @@ navItems.forEach(navItem => {
 // navbar area JS v.2022 end
 
 // responsive navbar area
-  // elements selector where toggle class will be added
-  const selctorsForResponsiveMenu = [
-    ".left-sidebar-wrapper",
-    ".navbar-appscode.documentation-menu > .navbar-right",
-    ".right-sidebar",
-    ".sidebar-search-area"
-  ];
-  // toggle classes for responsive buttons
-  const toggleClassesForResponsiveMenu = ["is-block", "is-visible", "is-block", "right-0"];
-  // All responsive menu buttons
-  const responsiveMenus = document.querySelectorAll(".responsive-menu > .is-flex.is-justify-content-space-between > .button");
-  // iterate thorugh the menus to handle click event
-  Array.from(responsiveMenus).forEach((menu, idx) => {
-    menu.addEventListener("click", function () {
-      const toggleElement = document.querySelector(selctorsForResponsiveMenu[idx]);
-      if (toggleElement) {
-        // toggle active menu class
-        toggleElement.classList.toggle(toggleClassesForResponsiveMenu[idx]);
-        if(toggleElement.classList.contains(toggleClassesForResponsiveMenu[idx])) {
-          const backButtonElement = toggleElement.querySelector(".back-button");
-          
-          function handleClick() {
-            toggleElement.classList.remove(toggleClassesForResponsiveMenu[idx]);
-            // remove event listener on back button click
-            backButtonElement.removeEventListener("click", handleClick);
-          }
+// elements selector where toggle class will be added
+const selctorsForResponsiveMenu = [
+  ".left-sidebar-wrapper",
+  ".navbar-appscode.documentation-menu > .navbar-right",
+  ".right-sidebar",
+  ".sidebar-search-area"
+];
+// toggle classes for responsive buttons
+const toggleClassesForResponsiveMenu = ["is-block", "is-visible", "is-block", "right-0"];
+// All responsive menu buttons
+const responsiveMenus = document.querySelectorAll(".responsive-menu > .is-flex.is-justify-content-space-between > .button");
+// iterate thorugh the menus to handle click event
+Array.from(responsiveMenus).forEach((menu, idx) => {
+  menu.addEventListener("click", function () {
+    const toggleElement = document.querySelector(selctorsForResponsiveMenu[idx]);
+    if (toggleElement) {
+      // toggle active menu class
+      toggleElement.classList.toggle(toggleClassesForResponsiveMenu[idx]);
+      if (toggleElement.classList.contains(toggleClassesForResponsiveMenu[idx])) {
+        const backButtonElement = toggleElement.querySelector(".back-button");
 
-          backButtonElement.addEventListener("click", handleClick);
+        function handleClick() {
+          toggleElement.classList.remove(toggleClassesForResponsiveMenu[idx]);
+          // remove event listener on back button click
+          backButtonElement.removeEventListener("click", handleClick);
+        }
+
+        backButtonElement.addEventListener("click", handleClick);
+      }
+    }
+    // remove previous active menu
+    selctorsForResponsiveMenu.forEach((el, selectorIdx) => {
+      if (selectorIdx !== idx) {
+        const selectorElement = document.querySelector(selctorsForResponsiveMenu[selectorIdx]);
+        if (selectorElement.classList.contains(toggleClassesForResponsiveMenu[selectorIdx])) {
+          selectorElement.classList.remove(toggleClassesForResponsiveMenu[selectorIdx])
         }
       }
-      // remove previous active menu
-      selctorsForResponsiveMenu.forEach((el, selectorIdx) => {
-        if(selectorIdx !== idx) {
-          const selectorElement = document.querySelector(selctorsForResponsiveMenu[selectorIdx]);
-          if(selectorElement.classList.contains(toggleClassesForResponsiveMenu[selectorIdx])) {
-            selectorElement.classList.remove(toggleClassesForResponsiveMenu[selectorIdx])
-          }
-        } 
-      });
     });
   });
+});
 
 
 // scroll to top start
@@ -87,6 +87,7 @@ if (goToTopBtn) {
 }
 // When the user scrolls down 20px from the top of the document, show the button
 document.addEventListener('scroll', scrollFunction);
+
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     goToTopBtn.classList.add('is-visible');
