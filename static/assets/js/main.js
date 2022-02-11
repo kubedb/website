@@ -35,7 +35,43 @@ navItems.forEach(navItem => {
 })
 // navbar area JS v.2022 end
 
-
+// responsive navbar area
+  // elements selector where toggle class will be added
+  const selctorsForResponsiveMenu = [
+    ".left-sidebar-wrapper",
+    ".navbar-appscode.documentation-menu > .navbar-right",
+    ".right-sidebar",
+    ".sidebar-search-area"
+  ];
+  // toggle classes for responsive buttons
+  const toggleClassesForResponsiveMenu = ["is-block", "is-visible", "is-block", "right-0"];
+  // All responsive menu buttons
+  const responsiveMenus = document.querySelectorAll(".responsive-menu > .is-flex.is-justify-content-space-between > .button");
+  // iterate thorugh the menus to handle click event
+  Array.from(responsiveMenus).forEach((menu, idx) => {
+    menu.addEventListener("click", function () {
+      const toggleElement = document.querySelector(selctorsForResponsiveMenu[idx]);
+      if (toggleElement) {
+      // toggle active menu class
+        toggleElement.classList.toggle(toggleClassesForResponsiveMenu[idx]);
+        if(toggleElement.classList.contains(toggleClassesForResponsiveMenu[idx])) {
+          const backButtonElement = toggleElement.querySelector(".back-button");
+          backButtonElement.addEventListener("click", function() {
+            toggleElement.classList.remove(toggleClassesForResponsiveMenu[idx]);
+          });
+        }
+      }
+      // remove previous active menu
+      selctorsForResponsiveMenu.forEach((el, selectorIdx) => {
+        if(selectorIdx !== idx) {
+          const selectorElement = document.querySelector(selctorsForResponsiveMenu[selectorIdx]);
+          if(selectorElement.classList.contains(toggleClassesForResponsiveMenu[selectorIdx])) {
+            selectorElement.classList.remove(toggleClassesForResponsiveMenu[selectorIdx])
+          }
+        } 
+      })
+    });
+  })
 
 var h_editor = document.querySelector('.hero-area-code-editor');
 
