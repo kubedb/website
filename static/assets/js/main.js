@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     h_editor.classList.add('is-visible')
   }
 
-  hljs.initHighlightingOnLoad();
+  hljs.highlightAll();
   // highligh js initilization end
 
   // AOS Animation
