@@ -4,6 +4,7 @@
 .is-fullwidth {
   width: 100% !important;
 }
+
 .section-title {
   margin-bottom: 2rem;
   position: relative;
@@ -43,6 +44,7 @@
     margin-bottom: 3rem;
   }
 }
+
 .cube {
   position: absolute;
   top: 80vh;
@@ -144,12 +146,14 @@
     opacity: 2s;
     margin-top: 200px;
   }
+
   to {
     transform: scale(5) rotate(960deg) translate(-50%, -50%);
     opacity: 0;
     margin-top: 0;
   }
 }
+
 .sp-y-100 {
   padding: 100px 0;
 }
@@ -204,6 +208,7 @@
   color: $ac-white;
   background: $ac-primary;
 }
+
 /****************************************
 Responsive Classes
 *****************************************/
@@ -213,22 +218,28 @@ Responsive Classes
     flex-direction: column-reverse;
     display: flex;
   }
+
   .container {
     padding: 0 15px;
   }
+
   .section-title {
     font-size: 28px;
     margin-bottom: 1rem;
+
     h2 {
       font-size: 28px;
       margin-bottom: 0;
     }
+
     h1 {
       font-size: 28px;
+
       &.is-outlined-text {
         font-size: 60px;
       }
     }
+
     p {
       margin-bottom: 0;
     }
@@ -244,12 +255,14 @@ Responsive Classes
   .container {
     padding: 0 30px;
   }
+
   .section-title {
     h1 {
       &.is-outlined-text {
         font-size: 70px;
       }
     }
+
     p {
       margin-bottom: 0;
     }
@@ -261,6 +274,7 @@ Responsive Classes
   .container {
     padding: 0 30px;
   }
+
   .section-title {
     h1 {
       &.is-outlined-text {
@@ -268,11 +282,16 @@ Responsive Classes
       }
     }
   }
+
+  .cube {
+    animation: none;
+  }
 }
 
 // Extra large devices (large desktops, 1216px and up)
 @media (min-width: 1216px) {
 }
+
 // pre {
 //   margin-bottom: 15px;
 //   padding: 20px 15px;

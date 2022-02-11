@@ -8,6 +8,8 @@
   background-size: cover;
   background-position: center;
   margin-top: 110px;
+  position: relative;
+  z-index: 1;
 
   &.is-dark {
     &.is-gradient {
@@ -330,10 +332,22 @@ Responsive Classes
 
 // Large devices (desktops, 1024px and up)
 @media (min-width: 1024px) and (max-width: 1215px) {
+  .hero-area.is-product {
+    h1 {
+      font-size: 2.3rem;
+    }
+  }
+  .social-prove-brand-area {
+    .brand-image-wrapper {
+      justify-content: center;
+      .single-brand {
+        padding: 0 10px;
+      }
+    }
+  }
 }
 
 @media (min-width: 1216px) and (max-width: 1407px) {
-
 }
 // Extra large devices (large desktops, 1216px and up)
 @media (min-width: 1408px) {

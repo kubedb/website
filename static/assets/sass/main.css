@@ -8347,6 +8347,10 @@ Responsive Classes
   .section-title h1.is-outlined-text {
     font-size: 80px;
   }
+  .cube {
+    -webkit-animation: none;
+            animation: none;
+  }
 }
 
 .service-image.is-box-shadow img {
@@ -9913,6 +9917,27 @@ Responsive Classes
   }
 }
 
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .navbar-burger {
+    display: none !important;
+  }
+  .navbar-appscode .navbar-right {
+    width: 100%;
+  }
+  .navbar-appscode .navbar-right .community-items.ml-70 {
+    margin-left: 10px !important;
+  }
+  .navbar-appscode ul .nav-item {
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width: 1216px) and (max-width: 1407px) {
+  .navbar-burger {
+    display: none !important;
+  }
+}
+
 @media (min-width: 1408px) {
   .navbar-burger {
     display: none !important;
@@ -10391,6 +10416,8 @@ Responsive Classes
   background-size: cover;
   background-position: center;
   margin-top: 110px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-area.is-product.is-dark.is-gradient {
@@ -10665,6 +10692,20 @@ Responsive Classes
   }
 }
 
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .hero-area.is-product h1 {
+    font-size: 2.3rem;
+  }
+  .social-prove-brand-area .brand-image-wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .social-prove-brand-area .brand-image-wrapper .single-brand {
+    padding: 0 10px;
+  }
+}
+
 @media (min-width: 1408px) {
   .navbar-burger {
     display: none !important;
@@ -10885,6 +10926,10 @@ Responsive Classes
   .features-area .features-image .check-list {
     left: 50%;
     margin-left: -150px;
+  }
+  .features-area h3 {
+    font-size: 28px;
+    margin-bottom: 0.8rem;
   }
 }
 

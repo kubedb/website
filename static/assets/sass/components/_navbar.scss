@@ -212,14 +212,12 @@
 
           @keyframes pulse-border {
             0% {
-              transform: translateX(-50%) translateY(-50%) translateZ(0)
-                scale(1);
+              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
               opacity: 1;
             }
 
             100% {
-              transform: translateX(-50%) translateY(-50%) translateZ(0)
-                scale(1.5);
+              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
               opacity: 0;
             }
           }
@@ -716,6 +714,7 @@
     }
 
     .dropdown-menu {
+
       /* ===== Scrollbar CSS ===== */
       /* Firefox */
       * {
@@ -934,11 +933,13 @@ Responsive Classes
         margin-left: 0 !important;
         margin-top: 15px;
       }
+
       .button.ac-button {
         &.is-primary {
           margin-left: 0;
         }
       }
+
       ul {
         display: flex;
         flex-direction: column;
@@ -1059,18 +1060,37 @@ Responsive Classes
 // }
 
 // Medium devices (tablets, 769px and up)
-@media (min-width: 769px) and (max-width: 1023.98px) {
-  
-}
+@media (min-width: 769px) and (max-width: 1023.98px) {}
 
 // Large devices (desktops, 1024px and up)
 @media (min-width: 1024px) and (max-width: 1215px) {
-  
+  .navbar-burger {
+    display: none !important;
+  }
+
+  .navbar-appscode {
+    .navbar-right {
+      width: 100%;
+
+      .community-items.ml-70 {
+        margin-left: 10px !important;
+      }
+    }
+
+    ul {
+      .nav-item {
+        margin-right: 2rem;
+      }
+    }
+  }
 }
 
 @media (min-width: 1216px) and (max-width: 1407px) {
-
+  .navbar-burger {
+    display: none !important;
+  }
 }
+
 // Extra large devices (large desktops, 1216px and up)
 @media (min-width: 1408px) {
   .navbar-burger {
