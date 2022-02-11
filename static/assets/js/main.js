@@ -52,13 +52,18 @@ navItems.forEach(navItem => {
     menu.addEventListener("click", function () {
       const toggleElement = document.querySelector(selctorsForResponsiveMenu[idx]);
       if (toggleElement) {
-      // toggle active menu class
+        // toggle active menu class
         toggleElement.classList.toggle(toggleClassesForResponsiveMenu[idx]);
         if(toggleElement.classList.contains(toggleClassesForResponsiveMenu[idx])) {
           const backButtonElement = toggleElement.querySelector(".back-button");
-          backButtonElement.addEventListener("click", function() {
+          
+          function handleClick() {
             toggleElement.classList.remove(toggleClassesForResponsiveMenu[idx]);
-          });
+            // remove event listener on back button click
+            backButtonElement.removeEventListener("click", handleClick);
+          }
+
+          backButtonElement.addEventListener("click", handleClick);
         }
       }
       // remove previous active menu
@@ -69,9 +74,9 @@ navItems.forEach(navItem => {
             selectorElement.classList.remove(toggleClassesForResponsiveMenu[selectorIdx])
           }
         } 
-      })
+      });
     });
-  })
+  });
 
 
 // scroll to top start
