@@ -37,8 +37,33 @@ navItems.forEach(navItem => {
 
 
 
-var h_editor = document.querySelector('.hero-area-code-editor');
 
+// scroll to top start
+//Get the button
+const goToTopBtn = document.querySelector(".go-to-top");
+if (goToTopBtn) {
+  goToTopBtn.addEventListener('click', topFunction)
+}
+// When the user scrolls down 20px from the top of the document, show the button
+document.addEventListener('scroll', scrollFunction);
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    goToTopBtn.classList.add('is-visible');
+  } else {
+    goToTopBtn.classList.remove('is-visible');
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+// scroll to top end
+
+
+
+var h_editor = document.querySelector('.hero-area-code-editor');
 document.addEventListener("DOMContentLoaded", () => {
   // highligh js initilization start
   if (h_editor) {
@@ -340,34 +365,7 @@ Array.from(codeHeading).forEach((heading) => {
   }
 });
 
-// scroll to top
-var basicScrollTop = function () {
-  // The button
-  var btnTop = document.querySelector("#goTop");
-  if (btnTop) {
-    // Reveal the button
-    var btnReveal = function () {
-      if (window.scrollY >= 300) {
-        btnTop.classList.add("is-visible");
-      } else {
-        btnTop.classList.remove("is-visible");
-      }
-    };
-    // Smooth scroll top
-    var TopscrollTo = function () {
-      if (window.scrollY != 0) {
-        setTimeout(function () {
-          window.scrollTo(0, window.scrollY - 30);
-          TopscrollTo();
-        }, 5);
-      }
-    };
-    // Listeners
-    window.addEventListener("scroll", btnReveal);
-    btnTop.addEventListener("click", TopscrollTo);
-  }
-};
-basicScrollTop();
+
 
 // custom accordion
 function acAccordion(actionBtn) {
@@ -416,4 +414,3 @@ function acAccordion(actionBtn) {
 acAccordion(".accordion-heading h3");
 acAccordion(".accordion-heading .icon");
 // accordion end
-

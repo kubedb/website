@@ -328,8 +328,8 @@ await serve(handler);
 <!-- hero area end -->
 
 
-<script src="https://cdn.jsdelivr.net/npm/keen-slider@5.0.2/keen-slider.min.js"></script>
-<script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/keen-slider@5.0.2/keen-slider.min.js"></script> -->
+<!-- <script>
   // initilize keen slider 
   var slider = new KeenSlider("#hero-area-carousel", {
     spacing: 10,
@@ -364,48 +364,48 @@ await serve(handler);
     slideChanged(instance) {
       updateClasses(instance);
     }
-  });
+  }); -->
 
-  // For auto-play 
-  var sliderElement = document.getElementById("hero-area-carousel");
-  var interval = 0;
+  <!-- // For auto-play 
+  // var sliderElement = document.getElementById("hero-area-carousel");
+  // var interval = 0;
 
-  function autoplay(run) {
-    clearInterval(interval);
-    interval = setInterval(() => {
-      if (run && slider) {
-        slider.next();
-      }
-    }, 2000);
-  }
-  // when hover slider element autoPlay off 
-  sliderElement.addEventListener("mouseover", () => {
-    autoplay(false);
-  });
-  sliderElement.addEventListener("mouseout", () => {
-    autoplay(true);
-  });
-  let dots_wrapper = document.getElementById("dots");
-  dots_wrapper.addEventListener("mouseover", () => {
-    autoplay(false);
-  });
-  dots_wrapper.addEventListener("mouseout", () => {
-    autoplay(true);
-  });
+  // function autoplay(run) {
+  //   clearInterval(interval);
+  //   interval = setInterval(() => {
+  //     if (run && slider) {
+  //       slider.next();
+  //     }
+  //   }, 2000);
+  // }
+  // // when hover slider element autoPlay off 
+  // sliderElement.addEventListener("mouseover", () => {
+  //   autoplay(false);
+  // });
+  // sliderElement.addEventListener("mouseout", () => {
+  //   autoplay(true);
+  // });
+  // let dots_wrapper = document.getElementById("dots");
+  // dots_wrapper.addEventListener("mouseover", () => {
+  //   autoplay(false);
+  // });
+  // dots_wrapper.addEventListener("mouseout", () => {
+  //   autoplay(true);
+  // });
 
-  autoplay(true);
+  // autoplay(true);
 
-  // For dots 
-  function updateClasses(instance) {
-    var slide = instance.details().relativeSlide;
-    var dots = document.querySelectorAll(".dot");
-    dots.forEach(function (dot, idx) {
-      idx === slide ?
-        dot.classList.add("dot--active") :
-        dot.classList.remove("dot--active");
-    });
-  }
-</script>
+//   // For dots 
+//   function updateClasses(instance) {
+//     var slide = instance.details().relativeSlide;
+//     var dots = document.querySelectorAll(".dot");
+//     dots.forEach(function (dot, idx) {
+//       idx === slide ?
+//         dot.classList.add("dot--active") :
+//         dot.classList.remove("dot--active");
+//     });
+//   } -->
+<!-- // </script> -->
 
 {{ if $p.videos.intro }}
 <!-- video player frame and scripts start -->
