@@ -8353,6 +8353,18 @@ Responsive Classes
   }
 }
 
+@media (min-width: 1216px) and (max-width: 1407px) {
+  .section-title h1.is-outlined-text {
+    font-size: 80px;
+  }
+}
+
+@media (min-width: 1408px) {
+  .section-title h1.is-outlined-text {
+    font-size: 80px;
+  }
+}
+
 .service-image.is-box-shadow img {
   -webkit-box-shadow: 0px 8px 57px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 8px 57px rgba(0, 0, 0, 0.16);
@@ -9921,20 +9933,53 @@ Responsive Classes
   .navbar-burger {
     display: none !important;
   }
+  .navbar-appscode.documentation-menu {
+    margin-left: 0;
+    border-left: none;
+  }
   .navbar-appscode .navbar-right {
-    width: 100%;
+    width: calc(100% - 180px);
   }
   .navbar-appscode .navbar-right .community-items.ml-70 {
     margin-left: 10px !important;
   }
   .navbar-appscode ul .nav-item {
-    margin-right: 2rem;
+    margin-right: 1.5rem;
+  }
+  .mega-menu-wrapper .mega-menu-inner .product-menu {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    width: calc(50% - 5rem);
+  }
+  .mega-menu-wrapper .mega-menu-inner .product-description {
+    border-left: none;
+  }
+  .mega-menu-wrapper .video-content {
+    display: none;
+  }
+  .product-version.ml-20 {
+    margin-left: 4px !important;
+  }
+  .product-version .dropdown .dropdown-trigger .button {
+    width: 160px;
+    padding: 2px 5px;
   }
 }
 
 @media (min-width: 1216px) and (max-width: 1407px) {
   .navbar-burger {
     display: none !important;
+  }
+  .mega-menu-wrapper .mega-menu-inner .product-menu {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    width: calc(50% - 5rem);
+  }
+  .mega-menu-wrapper .mega-menu-inner .product-description {
+    border-left: none;
+  }
+  .mega-menu-wrapper .video-content {
+    display: none;
   }
 }
 
@@ -10926,6 +10971,9 @@ Responsive Classes
   .features-area .features-image .check-list {
     left: 50%;
     margin-left: -150px;
+  }
+  .features-area .features-description {
+    font-size: 28px;
   }
   .features-area h3 {
     font-size: 28px;
@@ -13244,9 +13292,29 @@ Responsive Classes
   }
 }
 
-@media (min-width: 1216px) {
-  .navbar-burger {
-    display: none !important;
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .documentation-area .left-sidebar-wrapper {
+    width: 240px;
+  }
+  .documentation-area .documentation-body {
+    padding: 0 40px;
+    width: calc(100% - 480px);
+  }
+  .documentation-area .right-sidebar {
+    width: 240px;
+  }
+}
+
+@media (min-width: 1216px) and (max-width: 1407px) {
+  .documentation-area .left-sidebar-wrapper {
+    width: 240px;
+  }
+  .documentation-area .documentation-body {
+    padding: 0 40px;
+    width: calc(100% - 480px);
+  }
+  .documentation-area .right-sidebar {
+    width: 240px;
   }
 }
 

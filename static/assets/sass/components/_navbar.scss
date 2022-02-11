@@ -212,12 +212,14 @@
 
           @keyframes pulse-border {
             0% {
-              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+              transform: translateX(-50%) translateY(-50%) translateZ(0)
+                scale(1);
               opacity: 1;
             }
 
             100% {
-              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+              transform: translateX(-50%) translateY(-50%) translateZ(0)
+                scale(1.5);
               opacity: 0;
             }
           }
@@ -714,7 +716,6 @@
     }
 
     .dropdown-menu {
-
       /* ===== Scrollbar CSS ===== */
       /* Firefox */
       * {
@@ -1060,7 +1061,8 @@ Responsive Classes
 // }
 
 // Medium devices (tablets, 769px and up)
-@media (min-width: 769px) and (max-width: 1023.98px) {}
+@media (min-width: 769px) and (max-width: 1023.98px) {
+}
 
 // Large devices (desktops, 1024px and up)
 @media (min-width: 1024px) and (max-width: 1215px) {
@@ -1069,8 +1071,13 @@ Responsive Classes
   }
 
   .navbar-appscode {
+    &.documentation-menu {
+      margin-left: 0;
+      border-left: none;
+    }
+
     .navbar-right {
-      width: 100%;
+      width: calc(100% - 180px);
 
       .community-items.ml-70 {
         margin-left: 10px !important;
@@ -1079,7 +1086,39 @@ Responsive Classes
 
     ul {
       .nav-item {
-        margin-right: 2rem;
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  .mega-menu-wrapper {
+    .mega-menu-inner {
+      .product-menu {
+        grid-template-columns: auto;
+        width: calc(50% - 5rem);
+      }
+
+      .product-description {
+        border-left: none;
+      }
+    }
+
+    .video-content {
+      display: none;
+    }
+  }
+
+  .product-version {
+    &.ml-20 {
+      margin-left: 4px !important;
+    }
+
+    .dropdown {
+      .dropdown-trigger {
+        .button {
+          width: 160px;
+          padding: 2px 5px;
+        }
       }
     }
   }
@@ -1088,6 +1127,23 @@ Responsive Classes
 @media (min-width: 1216px) and (max-width: 1407px) {
   .navbar-burger {
     display: none !important;
+  }
+
+  .mega-menu-wrapper {
+    .mega-menu-inner {
+      .product-menu {
+        grid-template-columns: auto;
+        width: calc(50% - 5rem);
+      }
+
+      .product-description {
+        border-left: none;
+      }
+    }
+
+    .video-content {
+      display: none;
+    }
   }
 }
 

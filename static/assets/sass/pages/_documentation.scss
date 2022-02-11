@@ -49,11 +49,14 @@
         label {
           background: transparent;
         }
+
         ul {
           overflow: inherit;
+
           li {
             &.is-active {
               position: relative;
+
               &::after {
                 position: absolute;
                 content: "";
@@ -160,10 +163,12 @@
     pre {
       border: 1px solid $ac-white-light;
       border-radius: 2px;
+
       .hljs {
         background-color: transparent;
         color: #fff;
       }
+
       // code {
       //   color: $ac-white;
       // }
@@ -728,6 +733,7 @@ Responsive Classes
   .ac-product-left-sidebar {
     max-height: calc(100vh - 100px);
   }
+
   .sidebar-search-area {
     width: 100%;
   }
@@ -747,11 +753,39 @@ Responsive Classes
 
 // Large devices (desktops, 1024px and up)
 @media (min-width: 1024px) and (max-width: 1215px) {
+  .documentation-area {
+    .left-sidebar-wrapper {
+      width: 240px;
+    }
+
+    .documentation-body {
+      padding: 0 40px;
+      width: calc(100% - 480px);
+    }
+
+    .right-sidebar {
+      width: 240px;
+    }
+  }
+}
+
+@media (min-width: 1216px) and (max-width: 1407px) {
+  .documentation-area {
+    .left-sidebar-wrapper {
+      width: 240px;
+    }
+
+    .documentation-body {
+      padding: 0 40px;
+      width: calc(100% - 480px);
+    }
+
+    .right-sidebar {
+      width: 240px;
+    }
+  }
 }
 
 // Extra large devices (large desktops, 1216px and up)
-@media (min-width: 1216px) {
-  .navbar-burger {
-    display: none !important;
-  }
+@media (min-width: 1408px) {
 }

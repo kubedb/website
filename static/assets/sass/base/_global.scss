@@ -288,9 +288,27 @@ Responsive Classes
   }
 }
 
-// Extra large devices (large desktops, 1216px and up)
-@media (min-width: 1216px) {
+@media (min-width: 1216px) and (max-width: 1407px) {
+ .section-title {
+    h1 {
+      &.is-outlined-text {
+        font-size: 80px;
+      }
+    }
+  }
 }
+
+// Extra large devices (large desktops, 1216px and up)
+@media (min-width: 1408px) {
+  .section-title {
+    h1 {
+      &.is-outlined-text {
+        font-size: 80px;
+      }
+    }
+  }
+}
+
 
 // pre {
 //   margin-bottom: 15px;
