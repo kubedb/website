@@ -9795,6 +9795,9 @@ Responsive Classes
     margin-left: 0;
     padding: 0;
   }
+  .navbar-appscode.documentation-menu ul .nav-item .link.is-active:after {
+    display: none;
+  }
   .navbar-appscode.documentation-menu .navbar-right {
     top: 85px !important;
   }
@@ -9855,6 +9858,7 @@ Responsive Classes
   }
   .navbar-appscode .navbar-right .button.ac-button.is-primary {
     margin-left: 0;
+    width: 100%;
   }
   .navbar-appscode .navbar-right ul {
     display: -webkit-box;
@@ -12432,7 +12436,7 @@ p.spam-message {
 .footer-menu h4 {
   font-size: 18px;
   color: #1c1c1c;
-  margin-bottom: 14px;
+  margin-bottom: 4px;
 }
 
 .footer-link li a {
@@ -13083,6 +13087,11 @@ li.nav-item.active a {
   transition: 0.3s linear;
 }
 
+.sidebar-search-area button.button.ac-button.inline-button.back-button {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
 .sidebar-search-area::-webkit-scrollbar {
   width: 8px;
 }
@@ -13286,20 +13295,23 @@ Responsive Classes
     margin-top: 160px;
     margin-bottom: 15px;
   }
+  .documentation-area .right-sidebar-area {
+    top: 0;
+  }
   .documentation-area .left-sidebar-wrapper,
   .documentation-area .right-sidebar {
     display: none;
     position: fixed;
-    top: 120px;
+    top: 0px;
     z-index: 99;
     width: 100%;
+    margin-top: 0;
   }
   .documentation-area .right-sidebar {
     right: 0;
     background: #fff;
-    z-index: 9;
-    top: 171px !important;
-    height: 90vh;
+    height: 100vh;
+    overflow-y: auto;
   }
   .documentation-area .documentation-body {
     padding: 0 20px;

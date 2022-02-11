@@ -19,7 +19,7 @@
   </div> -->
   <!-- searchbar component start  -->
   <div class="navbar-right">
-
+    
     <ul>
       <button class="button ac-button inline-button back-button"><span
           class="material-icons-outlined">arrow_back</span>Back</button>
@@ -36,6 +36,7 @@
           <div class="mega-menu-inner ac-grid-container">
             <button class="button ac-button inline-button back-button"><span
                 class="material-icons-outlined">arrow_back</span>Back</button>
+                
             <!-- product start  -->
             <div class="product-menu database-list">
               {{ range .Children }}
@@ -91,6 +92,20 @@
             <!-- product description end -->
           </div>
         </div>
+        <script type="text/javascript">
+          const backBtn2 = document.querySelector('.mega-menu-inner.ac-grid-container > .back-button');
+
+          function handleBackButtonClick() {
+            const modalBackdropElement = document.querySelector(".modal-backdrop");
+            // if modal backdrop element is visible then hide it
+            if (modalBackdropElement && modalBackdropElement.classList.contains("is-show")) {
+              modalBackdropElement.classList.remove("is-show")
+            }
+          }
+
+          
+          backBtn2.addEventListener('click', handleBackButtonClick)
+        </script>
         <!-- mega-menu wrapper end  -->
       </li>
       {{ else }}
@@ -271,7 +286,7 @@
   <button class="button ac-button inline-button back-button"><span
       class="material-icons-outlined">arrow_back</span>Back</button>
   <div class="search-area-top">
-    <h3>Search</h3>
+    <h5>Search</h5>
 
     <div class="searchbar-area">
       <input type="search" name="search" id="searchbox" placeholder="Search..." />

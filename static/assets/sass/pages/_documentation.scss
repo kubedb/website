@@ -490,6 +490,10 @@ li.nav-item.active a {
   height: 100%;
   overflow-y: scroll;
   transition: 0.3s linear;
+  button.button.ac-button.inline-button.back-button {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
 }
 
 .sidebar-search-area::-webkit-scrollbar {
@@ -698,22 +702,24 @@ Responsive Classes
   .documentation-area {
     margin-top: 160px;
     margin-bottom: 15px;
-
+    .right-sidebar-area{
+      top: 0;
+    }
     .left-sidebar-wrapper,
     .right-sidebar {
       display: none;
       position: fixed;
-      top: 120px;
+      top: 0px;
       z-index: 99;
       width: 100%;
+      margin-top: 0;
     }
 
     .right-sidebar {
       right: 0;
       background: #fff;
-      z-index: 9;
-      top: 171px !important;
-      height: 90vh;
+      height: 100vh;
+      overflow-y: auto;
     }
 
     .documentation-body {

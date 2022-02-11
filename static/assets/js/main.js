@@ -64,8 +64,22 @@ Array.from(responsiveMenus).forEach((menu, idx) => {
         }
 
         backButtonElement.addEventListener("click", handleClick);
+
       }
     }
+
+    const modalBackdropElement = document.querySelector(".modal-backdrop.is-show");
+    // if modal backdrop element is visible then hide it
+    if (modalBackdropElement) {
+      modalBackdropElement.classList.remove("is-show")
+    }
+
+    const navItem = document.querySelector(".nav-item.is-active");
+    // if modal backdrop element is visible then hide it
+    if (navItem) {
+      navItem.classList.remove("is-active")
+    }
+
     // remove previous active menu
     selctorsForResponsiveMenu.forEach((el, selectorIdx) => {
       if (selectorIdx !== idx) {

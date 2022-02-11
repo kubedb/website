@@ -879,7 +879,11 @@ Responsive Classes
     &.documentation-menu {
       margin-left: 0;
       padding: 0;
-
+      ul .nav-item {
+        .link.is-active:after {
+          display: none;
+        }
+      }
       .navbar-right {
         top: 85px !important;
       }
@@ -938,6 +942,7 @@ Responsive Classes
       .button.ac-button {
         &.is-primary {
           margin-left: 0;
+          width: 100%;
         }
       }
 
