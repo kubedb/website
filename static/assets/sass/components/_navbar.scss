@@ -413,6 +413,7 @@
   display: none !important;
   color: $ac-color-text;
   margin-bottom: 10px !important;
+  background-color: transparent;
 }
 
 // inline button start
@@ -840,6 +841,13 @@
 .navbar-burger {
   height: 30px;
   width: 30px;
+  border-radius: 4px;
+  &.is-active {
+    i.fa {
+      transform: rotate(-180deg);
+      transform-origin: 10px;
+    }
+  }
 
   span {
     height: 1.5px;
@@ -863,11 +871,11 @@ Responsive Classes
         }
       }
 
-      .documentation-menu {
-        .navbar-right {
-          top: 85px !important;
-        }
-      }
+      // .documentation-menu {
+      //   .navbar-right {
+      //     top: 85px !important;
+      //   }
+      // }
     }
   }
 
@@ -885,7 +893,10 @@ Responsive Classes
         }
       }
       .navbar-right {
-        top: 85px !important;
+        position: fixed;
+        top: -60px !important;
+        width: 80%;
+        border-right: 1px solid #e7e7e7;
       }
     }
 
@@ -917,10 +928,10 @@ Responsive Classes
       right: 20%;
       opacity: 0;
       visibility: hidden;
-      background: $ac-white;
+      background: #fafafd;
       width: 100%;
       left: 0;
-      min-height: 100vh;
+      min-height: calc(100vh + 110px);
       overflow-y: auto;
       transition: 0.3s ease-in-out;
       top: 61px;
@@ -987,6 +998,7 @@ Responsive Classes
     left: 0 !important;
     top: 0 !important;
     padding-top: 20px !important;
+    background-color: #fafafd;
 
     .mega-menu-inner {
       .product-menu {
@@ -1025,7 +1037,12 @@ Responsive Classes
       }
     }
   }
-
+  .press-wrapper{
+     .button.inline-button{
+       margin-left: 0 !important;
+       background-color: transparent;
+     }
+  }
   .navbar-appscode-wrapper.navbar-product {
     .navbar-appscode .navbar-right {
       top: 47px;

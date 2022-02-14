@@ -9301,6 +9301,7 @@ video {
   display: none !important;
   color: #3b3030;
   margin-bottom: 10px !important;
+  background-color: transparent;
 }
 
 .button.ac-button.inline-button {
@@ -9767,6 +9768,14 @@ video {
 .navbar-burger {
   height: 30px;
   width: 30px;
+  border-radius: 4px;
+}
+
+.navbar-burger.is-active i.fa {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  -webkit-transform-origin: 10px;
+          transform-origin: 10px;
 }
 
 .navbar-burger span {
@@ -9785,9 +9794,6 @@ Responsive Classes
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-right {
     top: 47px;
   }
-  .headroom--unpinned .navbar-appscode-wrapper .documentation-menu .navbar-right {
-    top: 85px !important;
-  }
   .navbar-appscode.container {
     padding: 0.5rem 15px;
   }
@@ -9799,7 +9805,10 @@ Responsive Classes
     display: none;
   }
   .navbar-appscode.documentation-menu .navbar-right {
-    top: 85px !important;
+    position: fixed;
+    top: -60px !important;
+    width: 80%;
+    border-right: 1px solid #e7e7e7;
   }
   .navbar-appscode .navbar-left {
     width: 100%;
@@ -9823,10 +9832,10 @@ Responsive Classes
     right: 20%;
     opacity: 0;
     visibility: hidden;
-    background: #ffffff;
+    background: #fafafd;
     width: 100%;
     left: 0;
-    min-height: 100vh;
+    min-height: calc(100vh + 110px);
     overflow-y: auto;
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
@@ -9896,6 +9905,7 @@ Responsive Classes
     left: 0 !important;
     top: 0 !important;
     padding-top: 20px !important;
+    background-color: #fafafd;
   }
   .mega-menu-wrapper .mega-menu-inner .product-menu {
     -ms-grid-columns: auto;
@@ -9924,6 +9934,10 @@ Responsive Classes
     padding-left: 0;
     margin-top: 35px;
     margin-left: 0;
+  }
+  .press-wrapper .button.inline-button {
+    margin-left: 0 !important;
+    background-color: transparent;
   }
   .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-right {
     top: 47px;
@@ -13302,10 +13316,11 @@ Responsive Classes
   .documentation-area .right-sidebar {
     display: none;
     position: fixed;
-    top: 0px;
-    z-index: 99;
-    width: 100%;
+    top: 0;
+    z-index: 9999;
+    width: 80%;
     margin-top: 0;
+    height: calc(100vh - 0px);
   }
   .documentation-area .right-sidebar {
     right: 0;
@@ -13324,6 +13339,8 @@ Responsive Classes
   }
   .ac-product-left-sidebar {
     max-height: calc(100vh - 100px);
+    top: 0;
+    position: relative;
   }
   .sidebar-search-area {
     width: 100%;
