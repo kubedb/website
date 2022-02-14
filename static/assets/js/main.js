@@ -134,6 +134,29 @@ document.addEventListener("DOMContentLoaded", () => {
     once: true,
   });
 
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(
+    document.querySelectorAll(".navbar-burger"),
+    0
+  );
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+    // Add a click event on each of them
+    $navbarBurgers.forEach((el) => {
+      el.addEventListener("click", () => {
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle("is-active");
+        $target.classList.toggle("is-active");
+      });
+    });
+  }
+});
+
+// menu sticky
+// Not a ton of code, but hard to
 
 // mega menu active class
 var navbarItems = document.querySelectorAll(".navbar-item");
@@ -152,7 +175,13 @@ navbarItems.forEach((navbarItem) => {
   });
 });
 
-
+//bulma carousel
+bulmaCarousel.attach("#carousel-demo", {
+  slidesToScroll: 1,
+  slidesToShow: 1,
+  infinite: true,
+  autoplay: false,
+});
 
 // owl owlCarousel JS 
 var owl = $('.owl-carousel');
@@ -187,9 +216,9 @@ $('.customPrevBtn').click(function () {
 
 
 // headroomjs start
-var activeHeadroom = document.querySelector(".active-headroom");
+var myElement = document.querySelector(".active-headroom");
 // construct an instance of Headroom, passing the element
-var headroom = new Headroom(activeHeadroom);
+var headroom = new Headroom(myElement);
 // initialise
 headroom.init();
 // headroomjs end
