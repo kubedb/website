@@ -1,6 +1,23 @@
 {{ define "main" }}
 
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+
+ <!-- banner adds start  -->
+ <div class="banner-area-start modal-1">
+   <div class="modal">
+     <div class="modal-background" onclick="closeModal()"></div>
+     <div class="modal-content">
+       <div class="box">
+         <a href="https://appscode.com/webinar/" target="_blank">
+           <img src="/assets/images/webinar/10Feb22.png" alt="">
+         </a>
+       </div>
+     </div>
+     <button class="modal-close is-large" onclick="closeModal()"></button>
+   </div>
+ </div>
+ <!-- banner adds end -->
+
 <!-- new hero area start   -->
 <!-- style="background-image: url(/assets/images/products/kubedb/hero-product-bg-dark.png);" -->
 <section class="hero-area is-product is-gradient is-dark">
@@ -361,3 +378,4 @@ await serve(handler);
 </section>
 <!-- feature-area end -->
 {{ end }}
+

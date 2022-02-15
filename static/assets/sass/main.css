@@ -9806,9 +9806,8 @@ Responsive Classes
   }
   .navbar-appscode.documentation-menu .navbar-right {
     position: fixed;
-    top: -60px !important;
     width: 80%;
-    border-right: 1px solid #e7e7e7;
+    border-right: 1px solid #dbdbde;
   }
   .navbar-appscode .navbar-left {
     width: 100%;

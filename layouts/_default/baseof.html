@@ -597,8 +597,8 @@
               <!-- version select end -->
               {{ end }}
 
-              <a role="button" class="navbar-burger width-65 font-size-14 has-text-weight-bold pl-6 pr-6" aria-label="menu"
-                aria-expanded="false">
+              <a role="button" class="navbar-burger width-65 font-size-14 has-text-weight-bold pl-6 pr-6"
+                aria-label="menu" aria-expanded="false">
                 MENU <i class="fa fa-angle-down pl-5"></i>
               </a>
             </div>
@@ -731,15 +731,15 @@
             const modalBackdropElement = document.querySelector(".modal-backdrop");
 
             // if modal backdrop element is visible then hide it
-            if(modalBackdropElement && modalBackdropElement.classList.contains("is-show")) {
+            if (modalBackdropElement && modalBackdropElement.classList.contains("is-show")) {
               modalBackdropElement.classList.remove("is-show")
             }
 
             // if any nav element is visible then hide it
             const activeNavItem = document.querySelector(".nav-item.is-active");
-            if(activeNavItem && activeNavItem.classList.contains("is-active")) {
+            if (activeNavItem && activeNavItem.classList.contains("is-active")) {
               activeNavItem.classList.remove("is-active");
-            } 
+            }
 
             navbarRightAll[idx].classList.toggle("is-visible");
           });
@@ -840,9 +840,7 @@
   <!-- call to action end -->
   {{ end }}
   {{ end }}
-
-
-
+  
   <!-- top to button start -->
   <button class="go-to-top" id="goTop">
     <i class="fa fa-angle-up" aria-hidden="true"></i>

@@ -99,6 +99,8 @@ const goToTopBtn = document.querySelector(".go-to-top");
 if (goToTopBtn) {
   goToTopBtn.addEventListener('click', topFunction)
 }
+
+
 // When the user scrolls down 20px from the top of the document, show the button
 document.addEventListener('scroll', scrollFunction);
 
@@ -118,6 +120,20 @@ function topFunction() {
 // scroll to top end
 
 
+// close modal start
+function closeModal() {
+  document.querySelectorAll('.modal').forEach((modal) => {
+    if (modal.classList.contains('is-active')) {
+      modal.classList.remove('is-active')
+    }
+  })
+
+}
+// close modal end
+
+setTimeout(() => {
+  document.querySelector('.modal-1').querySelector('.modal').classList.add('is-active')
+}, 1500);
 
 var h_editor = document.querySelector('.hero-area-code-editor');
 document.addEventListener("DOMContentLoaded", () => {
@@ -212,8 +228,6 @@ $('.customNextBtn').click(function () {
 $('.customPrevBtn').click(function () {
   owl.trigger('prev.owl.carousel');
 })
-
-
 
 // headroomjs start
 var myElement = document.querySelector(".active-headroom");
