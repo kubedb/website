@@ -77,10 +77,10 @@
   <!-- Keen slider CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css" />
   <!-- Custom CSS -->
-  <!-- {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+  {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-    {{ end }} -->
-  <link rel="stylesheet" href="/assets/sass/main.css" />
+    {{ end }}
+  <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
 </head>
 
 <body class="{{$p.key}}">
@@ -624,7 +624,7 @@
                       {{ range .Children }}
                       {{ if eq .Parent $.Site.Params.main_menu_dropdown_item }}
                       <!-- single product start  -->
-                      <a href="/docs/{{ $p.latestVersion }}/guides/{{ .Identifier }}/" class="single-product">
+                      <a href="/databases/{{ .Identifier }}/" class="single-product">
                         <div class="product-logo">
                           <img src="/assets/images/products/kubedb/kubedb-icon.png" alt="">
                         </div>
@@ -766,6 +766,11 @@
 
   <!-- testimonial area 2022 start  -->
   <section class="testimonial-area">
+    <div class="shape scene shape-1"
+      style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
+      <span data-depth="4"
+        style="transform: translate3d(8.6px, -19.7px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><img
+          alt="shape image"></span></div>
     <div class="container">
       <div class="columns is-vcentered">
         <div class="column is-4">
@@ -840,7 +845,7 @@
   <!-- call to action end -->
   {{ end }}
   {{ end }}
-  
+
   <!-- top to button start -->
   <button class="go-to-top" id="goTop">
     <i class="fa fa-angle-up" aria-hidden="true"></i>
