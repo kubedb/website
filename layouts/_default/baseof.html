@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="{{ $p.website.themeColor }}">
-  <title>{{$p.fullname}}</title>
+  <title>{{$p.title}}</title>
   <meta name="description" content="{{ $p.summary | plainify }}">
   <meta name="author" content="{{ $p.author }}">
   <meta name="keywords" content="{{ $p.keywords }}">
@@ -626,11 +626,11 @@
                       <!-- single product start  -->
                       <a href="/kubernetes/databases/manage-{{ .Identifier }}-kubernetes
 " class="single-product">
+                        {{ if .Pre }}
                         <div class="product-logo">
-                          {{ if .Pre }}
                           <img src="{{ .Pre }}" alt="Menu Icon">
-                          {{ end }}
                         </div>
+                        {{ end }}
                         <div class="product-info">
                           <h6>{{ .Name }}</h6>
                           <!-- <p>static content</p> -->
