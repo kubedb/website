@@ -627,7 +627,9 @@
                       <a href="/kubernetes/databases/manage-{{ .Identifier }}-kubernetes
 " class="single-product">
                         <div class="product-logo">
-                          <img src="/assets/images/products/kubedb/kubedb-icon.png" alt="">
+                          {{ if .Pre }}
+                          <img src="{{ .Pre }}" alt="Menu Icon">
+                          {{ end }}
                         </div>
                         <div class="product-info">
                           <h6>{{ .Name }}</h6>
@@ -682,15 +684,21 @@
 
             <!-- Community link start  -->
             <div class="community-items ml-70">
-              <a href="{{$.Site.Data.products.kubedb.socialLinks.github}}" class="community-item" target="_blank">
+              {{ if $p.socialLinks.github }}
+              <a href="{{$p.socialLinks.github}}" class="community-item" target="_blank">
                 <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon">
               </a>
-              <a href="{{$.Site.Data.products.kubedb.socialLinks.twitter}}" class="community-item" target="_blank">
+              {{ end }}
+              {{ if $p.socialLinks.twitter }}
+              <a href="{{$p.socialLinks.twitter}}" class="community-item" target="_blank">
                 <img src="/assets/images/icon/community/twitter-icon.svg" alt="twitter-icon">
               </a>
-              <a href="http://slack.kubernetes.io/" class="community-item" target="_blank">
+              {{ end }}
+              {{ if $p.socialLinks.slack }}
+              <a href="{{$p.socialLinks.slack}}" class="community-item" target="_blank">
                 <img src="/assets/images/icon/community/slack-icon.svg" alt="slack-icon">
               </a>
+              {{ end }}
             </div>
             <!-- Community link end -->
             <!-- action button start  -->
