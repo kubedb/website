@@ -114,20 +114,21 @@ await serve(handler);
         {{ $odd:="true"}}
         {{ range .features }}
         <!-- single features start  -->
-        <div class="columns is-vcentered {{if eq $odd "false" }}is-flex-direction-row-reverse-mobile{{end}}">
+        <div
+          class="columns is-multiline is-vcentered {{if eq $odd "false" }}is-flex-direction-row-reverse-mobile{{end}}">
           {{ if eq $odd "true" }}
-          <div class="column is-4">
+          <div class="column is-5">
             <div class="features-thumbnail">
-              <img src="{{.image}}" alt="{{.title}}">
+              <img src="{{ .image }}" alt="{{.title}}">
             </div>
           </div>
           {{ end }}
-          <div class="column is-6 is-offset-1">
+          <div class="column is-6">
             <h3>{{.title}}</h3>
             <p>{{.description}}</p>
           </div>
           {{ if eq $odd "false" }}
-          <div class="column is-4 is-offset-1">
+          <div class="column is-5 is-offset-1">
             <div class="features-thumbnail">
               <img src="{{.image}}" alt="{{.title}}">
             </div>
