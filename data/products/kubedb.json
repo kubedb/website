@@ -177,12 +177,12 @@
       "features": [
         {
           "title": "Provisioning",
-          "image": "/assets/images/products/kubedb/features/easy-lg.png",
+          "image": "/assets/images/databases/illustrations/colud-chair.gif",
           "description": "If you can run Kubernetes, you can simply provision Elasticsearch databases using KubeDB. You don’t need to worry about all of the knowledge of Kubernetes Concept, Helm, and Elasticsearch server side setup. KubeDB simplifies the whole process for you. You just have to use standard Kubernetes CLI and API to provision Elasticsearch databases."
         },
         {
           "title": "Version Upgrade",
-          "image": "/assets/images/products/kubedb/features/easy-lg.png",
+          "image": "/assets/images/databases/illustrations/version-control.gif",
           "description": "Upgrading the database version in Kubernetes is complicated. Upgrade operation should follow a specific order. KubeDB allows you to upgrade your running Elasticsearch database version without any downtime. You can upgrade your database to any major or minor update of the Elasticsearch version."
         },
         {
