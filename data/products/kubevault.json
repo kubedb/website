@@ -133,6 +133,27 @@
       "show": true
     },
     {
+      "version": "v2022.02.22",
+      "hostDocs": true,
+      "info": {
+        "cli": "v0.7.0",
+        "installer": "v2022.02.22",
+        "operator": "v0.7.0",
+        "unsealer": "v0.7.0"
+      }
+    },
+    {
+      "version": "v2022.01.11",
+      "hostDocs": true,
+      "show": true,
+      "info": {
+        "cli": "v0.6.0",
+        "installer": "v2022.01.11",
+        "operator": "v0.6.0",
+        "unsealer": "v0.6.0"
+      }
+    },
+    {
       "version": "v2021.10.11",
       "hostDocs": true,
       "show": true,
@@ -166,7 +187,7 @@
       }
     }
   ],
-  "latestVersion": "v2021.10.11",
+  "latestVersion": "v2022.01.11",
   "socialLinks": {
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/kubevault",
