@@ -4,7 +4,7 @@ menu:
   docs_v2022.02.22:
     identifier: kubedb-webhook-server-run
     name: Kubedb-Webhook-Server Run
-    parent: reference-operator
+    parent: reference-webhook-server
 menu_name: docs_v2022.02.22
 section_menu_id: reference
 info:
@@ -110,5 +110,5 @@ kubedb-webhook-server run [flags]
 
 ### SEE ALSO
 
-* [kubedb-webhook-server](/docs/v2022.02.22/reference/operator/kubedb-webhook-server)	 - 
+* [kubedb-webhook-server](/docs/v2022.02.22/reference/webhook-server/kubedb-webhook-server)	 - 
 
