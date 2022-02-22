@@ -4,13 +4,13 @@ menu:
   docs_v2022.02.22:
     identifier: kubedb-webhook-server
     name: Kubedb-Webhook-Server
-    parent: reference-operator
+    parent: reference-webhook-server
     weight: 0
 menu_name: docs_v2022.02.22
 section_menu_id: reference
-url: /docs/v2022.02.22/reference/operator/
+url: /docs/v2022.02.22/reference/webhook-server/
 aliases:
-- /docs/v2022.02.22/reference/operator/kubedb-webhook-server/
+- /docs/v2022.02.22/reference/webhook-server/kubedb-webhook-server/
 info:
   autoscaler: v0.10.0
   cli: v0.25.0
@@ -37,6 +37,6 @@ info:
 
 ### SEE ALSO
 
-* [kubedb-webhook-server run](/docs/v2022.02.22/reference/operator/kubedb-webhook-server_run)	 - Launch KubeDB Webhook Server
-* [kubedb-webhook-server version](/docs/v2022.02.22/reference/operator/kubedb-webhook-server_version)	 - Prints binary version number.
+* [kubedb-webhook-server run](/docs/v2022.02.22/reference/webhook-server/kubedb-webhook-server_run)	 - Launch KubeDB Webhook Server
+* [kubedb-webhook-server version](/docs/v2022.02.22/reference/webhook-server/kubedb-webhook-server_version)	 - Prints binary version number.
 

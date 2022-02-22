@@ -46,20 +46,22 @@ kubectl apply -f https://github.com/kubedb/installer/raw/{{< param "info.version
 Now, upgrade the KubeDB helm chart using the following command. You can find the latest installation guide [here](/docs/v2022.02.22/setup/README). We recommend that you do **not** follow the legacy installation guide, as the new process is much more simpler.
 
 ```bash
-# Upgrade KubeDB Community operator chart
+# Upgrade KubeDB Community edition
 $ helm upgrade kubedb appscode/kubedb \
   --version {{< param "info.version" >}} \
-  --namespace kubedb \
+  --namespace kubedb --create-namespace \
   --set kubedb-catalog.skipDeprecated=false \
   --set-file global.license=/path/to/the/license.txt
 
-# Upgrade KubeDB Enterprise operator chart
+# Upgrade KubeDB Enterprise edition
 $ helm upgrade kubedb appscode/kubedb \
     --version {{< param "info.version" >}} \
-    --namespace kubedb \
+    --namespace kubedb --create-namespace \
     --set kubedb-catalog.skipDeprecated=false \
-    --set kubedb-enterprise.enabled=true \
+    --set kubedb-ops-manager.enabled=true \
     --set kubedb-autoscaler.enabled=true \
+    --set kubedb-dashboard.enabled=true \
+    --set kubedb-schema-manager.enabled=true \
     --set-file global.license=/path/to/the/license.txt
 ```
 
@@ -121,8 +123,10 @@ In order to migrate from KubeDB community edition to KubeDB enterprise edition, 
 ```bash
 helm upgrade kubedb -n kubedb appscode/kubedb \
   --reuse-values \
-  --set kubedb-enterprise.enabled=true \
+  --set kubedb-ops-manager.enabled=true \
   --set kubedb-autoscaler.enabled=true \
+  --set kubedb-dashboard.enabled=true \
+  --set kubedb-schema-manager.enabled=true \
   --set kubedb-catalog.skipDeprecated=false \
   --set-file global.license=/path/to/kubedb-enterprise-license.txt
 ```
@@ -134,8 +138,10 @@ In order to migrate from KubeDB enterprise edition to KubeDB community edition, 
 ```bash
 helm upgrade kubedb -n kubedb appscode/kubedb \
   --reuse-values \
-  --set kubedb-enterprise.enabled=false \
+  --set kubedb-ops-manager.enabled=false \
   --set kubedb-autoscaler.enabled=false \
+  --set kubedb-dashboard.enabled=false \
+  --set kubedb-schema-manager.enabled=false \
   --set kubedb-catalog.skipDeprecated=false \
   --set-file global.license=/path/to/kubedb-community-license.txt
 ```
@@ -154,8 +160,10 @@ In order to migrate from KubeDB community edition to KubeDB enterprise edition, 
 helm template kubedb appscode/kubedb \
   --namespace kubedb --create-namespace \
   --version {{< param "info.version" >}} \
-  --set kubedb-enterprise.enabled=true \
+  --set kubedb-ops-manager.enabled=true \
   --set kubedb-autoscaler.enabled=true \
+  --set kubedb-dashboard.enabled=true \
+  --set kubedb-schema-manager.enabled=true \
   --set kubedb-catalog.skipDeprecated=false \
   --set global.skipCleaner=true \
   --set-file global.license=/path/to/kubedb-enterprise-license.txt | kubectl apply -f -
@@ -170,8 +178,6 @@ In order to migrate from KubeDB enterprise edition to KubeDB community edition, 
 helm template kubedb appscode/kubedb \
   --namespace kubedb --create-namespace \
   --version {{< param "info.version" >}} \
-  --set kubedb-enterprise.enabled=false \
-  --set kubedb-autoscaler.enabled=false \
   --set kubedb-catalog.skipDeprecated=false \
   --set global.skipCleaner=true \
   --set-file global.license=/path/to/kubedb-community-license.txt | kubectl apply -f -
@@ -218,8 +224,6 @@ helm upgrade kubedb -n kubedb appscode/kubedb \
 ```bash
 helm template kubedb appscode/kubedb \
   --namespace kubedb --create-namespace \
-  --set kubedb-enterprise.enabled=false \
-  --set kubedb-autoscaler.enabled=false \
   --set global.skipCleaner=true \
   --show-only appscode/kubedb-community/templates/license.yaml \
   --set-file global.license=/path/to/new/license.txt | kubectl apply -f -
@@ -230,8 +234,10 @@ helm template kubedb appscode/kubedb \
 ```bash
 helm template kubedb appscode/kubedb \
   --namespace kubedb --create-namespace \
-  --set kubedb-enterprise.enabled=true \
+  --set kubedb-ops-manager.enabled=true \
   --set kubedb-autoscaler.enabled=true \
+  --set kubedb-dashboard.enabled=true \
+  --set kubedb-schema-manager.enabled=true \
   --set global.skipCleaner=true \
   --show-only appscode/kubedb-enterprise/templates/license.yaml \
   --set-file global.license=/path/to/new/license.txt | kubectl apply -f -
