@@ -5,32 +5,30 @@
 {{ range where $p.databases "id" .Params.id }}
 <!-- new hero area start   -->
 <!-- style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);" -->
-<section class="hero-area is-product is-dark is-gradient has-image-bg"
-  style="background-image:
-  url(https://f.hubspotusercontent10.net/hubfs/8725062/Website/background/gradient-vertical.jpeg);">
-   <div class="shape">
-     <div class="cube"></div>
-     <div class="cube"></div>
-     <div class="cube"></div>
-     <div class="cube"></div>
-     <div class="cube"></div>
-     <div class="cube"></div>
-   </div>
-   <div class="shape">
-     <div class="circle"></div>
-     <div class="circle"></div>
-     <div class="circle"></div>
-     <div class="circle"></div>
-     <div class="circle"></div>
-     <div class="circle"></div>
-     <div class="circle"></div>
-   </div>
+<section class="hero-area is-product is-dark is-gradient has-image-bg" >
+  <div class="shape">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
+  <div class="shape">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
   <div class="container">
     <div class="columns is-vcentered is-multiline">
       <div class="column is-6 is-full-touch">
         <!-- <h1> {{ $p.tagline | safeHTML }}</h1> -->
         <h1>{{.title}}</h1>
-        <p>{{.summary}}</p>
+        <!-- <p>{{.summary}}</p> -->
         <div class="buttons">
           <a href="/docs/{{ $p.latestVersion }}/guides/{{.id}}/" class="button ac-button is-primary">GET
             STARTED</a>
@@ -103,7 +101,7 @@ await serve(handler);
       <!-- description content start  -->
       <div class="column is-6">
         <div class="features-description">
-          <h2 class="is-size-6 has-text-primary">Why Choose KubeDB?</h2>
+          <h2 class="is-size-6 has-text-primary">Why Choose KubeDB?🤔</h2>
           <h1>{{ .title }}</h1>
 
           <p>{{.description | markdownify }}</p>
@@ -116,7 +114,11 @@ await serve(handler);
         <div class="features-image">
           <ul class="check-list">
             {{ range .features }}
-            <li><span class="material-icons-outlined">done</span>{{.title}}</li>
+            <li>
+              <lord-icon src="https://cdn.lordicon.com/hjeefwhm.json" target="ul.check-list li" trigger="hover" colors="primary:#1971bd"
+                style="width:20px;height:20px; margin-right: 10px;">
+              </lord-icon>{{.title}}
+            </li>
             {{ end }}
 
           </ul>
