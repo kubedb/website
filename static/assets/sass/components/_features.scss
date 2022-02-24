@@ -4,10 +4,14 @@
     position: relative;
     z-index: 1;
 
+    img {
+      border-radius: 4px;
+    }
+
     .check-list {
       position: absolute;
-      top: 50%;
-      margin-top: -150px;
+      top: 60px;
+      left: -150px;
       left: -150px;
     }
   }
@@ -300,20 +304,15 @@ Responsive Classes
   .features-area {
     .features-image {
       .check-list {
+        top: 30px;
         left: 50%;
         margin-left: -150px;
+        padding: 30px;
       }
     }
 
     .buttons {
       justify-content: center;
-    }
-
-    .features-image {
-      .check-list {
-        left: 50%;
-        margin-left: -150px;
-      }
     }
 
     .features-description {
@@ -408,6 +407,7 @@ Responsive Classes
       .check-list {
         left: 50%;
         margin-left: -150px;
+        padding: 30px;
       }
     }
   }

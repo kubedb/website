@@ -9182,7 +9182,7 @@ video {
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-menu .single-product:hover, .mega-menu-wrapper .mega-menu-inner .product-menu .single-product.is-active {
-  background-color: #e6fff2;
+  background-color: #4d4dcb0d;
 }
 
 .mega-menu-wrapper .mega-menu-inner .product-menu .single-product:hover .navigate-icon .material-icons, .mega-menu-wrapper .mega-menu-inner .product-menu .single-product.is-active .navigate-icon .material-icons {
@@ -10845,10 +10845,14 @@ Responsive Classes
   z-index: 1;
 }
 
+.features-area .features-image img {
+  border-radius: 4px;
+}
+
 .features-area .features-image .check-list {
   position: absolute;
-  top: 50%;
-  margin-top: -150px;
+  top: 60px;
+  left: -150px;
   left: -150px;
 }
 
@@ -10961,17 +10965,15 @@ Responsive Classes
 *****************************************/
 @media (max-width: 768px) {
   .features-area .features-image .check-list {
+    top: 30px;
     left: 50%;
     margin-left: -150px;
+    padding: 30px;
   }
   .features-area .buttons {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  .features-area .features-image .check-list {
-    left: 50%;
-    margin-left: -150px;
   }
   .features-area .features-description {
     text-align: center;
@@ -11047,6 +11049,7 @@ Responsive Classes
   .features-area .features-image .check-list {
     left: 50%;
     margin-left: -150px;
+    padding: 30px;
   }
 }
 
