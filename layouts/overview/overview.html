@@ -1,8 +1,12 @@
 {{ define "main" }}
 
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+{{ $data:=""}}
+{{ if .Params.data }}
+  {{ $data = getJSON .Params.data }}
+{{ end }}
 
-{{ range where $p.databases "id" .Params.id }}
+{{ with $data }}
 <!-- new hero area start   -->
 <!-- style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);" -->
 <section class="hero-area is-product is-dark is-gradient has-image-bg" >
@@ -26,7 +30,6 @@
   <div class="container">
     <div class="columns is-vcentered is-multiline">
       <div class="column is-6 is-full-touch">
-        <!-- <h1> {{ $p.tagline | safeHTML }}</h1> -->
         <h1>{{.title}}</h1>
         <!-- <p>{{.summary}}</p> -->
         <div class="buttons">
@@ -138,7 +141,7 @@ await serve(handler);
           class="columns is-multiline is-vcentered {{if eq $odd "false" }}is-flex-direction-row-reverse-mobile{{end}}">
           {{ if eq $odd "true" }}
           <div class="column is-5">
-            <div class="features-thumbnail">
+            <div class="features-thumbnail has-text-centered">
               <img src="{{ .image }}" alt="{{.title}}">
             </div>
           </div>
@@ -149,7 +152,7 @@ await serve(handler);
           </div>
           {{ if eq $odd "false" }}
           <div class="column is-5 is-offset-1">
-            <div class="features-thumbnail">
+            <div class="features-thumbnail has-text-centered">
               <img src="{{.image}}" alt="{{.title}}">
             </div>
           </div>

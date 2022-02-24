@@ -1,7 +1,8 @@
 ---
 title: MongoDB
 id: mongodb
-type: "databases"
+type: "overview"
 layout: "overview"
+data: "data/products/kubedb/databases/mongodb.json"
 url: "/kubernetes/databases/manage-mongodb-kubernetes"
 ---

@@ -1,7 +1,8 @@
 ---
 title: ProxySQL
 id: proxysql
-type: "databases"
+type: "overview"
 layout: "overview"
+data: "data/products/kubedb/databases/proxysql.json"
 url: "/kubernetes/databases/manage-proxysql-kubernetes"
 ---

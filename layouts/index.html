@@ -2,21 +2,21 @@
 
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 
- <!-- banner adds start  -->
- <div class="banner-area-start modal-1">
-   <div class="modal">
-     <div class="modal-background" onclick="closeModal()"></div>
-     <div class="modal-content">
-       <div class="box">
-         <a href="https://appscode.com/webinar/" target="_blank">
-           <img src="/assets/images/webinar/10Feb22.png" alt="">
-         </a>
-       </div>
-     </div>
-     <button class="modal-close is-large" onclick="closeModal()"></button>
-   </div>
- </div>
- <!-- banner adds end -->
+<!-- banner adds start  -->
+<div class="banner-area-start modal-1">
+  <div class="modal">
+    <div class="modal-background" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <div class="box">
+        <a href="https://appscode.com/webinar/" target="_blank">
+          <img src="/assets/images/webinar/10Feb22.png" alt="">
+        </a>
+      </div>
+    </div>
+    <button class="modal-close is-large" onclick="closeModal()"></button>
+  </div>
+</div>
+<!-- banner adds end -->
 
 <!-- new hero area start   -->
 <!-- style="background-image: url(/assets/images/products/kubedb/hero-product-bg-dark.png);" -->
@@ -48,8 +48,11 @@ url(https://f.hubspotusercontent10.net/hubfs/8725062/Website/background/gradient
           recovery, failure detection, and repair for various popular databases on private and public clouds</p>
         <div class="buttons">
           <a href="/docs/latest/setup/" class="button ac-button is-primary">TRY NOW FREE</a>
-          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary"><span
-              class="material-icons-outlined">mail</span>GET IN
+          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary"><span>
+              <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop" colors="primary:#ffffff;"
+                style="width:22px;height:22px; margin-right: 8px;">
+              </lord-icon>
+            </span>GET IN
             TOUCH</a>
         </div>
       </div>
@@ -151,73 +154,6 @@ await serve(handler);
   </div>
 </section>
 <!-- product features area end -->
-
-<!-- hero area start -->
-<section class="hero-area is-hidden">
-  <div class="container section">
-    <div>
-      <div class="columns is-vcentered">
-        <div class="column is-6">
-          <!-- hero content start -->
-          <div class="hero-area-content d-table" data-aos="fade-up">
-            <div class="hero-content-inner d-table-cell">
-              <h4>{{$p.name}}</h4>
-              <h1>
-                {{ $p.tagline | safeHTML }}
-              </h1>
-              <div class="hero-area-button buttons">
-                <a href="/docs/latest/setup/" class="button kd-button kd-primary">Try Now for FREE!</a>
-                <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button kd-transparent-btn"><span><i
-                      class="fa fa-envelope" aria-hidden="true"></i></span>Get In Touch</a>
-              </div>
-              {{ if $p.videos.intro }}
-              <!-- video player button start -->
-              <div class="play-buttons">
-                <a href="#" id="playme" onclick="revealVideo('video','youtube')"><span class="video-icon"><i
-                      class="fa fa-play" aria-hidden="true"></i></span>
-                  Watch the reel</a>
-              </div>
-              <!-- video player button end -->
-              {{ end }}
-            </div>
-          </div>
-          <!-- hero content end -->
-        </div>
-        <div class="column is-6">
-          {{ with $p.heroImage }}
-          <!-- hero image start -->
-          <div class="hero-area-img" data-aos="fade-up" data-aos-duration="1000">
-            <img src="{{ .src }}" alt="{{ .alt }}" class="img" />
-          </div>
-          <!-- hero image end -->
-          {{ end }}
-          {{ with $p.heroSlider }}
-          <!-- hero slider start -->
-          <div class="image-carousel-wrapper">
-            <!-- shape start  -->
-            <img class="shape-1" src="/assets/images/slider/s-1.png" alt="">
-            <img class="shape-2" src="/assets/images/slider/s-2.png" alt="">
-            <img class="shape-3" src="/assets/images/slider/s-3.png" alt="">
-            <!-- shape end  -->
-            <!-- carousel start  -->
-            <div class="carousel-inner keen-slider" id="hero-area-carousel">
-              {{ range . }}
-              <div class="single-slider-wrapper keen-slider__slide">
-                <a href="#"><img src="{{ .src }}" alt="{{ .alt }}"></a>
-              </div>
-              {{ end }}
-            </div>
-            <!-- carousel end -->
-            <div id="dots" class="dots"></div>
-          </div>
-          <!-- hero slider end -->
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- hero area end -->
 
 
 <script src="https://cdn.jsdelivr.net/npm/keen-slider@5.0.2/keen-slider.min.js"></script>
@@ -334,49 +270,5 @@ await serve(handler);
 <!-- video player frame and scripts end -->
 {{ end }}
 
-<!-- feature-area start -->
-<section class="product-feature-area section-padding is-hidden">
-  <div class="container section">
-    <div class="columns">
-      <div class="column is-8 is-offset-2 has-text-centered">
-        <!-- section-title start -->
-        <div class="section-title is-main-title" data-aos="fade-up">
-          <h2>Product Features</h2>
-          {{ if $p.summary }}
-          <p>
-            {{ $p.summary | plainify }}
-          </p>
-          {{ end }}
-        </div>
-        <!-- section-title end -->
-      </div>
-    </div>
-    <div class="columns is-multiline">
-      {{ range $f := $p.features }}
-      <!-- single feature area start -->
-      <div class="column is-6">
-        <div class="single-product-feature-wrapper" data-aos="fade-up">
-          <div class="product-feature-icon">
-            <img src="{{ $f.icon.src }}" alt="{{ $f.icon.alt }}" />
-          </div>
-          <div class="product-feature-content">
-            <div class="product-feature-title">
-              <h3>{{ $f.title }}</h3>
-              <p>{{ $f.summary }}</p>
-            </div>
-            <div class="product-feature-description">
-              <p>
-                {{ $f.description }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- single feature area end -->
-      {{ end }}
-    </div>
-  </div>
-</section>
-<!-- feature-area end -->
-{{ end }}
 
+{{ end }}
