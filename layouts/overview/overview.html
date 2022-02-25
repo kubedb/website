@@ -9,7 +9,7 @@
 {{ with $data }}
 <!-- new hero area start   -->
 <!-- style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);" -->
-<section class="hero-area is-product is-dark is-gradient has-image-bg" >
+<section class="hero-area is-product is-overview {{.id}}">
   <div class="shape">
     <div class="cube"></div>
     <div class="cube"></div>
@@ -30,8 +30,8 @@
   <div class="container">
     <div class="columns is-vcentered is-multiline">
       <div class="column is-6 is-full-touch">
-        <h1>{{.title}}</h1>
-        <!-- <p>{{.summary}}</p> -->
+        <h1>{{.title | markdownify }}</h1>
+        <p>{{.summary}}</p>
         <div class="buttons">
           <a href="/docs/{{ $p.latestVersion }}/guides/{{.id}}/" class="button ac-button is-primary">GET
             STARTED</a>
@@ -105,7 +105,7 @@ await serve(handler);
       <div class="column is-6">
         <div class="features-description">
           <h2 class="is-size-6 has-text-primary mb-15">Why Choose KubeDB?🤔</h2>
-          <h1>{{ .title }}</h1>
+          <h1>{{ .title | markdownify }}</h1>
 
           <p>{{.description | markdownify }}</p>
 

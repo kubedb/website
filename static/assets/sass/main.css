@@ -8039,7 +8039,7 @@ hr {
 }
 
 strong {
-  color: #393939;
+  color: #000000;
 }
 
 .is-font-medium {
@@ -10535,6 +10535,61 @@ Responsive Classes
   z-index: 1;
 }
 
+.hero-area.is-product.is-overview.elasticsearch {
+  background: #b980d0;
+  background: linear-gradient(16deg, rgba(185, 128, 208, 0.1) 0%, rgba(253, 31, 65, 0.1) 51%, rgba(0, 119, 204, 0.1) 91%, rgba(239, 0, 100, 0.1) 100%);
+}
+
+.hero-area.is-product.is-overview.mariadb {
+  background: #b980d0;
+  background: linear-gradient(39deg, rgba(185, 128, 208, 0.1) 0%, rgba(112, 115, 152, 0.1) 51%, rgba(175, 0, 208, 0.1) 91%, rgba(112, 115, 152, 0.1) 100%);
+}
+
+.hero-area.is-product.is-overview.memcached {
+  background: #514745;
+  background: linear-gradient(39deg, rgba(81, 71, 69, 0.1) 0%, rgba(81, 71, 69, 0.1) 51%, rgba(175, 0, 208, 0.1) 91%, rgba(81, 71, 69, 0.1) 100%);
+}
+
+.hero-area.is-product.is-overview.mongodb {
+  background: #00ed64;
+  background: linear-gradient(39deg, rgba(0, 237, 100, 0.1) 0%, rgba(253, 31, 65, 0.1) 51%, rgba(0, 237, 100, 0.1) 91%, rgba(239, 0, 100, 0.1) 100%);
+}
+
+.hero-area.is-product.is-overview.mysql {
+  background: #f29221;
+  background: linear-gradient(39deg, rgba(242, 146, 33, 0.1) 0%, rgba(253, 31, 65, 0.1) 51%, rgba(242, 146, 33, 0.1) 91%, rgba(0, 117, 143, 0.1) 100%);
+}
+
+.hero-area.is-product.is-overview.perconaxtradb {
+  background: #e77d03;
+  background: linear-gradient(39deg, rgba(231, 125, 3, 0.1) 0%, rgba(253, 31, 65, 0.1) 51%, rgba(231, 125, 3, 0.1) 91%, rgba(239, 0, 100, 0.1) 100%);
+}
+
+.hero-area.is-product.is-overview.pgbouncer {
+  background: #222222;
+  background: linear-gradient(39deg, rgba(34, 34, 34, 0.1) 0%, rgba(253, 31, 65, 0.1) 51%, rgba(34, 34, 34, 0.1) 91%, rgba(239, 0, 100, 0.1) 100%);
+}
+
+.hero-area.is-product.is-overview.postgresql {
+  background: #336790;
+  background: linear-gradient(39deg, rgba(51, 103, 144, 0.1) 0%, rgba(253, 31, 65, 0.1) 51%, rgba(175, 0, 208, 0.1) 91%, rgba(51, 103, 144, 0.1) 100%);
+}
+
+.hero-area.is-product.is-overview.proxysql {
+  background: #2e73b8;
+  background: linear-gradient(39deg, rgba(46, 115, 184, 0.1) 0%, rgba(253, 31, 65, 0.1) 51%, rgba(46, 115, 184, 0.1) 91%, rgba(46, 115, 184, 0.1) 100%);
+}
+
+.hero-area.is-product.is-overview.redis {
+  background: #d92b21;
+  background: linear-gradient(39deg, rgba(217, 43, 33, 0.1) 0%, rgba(217, 43, 33, 0.1) 51%, rgba(175, 0, 208, 0.1) 91%, rgba(217, 43, 33, 0.1) 100%);
+}
+
+.hero-area.is-product.is-overview .cube,
+.hero-area.is-product.is-overview .circle {
+  border-color: #333333;
+}
+
 .hero-area.is-product.has-image-bg::after {
   position: absolute;
   content: "";
@@ -10882,6 +10937,7 @@ Responsive Classes
 
 .features-area h3 {
   margin-bottom: 1rem;
+  font-weight: 800;
 }
 
 .features-area .check-list {

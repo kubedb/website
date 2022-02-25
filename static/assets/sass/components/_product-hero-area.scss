@@ -10,6 +10,138 @@
   margin-top: 110px;
   position: relative;
   z-index: 1;
+
+  &.is-overview {
+    &.elasticsearch {
+      background: rgb(185, 128, 208);
+      background: linear-gradient(
+        16deg,
+        rgba(185, 128, 208, 0.1) 0%,
+        rgba(253, 31, 65, 0.1) 51%,
+        rgba(0, 119, 204, 0.1) 91%,
+        rgba(239, 0, 100, 0.1) 100%
+      );
+      // h1{
+      //   strong{
+      //     color: rgb(185, 128, 208);
+      //     text-decoration: wavy underline;
+      //   }
+      // }
+    }
+
+    &.mariadb {
+      background: rgb(185, 128, 208);
+      background: linear-gradient(
+        39deg,
+        rgba(185, 128, 208, 0.1) 0%,
+        rgba(112, 115, 152, 0.1) 51%,
+        rgba(175, 0, 208, 0.1) 91%,
+        rgba(112, 115, 152, 0.1) 100%
+      );
+    }
+
+    &.memcached {
+      background: rgb(81, 71, 69);
+      background: linear-gradient(
+        39deg,
+        rgba(81, 71, 69, 0.1) 0%,
+        rgba(81, 71, 69, 0.1) 51%,
+        rgba(175, 0, 208, 0.1) 91%,
+        rgba(81, 71, 69, 0.1) 100%
+      );
+    }
+
+    &.mongodb {
+      background: rgb(0, 237, 100);
+      background: linear-gradient(
+        39deg,
+        rgba(0, 237, 100, 0.1) 0%,
+        rgba(253, 31, 65, 0.1) 51%,
+        rgba(0, 237, 100, 0.1) 91%,
+        rgba(239, 0, 100, 0.1) 100%
+      );
+    }
+
+    &.mysql {
+      background: rgb(242, 146, 33);
+      background: linear-gradient(
+        39deg,
+        rgba(242, 146, 33, 0.1) 0%,
+        rgba(253, 31, 65, 0.1) 51%,
+        rgba(242, 146, 33, 0.1) 91%,
+        rgba(0, 117, 143, 0.1) 100%
+      );
+    }
+
+    &.perconaxtradb {
+      background: rgb(231, 125, 3);
+      background: linear-gradient(
+        39deg,
+        rgba(231, 125, 3, 0.1) 0%,
+        rgba(253, 31, 65, 0.1) 51%,
+        rgba(231, 125, 3, 0.1) 91%,
+        rgba(239, 0, 100, 0.1) 100%
+      );
+    }
+
+    &.pgbouncer {
+      background: rgb(34, 34, 34);
+      background: linear-gradient(
+        39deg,
+        rgba(34, 34, 34, 0.1) 0%,
+        rgba(253, 31, 65, 0.1) 51%,
+        rgba(34, 34, 34, 0.1) 91%,
+        rgba(239, 0, 100, 0.1) 100%
+      );
+    }
+
+    &.postgresql {
+      background: rgb(51, 103, 144);
+      background: linear-gradient(
+        39deg,
+        rgba(51, 103, 144, 0.1) 0%,
+        rgba(253, 31, 65, 0.1) 51%,
+        rgba(175, 0, 208, 0.1) 91%,
+        rgba(51, 103, 144, 0.1) 100%
+      );
+    }
+
+    &.proxysql {
+      background: rgb(46, 115, 184);
+      background: linear-gradient(
+        39deg,
+        rgba(46, 115, 184, 0.1) 0%,
+        rgba(253, 31, 65, 0.1) 51%,
+        rgba(46, 115, 184, 0.1) 91%,
+        rgba(46, 115, 184, 0.1) 100%
+      );
+    }
+
+    &.redis {
+      background: rgb(217, 43, 33);
+      background: linear-gradient(
+        39deg,
+        rgba(217, 43, 33, 0.1) 0%,
+        rgba(217, 43, 33, 0.1) 51%,
+        rgba(175, 0, 208, 0.1) 91%,
+        rgba(217, 43, 33, 0.1) 100%
+      );
+    }
+
+    // h1 {
+    //   font-size: 4rem;
+    // }
+
+    // .tag {
+    //   border: 1px solid $ac-white-light;
+    // }
+
+    .cube,
+    .circle {
+      border-color: #333333;
+    }
+  }
+
   &.has-image-bg {
     &::after {
       position: absolute;
@@ -24,6 +156,7 @@
       background-size: 50%;
     }
   }
+
   &.is-dark {
     &.is-gradient {
       background: linear-gradient(-45deg, #a8356d, #940148, #4c346f, #3334f5);
@@ -95,6 +228,7 @@
   border-radius: 4px;
   overflow: hidden;
   transition: 0.5s ease-in-out;
+
   &.is-visible {
     opacity: 1;
     visibility: visible;
@@ -124,6 +258,7 @@
         .hljs-string {
           color: #f92e29;
         }
+
         .hljs-variable {
           color: #72ccd7;
         }
@@ -350,9 +485,11 @@ Responsive Classes
       font-size: 2.3rem;
     }
   }
+
   .social-prove-brand-area {
     .brand-image-wrapper {
       justify-content: center;
+
       .single-brand {
         padding: 0 10px;
       }
@@ -362,6 +499,7 @@ Responsive Classes
 
 @media (min-width: 1216px) and (max-width: 1407px) {
 }
+
 // Extra large devices (large desktops, 1216px and up)
 @media (min-width: 1408px) {
   .navbar-burger {
