@@ -10140,6 +10140,10 @@ Responsive Classes
 .button.ac-button:hover {
   background-color: var(--ac-primary);
   color: #ffffff;
+  -webkit-box-shadow: 2px 4px 24px rgba(73, 73, 163, 0.3) !important;
+          box-shadow: 2px 4px 24px rgba(73, 73, 163, 0.3) !important;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
 }
 
 .button.ac-button.is-disabled {

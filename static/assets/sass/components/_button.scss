@@ -21,6 +21,8 @@
     &:hover {
       background-color: $ac-primary;
       color: $ac-white;
+      box-shadow: 2px 4px 24px rgba(73, 73, 163, 0.3) !important;
+      transform: translateY(-2px);
     }
 
     &.is-disabled {
@@ -165,7 +167,6 @@ Responsive Classes
 }
 
 @media (min-width: 1216px) and (max-width: 1407px) {
-
 }
 
 // Extra large devices (large desktops, 1216px and up)
