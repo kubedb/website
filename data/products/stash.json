@@ -35,7 +35,7 @@
     "alt": "Stash"
   },
   "icon": {
-    "src": "/assets/images/products/stash/stash-icon.png",
+    "src": "/assets/images/products/stash/stash-icon.svg",
     "alt": "Stash",
     "sizes": {
       "192x192": "/assets/images/products/stash/icons/android-icon-192x192.png"

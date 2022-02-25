@@ -40,39 +40,24 @@
             <!-- product start  -->
             <div class="product-menu database-list">
               {{ range .Children }}
-              {{ if ne .Weight -1 }}
-              <!-- databases  start  -->
-              <a href="{{ .URL }}" class="single-product">
-                <div class="product-logo">
-                  <img src="https://via.placeholder.com/50/dddddd/808080" alt="">
-                </div>
-                <div class="product-info">
-                  <h6>{{ .Name }}</h6>
-                  <!-- <p>static content</p> -->
-                </div>
-                <div class="navigate-icon">
-                  <span class="material-icons">
-                    arrow_forward
-                  </span>
-                </div>
-              </a>
-              <!-- databases  end -->
-              {{ else }}
-              <a href="{{.URL}}" class="single-product">
-                <div class="product-logo">
-                  <img src="https://via.placeholder.com/50/dddddd/808080" alt="">
-                </div>
-                <div class="product-info">
-                  <h6>{{ .Name }}</h6>
-                  <!-- <p>static content</p> -->
-                </div>
-                <div class="navigate-icon">
-                  <span class="material-icons">
-                    arrow_forward
-                  </span>
-                </div>
-              </a>
-              {{ end }}
+                {{ if ne .Weight -1 }}
+                <!-- databases  start  -->
+                <a href="{{ .URL }}" class="single-product">
+                  <div class="product-logo">
+                    <img src="{{ partial "menu/get-logo.html" (dict "target" .Name "menus" site.Menus.main ) }}" alt="">
+                  </div>
+                  <div class="product-info">
+                    <h6>{{ .Name }}</h6>
+                    <!-- <p>static content</p> -->
+                  </div>
+                  <div class="navigate-icon">
+                    <span class="material-icons">
+                      arrow_forward
+                    </span>
+                  </div>
+                </a>
+                <!-- databases  end -->
+                {{ end }}
               {{ end }}
 
             </div>
