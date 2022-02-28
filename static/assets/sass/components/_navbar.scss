@@ -1016,6 +1016,8 @@ Responsive Classes
     top: 0 !important;
     padding-top: 20px !important;
     background-color: #fafafd;
+    max-height: 90vh;
+    overflow-y: auto;
 
     .mega-menu-inner {
       .product-menu {

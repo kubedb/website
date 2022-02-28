@@ -93,6 +93,8 @@ Array.from(responsiveMenus).forEach((menu, idx) => {
 });
 
 
+
+
 // scroll to top start
 //Get the button
 const goToTopBtn = document.querySelector(".go-to-top");
@@ -228,6 +230,12 @@ $('.customNextBtn').click(function () {
 $('.customPrevBtn').click(function () {
   owl.trigger('prev.owl.carousel');
 })
+
+// Modal js video init plugin
+$(".yt-video").magnificPopup({
+  type: 'iframe'
+});
+
 
 // headroomjs start
 var myElement = document.querySelector(".active-headroom");

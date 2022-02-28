@@ -12,6 +12,24 @@
   z-index: 1;
 
   &.is-overview {
+    h1{
+        strong {
+          color: $ac-primary;
+          // position: relative;
+          // z-index: 1;
+          // &:after{
+          //   position: absolute;
+          //   content: "";
+          //   left: 0;
+          //   top: 80%;
+          //   width: 100%;
+          //   height: 100%;
+          //   background-image: url(../images/shape/underline.svg);
+          //   background-repeat: no-repeat;
+          //   z-index: -1;
+          // }
+        }
+      }
     &.elasticsearch {
       background: rgb(185, 128, 208);
       background: linear-gradient(
@@ -21,12 +39,7 @@
         rgba(0, 119, 204, 0.1) 91%,
         rgba(239, 0, 100, 0.1) 100%
       );
-      // h1{
-      //   strong{
-      //     color: rgb(185, 128, 208);
-      //     text-decoration: wavy underline;
-      //   }
-      // }
+      
     }
 
     &.mariadb {
