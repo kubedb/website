@@ -132,10 +132,10 @@ function closeModal() {
 
 }
 // close modal end
-
-setTimeout(() => {
-  document.querySelector('.modal-1').querySelector('.modal').classList.add('is-active')
-}, 1500);
+// adds modal JS 
+// setTimeout(() => {
+//   document.querySelector('.modal-1')?.querySelector('.modal')?.classList.add('is-active')
+// }, 1500);
 
 var h_editor = document.querySelector('.hero-area-code-editor');
 document.addEventListener("DOMContentLoaded", () => {
@@ -206,7 +206,7 @@ var owl = $('.owl-carousel');
 owl.owlCarousel({
   loop: true,
   margin: 20,
-  autoplay: false,
+  autoplay: true,
   nav: false,
   dots: false,
   responsiveClass: true,
@@ -279,6 +279,7 @@ const goToASectionSmoothly = () => {
       // go to the target section smoothly
       const targetEl = document.querySelector(e.currentTarget.hash);
       const pos = targetEl.offsetTop;
+      console.log(pos);
       window.scrollTo({
         top: pos,
         behavior: "smooth",

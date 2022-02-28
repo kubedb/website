@@ -515,15 +515,15 @@
       display: inline-block;
       letter-spacing: 1.2px;
 
-      &:after {
-        position: absolute;
-        content: "";
-        left: 0;
-        bottom: 0;
-        width: 50%;
-        height: 2px;
-        background-color: $ac-primary;
-      }
+      // &:after {
+      //   position: absolute;
+      //   content: "";
+      //   left: 0;
+      //   bottom: 0;
+      //   width: 50%;
+      //   height: 2px;
+      //   background-color: $ac-primary;
+      // }
     }
 
     ul {

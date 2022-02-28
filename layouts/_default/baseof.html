@@ -416,7 +416,6 @@
                         <div class="list-items">
                           <h6>RESOURCES</h6>
                           <ul>
-                            <li><a href="{{.Site.Params.blog_url}}" target="_blank">Blog</a></li>
                             <!-- <li><a href="#" target="_blank">Forum</a></li> -->
                             <li><a href="{{.Site.Params.youtube_url}}" target="_blank">Demos</a></li>
                             <li><a
@@ -425,6 +424,7 @@
                             <li><a
                                 href="https://www.youtube.com/watch?v=4lkBt5UUEAQ&list=PLoiT1Gv2KR1hAtDDW7fHEi-s2y2H3DOgx"
                                 target="_blank">Webinars</a></li>
+                                <li><a href="{{.Site.Params.blog_url}}" target="_blank">Blog</a></li>
                             <!-- <li><a href="#" target="_blank">Community</a></li> -->
                           </ul>
                         </div>
@@ -432,7 +432,7 @@
 
                         <!-- single resources list  -->
                         <div class="list-items">
-                          <h6>DOCUNMENTATIONS</h6>
+                          <h6>DOCUMENTATION</h6>
                           <ul>
                             <li><a
                                 href="https://voyagermesh.com/docs/{{ .Site.Data.products.voyager.latestVersion }}/welcome/"
@@ -460,7 +460,7 @@
 
                         <!-- single resources list  -->
                         <div class="list-items">
-                          <h6>DOCUNMENTATIONS</h6>
+                          <h6>DOCUMENTATION</h6>
                           <ul>
                             <li><a
                                 href="https://kubedb.com/docs/{{ .Site.Data.products.kubedb.latestVersion }}/welcome/"
@@ -526,6 +526,9 @@
                       <!-- list menu items end -->
                     </div>
                   </div>
+                </li>
+                <li class="nav-item">
+                  <a href="{{.Site.Params.blog_url}}" class="link">Blog</a>
                 </li>
                 <li class="nav-item">
                   <a href="{{.Site.Params.domain_appscode}}/support/" class="link">Support</a>
@@ -847,7 +850,7 @@
               <h3>Run and Manage your Database in Kubernetes FREE !</h3>
               <p>{{ $p.name }} community edition is FREE to use on any supported Kubernetes engines. You can deploy and
                 manage
-                your your database in Kubernetes using {{ $p.name }}. There is no up-front investment required. We
+                your database in Kubernetes using {{ $p.name }}. There is no up-front investment required. We
                 offer a 30 days license FREE
                 of cost to try {{ $p.name }} Enterprise edition.
               </p>
@@ -1010,6 +1013,10 @@
                 <li>
                   <a href="{{.Site.Params.twitter_url}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 </li>
+                 <li>
+                   <a href="https://www.linkedin.com/company/appscode"><i class="fa fa-linkedin"
+                       aria-hidden="true"></i></a>
+                 </li>
                 <li>
                   <a href="{{.Site.Params.facebook_url}}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 </li>
