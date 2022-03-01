@@ -94,7 +94,7 @@
       </p>
     <![endif]-->
 
-  <!-- header area start -->
+  <!--========================== header area start ==========================-->
   {{ block "header" . }}
   <header>
     {{ block "header-top" . }}
@@ -777,7 +777,7 @@
 
   </header>
   {{ end }}
-  <!-- header area end -->
+  <!-- ========================== header area end ==========================-->
 
   <div class="modal-backdrop"></div>
 
@@ -787,10 +787,9 @@
   <!-- The part of the page that begins to differ between templates -->
   {{ end }}
 
-  <!-- testimonial area start -->
   {{ block "testimonial" . }}
 
-  <!-- testimonial area 2022 start  -->
+  <!-- ==========================testimonial area 2022 start ==========================  -->
   <section class="testimonial-area">
    
     <div class="container">
@@ -836,11 +835,11 @@
       </div>
     </div>
   </section>
-  <!-- testimonial area 2022 end -->
+  <!--========================== testimonial area 2022 end  ==========================-->
 
   {{ block "cta-install" . }}
   {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
-  <!-- call to action start  -->
+  <!--========================== call to action start ========================== -->
   <section class="cta-area">
     <div class="container">
       <div class="cta-area-inner">
@@ -864,16 +863,17 @@
       </div>
     </div>
   </section>
-  <!-- call to action end -->
+  <!-- ==========================call to action end ========================== -->
   {{ end }}
   {{ end }}
 
-  <!-- top to button start -->
+  <!--========================== top to button start ========================== -->
   <button class="go-to-top" id="goTop">
     <i class="fa fa-angle-up" aria-hidden="true"></i>
   </button>
-  <!-- top to button end -->
-  <!-- footer area start -->
+  <!--========================== top to button end ==========================-->
+
+  <!--========================== footer area start========================== -->
   {{ block "footer" . }}
   <footer class="footer-area">
     <div class="footer-top">
@@ -1031,7 +1031,7 @@
     </div>
   </footer>
   {{ end }}
-  <!-- footer area end -->
+  <!-- ==========================footer area end ==========================-->
 
 
   <!-- integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" -->

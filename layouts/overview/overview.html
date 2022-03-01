@@ -7,7 +7,7 @@
 {{ end }}
 
 {{ with $data }}
-<!-- new hero area start   -->
+<!-- ==========================new hero area start ==========================   -->
 <!-- style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);" -->
 <section class="hero-area is-product is-overview {{.id}}">
   <div class="shape">
@@ -75,9 +75,9 @@ await serve(handler);
   </div>
   </div>
 </section>
-<!-- new hero area end   -->
+<!-- ========================== new hero area end ==========================  -->
 
-<!-- social prove logo area start   -->
+<!-- ========================== social prove logo area start ==========================  -->
 <div class="social-prove-brand-area">
   <div class="container">
     <div class="columns">
@@ -93,9 +93,9 @@ await serve(handler);
     </div>
   </div>
 </div>
-<!-- social prove logo area end -->
+<!--========================== social prove logo area end ==========================-->
 
-<!-- product features area start  -->
+<!--========================== product features area start ========================== -->
 <section class="features-area mb-50">
   <div class="container">
     <!-- is-centered -->
@@ -134,6 +134,13 @@ await serve(handler);
 
     <!-- features items start  -->
     <div class="columns is-multiline is-centered">
+       <div class="line-shapes">
+         <div class="line line-1"></div>
+         <div class="line line-2"></div>
+         <div class="line line-3"></div>
+         <div class="line line-4"></div>
+         <div class="line line-5"></div>
+       </div>
       <div class="column is-10 ">
         {{ $odd:="true"}}
         {{ range .features }}
@@ -173,7 +180,7 @@ await serve(handler);
     <!-- features items end -->
   </div>
 </section>
-<!-- product features area end -->
+<!--========================== product features area end ==========================-->
 {{ end }}
 
 {{ end }}
