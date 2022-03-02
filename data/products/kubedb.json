@@ -3,7 +3,7 @@
   "name": "KubeDB",
   "fullname": "KubeDB by AppsCode",
   "title": "Run Production-Grade Databases on Kubernetes | KubeDB",
-  "tagline": "Run production-grade Databases on <br><strong>Kubernetes</strong>",
+  "tagline": "Run production-grade Databases on Kubernetes",
   "summary": "KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds",
   "metaDescription": "Provision, Monitoring, Backup, Recovery, Failure Detection, Data Protection, Migration for Various Databases in Kubernetes on Public and Private Cloud",
   "published": true,
