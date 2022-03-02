@@ -202,13 +202,14 @@ bulmaCarousel.attach("#carousel-demo", {
 });
 
 // owl owlCarousel JS 
-var owl = $('.owl-carousel');
+var owl = $('.testimonial-carousel');
 owl.owlCarousel({
   loop: true,
   margin: 20,
   autoplay: true,
   nav: false,
   dots: false,
+  smartSpeed: 2000,
   responsiveClass: true,
   responsive: {
     0: {
@@ -230,6 +231,32 @@ $('.customNextBtn').click(function () {
 $('.customPrevBtn').click(function () {
   owl.trigger('prev.owl.carousel');
 })
+
+// for social prove owlCarousel 
+// owl owlCarousel JS 
+var owlSocialProve = $('.brand-image-wrapper');
+owlSocialProve.owlCarousel({
+  loop: true,
+  margin: 20,
+  smartSpeed:3500,
+  autoplay: true,
+  nav: false,
+  dots: false,
+  // autoHeight:true,
+  // autoWidth:true,
+  responsiveClass: true,
+  responsive: {
+    0: {
+      items: 2,
+    },
+    600: {
+      items: 4,
+    },
+    1400: {
+      items: 9,
+    }
+  }
+});
 
 // Modal js video init plugin
 $(".yt-video").magnificPopup({

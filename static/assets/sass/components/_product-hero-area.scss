@@ -394,8 +394,15 @@
       &:hover {
         img {
           filter: grayscale(0);
-          transform: scale(1.2);
         }
+      }
+    }
+  }
+  .owl-carousel {
+    .owl-item {
+      img {
+        width: auto !important;
+        // margin: 0 auto;
       }
     }
   }

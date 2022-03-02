@@ -94,7 +94,7 @@ url(https://f.hubspotusercontent10.net/hubfs/8725062/Website/background/gradient
   <div class="container">
     <div class="columns">
       <div class="column is-12">
-        <div class="brand-image-wrapper">
+        <div class="brand-image-wrapper owl-carousel">
           {{ range $customer := $.Site.Data.customers }}
           {{ if $customer.show }}
           <div class="single-brand"><img src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>

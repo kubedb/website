@@ -10881,8 +10881,10 @@ Responsive Classes
 .social-prove-brand-area .brand-image-wrapper .single-brand:hover img {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+}
+
+.social-prove-brand-area .owl-carousel .owl-item img {
+  width: auto !important;
 }
 
 /****************************************

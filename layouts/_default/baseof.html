@@ -53,6 +53,7 @@
   <meta property="og:type" content="article">
   <!-- Font Awesome CSS -->
   <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <!-- google fonts icon  -->
   <link
     href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
@@ -810,7 +811,7 @@
         </div>
         <div class="column is-8">
           <!-- owl-carousel -->
-          <div class="testimonial-carousel-wrapper owl-carousel">
+          <div class="testimonial-carousel-wrapper owl-carousel testimonial-carousel">
             {{ range $user := $.Site.Data.testimonials }}
             <!-- single testimonial item start  -->
             <div class="single-testimonial-item">
