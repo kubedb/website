@@ -242,6 +242,7 @@ owlSocialProve.owlCarousel({
   autoplay: true,
   nav: false,
   dots: false,
+  autoplayHoverPause: true,
   // autoHeight:true,
   // autoWidth:true,
   responsiveClass: true,
