@@ -437,17 +437,29 @@ Responsive Classes
 
 // Extra large devices (large desktops, 1216px and up)
 @media (min-width: 1216px) {
-  .navbar-burger {
-    display: none !important;
-  }
+}
 
+@media (min-width: 1408px) and (max-width: 1600px) {
   .features-area {
     .features-description {
-      margin-right: 50px;
+      h1 {
+        font-size: 32px;
+      }
     }
-
     .features-image {
-      margin-left: 150px;
+      .check-list {
+        top: 30px;
+      }
+    }
+  }
+  .single-features-item {
+    padding: 20px;
+    min-height: 140px;
+    .feature-information {
+      h5 {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
     }
   }
 }

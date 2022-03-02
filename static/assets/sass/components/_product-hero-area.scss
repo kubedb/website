@@ -1,7 +1,7 @@
 .hero-area.is-product {
   background-color: #f1f1f9;
   padding: 100px 0;
-  height: calc(100vh - 240px);
+  height: calc(100vh - 200px);
   align-items: center;
   overflow: hidden;
   display: flex;
@@ -12,24 +12,24 @@
   z-index: 1;
 
   &.is-overview {
-    h1{
-        strong {
-          color: $ac-primary;
-          // position: relative;
-          // z-index: 1;
-          // &:after{
-          //   position: absolute;
-          //   content: "";
-          //   left: 0;
-          //   top: 80%;
-          //   width: 100%;
-          //   height: 100%;
-          //   background-image: url(../images/shape/underline.svg);
-          //   background-repeat: no-repeat;
-          //   z-index: -1;
-          // }
-        }
+    h1 {
+      strong {
+        color: $ac-primary;
+        // position: relative;
+        // z-index: 1;
+        // &:after{
+        //   position: absolute;
+        //   content: "";
+        //   left: 0;
+        //   top: 80%;
+        //   width: 100%;
+        //   height: 100%;
+        //   background-image: url(../images/shape/underline.svg);
+        //   background-repeat: no-repeat;
+        //   z-index: -1;
+        // }
       }
+    }
     &.elasticsearch {
       background: rgb(185, 128, 208);
       background: linear-gradient(
@@ -39,7 +39,6 @@
         rgba(0, 119, 204, 0.1) 91%,
         rgba(239, 0, 100, 0.1) 100%
       );
-      
     }
 
     &.mariadb {
@@ -378,7 +377,7 @@
 
 .social-prove-brand-area {
   .brand-image-wrapper {
-    padding: 50px 0;
+    padding: 30px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -513,9 +512,18 @@ Responsive Classes
 @media (min-width: 1216px) and (max-width: 1407px) {
 }
 
-// Extra large devices (large desktops, 1216px and up)
-@media (min-width: 1408px) {
-  .navbar-burger {
-    display: none !important;
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .hero-area {
+    &.is-product {
+      height: calc(100vh - 195px);
+      h1 {
+        font-size: 2.8rem;
+      }
+    }
+  }
+  .social-prove-brand-area {
+    .brand-image-wrapper {
+      padding: 30px 0;
+    }
   }
 }

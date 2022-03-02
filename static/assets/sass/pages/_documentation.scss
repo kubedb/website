@@ -798,6 +798,23 @@ Responsive Classes
   }
 }
 
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .navbar-appscode.documentation-menu {
+    margin-left: 263px;
+  }
+  .documentation-area {
+    .left-sidebar-wrapper {
+      width: 265px;
+    }
+    .documentation-body {
+      width: calc(100% - 520px);
+    }
+    .right-sidebar {
+      width: 260px;
+    }
+  }
+}
+
 // Extra large devices (large desktops, 1216px and up)
 @media (min-width: 1408px) {
 }

@@ -65,23 +65,18 @@ url(https://f.hubspotusercontent10.net/hubfs/8725062/Website/background/gradient
               <span class="action minimize"></span>
             </div>
             <pre>
-<code class="language-javascript">
-import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
-const messages = [];
-const channel = new BroadcastChannel("chat");
-channel.onmessage = (event) => {
-  messages.push(event.data);
-};
-function handler(req: Request): Response {
-  const { searchParams } = new URL(req.url);
-  const msg = searchParams.get("msg");
-  if (msg) channel.postMessage(msg);
-  return new Response(JSON.stringify(messages), {
-    headers: { "content-type": "application/json" }
-  });
-}
-console.log("Listening on http://localhost:8000");
-await serve(handler);
+<code class="language-shell">
+  $ helm repo add appscode https://charts.appscode.com/stable/
+  $ helm repo update
+  $ helm install kubedb appscode/kubedb \
+    --version v2022.02.22 \
+    --namespace kubedb --create-namespace \
+    --set kubedb-provisioner.enabled=true \
+    --set kubedb-ops-manager.enabled=true \
+    --set kubedb-autoscaler.enabled=true \
+    --set kubedb-dashboard.enabled=true \
+    --set kubedb-schema-manager.enabled=true \
+    --set-file global.license=/path/to/the/license.txt
 </code>
               </pre>
           </div>

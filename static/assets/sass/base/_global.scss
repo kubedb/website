@@ -362,8 +362,20 @@ Responsive Classes
   }
 }
 
-// Extra large devices (large desktops, 1216px and up)
-@media (min-width: 1408px) {
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .section-title {
+    h1 {
+      &.is-outlined-text {
+        font-size: 80px;
+      }
+    }
+  }
+  .container {
+    max-width: 1100px !important;
+  }
+}
+
+@media (min-width: 1600px) {
   .section-title {
     h1 {
       &.is-outlined-text {

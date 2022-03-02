@@ -86,7 +86,28 @@ Responsive Classes
 }
 
 @media (min-width: 1216px) and (max-width: 1407px) {
-
+  .cta-area {
+    .cta-area-inner {
+      height: 200px;
+      padding: 30px;
+      h3 {
+        font-size: 28px;
+      }
+    }
+  }
 }
+
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .cta-area {
+    .cta-area-inner {
+      height: 200px;
+      padding: 30px;
+      h3 {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
 @media (min-width: 1408px) {
 }
