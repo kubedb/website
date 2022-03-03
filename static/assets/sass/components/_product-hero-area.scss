@@ -399,6 +399,9 @@
     }
   }
   .owl-carousel {
+    .owl-stage {
+      transition-timing-function: linear !important;
+    }
     .owl-item {
       img {
         width: auto !important;

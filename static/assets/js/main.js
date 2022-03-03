@@ -211,6 +211,8 @@ owl.owlCarousel({
   dots: false,
   smartSpeed: 2000,
   responsiveClass: true,
+  autoplayHoverPause: true,
+  fluidSpeed: true,
   responsive: {
     0: {
       items: 1,
@@ -238,20 +240,24 @@ var owlSocialProve = $('.brand-image-wrapper');
 owlSocialProve.owlCarousel({
   loop: true,
   margin: 20,
-  smartSpeed:3500,
   autoplay: true,
   nav: false,
   dots: false,
+  fluidSpeed: true,
+  smartSpeed: 3000,
+  autoplayTimeout: 3000,
   autoplayHoverPause: true,
+  rewindNav:false,
+  rewindSpeed: 0,
   // autoHeight:true,
-  // autoWidth:true,
+  autoWidth:true,
   responsiveClass: true,
   responsive: {
     0: {
-      items: 2,
+      items: 4,
     },
     600: {
-      items: 4,
+      items: 5,
     },
     1400: {
       items: 9,

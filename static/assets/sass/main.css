@@ -8119,7 +8119,7 @@ strong {
 .section-title {
   margin-bottom: 2rem;
   position: relative;
-  z-index: 9;
+  z-index: 8;
 }
 
 .section-title h1 {
@@ -10881,6 +10881,11 @@ Responsive Classes
 .social-prove-brand-area .brand-image-wrapper .single-brand:hover img {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
+}
+
+.social-prove-brand-area .owl-carousel .owl-stage {
+  -webkit-transition-timing-function: linear !important;
+          transition-timing-function: linear !important;
 }
 
 .social-prove-brand-area .owl-carousel .owl-item img {
@@ -14236,3 +14241,4 @@ Responsive Classes
     min-width: 1344px;
   }
 }
+/*# sourceMappingURL=main.css.map */
