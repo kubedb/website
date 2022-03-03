@@ -31,9 +31,10 @@
     <div class="columns is-vcentered is-multiline">
       <div class="column is-6 is-full-touch">
         <h1>{{.title | markdownify }}</h1>
-        <p>{{.summary | markdownify }}</p>
+        <p data-aos="fade-up" data-aos-duration="500">{{.summary | markdownify }}</p>
         <div class="buttons">
-          <a href="/docs/{{ $p.latestVersion }}/guides/{{.id}}/" class="button ac-button is-primary">GET
+          <a href="/docs/{{ $p.latestVersion }}/guides/{{.id}}/" class="button ac-button is-primary" data-aos="fade-up"
+            data-aos-duration="700">GET
             STARTED</a>
         </div>
       </div>
@@ -105,9 +106,9 @@ await serve(handler);
       <div class="column is-5">
         <div class="features-description">
           
-          <h1>{{ .title | markdownify }}</h1>
+          <h1 data-aos="fade-up" data-aos-duration="500">{{ .title | markdownify }}</h1>
 
-          <p>{{.description | markdownify }}</p>
+          <p data-aos="fade-up" data-aos-duration="700">{{.description | markdownify }}</p>
 
         </div>
       </div>
@@ -115,7 +116,7 @@ await serve(handler);
       <!-- features image start  -->
       <div class="column is-5 is-offset-2-desktop">
         <div class="features-image">
-          <ul class="check-list">
+          <ul class="check-list" data-aos="flip-left">
             <h2 class="is-size-6 mb-15">Why Choose KubeDB?🤔</h2>
             {{ range .features }}
             <li>
@@ -149,18 +150,19 @@ await serve(handler);
           class="columns is-multiline is-vcentered {{if eq $odd "false" }}is-flex-direction-row-reverse-mobile{{end}}">
           {{ if eq $odd "true" }}
           <div class="column is-5">
-            <div class="features-thumbnail has-text-centered">
+            <div data-aos="flip-left" data-aos-duration="700" data-aos="flip-left"
+              class="features-thumbnail has-text-centered">
               <img src="{{ .image }}" alt="{{.title}}">
             </div>
           </div>
           {{ end }}
           <div class="column is-6">
-            <h3>{{.title}}</h3>
-            <p>{{.description}}</p>
+            <h3 data-aos="fade-up" data-aos-duration="500">{{.title}}</h3>
+            <p data-aos="fade-up" data-aos-duration="700">{{.description}}</p>
           </div>
           {{ if eq $odd "false" }}
-          <div class="column is-5 is-offset-1">
-            <div class="features-thumbnail has-text-centered">
+          <div class="column is-5 is-offset-1" >
+            <div data-aos="flip-left" data-aos-duration="700" class="features-thumbnail has-text-centered">
               <img src="{{.image}}" alt="{{.title}}">
             </div>
           </div>

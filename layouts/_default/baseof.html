@@ -53,7 +53,6 @@
   <meta property="og:type" content="article">
   <!-- Font Awesome CSS -->
   <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <!-- google fonts icon  -->
   <link
     href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
@@ -797,11 +796,12 @@
       <div class="columns is-vcentered">
         <div class="column is-4">
           <div class="section-title">
-            <h1 class="is-gradient">What They Are <span class="has-text-weight-light"> Talking About us</span></h1>
-            <p>Trusted by top engineers at the most ambitious companies</p>
+            <h1 class="is-gradient" data-aos="fade-up" data-aos-duration="500">What They Are <span
+                class="has-text-weight-light"> Talking About us</span></h1>
+            <p data-aos="fade-up" data-aos-duration="700">Trusted by top engineers at the most ambitious companies</p>
           </div>
           <!-- arrows start  -->
-          <div class="arrows">
+          <div class="arrows" data-aos="fade-up" data-aos-duration="900">
             <button class="button arrow is-rounded customPrevBtn"><span
                 class="material-icons-outlined">arrow_back</span></button>
             <button class="button arrow is-rounded customNextBtn"><span
@@ -847,8 +847,9 @@
         <div class="container">
           <div class="columns is-vcentered">
             <div class="column is-9">
-              <h3>Run and Manage your Database in Kubernetes FREE !</h3>
-              <p>{{ $p.name }} community edition is FREE to use on any supported Kubernetes engines. You can deploy and
+              <h3 data-aos="fade-up" data-aos-duration="500">Run and Manage your Database in Kubernetes FREE !</h3>
+              <p data-aos="fade-up" data-aos-duration="700">{{ $p.name }} community edition is FREE to use on any
+                supported Kubernetes engines. You can deploy and
                 manage
                 your database in Kubernetes using {{ $p.name }}. There is no up-front investment required. We
                 offer a 30 days license FREE
@@ -856,7 +857,8 @@
               </p>
             </div>
             <div class="column is-3  has-text-centered-touch has-text-right-desktop">
-              <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-white">TRY NOW FREE</a>
+              <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-white" data-aos="fade-up"
+                data-aos-duration="900">TRY NOW FREE</a>
             </div>
           </div>
         </div>

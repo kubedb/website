@@ -44,9 +44,10 @@ url(https://f.hubspotusercontent10.net/hubfs/8725062/Website/background/gradient
       <div class="column is-6 is-full-touch">
         <h1> {{ $p.tagline | safeHTML }}</h1>
         <!-- <h1> Run Production-Grade Databases on Kubernetes</h1> -->
-        <p>Provision, Upgrade, Monitor, Backup & Recovery, Failure Detection, Data Protection for various Databases in
+        <p data-aos="fade-up" data-aos-duration="500">Provision, Upgrade, Monitor, Backup & Recovery, Failure Detection,
+          Data Protection for various Databases in
           Kubernetes on any Public and Private Cloud</p>
-        <div class="buttons">
+        <div class="buttons" data-aos="fade-up" data-aos-duration="700">
           <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary">TRY NOW FREE</a>
           <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary"><span>
               <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop" colors="primary:#ffffff;"
@@ -114,10 +115,10 @@ url(https://f.hubspotusercontent10.net/hubfs/8725062/Website/background/gradient
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="section-title has-text-centered">
-          <h2 class="is-gradient">Special Features</h2>
+          <h2 class="is-gradient" data-aos="fade-up" data-aos-duration="500">Special Features</h2>
           <h1 class="is-outlined-text">Special Features</h1>
           {{ if $p.summary }}
-          <p>
+          <p data-aos="fade-up" data-aos-duration="700">
             {{ $p.summary | plainify }}
           </p>
           {{ end }}
@@ -131,7 +132,7 @@ url(https://f.hubspotusercontent10.net/hubfs/8725062/Website/background/gradient
       <!-- single feature information start  -->
       {{ range $f := $p.features }}
       <div class="column is-half-tablet is-one-third-widescreen">
-        <a href="#" class="single-features-item">
+        <a href="#" class="single-features-item" data-aos="fade-up" data-aos-duration="500">
           <div class="feature-icon">
             <img src="{{ $f.icon.src }}" alt="{{ $f.icon.alt }}" />
           </div>
