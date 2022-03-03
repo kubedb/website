@@ -10685,6 +10685,10 @@ Responsive Classes
           animation: gradient 15s ease infinite;
 }
 
+.hero-area.is-product.is-dark h1 strong {
+  color: #ffffff;
+}
+
 .hero-area.is-product.is-dark h1,
 .hero-area.is-product.is-dark p {
   color: #ffffff;
@@ -10938,6 +10942,12 @@ Responsive Classes
   }
   .social-prove-brand-area .brand-image-wrapper .single-brand img {
     max-height: 1.5rem;
+  }
+}
+
+@media (max-width: 378px) {
+  .hero-area.is-product .buttons .button {
+    padding: 0 14px;
   }
 }
 
@@ -11804,6 +11814,9 @@ Responsive Classes
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .testimonial-area .single-testimonial-item .user-info-wrapper .user-info {
+    text-align: left;
   }
   .testimonial-area .single-testimonial-item .user-info-wrapper .user-info h5 {
     font-size: 20px;
