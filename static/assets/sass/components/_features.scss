@@ -119,6 +119,16 @@
     }
   }
 }
+.features-area {
+  .single-feature-image {
+    display: flex;
+    align-items: center;
+   
+    img {
+      max-width: 400px;
+    }
+  }
+}
 
 // 2022 updated features page scss end
 

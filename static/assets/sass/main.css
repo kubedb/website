@@ -11113,6 +11113,19 @@ Responsive Classes
   color: #3b3030;
 }
 
+.features-area .single-feature-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.features-area .single-feature-image img {
+  max-width: 400px;
+}
+
 /* Feature area start */
 /****************************************
 Responsive Classes

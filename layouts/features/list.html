@@ -3,7 +3,7 @@
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 
 <section class="hero-area is-product is-dark"
-  style="background-image: url(/assets/images/products/kubedb/features/hero-images.png); height: calc(100vh - 300px);">
+  style="background-image: url(/assets/images/products/kubedb/features/hero-images.png); height: calc(100vh - 110px);">
   <div class="container">
     <div class="columns has-text-centered is-centered is-vcentered is-multiline">
       <div class="column is-8 is-full-touch">
@@ -24,53 +24,51 @@
   {{ range $idx, $f := $p.features }}
   <!-- single feature start -->
   <div class="container section">
-    <div class="feature-section-gap">
-      {{ if (modBool $idx 2) }}
-      <div class="columns is-vcentered">
-        <div class="column is-5 is-offset-1">
-          <div class="feature-wrapper d-table">
-            <div class="feature-content pr-140 d-table-cell" data-aos="fade-up">
-              <h3>{{ $f.title }}</h3>
-              <p>
-                {{ $f.description }}
-              </p>
+   <div class="columns">
+     <div class="column is-10 is-offset-1">
+        <div class="pt-30 pb-30">
+          {{ if (modBool $idx 2) }}
+          <div class="columns is-vcentered">
+            <div class="column is-6">
+              <div class="feature-wrapper d-table">
+                <div class="feature-content pr-140 d-table-cell" data-aos="fade-up">
+                  <h3>{{ $f.title }}</h3>
+                  <p>
+                    {{ $f.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="single-feature-image is-justify-content-flex-end" data-aos="flip-left"
+                data-aos-duration="700">
+                <img src="{{ $f.image.src }}" alt="{{ $f.image.alt }}" class="img" />
+              </div>
             </div>
           </div>
-        </div>
-        <div class="column is-5">
-          <div class="single-feature-image" data-aos="fade-up" data-aos-duration="1000">
-            <img
-              src="{{ $f.image.src }}"
-              alt="{{ $f.image.alt }}"
-              class="img"
-            />
-          </div>
-        </div>
-      </div>
-      {{ else }}
-      <div class="columns is-vcentered reverse-row-order">
-        <div class="column is-5 is-offset-1">
-          <div class="single-feature-image" data-aos="fade-up">
-            <img
-              src="{{ $f.image.src }}"
-              alt="{{ $f.image.alt }}"
-              class="img"
-            />
-          </div>
-        </div>
-        <div class="column is-5">
-          <div class="feature-wrapper d-table" data-aos="fade-up" data-aos-duration="1000">
-            <div class="feature-content pr-45 d-table-cell">
-              <h3>{{ $f.title }}</h3>
-              <p>
-                {{ $f.description }}
-              </p>
+          {{ else }}
+          <div class="columns is-vcentered is-flex-direction-row-reverse-mobile">
+            <div class="column is-6">
+              <div class="single-feature-image is-justify-content-flex-start" data-aos="flip-left"
+                data-aos-duration="700">
+                <img src="{{ $f.image.src }}" alt="{{ $f.image.alt }}" class="img" />
+              </div>
             </div>
+            <div class="column is-6">
+              <div class="feature-wrapper d-table" data-aos="fade-up" data-aos-duration="1000">
+                <div class="feature-content pr-45 d-table-cell">
+                  <h3>{{ $f.title }}</h3>
+                  <p>
+                    {{ $f.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {{ end }}
           </div>
         </div>
-        {{ end }}
-      </div>
-    </div>
+     </div>
+   </div>
   </div>
   <!-- single feature end -->
   {{ end }}
