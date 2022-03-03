@@ -2,7 +2,49 @@
 
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 
-<section class="hero-area is-product is-dark"
+
+
+
+<!-- ==========================new hero area start ==========================   -->
+<!-- style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);" -->
+<section class="hero-area is-product is-dark has-image-bg"
+  style="background-image: url(/assets/images/products/kubedb/features/hero-images.png); margin-top: 0;">
+  <div class="shape">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
+  <div class="shape">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div class="container">
+    <div class="columns has-text-centered is-centered is-vcentered is-multiline">
+      <div class="column is-8 is-centered is-full-touch">
+        <h1>{{ $p.name }} Features</h1>
+        <p data-aos="fade-up" data-aos-duration="500">{{ $p.summary }}</p>
+        <div class="buttons is-justify-content-center">
+          <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary" data-aos="fade-up"
+            data-aos-duration="700">Install Now Free</a>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+  </div>
+</section>
+<!-- ========================== new hero area end ==========================  -->
+
+
+<!-- <section class="hero-area is-product is-dark"
   style="background-image: url(/assets/images/products/kubedb/features/hero-images.png); height: calc(100vh - 110px);">
   <div class="container">
     <div class="columns has-text-centered is-centered is-vcentered is-multiline">
@@ -16,7 +58,7 @@
     </div>
   </div>
   </div>
-</section>
+</section> -->
 <!-- new hero area end   -->
 
 <!-- all featured section start -->
