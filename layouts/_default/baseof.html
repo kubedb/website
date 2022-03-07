@@ -29,6 +29,8 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/products/{{ $p.key }}/icons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/products/{{ $p.key }}/icons/favicon-16x16.png">
   <link rel="manifest" href="/assets/images/products/{{ $p.key }}/icons/manifest.json">
+  <!-- vuejs3  -->
+  <script src="https://unpkg.com/vue@3"></script>
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/assets/images/products/{{ $p.key }}/icons/ms-icon-144x144.png">
   <!-- Google / Search Engine Tags -->
@@ -85,7 +87,7 @@
   <link rel="stylesheet" href="/assets/sass/main.css" />
 </head>
 
-<body class="{{$p.key}}">
+<body class="{{$p.key}}" id="app">
   <!--[if lte IE 9]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
@@ -424,7 +426,7 @@
                             <li><a
                                 href="https://www.youtube.com/watch?v=4lkBt5UUEAQ&list=PLoiT1Gv2KR1hAtDDW7fHEi-s2y2H3DOgx"
                                 target="_blank">Webinars</a></li>
-                                <li><a href="{{.Site.Params.blog_url}}" target="_blank">Blog</a></li>
+                            <li><a href="{{.Site.Params.blog_url}}" target="_blank">Blog</a></li>
                             <!-- <li><a href="#" target="_blank">Community</a></li> -->
                           </ul>
                         </div>
@@ -791,7 +793,7 @@
 
   <!-- ==========================testimonial area 2022 start ==========================  -->
   <section class="testimonial-area">
-   
+
     <div class="container">
       <div class="columns is-vcentered">
         <div class="column is-4">
@@ -1016,10 +1018,10 @@
                 <li>
                   <a href="{{.Site.Params.twitter_url}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 </li>
-                 <li>
-                   <a href="https://www.linkedin.com/company/appscode"><i class="fa fa-linkedin"
-                       aria-hidden="true"></i></a>
-                 </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/appscode"><i class="fa fa-linkedin"
+                      aria-hidden="true"></i></a>
+                </li>
                 <li>
                   <a href="{{.Site.Params.facebook_url}}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 </li>
@@ -1036,7 +1038,7 @@
   {{ end }}
   <!-- ==========================footer area end ==========================-->
 
-
+  <script src="/assets/js/vue-elements.js"></script>
   <!-- integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" -->
   <script src="/assets/js/jquery-3.6.0.min.js"></script>
   <script src="/assets/js/owl.carousel.min.js"></script>
@@ -1092,6 +1094,9 @@
     });
   </script>
   <!--End of Tawk.to Script-->
+
 </body>
+
+
 
 </html>
