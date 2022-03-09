@@ -13056,34 +13056,6 @@ Responsive Classes
   width: calc(100% - 674px);
 }
 
-.documentation-area .documentation-body .highlight .hljs-variable {
-  color: #35a651;
-}
-
-.documentation-area .documentation-body .highlight .hljs-string {
-  color: #f15855;
-}
-
-.documentation-area .documentation-body .highlight .hljs-keyword,
-.documentation-area .documentation-body .highlight .hljs-literal,
-.documentation-area .documentation-body .highlight .nginx .hljs-title {
-  color: #ff08d8;
-}
-
-.documentation-area .documentation-body .highlight .hljs-class .hljs-title,
-.documentation-area .documentation-body .highlight .smalltalk .hljs-class,
-.documentation-area .documentation-body .highlight .hljs-type,
-.documentation-area .documentation-body .highlight .hljs-typename,
-.documentation-area .documentation-body .highlight .hljs-tag .hljs-attribute,
-.documentation-area .documentation-body .highlight .hljs-doctype,
-.documentation-area .documentation-body .highlight .hljs-class .hljs-id,
-.documentation-area .documentation-body .highlight .hljs-built_in,
-.documentation-area .documentation-body .highlight .setting,
-.documentation-area .documentation-body .highlight .hljs-params,
-.documentation-area .documentation-body .highlight .clojure .hljs-attribute {
-  color: #ad6ff3;
-}
-
 .documentation-area .right-sidebar {
   border-left: 1px solid #dbdbde;
   margin-top: -25px;
@@ -13185,44 +13157,6 @@ Responsive Classes
 
 .full-info h6 {
   font-size: 13px;
-}
-
-.full-info .highlight pre {
-  border: 1px solid #dbdbde;
-  border-radius: 2px;
-}
-
-.full-info .highlight pre .hljs {
-  background-color: transparent;
-  color: #d2d5e1;
-}
-
-.full-info .highlight .hljs-variable {
-  color: #35a651;
-}
-
-.full-info .highlight .hljs-string {
-  color: #f15855;
-}
-
-.full-info .highlight .hljs-keyword,
-.full-info .highlight .hljs-literal,
-.full-info .highlight .nginx .hljs-title {
-  color: #ff08d8;
-}
-
-.full-info .highlight .hljs-class .hljs-title,
-.full-info .highlight .smalltalk .hljs-class,
-.full-info .highlight .hljs-type,
-.full-info .highlight .hljs-typename,
-.full-info .highlight .hljs-tag .hljs-attribute,
-.full-info .highlight .hljs-doctype,
-.full-info .highlight .hljs-class .hljs-id,
-.full-info .highlight .hljs-built_in,
-.full-info .highlight .setting,
-.full-info .highlight .hljs-params,
-.full-info .highlight .clojure .hljs-attribute {
-  color: #ad6ff3;
 }
 
 .full-info h2 span.share-icon {
@@ -13380,16 +13314,6 @@ ul li b {
 
 .code-block-heading .copy-and-download .download-here {
   cursor: pointer;
-}
-
-.highlight {
-  margin-bottom: 40px;
-}
-
-.highlight pre {
-  background-color: #1e242e !important;
-  font-size: 14px;
-  margin-bottom: 20px;
 }
 
 .full-info ol {
