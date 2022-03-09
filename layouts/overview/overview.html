@@ -48,8 +48,10 @@
               <span class="action minimize"></span>
             </div>
             <pre>
-<!-- code will comming  -->
-              </pre>
+              <code class="language-yaml">
+              {{ .example | transform.Remarshal "yaml" }}
+              </code>
+            </pre>
           </div>
         </div>
         <!-- code editor end  -->
