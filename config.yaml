@@ -93,4 +93,4 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    style: solarized-dark
+    style: manni
