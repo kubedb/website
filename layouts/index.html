@@ -65,21 +65,17 @@ url(https://f.hubspotusercontent10.net/hubfs/8725062/Website/background/gradient
               <span class="action maximize"></span>
               <span class="action minimize"></span>
             </div>
-            <pre>
-<code class="language-shell">
-  $ helm repo add appscode https://charts.appscode.com/stable/
-  $ helm repo update
-  $ helm install kubedb appscode/kubedb \
-    --version {{ $p.latestVersion }} \
-    --namespace kubedb --create-namespace \
-    --set kubedb-provisioner.enabled=true \
-    --set kubedb-ops-manager.enabled=true \
-    --set kubedb-autoscaler.enabled=true \
-    --set kubedb-dashboard.enabled=true \
-    --set kubedb-schema-manager.enabled=true \
-    --set-file global.license=/path/to/the/license.txt
-</code>
-              </pre>
+            {{ highlight (printf `$ helm repo add appscode https://charts.appscode.com/stable/
+$ helm repo update
+$ helm install kubedb appscode/kubedb \
+  --version %s \
+  --namespace kubedb --create-namespace \
+  --set kubedb-provisioner.enabled=true \
+  --set kubedb-ops-manager.enabled=true \
+  --set kubedb-autoscaler.enabled=true \
+  --set kubedb-dashboard.enabled=true \
+  --set kubedb-schema-manager.enabled=true \
+  --set-file global.license=/path/to/the/license.txt` $p.latestVersion) "bash" }}
           </div>
         </div>
         <!-- code editor end  -->

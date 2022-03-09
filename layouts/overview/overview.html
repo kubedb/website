@@ -47,11 +47,7 @@
               <span class="action maximize"></span>
               <span class="action minimize"></span>
             </div>
-            <pre>
-              <code class="language-yaml">
-              {{ .example | transform.Remarshal "yaml" }}
-              </code>
-            </pre>
+            {{ highlight (transform.Remarshal "yaml" .example) "yaml" }}
           </div>
         </div>
         <!-- code editor end  -->
