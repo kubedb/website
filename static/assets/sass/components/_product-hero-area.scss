@@ -250,7 +250,9 @@
     visibility: visible;
     transform: scale(1);
   }
-
+  .hljs {
+    background-color: transparent;
+  }
   &.is-dark {
     .editor-header {
       background: #151a21;
@@ -549,6 +551,14 @@ Responsive Classes
   .social-prove-brand-area {
     .brand-image-wrapper {
       padding: 30px 0;
+    }
+  }
+  .hero-area-code-editor {
+    pre {
+      code {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   }
 }

@@ -10761,6 +10761,10 @@ Responsive Classes
           transform: scale(1);
 }
 
+.hero-area-code-editor .hljs {
+  background-color: transparent;
+}
+
 .hero-area-code-editor.is-dark .editor-header {
   background: #151a21;
   border-bottom: 1px solid #472f2f;
@@ -10990,6 +10994,10 @@ Responsive Classes
   }
   .social-prove-brand-area .brand-image-wrapper {
     padding: 30px 0;
+  }
+  .hero-area-code-editor pre code {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -11965,6 +11973,7 @@ Responsive Classes
   border-radius: 4px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .gallery-card:hover {
@@ -11997,7 +12006,6 @@ Responsive Classes
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  border-radius: 4px;
 }
 
 .gallery-card .gallery-card-thumbnail .play-button {
@@ -12060,6 +12068,40 @@ Responsive Classes
 .gallery-card .gallery-body .meta-tag p .material-icons-outlined {
   font-size: 16px;
   margin-right: 0.8rem;
+}
+
+.filtered-tags .tag {
+  background-color: rgba(77, 77, 203, 0.07);
+  border: 1px solid #dbdbde;
+  height: 33px;
+  padding: 0 1.1rem;
+}
+
+.filtered-tags .tag span {
+  font-size: 13px;
+  margin-left: 8px;
+  cursor: pointer;
+  padding: 9px;
+  margin-right: -18px;
+}
+
+.outlined-bg-buttons .button {
+  background: rgba(77, 77, 203, 0.07);
+  border: 1px solid var(--ac-primary);
+  font-size: 13px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  height: 33px;
+  border-radius: 4px;
+}
+
+.outlined-bg-buttons .button:hover {
+  background-color: var(--ac-primary);
+  color: #fff;
+}
+
+.outlined-bg-buttons .button span {
+  font-size: 13px;
 }
 
 .cta-area {
