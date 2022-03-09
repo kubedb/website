@@ -72,7 +72,19 @@ PROJECT_DIR := $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
 define go-get-tool
 @[ -f $(1) ] || { \
 set -e ;\
-bin=hugo-tools-$$(echo `uname`|tr '[:upper:]' '[:lower:]')-$$(uname -m); \
+OS=$$(echo `uname`|tr '[:upper:]' '[:lower:]'); \
+ARCH=$$(uname -m); \
+case $$ARCH in \
+  armv5*) ARCH="armv5";; \
+  armv6*) ARCH="armv6";; \
+  armv7*) ARCH="arm";; \
+  aarch64) ARCH="arm64";; \
+  x86) ARCH="386";; \
+  x86_64) ARCH="amd64";; \
+  i686) ARCH="386";; \
+  i386) ARCH="386";; \
+esac; \
+bin=hugo-tools-$${OS}-$${ARCH}; \
 echo "Downloading $${bin}" ;\
 mkdir -p $(PROJECT_DIR)/bin; \
 curl -fsSL -o $(1) https://github.com/$(2)/releases/download/$(3)/$${bin}; \
