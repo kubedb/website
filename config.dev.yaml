@@ -1,4 +1,4 @@
-title: 'KubeDB by AppsCode | Run roduction-grade databases on Kubernetes'
+title: KubeDB by AppsCode | Run roduction-grade databases on Kubernetes
 baseurl: https://kubedb-v2-hugo.web.app
 languageCode: en-us
 assetDir: static
@@ -21,7 +21,7 @@ params:
   domain_bytebuilders: https://byte.builders
   domain_marketplace: https://marketplace.byte.builders
   search_engine_ID: 015199383701854252104:8mvwy0fek2e
-  search_api_key: _replace_
+  search_api_key: AIzaSyBrcwLTnL09geNrFMUx1kpL--dT1379aag
   blog_url: https://blog.byte.builders
   slack_url: https://slack.appscode.com
   github_url: https://github.com/appscode

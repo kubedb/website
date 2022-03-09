@@ -70,7 +70,7 @@ url(https://f.hubspotusercontent10.net/hubfs/8725062/Website/background/gradient
   $ helm repo add appscode https://charts.appscode.com/stable/
   $ helm repo update
   $ helm install kubedb appscode/kubedb \
-    --version v2022.02.22 \
+    --version {{ $p.latestVersion }} \
     --namespace kubedb --create-namespace \
     --set kubedb-provisioner.enabled=true \
     --set kubedb-ops-manager.enabled=true \
