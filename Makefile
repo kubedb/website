@@ -4,18 +4,18 @@ run:
 	hugo server --config=config.dev.yaml --watch=false
 
 .PHONY: docs
-docs:
-	hugo-tools docs-aggregator
+docs: hugo-tools
+	$(HUGO_TOOLS) docs-aggregator
 	find ./data -name "*.json" -exec sed -i 's/https:\/\/cdn.appscode.com\/images/\/assets\/images/g' {} \;
 
 .PHONY: docs-skip-assets
-docs-skip-assets:
-	hugo-tools docs-aggregator --skip-assets
+docs-skip-assets: hugo-tools
+	$(HUGO_TOOLS) docs-aggregator --skip-assets
 	find ./data -name "*.json" -exec sed -i 's/https:\/\/cdn.appscode.com\/images/\/assets\/images/g' {} \;
 
 .PHONY: assets
-assets:
-	hugo-tools docs-aggregator --only-assets
+assets: hugo-tools
+	$(HUGO_TOOLS) docs-aggregator --only-assets
 	find ./data -name "*.json" -exec sed -i 's/https:\/\/cdn.appscode.com\/images/\/assets\/images/g' {} \;
 
 .PHONY: gen
@@ -61,3 +61,21 @@ set-assets-repo:
 	@mv data/config.json data/config.bk.json
 	@jq '(.assets | .repoURL) |= "$(ASSETS_REPO_URL)"' data/config.bk.json > data/config.json
 	@rm -rf data/config.bk.json
+
+HUGO_TOOLS = $(shell pwd)/bin/hugo-tools
+.PHONY: hugo-tools
+hugo-tools: ## Download hugo-tools locally if necessary.
+	$(call go-get-tool,$(HUGO_TOOLS),appscodelabs/hugo-tools,v0.2.21)
+
+# go-get-tool will 'curl' binary from GH repo $2 with version $3 and install it to $1.
+PROJECT_DIR := $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
+define go-get-tool
+@[ -f $(1) ] || { \
+set -e ;\
+bin=hugo-tools-$$(echo `uname`|tr '[:upper:]' '[:lower:]')-$$(uname -m); \
+echo "Downloading $${bin}" ;\
+mkdir -p $(PROJECT_DIR)/bin; \
+curl -fsSL -o $(1) https://github.com/$(2)/releases/download/$(3)/$${bin}; \
+chmod +x $(1); \
+}
+endef

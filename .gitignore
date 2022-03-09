@@ -5,3 +5,4 @@
 .sass-cache
 /public
 .hugo_build.lock
+/bin
