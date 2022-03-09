@@ -93,5 +93,4 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    style: pastie
-
+    style: solarized-dark
