@@ -92,3 +92,5 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    style: solarized-dark
