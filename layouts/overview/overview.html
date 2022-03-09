@@ -1,8 +1,3 @@
-{{ define "meta" }}
-  <title>{{ .Title }}</title>
-  <meta name="description" content="{{ .Description }}">
-{{ end }}
-
 {{ define "main" }}
 
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
