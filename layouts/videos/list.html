@@ -1,22 +1,46 @@
 {{ define "main" }}
 
-<section class="video-player-area mt-100">
+<section class="gallery-area mt-100">
   <div class="container mt-100">
-    <div class="video-player-wrapper">
+    <div class="gallery-wrapper">
       <!-- left sidebar area start  -->
-      <div class="left-sidebar">
-        left sidebar
-      </div>
+      <div class="left-sidebar">left sidebar</div>
       <!-- left sidebar area end -->
       <!-- right content start  -->
       <div class="right-content">
         <!-- header items start  -->
-        <div class="header-items">
-          <div class="left-content">left content</div>
-          <div class="right-content">right content</div>
+        <div class="header-items is-flex is-justify-content-space-between">
+          <div class="left-content">header left content</div>
+          <div class="right-content">header right content</div>
         </div>
         <!-- header items end -->
-        body content start 
+
+        <!-- gallery body start  -->
+        <div class="body-content">
+          <div class="columns is-multiline">
+            <div class="column is-4" v-for="item in 9">
+              <a href="#" class="gallery-card">
+                <div class="gallery-card-thumbnail">
+                  <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
+                  <div class="play-button"><span class="material-icons-outlined">play_arrow</span></div>
+                </div>
+                <div class="gallery-body">
+                  <div class="filtered-items">
+                    <span>KUBEDB</span>
+                    <span>WEBINER</span>
+                  </div>
+                  <h1>Upgrading MySQL with KubeDB Enterprise by AppsCode</h1>
+                  <div class="meta-tag is-flex is-justify-content-space-between">
+                    <p><span class="material-icons-outlined">calendar_today</span>22-Feb-2022</p>
+                    <p><span class="material-icons-outlined">person_outline</span>Masud Ahmmed</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- gallery body end -->
+
       </div>
       <!-- right content end -->
     </div>

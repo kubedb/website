@@ -11959,6 +11959,109 @@ Responsive Classes
   background: #0aafff;
 }
 
+.gallery-card {
+  display: block;
+  border: 1px solid #dbdbde;
+  border-radius: 4px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.gallery-card:hover {
+  border: 1px solid var(--ac-primary);
+}
+
+.gallery-card:hover .gallery-body h1 {
+  color: var(--ac-primary);
+}
+
+.gallery-card:hover .gallery-card-thumbnail .play-button {
+  background-color: #4d4dcb;
+}
+
+.gallery-card .gallery-card-thumbnail {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gallery-card .gallery-card-thumbnail img {
+  height: 170px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.gallery-card .gallery-card-thumbnail .play-button {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(77, 77, 203, 0.3);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.gallery-card .gallery-card-thumbnail .play-button .material-icons-outlined {
+  font-size: 28px;
+}
+
+.gallery-card .gallery-body {
+  padding: 20px 20px;
+}
+
+.gallery-card .gallery-body .filtered-items span {
+  margin-right: 0.8rem;
+  font-weight: normal;
+  font-size: 13px;
+  color: #505050;
+}
+
+.gallery-card .gallery-body h1 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  margin: 1rem 0 2rem;
+  color: #1c1c1c;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.gallery-card .gallery-body .meta-tag p {
+  font-weight: normal;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #505050;
+}
+
+.gallery-card .gallery-body .meta-tag p .material-icons-outlined {
+  font-size: 16px;
+  margin-right: 0.8rem;
+}
+
 .cta-area {
   margin-top: -125px;
 }
@@ -14323,4 +14426,3 @@ Responsive Classes
     min-width: 1344px;
   }
 }
-/*# sourceMappingURL=main.css.map */
