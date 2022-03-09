@@ -1,7 +1,7 @@
 .PHONY: run
 run:
 	@yqq w -i config.dev.yaml params.search_api_key --tag '!!str' $(GOOGLE_CUSTOM_SEARCH_API_KEY)
-	hugo server --config=config.dev.yaml
+	hugo server --config=config.dev.yaml --watch=false
 
 .PHONY: docs
 docs:

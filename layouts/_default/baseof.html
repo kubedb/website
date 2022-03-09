@@ -9,8 +9,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="{{ $p.website.themeColor }}">
-  <title>{{$p.title}}</title>
+  {{ block "meta" . }}
+  {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+  <title>{{ $p.fullname }}</title>
   <meta name="description" content="{{ $p.summary | plainify }}">
+  {{ end }}
   <meta name="author" content="{{ $p.author }}">
   <meta name="keywords" content="{{ $p.keywords }}">
   <!-- favicon -->
