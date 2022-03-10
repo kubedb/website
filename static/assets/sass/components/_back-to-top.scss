@@ -1,0 +1,24 @@
+
+//  go to top area start
+.go-to-top {
+  position: fixed;
+  display: block;
+  font-size: 16px;
+  z-index: 999;
+  right: 20px;
+  bottom: 40px;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(0,0,0, 0.5);
+  border: none;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.4s linear;
+}
+.go-to-top.is-visible {
+  opacity: 1;
+}
+//  go to top area end

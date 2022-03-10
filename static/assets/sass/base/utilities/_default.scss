@@ -1,0 +1,88 @@
+/* Deafult Margin & Padding view-height & view-width */
+@for $i from 0 through 100 {
+  .m-#{$i} {
+    margin: #{$i}px !important;
+  }
+
+  .mt-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+
+  .ml-#{$i} {
+    margin-left: #{$i}px !important;
+  }
+
+  .mr-#{$i} {
+    margin-right: #{$i}px !important;
+  }
+
+  .p-#{$i} {
+    padding: #{$i}px !important;
+  }
+
+  .pt-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+
+  .pl-#{$i} {
+    padding-left: #{$i}px !important;
+  }
+
+  .pr-#{$i} {
+    padding-right: #{$i}px !important;
+  }
+
+  .vh-#{$i} {
+    height: #{$i}vh !important;
+  }
+
+  .vw-#{$i} {
+    width: #{$i}vw !important;
+  }
+
+  .font-size-#{$i} {
+    font-size: #{$i}px !important;
+  }
+}
+
+/* Deafult height & widht */
+@for $i from 0 through 300 {
+  .height-#{$i} {
+    height: #{$i}px !important;
+  }
+
+  .width-#{$i} {
+    width: #{$i}px !important;
+  }
+}
+
+/* Deafult z-index and font-weight*/
+@for $i from 0 through 10 {
+  .z-index-#{$i} {
+    z-index: #{$i} !important;
+  }
+
+  .font-weight-#{$i*100} {
+    font-weight: #{$i * 100} !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .is-ellipsis-#{$i} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: #{$i};
+    -webkit-line-clamp: #{$i};
+    box-orient: vertical;
+    -webkit-box-orient: vertical;
+  }
+}

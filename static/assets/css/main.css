@@ -2111,7 +2111,7 @@ button.button.is-fullwidth {
   overflow: hidden;
   transition: 0.3s; }
 
-.kd-sidebar-menu .item label a {
+.product-sidebar-menu .item label a {
   font-weight: 600;
   color: #4a4a4a;
   padding: 8px 17px;
@@ -2147,8 +2147,8 @@ button.button.is-fullwidth {
   position: relative;
   z-index: 9; }
 
-.kd-sidebar-menu label,
-.kd-sidebar-menu li a {
+.product-sidebar-menu label,
+.product-sidebar-menu li a {
   font-size: 14px;
   font-weight: 500;
   color: #4a4a4a;
@@ -2159,10 +2159,10 @@ button.button.is-fullwidth {
   margin-top: 5px;
   transition: 0.3s; }
 
-.kd-sidebar-menu li a:hover {
+.product-sidebar-menu li a:hover {
   color: #4d4dcb; }
 
-.kd-sidebar-menu .item ul {
+.product-sidebar-menu .item ul {
   margin-left: 20px;
   padding-left: 15px;
   border-left: 1px solid #e2e2e2; }
@@ -2172,12 +2172,12 @@ button.button.is-fullwidth {
   border: 1px solid #e2e2e2;
   background: #fff; }
 
-.kd-left-sidebar {
+.ac-product-left-sidebar {
   margin-right: 30px;
   position: sticky;
   top: 130px; }
 
-.kd-sidebar-menu .item label {
+.product-sidebar-menu .item label {
   border: 1px solid transparent;
   position: relative;
   z-index: 1;
@@ -2661,7 +2661,7 @@ body.guard .full-info a,
 body.guard .tbl-of-contents ul a.active,
 body.guard li.nav-item.active a,
 body.guard .item ul li.is-active a,
-body.guard .kd-sidebar-menu li a:hover,
+body.guard .product-sidebar-menu li a:hover,
 body.guard .hero-content-inner h4,
 body.guard .single-search-result h3 a {
   color: #3498db; }
@@ -2730,7 +2730,7 @@ body.kubeci .full-info a,
 body.kubeci .tbl-of-contents ul a.active,
 body.kubeci li.nav-item.active a,
 body.kubeci .item ul li.is-active a,
-body.kubeci .kd-sidebar-menu li a:hover,
+body.kubeci .product-sidebar-menu li a:hover,
 body.kubeci .hero-content-inner h4,
 body.kubeci .single-search-result h3 a {
   color: #2c3e50; }
@@ -2799,7 +2799,7 @@ body.kubed .full-info a,
 body.kubed .tbl-of-contents ul a.active,
 body.kubed li.nav-item.active a,
 body.kubed .item ul li.is-active a,
-body.kubed .kd-sidebar-menu li a:hover,
+body.kubed .product-sidebar-menu li a:hover,
 body.kubed .hero-content-inner h4,
 body.kubed .single-search-result h3 a {
   color: #8854d0; }
@@ -2868,7 +2868,7 @@ body.kubesheild .full-info a,
 body.kubesheild .tbl-of-contents ul a.active,
 body.kubesheild li.nav-item.active a,
 body.kubesheild .item ul li.is-active a,
-body.kubesheild .kd-sidebar-menu li a:hover,
+body.kubesheild .product-sidebar-menu li a:hover,
 body.kubesheild .hero-content-inner h4,
 body.kubesheild .single-search-result h3 a {
   color: #95a5a6; }
@@ -2937,7 +2937,7 @@ body.kubevault .full-info a,
 body.kubevault .tbl-of-contents ul a.active,
 body.kubevault li.nav-item.active a,
 body.kubevault .item ul li.is-active a,
-body.kubevault .kd-sidebar-menu li a:hover,
+body.kubevault .product-sidebar-menu li a:hover,
 body.kubevault .hero-content-inner h4,
 body.kubevault .single-search-result h3 a {
   color: #0fb9b1; }
@@ -3006,7 +3006,7 @@ body.pharmer .full-info a,
 body.pharmer .tbl-of-contents ul a.active,
 body.pharmer li.nav-item.active a,
 body.pharmer .item ul li.is-active a,
-body.pharmer .kd-sidebar-menu li a:hover,
+body.pharmer .product-sidebar-menu li a:hover,
 body.pharmer .hero-content-inner h4,
 body.pharmer .single-search-result h3 a {
   color: #8e44ad; }
@@ -3075,7 +3075,7 @@ body.searchlight .full-info a,
 body.searchlight .tbl-of-contents ul a.active,
 body.searchlight li.nav-item.active a,
 body.searchlight .item ul li.is-active a,
-body.searchlight .kd-sidebar-menu li a:hover,
+body.searchlight .product-sidebar-menu li a:hover,
 body.searchlight .hero-content-inner h4,
 body.searchlight .single-search-result h3 a {
   color: #2ecc71; }
@@ -3144,7 +3144,7 @@ body.service-broker .full-info a,
 body.service-broker .tbl-of-contents ul a.active,
 body.service-broker li.nav-item.active a,
 body.service-broker .item ul li.is-active a,
-body.service-broker .kd-sidebar-menu li a:hover,
+body.service-broker .product-sidebar-menu li a:hover,
 body.service-broker .hero-content-inner h4,
 body.service-broker .single-search-result h3 a {
   color: #a5b1c2; }
@@ -3213,7 +3213,7 @@ body.stash .full-info a,
 body.stash .tbl-of-contents ul a.active,
 body.stash li.nav-item.active a,
 body.stash .item ul li.is-active a,
-body.stash .kd-sidebar-menu li a:hover,
+body.stash .product-sidebar-menu li a:hover,
 body.stash .hero-content-inner h4,
 body.stash .single-search-result h3 a {
   color: #f39c12; }
@@ -3282,7 +3282,7 @@ body.swift .full-info a,
 body.swift .tbl-of-contents ul a.active,
 body.swift li.nav-item.active a,
 body.swift .item ul li.is-active a,
-body.swift .kd-sidebar-menu li a:hover,
+body.swift .product-sidebar-menu li a:hover,
 body.swift .hero-content-inner h4,
 body.swift .single-search-result h3 a {
   color: #e67e22; }
@@ -3351,7 +3351,7 @@ body.voyager .full-info a,
 body.voyager .tbl-of-contents ul a.active,
 body.voyager li.nav-item.active a,
 body.voyager .item ul li.is-active a,
-body.voyager .kd-sidebar-menu li a:hover,
+body.voyager .product-sidebar-menu li a:hover,
 body.voyager .hero-content-inner h4,
 body.voyager .single-search-result h3 a {
   color: #f1c40f; }
@@ -3382,8 +3382,8 @@ body.voyager .go-to-top {
                 Theme voyager End
 ====================================================*/
 /* Normal desktop :1200px. */
-/* Normal desktop :992px. */
-@media (min-width: 992px) and (max-width: 1087px) {
+/* Normal desktop :1024px. */
+@media (min-width: 1024px) and (max-width: 1087px) {
   .single-db-logo {
     margin: 10px;
     padding: 10px;

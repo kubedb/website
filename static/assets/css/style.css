@@ -2601,7 +2601,7 @@ button.button.is-fullwidth {
   overflow: hidden;
   transition: 0.3s; }
 
-.kd-sidebar-menu .item label a {
+.product-sidebar-menu .item label a {
   font-weight: 600;
   color: #4a4a4a;
   padding: 8px 17px;
@@ -2637,8 +2637,8 @@ button.button.is-fullwidth {
   position: relative;
   z-index: 9; }
 
-.kd-sidebar-menu label,
-.kd-sidebar-menu li a {
+.product-sidebar-menu label,
+.product-sidebar-menu li a {
   font-size: 14px;
   font-weight: 500;
   color: #4a4a4a;
@@ -2649,10 +2649,10 @@ button.button.is-fullwidth {
   margin-top: 5px;
   transition: 0.3s; }
 
-.kd-sidebar-menu li a:hover {
+.product-sidebar-menu li a:hover {
   color: #4d4dcb; }
 
-.kd-sidebar-menu .item ul {
+.product-sidebar-menu .item ul {
   margin-left: 20px;
   padding-left: 15px;
   border-left: 1px solid #e2e2e2; }
@@ -2671,17 +2671,17 @@ button.button.is-fullwidth {
 .item input:checked ~ ul, .item input:checked ~ .item > ul > .item {
   margin-left: -20px; }
 
-.kd-left-sidebar {
+.ac-product-left-sidebar {
   margin-right: 30px;
   position: sticky;
   top: 130px;
   z-index: 9; }
 
-.kd-sidebar-menu {
+.product-sidebar-menu {
   max-height: 65vh;
   overflow-y: auto; }
 
-.kd-sidebar-menu .item label {
+.product-sidebar-menu .item label {
   border: 1px solid transparent;
   position: relative;
   z-index: 1;
@@ -3152,8 +3152,8 @@ video {
   .pricing-area-wrapper {
     overflow-x: scroll;
     padding-top: 64px; } }
-/* Normal desktop :992px. */
-@media (min-width: 992px) and (max-width: 1087px) {
+/* Normal desktop :1024px. */
+@media (min-width: 1024px) and (max-width: 1087px) {
   .single-db-logo {
     margin: 10px;
     padding: 10px;
@@ -4083,7 +4083,7 @@ video {
     .sidebar-search-area .result-thumb {
       width: 40px; }
 
-  .kd-left-sidebar {
+  .ac-product-left-sidebar {
     margin-right: 0; }
 
   .documentation-menu .ac-is-hoverable:hover .ac-dropdown {

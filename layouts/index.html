@@ -2,162 +2,149 @@
 
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 
-<!-- hero area start -->
-<section class="hero-area">
-  <div class="container section">
-    <div>
-      <div class="columns">
-        <div class="column is-6">
-          <!-- hero content start -->
-          <div class="hero-area-content d-table" data-aos="fade-up">
-            <div class="hero-content-inner d-table-cell">
-              <h4>{{$p.name}}</h4>
-              <h1>
-                {{ $p.tagline | safeHTML }}
-              </h1>
-              <div class="hero-area-button buttons">
-                <a href="/docs/latest/setup/" class="button kd-button kd-primary"
-                  >Try Now for FREE!</a
-                >
-                <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button kd-transparent-btn"
-                  ><span
-                    ><i
-                      class="fa fa-envelope"
-                      aria-hidden="true"
-                    ></i></span
-                  >Get In Touch</a
-                >
-              </div>
-              {{ if $p.videos.intro }}
-              <!-- video player button start -->
-              <div class="play-buttons">
-                <a href="#" id="playme" onclick="revealVideo('video','youtube')"
-                  ><span class="video-icon"
-                    ><i class="fa fa-play" aria-hidden="true"></i
-                  ></span>
-                  Watch the reel</a
-                >
-              </div>
-              <!-- video player button end -->
-              {{ end }}
-            </div>
-          </div>
-          <!-- hero content end -->
+<!-- banner adds start  -->
+<div class="banner-area-start modal-1">
+  <div class="modal">
+    <div class="modal-background" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <div class="box p-0 is-flex">
+        <a href="https://appscode.com/webinar/" target="_blank">
+          <img src="/assets/images/webinar/10Feb22.png" alt="">
+        </a>
+      </div>
+    </div>
+    <button class="modal-close is-large" onclick="closeModal()"></button>
+  </div>
+</div>
+<!-- banner adds end -->
+
+<!-- new hero area start   -->
+<!-- style="background-image: url(/assets/images/products/kubedb/hero-product-bg-dark.png);" -->
+<section class="hero-area is-product is-gradient is-dark has-image-bg" style="background-image:
+url(https://f.hubspotusercontent10.net/hubfs/8725062/Website/background/gradient-vertical.jpeg);">
+  <div class="shape">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
+  <div class="shape">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div class="container">
+    <div class="columns is-vcentered is-multiline">
+      <div class="column is-6 is-full-touch">
+        <h1> {{ $p.tagline | safeHTML }}</h1>
+        <!-- <h1> Run Production-Grade Databases on Kubernetes</h1> -->
+        <p data-aos="fade-up" data-aos-duration="500">Provision, Upgrade, Monitor, Backup & Recovery, Failure Detection,
+          Data Protection for various Databases in
+          Kubernetes on any Public and Private Cloud</p>
+        <div class="buttons" data-aos="fade-up" data-aos-duration="700">
+          <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary">TRY NOW FREE</a>
+          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary"><span>
+              <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop" colors="primary:#ffffff;"
+                style="width:22px;height:22px; margin-right: 8px;">
+              </lord-icon>
+            </span>GET IN TOUCH</a>
         </div>
-        <div class="column is-6">
-          {{ with $p.heroImage }}
-          <!-- hero image start -->
-          <div class="hero-area-img" data-aos="fade-up" data-aos-duration="1000">
-            <img src="{{ .src }}" alt="{{ .alt }}" class="img" />
-          </div>
-          <!-- hero image end -->
-          {{ end }}
-          {{ with $p.heroSlider }}
-          <!-- hero slider start -->
-          <div class="image-carousel-wrapper">
-            <!-- shape start  -->
-            <img class="shape-1" src="/assets/images/slider/s-1.png" alt="">
-            <img class="shape-2" src="/assets/images/slider/s-2.png" alt="">
-            <img class="shape-3" src="/assets/images/slider/s-3.png" alt="">
-            <!-- shape end  -->
-            <!-- carousel start  -->
-            <div class="carousel-inner keen-slider" id="hero-area-carousel">
-              {{ range . }}
-              <div class="single-slider-wrapper keen-slider__slide">
-               <a href="#"><img src="{{ .src }}" alt="{{ .alt }}"></a>
-              </div>
-              {{ end }}
+      </div>
+      <div class="column is-6 is-full-touch">
+        <div class="hero-area-right">
+          <!-- code editor start  -->
+          <div class="hero-area-code-editor">
+            <div class="editor-header">
+              <span class="action close"></span>
+              <span class="action maximize"></span>
+              <span class="action minimize"></span>
             </div>
-            <!-- carousel end -->
-            <div id="dots" class="dots"></div>
+            {{ highlight (printf `$ helm repo add appscode https://charts.appscode.com/stable/
+$ helm repo update
+$ helm install kubedb appscode/kubedb \
+  --version %s \
+  --namespace kubedb --create-namespace \
+  --set kubedb-provisioner.enabled=true \
+  --set kubedb-ops-manager.enabled=true \
+  --set kubedb-autoscaler.enabled=true \
+  --set kubedb-dashboard.enabled=true \
+  --set kubedb-schema-manager.enabled=true \
+  --set-file global.license=/path/to/the/license.txt` $p.latestVersion) "bash" "style=dracula" }}
           </div>
-          <!-- hero slider end -->
+        </div>
+        <!-- code editor end  -->
+        <!-- <img src="/assets/images/products/kubedb/hero-right-image.png" alt=""> -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- new hero area end   -->
+
+<!-- social prove logo area start   -->
+<div class="social-prove-brand-area">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-12">
+        <div class="brand-image-wrapper owl-carousel">
+          {{ range $customer := $.Site.Data.customers }}
+          {{ if $customer.show }}
+          <div class="single-brand"><img src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
+          {{ end }}
           {{ end }}
         </div>
       </div>
     </div>
   </div>
+</div>
+<!-- social prove logo area end -->
+
+
+<!-- product features area start  -->
+<section class="product-feaures-area mb-50">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="section-title has-text-centered">
+          <h2 class="is-gradient" data-aos="fade-up" data-aos-duration="500">Special Features</h2>
+          <h1 class="is-outlined-text">Special Features</h1>
+          {{ if $p.summary }}
+          <p data-aos="fade-up" data-aos-duration="700">
+            {{ $p.summary | plainify }}
+          </p>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <!-- is-centered -->
+    <div class="columns is-multiline is-centered">
+      <!-- single feature information start  -->
+      {{ range $f := $p.features }}
+      <div class="column is-half-tablet is-one-third-widescreen">
+        <a href="#" class="single-features-item" data-aos="fade-up" data-aos-duration="500">
+          <div class="feature-icon">
+            <img src="{{ $f.icon.src }}" alt="{{ $f.icon.alt }}" />
+          </div>
+          <div class="feature-information">
+            <h5>{{ $f.title }}</h5>
+            <p class="is-ellipsis-3">{{ $f.summary }}</p>
+            <p class="is-ellipsis-3">{{ $f.description }}</p>
+          </div>
+        </a>
+      </div>
+      {{end}}
+      <!-- single feature information end -->
+    </div>
+  </div>
 </section>
-<!-- hero area end -->
-
-
-<script src="https://cdn.jsdelivr.net/npm/keen-slider@5.0.2/keen-slider.min.js"></script>
-<script>
-  // initilize keen slider 
-  var slider = new KeenSlider("#hero-area-carousel", {
-    spacing: 10,
-    slidesPerView: 1,
-    centered: true,
-    loop: true,
-    mode: "snap",
-    duration: 1000,
-    dragStart: () => {
-      autoplay(false);
-    },
-    dragEnd: () => {
-      autoplay(true);
-    },
-    slideChanged(instance) {
-      updateClasses(instance);
-    },
-    created: function(instance) {
-     
-      var dots_wrapper = document.getElementById("dots");
-      var slides = document.querySelectorAll(".keen-slider__slide");
-      slides.forEach(function(t, idx) {
-        var dot = document.createElement("button");
-        dot.classList.add("dot");
-        dots_wrapper.appendChild(dot);
-        dot.addEventListener("click", function() {
-          instance.moveToSlide(idx);
-        });
-      });
-      updateClasses(instance);
-    },
-    slideChanged(instance) {
-      updateClasses(instance);
-    }
-  });
-
-  // For auto-play 
-  var sliderElement = document.getElementById("hero-area-carousel");
-  var interval = 0;
-  function autoplay(run) {
-    clearInterval(interval);
-    interval = setInterval(() => {
-      if (run && slider) {
-        slider.next();
-      }
-    }, 2000);
-  }
-  // when hover slider element autoPlay off 
-  sliderElement.addEventListener("mouseover", () => {
-    autoplay(false);
-  });
-  sliderElement.addEventListener("mouseout", () => {
-    autoplay(true);
-  });
-  let dots_wrapper = document.getElementById("dots");
-  dots_wrapper.addEventListener("mouseover", () => {
-    autoplay(false);
-  });
-  dots_wrapper.addEventListener("mouseout", () => {
-    autoplay(true);
-  });
-  
-  autoplay(true);
-
-  // For dots 
-  function updateClasses(instance) {
-    var slide = instance.details().relativeSlide;
-    var dots = document.querySelectorAll(".dot");
-    dots.forEach(function(dot, idx) {
-      idx === slide
-        ? dot.classList.add("dot--active")
-        : dot.classList.remove("dot--active");
-  });
-}
-</script>
+<!-- product features area end -->
 
 {{ if $p.videos.intro }}
 <!-- video player frame and scripts start -->
@@ -169,23 +156,24 @@
         X
       </button>
       <div class="video-container">
-        <iframe id="youtube" width="1080" height="540" src="https://www.youtube.com/embed/{{ $p.videos.intro }}" frameborder="0" allowfullscreen></iframe>
+        <!-- <iframe id="youtube" width="1080" height="540" src="https://www.youtube.com/embed/{{ $p.videos.intro }}"
+          frameborder="0" allowfullscreen></iframe> -->
       </div>
     </div>
   </div>
 </div>
 <!-- video-player start  -->
 <script>
-// Function to reveal lightbox and adding YouTube autoplay
-  function revealVideo(div,video_id) {
+  // Function to reveal lightbox and adding YouTube autoplay
+  function revealVideo(div, video_id) {
     var video = document.getElementById(video_id).src;
-    document.getElementById(video_id).src = video+'?&autoplay=1'; // adding autoplay to the URL
+    document.getElementById(video_id).src = video + '?&autoplay=1'; // adding autoplay to the URL
     document.getElementById(div).style.display = 'block';
   }
   // Hiding the lightbox and removing YouTube autoplay
-  function hideVideo(div,video_id) {
+  function hideVideo(div, video_id) {
     var video = document.getElementById(video_id).src;
-    var cleaned = video.replace('?&autoplay=1',''); // removing autoplay form url
+    var cleaned = video.replace('?&autoplay=1', ''); // removing autoplay form url
     document.getElementById(video_id).src = cleaned;
     document.getElementById(div).style.display = 'none';
   }
@@ -193,48 +181,5 @@
 <!-- video player frame and scripts end -->
 {{ end }}
 
-<!-- feature-area start -->
-<section class="product-feature-area section-padding">
-  <div class="container section">
-    <div class="columns">
-      <div class="column is-8 is-offset-2 has-text-centered">
-        <!-- section-title start -->
-        <div class="section-title is-main-title" data-aos="fade-up">
-          <h2>Product Features</h2>
-          {{ if $p.summary }}
-          <p>
-            {{ $p.summary | plainify }}
-          </p>
-          {{ end }}
-        </div>
-        <!-- section-title end -->
-      </div>
-    </div>
-    <div class="columns is-multiline">
-      {{ range $f := $p.features }}
-      <!-- single feature area start -->
-      <div class="column is-6">
-      <div class="single-product-feature-wrapper" data-aos="fade-up">
-        <div class="product-feature-icon">
-          <img src="{{ $f.icon.src }}" alt="{{ $f.icon.alt }}" />
-        </div>
-        <div class="product-feature-content">
-          <div class="product-feature-title">
-            <h3>{{ $f.title }}</h3>
-            <p>{{ $f.summary }}</p>
-          </div>
-          <div class="product-feature-description">
-            <p>
-              {{ $f.description }}
-            </p>
-          </div>
-        </div>
-      </div>
-      </div>
-      <!-- single feature area end -->
-      {{ end }}
-    </div>
-  </div>
-</section>
-<!-- feature-area end -->
+
 {{ end }}
