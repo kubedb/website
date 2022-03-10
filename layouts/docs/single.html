@@ -229,6 +229,17 @@
     <div class="full-info">
       {{ .Content }}
     </div>
+
+    <!-- comments area start -->
+    {{ if site.Params.comments.enable }}
+      <section class="comments-area mt-20">
+        <div class="container">
+          {{ partial "comments.html" . }}
+        </div>
+      </section>
+    {{ end }}
+    <!-- comments area end -->
+
   </div>
   <!-- documentation body end -->
 
@@ -324,6 +335,7 @@
   </div>
 </div>
 <!-- improve page section end -->
+
 
 <script type="text/javascript">
   var pageSize = 5;
