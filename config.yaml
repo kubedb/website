@@ -30,6 +30,16 @@ params:
   youtube_url: https://www.youtube.com/c/AppsCodeInc
   contact_email: support@appscode.com
   contact_phone: +1(650)241-8486
+
+  # Enable giscus comment
+  comments:
+    enable: true
+    giscus:
+      repo: bytebuilders/community
+      repoId: "R_kgDOG-h6rw"
+      category: KubeDB
+      categoryId: "DIC_kwDOG-h6r84COCFv"
+      map: title
 menu:
   main:
   - name: Databases
