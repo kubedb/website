@@ -10770,30 +10770,6 @@ Responsive Classes
   border-bottom: 1px solid #472f2f;
 }
 
-.hero-area-code-editor.is-dark pre {
-  background-color: #1e242e;
-  color: #f1f1f9;
-}
-
-.hero-area-code-editor.is-dark pre .hljs {
-  background-color: #1e242e;
-  color: #f1f1f9;
-}
-
-.hero-area-code-editor.is-dark pre .hljs .hljs-keyword,
-.hero-area-code-editor.is-dark pre .hljs .hljs-literal,
-.hero-area-code-editor.is-dark pre .hljs .nginx .hljs-title {
-  color: #f410d0;
-}
-
-.hero-area-code-editor.is-dark pre .hljs .hljs-string {
-  color: #f92e29;
-}
-
-.hero-area-code-editor.is-dark pre .hljs .hljs-variable {
-  color: #72ccd7;
-}
-
 .hero-area-code-editor .editor-header {
   height: 50px;
   background: #fafbfc;
@@ -10829,7 +10805,7 @@ Responsive Classes
 }
 
 .hero-area-code-editor pre {
-  padding: 0;
+  padding: 20px;
   background-color: #fff;
 }
 

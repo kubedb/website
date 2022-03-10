@@ -259,29 +259,29 @@
       border-bottom: 1px solid #472f2f;
     }
 
-    pre {
-      background-color: #1e242e;
-      color: #f1f1f9;
+    // pre {
+    //   background-color: #1e242e;
+    //   color: #f1f1f9;
 
-      .hljs {
-        background-color: #1e242e;
-        color: #f1f1f9;
+    //   .hljs {
+    //     background-color: #1e242e;
+    //     color: #f1f1f9;
 
-        .hljs-keyword,
-        .hljs-literal,
-        .nginx .hljs-title {
-          color: #f410d0;
-        }
+    //     .hljs-keyword,
+    //     .hljs-literal,
+    //     .nginx .hljs-title {
+    //       color: #f410d0;
+    //     }
 
-        .hljs-string {
-          color: #f92e29;
-        }
+    //     .hljs-string {
+    //       color: #f92e29;
+    //     }
 
-        .hljs-variable {
-          color: #72ccd7;
-        }
-      }
-    }
+    //     .hljs-variable {
+    //       color: #72ccd7;
+    //     }
+    //   }
+    // }
   }
 
   .editor-header {
@@ -315,7 +315,7 @@
   }
 
   pre {
-    padding: 0;
+    padding: 20px;
     background-color: #fff;
 
     code {
