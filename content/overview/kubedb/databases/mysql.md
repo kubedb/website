@@ -1,5 +1,5 @@
 ---
-title: MySQL
+title: Run and Manage MySQL Database in Kubernetes | KubeDB
 id: mysql
 type: "overview"
 layout: "overview"
