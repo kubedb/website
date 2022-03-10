@@ -1,4 +1,152 @@
+// navbar area JS v.2022 start
+const navItems = document.querySelectorAll(".navbar-appscode .nav-item");
+
+navItems.forEach(navItem => {
+  const item = navItem.querySelector('.link');
+  item.addEventListener('click', function (el) {
+
+    // to remove active class from previously selected navItem
+    const selectedNav = document.querySelector(".nav-item.is-active");
+    if (selectedNav && selectedNav !== item.parentElement) {
+      selectedNav.classList.toggle('is-active')
+    }
+
+    // handle selected navItem class
+    const hasActiveClass = navItem.classList.contains("is-active");
+    navItem.classList.toggle('is-active')
+
+    // handle background dark-shadow of navItem
+    const darkBodyEl = document.querySelector(".modal-backdrop");
+
+    function handleDarkBodyClickEvent(el) {
+      el.target.classList.remove('is-show')
+      const selectedNavItem = document.querySelector(".nav-item.is-active");
+      selectedNavItem ? selectedNavItem.classList.toggle('is-active') : null;
+    }
+
+    if (hasActiveClass && darkBodyEl.classList.contains("is-show")) {
+      darkBodyEl.classList.toggle("is-show");
+      darkBodyEl.removeEventListener('click', handleDarkBodyClickEvent);
+    } else if (!hasActiveClass && !darkBodyEl.classList.contains("is-show") && !!navItem.querySelector('.mega-menu-wrapper')) {
+      darkBodyEl.classList.toggle("is-show");
+      darkBodyEl.addEventListener('click', handleDarkBodyClickEvent);
+    }
+  })
+})
+// navbar area JS v.2022 end
+
+// responsive navbar area
+// elements selector where toggle class will be added
+const selctorsForResponsiveMenu = [
+  ".left-sidebar-wrapper",
+  ".navbar-appscode.documentation-menu > .navbar-right",
+  ".right-sidebar",
+  ".sidebar-search-area"
+];
+// toggle classes for responsive buttons
+const toggleClassesForResponsiveMenu = ["is-block", "is-visible", "is-block", "right-0"];
+// All responsive menu buttons
+const responsiveMenus = document.querySelectorAll(".responsive-menu > .is-flex.is-justify-content-space-between > .button");
+// iterate thorugh the menus to handle click event
+Array.from(responsiveMenus).forEach((menu, idx) => {
+  menu.addEventListener("click", function () {
+    const toggleElement = document.querySelector(selctorsForResponsiveMenu[idx]);
+    if (toggleElement) {
+      // toggle active menu class
+      toggleElement.classList.toggle(toggleClassesForResponsiveMenu[idx]);
+      if (toggleElement.classList.contains(toggleClassesForResponsiveMenu[idx])) {
+        const backButtonElement = toggleElement.querySelector(".back-button");
+
+        function handleClick() {
+          toggleElement.classList.remove(toggleClassesForResponsiveMenu[idx]);
+          // remove event listener on back button click
+          backButtonElement.removeEventListener("click", handleClick);
+        }
+
+        backButtonElement.addEventListener("click", handleClick);
+
+      }
+    }
+
+    const modalBackdropElement = document.querySelector(".modal-backdrop.is-show");
+    // if modal backdrop element is visible then hide it
+    if (modalBackdropElement) {
+      modalBackdropElement.classList.remove("is-show")
+    }
+
+    const navItem = document.querySelector(".nav-item.is-active");
+    // if modal backdrop element is visible then hide it
+    if (navItem) {
+      navItem.classList.remove("is-active")
+    }
+
+    // remove previous active menu
+    selctorsForResponsiveMenu.forEach((el, selectorIdx) => {
+      if (selectorIdx !== idx) {
+        const selectorElement = document.querySelector(selctorsForResponsiveMenu[selectorIdx]);
+        if (selectorElement.classList.contains(toggleClassesForResponsiveMenu[selectorIdx])) {
+          selectorElement.classList.remove(toggleClassesForResponsiveMenu[selectorIdx])
+        }
+      }
+    });
+  });
+});
+
+
+
+
+// scroll to top start
+//Get the button
+const goToTopBtn = document.querySelector(".go-to-top");
+if (goToTopBtn) {
+  goToTopBtn.addEventListener('click', topFunction)
+}
+
+
+// When the user scrolls down 20px from the top of the document, show the button
+document.addEventListener('scroll', scrollFunction);
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    goToTopBtn.classList.add('is-visible');
+  } else {
+    goToTopBtn.classList.remove('is-visible');
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+// scroll to top end
+
+
+// close modal start
+function closeModal() {
+  document.querySelectorAll('.modal').forEach((modal) => {
+    if (modal.classList.contains('is-active')) {
+      modal.classList.remove('is-active')
+    }
+  })
+
+}
+// close modal end
+// adds modal JS 
+// setTimeout(() => {
+//   document.querySelector('.modal-1')?.querySelector('.modal')?.classList.add('is-active')
+// }, 1500);
+
+var h_editor = document.querySelector('.hero-area-code-editor');
 document.addEventListener("DOMContentLoaded", () => {
+  // highligh js initilization start
+  if (h_editor) {
+    h_editor.classList.add('is-visible')
+  }
+
+  // hljs.highlightAll();
+  // highligh js initilization end
+
   // AOS Animation
   AOS.init({
     once: true,
@@ -27,38 +175,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // menu sticky
 // Not a ton of code, but hard to
-const nav = document.querySelector(".fixed-menu, .documentation-menu");
-const notificationArea = document.querySelector(".notification-area");
-const headerBottom = document.querySelector(".header-bottom-area");
-const documentationMenu = document.querySelector(".documentation-menu");
-const leftSidebar = document.querySelector(".kd-left-sidebar");
-const rightSidebar = document.querySelector(".right-sidebar-area");
-
-let topOfNav = nav.offsetTop;
-function fixNav() {
-  if (window.scrollY > topOfNav) {
-    document.body.classList.add("fixed-nav");
-
-    if (notificationArea.style.display === "block") {
-      if (window.innerWidth <= 550) {
-        headerBottom.style.top = "72px";
-        documentationMenu.style.top = "130px";
-      } else {
-        headerBottom.style.top = "45px";
-        documentationMenu.style.top = "103px";
-        leftSidebar.style.top = "150px";
-        rightSidebar.style.top = "150px";
-      }
-    }
-  } else {
-    document.body.classList.remove("fixed-nav");
-    headerBottom.style.top = "0px";
-    if(documentationMenu) documentationMenu.style.top = "56px";
-    leftSidebar.style.top = "130px";
-    rightSidebar.style.top = "140px";
-  }
-}
-window.addEventListener("scroll", fixNav);
 
 // mega menu active class
 var navbarItems = document.querySelectorAll(".navbar-item");
@@ -84,6 +200,85 @@ bulmaCarousel.attach("#carousel-demo", {
   infinite: true,
   autoplay: false,
 });
+
+// owl owlCarousel JS 
+var owl = $('.testimonial-carousel');
+owl.owlCarousel({
+  loop: true,
+  margin: 20,
+  autoplay: true,
+  nav: false,
+  dots: false,
+  smartSpeed: 2000,
+  responsiveClass: true,
+  autoplayHoverPause: true,
+  fluidSpeed: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    600: {
+      items: 1,
+    },
+    1400: {
+      items: 2,
+    }
+  }
+});
+// Go to the next item
+$('.customNextBtn').click(function () {
+  owl.trigger('next.owl.carousel');
+})
+// Go to the previous item
+$('.customPrevBtn').click(function () {
+  owl.trigger('prev.owl.carousel');
+})
+
+// for social prove owlCarousel 
+// owl owlCarousel JS 
+var owlSocialProve = $('.brand-image-wrapper');
+owlSocialProve.owlCarousel({
+  loop: true,
+  margin: 20,
+  autoplay: true,
+  nav: false,
+  dots: false,
+  fluidSpeed: true,
+  smartSpeed: 3000,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+  rewindNav:false,
+  rewindSpeed: 0,
+  // autoHeight:true,
+  autoWidth:true,
+  responsiveClass: true,
+  responsive: {
+    0: {
+      items: 4,
+    },
+    600: {
+      items: 5,
+    },
+    1400: {
+      items: 9,
+    }
+  }
+});
+
+// Modal js video init plugin
+$(".yt-video").magnificPopup({
+  type: 'iframe'
+});
+
+
+// headroomjs start
+var myElement = document.querySelector(".active-headroom");
+// construct an instance of Headroom, passing the element
+var headroom = new Headroom(myElement);
+// initialise
+headroom.init();
+// headroomjs end
+
 
 // For FAQ Collaps Page
 const accordionItem = document.querySelectorAll(".accordion-item");
@@ -118,6 +313,7 @@ const goToASectionSmoothly = () => {
       // go to the target section smoothly
       const targetEl = document.querySelector(e.currentTarget.hash);
       const pos = targetEl.offsetTop;
+      console.log(pos);
       window.scrollTo({
         top: pos,
         behavior: "smooth",
@@ -159,9 +355,10 @@ spyScrolling();
 // docs page left sidebar first item font-size
 document.addEventListener("DOMContentLoaded", () => {
   // left sidebar menu fontSize
-  const sidebarMenu = document.querySelector(".kd-sidebar-menu");
+  const sidebarMenu = document.querySelector(".product-sidebar-menu");
   if (sidebarMenu) {
     sidebarMenu.children[0].children[1].children[0].style.fontSize = "22px";
+    sidebarMenu.children[0].children[1].children[0].style.fontWeight = "600";
   }
   // docs-page -> right sidebar (content > 20) then show a scroll
   const allHeaders = document.querySelectorAll(
@@ -227,9 +424,9 @@ tabItems.forEach((tab) => {
 
     // add .active class to the clicked item, remove .active from others
     document.querySelectorAll(".nav-item .nav-link").forEach((navLink) => {
-      navLink === el
-        ? navLink.classList.add("active")
-        : navLink.classList.remove("active");
+      navLink === el ?
+        navLink.classList.add("active") :
+        navLink.classList.remove("active");
     });
 
     // add .show class to the target tab-pane, remove from others
@@ -237,9 +434,9 @@ tabItems.forEach((tab) => {
     const tabPaneTarget = document.querySelector(elHref);
 
     document.querySelectorAll(".tab-pane").forEach((tabPane) => {
-      tabPane === tabPaneTarget
-        ? tabPane.classList.add("show")
-        : tabPane.classList.remove("show");
+      tabPane === tabPaneTarget ?
+        tabPane.classList.add("show") :
+        tabPane.classList.remove("show");
     });
   });
 });
@@ -281,34 +478,7 @@ Array.from(codeHeading).forEach((heading) => {
   }
 });
 
-// scroll to top
-var basicScrollTop = function () {
-  // The button
-  var btnTop = document.querySelector("#goTop");
-  if (btnTop) {
-    // Reveal the button
-    var btnReveal = function () {
-      if (window.scrollY >= 300) {
-        btnTop.classList.add("is-visible");
-      } else {
-        btnTop.classList.remove("is-visible");
-      }
-    };
-    // Smooth scroll top
-    var TopscrollTo = function () {
-      if (window.scrollY != 0) {
-        setTimeout(function () {
-          window.scrollTo(0, window.scrollY - 30);
-          TopscrollTo();
-        }, 5);
-      }
-    };
-    // Listeners
-    window.addEventListener("scroll", btnReveal);
-    btnTop.addEventListener("click", TopscrollTo);
-  }
-};
-basicScrollTop();
+
 
 // custom accordion
 function acAccordion(actionBtn) {

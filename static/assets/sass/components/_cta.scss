@@ -1,0 +1,113 @@
+.cta-area {
+  margin-top: -125px;
+
+  .cta-area-inner {
+    padding: 20px 50px;
+    background-image: url(/assets/images/bg-image/cta-area-bg.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+
+    h3 {
+      color: $ac-white;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $ac-white;
+    }
+  }
+}
+
+/****************************************
+Responsive Classes
+*****************************************/
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 768px) {
+  .cta-area {
+    .cta-area-inner {
+      height: auto !important;
+      padding: 30px 15px;
+
+      h3 {
+        font-size: 22px;
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 768px) {
+}
+
+// Medium devices (tablets, 769px and up)
+@media (min-width: 769px) and (max-width: 1023px) {
+  .cta-area {
+    .cta-area-inner {
+      padding: 20px;
+      h3 {
+        font-size: 28px;
+      }
+    }
+  }
+  // .cta-area {
+  //   .cta-area-inner {
+  //     height: auto !important;
+  //     padding: 30px 15px;
+  //     h3 {
+  //       font-size: 22px;
+  //       text-align: center;
+  //     }
+  //     p {
+  //       text-align: center;
+  //     }
+  //   }
+  // }
+}
+
+// Large devices (desktops, 1024px and up)
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .cta-area {
+    .cta-area-inner {
+      padding: 20px;
+      h3 {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1216px) and (max-width: 1407px) {
+  .cta-area {
+    .cta-area-inner {
+      height: 200px;
+      padding: 30px;
+      h3 {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .cta-area {
+    .cta-area-inner {
+      height: 200px;
+      padding: 30px;
+      h3 {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1408px) {
+}

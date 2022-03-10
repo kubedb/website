@@ -1,0 +1,169 @@
+{{ define "main" }}
+
+{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+{{ $data:=""}}
+{{ if .Params.data }}
+  {{ $data = getJSON .Params.data }}
+{{ end }}
+
+{{ with $data }}
+<!-- ==========================new hero area start ==========================   -->
+<!-- style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);" -->
+<section class="hero-area is-product is-overview {{.id}}">
+  <div class="shape">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
+  <div class="shape">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div class="container">
+    <div class="columns is-vcentered is-multiline">
+      <div class="column is-6 is-full-touch">
+        <h1>{{.title | markdownify }}</h1>
+        <p data-aos="fade-up" data-aos-duration="500">{{.summary | markdownify }}</p>
+        <div class="buttons">
+          <a href="/docs/{{ $p.latestVersion }}/guides/{{.id}}/" class="button ac-button is-primary" data-aos="fade-up"
+            data-aos-duration="700">GET
+            STARTED</a>
+        </div>
+      </div>
+      <div class="column is-6 is-full-touch">
+        <div class="hero-area-right">
+          <!-- code editor start  -->
+          <div class="hero-area-code-editor">
+            <div class="editor-header">
+              <span class="action close"></span>
+              <span class="action maximize"></span>
+              <span class="action minimize"></span>
+            </div>
+            {{ highlight (transform.Remarshal "yaml" .example) "yaml" "lineNos=inline, style=dracula" }}
+          </div>
+        </div>
+        <!-- code editor end  -->
+        <!-- <img src="/assets/images/products/kubedb/hero-right-image.png" alt=""> -->
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- ========================== new hero area end ==========================  -->
+
+<!-- ========================== social prove logo area start ==========================  -->
+<div class="social-prove-brand-area">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-12">
+        <div class="brand-image-wrapper owl-carousel">
+          {{ range $customer := $.Site.Data.customers }}
+          {{ if $customer.show }}
+          <div class="single-brand"><img src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--========================== social prove logo area end ==========================-->
+
+<!--========================== product features area start ========================== -->
+<section class="features-area mb-50">
+  <div class="container">
+    <!-- is-centered -->
+    <div class="columns is-multiline is-vcentered">
+
+      <!-- description content start  -->
+      <div class="column is-5">
+        <div class="features-description">
+          
+          <h1 data-aos="fade-up" data-aos-duration="500">{{ .title | markdownify }}</h1>
+
+          <p data-aos="fade-up" data-aos-duration="700">{{.description | markdownify }}</p>
+
+        </div>
+      </div>
+      <!-- description content end  -->
+      <!-- features image start  -->
+      <div class="column is-5 is-offset-2-desktop">
+        <div class="features-image">
+          <ul class="check-list" data-aos="flip-left">
+            <h2 class="is-size-6 mb-15">Why Choose KubeDB?🤔</h2>
+            {{ range .features }}
+            <li>
+              <lord-icon src="https://cdn.lordicon.com/hjeefwhm.json" target="ul.check-list li" trigger="hover" colors="primary:#1971bd"
+                style="width:20px;height:20px; margin-right: 10px;">
+              </lord-icon>{{.title}}
+            </li>
+            {{ end }}
+
+          </ul>
+          <img src="{{.hero}}" alt="{{.title}}">
+        </div>
+      </div>
+      <!-- features image end -->
+    </div>
+
+    <!-- features items start  -->
+    <div class="columns is-multiline is-centered">
+       <div class="line-shapes">
+         <div class="line line-1"></div>
+         <div class="line line-2"></div>
+         <div class="line line-3"></div>
+         <div class="line line-4"></div>
+         <div class="line line-5"></div>
+       </div>
+      <div class="column is-10 ">
+        {{ $odd:="true"}}
+        {{ range .features }}
+        <!-- single features start  -->
+        <div
+          class="columns is-multiline is-vcentered {{if eq $odd "false" }}is-flex-direction-row-reverse-mobile{{end}}">
+          {{ if eq $odd "true" }}
+          <div class="column is-5">
+            <div data-aos="flip-left" data-aos-duration="700"
+              class="features-thumbnail has-text-centered">
+              <img src="{{ .image }}" alt="{{.title}}">
+            </div>
+          </div>
+          {{ end }}
+          <div class="column is-6">
+            <h3 data-aos="fade-up" data-aos-duration="500">{{.title}}</h3>
+            <p data-aos="fade-up" data-aos-duration="700">{{.description}}</p>
+          </div>
+          {{ if eq $odd "false" }}
+          <div class="column is-5 is-offset-1" >
+            <div data-aos="flip-left" data-aos-duration="700" class="features-thumbnail has-text-centered">
+              <img src="{{.image}}" alt="{{.title}}">
+            </div>
+          </div>
+          {{end}}
+
+          {{ if eq $odd "true"}}
+          {{ $odd = "false"}}
+          {{ else }}
+          {{ $odd = "true" }}
+          {{end}}
+        </div>
+        <!-- single features end  -->
+        {{ end }}
+      </div>
+
+    </div>
+    <!-- features items end -->
+  </div>
+</section>
+<!--========================== product features area end ==========================-->
+{{ end }}
+
+{{ end }}

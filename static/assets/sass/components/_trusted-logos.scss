@@ -1,0 +1,36 @@
+.trusted-logo {
+  .trusted-action {
+    background: #e0f2e9;
+    padding: 6px 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    display: inline-block;
+    margin: 0 auto;
+    a {
+      color: $ac-primary;
+    }
+  }
+  .trusted-company {
+    a {
+    color: $ac-primary;
+  }
+  p {
+    font-weight: 500;
+  }
+  }
+}
+
+/* brand logo area start */
+.single-brand-logo {
+  display: inline-block;
+  overflow: hidden;
+  margin: 10px 20px;
+  text-align: center;
+  vertical-align: middle;
+  max-width: 200px;
+  height: auto;
+  img {
+  max-height: 50px;
+}
+}
+/* brand logo area end */

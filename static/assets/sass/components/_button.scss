@@ -1,0 +1,174 @@
+.button {
+  transition: 0.3s ease-in-out;
+  &.ac-button {
+    border-color: $ac-primary;
+    border-radius: 0.125rem;
+    font-size: 0.875rem;
+    font-family: $ac-font-paragraph;
+    letter-spacing: 0.078rem;
+    line-height: 1;
+    color: $ac-primary;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $ac-primary;
+      color: $ac-white;
+      box-shadow: 2px 4px 24px rgba(73, 73, 163, 0.3) !important;
+      transform: translateY(-2px);
+    }
+
+    &.is-disabled {
+      opacity: 0.5 !important;
+    }
+
+    .ac-icon {
+      margin-left: 25px;
+      background-color: $ac-white;
+      color: $ac-primary;
+      padding: 2px 6px;
+      border-radius: 4px;
+      width: 28px;
+      height: 28px;
+    }
+
+    &.is-normal {
+      height: 45px;
+      font-size: 15px;
+      letter-spacing: 0px;
+      font-weight: 500;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &.is-medium {
+      height: 58px;
+      font-size: 18px;
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+
+    &.is-transparent {
+      padding: 0;
+      height: auto;
+      border: none;
+      font-size: 14px;
+      font-weight: 500;
+      background-color: transparent;
+      color: $ac-gray-lightest;
+
+      &.is-primary {
+        background-color: transparent;
+        color: $ac-primary;
+
+        &:hover {
+          background-color: transparent;
+          color: $ac-primary;
+        }
+      }
+
+      &.is-danger {
+        background-color: transparent;
+        color: $ac-red;
+
+        &:hover {
+          background-color: transparent;
+          color: $ac-red;
+        }
+      }
+
+      &.is-small {
+        letter-spacing: 0px;
+        font-size: 13px;
+      }
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+
+    &.is-white {
+      background-color: $ac-white;
+      border: none;
+      &:hover {
+        color: $ac-primary;
+        opacity: 0.9;
+      }
+    }
+
+    // ac-button from mixin
+    &.is-primary {
+      @include ac-button($ac-primary);
+      // &:hover {
+      //   background: linear-gradient(
+      //     -45deg,
+      //     $ac-primary,
+      //     #940148,
+      //     #4c346f,
+      //     #3334f5
+      //   );
+      //   background-size: 100% 100%;
+      //   animation: gradient 5s ease infinite;
+      // }
+    }
+
+    &.is-link {
+      @include ac-button($ac-blue);
+    }
+
+    &.is-info {
+      @include ac-button($ac-blue);
+    }
+
+    &.is-success {
+      @include ac-button($ac-primary);
+    }
+
+    &.is-warning {
+      @include ac-button($ac-orange);
+    }
+
+    &.is-danger {
+      @include ac-button($ac-red);
+    }
+
+    &.is-green {
+      @include ac-button($ac-green);
+    }
+  }
+}
+
+// dark theme end
+/****************************************
+Responsive Classes
+*****************************************/
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 768px) {
+}
+
+// Medium devices (tablets, 769px and up)
+@media (min-width: 769px) and (max-width: 1023.98px) {
+}
+
+// Large devices (desktops, 1024px and up)
+@media (min-width: 1024px) and (max-width: 1215px) {
+}
+
+@media (min-width: 1216px) and (max-width: 1407px) {
+}
+
+// Extra large devices (large desktops, 1216px and up)
+@media (min-width: 1408px) {
+}

@@ -1,0 +1,102 @@
+.hero-area-2 {
+  position: relative;
+  z-index: 1;
+  &::after {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat !important;
+    position: absolute;
+    z-index: -2;
+    content: "";
+    background: url(../images/appscode/about-hero-bg-2.png);
+    background-size: contain;
+  }
+  .hero-area-inner-2 {
+    height: 400px;
+    h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+}
+.hero-area-2.bg-color-available:after {
+  background-color: #fbfbfb;
+}
+// consultation page css start
+.illustration-area {
+  min-height: 500px;
+  background-repeat: no-repeat;
+}
+.illustration-1 {
+  background-image: url(../images/consulting-page/illustation.png);
+  background-size: contain;
+}
+.consulting-inner {
+  h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 400;
+    line-height: 50px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 28px;
+    color: $ac-color-text;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.testimonial-area-2 {
+  .testimonial-wrapper {
+    overflow: hidden;
+    .quote-icon {
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: 28px;
+      line-height: 45px;
+      font-weight: 600;
+    }
+    .user-information {
+      margin-top: 30px;
+      float: right;
+      overflow: hidden;
+      align-items: center;
+      figure{
+        margin-right: 15px;
+      }
+      h4 {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 700;
+        color: $ac-primary;
+      }
+      p {
+        font-size: 14px;
+        color: $ac-color-text;
+      }
+    }
+  }
+}
+
+.package-area {
+  .single-package-wrapper {
+    padding: 30px 50px;
+    h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}
+// consultation page css end

@@ -1,0 +1,103 @@
+{{ define "main" }}
+
+<section class="gallery-area mt-100">
+  <div class="container mt-100">
+    <div class="gallery-wrapper">
+      <!-- left sidebar area start  -->
+      <div class="left-sidebar">
+        <h4>AppsCode Videos</h4>
+        <div class="filter-items">
+          <section class="accordions">
+            <article class="accordion is-active">
+              <div class="accordion-header toggle">
+                <p>PRODUCTS</p>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                </div>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-header">
+                <p>Hello World</p>
+                <button class="toggle" aria-label="toggle"></button>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                </div>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-header">
+                <p>Hello World</p>
+                <button class="toggle" aria-label="toggle"></button>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                </div>
+              </div>
+            </article>
+          </section>
+          
+        </div>
+      </div>
+      <!-- left sidebar area end -->
+      <!-- right content start  -->
+      <div class="right-content">
+        <!-- header items start  -->
+        <div class="header-items is-flex is-justify-content-space-between mt-5 mb-8">
+          <div class="left-content">
+            <div class="tags filtered-tags">
+              <div class="tag">All <span class="material-icons-outlined">close</span></div>
+              <div class="tag">KubeDB <span class="material-icons-outlined">close</span></div>
+              <div class="tag">Webiner <span class="material-icons-outlined">close</span></div>
+            </div>
+          </div>
+          <div class="right-content">
+            <div class="buttons outlined-bg-buttons">
+              <div class="button is-tinny"><span class="material-icons-outlined mr-8">
+                  arrow_back
+                </span>Previous</div>
+              <div class="button is-tinny">Next <span class="material-icons-outlined ml-8">
+                arrow_forward
+              </span></div>
+            </div>
+          </div>
+        </div>
+        <!-- header items end -->
+
+        <!-- gallery body start  -->
+        <div class="body-content">
+          <div class="columns is-multiline">
+            <div class="column is-4" v-for="item in 9">
+              <a href="#" class="gallery-card">
+                <div class="gallery-card-thumbnail">
+                  <img src="https://images.unsplash.com/photo-1646678471872-af73a8ef8ffe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80" alt="">
+                  <div class="play-button"><span class="material-icons-outlined">play_arrow</span></div>
+                </div>
+                <div class="gallery-body">
+                  <div class="filtered-items">
+                    <span>KUBEDB</span>
+                    <span>WEBINER</span>
+                  </div>
+                  <h1 class="is-ellipsis-2">Upgrading MySQL with KubeDB Enterprise by AppsCode</h1>
+                  <div class="meta-tag is-flex is-justify-content-space-between">
+                    <p><span class="material-icons-outlined">calendar_today</span>22-Feb-2022</p>
+                    <p><span class="material-icons-outlined">person_outline</span>Masudur Rahman</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- gallery body end -->
+
+      </div>
+      <!-- right content end -->
+    </div>
+  </div>
+</section>
+{{ end }}

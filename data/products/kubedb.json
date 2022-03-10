@@ -2,7 +2,7 @@
   "key": "kubedb",
   "name": "KubeDB",
   "fullname": "KubeDB by AppsCode",
-  "tagline": "Run production-grade Databases on <br><strong>Kubernetes</strong>",
+  "tagline": "Run production-grade Databases on Kubernetes",
   "summary": "KubeDB by AppsCode simplifies and automates routine database tasks such as provisioning, patching, backup, recovery, failure detection, and repair for various popular databases on private and public clouds",
   "published": true,
   "author": "AppsCode Inc.",
@@ -17,7 +17,7 @@
     "alt": "KubeDB"
   },
   "logo": {
-    "src": "/assets/images/products/kubedb/kubedb.png",
+    "src": "/assets/images/products/kubedb/kubedb.svg",
     "alt": "KubeDB"
   },
   "logoWhite": {
@@ -25,7 +25,7 @@
     "alt": "KubeDB"
   },
   "icon": {
-    "src": "/assets/images/products/kubedb/kubedb-icon.png",
+    "src": "/assets/images/products/kubedb/kubedb-icon.svg",
     "alt": "KubeDB",
     "sizes": {
       "192x192": "/assets/images/products/kubedb/icons/android-icon-192x192.png"
@@ -530,6 +530,7 @@
   ],
   "latestVersion": "v2022.02.22",
   "socialLinks": {
+    "slack": "https://kubernetes.slack.com/messages/C8149MREV",
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/kubedb/cli",
     "linkedin": "https://www.linkedin.com/company/appscode",

@@ -1,0 +1,142 @@
+// Typography
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+$ac-font-heading: "Roboto", sans-serif;
+$ac-font-paragraph: "Roboto", sans-serif;
+$ac-font-inter: "Inter", sans-serif;
+
+html,
+body {
+  background-color: $ac-bg;
+  font-family: $ac-font-paragraph;
+  font-weight: 400;
+  font-size: 1rem;
+  color: $ac-color-text;
+  scroll-behavior: smooth;
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $ac-font-heading;
+  font-style: normal;
+  font-weight: 500;
+  color: $ac-color-heading;
+  &.is-gradient {
+      background: linear-gradient(
+        -45deg,
+        $ac-primary,
+        #940148,
+        #4c346f,
+        #3334f5
+      );
+      background-size: 300% 300%;
+      animation: gradient 5s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 130%;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 130%;
+
+  letter-spacing: -0.57px;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 130%;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 40px;
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+h6 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.15px;
+}
+
+h6 {
+  &.is-tiny {
+    font-size: $font-size-tiny;
+    line-height: $font-size-tiny + 10;
+  }
+
+  &.is-extra-small {
+    font-size: $font-size-extra-small;
+    line-height: $font-size-extra-small + 10;
+  }
+
+  &.is-small {
+    font-size: $font-size-small;
+    line-height: $font-size-small + 10;
+  }
+
+  &.is-normal {
+    font-size: $font-size-normal;
+    line-height: $font-size-normal + 10;
+  }
+
+  &.is-semi-normal {
+    font-size: $font-size-semi-normal;
+    line-height: $font-size-semi-normal + 10;
+  }
+
+  &.is-medium {
+    font-size: $font-size-medium;
+    line-height: $font-size-medium + 10;
+  }
+}
+
+a {
+  font-family: $ac-font-paragraph;
+  color: $ac-primary;
+}
+
+hr {
+  background-color: $ac-white-light;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 1rem 0;
+}
+
+strong {
+  color: #000000;
+}
+
+.is-font-medium {
+  font-weight: 500;
+}
+
+.is-font-bold {
+  font-weight: 700;
+}
