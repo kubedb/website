@@ -1,0 +1,13 @@
+{{$logo:= "https://via.placeholder.com/50/dddddd/808080"}}
+
+{{ range .menus }}
+  {{ if eq .Name $.target}}
+    {{ $logo = .Pre }}
+  {{ end }}
+
+  {{ if .HasChildren}}
+    {{ $logo = partial "menu/get-logo.html" (dict "target" $.target "menus" .Children) }}
+  {{ end }}
+{{ end }}
+
+{{ return $logo }}

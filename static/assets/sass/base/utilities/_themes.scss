@@ -1,0 +1,73 @@
+$ac-primary: var(--ac-primary);
+
+// Products Color
+$primary: #00a651;
+$guard-primary: #d84e27;
+$kubedb-primary: #4d4dcb;
+$kubeci-primary: #2c3e50;
+$kubed-primary: #1c7bd4;
+$kubesheild-primary: #2516c7;
+$kubevault-primary: #326ce5;
+$kubeform-primary: #592217;
+$pharmer-primary: #8e44ad;
+$searchlight-primary: #111738;
+$service-broker-primary: #29b4a2;
+$stash-primary: #5e2dea;
+$swift-primary: #3f51b6;
+$voyager-primary: #2d2a78;
+
+body {
+  --ac-primary: #{$primary};
+
+  &.guard {
+    --ac-primary: #{$guard-primary};
+  }
+
+  &.kubedb {
+    --ac-primary: #{$kubedb-primary};
+  }
+
+  &.kubeci {
+    --ac-primary: #{$kubeci-primary};
+  }
+
+  &.kubed {
+    --ac-primary: #{$kubed-primary};
+  }
+
+  &.kubesheild {
+    --ac-primary: #{$kubesheild-primary};
+  }
+
+  &.kubevault {
+    --ac-primary: #{$kubevault-primary};
+  }
+
+  &.kubeform {
+    --ac-primary: #{$kubeform-primary};
+  }
+
+  &.searchlight {
+    --ac-primary: #{$searchlight-primary};
+  }
+
+  &.pharmer {
+    --ac-primary: #{$pharmer-primary};
+  }
+
+  &.service-broker {
+    --ac-primary: #{$service-broker-primary};
+  }
+
+  &.stash {
+    --ac-primary: #{$stash-primary};
+  }
+
+  &.swift {
+    --ac-primary: #{$swift-primary};
+  }
+
+  &.voyager {
+    --ac-primary: #{$voyager-primary};
+  }
+}

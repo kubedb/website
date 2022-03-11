@@ -1,4 +1,4 @@
-title: Run production-grade databases easily on Kubernetes
+title: KubeDB by AppsCode | Run roduction-grade databases on Kubernetes
 baseurl: https://kubedb.com
 languageCode: en-us
 assetDir: static
@@ -30,6 +30,16 @@ params:
   youtube_url: https://www.youtube.com/c/AppsCodeInc
   contact_email: support@appscode.com
   contact_phone: +1(650)241-8486
+
+  # Enable giscus comment
+  comments:
+    enable: true
+    giscus:
+      repo: bytebuilders/community
+      repoId: "R_kgDOG-h6rw"
+      category: KubeDB
+      categoryId: "DIC_kwDOG-h6r84COCFv"
+      map: title
 menu:
   main:
   - name: Databases
@@ -38,65 +48,59 @@ menu:
     url: https://kubedb.com/docs/latest/setup/
   - name: Documentation
     weight: 20
-  - name: Community
-    identifier: community
-    weight: 25
   - name: Elasticsearch
     identifier: elasticsearch
     parent: database
     weight: 10
+    pre: /assets/images/databases/logos/elasticsearch.svg
   - name: MariaDB
     identifier: mariadb
     parent: database
     weight: 20
+    pre: /assets/images/databases/logos/mariadbs.svg
   - name: Memcached
     identifier: memcached
     parent: database
     weight: 30
+    pre: /assets/images/databases/logos/memcached.svg
   - name: MongoDB
     identifier: mongodb
     parent: database
     weight: 40
+    pre: /assets/images/databases/logos/mongodb.svg
   - name: MySQL
     identifier: mysql
     parent: database
     weight: 50
+    pre: /assets/images/databases/logos/mysql.svg
   - name: Percona XtraDB
     identifier: percona-xtradb
     parent: database
     weight: 60
+    pre: /assets/images/databases/logos/perconaxtradbs.svg
   - name: PgBouncer
     identifier: pgbouncer
     parent: database
     weight: 70
+    pre: /assets/images/databases/logos/pgbouncer.svg
   - name: PostgreSQL
     identifier: postgres
     parent: database
     weight: 80
+    pre: /assets/images/databases/logos/postgresql.svg
   - name: ProxySQL
     identifier: proxysql
     parent: database
     weight: 90
+    pre: /assets/images/databases/logos/proxysqls.svg
   - name: Redis
     identifier: redis
     parent: database
     weight: 100
-  - name: GitHub
-    identifier: github
-    parent: community
-    url: https://github.com/kubedb
-    weight: 1
-  - name: Twitter
-    identifier: twitter
-    parent: community
-    url: https://twitter.com/KubeDB
-    weight: 2
-  - name: Slack
-    identifier: slack
-    parent: community
-    url: http://slack.kubernetes.io/
-    weight: 3
+    pre: /assets/images/databases/logos/redis.svg
 markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    style: manni

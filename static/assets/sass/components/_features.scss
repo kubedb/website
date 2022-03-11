@@ -1,0 +1,475 @@
+// 2022 updated features page scss start
+.features-area {
+  .features-image {
+    position: relative;
+    z-index: 1;
+
+    img {
+      border-radius: 4px;
+    }
+
+    .check-list {
+      position: absolute;
+      top: 60px;
+      left: -150px;
+      left: -150px;
+    }
+  }
+
+  .features-description {
+    h2 {
+      line-height: 130%;
+    }
+
+    h1 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 34px;
+      line-height: 130%;
+      letter-spacing: -0.57px;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      text-align: justify;
+
+      strong {
+        color: $ac-color-heading;
+        font-weight: 500;
+      }
+    }
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+
+  .check-list {
+    background-color: $ac-white;
+    padding: 30px 40px;
+    width: 300px;
+
+    box-shadow: 0px 2px 30px rgba(44, 60, 74, 0.08);
+    border-radius: 0.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      span {
+        font-size: 18px;
+        margin-right: 0.8rem;
+        color: $ac-primary;
+      }
+    }
+  }
+}
+
+.single-features-item {
+  padding: 30px 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 3.75rem auto;
+  border: 1px solid $ac-white-light;
+  border-radius: 2px;
+  min-height: 160px;
+
+  // &:hover {
+  //   .feature-information {
+  //     a.is-ellipsis-3 {
+  //       display: initial;
+  //     }
+  //   }
+  // }
+
+  .feature-icon {
+    width: 3.75rem;
+    height: 3.75rem;
+    background-color: #f1f1f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+
+    img {
+      height: 30px;
+    }
+  }
+
+  .feature-information {
+    h5 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 0.875rem;
+      line-height: 160%;
+      transition: 0.3s ease-in-out;
+      color: $ac-color-text;
+    }
+  }
+}
+.features-area {
+  .single-feature-image {
+    display: flex;
+    align-items: center;
+   
+    img {
+      max-width: 400px;
+    }
+  }
+}
+
+// 2022 updated features page scss end
+
+/* Feature area start */
+// .feature-area {
+//   background-image: url(../images/bg-image/about.png);
+//   background-size: cover;
+//   background-position: center;
+//   background-color: #fbfcfe;
+// }
+
+// a.play-icon {
+//   width: 70px;
+//   height: 70px;
+//   background: #838383;
+//   text-align: center;
+//   line-height: 70px;
+//   border-radius: 50%;
+//   color: $ac-white;
+//   display: inline-block;
+//   position: relative;
+// }
+
+// a.play-icon .fa {
+//   margin-left: 5px;
+// }
+
+// .play-icon:after,
+// .play-icon:before {
+//   content: "";
+//   width: 70px;
+//   height: 70px;
+//   border: 35px solid rgba(255, 255, 255, 0.1);
+//   position: absolute;
+//   border-radius: 50px;
+//   animation: grow 2s infinite;
+//   left: 0;
+//   top: 0;
+// }
+
+// .play-icon:after {
+//   animation: grow 1.3s infinite;
+// }
+
+// @keyframes grow {
+//   from {
+//     transform: scale(1);
+//   }
+
+//   to {
+//     transform: scale(2);
+//     opacity: 0;
+//   }
+// }
+
+// .feature-video {
+//   background: #999;
+//   width: 100%;
+//   padding: 60px;
+//   text-align: center;
+//   border-radius: 4px;
+//   background-image: url(../images/video-thumbnail.png);
+//   background-size: cover;
+//   background-position: center;
+//   position: relative;
+//   z-index: 1;
+//   overflow: hidden;
+//   box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.16);
+// }
+
+// .feature-video:after {
+//   position: absolute;
+//   content: "";
+//   left: 0;
+//   top: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: #000;
+//   z-index: -1;
+//   opacity: 0.6;
+// }
+
+// .feature-content h2 {
+//   font-size: 28px;
+//   line-height: 46px;
+//   font-weight: 500;
+//   color: $ac-color-heading;
+//   margin-bottom: 20px;
+// }
+
+// .feature-content p {
+//   font-size: 16px;
+//   margin-bottom: 30px;
+// }
+
+// .feature-area .feature-content {
+//   padding: 0 70px;
+// }
+
+// /* Feature bottom area start */
+// .db-logo-area {
+//   padding: 0 70px;
+// }
+
+// .single-db-logo {
+//   width: 200px;
+//   float: left;
+//   border: 1px solid #ebebeb;
+//   margin: 0 100px 50px 0;
+//   text-align: center;
+//   padding: 25px;
+//   transition: 0.3s ease-in-out;
+// }
+
+// .single-db-logo:nth-child(even) {
+//   margin-right: 0;
+// }
+
+// .single-db-logo:nth-last-child(-n + 2) {
+//   margin-bottom: 0;
+// }
+
+// .single-db-logo:nth-child(3),
+// .single-db-logo:nth-child(4) {
+//   margin-left: 40px;
+// }
+
+// .single-db-logo:nth-child(4) {
+//   margin-left: 0;
+// }
+
+// .single-db-logo img {
+//   max-height: 50px;
+// }
+
+// .single-db-logo:nth-child(1),
+// .single-db-logo:nth-child(4),
+// .single-db-logo:nth-child(5) {
+//   box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
+//   border: 1px solid transparent;
+// }
+
+// .single-db-logo:hover {
+//   box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
+//   border: 1px solid transparent;
+// }
+
+// .features-area {
+//   background-image: url(../images/products/voyager/features/feature-bg.png);
+//   background-size: cover;
+//   background-position: center;
+
+//   .hero-features {
+//     height: 500px;
+//     display: flex;
+//     align-items: center;
+//     padding: 50 20px;
+//     max-width: 940px;
+//     margin: 0 auto;
+//   }
+// }
+
+// .single-feature-image {
+//   max-width: 450px;
+// }
+
+// .hero-features-content h1 {
+//   margin-bottom: 12px;
+// }
+
+// .hero-features-content p {
+//   margin: 0;
+// }
+
+// .hero-features-content .hero-area-button {
+//   margin-top: 47px;
+// }
+
+/****************************************
+Responsive Classes
+*****************************************/
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 768px) {
+  .features-area {
+    .features-image {
+      .check-list {
+        top: 30px;
+        left: 50%;
+        margin-left: -150px;
+        padding: 30px;
+      }
+    }
+
+    .buttons {
+      justify-content: center;
+    }
+
+    .features-description {
+      text-align: center;
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .single-features-item {
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    text-align: center;
+
+    .feature-icon {
+      margin: 0 auto;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 768px) {
+  .single-features-item {
+    padding: 15px 15px;
+    grid-gap: 20px;
+    grid-template-columns: 3rem auto;
+    min-height: auto;
+    border-radius: 4px;
+
+    .feature-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 4px;
+
+      img {
+        height: 24px;
+      }
+    }
+
+    .feature-information {
+      text-align: left;
+
+      h5 {
+        font-size: 18px;
+        margin-bottom: 5px;
+        line-height: 1.3;
+      }
+    }
+  }
+}
+
+// Medium devices (tablets, 769px and up)
+@media (min-width: 769px) and (max-width: 1023.98px) {
+  .single-features-item {
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    text-align: center;
+
+    .feature-icon {
+      margin: 0 auto;
+    }
+
+    .feature-information {
+      h5 {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .features-area {
+    .features-image {
+      .check-list {
+        left: 50%;
+        margin-left: -150px;
+        padding: 30px;
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 1024px and up)
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .features-area {
+    .features-image {
+      .check-list {
+        left: 50%;
+        margin-left: -150px;
+      }
+    }
+
+    .features-description {
+      font-size: 28px;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1216px and up)
+@media (min-width: 1216px) {
+}
+
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .features-area {
+    .features-description {
+      h1 {
+        font-size: 32px;
+      }
+    }
+    .features-image {
+      .check-list {
+        top: 30px;
+      }
+    }
+  }
+  .single-features-item {
+    padding: 20px;
+    min-height: 140px;
+    .feature-information {
+      h5 {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

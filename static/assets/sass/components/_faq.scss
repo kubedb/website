@@ -1,0 +1,77 @@
+.accordion-item {
+  background-color: $ac-white;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #e3e3e3;
+  &.active {
+    transition: background-color 0.2s ease-in 0s;
+    border: 1px solid $ac-primary;
+    .accordion-header {
+      color: #242a31;
+      transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
+      h2 {
+        color: $ac-primary;
+        &:before {
+          display: none;
+        }
+        &:after {
+          transform: rotate(90deg);
+        }
+      }
+    }
+    .accordion-body {
+      max-height: 900px;
+      padding: 0 15px 15px;
+      transition: max-height 0.3s ease-in 0s, padding 0.2s ease-in 0s;
+      p {
+        opacity: 1;
+        transition: opacity 0.2s ease-in 0.2s;
+      }
+    }
+  }
+}
+.accordion-item.active .accordion-header h2:before,
+.accordion-item.active .accordion-header h2:after {
+  background-color: black;
+  transition: background-color 0.2s ease-in 0.2s, transform 0.2s ease 0.1s;
+}
+.accordion-header {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
+  h2 {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    color: $ac-color-heading;
+    margin: 0;
+    user-select: none;
+    line-height: 26px;
+    &:before {
+      width: 10px;
+      height: 2px;
+      right: 0;
+      top: calc(50% - 1px);
+    }
+    &:after {
+      width: 2px;
+      height: 10px;
+      right: 4px;
+      top: calc(50% - 5px);
+      transform: none;
+    }
+  }
+}
+.accordion-header h2:before,
+.accordion-header h2:after {
+  content: "";
+  position: absolute;
+  background-color: #333;
+  transition: background-color 0.2s ease-in 0s, transform 0.2s ease 0s;
+}
+.accordion-body {
+  max-height: 0;
+  padding: 0 15px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
+}

@@ -1,0 +1,109 @@
+
+// count-down area start
+.count-link-area {
+  background-color: #fbfbfb;
+  position: relative;
+  z-index: 1;
+  .right-sidebar-wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+    .right-sidebar-menu {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+      ul {
+        padding-left: 30px;
+        border-left: 1px solid $ac-white-light;
+        li {
+          a {
+            display: inline-block;
+            color: $ac-color-link;
+            padding: 10px 0;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            &::after {
+              position: absolute;
+              content: "";
+              left: 0;
+              bottom: 0;
+              width: 0;
+              height: 2px;
+              background: $ac-primary;
+              transition: 0.3s linear;
+            }
+            &:hover {
+              color: $ac-color-heading;
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.counter-area {
+  background-color: #fbfbfb;
+  .single-count-wrapper {
+    text-align: center;
+    padding: 76px 40px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background: $ac-white;
+      box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+      z-index: 3;
+    }
+    .count-icon {
+      max-width: 180px;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      height: 170px;
+      img {
+        width: 100%;
+      
+      }
+    }
+    .count {
+      font-size: 48px;
+      font-weight: 700;
+      color: #1c2c41;
+      line-height: 1.5;
+      transition: 0.3s ease-in-out;
+    }
+    &:hover .count {
+      color: $ac-primary;
+    }
+    .name {
+      color: $ac-color-text;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .action-btn {
+      font-size: 18px;
+      font-weight: 600;
+      position: absolute;
+      bottom: 0;
+      transition: 0.3s ease-in-out;
+      margin-left: -50%;
+      width: 100%;
+      opacity: 0;
+      visibility: hidden;
+      color: $ac-primary;
+    }
+    &:hover .action-btn {
+      opacity: 1;
+      visibility: visible;
+      bottom: 50px;
+    }
+  }
+}
+// count-down area end

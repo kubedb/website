@@ -1,0 +1,58 @@
+// product page feature area start
+.single-product-feature-wrapper {
+  overflow: hidden;
+  background-color: $ac-white;
+  box-shadow: 0px 1px 4px rgba(50, 112, 128, 0.16);
+  border-radius: 4px;
+  padding: 20px;
+  transition: .3s ease-in-out;
+  position: relative;
+  min-height: 280px;
+  z-index: 1;
+  &:after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+    transition: .3s ease-in-out;
+    background-color: $ac-primary;
+  }
+  z-index: 1;
+  &:hover{
+    box-shadow: 0px 3px 28px rgba(50,152,128, .16);
+    &:after{
+      height: 5px;
+    }
+  }
+  .product-feature-icon {
+    width: 55px;
+    float: left;
+    margin-right: 25px;
+  }
+  .product-feature-content {
+    float: left;
+    width: 85%;
+  }
+  .product-feature-title {
+    margin-bottom: 10px;
+    h3 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 40px;
+    }
+    p {
+      font-size: 16px;
+      font-family: $ac-font-heading;
+      font-weight: 600;
+    }
+  }
+  .product-feature-description {
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+// product page feature area end

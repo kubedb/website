@@ -1,0 +1,316 @@
+/* pricing section style */
+.pricing-button .kd-button {
+  padding: 8px 20px;
+  background: $ac-primary;
+  width: 180px;
+}
+
+.single-pricing-table {
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  min-width: 180px;
+}
+
+.single-pricing-table.gold {
+  box-shadow: 0px 8px 47px rgba(0, 0, 0, 0.16);
+  z-index: 2;
+  position: relative;
+}
+.single-pricing-table.gold .pricing-heading {
+  .pricing-top {
+    min-height: 158px;
+  }
+  min-height: 265px;
+}
+.pricing-heading {
+  background: #e1e1e1;
+  padding: 10px 40px;
+  border-radius: 7px 7px 0 0;
+  position: relative;
+  z-index: 1;
+  min-height: 225px;
+}
+
+.pricing-heading:after {
+  position: absolute;
+  content: "";
+  bottom: -10px;
+  border-top: 10px solid #e1e1e1;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  right: 50%;
+  margin-right: -10px;
+}
+
+.pricing-body {
+  border-radius: 0 0 8px 8px;
+  border: 1px solid #dedede;
+}
+.pricing-top.kd-green,
+.kd-button.kd-green {
+  background: $ac-primary !important;
+}
+.pricing-button .button {
+  font-size: 15px;
+  min-width: 190px;
+  font-family: $ac-font-paragraph;
+  padding: 7px;
+  transition: 0.3s ease-in-out;
+}
+.pricing-top.kd-orange,
+.kd-button.kd-orange {
+  background-color: $ac-orange !important;
+}
+.pricing-button .kubedb-transparent-btn {
+  color: $kubedb-primary;
+  border: 1px solid $kubedb-primary;
+}
+.pricing-button .kubedb-transparent-btn:hover {
+  color: $ac-white !important;
+  border: 1px solid $kubedb-primary;
+  background-color: $kubedb-primary;
+}
+.pricing-button .primary-transparent-btn {
+  color: $ac-primary;
+  border: 1px solid $ac-primary;
+}
+.pricing-button .primary-transparent-btn:hover {
+  color: $ac-white;
+  border: 1px solid $ac-primary;
+  background-color: $ac-primary;
+}
+.pricing-button .red-transparent-btn {
+  color: $ac-red;
+  border: 1px solid $ac-red;
+}
+.pricing-button .red-transparent-btn:hover {
+  color: $ac-white;
+  border: 1px solid $ac-red;
+  background-color: $ac-red;
+}
+
+.pricing-top.kd-red,
+.kd-button.kd-red {
+  background-color: $ac-red !important;
+}
+.pricing-top {
+  background: $ac-primary;
+  box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
+  color: $ac-white;
+  padding: 10px 20px;
+  margin: 0 auto;
+  border-radius: 0px 8px 8px 8px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+  margin-top: -32px;
+  height: 171px;
+}
+.round-shape {
+  background: #fff;
+  color: $ac-orange;
+  font-size: 14px;
+  display: inline-block;
+  border-radius: 50px;
+  font-weight: 500;
+  padding: 5px 25px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.discount-text {
+  position: absolute;
+  top: -60px;
+  width: 100%;
+  color: #242a31;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+.discount-text.is-hide {
+  top: 0;
+}
+.single-pricing-table.silver {
+  .discount-text {
+    color: $ac-primary;
+  }
+}
+.single-pricing-table.gold {
+  .discount-text {
+    color: $ac-orange;
+  }
+}
+.single-pricing-table.silver .pricing-top {
+  height: 100px;
+}
+.single-pricing-table.silver.is-price-not-available .pricing-top{
+  height: 171px;
+  margin-bottom: 30px;
+}
+
+.single-pricing-table.gold.is-price-not-available .pricing-top{
+  min-height: 210px;
+  margin-bottom: 30px;
+}
+
+.single-pricing-table.free .pricing-top,
+.single-pricing-table.plutinum .pricing-top {
+  margin-bottom: 30px;
+}
+.pricing-top h4 {
+  font-size: 20px;
+  color: $ac-white;
+  font-weight: 700;
+}
+
+.package-price {
+  font-size: 26px;
+  font-weight: 400;
+  sup,
+  sub {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  strong {
+    color: $ac-white;
+  }
+}
+
+.package-price span {
+  display: block;
+  font-size: $font-size-extra-small;
+  font-weight: 400;
+}
+
+.pricing-top:before {
+  position: absolute;
+  content: "";
+  left: -12px;
+  top: 0;
+  // border-right: 12px solid darken($ac-primary, 15%);
+  border-top: 22px solid transparent;
+}
+
+.pricing-type .select select {
+  font-size: 14px;
+  color: #74818d;
+  height: 35px !important;
+  border: none;
+}
+
+.pricing-type {
+  margin-bottom: 15px;
+}
+
+.pricing-type .select {
+  width: 100%;
+}
+
+.pricing-type .select select.is-hovered,
+.pricing-type .select select:hover {
+  border: none;
+}
+
+.custom-arrow-down:after {
+  content: "\f0d7 ";
+  font-family: fontawesome;
+  right: 14px;
+  position: absolute;
+  top: 0;
+  line-height: 35px;
+  color: #74818d;
+}
+
+.custom-arrow-down {
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-body {
+  padding-bottom: 30px;
+}
+
+.pricing-body li {
+  font-size: 14px;
+  color: #32325d;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 5px 20px;
+  height: 60px;
+  display: table;
+  width: 100%;
+}
+.pricing-body ul li:first-child {
+  background-color: #fff;
+  padding-top: 10px;
+}
+.pricing-body li span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.pricing-body li span.tooltip {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+.pricing-body li:last-child {
+  border-bottom: none;
+}
+
+.single-pricing-table.details .pricing-body {
+  border-radius: 8px;
+  margin-top: 265px;
+  margin-right: 10px;
+  padding-bottom: 70px;
+  background-color: $ac-white;
+  padding-top: 5px;
+}
+.single-pricing-table.details .pricing-body ul li:first-child {
+  padding: 5px 20px;
+}
+.single-pricing-table.free,
+.single-pricing-table.silver,
+.single-pricing-table.plutinum {
+  margin-top: 40px;
+}
+
+.single-pricing-table.free {
+  margin-right: 10px;
+}
+
+.single-pricing-table.gold .pricing-body {
+  border: none;
+}
+.single-pricing-table.silver .pricing-body {
+  border-right: 1px solid transparent;
+}
+.single-pricing-table.plutinum .pricing-body {
+  border-left: 1px solid transparent;
+}
+.single-pricing-table.free .pricing-body {
+  border-radius: 0 0 0 8px;
+}
+
+.single-pricing-table.gold .pricing-body {
+  border-radius: 0 0 8px 0px;
+}
+
+.single-pricing-table.free .pricing-top:before {
+  border-right-color: #00803e;
+}
+
+.single-pricing-table.gold .pricing-top:before {
+  border-right-color: #ca7f04;
+}
+
+.single-pricing-table.plutinum .pricing-top:before {
+  border-right-color: #b20b32;
+}
+.pricing-description ul li {
+  color: #74818d;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.pricing-description ul li:last-child {
+  margin-bottom: 0;
+}
