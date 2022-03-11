@@ -1,5 +1,5 @@
-/* Normal desktop :1200px. */
-@media (min-width: 1200px) and (max-width: 1500px) {
+/* Normal desktop :1216px. */
+@media (min-width: 1216px) and (max-width: 1500px) {
   .feature-content.pr-140 {
     padding-right: 0;
   }
@@ -9,8 +9,8 @@
   }
 }
 
-/* Normal desktop :992px. */
-@media (min-width: 992px) and (max-width: 1087px) {
+/* Normal desktop :1024px. */
+@media (min-width: 1024px) and (max-width: 1087px) {
   .single-db-logo {
     margin: 10px;
     padding: 10px;
@@ -415,12 +415,6 @@
     width: 100%;
   }
 
-  .section-title h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-    line-height: 36px;
-  }
-
   .carousel-wrapper {
     padding: 30px 15px;
   }
@@ -444,9 +438,7 @@
     margin: 0;
   }
 
-  .footer-menu h4 {
-    margin-bottom: 0px;
-  }
+ 
 
   /* ============================================
       Feature Page Responsive Code
@@ -680,9 +672,6 @@
     display: none;
   }
 
-  .section-title {
-    margin-bottom: 30px;
-  }
 
   //docs page search
   .sidebar-search-area {
@@ -703,15 +692,15 @@
   }
 }
 }
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991.98px) {
+// Medium devices (tablets, 769px and up)
+@media (min-width: 769px) and (max-width: 1023.98px) {
   .navbar-burger{
     color: #333;
   }
 }
 
-/* small Mobile :768px. */
-@media only screen and (min-width: 300px) and (max-width: 768px) {
+/* small Mobile :769px. */
+@media only screen and (min-width: 300px) and (max-width: 769px) {
   .main-menu-button img {
     margin-bottom: 10px;
   }
@@ -826,12 +815,6 @@
     width: 100%;
   }
 
-  .section-title h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-    line-height: 36px;
-  }
-
   .carousel-wrapper {
     padding: 30px 15px;
   }
@@ -855,9 +838,7 @@
     margin: 0;
   }
 
-  .footer-menu h4 {
-    margin-bottom: 0px;
-  }
+
 
   /* ============================================
         Feature Page Responsive Code
@@ -1090,10 +1071,6 @@
     display: none;
   }
 
-  .section-title {
-    margin-bottom: 30px;
-  }
-
   .single-testimonial-wrapper {
     .testimonial-msg {
       p {
@@ -1132,7 +1109,7 @@
       width: 40px;
     }
   }
-  .kd-left-sidebar {
+  .ac-product-left-sidebar {
     margin-right: 0;
   }
   .documentation-menu .ac-is-hoverable:hover .ac-dropdown {

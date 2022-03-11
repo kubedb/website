@@ -2,78 +2,115 @@
 
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 
-<!-- features area start -->
-<section class="features-area">
-  <div class="hero-features d-table">
-    <!-- hero features text start -->
-    <div class="hero-features-content d-table-cell has-text-centered">
-      <h1 data-aos="fade-up">{{ $p.name }} Features</h1>
-      <p data-aos="fade-up" data-aos-duration="500">{{ $p.summary }}</p>
-      <div class="hero-area-button" data-aos="fade-up" data-aos-duration="700">
-        <a
-          href="/docs/{{ $p.latestVersion }}/setup/"
-          class="button kd-button kd-primary"
-          >Install Now FREE</a
-        >
+
+
+
+<!-- ==========================new hero area start ==========================   -->
+<!-- style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);" -->
+<section class="hero-area is-product is-dark has-image-bg"
+  style="background-image: url(/assets/images/products/kubedb/features/hero-images.png); margin-top: 0;">
+  <div class="shape">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
+  <div class="shape">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div class="container">
+    <div class="columns has-text-centered is-centered is-vcentered is-multiline">
+      <div class="column is-8 is-centered is-full-touch">
+        <h1>{{ $p.name }} Features</h1>
+        <p data-aos="fade-up" data-aos-duration="500">{{ $p.summary }}</p>
+        <div class="buttons is-justify-content-center">
+          <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary" data-aos="fade-up"
+            data-aos-duration="700">Install Now Free</a>
+        </div>
       </div>
+     
     </div>
-    <!-- hero features text end -->
+  </div>
   </div>
 </section>
-<!-- features area end -->
+<!-- ========================== new hero area end ==========================  -->
+
+
+<!-- <section class="hero-area is-product is-dark"
+  style="background-image: url(/assets/images/products/kubedb/features/hero-images.png); height: calc(100vh - 110px);">
+  <div class="container">
+    <div class="columns has-text-centered is-centered is-vcentered is-multiline">
+      <div class="column is-8 is-full-touch">
+        <h1>{{ $p.name }} Features</h1>
+        <p>{{ $p.summary }}</p>
+        <div class="buttons is-justify-content-center">
+          <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary">Install Now FREE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section> -->
+<!-- new hero area end   -->
 
 <!-- all featured section start -->
-<section class="features-wrapper">
+<section class="features-area">
   {{ range $idx, $f := $p.features }}
   <!-- single feature start -->
   <div class="container section">
-    <div class="feature-section-gap pb-100">
-      {{ if (modBool $idx 2) }}
-      <div class="columns">
-        <div class="column is-5 is-offset-1">
-          <div class="feature-wrapper d-table">
-            <div class="feature-content pr-140 d-table-cell" data-aos="fade-up">
-              <h2>{{ $f.title }}</h2>
-              <p>
-                {{ $f.description }}
-              </p>
+   <div class="columns">
+     <div class="column is-10 is-offset-1">
+        <div class="pt-30 pb-30">
+          {{ if (modBool $idx 2) }}
+          <div class="columns is-vcentered">
+            <div class="column is-6">
+              <div class="feature-wrapper d-table">
+                <div class="feature-content pr-140 d-table-cell" data-aos="fade-up">
+                  <h3>{{ $f.title }}</h3>
+                  <p>
+                    {{ $f.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="single-feature-image is-justify-content-flex-end" data-aos="flip-left"
+                data-aos-duration="700">
+                <img src="{{ $f.image.src }}" alt="{{ $f.image.alt }}" class="img" />
+              </div>
             </div>
           </div>
-        </div>
-        <div class="column is-5">
-          <div class="single-feature-image" data-aos="fade-up" data-aos-duration="1000">
-            <img
-              src="{{ $f.image.src }}"
-              alt="{{ $f.image.alt }}"
-              class="img"
-            />
-          </div>
-        </div>
-      </div>
-      {{ else }}
-      <div class="columns reverse-row-order">
-        <div class="column is-5 is-offset-1">
-          <div class="single-feature-image" data-aos="fade-up">
-            <img
-              src="{{ $f.image.src }}"
-              alt="{{ $f.image.alt }}"
-              class="img"
-            />
-          </div>
-        </div>
-        <div class="column is-5">
-          <div class="feature-wrapper d-table" data-aos="fade-up" data-aos-duration="1000">
-            <div class="feature-content pr-45 d-table-cell">
-              <h2>{{ $f.title }}</h2>
-              <p>
-                {{ $f.description }}
-              </p>
+          {{ else }}
+          <div class="columns is-vcentered is-flex-direction-row-reverse-mobile">
+            <div class="column is-6">
+              <div class="single-feature-image is-justify-content-flex-start" data-aos="flip-left"
+                data-aos-duration="700">
+                <img src="{{ $f.image.src }}" alt="{{ $f.image.alt }}" class="img" />
+              </div>
             </div>
+            <div class="column is-6">
+              <div class="feature-wrapper d-table" data-aos="fade-up" data-aos-duration="1000">
+                <div class="feature-content pr-45 d-table-cell">
+                  <h3>{{ $f.title }}</h3>
+                  <p>
+                    {{ $f.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {{ end }}
           </div>
         </div>
-        {{ end }}
-      </div>
-    </div>
+     </div>
+   </div>
   </div>
   <!-- single feature end -->
   {{ end }}
