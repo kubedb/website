@@ -6,7 +6,7 @@
       "images": "static/assets/images"
     },
     "repoURL": "https://github.com/appscode/static-assets",
-    "version": "fix-data-content"
+    "version": "master"
   },
   "clouds": [
     "aws",
@@ -45,7 +45,6 @@
   },
   "ossMenu": {
     "c0": [
-      "voyager",
       "guard",
       "kubed"
     ],
@@ -62,6 +61,7 @@
       "kubevault"
     ],
     "c1": [
+      "voyager",
       "kubeform"
     ]
   },
