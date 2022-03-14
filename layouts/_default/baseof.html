@@ -10,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="{{ $p.website.themeColor }}">
   <title>{{ default $p.fullname .Title }}</title>
-  <meta name="description" content="{{ default ($p.metaDescription | plainify) .Description }}">
+  <meta name="description" content="{{ default ($p.summary | plainify) .Description }}">
   <meta name="author" content="{{ $p.author }}">
   <meta name="keywords" content="{{ default $p.keywords .Keywords }}">
   <!-- favicon -->
@@ -632,7 +632,7 @@
                       {{ range .Children }}
                       {{ if eq .Parent $.Site.Params.main_menu_dropdown_item }}
                       <!-- single product start  -->
-                      <a href="/kubernetes/databases/manage-{{ .Identifier }}-in-kubernetes
+                      <a href="/kubernetes/databases/run-and-manage-{{ .Identifier }}-on-kubernetes
 " class="single-product">
                         {{ if .Pre }}
                         <div class="product-logo">

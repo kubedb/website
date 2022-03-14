@@ -1,9 +1,9 @@
 ---
-title: Run and Manage Redis Database in Kubernetes | KubeDB
+title: Run and Manage Redis Database on Kubernetes - KubeDB
 id: redis
 type: "overview"
 layout: "overview"
 data: "data/products/kubedb/databases/redis.json"
-url: "/kubernetes/databases/manage-redis-in-kubernetes"
-description: "Provision, Failure Detection, Upgrade, Backup & Recovery, Monitor, Data Protection for Redis Databases in Kubernetes on Public and Private Cloud"
+url: "/kubernetes/databases/run-and-manage-redis-on-kubernetes"
+description: "Provision, Upgrade, Scaling, Volume Expansion, Monitor, Backup & Restore, Security for Redis Databases in Kubernetes on any Public & Private Cloud"
 ---

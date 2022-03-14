@@ -1,9 +1,9 @@
 ---
-title: Run and Manage MariaDB Database in Kubernetes | KubeDB
+title: Run and Manage MariaDB Database on Kubernetes - KubeDB
 id: mariadb
 type: "overview"
 layout: "overview"
 data: "data/products/kubedb/databases/mariadb.json"
-url: "/kubernetes/databases/manage-mariadb-in-kubernetes"
-description: "Provision, Upgrade, Monitor, Backup & Recovery, Failure Detection, Data Protection for MariaDB Databases in Kubernetes on Public and Private Cloud"
+url: "/kubernetes/databases/run-and-manage-mariadb-on-kubernetes"
+description: "Provision, Upgrade, Scaling, Volume Expansion, Monitor, Backup & Restore, Security for MariaDB Databases in Kubernetes on any Public & Private Cloud"
 ---
