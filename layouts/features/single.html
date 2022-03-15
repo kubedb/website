@@ -1,8 +1,96 @@
 {{ define "main" }}
-<section style="margin-top: 200px;">
+
+{{$p := .Site.Data.products.kubedb}}
+
+    {{ $featuresData:=""}}
+    {{ if .Params.data }}
+    {{ $featuresData = getJSON .Params.data }}
+    {{ end }}
+
+    {{ with $featuresData }}
+
+<!-- ==========================new hero area start ==========================   -->
+<!-- style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);" -->
+<section class="hero-area is-product is-single-features">
+    <div class="shape">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+    <div class="shape">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
     <div class="container">
-        <h1>{{.Title}}</h1>
-        <p>{{.Params.description}}</p>
+        <div class="columns is-centered has-text-centered is-multiline">
+            <div class="column is-8 is-full-touch">
+                <h1>{{ $featuresData.title }}</h1>
+                <p data-aos="fade-up" data-aos-duration="500">{{ $featuresData.meta }}</p>
+                <div class="buttons is-justify-content-center" data-aos="fade-up" data-aos-duration="700">
+                    <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary">TRY NOW FREE</a>
+                    <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary"><span>
+                            <lord-icon class="inherit-color" speed="0.50" src="https://cdn.lordicon.com/uvextprq.json"
+                                trigger="loop" target="a.is-secondary" trigger="hover"
+                                style="width:22px;height:22px; margin-right: 8px;">
+                            </lord-icon>
+                        </span>GET IN TOUCH</a>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </section>
-{{end}}
+
+<!-- ========================== new hero area end ==========================  -->
+
+<!--========================== product features area start ========================== -->
+<section class="features-area mt-50 mb-50">
+    <div class="container">
+        <!-- features items start  -->
+        {{ range $data := $featuresData.innerContent }}
+     
+        {{ if mod $data.id 2 }}
+        <div class="columns is-multiline is-vcentered">
+            <!-- single features start  -->
+            <div class="column is-6">
+                <div data-aos="flip-left" data-aos-duration="700" class="features-thumbnail">
+                    <img src="{{ $data.img }}" alt="{{ $data.title }}">
+                </div>
+            </div>
+
+            <div class="column is-6">
+                <h3 data-aos="fade-up" data-aos-duration="500">{{ $data.title }}</h3>
+                <p data-aos="fade-up" data-aos-duration="700">{{ $data.description }}</p>
+            </div>
+        </div>
+        {{else}}
+        <div class="columns is-multiline is-vcentered">
+            <!-- single features start  -->
+            <div class="column is-6">
+                <h3 data-aos="fade-up" data-aos-duration="500">{{ $data.title }}</h3>
+                <p data-aos="fade-up" data-aos-duration="700">{{ $data.description }}</p>
+            </div>
+
+            <div class="column is-6">
+                <div data-aos="flip-left" data-aos-duration="700" class="features-thumbnail has-text-centered">
+                    <img src="{{ $data.img }}" alt="{{ $data.title }}">
+                </div>
+            </div>
+            <!-- single features end  -->
+        </div>
+        {{ end }}
+        {{ end }}
+        <!-- features items end -->
+    </div>
+</section>
+<!--========================== product features area end ==========================-->
+{{ end }}
+{{ end }}

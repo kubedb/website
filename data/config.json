@@ -45,6 +45,7 @@
   },
   "ossMenu": {
     "c0": [
+      "voyager",
       "guard",
       "kubed"
     ],
@@ -61,7 +62,6 @@
       "kubevault"
     ],
     "c1": [
-      "voyager",
       "kubeform"
     ]
   },
