@@ -1,9 +1,9 @@
 ---
-title: Run and Manage MySQL Database in Kubernetes | KubeDB
+title: Run and Manage MySQL Database on Kubernetes - KubeDB
 id: mysql
 type: "overview"
 layout: "overview"
 data: "data/products/kubedb/databases/mysql.json"
-url: "/kubernetes/databases/manage-mysql-in-kubernetes"
-description: "Provision, Upgrade, Monitor, Backup & Recovery, Failure Detection, Data Protection for MySQL Databases in Kubernetes on Public and Private Cloud"
+url: "/kubernetes/databases/run-and-manage-mysql-on-kubernetes"
+description: "Provision, Upgrade, Scaling, Volume Expansion, Monitor, Backup & Restore, Security for MySQL Databases in Kubernetes on any Public & Private Cloud"
 ---

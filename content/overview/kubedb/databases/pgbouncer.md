@@ -1,9 +1,9 @@
 ---
-title: Run and Manage PgBouncer Database in Kubernetes | KubeDB
+title: Run and Manage PgBouncer Database on Kubernetes - KubeDB
 id: pgbouncer
 type: "overview"
 layout: "overview"
 data: "data/products/kubedb/databases/pgbouncer.json"
-url: "/kubernetes/databases/manage-pgbouncer-in-kubernetes"
-description: "Provision, Failure Detection, Upgrade, Backup & Recovery, Monitor, Data Protection for PgBouncer Databases in Kubernetes on Public and Private Cloud"
+url: "/kubernetes/databases/run-and-manage-pgbouncer-on-kubernetes"
+description: "Provision, Upgrade, Scaling, Volume Expansion, Monitor, Backup & Restore, Security for PgBouncer Databases in Kubernetes on any Public & Private Cloud"
 ---
