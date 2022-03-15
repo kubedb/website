@@ -1,9 +1,9 @@
 ---
-title: Run and Manage Production grade Elasticsearch in Kubernetes
+title: Run and Manage Elasticsearch Database on Kubernetes - KubeDB
 type: "overview"
 layout: "overview"
 id: "elasticsearch"
 data: "data/products/kubedb/databases/elasticsearch.json"
-url: "/kubernetes/databases/manage-elasticsearch-in-kubernetes"
-description: "Provision, Upgrade, Monitor, Backup & Recovery, Failure Detection, Data Protection for Elasticsearch Databases in Kubernetes on Public and Private Cloud"
+url: "/kubernetes/databases/run-and-manage-elasticsearch-on-kubernetes"
+description: "Provision, Upgrade, Scaling, Volume Expansion, Monitor, Backup & Restore, Security for Elasticsearch Databases in Kubernetes on any Public & Private Cloud"
 ---
