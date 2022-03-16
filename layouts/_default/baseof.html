@@ -10,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="{{ $p.website.themeColor }}">
   <title>{{ default $p.fullname .Title }}</title>
-  <meta name="description" content="{{ default ($p.metaDescription | plainify) .Description }}">
+  <meta name="description" content="{{ default ($p.summary | plainify) .Description }}">
   <meta name="author" content="{{ $p.author }}">
   <meta name="keywords" content="{{ default $p.keywords .Keywords }}">
   <!-- favicon -->
