@@ -1,7 +1,7 @@
 {
   "id": "security",
-  "title": "Secure Databases in Kubernetes",
-  "meta": "Secure your Databases in Kubernetes via TLS/SSL encryption. KubeDB offers a bunch of steps to provide security for your Database in Kubernetes.",
+  "title": "Secure Databases on Kubernetes",
+  "meta": "Secure your Databases on Kubernetes via TLS/SSL encryption. KubeDB offers options to choose to maintain security for your Databases on Kubernetes.",
   "innerContent": [
     {
       "id": 1,

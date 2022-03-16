@@ -10707,7 +10707,7 @@ Responsive Classes
 .hero-area.is-product.is-single-features {
   height: calc(100vh - 110px);
   background: #514745;
-  background: linear-gradient(39deg, rgba(81, 71, 69, 0.1) 0%, rgba(81, 71, 69, 0.1) 51%, rgba(175, 0, 208, 0.1) 91%, rgba(81, 71, 69, 0.1) 100%);
+  background: linear-gradient(39deg, rgba(63, 48, 218, 0.2) 0%, rgba(81, 71, 69, 0.2) 51%, rgba(175, 0, 208, 0.2) 91%, rgba(81, 71, 69, 0.1) 100%);
 }
 
 .hero-area.is-product.is-dark.is-gradient {
@@ -11147,7 +11147,20 @@ Responsive Classes
   max-width: 400px;
 }
 
-/* Feature area start */
+.single-features-page .features-thumbnail {
+  max-width: 400px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.single-features-page .features-thumbnail.has-text-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
 /****************************************
 Responsive Classes
 *****************************************/

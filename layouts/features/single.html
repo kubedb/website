@@ -52,7 +52,7 @@
 <!-- ========================== new hero area end ==========================  -->
 
 <!--========================== product features area start ========================== -->
-<section class="features-area mt-50 mb-50">
+<section class="features-area single-features-page mt-50 mb-50">
     <div class="container">
         <!-- features items start  -->
         {{ range $data := $featuresData.innerContent }}
@@ -80,7 +80,7 @@
             </div>
 
             <div class="column is-6">
-                <div data-aos="flip-left" data-aos-duration="700" class="features-thumbnail has-text-centered">
+                <div data-aos="flip-left" data-aos-duration="700" class="features-thumbnail has-text-right">
                     <img src="{{ $data.img }}" alt="{{ $data.title }}">
                 </div>
             </div>

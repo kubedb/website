@@ -1,7 +1,7 @@
 {
   "id": "native-kubernetes-support",
-  "title": "Run & Manage Databases in Kubernetes Native Way",
-  "meta": "Run & Manage Databases in Kubernetes Native Way. KubeDB offers Native Kubernetes Support for managing databases on Hybrid and Multi-Cloud Environments.",
+  "title": "Deploy & Manage Databases in Kubernetes Native Way",
+  "meta": "Deploy & Manage Databases in Kubernetes Native Way. KubeDB offers Native Kubernetes Support for managing databases on Hybrid and Multi-Cloud Environments",
   "innerContent": [
     {
       "id": 1,

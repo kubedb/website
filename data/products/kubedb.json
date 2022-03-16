@@ -133,7 +133,7 @@
       },
       "summary": "",
       "description": "KubeDB comes with native support for monitoring via Prometheus. You can use builtin Prometheus scrapper or CoreOS Prometheus Operator to monitor KubeDB supported databases as well as KubeDB operator itself. You can use the Grafana to view key operational metrics, including compute/memory/storage capacity utilization, I/O activity, and instance connections. You can also use any metrics solutions like Datadog with KubeDB.",
-      "url": "backup-restore-databases-on-kubernetes"
+      "url": "monitor-databases-on-kubernetes"
     },
     {
       "title": "Cost-effectiveness",

@@ -1,8 +1,8 @@
 {
   "id": "manageability",
   "url": "monitor-database-kubernetes",
-  "title": "Monitor Databases in Kubernetes",
-  "meta": "Monitor your Databases in Kubernetes via Prometheus and Visualize key operational metrics of your Database using Grafana Dashboard.",
+  "title": "Monitor Databases on Kubernetes",
+  "meta": "Monitor your Databases on Kubernetes via Prometheus and Visualize key operational metrics of your Database using Grafana Dashboard.",
   "innerContent": [
     {
       "id": 1,

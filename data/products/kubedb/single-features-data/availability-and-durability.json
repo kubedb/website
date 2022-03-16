@@ -1,8 +1,7 @@
 {
   "id": "availability-and-durability",
-  "url": "backup-restore-database-kubernetes",
-  "title": "Backup & Restore Databases in Kubernetes",
-  "meta": "Backup, Restore and Data Protection for Various Databases in Kubernetes on any Public and Private Cloud",
+  "title": "Backup & Restore Databases on Kubernetes",
+  "meta": "Backup, Restore and Data Protection for Various Databases in Kubernetes on any Public and Private Cloud.",
   "innerContent": [
     {
       "id": 1,

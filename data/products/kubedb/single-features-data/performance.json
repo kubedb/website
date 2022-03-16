@@ -1,7 +1,7 @@
 {
   "id": "performance",
-  "title": "Ensuring Database Performance in Kubernetes",
-  "meta": "Ensure your Database Performance in Kubernetes using KubeDB. KubeDB provides a bunch of features that increase your database performance in Kubernetes.",
+  "title": "Ensuring Database Performance on Kubernetes",
+  "meta": "Ensure your Database Performance on Kubernetes using KubeDB. KubeDB provides a bunch of features that increase your database performance on Kubernetes.",
   "innerContent": [
     {
       "id": 1,
