@@ -8,13 +8,13 @@
       "url": "database-performance-kubernetes",
       "title": "Cloud agnostic Storage",
       "description": "Kubernetes provides a powerful cloud agnostic storage abstraction that enables Kubernetes workloads to use a wide variety of block and file storage to persist data. KubeDB uses Persistent Volume Claims (PVC) to dynamically provision disks for database instances. Using appropriately defined StorageClasses, KubeDB provisioned database instances are designed to scale from small development workloads up to performance-intensive workloads on private and public cloud environments.",
-      "img": "https://via.placeholder.com/400/dddddd/808080"
+      "img": "/assets/images/features/illustrations/cloud-agnostic-storage.jpg"
     },
     {
       "id": 2,
       "title": "Provisioned IOPS (SSD) Storage",
       "description": "Cloud providers like AWS provide provisioned IOPS Storage which is an SSD-backed storage option designed to deliver fast, predictable, and consistent I/O performance. You specify an IOPS rate when creating a StorageClass, and KubeDB provisions disks at that IOPS rate for the lifetime of the database instance. This storage type is optimized for I/O-intensive transactional (OLTP) database workloads.",
-      "img": "https://via.placeholder.com/400/dddddd/808080"
+      "img": "/assets/images/features/illustrations/provisioned-iops-storage.jpg"
     },
     {
       "id": 3,
