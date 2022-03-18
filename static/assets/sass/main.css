@@ -11093,7 +11093,7 @@ Responsive Classes
       grid-template-columns: 3.75rem auto;
   border: 1px solid #dbdbde;
   border-radius: 2px;
-  min-height: 160px;
+  min-height: 126px;
 }
 
 .single-features-item:hover .readmore-button {
@@ -11159,6 +11159,10 @@ Responsive Classes
 .single-features-page .features-thumbnail.has-text-right {
   margin-left: auto;
   margin-right: 0;
+}
+
+.single-features-page p {
+  text-align: justify;
 }
 
 /****************************************
@@ -11289,7 +11293,7 @@ Responsive Classes
   }
   .single-features-item {
     padding: 20px;
-    min-height: 140px;
+    min-height: 126px;
   }
   .single-features-item .feature-information h5 {
     font-size: 16px;
