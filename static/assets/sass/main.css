@@ -11147,7 +11147,11 @@ Responsive Classes
   max-width: 400px;
 }
 
-.single-features-page .features-thumbnail {
+.features-area p {
+  text-align: justify;
+}
+
+.features-area .features-thumbnail {
   max-width: 400px;
   border-radius: 4px;
   overflow: hidden;
@@ -11156,13 +11160,9 @@ Responsive Classes
   display: flex;
 }
 
-.single-features-page .features-thumbnail.has-text-right {
+.features-area .features-thumbnail.has-text-right {
   margin-left: auto;
   margin-right: 0;
-}
-
-.single-features-page p {
-  text-align: justify;
 }
 
 /****************************************
