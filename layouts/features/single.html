@@ -30,11 +30,11 @@
         <div class="circle"></div>
     </div>
     <div class="container">
-        <div class="columns is-centered has-text-centered is-multiline">
-            <div class="column is-8 is-full-touch">
+        <div class="columns is-multiline">
+            <div class="column is-6 is-full-touch">
                 <h1>{{ $featuresData.title }}</h1>
                 <p data-aos="fade-up" data-aos-duration="500">{{ $featuresData.meta }}</p>
-                <div class="buttons is-justify-content-center" data-aos="fade-up" data-aos-duration="700">
+                <div class="buttons" data-aos="fade-up" data-aos-duration="700">
                     <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary">TRY NOW FREE</a>
                     <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary"><span>
                             <lord-icon class="inherit-color" speed="0.50" src="https://cdn.lordicon.com/uvextprq.json"
@@ -42,6 +42,12 @@
                                 style="width:22px;height:22px; margin-right: 8px;">
                             </lord-icon>
                         </span>GET IN TOUCH</a>
+                </div>
+            </div>
+
+            <div class="column is-6 is-full-touch">
+                <div class="hero-area-right">
+                   <img src="/assets/images/products/kubedb/hero-right-image.png" alt="">
                 </div>
             </div>
         </div>

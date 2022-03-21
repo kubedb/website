@@ -24,7 +24,7 @@
     "alt": "Voyager"
   },
   "icon": {
-    "src": "/assets/images/products/voyager/voyager-icon.png",
+    "src": "/assets/images/products/voyager/voyager-icon.svg",
     "alt": "Voyager",
     "sizes": {
       "192x192": "/assets/images/products/voyager/icons/android-icon-192x192.png"
