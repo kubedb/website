@@ -45,11 +45,31 @@
                 </div>
             </div>
 
-            <div class="column is-6 is-full-touch">
-                <div class="hero-area-right">
-                   <img src="/assets/images/products/kubedb/hero-right-image.png" alt="">
-                </div>
-            </div>
+              <div class="column is-6 is-full-touch">
+                  <div class="hero-area-right">
+                      <!-- code editor start  -->
+                      <div class="hero-area-code-editor">
+                          <div class="editor-header">
+                              <span class="action close"></span>
+                              <span class="action maximize"></span>
+                              <span class="action minimize"></span>
+                          </div>
+                        {{ highlight (printf `$ helm repo add appscode https://charts.appscode.com/stable/
+$ helm repo update
+$ helm install kubedb appscode/kubedb \
+  --version %s \
+  --namespace kubedb --create-namespace \
+  --set kubedb-provisioner.enabled=true \
+  --set kubedb-ops-manager.enabled=true \
+  --set kubedb-autoscaler.enabled=true \
+  --set kubedb-dashboard.enabled=true \
+  --set kubedb-schema-manager.enabled=true \
+  --set-file global.license=/path/to/the/license.txt` $p.latestVersion) "bash" "style=dracula" }}
+                      </div>
+                  </div>
+                  <!-- code editor end  -->
+                  <!-- <img src="/assets/images/products/kubedb/hero-right-image.png" alt=""> -->
+              </div>
         </div>
     </div>
     </div>
