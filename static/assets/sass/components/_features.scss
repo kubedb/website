@@ -141,9 +141,9 @@
   }
 }
 
-.features-area  {
+.features-area {
   .features-thumbnail {
-    max-width: 400px;
+    max-width: 80%;
     border-radius: 4px;
     overflow: hidden;
     display: flex;
@@ -217,6 +217,15 @@ Responsive Classes
       margin: 0 auto;
     }
   }
+  .features-area {
+    .features-thumbnail {
+      margin: 0 auto;
+      max-width: 100%;
+      &.has-text-right {
+        margin-right: auto;
+      }
+    }
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -253,6 +262,14 @@ Responsive Classes
       }
     }
   }
+  .features-area {
+    .features-thumbnail {
+      margin: 0 auto;
+      &.has-text-right {
+        margin-right: auto;
+      }
+    }
+  }
 }
 
 // Medium devices (tablets, 769px and up)
@@ -279,6 +296,13 @@ Responsive Classes
         left: 50%;
         margin-left: -150px;
         padding: 30px;
+      }
+    }
+
+    .features-thumbnail {
+      margin: 0 auto;
+      &.has-text-right {
+        margin-right: auto;
       }
     }
   }
