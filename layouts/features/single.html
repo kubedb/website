@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{$p := .Site.Data.products.kubedb}}
+{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 
     {{ $featuresData:=""}}
     {{ if .Params.data }}
