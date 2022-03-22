@@ -158,11 +158,11 @@
   cursor: pointer;
   line-height: 1;
   transition: 0.3s ease-in-out;
-  letter-spacing: -0.05rem;
   
   .material-icons-outlined {
     font-size: 0.875rem;
     margin-left: 10px;
+    transition: 0.3s ease-in-out;
   }
 }
 // dark theme end

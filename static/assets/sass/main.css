@@ -10533,12 +10533,13 @@ Responsive Classes
   line-height: 1;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  letter-spacing: -0.05rem;
 }
 
 .readmore-button .material-icons-outlined {
   font-size: 0.875rem;
   margin-left: 10px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 /****************************************
@@ -11085,7 +11086,7 @@ Responsive Classes
 }
 
 .single-features-item {
-  padding: 30px 20px;
+  padding: 20px 20px;
   display: -ms-grid;
   display: grid;
   grid-gap: 20px;
@@ -11099,6 +11100,10 @@ Responsive Classes
 .single-features-item:hover .readmore-button {
   letter-spacing: 0;
   color: var(--ac-primary);
+}
+
+.single-features-item:hover .readmore-button .material-icons-outlined {
+  margin-left: 20px;
 }
 
 .single-features-item .feature-icon {
