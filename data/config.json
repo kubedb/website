@@ -6,7 +6,7 @@
       "images": "static/assets/images"
     },
     "repoURL": "https://github.com/appscode/static-assets",
-    "version": "features-page-data"
+    "version": "master"
   },
   "clouds": [
     "aws",
