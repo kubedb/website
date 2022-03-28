@@ -24,7 +24,7 @@
     "alt": "Voyager"
   },
   "icon": {
-    "src": "/assets/images/products/voyager/voyager-icon.png",
+    "src": "/assets/images/products/voyager/voyager-icon.svg",
     "alt": "Voyager",
     "sizes": {
       "192x192": "/assets/images/products/voyager/icons/android-icon-192x192.png"
@@ -130,6 +130,15 @@
       "version": "master",
       "hostDocs": false,
       "show": true
+    },
+    {
+      "version": "v2022.03.17",
+      "hostDocs": true,
+      "show": true,
+      "info": {
+        "cli": "v0.0.7",
+        "installer": "v2022.03.17"
+      }
     },
     {
       "version": "v2022.02.22",
@@ -362,7 +371,7 @@
       "hostDocs": false
     }
   ],
-  "latestVersion": "v2022.02.22",
+  "latestVersion": "v2022.03.17",
   "socialLinks": {
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/voyagermesh/voyager",
