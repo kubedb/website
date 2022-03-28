@@ -19,5 +19,8 @@
     "autoprefixer": "^9.6.1",
     "postcss-cli": "^9.1.0"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "postcss": "^8.4.12"
+  }
 }

@@ -123,16 +123,16 @@
          <div class="line line-4"></div>
          <div class="line line-5"></div>
        </div>
-      <div class="column is-10 ">
+      <div class="column is-12">
         {{ $odd:="true"}}
         {{ range .features }}
         <!-- single features start  -->
         <div
           class="columns is-multiline is-vcentered {{if eq $odd "false" }}is-flex-direction-row-reverse-mobile{{end}}">
           {{ if eq $odd "true" }}
-          <div class="column is-5">
+          <div class="column is-6">
             <div data-aos="flip-left" data-aos-duration="700"
-              class="features-thumbnail has-text-centered">
+              class="features-thumbnail has-text-left">
               <img src="{{ .image }}" alt="{{.title}}">
             </div>
           </div>
@@ -142,8 +142,8 @@
             <p data-aos="fade-up" data-aos-duration="700">{{.description}}</p>
           </div>
           {{ if eq $odd "false" }}
-          <div class="column is-5 is-offset-1" >
-            <div data-aos="flip-left" data-aos-duration="700" class="features-thumbnail has-text-centered">
+          <div class="column is-6" >
+            <div data-aos="flip-left" data-aos-duration="700" class="features-thumbnail has-text-right">
               <img src="{{.image}}" alt="{{.title}}">
             </div>
           </div>

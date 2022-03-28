@@ -21,7 +21,7 @@
 <!-- new hero area start   -->
 <!-- style="background-image: url(/assets/images/products/kubedb/hero-product-bg-dark.png);" -->
 <section class="hero-area is-product is-gradient is-dark has-image-bg" style="background-image:
-url(https://f.hubspotusercontent10.net/hubfs/8725062/Website/background/gradient-vertical.jpeg);">
+url(./assets/images/bg-image/gradient-bg.webp);">
   <div class="shape">
     <div class="cube"></div>
     <div class="cube"></div>
@@ -126,14 +126,16 @@ $ helm install kubedb appscode/kubedb \
       <!-- single feature information start  -->
       {{ range $f := $p.features }}
       <div class="column is-half-tablet is-one-third-widescreen">
-        <a href="#" class="single-features-item" data-aos="fade-up" data-aos-duration="500">
+        <a href="/features/{{ $f.url }}" class="single-features-item" data-aos="fade-up" data-aos-duration="500">
           <div class="feature-icon">
             <img src="{{ $f.icon.src }}" alt="{{ $f.icon.alt }}" />
           </div>
           <div class="feature-information">
+          
             <h5>{{ $f.title }}</h5>
-            <p class="is-ellipsis-3">{{ $f.summary }}</p>
-            <p class="is-ellipsis-3">{{ $f.description }}</p>
+            <p class="is-ellipsis-2">{{ $f.summary }}</p>
+            <p class="is-ellipsis-2">{{ $f.description }}</p>
+            <button class="readmore-button mt-15">Read More<span class="material-icons-outlined">arrow_forward</span></button>
           </div>
         </a>
       </div>
