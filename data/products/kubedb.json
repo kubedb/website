@@ -157,6 +157,22 @@
       "show": true
     },
     {
+      "version": "v2022.03.28",
+      "hostDocs": true,
+      "show": true,
+      "info": {
+        "autoscaler": "v0.11.0",
+        "cli": "v0.26.0",
+        "community": "v0.26.0",
+        "dashboard": "v0.2.0",
+        "enterprise": "v0.13.0",
+        "installer": "v2022.03.28",
+        "schema-manager": "v0.2.0",
+        "ui-server": "v0.2.0",
+        "webhook-server": "v0.2.0"
+      }
+    },
+    {
       "version": "v2022.02.22",
       "hostDocs": true,
       "show": true,
@@ -522,12 +538,12 @@
       "hostDocs": false
     }
   ],
-  "latestVersion": "v2022.02.22",
+  "latestVersion": "v2022.03.28",
   "socialLinks": {
-    "slack": "https://kubernetes.slack.com/messages/C8149MREV",
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/kubedb",
     "linkedin": "https://www.linkedin.com/company/appscode",
+    "slack": "https://kubernetes.slack.com/messages/C8149MREV",
     "twitter": "https://twitter.com/KubeDB",
     "youtube": "https://www.youtube.com/c/appscodeinc"
   },
