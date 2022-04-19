@@ -290,7 +290,7 @@ kubectl delete ns demo
 ## Next Steps
 
 - Learn about [backup & restore](/docs/v2022.03.28/guides/elasticsearch/backup/overview/) Elasticsearch database using Stash.
-- Learn how to configure [Elasticsearch Topology](/docs/v2022.03.28/guides/elasticsearch/clustering/topology-cluster/).
+- Learn how to configure [Elasticsearch Topology Cluster](/docs/v2022.03.28/guides/elasticsearch/clustering/topology-cluster/simple-dedicated-cluster/).
 - Monitor your Elasticsearch database with KubeDB using [`out-of-the-box` builtin-Prometheus](/docs/v2022.03.28/guides/elasticsearch/monitoring/using-builtin-prometheus).
 - Detail concepts of [Elasticsearch object](/docs/v2022.03.28/guides/elasticsearch/concepts/elasticsearch/).
 - Use [private Docker registry](/docs/v2022.03.28/guides/elasticsearch/private-registry/using-private-registry) to deploy Elasticsearch with KubeDB.
