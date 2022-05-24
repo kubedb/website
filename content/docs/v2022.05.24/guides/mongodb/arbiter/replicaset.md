@@ -72,7 +72,7 @@ spec:
       requests:
         storage: 500Mi
   arbiter:
-    podTemplate: null
+    podTemplate: {}
   terminationPolicy: WipeOut
 
 ```
