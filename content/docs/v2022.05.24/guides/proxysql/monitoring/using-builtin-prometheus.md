@@ -413,7 +413,7 @@ $ kubectl delete ns monitoring
 
 ## Next Steps
 
-- Monitor your ProxySQL database with KubeDB using [`out-of-the-box` Prometheus operator](/docs/v2022.05.24/guides/proxysql/monitoring/using-prometheus-operator).
+- Monitor your ProxySQL with KubeDB using [`out-of-the-box` Prometheus operator](/docs/v2022.05.24/guides/proxysql/monitoring/using-prometheus-operator).
 - Use private Docker registry to deploy ProxySQL with KubeDB [here](/docs/v2022.05.24/guides/proxysql/private-registry/using-private-registry).
 - Use custom config file to configure ProxySQL [here](/docs/v2022.05.24/guides/proxysql/configuration/using-config-file).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2022.05.24/CONTRIBUTING).
