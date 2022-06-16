@@ -1,11 +1,11 @@
 ---
-title: Use Kibana with KubeDB Elasticsearch
+title: Elasticsearch Dashboard
 menu:
   docs_v2022.05.24:
-    identifier: es-kibana
-    name: Kibana
+    identifier: es-dashboard
+    name: Elasticsearch Dashboard
     parent: es-elasticsearch-guides
-    weight: 65
+    weight: 53
 menu_name: docs_v2022.05.24
 info:
   autoscaler: v0.12.0
