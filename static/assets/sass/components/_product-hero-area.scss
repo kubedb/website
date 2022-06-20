@@ -246,7 +246,31 @@
     }
   }
 }
+.news-message {
+  display: inline-flex;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #3e393e;
+  background: $ac-white;
 
+  border: 1px solid $ac-white-light;
+  padding: 3px 15px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+
+  &:hover {
+    strong {
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    color: $ac-primary;
+  }
+}
 .hero-area-code-editor {
   opacity: 0;
   visibility: hidden;
@@ -459,7 +483,10 @@ Responsive Classes
       }
     }
   }
-
+  .news-message-wrapper {
+    display: flex;
+    justify-content: center;
+  }
   .hero-area-code-editor {
     max-width: calc(100vw - 30px);
     margin: 0 auto;
