@@ -216,7 +216,10 @@
   <!-- documentation body start  -->
   <div class="documentation-body">
     {{ if not (eq $p.latestVersion $currentBranch) }}
-    <article class="message is-danger">
+    <article class="message is-warning">
+       <lord-icon src="https://cdn.lordicon.com/rslnizbt.json" trigger="loop" colors="primary:#ffdd57"
+         style="width:52px;height:52px;">
+       </lord-icon>
       <div class="message-body">
         {{ $url := urls.Parse (absURL .Permalink) }}
         {{ $nurl := "/docs/latest/" }}
