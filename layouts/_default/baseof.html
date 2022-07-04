@@ -847,7 +847,7 @@
       <div class="cta-area-inner">
         <div class="container">
           <div class="columns is-vcentered">
-            <div class="column is-9">
+            <div class="column is-full-tablet is-half-tablet is-half-desktop">
               <h3 data-aos="fade-up" data-aos-duration="500">Run and Manage your Database on Kubernetes FREE !</h3>
               <p data-aos="fade-up" data-aos-duration="700">{{ $p.name }} community edition is FREE to use on any
                 supported Kubernetes engines. You can deploy and
@@ -857,13 +857,19 @@
                 of cost to try {{ $p.name }} Enterprise edition.
               </p>
             </div>
-            <div class="column is-3  has-text-centered-touch has-text-right-desktop">
-             <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-white"><span>
-                 <lord-icon class="inherit-color" speed="0.50" src="https://cdn.lordicon.com/uvextprq.json"
-                   trigger="loop" target="a.is-white" trigger="hover"
-                   style="width:22px;height:22px; margin-right: 8px;">
-                 </lord-icon>
-               </span>CONTACT US</a>
+            <div
+              class="column is-full-tablet is-half-tablet is-half-desktop has-text-centered-touch has-text-right-desktop">
+              <div class="buttons is-justify-content-flex-end">
+                <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-white" data-aos="fade-up"
+                  data-aos-duration="900">TRY NOW FREE</a>
+              <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary"
+                style="background-color: transparent; border: 1px solid #e7e7e7; color: #ffffff;"><span>
+                  <lord-icon class="inherit-color" speed="0.50" src="https://cdn.lordicon.com/uvextprq.json"
+                    trigger="loop" target="a.is-white" trigger="hover"
+                    style="width:22px;height:22px; margin-right: 8px;">
+                  </lord-icon>
+                </span>CONTACT US</a>
+               </div>
             </div>
           </div>
         </div>

@@ -8368,6 +8368,45 @@ strong {
   background: var(--ac-primary);
 }
 
+.message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.message lord-icon {
+  margin-right: 1rem;
+}
+
+.message.is-warning {
+  background-color: transparent;
+}
+
+.message.is-warning .message-body {
+  border-color: transparent;
+  border-width: 0;
+  color: #3b3030;
+  padding: 1em 1em;
+  background-color: #ffdd57;
+  width: 100%;
+}
+
+.message.is-danger {
+  background-color: transparent;
+}
+
+.message.is-danger .message-body {
+  border-color: transparent;
+  border-width: 0;
+  color: #ffffff;
+  padding: 1em 1em;
+  background-color: #ff3729;
+  width: 100%;
+}
+
 /****************************************
 Responsive Classes
 *****************************************/
@@ -12181,7 +12220,7 @@ Responsive Classes
   background-size: cover;
   background-position: center;
   border-radius: 8px;
-  height: 250px;
+  min-height: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12213,6 +12252,11 @@ Responsive Classes
   }
   .cta-area .cta-area-inner p {
     text-align: center;
+  }
+  .cta-area .cta-area-inner .buttons {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
   }
 }
 
@@ -13281,7 +13325,7 @@ blockquote {
 .full-info ul li pre,
 .full-info ol li pre {
   text-indent: 0px;
-  margin-left: -30px;
+  margin-left: 0px;
 }
 
 .full-info ul li:before {
@@ -13787,6 +13831,9 @@ Responsive Classes
   }
   .improve-section-area {
     padding-bottom: 20px;
+  }
+  .button.is-link.is-medium.is-active.has-text-weight-normal {
+    margin-bottom: 10px;
   }
 }
 
