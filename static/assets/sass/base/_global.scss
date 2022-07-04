@@ -10,12 +10,14 @@
   z-index: 1;
   border-radius: 4px;
   overflow: hidden;
+
   img {
     display: flex;
     object-fit: cover;
     height: 250px;
     width: 400px;
   }
+
   &:hover {
     .play-icon {
       svg {
@@ -273,6 +275,39 @@
   background: $ac-primary;
 }
 
+.message {
+  display: flex;
+  align-items: center;
+  lord-icon {
+    margin-right: 1rem;
+  }
+  &.is-warning {
+    background-color: transparent;
+    .message-body {
+      border-color: transparent;
+      border-width: 0;
+      color: $ac-color-text;
+      padding: 1em 1em;
+      background-color: #ffdd57;
+      width: 100%;
+    }
+  }
+
+   &.is-danger {
+    background-color: transparent;
+    .message-body {
+      border-color: transparent;
+      border-width: 0;
+      color: $ac-white;
+      padding: 1em 1em;
+      background-color: $ac-red;
+      width: 100%;
+    }
+  }
+}
+
+
+
 /****************************************
 Responsive Classes
 *****************************************/
@@ -370,6 +405,7 @@ Responsive Classes
       }
     }
   }
+
   .container {
     max-width: 1100px !important;
   }
