@@ -1,13 +1,13 @@
 apiVersion: kubedb.com/v1alpha2
-kind: MySQL
+kind: Postgres
 metadata:
-  name: my-group
+  name: demo-pg
   namespace: demo
 spec:
-  version: "8.0.29"
+  version: "13.2"
   replicas: 3
-  topology:
-    mode: GroupReplication
+  standbyMode: Hot
+  streamingMode: Synchronous
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -16,4 +16,4 @@ spec:
     resources:
       requests:
         storage: 1Gi
-  terminationPolicy: WipeOut
+  terminationPolicy: DoNotTerminate
