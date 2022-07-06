@@ -40,11 +40,9 @@ metadata:
   name: m1
   namespace: demo
 spec:
-  version: "8.0.27"
+  version: "8.0.29"
   topology:
     mode: GroupReplication
-    group:
-      name: "dc002fc3-c412-4d18-b1d4-66c1fbfbbc9b"
   authSecret:
     name: m1-auth
   storageType: "Durable"
@@ -58,7 +56,7 @@ spec:
   init:
     script:
       configMap:
-        name: mg-init-script
+        name: my-init-script
   monitor:
     agent: prometheus.io/operator
     prometheus:
@@ -126,8 +124,9 @@ spec:
 
 `spec.version` is a required field specifying the name of the [MySQLVersion](/docs/v2022.05.24/guides/mysql/concepts/catalog/) crd where the docker images are specified. Currently, when you install KubeDB, it creates the following `MySQLVersion` resources,
 
-- `8.0.27`, `8.0.27`, `8.0.20-v1`, `8.0.14-v2`, `8.0.3-v2`
-- `5.7.36`, `5.7.36`, `5.7.36`, `5.7.25-v2`
+- `8.0.29`, `8.0.27`, `8.0.17`, `8.0.3-v4`
+- `8.0.27-innodb`
+- `5.7.36`, `5.7.35-v1`,`5.7.25-v2`
 
 ### spec.topology
 

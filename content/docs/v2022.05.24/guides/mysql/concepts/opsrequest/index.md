@@ -50,10 +50,10 @@ spec:
     name: my-group
   type: Upgrade
   upgrade:
-    targetVersion: 8.0.27
+    targetVersion: 8.0.29
 status:
   conditions:
-  - lastTransitionTime: "2020-06-11T09:59:05Z"
+  - lastTransitionTime: "2022-06-16T13:52:58Z"
     message: The controller has scaled/upgraded the MySQL successfully
     observedGeneration: 3
     reason: OpsRequestSuccessful
@@ -79,7 +79,7 @@ spec:
     member: 3
 status:
   conditions:
-  - lastTransitionTime: "2020-06-11T09:59:05Z"
+  - lastTransitionTime: "2022-06-16T13:52:58Z"
     message: The controller has scaled/upgraded the MySQL successfully
     observedGeneration: 3
     reason: OpsRequestSuccessful
@@ -111,7 +111,7 @@ spec:
         cpu: "0.7"
 status:
   conditions:
-  - lastTransitionTime: "2020-06-11T09:59:05Z"
+  - lastTransitionTime: "2022-06-11T09:59:05Z"
     message: The controller has scaled/upgraded the MySQL successfully
     observedGeneration: 3
     reason: OpsRequestSuccessful

@@ -44,7 +44,7 @@ info:
 ## Life Cycle of a Redis Object
 
 <p align="center">
-  <img alt="lifecycle"  src="/docs/v2022.05.24/images/redis/redis-lifecycle.svg">
+  <img alt="lifecycle"  src="/docs/v2022.05.24/images/redis/redis-lifecycle.png">
 </p>
 
 ## User Guide
