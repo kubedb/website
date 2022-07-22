@@ -86,7 +86,7 @@ spec:
     resources:
       requests:
         storage: 50Mi
-  terminationPolicy: WipeOut
+  terminationPolicy: Delete
 ```
 
 ```bash
@@ -240,7 +240,7 @@ spec:
         storage: 50Mi
     storageClassName: standard
   storageType: Durable
-  terminationPolicy: WipeOut
+  terminationPolicy: Delete
   version: "5.7"
 status:
   observedGeneration: 2

@@ -80,7 +80,7 @@ spec:
     resources:
       requests:
         storage: 1Gi
-  terminationPolicy: WipeOut
+  terminationPolicy: Delete
 ```
 
 Create the above `MySQL` object,
@@ -224,7 +224,7 @@ spec:
       kind: MySQL
       name: mysql-server
     replicas: 3
-  terminationPolicy: WipeOut
+  terminationPolicy: Delete
 ```
 
 Now, create this,
