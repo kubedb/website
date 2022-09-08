@@ -9722,7 +9722,7 @@ video {
 
 .product-version .dropdown .dropdown-trigger .button {
   font-size: 0.813rem;
-  width: 190px;
+  width: 210px;
   height: 2rem;
   border-radius: 2px;
   padding: 2px 15px;
@@ -10069,7 +10069,7 @@ Responsive Classes
     padding-left: 10px;
   }
   .product-version .dropdown .dropdown-trigger .button {
-    width: 170px;
+    width: 200px;
   }
   .product-version .dropdown-menu {
     z-index: 9999;
@@ -10118,7 +10118,7 @@ Responsive Classes
     margin-left: 4px !important;
   }
   .product-version .dropdown .dropdown-trigger .button {
-    width: 160px;
+    width: 200px;
     padding: 2px 5px;
   }
 }
