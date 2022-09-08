@@ -561,7 +561,12 @@
           <!-- navbar left start  -->
           <div class="navbar-left">
             <div class="navbar-brand">
-              <a href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}"><img src="{{ $p.logo.src }}"
+              <a href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}"
+                class="is-hidden-mobile"><img src="{{ $p.logo.src }}"
+                  alt="{{ $p.logo.alt }}" alt="{{ $p.logo.alt }}"></a>
+              <a href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}"
+                class="is-hidden-tablet"><img
+                  src="/assets/images/logo/{{ $p.key }}/logo-moscot.svg"
                   alt="{{ $p.logo.alt }}" alt="{{ $p.logo.alt }}"></a>
 
               <!-- {{ $currentPageType := index (split .Page.Permalink "/") 3 }} -->
