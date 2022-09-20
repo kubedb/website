@@ -2,9 +2,8 @@
   "key": "kubevault",
   "name": "KubeVault",
   "fullname": "KubeVault by AppsCode",
-  "tagline": "KubeVault - Run Production-Grade Vault on Kubernetes",
-  "summary": "KubeVault is a Git-Ops ready, production-grade solution <br/> for deploying and configuring Hashicorp's Vault on Kubernetes.",
-  "heroAreaTitle": "Run Production-Grade <br/> Vault on Kubernetes",
+  "tagline": "Run Production-Grade <br/>Vault on Kubernetes",
+  "summary": "KubeVault is a Git-Ops ready, production-grade solution for deploying and configuring Hashicorp's Vault on Kubernetes.",
   "published": true,
   "author": "AppsCode Inc.",
   "website": {
@@ -50,6 +49,7 @@
   "features": [
     {
       "title": "Vault Kubernetes Deployment",
+      "url": "vault-kubernetes-deployment",
       "image": {
         "src": "/assets/images/products/kubevault/features/feature-1.png",
         "alt": "http"
@@ -63,6 +63,7 @@
     },
     {
       "title": "Auto Initialization & Unsealing",
+      "url": "auto-initialization-and-unsealing",
       "image": {
         "src": "/assets/images/products/kubevault/features/feature-1.png",
         "alt": "http"
@@ -75,7 +76,8 @@
       "description": "KubeVault provides various ways to automatically initialize & unseal your Vault Servers. You can use your choice of cloud providers among GCP, AWS, Azure, etc. or even K8s secret to store unseal keys & vault token."
     },
     {
-      "title": "Consume Vault Secrets using Secrets Store CSI Driver",
+      "title": "Consume KubeVault Secrets with CSI",
+      "url": "consume-kubevault-secrets-with-csi",
       "image": {
         "src": "/assets/images/products/kubevault/features/feature-5.png",
         "alt": "http"
@@ -89,6 +91,7 @@
     },
     {
       "title": "Manage DB Users Privileges",
+      "url": "manage-db-users-privileges",
       "image": {
         "src": "/assets/images/products/kubevault/features/feature-4.png",
         "alt": "http"
@@ -102,6 +105,7 @@
     },
     {
       "title": "Storage Backend",
+      "url": "storage-backend",
       "image": {
         "src": "/assets/images/products/kubevault/features/feature-2.png",
         "alt": "http"
@@ -115,6 +119,7 @@
     },
     {
       "title": "Authentication Method",
+      "url": "authentication-method",
       "image": {
         "src": "/assets/images/products/kubevault/features/feature-3.png",
         "alt": "http"
@@ -128,6 +133,7 @@
     },
     {
       "title": "Database Secret Engine",
+      "url": "database-secret-engine",
       "image": {
         "src": "/assets/images/products/kubevault/features/feature-4.png",
         "alt": "http"
@@ -141,6 +147,7 @@
     },
     {
       "title": "Azure Secret Engine",
+      "url": "azure-secret-engine",
       "image": {
         "src": "/assets/images/products/kubevault/features/feature-4.png",
         "alt": "http"
@@ -154,6 +161,7 @@
     },
     {
       "title": "AWS Secret Engine",
+      "url": "aws-secret-engine",
       "image": {
         "src": "/assets/images/products/kubevault/features/feature-4.png",
         "alt": "http"
@@ -167,6 +175,7 @@
     },
     {
       "title": "GCP Secret Engine",
+      "url": "gcp-secret-engine",
       "image": {
         "src": "/assets/images/products/kubevault/features/feature-4.png",
         "alt": "http"
@@ -180,6 +189,7 @@
     },
     {
       "title": "Kubectl Plugin",
+      "url": "kubectl-plugin",
       "image": {
         "src": "/assets/images/products/kubevault/features/feature-6.png",
         "alt": "http"
@@ -197,6 +207,28 @@
       "version": "master",
       "hostDocs": false,
       "show": true
+    },
+    {
+      "version": "v2022.09.09",
+      "hostDocs": true,
+      "show": true,
+      "info": {
+        "cli": "v0.9.0",
+        "installer": "v2022.09.09",
+        "operator": "v0.9.0",
+        "unsealer": "v0.9.0"
+      }
+    },
+    {
+      "version": "v2022.09.05-rc.0",
+      "hostDocs": true,
+      "show": true,
+      "info": {
+        "cli": "v0.9.0-rc.0",
+        "installer": "v2022.09.05-rc.0",
+        "operator": "v0.9.0-rc.0",
+        "unsealer": "v0.9.0-rc.0"
+      }
     },
     {
       "version": "v2022.06.16",
@@ -265,7 +297,7 @@
       }
     }
   ],
-  "latestVersion": "v2022.06.16",
+  "latestVersion": "v2022.09.09",
   "socialLinks": {
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/kubevault",
