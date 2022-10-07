@@ -5,7 +5,15 @@
 <html lang="en">
 
 <head>
-  {{ template "_internal/google_analytics_async.html" . }}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5J3WVDEFB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-R5J3WVDEFB');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -91,6 +99,7 @@
     {{ end }}
   <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
   <script src="https://cdn.pagesense.io/js/appscodeinc/30ddadb503fc4a72b3eede8ce8b08997.js"></script>
+  <script src="https://tag.clearbitscripts.com/v1/pk_81079761ad5191fbdb09e9f13ff41927/tags.js"></script>
 </head>
 
 <body class="{{$p.key}}" id="app">
