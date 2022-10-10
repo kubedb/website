@@ -13430,38 +13430,57 @@ ul li b {
   color: var(--ac-primary);
 }
 
-.code-block-heading {
+.code-block-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.code-block-wrapper .code-block-title h4 {
+  font-size: 16px;
+  line-height: 130%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  margin-bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background: #f0f3f6;
-  padding: 10px;
-  border-radius: 4px 4px 0 0;
-  overflow: hidden;
-  border: 1px solid #d1d5d9;
-  border-bottom: transparent;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.code-block-heading h4 {
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  margin-bottom: 0;
+.code-block-wrapper .code-block-title .copy-and-download {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f0f3f3;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-.code-block-heading .copy-and-download .download-here,
-.code-block-heading .copy-and-download .copy-here {
+.code-block-wrapper .code-block-title .copy-and-download button {
   background: transparent;
   border: none;
-  color: #9aa2ad;
-  font-size: 20px;
   cursor: copy;
+  width: 30px;
 }
 
-.code-block-heading .copy-and-download .download-here {
+.code-block-wrapper .code-block-title .copy-and-download button svg {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.code-block-wrapper .code-block-title .copy-and-download button:hover svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.code-block-wrapper .code-block-title .copy-and-download .download-here {
   cursor: pointer;
 }
 
