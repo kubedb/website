@@ -1,0 +1,92 @@
+.cookie-wrapper {
+  border-top: 1px solid $ac-white-light;
+  position: fixed;
+  width: 100%;
+  background-color: #fafafd;
+  bottom: 0;
+  left: 0;
+  padding: 8px 0;
+  z-index: 99;
+  transition: 0.3s ease-in-out;
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .cookie-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-size: 14px;
+      color: $ac-color-text;
+      width: calc(100% - 220px);
+      margin-bottom: 0;
+
+      a {
+        color: $ac-primary;
+        text-decoration: underline;
+        font-weight: 500;
+      }
+    }
+
+    .buttons {
+      .button {
+        border: none;
+        background-color: transparent;
+        font-weight: 500;
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 2px;
+        transition: 0.3s;
+        &:hover:not(.is-primary) {
+          text-decoration: underline;
+          color: $ac-primary;
+        }
+        &.is-primary {
+          background-color: $ac-primary;
+        }
+      }
+    }
+  }
+}
+
+/****************************************
+Responsive Classes
+*****************************************/
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 768px) {
+  .cookie-wrapper {
+    .cookie-content {
+      justify-content: center;
+      flex-direction: column;
+
+      p {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 768px) {
+}
+
+// Medium devices (tablets, 769px and up)
+@media (min-width: 769px) and (max-width: 1023px) {
+}
+
+// Large devices (desktops, 1024px and up)
+@media (min-width: 1024px) and (max-width: 1215px) {
+}
+
+@media (min-width: 1216px) and (max-width: 1407px) {
+}
+
+@media (min-width: 1408px) and (max-width: 1600px) {
+}
+
+@media (min-width: 1408px) {
+}

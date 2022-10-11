@@ -76,11 +76,10 @@
       }
     }
 
-    .item input:checked~label a, 
-    .item input:checked~.item>label a {
+    .item input:checked ~ label a,
+    .item input:checked ~ .item > label a {
       color: $ac-primary;
     }
-
   }
 
   .documentation-body {
@@ -361,35 +360,46 @@ ul li b {
   color: $ac-primary;
 }
 
-.code-block-heading {
-  display: flex;
-  justify-content: space-between;
-  background: #f0f3f6;
-  padding: 10px;
-  border-radius: 4px 4px 0 0;
-  overflow: hidden;
-  border: 1px solid #d1d5d9;
-  border-bottom: transparent;
-
-  h4 {
-    font-size: 16px;
-    font-family: $ac-font-heading;
-    font-weight: 400;
-    margin-bottom: 0;
-  }
-
-  .copy-and-download {
-    .download-here,
-    .copy-here {
-      background: transparent;
-      border: none;
-      color: #9aa2ad;
-      font-size: 20px;
-      cursor: copy;
+.code-block-wrapper {
+  position: relative;
+  z-index: 1;
+  .code-block-title {
+    h4 {
+      font-size: 16px;
+      line-height: 130%;
+      font-family: $ac-font-heading;
+      font-weight: 500;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
     }
 
-    .download-here {
-      cursor: pointer;
+    .copy-and-download {
+      display: flex;
+      align-items: center;
+      background: #f0f3f3;
+      padding: 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      button {
+        background: transparent;
+        border: none;
+        cursor: copy;
+        width: 30px;
+        svg {
+          transition: 0.3s ease-in-out;
+        }
+        &:hover {
+          svg {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      .download-here {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -817,7 +827,7 @@ Responsive Classes
   .improve-section-area {
     padding-bottom: 20px;
   }
-  .button.is-link.is-medium.is-active.has-text-weight-normal{
+  .button.is-link.is-medium.is-active.has-text-weight-normal {
     margin-bottom: 10px;
   }
 }

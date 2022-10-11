@@ -96,7 +96,7 @@
   <!-- Custom CSS -->
   {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-    {{ end }}
+  {{ end }}
   <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
   <script src="https://cdn.pagesense.io/js/appscodeinc/30ddadb503fc4a72b3eede8ce8b08997.js"></script>
   <script src="https://tag.clearbitscripts.com/v1/pk_81079761ad5191fbdb09e9f13ff41927/tags.js"></script>
@@ -110,6 +110,45 @@
         your experience and security.
       </p>
     <![endif]-->
+
+    <!-- cookies consent start  -->
+    <div class="cookie-wrapper">
+      <div class="container">
+       <div class="cookie-content">
+         <p>We use cookies and other similar technology to collect data to improve your experience on our site, as
+           described in our <a href="https://appscode.com/legal/privacy-policy/" target="_blank">Privacy Policy</a>.</p>
+         <div class="buttons">
+           <button class="button close-btn">Close</button>
+           <button class="button ac-button is-primary">ACCEPT</button>
+         </div>
+       </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      // for cookie
+      const cookieBox = document.querySelector(".cookie-wrapper"), acceptBtn = cookieBox.querySelector(".is-primary"),
+      closeBtn = cookieBox.querySelector(".close-btn");
+      
+      // close cookie box 
+      closeBtn.addEventListener("click", function(){
+        cookieBox.classList.add("hide");
+      })
+
+      acceptBtn.addEventListener("click", function () {
+      //setting cookie for 1 month, after one month it'll be expired automatically
+        document.cookie = `CookieBy=KubeDB; path=/; max-age=${60 * 60 * 24 * 365}`;
+        if (document.cookie) { //if cookie is set
+        cookieBox.classList.add("hide"); //hide cookie box
+        } else { //if cookie not set then alert an error
+        alert("Cookie can't be set! Please unblock this site from the cookie setting of your browser.");
+        }
+      });
+      let checkCookie = document.cookie.indexOf("CookieBy=KubeDB"); //checking our cookie
+      //if cookie is set then hide the cookie box else show it
+      checkCookie != -1 ? cookieBox.classList.add("hide") : cookieBox.classList.remove("hide");
+    </script>
+    <!-- cookies consent end -->
 
   <!--========================== header area start ==========================-->
   {{ block "header" . }}
