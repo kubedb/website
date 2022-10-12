@@ -197,6 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
 });
 
 // menu sticky
