@@ -44,17 +44,67 @@
       "redirects": [
         {
           "source": "/docs/latest/",
-          "destination": "/docs/v2022.08.04-rc.1/",
+          "destination": "/docs/v2022.08.08/",
           "type": 302
         },
         {
           "source": "/docs/latest/:rest*",
-          "destination": "/docs/v2022.08.04-rc.1/:rest",
+          "destination": "/docs/v2022.08.08/:rest",
           "type": 302
         },
         {
           "source": "/docs",
-          "destination": "/docs/v2022.08.04-rc.1/",
+          "destination": "/docs/v2022.08.08/",
+          "type": 302
+        },
+        {
+          "source": "/elasticsearch",
+          "destination": "/kubernetes/databases/run-and-manage-elasticsearch-on-kubernetes/",
+          "type": 302
+        },
+        {
+          "source": "/mariadb",
+          "destination": "/kubernetes/databases/run-and-manage-mariadb-on-kubernetes/",
+          "type": 302
+        },
+        {
+          "source": "/memcached",
+          "destination": "/kubernetes/databases/run-and-manage-memcached-on-kubernetes/",
+          "type": 302
+        },
+        {
+          "source": "/mongodb",
+          "destination": "/kubernetes/databases/run-and-manage-mongodb-on-kubernetes/",
+          "type": 302
+        },
+        {
+          "source": "/mysql",
+          "destination": "/kubernetes/databases/run-and-manage-mysql-on-kubernetes/",
+          "type": 302
+        },
+        {
+          "source": "/percona-xtradb",
+          "destination": "/kubernetes/databases/run-and-manage-percona-xtradb-on-kubernetes/",
+          "type": 302
+        },
+        {
+          "source": "/pgbouncer",
+          "destination": "/kubernetes/databases/run-and-manage-pgbouncer-on-kubernetes/",
+          "type": 302
+        },
+        {
+          "source": "/postgres",
+          "destination": "/kubernetes/databases/run-and-manage-postgres-on-kubernetes/",
+          "type": 302
+        },
+        {
+          "source": "/proxysql",
+          "destination": "/kubernetes/databases/run-and-manage-proxysql-on-kubernetes/",
+          "type": 302
+        },
+        {
+          "source": "/redis",
+          "destination": "/kubernetes/databases/run-and-manage-redis-on-kubernetes/",
           "type": 302
         }
       ]
