@@ -107,6 +107,17 @@
   <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
   <script src="https://cdn.pagesense.io/js/appscodeinc/30ddadb503fc4a72b3eede8ce8b08997.js"></script>
   <script src="https://tag.clearbitscripts.com/v1/pk_81079761ad5191fbdb09e9f13ff41927/tags.js"></script>
+  <script>
+    (function () {
+      var zi = document.createElement('script');
+      zi.type = 'text/javascript';
+      zi.async = true;
+      zi.referrerPolicy = 'unsafe-url';
+      zi.src = 'https://ws.zoominfo.com/pixel/63336998dabc29c01993a712';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(zi, s);
+    })();
+  </script>
 </head>
 
 <body class="{{$p.key}}" id="app">
@@ -1167,9 +1178,9 @@
     });
   </script>
   <!--End of Tawk.to Script-->
-
+  <noscript>
+    <img src="https://ws.zoominfo.com/pixel/63336998dabc29c01993a712" width="1" height="1" style="display: none;" alt="websights"/>
+  </noscript>
 </body>
-
-
 
 </html>
