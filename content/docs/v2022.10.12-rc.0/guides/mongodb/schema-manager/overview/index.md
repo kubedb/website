@@ -2,7 +2,7 @@
 title: MongoDB Schema Manager Overview
 menu:
   docs_v2022.10.12-rc.0:
-    identifier: schema-manager-overview
+    identifier: mg-schema-manager-overview
     name: Overview
     parent: mg-schema-manager
     weight: 10
