@@ -1,0 +1,21 @@
+{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+
+{{- $numPages := len .Site.Pages -}}
+{{- $count := 0 -}}
+[
+    {{- range .Site.Pages -}}
+    {{- $count = add $count 1 -}}
+    {{- $text := "" -}}
+    {{ if .IsPage }}{{ $text = .Plain }}{{ else }}{{ $text = .Description }}{{ end }}
+    {{- if and (or (not (hasPrefix .RelPermalink "/docs")) (hasPrefix .RelPermalink (printf "/docs/%s" $p.latestVersion))) $text -}}
+    {{- $url := (replace .RelPermalink $p.latestVersion "latest") -}}
+    {{ dict
+    "documentId" ( md5 $url )
+    "title" .Title
+    "url" $url
+    "text" (chomp $text)
+    | jsonify | chomp }}
+    {{- if ne $count $numPages -}},{{- end -}}
+    {{- end -}}
+    {{- end -}}
+]

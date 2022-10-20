@@ -102,3 +102,7 @@ markup:
       unsafe: true
   highlight:
     style: manni
+outputs:
+  home:
+  - HTML
+  - JSON
