@@ -118,10 +118,86 @@
       </label>
     
       <input id="acSearch" type="search" placeholder="Search in {{ $p.name }} documentation!">
-    </div>
 
+      <!-- search result start  -->
+      <div class="search-result-box is-hidden">
+
+        <!-- add ".is-hidden" for hide item -->
+        <div class="not-found is-hidden">
+          No Result Found!
+        </div>
+
+        <!-- add ".is-hidden" for hide item -->
+        <div class="search-content">
+          <!-- single search item start  -->
+          <div class="single-result-item">
+            <h2><a href="#">KubeDB - Run Production-Grade Databases on Kubernetes</a></h2>
+            <a href="#" class="url">https://kubedb.com/</a>
+            <p class="is-ellipsis-2">helm repo add appscode https://charts.appscode.com/stable/ $ helm repo update $ helm
+              install
+              <strong>kubedb</strong>
+              appscode/kubedb \ --version v2022.10.18 \ --namespace ...</p>
+          </div>
+          <!-- single search item end -->
+
+          <!-- single search item start  -->
+          <div class="single-result-item">
+            <h2><a href="#">KubeDB - Run Production-Grade Databases on Kubernetes</a></h2>
+            <a href="#" class="url">https://kubedb.com/</a>
+            <p class="is-ellipsis-2">helm repo add appscode https://charts.appscode.com/stable/ $ helm repo update $ helm
+              install
+              <strong>kubedb</strong>
+              appscode/kubedb \ --version v2022.10.18 \ --namespace ...</p>
+          </div>
+          <!-- single search item end -->
+
+          <!-- single search item start  -->
+          <div class="single-result-item">
+            <h2><a href="#">KubeDB - Run Production-Grade Databases on Kubernetes</a></h2>
+            <a href="#" class="url">https://kubedb.com/</a>
+            <p class="is-ellipsis-2">helm repo add appscode https://charts.appscode.com/stable/ $ helm repo update $ helm
+              install
+              <strong>kubedb</strong>
+              appscode/kubedb \ --version v2022.10.18 \ --namespace ...</p>
+          </div>
+          <!-- single search item end -->
+
+          <!-- single search item start  -->
+          <div class="single-result-item">
+            <h2><a href="#">KubeDB - Run Production-Grade Databases on Kubernetes</a></h2>
+            <a href="#" class="url">https://kubedb.com/</a>
+            <p class="is-ellipsis-2">helm repo add appscode https://charts.appscode.com/stable/ $ helm repo update $
+              helm
+              install
+              <strong>kubedb</strong>
+              appscode/kubedb \ --version v2022.10.18 \ --namespace ...</p>
+          </div>
+          <!-- single search item end -->
+
+          <div class="pagination-area">
+            <div class="pagination-list is-flex is-justify-content-space-between">
+              <p>About 196 results (0.45 seconds)</p>
+              <ul>
+                <li><a href="#" class="is-active">1</a></li>
+                <li><a href="#">NEXT</a></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+
+      </div>
+      <!-- search result end  -->
+    </div>
   </div>
   <!-- searchbar component end -->
+  <script type="text/javascript">
+    const acSearch = document.querySelector("#acSearch");
+    acSearch.addEventListener("click", function(){
+      console.log(123333);
+      let searchBox = document.querySelector(".search-result-box");
+        searchBox.classList.remove('is-hidden')
+    })
+  </script>
 </div>
 <!-- documentation and search end  -->
 {{ end }}
@@ -343,7 +419,7 @@
 <!-- improve page section end -->
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   var pageSize = 5;
   var acSearch = document.querySelector("#acSearch");
   var bodyOverlay = document.querySelector(".overlay-bg");
@@ -456,7 +532,7 @@
     pager += '</ul>';
     document.querySelector(".pagination-area .pagination-list").innerHTML = pager;
   }
-</script>
+</script> -->
 
 <!-- sidebar search area end -->
 
