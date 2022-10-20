@@ -70,3 +70,22 @@ jobs:
           npm install
           make docs
           make release
+
+      - name: Update search index
+        env:
+          MEILISEARCH_ADMIN_API_KEY: ${{ secrets.MEILISEARCH_ADMIN_API_KEY }}
+        if: startsWith(github.event.ref, 'refs/tags/') && (contains(github.ref, '-alpha.') || contains(github.ref, '-beta.')) == false
+        run: |
+          curl \
+            -X POST 'https://search.docs.appscode.com/indexes' \
+            -H "Authorization: Bearer $MEILISEARCH_ADMIN_API_KEY" \
+            -H 'Content-Type: application/json' \
+            --data-binary '{
+              "uid": "kubedb",
+              "primaryKey": "documentId"
+            }'
+          curl \
+            -X POST 'https://search.docs.appscode.com/indexes/kubedb/documents' \
+            -H "Authorization: Bearer $MEILISEARCH_ADMIN_API_KEY" \
+            -H 'Content-Type: application/json' \
+            --data-binary @public/index.json
