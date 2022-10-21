@@ -9796,7 +9796,7 @@ video {
   background-color: transparent;
   color: #3b3030;
   font-size: 0.875rem;
-  width: 270px;
+  width: 550px;
   padding: 0.2rem 0.875rem;
 }
 
@@ -10180,6 +10180,9 @@ Responsive Classes
   left: 0;
   top: 36px;
   padding: 8px 0;
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  /* Chrome, Edge, and Safari */
 }
 
 .search-result-box .not-found {
@@ -10195,30 +10198,64 @@ Responsive Classes
   min-height: 200px;
 }
 
-.search-result-box .single-result-item {
+.search-result-box * {
+  scrollbar-width: auto;
+  scrollbar-color: #ebebeb #fafafd;
+}
+
+.search-result-box *::-webkit-scrollbar {
+  width: 12px;
+}
+
+.search-result-box *::-webkit-scrollbar-track {
+  background: #fafafd;
+}
+
+.search-result-box *::-webkit-scrollbar-thumb {
+  background-color: #ebebeb;
+  border-radius: 10px;
+  border: 3px solid #fafafd;
+}
+
+.search-result-box .search-content {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.search-result-box .search-footer {
+  padding: 8px 32px 4px;
+  border-top: 1px solid #dbdbde;
+}
+
+.search-result-box .search-footer p {
+  font-size: 13px;
+  color: #666;
+}
+
+.single-result-item {
   padding: 16px 32px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   border-bottom: 1px solid #dbdbde;
 }
 
-.search-result-box .single-result-item:last-child {
+.single-result-item:last-child {
   border-bottom: none;
 }
 
-.search-result-box .single-result-item:hover {
+.single-result-item:hover {
   background-color: #f7f7fd;
 }
 
-.search-result-box .single-result-item:hover h2 {
+.single-result-item:hover h2 {
   text-decoration: underline;
 }
 
-.search-result-box .single-result-item:hover h2 a {
+.single-result-item:hover h2 a {
   color: var(--ac-primary);
 }
 
-.search-result-box .single-result-item h2 {
+.single-result-item h2 {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -10227,7 +10264,7 @@ Responsive Classes
   color: var(--ac-primary);
 }
 
-.search-result-box .single-result-item .url {
+.single-result-item .url {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -10236,7 +10273,7 @@ Responsive Classes
   color: #00a651;
 }
 
-.search-result-box .single-result-item p {
+.single-result-item p {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -10245,13 +10282,8 @@ Responsive Classes
   color: #3e393e;
 }
 
-.search-result-box .single-result-item p strong {
+.single-result-item p strong {
   font-weight: 600;
-}
-
-.search-result-box .pagination-area p {
-  font-size: 13px;
-  color: #666;
 }
 
 .cookie-wrapper {
@@ -13832,7 +13864,7 @@ li.nav-item.active a {
 }
 
 .search-area-top {
-  padding: 20px;
+  padding: 8px 32px;
 }
 
 .searchbar-area input {

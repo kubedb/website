@@ -12,17 +12,58 @@
   left: 0;
   top: 36px;
   padding: 8px 0;
+
   .not-found {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 200px;
   }
+   /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+    * {
+      scrollbar-width: auto;
+      scrollbar-color: #ebebeb #fafafd;
+    }
 
-  .single-result-item {
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: #fafafd;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: #ebebeb;
+      border-radius: 10px;
+      border: 3px solid #fafafd;
+    }
+  .search-content {
+    max-height: 350px;
+    overflow-y: auto;
+  }
+
+ 
+
+  .search-footer {
+    padding: 8px 32px 4px;
+    border-top: 1px solid $ac-white-light;
+
+    p {
+      font-size: 13px;
+      color: #666;
+    }
+  }
+}
+
+
+ .single-result-item {
     padding: 16px 32px;
     transition: 0.3s ease-in-out;
     border-bottom: 1px solid $ac-white-light;
+
     &:last-child {
       border-bottom: none;
     }
@@ -32,6 +73,7 @@
 
       h2 {
         text-decoration: underline;
+
         a {
           color: $ac-primary;
         }
@@ -45,8 +87,6 @@
       font-size: 16px;
       line-height: 130%;
       color: $ac-primary;
-      a {
-      }
     }
 
     .url {
@@ -65,15 +105,9 @@
       font-size: 13px;
       line-height: 150%;
       color: #3e393e;
+
       strong {
         font-weight: 600;
       }
     }
   }
-  .pagination-area {
-    p {
-      font-size: 13px;
-      color: #666;
-    }
-  }
-}

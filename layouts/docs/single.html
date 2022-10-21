@@ -16,9 +16,6 @@
 </div>
 <div class="navbar-appscode documentation-menu">
 
-  <!-- <div class="navbar-left ml-40">
-
-  </div> -->
   <!-- searchbar component start  -->
   <div class="navbar-right">
 
@@ -111,12 +108,14 @@
       {{ end }}
       {{ end }}
     </ul>
+    <!-- =============searchbar area start  ===========================-->
     <div class="ac-searchbar">
       <label for="acSearch">
-        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" target="#acSearch" trigger="hover" style="width:22px;height:22px">
+        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" target="#acSearch" trigger="hover"
+          style="width:22px;height:22px">
         </lord-icon>
       </label>
-    
+
       <input id="acSearch" type="search" placeholder="Search in {{ $p.name }} documentation!">
 
       <!-- search result start  -->
@@ -131,69 +130,53 @@
         <div class="search-content">
           <!-- single search item start  -->
           <div class="single-result-item">
-            <h2><a href="#">KubeDB - Run Production-Grade Databases on Kubernetes</a></h2>
+            <h2><a href="#">Title</a></h2>
             <a href="#" class="url">https://kubedb.com/</a>
-            <p class="is-ellipsis-2">helm repo add appscode https://charts.appscode.com/stable/ $ helm repo update $ helm
-              install
-              <strong>kubedb</strong>
-              appscode/kubedb \ --version v2022.10.18 \ --namespace ...</p>
+            <p class="is-ellipsis-2">Short description</p>
           </div>
           <!-- single search item end -->
 
           <!-- single search item start  -->
           <div class="single-result-item">
-            <h2><a href="#">KubeDB - Run Production-Grade Databases on Kubernetes</a></h2>
+            <h2><a href="#">Title</a></h2>
             <a href="#" class="url">https://kubedb.com/</a>
-            <p class="is-ellipsis-2">helm repo add appscode https://charts.appscode.com/stable/ $ helm repo update $ helm
-              install
-              <strong>kubedb</strong>
-              appscode/kubedb \ --version v2022.10.18 \ --namespace ...</p>
+            <p class="is-ellipsis-2">Short description</p>
           </div>
           <!-- single search item end -->
 
           <!-- single search item start  -->
           <div class="single-result-item">
-            <h2><a href="#">KubeDB - Run Production-Grade Databases on Kubernetes</a></h2>
+            <h2><a href="#">Title</a></h2>
             <a href="#" class="url">https://kubedb.com/</a>
-            <p class="is-ellipsis-2">helm repo add appscode https://charts.appscode.com/stable/ $ helm repo update $ helm
-              install
-              <strong>kubedb</strong>
-              appscode/kubedb \ --version v2022.10.18 \ --namespace ...</p>
+            <p class="is-ellipsis-2">Short description</p>
           </div>
           <!-- single search item end -->
 
           <!-- single search item start  -->
           <div class="single-result-item">
-            <h2><a href="#">KubeDB - Run Production-Grade Databases on Kubernetes</a></h2>
+            <h2><a href="#">Title</a></h2>
             <a href="#" class="url">https://kubedb.com/</a>
-            <p class="is-ellipsis-2">helm repo add appscode https://charts.appscode.com/stable/ $ helm repo update $
-              helm
-              install
-              <strong>kubedb</strong>
-              appscode/kubedb \ --version v2022.10.18 \ --namespace ...</p>
+            <p class="is-ellipsis-2">Short description</p>
           </div>
           <!-- single search item end -->
+        </div>
 
-          <div class="pagination-area">
-            <div class="pagination-list is-flex is-justify-content-space-between">
-              <p>About 196 results (0.45 seconds)</p>
-              <ul>
-                <li><a href="#" class="is-active">1</a></li>
-                <li><a href="#">NEXT</a></li>
-              </ul>
-            </div>
-          </div>
-      </div>
+        <!-- search footer start  -->
+        <div class="search-footer">
+          <p>About 196 results (0.45 seconds)</p>
+        </div>
+        <!-- search footer end -->
 
       </div>
       <!-- search result end  -->
     </div>
+    <!-- =============searchbar area end  ===========================-->
   </div>
-  <!-- searchbar component end -->
+
+  <!-- JS for searchbar functionality  -->
   <script type="text/javascript">
     const acSearch = document.querySelector("#acSearch");
     acSearch.addEventListener("click", function(){
-      console.log(123333);
       let searchBox = document.querySelector(".search-result-box");
         searchBox.classList.remove('is-hidden')
     })
@@ -365,10 +348,6 @@
 
 <!-- sidebar search area start -->
 
-<!-- overlay start -->
-<div class="overlay-bg"></div>
-<!-- overlay end -->
-
 <div class="sidebar-search-area">
   <button class="button ac-button inline-button back-button"><span
       class="material-icons-outlined">arrow_back</span>Back</button>
@@ -377,28 +356,57 @@
 
     <div class="searchbar-area">
       <input type="search" name="search" id="searchbox" placeholder="Search..." />
-      <button onclick="queryPage(1)"><lord-icon src="https://cdn.lordicon.com/msoeawqm.json" colors="primary:#ffffff" target=".searchbar-area button" trigger="hover" style="width:22px;height:22px">
-      </lord-icon></button>
-    </div>
-
-    <span id="searchbar-script-container" style="display:none"></span>
-
-    <div class="search-meta-information level">
-      <div class="level-left">
-      </div>
+      <button>
+        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" colors="primary:#ffffff" target=".searchbar-area button"
+          trigger="hover" style="width:22px;height:22px">
+        </lord-icon>
+      </button>
     </div>
   </div>
 
-  <div class="search-result-wrapper">
-  </div>
-
-  <!-- pagination area start -->
-  <div class="pagination-area">
-    <div class="pagination-list">
+  <!-- search content start -->
+  <div class="search-content">
+    <!-- single search item start  -->
+    <div class="single-result-item">
+      <h2><a href="#">Title</a></h2>
+      <a href="#" class="url">https://kubedb.com/</a>
+      <p class="is-ellipsis-2">Short description</p>
     </div>
+    <!-- single search item end -->
+
+    <!-- single search item start  -->
+    <div class="single-result-item">
+      <h2><a href="#">Title</a></h2>
+      <a href="#" class="url">https://kubedb.com/</a>
+      <p class="is-ellipsis-2">Short description</p>
+    </div>
+    <!-- single search item end -->
+
+    <!-- single search item start  -->
+    <div class="single-result-item">
+      <h2><a href="#">Title</a></h2>
+      <a href="#" class="url">https://kubedb.com/</a>
+      <p class="is-ellipsis-2">Short description</p>
+    </div>
+    <!-- single search item end -->
+
+    <!-- single search item start  -->
+    <div class="single-result-item">
+      <h2><a href="#">Title</a></h2>
+      <a href="#" class="url">https://kubedb.com/</a>
+      <p class="is-ellipsis-2">Short description</p>
+    </div>
+    <!-- single search item end -->
   </div>
-  <!-- pagination area end -->
+  <!-- search content end -->
+
 </div>
+
+<!-- overlay start -->
+<div class="overlay-bg"></div>
+<!-- overlay end -->
+
+
 
 <!-- improve page section start  -->
 <div class="improve-section-area">
