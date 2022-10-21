@@ -9796,7 +9796,7 @@ video {
   background-color: transparent;
   color: #3b3030;
   font-size: 0.875rem;
-  width: 550px;
+  width: calc(100% - 30px);
   padding: 0.2rem 0.875rem;
 }
 
