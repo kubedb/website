@@ -42,7 +42,6 @@
     &.is-normal {
       height: 45px;
       font-size: 15px;
-      letter-spacing: 0px;
       font-weight: 500;
       padding-left: 25px;
       padding-right: 25px;
@@ -53,6 +52,7 @@
       font-size: 18px;
       padding-left: 45px;
       padding-right: 45px;
+      border-width: 2px;
     }
 
     &.is-transparent {

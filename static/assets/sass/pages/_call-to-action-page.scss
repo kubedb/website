@@ -1,0 +1,76 @@
+.hero-area {
+  background-color: #f7f7fd;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  margin-top: -60px;
+  img.pattern-line {
+    position: absolute;
+    top: -90px;
+  }
+  .hero-content {
+    margin-bottom: 5rem;
+    .title {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 72px;
+      line-height: 130%;
+      text-align: center;
+      text-transform: capitalize;
+      color: #1c1c1c;
+    }
+
+    .subtitle {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 160%;
+      text-align: center;
+      color: #3c3c3c;
+    }
+
+    p.support-message {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 150%;
+      text-align: center;
+      color: #1c1c1c;
+    }
+  }
+  .single-card {
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+    background-color: #fff;
+    // box-shadow: 2px 4px 108px 5px rgba(0, 0, 0, 0.09);
+    // border-radius: 10px;
+    h4 {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+      color: #1c1c1c;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #525456;
+    }
+    img {
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      z-index: -1;
+    }
+  }
+}
