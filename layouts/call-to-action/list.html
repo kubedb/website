@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KubeDB Title</title>
+  <!-- Bulma CSS -->
+  {{ with $style := resources.Get "assets/css/bulma.min.css" | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+  {{ end }}
+
+  <link rel="stylesheet" href="/assets/sass/main.css" />
+</head>
+
+<body>
+   <!--========================== header area start ==========================-->
+  <div class="header-area">
+    <div class="container">
+      <div class="navbar-appscode is-flex is-justify-content-space-between">
+        <div class="navbar-left">
+          <div class="navbar-brand"><a href="https://kubedb.com"><img src="/assets/images/products/kubedb/kubedb.svg"
+                alt="KubeDB"></a></div>
+        </div>
+        <div class="navbar-right">
+          <a href="https://appscode.com/contact/" class="button ac-button is-secondary">GET IT STARTED</a>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!--========================== header area end ==========================-->
+
+    <!--========================== hero area start ==========================-->
+    <section class="hero-area">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <div class="hero-content">
+              <h1>Running in Production by Multiple Fortune 500 Companies</h1>
+              <p>KubeDB is being used in production by multiple Fortune 500 companies including Large Telcos, Government
+                Projects, Tech Giants, Universities, Reputed Enterprises etc. You can trust KubeDB with your production
+                data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--========================== hero area end ==========================-->
+
+</body>
+
+</html>
