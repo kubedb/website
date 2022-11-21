@@ -18,8 +18,8 @@
   <!--========================== header area start ==========================-->
   <div class="header-area navbar-appscode">
     <div class="container">
-    <div class="columns">
-      <div class="column">
+      <div class="columns">
+        <div class="column">
           <div class="is-flex is-justify-content-space-between">
             <div class="navbar-left">
               <div class="navbar-brand"><a href="https://kubedb.com"><img
@@ -29,8 +29,8 @@
               <a href="https://appscode.com/contact/" class="button ac-button is-normal is-secondary">GET IT STARTED</a>
             </div>
           </div>
+        </div>
       </div>
-    </div>
     </div>
   </div>
   <!--========================== header area end ==========================-->
@@ -38,12 +38,14 @@
   <!--========================== hero area start ==========================-->
   <section class="hero-area">
     <div class="container">
-      <img class="pattern-line" src="/assets/images/patterns/pattern-line.svg" alt="pattern-line.svg">
+      <!-- <img class="pattern-line" src="/assets/images/patterns/pattern-line.svg" alt="pattern-line.svg"> -->
       <div class="columns is-centered">
         <div class="column is-10">
           <div class="hero-content has-text-centered">
-            <h1 class="title is-1 is-spaced">Running in Production by Multiple Fortune <span class="highlight">500 Companies</span></h1>
-            <p class="subtitle is-5">KubeDB is being used in production by multiple Fortune 500 companies including Large
+            <h1 class="title is-1 is-spaced">Running in Production by Multiple Fortune <span class="highlight">500
+                Companies</span></h1>
+            <p class="subtitle is-5">KubeDB is being used in production by multiple Fortune 500 companies including
+              Large
               Telcos, Government
               Projects, Tech Giants, Universities, Reputed Enterprises etc. You can trust KubeDB with your production
               data.</p>
@@ -58,7 +60,8 @@
               <a href="https://appscode.com/contact/" class="button ac-button is-normal is-secondary">REQUEST DEMO</a>
             </div>
 
-            <p class="support-message">We ensure 24x7 support and maintain SLA to provide 100% reliability to our clients</p>
+            <p class="support-message">We ensure 24x7 support and maintain SLA to provide 100% reliability to our
+              clients</p>
           </div>
         </div>
       </div>
@@ -68,20 +71,241 @@
             <h4>Why you choose KubeDB?</h4>
             <p>Kubernetes has emerged as the platform that lets developers seamlessly deploy, scale, run applications,
               and manage their life cycles.</p>
-              <!-- <img src="/assets/images/patterns/pattern-dots.png" alt="pattern-dots.png"> -->
+            <!-- <img src="/assets/images/patterns/pattern-dots.png" alt="pattern-dots.png"> -->
           </div>
         </div>
-         <div class="column is-5">
-           <div class="box single-card">
-             <h4>Manage Production-Grade Databases on Kubernetes</h4>
-             <p>KubeDB simplifies Provision, Upgrade, Scaling, Volume Expansion, Monitor, Backup, Restore for various Databases in Kubernetes on any Public & Private Cloud
+        <div class="column is-5">
+          <div class="box single-card">
+            <h4>Manage Production-Grade Databases on Kubernetes</h4>
+            <p>KubeDB simplifies Provision, Upgrade, Scaling, Volume Expansion, Monitor, Backup, Restore for various
+              Databases in Kubernetes on any Public & Private Cloud
             </p>
-           </div>
-         </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   <!--========================== hero area end ==========================-->
+
+  <!--========================== social prove logo area start  ==========================-->
+  <div class="social-prove-brand-area">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-12">
+          <div class="brand-image-wrapper owl-carousel">
+            {{ range $customer := $.Site.Data.customers }}
+            {{ if $customer.show }}
+            <div class="single-brand"><img src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
+            {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--========================== social prove logo area end ==========================-->
+
+  <!--========================== special features area start  ==========================-->
+  <section class="special-featues">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div class="column is-9">
+          <div class="section-title">
+            <h1>More Features but Less cost than Vendor-Managed Solutions</h1>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="single-card">
+            <div class="icon">
+              <img src="/assets/images/cta-page/icons/unique-features.png" alt="unique-features.png">
+            </div>
+            <h3>K8s Unique features</h3>
+            <P>KubeDB not only matches features of vendor managed database solutions but also it takes the advantage of
+              Kubernetes to provide some unique features.</P>
+          </div>
+        </div>
+
+        <div class="column is-4">
+          <div class="single-card">
+            <div class="icon dashboard">
+              <img src="/assets/images/cta-page/icons/dashboard.png" alt="dashboard.png">
+            </div>
+            <h3>Easy UI Dashboard</h3>
+            <P>KubeDB's UI provides one-click experience for database deployment, rich database insight, alerting, and
+              day 2 lifecycle management.</P>
+          </div>
+        </div>
+
+        <div class="column is-4">
+          <div class="single-card">
+            <div class="icon database">
+              <img src="/assets/images/cta-page/icons/database.png" alt="database.png">
+            </div>
+            <h3>Manage your database</h3>
+            <P>KubeDB enables you to manage your databases with the same stack as your. application</P>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--========================== special features area end  ==========================-->
+
+
+  <!--==========================  features area start  ==========================-->
+  <section class="features-area">
+    <div class="container">
+
+      <div class="columns is-vcentered pb-100">
+        <div class="column is-5">
+          <div class="features-content">
+            <h2>Provision your Database</h2>
+            <p>KubeDB automates the whole process of provisioning your databases with minimal time. You can use standard
+              Kubernetes CLI or KubeDB UI to provision your databases.</p>
+
+              <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
+                  <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
+                    colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
+                  </lord-icon>
+                </span>
+                <span>CONTACT SALES</span>
+              </a>
+          </div>
+        </div>
+        <div class="column is-7 has-text-right-desktop">
+          <div class="features-image">
+            <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-vcentered pb-100">
+        <div class="column is-7 has-text-left-desktop">
+          <div class="features-image">
+            <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
+          </div>
+        </div>
+        <div class="column is-5">
+          <div class="features-content">
+            <h2>Upgrade database version</h2>
+            <p>KubeDB provides you to upgrade your running database version without any downtime. You can upgrade your
+              database between any major and minor versions.</p>
+
+            <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
+                <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
+                  colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
+                </lord-icon>
+              </span>
+              <span>CONTACT SALES</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+       <div class="columns is-vcentered pb-100">
+         <div class="column is-5">
+           <div class="features-content">
+             <h2>Scale your database</h2>
+             <p>KubeDB offers both Vertical and Horizontal Scaling of databases. Simply scale your database to improve
+               your database performance or accommodate more demand with just few clicks.</p>
+
+             <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
+                 <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
+                   colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
+                 </lord-icon>
+               </span>
+               <span>CONTACT SALES</span>
+             </a>
+           </div>
+         </div>
+         <div class="column is-7 has-text-right-desktop">
+           <div class="features-image">
+             <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
+           </div>
+         </div>
+       </div>
+
+       <div class="columns is-vcentered pb-100">
+         <div class="column is-7 has-text-left-desktop">
+           <div class="features-image">
+             <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
+           </div>
+         </div>
+         <div class="column is-5">
+           <div class="features-content">
+             <h2>Expand database Volume</h2>
+             <p>KubeDB offers Volume Expansion capabilities that ensures database availability even when your data grow
+               over time.</p>
+
+             <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
+                 <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
+                   colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
+                 </lord-icon>
+               </span>
+               <span>CONTACT SALES</span>
+             </a>
+           </div>
+         </div>
+       </div>
+
+
+    </div>
+  </section>
+  <!--==========================  features area end  ==========================-->
+
+   <!--==========================  features area start  ==========================-->
+   <section class="features-area is-bg">
+     <div class="container">
+
+       <div class="columns is-vcentered">
+         <div class="column is-5">
+           <div class="features-content">
+             <h2>Provision your Database</h2>
+             <p>KubeDB automates the whole process of provisioning your databases with minimal time. You can use
+               standard
+               Kubernetes CLI or KubeDB UI to provision your databases.</p>
+
+             <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
+                 <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
+                   colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
+                 </lord-icon>
+               </span>
+               <span>CONTACT SALES</span>
+             </a>
+           </div>
+         </div>
+         <div class="column is-7 has-text-right-desktop">
+           <div class="features-image">
+             <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
+           </div>
+         </div>
+       </div>
+
+     </div>
+   </section>
+   <!--==========================  features area end  ==========================-->
+
+   <!--==========================  ecosystem area start  ==========================-->
+   <section class="eco-system-area">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+         <div class="section-title">
+            <h2>KubeDB Cloud Native Ecosystem</h2>
+         </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="brand-logos">
+          <div class="brand-logo">
+            <img src="/assets/images/ecosystem-logos/kubernetes.png" alt="kubernetes.png">
+          </div>
+        </div>
+      </div>
+    </div>
+   </section>
+   <!--==========================  ecosystem area end  ==========================-->
+
+
 
 </body>
 

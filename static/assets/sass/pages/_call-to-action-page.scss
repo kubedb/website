@@ -1,20 +1,34 @@
 .hero-area {
-  background-color: #f7f7fd;
+  // background-color: #f7f7fd;
   min-height: 100vh;
   display: flex;
   align-items: center;
   margin-top: -60px;
+  z-index: 9;
+  &:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/patterns/pattern-line.svg');
+    z-index: -1;
+  }
+
   img.pattern-line {
     position: absolute;
     top: -90px;
   }
+
   .hero-content {
     margin-bottom: 5rem;
+
     .title {
       font-family: "Roboto";
       font-style: normal;
       font-weight: 700;
-      font-size: 72px;
+      font-size: 62px;
       line-height: 130%;
       text-align: center;
       text-transform: capitalize;
@@ -25,7 +39,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 400;
-      font-size: 20px;
+      font-size: 1.25rem;
       line-height: 160%;
       text-align: center;
       color: #3c3c3c;
@@ -35,19 +49,21 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 400;
-      font-size: 20px;
+      font-size: 1.25rem;
       line-height: 150%;
       text-align: center;
       color: #1c1c1c;
     }
   }
+
   .single-card {
     position: relative;
     z-index: 1;
     padding: 30px;
     background-color: #fff;
     // box-shadow: 2px 4px 108px 5px rgba(0, 0, 0, 0.09);
-    // border-radius: 10px;
+    border-radius: 10px;
+
     h4 {
       font-family: "Roboto";
       font-style: normal;
@@ -66,11 +82,123 @@
       line-height: 150%;
       color: #525456;
     }
+
     img {
       position: absolute;
-      right: -20px;
-      bottom: -20px;
+      right: -1.25rem;
+      bottom: -1.25rem;
       z-index: -1;
     }
   }
 }
+
+// special features start
+.special-featues {
+  background-color: #f7f7fd;
+  border-radius: 40px;
+  width: calc(100% - 300px);
+  margin: 0 auto;
+  padding: 100px 0;
+  margin-bottom: 100px;
+
+  .section-title {
+    h1 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 62px;
+      line-height: 130%;
+      margin-bottom: 45px;
+    }
+  }
+
+  .single-card {
+    height: 379px;
+    background-color: #ffffff;
+    border-radius: 1.25rem;
+    padding: 40px 50px;
+    transition: 0.3s ease-in-out;
+    border: 2px solid transparent;
+
+    &:hover {
+      border: 2px solid $ac-primary;
+    }
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      background-color: #e6f1fe;
+      margin-bottom: 1.5rem;
+
+      &.dashboard {
+        background-color: #fdf5e8;
+      }
+
+      &.database {
+        background-color: #e7f7fd;
+      }
+
+      img {
+        width: 42px;
+        margin-left: -1.25rem;
+      }
+    }
+
+    h3 {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 130%;
+      text-transform: capitalize;
+      margin-bottom: 0.725em;
+      color: #1c1c1c;
+    }
+
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 180%;
+      color: #525456;
+    }
+  }
+}
+
+// special features end
+
+// features area start
+.features-area {
+  &.is-bg {
+    background-color: #f7f7fd;
+    border-radius: 40px;
+    width: calc(100% - 300px);
+    margin: 0 auto;
+    padding: 100px 0;
+  }
+
+  .features-content {
+    h2 {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 62px;
+      line-height: 130%;
+      text-transform: capitalize;
+    }
+
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 180%;
+      color: #525456;
+      margin: 1rem 0 2rem;
+      text-align: left;
+    }
+  }
+}
+
+// features area end

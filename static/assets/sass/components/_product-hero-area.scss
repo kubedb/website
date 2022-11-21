@@ -425,6 +425,7 @@
     width: 100%;
 
     .single-brand {
+      display: flex;
       img {
         max-height: 2rem;
         filter: grayscale(1);
