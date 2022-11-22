@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
   {{ end }}
 
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+
   <link rel="stylesheet" href="/assets/sass/main.css" />
 </head>
 
@@ -36,10 +39,10 @@
   <!--========================== header area end ==========================-->
 
   <!--========================== hero area start ==========================-->
-  <section class="hero-area">
+  <section class="hero-area cta-page">
     <div class="container">
-      <!-- <img class="pattern-line" src="/assets/images/patterns/pattern-line.svg" alt="pattern-line.svg"> -->
-      <div class="columns is-centered">
+      <img class="pattern-line" src="/assets/images/patterns/pattern-line.svg" alt="pattern-line.svg">
+      <div class="columns is-centered mt-6">
         <div class="column is-10">
           <div class="hero-content has-text-centered">
             <h1 class="title is-1 is-spaced">Running in Production by Multiple Fortune <span class="highlight">500
@@ -92,7 +95,7 @@
     <div class="container">
       <div class="columns">
         <div class="column is-12">
-          <div class="brand-image-wrapper owl-carousel">
+          <div class="brand-image-wrapper">
             {{ range $customer := $.Site.Data.customers }}
             {{ if $customer.show }}
             <div class="single-brand"><img src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
@@ -162,13 +165,13 @@
             <p>KubeDB automates the whole process of provisioning your databases with minimal time. You can use standard
               Kubernetes CLI or KubeDB UI to provision your databases.</p>
 
-              <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
-                  <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
-                    colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
-                  </lord-icon>
-                </span>
-                <span>CONTACT SALES</span>
-              </a>
+            <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
+                <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
+                  colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
+                </lord-icon>
+              </span>
+              <span>CONTACT SALES</span>
+            </a>
           </div>
         </div>
         <div class="column is-7 has-text-right-desktop">
@@ -201,97 +204,95 @@
         </div>
       </div>
 
-       <div class="columns is-vcentered pb-100">
-         <div class="column is-5">
-           <div class="features-content">
-             <h2>Scale your database</h2>
-             <p>KubeDB offers both Vertical and Horizontal Scaling of databases. Simply scale your database to improve
-               your database performance or accommodate more demand with just few clicks.</p>
+      <div class="columns is-vcentered pb-100">
+        <div class="column is-5">
+          <div class="features-content">
+            <h2>Scale your database</h2>
+            <p>KubeDB offers both Vertical and Horizontal Scaling of databases. Simply scale your database to improve
+              your database performance or accommodate more demand with just few clicks.</p>
 
-             <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
-                 <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
-                   colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
-                 </lord-icon>
-               </span>
-               <span>CONTACT SALES</span>
-             </a>
-           </div>
-         </div>
-         <div class="column is-7 has-text-right-desktop">
-           <div class="features-image">
-             <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
-           </div>
-         </div>
-       </div>
+            <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
+                <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
+                  colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
+                </lord-icon>
+              </span>
+              <span>CONTACT SALES</span>
+            </a>
+          </div>
+        </div>
+        <div class="column is-7 has-text-right-desktop">
+          <div class="features-image">
+            <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
+          </div>
+        </div>
+      </div>
 
-       <div class="columns is-vcentered pb-100">
-         <div class="column is-7 has-text-left-desktop">
-           <div class="features-image">
-             <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
-           </div>
-         </div>
-         <div class="column is-5">
-           <div class="features-content">
-             <h2>Expand database Volume</h2>
-             <p>KubeDB offers Volume Expansion capabilities that ensures database availability even when your data grow
-               over time.</p>
+      <div class="columns is-vcentered pb-100">
+        <div class="column is-7 has-text-left-desktop">
+          <div class="features-image">
+            <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
+          </div>
+        </div>
+        <div class="column is-5">
+          <div class="features-content">
+            <h2>Expand database Volume</h2>
+            <p>KubeDB offers Volume Expansion capabilities that ensures database availability even when your data grow
+              over time.</p>
 
-             <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
-                 <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
-                   colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
-                 </lord-icon>
-               </span>
-               <span>CONTACT SALES</span>
-             </a>
-           </div>
-         </div>
-       </div>
+            <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
+                <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
+                  colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
+                </lord-icon>
+              </span>
+              <span>CONTACT SALES</span>
+            </a>
+          </div>
+        </div>
+      </div>
 
 
     </div>
   </section>
   <!--==========================  features area end  ==========================-->
 
-   <!--==========================  features area start  ==========================-->
-   <section class="features-area is-bg">
-     <div class="container">
+  <!--==========================  features area start  ==========================-->
+  <section class="features-area is-bg">
+    <div class="container">
 
-       <div class="columns is-vcentered">
-         <div class="column is-5">
-           <div class="features-content">
-             <h2>Provision your Database</h2>
-             <p>KubeDB automates the whole process of provisioning your databases with minimal time. You can use
-               standard
-               Kubernetes CLI or KubeDB UI to provision your databases.</p>
+      <div class="columns is-vcentered">
+        <div class="column is-5">
+          <div class="features-content">
+            <h2>Provision your Database</h2>
+            <p>KubeDB automates the whole process of provisioning your databases with minimal time. You can use
+              standard
+              Kubernetes CLI or KubeDB UI to provision your databases.</p>
 
-             <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
-                 <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
-                   colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
-                 </lord-icon>
-               </span>
-               <span>CONTACT SALES</span>
-             </a>
-           </div>
-         </div>
-         <div class="column is-7 has-text-right-desktop">
-           <div class="features-image">
-             <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
-           </div>
-         </div>
-       </div>
+            <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
+                <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
+                  colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
+                </lord-icon>
+              </span>
+              <span>CONTACT SALES</span>
+            </a>
+          </div>
+        </div>
+        <div class="column is-7 has-text-right-desktop">
+          <div class="features-image">
+            <img src="https://via.placeholder.com/600/dddddd/808080" alt="">
+          </div>
+        </div>
+      </div>
 
-     </div>
-   </section>
-   <!--==========================  features area end  ==========================-->
+    </div>
+  </section>
+  <!--==========================  features area end  ==========================-->
 
-   <!--==========================  ecosystem area start  ==========================-->
-   <section class="eco-system-area">
+  <!--==========================  ecosystem area start  ==========================-->
+  <section class="eco-system-area">
     <div class="container">
       <div class="columns is-centered">
-        <div class="column is-8">
-         <div class="section-title">
-            <h2>KubeDB Cloud Native Ecosystem</h2>
-         </div>
+        <div class="column is-9">
+          <h2 class="title">KubeDB Cloud Native Ecosystem</h2>
         </div>
       </div>
       <div class="columns">
@@ -299,13 +300,211 @@
           <div class="brand-logo">
             <img src="/assets/images/ecosystem-logos/kubernetes.png" alt="kubernetes.png">
           </div>
+          <div class="brand-logo">
+            <img src="/assets/images/ecosystem-logos/google-cloud.png" alt="google-cloud.png">
+          </div>
+          <div class="brand-logo">
+            <img src="/assets/images/ecosystem-logos/dell-emc.png" alt="dell-emc.png">
+          </div>
+          <div class="brand-logo">
+            <img src="/assets/images/ecosystem-logos/aws.png" alt="aws.png">
+          </div>
+          <div class="brand-logo">
+            <img src="/assets/images/ecosystem-logos/microsoft-azure.png" alt="microsoft-azure.png">
+          </div>
+          <div class="brand-logo">
+            <img src="/assets/images/ecosystem-logos/digital-ocean.png" alt="digital-ocean.png">
+          </div>
+          <div class="brand-logo">
+            <img src="/assets/images/ecosystem-logos/microsoft-azure.png" alt="microsoft-azure.png">
+          </div>
+          <div class="brand-logo">
+            <img src="/assets/images/ecosystem-logos/minio.png" alt="minio.png">
+          </div>
         </div>
       </div>
     </div>
-   </section>
-   <!--==========================  ecosystem area end  ==========================-->
+  </section>
+  <!--==========================  ecosystem area end  ==========================-->
 
+  <!--==========================  faq area end  ==========================-->
+  <section class="faq-area">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-6">
+          <div class="faq-left">
+            <h2>frequently asked questions</h2>
+            <p>Find your answers here. if you don’t find it here, please contact us.</p>
+            <a href="https://appscode.com/contact/" class="button ac-button is-normal is-primary"> <span>
+                <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
+                  colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
+                </lord-icon>
+              </span>
+              <span>CONTACT SALES</span>
+            </a>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div class="faq-right">
+            <div class="ac-accordion-wrapper">
+              <!-- single accordion item start  -->
+              <div class="single-accordion-item open">
+                <!-- accordion heading start  -->
+                <div class="accordion-heading">
+                  <h3>Can I upgrade or downgrade anytime?</h3>
+                  <button class="icon">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <!-- accordion heading end -->
+                <!-- accordion body start  -->
+                <div class="accordion-body" style="max-height: 48px;">
+                  <p>
+                    Monthly plans are subject to a 30 day minimum term.
+                    Monthly plans can be upgraded anytime.
+                    Annual plans can be downgraded at the end of the term.
+                  </p>
+                </div>
+                <!-- accordion body end -->
+              </div>
+              <!-- single accordion item end  -->
 
+              <!-- single accordion item start  -->
+              <div class="single-accordion-item closed">
+                <!-- accordion heading start  -->
+                <div class="accordion-heading">
+                  <h3>Is my payment information safe?</h3>
+                  <button class="icon">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <!-- accordion heading end -->
+                <!-- accordion body start  -->
+                <div class="accordion-body">
+                  <p>
+                    Our payment processing is powerd by
+                    <a href="https://stripe.com" class="ac-primary-color">Stripe</a>.
+                    You credit card data never touches our servers. For more information,
+                    please visit <a target="_blank" href="https://stripe.com" class="ac-primary-color">stripe.com</a>.
+                  </p>
+                </div>
+                <!-- accordion body end -->
+              </div>
+              <!-- single accordion item end  -->
+
+              <!-- single accordion item start  -->
+              <div class="single-accordion-item closed">
+                <!-- accordion heading start  -->
+                <div class="accordion-heading">
+                  <h3>Do you have any cancellation fee?</h3>
+                  <button class="icon">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <!-- accordion heading end -->
+                <!-- accordion body start  -->
+                <div class="accordion-body">
+                  <p>
+                    There is no cancellation fee. But plans are subject to minimum duration as stated above.
+                  </p>
+                </div>
+                <!-- accordion body end -->
+              </div>
+              <!-- single accordion item end  -->
+
+              <!-- single accordion item start  -->
+              <div class="single-accordion-item closed">
+                <!-- accordion heading start  -->
+                <div class="accordion-heading">
+                  <h3>What types of payment do you accept?</h3>
+                  <button class="icon">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <!-- accordion heading end -->
+                <!-- accordion body start  -->
+                <div class="accordion-body">
+                  <p>
+                    We accept all popular credit/debit cards such as Visa, Mastercard, American Express,
+                    Discover, etc. We also accept ACH debit/credit.
+                  </p>
+                </div>
+                <!-- accordion body end -->
+              </div>
+              <!-- single accordion item end  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // custom accordion
+    function acAccordion(actionBtn) {
+      let accordionHeadingAll = document.querySelectorAll(actionBtn);
+      // Create event listeners for each accordion heading
+      Array.from(accordionHeadingAll).forEach((accordionHeading) => {
+        accordionHeading.addEventListener("click", function () {
+          let singleAcc = accordionHeading.closest(".single-accordion-item");
+
+          let isOpen = singleAcc.classList.contains("open");
+
+          // select all accordion
+          let accordionItems = document.querySelectorAll(".single-accordion-item");
+          Array.from(accordionItems).forEach((accordionItem) => {
+            // close all item
+            accordionItem.className = "single-accordion-item closed";
+            let icon = accordionItem.querySelector(".icon .fa");
+            if (icon) {
+              icon.classList.replace("fa-minus", "fa-plus");
+            }
+            let accordionBody = accordionItem.querySelector(".accordion-body");
+            accordionBody.style.maxHeight = null;
+          });
+
+          // get single element icon
+          let icon = singleAcc.querySelector(".icon .fa");
+          if (isOpen) {
+            singleAcc.className = "single-accordion-item closed";
+            let accordionBody = singleAcc.querySelector(".accordion-body");
+            accordionBody.style.maxHeight = null;
+            if (icon) {
+              icon.classList.replace("fa-minus", "fa-plus");
+            }
+          } else {
+            singleAcc.className = "single-accordion-item open";
+            let accordionBody = singleAcc.querySelector(".accordion-body");
+            accordionBody.style.maxHeight = accordionBody.scrollHeight + "px";
+            if (icon) {
+              icon.classList.replace("fa-plus", "fa-minus");
+            }
+          }
+        });
+      });
+    }
+
+    acAccordion(".accordion-heading h3");
+    acAccordion(".accordion-heading .icon");
+  </script>
+  <!--==========================  faq area end  ==========================-->
+
+  <!--==========================  footer to area end  ==========================-->
+  <div class="footer-bottom bt-1">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-6 has-text-centered-mobile has-text-left-tablet is-paddingless">
+          <p>© 2022 AppsCode Inc. All rights reserved.</p>
+        </div>
+        <div class="column is-6 is-mobile has-text-centered-touch has-text-right-desktop is-paddingless">
+          <div class="footer-inline-link"><a href="https://appscode.com/legal/privacy-policy/">Privacy Policy</a>
+            <a href="https://appscode.com/legal/tos/">Terms of Service</a></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--==========================  footer to area end  ==========================-->
 
 </body>
 
