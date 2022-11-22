@@ -7,6 +7,7 @@
   // background-image: url('/assets/images/patterns/pattern-line.svg');
   background-repeat: no-repeat;
   z-index: 9;
+  padding-top: 90px;
 
   img.pattern-line {
     position: absolute;
@@ -197,7 +198,7 @@
 
 // eco system logos start
 .eco-system-area {
-  margin: 100px 0;
+  padding: 100px 0;
 
   .title {
     font-family: "Roboto";
@@ -255,4 +256,183 @@
       margin: 1rem 0 2rem;
     }
   }
+}
+
+/****************************************
+Responsive Classes
+*****************************************/
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 767.98px) {
+  .navbar-appscode {
+    &.cta-page {
+      .navbar-right {
+        opacity: 1;
+        visibility: visible;
+        min-height: auto;
+        background-color: transparent;
+        position: inherit;
+        padding: 0;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  .pattern-line {
+    display: none;
+  }
+
+  .hero-area.cta-page {
+    margin-top: -60px;
+    padding-bottom: 60px;
+
+    .hero-content {
+      margin-bottom: 1rem;
+
+      .title {
+        font-size: 42px;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      p.support-message {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .special-featues {
+    width: 100%;
+    border-radius: 0;
+    padding: 30px 0;
+    margin-bottom: 50px;
+    margin-top: 30px;
+
+    &.is-bg {
+      width: 100%;
+      border-radius: 0;
+      padding: 30px 0;
+    }
+
+    .section-title {
+      margin-bottom: 0;
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+    }
+
+    .single-card {
+      height: auto;
+      padding: 30px;
+
+      .icon {
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .features-content {
+      h2 {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 62px;
+        line-height: 130%;
+        text-transform: capitalize;
+      }
+
+      p {
+        margin: 0.5rem 0 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .eco-system-area {
+    padding: 50px 15px;
+
+    .title {
+      font-size: 32px;
+    }
+
+    .brand-logos {
+      grid-template-columns: 50% 50%;
+      width: calc(100% - 20px);
+    }
+  }
+
+  .features-area {
+    &.is-bg {
+      width: 100%;
+      border-radius: 0;
+      padding: 30px 0;
+    }
+
+    .features-content {
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .columns.pb-100 {
+      padding-bottom: 30px !important;
+    }
+
+    .columns.is-vcentered:nth-child(even) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .faq-area {
+    margin-bottom: 30px;
+    .faq-left {
+      margin-bottom: 30px;
+      h2 {
+        margin-bottom: 0;
+      }
+      p {
+        margin: 0.5rem 0 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  h1.title {
+    font-size: 42px !important;
+  }
+
+  h2.title {
+    font-size: 32px !important;
+  }
+  .eco-system-area {
+    .brand-logos {
+      .brand-logo {
+        height: 100px;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
 }
