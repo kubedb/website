@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
   z-index: 9;
   padding-top: 90px;
+  padding-bottom: 50px;
 
   img.pattern-line {
     position: absolute;
@@ -48,45 +49,53 @@
       color: #1c1c1c;
     }
   }
+  .card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-  .single-card {
-    position: relative;
-    z-index: 1;
-    padding: 30px;
-    background-color: #fff;
-    // box-shadow: 2px 4px 108px 5px rgba(0, 0, 0, 0.09);
-    border-radius: 10px;
+    .single-card.box {
+      position: relative;
+      z-index: 1;
+      padding: 30px;
+      background-color: #fff;
+      // box-shadow: 2px 4px 108px 5px rgba(0, 0, 0, 0.09);
+      border-radius: 10px;
+      width: calc(50% - 50px);
+      min-height: 165px;
+      margin: 0;
 
-    h4 {
-      font-family: "Roboto";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 130%;
-      color: #1c1c1c;
-      margin-bottom: 0.5rem;
-    }
+      h4 {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 130%;
+        color: #1c1c1c;
+        margin-bottom: 0.5rem;
+      }
 
-    p {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 150%;
-      color: #525456;
-    }
+      p {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #525456;
+      }
 
-    img {
-      position: absolute;
-      right: -1.25rem;
-      bottom: -1.25rem;
-      z-index: -1;
+      img {
+        position: absolute;
+        right: -1.25rem;
+        bottom: -1.25rem;
+        z-index: -1;
+      }
     }
   }
 }
 
 // special features start
-.special-featues {
+.special-features {
   background-color: #f7f7fd;
   border-radius: 40px;
   width: calc(100% - 300px);
@@ -261,8 +270,8 @@
 /****************************************
 Responsive Classes
 *****************************************/
-// Extra small devices (portrait phones, less than 576px)
-@media (max-width: 767.98px) {
+// Mobile Up to 768px
+@media (max-width: 768px) {
   .navbar-appscode {
     &.cta-page {
       .navbar-right {
@@ -300,14 +309,24 @@ Responsive Classes
         font-size: 1rem;
       }
     }
+    .card-wrapper {
+      .box.single-card {
+        width: 100%;
+        margin-bottom: 1rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
-  .special-featues {
+  .special-features {
     width: 100%;
     border-radius: 0;
     padding: 30px 0;
     margin-bottom: 50px;
     margin-top: 30px;
+    padding: 0 15px;
 
     &.is-bg {
       width: 100%;
@@ -334,6 +353,9 @@ Responsive Classes
 
       h3 {
         margin-bottom: 0.5rem;
+      }
+      p {
+        font-size: 1rem;
       }
     }
 
@@ -381,6 +403,7 @@ Responsive Classes
 
       p {
         font-size: 1rem;
+        margin: 0.5rem 0 1rem;
       }
     }
 
@@ -425,14 +448,458 @@ Responsive Classes
   }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991.98px) {
+// Tablet Between 769px and 1023px
+@media (min-width: 769px) and (max-width: 1023px) {
+  .navbar-appscode {
+    &.cta-page {
+      .navbar-right {
+        opacity: 1;
+        visibility: visible;
+        min-height: auto;
+        background-color: transparent;
+        position: inherit;
+        padding: 0;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  .pattern-line {
+    display: none;
+  }
+
+  .hero-area.cta-page {
+    margin-top: -60px;
+    padding-bottom: 60px;
+
+    .hero-content {
+      margin-bottom: 1rem;
+
+      .title {
+        font-size: 42px;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      p.support-message {
+        font-size: 1rem;
+      }
+    }
+    .card-wrapper {
+      .single-card.box {
+        width: calc(50% - 15px);
+      }
+    }
+  }
+
+  .special-features {
+    width: 100%;
+    border-radius: 0;
+    padding: 30px 0;
+    margin-bottom: 50px;
+    margin-top: 30px;
+
+    &.is-bg {
+      width: 100%;
+      border-radius: 0;
+      padding: 30px 0;
+    }
+
+    .section-title {
+      margin-bottom: 0;
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .single-card {
+      height: auto;
+      padding: 30px;
+
+      .icon {
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .features-content {
+      h2 {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 62px;
+        line-height: 130%;
+        text-transform: capitalize;
+      }
+
+      p {
+        margin: 0.5rem 0 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .eco-system-area {
+    padding: 50px 15px;
+
+    .title {
+      font-size: 32px;
+    }
+
+    .brand-logos {
+      grid-template-columns: 33% 33% 33%;
+      width: calc(100% - 20px);
+    }
+  }
+
+  .features-area {
+    &.is-bg {
+      width: 100%;
+      border-radius: 0;
+      padding: 30px 0;
+    }
+
+    .features-content {
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .columns.pb-100 {
+      padding-bottom: 30px !important;
+    }
+  }
+
+  .faq-area {
+    margin-bottom: 30px;
+    .faq-left {
+      margin-bottom: 30px;
+      h2 {
+        margin-bottom: 0;
+      }
+      p {
+        margin: 0.5rem 0 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  h1.title {
+    font-size: 42px !important;
+  }
+
+  h2.title {
+    font-size: 32px !important;
+  }
+  .eco-system-area {
+    .brand-logos {
+      .brand-logo {
+        height: 100px;
+        padding: 20px;
+      }
+    }
+  }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199.98px) {
+// Desktop Between 1024px and 1215px
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .navbar-appscode {
+    &.cta-page {
+      .navbar-right {
+        opacity: 1;
+        visibility: visible;
+        min-height: auto;
+        background-color: transparent;
+        position: inherit;
+        padding: 0;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  .pattern-line {
+    top: -40px !important;
+  }
+
+  .hero-area.cta-page {
+    margin-top: -60px;
+    padding-bottom: 60px;
+
+    .hero-content {
+      margin-bottom: 1rem;
+
+      .title {
+        font-size: 42px;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      p.support-message {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .special-features {
+    width: 100%;
+    border-radius: 0;
+    padding: 30px 0;
+    margin-bottom: 50px;
+    margin-top: 30px;
+
+    &.is-bg {
+      width: 100%;
+      border-radius: 0;
+      padding: 30px 0;
+    }
+
+    .section-title {
+      margin-bottom: 0;
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+    }
+
+    .single-card {
+      height: auto;
+      padding: 20px;
+      border-radius: 10px;
+      min-height: 310px;
+
+      .icon {
+        margin-bottom: 1rem;
+        width: 54px;
+        height: 54px;
+      }
+
+      h3 {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        font-size: 20px;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .features-content {
+      h2 {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 62px;
+        line-height: 130%;
+        text-transform: capitalize;
+      }
+
+      p {
+        margin: 0.5rem 0 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .eco-system-area {
+    padding: 50px 15px;
+
+    .title {
+      font-size: 32px;
+    }
+
+    .brand-logos {
+      grid-template-columns: 25% 25% 25% 25%;
+      width: calc(100% - 70px);
+    }
+  }
+
+  .features-area {
+    &.is-bg {
+      width: 100%;
+      border-radius: 0;
+      padding: 30px 0;
+    }
+
+    .features-content {
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .columns.pb-100 {
+      padding-bottom: 30px !important;
+    }
+  }
+
+  .faq-area {
+    margin-bottom: 30px;
+    .faq-left {
+      margin-bottom: 30px;
+      h2 {
+        margin-bottom: 0;
+      }
+      p {
+        margin: 0.5rem 0 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  h1.title {
+    font-size: 42px !important;
+  }
+
+  h2.title {
+    font-size: 32px !important;
+  }
+  .eco-system-area {
+    .brand-logos {
+      .brand-logo {
+        height: 100px;
+        padding: 20px;
+      }
+    }
+  }
 }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+// Widescreen Between 1216px and 1407px
+@media (min-width: 1216px) and (max-width: 1407px) {
+  .pattern-line {
+    top: -40px !important;
+  }
+  .special-features {
+    width: 100%;
+    border-radius: 0;
+    padding: 60px 0;
+    margin-bottom: 50px;
+
+    &.is-bg {
+      width: 100%;
+      border-radius: 0;
+      padding: 60px 0;
+    }
+
+    .section-title {
+      margin-bottom: 0;
+
+      h1 {
+        margin-bottom: 0;
+      }
+    }
+
+    .single-card {
+      height: auto;
+      padding: 20px;
+      border-radius: 10px;
+      min-height: 260px;
+
+      .icon {
+        margin-bottom: 1rem;
+        width: 54px;
+        height: 54px;
+      }
+
+      h3 {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        font-size: 20px;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .features-content {
+      p {
+        margin: 0.5rem 0 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .eco-system-area {
+    padding: 50px 15px;
+
+    .title {
+      font-size: 32px;
+    }
+
+    .brand-logos {
+      grid-template-columns: 25% 25% 25% 25%;
+      width: calc(100% - 70px);
+    }
+  }
+
+  .features-area {
+    &.is-bg {
+      width: 100%;
+      border-radius: 0;
+      padding: 30px 0;
+    }
+
+    .features-content {
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .columns.pb-100 {
+      padding-bottom: 30px !important;
+    }
+  }
+
+  .faq-area {
+    margin-bottom: 30px;
+    .faq-left {
+      margin-bottom: 30px;
+      h2 {
+        margin-bottom: 0;
+      }
+      p {
+        margin: 0.5rem 0 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  h1.title {
+    font-size: 52px !important;
+  }
+
+  h2.title {
+    font-size: 42px !important;
+  }
+  .eco-system-area {
+    .brand-logos {
+      .brand-logo {
+        height: 100px;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+// FullHD 1408px and above
+@media (min-width: 1408px) {
 }
