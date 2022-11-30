@@ -90,13 +90,9 @@
   {{ with $style := resources.Get "assets/css/bulma.min.css" | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
   {{ end }}
-  <!-- highlight css  -->
-  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css"> -->
   <!-- owl carousel CSS -->
   <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
   <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
-
-  <!-- <link rel="stylesheet" href="/assets/css/bulma.min.css" /> -->
   <!-- Keen slider CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css" />
   <!-- Custom CSS -->
@@ -1118,10 +1114,14 @@
   <script src="/assets/js/jquery-3.6.0.min.js"></script>
   <script src="/assets/js/owl.carousel.min.js"></script>
   <script src="/assets/js/headroom.min.js"></script>
-
   <!-- lordicon js  -->
   <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+<<<<<<< HEAD
   
+=======
+  <!-- Bulma Carousel JS -->
+  <script src="/assets/js/bulma-carousel.min.js"></script>
+>>>>>>> 46969052 (Remove unnecery file and comment)
   <!-- Magnific-popup JS  -->
   <script src="/assets/js/magnific-popup.min.js"></script>
   <!-- AOS JS -->
@@ -1130,8 +1130,6 @@
   <script src="https://unpkg.com/downloadjs@1.4.7/download.min.js"></script>
   <!-- clipboard js  -->
   <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
-  <!-- highlight js  -->
-  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script> -->
 
   <!-- Main JS -->
   <!-- {{ with $style := resources.Get "assets/js/main.js" | resources.Fingerprint }}
