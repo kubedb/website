@@ -261,12 +261,6 @@ $('.customPrevBtn').click(function () {
   owl.trigger('prev.owl.carousel');
 })
 
-// remove searchbox from body click 
- $(document).on('click', function (event) {
-   if (!$(event.target).closest('.ac-searchbar').length) {
-    $(".search-result-box").addClass("is-hidden");
-   }
- });
 
 // for social prove owlCarousel 
 // owl owlCarousel JS 
