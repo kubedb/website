@@ -781,7 +781,7 @@
     background-color: transparent;
     color: $ac-color-text;
     font-size: 0.875rem;
-    width: 270px;
+    width: calc(100% - 30px);
     padding: 0.2rem 0.875rem;
 
     &:focus {
