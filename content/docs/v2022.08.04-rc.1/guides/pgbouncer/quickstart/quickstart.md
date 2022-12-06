@@ -1,5 +1,5 @@
 ---
-bastitle: PgBouncer Quickstart
+title: PgBouncer Quickstart
 menu:
   docs_v2022.08.04-rc.1:
     identifier: pb-quickstart-quickstart
