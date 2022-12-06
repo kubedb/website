@@ -20,7 +20,7 @@ const createHitsElement = (title, url, des) => {
   return hitElement;
 };
 
-const updateHitsDomElement = (searchData,listId) => {
+const updateHitsDomElement = (searchData, listId) => {
 
   const hitListElement = document.getElementById(listId);
 
@@ -43,8 +43,12 @@ const showMeilisearchList = (event, listId, hideId) => {
   const searchText = event.target.value || "";
   const trimedSearchText = searchText.trim();
 
+  // show text list
+  let searchBox = document.getElementById(hideId)
+  searchBox.classList.remove("is-hidden");
+
   // If searchtext available
-  if (trimedSearchText.length > 1) {
+  if (trimedSearchText.length > 0) {
     // create body for the post request
     const payload = {
       q: trimedSearchText,
@@ -58,29 +62,33 @@ const showMeilisearchList = (event, listId, hideId) => {
 
     // get the search result
     fetch(fetchUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(payload),
-    })
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      })
       .then((res) => res.json())
       .then((data) => {
         const hitsarray = data.hits;
         const formatedHits = hitsarray.map((hit) => hit._formatted);
 
-        // show text list
-        let searchBox = document.getElementById(hideId)
-        searchBox.classList.remove("is-hidden");
-
         // update the don with search result
-        updateHitsDomElement(formatedHits,listId);
+        updateHitsDomElement(formatedHits, listId);
       })
       .catch((error) => {
         console.log(error);
       });
   } else {
+
+    // update the don with search result
+    updateHitsDomElement([{
+      title: 'Searching',
+      url: '',
+      text: ''
+    }], listId);
+
     // hide the search list
     let searchBox = document.getElementById(hideId)
     searchBox.classList.add("is-hidden");
@@ -99,7 +107,7 @@ const debounce = (callback, wait) => {
 }
 
 
-function activate_search(index, searchToken, inputId, listId, hideId) {
+const activate_search = (index, searchToken, inputId, listId, hideId) => {
 
   // index = this is search index for meilisearch
   // searchToken = this is searchToken for meilisearch
@@ -107,20 +115,25 @@ function activate_search(index, searchToken, inputId, listId, hideId) {
   // listId whene the generated list will be showed
   // hideId for hiding the component
 
+  updateHitsDomElement([{
+    title: 'Searching',
+    url: '',
+    text: ''
+  }], listId);
+
   const inputElement = document.getElementById(inputId);
 
   fetchUrl = `https://search.docs.appscode.com/indexes/${index}/search`;
   token = searchToken;
 
-  inputElement.addEventListener("input", debounce((event)=>showMeilisearchList(event,listId,hideId),250));
-  
+  inputElement.addEventListener("input", debounce((event) => showMeilisearchList(event, listId, hideId), 100));
+
   // remove searchbox from body click
   $(document).on("click", function (event) {
     if (!$(event.target).closest(".ac-searchbar").length) {
-      updateHitsDomElement([],listId);
+      updateHitsDomElement([], listId);
       inputElement.value = "";
       $(".search-result-box").addClass("is-hidden");
     }
   });
- 
 }

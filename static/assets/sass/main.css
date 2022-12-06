@@ -10283,7 +10283,17 @@ Responsive Classes
 }
 
 .single-result-item p strong {
-  font-weight: 600;
+  font-weight: 500;
+}
+
+.single-result-item em {
+  background: #dbdbde;
+  padding: 2px 4px;
+  font-style: normal;
+  color: var(--ac-primary);
+  border-radius: 2px;
+  font-size: 86%;
+  font-weight: 500;
 }
 
 .cookie-wrapper {
