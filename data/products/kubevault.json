@@ -76,6 +76,20 @@
       "description": "KubeVault provides various ways to automatically initialize & unseal your Vault Servers. You can use your choice of cloud providers among GCP, AWS, Azure, etc. or even K8s secret to store unseal keys & vault token."
     },
     {
+      "title": "Vault Backup & Restore",
+      "url": "vault-backup-restore",
+      "image": {
+        "src": "/assets/images/products/kubevault/features/feature-6.png",
+        "alt": "http"
+      },
+      "icon": {
+        "src": "/assets/images/products/kubevault/features/vault-backup-restore.svg",
+        "alt": "vault-backup-restore"
+      },
+      "summary": "",
+      "description": "You can Backup & Restore your Vault cluster managed by KubeVault or deployed with Helm-charts using Stash. Stash simplifies & generalizes the process for Vault regardless of the Storage Backend used by the Vault. It protects your Vault cluster against data corruption or sabotage."
+    },
+    {
       "title": "Consume KubeVault Secrets with CSI",
       "url": "consume-kubevault-secrets-with-csi",
       "image": {
@@ -209,6 +223,17 @@
       "show": true
     },
     {
+      "version": "v2022.12.28",
+      "hostDocs": true,
+      "show": true,
+      "info": {
+        "cli": "v0.13.0",
+        "installer": "v2022.12.28",
+        "operator": "v0.13.0",
+        "unsealer": "v0.13.0"
+      }
+    },
+    {
       "version": "v2022.12.09",
       "hostDocs": true,
       "show": true,
@@ -330,7 +355,7 @@
       }
     }
   ],
-  "latestVersion": "v2022.12.09",
+  "latestVersion": "v2022.12.28",
   "socialLinks": {
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/kubevault",
