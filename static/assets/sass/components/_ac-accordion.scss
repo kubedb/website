@@ -1,6 +1,6 @@
 .ac-accordion-wrapper {
-  &.is-marginless{
-    .single-accordion-item{
+  &.is-marginless {
+    .single-accordion-item {
       margin: 0;
       padding: 0;
       .accordion-heading {
@@ -21,7 +21,7 @@
   }
   .single-accordion-item {
     background-color: #fff;
-    border: 1px solid #E8E9EA;
+    border: 1px solid #e8e9ea;
     padding: 12px 20px;
     margin-bottom: 15px;
     border-radius: 4px;
@@ -36,22 +36,23 @@
         cursor: pointer;
         font-size: 16px;
         font-weight: 700;
-        color: #1C1C1C;
+        color: #1c1c1c;
       }
-      h4{
+      h4 {
         font-size: 14px;
-        font-weight: 700; 
+        font-weight: 700;
         line-height: 20px;
       }
-      button{
+      button {
         font-size: 12px;
-        letter-spacing: .1px;
+        letter-spacing: 0.1px;
       }
+      
       .icon {
-        width: 16px;
-        height: 16px;
-        border: 1px solid #1C1C1C;
-        line-height: 16px;
+        width: 24px;
+        height: 24px;
+        border: 1px solid $ac-white-light;
+        line-height: 12px;
         font-size: 12px;
         border-radius: 50%;
         cursor: pointer;
@@ -65,7 +66,7 @@
       p {
         padding-top: 3px;
         font-size: 15px;
-        color: #393E46;
+        color: #393e46;
       }
     }
   }
