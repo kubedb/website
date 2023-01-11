@@ -1,3 +1,65 @@
+// eco system logos start
+.eco-system-area {
+  padding: 100px 0;
+
+  .title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 130%;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+  }
+
+  .brand-logos {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 25% 25% 25% 25%;
+    width: 100%;
+
+    .brand-logo {
+      background: #ffffff;
+      box-shadow: 0px 4px 68px 5px rgba(77, 77, 203, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 190px;
+
+      img {
+        max-height: 48px;
+      }
+    }
+  }
+}
+
+// eco system logos end
+
+.faq-area {
+  margin-bottom: 100px;
+
+  .faq-left {
+    h2 {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 42px;
+      line-height: 130%;
+      text-transform: capitalize;
+    }
+
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 180%;
+      margin: 1rem 0 2rem;
+    }
+  }
+}
+
 .accordion-item {
   background-color: $ac-white;
   margin-bottom: 20px;
