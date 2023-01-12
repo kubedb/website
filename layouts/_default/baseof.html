@@ -82,8 +82,6 @@
     rel="stylesheet">
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Bulma Carousel CSS -->
-  <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
   <!-- Bulma tooltip CSS -->
   <link rel="stylesheet" href="/assets/css/bulma-tooltip.min.css" />
   <!-- Magnific-popup css  -->
@@ -102,10 +100,10 @@
   <!-- Keen slider CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css" />
   <!-- Custom CSS -->
- <!-- {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+ {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-  {{ end }} -->
-  <link rel="stylesheet" href="/assets/sass/main.css" />
+  {{ end }}
+  <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
   <script src="https://cdn.pagesense.io/js/appscodeinc/30ddadb503fc4a72b3eede8ce8b08997.js"></script>
 </head>
 
@@ -1123,9 +1121,7 @@
 
   <!-- lordicon js  -->
   <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
-
-  <!-- Bulma Carousel JS -->
-  <script src="/assets/js/bulma-carousel.min.js"></script>
+  
   <!-- Magnific-popup JS  -->
   <script src="/assets/js/magnific-popup.min.js"></script>
   <!-- AOS JS -->

@@ -55,6 +55,10 @@
   }
 }
 
+.section-padding {
+  padding: 80px 0;
+}
+
 .section-title {
   margin-bottom: 2rem;
   position: relative;
@@ -278,11 +282,14 @@
 .message {
   display: flex;
   align-items: center;
+
   lord-icon {
     margin-right: 1rem;
   }
+
   &.is-warning {
     background-color: transparent;
+
     .message-body {
       border-color: transparent;
       border-width: 0;
@@ -293,8 +300,9 @@
     }
   }
 
-   &.is-danger {
+  &.is-danger {
     background-color: transparent;
+
     .message-body {
       border-color: transparent;
       border-width: 0;
@@ -305,8 +313,6 @@
     }
   }
 }
-
-
 
 /****************************************
 Responsive Classes
@@ -320,6 +326,10 @@ Responsive Classes
 
   .container {
     padding: 0 15px;
+  }
+
+  .section-padding {
+    padding: 40px 0;
   }
 
   .section-title {
@@ -355,6 +365,10 @@ Responsive Classes
     padding: 0 30px;
   }
 
+  .section-padding {
+    padding: 50px 0;
+  }
+
   .section-title {
     h1 {
       &.is-outlined-text {
@@ -374,6 +388,10 @@ Responsive Classes
     padding: 0 30px;
   }
 
+  .section-padding {
+    padding: 60px 0;
+  }
+
   .section-title {
     h1 {
       &.is-outlined-text {
@@ -388,6 +406,10 @@ Responsive Classes
 }
 
 @media (min-width: 1216px) and (max-width: 1407px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+
   .section-title {
     h1 {
       &.is-outlined-text {
