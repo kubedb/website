@@ -123,6 +123,23 @@ $ helm install kubedb appscode/kubedb \
   --set-file global.license=/path/to/the/license.txt
 ```
 
+{{< notice type="warning" message="If you are using **private Docker registries** using *self-signed certificates*, please pass the registry domains to the operator like below:" >}}
+
+```
+# Install KubeDB Enterprise edition
+$ helm install kubedb appscode/kubedb \
+  --version {{< param "info.version" >}} \
+  --namespace kubedb --create-namespace \
+  --set kubedb-provisioner.enabled=true \
+  --set kubedb-ops-manager.enabled=true \
+  --set kubedb-autoscaler.enabled=true \
+  --set kubedb-dashboard.enabled=true \
+  --set kubedb-schema-manager.enabled=true \
+  --set global.insecureRegistries[0]=hub.example.com \
+  --set global.insecureRegistries[1]=hub2.example.com \
+  --set-file global.license=/path/to/the/license.txt
+```
+
 To see the detailed configuration options, visit [here](https://github.com/kubedb/installer/tree/{{< param "info.installer" >}}/charts/kubedb).
 
 </div>
@@ -162,6 +179,24 @@ $ helm template kubedb appscode/kubedb \
   --set kubedb-autoscaler.enabled=true \
   --set kubedb-dashboard.enabled=true \
   --set kubedb-schema-manager.enabled=true \
+  --set global.skipCleaner=true | kubectl apply -f -
+```
+
+{{< notice type="warning" message="If you are using **private Docker registries** using *self-signed certificates*, please pass the registry domains to the operator like below:" >}}
+
+```
+# Install KubeDB Enterprise operator chart
+$ helm template kubedb appscode/kubedb \
+  --version {{< param "info.version" >}} \
+  --namespace kubedb --create-namespace \
+  --set-file global.license=/path/to/the/license.txt  \
+  --set kubedb-provisioner.enabled=true \
+  --set kubedb-ops-manager.enabled=true \
+  --set kubedb-autoscaler.enabled=true \
+  --set kubedb-dashboard.enabled=true \
+  --set kubedb-schema-manager.enabled=true \
+  --set global.insecureRegistries[0]=hub.example.com \
+  --set global.insecureRegistries[1]=hub2.example.com \
   --set global.skipCleaner=true | kubectl apply -f -
 ```
 

@@ -1,11 +1,11 @@
 ---
-title: Use X-Pack with KubeDB Elasticsearch
+title: Using Search Guard with Elasticsearch
 menu:
   docs_v2023.01.17:
-    identifier: es-x-pack
-    name: X-Pack
-    parent: es-elasticsearch-guides
-    weight: 55
+    identifier: es-search-guard-elasticsearch
+    name: Search Guard
+    parent: es-plugin-elasticsearch
+    weight: 15
 menu_name: docs_v2023.01.17
 info:
   autoscaler: v0.15.1

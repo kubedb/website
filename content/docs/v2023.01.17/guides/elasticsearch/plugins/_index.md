@@ -1,11 +1,11 @@
 ---
-title: Elasticsearch Dashboard
+title: Using plugins and extensions with Elasticsearch
 menu:
   docs_v2023.01.17:
-    identifier: es-dashboard
-    name: Elasticsearch Dashboard
+    identifier: es-plugin-elasticsearch
+    name: Extensions & Plugins
     parent: es-elasticsearch-guides
-    weight: 32
+    weight: 60
 menu_name: docs_v2023.01.17
 info:
   autoscaler: v0.15.1

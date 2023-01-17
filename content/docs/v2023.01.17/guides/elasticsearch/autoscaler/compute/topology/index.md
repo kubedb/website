@@ -37,8 +37,6 @@ This guide will show you how to use `KubeDB` to autoscale compute resources i.e.
 
 - Install `Metrics Server` from [here](https://github.com/kubernetes-sigs/metrics-server#installation)
 
-- Install `Vertical Pod Autoscaler` from [here](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler#installation)
-
 - You should be familiar with the following `KubeDB` concepts:
   - [Elasticsearch](/docs/v2023.01.17/guides/elasticsearch/concepts/elasticsearch/)
   - [ElasticsearchAutoscaler](/docs/v2023.01.17/guides/elasticsearch/concepts/autoscaler/)
