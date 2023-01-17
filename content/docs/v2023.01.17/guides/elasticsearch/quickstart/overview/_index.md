@@ -1,11 +1,11 @@
 ---
-title: Using Search Guard with Elasticsearch
+title: Elasticsearch Overview
 menu:
   docs_v2023.01.17:
-    identifier: es-search-guard-elasticsearch
-    name: Search Guard
-    parent: es-elasticsearch-guides
-    weight: 60
+    identifier: es-overview-elasticsearch
+    name: Overview
+    parent: es-quickstart-elasticsearch
+    weight: 10
 menu_name: docs_v2023.01.17
 info:
   autoscaler: v0.15.1

@@ -369,6 +369,6 @@ kubectl delete ns demo
 
 ## Next Steps
 
-- Learn how to [create TLS certificates](/docs/v2023.01.17/guides/elasticsearch/x-pack/issue-certificate).
-- Learn how to generate [x-pack configuration](/docs/v2023.01.17/guides/elasticsearch/x-pack/configuration).
+- Learn how to [create TLS certificates](/docs/v2023.01.17/guides/elasticsearch/plugins/x-pack/issue-certificate).
+- Learn how to generate [x-pack configuration](/docs/v2023.01.17/guides/elasticsearch/plugins/x-pack/configuration).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2023.01.17/CONTRIBUTING).

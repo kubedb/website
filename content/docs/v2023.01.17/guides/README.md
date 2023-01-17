@@ -26,10 +26,10 @@ info:
 
 # Guides
 
-Guides show you how to perform tasks with KubeDB.
+Guides to show you how to perform tasks with KubeDB:
 
-- [Elasticsearch](/docs/v2023.01.17/guides/elasticsearch/README). Shows how to manage Elasticsearch using KubeDB.
-- [MariaDB](/docs/v2023.01.17/guides/mariadb). Shows how to manage Elasticsearch using KubeDB.
+- [Elasticsearch](/docs/v2023.01.17/guides/elasticsearch/README). Shows how to manage Elasticsearch & OpenSearch using KubeDB.
+- [MariaDB](/docs/v2023.01.17/guides/mariadb). Shows how to manage MariaDB using KubeDB.
 - [Memcached](/docs/v2023.01.17/guides/memcached/README). Shows how to manage Memcached using KubeDB.
 - [MongoDB](/docs/v2023.01.17/guides/mongodb/README). Shows how to manage MongoDB using KubeDB.
 - [MySQL](/docs/v2023.01.17/guides/mysql/README). Shows how to manage MySQL using KubeDB.

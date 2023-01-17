@@ -146,4 +146,5 @@ KubeDB accepts the following fields to set in `spec.podTemplate`:
 ## Next Steps
 
 - Learn about Elasticsearch CRD [here](/docs/v2023.01.17/guides/elasticsearch/concepts/elasticsearch/).
-- Deploy your first Elasticsearch database with KubeDB by following the guide [here](/docs/v2023.01.17/guides/elasticsearch/quickstart/overview/).
+- Deploy your first Elasticsearch database with KubeDB by following the guide [here](/docs/v2023.01.17/guides/elasticsearch/quickstart/overview/elasticsearch/).
+- Deploy your first OpenSearch database with KubeDB by following the guide [here](/docs/v2023.01.17/guides/elasticsearch/quickstart/overview/opensearch/).

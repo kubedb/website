@@ -1,11 +1,11 @@
 ---
-title: OpenSearch Quickstart
+title: Use X-Pack with KubeDB Elasticsearch
 menu:
   docs_v2023.01.17:
-    identifier: os-quickstart
-    name: OpenSearch
-    parent: es-elasticsearch-guides
-    weight: 60
+    identifier: es-x-pack
+    name: X-Pack
+    parent: es-plugin-elasticsearch
+    weight: 10
 menu_name: docs_v2023.01.17
 info:
   autoscaler: v0.15.1

@@ -3,7 +3,7 @@ title: OpenSearch
 menu:
   docs_v2023.01.17:
     identifier: es-dashboard-opensearch
-    name: OpenSearch
+    name: OpenSearch-Dashboards
     parent: es-dashboard
     weight: 15
 menu_name: docs_v2023.01.17
@@ -23,7 +23,7 @@ info:
 
 > New to KubeDB? Please start [here](/docs/v2023.01.17/README).
 
-# Deploy OpenSearch Dashboards With ElasticsearchDashboard
+# Deploy OpenSearch-Dashboards With ElasticsearchDashboard 
 
 ## Before You Begin
 
