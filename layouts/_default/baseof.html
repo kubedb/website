@@ -82,8 +82,6 @@
     rel="stylesheet">
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Bulma Carousel CSS -->
-  <link rel="stylesheet" href="/assets/css/bulma-carousel.min.css" />
   <!-- Bulma tooltip CSS -->
   <link rel="stylesheet" href="/assets/css/bulma-tooltip.min.css" />
   <!-- Magnific-popup css  -->
@@ -904,6 +902,10 @@
   </section>
   <!--========================== testimonial area 2022 end  ==========================-->
 
+  <!--========================== faq area start ========================== -->
+  {{ partial "faq.html" . }}
+  <!--========================== faq area end ========================== -->
+
   {{ block "cta-install" . }}
   {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
   <!--========================== call to action start ========================== -->
@@ -1119,9 +1121,7 @@
 
   <!-- lordicon js  -->
   <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
-
-  <!-- Bulma Carousel JS -->
-  <script src="/assets/js/bulma-carousel.min.js"></script>
+  
   <!-- Magnific-popup JS  -->
   <script src="/assets/js/magnific-popup.min.js"></script>
   <!-- AOS JS -->

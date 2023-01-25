@@ -220,14 +220,6 @@ navbarItems.forEach((navbarItem) => {
   });
 });
 
-//bulma carousel
-bulmaCarousel.attach("#carousel-demo", {
-  slidesToScroll: 1,
-  slidesToShow: 1,
-  infinite: true,
-  autoplay: false,
-});
-
 // owl owlCarousel JS 
 var owl = $('.testimonial-carousel');
 owl.owlCarousel({
@@ -473,11 +465,12 @@ tabItems.forEach((tab) => {
 // custom accordion
 function acAccordion(actionBtn) {
   let accordionHeadingAll = document.querySelectorAll(actionBtn);
+
   // Create event listeners for each accordion heading
   Array.from(accordionHeadingAll).forEach((accordionHeading) => {
     accordionHeading.addEventListener("click", function () {
       let singleAcc = accordionHeading.closest(".single-accordion-item");
-
+      
       let isOpen = singleAcc.classList.contains("open");
 
       // select all accordion
