@@ -7937,8 +7937,7 @@ h5.is-gradient,
 h6.is-gradient {
   background: linear-gradient(-45deg, var(--ac-primary), #940148, #4c346f, #3334f5);
   background-size: 300% 300%;
-  -webkit-animation: gradient 5s ease infinite;
-          animation: gradient 5s ease infinite;
+  animation: gradient 5s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -8145,39 +8144,33 @@ strong {
   opacity: 0.5;
   transform-origin: top left;
   transform: scale(0) rotate(0deg) translate(-50%, -50%);
-  -webkit-animation: cube 12s ease-in forwards infinite;
-          animation: cube 12s ease-in forwards infinite;
+  animation: cube 12s ease-in forwards infinite;
 }
 .cube:nth-child(2n) {
   border-color: white;
 }
 .cube:nth-child(2) {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  animation-delay: 2s;
   left: 5vw;
   top: 30vh;
 }
 .cube:nth-child(3) {
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  animation-delay: 4s;
   left: 95vw;
   top: 50vh;
 }
 .cube:nth-child(4) {
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
+  animation-delay: 6s;
   left: 90vw;
   top: 30vh;
 }
 .cube:nth-child(5) {
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
+  animation-delay: 8s;
   left: 10vw;
   top: 75vh;
 }
 .cube:nth-child(6) {
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
+  animation-delay: 10s;
   left: 50vw;
   top: 20vh;
 }
@@ -8193,54 +8186,35 @@ strong {
   opacity: 0.5;
   transform-origin: top left;
   transform: scale(0) rotate(0deg) translate(-50%, -50%);
-  -webkit-animation: cube 12s ease-in forwards infinite;
-          animation: cube 12s ease-in forwards infinite;
+  animation: cube 12s ease-in forwards infinite;
 }
 .circle:nth-child(2n) {
   border-color: white;
 }
 .circle:nth-child(2) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
   left: 15vw;
   top: 40vh;
 }
 .circle:nth-child(3) {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  animation-delay: 2s;
   left: 100vw;
   top: 60vh;
 }
 .circle:nth-child(4) {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-delay: 3s;
   left: 90vw;
   top: 30vh;
 }
 .circle:nth-child(5) {
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
+  animation-delay: 5s;
   left: 20vw;
   top: 65vh;
 }
 .circle:nth-child(6) {
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
+  animation-delay: 8s;
   left: 60vw;
   top: 30vh;
-}
-
-@-webkit-keyframes cube {
-  from {
-    transform: scale(0) rotate(0deg) translate(-50%, -50%);
-    opacity: 2s;
-    margin-top: 200px;
-  }
-  to {
-    transform: scale(5) rotate(960deg) translate(-50%, -50%);
-    opacity: 0;
-    margin-top: 0;
-  }
 }
 
 @keyframes cube {
@@ -8397,8 +8371,7 @@ Responsive Classes
     font-size: 80px;
   }
   .cube {
-    -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
 }
 @media (min-width: 1216px) and (max-width: 1407px) {
@@ -8703,7 +8676,6 @@ section.our-customer-area {
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   transition: 0.3s;
 }
@@ -8734,7 +8706,6 @@ section.our-customer-area {
 
 .ac-product-left-sidebar {
   margin-right: 30px;
-  position: -webkit-sticky;
   position: sticky;
   top: 130px;
   z-index: 9;
@@ -8808,10 +8779,6 @@ section.our-customer-area {
 }
 
 .single-input-field input::-moz-placeholder {
-  color: #dbdbde;
-}
-
-.single-input-field input:-ms-input-placeholder {
   color: #dbdbde;
 }
 
@@ -9005,8 +8972,7 @@ video {
   height: 1rem;
   background: var(--ac-primary);
   border-radius: 2px;
-  -webkit-animation: pulse-border 1500ms ease-out infinite;
-          animation: pulse-border 1500ms ease-out infinite;
+  animation: pulse-border 1500ms ease-out infinite;
 }
 .navbar-appscode ul .nav-item .link .whats-new:after {
   content: "";
@@ -9020,16 +8986,6 @@ video {
   height: 1rem;
   background: var(--ac-primary);
   transition: all 200ms;
-}
-@-webkit-keyframes pulse-border {
-  0% {
-    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
-    opacity: 0;
-  }
 }
 @keyframes pulse-border {
   0% {
@@ -9481,9 +9437,6 @@ video {
   outline: none;
 }
 .ac-searchbar input[type=search]::-moz-placeholder {
-  color: #636363;
-}
-.ac-searchbar input[type=search]:-ms-input-placeholder {
   color: #636363;
 }
 .ac-searchbar input[type=search]::placeholder {
@@ -10424,8 +10377,7 @@ Responsive Classes
 .hero-area.is-product.is-dark.is-gradient {
   background: linear-gradient(-45deg, #a8356d, #940148, #4c346f, #3334f5);
   background-size: 200% 200%;
-  -webkit-animation: gradient 15s ease infinite;
-          animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
 }
 .hero-area.is-product.is-dark h1 strong {
   color: #ffffff;
@@ -10547,18 +10499,6 @@ Responsive Classes
 .hero-area-code-editor pre code {
   padding-left: 0px;
   padding-right: 20px;
-}
-
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 @keyframes gradient {
   0% {
@@ -11342,6 +11282,9 @@ table th:first-child {
   background-color: #f3f4f7;
   padding: 60px 0;
 }
+.testimonial-area .section-title h2 {
+  font-size: 48px;
+}
 .testimonial-area .section-title p {
   font-size: 18px;
 }
@@ -11415,7 +11358,7 @@ Responsive Classes
   .testimonial-area .section-title {
     text-align: center;
   }
-  .testimonial-area .section-title h1 {
+  .testimonial-area .section-title h2 {
     font-size: 32px;
   }
   .testimonial-area .owl-carousel .owl-stage-outer {
@@ -11448,7 +11391,7 @@ Responsive Classes
   }
 }
 @media (min-width: 769px) and (max-width: 1023.98px) {
-  .testimonial-area .section-title h1 {
+  .testimonial-area .section-title h2 {
     font-size: 38px;
   }
   .testimonial-area .single-testimonial-item {
@@ -11457,7 +11400,7 @@ Responsive Classes
   }
 }
 @media (min-width: 1024px) and (max-width: 1215px) {
-  .testimonial-area .section-title h1 {
+  .testimonial-area .section-title h2 {
     font-size: 38px;
   }
   .testimonial-area .single-testimonial-item {
@@ -11994,8 +11937,7 @@ Responsive Classes
 
 .pricing-body li span.tooltip {
   text-decoration: underline;
-  -webkit-text-decoration-style: dashed;
-          text-decoration-style: dashed;
+  text-decoration-style: dashed;
 }
 
 .pricing-body li:last-child {
@@ -12253,7 +12195,6 @@ Responsive Classes
   margin: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   line-height: 26px;
 }
@@ -12931,7 +12872,6 @@ li.nav-item.active a {
 
 .right-sidebar-area {
   padding: 0 1.25rem 0 0;
-  position: -webkit-sticky;
   position: sticky;
   top: 130px;
 }
@@ -13171,7 +13111,7 @@ Responsive Classes
     top: 0;
   }
   .documentation-area .left-sidebar-wrapper,
-.documentation-area .right-sidebar {
+  .documentation-area .right-sidebar {
     display: none;
     position: fixed;
     top: 0;
@@ -13274,7 +13214,6 @@ Responsive Classes
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: -webkit-sticky;
   position: sticky;
   z-index: 8;
   top: 50px;
