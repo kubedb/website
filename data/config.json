@@ -45,13 +45,10 @@
   },
   "ossMenu": {
     "c0": [
-      "guard",
-      "kubed"
+      "guard"
     ],
     "c1": [
-      "pharmer",
-      "swift",
-      "searchlight"
+      "kubed"
     ]
   },
   "productMenu": {
