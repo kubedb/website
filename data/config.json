@@ -54,12 +54,11 @@
   "productMenu": {
     "c0": [
       "kubedb",
-      "stash",
-      "kubevault"
+      "stash"
     ],
     "c1": [
-      "voyager",
-      "kubeform"
+      "kubevault",
+      "voyager"
     ]
   },
   "products": [
