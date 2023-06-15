@@ -4,8 +4,8 @@ languageCode: en-us
 assetDir: static
 googleAnalytics: UA-62096468-4
 disableKinds:
-- taxonomy
-- taxonomyTerm
+  - taxonomy
+  - taxonomyTerm
 params:
   product_key: kubedb
   main_menu_dropdown_item: database
@@ -39,62 +39,67 @@ params:
       map: title
 menu:
   main:
-  - name: Databases
-    identifier: database
-    weight: 15
-    url: https://kubedb.com/docs/latest/setup/
-  - name: Documentation
-    weight: 20
-  - name: Elasticsearch
-    identifier: elasticsearch
-    parent: database
-    weight: 10
-    pre: /assets/images/databases/logos/elasticsearch.svg
-  - name: MariaDB
-    identifier: mariadb
-    parent: database
-    weight: 20
-    pre: /assets/images/databases/logos/mariadbs.svg
-  - name: Memcached
-    identifier: memcached
-    parent: database
-    weight: 30
-    pre: /assets/images/databases/logos/memcached.svg
-  - name: MongoDB
-    identifier: mongodb
-    parent: database
-    weight: 40
-    pre: /assets/images/databases/logos/mongodb.svg
-  - name: MySQL
-    identifier: mysql
-    parent: database
-    weight: 50
-    pre: /assets/images/databases/logos/mysql.svg
-  - name: Percona XtraDB
-    identifier: percona-xtradb
-    parent: database
-    weight: 60
-    pre: /assets/images/databases/logos/perconaxtradbs.svg
-  - name: PgBouncer
-    identifier: pgbouncer
-    parent: database
-    weight: 70
-    pre: /assets/images/databases/logos/pgbouncer.svg
-  - name: PostgreSQL
-    identifier: postgres
-    parent: database
-    weight: 80
-    pre: /assets/images/databases/logos/postgresql.svg
-  - name: ProxySQL
-    identifier: proxysql
-    parent: database
-    weight: 90
-    pre: /assets/images/databases/logos/proxysqls.svg
-  - name: Redis
-    identifier: redis
-    parent: database
-    weight: 100
-    pre: /assets/images/databases/logos/redis.svg
+    - name: Databases
+      identifier: database
+      weight: 15
+      url: https://kubedb.com/docs/latest/setup/
+    - name: Documentation
+      weight: 20
+    - name: Elasticsearch
+      identifier: elasticsearch
+      parent: database
+      weight: 10
+      pre: /assets/images/databases/logos/elasticsearch.svg
+    - name: MariaDB
+      identifier: mariadb
+      parent: database
+      weight: 20
+      pre: /assets/images/databases/logos/mariadbs.svg
+    - name: Memcached
+      identifier: memcached
+      parent: database
+      weight: 30
+      pre: /assets/images/databases/logos/memcached.svg
+    - name: MongoDB
+      identifier: mongodb
+      parent: database
+      weight: 40
+      pre: /assets/images/databases/logos/mongodb.svg
+    - name: MySQL
+      identifier: mysql
+      parent: database
+      weight: 50
+      pre: /assets/images/databases/logos/mysql.svg
+    - name: Percona XtraDB
+      identifier: percona-xtradb
+      parent: database
+      weight: 60
+      pre: /assets/images/databases/logos/perconaxtradbs.svg
+    - name: PgBouncer
+      identifier: pgbouncer
+      parent: database
+      weight: 70
+      pre: /assets/images/databases/logos/pgbouncer.svg
+    - name: PostgreSQL
+      identifier: postgres
+      parent: database
+      weight: 80
+      pre: /assets/images/databases/logos/postgresql.svg
+    - name: ProxySQL
+      identifier: proxysql
+      parent: database
+      weight: 90
+      pre: /assets/images/databases/logos/proxysqls.svg
+    - name: Redis
+      identifier: redis
+      parent: database
+      weight: 100
+      pre: /assets/images/databases/logos/redis.svg
+    - name: Kafka
+      identifier: kafka
+      parent: database
+      weight: 110
+      pre: /assets/images/databases/logos/kafkas.svg
 markup:
   goldmark:
     renderer:
@@ -103,5 +108,5 @@ markup:
     style: manni
 outputs:
   home:
-  - HTML
-  - JSON
+    - HTML
+    - JSON
