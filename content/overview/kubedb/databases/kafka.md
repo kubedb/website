@@ -1,5 +1,5 @@
 ---
-title: Run and Manage Kafka Database on Kubernetes - KubeDB
+title: Run and Manage Apache Kafka on Kubernetes - KubeDB
 id: kafka
 type: "overview"
 layout: "overview"
