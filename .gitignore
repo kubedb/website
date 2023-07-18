@@ -8,9 +8,4 @@
 /bin
 .DS_Store
 .hugo_build.lock
-<<<<<<< HEAD
 *.css.map
-
-=======
-*.css.map
->>>>>>> 976a75ce (Add css.map in gitignore)
