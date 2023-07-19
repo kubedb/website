@@ -4,17 +4,19 @@
 {{- $pages := $pctx.RegularPages -}}
 
 <!-- articles area for page start -->
-<section class="articles-area" style="margin-top: 140px;">
+<section class="articles-area">
   <div class="container">
-    <div class="columns is-vcentered">
+    <div class="columns is-multiline">
       {{ range $idx, $p := $pages.ByDate.Reverse }}
       <div class="column is-4">
-        <a href="{{ $p.RelPermalink }}" class="single-blog-card">
-          <div class="user-info">
+        <a href="{{ $p.RelPermalink }}" class="single-article-card">
+          <!-- <div class="user-info">
             <img src="/assets/images/authors/profile-photos-84x84/dipta-roy.jpg" alt="author" width="20" height="20" loading="lazy" decoding="async">
             <p class="mr-12 author">Dipta Roy</p>
-          </div>
+          </div> -->
+
           <h2 class="is-ellipsis-3" title="Monitor MongoDB with Grafana Dashboard in Azure Kubernetes Service (AKS)">{{ $p.Title }}</h2>
+          <p class="is-ellipsis-3">{{$p.Description }}</p>
           <div class="card-bottom is-flex is-justify-content-space-between">
             <div class="date-meta">10-Jul-2023</div>
             <div class="arrow-icon width-15">

@@ -9,4 +9,4 @@
 .DS_Store
 .hugo_build.lock
 *.css.map
-
+main.css.map

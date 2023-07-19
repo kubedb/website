@@ -1,18 +1,7 @@
 ---
-title: How to Deploy Postgres via Kubernetes PostgreSQL Operator 01111
+title: Deploy Postgres via Kubernetes PostgreSQL Operator
+Description: Learn how to deploy Postgres using the Kubernetes PostgreSQL Operator. A step-by-step guide for deploying PostgreSQL database in Kubernetes.
 date: "2023-02-01"
-weight: 20
-authors:
-- Raihan Khan
-tags:
-- clustering
-- kafka
-- kraft
-- kubedb
-- kubernetes
-- provisioner
-- publisher
-- subscriber
 ---
 
 ## Summary

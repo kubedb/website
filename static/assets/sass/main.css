@@ -1,6 +1,7 @@
 /* Deafult Margin & Padding view-height & view-width */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap");
 .m-0 {
   margin: 0px !important;
 }
@@ -12443,24 +12444,37 @@ Responsive Classes
     padding: 20px 0;
   }
 }
-.single-blog-card {
+.articles-area {
+  padding-top: 140px;
+  padding-bottom: 30px;
+}
+
+.single-article-card {
   background-color: #fff;
   display: block;
   min-height: 185px;
-  padding: 32px 16px;
+  padding: 16px 16px;
   transition: 0.3s ease-in-out;
   border: 1px solid #dbdbde;
 }
-.single-blog-card h2 {
+.single-article-card h2 {
   font-family: roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
   color: #1c1c1c;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   letter-spacing: 0;
   transition: 0.3s ease-in-out;
+}
+.single-article-card p {
+  color: #506070;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.single-article-card .card-bottom {
+  color: #506070;
 }
 
 .user-info {
@@ -12496,6 +12510,251 @@ Responsive Classes
   width: 15px !important;
 }
 
+.article-details-area {
+  margin-top: 140px;
+}
+.article-details-area .meta {
+  margin-bottom: 20px;
+}
+
+.fig-style {
+  max-height: 650px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.fig-style img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: block;
+  border-radius: 4px;
+}
+.fig-style figcaption {
+  max-width: 80%;
+  margin: 0 auto;
+  color: #3b3030;
+  opacity: 0.8;
+  padding: 10px 0;
+  border-bottom: 1px solid #dbdbde;
+}
+
+.sticky-social-menu,
+.wizerd-items {
+  position: sticky;
+  top: 30px;
+  z-index: 9;
+}
+
+.highlight {
+  margin-bottom: 40px;
+}
+.highlight pre {
+  background-color: #1c2c41 !important;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+.highlight pre code {
+  color: #f1f1f1;
+}
+
+.text-underline, .blog-content ol li a, .blog-content ul li a, .blog-content p a, .article-content ol li a, .article-content ul li a, .article-content p a {
+  font-weight: 500;
+  position: relative;
+  text-decoration: underline;
+}
+.text-underline:after, .blog-content ol li a:after, .blog-content ul li a:after, .blog-content p a:after, .article-content ol li a:after, .article-content ul li a:after, .article-content p a:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #00a651;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+}
+.text-underline:hover:after, .blog-content ol li a:hover:after, .blog-content ul li a:hover:after, .blog-content p a:hover:after, .article-content ol li a:hover:after, .article-content ul li a:hover:after, .article-content p a:hover:after {
+  width: 100%;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 130%;
+}
+.article-content h1 {
+  font-size: 2rem;
+}
+.article-content h2 {
+  font-size: 1.5rem;
+}
+.article-content h3 {
+  font-size: 1.25rem;
+}
+.article-content h4 {
+  font-size: 1.125rem;
+}
+.article-content h5 {
+  font-size: 1rem;
+}
+.article-content h6 {
+  font-size: 0.875rem;
+}
+.article-content p {
+  color: #506070;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  line-height: 190%;
+}
+.article-content p img {
+  border: 1px solid #dbdbde;
+  padding: 15px;
+  border-radius: 8px;
+}
+.article-content pre {
+  margin-bottom: 15px;
+  border-radius: 4px;
+  background-color: #1c2c41;
+  color: #fff;
+  font-size: 16px;
+  line-height: 22px;
+}
+.article-content figure {
+  border: 1px solid #dbdbde;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+.article-content iframe {
+  margin-bottom: 20px;
+}
+.article-content .inline-button {
+  font-size: 16px;
+}
+.article-content ul {
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+.article-content ul li {
+  font-size: 18px;
+  list-style: disc;
+  line-height: 190%;
+}
+.article-content ul li:last-child {
+  margin-bottom: 0;
+}
+.article-content ul li code {
+  border-radius: 2px;
+}
+.article-content ul li pre {
+  font-size: 16px;
+  margin-left: -20px;
+}
+.article-content ol {
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+.article-content ol li {
+  font-size: 18px;
+  line-height: 190%;
+}
+.article-content ol li:last-child {
+  margin-bottom: 0;
+}
+.article-content ol li code {
+  border-radius: 2px;
+}
+.article-content blockquote {
+  position: relative;
+  z-index: 1;
+  padding-left: 20px;
+  opacity: 0.9;
+}
+.article-content blockquote::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #00a651;
+  border-radius: 2px;
+}
+.article-content .bb-quote-msg {
+  position: relative;
+  z-index: 1;
+}
+.article-content .bb-quote-msg p {
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #1c2c41;
+}
+.article-content .bb-quote-msg .quote-icon {
+  position: absolute;
+  left: -50px;
+  top: 10px;
+}
+.article-content .bb-quote-msg .name-descriptor {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.article-content .bb-quote-msg .name-descriptor::before {
+  content: url(/assets/images/icons/line.svg);
+  position: absolute;
+  left: -60px;
+}
+.article-content .bb-quote-msg .name-descriptor span {
+  font-size: 16px;
+}
+.article-content .tags .tag {
+  height: 36px;
+  font-size: 14px;
+  padding: 5px 20px;
+}
+.article-content .tab-content h2 {
+  margin-top: 0;
+  font-size: 28px;
+  line-height: 40px;
+}
+.article-content table {
+  margin-bottom: 20px;
+}
+.article-content table td,
+.article-content table th {
+  border: 1px solid #dbdbde;
+  padding: 10px 20px;
+}
+.article-content table th {
+  font-weight: 500;
+}
+
+/*=================================================================================================
+                                    Responsive code start
+=================================================================================================*/
+@media (min-width: 769px) and (max-width: 1023.98px) {
+  .single-article-card {
+    padding: 12px 16px;
+  }
+}
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .meta {
+    margin-bottom: 10px;
+  }
+  .meta .author {
+    margin-right: 4px;
+  }
+  .single-article-card {
+    padding: 16px;
+  }
+}
+/*=================================================================================================
+                                    Responsive code end
+=================================================================================================*/
 .blog-details-area {
   margin-top: 30px;
 }
@@ -12544,12 +12803,12 @@ Responsive Classes
   color: #f1f1f1;
 }
 
-.text-underline, .blog-content ol li a, .blog-content ul li a, .blog-content p a {
+.text-underline, .blog-content ol li a, .blog-content ul li a, .blog-content p a, .article-content p a, .article-content ul li a, .article-content ol li a {
   font-weight: 500;
   position: relative;
   text-decoration: underline;
 }
-.text-underline:after, .blog-content ol li a:after, .blog-content ul li a:after, .blog-content p a:after {
+.text-underline:after, .blog-content ol li a:after, .blog-content ul li a:after, .blog-content p a:after, .article-content p a:after, .article-content ul li a:after, .article-content ol li a:after {
   position: absolute;
   content: "";
   left: 0;
@@ -12560,7 +12819,7 @@ Responsive Classes
   border-radius: 50px;
   transition: 0.3s ease-in-out;
 }
-.text-underline:hover:after, .blog-content ol li a:hover:after, .blog-content ul li a:hover:after, .blog-content p a:hover:after {
+.text-underline:hover:after, .blog-content ol li a:hover:after, .blog-content ul li a:hover:after, .blog-content p a:hover:after, .article-content p a:hover:after, .article-content ul li a:hover:after, .article-content ol li a:hover:after {
   width: 100%;
 }
 
@@ -14030,4 +14289,4 @@ Responsive Classes
   .features-cta-area .features-plan-area {
     min-width: 1344px;
   }
-}/*# sourceMappingURL=main.css.map */
+}
