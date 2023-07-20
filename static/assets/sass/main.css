@@ -12501,6 +12501,10 @@ Responsive Classes
 .article-details-area {
   margin-top: 140px;
 }
+.article-details-area .full-info p {
+  font-size: 18px;
+  line-height: 180%;
+}
 .article-details-area .meta {
   margin-bottom: 20px;
 }
