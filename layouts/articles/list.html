@@ -6,12 +6,10 @@
 <!-- articles area for page start -->
 <section class="articles-area">
   <div class="container">
-    <div class="columns">
-      <div class="column">
-        <h3>All Articles</h3>
-      </div>
-    </div>
     <div class="columns is-multiline">
+      <div class="column is-12">
+        <h4>All Articles</h4>
+      </div>
       {{ range $idx, $p := $pages.ByDate.Reverse }}
       <div class="column is-4">
         <a href="{{ $p.RelPermalink }}" class="single-article-card">
