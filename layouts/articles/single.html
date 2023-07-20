@@ -1,11 +1,25 @@
 {{ define "main" }}
 
+
+
 <section class="article-details-area">
   <div class="container">
     <!-- is-centered -->
-    <div class="columns is-centered">
-      <div class="column is-10">
+    <div class="columns">
+      <div class="column is-9">
         <div class="full-info">{{ .Content }}</div>
+      </div>
+
+      <div class="column is-3">
+        <div class="right-sidebar">
+          <div class="right-sidebar-area">
+            <div class="tbl-of-contents">
+              <button class="button ac-button inline-button back-button pl-15 is-hidden-desktop"><span class="material-icons-outlined">arrow_back</span>Back</button>
+              <h4>What's on this Page</h4>
+              {{ .TableOfContents }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

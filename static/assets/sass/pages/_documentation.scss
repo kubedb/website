@@ -194,49 +194,9 @@
     font-size: 13px;
   }
 
-  // .highlight {
-  //   pre {
-  //     border: 1px solid $ac-white-light;
-  //     border-radius: 2px;
-
-  //     .hljs {
-  //       background-color: transparent;
-  //       color: #d2d5e1;
-  //     }
-
-  //     // code {
-  //     //   color: $ac-white;
-  //     // }
-  //   }
-
-  //   .hljs-variable {
-  //     color: #35a651;
-  //   }
-
-  //   .hljs-string {
-  //     color: #f15855;
-  //   }
-
-  //   .hljs-keyword,
-  //   .hljs-literal,
-  //   .nginx .hljs-title {
-  //     color: #ff08d8;
-  //   }
-
-  //   .hljs-class .hljs-title,
-  //   .smalltalk .hljs-class,
-  //   .hljs-type,
-  //   .hljs-typename,
-  //   .hljs-tag .hljs-attribute,
-  //   .hljs-doctype,
-  //   .hljs-class .hljs-id,
-  //   .hljs-built_in,
-  //   .setting,
-  //   .hljs-params,
-  //   .clojure .hljs-attribute {
-  //     color: #ad6ff3;
-  //   }
-  // }
+  a{
+    @extend .text-underline;
+  }
 }
 
 .full-info h2 span.share-icon {

@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap");
-
 .articles-area {
   padding-top: 140px;
   padding-bottom: 40px;
@@ -27,8 +25,6 @@
   }
 
   h2 {
-    font-family: roboto;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
@@ -42,11 +38,11 @@
     font-size: 14px;
     margin-bottom: 8px;
   }
+
   .card-bottom {
     color: #506070;
   }
   .date-meta {
-    font-family: roboto mono;
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -60,16 +56,33 @@
 // ===================================== articles details  area =====================================
 .article-details-area {
   margin-top: 140px;
+  padding-bottom: 80px;
 
-  .full-info p {
-    font-size: 18px;
-    line-height: 180%;
+  .full-info {
+    padding-right: 32px;
+    h1 {
+      font-size: 48px;
+      max-width: 90%;
+    }
+    p {
+      font-size: 18px;
+      line-height: 180%;
+      color: #4a4a4a;
+    }
+
+    a {
+      @extend .text-underline;
+    }
   }
-
-  .meta {
-    margin-bottom: 20px;
+  .right-sidebar {
+    position: sticky;
+    top: 70px;
+    border-left: 1px solid #dbdbde;
+    margin-top: -25px;
+    width: 324px;
+    padding-top: 24px;
+    height: 100%;
   }
-
 }
 
 /*=================================================================================================
