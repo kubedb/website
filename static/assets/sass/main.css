@@ -12514,6 +12514,7 @@ Responsive Classes
 }
 .single-article-card .thumbnail {
   display: flex;
+  background-color: #dddddd;
 }
 .single-article-card .thumbnail img {
   height: 220px;
