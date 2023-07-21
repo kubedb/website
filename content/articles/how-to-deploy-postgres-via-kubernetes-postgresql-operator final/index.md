@@ -6,13 +6,17 @@ date: "2023-02-01"
 
 # How to Deploy Postgres via Kubernetes PostgreSQL Operator
 
-![Alt text](./hero.jpg "a title")
+![Alt text](./hero.jpg "Kubernetes PostgreSQL")
 
-Kubernetes is an open-source container orchestration platform that revolutionizes the way applications are deployed, scaled, and managed in a distributed computing environment. It provides a highly scalable and fault-tolerant system for automating the lifecycle management of containerized applications. Leveraging concepts like pods, services, and controllers, Kubernetes abstracts the underlying infrastructure and offers a declarative approach to application deployment and scaling. It incorporates advanced scheduling techniques, load balancing, and service discovery mechanisms to ensure efficient resource utilization and optimal performance. With its robust API, extensible architecture, and integration with cloud-native technologies, Kubernetes has emerged as the industry-standard solution for container orchestration, empowering organizations to build and operate resilient and scalable applications in a highly efficient manner. 
+Kubernetes is an open-source container orchestration platform that revolutionizes the way applications are deployed, scaled, and managed in a distributed computing environment. It provides a highly scalable and fault-tolerant system for automating the lifecycle management of containerized applications. Leveraging concepts like pods, services, and controllers, Kubernetes abstracts the underlying infrastructure and offers a declarative approach to application deployment and scaling. 
+
+It incorporates advanced scheduling techniques, load balancing, and service discovery mechanisms to ensure efficient resource utilization and optimal performance. With its robust API, extensible architecture, and integration with cloud-native technologies, Kubernetes has emerged as the industry-standard solution for container orchestration, empowering organizations to build and operate resilient and scalable applications in a highly efficient manner. 
 
 Nowadays, Kubernetes has become the most effective option for managing containerized applications. However, handling stateful applications like databases is still a challenge in Kubernetes. To address this complexity, Kubernetes introduced StatefulSets. Even though managing databases on Kubernetes still requires extensive knowledge and manual effort.
 
-To simplify database management on Kubernetes, Kubernetes operators come into play. These specialized applications extend Kubernetes for specific purposes, automating tasks like provisioning, monitoring, scaling, and security. By leveraging Kubernetes operators, developers can delegate database management to application developers, enabling the adoption of cloud-native DevOps practices across multiple Kubernetes clusters. Operators use custom resources, simplifying database provisioning through standard Kubernetes command-line and application programming interfaces (APIs). They also facilitate seamless upgrades, scalability, storage expansion, security configuration, and disaster recovery through automated backup processes. By utilizing Kubernetes operators, developers can streamline database management and enjoy the benefits of managed solutions without vendor lock-in. Operators empower developers to efficiently handle databases within Kubernetes, eliminating the need for extensive knowledge of Kubernetes intricacies and manual configurations.
+To simplify database management on Kubernetes, Kubernetes operators come into play. These specialized applications extend Kubernetes for specific purposes, automating tasks like provisioning, monitoring, scaling, and security. By leveraging Kubernetes operators, developers can delegate database management to application developers, enabling the adoption of cloud-native DevOps practices across multiple Kubernetes clusters. Operators use custom resources, simplifying database provisioning through standard Kubernetes command-line and application programming interfaces (APIs). They also facilitate seamless upgrades, scalability, storage expansion, security configuration, and disaster recovery through automated backup processes. 
+
+By utilizing Kubernetes operators, developers can streamline database management and enjoy the benefits of managed solutions without vendor lock-in. Operators empower developers to efficiently handle databases within Kubernetes, eliminating the need for extensive knowledge of Kubernetes intricacies and manual configurations.
 
 
 ## Why PostgreSQL in Kubernetes
@@ -32,7 +36,7 @@ To sum up, PostgreSQL is a powerful and flexible database management system that
 
 We have to set up the environment to deploy PostgreSQL on Kubernetes using a Kubernetes PostgreSQL operator. You need to have a working Kubernetes cluster and a basic understanding of PostgreSQL queries. Here we are using [Kind](https://kubernetes.io/docs/tasks/tools/#kind) to create our Kubernetes cluster. Additionally, you should install [Helm](https://helm.sh/docs/intro/install/) to your Kubernetes cluster.
 
-In this tutorial, We will use the Kubernetes PostgreSQL operator [KubeDB](https://kubedb.com/) to deploy PostgreSQL on Kubernetes. First, We need to install Kubernetes PostgreSQL operator KubeDB to our Kubernetes cluster. We need a license to install KubeDB to our Kubernetes cluster. We can get a free enterprise license from [Appscode License Server](https://license-issuer.appscode.com/). To get the license we need to provide our Kubernetes cluster ID. To get the cluster ID we can run the following command:
+In this tutorial, We will use the Kubernetes PostgreSQL operator [KubeDB](https://kubedb.com/) to deploy PostgreSQL on Kubernetes. First, We need to install KubeDB to our Kubernetes cluster. We need a license to install KubeDB to our Kubernetes cluster. We can get a free enterprise license from [Appscode License Server](https://license-issuer.appscode.com/). To get the license we need to provide our Kubernetes cluster ID. To get the cluster ID we can run the following command:
 
 
 ```bash
@@ -242,13 +246,13 @@ We’ve successfully deployed PostgreSQL to Kubernetes via Kubernetes PostgreSQL
 
 To ensure the stability of your application when deploying PostgreSQL on Kubernetes, there are some best practices that you should follow:
 
-<strong>Upgrade your database version:</strong> Always try to keep your database version to the latest, to reduce vulnerabilities and improve your database performance.
+* <strong>Upgrade your database version:</strong> Always try to keep your database version to the latest, to reduce vulnerabilities and improve your database performance.
 
-<strong>Having the option of scaling:</strong> Having the option of scaling the database provides the flexibility to meet growing demands and ensure optimal performance. It allows them to dynamically allocate resources and seamlessly handle increasing workloads.
+* <strong>Having the option of scaling:</strong> Having the option of scaling the database provides the flexibility to meet growing demands and ensure optimal performance. It allows them to dynamically allocate resources and seamlessly handle increasing workloads.
 
-<strong>Backup and Restore the database:</strong> Backup and Restore ensures data protection and enables organizations to recover from potential data loss or system failures. It allows efficient disaster recovery strategies.
+* <strong>Backup and Restore the database:</strong> Backup and Restore ensures data protection and enables organizations to recover from potential data loss or system failures. It allows efficient disaster recovery strategies.
 
-<strong>Monitoring & Security:</strong> Monitoring the database allows organizations to proactively identify performance issues, optimize resource utilization, and ensure efficient database operations. It provides valuable insights into the system's health and enables timely troubleshooting and optimization. Also, having TLS/SSL support in the database ensures secure communication and protects sensitive data from unauthorized access or interception. It establishes a secure connection between the client and the database, enhancing data privacy and compliance with security standards.
+* <strong>Monitoring & Security:</strong> Monitoring the database allows organizations to proactively identify performance issues, optimize resource utilization, and ensure efficient database operations. It provides valuable insights into the system's health and enables timely troubleshooting and optimization. Also, having TLS/SSL support in the database ensures secure communication and protects sensitive data from unauthorized access or interception. It establishes a secure connection between the client and the database, enhancing data privacy and compliance with security standards.
 
 
 ## Conclusion:
