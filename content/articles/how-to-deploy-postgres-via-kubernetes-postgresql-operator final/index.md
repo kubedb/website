@@ -6,7 +6,7 @@ date: "2023-02-01"
 
 # How to Deploy Postgres via Kubernetes PostgreSQL Operator
 
-![Alt text](./deploy-postgres.jpg "a title")
+![Alt text](./hero.jpg "a title")
 
 Kubernetes is an open-source container orchestration platform that revolutionizes the way applications are deployed, scaled, and managed in a distributed computing environment. It provides a highly scalable and fault-tolerant system for automating the lifecycle management of containerized applications. Leveraging concepts like pods, services, and controllers, Kubernetes abstracts the underlying infrastructure and offers a declarative approach to application deployment and scaling. It incorporates advanced scheduling techniques, load balancing, and service discovery mechanisms to ensure efficient resource utilization and optimal performance. With its robust API, extensible architecture, and integration with cloud-native technologies, Kubernetes has emerged as the industry-standard solution for container orchestration, empowering organizations to build and operate resilient and scalable applications in a highly efficient manner. 
 

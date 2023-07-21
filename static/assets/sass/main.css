@@ -12472,7 +12472,6 @@ Responsive Classes
   background-color: #fff;
   display: block;
   min-height: 166px;
-  padding: 16px 16px;
   transition: 0.3s ease-in-out;
   border: 1px solid #dbdbde;
   transition: 0.3s ease-in-out;
@@ -12513,22 +12512,31 @@ Responsive Classes
 .single-article-card .width-15 {
   width: 15px !important;
 }
+.single-article-card .thumbnail {
+  display: flex;
+}
+.single-article-card .thumbnail img {
+  height: 220px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 .article-details-area {
   margin-top: 140px;
-  padding-bottom: 80px;
 }
 .article-details-area .full-info {
   padding-right: 32px;
+  padding-bottom: 32px;
 }
 .article-details-area .full-info h1 {
   font-size: 48px;
   max-width: 90%;
 }
 .article-details-area .full-info p {
-  font-size: 18px;
-  line-height: 180%;
-  color: #4a4a4a;
+  font-size: 16px;
+  line-height: 170%;
+  color: #506070;
 }
 .article-details-area .right-sidebar {
   position: sticky;
@@ -12538,6 +12546,60 @@ Responsive Classes
   width: 324px;
   padding-top: 24px;
   height: 100%;
+}
+
+.sticky-social-menu {
+  padding-bottom: 80px;
+}
+
+ul.social-share-button {
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+ul.social-share-button li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+ul.social-share-button li:last-child {
+  margin-right: 0;
+}
+ul.social-share-button li a {
+  width: 46px;
+  height: 46px;
+  background: #1da1f2;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul.social-share-button li a:hover i.fa {
+  animation: icon-animation 0.9s both;
+}
+ul.social-share-button li a.twitter {
+  background-color: #1da1f2;
+}
+ul.social-share-button li a.github {
+  background-color: #171516;
+}
+ul.social-share-button li a.linkedin {
+  background-color: #0a66c2;
+}
+ul.social-share-button li a.facebook {
+  background-color: #4867aa;
+}
+ul.social-share-button li a.envelope {
+  background-color: #4285f4;
+}
+ul.social-share-button li a i.fa {
+  font-size: 1rem;
 }
 
 /*=================================================================================================
