@@ -32,7 +32,7 @@ Kubernetes excels in efficient scaling, allowing for dynamic pod scaling during 
 To sum up, PostgreSQL is a powerful and flexible database management system that can be used to handle and analyze significant datasets. With its comprehensive data modeling and manipulation capabilities, scalability, and robust security features, it is appropriate for a number of industries and applications. Whether you're a developer, administrator, or data analyst, Kubernetes PostgreSQL can be a decent choice for managing and analyzing large, complex datasets.
 
 ## Deploying PostgreSQL on Kubernetes
-### Pre-requisites
+### Prerequisites
 
 We have to set up the environment to deploy PostgreSQL on Kubernetes using a Kubernetes PostgreSQL operator. You need to have a working Kubernetes cluster and a basic understanding of PostgreSQL queries. Here we are using [Kind](https://kubernetes.io/docs/tasks/tools/#kind) to create our Kubernetes cluster. Additionally, you should install [Helm](https://helm.sh/docs/intro/install/) to your Kubernetes cluster.
 
@@ -255,7 +255,7 @@ To ensure the stability of your application when deploying PostgreSQL on Kuberne
 * <strong>Monitoring & Security:</strong> Monitoring the database allows organizations to proactively identify performance issues, optimize resource utilization, and ensure efficient database operations. It provides valuable insights into the system's health and enables timely troubleshooting and optimization. Also, having TLS/SSL support in the database ensures secure communication and protects sensitive data from unauthorized access or interception. It establishes a secure connection between the client and the database, enhancing data privacy and compliance with security standards.
 
 
-## Conclusion:
+## Conclusion
 
 Kubernetes PostgreSQL offers a powerful and comprehensive solution for effectively managing databases in a Kubernetes environment. In this tutorial, you have successfully deployed a PostgreSQL database on Kubernetes using Kubernetes PostgreSQL operator KubeDB, which is suitable for a wide range of use cases. You can visit the official [PostgreSQL documentation](https://www.postgresql.org/docs/) for further details. Managing database operations, whether on-premises or in the cloud, requires extensive knowledge and consistent practice. 
 Your decision can significantly impact your application performance. 
