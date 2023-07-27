@@ -1,0 +1,211 @@
+.articles-area {
+  padding-top: 140px;
+  padding-bottom: 40px;
+}
+.single-article-card {
+  background-color: #fff;
+  display: block;
+  min-height: 166px;
+  transition: 0.3s ease-in-out;
+  border: 1px solid #dbdbde;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    border: 1px solid $ac-primary;
+
+    h2 {
+      text-decoration: underline;
+      color: $ac-primary;
+    }
+
+    .arrow-icon {
+      color: $ac-primary;
+    }
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1c1c1c;
+    margin-bottom: 8px;
+    letter-spacing: 0;
+    transition: 0.3s ease-in-out;
+  }
+  p {
+    color: #506070;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .card-bottom {
+    color: #506070;
+  }
+  .date-meta {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .width-15 {
+    width: 15px !important;
+  }
+  .thumbnail {
+    display: flex;
+    background-color: #dddddd;
+    img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// ===================================== articles details  area =====================================
+.article-details-area {
+  margin-top: 140px;
+
+  .full-info {
+    padding-right: 32px;
+    padding-bottom: 32px;
+    h1 {
+      font-size: 48px;
+      max-width: 90%;
+    }
+    p {
+      font-size: 16px;
+      line-height: 170%;
+      color: #506070;
+    }
+
+    a {
+      @extend .text-underline;
+    }
+  }
+  .right-sidebar {
+    position: sticky;
+    top: 70px;
+    border-left: 1px solid #dbdbde;
+    margin-top: -25px;
+    width: 324px;
+    padding-top: 24px;
+    height: 100%;
+  }
+}
+
+// social share 
+.sticky-social-menu {
+  padding-bottom: 80px;
+}
+ul.social-share-button {
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      width: 46px;
+      height: 46px;
+      background: #1da1f2;
+      color: $ac-white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        i.fa {
+          animation: icon-animation 0.9s both;
+        }
+      }
+
+      &.twitter {
+        background-color: #1da1f2;
+      }
+
+      &.github {
+        background-color: #171516;
+      }
+
+      &.linkedin {
+        background-color: #0a66c2;
+      }
+
+      &.facebook {
+        background-color: #4867aa;
+      }
+
+      &.envelope {
+        background-color: #4285f4;
+      }
+
+      i.fa {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+/*=================================================================================================
+                                    Responsive code start
+=================================================================================================*/
+
+@media (max-width: 480px) {
+}
+
+// Extra small devices (portrait phones, less than 768px)
+@media (max-width: 768px) {
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 768px) {
+}
+
+// Medium devices (tablets, 769px and up)
+@media (min-width: 769px) and (max-width: 1023.98px) {
+  .single-article-card {
+    padding: 12px 16px;
+  }
+}
+
+@media (min-width: 850px) and (max-width: 1023px) {
+}
+
+// Large devices (desktops, 1024px and up)
+@media (min-width: 1024px) and (max-width: 1407px) {
+}
+
+// Extra large devices (large desktops, 1216px and up)
+@media (min-width: 1216px) {
+}
+
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .meta {
+    margin-bottom: 10px;
+
+    .author {
+      margin-right: 4px;
+    }
+  }
+
+  .single-article-card {
+    padding: 16px;
+  }
+}
+
+/*=================================================================================================
+                                    Responsive code end
+=================================================================================================*/

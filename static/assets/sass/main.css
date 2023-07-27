@@ -8314,6 +8314,26 @@ strong {
   width: 100%;
 }
 
+.text-underline, .full-info a, .article-details-area .full-info a {
+  font-weight: 500;
+  position: relative;
+  text-decoration: underline;
+}
+.text-underline:after, .full-info a:after, .article-details-area .full-info a:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--ac-primary);
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+}
+.text-underline:hover:after, .full-info a:hover:after {
+  width: 100%;
+}
+
 /****************************************
 Responsive Classes
 *****************************************/
@@ -12443,6 +12463,168 @@ Responsive Classes
     padding: 20px 0;
   }
 }
+.articles-area {
+  padding-top: 140px;
+  padding-bottom: 40px;
+}
+
+.single-article-card {
+  background-color: #fff;
+  display: block;
+  min-height: 166px;
+  transition: 0.3s ease-in-out;
+  border: 1px solid #dbdbde;
+  transition: 0.3s ease-in-out;
+}
+.single-article-card:hover {
+  border: 1px solid var(--ac-primary);
+}
+.single-article-card:hover h2 {
+  text-decoration: underline;
+  color: var(--ac-primary);
+}
+.single-article-card:hover .arrow-icon {
+  color: var(--ac-primary);
+}
+.single-article-card h2 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #1c1c1c;
+  margin-bottom: 8px;
+  letter-spacing: 0;
+  transition: 0.3s ease-in-out;
+}
+.single-article-card p {
+  color: #506070;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.single-article-card .card-bottom {
+  color: #506070;
+}
+.single-article-card .date-meta {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 17px;
+}
+.single-article-card .width-15 {
+  width: 15px !important;
+}
+.single-article-card .thumbnail {
+  display: flex;
+  background-color: #dddddd;
+}
+.single-article-card .thumbnail img {
+  height: 220px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.article-details-area {
+  margin-top: 140px;
+}
+.article-details-area .full-info {
+  padding-right: 32px;
+  padding-bottom: 32px;
+}
+.article-details-area .full-info h1 {
+  font-size: 48px;
+  max-width: 90%;
+}
+.article-details-area .full-info p {
+  font-size: 16px;
+  line-height: 170%;
+  color: #506070;
+}
+.article-details-area .right-sidebar {
+  position: sticky;
+  top: 70px;
+  border-left: 1px solid #dbdbde;
+  margin-top: -25px;
+  width: 324px;
+  padding-top: 24px;
+  height: 100%;
+}
+
+.sticky-social-menu {
+  padding-bottom: 80px;
+}
+
+ul.social-share-button {
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+ul.social-share-button li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+ul.social-share-button li:last-child {
+  margin-right: 0;
+}
+ul.social-share-button li a {
+  width: 46px;
+  height: 46px;
+  background: #1da1f2;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul.social-share-button li a:hover i.fa {
+  animation: icon-animation 0.9s both;
+}
+ul.social-share-button li a.twitter {
+  background-color: #1da1f2;
+}
+ul.social-share-button li a.github {
+  background-color: #171516;
+}
+ul.social-share-button li a.linkedin {
+  background-color: #0a66c2;
+}
+ul.social-share-button li a.facebook {
+  background-color: #4867aa;
+}
+ul.social-share-button li a.envelope {
+  background-color: #4285f4;
+}
+ul.social-share-button li a i.fa {
+  font-size: 1rem;
+}
+
+/*=================================================================================================
+                                    Responsive code start
+=================================================================================================*/
+@media (min-width: 769px) and (max-width: 1023.98px) {
+  .single-article-card {
+    padding: 12px 16px;
+  }
+}
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .meta {
+    margin-bottom: 10px;
+  }
+  .meta .author {
+    margin-right: 4px;
+  }
+  .single-article-card {
+    padding: 16px;
+  }
+}
+/*=================================================================================================
+                                    Responsive code end
+=================================================================================================*/
 /*==============================================================
     Documentation page style
 ==============================================================*/
@@ -12603,7 +12785,6 @@ Responsive Classes
 .full-info h6 {
   font-size: 13px;
 }
-
 .full-info h2 span.share-icon {
   color: #6b6b6b;
   font-size: 18px;
@@ -13694,4 +13875,4 @@ Responsive Classes
   .features-cta-area .features-plan-area {
     min-width: 1344px;
   }
-}/*# sourceMappingURL=main.css.map */
+}

@@ -314,6 +314,30 @@
   }
 }
 
+.text-underline {
+  font-weight: 500;
+  position: relative;
+  text-decoration: underline;
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: $ac-primary;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
 /****************************************
 Responsive Classes
 *****************************************/
