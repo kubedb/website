@@ -423,6 +423,7 @@ ul li b {
 .tbl-of-contents {
   #TableOfContents {
     max-height: 70vh;
+    padding-bottom: 32px;
 
     &::-webkit-scrollbar {
       width: 4px;
