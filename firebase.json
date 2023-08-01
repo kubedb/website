@@ -107,7 +107,12 @@
           "destination": "/kubernetes/databases/run-and-manage-redis-on-kubernetes/",
           "type": 302
         }
-      ]
+      ],
+      // Serves index.html for requests to files or directories that do not exist
+      "rewrites": [ {
+        "source": "**",
+        "destination": "/"
+      } ]
     }
   ]
 }
