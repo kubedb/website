@@ -33,7 +33,7 @@
         <h1>{{.title | markdownify }}</h1>
         <p data-aos="fade-up" data-aos-duration="500">{{.summary | markdownify }}</p>
         <div class="buttons">
-          <a href="/docs/{{ $p.latestVersion }}/guides/{{.id}}/" class="button ac-button is-primary" data-aos="fade-up"
+          <a href="/docs/{{ $p.latestVersion }}/guides/{{if eq .id "opensearch"}}elasticsearch/quickstart/overview/opensearch{{else}}{{.id}}{{end}}/" class="button ac-button is-primary" data-aos="fade-up"
             data-aos-duration="700">USER GUIDES</a>
         </div>
       </div>
