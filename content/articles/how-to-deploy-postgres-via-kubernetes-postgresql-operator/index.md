@@ -96,13 +96,13 @@ apiVersion: kubedb.com/v1alpha2
 kind: Postgres
 metadata:
   name: postgres-cluster
-  namespace: demo
+  namespace: pgns
 spec:
   version: "14.2"
   replicas: 3
   storageType: Durable
   storage:
-    storageClassName: "pgns"
+    storageClassName: "standard"
     accessModes:
     - ReadWriteOnce
     resources:
