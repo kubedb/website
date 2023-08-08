@@ -1,12 +1,13 @@
 ---
 title: How to Deploy Postgres via Kubernetes PostgreSQL Operator
 Description: Learn how to deploy Postgres using the Kubernetes PostgreSQL Operator. A step-by-step guide for deploying PostgreSQL database in Kubernetes.
+alt: kubernetes postgresql
 date: "2023-07-21"
 ---
 
 # How to Deploy Postgres via Kubernetes PostgreSQL Operator
 
-![Alt text](./hero.jpg "Kubernetes PostgreSQL")
+![Kubernetes PostgreSQL](./hero.jpg "Kubernetes PostgreSQL")
 
 Kubernetes is an open-source container orchestration platform that revolutionizes the way applications are deployed, scaled, and managed in a distributed computing environment. It provides a highly scalable and fault-tolerant system for automating the lifecycle management of containerized applications. Leveraging concepts like pods, services, and controllers, Kubernetes abstracts the underlying infrastructure and offers a declarative approach to application deployment and scaling. 
 
