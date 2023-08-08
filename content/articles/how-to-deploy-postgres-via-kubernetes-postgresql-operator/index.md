@@ -33,7 +33,7 @@ Kubernetes excels in efficient scaling, allowing for dynamic pod scaling during 
 To sum up, PostgreSQL is a powerful and flexible database management system that can be used to handle and analyze significant datasets. With its comprehensive data modeling and manipulation capabilities, scalability, and robust security features, it is appropriate for a number of industries and applications. Whether you're a developer, administrator, or data analyst, Kubernetes PostgreSQL can be a decent choice for managing and analyzing large, complex datasets.
 
 ## Deploying PostgreSQL on Kubernetes
-### Prerequisites
+### Pre-requisites
 
 We have to set up the environment to deploy PostgreSQL on Kubernetes using a Kubernetes PostgreSQL operator. You need to have a working Kubernetes cluster and a basic understanding of PostgreSQL queries. Here we are using [Kind](https://kubernetes.io/docs/tasks/tools/#kind) to create our Kubernetes cluster. Additionally, you should install [Helm](https://helm.sh/docs/intro/install/) to your Kubernetes cluster.
 
