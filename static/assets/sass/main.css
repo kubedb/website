@@ -12606,6 +12606,13 @@ ul.social-share-button li a i.fa {
 /*=================================================================================================
                                     Responsive code start
 =================================================================================================*/
+@media (max-width: 480px) {
+  .article-toc {
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+}
 @media (min-width: 769px) and (max-width: 1023.98px) {
   .single-article-card {
     padding: 12px 16px;
@@ -12990,6 +12997,7 @@ ul li b {
 
 .tbl-of-contents #TableOfContents {
   max-height: 70vh;
+  padding-bottom: 32px;
 }
 .tbl-of-contents #TableOfContents::-webkit-scrollbar {
   width: 4px;
