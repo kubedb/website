@@ -11,16 +11,16 @@
         <h4>All Articles</h4>
       </div>
       {{ range $idx, $p := $pages.ByDate.Reverse }}
-      <div class="column is-3">
+      <div class="column is-one-quarter-widescreen is-one-quarter-fullhd is-half-tablet is-full-mobile">
         <a href="{{ $p.RelPermalink }}" class="single-article-card">
           
           <div class="thumbnail">
             {{ $original := $p.Resources.GetMatch "hero.jpg" }}
             {{ $cropped := $original.Resize "x220" }}
-            <img src="{{ $cropped.RelPermalink }}" alt="{{ $p.Title }}" loading="lazy" decoding="async">
+            <img src="{{ $cropped.RelPermalink }}" alt="{{ .Params.alt }}" loading="lazy" decoding="async">
           </div>
           <div class="p-16">
-            <h2 class="is-ellipsis-2" title="Monitor MongoDB with Grafana Dashboard in Azure Kubernetes Service (AKS)">{{ $p.Title }}</h2>
+            <h2 class="is-ellipsis-2">{{ $p.Title }}</h2>
             <p class="is-ellipsis-2">{{$p.Description }}</p>
             <div class="card-bottom is-flex is-justify-content-space-between">
               <div class="date-meta">{{ .Date.Format "2-Jan-2006" }}</div>

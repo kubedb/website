@@ -82,18 +82,21 @@
       @extend .text-underline;
     }
   }
-  .right-sidebar {
-    position: sticky;
-    top: 70px;
+  .right-sidebar-area {
+    top: 0;
     border-left: 1px solid #dbdbde;
     margin-top: -25px;
-    width: 324px;
     padding-top: 24px;
+    padding-right: 0;
     height: 100%;
+    .tbl-of-contents {
+      position: sticky;
+      top: 130px;
+    }
   }
 }
 
-// social share 
+// social share
 .sticky-social-menu {
   padding-bottom: 80px;
 }
@@ -163,15 +166,57 @@ ul.social-share-button {
                                     Responsive code start
 =================================================================================================*/
 
-@media (max-width: 480px) {
-}
-
-// Extra small devices (portrait phones, less than 768px)
 @media (max-width: 768px) {
-}
+  .article-details-area {
+    .full-info {
+      padding-right: 0;
+      h1 {
+        font-size: 32px;
+        max-width: 100%;
+      }
+    }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 768px) {
+    .right-sidebar-area {
+      &.article-toc {
+        width: calc(100% - 60px);
+        height: calc(100vh + 30px);
+        position: fixed;
+        right: -100%;
+        top: 0px;
+        background-color: #ffffff;
+        z-index: 99;
+        transition: 0.3s ease-in-out;
+        .tbl-of-contents {
+          top: 10px;
+        }
+        .back-button {
+          color: $ac-red;
+          span {
+            color: $ac-red;
+          }
+
+          &:hover {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  .article-page-toc-button {
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      color: $ac-primary;
+    }
+  }
 }
 
 // Medium devices (tablets, 769px and up)
@@ -179,17 +224,19 @@ ul.social-share-button {
   .single-article-card {
     padding: 12px 16px;
   }
-}
-
-@media (min-width: 850px) and (max-width: 1023px) {
-}
-
-// Large devices (desktops, 1024px and up)
-@media (min-width: 1024px) and (max-width: 1407px) {
-}
-
-// Extra large devices (large desktops, 1216px and up)
-@media (min-width: 1216px) {
+  .article-details-area {
+    .full-info h1 {
+      font-size: 32px;
+      max-width: 100%;
+    }
+  }
+  .right-sidebar-area {
+    &.article-toc {
+      .back-button {
+        display: none !important;
+      }
+    }
+  }
 }
 
 @media (min-width: 1408px) and (max-width: 1600px) {

@@ -34,6 +34,8 @@
   <!--https://developers.google.com/search/docs/advanced/crawling/block-indexing#meta-tag-->
   <meta name="robots" content="noindex">
   {{ end }}
+  <!-- Search engines should consider as the primary source  -->
+  <link rel="canonical" href="{{ .Permalink }}">
   <!-- favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/products/{{ $p.key }}/icons/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/products/{{ $p.key }}/icons/apple-icon-60x60.png">
@@ -673,6 +675,7 @@
               <!-- version select end -->
               {{ end }}
 
+              <button class="article-page-toc-button is-hidden-tablet">Table Of Content</button>
               <a role="button" class="navbar-burger width-65 font-size-14 has-text-weight-bold pl-6 pr-6"
                 aria-label="menu" aria-expanded="false">
                 MENU <i class="fa fa-angle-down pl-5"></i>
