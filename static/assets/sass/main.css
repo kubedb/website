@@ -12539,14 +12539,17 @@ Responsive Classes
   line-height: 170%;
   color: #506070;
 }
-.article-details-area .right-sidebar {
-  position: sticky;
-  top: 70px;
+.article-details-area .right-sidebar-area {
+  top: 0;
   border-left: 1px solid #dbdbde;
   margin-top: -25px;
-  width: 324px;
   padding-top: 24px;
+  padding-right: 0;
   height: 100%;
+}
+.article-details-area .right-sidebar-area .tbl-of-contents {
+  position: sticky;
+  top: 130px;
 }
 
 .sticky-social-menu {
@@ -12606,16 +12609,61 @@ ul.social-share-button li a i.fa {
 /*=================================================================================================
                                     Responsive code start
 =================================================================================================*/
-@media (max-width: 480px) {
-  .article-toc {
+@media (max-width: 768px) {
+  .article-details-area .full-info {
+    padding-right: 0;
+  }
+  .article-details-area .full-info h1 {
+    font-size: 32px;
+    max-width: 100%;
+  }
+  .article-details-area .right-sidebar-area.article-toc {
+    width: calc(100% - 60px);
+    height: calc(100vh + 30px);
     position: fixed;
-    right: 0;
-    top: 0;
+    right: -100%;
+    top: 0px;
+    background-color: #ffffff;
+    z-index: 99;
+    transition: 0.3s ease-in-out;
+  }
+  .article-details-area .right-sidebar-area.article-toc .tbl-of-contents {
+    top: 10px;
+  }
+  .article-details-area .right-sidebar-area.article-toc .back-button {
+    color: #ff3729;
+  }
+  .article-details-area .right-sidebar-area.article-toc .back-button span {
+    color: #ff3729;
+  }
+  .article-details-area .right-sidebar-area.article-toc .back-button:hover {
+    box-shadow: none;
+  }
+  .article-page-toc-button {
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: 0.3s ease-in-out;
+  }
+  .article-page-toc-button:hover {
+    color: var(--ac-primary);
   }
 }
 @media (min-width: 769px) and (max-width: 1023.98px) {
   .single-article-card {
     padding: 12px 16px;
+  }
+  .article-details-area .full-info h1 {
+    font-size: 32px;
+    max-width: 100%;
+  }
+  .right-sidebar-area.article-toc .back-button {
+    display: none !important;
   }
 }
 @media (min-width: 1408px) and (max-width: 1600px) {
