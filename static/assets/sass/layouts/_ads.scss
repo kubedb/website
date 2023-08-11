@@ -1,0 +1,132 @@
+// header
+.ads-navbar-area {
+  padding: 8px 0;
+}
+
+// hero area
+.ads-hero-area {
+  h1 {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: -2%;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: #3c3c3c;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    margin-bottom: 16px;
+  }
+}
+
+
+// supported platforms area 
+.supported-platforms-area {
+ background-color: #F3F3FC; 
+}
+
+.check-list-items {
+  margin-bottom: 32px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    span {
+      color: #1c1c1c;
+      &.icon {
+        color: #636363;
+      }
+    
+    }
+  }
+}
+
+.ads{
+  &.faq-area {
+    .faq-left {
+      p{
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// support plans 
+.ads-support-plan {
+  table {
+    thead {
+      background-color: $ac-primary;
+      tr{
+        th {
+          color: #ffffff;
+        }
+      }
+    }
+    tbody{
+      td {
+        font-size: 14px;
+        width: 300px;
+        &:first-child{
+          width: calc(100% - 900px);
+          min-width: 400px;
+        }
+      }
+    }
+  }
+}
+
+// ads footer area 
+.ads-footer-area{
+  .footer-top{
+    background-color: #F3F3FC;
+    padding: 70px 0;
+    .brand-logo {
+      margin-bottom: 16px;
+      img {
+        height: 30px;
+      }
+    }
+    p{
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .contact-info {
+      .info-text{
+        display: flex;
+        align-items: center;
+        color: #3c3c3c;
+        gap: 8px;
+
+        span:not(.icon){
+          width: calc(100% - 2rem);
+        }
+      }
+    }
+  }
+  .footer-bottom{
+    a{
+      color: #3c3c3c;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: underline;
+      font-size: 14px;
+      .icon {
+        font-size: 14px;
+      }
+      &:hover {
+        color: $ac-primary;
+      }
+    }
+  }
+}
