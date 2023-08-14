@@ -39,7 +39,7 @@
             </ul>
 
             <div class="buttons">
-              <a href="mailto:sales@appscode.com" class="button ac-button is-primary">
+              <a href="https://appscode.com/contact/" target="_blank" class="button ac-button is-primary">
                 <span class="icon mr-8">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
@@ -50,8 +50,13 @@
                 <span>CONTACT SALES</span>
               </a>
 
-              <a href="https://appscode.com/contact/" target="_blank"
-                class="button ac-button is-primary is-outlined">REQUEST DEMO</a>
+              <!-- Calendly link widget begin -->
+              <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+              <a href="" class="button ac-button is-primary is-outlined" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/appscode/intro'});return false;">SCHEDULE DEMO</a>
+              <!-- Calendly link widget end -->
+
+              <!-- <a href="https://appscode.com/contact/" target="_blank"
+                class="button ac-button is-primary is-outlined">REQUEST DEMO</a> -->
             </div>
           </div>
         </div>
