@@ -1,5 +1,5 @@
 ---
-title: Run and Manage PgBouncer Database on Kubernetes - KubeDB
+title: Run and Manage PgBouncer on Kubernetes - KubeDB
 id: pgbouncer
 type: "overview"
 layout: "overview"

@@ -1,7 +1,7 @@
 ---
-title: Run and Manage Kafka Database on Kubernetes - KubeDB
+title: One-stop Solution for Managing Apache Kafka on Kubernetes
 type: "datasheet"
 id: "kafka"
 data: "data/products/kubedb/databases/kafka.json"
-url: "/datasheet/run-and-manage-kafka-on-kubernetes"
+url: "/datasheet/kafka"
 ---

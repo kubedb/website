@@ -1,5 +1,5 @@
 ---
-title: Run and Manage MariaDB Database on Kubernetes - KubeDB
+title: Run and Manage MariaDB on Kubernetes - KubeDB
 id: mariadb
 type: "overview"
 layout: "overview"

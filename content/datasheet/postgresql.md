@@ -1,7 +1,7 @@
 ---
-title: Run and Manage postgreSQL Database on Kubernetes - KubeDB
+title: One-stop Solution for Managing PostgreSQL on Kubernetes
 type: "datasheet"
 id: "postgresql"
 data: "data/products/kubedb/databases/postgresql.json"
-url: "/datasheet/run-and-manage-postgresql-on-kubernetes"
+url: "/datasheet/postgresql"
 ---

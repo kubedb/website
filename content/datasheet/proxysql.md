@@ -1,7 +1,7 @@
 ---
-title: Run and Manage ProxySQL Database on Kubernetes - KubeDB
+title: One-stop Solution for Managing ProxySQL on Kubernetes
 type: "datasheet"
 id: "proxysql"
 data: "data/products/kubedb/databases/proxysql.json"
-url: "/datasheet/run-and-manage-proxysql-on-kubernetes"
+url: "/datasheet/proxysql"
 ---

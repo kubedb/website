@@ -1,5 +1,5 @@
 ---
-title: Run and Manage Memcached Database on Kubernetes - KubeDB
+title: Run and Manage Memcached on Kubernetes - KubeDB
 id: memcached
 type: "overview"
 layout: "overview"

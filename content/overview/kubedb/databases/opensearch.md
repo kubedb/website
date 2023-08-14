@@ -1,5 +1,5 @@
 ---
-title: Run and Manage OpenSearch Database on Kubernetes - KubeDB
+title: Run and Manage OpenSearch on Kubernetes - KubeDB
 type: "overview"
 layout: "overview"
 id: "opensearch"

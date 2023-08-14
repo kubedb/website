@@ -1,7 +1,7 @@
 ---
-title: Run and Manage Elasticsearch Database on Kubernetes - KubeDB
+title: One-stop Solution for Managing Elasticsearch on Kubernetes
 type: "datasheet"
 id: "elasticsearch"
 data: "data/products/kubedb/databases/elasticsearch.json"
-url: "/datasheet/run-and-manage-elasticsearch-on-kubernetes"
+url: "/datasheet/elasticsearch"
 ---

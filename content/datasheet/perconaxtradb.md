@@ -1,7 +1,7 @@
 ---
-title: Run and Manage PerconaXtraDB Database on Kubernetes - KubeDB
+title: One-stop Solution for Managing Percona XtraDB on Kubernetes
 type: "datasheet"
 id: "perconaxtradb"
 data: "data/products/kubedb/databases/perconaxtradb.json"
-url: "/datasheet/run-and-manage-perconaxtradb-on-kubernetes"
+url: "/datasheet/perconaxtradb"
 ---
