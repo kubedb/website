@@ -1,5 +1,5 @@
 ---
-title: Run and Manage MongoDB Database on Kubernetes - KubeDB
+title: Run and Manage MongoDB on Kubernetes - KubeDB
 id: mongodb
 type: "overview"
 layout: "overview"

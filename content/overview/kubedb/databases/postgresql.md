@@ -1,5 +1,5 @@
 ---
-title: Run and Manage PostgreSQL Database on Kubernetes - KubeDB
+title: Run and Manage PostgreSQL on Kubernetes - KubeDB
 id: postgres
 type: "overview"
 layout: "overview"

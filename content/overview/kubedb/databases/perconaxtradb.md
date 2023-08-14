@@ -1,5 +1,5 @@
 ---
-title: Run and Manage Percona XtraDB Database on Kubernetes - KubeDB
+title: Run and Manage Percona XtraDB on Kubernetes - KubeDB
 id: perconaxtradb
 type: "overview"
 layout: "overview"

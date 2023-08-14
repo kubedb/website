@@ -77,7 +77,7 @@
     content="{{ $.Site.BaseURL }}/assets/images/products/{{ $p.key }}/{{ $p.key }}-1280x640.png">
   <meta property="og:type" content="article">
   <!-- Font Awesome CSS -->
-  <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+  <!-- <link rel="stylesheet" href="/assets/css/font-awesome.min.css" /> -->
   <!-- google fonts icon  -->
   <link
     href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
@@ -89,9 +89,9 @@
   <!-- Magnific-popup css  -->
   <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
   <!-- Bulma CSS -->
-  {{ with $style := resources.Get "assets/css/bulma.min.css" | resources.Fingerprint }}
+  <!-- {{ with $style := resources.Get "assets/css/bulma.min.css" | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-  {{ end }}
+  {{ end }} -->
   <!-- highlight css  -->
   <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css"> -->
   <!-- owl carousel CSS -->
@@ -102,10 +102,10 @@
   <!-- Keen slider CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css" />
   <!-- Custom CSS -->
- {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+ <!-- {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-  {{ end }}
-  <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
+  {{ end }} -->
+  <link rel="stylesheet" href="/assets/sass/main.css" />
   <script src="https://cdn.pagesense.io/js/appscodeinc/30ddadb503fc4a72b3eede8ce8b08997.js"></script>
 </head>
 
@@ -115,12 +115,14 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!--[if lte IE 9]>
-      <p class="browserupgrade">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
-        your experience and security.
-      </p>
-    <![endif]-->
+    <p class="browserupgrade">
+      You are using an <strong>outdated</strong> browser. Please
+      <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+      your experience and security.
+    </p>
+  <![endif]-->
+
+  {{ block "body" . }}
 
     <!-- cookies consent start  -->
     <div class="cookie-wrapper">
@@ -140,8 +142,8 @@
       // for cookie
       const cookieBox = document.querySelector(".cookie-wrapper"), acceptBtn = cookieBox.querySelector(".is-primary"),
       closeBtn = cookieBox.querySelector(".close-btn");
-      
-      // close cookie box 
+
+      // close cookie box
       closeBtn.addEventListener("click", function(){
         cookieBox.classList.add("hide");
       })
@@ -1173,6 +1175,8 @@
 
   <!-- Meilisearch -->
   {{ block "footer-script" . }}
+  {{ end }}
+
   {{ end }}
 
 </body>

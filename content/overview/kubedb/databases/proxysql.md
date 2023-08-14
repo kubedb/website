@@ -1,5 +1,5 @@
 ---
-title: Run and Manage ProxySQL Database on Kubernetes - KubeDB
+title: Run and Manage ProxySQL on Kubernetes - KubeDB
 id: proxysql
 type: "overview"
 layout: "overview"

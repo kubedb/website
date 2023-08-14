@@ -1,5 +1,5 @@
 ---
-title: Run and Manage Elasticsearch Database on Kubernetes - KubeDB
+title: Run and Manage Elasticsearch on Kubernetes - KubeDB
 type: "overview"
 layout: "overview"
 id: "elasticsearch"
