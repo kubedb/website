@@ -12492,7 +12492,7 @@ Responsive Classes
   width: 42%;
   height: 100vh;
   z-index: -1;
-  padding-left: 100px;
+  text-align: center;
 }
 .ads-hero-area h1 {
   padding-top: 120px;
