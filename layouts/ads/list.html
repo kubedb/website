@@ -1,91 +1,4 @@
-{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
-{{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <script>function vqTrackId(){return 'cfececff-9dfc-4c70-9915-dde1416b7010';} (function(d, e) { var el = d.createElement(e); el.sa = function(an, av){this.setAttribute(an, av); return this;}; el.sa('id', 'vq_tracking').sa('src', '//t.visitorqueue.com/p/tracking.min.js?id='+vqTrackId()).sa('async', 1).sa('data-id', vqTrackId()); d.getElementsByTagName(e)[0].parentNode.appendChild(el); })(document, 'script'); </script>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-T7BHQZB');</script>
-  <!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5J3WVDEFB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-R5J3WVDEFB');
-  </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="theme-color" content="{{ $p.website.themeColor }}">
-  <title>{{ default $p.fullname .Title }}</title>
-  <meta name="description" content="{{ default ($p.summary | plainify) .Description }}">
-  <meta name="author" content="{{ $p.author }}">
-  <meta name="keywords" content="{{ default $p.keywords .Keywords }}">
-  {{ if (and $currentBranch (not (eq $p.latestVersion $currentBranch))) }}
-  <!--https://developers.google.com/search/docs/advanced/crawling/block-indexing#meta-tag-->
-  <meta name="robots" content="noindex">
-  {{ end }}
-  <!-- Search engines should consider as the primary source  -->
-  <link rel="canonical" href="{{ .Permalink }}">
-  <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/products/{{ $p.key }}/icons/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/products/{{ $p.key }}/icons/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/products/{{ $p.key }}/icons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/products/{{ $p.key }}/icons/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/products/{{ $p.key }}/icons/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/products/{{ $p.key }}/icons/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/products/{{ $p.key }}/icons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/products/{{ $p.key }}/icons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/products/{{ $p.key }}/icons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"
-    href="/assets/images/products/{{ $p.key }}/icons/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/products/{{ $p.key }}/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/products/{{ $p.key }}/icons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/products/{{ $p.key }}/icons/favicon-16x16.png">
-  <link rel="manifest" href="/assets/images/products/{{ $p.key }}/icons/manifest.json">
-  <!-- vuejs3  -->
-  <!-- <script src="https://unpkg.com/vue@3"></script> -->
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/assets/images/products/{{ $p.key }}/icons/ms-icon-144x144.png">
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="{{ $p.title }}">
-  <meta itemprop="description" content="{{ $p.summary | plainify }}">
-  <meta itemprop="image" content="{{ $.Site.BaseURL }}/assets/images/products/{{ $p.key }}/{{ $p.key }}-1280x640.png">
-  <!-- twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@{{ strings.TrimPrefix `https://twitter.com/` $p.socialLinks.twitter }}">
-  <meta name="twitter:title" content="{{$p.title}}">
-  <meta name="twitter:creator" content="@{{ strings.TrimPrefix `https://twitter.com/` $p.socialLinks.twitter }}">
-  <meta name="twitter:description" content="{{ $p.summary | plainify }}">
-  <meta name="twitter:image:src"
-    content="{{ $.Site.BaseURL }}/assets/images/products/{{ $p.key }}/{{ $p.key }}-1280x640.png">
-  <!-- facebook -->
-  <meta property="og:url" content="{{ $.Site.BaseURL }}">
-  <meta property="og:title" content="{{$p.title}}">
-  <meta property="og:description" content="{{ $p.summary | plainify }}">
-  <meta property="og:site_name" content="{{ $p.title }}">
-  <meta property="og:image"
-    content="{{ $.Site.BaseURL }}/assets/images/products/{{ $p.key }}/{{ $p.key }}-1280x640.png">
-  <meta property="og:type" content="article">
-  <title>KubeDB - Run Production-Grade Databases on Kubernetes</title>
-
-  <!-- owl carousel CSS -->
-  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
-
-  <link rel="stylesheet" href="/assets/sass/main.css" />
-</head>
-
-<body class="kubedb">
+{{ define "body" }}
 
   <!-- header area start  -->
   <header class="ads-navbar-area">
@@ -698,6 +611,5 @@
       }
     });
   </script>
-</body>
 
-</html>
+{{ end }}

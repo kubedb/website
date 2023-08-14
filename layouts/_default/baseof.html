@@ -115,12 +115,14 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!--[if lte IE 9]>
-      <p class="browserupgrade">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
-        your experience and security.
-      </p>
-    <![endif]-->
+    <p class="browserupgrade">
+      You are using an <strong>outdated</strong> browser. Please
+      <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+      your experience and security.
+    </p>
+  <![endif]-->
+
+  {{ block "body" . }}
 
     <!-- cookies consent start  -->
     <div class="cookie-wrapper">
@@ -140,8 +142,8 @@
       // for cookie
       const cookieBox = document.querySelector(".cookie-wrapper"), acceptBtn = cookieBox.querySelector(".is-primary"),
       closeBtn = cookieBox.querySelector(".close-btn");
-      
-      // close cookie box 
+
+      // close cookie box
       closeBtn.addEventListener("click", function(){
         cookieBox.classList.add("hide");
       })
@@ -1173,6 +1175,8 @@
 
   <!-- Meilisearch -->
   {{ block "footer-script" . }}
+  {{ end }}
+
   {{ end }}
 
 </body>
