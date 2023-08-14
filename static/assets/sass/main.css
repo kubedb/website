@@ -12611,6 +12611,36 @@ Responsive Classes
   color: var(--ac-primary);
 }
 
+.custom-code-editor {
+  border-radius: 4px;
+  overflow: hidden;
+}
+.custom-code-editor .editor-header {
+  height: 50px;
+  background: #f3f3fc;
+  border-bottom: 1px solid #e7e7e7;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.custom-code-editor .editor-header span {
+  width: 15px;
+  height: 15px;
+  background-color: #ddd;
+  display: block;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.custom-code-editor .editor-header span.close {
+  background-color: #ff5a52;
+}
+.custom-code-editor .editor-header span.maximize {
+  background-color: #e6c029;
+}
+.custom-code-editor .editor-header span.minimize {
+  background-color: #53c22b;
+}
+
 /****************************************
 Responsive Classes
 *****************************************/
@@ -12656,12 +12686,11 @@ Responsive Classes
     margin-bottom: 8px;
   }
 }
-@media (min-width: 1024px) and (max-width: 1215px) {
-  .ads-hero-area:after {
-    content: url("/assets/images/ads/hero-7.png");
+@media (min-width: 1024px) and (max-width: 1407px) {
+  .ads-hero-area .left-content h1 {
+    padding-top: 30px;
+    font-size: 40px;
   }
-}
-@media (min-width: 1216px) and (max-width: 1407px) {
   .ads-hero-area:after {
     content: url("/assets/images/ads/hero-7.png");
   }
@@ -12672,6 +12701,7 @@ Responsive Classes
   }
   .ads-hero-area .left-content h1 {
     padding-top: 30px;
+    font-size: 40px;
   }
   .ads-hero-area:after {
     content: url("/assets/images/ads/hero-7.png");
