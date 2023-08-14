@@ -1,3 +1,5 @@
+@import "/assets/css/bulma.min.css";
+@import "/assets/css/font-awesome.min.css";
 /* Deafult Margin & Padding view-height & view-width */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
@@ -9977,6 +9979,7 @@ Responsive Classes
   align-items: center;
   justify-content: center;
   height: 2.5rem;
+  text-decoration: none;
 }
 .button.ac-button:focus-visible {
   outline: none;
@@ -12463,6 +12466,247 @@ Responsive Classes
     padding: 20px 0;
   }
 }
+.ads-navbar-area {
+  padding: 8px 0;
+  z-index: 99;
+  position: relative;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #dbdbde;
+}
+.ads-navbar-area .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.ads-hero-area {
+  position: relative;
+  z-index: 1;
+  background-color: #f3f3fc;
+  min-height: 100vh;
+}
+.ads-hero-area:after {
+  position: absolute;
+  padding-top: 200px;
+  content: url("/assets/images/ads/hero.png");
+  right: 0;
+  top: 0;
+  background: #fbfbfe;
+  width: 42%;
+  height: 100vh;
+  z-index: -1;
+  text-align: center;
+}
+.ads-hero-area .left-content {
+  padding-right: 100px;
+}
+.ads-hero-area .left-content h1 {
+  padding-top: 120px;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -2px;
+  margin-bottom: 16px;
+}
+.ads-hero-area .left-content p {
+  color: #3c3c3c;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  margin-bottom: 16px;
+}
+
+.supported-platforms-area {
+  background-color: #f3f3fc;
+}
+.supported-platforms-area .right-content {
+  padding-left: 60px;
+}
+
+.check-list-items {
+  margin-bottom: 32px;
+}
+.check-list-items li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.check-list-items li::before {
+  content: url("/assets/images/icon/check-circle.svg");
+  line-height: 0;
+}
+.check-list-items li:last-child {
+  margin-bottom: 0;
+}
+
+.ui-ss img {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.ads.faq-area .faq-left p {
+  font-size: 16px;
+}
+
+.ads-support-plan table thead {
+  background-color: var(--ac-primary);
+}
+.ads-support-plan table thead tr th {
+  color: #ffffff;
+  padding: 8px 16px;
+  text-align: center !important;
+}
+.ads-support-plan table tbody td {
+  font-size: 14px;
+  width: 320px;
+  padding: 8px 16px;
+  text-align: center;
+}
+.ads-support-plan table tbody td:first-child {
+  width: calc(100% - 960px);
+  min-width: 400px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.ads-footer-area .footer-top {
+  background-color: #f3f3fc;
+  padding: 70px 0;
+}
+.ads-footer-area .footer-top .brand-logo {
+  margin-bottom: 16px;
+}
+.ads-footer-area .footer-top .brand-logo img {
+  height: 30px;
+}
+.ads-footer-area .footer-top p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.ads-footer-area .footer-top .contact-info .info-text {
+  display: flex;
+  align-items: center;
+  color: #3c3c3c;
+  gap: 8px;
+}
+.ads-footer-area .footer-top .contact-info .info-text span:not(.icon) {
+  width: calc(100% - 2rem);
+}
+.ads-footer-area .footer-bottom a {
+  color: #3c3c3c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: underline;
+  font-size: 14px;
+}
+.ads-footer-area .footer-bottom a .icon {
+  font-size: 14px;
+}
+.ads-footer-area .footer-bottom a:hover {
+  color: var(--ac-primary);
+}
+
+.custom-code-editor {
+  border-radius: 4px;
+  overflow: hidden;
+}
+.custom-code-editor .editor-header {
+  height: 50px;
+  background: #f3f3fc;
+  border-bottom: 1px solid #e7e7e7;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.custom-code-editor .editor-header span {
+  width: 15px;
+  height: 15px;
+  background-color: #ddd;
+  display: block;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.custom-code-editor .editor-header span.close {
+  background-color: #ff5a52;
+}
+.custom-code-editor .editor-header span.maximize {
+  background-color: #e6c029;
+}
+.custom-code-editor .editor-header span.minimize {
+  background-color: #53c22b;
+}
+
+/****************************************
+Responsive Classes
+*****************************************/
+@media (max-width: 1023.98px) {
+  .ads-hero-area:after {
+    width: 100%;
+    opacity: 0.2;
+  }
+}
+@media (min-width: 769px) and (max-width: 1023.98px) {
+  .ads-support-plan table tbody td:first-child {
+    min-width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .ads-hero-area:after {
+    display: none;
+  }
+  .ads-hero-area .left-content {
+    padding-right: 0;
+  }
+  .ads-hero-area .left-content h1 {
+    padding-top: 50px;
+    font-size: 32px;
+    letter-spacing: 0;
+  }
+  .ads-support-plan table tbody td:first-child {
+    min-width: 200px;
+  }
+  .check-list-items {
+    margin-bottom: 16px;
+  }
+  .supported-platforms-area .right-content {
+    padding-left: 0;
+  }
+  .ads-footer-area .footer-top .is-justify-content-flex-end {
+    justify-content: flex-start !important;
+  }
+  .ads-footer-area .footer-bottom p,
+  .ads-footer-area .footer-bottom a {
+    text-align: left;
+    justify-content: flex-start !important;
+    margin-bottom: 8px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1407px) {
+  .ads-hero-area .left-content h1 {
+    padding-top: 30px;
+    font-size: 40px;
+  }
+  .ads-hero-area:after {
+    content: url("/assets/images/ads/hero-7.png");
+  }
+}
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+  .ads-hero-area .left-content h1 {
+    padding-top: 30px;
+    font-size: 40px;
+  }
+  .ads-hero-area:after {
+    content: url("/assets/images/ads/hero-7.png");
+  }
+}
 .articles-area {
   padding-top: 140px;
   padding-bottom: 40px;
@@ -12539,14 +12783,17 @@ Responsive Classes
   line-height: 170%;
   color: #506070;
 }
-.article-details-area .right-sidebar {
-  position: sticky;
-  top: 70px;
+.article-details-area .right-sidebar-area {
+  top: 0;
   border-left: 1px solid #dbdbde;
   margin-top: -25px;
-  width: 324px;
   padding-top: 24px;
+  padding-right: 0;
   height: 100%;
+}
+.article-details-area .right-sidebar-area .tbl-of-contents {
+  position: sticky;
+  top: 130px;
 }
 
 .sticky-social-menu {
@@ -12606,16 +12853,61 @@ ul.social-share-button li a i.fa {
 /*=================================================================================================
                                     Responsive code start
 =================================================================================================*/
-@media (max-width: 480px) {
-  .article-toc {
+@media (max-width: 768px) {
+  .article-details-area .full-info {
+    padding-right: 0;
+  }
+  .article-details-area .full-info h1 {
+    font-size: 32px;
+    max-width: 100%;
+  }
+  .article-details-area .right-sidebar-area.article-toc {
+    width: calc(100% - 60px);
+    height: calc(100vh + 30px);
     position: fixed;
-    right: 0;
-    top: 0;
+    right: -100%;
+    top: 0px;
+    background-color: #ffffff;
+    z-index: 99;
+    transition: 0.3s ease-in-out;
+  }
+  .article-details-area .right-sidebar-area.article-toc .tbl-of-contents {
+    top: 10px;
+  }
+  .article-details-area .right-sidebar-area.article-toc .back-button {
+    color: #ff3729;
+  }
+  .article-details-area .right-sidebar-area.article-toc .back-button span {
+    color: #ff3729;
+  }
+  .article-details-area .right-sidebar-area.article-toc .back-button:hover {
+    box-shadow: none;
+  }
+  .article-page-toc-button {
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: 0.3s ease-in-out;
+  }
+  .article-page-toc-button:hover {
+    color: var(--ac-primary);
   }
 }
 @media (min-width: 769px) and (max-width: 1023.98px) {
   .single-article-card {
     padding: 12px 16px;
+  }
+  .article-details-area .full-info h1 {
+    font-size: 32px;
+    max-width: 100%;
+  }
+  .right-sidebar-area.article-toc .back-button {
+    display: none !important;
   }
 }
 @media (min-width: 1408px) and (max-width: 1600px) {

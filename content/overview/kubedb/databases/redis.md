@@ -1,5 +1,5 @@
 ---
-title: Run and Manage Redis Database on Kubernetes - KubeDB
+title: Run and Manage Redis on Kubernetes - KubeDB
 id: redis
 type: "overview"
 layout: "overview"

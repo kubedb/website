@@ -1,5 +1,11 @@
 {{ define "body" }}
-{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+
+{{ $data:=""}}
+{{ if .Params.data }}
+{{ $data = getJSON .Params.data }}
+{{ end }}
+
+{{ with $data }}
 <!-- header area start  -->
 <header class="ads-navbar-area">
   <div class="container">
@@ -11,7 +17,7 @@
       </div>
       <div class="navbar-right">
         <a href="https://appscode.com/contact/" class="button ac-button is-primary is-outlined">GET IT
-          STARTED </a>
+          STARTED</a>
       </div>
     </div>
   </div>
@@ -24,7 +30,7 @@
     <div class="columns is-vcentered is-multiline ">
       <div class="column is-two-thirds-desktop is-full-tablet">
         <div class="left-content">
-          <h1>One-stop Solution for Managing Databases on Kubernetes</h1>
+          <h1>{{ $.Title }}</h1>
           <p>KubeDB is a Kubernetes Native Database Management Solution that simplifies and automates routine database
             tasks such as Provisioning, Monitoring, Upgrading, Patching, Scaling, Volume Expansion, Backup, Recovery,
             Failure detection, and repair for various popular databases on any private and public clouds.</p>
@@ -76,7 +82,7 @@
 <!-- features area start  -->
 <section class="ads-features-area section-padding">
   <div class="container">
-    <div class="columns is-vcentered">
+    <div class="columns is-multiline is-vcentered">
       <div class="column is-6">
         <h3 class="mb-16">Features</h3>
         <ul class="check-list-items">
@@ -102,17 +108,7 @@
             <span class="action maximize"></span>
             <span class="action minimize"></span>
           </div>
-          {{ highlight (printf `$ helm repo add appscode https://charts.appscode.com/stable/
-$ helm repo update
-$ helm install kubedb appscode/kubedb \
---version %s \
---namespace kubedb --create-namespace \
---set kubedb-provisioner.enabled=true \
---set kubedb-ops-manager.enabled=true \
---set kubedb-autoscaler.enabled=true \
---set kubedb-dashboard.enabled=true \
---set kubedb-schema-manager.enabled=true \
---set-file global.license=/path/to/the/license.txt` $p.latestVersion) "bash" "style=dracula" }}
+          {{ highlight (transform.Remarshal "yaml" .example) "yaml" "lineNos=inline, style=dracula" }}
         </div>
       </div>
     </div>
@@ -641,4 +637,5 @@ $ helm install kubedb appscode/kubedb \
   });
 </script>
 
+{{ end }}
 {{ end }}

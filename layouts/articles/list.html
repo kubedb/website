@@ -13,7 +13,6 @@
       {{ range $idx, $p := $pages.ByDate.Reverse }}
       <div class="column is-one-quarter-widescreen is-one-quarter-fullhd is-half-tablet is-full-mobile">
         <a href="{{ $p.RelPermalink }}" class="single-article-card">
-          
           <div class="thumbnail">
             {{ $original := $p.Resources.GetMatch "hero.jpg" }}
             {{ $cropped := $original.Resize "x220" }}
