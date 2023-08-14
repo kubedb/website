@@ -7,49 +7,58 @@
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid $ac-white-light;
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
 }
 
 // hero area
 .ads-hero-area {
   position: relative;
   z-index: 1;
-  background-color: #F3F3FC;
-  height: 100vh;
+  background-color: #f3f3fc;
+  min-height: 100vh;
   &:after {
     position: absolute;
     padding-top: 200px;
     content: url("/assets/images/ads/hero.png");
     right: 0;
     top: 0;
-    background: #FBFBFE;
+    background: #fbfbfe;
     width: 42%;
     height: 100vh;
     z-index: -1;
     text-align: center;
   }
-  h1 {
-    padding-top: 120px;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 130%;
-    letter-spacing: -2%;
-    margin-bottom: 16px;
-  }
+  .left-content {
+    padding-right: 100px;
+    h1 {
+      padding-top: 120px;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 130%;
+      letter-spacing: -2px;
+      margin-bottom: 16px;
+    }
 
-  p {
-    color: #3c3c3c;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-    margin-bottom: 16px;
+    p {
+      color: #3c3c3c;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      margin-bottom: 16px;
+    }
   }
 }
 
-
 .supported-platforms-area {
-  background-color: #F3F3FC;
+  background-color: #f3f3fc;
+  .right-content {
+    padding-left: 60px;
+  }
 }
 
 .check-list-items {
@@ -72,8 +81,8 @@
 }
 
 .ui-ss {
-  img{
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+  img {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
   }
 }
@@ -97,6 +106,7 @@
         th {
           color: #ffffff;
           padding: 8px 16px;
+          text-align: center !important;
         }
       }
     }
@@ -119,9 +129,8 @@
 
 // ads footer area
 .ads-footer-area {
-
   .footer-top {
-    background-color: #F3F3FC;
+    background-color: #f3f3fc;
     padding: 70px 0;
     .brand-logo {
       margin-bottom: 16px;
@@ -162,4 +171,109 @@
       }
     }
   }
+}
+
+/****************************************
+Responsive Classes
+*****************************************/
+
+@media (max-width: 1023.98px) {
+  .ads-hero-area {
+    &:after {
+      width: 100%;
+      opacity: 0.2;
+    }
+  }
+}
+
+// Medium devices (tablets, 769px and up)
+@media (min-width: 769px) and (max-width: 1023.98px) {
+  .ads-support-plan {
+    table {
+      tbody {
+        td {
+          &:first-child {
+            min-width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ads-hero-area {
+    &:after {
+      display: none;
+    }
+    .left-content {
+      padding-right: 0;
+      h1 {
+        padding-top: 50px;
+        font-size: 32px;
+        letter-spacing: 0;
+      }
+    }
+  }
+
+  .ads-support-plan table tbody td:first-child {
+    min-width: 200px;
+  }
+
+  .check-list-items {
+    margin-bottom: 16px;
+  }
+  .supported-platforms-area {
+    .right-content {
+      padding-left: 0;
+    }
+  }
+  .ads-footer-area {
+    .footer-top {
+      .is-justify-content-flex-end {
+        justify-content: flex-start !important;
+      }
+    }
+    .footer-bottom {
+      p,
+      a {
+        text-align: left;
+        justify-content: flex-start !important;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 1024px and up)
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .ads-hero-area:after {
+    content: url("/assets/images/ads/hero-7.png");
+  }
+}
+
+@media (min-width: 1216px) and (max-width: 1407px) {
+  .ads-hero-area:after {
+    content: url("/assets/images/ads/hero-7.png");
+  }
+}
+
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .ads-hero-area {
+    .left-content {
+      h1 {
+        padding-top: 30px;
+      }
+    }
+    &:after {
+      content: url("/assets/images/ads/hero-7.png");
+    }
+  }
+}
+
+@media (min-width: 1408px) {
 }

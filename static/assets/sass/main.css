@@ -12475,12 +12475,16 @@ Responsive Classes
   background-color: #fff;
   border-bottom: 1px solid #dbdbde;
 }
+.ads-navbar-area .navbar-right {
+  display: flex;
+  align-items: center;
+}
 
 .ads-hero-area {
   position: relative;
   z-index: 1;
-  background-color: #F3F3FC;
-  height: 100vh;
+  background-color: #f3f3fc;
+  min-height: 100vh;
 }
 .ads-hero-area:after {
   position: absolute;
@@ -12488,22 +12492,25 @@ Responsive Classes
   content: url("/assets/images/ads/hero.png");
   right: 0;
   top: 0;
-  background: #FBFBFE;
+  background: #fbfbfe;
   width: 42%;
   height: 100vh;
   z-index: -1;
   text-align: center;
 }
-.ads-hero-area h1 {
+.ads-hero-area .left-content {
+  padding-right: 100px;
+}
+.ads-hero-area .left-content h1 {
   padding-top: 120px;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
-  letter-spacing: -2%;
+  letter-spacing: -2px;
   margin-bottom: 16px;
 }
-.ads-hero-area p {
+.ads-hero-area .left-content p {
   color: #3c3c3c;
   font-size: 18px;
   font-style: normal;
@@ -12513,7 +12520,10 @@ Responsive Classes
 }
 
 .supported-platforms-area {
-  background-color: #F3F3FC;
+  background-color: #f3f3fc;
+}
+.supported-platforms-area .right-content {
+  padding-left: 60px;
 }
 
 .check-list-items {
@@ -12548,6 +12558,7 @@ Responsive Classes
 .ads-support-plan table thead tr th {
   color: #ffffff;
   padding: 8px 16px;
+  text-align: center !important;
 }
 .ads-support-plan table tbody td {
   font-size: 14px;
@@ -12563,7 +12574,7 @@ Responsive Classes
 }
 
 .ads-footer-area .footer-top {
-  background-color: #F3F3FC;
+  background-color: #f3f3fc;
   padding: 70px 0;
 }
 .ads-footer-area .footer-top .brand-logo {
@@ -12600,6 +12611,72 @@ Responsive Classes
   color: var(--ac-primary);
 }
 
+/****************************************
+Responsive Classes
+*****************************************/
+@media (max-width: 1023.98px) {
+  .ads-hero-area:after {
+    width: 100%;
+    opacity: 0.2;
+  }
+}
+@media (min-width: 769px) and (max-width: 1023.98px) {
+  .ads-support-plan table tbody td:first-child {
+    min-width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .ads-hero-area:after {
+    display: none;
+  }
+  .ads-hero-area .left-content {
+    padding-right: 0;
+  }
+  .ads-hero-area .left-content h1 {
+    padding-top: 50px;
+    font-size: 32px;
+    letter-spacing: 0;
+  }
+  .ads-support-plan table tbody td:first-child {
+    min-width: 200px;
+  }
+  .check-list-items {
+    margin-bottom: 16px;
+  }
+  .supported-platforms-area .right-content {
+    padding-left: 0;
+  }
+  .ads-footer-area .footer-top .is-justify-content-flex-end {
+    justify-content: flex-start !important;
+  }
+  .ads-footer-area .footer-bottom p,
+  .ads-footer-area .footer-bottom a {
+    text-align: left;
+    justify-content: flex-start !important;
+    margin-bottom: 8px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .ads-hero-area:after {
+    content: url("/assets/images/ads/hero-7.png");
+  }
+}
+@media (min-width: 1216px) and (max-width: 1407px) {
+  .ads-hero-area:after {
+    content: url("/assets/images/ads/hero-7.png");
+  }
+}
+@media (min-width: 1408px) and (max-width: 1600px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+  .ads-hero-area .left-content h1 {
+    padding-top: 30px;
+  }
+  .ads-hero-area:after {
+    content: url("/assets/images/ads/hero-7.png");
+  }
+}
 .articles-area {
   padding-top: 140px;
   padding-bottom: 40px;
