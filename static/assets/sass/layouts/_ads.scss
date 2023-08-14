@@ -1,11 +1,34 @@
 // header
 .ads-navbar-area {
   padding: 8px 0;
+  z-index: 99;
+  position: relative;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid $ac-white-light;
 }
 
 // hero area
 .ads-hero-area {
+  position: relative;
+  z-index: 1;
+  background-color: #F3F3FC;
+  height: 100vh;
+  &:after {
+    position: absolute;
+    padding-top: 200px;
+    content: url("/assets/images/ads/hero.png");
+    right: 0;
+    top: 0;
+    background: #FBFBFE;
+    width: 42%;
+    height: 100vh;
+    z-index: -1;
+    padding-left: 100px;
+  }
   h1 {
+    padding-top: 120px;
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
@@ -25,9 +48,8 @@
 }
 
 
-// supported platforms area 
 .supported-platforms-area {
- background-color: #F3F3FC; 
+  background-color: #F3F3FC;
 }
 
 .check-list-items {
@@ -38,56 +60,67 @@
     align-items: center;
     gap: 16px;
     margin-bottom: 16px;
+    &::before {
+      content: url("/assets/images/icon/check-circle.svg");
+      line-height: 0;
+    }
+
     &:last-child {
       margin-bottom: 0;
-    }
-    span {
-      color: #1c1c1c;
-      &.icon {
-        color: #636363;
-      }
-    
     }
   }
 }
 
-.ads{
+.ui-ss {
+  img{
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+    border-radius: 10px;
+  }
+}
+
+.ads {
   &.faq-area {
     .faq-left {
-      p{
+      p {
         font-size: 16px;
       }
     }
   }
 }
 
-// support plans 
+// support plans
 .ads-support-plan {
   table {
     thead {
       background-color: $ac-primary;
-      tr{
+      tr {
         th {
           color: #ffffff;
+          padding: 8px 16px;
         }
       }
     }
-    tbody{
+    tbody {
       td {
         font-size: 14px;
-        width: 300px;
-        &:first-child{
-          width: calc(100% - 900px);
+        width: 320px;
+        padding: 8px 16px;
+        text-align: center;
+        &:first-child {
+          width: calc(100% - 960px);
           min-width: 400px;
+          text-align: left;
+          font-weight: 500;
         }
       }
     }
   }
 }
 
-// ads footer area 
-.ads-footer-area{
-  .footer-top{
+// ads footer area
+.ads-footer-area {
+
+  .footer-top {
     background-color: #F3F3FC;
     padding: 70px 0;
     .brand-logo {
@@ -96,25 +129,25 @@
         height: 30px;
       }
     }
-    p{
+    p {
       margin-bottom: 16px;
       line-height: 1.6;
     }
     .contact-info {
-      .info-text{
+      .info-text {
         display: flex;
         align-items: center;
         color: #3c3c3c;
         gap: 8px;
 
-        span:not(.icon){
+        span:not(.icon) {
           width: calc(100% - 2rem);
         }
       }
     }
   }
-  .footer-bottom{
-    a{
+  .footer-bottom {
+    a {
       color: #3c3c3c;
       display: flex;
       align-items: center;

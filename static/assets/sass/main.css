@@ -12468,9 +12468,34 @@ Responsive Classes
 }
 .ads-navbar-area {
   padding: 8px 0;
+  z-index: 99;
+  position: relative;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #dbdbde;
 }
 
+.ads-hero-area {
+  position: relative;
+  z-index: 1;
+  background-color: #F3F3FC;
+  height: 100vh;
+}
+.ads-hero-area:after {
+  position: absolute;
+  padding-top: 200px;
+  content: url("/assets/images/ads/hero.png");
+  right: 0;
+  top: 0;
+  background: #FBFBFE;
+  width: 42%;
+  height: 100vh;
+  z-index: -1;
+  padding-left: 100px;
+}
 .ads-hero-area h1 {
+  padding-top: 120px;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
@@ -12500,14 +12525,17 @@ Responsive Classes
   gap: 16px;
   margin-bottom: 16px;
 }
+.check-list-items li::before {
+  content: url("/assets/images/icon/check-circle.svg");
+  line-height: 0;
+}
 .check-list-items li:last-child {
   margin-bottom: 0;
 }
-.check-list-items li span {
-  color: #1c1c1c;
-}
-.check-list-items li span.icon {
-  color: #636363;
+
+.ui-ss img {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .ads.faq-area .faq-left p {
@@ -12519,14 +12547,19 @@ Responsive Classes
 }
 .ads-support-plan table thead tr th {
   color: #ffffff;
+  padding: 8px 16px;
 }
 .ads-support-plan table tbody td {
   font-size: 14px;
-  width: 300px;
+  width: 320px;
+  padding: 8px 16px;
+  text-align: center;
 }
 .ads-support-plan table tbody td:first-child {
-  width: calc(100% - 900px);
+  width: calc(100% - 960px);
   min-width: 400px;
+  text-align: left;
+  font-weight: 500;
 }
 
 .ads-footer-area .footer-top {
