@@ -7,11 +7,13 @@
       <div class="navbar-left">
         <a href="/" class="navbar-brand">
           <img src="/assets/images/products/kubedb/kubedb.svg" alt="KubeDB">
+          <span>by</span>
+          <img src="/assets/images/logo/appscode/ac-logo-color.svg" alt="appscode-logo" class="appscode-logo">
         </a>
       </div>
       <div class="navbar-right">
-        <a href="https://appscode.com/contact/" class="button ac-button is-primary is-outlined">GET IT
-          STARTED </a>
+        <a href="https://appscode.com/contact/" target="_blank" class="button ac-button is-primary is-outlined">CONTACT
+          US </a>
       </div>
     </div>
   </div>
@@ -39,7 +41,7 @@
           </ul>
 
           <div class="buttons">
-            <a href="https://appscode.com/contact/" target="_blank" class="button ac-button is-primary">
+            <a href="https://appscode.com/contact/" target="_blank" class="button ac-button is-primary is-normal">
               <span class="icon mr-8">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="w-6 h-6">
@@ -51,8 +53,7 @@
             </a>
 
             <!-- Calendly link widget begin -->
-            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-            <a href="" class="button ac-button is-primary is-outlined"
+            <a href="" class="button ac-button is-primary is-outlined is-normal"
               onclick="Calendly.initPopupWidget({url: 'https://calendly.com/appscode/intro'});return false;">SCHEDULE
               DEMO</a>
             <!-- Calendly link widget end -->
@@ -73,95 +74,8 @@
 </section>
 <!-- hero area end  -->
 
-<!-- features area start  -->
-<section class="ads-features-area section-padding">
-  <div class="container">
-    <div class="columns is-vcentered">
-      <div class="column is-6">
-        <h3 class="mb-16">Features</h3>
-        <ul class="check-list-items">
-          <li>Database Provisioning and Simplified Management</li>
-          <li>High Availability and Resiliency</li>
-          <li>Private Registry and Air-gapped clusters</li>
-          <li>Backup and Restore Capabilities</li>
-          <li>Monitoring and Alerts</li>
-          <li>Horizontal & Vertical Scaling</li>
-          <li>Volume Expansion </li>
-          <li>Web UI</li>
-          <li>TLS Management and renewals</li>
-          <li>GitOps (ArgoCD / FluxCD) Integration</li>
-          <li>Major, Minor, and Patch Version upgrades</li>
-          <li>Custom Database Plugin Support</li>
-          <li>Cross Cluster Access using Envoy Gateway</li>
-        </ul>
-      </div>
-      <div class="column is-6">
-        <div class="custom-code-editor">
-          <div class="editor-header">
-            <span class="action close"></span>
-            <span class="action maximize"></span>
-            <span class="action minimize"></span>
-          </div>
-          {{ highlight (printf `$ helm repo add appscode https://charts.appscode.com/stable/
-$ helm repo update
-$ helm install kubedb appscode/kubedb \
---version %s \
---namespace kubedb --create-namespace \
---set kubedb-provisioner.enabled=true \
---set kubedb-ops-manager.enabled=true \
---set kubedb-autoscaler.enabled=true \
---set kubedb-dashboard.enabled=true \
---set kubedb-schema-manager.enabled=true \
---set-file global.license=/path/to/the/license.txt` $p.latestVersion) "bash" "style=dracula" }}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- features area end -->
-
-<!-- supported platforms area start -->
-<section class="supported-platforms-area section-padding">
-  <div class="container">
-    <div class="columns is-vcentered">
-      <div class="column is-6">
-        <div class="is-flex pr-30">
-          <img src="/assets/images/ads/supported-platforms.png" alt="supported-platforms">
-        </div>
-      </div>
-      <div class="column is-6">
-        <div class="right-content">
-          <h5 class="mb-16">KubeDB effortlessly integrates with any Kubernetes platform such, as;</h5>
-
-          <ul class="check-list-items">
-            <li> AWS Elastic Kubernetes Service (EKS) </li>
-            <li> Azure Kubernetes Service (AKS)</li>
-            <li> Google Kubernetes Engine (GKE) </li>
-            <li> Red Hat OpenShift</li>
-            <li> Rancher</li>
-            <li> VMware Tanzu</li>
-            <li> Equinix Metal</li>
-            <li> Openstack </li>
-            <li> On-Prem Kubernetes Clusters </li>
-            <li> IBM Cloud </li>
-            <li> Oracle Cloud </li>
-            <li> Alibaba Cloud</li>
-            <li> Digital Ocean </li>
-            <li> Linode </li>
-            <li> Exoscale Cloud Hosting </li>
-          </ul>
-
-          <p>Select your preferred platform and enjoy deployment, scalability and management. Join us in embracing the
-            future of application deployment.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- supported platforms area end -->
-
 <!-- customers logo start -->
-<section class="customers-logo-area section-padding">
+<section class="customers-logo-area section-padding pb-0">
   <div class="container">
     <div class="columns">
       <div class="column is-12">
@@ -213,6 +127,93 @@ $ helm install kubedb appscode/kubedb \
   </div>
 </section>
 <!-- customers logo end -->
+
+<!-- features area start  -->
+<section class="ads-features-area section-padding">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-6">
+        <h3 class="mb-16">Features</h3>
+        <ul class="check-list-items">
+          <li>Database Provisioning and Simplified Management</li>
+          <li>High Availability and Resiliency</li>
+          <li>Private Registry and Air-gapped clusters</li>
+          <li>Backup and Restore Capabilities</li>
+          <li>Monitoring and Alerts</li>
+          <li>Horizontal & Vertical Scaling</li>
+          <li>Volume Expansion </li>
+          <li>Web UI</li>
+          <li>TLS Management and renewals</li>
+          <li>GitOps (ArgoCD / FluxCD) Integration</li>
+          <li>Major, Minor, and Patch Version upgrades</li>
+          <li>Custom Database Plugin Support</li>
+          <li>Cross Cluster Access using Envoy Gateway</li>
+        </ul>
+      </div>
+      <div class="column is-6">
+        <div class="custom-code-editor">
+          <div class="editor-header">
+            <span class="action close"></span>
+            <span class="action maximize"></span>
+            <span class="action minimize"></span>
+          </div>
+          {{ highlight (printf `$ helm repo add appscode https://charts.appscode.com/stable/
+          $ helm repo update
+          $ helm install kubedb appscode/kubedb \
+          --version %s \
+          --namespace kubedb --create-namespace \
+          --set kubedb-provisioner.enabled=true \
+          --set kubedb-ops-manager.enabled=true \
+          --set kubedb-autoscaler.enabled=true \
+          --set kubedb-dashboard.enabled=true \
+          --set kubedb-schema-manager.enabled=true \
+          --set-file global.license=/path/to/the/license.txt` $p.latestVersion) "bash" "style=dracula" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- features area end -->
+
+<!-- supported platforms area start -->
+<section class="supported-platforms-area section-padding">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-6">
+        <div class="is-flex pr-30">
+          <img src="/assets/images/ads/supported-platforms.png" alt="supported-platforms">
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="right-content">
+          <h5 class="mb-16">KubeDB effortlessly integrates with any Kubernetes platform such, as;</h5>
+
+          <ul class="check-list-items">
+            <li> AWS Elastic Kubernetes Service (EKS) </li>
+            <li> Azure Kubernetes Service (AKS)</li>
+            <li> Google Kubernetes Engine (GKE) </li>
+            <li> Red Hat OpenShift</li>
+            <li> Rancher</li>
+            <li> VMware Tanzu</li>
+            <li> Equinix Metal</li>
+            <li> Openstack </li>
+            <li> On-Prem Kubernetes Clusters </li>
+            <li> IBM Cloud </li>
+            <li> Oracle Cloud </li>
+            <li> Alibaba Cloud</li>
+            <li> Digital Ocean </li>
+            <li> Linode </li>
+            <li> Exoscale Cloud Hosting </li>
+          </ul>
+
+          <p>Select your preferred platform and enjoy deployment, scalability and management. Join us in embracing the
+            future of application deployment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- supported platforms area end -->
 
 <!-- ui img  -->
 <div class="ui-ss">
@@ -365,13 +366,19 @@ $ helm install kubedb appscode/kubedb \
           <h3 class="title">Frequently asked questions</h3>
           <p>Here are a few of the questions we get the most. If you don't see what's on your mind, contact us
             anytime.</p>
-          <a href="https://appscode.com/contact/" target="_blank" class="button ac-button is-normal is-primary"> <span>
-              <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
-                colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
-              </lord-icon>
-            </span>
-            <span>CONTACT SALES</span>
-          </a>
+          <div class="buttons">
+            <a href="https://appscode.com/contact/" target="_blank" class="button ac-button is-normal is-primary">
+              <span>
+                <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop"
+                  colors="primary:#ffffff;" style="width:22px;height:22px; margin-right: 8px;">
+                </lord-icon>
+              </span>
+              <span>CONTACT SALES</span>
+            </a>
+            <a href="#" class="button ac-button is-primary is-outlined is-normal"
+              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/appscode/intro'});return false;">SCHEDULE
+              DEMO</a>
+          </div>
 
         </div>
       </div>
@@ -606,6 +613,8 @@ $ helm install kubedb appscode/kubedb \
 
 <script src="/assets/js/jquery-3.6.0.min.js"></script>
 <script src="/assets/js/owl.carousel.min.js"></script>
+<!-- Calendly link widget begin -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 
 <script>
   // owl owlCarousel JS 
