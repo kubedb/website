@@ -12530,6 +12530,10 @@ Responsive Classes
   margin-bottom: 16px;
 }
 
+.customers-logo-area .customers-logo {
+  min-height: 40px;
+}
+
 .supported-platforms-area {
   background-color: #f3f3fc;
 }
@@ -12603,14 +12607,14 @@ Responsive Classes
 }
 .ads-footer-area .footer-top .contact-info .info-text {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   color: #3c3c3c;
   gap: 8px;
 }
 .ads-footer-area .footer-top .contact-info .info-text span:not(.icon) {
   width: calc(100% - 2rem);
 }
-.ads-footer-area .footer-bottom a {
+.ads-footer-area .footer-bottom a :not(.icon) {
   color: #3c3c3c;
   display: flex;
   align-items: center;
@@ -12618,10 +12622,10 @@ Responsive Classes
   text-decoration: underline;
   font-size: 14px;
 }
-.ads-footer-area .footer-bottom a .icon {
+.ads-footer-area .footer-bottom a :not(.icon) .icon {
   font-size: 14px;
 }
-.ads-footer-area .footer-bottom a:hover {
+.ads-footer-area .footer-bottom a :not(.icon):hover {
   color: var(--ac-primary);
 }
 
@@ -12670,6 +12674,12 @@ Responsive Classes
   }
 }
 @media (max-width: 768px) {
+  .ads-navbar-area .navbar-left .navbar-brand img {
+    height: 24px;
+  }
+  .ads-navbar-area .navbar-right .button.ac-button {
+    padding: 0.4rem 1rem;
+  }
   .ads-hero-area:after {
     display: none;
   }
@@ -12692,6 +12702,9 @@ Responsive Classes
   }
   .ads-footer-area .footer-top .is-justify-content-flex-end {
     justify-content: flex-start !important;
+  }
+  .ads-footer-area .footer-bottom {
+    padding: 20px 15px;
   }
   .ads-footer-area .footer-bottom p,
   .ads-footer-area .footer-bottom a {
