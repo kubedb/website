@@ -67,6 +67,11 @@
     }
   }
 }
+.customers-logo-area {
+  .customers-logo {
+    min-height: 40px;
+  }
+}
 
 .supported-platforms-area {
   background-color: #f3f3fc;
@@ -159,8 +164,8 @@
     }
     .contact-info {
       .info-text {
-        display: flex;
-        align-items: center;
+        display: inline-flex;
+        align-items: baseline;
         color: #3c3c3c;
         gap: 8px;
 
@@ -171,13 +176,17 @@
     }
   }
   .footer-bottom {
-    a {
+    a{
       color: #3c3c3c;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-      text-decoration: underline;
       font-size: 14px;
+      span {
+        &:not(.icon) {
+          text-decoration: underline;
+        }
+      }
       .icon {
         font-size: 14px;
       }
@@ -247,6 +256,22 @@ Responsive Classes
 }
 
 @media (max-width: 768px) {
+  .ads-navbar-area {
+    .navbar-left {
+      .navbar-brand {
+        img {
+          height: 24px;
+        }
+      }
+    }
+    .navbar-right {
+      .button{
+        &.ac-button {
+          padding: 0.4rem 1rem;
+        }
+      }
+    }
+  }
   .ads-hero-area {
     &:after {
       display: none;
@@ -280,6 +305,7 @@ Responsive Classes
       }
     }
     .footer-bottom {
+      padding: 20px 15px;
       p,
       a {
         text-align: left;
