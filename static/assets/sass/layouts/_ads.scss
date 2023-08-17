@@ -164,7 +164,7 @@
     }
     .contact-info {
       .info-text {
-        display: flex;
+        display: inline-flex;
         align-items: baseline;
         color: #3c3c3c;
         gap: 8px;
@@ -176,13 +176,17 @@
     }
   }
   .footer-bottom {
-    a :not(.icon){
+    a{
       color: #3c3c3c;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-      text-decoration: underline;
       font-size: 14px;
+      span {
+        &:not(.icon) {
+          text-decoration: underline;
+        }
+      }
       .icon {
         font-size: 14px;
       }

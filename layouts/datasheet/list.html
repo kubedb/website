@@ -8,13 +8,16 @@
         <a href="/" class="navbar-brand">
           <img src="/assets/images/products/kubedb/kubedb.svg" alt="KubeDB">
           <span>by</span>
-          <img src="/assets/images/logo/appscode/ac-logo-color.svg" alt="appscode-logo" class="appscode-logo is-hidden-mobile">
-          <img src="/assets/images/logo/appscode/ac-logo-moscot.svg" alt="appscode-logo-moscot" class="appscode-logo is-hidden-tablet">
-         
+          <img src="/assets/images/logo/appscode/ac-logo-color.svg" alt="appscode-logo"
+            class="appscode-logo is-hidden-mobile">
+          <img src="/assets/images/logo/appscode/ac-logo-moscot.svg" alt="appscode-logo-moscot"
+            class="appscode-logo is-hidden-tablet">
+
         </a>
       </div>
       <div class="navbar-right">
-        <a href="https://appscode.com/contact/" target="_blank" class="button ac-button is-primary is-outlined">CONTACT SALES</a>
+        <a href="https://appscode.com/contact/" target="_blank" class="button ac-button is-primary is-outlined">CONTACT
+          SALES</a>
       </div>
     </div>
   </div>
@@ -159,16 +162,16 @@
             <span class="action minimize"></span>
           </div>
           {{ highlight (printf `$ helm repo add appscode https://charts.appscode.com/stable/
-$ helm repo update
-$ helm install kubedb appscode/kubedb \
---version %s \
---namespace kubedb --create-namespace \
---set kubedb-provisioner.enabled=true \
---set kubedb-ops-manager.enabled=true \
---set kubedb-autoscaler.enabled=true \
---set kubedb-dashboard.enabled=true \
---set kubedb-schema-manager.enabled=true \
---set-file global.license=/path/to/the/license.txt` $p.latestVersion) "bash" "style=dracula" }}
+          $ helm repo update
+          $ helm install kubedb appscode/kubedb \
+          --version %s \
+          --namespace kubedb --create-namespace \
+          --set kubedb-provisioner.enabled=true \
+          --set kubedb-ops-manager.enabled=true \
+          --set kubedb-autoscaler.enabled=true \
+          --set kubedb-dashboard.enabled=true \
+          --set kubedb-schema-manager.enabled=true \
+          --set-file global.license=/path/to/the/license.txt` $p.latestVersion) "bash" "style=dracula" }}
         </div>
       </div>
     </div>
@@ -494,10 +497,11 @@ $ helm install kubedb appscode/kubedb \
           <h5 class="mb-16">CONTACT US</h5>
           <div class="contact-info">
             <a href="mailto:sales@appscode.com" class="info-text mb-16"><span class="icon">
-              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
               </span> <span>sales@appscode.com</span></a>
             <p class="info-text">
-              <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span> <span>3937 Spencer St Apt 118
+              <span class="icon"> <i class="fa fa-map-marker" aria-hidden="true"></i> </span><span>3937 Spencer St Apt
+                118
                 Las Vegas, NV 89119, USA
                 Phone: +1(650)241-8486</span>
             </p>
@@ -515,32 +519,30 @@ $ helm install kubedb appscode/kubedb \
   <div class="footer-bottom">
     <div class="container">
       <div class="columns is-vcentered">
-        <div class="column is-4 has-text-centered-mobile has-text-left-tablet is-paddingless">
-          <p><span class="icon"><i class="fa fa-copyright" aria-hidden="true"></i></span> AppsCode Inc. All rights reserved.</p>
+        <div class="column is-4 has-text-left-mobile has-text-left-tablet is-paddingless">
+          <p><span class="icon"><i class="fa fa-copyright" aria-hidden="true"></i></span>AppsCode Inc. All rights
+            reserved.</p>
         </div>
-        <div class="column is-4 is-mobile has-text-centered-touch has-text-centered-desktop is-paddingless">
+        <div class="column is-4 is-mobile has-text-centered-tablet is-paddingless">
           <a href="https://twitter.com/AppsCodeHQ" target="_blank"
-            class="is-flex gap-8 is-align-items-center is-justify-content-center">
+            class="is-inline-flex gap-8 is-align-items-center is-justify-content-center">
             <span class="icon">
               <i class="fa fa-twitter" aria-hidden="true"></i>
-            </span> 
+            </span>
             <span>@AppsCodeHQ</span>
           </a>
         </div>
-        <div class="column is-4 has-text-centered-mobile has-text-right-tablet is-paddingless">
-          <a href="https://appscode.com/" target="_blank" class="info-text is-flex is-justify-content-flex-end">
-            <span
-              class="icon">
+        <div class="column is-4 has-text-left-mobile has-text-left-tablet has-text-right-desktop is-paddingless">
+          <a href="https://appscode.com/" target="_blank" class="info-text is-inline-flex is-justify-content-flex-end">
+            <span class="icon">
               <i class="fa fa-globe" aria-hidden="true"></i>
-            </span> 
+            </span>
             <span>https://appscode.com</span></a>
         </div>
       </div>
     </div>
   </div>
   <!-- footer bottom end  -->
-
-
 </footer>
 <!-- footer area end  -->
 
