@@ -26,7 +26,7 @@ Additionally, ProxySQL provides query caching capabilities, which can significan
 
 We have to set up the environment to deploy ProxySQL on Kubernetes using a Kubernetes ProxySQL operator. You requires to have a running Kubernetes cluster and a basic understanding of ProxySQL. Here we are using [Kind](https://kubernetes.io/docs/tasks/tools/#kind) to create our Kubernetes cluster. Additionally, you should install [Helm](https://helm.sh/docs/intro/install/) to your Kubernetes cluster.
 
-In this tutorial, We will use the Kubernetes ProxySQL operator [KubeDB](https://kubedb.com/) to deploy ProxySQL on Kubernetes. First, We must install KubeDB in our Kubernetes cluster. We requires a license to setup KubeDB in our Kubernetes cluster. We can obtain a free enterprise license via the [Appscode License Server](https://license-issuer.appscode.com/). To obtain the license we must provide our Kubernetes cluster ID. Run the following command to get the cluster ID.get
+In this tutorial, We will use the Kubernetes ProxySQL operator [KubeDB](https://kubedb.com/) to deploy ProxySQL on Kubernetes. First, We must install KubeDB in our Kubernetes cluster. We requires a license to setup KubeDB in our Kubernetes cluster. We can obtain a free enterprise license via the [Appscode License Server](https://license-issuer.appscode.com/). To obtain the license we must provide our Kubernetes cluster ID. Run the following command to get the cluster ID.
 
 ```bash
 $ kubectl get ns kube-system -o jsonpath='{.metadata.uid}'
@@ -110,7 +110,7 @@ mysql.kubedb.com/mysql-server created
 Let’s check if the server is ready to use,
 
 ```bash
-$ kubectl get mysql -n demo mysql-server
+$ kubectl get mysql -n proxydemo mysql-server
 NAME           VERSION   STATUS   AGE
 mysql-server   8.0.32    Ready    3m21s
 ```
@@ -206,7 +206,7 @@ $ kubectl get secrets -n proxydemo mysql-server-auth -o jsonpath='{.data.passwor
 Now, we will connect to the MySQL database through ProxySQL pod using the required credentials and insert some sample data,
 
 ```bash
-$ kubectl exec -it proxy-server-0 -n demo -- bash
+$ kubectl exec -it proxy-server-0 -n proxydemo -- bash
 root@proxy-server-0:/# mysql --user=root --password='3i7ig3RQXKD!2ksc' --host 127.0.0.1 --port=6033
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
