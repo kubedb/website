@@ -1,11 +1,11 @@
 ---
-title: Improve Database Management via Kubernetes ProxySQL Operator
-Description: Learn how to Improve Database Management using the Kubernetes ProxySQL Operator. Boost your database performance using ProxySQL in Kubernetes.
+title: Optimize Your Database via Kubernetes ProxySQL Operator
+Description: Optimize your Database Management using Kubernetes ProxySQL Operator. Boost your database performance using ProxySQL in Kubernetes.
 alt: Kubernetes ProxySQL
 date: "2023-08-08"
 ---
 
-# Improve Database Management via Kubernetes ProxySQL Operator
+# Optimize Your Database via Kubernetes ProxySQL Operator
 
 ![Kubernetes PostgreSQL](./hero.jpg "Kubernetes ProxySQL")
 
