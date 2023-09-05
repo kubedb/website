@@ -1,15 +1,15 @@
 ---
-title: Install MySQL on Kubernetes via Kubernetes MySQL Operator
+title: Install MySQL using Kubernetes MySQL Operator
 Description: Learn the process of installing MySQL step by step with the Kubernetes MySQL Operator. A simple guide for installing the MySQL database in Kubernetes.
 alt: Kubernetes MySQL
 date: "2023-09-05"
 ---
 
-# Install MySQL on Kubernetes via Kubernetes MySQL Operator
+# Install MySQL using Kubernetes MySQL Operator
 
 ![Kubernetes MySQL](./hero.jpg "Kubernetes MySQL")
 
-In the modern landscape of containerized applications and orchestration, deploying and managing relational databases like MySQL requires a dynamic and efficient approach. The Kubernetes MySQL Operator streamlines the process of deploying, managing, and scaling MySQL databases within a Kubernetes environment. This article covers the fundamentals of installing MySQL databases using the MySQL Kubernetes Operator, exploring its benefits, features, and step-by-step procedures. By leveraging this, you can achieve greater flexibility and automation in provisioning and maintaining your MySQL databases while following to the best practices of containerized infrastructure.
+In the modern landscape of containerized applications and orchestration, deploying and managing relational databases like MySQL requires a dynamic and efficient approach. The **Kubernetes MySQL** Operator streamlines the process of deploying, managing, and scaling MySQL databases within a Kubernetes environment. This article covers the fundamentals of installing MySQL databases using the MySQL Kubernetes Operator, exploring its benefits, features, and step-by-step procedures. By leveraging this, you can achieve greater flexibility and automation in provisioning and maintaining your MySQL databases while following to the best practices of containerized infrastructure.
 
 Imagine orchestrating the deployment of applications spread around a vast cloud infrastructure without the headache of managing each server individually. Kubernetes is a game-changing open-source platform that reduces the complexity of containerized applications. With Kubernetes, you gain the power to effortlessly deploy, scale, and manage applications, regardless of whether they run on a single machine or span a multi-cloud environment.
 
@@ -216,13 +216,13 @@ We’ve successfully Installed MySQL to Kubernetes via **Kubernetes MySQL operat
 ## MySQL on Kubernetes: Best Practices
 To ensure the stability of your application while using MySQL on Kubernetes, there are some best practices that you should follow:
 
-**Using the Kubernetes MySQL Operator:** The Kubernetes MySQL Operator should be used to simplify MySQL installation and administration within a Kubernetes cluster. Kubernetes operators serve as controllers that package the practical expertise of the application, automating managerial duties. The Kubernetes MySQL Operator eases the setup and expansion of MySQL instances, alleviating the workload on database administrators.
+* **Using the Kubernetes MySQL Operator:** The Kubernetes MySQL Operator should be used to simplify MySQL installation and administration within a Kubernetes cluster. Kubernetes operators serve as controllers that package the practical expertise of the application, automating managerial duties. The Kubernetes MySQL Operator eases the setup and expansion of MySQL instances, alleviating the workload on database administrators.
 
-**High Availability:** Configure MySQL for high availability using solutions like MySQL Group Replication to minimize downtime in the event of node failures and ensure continuous service availability.
+* **High Availability:** Configure MySQL for high availability using solutions like MySQL Group Replication to minimize downtime in the event of node failures and ensure continuous service availability.
 
-**Monitoring and Logging:** Implement robust monitoring and logging solutions like Prometheus and Grafana to collect and visualize MySQL performance metrics, helping you proactively identify and address issues.
+* **Monitoring and Logging:** Implement robust monitoring and logging solutions like Prometheus and Grafana to collect and visualize MySQL performance metrics, helping you proactively identify and address issues.
 
-**Regular Backups:**  Set up regular backups of your MySQL data and store backups securely to ensure data recoverability in case of failures or disasters.
+* **Regular Backups:**  Set up regular backups of your MySQL data and store backups securely to ensure data recoverability in case of failures or disasters.
 
 ## Conclusion
 
