@@ -34,7 +34,7 @@ Deploying MongoDB in Kubernetes offers a host of advantages for modern database 
 ### Pre-requisites
 We have to set up the environment to deploy MongoDB on Kubernetes using a Kubernetes MongoDB operator. A running Kubernetes cluster and a fundamental understanding of MongoDB queries are required to conduct this tutorial. Here we are using [Kind](https://kubernetes.io/docs/tasks/tools/#kind) to create our Kubernetes cluster. Additionally, you should install [Helm](https://helm.sh/docs/intro/install/) to your Kubernetes cluster.
 
-In this tutorial, We will use the Kubernetes ProxySQL operator [KubeDB](https://kubedb.com/) to deploy ProxySQL on Kubernetes. First, We must install KubeDB in our Kubernetes cluster. We requires a license to setup KubeDB in our Kubernetes cluster. We can obtain a free enterprise license via the [Appscode License Server](https://license-issuer.appscode.com/). To obtain the license we must provide our Kubernetes cluster ID. Run the following command to get the cluster ID.
+In this tutorial, We will use the Kubernetes MongoDB operator [KubeDB](https://kubedb.com/) to deploy MongoDB on Kubernetes. First, We must install KubeDB in our Kubernetes cluster. We requires a license to setup KubeDB in our Kubernetes cluster. We can obtain a free enterprise license via the [Appscode License Server](https://license-issuer.appscode.com/). To obtain the license we must provide our Kubernetes cluster ID. Run the following command to get the cluster ID.
 
  
 ```bash
@@ -104,7 +104,7 @@ spec:
   terminationPolicy: WipeOut
 ```
 
-You can see the detailed yaml specifications in the [Kubernetes MongoDB](https://kubedb.com/docs/latest/guides/postgres/concepts/postgres/) documentation.
+You can see the detailed yaml specifications in the [Kubernetes MongoDB](https://kubedb.com/docs/latest/guides/mongodb/) documentation.
 
 We will save this yaml configuration to `mongodb.yaml`. Then create the above MongoDB object.
 
