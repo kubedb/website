@@ -278,7 +278,7 @@ $ curl -XGET -k --user 'elastic:q)UC;l!!euEnk.ZZ' "https://localhost:9200/music/
 }
 ```
 
-We’ve successfully Deploy Elasticsearch to Kubernetes via * Kubernetes Elasticsearch operator** KubeDB and insert some sample data into it.
+We’ve successfully Deploy Elasticsearch to Kubernetes via **Kubernetes Elasticsearch operator** KubeDB and insert some sample data into it.
 
 ## Elasticsearch on Kubernetes: Best Practices
 To ensure the stability of your application while using Elasticsearch on Kubernetes using Kubernetes Elasticsearch operator, there are some best practices that you should follow:
