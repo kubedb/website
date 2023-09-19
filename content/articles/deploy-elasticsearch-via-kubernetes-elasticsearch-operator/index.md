@@ -278,18 +278,18 @@ $ curl -XGET -k --user 'elastic:q)UC;l!!euEnk.ZZ' "https://localhost:9200/music/
 }
 ```
 
-We’ve successfully Deploy Elasticsearch to Kubernetes via **Kubernetes Elasticsearch operator** KubeDB and insert some sample data into it.
+We’ve successfully Deploy Elasticsearch to Kubernetes via * Kubernetes Elasticsearch operator** KubeDB and insert some sample data into it.
 
 ## Elasticsearch on Kubernetes: Best Practices
 To ensure the stability of your application while using Elasticsearch on Kubernetes using Kubernetes Elasticsearch operator, there are some best practices that you should follow:
 
-**Use Dashboard like Kibana:** Deploy Kibana alongside Elasticsearch for real-time performance insights and data visualization. Secure Kibana with access controls and encryption, and leverage its dashboards and visualization tools to monitor Elasticsearch cluster health and gain valuable application performance insights.
+* **Use Dashboard like Kibana:** Deploy Kibana alongside Elasticsearch for real-time performance insights and data visualization. Secure Kibana with access controls and encryption, and leverage its dashboards and visualization tools to monitor Elasticsearch cluster health and gain valuable application performance insights.
 
-**High Availability:** Ensure high availability by utilizing Elasticsearch's data replication features, distributing data across multiple nodes for redundancy. Kubernetes pod anti-affinity rules help prevent single points of failure, and using a load balancer evenly distributes traffic among nodes.
+* **High Availability:** Ensure high availability by utilizing Elasticsearch's data replication features, distributing data across multiple nodes for redundancy. Kubernetes pod anti-affinity rules help prevent single points of failure, and using a load balancer evenly distributes traffic among nodes.
 
-**Backup and Recovery:**  Prioritize backup and recovery with regular data backups using Elasticsearch snapshots or available backup and recovery solutions. Store backups in separate locations or cloud storage for disaster recovery, and routinely test data restoration processes for reliability.
+* **Backup and Recovery:**  Prioritize backup and recovery with regular data backups using Elasticsearch snapshots or available backup and recovery solutions. Store backups in separate locations or cloud storage for disaster recovery, and routinely test data restoration processes for reliability.
 
-**Monitoring & Security:** Implement comprehensive monitoring using tools like Prometheus, Grafana, or Elasticsearch's monitoring features to track cluster health and performance metrics. Strengthen security with RBAC and robust authentication mechanisms, and implement Kubernetes network policies to Elasticsearch pods.
+* **Monitoring & Security:** Implement comprehensive monitoring using tools like Prometheus, Grafana, or Elasticsearch's monitoring features to track cluster health and performance metrics. Strengthen security with RBAC and robust authentication mechanisms, and implement Kubernetes network policies to Elasticsearch pods.
 
 ## Conclusion
 Elasticsearch is a powerful, open-source search and analytics engine renowned for its ability to handle large and diverse datasets with speed and precision. You have now successfully installed an Elasticsearch database on Kubernetes using the Kubernetes Elasticsearch operator, which is suitable for a variety of use cases. You can visit the official [Elasticsearch documentation](https://www.elastic.co/guide/index.html) for further details. Managing database, whether on-premises or in the cloud, requires extensive knowledge and consistent practice. KubeDB provides a full support solution to ensure that your database management fulfills performance and uptime requirements. Whether your database infrastructure is hosted on-site, geographically distributed, or utilizing cloud services or database-as-a-service providers, KubeDB offers assistance in managing the entire process in a production-grade environment.
