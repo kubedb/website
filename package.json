@@ -21,6 +21,6 @@
   },
   "private": true,
   "dependencies": {
-    "postcss": "^8.4.12"
+    "postcss": "^8.4.31"
   }
 }
