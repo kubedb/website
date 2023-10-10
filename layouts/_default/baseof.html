@@ -778,13 +778,13 @@
             <!-- Community link start  -->
             <div class="community-items ml-70">
               {{ if $p.socialLinks.github }}
-              <a href="{{$p.socialLinks.github}}" class="community-item" target="_blank">
+              <a href="{{$p.socialLinks.github}}" class="community-item" target="_blank" title="Github">
                 <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon">
               </a>
               {{ end }}
               {{ if $p.socialLinks.twitter }}
-              <a href="{{$p.socialLinks.twitter}}" class="community-item" target="_blank">
-                <img src="/assets/images/icon/community/twitter-icon.svg" alt="twitter-icon">
+              <a href="{{$p.socialLinks.twitter}}" class="community-item" target="_blank" title="X(Twitter)">
+                <img src="/assets/images/icon/community/twitterx-icon.svg" alt="twitterx-icon">
               </a>
               {{ end }}
             </div>
@@ -1098,7 +1098,7 @@
             <div class="socail-link-inline">
               <ul>
                 <li>
-                  <a href="{{.Site.Params.twitter_url}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  <a href="{{.Site.Params.twitter_url}}"><img src="/assets/images/icon/community/twitterx-solid-icon.svg" alt="twitterx-icon"></a>
                 </li>
                 <li>
                   <a href="https://www.linkedin.com/company/appscode"><i class="fa fa-linkedin"

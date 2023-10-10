@@ -141,6 +141,11 @@ p.spam-message {
 }
 
 .socail-link-inline {
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
   li {
     margin-right: 10px;
     display: inline-block;
@@ -156,11 +161,18 @@ p.spam-message {
       border: 1px solid #8a8a8a;
       border-radius: 50%;
       transition: 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
 
       &:hover {
         background: $ac-primary;
         color: $ac-white;
         border: 1px solid transparent;
+        img{
+          filter: brightness(10);
+        }
       }
     }
 
@@ -227,6 +239,11 @@ Responsive Classes
   }
   .footer-bottom {
     padding: 20px 0;
+  }
+  .socail-link-inline{
+    ul {
+      justify-content: center;
+    }
   }
 }
 

@@ -161,7 +161,7 @@ mongodb-rs        ClusterIP   10.8.1.145   <none>        27017/TCP   6m39s
 mongodb-rs-pods   ClusterIP   None         <none>        27017/TCP   6m39s
 ``` 
 
-Now we'll use'mongodb-rs-auth' to export credentials. To make future commands more reusable, export 'USER' and 'PASSWORD' as environment variables.
+Now we'll use `mongodb-rs-auth` to export credentials. To make future commands more reusable, export `USER` and `PASSWORD` as environment variables.
 ```bash
 $ export USER=$(kubectl get secrets -n mongons mongodb-rs-auth -o jsonpath='{.data.\username}' | base64 -d)
 
