@@ -9,7 +9,7 @@ date: "2023-10-10"
 
 ![Kubernetes Redis Operator](./hero.jpg "Redis Operator")
 
-In today's world of containerized applications and orchestration, the successful deployment and maintenance of databases, such as Redis, require a flexible and efficient approach. *Kubernetes Redis Operator* —a tool that streamlines the intricate tasks of configuring, managing, and scaling Redis databases within the Kubernetes environment.
+In today's world of containerized applications and orchestration, the successful deployment and maintenance of databases, such as Redis, require a flexible and efficient approach. **Kubernetes Redis Operator** —a tool that streamlines the intricate tasks of configuring, managing, and scaling Redis databases within the Kubernetes environment.
 
 Within this article, we will dive deep into the realm of Redis database setup, leveraging the power of the Kubernetes Redis Operator. We'll explore its array of benefits, distinctive features, and provide you with a comprehensive, go to guide. With this solution, you'll empower yourself with enhanced flexibility and automation for provisioning and administering your Redis databases, all while embracing the containerized infrastructure's best practices.
 
@@ -188,7 +188,7 @@ OK
 "Stash"
 10.244.0.14:6379> exit
 ```
-We’ve successfully Deploy Redis to Kubernetes via *Kubernetes Redis operator* KubeDB and insert some sample data into it.
+We’ve successfully Deploy Redis to Kubernetes via **Kubernetes Redis operator** KubeDB and insert some sample data into it.
 
 ## Redis on Kubernetes: Best Practices
 When deploying Redis on Kubernetes, following best practices is essential to ensure the stability and reliability of your application. Here are some key best practices for optimizing your Redis deployment within a Kubernetes environment:
