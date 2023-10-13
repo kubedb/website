@@ -73,9 +73,6 @@ spec:
   version: "1.17.0"
   replicas: 1
   connectionPool:
-    adminUsers:
-    - admin
-    - admin1
     poolMode: session
     port: 5432
     reservePoolSize: 5
@@ -85,6 +82,4 @@ spec:
     databaseRef:
       name: quick-postgres
       namespace: demo
-  userListSecretRef:
-    name: db-user-pass
 ```
