@@ -144,10 +144,9 @@ metadata:
 spec:
   version: "2.3.2-debian"  
   replicas: 3
-  mode: GroupReplication
   backend:
     name: mysql-server
-  sycnUsers: true
+  syncUsers: true
   tls:
     issuerRef:
       apiGroup: cert-manager.io
