@@ -23,7 +23,7 @@
     "kubedb",
     "stash",
     "kubevault",
-    "voyager"
+    "kubeform"
   ],
   "mainMenu": {
     "c0": [
