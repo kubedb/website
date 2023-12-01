@@ -1,6 +1,6 @@
 ---
 title: Deploy MariaDB using Kubernetes MariaDB Operator
-Description: A comprehensive guide to effortlessly deploy the MariaDB database on Kubernetes. Discover the procedure of deploying MariaDB using Kubernetes MariaDB operator.
+Description: A complete guide to effortlessly deploy the MariaDB database on Kubernetes. Discover the process of deploying MariaDB via Kubernetes MariaDB operator.
 alt: Kubernetes MariaDB
 date: "2023-11-22"
 ---
@@ -20,7 +20,7 @@ MariaDB, a fork of MySQL, continues the legacy of a resilient and feature-rich r
 
 As an open-source database and a derivative of MySQL, seamlessly integrates scalability features, making it proficient in managing expanding data volumes and user numbers, particularly beneficial for dynamic web-based applications. Beyond scalability, MariaDB maintains compliance with the ACID principles, ensuring Atomicity, Consistency, Isolation, and Durability in transactions, catering to applications prioritizing data integrity. With a top-tier emphasis on security, MariaDB incorporates robust measures like authentication, encryption, and role-based access control, positioning itself as an ideal choice for organizations seeking databases that scale effectively with growth while prioritizing security and transactional integrity in modern, data-intensive scenarios.
 
-Integrating MariaDB with Kubernetes offers a range of benefits that revolutionize conventional database management. This integration allows for seamless scalability, ensuring that the database can effortlessly handle increasing data demands. It also enhances performance, providing optimal speed and efficiency. In terms of reliability, the integration simplifies backup and disaster recovery processes, ensuring data safety. Moreover, it optimizes resource utilization, making efficient use of computing power. Additionally, this integration streamlines development and testing, aligning with DevOps principles. Overall, it offers flexibility and advantages in various IT environments.
+Integrating MariaDB with Kubernetes offers a range of benefits that revolutionize conventional database management. This integration of Kubernetes MariaDB allows seamless scalability, ensuring that the database can effortlessly handle increasing data demands. It also enhances performance, providing optimal speed and efficiency. In terms of reliability, the integration simplifies backup and disaster recovery processes, ensuring data safety. Moreover, it optimizes resource utilization, making efficient use of computing power. Additionally, this integration streamlines development and testing, aligning with DevOps principles. Overall, it offers flexibility and advantages in various IT environments.
 
 ## Deploy MariaDB on Kubernetes
 ### Pre-requisites
