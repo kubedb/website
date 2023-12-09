@@ -35,13 +35,13 @@ e5b4a1a0-5a67-4657-b390-db7200108bae
 ```
 
 The license server will email us with a "license.txt" file attached after we provide the necessary data. To install KubeDB, run the following commands,
+
 ```bash
-$ helm repo add appscode https://charts.appscode.com/stable/
-$ helm repo update
-$ helm install kubedb appscode/kubedb \
+$ helm install kubedb oci://ghcr.io/appscode-charts/kubedb \
   --version v2023.12.11 \
   --namespace kubedb --create-namespace \
-  --set-file global.license=/path/to/the/license.txt
+  --set-file global.license=/path/to/the/license.txt \
+  --wait --burst-limit=10000 --debug
 ```
 
 

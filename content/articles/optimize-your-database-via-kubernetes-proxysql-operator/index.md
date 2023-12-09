@@ -35,18 +35,15 @@ fc435a61-c74b-9243-83a5-f1110ef2462c
 
 After providing the required information, we will receive an email from the license server including a `license.txt` file. To install KubeDB, use the following helm commands. 
 
-
 ```bash
-$ helm repo add appscode https://charts.appscode.com/stable/
-$ helm repo update
-$ helm install kubedb appscode/kubedb \
+$ helm install kubedb oci://ghcr.io/appscode-charts/kubedb \
   --version v2023.12.11 \
   --namespace kubedb --create-namespace \
-  --set-file global.license=/path/to/the/license.txt
+  --set-file global.license=/path/to/the/license.txt \
+  --wait --burst-limit=10000 --debug
 ```
 
 Verify the KubeDB installation by the following command,
-
 
 ```bash
 $ kubectl get pods --all-namespaces -l "app.kubernetes.io/instance=kubedb"

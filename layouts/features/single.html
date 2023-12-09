@@ -54,12 +54,11 @@
                               <span class="action maximize"></span>
                               <span class="action minimize"></span>
                           </div>
-                        {{ highlight (printf `$ helm repo add appscode https://charts.appscode.com/stable/
-$ helm repo update
-$ helm install kubedb appscode/kubedb \
+                        {{ highlight (printf `$ helm install kubedb ghcr.io/appscode-charts/kubedb \
   --version %s \
   --namespace kubedb --create-namespace \
-  --set-file global.license=/path/to/the/license.txt` $p.latestVersion) "bash" "style=dracula" }}
+  --set-file global.license=/path/to/the/license.txt \
+  --wait --burst-limit=10000 --debug` $p.latestVersion) "bash" "style=dracula" }}
                       </div>
                   </div>
                   <!-- code editor end  -->
