@@ -29,7 +29,7 @@ info:
 # Setup
 
 <div style="text-align: center;">
-  <a class="button is-info is-medium is-active has-text-weight-normal" href="/docs/v2023.12.11/setup/install/kubedb"  style="background:#FC6011; width: 18rem;">Try KubeDB</a>
+  <a class="button is-info is-medium is-active has-text-weight-normal" href="/docs/v2023.12.11/setup/install/kubedb"  style="background:#FC6011; width: 18rem;">Install KubeDB</a>
 </div>
 <br>
 
