@@ -40,13 +40,8 @@ After providing the required information, we will receive an email from the lice
 $ helm repo add appscode https://charts.appscode.com/stable/
 $ helm repo update
 $ helm install kubedb appscode/kubedb \
-  --version v2023.06.19 \
+  --version v2023.12.11 \
   --namespace kubedb --create-namespace \
-  --set kubedb-provisioner.enabled=true \
-  --set kubedb-ops-manager.enabled=true \
-  --set kubedb-autoscaler.enabled=true \
-  --set kubedb-dashboard.enabled=true \
-  --set kubedb-schema-manager.enabled=true \
   --set-file global.license=/path/to/the/license.txt
 ```
 

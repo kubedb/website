@@ -41,13 +41,8 @@ The license server will email us with a "license.txt" file attached after we pro
 $ helm repo add appscode https://charts.appscode.com/stable/
 $ helm repo update
 $ helm install kubedb appscode/kubedb \
-  --version v2023.11.2 \
+  --version v2023.12.11 \
   --namespace kubedb --create-namespace \
-  --set kubedb-provisioner.enabled=true \
-  --set kubedb-ops-manager.enabled=true \
-  --set kubedb-autoscaler.enabled=true \
-  --set kubedb-dashboard.enabled=true \
-  --set kubedb-schema-manager.enabled=true \
   --set-file global.license=/path/to/the/license.txt
 ```
 
@@ -84,7 +79,7 @@ metadata:
   namespace: os-demo
 spec:
   enableSSL: true 
-  version: opensearch-2.8.0 
+  version: opensearch-2.11.1
   storageType: Durable
   topology:
     master:
@@ -156,7 +151,7 @@ NAME                                            TYPE                       VERSI
 appbinding.appcatalog.appscode.com/os-cluster   kubedb.com/elasticsearch   2.8.0     4m37s
 
 NAME                                  VERSION            STATUS   AGE
-elasticsearch.kubedb.com/os-cluster   opensearch-2.8.0   Ready    4m55s
+elasticsearch.kubedb.com/os-cluster   opensearch-2.11.1   Ready    4m55s
 ```
 
 We have successfully deployed OpenSearch to Kubernetes via the Kubernetes OpenSearch operator. Now, we will connect to the OpenSearch database to insert some sample data and verify whether our OpenSearch is usable or not. First, check the database status,
@@ -164,7 +159,7 @@ We have successfully deployed OpenSearch to Kubernetes via the Kubernetes OpenSe
 ```bash
 $ kubectl get es -n os-demo os-cluster
 NAME         VERSION            STATUS   AGE
-os-cluster   opensearch-2.8.0   Ready    4m59s
+os-cluster   opensearch-2.11.1   Ready    4m59s
 ```
 ## Insert sample data to the OpenSearch database
 
