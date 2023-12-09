@@ -39,13 +39,8 @@ The license server will email us with a "license.txt" file attached after we pro
 $ helm repo add appscode https://charts.appscode.com/stable/
 $ helm repo update
 $ helm install kubedb appscode/kubedb \
-  --version v2023.08.18 \
+  --version v2023.12.11 \
   --namespace kubedb --create-namespace \
-  --set kubedb-provisioner.enabled=true \
-  --set kubedb-ops-manager.enabled=true \
-  --set kubedb-autoscaler.enabled=true \
-  --set kubedb-dashboard.enabled=true \
-  --set kubedb-schema-manager.enabled=true \
   --set-file global.license=/path/to/the/license.txt
 ```
 

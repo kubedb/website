@@ -43,13 +43,8 @@ The license server will email us with a "license.txt" file attached after we pro
 $ helm repo add appscode https://charts.appscode.com/stable/
 $ helm repo update
 $ helm install kubedb appscode/kubedb \
-  --version v2023.08.18 \
+  --version v2023.12.11 \
   --namespace kubedb --create-namespace \
-  --set kubedb-provisioner.enabled=true \
-  --set kubedb-ops-manager.enabled=true \
-  --set kubedb-autoscaler.enabled=true \
-  --set kubedb-dashboard.enabled=true \
-  --set kubedb-schema-manager.enabled=true \
   --set-file global.license=/path/to/the/license.txt
 ```
 
@@ -87,7 +82,7 @@ metadata:
   namespace: es-demo
 spec:
   enableSSL: true 
-  version: xpack-8.5.2
+  version: xpack-8.11.1
   storageType: Durable
   topology:
     master:
@@ -157,7 +152,7 @@ NAME                                                     TYPE                   
 appbinding.appcatalog.appscode.com/es-topology-cluster   kubedb.com/elasticsearch   8.5.2     4m
 
 NAME                                           VERSION       STATUS   AGE
-elasticsearch.kubedb.com/es-topology-cluster   xpack-8.5.2   Ready    4m
+elasticsearch.kubedb.com/es-topology-cluster   xpack-8.11.1   Ready    4m
 ```
 
 We have successfully deployed Elasticsearch to Kubernetes via the Kubernetes Elasticsearch operator. Now, we will connect to the Elasticsearch database to insert some sample data and verify whether our Elasticsearch is usable or not. First, check the database status,
@@ -165,7 +160,7 @@ We have successfully deployed Elasticsearch to Kubernetes via the Kubernetes Ela
 ```bash
 $ kubectl get elasticsearch -n es-demo es-topology-cluster
 NAME                  VERSION       STATUS   AGE
-es-topology-cluster   xpack-8.5.2   Ready    4m
+es-topology-cluster   xpack-8.11.1   Ready    4m
 ```
 ## Insert sample data to the Elasticsearch database
 Now, we will create few indexes in Elasticsearch. The Kubernetes Elasticsearch operator establishes a governing service with the name of the Elasticsearch object itself when Elasticsearch yaml is deployed. Using this service, we will port-forward to the database from our local workstation and establish a connection. After that, we'll add some data to Elasticsearch.

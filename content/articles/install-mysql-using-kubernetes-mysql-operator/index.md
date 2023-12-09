@@ -43,16 +43,10 @@ The license server will email us with a "license.txt" file attached after we pro
 $ helm repo add appscode https://charts.appscode.com/stable/
 $ helm repo update
 $ helm install kubedb appscode/kubedb \
-  --version v2023.08.18 \
+  --version v2023.12.11 \
   --namespace kubedb --create-namespace \
-  --set kubedb-provisioner.enabled=true \
-  --set kubedb-ops-manager.enabled=true \
-  --set kubedb-autoscaler.enabled=true \
-  --set kubedb-dashboard.enabled=true \
-  --set kubedb-schema-manager.enabled=true \
   --set-file global.license=/path/to/the/license.txt
 ```
-
 
 Verify the installation by the following command,
 
@@ -86,7 +80,7 @@ metadata:
   name: sample-mysql
   namespace: ms-demo
 spec:
-  version: "8.0.29"
+  version: "8.0.32"
   replicas: 3
   topology:
     mode: GroupReplication
@@ -131,10 +125,10 @@ NAME                            READY   AGE
 statefulset.apps/sample-mysql   3/3     2m41s
 
 NAME                                              TYPE               VERSION   AGE
-appbinding.appcatalog.appscode.com/sample-mysql   kubedb.com/mysql   8.0.29    2m44s
+appbinding.appcatalog.appscode.com/sample-mysql   kubedb.com/mysql   8.0.32    2m44s
 
 NAME                            VERSION   STATUS   AGE
-mysql.kubedb.com/sample-mysql   8.0.29    Ready    2m59s
+mysql.kubedb.com/sample-mysql   8.0.32    Ready    2m59s
 ```
 
 We have successfully deployed MySQL to Kubernetes via the Kubernetes MySQL operator. Now, we will connect to the MySQL database to insert some sample data and verify whether our MySQL is usable or not. First, check the database status,
@@ -142,7 +136,7 @@ We have successfully deployed MySQL to Kubernetes via the Kubernetes MySQL opera
 ```bash
 $ kubectl get mysql -n ms-demo sample-mysql
 NAME           VERSION   STATUS   AGE
-sample-mysql   8.0.29    Ready    3m37s
+sample-mysql   8.0.32    Ready    3m37s
 ```
 
 In order to connect to the database, we required to obtain the appropriate credentials here. We need to access the `Secret` and `Service` for the database `sample-mysql` created by KubeDB. Using the commands below, let's check them,
