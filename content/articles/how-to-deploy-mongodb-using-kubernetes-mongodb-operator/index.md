@@ -45,12 +45,11 @@ $ kubectl get ns kube-system -o jsonpath='{.metadata.uid}'
 After giving the required information, the license server will send us an email with a "license.txt" file attached. We will run the following commands listed below to install KubeDB. 
 
 ```bash
-$ helm repo add appscode https://charts.appscode.com/stable/
-$ helm repo update
-$ helm install kubedb appscode/kubedb \
+$ helm install kubedb oci://ghcr.io/appscode-charts/kubedb \
   --version v2023.12.11 \
   --namespace kubedb --create-namespace \
-  --set-file global.license=/path/to/the/license.txt
+  --set-file global.license=/path/to/the/license.txt \
+  --wait --burst-limit=10000 --debug
 ```
 
 
