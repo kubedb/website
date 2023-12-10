@@ -23,7 +23,7 @@ info:
 
 > New to KubeDB? Please start [here](/docs/v2023.12.11/README).
 
-{{< notice type="warning" message="Please install [Stash](https://stash.run/docs/latest/setup/install/enterprise/) to try this feature. Database backup with Stash is already included in the KubeDB license. So, you don't need a separate license for Stash." >}}
+{{< notice type="warning" message="Please install [Stash](https://stash.run/docs/latest/setup/install/stash/) to try this feature. Database backup with Stash is already included in the KubeDB license. So, you don't need a separate license for Stash." >}}
 
 # Redis Backup & Restore Overview
 
