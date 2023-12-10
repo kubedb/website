@@ -31,7 +31,7 @@ In this tutorial, we are going to show how you can configure a backup blueprint 
 ## Before You Begin
 
 - At first, you need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster.
-- Install Stash Enterprise in your cluster following the steps [here](https://stash.run/docs/latest/setup/install/stash/).
+- Install Stash in your cluster following the steps [here](https://stash.run/docs/latest/setup/install/stash/).
 - Install KubeDB in your cluster following the steps [here](/docs/v2023.12.11/setup/README).
 - If you are not familiar with how Stash backup and restore MongoDB databases, please check the following guide [here](/docs/v2023.12.11/guides/mongodb/backup/overview/).
 - If you are not familiar with how auto-backup works in Stash, please check the following guide [here](https://stash.run/docs/latest/guides/auto-backup/overview/).
@@ -59,7 +59,7 @@ namespace/demo-2 created
 namespace/demo-3 created
 ```
 
-When you install the Stash Enterprise edition, it automatically installs all the official database addons. Verify that it has installed the MongoDB addons using the following command.
+When you install the Stash, it automatically installs all the official database addons. Verify that it has installed the MongoDB addons using the following command.
 
 ```bash
 ❯ kubectl get tasks.stash.appscode.com | grep mongodb
