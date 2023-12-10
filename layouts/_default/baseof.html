@@ -608,7 +608,7 @@
             </div>
             {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
             <a href="{{ $.Site.Params.domain_appscode }}/contact/"
-              class="button ac-button is-primary {{ if eq $currentPageType "docs" }} is-hidden {{ end }}">CONTACT
+              class="button ac-button is-primary {{ if eq $currentPageType "docs" }} is-outlined {{ end }}">CONTACT
               SALES</a>
           </div>
         </div>
