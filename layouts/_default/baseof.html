@@ -608,7 +608,7 @@
             </div>
             {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
             <a href="{{ $.Site.Params.domain_appscode }}/contact/"
-              class="button ac-button is-primary {{ if eq $currentPageType "docs" }} is-hidden {{ end }}">CONTACT
+              class="button ac-button is-primary {{ if eq $currentPageType "docs" }} is-outlined {{ end }}">CONTACT
               SALES</a>
           </div>
         </div>
@@ -628,7 +628,7 @@
                 class="is-hidden-mobile"><img src="{{ $p.logo.src }}"
                   alt="{{ $p.logo.alt }}" alt="{{ $p.logo.alt }}"></a>
               <a href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}"
-                class="is-hidden-tablet"><img
+                class="is-hidden-tablet" style="min-width: 20px;"><img
                   src="/assets/images/logo/{{ $p.key }}/logo-moscot.svg"
                   alt="{{ $p.logo.alt }}" alt="{{ $p.logo.alt }}"></a>
 
@@ -637,7 +637,7 @@
               <!-- version select start  -->
               {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
               {{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
-              <div class="product-version ml-20">
+              <div class="product-version ml-8">
                 <div class="dropdown">
                   <div class="dropdown-trigger">
                     <button class="button is-justify-content-space-between" aria-haspopup="true"
