@@ -25,13 +25,13 @@ info:
 
 # Vertical Scale MySQL Standalone
 
-This guide will show you how to use `KubeDB` enterprise operator to update the resources of a standalone.
+This guide will show you how to use `KubeDB` Ops Manager to update the resources of a standalone.
 
 ## Before You Begin
 
 - At first, you need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
 
-- Install `KubeDB` community and enterprise operator in your cluster following the steps [here](/docs/v2023.12.11/setup/README).
+- Install `KubeDB` in your cluster following the steps [here](/docs/v2023.12.11/setup/README).
 
 - You should be familiar with the following `KubeDB` concepts:
   - [MySQL](/docs/v2023.12.11/guides/mysql/concepts/database/)
@@ -184,7 +184,7 @@ mysqlopsrequest.ops.kubedb.com/my-scale-standalone created
 
 **Verify MySQL Standalone resources updated successfully:**
 
-If everything goes well, `KubeDB` enterprise operator will update the resources of the StatefulSet's `Pod` containers. After a successful scaling process is done, the `KubeDB` enterprise operator updates the resources of the `MySQL` object.
+If everything goes well, `KubeDB` Ops Manager will update the resources of the StatefulSet's `Pod` containers. After a successful scaling process is done, the `KubeDB` Ops Manager updates the resources of the `MySQL` object.
 
 First, we will wait for `MySQLOpsRequest` to be successful.  Run the following command to watch `MySQlOpsRequest` cr,
 
