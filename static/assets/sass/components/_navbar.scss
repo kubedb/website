@@ -874,6 +874,19 @@
 /****************************************
 Responsive Classes
 *****************************************/
+@media (max-width: 767.98px) {
+  .product-version {
+    .dropdown {
+      .dropdown-trigger {
+        .button {
+          width: 160px;
+          padding: 4px 8px;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 1023.98px) {
   .headroom--unpinned {
     .navbar-appscode-wrapper {
