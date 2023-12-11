@@ -92,7 +92,7 @@ url(./assets/images/bg-image/gradient-bg.webp);">
               <span class="action maximize"></span>
               <span class="action minimize"></span>
             </div>
-            {{ highlight (printf `$ helm install kubedb oci://ghcr.io/appscode-charts/kubedb \
+            {{ highlight (printf `helm install kubedb oci://ghcr.io/appscode-charts/kubedb \
   --version %s \
   --namespace kubedb --create-namespace \
   --set-file global.license=/path/to/the/license.txt \
