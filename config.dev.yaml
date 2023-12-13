@@ -37,10 +37,10 @@ menu:
   main:
   - name: Databases
     identifier: database
-    weight: 15
+    weight: 5
     url: https://kubedb.com/docs/latest/setup/
   - name: Documentation
-    weight: 20
+    weight: 6
   - name: Elasticsearch
     identifier: elasticsearch
     parent: database

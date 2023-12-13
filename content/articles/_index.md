@@ -4,5 +4,5 @@ menu:
   main:
     identifier: articles
     name: Articles
-    weight: 20
+    weight: 4
 ---
