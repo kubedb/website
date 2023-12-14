@@ -1,11 +1,11 @@
 ---
 title: Reprovision MongoDB
-menu: null
-docs_v2023.12.11: null
-identifier: mg-reprovision-details
-name: Reprovision MongoDB
-parent: mg-reprovision
-weight: 10
+menu:
+  docs_v2023.12.11:
+    identifier: mg-reprovision-details
+    name: Reprovision MongoDB
+    parent: mg-reprovision
+    weight: 10
 menu_name: docs_v2023.12.11
 section_menu_id: guides
 info:
