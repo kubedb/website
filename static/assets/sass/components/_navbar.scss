@@ -64,6 +64,11 @@
 
       .ac-searchbar {
         width: 49%;
+        display: flex;
+        align-items: center;
+        label {
+          display: flex;
+        }
       }
     }
 
