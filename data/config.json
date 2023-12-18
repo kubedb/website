@@ -43,14 +43,6 @@
       "kubeform"
     ]
   },
-  "ossMenu": {
-    "c0": [
-      "guard"
-    ],
-    "c1": [
-      "configsyncer"
-    ]
-  },
   "productMenu": {
     "c0": [
       "kubedb",
@@ -59,6 +51,10 @@
     "c1": [
       "kubevault",
       "voyager"
+    ],
+    "c2": [
+      "guard",
+      "configsyncer"
     ]
   },
   "products": [

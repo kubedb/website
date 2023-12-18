@@ -194,7 +194,8 @@
 
           <div class="navbar-right">
             <div class="is-flex is-justify-content-space-between is-fullwidth">
-              <!-- navbar items start -->
+              <div class="navbar-left-group">
+                <!-- navbar items start -->
               <ul>
                 <li class="nav-item">
                   <button class="link">Products <i class="fa fa-angle-down" aria-hidden="true"></i></button>
@@ -228,6 +229,27 @@
                         {{ end }}
 
                         {{ range $item := $.Site.Data.config.productMenu.c1 }}
+                        {{ $p := (index $.Site.Data.products $item) }}
+                        <!-- single product start  -->
+                        <a class="single-product"
+                          href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
+                          <div class="product-logo">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
+                          </div>
+                          <div class="product-info">
+                            <h6>{{ $p.name }}</h6>
+                            <p>{{ $p.tagline | plainify }}</p>
+                          </div>
+                          <div class="navigate-icon">
+                            <span class="material-icons">
+                              arrow_forward
+                            </span>
+                          </div>
+                        </a>
+                        <!-- single product end -->
+                        {{ end }}
+
+                        {{ range $item := $.Site.Data.config.productMenu.c2 }}
                         {{ $p := (index $.Site.Data.products $item) }}
                         <!-- single product start  -->
                         <a class="single-product"
@@ -301,6 +323,33 @@
                       <!-- single product description end  -->
                       {{ end }}
                       <!-- product description end -->
+
+
+                      {{ range $item := $.Site.Data.config.productMenu.c2 }}
+                      {{ $p := (index $.Site.Data.products $item) }}
+                      <!-- single product description start  -->
+                      <div class="product-description">
+                        <div class="brand">
+                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
+                        </div>
+
+
+                        <p>{{ $p.summary | safeHTML }}</p>
+
+                        <ul class="features">
+                          {{ range $index, $item := $p.features }}
+                          {{ if lt $index 8 }}
+                          <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
+                          {{ end }}
+                          {{ end }}
+                        </ul>
+                        <!-- <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
+                     class="button ac-button inline-button">Learn More <span
+                       class="material-icons">arrow_forward</span></a> -->
+                      </div>
+                      <!-- single product description end  -->
+                      {{ end }}
+                      <!-- product description end -->
                     </div>
                   </div>
                   <script type="text/javascript">
@@ -325,155 +374,7 @@
                   </script>
 
                 </li>
-                <!-- <li class="nav-item">
-              <button class="link">Services <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-              <div class="mega-menu-wrapper">
-                <div class="mega-menu-inner ac-grid-container">
-                  <div class="linkable-nav-items">
-                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/consulting/">
-                      Consulting
-                    </a>
-                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/training/">
-                      Training
-                    </a>
-                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/support/">
-                      Support
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li> -->
-                <li class="nav-item">
-                  <button class="link">Open Source <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-                  <!-- mega-menu wrapper start  -->
-                  <div class="mega-menu-wrapper">
 
-                    <!-- ac-grid-container -->
-                    <div class="mega-menu-inner container">
-                      <button class="button ac-button inline-button back-button"><span
-                          class="material-icons-outlined">arrow_back</span>Back</button>
-                      <!-- open source project items start   -->
-                      <div class="linkable-nav-items">
-                        <ul>
-                          {{ range $item := $.Site.Data.config.ossMenu.c0 }}
-                          {{ $p := (index $.Site.Data.products $item) }}
-                          <li class="open-source-item"><a
-                              href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"><span><img
-                                  src="{{ $p.icon.src }}" alt=" {{ $p.icon.alt }}"></span>
-                              {{ $p.name }}<span class="material-icons">arrow_forward </span></a></li>
-                          {{ end }}
-
-                          {{ range $item := $.Site.Data.config.ossMenu.c1 }}
-                          {{ $p := (index $.Site.Data.products $item) }}
-                          <li class="open-source-item"><a
-                              href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"><span><img
-                                  src="{{ $p.icon.src }}" alt=" {{ $p.icon.alt }}"></span>
-                              {{ $p.name }}<span class="material-icons">arrow_forward </span></a></li>
-                          {{ end }}
-                        </ul>
-                      </div>
-                      <!-- open source project items end -->
-                      <!-- product description start  -->
-                      {{ range $item := $.Site.Data.config.ossMenu.c0 }}
-                      {{ $p := (index $.Site.Data.products $item) }}
-                      <div class="product-description open-source-description">
-                        <div class="brand">
-                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
-                        </div>
-                        <p>{{ $p.tagline | safeHTML }}
-                        </p>
-                        <ul class="features">
-                          {{ range $index, $item := $p.features }}
-                          {{ if lt $index 8 }}
-                          <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
-                          {{ end }}
-                          {{ end }}
-                        </ul>
-                        <!-- <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
-                     class="button ac-button inline-button">Learn More <span
-                       class="material-icons">arrow_forward</span></a> -->
-                      </div>
-                      {{ end }}
-                      <!-- product description start  -->
-
-                      <!-- product description start  -->
-                      {{ range $item := $.Site.Data.config.ossMenu.c1 }}
-                      {{ $p := (index $.Site.Data.products $item) }}
-                      <div class="product-description open-source-description">
-                        <div class="brand">
-                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
-                        </div>
-                        <p>{{ $p.tagline | safeHTML }}
-                        </p>
-                        <ul class="features">
-                          {{ range $index, $item := $p.features }}
-                          {{ if lt $index 8 }}
-                          <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
-                          {{ end }}
-                          {{ end }}
-                        </ul>
-                        <!-- <a href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}"
-                     class="button ac-button inline-button">Learn More <span
-                       class="material-icons">arrow_forward</span></a> -->
-                      </div>
-                      {{ end }}
-                      <!-- product description end -->
-                    </div>
-                  </div>
-                  <!-- mega-menu wrapper end -->
-                  <script type="text/javascript">
-                    const openSourceItemDescriptions = document.querySelectorAll(".open-source-description");
-                    const openSourceItems = document.querySelectorAll(".open-source-item");
-
-                    openSourceItemDescriptions[0].classList.add("is-block");
-                    openSourceItems[0].classList.add('is-active');
-
-                    openSourceItems.forEach((product, index) => {
-                      product.addEventListener("mouseover", function () {
-                        const currentActiveProduct = document.querySelector(
-                          ".open-source-description.is-block");
-                        const currentActiveItem = document.querySelector(".open-source-item.is-active");
-
-                        currentActiveProduct.classList.remove("is-block");
-                        currentActiveItem.classList.remove('is-active');
-                        openSourceItemDescriptions[index].classList.add("is-block");
-                        openSourceItems[index].classList.add("is-active");
-                      });
-                    });
-                  </script>
-                </li>
-                <li class="nav-item">
-                  <a href="https://appscode.com/webinar" target="_blank" class="link">Webinar <span
-                      class="whats-new">New</span></a>
-                </li>
-              </ul>
-              <!-- navbar items end -->
-              <!-- if webinar exist script  -->
-              <script type="text/javascript">
-                (function () {
-                  var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-                  xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4) {
-                      if (xhr.status === 200) {
-                        var result = JSON.parse(xhr.responseText);
-                        if (result.schedules) {
-                          let endDate = new Date(result.schedules[0]).getTime();
-                          let startDate = new Date().getTime();
-                          let timeRemaining = parseInt((endDate - startDate) / 1000);
-                          if (timeRemaining >= 0) {
-                            document.querySelector('.whats-new').classList.add('is-block')
-                          }
-                        }
-                      }
-                    }
-                  } //
-                  console.log('GET', 'https://license-issuer.appscode.com/_/webinars/');
-                  xhr.open('GET', 'https://license-issuer.appscode.com/_/webinars/');
-                  xhr.send();
-                }());
-              </script>
-              <!-- navbar items start -->
-              <ul>
                 <li class="nav-item">
                   <button class="link">Resources <i class="fa fa-angle-down" aria-hidden="true"></i></button>
                   <div class="mega-menu-wrapper">
@@ -488,10 +389,12 @@
                           <h6>RESOURCES</h6>
                           <ul>
                             <!-- <li><a href="#" target="_blank">Forum</a></li> -->
-                            <li><a href="{{.Site.Params.blog_url}}" target="_blank">Blog</a></li>
+                            <li><a href="{{.Site.Params.blog_url}}">Blog</a></li>
+                            <li><a href="{{.Site.Params.docs_url}}">Docs</a></li>
                             <li><a
                                 href="https://www.youtube.com/watch?v=4lkBt5UUEAQ&list=PLoiT1Gv2KR1hAtDDW7fHEi-s2y2H3DOgx"
                                 target="_blank">Webinars</a></li>
+                            <li><a href="{{.Site.Params.learn_url}}">Learn</a></li>
                             <li><a href="{{.Site.Params.youtube_url}}" target="_blank">Demos</a></li>
                             <!-- <li><a
                                 href="https://www.youtube.com/watch?v=xSq0OdlVLRI&list=PLoiT1Gv2KR1gE-WK7dIQ5bsJ_RAVZnzP8"
@@ -527,24 +430,6 @@
                                 target="_blank">Searchlight</a></li>
                           </ul>
                         </div> -->
-                        <!-- single resources list  -->
-
-                        <!-- single resources list  -->
-                        <div class="list-items">
-                          <h6>DOCUMENTATION</h6>
-                          <ul>
-                            <li><a
-                              href="https://kubedb.com/docs" target="_blank">KubeDB</a></li>
-                            <li><a
-                              href="https://stash.run/docs" target="_blank">Stash</a></li>
-                            <li><a
-                                href="https://voyagermesh.com/docs" target="_blank">Voyager</a></li>
-                            <li><a
-                                href="https://kubevault.com/docs" target="_blank">KubeVault</a></li>
-                            <li><a
-                                href="https://kubeform.com/docs" target="_blank">Kubeform</a></li>
-                          </ul>
-                        </div>
                         <!-- single resources list  -->
 
                         <!-- single resources list  -->
@@ -597,19 +482,76 @@
                     </div>
                   </div>
                 </li>
+                <!-- <li class="nav-item">
+              <button class="link">Services <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+              <div class="mega-menu-wrapper">
+                <div class="mega-menu-inner ac-grid-container">
+                  <div class="linkable-nav-items">
+                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/consulting/">
+                      Consulting
+                    </a>
+                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/training/">
+                      Training
+                    </a>
+                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/support/">
+                      Support
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li> -->
                 <li class="nav-item">
-                  <a href="{{.Site.Params.blog_url}}" class="link">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://appscode.freshdesk.com" class="link">Support</a>
+                  <a href="https://appscode.com/webinar" target="_blank" class="link">Webinar <span
+                      class="whats-new">New</span></a>
                 </li>
               </ul>
               <!-- navbar items end -->
+              <!-- if webinar exist script  -->
+              <script type="text/javascript">
+                (function () {
+                  var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+                  xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                      if (xhr.status === 200) {
+                        var result = JSON.parse(xhr.responseText);
+                        if (result.schedules) {
+                          let endDate = new Date(result.schedules[0]).getTime();
+                          let startDate = new Date().getTime();
+                          let timeRemaining = parseInt((endDate - startDate) / 1000);
+                          if (timeRemaining >= 0) {
+                            document.querySelector('.whats-new').classList.add('is-block')
+                          }
+                        }
+                      }
+                    }
+                  } //
+                  console.log('GET', 'https://license-issuer.appscode.com/_/webinars/');
+                  xhr.open('GET', 'https://license-issuer.appscode.com/_/webinars/');
+                  xhr.send();
+                }());
+              </script>
+              <!-- navbar items start -->
+              </div>
+              <div class="navbar-right-group">
+                <ul>
+                  <li class="nav-item">
+                    <a href="https://appscode.freshdesk.com" class="link">Support</a>
+                  </li>
+                </ul>
+                <!-- navbar items end -->
+
+                {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
+                <div class="buttons">
+                  <a id="ac-sign-in-button" href="https://accounts.appscode.com/user/login"
+                  class="button ac-button is-loading {{ if eq $currentPageType "docs" }} is-hidden {{ end }}"><span>SIGN IN</span></a>
+                  <a href="{{ $.Site.Params.domain_appscode }}/contact/"
+                    class="button ac-button is-primary {{ if eq $currentPageType "docs" }} is-outlined {{ end }}">CONTACT
+                    SALES</a>
+                </div>
+
+              </div>
+           
             </div>
-            {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
-            <a href="{{ $.Site.Params.domain_appscode }}/contact/"
-              class="button ac-button is-primary {{ if eq $currentPageType "docs" }} is-outlined {{ end }}">CONTACT
-              SALES</a>
           </div>
         </div>
         <!-- appscode navbar end -->
@@ -1182,6 +1124,82 @@
   {{ end }}
 
   {{ end }}
+
+
+  <!-- console beta tag start  -->
+  <script>
+    const acSignInButton = document.getElementById('ac-sign-in-button')
+
+    // define Beta tag
+    const betaSpan = document.createElement("span")
+    betaSpan.innerText = "BETA"
+    betaSpan.classList.add('tag')
+
+    // function to get cookie
+    function getCookie(cname) {
+      let name = cname + "=";
+      let ca = document.cookie.split(';');
+      for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    // function to fetch user
+    async function fetchUser() {
+      try {
+        const hostname = window.location.hostname;
+        const protocol = window.location.protocol;
+        const port = window.location.port;
+
+        const apiDomain = protocol + "//api." + hostname +  (port? ":3003" : "");
+        const consoleDomain = protocol + "//console." + hostname +  (port? ":5990" : "");
+
+        acSignInButton.classList.add('is-loading');
+
+        const response = await fetch(apiDomain + "/api/v1/user", {
+          method: "GET",
+          credentials: "include",
+          headers: {
+            "X-Csrf-Token": getCookie("_csrf"),
+            "X-Requested-With": "xmlhttprequest"
+          }
+        })
+
+        if(response.status === 200) {
+          // user is logged in
+          // show console link
+          acSignInButton.firstElementChild.innerHTML =  "CONSOLE"
+          acSignInButton.href = consoleDomain
+        }
+      } catch(error) {
+        console.log("Failed to fetch user", error)
+      }
+      // remove the loader
+      acSignInButton.classList.remove('is-loading');
+      // append beta tag
+      acSignInButton.appendChild(betaSpan);
+    }
+
+    window.addEventListener('load', function() {
+      jQuery('a:contains("KubeDB")').click(function() {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-10933819571/j5J-CL2sweQDELOx090o'
+        });
+      })
+
+
+      // fetch if user is logged in or not
+      fetchUser();
+    });
+  </script>
+  <!-- console beta tag end  -->
 
 </body>
 
