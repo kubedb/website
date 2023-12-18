@@ -64,11 +64,6 @@
 
       .ac-searchbar {
         width: 49%;
-        display: flex;
-        align-items: center;
-        label {
-          display: flex;
-        }
       }
     }
 
@@ -121,8 +116,43 @@
     width: calc(100% - 200px);
     justify-content: flex-end;
 
-    .button {
-      margin-left: 2.5rem;
+    .navbar-left-group {
+      display: flex;
+      align-items: center;
+      @media (min-width: 0px) and (max-width: 1023px) {
+        align-items: flex-start;
+      }
+    }
+
+    .navbar-right-group {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      .buttons{
+        .button {
+          &:has(.tag){
+            gap: 4px;
+          }
+          .tag {
+            background-color: $ac-primary;
+            color: $ac-white;
+          }
+        }
+      }
+
+      @media (min-width: 0px) and (max-width: 1023px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        width: 100%;
+        .buttons{
+          width: 100%;
+          .button {
+            width: 100%;
+            margin-right: 0;
+          }
+        }
+      }
     }
   }
 
@@ -786,7 +816,7 @@
     background-color: transparent;
     color: $ac-color-text;
     font-size: 0.875rem;
-    width: calc(100% - 30px);
+    width: 270px;
     padding: 0.2rem 0.875rem;
 
     &:focus {
@@ -879,19 +909,6 @@
 /****************************************
 Responsive Classes
 *****************************************/
-@media (max-width: 767.98px) {
-  .product-version {
-    .dropdown {
-      .dropdown-trigger {
-        .button {
-          width: 160px;
-          padding: 4px 8px;
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: 1023.98px) {
   .headroom--unpinned {
     .navbar-appscode-wrapper {
@@ -1095,7 +1112,7 @@ Responsive Classes
     .dropdown {
       .dropdown-trigger {
         .button {
-          width: 200px;
+          width: 190px;
         }
       }
     }
@@ -1135,18 +1152,27 @@ Responsive Classes
       margin-left: 0;
       border-left: none;
     }
-
+    .navbar-left {
+      .navbar-brand {
+        margin-right: 1rem;
+      }
+    }
     .navbar-right {
       width: calc(100% - 180px);
 
       .community-items.ml-70 {
         margin-left: 10px !important;
       }
+      .button.ac-button {
+        padding: .5rem 1rem;
+      }
     }
-
+    .navbar-right-group {
+      gap: 8px !important;
+    }
     ul {
       .nav-item {
-        margin-right: 1.5rem;
+        margin-right: 0.5rem;
       }
     }
   }
@@ -1176,7 +1202,7 @@ Responsive Classes
     .dropdown {
       .dropdown-trigger {
         .button {
-          width: 200px;
+          width: 180px;
           padding: 2px 5px;
         }
       }

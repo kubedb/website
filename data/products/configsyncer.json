@@ -13,19 +13,19 @@
   },
   "heroImage": {
     "src": "/assets/images/products/configsyncer/configsyncer-hero.png",
-    "alt": "Kubed"
+    "alt": "configsyncer"
   },
   "logo": {
     "src": "/assets/images/products/configsyncer/configsyncer.png",
-    "alt": "Kubed"
+    "alt": "configsyncer"
   },
   "logoWhite": {
     "src": "/assets/images/products/configsyncer/configsyncer-white.png",
-    "alt": "Kubed"
+    "alt": "configsyncer"
   },
   "icon": {
-    "src": "/assets/images/products/configsyncer/configsyncer-icon.png",
-    "alt": "Kubed",
+    "src": "/assets/images/products/configsyncer/configsyncer-512x512.svg",
+    "alt": "configsyncer",
     "sizes": {
       "192x192": "/assets/images/products/configsyncer/icons/android-icon-192x192.png"
     }

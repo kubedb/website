@@ -24,7 +24,7 @@
     "alt": "Guard"
   },
   "icon": {
-    "src": "/assets/images/products/guard/guard-icon.png",
+    "src": "/assets/images/products/guard/guard-512x512.svg",
     "alt": "Guard",
     "sizes": {
       "192x192": "/assets/images/products/guard/icons/android-icon-192x192.png"
