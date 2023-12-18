@@ -53,8 +53,8 @@
       "voyager"
     ],
     "c2": [
-      "guard",
-      "configsyncer"
+      "configsyncer",
+      "guard"
     ]
   },
   "products": [
