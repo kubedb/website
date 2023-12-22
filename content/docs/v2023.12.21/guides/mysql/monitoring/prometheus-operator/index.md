@@ -122,7 +122,7 @@ metadata:
   name: coreos-prom-mysql
   namespace: demo
 spec:
-  version: "8.0.32"
+  version: "8.0.35"
   terminationPolicy: WipeOut
   storage:
     storageClassName: "standard"
@@ -162,7 +162,7 @@ $ watch -n 3 kubectl get mysql -n demo coreos-prom-mysql
 Every 3.0s: kubectl get mysql -n demo coreos-prom-mysql         suaas-appscode: Tue Aug 25 11:53:34 2020
 
 NAME                VERSION      STATUS    AGE
-coreos-prom-mysql   8.0.32    Running   2m53s
+coreos-prom-mysql   8.0.35    Running   2m53s
 ```
 
 KubeDB will create a separate stats service with name `{MySQL crd name}-stats` for monitoring purpose.

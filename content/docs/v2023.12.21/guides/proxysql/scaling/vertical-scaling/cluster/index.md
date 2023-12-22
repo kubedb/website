@@ -55,7 +55,7 @@ metadata:
   name: mysql-server
   namespace: demo
 spec:
-  version: "5.7.41"
+  version: "5.7.44"
   replicas: 3
   topology:
     mode: GroupReplication
@@ -166,12 +166,13 @@ spec:
     name: proxy-server
   verticalScaling:
     proxysql:
-      requests:
-        memory: "1.2Gi"
-        cpu: "0.6"
-      limits:
-        memory: "1.2Gi"
-        cpu: "0.6"
+      resources:
+        requests:
+          memory: "1.2Gi"
+          cpu: "0.6"
+        limits:
+          memory: "1.2Gi"
+          cpu: "0.6"
 ```
 
 Here,

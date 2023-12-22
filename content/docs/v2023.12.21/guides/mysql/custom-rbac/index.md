@@ -153,7 +153,7 @@ metadata:
   name: quick-mysql
   namespace: demo
 spec:
-  version: "8.0.32"
+  version: "8.0.35"
   storageType: Durable
   podTemplate:
     spec:
@@ -183,13 +183,13 @@ Check the pod's log to see if the database is ready
 ```bash
 $ kubectl logs -f -n demo quick-mysql-0
 ...
-2022-06-28 13:46:46+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.32-1debian10 started.
+2022-06-28 13:46:46+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.35-1debian10 started.
 2022-06-28 13:46:46+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-2022-06-28 13:46:46+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.32-1debian10 started.
+2022-06-28 13:46:46+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.35-1debian10 started.
 
 ...
 2022-06-28T13:47:02.915445Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
-2022-06-28T13:47:02.915504Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.32'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2022-06-28T13:47:02.915504Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.35'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
 
 ```
 
@@ -215,7 +215,7 @@ metadata:
   name: minute-mysql
   namespace: demo
 spec:
-  version: "8.0.32"
+  version: "8.0.35"
   storageType: Durable
   podTemplate:
     spec:
@@ -245,14 +245,14 @@ Check the pod's log to see if the database is ready
 
 ```bash
 ...
-2022-06-28 13:48:53+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.32-1debian10 started.
+2022-06-28 13:48:53+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.35-1debian10 started.
 2022-06-28 13:48:53+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-2022-06-28 13:48:53+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.32-1debian10 started.
+2022-06-28 13:48:53+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.35-1debian10 started.
 2022-06-28 13:48:53+00:00 [Note] [Entrypoint]: Initializing database files
-2022-06-28T13:48:53.986191Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.32) initializing of server in progress as process 43
+2022-06-28T13:48:53.986191Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.35) initializing of server in progress as process 43
 ...
 2022-06-28T13:49:11.543893Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
-2022-06-28T13:49:11.543917Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.32'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2022-06-28T13:49:11.543917Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.35'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
 
 
 

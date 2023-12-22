@@ -65,7 +65,7 @@ topolvm-provisioner   topolvm.cybozu.com      Delete          WaitForFirstConsum
 
 We can see from the output the `topolvm-provisioner` storage class has `ALLOWVOLUMEEXPANSION` field as true. So, this storage class supports volume expansion. We will use this storage class. You can install topolvm from [here](https://github.com/topolvm/topolvm).
 
-Now, we are going to deploy a `MySQL` database of 3 replicas with version `8.0.31`.
+Now, we are going to deploy a `MySQL` database of 3 replicas with version `8.0.35`.
 
 ### Deploy MySQL
 
@@ -100,7 +100,7 @@ metadata:
   name: sample-mysql
   namespace: demo
 spec:
-  version: "8.0.31"
+  version: "8.0.35"
   replicas: 3
   topology:
     mode: GroupReplication
@@ -168,7 +168,7 @@ metadata:
   name: sample-mysql
   namespace: demo
 spec:
-  version: "8.0.31"
+  version: "8.0.35"
   replicas: 3
   topology:
     mode: SemiSync
@@ -205,7 +205,7 @@ metadata:
   name: sample-mysql
   namespace: demo
 spec:
-  version: "8.0.31"
+  version: "8.0.35"
   storageType: Durable
   storage:
     storageClassName: "topolvm-provisioner"
@@ -232,7 +232,7 @@ Now, wait until `sample-mysql` has status `Ready`. i.e,
 ```bash
 $ kubectl get mysql -n demo
 NAME             VERSION   STATUS   AGE
-sample-mysql     8.0.31    Ready    5m4s
+sample-mysql     8.0.35    Ready    5m4s
 ```
 
 Let's check volume size from statefulset, and from the persistent volume,

@@ -171,11 +171,10 @@ spec:
   databaseRef:
     name: es-topology
   storage:
-    topology:
-      data:
-        trigger: "On"
-        usageThreshold: 60
-        scalingThreshold: 50
+    data:
+      trigger: "On"
+      usageThreshold: 60
+      scalingThreshold: 50
 ```
 
 Here,

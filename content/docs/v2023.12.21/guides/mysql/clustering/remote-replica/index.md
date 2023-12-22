@@ -125,7 +125,7 @@ metadata:
 spec:
   authSecret:
     name: mysql-singapore-auth
-  version: "8.0.31"
+  version: "8.0.35"
   replicas: 3
   topology:
     mode: GroupReplication
@@ -165,7 +165,7 @@ KubeDB operator sets the `status.phase` to `Ready` once the database is successf
 ```bash
 $ kubectl get mysql -n demo
 NAME              VERSION   STATUS   AGE
-mysql-singapore   8.0.31    Ready    22h
+mysql-singapore   8.0.35    Ready    22h
 ```
 
 ## Connect with MySQL database
@@ -273,7 +273,7 @@ appbinding.appcatalog.appscode.com/mysql-singapore created
 
 $ kubectl get appbinding -n  demo
 NAME              TYPE               VERSION   AGE
-mysql-singapore   kubedb.com/mysql   8.0.31    4m17s
+mysql-singapore   kubedb.com/mysql   8.0.35    4m17s
 ```
 
 ### Create remote replica auth 
@@ -308,7 +308,7 @@ spec:
     periodSeconds: 10
     timeoutSeconds: 10
     disableWriteCheck: true
-  version: "8.0.31"
+  version: "8.0.35"
   replicas: 1
   topology:
     mode: RemoteReplica
@@ -343,7 +343,7 @@ KubeDB operator sets the `status.phase` to `Ready` once the database is successf
 ```bash
 $ kubectl get mysql -n demo 
 NAME           VERSION   STATUS   AGE
-mysql-london   8.0.31    Ready    7m17s
+mysql-london   8.0.35    Ready    7m17s
 ```
 
 ##  Validate Remote Replica

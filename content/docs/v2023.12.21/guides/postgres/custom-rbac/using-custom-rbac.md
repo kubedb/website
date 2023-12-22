@@ -187,7 +187,7 @@ metadata:
     app.kubernetes.io/component: database
     app.kubernetes.io/instance: quick-postgres
 spec:
-  version: "13.2"
+  version: "13.13"
   storageType: Durable
   podTemplate:
     spec:
@@ -312,7 +312,7 @@ metadata:
     app.kubernetes.io/component: database
     app.kubernetes.io/instance: quick-postgres
 spec:
-  version: "13.2"
+  version: "13.13"
   storageType: Durable
   podTemplate:
     spec:

@@ -53,7 +53,7 @@ Here, we are going to deploy a  `Redis` and `RedisSentinel` instance using a sup
 
 ### Prepare RedisSentinel
 
-Now, we are going to deploy a `RedisSentinel` version `6.2.8`.
+Now, we are going to deploy a `RedisSentinel` version `6.2.14`.
 ```yaml
 apiVersion: kubedb.com/v1alpha2
 kind: RedisSentinel
@@ -61,7 +61,7 @@ metadata:
   name: sen-demo
   namespace: demo
 spec:
-  version: 6.2.8
+  version: 6.2.14
   replicas: 3
   storageType: Durable
   storage:
@@ -85,7 +85,7 @@ Now, wait until `sen-dmo` has status `Ready`. i.e. ,
 ```bash
 $ kubectl get redissentinel -n demo
 NAME       VERSION   STATUS   AGE
-sen-demo   6.2.8     Ready    96s
+sen-demo   6.2.14     Ready    96s
 ```
 ### Deploy Redis in Sentinel Mode
 
@@ -97,7 +97,7 @@ metadata:
   name: rd-demo
   namespace: demo
 spec:
-  version: 6.2.8
+  version: 6.2.14
   replicas: 3
   sentinelRef:
     name: sen-demo
@@ -125,7 +125,7 @@ Now, wait until `rd-demo` has status `Ready`. i.e. ,
 
 ```bash
 NAME      VERSION   STATUS   AGE
-rd-demo   6.2.8     Ready    67s
+rd-demo   6.2.14     Ready    67s
 ```
 
 Lets exec into a sentinel pod, and make sure sentinel monitors redis master
@@ -186,7 +186,7 @@ metadata:
   name: new-sentinel
   namespace: demo
 spec:
-  version: 6.2.5
+  version: 6.2.14
   replicas: 3
   storageType: Durable
   storage:
@@ -210,8 +210,8 @@ Now, wait until `new-sentinel` has status `Ready`. i.e. ,
 ```bash
 $ kubectl get redissentinel -n demo
 NAME           VERSION   STATUS   AGE
-new-sentinel   6.2.5     Ready    60s
-sen-demo       6.2.8     Ready    11m
+new-sentinel   6.2.14     Ready    60s
+sen-demo       6.2.14     Ready    11m
 ```
 
 Here, we are going to replace `sen-demo` with `new-sentinel`
