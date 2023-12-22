@@ -103,7 +103,7 @@ metadata:
   name: pg
   namespace: demo
 spec:
-  version: "13.2"
+  version: "13.13"
   replicas: 3
   standbyMode: Hot
   storageType: Durable
@@ -190,12 +190,13 @@ spec:
     name: pg
   verticalScaling:
     postgres:
-      requests:
-        memory: "1200Mi"
-        cpu: "0.7"
-      limits:
-        memory: "1200Mi"
-        cpu: "0.7"
+      resources:
+        requests:
+          memory: "1200Mi"
+          cpu: "0.7"
+        limits:
+          memory: "1200Mi"
+          cpu: "0.7"
 ```
 
 Here,

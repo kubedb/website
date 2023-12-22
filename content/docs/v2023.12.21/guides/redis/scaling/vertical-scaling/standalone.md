@@ -53,7 +53,7 @@ Here, we are going to deploy a  `Redis` standalone using a supported version by 
 
 ### Prepare Redis Standalone Database
 
-Now, we are going to deploy a `Redis` standalone database with version `5.0.3-v1`.
+Now, we are going to deploy a `Redis` standalone database with version `6.2.14`.
 
 ### Deploy Redis standalone 
 
@@ -66,7 +66,7 @@ metadata:
   name: redis-quickstart
   namespace: demo
 spec:
-  version: 5.0.3-v1
+  version: 6.2.14
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -95,7 +95,7 @@ Now, wait until `rd-quickstart` has status `Ready`. i.e. ,
 ```bash
 $ kubectl get redis -n demo
 NAME               VERSION    STATUS   AGE
-redis-quickstart   5.0.3-v1   Ready    2m30s
+redis-quickstart   6.2.14   Ready    2m30s
 ```
 
 Let's check the Pod containers resources,
@@ -137,14 +137,14 @@ spec:
     name: redis-quickstart
   verticalScaling:
     redis:
-      requests:
-        memory: "300Mi"
-        cpu: "200m"
-      limits:
-        memory: "800Mi"
-        cpu: "500m"
+      resources:
+        requests:
+          memory: "300Mi"
+          cpu: "200m"
+        limits:
+          memory: "800Mi"
+          cpu: "500m"
 ```
-
 
 Here,
 

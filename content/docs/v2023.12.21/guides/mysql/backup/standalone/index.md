@@ -68,7 +68,7 @@ metadata:
   name: sample-mysql
   namespace: demo
 spec:
-  version: "8.0.32"
+  version: "8.0.35"
   replicas: 1
   storageType: Durable
   storage:
@@ -94,7 +94,7 @@ Let's check if the database is ready to use,
 ```bash
 $ kubectl get my -n demo sample-mysql
 NAME           VERSION   STATUS    AGE
-sample-mysql   8.0.32    Ready   4m22s
+sample-mysql   8.0.35    Ready   4m22s
 ```
 
 The database is `Ready`. Verify that KubeDB has created a Secret and a Service for this database using the following commands,
@@ -134,7 +134,7 @@ kind: AppBinding
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"kubedb.com/v1alpha2","kind":"MySQL","metadata":{"annotations":{},"name":"sample-mysql","namespace":"demo"},"spec":{"replicas":1,"storage":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"50Mi"}}},"storageType":"Durable","terminationPolicy":"WipeOut","version":"8.0.32"}}
+      {"apiVersion":"kubedb.com/v1alpha2","kind":"MySQL","metadata":{"annotations":{},"name":"sample-mysql","namespace":"demo"},"spec":{"replicas":1,"storage":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"50Mi"}}},"storageType":"Durable","terminationPolicy":"WipeOut","version":"8.0.35"}}
   creationTimestamp: "2022-06-30T05:45:43Z"
   generation: 1
   labels:
@@ -176,7 +176,7 @@ spec:
   secret:
     name: sample-mysql-auth
   type: kubedb.com/mysql
-  version: 8.0.32
+  version: 8.0.35
 ```
 
 Stash uses the AppBinding CRD to connect with the target database. It requires the following two fields to set in AppBinding's `.spec` section.
@@ -456,7 +456,7 @@ metadata:
   name: restored-mysql
   namespace: demo
 spec:
-  version: "8.0.32"
+  version: "8.0.35"
   replicas: 1
   storageType: Durable
   storage:
@@ -482,7 +482,7 @@ If you check the database status, you will see it is stuck in **`Provisioning`**
 ```bash
 $ kubectl get my -n demo restored-mysql
 NAME             VERSION   STATUS         AGE
-restored-mysql   8.0.32    Provisioning   61s
+restored-mysql   8.0.35    Provisioning   61s
 ```
 
 #### Create RestoreSession:

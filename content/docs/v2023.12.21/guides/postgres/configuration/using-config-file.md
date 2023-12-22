@@ -104,7 +104,7 @@ metadata:
   name: custom-postgres
   namespace: demo
 spec:
-  version: "13.2"
+  version: "13.13"
   configSecret:
     name: pg-configuration
   storage:

@@ -58,7 +58,7 @@ metadata:
   name: mysql-server
   namespace: demo
 spec:
-  version: "5.7.41"
+  version: "5.7.44"
   replicas: 3
   topology:
     mode: GroupReplication
@@ -83,7 +83,7 @@ Let's wait for the MySQL to be Ready.
 ```bash
 $ kubectl get mysql -n demo 
 NAME           VERSION   STATUS   AGE
-mysql-server   5.7.41    Ready    3m51s
+mysql-server   5.7.44    Ready    3m51s
 ```
 
 ## Autoscaling of ProxySQL Cluster

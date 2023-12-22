@@ -60,7 +60,7 @@ metadata:
   name: builtin-prom-postgres
   namespace: demo
 spec:
-  version: "13.2"
+  version: "13.13"
   terminationPolicy: WipeOut
   storage:
     storageClassName: "standard"
@@ -119,7 +119,7 @@ Type:              ClusterIP
 IP:                10.102.128.153
 Port:              prom-http  56790/TCP
 TargetPort:        prom-http/TCP
-Endpoints:         172.17.0.5:56790
+Endpoints:         172.17.0.14:56790
 Session Affinity:  None
 Events:            <none>
 ```
