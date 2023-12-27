@@ -66,7 +66,7 @@ Now we'll create a new namespace in which we will deploy MariaDB. To create a na
 $ kubectl create namespace maria-demo
 namespace/maria-demo created
 ``` 
-## Deploy via Kubernetes MariaDB operator
+## Deploy MariaDB via Kubernetes MariaDB operator
 
 We need to create a yaml manifest to install MariaDB on Kubernetes. And we will apply this yaml below,
 
