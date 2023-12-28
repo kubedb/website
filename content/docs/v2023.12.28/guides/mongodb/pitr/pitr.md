@@ -3,7 +3,7 @@ title: Continuous Archiving and Point-in-time Recovery
 menu:
   docs_v2023.12.28:
     identifier: pitr-mongo
-    name: MongoDB Archiver
+    name: Archiver
     parent: mg-archiver-pitr
     weight: 42
 menu_name: docs_v2023.12.28

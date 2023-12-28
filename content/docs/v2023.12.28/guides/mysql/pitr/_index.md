@@ -2,9 +2,9 @@
 title: Continuous Archiving and Point-in-time Recovery
 menu:
   docs_v2023.12.28:
-    identifier: pitr-postgres
+    identifier: pitr-mysql
     name: Point-in-time Recovery
-    parent: pg-postgres-guides
+    parent: guides-mysql
     weight: 42
 menu_name: docs_v2023.12.28
 info:
