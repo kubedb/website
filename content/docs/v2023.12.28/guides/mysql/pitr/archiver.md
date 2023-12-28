@@ -3,7 +3,7 @@ title: Continuous Archiving and Point-in-time Recovery
 menu:
   docs_v2023.12.28:
     identifier: pitr-mysql-archiver
-    name: Archiver
+    name: Overview
     parent: pitr-mysql
     weight: 10
 menu_name: docs_v2023.12.28
