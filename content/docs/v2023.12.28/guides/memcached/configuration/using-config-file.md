@@ -145,7 +145,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 1
-  version: "1.5.4-v1"
+  version: "1.6.22"
   configSecret:
     name: mc-configuration
   podTemplate:
