@@ -225,6 +225,7 @@ var owl = $('.testimonial-carousel');
 owl.owlCarousel({
   loop: true,
   margin: 20,
+  infinity: true,
   autoplay: true,
   nav: false,
   dots: false,
@@ -263,6 +264,7 @@ owlSocialProve.owlCarousel({
   autoplay: true,
   nav: false,
   dots: false,
+  infinity: true,
   fluidSpeed: true,
   smartSpeed: 3000,
   autoplayTimeout: 3000,

@@ -1157,7 +1157,7 @@
         const apiDomain = protocol + "//api." + hostname +  (port? ":3003" : "");
         const consoleDomain = protocol + "//console." + hostname +  (port? ":5990" : "");
 
-        acSignInButton.classList.add('is-loading');
+        acSignInButton?.classList.add('is-loading');
 
         const response = await fetch(apiDomain + "/api/v1/user", {
           method: "GET",
@@ -1171,16 +1171,16 @@
         if(response.status === 200) {
           // user is logged in
           // show console link
-          acSignInButton.firstElementChild.innerHTML =  "CONSOLE"
-          acSignInButton.href = consoleDomain
+          acSignInButton?.firstElementChild.innerHTML =  "CONSOLE"
+          acSignInButton?.href = consoleDomain
         }
       } catch(error) {
         console.log("Failed to fetch user", error)
       }
       // remove the loader
-      acSignInButton.classList.remove('is-loading');
+      acSignInButton?.classList.remove('is-loading');
       // append beta tag
-      acSignInButton.appendChild(betaSpan);
+      acSignInButton?.appendChild(betaSpan);
     }
 
     window.addEventListener('load', function() {

@@ -36,7 +36,7 @@
   &:after {
     position: absolute;
     padding-top: 200px;
-    content: url("/assets/images/ads/hero.png");
+    content: url("/assets/images/ads/hero-1.png");
     right: 0;
     top: 0;
     background: #fbfbfe;
@@ -68,6 +68,11 @@
   }
 }
 .customers-logo-area {
+  .single-brand {
+    img {
+      max-height: 32px;
+    }
+  }
   .customers-logo {
     min-height: 40px;
   }
@@ -207,6 +212,9 @@
     display: flex;
     align-items: center;
     padding-left: 20px;
+    pre {
+      min-height: 300px;
+    }
     span {
       width: 15px;
       height: 15px;
@@ -234,14 +242,23 @@ Responsive Classes
 @media (max-width: 1023.98px) {
   .ads-hero-area {
     &:after {
-      width: 100%;
-      opacity: 0.2;
+     display: none;
     }
   }
 }
 
 // Medium devices (tablets, 769px and up)
 @media (min-width: 769px) and (max-width: 1023.98px) {
+
+  .ads-hero-area {
+    .left-content {
+      h1{
+        font-size: 32px;
+        letter-spacing: -1px;
+      }
+    }
+  }
+
   .ads-support-plan {
     table {
       tbody {
@@ -322,7 +339,8 @@ Responsive Classes
     .left-content {
       h1 {
         padding-top: 30px;
-        font-size: 40px;
+        font-size: 32px;
+        letter-spacing: -1px;
       }
     }
     &:after {
