@@ -139,6 +139,7 @@
        </div>
       </div>
     </div>
+    
 
     <script type="text/javascript">
       // for cookie
@@ -542,8 +543,9 @@
 
                 {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
                 <div class="buttons">
-                  <a id="ac-sign-in-button" href="https://accounts.appscode.com/user/login"
-                  class="button ac-button is-loading {{ if eq $currentPageType "docs" }} is-hidden {{ end }}"><span>SIGN IN</span></a>
+                  <iframe src="https://appscode.com/embed/?color=4d4dcb" frameborder="0" scrolling="no" style="height: 40px; margin-bottom: 8px; width: 185px;  overflow: hidden;"></iframe>
+                  <!-- <a id="ac-sign-in-button" href="https://accounts.appscode.com/user/login"
+                  class="button ac-button is-loading {{ if eq $currentPageType "docs" }} is-hidden {{ end }}"><span>SIGN IN</span></a> -->
                   <a href="{{ $.Site.Params.domain_appscode }}/contact/"
                     class="button ac-button is-primary {{ if eq $currentPageType "docs" }} is-outlined {{ end }}">CONTACT
                     SALES</a>
@@ -1121,81 +1123,6 @@
 
   {{ end }}
 
-
-  <!-- console beta tag start  -->
-  <script>
-    const acSignInButton = document.getElementById('ac-sign-in-button')
-
-    // define Beta tag
-    const betaSpan = document.createElement("span")
-    betaSpan.innerText = "BETA"
-    betaSpan.classList.add('tag')
-
-    // function to get cookie
-    function getCookie(cname) {
-      let name = cname + "=";
-      let ca = document.cookie.split(';');
-      for(let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-          c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-        }
-      }
-      return "";
-    }
-
-    // function to fetch user
-    async function fetchUser() {
-      try {
-        const hostname = window.location.hostname;
-        const protocol = window.location.protocol;
-        const port = window.location.port;
-
-        const apiDomain = protocol + "//api." + hostname +  (port? ":3003" : "");
-        const consoleDomain = protocol + "//console." + hostname +  (port? ":5990" : "");
-
-        acSignInButton?.classList.add('is-loading');
-
-        const response = await fetch(apiDomain + "/api/v1/user", {
-          method: "GET",
-          credentials: "include",
-          headers: {
-            "X-Csrf-Token": getCookie("_csrf"),
-            "X-Requested-With": "xmlhttprequest"
-          }
-        })
-
-        if(response.status === 200) {
-          // user is logged in
-          // show console link
-          acSignInButton?.firstElementChild.innerHTML =  "CONSOLE"
-          acSignInButton?.href = consoleDomain
-        }
-      } catch(error) {
-        console.log("Failed to fetch user", error)
-      }
-      // remove the loader
-      acSignInButton?.classList.remove('is-loading');
-      // append beta tag
-      acSignInButton?.appendChild(betaSpan);
-    }
-
-    window.addEventListener('load', function() {
-      jQuery('a:contains("KubeDB")').click(function() {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-10933819571/j5J-CL2sweQDELOx090o'
-        });
-      })
-
-
-      // fetch if user is logged in or not
-      fetchUser();
-    });
-  </script>
-  <!-- console beta tag end  -->
 
 </body>
 
