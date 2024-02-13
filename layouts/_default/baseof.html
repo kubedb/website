@@ -542,8 +542,9 @@
 
                 {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
                 <div class="buttons">
-                  <a id="ac-sign-in-button" href="https://accounts.appscode.com/user/login"
-                  class="button ac-button is-loading {{ if eq $currentPageType "docs" }} is-hidden {{ end }}"><span>SIGN IN</span></a>
+                  <iframe src="https://appscode.com/embed/?color=4d4dcb" frameborder="0" scrolling="no" style="height: 40px; margin-bottom: 8px; width: 185px;  overflow: hidden;"></iframe>
+                  <!-- <a id="ac-sign-in-button" href="https://accounts.appscode.com/user/login"
+                  class="button ac-button is-loading {{ if eq $currentPageType "docs" }} is-hidden {{ end }}"><span>SIGN IN</span></a> -->
                   <a href="{{ $.Site.Params.domain_appscode }}/contact/"
                     class="button ac-button is-primary {{ if eq $currentPageType "docs" }} is-outlined {{ end }}">CONTACT
                     SALES</a>
