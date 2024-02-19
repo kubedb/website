@@ -31,7 +31,7 @@ Want to contribute to KubeDB?
 
 ## Getting Help
 
-To speak with us, please leave a message on [our website](https://appscode.com/contact/). To receive product announcements, follow us on [Twitter](https://x.com/KubeDB).
+To speak with us, please leave a message on [our website](https://appscode.com/contact/). To receive product announcements, follow us on [Twitter](https://twitter.com/KubeDB).
 
 ## Bugs/Feature request
 
@@ -39,4 +39,4 @@ If you have found a bug with KubeDB or want to request for new features, please 
 
 ## Spread the word
 
-If you have written blog post or tutorial on KubeDB, please share it with us on [Twitter](https://x.com/KubeDB).
+If you have written blog post or tutorial on KubeDB, please share it with us on [Twitter](https://twitter.com/KubeDB).
