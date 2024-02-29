@@ -174,11 +174,8 @@
     <div class="navbar-area active-headroom header--fixed">
       <!-- iframe  -->
       {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
-      <div class="notification-wrapper">
-        <div class="navbar-appscode container {{ if eq $currentPageType "docs" }} is-hidden {{ end }}">
-          <iframe src="https://appscode.com/notification-top/" id="notification" frameborder="0" scrolling="no" onload="resizeIframe()"></iframe>
-        </div>
-      </div>
+      <iframe src="https://appscode.com/notification-top/" id="notification" class="{{ if eq $currentPageType "docs" }} is-hidden {{ end }}" frameborder="0" scrolling="no" onload="resizeIframe()" style="height: 38px; width: 100%; display: flex; overflow: hidden;"></iframe>
+     
       <script>
           function resizeIframe() {
           var iframe = document.getElementById("notification");

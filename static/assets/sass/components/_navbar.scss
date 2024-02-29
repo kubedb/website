@@ -3,37 +3,18 @@
   position: relative;
   z-index: 99;
   background-color: $ac-white;
-  .notification-wrapper {
-    background: linear-gradient(-100deg,#fb00ff,#ffee00 32%,#fe4d5d 70%,#ff7900);
-
-    .navbar-appscode{
-      padding: 0 20px;
-      @media (max-width: 1024px) {
-        padding: 0 16px;
-      }
-      @media (min-width: 1024px) {
-        &.container {
-          padding: 0;
-        }
-      }
+  iframe#notification {
+    @media (min-width: 250px) and (max-width:316px) {
+     height: 108px;
     }
-    iframe {
-      overflow: hidden;
-      display: flex;
-      width: 100%;
+    @media (min-width: 317px) and (max-width:590px) {
+      height: 90px;
+     }
+    @media (min-width: 591px) and (max-width: 731px) {
+      height: 70px;
+    }
+    @media (min-width: 732px) {
       height: 38px;
-      @media (min-width: 250px) and (max-width:316px) {
-       height: 108px;
-      }
-      @media (min-width: 317px) and (max-width:590px) {
-        height: 90px;
-       }
-      @media (min-width: 591px) and (max-width: 731px) {
-        height: 70px;
-      }
-      @media (min-width: 732px) {
-        height: 38px;
-      }
     }
   }
 }
