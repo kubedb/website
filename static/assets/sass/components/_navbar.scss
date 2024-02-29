@@ -3,6 +3,39 @@
   position: relative;
   z-index: 99;
   background-color: $ac-white;
+  .notification-wrapper {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5e2dea+0,f8742e+50,f97530+51,7db9e8+100 */
+    background: linear-gradient(45deg,  #5e2dea 0%,#f8742e 50%,#f97530 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    .navbar-appscode{
+      padding: 0 20px;
+      @media (max-width: 1024px) {
+        padding: 0 16px;
+      }
+      @media (min-width: 1024px) {
+        &.container {
+          padding: 0;
+        }
+      }
+    }
+    iframe {
+      overflow: hidden;
+      display: flex;
+      width: 100%;
+      height: 38px;
+      @media (min-width: 250px) and (max-width:316px) {
+       height: 108px;
+      }
+      @media (min-width: 317px) and (max-width:590px) {
+        height: 90px;
+       }
+      @media (min-width: 591px) and (max-width: 731px) {
+        height: 70px;
+      }
+      @media (min-width: 732px) {
+        height: 38px;
+      }
+    }
+  }
 }
 
 .navbar-appscode-wrapper {
@@ -55,7 +88,7 @@
     border-left: 1px solid $ac-white-light;
 
     .mega-menu-wrapper {
-      top: 104px;
+      top: 54px;
     }
 
     .navbar-right {
@@ -888,11 +921,14 @@
 }
 
 .headroom--unpinned {
-  transform: translateY(-165px);
+  transform: translateY(-156px);
 
   .navbar-appscode-wrapper {
     &.navbar-product {
-      transform: translateY(104px);
+      transform: translateY(56px);
+      &.is-docs-page {
+        transform: translateY(94px);
+      }
     }
   }
 }
@@ -921,7 +957,7 @@ Responsive Classes
     .navbar-appscode-wrapper {
       &.navbar-product {
         padding: 0 0;
-        transform: translateY(104px);
+        transform: translateY(0px);
 
         .navbar-appscode {
           .navbar-right {

@@ -172,6 +172,21 @@
     {{ block "header-top" . }}
     <!-- new navbar area start  -->
     <div class="navbar-area active-headroom header--fixed">
+      <!-- iframe  -->
+      {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
+      <div class="notification-wrapper">
+        <div class="navbar-appscode container {{ if eq $currentPageType "docs" }} is-hidden {{ end }}">
+          <iframe src="https://appscode.com/notification-top/" id="notification" frameborder="0" scrolling="no" onload="resizeIframe()"></iframe>
+        </div>
+      </div>
+      <script>
+          function resizeIframe() {
+          var iframe = document.getElementById("notification");
+          iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        }
+      </script>
+      <!-- iframe  -->
+
       <div class="navbar-appscode-wrapper ">
         <!-- appscode navbar start  -->
         {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
@@ -560,9 +575,9 @@
       </div>
       {{ block "header-bottom" . }}
       {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
-      <div class="navbar-appscode-wrapper navbar-product">
+      {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
+      <div class="navbar-appscode-wrapper navbar-product {{ if eq $currentPageType "docs" }} is-docs-page {{ end }}">
         <!-- product navbar start  -->
-        {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
         <div class="navbar-appscode{{ if eq $currentPageType "docs" }} bb-1 {{ else }}
           container{{ end }}">
           <!-- navbar left start  -->
