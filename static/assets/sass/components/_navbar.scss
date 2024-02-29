@@ -4,8 +4,8 @@
   z-index: 99;
   background-color: $ac-white;
   .notification-wrapper {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5e2dea+0,f8742e+50,f97530+51,7db9e8+100 */
-    background: linear-gradient(45deg,  #5e2dea 0%,#f8742e 50%,#f97530 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(-100deg,#fb00ff,#ffee00 32%,#fe4d5d 70%,#ff7900);
+
     .navbar-appscode{
       padding: 0 20px;
       @media (max-width: 1024px) {
