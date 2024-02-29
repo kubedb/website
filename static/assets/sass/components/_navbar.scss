@@ -3,6 +3,20 @@
   position: relative;
   z-index: 99;
   background-color: $ac-white;
+  iframe#notification {
+    @media (min-width: 250px) and (max-width:316px) {
+     height: 108px;
+    }
+    @media (min-width: 317px) and (max-width:590px) {
+      height: 90px;
+     }
+    @media (min-width: 591px) and (max-width: 731px) {
+      height: 70px;
+    }
+    @media (min-width: 732px) {
+      height: 38px;
+    }
+  }
 }
 
 .navbar-appscode-wrapper {
@@ -55,7 +69,7 @@
     border-left: 1px solid $ac-white-light;
 
     .mega-menu-wrapper {
-      top: 104px;
+      top: 54px;
     }
 
     .navbar-right {
@@ -888,11 +902,14 @@
 }
 
 .headroom--unpinned {
-  transform: translateY(-165px);
+  transform: translateY(-156px);
 
   .navbar-appscode-wrapper {
     &.navbar-product {
-      transform: translateY(104px);
+      transform: translateY(56px);
+      &.is-docs-page {
+        transform: translateY(94px);
+      }
     }
   }
 }
@@ -921,7 +938,7 @@ Responsive Classes
     .navbar-appscode-wrapper {
       &.navbar-product {
         padding: 0 0;
-        transform: translateY(104px);
+        transform: translateY(0px);
 
         .navbar-appscode {
           .navbar-right {
