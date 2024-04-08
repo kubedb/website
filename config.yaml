@@ -38,7 +38,7 @@ params:
   comments:
     enable: true
     giscus:
-      repo: bytebuilders/community
+      repo: appscode/community
       repoId: R_kgDOG-h6rw
       category: KubeDB
       categoryId: DIC_kwDOG-h6r84COCFv
