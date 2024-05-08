@@ -4,7 +4,7 @@ menu:
   docs_v2024.4.27:
     identifier: mg-readme-ferretdb
     name: FerretDB
-    parent: mg-ferretdb-guides
+    parent: fr-ferretdb-guides
     weight: 10
 menu_name: docs_v2024.4.27
 section_menu_id: guides
