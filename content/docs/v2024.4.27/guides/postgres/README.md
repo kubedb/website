@@ -63,6 +63,7 @@ info:
 - [Streaming Replication](/docs/v2024.4.27/guides/postgres/clustering/streaming_replication) for PostgreSQL clustering.
 - Monitor your PostgreSQL database with KubeDB using [`out-of-the-box` builtin-Prometheus](/docs/v2024.4.27/guides/postgres/monitoring/using-builtin-prometheus).
 - Monitor your PostgreSQL database with KubeDB using [`out-of-the-box` Prometheus operator](/docs/v2024.4.27/guides/postgres/monitoring/using-prometheus-operator).
+- Check Update Version of PostgreSQL database with KubeDB using [Update Version](/docs/v2024.4.27/guides/postgres/update-version/versionupgrading)
 - Use [private Docker registry](/docs/v2024.4.27/guides/postgres/private-registry/using-private-registry) to deploy PostgreSQL with KubeDB.
 - Detail concepts of [Postgres object](/docs/v2024.4.27/guides/postgres/concepts/postgres).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2024.4.27/CONTRIBUTING).
