@@ -48,7 +48,7 @@ demo                 Active   9s
 
 ## Create Standalone Kafka Cluster
 
-Here, we are going to create a standalone (ie. `replicas: 1`) Kafka cluster in Kraft mode. For this demo, we are going to provision kafka version `3.3.2`. To learn more about Kafka CR, visit [here](/docs/v2024.4.27/guides/kafka/concepts/kafka). visit [here](/docs/v2024.4.27/guides/kafka/concepts/catalog) to learn more about KafkaVersion CR.
+Here, we are going to create a standalone (i.e. `replicas: 1`) Kafka cluster in Kraft mode. For this demo, we are going to provision kafka version `3.6.1`. To learn more about Kafka CR, visit [here](/docs/v2024.4.27/guides/kafka/concepts/kafka). visit [here](/docs/v2024.4.27/guides/kafka/concepts/kafkaversion) to learn more about KafkaVersion CR.
 
 ```yaml
 apiVersion: kubedb.com/v1alpha2
@@ -58,7 +58,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 1
-  version: 3.3.2
+  version: 3.6.1
   storage:
     accessModes:
       - ReadWriteOnce
@@ -82,12 +82,12 @@ Watch the bootstrap progress:
 ```bash
 $ kubectl get kf -n demo -w
 NAME               TYPE                  VERSION   STATUS         AGE
-kafka-standalone   kubedb.com/v1alpha2   3.3.2     Provisioning   8s
-kafka-standalone   kubedb.com/v1alpha2   3.3.2     Provisioning   14s
-kafka-standalone   kubedb.com/v1alpha2   3.3.2     Provisioning   35s
-kafka-standalone   kubedb.com/v1alpha2   3.3.2     Provisioning   35s
-kafka-standalone   kubedb.com/v1alpha2   3.3.2     Provisioning   36s
-kafka-standalone   kubedb.com/v1alpha2   3.3.2     Ready          41s
+kafka-standalone   kubedb.com/v1alpha2   3.6.1     Provisioning   8s
+kafka-standalone   kubedb.com/v1alpha2   3.6.1     Provisioning   14s
+kafka-standalone   kubedb.com/v1alpha2   3.6.1     Provisioning   35s
+kafka-standalone   kubedb.com/v1alpha2   3.6.1     Provisioning   35s
+kafka-standalone   kubedb.com/v1alpha2   3.6.1     Provisioning   36s
+kafka-standalone   kubedb.com/v1alpha2   3.6.1     Ready          41s
 ```
 
 Hence, the cluster is ready to use.
@@ -105,7 +105,7 @@ NAME                                READY   AGE
 statefulset.apps/kafka-standalone   1/1     8m56s
 
 NAME                                                  TYPE               VERSION   AGE
-appbinding.appcatalog.appscode.com/kafka-standalone   kubedb.com/kafka   3.3.2     8m56s
+appbinding.appcatalog.appscode.com/kafka-standalone   kubedb.com/kafka   3.6.1     8m56s
 
 NAME                                 TYPE                       DATA   AGE
 secret/kafka-standalone-admin-cred   kubernetes.io/basic-auth   2      8m59s
@@ -127,7 +127,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 3
-  version: 3.3.2
+  version: 3.6.1
   storage:
     accessModes:
       - ReadWriteOnce
@@ -150,12 +150,12 @@ Watch the bootstrap progress:
 
 ```bash
 $ kubectl get kf -n demo -w
-kafka-multinode   kubedb.com/v1alpha2   3.3.2     Provisioning   9s
-kafka-multinode   kubedb.com/v1alpha2   3.3.2     Provisioning   14s
-kafka-multinode   kubedb.com/v1alpha2   3.3.2     Provisioning   18s
-kafka-multinode   kubedb.com/v1alpha2   3.3.2     Provisioning   2m6s
-kafka-multinode   kubedb.com/v1alpha2   3.3.2     Provisioning   2m8s
-kafka-multinode   kubedb.com/v1alpha2   3.3.2     Ready          2m14s
+kafka-multinode   kubedb.com/v1alpha2   3.6.1     Provisioning   9s
+kafka-multinode   kubedb.com/v1alpha2   3.6.1     Provisioning   14s
+kafka-multinode   kubedb.com/v1alpha2   3.6.1     Provisioning   18s
+kafka-multinode   kubedb.com/v1alpha2   3.6.1     Provisioning   2m6s
+kafka-multinode   kubedb.com/v1alpha2   3.6.1     Provisioning   2m8s
+kafka-multinode   kubedb.com/v1alpha2   3.6.1     Ready          2m14s
 ```
 
 Hence, the cluster is ready to use.
@@ -175,7 +175,7 @@ NAME                               READY   AGE
 statefulset.apps/kafka-multinode   3/3     6m2s
 
 NAME                                                 TYPE               VERSION   AGE
-appbinding.appcatalog.appscode.com/kafka-multinode   kubedb.com/kafka   3.3.2     6m2s
+appbinding.appcatalog.appscode.com/kafka-multinode   kubedb.com/kafka   3.6.1     6m2s
 
 NAME                                TYPE                       DATA   AGE
 secret/kafka-multinode-admin-cred   kubernetes.io/basic-auth   2      6m7s
@@ -321,6 +321,6 @@ $ kubectl delete namespace demo
 - Deploy [dedicated topology cluster](/docs/v2024.4.27/guides/kafka/clustering/topology-cluster/) for Apache Kafka
 - Monitor your Kafka cluster with KubeDB using [`out-of-the-box` Prometheus operator](/docs/v2024.4.27/guides/kafka/monitoring/using-prometheus-operator).
 - Detail concepts of [Kafka object](/docs/v2024.4.27/guides/kafka/concepts/kafka).
-- Detail concepts of [KafkaVersion object](/docs/v2024.4.27/guides/kafka/concepts/catalog).
+- Detail concepts of [KafkaVersion object](/docs/v2024.4.27/guides/kafka/concepts/kafkaversion).
 - Learn to use KubeDB managed Kafka objects using [CLIs](/docs/v2024.4.27/guides/kafka/cli/cli).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2024.4.27/CONTRIBUTING).

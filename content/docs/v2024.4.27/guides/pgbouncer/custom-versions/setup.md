@@ -6,7 +6,7 @@ menu:
     name: Overview
     parent: pb-custom-versions-pgbouncer
     weight: 10
-menu_name: docs_v2024.4.27s
+menu_name: docs_v2024.4.27
 section_menu_id: guides
 info:
   autoscaler: v0.30.0

@@ -5,7 +5,7 @@ menu:
     identifier: guides-mysql
     name: MySQL
     parent: guides
-    weight: 40
+    weight: 10
 menu_name: docs_v2024.4.27
 info:
   autoscaler: v0.30.0
