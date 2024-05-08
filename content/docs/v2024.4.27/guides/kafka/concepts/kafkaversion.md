@@ -5,7 +5,7 @@ menu:
     identifier: kf-catalog-concepts
     name: KafkaVersion
     parent: kf-concepts-kafka
-    weight: 15
+    weight: 25
 menu_name: docs_v2024.4.27
 section_menu_id: guides
 info:
@@ -29,9 +29,9 @@ info:
 
 `KafkaVersion` is a Kubernetes `Custom Resource Definitions` (CRD). It provides a declarative configuration to specify the docker images to be used for [Kafka](https://kafka.apache.org) database deployed with KubeDB in a Kubernetes native way.
 
-When you install KubeDB, a `KafkaVersion` custom resource will be created automatically for every supported Kafka versions. You have to specify the name of `KafkaVersion` crd in `spec.version` field of [Kafka](/docs/v2024.4.27/guides/kafka/concepts/kafka) crd. Then, KubeDB will use the docker images specified in the `KafkaVersion` crd to create your expected database.
+When you install KubeDB, a `KafkaVersion` custom resource will be created automatically for every supported Kafka versions. You have to specify the name of `KafkaVersion` CR in `spec.version` field of [Kafka](/docs/v2024.4.27/guides/kafka/concepts/kafka) crd. Then, KubeDB will use the docker images specified in the `KafkaVersion` CR to create your expected database.
 
-Using a separate crd for specifying respective docker images, and pod security policy names allow us to modify the images, and policies independent of KubeDB operator.This will also allow the users to use a custom image for the database.
+Using a separate CRD for specifying respective docker images, and pod security policy names allow us to modify the images, and policies independent of KubeDB operator.This will also allow the users to use a custom image for the database.
 
 ## KafkaVersion Spec
 
@@ -42,40 +42,42 @@ apiVersion: catalog.kubedb.com/v1alpha1
 kind: KafkaVersion
 metadata:
   annotations:
-    meta.helm.sh/release-name: kubedb-catalog
+    meta.helm.sh/release-name: kubedb
     meta.helm.sh/release-namespace: kubedb
-  creationTimestamp: "2023-03-23T10:15:24Z"
-  generation: 2
+  creationTimestamp: "2024-05-02T06:38:17Z"
+  generation: 1
   labels:
-    app.kubernetes.io/instance: kubedb-catalog
+    app.kubernetes.io/instance: kubedb
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kubedb-catalog
-    app.kubernetes.io/version: v2023.02.28
-    helm.sh/chart: kubedb-catalog-v2023.02.28
-  name: 3.4.0
-  resourceVersion: "472767"
-  uid: 36a167a3-5218-4e32-b96d-d6b5b0c86125
+    app.kubernetes.io/version: v2024.4.27
+    helm.sh/chart: kubedb-catalog-v2024.4.27
+  name: 3.6.1
+  resourceVersion: "2881"
+  uid: 778fb80c-b37a-4ac6-bfaa-fec83e5f49c7
 spec:
   connectCluster:
     image: ghcr.io/appscode-images/kafka-connect-cluster:3.6.1
+  cruiseControl:
+    image: ghcr.io/appscode-images/kafka-cruise-control:3.6.1
   db:
-    image: kubedb/kafka-kraft:3.4.0
+    image: ghcr.io/appscode-images/kafka-kraft:3.6.1
   podSecurityPolicies:
     databasePolicyName: kafka-db
-  version: 3.4.0
-  cruiseControl:
-    image: ghcr.io/kubedb/cruise-control:3.4.0
+  securityContext:
+    runAsUser: 1001
+  version: 3.6.1
 ```
 
 ### metadata.name
 
-`metadata.name` is a required field that specifies the name of the `KafkaVersion` crd. You have to specify this name in `spec.version` field of [Kafka](/docs/v2024.4.27/guides/kafka/concepts/kafka) crd.
+`metadata.name` is a required field that specifies the name of the `KafkaVersion` CR. You have to specify this name in `spec.version` field of [Kafka](/docs/v2024.4.27/guides/kafka/concepts/kafka) CR.
 
-We follow this convention for naming KafkaVersion crd:
+We follow this convention for naming KafkaVersion CR:
 
 - Name format: `{Original Kafka image version}-{modification tag}`
 
-We use official Apache Kafka release tar files to build docker images for supporting Kafka versions and re-tag the image with v1, v2 etc. modification tag when there's any. An image with higher modification tag will have more features than the images with lower modification tag. Hence, it is recommended to use KafkaVersion crd with the highest modification tag to enjoy the latest features.
+We use official Apache Kafka release tar files to build docker images for supporting Kafka versions and re-tag the image with v1, v2 etc. modification tag when there's any. An image with higher modification tag will have more features than the images with lower modification tag. Hence, it is recommended to use KafkaVersion CR with the highest modification tag to enjoy the latest features.
 
 ### spec.version
 
@@ -90,6 +92,14 @@ The default value of this field is `false`. If `spec.deprecated` is set to `true
 ### spec.db.image
 
 `spec.db.image` is a required field that specifies the docker image which will be used to create StatefulSet by KubeDB operator to create expected Kafka database.
+
+### spec.cruiseControl.image
+
+`spec.cruiseControl.image` is a required field that specifies the docker image which will be used to create Deployment by KubeDB operator to create expected Kafka Cruise Control.
+
+### spec.connectCluster.image
+
+`spec.connectCluster.image` is a required field that specifies the docker image which will be used to create StatefulSet by KubeDB operator to create expected Kafka Connect Cluster.
 
 <!---
 ### spec.stash
@@ -115,5 +125,5 @@ helm upgrade -i kubedb oci://ghcr.io/appscode-charts/kubedb \
 
 ## Next Steps
 
-- Learn about Kafka crd [here](/docs/v2024.4.27/guides/kafka/concepts/kafka).
-- Deploy your first Kafka database with KubeDB by following the guide [here](/docs/v2024.4.27/guides/kafka/quickstart/overview/).
+- Learn about Kafka CRD [here](/docs/v2024.4.27/guides/kafka/concepts/kafka).
+- Deploy your first Kafka database with KubeDB by following the guide [here](/docs/v2024.4.27/guides/kafka/quickstart/overview/kafka/).
