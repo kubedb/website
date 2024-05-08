@@ -42,6 +42,8 @@ metadata:
 spec:
   authSecret:
     name: kafka-admin-cred
+  configSecret:
+    name: kafka-custom-config
   enableSSL: true
   healthChecker:
     failureThreshold: 3
@@ -109,21 +111,24 @@ spec:
     agent: prometheus.io/operator
     prometheus:
       exporter:
-        port: 9091
+        port: 56790
       serviceMonitor:
         labels:
           release: prometheus
         interval: 10s
-  version: 3.4.0
+  version: 3.6.1
 ```
 
 ### spec.version
 
-`spec.version` is a required field specifying the name of the [KafkaVersion](/docs/v2024.4.27/guides/kafka/concepts/catalog) crd where the docker images are specified. Currently, when you install KubeDB, it creates the following `Kafka` resources,
+`spec.version` is a required field specifying the name of the [KafkaVersion](/docs/v2024.4.27/guides/kafka/concepts/kafkaversion) crd where the docker images are specified. Currently, when you install KubeDB, it creates the following `Kafka` resources,
 
-- `3.3.0`
 - `3.3.2`
-- `3.4.0`
+- `3.4.1`
+- `3.5.1`
+- `3.5.2`
+- `3.6.0`
+- `3.6.1`
 
 ### spec.replicas
 
@@ -177,6 +182,10 @@ type: Opaque
 ```
 
 Secrets provided by users are not managed by KubeDB, and therefore, won't be modified or garbage collected by the KubeDB operator (version 0.13.0 and higher).
+
+### spec.configSecret
+
+`spec.configSecret` is an optional field that points to a Secret used to hold custom Kafka configuration. If not set, KubeDB operator will use default configuration for Kafka.
 
 ### spec.topology
 
@@ -251,17 +260,15 @@ spec:
 
 The `spec.tls` contains the following fields:
 
-- `tls.issuerRef` - is an `optional` field that references to the `Issuer` or `ClusterIssuer` custom resource object of [cert-manager](https://cert-manager.io/docs/concepts/issuer/). It is used to generate the necessary certificate secrets for Elasticsearch. If the `issuerRef` is not specified, the operator creates a self-signed CA and also creates necessary certificate (valid: 365 days) secrets using that CA.
+- `tls.issuerRef` - is an `optional` field that references to the `Issuer` or `ClusterIssuer` custom resource object of [cert-manager](https://cert-manager.io/docs/concepts/issuer/). It is used to generate the necessary certificate secrets for Kafka. If the `issuerRef` is not specified, the operator creates a self-signed CA and also creates necessary certificate (valid: 365 days) secrets using that CA.
     - `apiGroup` - is the group name of the resource that is being referenced. Currently, the only supported value is `cert-manager.io`.
     - `kind` - is the type of resource that is being referenced. The supported values are `Issuer` and `ClusterIssuer`.
     - `name` - is the name of the resource ( `Issuer` or `ClusterIssuer` ) that is being referenced.
 
 - `tls.certificates` - is an `optional` field that specifies a list of certificate configurations used to configure the  certificates. It has the following fields:
     - `alias` - represents the identifier of the certificate. It has the following possible value:
-        - `transport` - is used for the transport layer certificate configuration.
-        - `http` - is used for the HTTP layer certificate configuration.
-        - `admin` - is used for the admin certificate configuration. Available for the `SearchGuard` and the `OpenDistro` auth-plugins.
-        - `metrics-exporter` - is used for the metrics-exporter sidecar certificate configuration.
+        - `server` - is used for the server certificate configuration.
+        - `client` - is used for the client certificate configuration.
 
     - `secretName` - ( `string` | `"<database-name>-alias-cert"` ) - specifies the k8s secret name that holds the certificates.
 
@@ -321,10 +328,9 @@ KubeDB accept following fields to set in `spec.podTemplate:`
     - annotations (statefulset's annotation)
     - labels (statefulset's labels)
 - spec:
-    - args
-    - env
     - resources
     - initContainers
+    - containers
     - imagePullSecrets
     - nodeSelector
     - affinity
@@ -338,17 +344,9 @@ KubeDB accept following fields to set in `spec.podTemplate:`
     - readinessProbe
     - lifecycle
 
-You can check out the full list [here](https://github.com/kmodules/offshoot-api/blob/ea366935d5bad69d7643906c7556923271592513/api/v1/types.go#L42-L259). Uses of some field of `spec.podTemplate` is described below,
+You can check out the full list [here](https://github.com/kmodules/offshoot-api/blob/39bf8b2/api/v2/types.go#L44-L279). Uses of some field of `spec.podTemplate` is described below,
 
 NB. If `spec.topology` is set, then `spec.podTemplate` needs to be empty. Instead use `spec.topology.<controller/broker>.podTemplate`
-
-#### spec.podTemplate.spec.args
-
-`spec.podTemplate.spec.args` is an optional field. This can be used to provide additional arguments to database installation.
-
-#### spec.podTemplate.spec.env
-
-`spec.podTemplate.spec.env` is an optional field that specifies the environment variables to pass to the Kafka docker image.
 
 #### spec.podTemplate.spec.nodeSelector
 
@@ -401,10 +399,10 @@ Know details about KubeDB Health checking from this [blog post](https://appscode
 
 ## Next Steps
 
-- Learn how to use KubeDB to run a Apache Kafka cluster [here](/docs/v2024.4.27/guides/kafka/README).
+- Learn how to use KubeDB to run Apache Kafka cluster [here](/docs/v2024.4.27/guides/kafka/README).
 - Deploy [dedicated topology cluster](/docs/v2024.4.27/guides/kafka/clustering/topology-cluster/) for Apache Kafka
 - Deploy [combined cluster](/docs/v2024.4.27/guides/kafka/clustering/combined-cluster/) for Apache Kafka
 - Monitor your Kafka cluster with KubeDB using [`out-of-the-box` Prometheus operator](/docs/v2024.4.27/guides/kafka/monitoring/using-prometheus-operator).
-- Detail concepts of [KafkaVersion object](/docs/v2024.4.27/guides/kafka/concepts/catalog).
+- Detail concepts of [KafkaVersion object](/docs/v2024.4.27/guides/kafka/concepts/kafkaversion).
 - Learn to use KubeDB managed Kafka objects using [CLIs](/docs/v2024.4.27/guides/kafka/cli/cli).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2024.4.27/CONTRIBUTING).

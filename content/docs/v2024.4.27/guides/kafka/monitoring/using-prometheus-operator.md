@@ -178,7 +178,7 @@ spec:
       name: kafka-ca-issuer
       kind: Issuer
   replicas: 3
-  version: 3.4.0
+  version: 3.6.1
   storage:
     accessModes:
       - ReadWriteOnce
@@ -217,7 +217,7 @@ Now, wait for the database to go into `Running` state.
 ```bash
 $ kubectl get kf -n demo kafka
 NAME    TYPE                  VERSION   STATUS   AGE
-kafka   kubedb.com/v1alpha2   3.4.0     Ready    2m24s
+kafka   kubedb.com/v1alpha2   3.6.1     Ready    2m24s
 ```
 
 KubeDB will create a separate stats service with name `{Kafka crd name}-stats` for monitoring purpose.
@@ -357,6 +357,6 @@ kubectl delete ns demo
 - Learn how to use KubeDB to run a Apache Kafka cluster [here](/docs/v2024.4.27/guides/kafka/README).
 - Deploy [dedicated topology cluster](/docs/v2024.4.27/guides/kafka/clustering/topology-cluster/) for Apache Kafka
 - Deploy [combined cluster](/docs/v2024.4.27/guides/kafka/clustering/combined-cluster/) for Apache Kafka
-- Detail concepts of [KafkaVersion object](/docs/v2024.4.27/guides/kafka/concepts/catalog).
+- Detail concepts of [KafkaVersion object](/docs/v2024.4.27/guides/kafka/concepts/kafkaversion).
 - Learn to use KubeDB managed Kafka objects using [CLIs](/docs/v2024.4.27/guides/kafka/cli/cli).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2024.4.27/CONTRIBUTING).
