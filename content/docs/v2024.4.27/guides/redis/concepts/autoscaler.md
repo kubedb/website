@@ -33,7 +33,7 @@ info:
 
 Like any official Kubernetes resource, a `RedisAutoscaler` has `TypeMeta`, `ObjectMeta`, `Spec` and `Status` sections.
 
-Here is a sample `RedisAutoscaler` CRDs for autoscaling different components of database is given below:
+Here is a sample `RedisAutoscaler` CRO for autoscaling different components of database is given below:
 
 **Sample `RedisAutoscaler` for standalone database:**
 
@@ -70,7 +70,7 @@ spec:
       scalingThreshold: 20
 ```
 
-Here is a sample `RedisSentinelAutoscaler` CRDs for autoscaling different components of database is given below:
+Here is a sample `RedisSentinelAutoscaler` CRO for autoscaling different components of database is given below:
 
 **Sample `RedisSentinelAutoscaler` for standalone database:**
 ```yaml
@@ -111,7 +111,7 @@ A `RedisAutoscaler` object has the following fields in the `spec` section.
 - **spec.databaseRef.name :** specifies the name of the [Redis](/docs/v2024.4.27/guides/redis/concepts/redis) object.
 
 ### spec.opsRequestOptions
-These are the options to pass in the internally created opsRequest CRD. `opsRequestOptions` has three fields. They have been described in details [here](/docs/v2024.4.27/guides/redis/concepts/redisopsrequest#specreadinesscriteria).
+These are the options to pass in the internally created opsRequest CRO. `opsRequestOptions` has three fields. They have been described in details [here](/docs/v2024.4.27/guides/redis/concepts/redisopsrequest#specreadinesscriteria).
 
 ### spec.compute
 
@@ -141,7 +141,7 @@ All of them has the following sub-fields:
 - `spec.storage.cluster` indicates the desired storage autoscaling configuration for cluster mode in Redis database.
 - `spec.storage.sentinel` indicates the desired storage autoscaling configuration for sentinel mode in Redis database.
 
-`RedisSentinelAutoscaler` does not have `spec.stoage` section. 
+`RedisSentinelAutoscaler` does not have `spec.storage` section. 
 
 All of them has the following sub-fields:
 

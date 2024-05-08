@@ -45,7 +45,7 @@ $ kubectl create ns demo
 namespace/demo created
 ```
 
-> **Note:** YAML files used in this tutorial are stored in [docs/guides/postgres/updating/versionupdating/yamls](/docs/v2024.4.27/guides/postgres/update-version/versionupgrading/yamls) directory of [kubedb/docs](https://github.com/kube/docs) repository.
+> **Note:** YAML files used in this tutorial are stored in [docs/guides/postgres/update-version/versionupdating/yamls](/docs/v2024.4.27/guides/postgres/update-version/versionupgrading/yamls) directory of [kubedb/docs](https://github.com/kubedb/docs) repository.
 
 ### Apply Version updating on Postgres
 
