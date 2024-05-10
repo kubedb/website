@@ -1,0 +1,42 @@
+{
+  "showcase_partners": {
+    "aws": {
+      "name": "AWS",
+      "website": "https://aws.amazon.com/",
+      "logo": "/assets/images/partners/showcase/aws.svg",
+      "show": true
+    },
+    "azure": {
+      "name": "Azure",
+      "website": "https://azure.microsoft.com/en-gb/",
+      "logo": "/assets/images/partners/showcase/azure.svg",
+      "show": true
+    },
+    "gcp": {
+      "name": "Google Cloud",
+      "website": "https://cloud.google.com/",
+      "logo": "/assets/images/partners/showcase/gcp.svg",
+      "show": true
+    }
+  },
+  "technology_partners": {
+    "astrokube": {
+      "name": "Astrokube",
+      "website": "https://www.astrokube.com/",
+      "logo": "/assets/images/partners/technology/astrokube.svg",
+      "show": true
+    },
+    "cartman": {
+      "name": "Cartman",
+      "website": "https://www.cartman.fi/",
+      "logo": "/assets/images/partners/technology/cartman-digital.svg",
+      "show": true
+    },
+    "dedicatted": {
+      "name": "Dedicatted",
+      "website": "https://dedicatted.com/",
+      "logo": "/assets/images/partners/technology/dedicatted.svg",
+      "show": true
+    }
+  }
+}
