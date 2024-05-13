@@ -43,6 +43,14 @@
       "kubeform"
     ]
   },
+  "ossMenu": {
+    "c0": [
+      "guard"
+    ],
+    "c1": [
+      "kubed"
+    ]
+  },
   "productMenu": {
     "c0": [
       "kubedb",
