@@ -15,19 +15,6 @@
     h1 {
       strong {
         color: $ac-primary;
-        // position: relative;
-        // z-index: 1;
-        // &:after{
-        //   position: absolute;
-        //   content: "";
-        //   left: 0;
-        //   top: 80%;
-        //   width: 100%;
-        //   height: 100%;
-        //   background-image: url(../images/shape/underline.svg);
-        //   background-repeat: no-repeat;
-        //   z-index: -1;
-        // }
       }
     }
     &.elasticsearch {
@@ -190,6 +177,9 @@
     .button.ac-button {
       border-color: rgba(255, 255, 255, 0.5);
       color: $ac-white;
+      &.is-white {
+        color: $ac-primary;
+      }
 
       &:hover {
         border-color: $ac-primary;
@@ -409,7 +399,7 @@
 
 .social-prove-brand-area {
   .brand-image-wrapper {
-    padding: 30px 0;
+    padding: 16px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -417,6 +407,11 @@
     width: 100%;
 
     .single-brand {
+        border: 1px solid $ac-white-light;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        padding: 12px 24px;
       img {
         max-height: 2rem;
         filter: grayscale(1);
@@ -490,7 +485,7 @@ Responsive Classes
 
   .social-prove-brand-area {
     .brand-image-wrapper {
-      padding: 30px 0;
+      padding: 16px 0;
       padding-bottom: 0px;
       justify-content: center;
 
@@ -557,10 +552,6 @@ Responsive Classes
   .social-prove-brand-area {
     .brand-image-wrapper {
       justify-content: center;
-
-      .single-brand {
-        padding: 0 10px;
-      }
     }
   }
 }
@@ -579,7 +570,7 @@ Responsive Classes
   }
   .social-prove-brand-area {
     .brand-image-wrapper {
-      padding: 30px 0;
+      padding: 16px 0;
     }
   }
   .hero-area-code-editor {
