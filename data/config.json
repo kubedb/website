@@ -59,6 +59,10 @@
     "c1": [
       "kubevault",
       "voyager"
+    ],
+    "c2": [
+      "configsyncer",
+      "guard"
     ]
   },
   "products": [
