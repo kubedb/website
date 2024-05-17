@@ -9832,7 +9832,7 @@ Responsive Classes
 }
 .ac-searchbar {
   position: relative;
-  z-index: 9;
+  z-index: 1;
 }
 
 .search-result-box {
