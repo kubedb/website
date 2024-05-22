@@ -1,6 +1,7 @@
 ---
 title: Deploy Pgpool via Kubernetes Pgpool Operator
 Description: Seamlessly deploy Pgpool on Kubernetes using the Kubernetes Pgpool Operator and boost your PostgreSQL databse performance on Kubernetes.
+alt: Kubernetes pgpool
 date: "2024-05-23"
 ---
 
