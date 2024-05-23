@@ -2,7 +2,7 @@
 title: Deploy Pgpool via Kubernetes Pgpool Operator
 Description: Seamlessly deploy Pgpool on Kubernetes using the Kubernetes Pgpool Operator and boost your PostgreSQL databse performance on Kubernetes.
 alt: Kubernetes pgpool
-date: "2024-05-22"
+date: "2024-05-23"
 ---
 
 # Deploy Pgpool using Kubernetes Pgpool Operator
@@ -11,7 +11,7 @@ date: "2024-05-22"
 
 Containerization and orchestration are changing the game, but managing databases in these dynamic, highly scalable environments brings a new challenge. While Kubernetes, the leading container orchestration platform excels at automating deployment, scaling, and maintenance of containerized applications, effectively managing databases within a Kubernetes cluster requires a different approach for optimal performance and scalability.
 
-This article explores Pgpool, a powerful middleware that elevates your PostgreSQL database management strategy within the Kubernetes ecosystem. We'll dive into the fundamentals of Pgpool, showcasing its significance in effective database management. We'll also provide best practices for deploying and configuring Pgpool on Kubernetes. By the end of this article, you'll be well-equipped to integrate Kubernetes Pgpool and streamline your database management approach within your Kubernetes environment.
+This article explores Pgpool, a powerful middleware that elevates your PostgreSQL database management strategy within the Kubernetes ecosystem. We'll dive into the fundamentals of Pgpool, showcasing its significance in effective database management. We'll also provide best practices for deploying and configuring Pgpool on Kubernetes. By the end of this article, you'll be well-equipped to integrate Kubernetes Pgpool via Kubernetes Pgpool operator and streamline your database management approach within your Kubernetes environment.
 
 ## Advantage of Pgpool in Kubernetes
 
@@ -194,7 +194,7 @@ secret/db-user-pass created
 
 ## Deploy Pgpool
 
-We are going to deploy Pgpool using KubeDB. Here, is the yaml of the Pgpool CRO we are going to use:
+We are going to deploy Pgpool using Kubernetes Pgpool operator KubeDB. Here, is the yaml of the Pgpool CRO we are going to use:
 
 ```yaml
 apiVersion: kubedb.com/v1alpha2
