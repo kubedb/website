@@ -43,7 +43,7 @@
                 <!-- databases  start  -->
                 <a href="{{ .URL }}" class="single-product">
                   <div class="product-logo">
-                    <img src="{{ partial "menu/get-logo.html" (dict "target" .Name "menus" site.Menus.main ) }}" alt="">
+                    <img src="{{ partial "menu/get-logo.html" (dict "target" .Name "menus" site.Menus.main ) }}" alt="{{ .Name }}" loading="lazy">
                   </div>
                   <div class="product-info">
                     <h6>{{ .Name }}</h6>
