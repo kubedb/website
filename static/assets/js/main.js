@@ -179,9 +179,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // highligh js initilization end
 
   // AOS Animation
-  AOS.init({
-    once: true,
-  });
+  // AOS.init({
+  //   once: true,
+  // });
 
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
