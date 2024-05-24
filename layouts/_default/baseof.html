@@ -226,7 +226,7 @@
                         <a class="single-product"
                           href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
                           <div class="product-logo">
-                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}" loading="lazy">
                           </div>
                           <div class="product-info">
                             <h6>{{ $p.name }}</h6>
@@ -247,7 +247,7 @@
                         <a class="single-product"
                           href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
                           <div class="product-logo">
-                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}" loading="lazy">
                           </div>
                           <div class="product-info">
                             <h6>{{ $p.name }}</h6>
@@ -268,7 +268,7 @@
                         <a class="single-product"
                           href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
                           <div class="product-logo">
-                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}" loading="lazy">
                           </div>
                           <div class="product-info">
                             <h6>{{ $p.name }}</h6>
@@ -291,7 +291,7 @@
                       <!-- single product description start  -->
                       <div class="product-description">
                         <div class="brand">
-                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
+                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" loading="lazy">
                         </div>
 
                         <p>{{ $p.summary | safeHTML }}</p>
@@ -316,7 +316,7 @@
                       <!-- single product description start  -->
                       <div class="product-description">
                         <div class="brand">
-                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
+                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" loading="lazy">
                         </div>
 
 
@@ -343,7 +343,7 @@
                       <!-- single product description start  -->
                       <div class="product-description">
                         <div class="brand">
-                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
+                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" loading="lazy">
                         </div>
 
 
@@ -416,103 +416,12 @@
                           </ul>
                         </div>
                         <!-- single resources list  -->
-
-                        <!-- single resources list  -->
-<!--                         <div class="list-items">
-                          <h6>DOCUMENTATION</h6>
-                          <ul>
-                            <li><a
-                                href="https://voyagermesh.com/docs"
-                                target="_blank">Voyager</a></li>
-                            <li><a
-                                href="https://appscode.com/products/guard/latest/welcome/"
-                                target="_blank">Guard</a></li>
-                            <li><a
-                                href="https://appscode.com/products/kubed/latest/welcome/"
-                                target="_blank">Kubed</a>
-                            </li>
-                            <li><a
-                                href="https://pharmer.dev/docs/latest/welcome/"
-                                target="_blank">Pharmer</a></li>
-                            <li><a
-                                href="https://appscode.com/products/swift/latest/welcome/"
-                                target="_blank">Swift</a>
-                            </li>
-                            <li><a
-                                href="https://appscode.com/products/searchlight/latest/welcome/"
-                                target="_blank">Searchlight</a></li>
-                          </ul>
-                        </div> -->
-                        <!-- single resources list  -->
-
-                        <!-- single resources list  -->
-                        <div class="list-items is-hidden">
-                          <h6>RECENT NEWS/BLOG</h6>
-                          {{- $pctx := . -}}
-                          {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
-                          {{- $pages := $pctx.RegularPages -}}
-
-
-                          <div class="press-wrapper">
-                            {{ range $idx, $p := $pages.ByDate.Reverse }}
-                            {{ if lt $idx 2 }}
-                            <!-- single press start  -->
-                            <a class="single-press">
-                              <div class="calender">
-                                <span class="date">{{ $p.Date.Format "2" }}</span>
-                                <span class="month">{{ $p.Date.Format "Jan" }}</span>
-                              </div>
-
-                              <div class="description">
-                                <h6>{{ $p.Title }}</h6>
-                                {{ range $author := $p.Params.authors }}
-                                <a href="/authors/{{ $author | urlize }}"
-                                  class="author"><span>by</span>{{ $author }}</a>
-                                {{ end }}
-                                <p class="is-ellipsis-2">{{ $p.Summary }}</p>
-                              </div>
-                            </a>
-                            <!-- <a class="single-press">
-                          <div class="description">
-                            <h6><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h6>
-                          </div>
-                        </a> -->
-                            <!-- single press end -->
-                            {{ end }}
-                            {{ end }}
-
-                            <a href="#" class="button ac-button inline-button">See More <span
-                                class="material-icons">arrow_forward</span></a>
-                          </div>
-
-
-                        </div>
-                        <!-- single resources list  -->
-
-
                       </div>
                       <!-- list menu items end -->
                     </div>
                   </div>
                 </li>
-                <!-- <li class="nav-item">
-              <button class="link">Services <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-              <div class="mega-menu-wrapper">
-                <div class="mega-menu-inner ac-grid-container">
-                  <div class="linkable-nav-items">
-                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/consulting/">
-                      Consulting
-                    </a>
-                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/training/">
-                      Training
-                    </a>
-                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/support/">
-                      Support
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li> -->
+                
                 <li class="nav-item">
                   <a href="https://appscode.com/webinar" target="_blank" class="link">Webinar <span
                       class="whats-new">New</span></a>
@@ -669,7 +578,7 @@
 " class="single-product">
                         {{ if .Pre }}
                         <div class="product-logo">
-                          <img src="{{ .Pre }}" alt="{{ .Name }}">
+                          <img src="{{ .Pre }}" alt="{{ .Name }}" loading="lazy">
                         </div>
                         {{ end }}
                         <div class="product-info">
@@ -708,7 +617,7 @@
                           </a>
                           <img
                             src="https://img.youtube.com/vi/hBHxMtSjKo4/sddefault.jpg"
-                            alt="">
+                            alt="kubedb-youtube-intro" loading="lazy">
                         </div>
                       </div>
                     </div>
@@ -737,12 +646,12 @@
             <div class="community-items ml-70">
               {{ if $p.socialLinks.github }}
               <a href="{{$p.socialLinks.github}}" class="community-item" target="_blank" title="Github">
-                <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon">
+                <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon" loading="lazy">
               </a>
               {{ end }}
               {{ if $p.socialLinks.twitter }}
               <a href="{{$p.socialLinks.twitter}}" class="community-item" target="_blank" title="X(Twitter)">
-                <img src="/assets/images/icon/community/twitterx-icon.svg" alt="twitterx-icon">
+                <img src="/assets/images/icon/community/twitterx-icon.svg" alt="twitterx-icon" loading="lazy">
               </a>
               {{ end }}
             </div>
@@ -847,7 +756,7 @@
               <!-- user info wrapper start  -->
               <div class="user-info-wrapper">
                 <figure class="image is-64x64">
-                  <img class="is-rounded" src="{{ $user.profile }}" alt="{{ $user.name }}">
+                  <img class="is-rounded" src="{{ $user.profile }}" alt="{{ $user.name }}" loading="lazy">
                 </figure>
                 <div class="user-info">
                   <h5>{{ $user.name }}</h5>
@@ -927,7 +836,7 @@
               <!-- logo start -->
               <div class="footer-logo">
                 <a href="{{.Site.Params.domain_appscode}}"><img src="{{$.Site.Data.products.appscode.logo.src}}"
-                    alt="{{$.Site.Data.products.appscode.logo.alt}}" class="img" /></a>
+                    alt="{{$.Site.Data.products.appscode.logo.alt}}" class="img" loading="lazy" /></a>
               </div>
               <!-- logo end -->
 
@@ -1052,7 +961,7 @@
             <div class="socail-link-inline">
               <ul>
                 <li>
-                  <a href="{{.Site.Params.twitter_url}}"><img src="/assets/images/icon/community/twitterx-solid-icon.svg" alt="twitterx-icon"></a>
+                  <a href="{{.Site.Params.twitter_url}}"><img src="/assets/images/icon/community/twitterx-solid-icon.svg" alt="twitterx-icon" loading="lazy"></a>
                 </li>
                 <li>
                   <a href="https://www.linkedin.com/company/appscode"><i class="fa fa-linkedin"
