@@ -8409,7 +8409,7 @@ Responsive Classes
     font-size: 80px;
   }
   .container {
-    max-width: 1100px !important;
+    max-width: 1200px !important;
   }
 }
 @media (min-width: 1600px) {
@@ -8845,6 +8845,26 @@ video {
   z-index: 99;
   background-color: #ffffff;
 }
+@media (min-width: 250px) and (max-width: 316px) {
+  .navbar-area iframe#notification {
+    height: 108px;
+  }
+}
+@media (min-width: 317px) and (max-width: 590px) {
+  .navbar-area iframe#notification {
+    height: 90px;
+  }
+}
+@media (min-width: 591px) and (max-width: 731px) {
+  .navbar-area iframe#notification {
+    height: 70px;
+  }
+}
+@media (min-width: 732px) {
+  .navbar-area iframe#notification {
+    height: 38px;
+  }
+}
 
 .navbar-appscode-wrapper {
   background-color: #ffffff;
@@ -8929,8 +8949,48 @@ video {
   width: calc(100% - 200px);
   justify-content: flex-end;
 }
-.navbar-appscode .navbar-right .button {
-  margin-left: 2.5rem;
+.navbar-appscode .navbar-right .navbar-left-group {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 0px) and (max-width: 1023px) {
+  .navbar-appscode .navbar-right .navbar-left-group {
+    align-items: flex-start;
+  }
+}
+.navbar-appscode .navbar-right .navbar-right-group {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.navbar-appscode .navbar-right .navbar-right-group .buttons iframe {
+  transition: 0.3s ease-in-out;
+}
+.navbar-appscode .navbar-right .navbar-right-group .buttons iframe:hover {
+  box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.3) !important;
+  transform: translateY(-2px);
+}
+.navbar-appscode .navbar-right .navbar-right-group .buttons .button:has(.tag) {
+  gap: 4px;
+}
+.navbar-appscode .navbar-right .navbar-right-group .buttons .button .tag {
+  background-color: var(--ac-primary);
+  color: #ffffff;
+}
+@media (min-width: 0px) and (max-width: 1023px) {
+  .navbar-appscode .navbar-right .navbar-right-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+  .navbar-appscode .navbar-right .navbar-right-group .buttons {
+    width: 100%;
+  }
+  .navbar-appscode .navbar-right .navbar-right-group .buttons .button {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 .navbar-appscode ul .nav-item {
   margin-right: 2.5rem;
@@ -8974,8 +9034,8 @@ video {
 .navbar-appscode ul .nav-item .link .whats-new {
   position: absolute;
   z-index: 1;
-  top: -0.5rem;
-  right: -2.5rem;
+  top: -10px;
+  right: -30px;
   font-size: 0.8rem;
   color: #ffffff;
   padding: 0.2rem 0.3rem;
@@ -9451,7 +9511,7 @@ video {
   background-color: transparent;
   color: #3b3030;
   font-size: 0.875rem;
-  width: calc(100% - 30px);
+  width: 270px;
   padding: 0.2rem 0.875rem;
 }
 .ac-searchbar input[type=search]:focus {
@@ -9508,10 +9568,13 @@ video {
 }
 
 .headroom--unpinned {
-  transform: translateY(-165px);
+  transform: translateY(-156px);
 }
 .headroom--unpinned .navbar-appscode-wrapper.navbar-product {
-  transform: translateY(104px);
+  transform: translateY(56px);
+}
+.headroom--unpinned .navbar-appscode-wrapper.navbar-product.is-docs-page {
+  transform: translateY(94px);
 }
 
 .navbar-burger {
@@ -9533,7 +9596,7 @@ Responsive Classes
 @media (max-width: 1023.98px) {
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product {
     padding: 0 0;
-    transform: translateY(104px);
+    transform: translateY(0px);
   }
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-right {
     top: 47px;
@@ -9607,8 +9670,8 @@ Responsive Classes
     margin: 6px 0;
   }
   .navbar-appscode .navbar-right ul li.nav-item .link .whats-new {
-    top: -0.2rem;
-    right: 0.5rem;
+    top: -10px;
+    right: -30px;
   }
   .navbar-appscode .navbar-right .community-items.ml-70 {
     margin-left: 0 !important;
@@ -9671,7 +9734,7 @@ Responsive Classes
     padding-left: 10px;
   }
   .product-version .dropdown .dropdown-trigger .button {
-    width: 200px;
+    width: 190px;
   }
   .product-version .dropdown-menu {
     z-index: 9999;
@@ -9693,14 +9756,23 @@ Responsive Classes
     margin-left: 0;
     border-left: none;
   }
+  .navbar-appscode .navbar-left .navbar-brand {
+    margin-right: 1rem;
+  }
   .navbar-appscode .navbar-right {
     width: calc(100% - 180px);
   }
   .navbar-appscode .navbar-right .community-items.ml-70 {
     margin-left: 10px !important;
   }
+  .navbar-appscode .navbar-right .button.ac-button {
+    padding: 0.5rem 1rem;
+  }
+  .navbar-appscode .navbar-right-group {
+    gap: 8px !important;
+  }
   .navbar-appscode ul .nav-item {
-    margin-right: 1.5rem;
+    margin-right: 0.5rem;
   }
   .mega-menu-wrapper .mega-menu-inner .product-menu {
     grid-template-columns: auto;
@@ -9716,7 +9788,7 @@ Responsive Classes
     margin-left: 4px !important;
   }
   .product-version .dropdown .dropdown-trigger .button {
-    width: 200px;
+    width: 180px;
     padding: 2px 5px;
   }
 }
@@ -9760,7 +9832,7 @@ Responsive Classes
 }
 .ac-searchbar {
   position: relative;
-  z-index: 9;
+  z-index: 1;
 }
 
 .search-result-box {
@@ -10387,7 +10459,7 @@ Responsive Classes
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
+  background-color: var(--ac-primary);
   z-index: -1;
   opacity: 0.5;
   background-size: 50%;
@@ -10412,6 +10484,9 @@ Responsive Classes
 .hero-area.is-product.is-dark .button.ac-button {
   border-color: rgba(255, 255, 255, 0.5);
   color: #ffffff;
+}
+.hero-area.is-product.is-dark .button.ac-button.is-white {
+  color: var(--ac-primary);
 }
 .hero-area.is-product.is-dark .button.ac-button:hover {
   border-color: var(--ac-primary);
@@ -10535,12 +10610,19 @@ Responsive Classes
   }
 }
 .social-prove-brand-area .brand-image-wrapper {
-  padding: 30px 0;
+  padding: 16px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+.social-prove-brand-area .brand-image-wrapper .single-brand {
+  border: 1px solid #dbdbde;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
 }
 .social-prove-brand-area .brand-image-wrapper .single-brand img {
   max-height: 2rem;
@@ -10594,7 +10676,7 @@ Responsive Classes
     display: none;
   }
   .social-prove-brand-area .brand-image-wrapper {
-    padding: 30px 0;
+    padding: 16px 0;
     padding-bottom: 0px;
     justify-content: center;
   }
@@ -10632,9 +10714,6 @@ Responsive Classes
   .social-prove-brand-area .brand-image-wrapper {
     justify-content: center;
   }
-  .social-prove-brand-area .brand-image-wrapper .single-brand {
-    padding: 0 10px;
-  }
 }
 @media (min-width: 1408px) and (max-width: 1600px) {
   .hero-area.is-product {
@@ -10644,7 +10723,7 @@ Responsive Classes
     font-size: 2.8rem;
   }
   .social-prove-brand-area .brand-image-wrapper {
-    padding: 30px 0;
+    padding: 16px 0;
   }
   .hero-area-code-editor pre code {
     padding-left: 0;
@@ -11622,13 +11701,14 @@ Responsive Classes
 
 .cta-area .cta-area-inner {
   padding: 20px 50px;
-  background-image: url(/assets/images/bg-image/cta-area-bg.png);
+  background-image: url(/assets/images/bg-image/cta-bg-transparent.png);
   background-size: cover;
   background-position: center;
   border-radius: 8px;
   min-height: 250px;
   display: flex;
   align-items: center;
+  background-color: var(--ac-primary);
 }
 .cta-area .cta-area-inner h3 {
   color: #ffffff;
@@ -12390,6 +12470,11 @@ p.spam-message {
   margin-right: 0;
 }
 
+.socail-link-inline ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 .socail-link-inline li {
   margin-right: 10px;
   display: inline-block;
@@ -12405,11 +12490,18 @@ p.spam-message {
   border: 1px solid #8a8a8a;
   border-radius: 50%;
   transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
 }
 .socail-link-inline li a:hover {
   background: var(--ac-primary);
   color: #ffffff;
   border: 1px solid transparent;
+}
+.socail-link-inline li a:hover img {
+  filter: brightness(10);
 }
 .socail-link-inline li:last-child {
   margin-right: 0;
@@ -12465,6 +12557,9 @@ Responsive Classes
   .footer-bottom {
     padding: 20px 0;
   }
+  .socail-link-inline ul {
+    justify-content: center;
+  }
 }
 .ads-navbar-area {
   padding: 8px 0;
@@ -12500,7 +12595,7 @@ Responsive Classes
 .ads-hero-area:after {
   position: absolute;
   padding-top: 200px;
-  content: url("/assets/images/ads/hero.png");
+  content: url("/assets/images/ads/hero-1.png");
   right: 0;
   top: 0;
   background: #fbfbfe;
@@ -12530,6 +12625,9 @@ Responsive Classes
   margin-bottom: 16px;
 }
 
+.customers-logo-area .single-brand img {
+  max-height: 32px;
+}
 .customers-logo-area .customers-logo {
   min-height: 40px;
 }
@@ -12606,7 +12704,7 @@ Responsive Classes
   line-height: 1.6;
 }
 .ads-footer-area .footer-top .contact-info .info-text {
-  display: flex;
+  display: inline-flex;
   align-items: baseline;
   color: #3c3c3c;
   gap: 8px;
@@ -12614,18 +12712,20 @@ Responsive Classes
 .ads-footer-area .footer-top .contact-info .info-text span:not(.icon) {
   width: calc(100% - 2rem);
 }
-.ads-footer-area .footer-bottom a :not(.icon) {
+.ads-footer-area .footer-bottom a {
   color: #3c3c3c;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-size: 14px;
+}
+.ads-footer-area .footer-bottom a span:not(.icon) {
   text-decoration: underline;
+}
+.ads-footer-area .footer-bottom a .icon {
   font-size: 14px;
 }
-.ads-footer-area .footer-bottom a :not(.icon) .icon {
-  font-size: 14px;
-}
-.ads-footer-area .footer-bottom a :not(.icon):hover {
+.ads-footer-area .footer-bottom a:hover {
   color: var(--ac-primary);
 }
 
@@ -12640,6 +12740,9 @@ Responsive Classes
   display: flex;
   align-items: center;
   padding-left: 20px;
+}
+.custom-code-editor .editor-header pre {
+  min-height: 300px;
 }
 .custom-code-editor .editor-header span {
   width: 15px;
@@ -12664,11 +12767,14 @@ Responsive Classes
 *****************************************/
 @media (max-width: 1023.98px) {
   .ads-hero-area:after {
-    width: 100%;
-    opacity: 0.2;
+    display: none;
   }
 }
 @media (min-width: 769px) and (max-width: 1023.98px) {
+  .ads-hero-area .left-content h1 {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
   .ads-support-plan table tbody td:first-child {
     min-width: 300px;
   }
@@ -12716,7 +12822,8 @@ Responsive Classes
 @media (min-width: 1024px) and (max-width: 1407px) {
   .ads-hero-area .left-content h1 {
     padding-top: 30px;
-    font-size: 40px;
+    font-size: 32px;
+    letter-spacing: -1px;
   }
   .ads-hero-area:after {
     content: url("/assets/images/ads/hero-7.png");
@@ -12735,7 +12842,7 @@ Responsive Classes
   }
 }
 .articles-area {
-  padding-top: 140px;
+  padding-top: 170px;
   padding-bottom: 40px;
 }
 
@@ -12803,7 +12910,7 @@ Responsive Classes
 }
 .article-details-area .full-info h1 {
   font-size: 48px;
-  max-width: 90%;
+  max-width: 100%;
 }
 .article-details-area .full-info p {
   font-size: 16px;
@@ -12918,7 +13025,7 @@ ul.social-share-button li a i.fa {
     text-transform: uppercase;
     font-weight: 500;
     cursor: pointer;
-    padding: 8px 16px;
+    padding: 4px;
     transition: 0.3s ease-in-out;
   }
   .article-page-toc-button:hover {
@@ -13763,7 +13870,7 @@ Responsive Classes
   width: 30%;
 }
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.enterprise {
-  width: 70%;
+  width: 100%;
 }
 .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta.enterprise .button.ac-button.is-secondary {
   background-color: #ff8000;
@@ -13934,7 +14041,7 @@ Responsive Classes
 .features-plan-area .single-features-area .single-features .features-plan-wrapper {
   display: grid;
   align-items: center;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 100%;
 }
 .features-plan-area .single-features-area .single-features .features-plan-wrapper .features-plan {
   font-weight: 400;
@@ -14060,8 +14167,8 @@ Responsive Classes
 }
 
 /****************************************
-Responsive Classes
-*****************************************/
+ Responsive Classes
+ *****************************************/
 @media (max-width: 575.98px) {
   .features-plan .hero-area-content .hero-content-inner h1 {
     font-size: 28px;
@@ -14137,7 +14244,7 @@ Responsive Classes
     min-width: 1344px;
   }
   .features-cta-area .features-plan-cta-wrapper .cta-left {
-    width: 100%;
+    width: 42%;
   }
   .features-cta-area .features-plan-cta-wrapper .cta-left h2 {
     font-size: 26px;
@@ -14149,7 +14256,7 @@ Responsive Classes
   .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta {
     width: 100%;
     padding: 40px 20px 108px 20px;
-    min-height: 240px;
+    min-height: 200px;
   }
   .features-cta-area .features-plan-cta-wrapper .cta-right .single-cta h3 {
     font-size: 20px;
