@@ -2,22 +2,6 @@
 
 {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
 
-<!-- banner adds start  -->
-<div class="banner-area-start modal-1">
-  <div class="modal">
-    <div class="modal-background" onclick="closeModal()"></div>
-    <div class="modal-content">
-      <div class="box p-0 is-flex">
-        <a href="https://appscode.com/webinar/" target="_blank">
-          <img src="/assets/images/webinar/10Feb22.png" alt="">
-        </a>
-      </div>
-    </div>
-    <button class="modal-close is-large" onclick="closeModal()"></button>
-  </div>
-</div>
-<!-- banner adds end -->
-
 <!-- new hero area start   -->
 <!-- style="background-image: url(/assets/images/products/kubedb/hero-product-bg-dark.png);" -->
 <section class="hero-area is-product is-gradient is-dark has-image-bg" style="background-image:
@@ -75,7 +59,7 @@ url(./assets/images/bg-image/gradient-bg.webp);">
         <!-- <h1> Run Production-Grade Databases on Kubernetes</h1> -->
         <p data-aos="fade-up" data-aos-duration="500">KubeDB simplifies Provision, Upgrade, Scaling, Volume Expansion, Monitor, Backup, Restore for various Databases in Kubernetes on any Public & Private Cloud</p>
         <div class="buttons" data-aos="fade-up" data-aos-duration="700">
-          <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary">TRY NOW FREE</a>
+          <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-white">TRY NOW FREE</a>
           <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary"><span>
               <lord-icon speed="0.50" src="https://cdn.lordicon.com/uvextprq.json" trigger="loop" colors="primary:#ffffff;"
                 style="width:22px;height:22px; margin-right: 8px;">
@@ -154,7 +138,7 @@ url(./assets/images/bg-image/gradient-bg.webp);">
           </div>
           <div class="feature-information">
           
-            <h5>{{ $f.title }}</h5>
+            <h3>{{ $f.title }}</h3>
             <p class="is-ellipsis-2">{{ $f.summary }}</p>
             <p class="is-ellipsis-2">{{ $f.description }}</p>
             <button class="readmore-button mt-15">Read More<span class="material-icons-outlined">arrow_forward</span></button>

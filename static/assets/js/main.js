@@ -335,7 +335,7 @@ const goToASectionSmoothly = () => {
       // go to the target section smoothly
       const targetEl = document.querySelector(e.currentTarget.hash);
       const pos = targetEl.offsetTop;
-      console.log(pos);
+      console.error(pos);
       window.scrollTo({
         top: pos,
         behavior: "smooth",

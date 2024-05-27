@@ -55,7 +55,7 @@ fs.readFile(cssFilePath, (err, css) => {
       // Processed CSS back to the file
       fs.writeFile(cssFilePath, result.css, err => {
         if (err) throw err;
-        console.log('CSS processed successfully!');
+        console.error('CSS processed successfully!');
       });
     })
     .catch(error => {

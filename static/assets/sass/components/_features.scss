@@ -116,8 +116,10 @@
   }
 
   .feature-information {
-    h5 {
+    h3 {
       font-size: 20px;
+      font-weight: 700;
+      letter-spacing: normal;
       margin-bottom: 5px;
     }
 
@@ -253,7 +255,7 @@ Responsive Classes
     .feature-information {
       text-align: left;
 
-      h5 {
+      h3 {
         font-size: 18px;
         margin-bottom: 5px;
         line-height: 1.3;
@@ -287,7 +289,7 @@ Responsive Classes
     }
 
     .feature-information {
-      h5 {
+      h3 {
         font-size: 18px;
       }
     }
@@ -361,7 +363,7 @@ Responsive Classes
     min-height: 126px;
 
     .feature-information {
-      h5 {
+      h3 {
         font-size: 16px;
         margin-bottom: 0;
         line-height: 130%;

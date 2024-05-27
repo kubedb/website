@@ -99,11 +99,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" media="print" onload="this.media='all'">
 
   <!-- Load custom CSS asynchronously -->
-  <link rel="stylesheet" href="/assets/sass/main.css">
-<!-- 
+  <!-- <link rel="stylesheet" href="/assets/sass/main.css"> -->
+
   {{ with $style := resources.Get "/assets/sass/main.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-  {{ end }}  -->
+  {{ end }} 
   <!-- new style  -->
 
   <!-- Font Awesome CSS -->
@@ -115,7 +115,7 @@
   <!-- AOS CSS -->
   <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
   <!-- Bulma tooltip CSS -->
-  <link rel="stylesheet" href="/assets/css/bulma-tooltip.min.css" />
+  <!-- <link rel="stylesheet" href="/assets/css/bulma-tooltip.min.css" /> -->
 
   <!-- Bulma CSS -->
 
@@ -201,7 +201,7 @@
     <div class="navbar-area active-headroom header--fixed">
       <!-- iframe  -->
       {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
-      <iframe src="https://appscode.com/notification-top/" id="notification" class="{{ if eq $currentPageType "docs" }} is-hidden {{ end }}" frameborder="0" scrolling="no" onload="resizeIframe()" style="height: 0px; width: 100%; display: flex; overflow: hidden;"></iframe>
+      <iframe src="https://appscode.com/notification-top/" id="notification" class="{{ if eq $currentPageType "docs" }} is-hidden {{ end }}" frameborder="0" scrolling="no" onload="resizeIframe()" style="height: 0px; width: 100%; display: flex; overflow: hidden;" title="Notification"></iframe>
      
       <script>
           function resizeIframe() {
@@ -474,7 +474,7 @@
                       }
                     }
                   } //
-                  console.log('GET', 'https://license-issuer.appscode.com/_/webinars/');
+                  console.error('GET', 'https://license-issuer.appscode.com/_/webinars/');
                   xhr.open('GET', 'https://license-issuer.appscode.com/_/webinars/');
                   xhr.send();
                 }());
@@ -494,7 +494,7 @@
 
                 {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
                 <div class="buttons">
-                  <iframe src="https://appscode.com/embed/?color=4d4dcb" frameborder="0" scrolling="no" style="height: 40px; margin-bottom: 8px; width: 185px;  overflow: hidden;"></iframe>
+                  <iframe src="https://appscode.com/embed/?color=4d4dcb" frameborder="0" scrolling="no" style="height: 40px; margin-bottom: 8px; width: 185px;  overflow: hidden;" title="Console"></iframe>
                   <!-- <a id="ac-sign-in-button" href="https://accounts.appscode.com/user/login"
                   class="button ac-button is-loading {{ if eq $currentPageType "docs" }} is-hidden {{ end }}"><span>SIGN IN</span></a> -->
                   <a href="{{ $.Site.Params.domain_appscode }}/contact/"
@@ -783,10 +783,10 @@
               <!-- user info wrapper start  -->
               <div class="user-info-wrapper">
                 <figure class="image is-64x64">
-                  <img class="is-rounded" src="{{ $user.profile }}" alt="{{ $user.name }}" loading="lazy">
+                  <img class="is-rounded" src="{{ $user.profile }}" alt="{{ $user.name }}" loading="lazy" width="64" height="64">
                 </figure>
                 <div class="user-info">
-                  <h5>{{ $user.name }}</h5>
+                  <label>{{ $user.name }}</label>
                   <p>{{ $user.job }}{{ if $user.companyKey }} at
                     {{ index $.Site.Data.customers $user.companyKey "name" }}{{ end }}</p>
                 </div>
@@ -846,7 +846,7 @@
   {{ end }}
 
   <!--========================== top to button start ========================== -->
-  <button class="go-to-top" id="goTop">
+  <button class="go-to-top" id="goTop" title="go-to-top">
     <i class="fa fa-angle-up" aria-hidden="true"></i>
   </button>
   <!--========================== top to button end ==========================-->
@@ -871,7 +871,7 @@
               <div class="subscription-form">
                 <form method="post" action="https://listmonk.appscode.com/subscription/form"
                   id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="navbar-form" target="_blank"
-                  novalidate role="email" role="email">
+                  novalidate>
                   <label for="email">Subscribe to Our Newsletter</label>
                   <p class="spam-message">No spam, we promise. Your mail address is secure</p>
                   <div class="field has-addons">
@@ -880,7 +880,7 @@
                       <input type="hidden" id="afbbc" name="l" value="d6a7b3b4-15ec-419e-beaf-a503d0bc1b41" />
                       <input class="input" name="email" id="mce-EMAIL" type="email"
                         placeholder="Your work email address" required />
-                      <button id="mc-embedded-subscribe" type="submit" name="subscribe" class="button">
+                      <button id="mc-embedded-subscribe" type="submit" title="subscribe" class="button" name="mc-embedded-subscribe">
                         <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                       </button>
                     </div>
@@ -912,7 +912,7 @@
             <div class="single-footer-widget">
               <!-- footer menu start -->
               <div class="footer-menu is-info">
-                <h4>Products</h4>
+                <label>Products</label>
                 <ul class="footer-link">
                   {{ range $item := $.Site.Data.config.footerLinks }}
                   {{ $p := (index $.Site.Data.products $item) }}
@@ -928,7 +928,7 @@
             <div class="single-footer-widget">
               <!-- footer menu start -->
               <div class="footer-menu is-success">
-                <h4>Services</h4>
+                <label>Services</label>
                 <ul class="footer-link">
                   <li><a href="{{.Site.Params.domain_appscode}}/consulting/">Consulting</a></li>
                   <li><a href="{{.Site.Params.domain_appscode}}/training/">Training</a></li>
@@ -943,7 +943,7 @@
             <div class="single-footer-widget">
               <!-- footer menu start -->
               <div class="footer-menu is-warning">
-                <h4>Company</h4>
+                <label>Company</label>
                 <ul class="footer-link">
                   <li><a href="{{.Site.Params.domain_appscode}}/about/">About Us</a></li>
                   <li><a href="{{.Site.Params.blog_url}}">Blog</a></li>
@@ -958,7 +958,7 @@
             <div class="single-footer-widget">
               <!-- footer menu start -->
               <div class="footer-menu is-danger">
-                <h4>Legal</h4>
+                <label>Legal</label>
                 <ul class="footer-link">
                   <li><a href="{{.Site.Params.domain_appscode}}/legal/tos/">Terms of Service</a></li>
                   <li><a href="{{.Site.Params.domain_appscode}}/legal/privacy-policy/">Privacy Policy</a></li>
@@ -988,17 +988,17 @@
             <div class="socail-link-inline">
               <ul>
                 <li>
-                  <a href="{{.Site.Params.twitter_url}}"><img src="/assets/images/icon/community/twitterx-solid-icon.svg" alt="twitterx-icon" loading="lazy"></a>
+                  <a href="{{.Site.Params.twitter_url}}" title="Twitter"><img src="/assets/images/icon/community/twitterx-solid-icon.svg" alt="twitterx-icon" loading="lazy"></a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/company/appscode"><i class="fa fa-linkedin"
+                  <a href="https://www.linkedin.com/company/appscode" title="Linkedin"><i class="fa fa-linkedin"
                       aria-hidden="true"></i></a>
                 </li>
                 <li>
-                  <a href="{{.Site.Params.facebook_url}}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  <a href="{{.Site.Params.facebook_url}}" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 </li>
                 <li>
-                  <a href="{{.Site.Params.youtube_url}}"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                  <a href="{{.Site.Params.youtube_url}}" title="Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
                 </li>
               </ul>
             </div>

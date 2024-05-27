@@ -33,8 +33,8 @@
       }
 
       .user-info {
-        h5 {
-          font-weight: bold;
+        label {
+          font-weight: 600;
           font-size: 22px;
           line-height: 1;
           line-height: 160%;
@@ -43,7 +43,7 @@
         p {
           font-size: 14px;
           line-height: 160%;
-          color: $ac-color-label;
+          color: $ac-color-text;
         }
       }
     }
@@ -129,7 +129,7 @@ Responsive Classes
         justify-content: center;
 
         .user-info {
-          h5 {
+          label {
             font-size: 20px;
           }
           text-align: left;
@@ -185,7 +185,7 @@ Responsive Classes
       padding: 30px;
       .user-info-wrapper {
         .user-info {
-          h5 {
+          label {
             font-size: 18px;
           }
         }
