@@ -833,7 +833,7 @@
     }
   }
 
-  input[type="search"] {
+  input {
     border: none;
     background-color: transparent;
     color: $ac-color-text;
@@ -907,7 +907,7 @@
 
   .navbar-appscode-wrapper {
     &.navbar-product {
-      transform: translateY(56px);
+      transform: translateY(94px);
       &.is-docs-page {
         transform: translateY(94px);
       }

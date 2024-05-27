@@ -98,42 +98,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" media="print" onload="this.media='all'">
 
-  <!-- Load custom CSS asynchronously -->
-  <!-- <link rel="stylesheet" href="/assets/sass/main.css"> -->
-
-  {{ with $style := resources.Get "/assets/sass/main.css" | resources.Minify | resources.Fingerprint }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-  {{ end }} 
-  <!-- new style  -->
-
-  <!-- Font Awesome CSS -->
-  <!-- <link rel="stylesheet" href="/assets/css/font-awesome.min.css" /> -->
-  <!-- google fonts icon  -->
-  <!-- <link
-    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-    rel="stylesheet"> -->
-  <!-- AOS CSS -->
-  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
-  <!-- Bulma tooltip CSS -->
-  <!-- <link rel="stylesheet" href="/assets/css/bulma-tooltip.min.css" /> -->
-
-  <!-- Bulma CSS -->
-
-  <!-- highlight css  -->
-  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css"> -->
-  <!-- owl carousel CSS -->
-  <!-- <link rel="stylesheet" href="/assets/css/owl.carousel.min.css"> -->
-  <!-- <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css"> -->
   <!-- Calendly link widget begin -->
   <link href="https://calendly.com/assets/external/widget.css" rel="stylesheet">
+ 
+  <!-- <link rel="stylesheet" href="/assets/sass/main.css"> -->
 
-  <!-- <link rel="stylesheet" href="/assets/css/bulma.min.css" /> -->
-  <!-- Keen slider CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css" />
   <!-- Custom CSS -->
-  <!-- {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+  {{ with $style := resources.Get "assets/sass/main.css" | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-  {{ end }} -->
+  {{ end }}
   <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
   <script src="https://cdn.pagesense.io/js/appscodeinc/30ddadb503fc4a72b3eede8ce8b08997.js"></script>
 </head>
@@ -175,21 +148,21 @@
 
       // close cookie box
       closeBtn.addEventListener("click", function(){
-        cookieBox.classList.add("hide");
+        cookieBox.classList.add("is-hidden");
       })
 
       acceptBtn.addEventListener("click", function () {
       //setting cookie for 1 month, after one month it'll be expired automatically
         document.cookie = `CookieBy=KubeDB; path=/; max-age=${60 * 60 * 24 * 365}`;
         if (document.cookie) { //if cookie is set
-        cookieBox.classList.add("hide"); //hide cookie box
+        cookieBox.classList.add("is-hidden"); //is-hidden cookie box
         } else { //if cookie not set then alert an error
         alert("Cookie can't be set! Please unblock this site from the cookie setting of your browser.");
         }
       });
       let checkCookie = document.cookie.indexOf("CookieBy=KubeDB"); //checking our cookie
-      //if cookie is set then hide the cookie box else show it
-      checkCookie != -1 ? cookieBox.classList.add("hide") : cookieBox.classList.remove("hide");
+      //if cookie is set then is-hidden the cookie box else show it
+      checkCookie != -1 ? cookieBox.classList.add("is-hidden") : cookieBox.classList.remove("hide");
     </script>
     <!-- cookies consent end -->
 

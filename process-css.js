@@ -29,8 +29,11 @@ fs.readFile(cssFilePath, (err, css) => {
         'select2',
         'fs-webform-container',
         'placeholder',
-        'fserv-button-submit'
-
+        'fserv-button-submit',
+        'single-result-item',
+        'single-result-item h2',
+        'search-content',
+        'is-show',
       ],
       deep: [
         /^fserv-/, 
@@ -39,7 +42,8 @@ fs.readFile(cssFilePath, (err, css) => {
         /^formserv/,
         /^ss-/,
         /^owl-/,
-        /^item/
+        /^item/,
+        /^headroom/,
       ],
       greedy: [
         // /^header-/,
