@@ -68,9 +68,20 @@
   }
 }
 .customers-logo-area {
+  h2 {
+    font-size: 32px;
+    letter-spacing: 0;
+    font-weight: 500;
+  }
   .single-brand {
+    border: 1px solid $ac-white-light;
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 4px;
     img {
-      max-height: 32px;
+      height: 32px;
+      width: auto;
     }
   }
   .customers-logo {

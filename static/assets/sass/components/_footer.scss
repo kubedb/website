@@ -53,7 +53,7 @@
 .contact-information {
   margin-top: 28px;
 
-  h4 {
+  label {
     font-size: 18px;
     color: $ac-color-heading;
   }
@@ -79,7 +79,7 @@ p.spam-message {
 }
 
 .footer-menu {
-  h4 {
+  label {
     font-size: 18px;
     color: $ac-color-heading;
     margin-bottom: 4px;
@@ -226,7 +226,7 @@ Responsive Classes
       &.is-success {
         background-color: #27b06430;
       }
-      h4 {
+      label {
         margin-bottom: 0;
       }
     }

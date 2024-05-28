@@ -78,7 +78,7 @@ const showMeilisearchList = (event, listId, hideId) => {
         updateHitsDomElement(formatedHits, listId);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   } else {
 
