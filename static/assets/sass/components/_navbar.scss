@@ -334,8 +334,8 @@
           }
 
           .navigate-icon {
-            .material-icons {
-              font-size: 1rem;
+            .icon {
+              width: 1rem;
             }
           }
         }
@@ -357,7 +357,7 @@
           background-color: #4d4dcb0d;
 
           .navigate-icon {
-            .material-icons {
+            .icon {
               opacity: 1;
               visibility: visible;
             }
@@ -400,8 +400,8 @@
           justify-content: center;
           align-items: center;
 
-          .material-icons {
-            font-size: 1.2rem;
+          .icon {
+            width: 1.2rem;
             color: $ac-primary;
             opacity: 0;
             visibility: hidden;
@@ -453,7 +453,7 @@
           align-items: center;
           margin-bottom: 15px;
 
-          .material-icons {
+          .icon {
             font-size: 1rem;
             margin-right: 0.6rem;
             color: $ac-primary;
@@ -491,12 +491,12 @@
         border: none;
         color: $ac-primary;
 
-        .material-icons {
+        .icon {
           margin-left: 1rem;
         }
       }
 
-      .material-icons {
+      .icon {
         font-size: 1rem;
         margin-left: 0.5rem;
         transition: 0.3s ease-in-out;
@@ -1097,7 +1097,7 @@ Responsive Classes
           }
 
           .navigate-icon {
-            .material-icons {
+            .icon {
               font-size: 16px;
             }
           }

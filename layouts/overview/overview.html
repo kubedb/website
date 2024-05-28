@@ -100,9 +100,8 @@
             <h2 class="is-size-6 mb-15">Why Choose KubeDB?🤔</h2>
             {{ range .features }}
             <li>
-              <lord-icon src="https://cdn.lordicon.com/hjeefwhm.json" target="ul.check-list li" trigger="hover" colors="primary:#1971bd"
-                style="width:20px;height:20px; margin-right: 10px;">
-              </lord-icon>{{.title}}
+              <span class="icon"><img src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span>
+            <span>{{.title}}</span>
             </li>
             {{ end }}
 

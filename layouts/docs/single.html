@@ -20,8 +20,14 @@
   <div class="navbar-right">
 
     <ul>
-      <button class="button ac-button inline-button back-button"><span
-          class="material-icons-outlined">arrow_back</span>Back</button>
+      <button class="button ac-button inline-button back-button">
+        <span class="icon arrow-back">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+        </span>
+        <span>Back</span>
+      </button>
       {{ $sectionMenuId := .Params.section_menu_id }}
       {{ if isset .Params "menu_name" }}
       {{ range (index .Site.Menus .Params.menu_name) }}
@@ -33,8 +39,14 @@
         <!-- mega-menu wrapper start  -->
         <div class="mega-menu-wrapper">
           <div class="mega-menu-inner ac-grid-container">
-            <button class="button ac-button inline-button back-button"><span
-                class="material-icons-outlined">arrow_back</span>Back</button>
+            <button class="button ac-button inline-button back-button">
+              <span class="icon arrow-back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                </svg>
+              </span>
+              <span>Back</span>
+            </button>
 
             <!-- product start  -->
             <div class="product-menu database-list">
@@ -50,8 +62,10 @@
                     <!-- <p>static content</p> -->
                   </div>
                   <div class="navigate-icon">
-                    <span class="material-icons">
-                      arrow_forward
+                    <span class="icon arrow-forward">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
                     </span>
                   </div>
                 </a>
@@ -149,8 +163,14 @@
 <div class="documentation-area">
   <!-- documentation area start -->
   <div class="left-sidebar-wrapper">
-    <button class="button ac-button inline-button back-button pl-15 is-hidden-desktop"><span
-        class="material-icons-outlined">arrow_back</span>Back</button>
+    <button class="button ac-button inline-button back-button pl-15 is-hidden-desktop">
+      <span class="icon arrow-back">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+        </svg>
+      </span>
+      <span>Back</span>
+    </button>
     <div class="ac-product-left-sidebar">
 
       {{ if isset .Params "menu_name" }}
@@ -226,9 +246,11 @@
   <div class="documentation-body">
     {{ if not (eq $p.latestVersion $currentBranch) }}
     <article class="message is-warning">
-       <lord-icon src="https://cdn.lordicon.com/rslnizbt.json" trigger="loop" colors="primary:#ffdd57"
-         style="width:52px;height:52px;">
-       </lord-icon>
+       <div class="icon width-40 height-40">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+        </svg>        
+       </div>
       <div class="message-body">
         {{ $url := urls.Parse (absURL .Permalink) }}
         {{ $nurl := "/docs/latest/" }}
@@ -275,8 +297,14 @@
 
       <!-- table of contents area start -->
       <div class="tbl-of-contents">
-        <button class="button ac-button inline-button back-button pl-15 is-hidden-desktop"><span
-            class="material-icons-outlined">arrow_back</span>Back</button>
+        <button class="button ac-button inline-button back-button pl-15 is-hidden-desktop">
+          <span class="icon arrow-back">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+          </span>
+          <span>Back</span>
+        </button>
         <h4>What's on this Page</h4>
         {{.TableOfContents}}
       </div>
@@ -299,17 +327,25 @@
 <!-- sidebar search area start -->
 
 <div class="sidebar-search-area">
-  <button class="button ac-button inline-button back-button"><span
-      class="material-icons-outlined">arrow_back</span>Back</button>
+  <button class="button ac-button inline-button back-button">
+    <span class="icon back">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+      </svg>
+    </span>
+    <span>Back</span>
+  </button>
   <div class="search-area-top">
     <h5>Search</h5>
 
     <div class="searchbar-area">
       <input type="search" name="search" id="searchbox" placeholder="Search in {{ $p.name }} documentation!" />
       <button>
-        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" colors="primary:#ffffff" target=".searchbar-area button"
-          trigger="hover" style="width:22px;height:22px">
-        </lord-icon>
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>          
+        </span>
       </button>
     </div>
   </div>

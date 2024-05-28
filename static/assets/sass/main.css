@@ -2230,9 +2230,6 @@ strong {
   display: flex;
   align-items: center;
 }
-.message lord-icon {
-  margin-right: 1rem;
-}
 .message.is-warning {
   background-color: transparent;
 }
@@ -2749,8 +2746,8 @@ video {
 .mega-menu-wrapper .mega-menu-inner .product-menu.database-list .single-product .product-logo img {
   height: 1.5rem;
 }
-.mega-menu-wrapper .mega-menu-inner .product-menu.database-list .single-product .navigate-icon .material-icons {
-  font-size: 1rem;
+.mega-menu-wrapper .mega-menu-inner .product-menu.database-list .single-product .navigate-icon .icon {
+  width: 1rem;
 }
 .mega-menu-wrapper .mega-menu-inner .product-menu .single-product {
   display: grid;
@@ -2766,7 +2763,7 @@ video {
 .mega-menu-wrapper .mega-menu-inner .product-menu .single-product:hover, .mega-menu-wrapper .mega-menu-inner .product-menu .single-product.is-active {
   background-color: rgba(77, 77, 203, 0.0509803922);
 }
-.mega-menu-wrapper .mega-menu-inner .product-menu .single-product:hover .navigate-icon .material-icons, .mega-menu-wrapper .mega-menu-inner .product-menu .single-product.is-active .navigate-icon .material-icons {
+.mega-menu-wrapper .mega-menu-inner .product-menu .single-product:hover .navigate-icon .icon, .mega-menu-wrapper .mega-menu-inner .product-menu .single-product.is-active .navigate-icon .icon {
   opacity: 1;
   visibility: visible;
 }
@@ -2800,8 +2797,8 @@ video {
   justify-content: center;
   align-items: center;
 }
-.mega-menu-wrapper .mega-menu-inner .product-menu .single-product .navigate-icon .material-icons {
-  font-size: 1.2rem;
+.mega-menu-wrapper .mega-menu-inner .product-menu .single-product .navigate-icon .icon {
+  width: 1.2rem;
   color: var(--ac-primary);
   opacity: 0;
   visibility: hidden;
@@ -2841,7 +2838,7 @@ video {
   align-items: center;
   margin-bottom: 15px;
 }
-.mega-menu-wrapper .mega-menu-inner .product-description .features li .material-icons {
+.mega-menu-wrapper .mega-menu-inner .product-description .features li .icon {
   font-size: 1rem;
   margin-right: 0.6rem;
   color: var(--ac-primary);
@@ -2868,10 +2865,10 @@ video {
   border: none;
   color: var(--ac-primary);
 }
-.button.ac-button.inline-button:hover .material-icons {
+.button.ac-button.inline-button:hover .icon {
   margin-left: 1rem;
 }
-.button.ac-button.inline-button .material-icons {
+.button.ac-button.inline-button .icon {
   font-size: 1rem;
   margin-left: 0.5rem;
   transition: 0.3s ease-in-out;
@@ -3216,7 +3213,7 @@ Responsive Classes
   .mega-menu-wrapper .mega-menu-inner .product-menu .single-product .product-logo img {
     height: 1.8rem;
   }
-  .mega-menu-wrapper .mega-menu-inner .product-menu .single-product .navigate-icon .material-icons {
+  .mega-menu-wrapper .mega-menu-inner .product-menu .single-product .navigate-icon .icon {
     font-size: 16px;
   }
   .mega-menu-wrapper .mega-menu-inner .product-menu.database-list {
@@ -3628,8 +3625,8 @@ Responsive Classes
   line-height: 1;
   transition: 0.3s ease-in-out;
 }
-.readmore-button .material-icons-outlined {
-  font-size: 0.875rem;
+.readmore-button .icon {
+  width: 0.875rem;
   margin-left: 10px;
   transition: 0.3s ease-in-out;
 }
@@ -3816,10 +3813,6 @@ Responsive Classes
   height: 2.875rem;
   margin-right: 0.5rem;
   padding: 0 30px;
-}
-.hero-area.is-product .buttons .button .material-icons-outlined {
-  font-size: 1.3rem;
-  margin-right: 0.5rem;
 }
 .hero-area.is-product .buttons .button.is-primary {
   box-shadow: 2px 4px 24px rgba(73, 73, 163, 0.15);
@@ -4102,9 +4095,6 @@ Responsive Classes
 .single-features-item:hover .readmore-button {
   letter-spacing: 0;
   color: var(--ac-primary);
-}
-.single-features-item:hover .readmore-button .material-icons-outlined {
-  margin-left: 20px;
 }
 .single-features-item .feature-icon {
   width: 3.75rem;
@@ -4476,14 +4466,6 @@ table th:first-child {
   background-color: #ffffff;
   border: none;
 }
-.arrows .button:hover .material-icons-outlined {
-  transform: scale(1.2);
-  color: var(--ac-primary);
-}
-.arrows .button .material-icons-outlined {
-  transition: 0.3s ease-in-out;
-  font-size: 18px;
-}
 
 /****************************************
 Responsive Classes
@@ -4594,9 +4576,6 @@ Responsive Classes
   color: #fff;
   transition: 0.3s ease-in-out;
 }
-.gallery-card .gallery-card-thumbnail .play-button .material-icons-outlined {
-  font-size: 28px;
-}
 .gallery-card .gallery-body {
   padding: 20px 20px;
 }
@@ -4620,10 +4599,6 @@ Responsive Classes
   display: flex;
   align-items: center;
   color: #505050;
-}
-.gallery-card .gallery-body .meta-tag p .material-icons-outlined {
-  font-size: 16px;
-  margin-right: 0.8rem;
 }
 
 .filtered-tags .tag {
@@ -6336,6 +6311,7 @@ Responsive Classes
   box-shadow: 0px 2px 30px rgba(44, 60, 74, 0.08);
   border-radius: 4px;
   transition: 0.3s ease-in-out;
+  height: 100%;
 }
 .assistance-card-wrapper .single-card:hover {
   box-shadow: 0px 2px 30px rgba(44, 60, 74, 0.16);

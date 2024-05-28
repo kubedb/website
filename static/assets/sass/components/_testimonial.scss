@@ -76,13 +76,13 @@
     border: none;
 
     &:hover {
-      .material-icons-outlined {
+      .icon-outlined {
         transform: scale(1.2);
         color: $ac-primary;
       }
     }
 
-    .material-icons-outlined {
+    .icon-outlined {
       transition: 0.3s ease-in-out;
       font-size: 18px;
     }
