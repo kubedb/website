@@ -179,9 +179,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // highligh js initilization end
 
   // AOS Animation
-  AOS.init({
-    once: true,
-  });
+  // AOS.init({
+  //   once: true,
+  // });
 
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
@@ -335,7 +335,7 @@ const goToASectionSmoothly = () => {
       // go to the target section smoothly
       const targetEl = document.querySelector(e.currentTarget.hash);
       const pos = targetEl.offsetTop;
-      console.log(pos);
+      console.error(pos);
       window.scrollTo({
         top: pos,
         behavior: "smooth",

@@ -76,39 +76,34 @@
   <meta property="og:image"
     content="{{ $.Site.BaseURL }}/assets/images/products/{{ $p.key }}/{{ $p.key }}-1280x640.png">
   <meta property="og:type" content="article">
-  <!-- Font Awesome CSS -->
-  <!-- <link rel="stylesheet" href="/assets/css/font-awesome.min.css" /> -->
-  <!-- google fonts icon  -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-    rel="stylesheet">
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Bulma tooltip CSS -->
-  <link rel="stylesheet" href="/assets/css/bulma-tooltip.min.css" />
-  <!-- Magnific-popup css  -->
-  <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
-  <!-- Bulma CSS -->
-  <!-- {{ with $style := resources.Get "assets/css/bulma.min.css" | resources.Fingerprint }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-  {{ end }} -->
-  <!-- highlight css  -->
-  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css"> -->
-  <!-- owl carousel CSS -->
-  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+
+  <!-- new style  -->
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Load Roboto font asynchronously with font-display: swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 4.7 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="print" onload="this.media='all'">
+
+  <!-- Magnific Popup CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" media="print" onload="this.media='all'">
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" media="print" onload="this.media='all'">
+
   <!-- Calendly link widget begin -->
   <link href="https://calendly.com/assets/external/widget.css" rel="stylesheet">
 
-  <!-- <link rel="stylesheet" href="/assets/css/bulma.min.css" /> -->
-  <!-- Keen slider CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css" />
   <!-- Custom CSS -->
-  {{ with $style := resources.Get "assets/sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+  {{ with $style := resources.Get "/assets/sass/main.css" | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
   {{ end }}
   <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
-  <script src="https://cdn.pagesense.io/js/appscodeinc/30ddadb503fc4a72b3eede8ce8b08997.js"></script>
 </head>
 
 <body class="{{$p.key}}" id="app">
@@ -148,21 +143,21 @@
 
       // close cookie box
       closeBtn.addEventListener("click", function(){
-        cookieBox.classList.add("hide");
+        cookieBox.classList.add("is-hidden");
       })
 
       acceptBtn.addEventListener("click", function () {
       //setting cookie for 1 month, after one month it'll be expired automatically
         document.cookie = `CookieBy=KubeDB; path=/; max-age=${60 * 60 * 24 * 365}`;
         if (document.cookie) { //if cookie is set
-        cookieBox.classList.add("hide"); //hide cookie box
+        cookieBox.classList.add("is-hidden"); //is-hidden cookie box
         } else { //if cookie not set then alert an error
         alert("Cookie can't be set! Please unblock this site from the cookie setting of your browser.");
         }
       });
       let checkCookie = document.cookie.indexOf("CookieBy=KubeDB"); //checking our cookie
-      //if cookie is set then hide the cookie box else show it
-      checkCookie != -1 ? cookieBox.classList.add("hide") : cookieBox.classList.remove("hide");
+      //if cookie is set then is-hidden the cookie box else show it
+      checkCookie != -1 ? cookieBox.classList.add("is-hidden") : cookieBox.classList.remove("hide");
     </script>
     <!-- cookies consent end -->
 
@@ -174,7 +169,7 @@
     <div class="navbar-area active-headroom header--fixed">
       <!-- iframe  -->
       {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
-      <iframe src="https://appscode.com/notification-top/" id="notification" class="{{ if eq $currentPageType "docs" }} is-hidden {{ end }}" frameborder="0" scrolling="no" onload="resizeIframe()" style="height: 0px; width: 100%; display: flex; overflow: hidden;"></iframe>
+      <iframe src="https://appscode.com/notification-top/" id="notification" class="{{ if eq $currentPageType "docs" }} is-hidden {{ end }}" frameborder="0" scrolling="no" onload="resizeIframe()" style="height: 0px; width: 100%; display: flex; overflow: hidden;" title="Notification"></iframe>
      
       <script>
           function resizeIframe() {
@@ -217,7 +212,12 @@
                     <!-- ac-grid-container -->
                     <div class="mega-menu-inner container">
                       <button class="button ac-button inline-button back-button"><span
-                          class="material-icons-outlined">arrow_back</span>Back</button>
+                          class="icon back-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                          </svg>
+                          
+                        </span>Back</button>
                       <!-- product start  -->
                       <div class="product-menu">
                         {{ range $item := $.Site.Data.config.productMenu.c0 }}
@@ -226,15 +226,17 @@
                         <a class="single-product"
                           href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
                           <div class="product-logo">
-                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}" loading="lazy">
                           </div>
                           <div class="product-info">
                             <h6>{{ $p.name }}</h6>
                             <p>{{ $p.tagline | plainify }}</p>
                           </div>
                           <div class="navigate-icon">
-                            <span class="material-icons">
-                              arrow_forward
+                            <span class="icon arrow-forward">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                              </svg>                              
                             </span>
                           </div>
                         </a>
@@ -247,15 +249,17 @@
                         <a class="single-product"
                           href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
                           <div class="product-logo">
-                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}" loading="lazy">
                           </div>
                           <div class="product-info">
                             <h6>{{ $p.name }}</h6>
                             <p>{{ $p.tagline | plainify }}</p>
                           </div>
                           <div class="navigate-icon">
-                            <span class="material-icons">
-                              arrow_forward
+                            <span class="icon arrow-forward">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                              </svg>                              
                             </span>
                           </div>
                         </a>
@@ -268,15 +272,17 @@
                         <a class="single-product"
                           href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
                           <div class="product-logo">
-                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}" loading="lazy">
                           </div>
                           <div class="product-info">
                             <h6>{{ $p.name }}</h6>
                             <p>{{ $p.tagline | plainify }}</p>
                           </div>
                           <div class="navigate-icon">
-                            <span class="material-icons">
-                              arrow_forward
+                            <span class="icon arrow-forward">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                              </svg>                              
                             </span>
                           </div>
                         </a>
@@ -291,7 +297,7 @@
                       <!-- single product description start  -->
                       <div class="product-description">
                         <div class="brand">
-                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
+                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" loading="lazy">
                         </div>
 
                         <p>{{ $p.summary | safeHTML }}</p>
@@ -300,7 +306,7 @@
                         <ul class="features">
                           {{ range $index, $item := $p.features }}
                           {{ if lt $index 8 }}
-                          <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
+                          <li><span class="icon"><img src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span><span>{{ $item.title }}</span></li>
                           {{ end }}
                           {{ end }}
                         </ul>
@@ -316,7 +322,7 @@
                       <!-- single product description start  -->
                       <div class="product-description">
                         <div class="brand">
-                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
+                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" loading="lazy">
                         </div>
 
 
@@ -325,7 +331,7 @@
                         <ul class="features">
                           {{ range $index, $item := $p.features }}
                           {{ if lt $index 8 }}
-                          <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
+                          <li><span class="icon"><img src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span><span>{{ $item.title }}</span></li>
                           {{ end }}
                           {{ end }}
                         </ul>
@@ -343,7 +349,7 @@
                       <!-- single product description start  -->
                       <div class="product-description">
                         <div class="brand">
-                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
+                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" loading="lazy">
                         </div>
 
 
@@ -352,7 +358,7 @@
                         <ul class="features">
                           {{ range $index, $item := $p.features }}
                           {{ if lt $index 8 }}
-                          <li><span class="material-icons">task_alt</span>{{ $item.title }}</li>
+                          <li><span class="icon"><img src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span></span><span>{{ $item.title }}</span></li>
                           {{ end }}
                           {{ end }}
                         </ul>
@@ -394,7 +400,10 @@
                     <!-- ac-grid-container -->
                     <div class="mega-menu-inner container">
                       <button class="button ac-button inline-button back-button"><span
-                          class="material-icons-outlined">arrow_back</span>Back to Resources</button>
+                          class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                          </svg>
+                          </span><span>Back to Resources</span></button>
                       <!-- list menu items start  -->
                       <div class="resources-list">
                         <!-- single resources list  -->
@@ -416,103 +425,12 @@
                           </ul>
                         </div>
                         <!-- single resources list  -->
-
-                        <!-- single resources list  -->
-<!--                         <div class="list-items">
-                          <h6>DOCUMENTATION</h6>
-                          <ul>
-                            <li><a
-                                href="https://voyagermesh.com/docs"
-                                target="_blank">Voyager</a></li>
-                            <li><a
-                                href="https://appscode.com/products/guard/latest/welcome/"
-                                target="_blank">Guard</a></li>
-                            <li><a
-                                href="https://appscode.com/products/kubed/latest/welcome/"
-                                target="_blank">Kubed</a>
-                            </li>
-                            <li><a
-                                href="https://pharmer.dev/docs/latest/welcome/"
-                                target="_blank">Pharmer</a></li>
-                            <li><a
-                                href="https://appscode.com/products/swift/latest/welcome/"
-                                target="_blank">Swift</a>
-                            </li>
-                            <li><a
-                                href="https://appscode.com/products/searchlight/latest/welcome/"
-                                target="_blank">Searchlight</a></li>
-                          </ul>
-                        </div> -->
-                        <!-- single resources list  -->
-
-                        <!-- single resources list  -->
-                        <div class="list-items is-hidden">
-                          <h6>RECENT NEWS/BLOG</h6>
-                          {{- $pctx := . -}}
-                          {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
-                          {{- $pages := $pctx.RegularPages -}}
-
-
-                          <div class="press-wrapper">
-                            {{ range $idx, $p := $pages.ByDate.Reverse }}
-                            {{ if lt $idx 2 }}
-                            <!-- single press start  -->
-                            <a class="single-press">
-                              <div class="calender">
-                                <span class="date">{{ $p.Date.Format "2" }}</span>
-                                <span class="month">{{ $p.Date.Format "Jan" }}</span>
-                              </div>
-
-                              <div class="description">
-                                <h6>{{ $p.Title }}</h6>
-                                {{ range $author := $p.Params.authors }}
-                                <a href="/authors/{{ $author | urlize }}"
-                                  class="author"><span>by</span>{{ $author }}</a>
-                                {{ end }}
-                                <p class="is-ellipsis-2">{{ $p.Summary }}</p>
-                              </div>
-                            </a>
-                            <!-- <a class="single-press">
-                          <div class="description">
-                            <h6><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h6>
-                          </div>
-                        </a> -->
-                            <!-- single press end -->
-                            {{ end }}
-                            {{ end }}
-
-                            <a href="#" class="button ac-button inline-button">See More <span
-                                class="material-icons">arrow_forward</span></a>
-                          </div>
-
-
-                        </div>
-                        <!-- single resources list  -->
-
-
                       </div>
                       <!-- list menu items end -->
                     </div>
                   </div>
                 </li>
-                <!-- <li class="nav-item">
-              <button class="link">Services <i class="fa fa-angle-down" aria-hidden="true"></i></button>
-              <div class="mega-menu-wrapper">
-                <div class="mega-menu-inner ac-grid-container">
-                  <div class="linkable-nav-items">
-                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/consulting/">
-                      Consulting
-                    </a>
-                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/training/">
-                      Training
-                    </a>
-                    <a class="navbar-item" href="{{ $.Site.Params.domain_appscode }}/support/">
-                      Support
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li> -->
+                
                 <li class="nav-item">
                   <a href="https://appscode.com/webinar" target="_blank" class="link">Webinar <span
                       class="whats-new">New</span></a>
@@ -538,7 +456,7 @@
                       }
                     }
                   } //
-                  console.log('GET', 'https://license-issuer.appscode.com/_/webinars/');
+                  console.error('GET', 'https://license-issuer.appscode.com/_/webinars/');
                   xhr.open('GET', 'https://license-issuer.appscode.com/_/webinars/');
                   xhr.send();
                 }());
@@ -558,7 +476,7 @@
 
                 {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
                 <div class="buttons">
-                  <iframe src="https://appscode.com/embed/?color=4d4dcb" frameborder="0" scrolling="no" style="height: 40px; margin-bottom: 8px; width: 185px;  overflow: hidden;"></iframe>
+                  <iframe src="https://appscode.com/embed/?color=4d4dcb" frameborder="0" scrolling="no" style="height: 40px; margin-bottom: 8px; width: 185px;  overflow: hidden;" title="Console"></iframe>
                   <!-- <a id="ac-sign-in-button" href="https://accounts.appscode.com/user/login"
                   class="button ac-button is-loading {{ if eq $currentPageType "docs" }} is-hidden {{ end }}"><span>SIGN IN</span></a> -->
                   <a href="{{ $.Site.Params.domain_appscode }}/contact/"
@@ -658,8 +576,14 @@
 
                   <!-- ac-grid-container -->
                   <div class="mega-menu-inner container">
-                    <button class="button ac-button inline-button back-button"><span
-                        class="material-icons-outlined">arrow_back</span>Back</button>
+                    <button class="button ac-button inline-button back-button">
+                      <span class="icon arrow-back">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                        </svg>
+                      </span>
+                      <span>Back</span>
+                    </button>
                     <!-- product start  -->
                     <div class="product-menu database-list">
                       {{ range .Children }}
@@ -669,7 +593,7 @@
 " class="single-product">
                         {{ if .Pre }}
                         <div class="product-logo">
-                          <img src="{{ .Pre }}" alt="{{ .Name }}">
+                          <img src="{{ .Pre }}" alt="{{ .Name }}" loading="lazy">
                         </div>
                         {{ end }}
                         <div class="product-info">
@@ -677,8 +601,10 @@
                           <!-- <p>static content</p> -->
                         </div>
                         <div class="navigate-icon">
-                          <span class="material-icons">
-                            arrow_forward
+                          <span class="icon arrow-forward">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
                           </span>
                         </div>
                       </a>
@@ -708,7 +634,7 @@
                           </a>
                           <img
                             src="https://img.youtube.com/vi/hBHxMtSjKo4/sddefault.jpg"
-                            alt="">
+                            alt="kubedb-youtube-intro" loading="lazy">
                         </div>
                       </div>
                     </div>
@@ -737,12 +663,12 @@
             <div class="community-items ml-70">
               {{ if $p.socialLinks.github }}
               <a href="{{$p.socialLinks.github}}" class="community-item" target="_blank" title="Github">
-                <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon">
+                <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon" loading="lazy">
               </a>
               {{ end }}
               {{ if $p.socialLinks.twitter }}
               <a href="{{$p.socialLinks.twitter}}" class="community-item" target="_blank" title="X(Twitter)">
-                <img src="/assets/images/icon/community/twitterx-icon.svg" alt="twitterx-icon">
+                <img src="/assets/images/icon/community/twitterx-icon.svg" alt="twitterx-icon" loading="lazy">
               </a>
               {{ end }}
             </div>
@@ -831,10 +757,20 @@
           </div>
           <!-- arrows start  -->
           <div class="arrows" data-aos="fade-up" data-aos-duration="900">
-            <button class="button arrow is-rounded customPrevBtn"><span
-                class="material-icons-outlined">arrow_back</span></button>
-            <button class="button arrow is-rounded customNextBtn"><span
-                class="material-icons-outlined">arrow_forward</span></button>
+            <button class="button arrow is-rounded customPrevBtn" title="Previous">
+              <span class="icon arrow-back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                </svg>
+              </span>
+            </button>
+            <button class="button arrow is-rounded customNextBtn" title="Next">
+              <span class="icon arrow-forward">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </span>
+            </button>
           </div>
           <!-- arrows end -->
         </div>
@@ -847,10 +783,10 @@
               <!-- user info wrapper start  -->
               <div class="user-info-wrapper">
                 <figure class="image is-64x64">
-                  <img class="is-rounded" src="{{ $user.profile }}" alt="{{ $user.name }}">
+                  <img class="is-rounded" src="{{ $user.profile }}" alt="{{ $user.name }}" loading="lazy" width="64" height="64">
                 </figure>
                 <div class="user-info">
-                  <h5>{{ $user.name }}</h5>
+                  <label>{{ $user.name }}</label>
                   <p>{{ $user.job }}{{ if $user.companyKey }} at
                     {{ index $.Site.Data.customers $user.companyKey "name" }}{{ end }}</p>
                 </div>
@@ -910,7 +846,7 @@
   {{ end }}
 
   <!--========================== top to button start ========================== -->
-  <button class="go-to-top" id="goTop">
+  <button class="go-to-top" id="goTop" title="go-to-top">
     <i class="fa fa-angle-up" aria-hidden="true"></i>
   </button>
   <!--========================== top to button end ==========================-->
@@ -927,7 +863,7 @@
               <!-- logo start -->
               <div class="footer-logo">
                 <a href="{{.Site.Params.domain_appscode}}"><img src="{{$.Site.Data.products.appscode.logo.src}}"
-                    alt="{{$.Site.Data.products.appscode.logo.alt}}" class="img" /></a>
+                    alt="{{$.Site.Data.products.appscode.logo.alt}}" class="img" loading="lazy" /></a>
               </div>
               <!-- logo end -->
 
@@ -935,7 +871,7 @@
               <div class="subscription-form">
                 <form method="post" action="https://listmonk.appscode.com/subscription/form"
                   id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="navbar-form" target="_blank"
-                  novalidate role="email" role="email">
+                  novalidate>
                   <label for="email">Subscribe to Our Newsletter</label>
                   <p class="spam-message">No spam, we promise. Your mail address is secure</p>
                   <div class="field has-addons">
@@ -944,7 +880,7 @@
                       <input type="hidden" id="afbbc" name="l" value="d6a7b3b4-15ec-419e-beaf-a503d0bc1b41" />
                       <input class="input" name="email" id="mce-EMAIL" type="email"
                         placeholder="Your work email address" required />
-                      <button id="mc-embedded-subscribe" type="submit" name="subscribe" class="button">
+                      <button id="mc-embedded-subscribe" type="submit" title="subscribe" class="button" name="mc-embedded-subscribe">
                         <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                       </button>
                     </div>
@@ -976,7 +912,7 @@
             <div class="single-footer-widget">
               <!-- footer menu start -->
               <div class="footer-menu is-info">
-                <h4>Products</h4>
+                <label>Products</label>
                 <ul class="footer-link">
                   {{ range $item := $.Site.Data.config.footerLinks }}
                   {{ $p := (index $.Site.Data.products $item) }}
@@ -992,7 +928,7 @@
             <div class="single-footer-widget">
               <!-- footer menu start -->
               <div class="footer-menu is-success">
-                <h4>Services</h4>
+                <label>Services</label>
                 <ul class="footer-link">
                   <li><a href="{{.Site.Params.domain_appscode}}/consulting/">Consulting</a></li>
                   <li><a href="{{.Site.Params.domain_appscode}}/training/">Training</a></li>
@@ -1007,7 +943,7 @@
             <div class="single-footer-widget">
               <!-- footer menu start -->
               <div class="footer-menu is-warning">
-                <h4>Company</h4>
+                <label>Company</label>
                 <ul class="footer-link">
                   <li><a href="{{.Site.Params.domain_appscode}}/about/">About Us</a></li>
                   <li><a href="{{.Site.Params.blog_url}}">Blog</a></li>
@@ -1022,7 +958,7 @@
             <div class="single-footer-widget">
               <!-- footer menu start -->
               <div class="footer-menu is-danger">
-                <h4>Legal</h4>
+                <label>Legal</label>
                 <ul class="footer-link">
                   <li><a href="{{.Site.Params.domain_appscode}}/legal/tos/">Terms of Service</a></li>
                   <li><a href="{{.Site.Params.domain_appscode}}/legal/privacy-policy/">Privacy Policy</a></li>
@@ -1052,17 +988,17 @@
             <div class="socail-link-inline">
               <ul>
                 <li>
-                  <a href="{{.Site.Params.twitter_url}}"><img src="/assets/images/icon/community/twitterx-solid-icon.svg" alt="twitterx-icon"></a>
+                  <a href="{{.Site.Params.twitter_url}}" title="Twitter"><img src="/assets/images/icon/community/twitterx-solid-icon.svg" alt="twitterx-icon" loading="lazy"></a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/company/appscode"><i class="fa fa-linkedin"
+                  <a href="https://www.linkedin.com/company/appscode" title="Linkedin"><i class="fa fa-linkedin"
                       aria-hidden="true"></i></a>
                 </li>
                 <li>
-                  <a href="{{.Site.Params.facebook_url}}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  <a href="{{.Site.Params.facebook_url}}" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 </li>
                 <li>
-                  <a href="{{.Site.Params.youtube_url}}"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                  <a href="{{.Site.Params.youtube_url}}" title="Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
                 </li>
               </ul>
             </div>
@@ -1074,63 +1010,84 @@
   {{ end }}
   <!-- ==========================footer area end ==========================-->
 
-  <!-- <script src="/assets/js/vue-elements.js"></script> -->
-  <!-- integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" -->
-  <script src="/assets/js/jquery-3.6.0.min.js"></script>
-  <script src="/assets/js/owl.carousel.min.js"></script>
-  <script src="/assets/js/headroom.min.js"></script>
+  <!-- Compressed and Minified Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.12.0/headroom.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" defer></script>
+<script src="/assets/js/jquery.serialscrolling.min.js" defer></script>
 
-  <!-- lordicon js  -->
-  <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
-  
-  <!-- Magnific-popup JS  -->
-  <script src="/assets/js/magnific-popup.min.js"></script>
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- download js  -->
-  <script src="https://unpkg.com/downloadjs@1.4.7/download.min.js"></script>
-  <!-- clipboard js  -->
-  <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+{{ with $script := resources.Get "/assets/js/main.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $script.RelPermalink }}" defer></script>
+{{ end }}
 
-  <!-- Calendly link widget begin -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-  <!-- highlight js  -->
-  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script> -->
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9255943.js"></script>
+<!-- End of HubSpot Embed Code -->
 
-  <!-- Main JS -->
-  <!-- {{ with $style := resources.Get "assets/js/main.js" | resources.Fingerprint }}
-  <script src="{{ $style.RelPermalink }}"></script>
-  {{ end }} -->
-  <script src="/assets/js/main.js"></script>
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9255943.js"></script>
-  <!-- End of HubSpot Embed Code -->
+<!-- Start of Tawk.to Script -->
+<script type="text/javascript" defer>
+// if (window.innerWidth >= 768) {
+//   setTimeout(() => {
+//     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+//     (function() {
+//       var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+//       s1.async = true;
+//       s1.src = 'https://embed.tawk.to/5821e34b18d9f16af02864b7/default';
+//       s1.charset = 'UTF-8';
+//       s1.setAttribute('crossorigin', '*');
+//       s0.parentNode.insertBefore(s1, s0);
+//     })();
+//   }, 2000);
+// }
 
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {},
-      Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/5821e34b18d9f16af02864b7/default';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
+document.addEventListener('DOMContentLoaded', function () {
+    // Check if the screen width is greater than 768px
+    if (window.innerWidth > 768) {
+        // Set the position you want to trigger the script (e.g., 50 pixels from the top)
+        var scrollTriggerPosition = 50;
 
-    const backButtonAll = document.querySelectorAll(".back-button");
-    // create click event for all back button
-    Array.from(backButtonAll).forEach((el) => {
-      el.addEventListener("click", () => {
-        // closeset nav item ancestor
-        const activeNavElement = el.closest(".nav-item.is-active");
-        if (activeNavElement) activeNavElement.classList.remove("is-active");
-      })
+        // Function to load the Tawk.to script
+        function loadTawkTo() {
+            setTimeout(() => {
+                var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+                (function() {
+                    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                    s1.async = true;
+                    s1.src = 'https://embed.tawk.to/5821e34b18d9f16af02864b7/default';
+                    s1.charset = 'UTF-8';
+                    s1.setAttribute('crossorigin', '*');
+                    s0.parentNode.insertBefore(s1, s0);
+                })();
+            }, 0);
+        }
+
+        // Named function to handle the scroll event
+        function onScroll() {
+            // Check if the user has scrolled past the trigger position
+            if (window.scrollY > scrollTriggerPosition) {
+                // Load the Tawk.to script
+                loadTawkTo();
+                // Remove the event listener after the script has been loaded
+                window.removeEventListener('scroll', onScroll);
+            }
+        }
+
+        // Add the scroll event listener
+        window.addEventListener('scroll', onScroll);
+    }
+});
+
+
+const backButtonAll = document.querySelectorAll(".back-button");
+  Array.from(backButtonAll).forEach((el) => {
+    el.addEventListener("click", () => {
+      const activeNavElement = el.closest(".nav-item.is-active");
+      if (activeNavElement) activeNavElement.classList.remove("is-active");
     });
-  </script>
-  <!--End of Tawk.to Script-->
+  });
+
+</script>
 
   <!-- Meilisearch -->
   {{ block "footer-script" . }}

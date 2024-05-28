@@ -143,7 +143,7 @@
       height: 100%;
       background-color: $ac-primary;
       z-index: -1;
-      opacity: 0.5;
+      opacity: 0.8;
       background-size: 50%;
     }
   }
@@ -209,7 +209,7 @@
       margin-right: 0.5rem;
       padding: 0 30px;
 
-      .material-icons-outlined {
+      .icon-outlined {
         font-size: 1.3rem;
         margin-right: 0.5rem;
       }
@@ -490,8 +490,6 @@ Responsive Classes
       justify-content: center;
 
       .single-brand {
-        padding: 5px;
-
         img {
           max-height: 1.5rem;
         }
