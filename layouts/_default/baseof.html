@@ -226,7 +226,7 @@
                         <a class="single-product"
                           href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
                           <div class="product-logo">
-                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}" loading="lazy">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
                           </div>
                           <div class="product-info">
                             <h6>{{ $p.name }}</h6>
@@ -249,7 +249,7 @@
                         <a class="single-product"
                           href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
                           <div class="product-logo">
-                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}" loading="lazy">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
                           </div>
                           <div class="product-info">
                             <h6>{{ $p.name }}</h6>
@@ -272,7 +272,7 @@
                         <a class="single-product"
                           href="{{ index $.Site.Params $p.website.domainKey}}{{ $p.website.path }}">
                           <div class="product-logo">
-                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}" loading="lazy">
+                            <img src="{{ $p.icon.src }}" alt="{{ $p.icon.alt }}">
                           </div>
                           <div class="product-info">
                             <h6>{{ $p.name }}</h6>
@@ -297,7 +297,7 @@
                       <!-- single product description start  -->
                       <div class="product-description">
                         <div class="brand">
-                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" loading="lazy">
+                          <img loading="lazy" src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
                         </div>
 
                         <p>{{ $p.summary | safeHTML }}</p>
@@ -306,7 +306,7 @@
                         <ul class="features">
                           {{ range $index, $item := $p.features }}
                           {{ if lt $index 8 }}
-                          <li><span class="icon"><img src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span><span>{{ $item.title }}</span></li>
+                          <li><span class="icon"><img loading="lazy" src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box"></span><span>{{ $item.title }}</span></li>
                           {{ end }}
                           {{ end }}
                         </ul>
@@ -322,7 +322,7 @@
                       <!-- single product description start  -->
                       <div class="product-description">
                         <div class="brand">
-                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" loading="lazy">
+                          <img loading="lazy" src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
                         </div>
 
 
@@ -331,7 +331,7 @@
                         <ul class="features">
                           {{ range $index, $item := $p.features }}
                           {{ if lt $index 8 }}
-                          <li><span class="icon"><img src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span><span>{{ $item.title }}</span></li>
+                          <li><span class="icon"><img loading="lazy" src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box"></span><span>{{ $item.title }}</span></li>
                           {{ end }}
                           {{ end }}
                         </ul>
@@ -349,7 +349,7 @@
                       <!-- single product description start  -->
                       <div class="product-description">
                         <div class="brand">
-                          <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" loading="lazy">
+                          <img loading="lazy" src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}">
                         </div>
 
 
@@ -358,7 +358,7 @@
                         <ul class="features">
                           {{ range $index, $item := $p.features }}
                           {{ if lt $index 8 }}
-                          <li><span class="icon"><img src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span></span><span>{{ $item.title }}</span></li>
+                          <li><span class="icon"><img loading="lazy" src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box"></span></span><span>{{ $item.title }}</span></li>
                           {{ end }}
                           {{ end }}
                         </ul>
@@ -593,7 +593,7 @@
 " class="single-product">
                         {{ if .Pre }}
                         <div class="product-logo">
-                          <img src="{{ .Pre }}" alt="{{ .Name }}" loading="lazy">
+                          <img src="{{ .Pre }}" alt="{{ .Name }}" >
                         </div>
                         {{ end }}
                         <div class="product-info">
@@ -632,9 +632,8 @@
                                 d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                           </a>
-                          <img
-                            src="https://img.youtube.com/vi/hBHxMtSjKo4/sddefault.jpg"
-                            alt="kubedb-youtube-intro" loading="lazy">
+                          <img loading="lazy" src="https://img.youtube.com/vi/hBHxMtSjKo4/sddefault.jpg"
+                            alt="kubedb-youtube-intro">
                         </div>
                       </div>
                     </div>
@@ -663,12 +662,12 @@
             <div class="community-items ml-70">
               {{ if $p.socialLinks.github }}
               <a href="{{$p.socialLinks.github}}" class="community-item" target="_blank" title="Github">
-                <img src="/assets/images/icon/community/github-icon.svg" alt="github-icon" loading="lazy">
+                <img loading="auto" src="/assets/images/icon/community/github-icon.svg" alt="github-icon">
               </a>
               {{ end }}
               {{ if $p.socialLinks.twitter }}
               <a href="{{$p.socialLinks.twitter}}" class="community-item" target="_blank" title="X(Twitter)">
-                <img src="/assets/images/icon/community/twitterx-icon.svg" alt="twitterx-icon" loading="lazy">
+                <img loading="auto" src="/assets/images/icon/community/twitterx-icon.svg" alt="twitterx-icon">
               </a>
               {{ end }}
             </div>
@@ -783,7 +782,7 @@
               <!-- user info wrapper start  -->
               <div class="user-info-wrapper">
                 <figure class="image is-64x64">
-                  <img class="is-rounded" src="{{ $user.profile }}" alt="{{ $user.name }}" loading="lazy" width="64" height="64">
+                  <img loading="lazy" class="is-rounded" src="{{ $user.profile }}" alt="{{ $user.name }}" width="64" height="64">
                 </figure>
                 <div class="user-info">
                   <label>{{ $user.name }}</label>
@@ -862,8 +861,8 @@
             <div class="single-footer-widget">
               <!-- logo start -->
               <div class="footer-logo">
-                <a href="{{.Site.Params.domain_appscode}}"><img src="{{$.Site.Data.products.appscode.logo.src}}"
-                    alt="{{$.Site.Data.products.appscode.logo.alt}}" class="img" loading="lazy" /></a>
+                <a href="{{.Site.Params.domain_appscode}}"><img loading="lazy" src="{{$.Site.Data.products.appscode.logo.src}}"
+                    alt="{{$.Site.Data.products.appscode.logo.alt}}" class="img" /></a>
               </div>
               <!-- logo end -->
 
@@ -988,7 +987,7 @@
             <div class="socail-link-inline">
               <ul>
                 <li>
-                  <a href="{{.Site.Params.twitter_url}}" title="Twitter"><img src="/assets/images/icon/community/twitterx-solid-icon.svg" alt="twitterx-icon" loading="lazy"></a>
+                  <a href="{{.Site.Params.twitter_url}}" title="Twitter"><img loading="lazy" src="/assets/images/icon/community/twitterx-solid-icon.svg" alt="twitterx-icon"></a>
                 </li>
                 <li>
                   <a href="https://www.linkedin.com/company/appscode" title="Linkedin"><i class="fa fa-linkedin"

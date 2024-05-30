@@ -66,7 +66,7 @@
         <div class="brand-image-wrapper owl-carousel">
           {{ range $customer := $.Site.Data.customers }}
           {{ if $customer.show }}
-          <div class="single-brand"><img src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
+          <div class="single-brand"><img loading="lazy" src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
           {{ end }}
           {{ end }}
         </div>
@@ -100,13 +100,13 @@
             <h2 class="is-size-6 mb-15">Why Choose KubeDB?🤔</h2>
             {{ range .features }}
             <li>
-              <span class="icon"><img src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span>
+              <span class="icon"><img loading="lazy" src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span>
             <span>{{.title}}</span>
             </li>
             {{ end }}
 
           </ul>
-          <img src="{{.hero}}" alt="{{.title}}">
+          <img loading="lazy" src="{{.hero}}" alt="{{.title}}">
         </div>
       </div>
       <!-- features image end -->
@@ -131,7 +131,7 @@
           <div class="column is-6">
             <div data-aos="flip-left" data-aos-duration="700"
               class="features-thumbnail has-text-left">
-              <img src="{{ .image }}" alt="{{.title}}">
+              <img loading="lazy" src="{{ .image }}" alt="{{.title}}">
             </div>
           </div>
           {{ end }}
