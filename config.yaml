@@ -55,7 +55,7 @@ menu:
     identifier: druid
     parent: database
     weight: 3
-    pre: /assets/images/databases/logos/png/druid.png
+    pre: /assets/images/databases/logos/png/druids.png
   - name: Elasticsearch
     identifier: elasticsearch
     parent: database
@@ -65,7 +65,7 @@ menu:
     identifier: ferretdb
     parent: database
     weight: 5
-    pre: /assets/images/databases/logos/png/ferretdb.png
+    pre: /assets/images/databases/logos/png/ferretdbs.png
   - name: Kafka
     identifier: kafka
     parent: database

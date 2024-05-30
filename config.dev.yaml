@@ -39,60 +39,110 @@ menu:
   main:
   - name: Databases
     identifier: database
-    weight: 5
+    weight: 1
     url: https://kubedb.com/docs/latest/setup/
   - name: Documentation
-    weight: 6
+    weight: 2
+  - name: Druid
+    identifier: druid
+    parent: database
+    weight: 3
+    pre: /assets/images/databases/logos/png/druids.png
   - name: Elasticsearch
     identifier: elasticsearch
     parent: database
-    weight: 10
-    pre: /assets/images/databases/logos/elasticsearch.svg
+    weight: 4
+    pre: /assets/images/databases/logos/png/elasticsearches.png
+  - name: FerretDB
+    identifier: ferretdb
+    parent: database
+    weight: 5
+    pre: /assets/images/databases/logos/png/ferretdbs.png
+  - name: Kafka
+    identifier: kafka
+    parent: database
+    weight: 6
+    pre: /assets/images/databases/logos/png/kafkas.png
   - name: MariaDB
     identifier: mariadb
     parent: database
-    weight: 20
-    pre: /assets/images/databases/logos/mariadbs.svg
+    weight: 7
+    pre: /assets/images/databases/logos/png/mariadbs.png
   - name: Memcached
     identifier: memcached
     parent: database
-    weight: 30
-    pre: /assets/images/databases/logos/memcached.svg
+    weight: 8
+    pre: /assets/images/databases/logos/png/memcacheds.png
+  - name: Microsoft SQL Server
+    identifier: mssqlserver
+    parent: database
+    weight: 9
+    pre: /assets/images/databases/logos/png/mssqlservers.png
   - name: MongoDB
     identifier: mongodb
     parent: database
-    weight: 40
-    pre: /assets/images/databases/logos/mongodb.svg
+    weight: 10
+    pre: /assets/images/databases/logos/png/mongodbs.png
   - name: MySQL
     identifier: mysql
     parent: database
-    weight: 50
-    pre: /assets/images/databases/logos/mysql.svg
-  - name: Percona XtraDB
+    weight: 11
+    pre: /assets/images/databases/logos/png/mysqls.png
+  - name: OpenSearch
+    identifier: opensearch
+    parent: database
+    weight: 12
+    pre: /assets/images/databases/logos/png/opensearch.png
+  - name: PerconaXtraDB
     identifier: percona-xtradb
     parent: database
-    weight: 60
-    pre: /assets/images/databases/logos/perconaxtradbs.svg
+    weight: 13
+    pre: /assets/images/databases/logos/png/perconaxtradbs.png
   - name: PgBouncer
     identifier: pgbouncer
     parent: database
-    weight: 70
-    pre: /assets/images/databases/logos/pgbouncer.svg
+    weight: 14
+    pre: /assets/images/databases/logos/png/pgbouncers.png
+  - name: Pgpool
+    identifier: pgpool
+    parent: database
+    weight: 15
+    pre: /assets/images/databases/logos/png/pgpools.png
   - name: PostgreSQL
     identifier: postgres
     parent: database
-    weight: 80
-    pre: /assets/images/databases/logos/postgresql.svg
+    weight: 16
+    pre: /assets/images/databases/logos/png/postgreses.png
   - name: ProxySQL
     identifier: proxysql
     parent: database
-    weight: 90
-    pre: /assets/images/databases/logos/proxysqls.svg
+    weight: 17
+    pre: /assets/images/databases/logos/png/proxysqls.png
+  - name: RabbitMQ
+    identifier: rabbitmq
+    parent: database
+    weight: 18
+    pre: /assets/images/databases/logos/png/rabbitmqs.png
   - name: Redis
     identifier: redis
     parent: database
-    weight: 100
-    pre: /assets/images/databases/logos/redis.svg
+    weight: 19
+    pre: /assets/images/databases/logos/png/redises.png
+  - name: SingleStore
+    identifier: singlestore
+    parent: database
+    weight: 20
+    pre: /assets/images/databases/logos/png/singlestores.png
+  - name: Solr
+    identifier: solr
+    parent: database
+    weight: 21
+    pre: /assets/images/databases/logos/png/solrs.png
+  - name: ZooKeeper
+    identifier: zookeeper
+    parent: database
+    weight: 22
+    pre: /assets/images/databases/logos/png/zookeepers.png
 markup:
   goldmark:
     renderer:
