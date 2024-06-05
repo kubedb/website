@@ -1,0 +1,67 @@
+---
+title: Redis
+menu:
+  docs_v2023.02.28:
+    identifier: rd-readme-redis
+    name: Redis
+    parent: rd-redis-guides
+    weight: 10
+menu_name: docs_v2023.02.28
+section_menu_id: guides
+url: /docs/v2023.02.28/guides/redis/
+aliases:
+- /docs/v2023.02.28/guides/redis/README/
+info:
+  autoscaler: v0.17.0
+  cli: v0.32.0
+  dashboard: v0.8.0
+  installer: v2023.02.28
+  ops-manager: v0.19.0
+  provisioner: v0.32.0
+  schema-manager: v0.8.0
+  ui-server: v0.8.0
+  version: v2023.02.28
+  webhook-server: v0.8.0
+---
+
+> New to KubeDB? Please start [here](/docs/v2023.02.28/README).
+
+## Supported Redis Features
+| Features                                                                           | Community | Enterprise |
+|------------------------------------------------------------------------------------|:---------:|:----------:|
+| Clustering                                                                         | &#10003;  |  &#10003;  |
+| Sentinel                                                                           | &#10003;  |  &#10003;  |
+| Standalone                                                                         | &#10003;  |  &#10003;  |
+| Authentication & Autorization                                                      | &#10003;  |  &#10003;  |
+| Persistent Volume                                                                  | &#10003;  |  &#10003;  |
+| Initializing from Snapshot ( [Stash](https://stash.run/) )                         | &#10003;  |  &#10003;  |
+| Instant Backup (Sentinel and Standalone Mode)                                      | &#10003;  |  &#10003;  |
+| Scheduled Backup (Sentinel and Standalone Mode)                                    | &#10003;  |  &#10003;  |
+| Builtin Prometheus Discovery                                                       | &#10003;  |  &#10003;  |
+| Using Prometheus operator                                                          | &#10003;  |  &#10003;  |
+| Automated Version Upgrade                                                          | &#10007;  |  &#10003;  |
+| Automatic Vertical Scaling                                                         | &#10007;  |  &#10003;  |
+| Automated Horizontal Scaling                                                       | &#10007;  |  &#10003;  |
+| Automated db-configure Reconfiguration                                             | &#10007;  |  &#10003;  |
+| TLS: Add, Remove, Update, Rotate ( [Cert Manager](https://cert-manager.io/docs/) ) | &#10007;  |  &#10003;  |
+| Automated Volume Expansion                                                         | &#10007;  |  &#10003;  |
+| Autoscaling (vertically)                                                           | &#10007;  |  &#10003;  |
+
+
+## Life Cycle of a Redis Object
+
+<p align="center">
+  <img alt="lifecycle"  src="/docs/v2023.02.28/images/redis/redis-lifecycle.png">
+</p>
+
+## User Guide
+
+- [Quickstart Redis](/docs/v2023.02.28/guides/redis/quickstart/quickstart) with KubeDB Operator.
+- [Deploy Redis Cluster](/docs/v2023.02.28/guides/redis/clustering/redis-cluster) using KubeDB.
+- Monitor your Redis server with KubeDB using [out-of-the-box Prometheus operator](/docs/v2023.02.28/guides/redis/monitoring/using-prometheus-operator).
+- Monitor your Redis server with KubeDB using [out-of-the-box builtin-Prometheus](/docs/v2023.02.28/guides/redis/monitoring/using-builtin-prometheus).
+- Use [private Docker registry](/docs/v2023.02.28/guides/redis/private-registry/using-private-registry) to deploy Redis with KubeDB.
+- Use [kubedb cli](/docs/v2023.02.28/guides/redis/cli/cli) to manage databases like kubectl for Kubernetes.
+- Detail concepts of [Redis object](/docs/v2023.02.28/guides/redis/concepts/redis).
+- Detail concepts of [RedisVersion object](/docs/v2023.02.28/guides/redis/concepts/catalog).
+- Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2023.02.28/CONTRIBUTING).
