@@ -24,7 +24,7 @@ Traditionally, managing RabbitMQ involved dedicated servers, which is complex to
 
 ## Deploy RabbitMQ on Kubernetes
 ### Pre-requisites
-We have to set up the environment to deploy RabbitMQ on Kubernetes using a Kubernetes RabbitMQ operator. A running Kubernetes cluster and fundamental understanding of RabbitMQ is required to conduct this tutorial. Here we are using [Kind](https://kubernetes.io/docs/tasks/tools/#kind) to create our Kubernetes cluster. Additionally, you should install [Helm](https://helm.sh/docs/intro/install/) to your Kubernetes cluster.
+We have to set up the environment to deploy RabbitMQ on Kubernetes using a [Kubernetes RabbitMQ operator](https://kubedb.com/kubernetes/databases/run-and-manage-rabbitmq-on-kubernetes/). A running Kubernetes cluster and fundamental understanding of RabbitMQ is required to conduct this tutorial. Here we are using [Kind](https://kubernetes.io/docs/tasks/tools/#kind) to create our Kubernetes cluster. Additionally, you should install [Helm](https://helm.sh/docs/intro/install/) to your Kubernetes cluster.
 
 In this tutorial, We will use the Kubernetes RabbitMQ operator [KubeDB](https://kubedb.com/) to deploy RabbitMQ on Kubernetes. We must install KubeDB to our Kubernetes cluster. To set up KubeDB in our Kubernetes cluster, we need a license. We can get a free license using the [Appscode License Server](https://license-issuer.appscode.com/). We should use Kubernetes cluster ID to get a license. Use the following command below to get the cluster ID.
 
