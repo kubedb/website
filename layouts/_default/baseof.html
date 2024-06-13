@@ -100,10 +100,10 @@
   <link href="https://calendly.com/assets/external/widget.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  {{ with $style := resources.Get "/assets/sass/main.css" | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+  <!-- {{ with $style := resources.Get "/assets/sass/main.css" | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-  {{ end }}
-  <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
+  {{ end }} -->
+ <link rel="stylesheet" href="/assets/sass/main.css" />
 </head>
 
 <body class="{{$p.key}}" id="app">
@@ -852,7 +852,7 @@
 
   <!--========================== footer area start========================== -->
   {{ block "footer" . }}
-  <footer class="footer-area">
+  <footer class="footer-area dark-bg">
     <div class="footer-top">
       <div class="container">
         <div class="columns is-mobile is-multiline is-variable is-1-mobile">
@@ -861,8 +861,8 @@
             <div class="single-footer-widget">
               <!-- logo start -->
               <div class="footer-logo">
-                <a href="{{.Site.Params.domain_appscode}}"><img loading="lazy" src="{{$.Site.Data.products.appscode.logo.src}}"
-                    alt="{{$.Site.Data.products.appscode.logo.alt}}" class="img" /></a>
+                <a href="{{.Site.Params.domain_appscode}}"><img src="{{$.Site.Data.products.appscode.logoWhite.src}}"
+                    alt="{{$.Site.Data.products.appscode.logo.alt}}" class="img" loading="lazy"/></a>
               </div>
               <!-- logo end -->
 
@@ -879,7 +879,7 @@
                       <input type="hidden" id="afbbc" name="l" value="d6a7b3b4-15ec-419e-beaf-a503d0bc1b41" />
                       <input class="input" name="email" id="mce-EMAIL" type="email"
                         placeholder="Your work email address" required />
-                      <button id="mc-embedded-subscribe" type="submit" title="subscribe" class="button" name="mc-embedded-subscribe">
+                      <button id="mc-embedded-subscribe" type="submit" name="subscribe" class="button" aria-label="Subscribe Button">
                         <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                       </button>
                     </div>
@@ -890,7 +890,7 @@
 
               <!-- contact information start -->
               <div class="contact-information">
-                <h4>Have any Inquiry?</h4>
+                <p class="has-text-weight-semibold">Have any Inquiry?</p>
                 <ul class="all-contact-info">
                   <li>
                     <a href="callto:{{.Site.Params.contact_phone}}"><span><i class="fa fa-phone"
@@ -915,7 +915,14 @@
                 <ul class="footer-link">
                   {{ range $item := $.Site.Data.config.footerLinks }}
                   {{ $p := (index $.Site.Data.products $item) }}
-                  <li><a href="{{index $.Site.Params $p.website.domainKey}}{{$p.website.path}}">{{$p.name}}</a></li>
+                  <li><a href="{{index $.Site.Params $p.website.domainKey}}{{$p.website.path}}" class="is-flex is-gap-4">
+                    <span>{{$p.name}}</span>
+                    <span class="is-flex width-12">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                      </svg>
+                    </span>
+                  </a></li>
                   {{ end }}
                 </ul>
               </div>
@@ -929,9 +936,33 @@
               <div class="footer-menu is-success">
                 <label>Services</label>
                 <ul class="footer-link">
-                  <li><a href="{{.Site.Params.domain_appscode}}/consulting/">Consulting</a></li>
-                  <li><a href="{{.Site.Params.domain_appscode}}/training/">Training</a></li>
-                  <li><a href="{{.Site.Params.domain_appscode}}/support/">Support</a></li>
+                  <!-- <li><a href="{{.Site.Params.domain_appscode}}/pricing/">Pricing</a></li> -->
+                  <li>
+                    <a href="{{.Site.Params.domain_appscode}}/consulting/" class="is-flex is-gap-4">
+                    <span>Consulting</span>
+                    <span class="is-flex width-12">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                    </span>
+                    </a>
+                  </li>
+                  <li><a href="{{.Site.Params.domain_appscode}}/training/" class="is-flex is-gap-4">
+                    <span>Training</span>
+                    <span class="is-flex width-12">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                    </span>
+                  </a></li>
+                  <li><a href="{{.Site.Params.domain_appscode}}/support/" class="is-flex is-gap-4">
+                    <span>Support</span>
+                    <span class="is-flex width-12">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                    </span>
+                  </a></li>
                 </ul>
               </div>
               <!-- footer menu end -->
@@ -944,9 +975,30 @@
               <div class="footer-menu is-warning">
                 <label>Company</label>
                 <ul class="footer-link">
-                  <li><a href="{{.Site.Params.domain_appscode}}/about/">About Us</a></li>
-                  <li><a href="{{.Site.Params.blog_url}}">Blog</a></li>
-                  <li><a href="{{.Site.Params.domain_appscode}}/contact/">Contact Us</a></li>
+                  <li><a href="{{.Site.Params.domain_appscode}}/about/" class="is-flex is-gap-4">
+                  <span> About Us</span>
+                    <span class="is-flex width-12">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                    </span>
+                  </a></li>
+                  <li><a href="{{.Site.Params.blog_url}}" class="is-flex is-gap-4">
+                    <span>Blog</span>
+                    <span class="is-flex width-12">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                    </span>
+                  </a></li>
+                  <li><a href="{{.Site.Params.domain_appscode}}/contact/" class="is-flex is-gap-4">
+                    <span>Contact Us</span>
+                    <span class="is-flex width-12">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                    </span>
+                  </a></li>
                 </ul>
               </div>
               <!-- footer menu end -->
@@ -959,10 +1011,51 @@
               <div class="footer-menu is-danger">
                 <label>Legal</label>
                 <ul class="footer-link">
-                  <li><a href="{{.Site.Params.domain_appscode}}/legal/tos/">Terms of Service</a></li>
-                  <li><a href="{{.Site.Params.domain_appscode}}/legal/privacy-policy/">Privacy Policy</a></li>
-                  <li><a href="{{.Site.Params.domain_appscode}}/legal/security/">Security</a></li>
-                  <li><a href="{{.Site.Params.domain_appscode}}/legal/sla/">Service Level Agreement</a></li>
+                  <li>
+                    <a href="{{.Site.Params.domain_appscode}}/legal/tos/" class="is-flex is-gap-4">
+                    <span>Terms of Service</span>
+                    <span class="is-flex width-12">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                      
+                    </span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="{{.Site.Params.domain_appscode}}/legal/privacy-policy/" class="is-flex is-gap-4">
+                  <span>Privacy Policy</span>
+                  <span class="is-flex width-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                    
+                  </span>
+                  </a>
+                </li>
+                  <li>
+                    <a href="{{.Site.Params.domain_appscode}}/legal/security/" class="is-flex is-gap-4">
+                      <span>Security</span>
+                      <span class="is-flex width-12">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                        
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{.Site.Params.domain_appscode}}/legal/sla/" class="is-flex is-gap-4">
+                    <span>Service Level Agreement</span>
+                    <span class="is-flex width-12">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                      
+                    </span>
+                    </a>
+                  </li>
                 </ul>
               </div>
               <!-- footer menu end -->
@@ -971,7 +1064,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom dark-bg">
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column is-4 has-text-centered-mobile  has-text-left-tablet is-paddingless">
@@ -981,23 +1074,28 @@
             <div class="footer-inline-link">
               <a href="{{.Site.Params.domain_appscode}}/legal/privacy-policy/">Privacy Policy</a>
               <a href="{{.Site.Params.domain_appscode}}/legal/tos/">Terms of Service</a>
+              <a href="https://icons8.com/" target="_blank"> Icons by Icons8</a>
             </div>
           </div>
           <div class="column is-4 has-text-centered-mobile  has-text-right-tablet is-paddingless">
             <div class="socail-link-inline">
               <ul>
                 <li>
-                  <a href="{{.Site.Params.twitter_url}}" title="Twitter"><img loading="lazy" src="/assets/images/icon/community/twitterx-solid-icon.svg" alt="twitterx-icon"></a>
+                  <a href="{{.Site.Params.twitter_url}}" title="{{.Site.Params.twitter_url}}">
+                    <i class="fa" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                    </i>
+                  </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/company/appscode" title="Linkedin"><i class="fa fa-linkedin"
+                  <a href="https://www.linkedin.com/company/appscode" title="https://www.linkedin.com/company/appscode"><i class="fa fa-linkedin"
                       aria-hidden="true"></i></a>
                 </li>
                 <li>
-                  <a href="{{.Site.Params.facebook_url}}" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  <a href="{{.Site.Params.facebook_url}}" title="{{.Site.Params.facebook_url}}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 </li>
                 <li>
-                  <a href="{{.Site.Params.youtube_url}}" title="Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                  <a href="{{.Site.Params.youtube_url}}" title="{{.Site.Params.youtube_url}}"><i class="fa fa-youtube" aria-hidden="true"></i></a>
                 </li>
               </ul>
             </div>
