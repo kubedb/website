@@ -10,6 +10,12 @@
   margin-top: 110px;
   position: relative;
   z-index: 1;
+  &.is-feature {
+    height: 400px;
+    p {
+      text-wrap: balance;
+    }
+  }
 
   &.is-overview {
     h1 {
@@ -189,7 +195,7 @@
 
   h1 {
     font-size: 3rem;
-    line-height: 130%;
+    line-height: 120%;
     font-weight: 700;
     letter-spacing: -0.57px;
     margin-bottom: 1rem;

@@ -1,0 +1,36 @@
+:root {
+    --sidebar-width: 350px;
+    --sidebar-sm-width: 300px;
+    --content-gap: 120px;
+  }
+  
+  @include until-fullhd {
+    :root {
+      --sidebar-width: 320px;
+      --sidebar-sm-width: 280px;
+      --content-gap: 60px
+    }
+  }
+  
+  @media (min-width: 1408px) and (max-width: 1600px) {
+    :root {
+      --sidebar-width: 320px;
+      --sidebar-sm-width: 260px;
+      --content-gap: 60px
+    }
+  }
+  @include desktop-only {
+    :root {
+      --sidebar-width: 300px;
+      --sidebar-sm-width: 200px;
+      --content-gap: 60px
+    }
+  }
+  
+  @include mobile {
+    :root {
+      --content-gap: 32px
+    }
+}
+  
+  

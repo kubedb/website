@@ -43,7 +43,7 @@
 
   h3 {
     margin-bottom: 1rem;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   .check-list {
@@ -119,7 +119,7 @@
       font-size: 20px;
       font-weight: 700;
       letter-spacing: normal;
-      margin-bottom: 5px;
+      margin-bottom: 12px;
     }
 
     p {
@@ -127,17 +127,29 @@
       line-height: 160%;
       transition: 0.3s ease-in-out;
       color: $ac-color-text;
+      margin-bottom: 8px;
     }
   }
 }
 
 .features-area {
+  .feature-content{
+    @include mobile {
+      margin-top: 16px;
+    }
+  }
   .single-feature-image {
     display: flex;
     align-items: center;
+    @include mobile {
+      justify-content: center !important;
+    }
 
     img {
       max-width: 400px;
+      @include touch {
+        max-width: 100%;
+      }
     }
   }
 }
@@ -361,7 +373,7 @@ Responsive Classes
     .feature-information {
       h3 {
         font-size: 16px;
-        margin-bottom: 0;
+        margin-bottom: 4px;
         line-height: 130%;
       }
     }

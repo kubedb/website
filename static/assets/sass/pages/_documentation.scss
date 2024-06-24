@@ -9,7 +9,7 @@
   .left-sidebar-wrapper {
     border-right: 1px solid $ac-white-light;
     margin-top: -35px;
-    background-color: #fafafd;
+    // background-color: #fafafd;
     z-index: 1;
     width: 350px;
     padding-top: 1rem;
@@ -88,7 +88,7 @@
   }
 
   .right-sidebar {
-    border-left: 1px solid $ac-white-light;
+    // border-left: 1px solid $ac-white-light;
     margin-top: -25px;
     width: 324px;
     padding-top: 24px;
@@ -438,17 +438,17 @@ ul li b {
   border: none;
 }
 
-.tbl-of-contents ul a.active:before {
-  width: 3px;
-  height: 100%;
-  background: $ac-primary;
-  content: "";
-  left: -2px;
-  top: 0;
-  position: absolute;
-  border-radius: 50px;
-  transition: 0.3s ease-in-out;
-}
+// .tbl-of-contents ul a.active:before {
+//   width: 3px;
+//   height: 100%;
+//   background: $ac-primary;
+//   content: "";
+//   left: -2px;
+//   top: 0;
+//   position: absolute;
+//   border-radius: 50px;
+//   transition: 0.3s ease-in-out;
+// }
 
 .tbl-of-contents ul a.active {
   position: relative;
@@ -807,9 +807,9 @@ Responsive Classes
 }
 
 @media (min-width: 1408px) and (max-width: 1600px) {
-  .navbar-appscode.documentation-menu {
-    margin-left: 263px;
-  }
+  // .navbar-appscode.documentation-menu {
+  //   margin-left: 261px;
+  // }
 
   .documentation-area {
     .left-sidebar-wrapper {
