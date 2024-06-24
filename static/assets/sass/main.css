@@ -24194,6 +24194,8 @@ ul li b {
 
 .tbl-of-contents {
   padding-right: 20px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
 }
 .tbl-of-contents h4 {
   font-size: 14px;

@@ -286,6 +286,8 @@
       "is-block",
       "is-bordered",
       "is-centered",
+      "is-clipped",
+      "is-clippis",
       "is-danger",
       "is-dark",
       "is-docs-page",

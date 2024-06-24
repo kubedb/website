@@ -22,7 +22,7 @@ $ac-red: #e03056;
 $ac-blue: #0AAFFF;
 
 //theme color define
-$ac-primary: #00A651;
+$ac-primary: var(--primary-hue);
 $voyager-primary: #2D2A78;
 $guard-primary: #D84E27;
 $kubeci-primary: #2c3e50;
