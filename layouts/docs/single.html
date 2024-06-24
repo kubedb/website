@@ -263,13 +263,15 @@
       </div>
     </article>
     {{ end }}
-    <div class="full-info">
+    <div class="content">
+     <div class="full-info content-body">
       {{ .Content }}
+    </div>
     </div>
 
     <!-- comments area start -->
     {{ if site.Params.comments.enable }}
-      <section class="comments-area mt-20">
+      <section class="comments-area p-20">
         <div class="container">
           {{ partial "comments.html" . }}
         </div>

@@ -3,6 +3,7 @@
 // Version: 0.1.0
 @import "../../../node_modules/bulma/bulma.sass";
 //BASE - Base styles, variables, mixins
+@import "base/utilities/_root";
 @import "base/utilities/_initial-variable";
 @import "base/utilities/_default";
 @import "base/utilities/_themes";

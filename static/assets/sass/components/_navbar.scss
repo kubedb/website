@@ -48,6 +48,8 @@
   }
 }
 
+
+
 .navbar-appscode {
   display: flex;
   align-items: center;
@@ -103,7 +105,11 @@
       }
     }
   }
-
+  .nav-item {
+    .link{
+      font-family: $ac-font-heading !important;
+    }
+  }
   .navbar-left {
     display: flex;
     align-items: center;

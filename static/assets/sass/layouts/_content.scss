@@ -62,7 +62,7 @@
     .content-body {
       overflow: hidden;
       min-height: calc(100vh - 250px);
-      margin-bottom: 64px;
+      margin-bottom: 32px;
   
       div[class*="language-"] {
         position: relative;
@@ -336,7 +336,7 @@
   }
   
   .content:not(:last-child) {
-    margin-bottom: 64px;
+    margin-bottom: 32px;
   }
   
   code:not(pre code) {
