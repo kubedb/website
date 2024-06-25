@@ -87,6 +87,7 @@
   color: $ac-color-heading;
   padding: 8px 12px;
   display: block;
+  width: calc(100% - 8px);
 }
 
 .item ul li.is-active a {

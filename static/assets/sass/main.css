@@ -10284,11 +10284,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 :root {
-  --sidebar-width: 350px;
+  --sidebar-width: 320px;
   --sidebar-sm-width: 300px;
   --content-gap: 120px;
 }
-
 @media screen and (max-width: 1407px) {
   :root {
     --sidebar-width: 320px;
@@ -10315,6 +10314,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     --content-gap: 32px ;
   }
 }
+
 /* Deafult Margin & Padding view-height & view-width */
 .m-0 {
   margin: 0px !important;
@@ -19170,6 +19170,7 @@ section.our-customer-area {
   color: #1c1c1c;
   padding: 8px 12px;
   display: block;
+  width: calc(100% - 8px);
 }
 
 .item ul li.is-active a {
@@ -23592,8 +23593,6 @@ ul.social-share-button li a i.fa {
 }
 
 .content {
-  width: calc(100% - var(--content-gap));
-  margin: 24px auto 64px;
   overflow: hidden;
 }
 .content .content-body {
@@ -23868,8 +23867,22 @@ code:not(pre code) {
 .documentation-area {
   margin-top: 190px;
   display: grid;
-  grid-template-columns: var(--sidebar-width) auto var(--sidebar-sm-width) !important;
+  grid-template-columns: var(--sidebar-width) auto !important;
   padding-top: 0;
+}
+.documentation-area .documentation-body {
+  display: flex;
+  gap: 16px;
+  max-width: 1175px;
+  margin: 0 auto;
+  padding: 32px;
+}
+.documentation-area .documentation-body .left-content {
+  width: calc(100% - 272px);
+}
+.documentation-area .documentation-body .right-sidebar {
+  width: 256px;
+  padding-left: 32px;
 }
 .documentation-area .left-sidebar-wrapper {
   border-right: 1px solid #dbdbde;
@@ -23897,10 +23910,7 @@ code:not(pre code) {
   border: 3px solid #fafafd;
 }
 .documentation-area .left-sidebar-wrapper .product-sidebar-menu {
-  overflow-y: auto;
-  overflow-y: scroll;
   padding: 0 16px;
-  box-sizing: content-box;
 }
 .documentation-area .left-sidebar-wrapper .product-sidebar-menu .item label {
   background: transparent;
@@ -23927,11 +23937,6 @@ code:not(pre code) {
 .documentation-area .left-sidebar-wrapper .item input:checked ~ label a,
 .documentation-area .left-sidebar-wrapper .item input:checked ~ .item > label a {
   color: var(--ac-primary);
-}
-.documentation-area .right-sidebar {
-  margin-top: -25px;
-  width: var(--sidebar-sm-width);
-  padding-top: 24px;
 }
 
 .info-title p {
@@ -24169,25 +24174,7 @@ ul li b {
   max-height: 70vh;
   padding-bottom: 32px;
 }
-.tbl-of-contents #TableOfContents::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-.tbl-of-contents #TableOfContents::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-.tbl-of-contents #TableOfContents::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-}
-.tbl-of-contents #TableOfContents::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 
-.tbl-of-contents {
-  padding-right: 20px;
-  max-height: calc(100vh - 150px);
-  overflow-y: auto;
-}
 .tbl-of-contents h4 {
   font-size: 14px;
   font-weight: 700;
@@ -24476,6 +24463,7 @@ Responsive Classes
   .documentation-area .documentation-body {
     padding: 0 20px;
     width: 100%;
+    display: flex;
   }
   .documentation-area .documentation-body .full-info h1 {
     font-size: 1.5rem;
@@ -25020,4 +25008,4 @@ Responsive Classes
   .features-cta-area .features-plan-area {
     min-width: 1344px;
   }
-}/*# sourceMappingURL=main.css.map */
+}

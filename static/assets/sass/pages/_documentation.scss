@@ -4,10 +4,25 @@
 .documentation-area {
   margin-top: 190px;
   display: grid;
-  grid-template-columns: var(--sidebar-width) auto var(--sidebar-sm-width) !important;
+  grid-template-columns: var(--sidebar-width) auto !important;
   padding-top: 0;
 
-  // padding: 0 1.25rem;
+  .documentation-body {
+    display: flex;
+    gap: 16px;
+    max-width: 1175px;
+    margin: 0 auto;
+    padding: 32px;
+
+    .left-content {
+      width: calc(100% - 272px);
+    }
+    .right-sidebar {
+      width: 256px;
+      padding-left: 32px;
+    }
+  }
+  
   .left-sidebar-wrapper {
     border-right: 1px solid $ac-white-light;
     margin-top: -35px;
@@ -41,11 +56,11 @@
     .product-sidebar-menu {
       // min-height: calc(100vh - 120px);
       // padding-left: 20px;
-      overflow-y: auto;
+      // overflow-y: auto;
       // width: 100%;
-      overflow-y: scroll;
+      // overflow-y: scroll;
       padding: 0 16px;
-      box-sizing: content-box;
+      // box-sizing: content-box;
       // border-right: 1px solid $ac-white-light;
 
       .item {
@@ -83,19 +98,6 @@
     .item input:checked ~ .item > label a {
       color: $ac-primary;
     }
-  }
-
-  .documentation-body {
-    // padding: 0 60px;260px
-    // width: calc(100% - var(--content-gap));
-    // margin: 0 auto;
-  }
-
-  .right-sidebar {
-    // border-left: 1px solid $ac-white-light;
-    margin-top: -25px;
-    width: var(--sidebar-sm-width);
-    padding-top: 24px;
   }
 }
 
@@ -399,31 +401,29 @@ ul li b {
     max-height: 70vh;
     padding-bottom: 32px;
 
-    &::-webkit-scrollbar {
-      width: 4px;
-      height: 4px;
-    }
+    // &::-webkit-scrollbar {
+    //   width: 4px;
+    //   height: 4px;
+    // }
 
-    &::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
+    // &::-webkit-scrollbar-track {
+    //   background: #f1f1f1;
+    // }
 
-    &::-webkit-scrollbar-thumb {
-      background: #c1c1c1;
-    }
+    // &::-webkit-scrollbar-thumb {
+    //   background: #c1c1c1;
+    // }
 
-    &::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
+    // &::-webkit-scrollbar-thumb:hover {
+    //   background: #555;
+    // }
   }
 }
 
 
 
 .tbl-of-contents{
-  padding-right: 20px;
-  max-height: calc(100vh - 150px);
-  overflow-y: auto;
+  // padding-right: 20px;
   h4 {
     font-size: 14px;
     font-weight: 700;
@@ -745,6 +745,7 @@ Responsive Classes
     .documentation-body {
       padding: 0 20px;
       width: 100%;
+      display: flex;
 
       .full-info {
         h1 {

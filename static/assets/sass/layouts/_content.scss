@@ -55,8 +55,8 @@
   }
   
   .content {
-    width: calc(100% - var(--content-gap));
-    margin: 24px auto 64px;
+    // width: calc(100% - var(--content-gap));
+    // margin: 24px auto 64px;
     overflow: hidden;
   
     .content-body {

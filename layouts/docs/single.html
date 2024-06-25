@@ -243,77 +243,83 @@
 
 
   <!-- documentation body start  -->
-  <div class="documentation-body is-clipped">
-    {{ if not (eq $p.latestVersion $currentBranch) }}
-    <article class="message is-warning">
-       <div class="icon" style="width: 52px; margin-right: 8px; height: auto;">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffdd57" class="size-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-        </svg>        
-       </div>
-      <div class="message-body">
-        {{ $url := urls.Parse (absURL .Permalink) }}
-        {{ $nurl := "/docs/latest/" }}
-        {{ $nf := replace .File.Path (print "/" $currentBranch "/") (print "/" $p.latestVersion "/") }}
-        {{ if fileExists $nf }}
-        {{ $nurl = replace $url.Path (print "/" $currentBranch) (print "/" $p.latestVersion) }}
-        {{ end }}
-        You are looking at the documentation of a prior release. To read the documentation of the latest release, please
-        visit <a href="{{ $nurl }}">here</a>.
+  <div class="documentation-body">
+   
+    <div class="left-content is-clipped">
+      {{ if not (eq $p.latestVersion $currentBranch) }}
+      <article class="message is-warning">
+         <div class="icon" style="width: 52px; margin-right: 8px; height: auto;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffdd57" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+          </svg>        
+         </div>
+        <div class="message-body">
+          {{ $url := urls.Parse (absURL .Permalink) }}
+          {{ $nurl := "/docs/latest/" }}
+          {{ $nf := replace .File.Path (print "/" $currentBranch "/") (print "/" $p.latestVersion "/") }}
+          {{ if fileExists $nf }}
+          {{ $nurl = replace $url.Path (print "/" $currentBranch) (print "/" $p.latestVersion) }}
+          {{ end }}
+          You are looking at the documentation of a prior release. To read the documentation of the latest release, please
+          visit <a href="{{ $nurl }}">here</a>.
+        </div>
+      </article>
+      {{ end }}
+      <div class="content">
+       <div class="full-info content-body">
+        {{ .Content }}
       </div>
-    </article>
-    {{ end }}
-    <div class="content">
-     <div class="full-info content-body">
-      {{ .Content }}
-    </div>
+      </div>
+  
+      <!-- comments area start -->
+      {{ if site.Params.comments.enable }}
+        <section class="comments-area p-20">
+          <div class="container">
+            {{ partial "comments.html" . }}
+          </div>
+        </section>
+      {{ end }}
+      <!-- comments area end -->
+
     </div>
 
-    <!-- comments area start -->
-    {{ if site.Params.comments.enable }}
-      <section class="comments-area p-20">
-        <div class="container">
-          {{ partial "comments.html" . }}
+      <!-- right sidebar start  -->
+      <div class="right-sidebar">
+        <div class="right-sidebar-area">
+          <!-- search item -->
+          <!-- <div class="search-area">
+            <form action="#">
+              <input id="acSearch" type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div> -->
+          <!-- search item end -->
+
+          <!-- table of contents area start -->
+          <div class="tbl-of-contents">
+            <button class="button ac-button inline-button back-button pl-15 is-hidden-desktop">
+              <span class="icon arrow-back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                </svg>
+              </span>
+              <span>Back</span>
+            </button>
+            <h4>What's on this Page</h4>
+            {{.TableOfContents}}
+          </div>
+          <!-- table of contents area end -->
         </div>
-      </section>
-    {{ end }}
-    <!-- comments area end -->
+      </div>
+      <!-- right sidebar end  -->
 
   </div>
   <!-- documentation body end -->
 
 
-  <!-- right sidebar start  -->
-  <div class="right-sidebar">
-    <div class="right-sidebar-area">
-      <!-- search item -->
-      <!-- <div class="search-area">
-        <form action="#">
-          <input id="acSearch" type="text" placeholder="Search..." />
-          <button class="search-button">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </form>
-      </div> -->
-      <!-- search item end -->
 
-      <!-- table of contents area start -->
-      <div class="tbl-of-contents">
-        <button class="button ac-button inline-button back-button pl-15 is-hidden-desktop">
-          <span class="icon arrow-back">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-            </svg>
-          </span>
-          <span>Back</span>
-        </button>
-        <h4>What's on this Page</h4>
-        {{.TableOfContents}}
-      </div>
-      <!-- table of contents area end -->
-    </div>
-  </div>
-  <!-- right sidebar end  -->
 
   <script>
     // kd version dropdown js
