@@ -19242,13 +19242,21 @@ section.our-customer-area {
 
 .ac-product-left-sidebar {
   position: sticky;
-  top: 130px;
+  top: 180px;
   z-index: 9;
   width: 100%;
   height: 100%;
   overflow-y: auto;
   max-height: calc(100vh - 190px);
   overflow-x: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+body:has(.headroom--pinned) .ac-product-left-sidebar {
+  top: 180px;
+}
+body:has(.headroom--unpinned) .ac-product-left-sidebar {
+  top: 120px;
 }
 
 .product-sidebar-menu .item label {
@@ -20126,7 +20134,7 @@ Responsive Classes
     transform: translateY(0px);
   }
   .headroom--unpinned .navbar-appscode-wrapper.navbar-product .navbar-appscode .navbar-right {
-    top: 47px;
+    top: 49px;
   }
   .navbar-appscode.container {
     padding: 0.5rem 15px;
@@ -20299,7 +20307,7 @@ Responsive Classes
     gap: 8px !important;
   }
   .navbar-appscode ul .nav-item {
-    margin-right: 0.5rem;
+    margin-right: 1rem;
   }
   .mega-menu-wrapper .mega-menu-inner .product-menu {
     grid-template-columns: auto;
@@ -21626,6 +21634,13 @@ a.nav-link.active:after {
 
 table tr:nth-child(even) {
   background-color: #f6f8fa;
+}
+
+.content table {
+  display: block;
+  overflow-x: auto;
+  margin-bottom: 15px;
+  border-radius: 2px;
 }
 
 .content table thead td, .content table thead th {
@@ -23648,6 +23663,11 @@ ul.social-share-button li a i.fa {
   font-family: "Inter", sans-serif;
   line-height: 1.6 !important;
 }
+@media (min-width: 1600px) {
+  .content .content-body p {
+    line-height: 1.8 !important;
+  }
+}
 .content .content-body ol {
   list-style: none;
   counter-reset: order-list-counter;
@@ -23865,13 +23885,19 @@ code:not(pre code) {
     Documentation page style
 ==============================================================*/
 .documentation-area {
-  margin-top: 190px;
+  margin-top: 166px;
   display: grid;
   grid-template-columns: var(--sidebar-width) auto !important;
   padding-top: 0;
 }
+@media screen and (max-width: 1023px) {
+  .documentation-area {
+    grid-template-columns: 100% !important;
+  }
+}
 .documentation-area .documentation-body {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   max-width: 1175px;
   margin: 0 auto;
@@ -23880,13 +23906,22 @@ code:not(pre code) {
 .documentation-area .documentation-body .left-content {
   width: calc(100% - 272px);
 }
+@media screen and (max-width: 1023px) {
+  .documentation-area .documentation-body .left-content {
+    width: 100%;
+  }
+}
 .documentation-area .documentation-body .right-sidebar {
   width: 256px;
   padding-left: 32px;
 }
+@media screen and (max-width: 1215px) {
+  .documentation-area .documentation-body .right-sidebar {
+    padding-left: 0;
+  }
+}
 .documentation-area .left-sidebar-wrapper {
   border-right: 1px solid #dbdbde;
-  margin-top: -35px;
   z-index: 1;
   width: var(--sidebar-width);
   padding-top: 1rem;
@@ -24207,7 +24242,30 @@ li.nav-item.active a {
 .right-sidebar-area {
   padding: 0 1.25rem 0 0;
   position: sticky;
+  top: 190px;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (max-width: 1023px) {
+  .right-sidebar-area {
+    top: 120px;
+  }
+}
+
+body:has(.headroom--pinned) .right-sidebar-area {
+  top: 190px;
+}
+@media screen and (max-width: 1023px) {
+  body:has(.headroom--pinned) .right-sidebar-area {
+    top: 120px;
+  }
+}
+body:has(.headroom--unpinned) .right-sidebar-area {
   top: 130px;
+}
+@media screen and (max-width: 1023px) {
+  body:has(.headroom--unpinned) .right-sidebar-area {
+    top: 60px;
+  }
 }
 
 .overlay-bg {
@@ -24442,7 +24500,7 @@ Responsive Classes
     margin-bottom: 15px;
   }
   .documentation-area .right-sidebar-area {
-    top: 0;
+    padding: 32px;
   }
   .documentation-area .left-sidebar-wrapper,
   .documentation-area .right-sidebar {
@@ -24453,12 +24511,13 @@ Responsive Classes
     width: 80%;
     margin-top: 0;
     height: calc(100vh - 0px);
+    background-color: #fff;
   }
   .documentation-area .right-sidebar {
     right: 0;
-    background: #fff;
     height: 100vh;
     overflow-y: auto;
+    z-index: 9;
   }
   .documentation-area .documentation-body {
     padding: 0 20px;

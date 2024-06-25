@@ -169,13 +169,26 @@
 
 .ac-product-left-sidebar {
   position: sticky;
-  top: 130px;
+  top: 180px;
   z-index: 9;
   width: 100%;
   height: 100%;
   overflow-y: auto;
   max-height: calc(100vh - 190px);
   overflow-x: hidden;
+  transition: 0.3s ease-in-out;
+}
+body {
+  &:has(.headroom--pinned ) {
+    .ac-product-left-sidebar {
+      top: 180px;
+    }
+  }
+  &:has(.headroom--unpinned ) {
+    .ac-product-left-sidebar {
+      top: 120px;
+    }
+  }
 }
 
 .product-sidebar-menu .item label {

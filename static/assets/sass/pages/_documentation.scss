@@ -2,13 +2,18 @@
     Documentation page style
 ==============================================================*/
 .documentation-area {
-  margin-top: 190px;
+  margin-top: 166px;
   display: grid;
   grid-template-columns: var(--sidebar-width) auto !important;
   padding-top: 0;
 
+  @include touch {
+    grid-template-columns: 100% !important;
+  }
+
   .documentation-body {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     max-width: 1175px;
     margin: 0 auto;
@@ -16,16 +21,22 @@
 
     .left-content {
       width: calc(100% - 272px);
+      @include touch {
+        width: 100%;
+      }
     }
     .right-sidebar {
       width: 256px;
       padding-left: 32px;
+
+      @include until-widescreen {
+        padding-left: 0;
+      }
     }
   }
   
   .left-sidebar-wrapper {
     border-right: 1px solid $ac-white-light;
-    margin-top: -35px;
     // background-color: #fafafd;
     z-index: 1;
     width: var(--sidebar-width);
@@ -474,7 +485,30 @@ li.nav-item.active a {
 .right-sidebar-area {
   padding: 0 1.25rem 0 0;
   position: sticky;
-  top: 130px;
+  top: 190px;
+  transition: 0.3s ease-in-out;
+  @include touch {
+    top: 120px;
+  }
+}
+
+body {
+  &:has(.headroom--pinned ) {
+    .right-sidebar-area {
+      top: 190px;
+      @include touch {
+        top: 120px;
+      }
+    }
+  }
+  &:has(.headroom--unpinned ) {
+    .right-sidebar-area {
+      top: 130px;
+      @include touch {
+        top: 60px;
+      }
+    }
+  }
 }
 
 .overlay-bg {
@@ -721,7 +755,7 @@ Responsive Classes
     margin-bottom: 15px;
 
     .right-sidebar-area {
-      top: 0;
+      padding: 32px;
     }
 
     .left-sidebar-wrapper,
@@ -733,13 +767,15 @@ Responsive Classes
       width: 80%;
       margin-top: 0;
       height: calc(100vh - 0px);
+      background-color: #fff;
+
     }
 
     .right-sidebar {
       right: 0;
-      background: #fff;
       height: 100vh;
       overflow-y: auto;
+      z-index: 9;
     }
 
     .documentation-body {

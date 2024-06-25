@@ -33,6 +33,14 @@ table tr:nth-child(even) {
 // table th:first-child {
 //   text-align: left;
 // }
+.content {
+  table {
+    display: block;
+    overflow-x: auto;
+    margin-bottom: 15px;
+    border-radius: 2px;
+  }
+}
 .content table thead td, .content table thead th {
   border-width: 1px;
 }
