@@ -10286,33 +10286,33 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 :root {
   --sidebar-width: 320px;
   --sidebar-sm-width: 300px;
-  --content-gap: 120px;
 }
 @media screen and (max-width: 1407px) {
   :root {
     --sidebar-width: 320px;
     --sidebar-sm-width: 280px;
-    --content-gap: 60px ;
   }
 }
 @media (min-width: 1408px) and (max-width: 1600px) {
   :root {
     --sidebar-width: 320px;
     --sidebar-sm-width: 260px;
-    --content-gap: 60px ;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1215px) {
   :root {
     --sidebar-width: 300px;
     --sidebar-sm-width: 200px;
-    --content-gap: 60px ;
   }
 }
-@media screen and (max-width: 768px) {
-  :root {
-    --content-gap: 32px ;
-  }
+
+:root {
+  --primary-h: 149;
+  --primary-s: 100%;
+  --primary-l: 30%;
+  --guard-primary-h: 13;
+  --guard-primary-s: 69%;
+  --guard-primary-l: 50%;
 }
 
 /* Deafult Margin & Padding view-height & view-width */
@@ -18177,46 +18177,46 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 body {
-  --ac-primary: #00a651;
+  --ac-primary: hsl(149, 100%, 33%);
 }
 body.guard {
-  --ac-primary: #d84e27;
+  --ac-primary: hsl(13, 69%, 50%);
 }
 body.kubedb {
-  --ac-primary: #4d4dcb;
+  --ac-primary: hsl(240, 55%, 55%);
 }
 body.kubeci {
-  --ac-primary: #2c3e50;
+  --ac-primary: hsl(210, 29%, 24%);
 }
 body.kubed {
-  --ac-primary: #1c7bd4;
+  --ac-primary: hsl(209, 77%, 47%);
 }
 body.kubesheild {
-  --ac-primary: #2516c7;
+  --ac-primary: hsl(245, 80%, 43%);
 }
 body.kubevault {
-  --ac-primary: #326ce5;
+  --ac-primary: hsl(221, 77%, 55%);
 }
 body.kubeform {
-  --ac-primary: #592217;
+  --ac-primary: hsl(10, 59%, 22%);
 }
 body.searchlight {
-  --ac-primary: #111738;
+  --ac-primary: hsl(231, 53%, 14%);
 }
 body.pharmer {
-  --ac-primary: #8e44ad;
+  --ac-primary: hsl(282, 44%, 47%);
 }
 body.service-broker {
-  --ac-primary: #29b4a2;
+  --ac-primary: hsl(172, 63%, 43%);
 }
 body.stash {
-  --ac-primary: #5e2dea;
+  --ac-primary: hsl(256, 82%, 55%);
 }
 body.swift {
-  --ac-primary: #3f51b6;
+  --ac-primary: hsl(231, 49%, 48%);
 }
 body.voyager {
-  --ac-primary: #2d2a78;
+  --ac-primary: hsl(242, 48%, 32%);
 }
 
 html,
@@ -18936,152 +18936,6 @@ Responsive Classes
     font-size: 80px;
   }
 }
-.service-image.is-box-shadow img {
-  box-shadow: 0px 8px 57px rgba(0, 0, 0, 0.16);
-}
-
-.service-content {
-  padding-right: 60px;
-}
-.service-content h5 {
-  color: var(--ac-primary);
-  font-size: 14px;
-  font-weight: 600;
-}
-.service-content h2 {
-  color: #1c1c1c;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 54px;
-  margin-bottom: 10px;
-}
-.service-content p {
-  color: #3b3030;
-  font-size: 16px;
-  max-width: 83%;
-}
-
-.ac-custom-tabs ul li {
-  margin-bottom: 30px;
-}
-.ac-custom-tabs ul li a {
-  color: #242a31;
-  font-size: 24px;
-  font-family: "Inter", sans-serif;
-  display: block;
-  padding: 20px 20px;
-  box-shadow: 0px 1px 4px rgba(26, 80, 151, 0.16);
-  border-radius: 9px;
-  transition: 0.3s;
-}
-.ac-custom-tabs ul li a:hover {
-  box-shadow: 0px 8px 50px rgba(26, 80, 151, 0.16);
-}
-.ac-custom-tabs ul li a span.circle-shape {
-  width: 20px;
-  height: 20px;
-  background: #00a0ff;
-  display: inline-block;
-  border-radius: 50%;
-  margin-right: 14px;
-}
-
-.about-text-inner p {
-  margin-bottom: 30px;
-}
-
-.ceo-message-wrapper h1 {
-  margin-bottom: 40px;
-  font-weight: 400;
-}
-
-.signature-image {
-  margin-top: 40px;
-}
-.signature-image p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-}
-
-.ceo-image {
-  position: relative;
-  z-index: 1;
-}
-.ceo-image img {
-  max-width: 300px;
-  margin-top: 20px;
-}
-.ceo-image .dots-style {
-  position: absolute;
-  background: url(../images/appscode/dots.png);
-  background-repeat: no-repeat;
-  height: 150px;
-  width: 250px;
-  right: 100px;
-  bottom: -75px;
-  z-index: -1;
-  left: 50%;
-  margin-left: -125px;
-}
-
-section.our-customer-area {
-  background: #fbfbfb;
-}
-
-.single-product-feature-wrapper {
-  overflow: hidden;
-  background-color: #ffffff;
-  box-shadow: 0px 1px 4px rgba(50, 112, 128, 0.16);
-  border-radius: 4px;
-  padding: 20px;
-  transition: 0.3s ease-in-out;
-  position: relative;
-  min-height: 280px;
-  z-index: 1;
-  z-index: 1;
-}
-.single-product-feature-wrapper:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 0;
-  transition: 0.3s ease-in-out;
-  background-color: var(--ac-primary);
-}
-.single-product-feature-wrapper:hover {
-  box-shadow: 0px 3px 28px rgba(50, 152, 128, 0.16);
-}
-.single-product-feature-wrapper:hover:after {
-  height: 5px;
-}
-.single-product-feature-wrapper .product-feature-icon {
-  width: 55px;
-  float: left;
-  margin-right: 25px;
-}
-.single-product-feature-wrapper .product-feature-content {
-  float: left;
-  width: 85%;
-}
-.single-product-feature-wrapper .product-feature-title {
-  margin-bottom: 10px;
-}
-.single-product-feature-wrapper .product-feature-title h3 {
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 40px;
-}
-.single-product-feature-wrapper .product-feature-title p {
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-}
-.single-product-feature-wrapper .product-feature-description p {
-  font-size: 16px;
-}
-
 /* call to action area */
 .cta-padding {
   padding: 80px 100px;
@@ -22384,14 +22238,14 @@ Responsive Classes
 }
 
 .pricing-button .kubedb-transparent-btn {
-  color: #4d4dcb;
-  border: 1px solid #4d4dcb;
+  color: hsl(240, 55%, 55%);
+  border: 1px solid hsl(240, 55%, 55%);
 }
 
 .pricing-button .kubedb-transparent-btn:hover {
   color: #ffffff !important;
-  border: 1px solid #4d4dcb;
-  background-color: #4d4dcb;
+  border: 1px solid hsl(240, 55%, 55%);
+  background-color: hsl(240, 55%, 55%);
 }
 
 .pricing-button .primary-transparent-btn {
@@ -23662,11 +23516,6 @@ ul.social-share-button li a i.fa {
 .content .content-body p {
   font-family: "Inter", sans-serif;
   line-height: 1.6 !important;
-}
-@media (min-width: 1600px) {
-  .content .content-body p {
-    line-height: 1.8 !important;
-  }
 }
 .content .content-body ol {
   list-style: none;

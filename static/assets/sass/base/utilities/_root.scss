@@ -2,31 +2,34 @@
     // spacing 
     --sidebar-width: 320px;
     --sidebar-sm-width: 300px;
-    --content-gap: 120px;
 
     @include until-fullhd {
         --sidebar-width: 320px;
         --sidebar-sm-width: 280px;
-        --content-gap: 60px
     }
 
     @media (min-width: 1408px) and (max-width: 1600px) {
         --sidebar-width: 320px;
         --sidebar-sm-width: 260px;
-        --content-gap: 60px
     }
 
     @include desktop-only {
         --sidebar-width: 300px;
         --sidebar-sm-width: 200px;
-        --content-gap: 60px
-    }
-    
-    @include mobile {
-        --content-gap: 32px
     }
 }
-  
+
+:root {
+    --primary-h: 149;
+    --primary-s: 100%;
+    --primary-l: 30%;
+
+    --guard-primary-h: 13;
+    --guard-primary-s: 69%;
+    --guard-primary-l: 50%;
+
+}
+
 
   
  

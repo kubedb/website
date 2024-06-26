@@ -120,9 +120,9 @@
       p {
         font-family: $ac-font-paragraph;
         line-height: 1.6 !important;
-        @media (min-width: 1600px) {
-          line-height: 1.8 !important;
-        }
+        // @media (min-width: 1600px) {
+        //   line-height: 1.8 !important;
+        // }
       }
   
       ol {
