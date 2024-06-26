@@ -18172,6 +18172,10 @@ body {
   --primary-s: 100%;
   --primary-l: 30%;
   --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
+  --secondary-h: 196;
+  --secondary-s: 50%;
+  --secondary-l: 20%;
+  --ac-secondary: hsl(var(--secondary-h), var(--secondary-s),var(--secondary-l));
 }
 body.guard {
   --primary-h: 13;
@@ -19052,9 +19056,10 @@ Responsive Classes
 }
 
 .product-sidebar-menu .item label a {
-  font-weight: 500;
+  font-weight: 700;
   color: #1c1c1c;
-  padding: 8px 12px;
+  padding: 12px 12px 4px;
+  line-height: 1.2;
   display: block;
   width: calc(100% - 8px);
 }
@@ -19088,6 +19093,7 @@ Responsive Classes
   padding: 8px 16px;
   font-family: "Inter", sans-serif;
   font-weight: 400;
+  line-height: 1.2;
 }
 
 .item label {
@@ -19573,9 +19579,8 @@ video {
 }
 .mega-menu-wrapper .mega-menu-inner .product-menu .single-product .product-info p {
   font-size: 0.813rem;
-  color: #636363;
+  color: #3b3030;
   line-height: 140%;
-  letter-spacing: 0.025rem;
 }
 .mega-menu-wrapper .mega-menu-inner .product-menu .single-product .navigate-icon {
   text-align: right;
@@ -20924,6 +20929,7 @@ Responsive Classes
   font-weight: 700;
   letter-spacing: -0.57px;
   margin-bottom: 1rem;
+  text-wrap: balance;
 }
 .hero-area.is-product p {
   font-family: "Inter", sans-serif;
@@ -20931,6 +20937,7 @@ Responsive Classes
   line-height: 160%;
   color: #636363;
   margin-bottom: 2rem;
+  text-wrap: balance;
 }
 .hero-area.is-product .buttons .button {
   height: 2.875rem;
@@ -21209,7 +21216,7 @@ Responsive Classes
 .features-area .check-list li span {
   font-size: 18px;
   margin-right: 0.8rem;
-  color: var(--ac-primary);
+  color: #3b3030;
 }
 
 .single-features-item {
@@ -21823,7 +21830,7 @@ table tr:nth-child(even) {
   box-shadow: 0px 2px 30px rgba(44, 60, 74, 0.08);
   border-radius: 4px;
   padding: 50px 40px;
-  min-height: 460px;
+  min-height: 490px;
 }
 .testimonial-area .single-testimonial-item .user-info-wrapper {
   display: flex;
@@ -23622,7 +23629,7 @@ ul.social-share-button li a i.fa {
   margin-bottom: 24px;
   padding: 24px 32px;
   background-color: #F7F7F7;
-  border-left: 4px solid hsl(var(--primary-h), 50%, 80%);
+  border-left: 4px solid hsl(var(--primary-h), var(--primary-s), 80%);
 }
 .content .content-body pre code {
   min-width: 100%;
@@ -23733,8 +23740,8 @@ ul.social-share-button li a i.fa {
   text-align: left;
 }
 .content blockquote {
-  border-left: 4px solid hsl(var(--primary-h), 50%, 80%) !important;
-  border-radius: 4px !important;
+  border-left: 4px solid hsl(var(--primary-h), var(--primary-s), 80%);
+  border-radius: 4px;
 }
 .content .ac-doc-footer .button.ac-button {
   font-size: 0.875rem;
@@ -23840,23 +23847,12 @@ code:not(pre code) {
 }
 .documentation-area .left-sidebar-wrapper .product-sidebar-menu .item ul li.is-active {
   position: relative;
-}
-.documentation-area .left-sidebar-wrapper .product-sidebar-menu .item ul li.is-active::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 50%;
-  margin-top: -18px;
-  width: 100%;
-  height: 100%;
-  background: #f1f1f1;
+  background: hsl(var(--primary-h), var(--primary-s), 95%);
   border-radius: 4px;
-  z-index: -1;
-  border: 1px solid #dbdbde;
 }
 .documentation-area .left-sidebar-wrapper .item input:checked ~ label a,
 .documentation-area .left-sidebar-wrapper .item input:checked ~ .item > label a {
-  color: var(--ac-primary);
+  color: #1c1c1c;
 }
 
 .info-title p {

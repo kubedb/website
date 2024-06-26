@@ -83,9 +83,10 @@
 }
 
 .product-sidebar-menu .item label a {
-  font-weight: 500;
+  font-weight: 700;
   color: $ac-color-heading;
-  padding: 8px 12px;
+  padding: 12px 12px 4px;
+  line-height: 1.2;
   display: block;
   width: calc(100% - 8px);
 }
@@ -119,6 +120,7 @@
   padding: 8px 16px;
   font-family: $ac-font-paragraph;
   font-weight: 400;
+  line-height: 1.2;
 }
 
 .item label {

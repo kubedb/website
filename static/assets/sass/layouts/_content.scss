@@ -204,7 +204,7 @@
         margin-bottom: 24px;
         padding: 24px 32px;
         background-color: #F7F7F7;
-        border-left: 4px solid hsl(var(--primary-h), 50%, 80%);
+        border-left: 4px solid hsl(var(--primary-h), var(--primary-s), 80%);
   
         code {
           min-width: 100%;
@@ -314,8 +314,8 @@
       }
     }
     blockquote {
-      border-left: 4px solid hsl(var(--primary-h), 50%, 80%) !important;
-      border-radius: 4px !important;
+      border-left: 4px solid hsl(var(--primary-h), var(--primary-s), 80%);
+      border-radius: 4px;
     }
     .ac-doc-footer {
       .button.ac-button {

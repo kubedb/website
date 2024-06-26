@@ -5,6 +5,14 @@ $ac-color-link: #4a4a4a;
 $ac-color-value: #393939;
 $ac-color-heading: #1c1c1c;
 
+$color-text: hsl(var(--secondary-h), 10%, 35%);
+$color-heading: hsl(var(--secondary-h), 10%, 10%);
+$color-label: hsl(var(--secondary-h), 20%, 30%);
+$color-link: hsl(var(--secondary-h), 40%, 20%);
+$color-border-light: hsl(var(--secondary-h), 40%, 95%);
+$color-border: hsl(var(--secondary-h), 10%, 90%);
+$color-border-dark: hsl(var(--secondary-h), 10%, 80%);
+
 $ac-black: #000000;
 $ac-bg: #ffffff;
 $ac-white: #ffffff;
