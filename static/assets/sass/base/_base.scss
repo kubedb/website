@@ -14,7 +14,7 @@
 
 .cta-text p {
   font-size: 26px;
-  color: $ac-color-text;
+  color: $color-text;
   margin-top: 10px;
   margin-bottom: 0;
 }
@@ -28,7 +28,7 @@
 
 .support-page .hero-content-inner h1 {
   margin-bottom: 30px;
-  color: $ac-color-heading;
+  color: $color-heading;
   font-weight: 500;
   line-height: 64px;
 }
@@ -44,7 +44,7 @@
 }
 
 .payment-method-innner-text h2 {
-  color: $ac-color-heading;
+  color: $color-heading;
   margin-bottom: 20px;
 }
 
@@ -84,7 +84,7 @@
 
 .product-sidebar-menu .item label a {
   font-weight: 700;
-  color: $ac-color-heading;
+  color: $color-heading;
   padding: 12px 12px 4px;
   line-height: 1.2;
   display: block;
@@ -132,7 +132,7 @@
 .product-sidebar-menu li a {
   font-size: 14px;
   font-weight: 500;
-  color: $ac-color-link;
+  color: $color-link;
   display: block;
   cursor: pointer;
   user-select: none;
@@ -146,12 +146,12 @@
 .product-sidebar-menu .item ul {
   // margin-left: 20px;
   // padding-left: 15px;
-  // border-left: 1px solid $ac-white-light;
+  // border-left: 1px solid $color-border;
 }
 // border remove style
 // .item input:checked ~ label,
 // .item input:checked ~ .item > label {
-//   border: 1px solid $ac-white-light;
+//   border: 1px solid $color-border;
 //   background: $ac-white;
 // }
 
@@ -207,12 +207,12 @@ body {
 
 .download-question h4 {
   font-size: 18px;
-  color: $ac-color-heading;
+  color: $color-heading;
   font-weight: 700;
 }
 
 .download-question p {
-  color: $ac-color-text;
+  color: $color-text;
   font-size: 16px;
   font-family: $ac-font-paragraph;
 }
@@ -232,7 +232,7 @@ body {
 
 .form-area h4 {
   font-size: 18px;
-  color: $ac-color-heading;
+  color: $color-heading;
   font-weight: 700;
   margin-bottom: 30px;
 }
@@ -256,7 +256,7 @@ body {
 }
 
 .single-input-field input::placeholder {
-  color: $ac-white-light;
+  color: $color-border;
 }
 
 .single-input-field .select,
@@ -267,7 +267,7 @@ select {
 
 .single-input-field .select select:not([multiple]) {
   padding-left: 15px;
-  color: $ac-white-light;
+  color: $color-border;
 }
 
 .download-button .icon {

@@ -36,7 +36,7 @@
   }
   
   .left-sidebar-wrapper {
-    border-right: 1px solid $ac-white-light;
+    border-right: 1px solid $color-border;
     // background-color: #fafafd;
     z-index: 1;
     width: var(--sidebar-width);
@@ -99,13 +99,13 @@
 
     .item input:checked ~ label a,
     .item input:checked ~ .item > label a {
-      color: $ac-color-heading;
+      color: $color-heading;
     }
   }
 }
 
 .info-title p {
-  color: $ac-color-text;
+  color: $color-text;
   padding: 0 20px;
 }
 
@@ -120,7 +120,7 @@
   h6 {
     margin-top: 40px;
     font-weight: 700;
-    color: $ac-color-heading;
+    color: $color-heading;
     margin-bottom: 10px;
 
     &:first-child {
@@ -193,14 +193,14 @@
 }
 
 blockquote {
-  border-left: 4px solid $ac-primary;
+  border-left: none !important;
   padding-left: 15px;
 }
 
 // .full-info ul li,
 // .full-info ol li,
 // .full-info ol li p {
-//   color: $ac-color-link;
+//   color: $color-link;
 //   display: block;
 //   padding-bottom: 8px;
 //   line-height: 1.8;
@@ -281,7 +281,7 @@ ul li b {
 
 .full-info p {
   // margin-bottom: 0.825rem;
-  // color: $ac-color-text;
+  // color: $color-text;
   // line-height: 160%;
   // font-family: $ac-font-paragraph;
 }
@@ -367,7 +367,7 @@ ul li b {
   font-weight: 500;
   font-family: $ac-font-paragraph;
   font-size: 15px;
-  color: $ac-color-link;
+  color: $color-link;
 }
 
 .search-area {
@@ -378,7 +378,7 @@ ul li b {
 
 .search-area input {
   background: $ac-white;
-  border: 1px solid $ac-white-light;
+  border: 1px solid $color-border;
   padding: 9px 40px 9px 15px;
   font-size: 15px;
   border-radius: 3px;
@@ -430,14 +430,14 @@ ul li b {
   h4 {
     font-size: 14px;
     font-weight: 700;
-    color: $ac-color-heading;
+    color: $color-heading;
     margin-bottom: 8px;
     line-height: 1;
   }
   ul {
     li {
       a {
-        color: $ac-color-link;
+        color: $color-link;
         opacity: 0.7;
         font-size: 14px;
         font-family: $ac-font-paragraph;
@@ -544,7 +544,7 @@ body {
 }
 
 .sidebar-search-area::-webkit-scrollbar-track {
-  background: $ac-white-light;
+  background: $color-border;
 }
 
 .sidebar-search-area::-webkit-scrollbar-thumb {
@@ -563,7 +563,7 @@ body {
 .searchbar-area input {
   background: $ac-white;
   padding: 10px;
-  border: 1px solid $ac-white-light;
+  border: 1px solid $color-border;
   height: 40px;
   border-radius: 3px;
   width: calc(100% - 70px);
@@ -609,7 +609,7 @@ body {
   border-radius: 3px;
   width: 60px;
   background: #f2f2f2;
-  border-color: $ac-white-light;
+  border-color: $color-border;
   color: #393e46;
   font-family: $ac-font-paragraph;
 }
@@ -706,8 +706,8 @@ body {
 // improve section start
 .improve-section-area {
   background-color: #fafafd;
-  border-top: 1px solid $ac-white-light;
-  border-bottom: 1px solid $ac-white-light;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
   padding: 20px;
   font-size: 1rem;
   font-weight: 500;

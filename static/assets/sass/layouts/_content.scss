@@ -34,12 +34,12 @@
       // top: 112px;
   
       .sidebar-header {
-        border-bottom: 1px solid $ac-white-light !important;
+        border-bottom: 1px solid $color-border !important;
       }
   
       .ac-left-sidebar .menu-list.ac-menu-list,
       .sidebar-footer {
-        border-right: 1px solid $ac-white-light;
+        border-right: 1px solid $color-border;
       }
     }
   
@@ -80,7 +80,7 @@
         position: absolute;
         right: 8px;
         top: 8px;
-        color: $ac-color-text;
+        color: $color-text;
         font-size: 12px;
       }
   
@@ -93,7 +93,7 @@
         height: 40px;
         padding: 10px;
         background-repeat: no-repeat;
-        border: 1px solid $ac-white-light;
+        border: 1px solid $color-border;
         background-color: $ac-white;
         background-position: 50%;
         cursor: pointer;
@@ -136,7 +136,7 @@
             content: counter(order-list-counter) ". ";
             font-weight: 500;
             font-size: 15px;
-            color: $ac-color-text;
+            color: $color-text;
           }
         }
       }
@@ -149,7 +149,7 @@
           line-height: 1.6;
           margin-bottom: 8px;
           display: block;
-          color: $ac-color-text;
+          color: $color-text;
   
           p {
             display: inline-block;
@@ -185,7 +185,7 @@
             font-family: fontawesome;
             font-size: 6px;
             margin-right: 8px;
-            color: $ac-color-text;
+            color: $color-text;
             transform: translateY(-2px);
             display: inline-flex;
           }
@@ -300,7 +300,7 @@
   
       img {
         padding: 20px;
-        border: 1px solid $ac-white-light;
+        border: 1px solid $color-border;
         border-radius: 4px;
         margin-top: 8px;
       }
@@ -348,7 +348,7 @@
   code:not(pre code) {
     padding: 2px;
     background-color: #F7F7F7;
-    border: 1px solid $ac-white-light;
+    border: 1px solid $color-border;
     border-radius: 4px;
   }
   

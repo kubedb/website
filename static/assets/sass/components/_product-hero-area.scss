@@ -246,7 +246,7 @@
   color: #3e393e;
   background: $ac-white;
 
-  border: 1px solid $ac-white-light;
+  border: 1px solid $color-border;
   padding: 3px 15px;
   border-radius: 2px;
   margin-bottom: 20px;
@@ -415,7 +415,7 @@
     width: 100%;
 
     .single-brand {
-        border: 1px solid $ac-white-light;
+        border: 1px solid $color-border;
         border-radius: 4px;
         display: flex;
         align-items: center;

@@ -1,5 +1,5 @@
 .testimonial-area {
-  background-color: #f3f4f7;
+  background-color: hsl(var(--primary-h), 20%, 98%);
   padding: 60px 0;
   
   .section-title {
@@ -43,7 +43,7 @@
         p {
           font-size: 14px;
           line-height: 160%;
-          color: $ac-color-text;
+          color: $color-text;
         }
       }
     }

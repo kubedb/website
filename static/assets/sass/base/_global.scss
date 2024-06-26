@@ -70,11 +70,11 @@
     line-height: 130%;
 
     &.is-outlined-text {
-      color: $ac-white-light;
+      color: $color-border;
       -webkit-text-fill-color: white;
       /* Will override color (regardless of order) */
       -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: $ac-white-light;
+      -webkit-text-stroke-color: $color-border;
       position: absolute;
       font-size: 107px;
       top: 0;
@@ -95,7 +95,6 @@
     font-size: 16px;
     line-height: 160%;
     letter-spacing: 0px;
-    margin-bottom: 3rem;
     text-wrap: balance;
     @include touch {
       text-wrap: auto;
@@ -130,7 +129,7 @@
 
 // dark background
 .dark-bg {
-  background-color: #000a05;
+  background-color: hsl(var(--primary-h), var(--primary-s), 2%);
   h1,
   h2,
   h3,
@@ -311,19 +310,19 @@
 }
 
 .br-1 {
-  border-right: 1px solid $ac-white-light;
+  border-right: 1px solid $color-border;
 }
 
 .bl-1 {
-  border-left: 1px solid $ac-white-light;
+  border-left: 1px solid $color-border;
 }
 
 .bt-1 {
-  border-top: 1px solid $ac-white-light;
+  border-top: 1px solid $color-border;
 }
 
 .bb-1 {
-  border-bottom: 1px solid $ac-white-light;
+  border-bottom: 1px solid $color-border;
 }
 
 .has-text-primary {
@@ -355,7 +354,7 @@
     .message-body {
       border-color: transparent;
       border-width: 0;
-      color: $ac-color-text;
+      color: $color-text;
       padding: 1em 1em;
       background-color: #ffdd57;
       width: 100%;

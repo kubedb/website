@@ -64,7 +64,7 @@
       font-size: 14px;
       font-weight: 500;
       background-color: transparent;
-      color: $ac-gray-lightest;
+      color: $color-text;
 
       &.is-primary {
         background-color: transparent;
@@ -151,7 +151,7 @@
   margin: 0;
   padding: 0;
   font-size: 0.875rem;
-  color: $ac-color-text;
+  color: $color-text;
   font-weight: 500;
   border: none;
   background: transparent;

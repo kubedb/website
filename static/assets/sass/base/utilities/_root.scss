@@ -19,6 +19,19 @@
     }
 }
 
+:root {
+    // color 
+    --primary-h: 149;
+    --primary-s: 100%;
+    --primary-l: 30%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
+  
+    --secondary-h: 196;
+    --secondary-s: 50%;
+    --secondary-l: 20%;
+    --ac-secondary: hsl(var(--secondary-h), var(--secondary-s),var(--secondary-l));
+}
+
 
 
   

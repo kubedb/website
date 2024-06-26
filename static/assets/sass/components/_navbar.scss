@@ -21,10 +21,10 @@
 
 .navbar-appscode-wrapper {
   background-color: $ac-white;
-  border-bottom: 1px solid $ac-white-light;
+  border-bottom: 1px solid $color-border;
 
   &.navbar-product {
-    background-color: #fafafd;
+    background-color: $primary-light-gray;
     will-change: transform;
     transition: transform 200ms linear;
 
@@ -68,7 +68,7 @@
   &.documentation-menu {
     // margin-left: 349px;
     background-color: $ac-white;
-    border-left: 1px solid $ac-white-light;
+    border-left: 1px solid $color-border;
 
     .mega-menu-wrapper {
       top: 106px;
@@ -208,7 +208,7 @@
       .link {
         font-size: 0.875rem;
         line-height: 1;
-        color: $ac-color-heading;
+        color: $color-heading;
         font-weight: 500;
         border: none;
         background-color: transparent;
@@ -388,13 +388,13 @@
           h6 {
             font-size: 1rem;
             letter-spacing: 0.009rem;
-            color: $ac-color-heading;
+            color: $color-heading;
             font-weight: 500;
           }
 
           p {
             font-size: 0.813rem;
-            color: $ac-color-text;
+            color: $color-text;
             line-height: 140%;
           }
         }
@@ -422,7 +422,7 @@
     .product-description {
       margin-left: 1rem;
       float: left;
-      border-left: 1px solid $ac-white-light;
+      border-left: 1px solid $color-border;
       padding-left: 4rem;
       max-width: 36%;
       opacity: 0;
@@ -445,7 +445,7 @@
 
       p {
         font-size: 0.875rem;
-        color: $ac-color-text;
+        color: $color-text;
         line-height: 160%;
         margin-bottom: 1rem;
       }
@@ -453,7 +453,7 @@
       .features {
         li {
           font-size: 0.813rem;
-          color: $ac-color-heading;
+          color: $color-heading;
           display: flex;
           align-items: center;
           margin-bottom: 15px;
@@ -473,7 +473,7 @@
 
 .back-button {
   display: none !important;
-  color: $ac-color-text;
+  color: $color-text;
   margin-bottom: 10px !important;
   background-color: transparent;
 }
@@ -528,7 +528,7 @@
         align-items: center;
         font-size: 0.875rem;
         letter-spacing: 0.009rem;
-        color: $ac-color-heading;
+        color: $color-heading;
         font-weight: 500;
         transition: 0.3s;
         padding-left: 0;
@@ -597,7 +597,7 @@
         a {
           font-size: 0.875rem;
           padding: 0.6rem 0;
-          color: $ac-color-heading;
+          color: $color-heading;
           display: inline-block;
           line-height: 1;
           transition: 0.3s ease-in-out;
@@ -768,8 +768,8 @@
         height: 2rem;
         border-radius: 2px;
         padding: 2px 15px;
-        color: $ac-color-heading;
-        border: 1px solid $ac-white-light;
+        color: $color-heading;
+        border: 1px solid $color-border;
 
         .arrow {
           color: #999999;
@@ -807,7 +807,7 @@
 
         .dropdown-item {
           font-size: 0.813rem;
-          color: $ac-color-heading;
+          color: $color-heading;
         }
       }
     }
@@ -830,11 +830,11 @@
   position: relative;
   z-index: 1;
   padding: 0 20px;
-  border-left: 1px solid $ac-white-light;
+  border-left: 1px solid $color-border;
 
   label {
     .fa {
-      color: $ac-color-heading;
+      color: $color-heading;
     }
   }
   .icon {
@@ -850,7 +850,7 @@
   input {
     border: none;
     background-color: transparent;
-    color: $ac-color-text;
+    color: $color-text;
     font-size: 0.875rem;
     width: 270px;
     padding: 8px 8px;
@@ -988,7 +988,7 @@ Responsive Classes
         position: fixed;
         // top: -60px !important;
         width: 80%;
-        border-right: 1px solid $ac-white-light;
+        border-right: 1px solid $color-border;
       }
     }
 

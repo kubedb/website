@@ -59,7 +59,7 @@
       .icon {
         width: 24px;
         height: 24px;
-        border: 1px solid $ac-white-light;
+        border: 1px solid $color-border;
         line-height: 12px;
         font-size: 12px;
         border-radius: 50%;
@@ -137,7 +137,7 @@
     position: relative;
     font-size: 16px;
     font-weight: 500;
-    color: $ac-color-heading;
+    color: $color-heading;
     margin: 0;
     user-select: none;
     line-height: 26px;

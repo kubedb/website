@@ -6,7 +6,7 @@
   position: fixed;
   width: 100%;
   background-color: #fff;
-  border-bottom: 1px solid $ac-white-light;
+  border-bottom: 1px solid $color-border;
   .navbar-left {
     .navbar-brand {
       display: flex;
@@ -74,7 +74,7 @@
     font-weight: 500;
   }
   .single-brand {
-    border: 1px solid $ac-white-light;
+    border: 1px solid $color-border;
     display: flex;
     align-items: center;
     padding: 12px 24px;

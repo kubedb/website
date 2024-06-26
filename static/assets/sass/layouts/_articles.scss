@@ -36,13 +36,13 @@
     transition: 0.3s ease-in-out;
   }
   p {
-    color: $ac-color-text;
+    color: $color-text;
     font-size: 16px;
     margin-bottom: 16px;
   }
 
   .card-bottom {
-    color: $ac-color-text;
+    color: $color-text;
   }
   .date-meta {
     font-style: normal;
@@ -78,7 +78,7 @@
   //   p {
   //     font-size: 16px;
   //     line-height: 160%;
-  //     color: $ac-color-text;
+  //     color: $color-text;
   //   }
 
   //   a {
