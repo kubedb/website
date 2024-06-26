@@ -78,7 +78,7 @@ kind: Kafka
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"kubedb.com/v1alpha2","kind":"Kafka","metadata":{"annotations":{},"name":"kafka","namespace":"demo"},"spec":{"authSecret":{"name":"kafka-admin-cred"},"enableSSL":true,"healthChecker":{"failureThreshold":3,"periodSeconds":20,"timeoutSeconds":10},"keystoreCredSecret":{"name":"kafka-keystore-cred"},"storageType":"Durable","terminationPolicy":"DoNotTerminate","tls":{"certificates":[{"alias":"server","secretName":"kafka-server-cert"},{"alias":"client","secretName":"kafka-client-cert"}],"issuerRef":{"apiGroup":"cert-manager.io","kind":"Issuer","name":"kafka-ca-issuer"}},"topology":{"broker":{"replicas":3,"resources":{"limits":{"memory":"1Gi"},"requests":{"cpu":"500m","memory":"1Gi"}},"storage":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"standard"},"suffix":"broker"},"controller":{"replicas":3,"resources":{"limits":{"memory":"1Gi"},"requests":{"cpu":"500m","memory":"1Gi"}},"storage":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"standard"},"suffix":"controller"}},"version":"3.6.1"}}
+      {"apiVersion":"kubedb.com/v1alpha2","kind":"Kafka","metadata":{"annotations":{},"name":"kafka","namespace":"demo"},"spec":{"authSecret":{"name":"kafka-admin-cred"},"enableSSL":true,"healthChecker":{"failureThreshold":3,"periodSeconds":20,"timeoutSeconds":10},"keystoreCredSecret":{"name":"kafka-keystore-cred"},"storageType":"Durable","deletionPolicy":"DoNotTerminate","tls":{"certificates":[{"alias":"server","secretName":"kafka-server-cert"},{"alias":"client","secretName":"kafka-client-cert"}],"issuerRef":{"apiGroup":"cert-manager.io","kind":"Issuer","name":"kafka-ca-issuer"}},"topology":{"broker":{"replicas":3,"resources":{"limits":{"memory":"1Gi"},"requests":{"cpu":"500m","memory":"1Gi"}},"storage":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"standard"},"suffix":"broker"},"controller":{"replicas":3,"resources":{"limits":{"memory":"1Gi"},"requests":{"cpu":"500m","memory":"1Gi"}},"storage":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"standard"},"suffix":"controller"}},"version":"3.6.1"}}
   creationTimestamp: "2023-03-29T07:01:29Z"
   finalizers:
     - kubedb.com
@@ -103,7 +103,7 @@ spec:
     spec:
       resources: {}
   storageType: Durable
-  terminationPolicy: DoNotTerminate
+  deletionPolicy: DoNotTerminate
   tls:
     certificates:
       - alias: server
@@ -192,7 +192,7 @@ $ kubectl get kf kafka -n demo -ojson
     "kind": "Kafka",
     "metadata": {
         "annotations": {
-            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"kubedb.com/v1alpha2\",\"kind\":\"Kafka\",\"metadata\":{\"annotations\":{},\"name\":\"kafka\",\"namespace\":\"demo\"},\"spec\":{\"authSecret\":{\"name\":\"kafka-admin-cred\"},\"enableSSL\":true,\"healthChecker\":{\"failureThreshold\":3,\"periodSeconds\":20,\"timeoutSeconds\":10},\"keystoreCredSecret\":{\"name\":\"kafka-keystore-cred\"},\"storageType\":\"Durable\",\"terminationPolicy\":\"DoNotTerminate\",\"tls\":{\"certificates\":[{\"alias\":\"server\",\"secretName\":\"kafka-server-cert\"},{\"alias\":\"client\",\"secretName\":\"kafka-client-cert\"}],\"issuerRef\":{\"apiGroup\":\"cert-manager.io\",\"kind\":\"Issuer\",\"name\":\"kafka-ca-issuer\"}},\"topology\":{\"broker\":{\"replicas\":3,\"resources\":{\"limits\":{\"memory\":\"1Gi\"},\"requests\":{\"cpu\":\"500m\",\"memory\":\"1Gi\"}},\"storage\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"standard\"},\"suffix\":\"broker\"},\"controller\":{\"replicas\":3,\"resources\":{\"limits\":{\"memory\":\"1Gi\"},\"requests\":{\"cpu\":\"500m\",\"memory\":\"1Gi\"}},\"storage\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"standard\"},\"suffix\":\"controller\"}},\"version\":\"3.6.1\"}}\n"
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"kubedb.com/v1alpha2\",\"kind\":\"Kafka\",\"metadata\":{\"annotations\":{},\"name\":\"kafka\",\"namespace\":\"demo\"},\"spec\":{\"authSecret\":{\"name\":\"kafka-admin-cred\"},\"enableSSL\":true,\"healthChecker\":{\"failureThreshold\":3,\"periodSeconds\":20,\"timeoutSeconds\":10},\"keystoreCredSecret\":{\"name\":\"kafka-keystore-cred\"},\"storageType\":\"Durable\",\"deletionPolicy\":\"DoNotTerminate\",\"tls\":{\"certificates\":[{\"alias\":\"server\",\"secretName\":\"kafka-server-cert\"},{\"alias\":\"client\",\"secretName\":\"kafka-client-cert\"}],\"issuerRef\":{\"apiGroup\":\"cert-manager.io\",\"kind\":\"Issuer\",\"name\":\"kafka-ca-issuer\"}},\"topology\":{\"broker\":{\"replicas\":3,\"resources\":{\"limits\":{\"memory\":\"1Gi\"},\"requests\":{\"cpu\":\"500m\",\"memory\":\"1Gi\"}},\"storage\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"standard\"},\"suffix\":\"broker\"},\"controller\":{\"replicas\":3,\"resources\":{\"limits\":{\"memory\":\"1Gi\"},\"requests\":{\"cpu\":\"500m\",\"memory\":\"1Gi\"}},\"storage\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"standard\"},\"suffix\":\"controller\"}},\"version\":\"3.6.1\"}}\n"
         },
         "creationTimestamp": "2023-03-29T07:01:29Z",
         "finalizers": [
@@ -225,7 +225,7 @@ $ kubectl get kf kafka -n demo -ojson
             }
         },
         "storageType": "Durable",
-        "terminationPolicy": "DoNotTerminate",
+        "deletionPolicy": "DoNotTerminate",
         "tls": {
             "certificates": [
                 {
@@ -462,7 +462,7 @@ Metadata:
           f:timeoutSeconds:
         f:keystoreCredSecret:
         f:storageType:
-        f:terminationPolicy:
+        f:deletionPolicy:
         f:tls:
           .:
           f:certificates:
@@ -546,7 +546,7 @@ Spec:
     Spec:
       Resources:
   Storage Type:        Durable
-  Termination Policy:  DoNotTerminate
+  Deletion Policy:     DoNotTerminate
   Tls:
     Certificates:
       Alias:        server
