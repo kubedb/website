@@ -1,73 +1,116 @@
 $ac-primary: var(--ac-primary);
 
 // Products Color
-$primary: hsl(149, 100%, 33%); //#00a651;
-$guard-primary: hsl(13, 69%, 50%); //#d84e27;
-$kubedb-primary: hsl(240, 55%, 55%); //#4d4dcb;
-$kubeci-primary: hsl(210, 29%, 24%); //#2c3e50;
-$kubed-primary: hsl(209, 77%, 47%); // #1c7bd4;
-$kubesheild-primary: hsl(245, 80%, 43%); //#2516c7;
-$kubevault-primary: hsl(221, 77%, 55%); //#326ce5;
-$kubeform-primary: 	hsl(10, 59%, 22%); //#592217;
-$pharmer-primary: 	hsl(282, 44%, 47%); //#8e44ad;
-$searchlight-primary: hsl(231, 53%, 14%); // #111738;
-$service-broker-primary: hsl(172, 63%, 43%); //#29b4a2;
-$stash-primary:	hsl(256, 82%, 55%); //#5e2dea;
-$swift-primary: hsl(231, 49%, 48%); //#3f51b6;
-$voyager-primary:	hsl(242, 48%, 32%); // #2d2a78;
+// $primary: hsl(149, 100%, 33%); //#00a651;
+// $guard-primary: hsl(13, 69%, 50%); //#d84e27;
+// $kubedb-primary: hsl(240, 55%, 55%); //#4d4dcb;
+// $kubeci-primary: hsl(210, 29%, 24%); //#2c3e50;
+// $kubed-primary: hsl(209, 77%, 47%); // #1c7bd4;
+// $kubesheild-primary: hsl(245, 80%, 43%); //#2516c7;
+// $kubevault-primary: hsl(221, 77%, 55%); //#326ce5;
+// $kubeform-primary: 	hsl(10, 59%, 22%); //#592217;
+// $pharmer-primary: 	hsl(282, 44%, 47%); //#8e44ad;
+// $searchlight-primary: hsl(231, 53%, 14%); // #111738;
+// $service-broker-primary: hsl(172, 63%, 43%); //#29b4a2;
+// $stash-primary:	hsl(256, 82%, 55%); //#5e2dea;
+// $swift-primary: hsl(231, 49%, 48%); //#3f51b6;
+// $voyager-primary:	hsl(242, 48%, 32%); // #2d2a78;
 
 body {
-  --ac-primary: #{$primary};
+  --primary-h: 149;
+  --primary-s: 100%;
+  --primary-l: 30%;
+
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 
   &.guard {
-    --ac-primary: #{$guard-primary};
+    --primary-h: 13;
+    --primary-s: 69%;
+    --primary-l: 50%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.kubedb {
-    --ac-primary: #{$kubedb-primary};
+    --primary-h: 240;
+    --primary-s: 55%;
+    --primary-l: 55%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.kubeci {
-    --ac-primary: #{$kubeci-primary};
+    --primary-h: 210;
+    --primary-s: 29%;
+    --primary-l: 24%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.kubed {
-    --ac-primary: #{$kubed-primary};
+    --primary-h: 209;
+    --primary-s: 77%;
+    --primary-l: 47%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.kubesheild {
-    --ac-primary: #{$kubesheild-primary};
+    --primary-h: 245;
+    --primary-s: 80%;
+    --primary-l: 43%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.kubevault {
-    --ac-primary: #{$kubevault-primary};
+    --primary-h: 221;
+    --primary-s: 77%;
+    --primary-l: 55%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.kubeform {
-    --ac-primary: #{$kubeform-primary};
+    --primary-h: 10;
+    --primary-s: 59%;
+    --primary-l: 22%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.searchlight {
-    --ac-primary: #{$searchlight-primary};
+    --primary-h: 231;
+    --primary-s: 53%;
+    --primary-l: 14%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.pharmer {
-    --ac-primary: #{$pharmer-primary};
+    --primary-h: 282;
+    --primary-s: 44%;
+    --primary-l: 47%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.service-broker {
-    --ac-primary: #{$service-broker-primary};
+    --primary-h: 172;
+    --primary-s: 63%;
+    --primary-l: 43%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.stash {
-    --ac-primary: #{$stash-primary};
+    --primary-h: 256;
+    --primary-s: 82%;
+    --primary-l: 55%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.swift {
-    --ac-primary: #{$swift-primary};
+    --primary-h: 231;
+    --primary-s: 49%;
+    --primary-l: 48%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 
   &.voyager {
-    --ac-primary: #{$voyager-primary};
+    --primary-h: 242;
+    --primary-s: 48%;
+    --primary-l: 32%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
   }
 }

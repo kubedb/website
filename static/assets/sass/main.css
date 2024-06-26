@@ -10306,15 +10306,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   }
 }
 
-:root {
-  --primary-h: 149;
-  --primary-s: 100%;
-  --primary-l: 30%;
-  --guard-primary-h: 13;
-  --guard-primary-s: 69%;
-  --guard-primary-l: 50%;
-}
-
 /* Deafult Margin & Padding view-height & view-width */
 .m-0 {
   margin: 0px !important;
@@ -18177,46 +18168,88 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 body {
-  --ac-primary: hsl(149, 100%, 33%);
+  --primary-h: 149;
+  --primary-s: 100%;
+  --primary-l: 30%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.guard {
-  --ac-primary: hsl(13, 69%, 50%);
+  --primary-h: 13;
+  --primary-s: 69%;
+  --primary-l: 50%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.kubedb {
-  --ac-primary: hsl(240, 55%, 55%);
+  --primary-h: 240;
+  --primary-s: 55%;
+  --primary-l: 55%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.kubeci {
-  --ac-primary: hsl(210, 29%, 24%);
+  --primary-h: 210;
+  --primary-s: 29%;
+  --primary-l: 24%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.kubed {
-  --ac-primary: hsl(209, 77%, 47%);
+  --primary-h: 209;
+  --primary-s: 77%;
+  --primary-l: 47%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.kubesheild {
-  --ac-primary: hsl(245, 80%, 43%);
+  --primary-h: 245;
+  --primary-s: 80%;
+  --primary-l: 43%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.kubevault {
-  --ac-primary: hsl(221, 77%, 55%);
+  --primary-h: 221;
+  --primary-s: 77%;
+  --primary-l: 55%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.kubeform {
-  --ac-primary: hsl(10, 59%, 22%);
+  --primary-h: 10;
+  --primary-s: 59%;
+  --primary-l: 22%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.searchlight {
-  --ac-primary: hsl(231, 53%, 14%);
+  --primary-h: 231;
+  --primary-s: 53%;
+  --primary-l: 14%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.pharmer {
-  --ac-primary: hsl(282, 44%, 47%);
+  --primary-h: 282;
+  --primary-s: 44%;
+  --primary-l: 47%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.service-broker {
-  --ac-primary: hsl(172, 63%, 43%);
+  --primary-h: 172;
+  --primary-s: 63%;
+  --primary-l: 43%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.stash {
-  --ac-primary: hsl(256, 82%, 55%);
+  --primary-h: 256;
+  --primary-s: 82%;
+  --primary-l: 55%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.swift {
-  --ac-primary: hsl(231, 49%, 48%);
+  --primary-h: 231;
+  --primary-s: 49%;
+  --primary-l: 48%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 body.voyager {
-  --ac-primary: hsl(242, 48%, 32%);
+  --primary-h: 242;
+  --primary-s: 48%;
+  --primary-l: 32%;
+  --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
 }
 
 html,
@@ -22238,14 +22271,14 @@ Responsive Classes
 }
 
 .pricing-button .kubedb-transparent-btn {
-  color: hsl(240, 55%, 55%);
-  border: 1px solid hsl(240, 55%, 55%);
+  color: var(--ac-primary);
+  border: 1px solid var(--ac-primary);
 }
 
 .pricing-button .kubedb-transparent-btn:hover {
   color: #ffffff !important;
-  border: 1px solid hsl(240, 55%, 55%);
-  background-color: hsl(240, 55%, 55%);
+  border: 1px solid var(--ac-primary);
+  background-color: var(--ac-primary);
 }
 
 .pricing-button .primary-transparent-btn {
@@ -23590,7 +23623,7 @@ ul.social-share-button li a i.fa {
   margin-bottom: 24px;
   padding: 24px 32px;
   background-color: #F7F7F7;
-  border-left: 4px solid var(--ac-primary);
+  border-left: 4px solid hsl(var(--primary-h), 50%, 80%);
 }
 .content .content-body pre code {
   min-width: 100%;
@@ -23699,6 +23732,10 @@ ul.social-share-button li a i.fa {
 .content .content-body table td,
 .content .content-body table th {
   text-align: left;
+}
+.content blockquote {
+  border-left: 4px solid hsl(var(--primary-h), 50%, 80%) !important;
+  border-radius: 4px !important;
 }
 .content .ac-doc-footer .button.ac-button {
   font-size: 0.875rem;
