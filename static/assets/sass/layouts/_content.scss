@@ -314,8 +314,9 @@
       }
     }
     blockquote {
-      border-left: 4px solid hsl(var(--primary-h), var(--primary-s), 80%);
+      border-left: none;
       border-radius: 4px;
+      background-color: hsl(var(--primary-h), 10%, 90%);
     }
     .ac-doc-footer {
       .button.ac-button {
