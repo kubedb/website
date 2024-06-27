@@ -32,7 +32,8 @@
 
     p {
       font-size: 1rem;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
+      text-align: justify;
 
       strong {
         color: $color-heading;
@@ -65,7 +66,7 @@
       }
 
       span {
-        font-size: 18px;
+        font-size: 16px;
         margin-right: 0.8rem;
         color: $color-text;
       }

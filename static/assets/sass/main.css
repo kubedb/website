@@ -21187,7 +21187,8 @@ Responsive Classes
 }
 .features-area .features-description p {
   font-size: 1rem;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+  text-align: justify;
 }
 .features-area .features-description p strong {
   color: hsl(var(--secondary-h), 10%, 10%);
@@ -21214,7 +21215,7 @@ Responsive Classes
   margin-bottom: 0;
 }
 .features-area .check-list li span {
-  font-size: 18px;
+  font-size: 16px;
   margin-right: 0.8rem;
   color: hsl(var(--secondary-h), 10%, 20%);
 }
