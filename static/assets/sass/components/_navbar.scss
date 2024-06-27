@@ -26,18 +26,20 @@
   &.navbar-product {
     will-change: transform;
     transition: transform 200ms linear;
-    .navbar-appscode:not(.documentation-menu) {
-      background-color: $primary-light-gray;
-    }
-    .documentation-menu {
-      margin-left: 319px;
-      border-left: 1px solid $color-border;
-
-      @media screen and (max-width: 1440px) {
-        margin-left: 0;
-        border-left: none;
-      }
-    }
+    background-color: $primary-light-gray;
+  
+    // .documentation-menu {
+    //   .navbar-right {
+    //     margin-left: 299px;
+    //     border-left: 1px solid $color-border;
+    //     padding-left: 24px;
+    //     @media screen and (max-width: 1440px) {
+    //       margin-left: 0;
+    //       border-left: none;
+    //       padding-left: 0;
+    //     }
+    //   }
+    // }
 
     .mega-menu-wrapper {
       top: 57px;

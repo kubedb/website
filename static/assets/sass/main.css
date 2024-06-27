@@ -19296,19 +19296,7 @@ video {
 .navbar-appscode-wrapper.navbar-product {
   will-change: transform;
   transition: transform 200ms linear;
-}
-.navbar-appscode-wrapper.navbar-product .navbar-appscode:not(.documentation-menu) {
   background-color: hsl(var(--primary-h), 10%, 96%);
-}
-.navbar-appscode-wrapper.navbar-product .documentation-menu {
-  margin-left: 319px;
-  border-left: 1px solid hsl(var(--secondary-h), 10%, 90%);
-}
-@media screen and (max-width: 1440px) {
-  .navbar-appscode-wrapper.navbar-product .documentation-menu {
-    margin-left: 0;
-    border-left: none;
-  }
 }
 .navbar-appscode-wrapper.navbar-product .mega-menu-wrapper {
   top: 57px;
