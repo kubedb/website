@@ -19056,7 +19056,7 @@ Responsive Classes
 }
 
 .product-sidebar-menu .item label a {
-  font-weight: 700;
+  font-weight: 500;
   color: hsl(var(--secondary-h), 10%, 10%);
   padding: 12px 12px 4px;
   line-height: 1.2;
@@ -22806,11 +22806,14 @@ Responsive Classes
   line-height: 30px;
   border-radius: 50%;
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  background: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.5);
   border: none;
   opacity: 0;
   cursor: pointer;
   transition: opacity 0.4s linear;
+}
+.go-to-top:hover {
+  background: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
 }
 
 .go-to-top.is-visible {
@@ -23882,7 +23885,7 @@ code:not(pre code) {
 }
 .documentation-area .left-sidebar-wrapper .item input:checked ~ label a,
 .documentation-area .left-sidebar-wrapper .item input:checked ~ .item > label a {
-  color: hsl(var(--secondary-h), 10%, 10%);
+  color: var(--ac-primary);
 }
 
 .info-title p {

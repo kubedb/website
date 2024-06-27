@@ -99,7 +99,7 @@
 
     .item input:checked ~ label a,
     .item input:checked ~ .item > label a {
-      color: $color-heading;
+      color: $ac-primary;
     }
   }
 }
