@@ -24,9 +24,20 @@
   border-bottom: 1px solid $color-border;
 
   &.navbar-product {
-    background-color: $primary-light-gray;
     will-change: transform;
     transition: transform 200ms linear;
+    .navbar-appscode:not(.documentation-menu) {
+      background-color: $primary-light-gray;
+    }
+    .documentation-menu {
+      margin-left: 319px;
+      border-left: 1px solid $color-border;
+
+      @media screen and (max-width: 1440px) {
+        margin-left: 0;
+        border-left: none;
+      }
+    }
 
     .mega-menu-wrapper {
       top: 57px;
@@ -94,7 +105,7 @@
               position: absolute;
               content: "";
               left: 0;
-              bottom: -8px;
+              bottom: -9px;
               width: 100%;
               height: 4px;
               background: $ac-primary;

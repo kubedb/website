@@ -19294,9 +19294,21 @@ video {
   border-bottom: 1px solid hsl(var(--secondary-h), 10%, 90%);
 }
 .navbar-appscode-wrapper.navbar-product {
-  background-color: hsl(var(--primary-h), 10%, 96%);
   will-change: transform;
   transition: transform 200ms linear;
+}
+.navbar-appscode-wrapper.navbar-product .navbar-appscode:not(.documentation-menu) {
+  background-color: hsl(var(--primary-h), 10%, 96%);
+}
+.navbar-appscode-wrapper.navbar-product .documentation-menu {
+  margin-left: 319px;
+  border-left: 1px solid hsl(var(--secondary-h), 10%, 90%);
+}
+@media screen and (max-width: 1440px) {
+  .navbar-appscode-wrapper.navbar-product .documentation-menu {
+    margin-left: 0;
+    border-left: none;
+  }
 }
 .navbar-appscode-wrapper.navbar-product .mega-menu-wrapper {
   top: 57px;
@@ -19343,7 +19355,7 @@ video {
   position: absolute;
   content: "";
   left: 0;
-  bottom: -8px;
+  bottom: -9px;
   width: 100%;
   height: 4px;
   background: var(--ac-primary);
@@ -23548,7 +23560,6 @@ ul.social-share-button li a i.fa {
 }
 .content .content-body {
   overflow: hidden;
-  min-height: calc(100vh - 250px);
   margin-bottom: 32px;
 }
 .content .content-body div[class*=language-] {
@@ -23865,7 +23876,7 @@ code:not(pre code) {
   border-right: 1px solid hsl(var(--secondary-h), 10%, 90%);
   z-index: 1;
   width: var(--sidebar-width);
-  padding-top: 1rem;
+  padding-top: 8px;
   /* ===== Scrollbar CSS ===== */
   /* Firefox */
   /* Chrome, Edge, and Safari */
@@ -25005,4 +25016,4 @@ body:has(.headroom--unpinned) .features-cta-area .features-plan-cta-wrapper {
   .features-cta-area .features-plan-area {
     min-width: 1344px;
   }
-}/*# sourceMappingURL=main.css.map */
+}

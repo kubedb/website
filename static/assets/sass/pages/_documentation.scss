@@ -41,10 +41,10 @@
   
   .left-sidebar-wrapper {
     border-right: 1px solid $color-border;
-    // background-color: #fafafd;
+    // background-color: $primary-light-gray;
     z-index: 1;
     width: var(--sidebar-width);
-    padding-top: 1rem;
+    padding-top: 8px;
 
     /* ===== Scrollbar CSS ===== */
     /* Firefox */
