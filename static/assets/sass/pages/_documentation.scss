@@ -18,6 +18,10 @@
     max-width: 1175px;
     margin: 0 auto;
     padding: 32px;
+  
+    @media screen and (max-width:1440px) {
+      max-width: 1120px;
+    }
 
     .left-content {
       width: calc(100% - 272px);

@@ -6,8 +6,11 @@
 <!-- documentation and search start   -->
 <div class="responsive-menu is-hidden-desktop is-flex is-justify-content-center">
   <div class="is-flex is-justify-content-space-between is-fullwidth pl-20 pr-20">
-    <button class="button"><span class="material-icons">
-        menu
+    <button class="button"><span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+      </svg>
+
       </span></button>
     <button class="button">Docs</button>
     <button class="button">On this page</button>
@@ -21,12 +24,12 @@
 
     <ul>
       <button class="button ac-button inline-button back-button">
-        <span class="icon arrow-back">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-          </svg>
-        </span>
-        <span>Back</span>
+        <span class="icon arrow-close p-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </span>
+      <span>Close</span>
       </button>
       {{ $sectionMenuId := .Params.section_menu_id }}
       {{ if isset .Params "menu_name" }}
@@ -164,12 +167,12 @@
   <!-- documentation area start -->
   <div class="left-sidebar-wrapper">
     <button class="button ac-button inline-button back-button pl-15 is-hidden-desktop">
-      <span class="icon arrow-back">
+      <span class="icon arrow-close p-0">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
         </svg>
       </span>
-      <span>Back</span>
+      <span>Close</span>
     </button>
     <div class="ac-product-left-sidebar">
 
@@ -300,12 +303,12 @@
           <!-- table of contents area start -->
           <div class="tbl-of-contents">
             <button class="button ac-button inline-button back-button is-hidden-desktop">
-              <span class="icon arrow-back">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                </svg>
-              </span>
-              <span>Back</span>
+              <span class="icon arrow-close p-0">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </span>
+            <span>Close</span>
             </button>
             <h4>What's on this Page</h4>
             {{.TableOfContents}}
@@ -336,12 +339,12 @@
 
 <div class="sidebar-search-area">
   <button class="button ac-button inline-button back-button">
-    <span class="icon back">
+   <span class="icon arrow-close p-0">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
       </svg>
     </span>
-    <span>Back</span>
+    <span>Close</span>
   </button>
   <div class="search-area-top">
     <h5>Search</h5>

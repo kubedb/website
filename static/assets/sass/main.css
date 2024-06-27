@@ -19147,8 +19147,18 @@ Responsive Classes
 body:has(.headroom--pinned) .ac-product-left-sidebar {
   top: 180px;
 }
+@media screen and (max-width: 1023px) {
+  body:has(.headroom--pinned) .ac-product-left-sidebar {
+    top: 0;
+  }
+}
 body:has(.headroom--unpinned) .ac-product-left-sidebar {
   top: 120px;
+}
+@media screen and (max-width: 1023px) {
+  body:has(.headroom--unpinned) .ac-product-left-sidebar {
+    top: 0;
+  }
 }
 
 .product-sidebar-menu .item label {
@@ -23829,6 +23839,11 @@ code:not(pre code) {
   margin: 0 auto;
   padding: 32px;
 }
+@media screen and (max-width: 1440px) {
+  .documentation-area .documentation-body {
+    max-width: 1120px;
+  }
+}
 .documentation-area .documentation-body .left-content {
   width: calc(100% - 272px);
 }
@@ -24990,4 +25005,4 @@ body:has(.headroom--unpinned) .features-cta-area .features-plan-cta-wrapper {
   .features-cta-area .features-plan-area {
     min-width: 1344px;
   }
-}
+}/*# sourceMappingURL=main.css.map */

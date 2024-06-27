@@ -184,11 +184,17 @@ body {
   &:has(.headroom--pinned ) {
     .ac-product-left-sidebar {
       top: 180px;
+      @include touch {
+        top: 0;
+      }
     }
   }
   &:has(.headroom--unpinned ) {
     .ac-product-left-sidebar {
       top: 120px;
+      @include touch {
+        top: 0;
+      }
     }
   }
 }
