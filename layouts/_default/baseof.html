@@ -100,10 +100,10 @@
   <link href="https://calendly.com/assets/external/widget.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <!-- {{ with $style := resources.Get "/assets/sass/main.css" | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+  {{ with $style := resources.Get "/assets/sass/main.css" | resources.PostCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-  {{ end }} -->
- <link rel="stylesheet" href="/assets/sass/main.css" />
+  {{ end }}
+ <!-- <link rel="stylesheet" href="/assets/sass/main.css" /> -->
 </head>
 
 <body class="{{$p.key}}" id="app">
