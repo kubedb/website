@@ -81,3 +81,24 @@ a.nav-link.active:after {
 .tab-content h2 {
   margin-top: 0;
 }
+.nav-tabs {
+  padding-left: 16px;
+  li.nav-item{
+    list-style: none;
+    margin-bottom: -2px !important;
+    a{
+      border-bottom-width: 0;
+      color: $color-link;
+      &.active {
+        color: $ac-primary;
+      }
+      &::after{
+        display: none !important;
+      }
+    }
+    &::before{
+      display: none !important;
+    }
+
+  }
+}
