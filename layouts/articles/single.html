@@ -5,8 +5,10 @@
     <!-- is-centered -->
     <div class="columns is-multiline">
       <div class="column is-9">
-        <div class="full-info">
-          {{ .Content }}
+        <div class="full-info content">
+         <div class="content-body">
+           {{ .Content }}
+         </div>
         </div>
 
         <h5 class="mb-16">Share on social media</h5>
@@ -66,7 +68,7 @@
       articleToc.style.right = "-100%";
     })
 
-    article_page_toc_button.addEventListener('click', function(){
+    article_page_toc_button?.addEventListener('click', function(){
       articleToc.style.right = "0";
     })
     

@@ -14,7 +14,7 @@
 
 .cta-text p {
   font-size: 26px;
-  color: $ac-color-text;
+  color: $color-text;
   margin-top: 10px;
   margin-bottom: 0;
 }
@@ -28,7 +28,7 @@
 
 .support-page .hero-content-inner h1 {
   margin-bottom: 30px;
-  color: $ac-color-heading;
+  color: $color-heading;
   font-weight: 500;
   line-height: 64px;
 }
@@ -44,7 +44,7 @@
 }
 
 .payment-method-innner-text h2 {
-  color: $ac-color-heading;
+  color: $color-heading;
   margin-bottom: 20px;
 }
 
@@ -84,9 +84,11 @@
 
 .product-sidebar-menu .item label a {
   font-weight: 500;
-  color: $ac-color-heading;
-  padding: 0.5rem 1.25rem;
+  color: $color-heading;
+  padding: 12px 12px 4px;
+  line-height: 1.2;
   display: block;
+  width: calc(100% - 8px);
 }
 
 .item ul li.is-active a {
@@ -115,9 +117,10 @@
 
 .item ul li a {
   display: block;
-  padding: 6px 0;
+  padding: 8px 16px;
   font-family: $ac-font-paragraph;
   font-weight: 400;
+  line-height: 1.2;
 }
 
 .item label {
@@ -129,7 +132,7 @@
 .product-sidebar-menu li a {
   font-size: 14px;
   font-weight: 500;
-  color: $ac-color-link;
+  color: $color-link;
   display: block;
   cursor: pointer;
   user-select: none;
@@ -141,14 +144,14 @@
 }
 
 .product-sidebar-menu .item ul {
-  margin-left: 20px;
-  padding-left: 15px;
-  border-left: 1px solid $ac-white-light;
+  // margin-left: 20px;
+  // padding-left: 15px;
+  // border-left: 1px solid $color-border;
 }
 // border remove style
 // .item input:checked ~ label,
 // .item input:checked ~ .item > label {
-//   border: 1px solid $ac-white-light;
+//   border: 1px solid $color-border;
 //   background: $ac-white;
 // }
 
@@ -163,19 +166,37 @@
 
 .item input:checked ~ ul,
 .item input:checked ~ .item > ul > .item {
-  margin-left: -20px;
+  margin-left: 8px;
 }
 
 .ac-product-left-sidebar {
-  margin-right: 30px;
   position: sticky;
-  top: 130px;
+  top: 180px;
   z-index: 9;
   width: 100%;
   height: 100%;
   overflow-y: auto;
   max-height: calc(100vh - 190px);
   overflow-x: hidden;
+  transition: 0.3s ease-in-out;
+}
+body {
+  &:has(.headroom--pinned ) {
+    .ac-product-left-sidebar {
+      top: 180px;
+      @include touch {
+        top: 0;
+      }
+    }
+  }
+  &:has(.headroom--unpinned ) {
+    .ac-product-left-sidebar {
+      top: 120px;
+      @include touch {
+        top: 0;
+      }
+    }
+  }
 }
 
 .product-sidebar-menu .item label {
@@ -192,12 +213,12 @@
 
 .download-question h4 {
   font-size: 18px;
-  color: $ac-color-heading;
+  color: $color-heading;
   font-weight: 700;
 }
 
 .download-question p {
-  color: $ac-color-text;
+  color: $color-text;
   font-size: 16px;
   font-family: $ac-font-paragraph;
 }
@@ -217,7 +238,7 @@
 
 .form-area h4 {
   font-size: 18px;
-  color: $ac-color-heading;
+  color: $color-heading;
   font-weight: 700;
   margin-bottom: 30px;
 }
@@ -241,7 +262,7 @@
 }
 
 .single-input-field input::placeholder {
-  color: $ac-white-light;
+  color: $color-border;
 }
 
 .single-input-field .select,
@@ -252,7 +273,7 @@ select {
 
 .single-input-field .select select:not([multiple]) {
   padding-left: 15px;
-  color: $ac-white-light;
+  color: $color-border;
 }
 
 .download-button .icon {

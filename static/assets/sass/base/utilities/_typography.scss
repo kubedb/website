@@ -1,6 +1,6 @@
 // Typography
 $ac-font-heading: "Roboto", sans-serif;
-$ac-font-paragraph: "Roboto", sans-serif;
+$ac-font-paragraph: "Inter", sans-serif;
 $ac-font-inter: "Inter", sans-serif;
 
 html,
@@ -9,12 +9,13 @@ body {
   font-family: $ac-font-paragraph;
   font-weight: 400;
   font-size: 1rem;
-  color: $ac-color-text;
+  color: $color-text;
   scroll-behavior: smooth;
 }
 
 p {
   font-size: 1rem;
+  font-family: $ac-font-paragraph;
 }
 
 h1,
@@ -26,14 +27,14 @@ h6 {
   font-family: $ac-font-heading;
   font-style: normal;
   font-weight: 500;
-  color: $ac-color-heading;
+  color: $color-heading;
   &.is-gradient {
       background: linear-gradient(
         -45deg,
         $ac-primary,
         #940148,
         #4c346f,
-        #3334f5
+        $ac-primary
       );
       background-size: 300% 300%;
       animation: gradient 5s ease infinite;
@@ -118,7 +119,7 @@ a {
 }
 
 hr {
-  background-color: $ac-white-light;
+  background-color: $color-border;
   border: none;
   display: block;
   height: 1px;

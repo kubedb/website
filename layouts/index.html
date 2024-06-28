@@ -113,7 +113,7 @@ url(./assets/images/bg-image/gradient-bg.webp);">
 
 
 <!-- product features area start  -->
-<section class="product-feaures-area mb-50">
+<section class="product-feaures-area section-padding">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
@@ -141,9 +141,11 @@ url(./assets/images/bg-image/gradient-bg.webp);">
           <div class="feature-information">
           
             <h3>{{ $f.title }}</h3>
+            {{  if $f.summary }} 
             <p class="is-ellipsis-2">{{ $f.summary }}</p>
+            {{ end }}
             <p class="is-ellipsis-2">{{ $f.description }}</p>
-            <button class="readmore-button mt-15"><span>Read More</span><span class="icon">
+            <button class="readmore-button"><span>Read More</span><span class="icon">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
               </svg>
