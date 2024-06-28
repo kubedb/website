@@ -1,8 +1,0 @@
-apiVersion: kubedb.com/v1alpha2
-kind: Postgres
-metadata:
-  name: instant-postgres
-  namespace: demo
-spec:
-  version: "13.2"
-  storageType: Ephemeral
