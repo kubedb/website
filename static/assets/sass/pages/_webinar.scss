@@ -265,7 +265,7 @@ $poppins: "Poppins", sans-serif;
       font-weight: 500;
       font-size: 15px;
       background-color: transparent;
-      color: $ac-color-text;
+      color: $color-text;
 
       &:focus {
         outline: none !important;
@@ -295,7 +295,7 @@ $poppins: "Poppins", sans-serif;
         border: none;
         font-weight: 500;
         height: 45px !important;
-        color: $ac-color-text;
+        color: $color-text;
         padding-left: 15px;
 
         option[selected] {

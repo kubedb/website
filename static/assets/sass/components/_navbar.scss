@@ -21,12 +21,25 @@
 
 .navbar-appscode-wrapper {
   background-color: $ac-white;
-  border-bottom: 1px solid $ac-white-light;
+  border-bottom: 1px solid $color-border;
 
   &.navbar-product {
-    background-color: #fafafd;
     will-change: transform;
     transition: transform 200ms linear;
+    background-color: $primary-light-gray;
+  
+    // .documentation-menu {
+    //   .navbar-right {
+    //     margin-left: 299px;
+    //     border-left: 1px solid $color-border;
+    //     padding-left: 24px;
+    //     @media screen and (max-width: 1440px) {
+    //       margin-left: 0;
+    //       border-left: none;
+    //       padding-left: 0;
+    //     }
+    //   }
+    // }
 
     .mega-menu-wrapper {
       top: 57px;
@@ -48,6 +61,8 @@
   }
 }
 
+
+
 .navbar-appscode {
   display: flex;
   align-items: center;
@@ -64,12 +79,12 @@
   }
 
   &.documentation-menu {
-    margin-left: 349px;
+    // margin-left: 349px;
     background-color: $ac-white;
-    border-left: 1px solid $ac-white-light;
+    border-left: 1px solid $color-border;
 
     .mega-menu-wrapper {
-      top: 104px;
+      top: 106px;
     }
 
     .navbar-right {
@@ -92,7 +107,7 @@
               position: absolute;
               content: "";
               left: 0;
-              bottom: -8px;
+              bottom: -9px;
               width: 100%;
               height: 4px;
               background: $ac-primary;
@@ -103,7 +118,11 @@
       }
     }
   }
-
+  .nav-item {
+    .link{
+      font-family: $ac-font-heading !important;
+    }
+  }
   .navbar-left {
     display: flex;
     align-items: center;
@@ -202,7 +221,7 @@
       .link {
         font-size: 0.875rem;
         line-height: 1;
-        color: $ac-color-heading;
+        color: $color-heading;
         font-weight: 500;
         border: none;
         background-color: transparent;
@@ -382,15 +401,14 @@
           h6 {
             font-size: 1rem;
             letter-spacing: 0.009rem;
-            color: $ac-color-heading;
+            color: $color-heading;
             font-weight: 500;
           }
 
           p {
             font-size: 0.813rem;
-            color: #636363;
+            color: $color-text;
             line-height: 140%;
-            letter-spacing: 0.025rem;
           }
         }
 
@@ -417,7 +435,7 @@
     .product-description {
       margin-left: 1rem;
       float: left;
-      border-left: 1px solid $ac-white-light;
+      border-left: 1px solid $color-border;
       padding-left: 4rem;
       max-width: 36%;
       opacity: 0;
@@ -440,7 +458,7 @@
 
       p {
         font-size: 0.875rem;
-        color: $ac-color-text;
+        color: $color-text;
         line-height: 160%;
         margin-bottom: 1rem;
       }
@@ -448,7 +466,7 @@
       .features {
         li {
           font-size: 0.813rem;
-          color: $ac-color-heading;
+          color: $color-heading;
           display: flex;
           align-items: center;
           margin-bottom: 15px;
@@ -468,7 +486,7 @@
 
 .back-button {
   display: none !important;
-  color: $ac-color-text;
+  color: $color-text;
   margin-bottom: 10px !important;
   background-color: transparent;
 }
@@ -523,7 +541,7 @@
         align-items: center;
         font-size: 0.875rem;
         letter-spacing: 0.009rem;
-        color: $ac-color-heading;
+        color: $color-heading;
         font-weight: 500;
         transition: 0.3s;
         padding-left: 0;
@@ -592,7 +610,7 @@
         a {
           font-size: 0.875rem;
           padding: 0.6rem 0;
-          color: $ac-color-heading;
+          color: $color-heading;
           display: inline-block;
           line-height: 1;
           transition: 0.3s ease-in-out;
@@ -759,12 +777,12 @@
     .dropdown-trigger {
       .button {
         font-size: 0.813rem;
-        width: 210px;
+        width: 170px;
         height: 2rem;
         border-radius: 2px;
         padding: 2px 15px;
-        color: $ac-color-heading;
-        border: 1px solid $ac-white-light;
+        color: $color-heading;
+        border: 1px solid $color-border;
 
         .arrow {
           color: #999999;
@@ -802,7 +820,7 @@
 
         .dropdown-item {
           font-size: 0.813rem;
-          color: $ac-color-heading;
+          color: $color-heading;
         }
       }
     }
@@ -825,21 +843,30 @@
   position: relative;
   z-index: 1;
   padding: 0 20px;
-  border-left: 1px solid $ac-white-light;
+  border-left: 1px solid $color-border;
 
   label {
     .fa {
-      color: $ac-color-heading;
+      color: $color-heading;
+    }
+  }
+  .icon {
+    width: 22px;
+    height: 22px;
+    color: #999;
+    svg {
+      width: 1rem;
+      height: 1rem;
     }
   }
 
   input {
     border: none;
     background-color: transparent;
-    color: $ac-color-text;
+    color: $color-text;
     font-size: 0.875rem;
     width: 270px;
-    padding: 0.2rem 0.875rem;
+    padding: 8px 8px;
 
     &:focus {
       border: none;
@@ -848,6 +875,7 @@
 
     &::placeholder {
       color: #636363;
+      font-weight: 500;
     }
   }
 }
@@ -943,7 +971,7 @@ Responsive Classes
 
         .navbar-appscode {
           .navbar-right {
-            top: 47px;
+            top: 49px;
           }
         }
       }
@@ -973,7 +1001,7 @@ Responsive Classes
         position: fixed;
         // top: -60px !important;
         width: 80%;
-        border-right: 1px solid $ac-white-light;
+        border-right: 1px solid $color-border;
       }
     }
 
@@ -1137,7 +1165,7 @@ Responsive Classes
     .dropdown {
       .dropdown-trigger {
         .button {
-          width: 190px;
+          width: 170px;
         }
       }
     }
@@ -1197,7 +1225,7 @@ Responsive Classes
     }
     ul {
       .nav-item {
-        margin-right: 0.5rem;
+        margin-right: 1rem;
       }
     }
   }
@@ -1227,7 +1255,7 @@ Responsive Classes
     .dropdown {
       .dropdown-trigger {
         .button {
-          width: 180px;
+          width: 170px;
           padding: 2px 5px;
         }
       }

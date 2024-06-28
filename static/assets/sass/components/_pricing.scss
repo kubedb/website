@@ -63,13 +63,13 @@
   background-color: $ac-orange !important;
 }
 .pricing-button .kubedb-transparent-btn {
-  color: $kubedb-primary;
-  border: 1px solid $kubedb-primary;
+  color: $ac-primary;
+  border: 1px solid $ac-primary;
 }
 .pricing-button .kubedb-transparent-btn:hover {
   color: $ac-white !important;
-  border: 1px solid $kubedb-primary;
-  background-color: $kubedb-primary;
+  border: 1px solid $ac-primary;
+  background-color: $ac-primary;
 }
 .pricing-button .primary-transparent-btn {
   color: $ac-primary;
@@ -314,3 +314,4 @@
 .pricing-description ul li:last-child {
   margin-bottom: 0;
 }
+

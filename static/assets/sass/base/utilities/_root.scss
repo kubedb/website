@@ -1,0 +1,43 @@
+:root {
+    // spacing 
+    --sidebar-width: 320px;
+    --sidebar-sm-width: 300px;
+
+    @include until-fullhd {
+        --sidebar-width: 320px;
+        --sidebar-sm-width: 280px;
+    }
+
+    @media (min-width: 1408px) and (max-width: 1600px) {
+        --sidebar-width: 320px;
+        --sidebar-sm-width: 260px;
+    }
+
+    @include desktop-only {
+        --sidebar-width: 300px;
+        --sidebar-sm-width: 200px;
+    }
+}
+
+:root {
+    // color 
+    --primary-h: 149;
+    --primary-s: 100%;
+    --primary-l: 30%;
+    --ac-primary: hsl(var(--primary-h), var(--primary-s),var(--primary-l));
+  
+    --secondary-h: 196;
+    --secondary-s: 50%;
+    --secondary-l: 20%;
+    --ac-secondary: hsl(var(--secondary-h), var(--secondary-s),var(--secondary-l));
+}
+
+
+
+  
+ 
+
+  
+
+  
+  

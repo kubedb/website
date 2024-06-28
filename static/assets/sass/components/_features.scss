@@ -32,11 +32,11 @@
 
     p {
       font-size: 1rem;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
       text-align: justify;
 
       strong {
-        color: $ac-color-heading;
+        color: $color-heading;
         font-weight: 500;
       }
     }
@@ -44,7 +44,7 @@
 
   h3 {
     margin-bottom: 1rem;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   .check-list {
@@ -66,9 +66,9 @@
       }
 
       span {
-        font-size: 18px;
+        font-size: 16px;
         margin-right: 0.8rem;
-        color: $ac-primary;
+        color: $color-text;
       }
     }
   }
@@ -79,7 +79,7 @@
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 3.75rem auto;
-  border: 1px solid $ac-white-light;
+  border: 1px solid $color-border;
   border-radius: 2px;
   min-height: 126px;
 
@@ -104,7 +104,7 @@
   .feature-icon {
     width: 3.75rem;
     height: 3.75rem;
-    background-color: #f1f1f9;
+    background-color: hsl(var(--primary-h), var(--primary-s), 95%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,29 +120,66 @@
       font-size: 20px;
       font-weight: 700;
       letter-spacing: normal;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
 
     p {
       font-size: 0.875rem;
       line-height: 160%;
       transition: 0.3s ease-in-out;
-      color: $ac-color-text;
+      color: $color-text;
+      margin-bottom: 8px;
     }
   }
 }
+a.single-features-item {
+  transition: 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+  background-color: hsl(var(--primary-h), 10%, 98%);
 
+  &::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid $ac-primary;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+  &:hover {
+    border: 1px solid transparent;
+    box-shadow: $ac-shadow-2;
+    &::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
 .features-area {
+  .feature-content{
+    @include mobile {
+      margin-top: 16px;
+    }
+  }
   .single-feature-image {
     display: flex;
     align-items: center;
+    @include mobile {
+      justify-content: center !important;
+    }
 
     img {
       max-width: 400px;
+      @include touch {
+        max-width: 100%;
+      }
     }
-  }
-  p {
-    text-align: justify;
   }
 }
 
@@ -365,7 +402,7 @@ Responsive Classes
     .feature-information {
       h3 {
         font-size: 16px;
-        margin-bottom: 0;
+        margin-bottom: 4px;
         line-height: 130%;
       }
     }

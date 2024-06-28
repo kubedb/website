@@ -6,9 +6,10 @@
       .hero-content-inner {
         h1 {
           font-size: 36px;
-          line-height: 140%;
-          font-weight: 500;
-          margin-bottom: 30px;
+          line-height: 120%;
+          font-weight: 700;
+          margin-bottom: 8px;
+          text-wrap: balance;
 
           b {
             font-weight: 700;
@@ -34,6 +35,7 @@
     position: sticky;
     z-index: 8;
     top: 50px;
+    transition: 0.3s ease-in-out;
 
     .cta-left {
       width: 30%;
@@ -175,6 +177,18 @@
 
         // plan title end
       }
+    }
+  }
+}
+body {
+  &:has(.headroom--pinned ) {
+    .features-cta-area .features-plan-cta-wrapper{
+      top: 118px;
+    }
+  }
+  &:has(.headroom--unpinned ) {
+    .features-cta-area .features-plan-cta-wrapper{
+      top: 50px;
     }
   }
 }
@@ -443,7 +457,7 @@
 
         input {
           border: none;
-          background-color: $ac-white-light;
+          background-color: $color-border;
           height: 41px;
 
           &:focus {

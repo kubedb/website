@@ -3,6 +3,7 @@
 // Version: 0.1.0
 @import "../../../node_modules/bulma/bulma.sass";
 //BASE - Base styles, variables, mixins
+@import "base/utilities/_root";
 @import "base/utilities/_initial-variable";
 @import "base/utilities/_default";
 @import "base/utilities/_themes";
@@ -13,9 +14,6 @@
 
 // @import "base/_variables";
 @import "base/_global";
-@import "base/_homepage";
-
-@import "base/_innerpage";
 @import "base/_base";
 
 // components SCSS
@@ -47,6 +45,7 @@
 // LAYOUTS 
 @import "layouts/_ads";
 @import "layouts/_articles";
+@import "layouts/_content";
 
 
 // pages SCSS
@@ -54,6 +53,8 @@
 // @import "pages/_training";
 // @import "pages/_consulting";
 // @import "pages/_contactus";
+// @import "pages/_homepage";
+// @import "pages/_innerpage";
 @import "pages/_documentation";
 @import "pages/_features-plan";
 

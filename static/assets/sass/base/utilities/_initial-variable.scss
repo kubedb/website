@@ -1,18 +1,25 @@
 //  color variable
-$ac-color-text: #3b3030;
-$ac-color-label: #a6abbd;
-$ac-color-link: #4a4a4a;
-$ac-color-value: #393939;
-$ac-color-heading: #1c1c1c;
+$color-text: hsl(var(--secondary-h), 10%, 20%);
+$color-heading: hsl(var(--secondary-h), 10%, 10%);
+$color-label: hsl(var(--secondary-h), 20%, 30%);
+$color-link: hsl(var(--secondary-h), 40%, 20%);
+$color-border-light: hsl(var(--secondary-h), 40%, 95%);
+$color-border: hsl(var(--secondary-h), 10%, 90%);
+$color-border-dark: hsl(var(--secondary-h), 10%, 80%);
+
+$primary-light-grey: hsl(var(--primary-h), 10%, 96%);
+$primary-dark-grey: hsl(var(--primary-h), 10%, 10%);
+$primary-light-gray: hsl(var(--primary-h), 10%, 96%);
+$primary-dark-gray: hsl(var(--primary-h), 10%, 10%);
+
+$secondary-light-grey: hsl(var(--secondary-h), 10%, 96%);
+$secondary-dark-grey: hsl(var(--secondary-h), 10%, 10%);
+$secondary-light-gray: hsl(var(--secondary-h), 10%, 96%);
+$secondary-dark-gray: hsl(var(--secondary-h), 10%, 10%);
 
 $ac-black: #000000;
-$ac-bg: #ffffff;
 $ac-white: #ffffff;
-$ac-white-light: #dbdbde;
-$ac-white-lighter: #f1f1f1;
-$ac-gray-dark: #5f5f5f;
-$ac-gray-light: #8d8d8d;
-$ac-gray-lightest: #d1d1d1;
+$ac-bg: #ffffff;
 
 // size
 $ac-size-1: 48px;
@@ -38,3 +45,12 @@ $ac-green: #158748;
 $ac-blue: #0aafff;
 $ac-purple: #791e94;
 $ac-red: #ff3729;
+
+// Box Shadow
+$ac-shadow-1: 0 1px 4px rgba(26, 80, 151, 0.16);
+$ac-shadow-2: 0px 8px 57px rgba(0, 0, 0, 0.16);
+$ac-shadow-3: 0 3px 4px 0 rgba(0, 0, 0, 0.18), 0 3px 3px -2px rgba(0, 0, 0, 0.16), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+
+$shadow-sm: 0 1px 4px rgba(26, 80, 151, 0.16);
+$shadow-xl: 0px 8px 57px rgba(0, 0, 0, 0.16);
+$shadow-lg: 0 3px 4px 0 rgba(0, 0, 0, 0.18), 0 3px 3px -2px rgba(0, 0, 0, 0.16), 0 1px 6px 0 rgba(0, 0, 0, 0.12);

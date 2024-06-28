@@ -1,5 +1,5 @@
 .cookie-wrapper {
-  border-top: 1px solid $ac-white-light;
+  border-top: 1px solid $color-border;
   position: fixed;
   width: 100%;
   background-color: #fafafd;
@@ -19,7 +19,7 @@
 
     p {
       font-size: 14px;
-      color: $ac-color-text;
+      color: $color-text;
       width: calc(100% - 220px);
       margin-bottom: 0;
 

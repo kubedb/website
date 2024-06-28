@@ -14,11 +14,11 @@
       width: 100%;
       ul {
         padding-left: 30px;
-        border-left: 1px solid $ac-white-light;
+        border-left: 1px solid $color-border;
         li {
           a {
             display: inline-block;
-            color: $ac-color-link;
+            color: $color-link;
             padding: 10px 0;
             font-weight: 600;
             position: relative;
@@ -34,7 +34,7 @@
               transition: 0.3s linear;
             }
             &:hover {
-              color: $ac-color-heading;
+              color: $color-heading;
               &::after {
                 width: 100%;
               }
@@ -82,7 +82,7 @@
       color: $ac-primary;
     }
     .name {
-      color: $ac-color-text;
+      color: $color-text;
       font-size: 18px;
       font-weight: 500;
       margin-bottom: 20px;
