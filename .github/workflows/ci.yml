@@ -16,13 +16,15 @@ concurrency:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
 
       - uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: '20'
           check-latest: true
 
       - name: Install yq
@@ -34,7 +36,7 @@ jobs:
 
       - name: Install Hugo
         run: |
-          curl -fsSL -o hugo_extended.deb https://github.com/gohugoio/hugo/releases/download/v0.111.1/hugo_extended_0.111.1_linux-amd64.deb
+          curl -fsSL -o hugo_extended.deb https://github.com/gohugoio/hugo/releases/download/v0.128.2/hugo_extended_0.128.2_linux-amd64.deb
           sudo dpkg -i hugo_extended.deb
           rm hugo_extended.deb
 

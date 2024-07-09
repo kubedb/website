@@ -6,8 +6,10 @@ googleAnalytics: UA-62096468-4
 disableKinds:
 - taxonomy
 - taxonomyTerm
+theme: hugo-product-theme
 params:
   product_key: kubedb
+  primary_color: 4d4dcb
   main_menu_dropdown_item: database
   domain_appscode: https://appscode.com
   domain_bytebuilders: https://appscode.com
@@ -163,3 +165,4 @@ outputs:
   - JSON
 build:
   writeStats: true
+  timeout: 1800000

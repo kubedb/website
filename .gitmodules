@@ -1,0 +1,3 @@
+[submodule "themes/hugo-product-theme"]
+	path = themes/hugo-product-theme
+	url = git@github.com:appscode/hugo-product-theme.git

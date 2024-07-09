@@ -2,7 +2,7 @@ const fs = require('fs');
 const postcss = require('postcss');
 const purgecss = require('@fullhuman/postcss-purgecss');
 
-const cssFilePath = './static/assets/sass/main.css'; // Path CSS file
+const cssFilePath = './themes/hugo-product-theme/assets/css/main.css'; // Path CSS file
 
 // Read the CSS file
 fs.readFile(cssFilePath, (err, css) => {
