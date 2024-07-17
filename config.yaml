@@ -4,7 +4,6 @@ languageCode: en-us
 assetDir: static
 googleAnalytics: UA-62096468-4
 disableKinds:
-- section
 - taxonomy
 - taxonomyTerm
 theme: hugo-product-theme
