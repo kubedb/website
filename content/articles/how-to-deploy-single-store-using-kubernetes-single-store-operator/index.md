@@ -1,11 +1,11 @@
 ---
-title: How to Deploy SingleStore using Kubernetes SingleStore Operator
+title: How to Deploy SingleStore via Kubernetes SingleStore Operator
 Description: Deploy SingleStore on Kubernetes with ease using the Kubernetes SingleStore Operator. Follow this step-by-step guide for a seamless setup.
 alt: Kubernetes SingleStore
 date: "2024-08-07"
 ---
 
-# How to Deploy SingleStore using Kubernetes SingleStore Operator
+# How to Deploy SingleStore via Kubernetes SingleStore Operator
 
 ![Kubernetes SingleStore](./hero.jpg "Kubernetes SingleStore")
 
@@ -79,7 +79,7 @@ $ kubectl create secret generic -n ss-demo license-secret \
 ```
 With the namespace and license secret created, we can now deploy the SingleStore cluster.
 
-## Deploy SingleStore Cluster
+## Deploy SingleStore using Kubernetes SingleStore operator
 
 Here is the yaml of the SingleStore CR we are going to use:
 
