@@ -5,7 +5,7 @@ menu:
     identifier: kf-catalog-concepts
     name: KafkaVersion
     parent: kf-concepts-kafka
-    weight: 25
+    weight: 45
 menu_name: docs_v2024.8.21
 section_menu_id: guides
 info:
@@ -126,4 +126,4 @@ helm upgrade -i kubedb oci://ghcr.io/appscode-charts/kubedb \
 ## Next Steps
 
 - Learn about Kafka CRD [here](/docs/v2024.8.21/guides/kafka/concepts/kafka).
-- Deploy your first Kafka database with KubeDB by following the guide [here](/docs/v2024.8.21/guides/kafka/quickstart/overview/kafka/).
+- Deploy your first Kafka database with KubeDB by following the guide [here](/docs/v2024.8.21/guides/kafka/quickstart/kafka/).

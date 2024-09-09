@@ -193,7 +193,7 @@ Hence, the cluster is ready to use.
 Let's check the k8s resources created by the operator on the deployment of ConnectCluster:
 
 ```bash
-$ kubectl get all,secret -n demo -l 'app.kubernetes.io/instance=connectcluster-distributed'
+$ kubectl get all,petset,secret -n demo -l 'app.kubernetes.io/instance=connectcluster-distributed'
 NAME                               READY   STATUS    RESTARTS   AGE
 pod/connectcluster-distributed-0   1/1     Running   0          8m55s
 pod/connectcluster-distributed-1   1/1     Running   0          8m52s
@@ -202,8 +202,8 @@ NAME                                      TYPE        CLUSTER-IP     EXTERNAL-IP
 service/connectcluster-distributed        ClusterIP   10.128.238.9   <none>        8083/TCP   17m
 service/connectcluster-distributed-pods   ClusterIP   None           <none>        8083/TCP   17m
 
-NAME                                          READY   AGE
-petset.apps/connectcluster-distributed   2/2     8m56s
+NAME                                                      READY   AGE
+petset.apps.k8s.appscode.com/connectcluster-distributed   2/2     8m56s
 
 NAME                                                            TYPE                              VERSION   AGE
 appbinding.appcatalog.appscode.com/connectcluster-distributed   kafka.kubedb.com/connectcluster   3.6.1     8m56s
@@ -513,8 +513,8 @@ If you are just testing some basic functionalities, you might want to avoid addi
 
 ## Next Steps
 
-- [Quickstart Kafka](/docs/v2024.8.21/guides/kafka/quickstart/overview/kafka/) with KubeDB Operator.
-- [Quickstart ConnectCluster](/docs/v2024.8.21/guides/kafka/quickstart/overview/connectcluster/) with KubeDB Operator.
+- [Quickstart Kafka](/docs/v2024.8.21/guides/kafka/quickstart/kafka/) with KubeDB Operator.
+- [Quickstart ConnectCluster](/docs/v2024.8.21/guides/kafka/connectcluster/overview) with KubeDB Operator.
 - Use [kubedb cli](/docs/v2024.8.21/guides/kafka/cli/cli) to manage databases like kubectl for Kubernetes.
 - Detail concepts of [ConnectCluster object](/docs/v2024.8.21/guides/kafka/concepts/connectcluster).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2024.8.21/CONTRIBUTING).
