@@ -30,17 +30,17 @@ KubeStash v0.1.0+ supports backup and restoration of MongoDB databases. This gui
 
 - At first, you need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using Minikube.
 - Install KubeDB in your cluster following the steps [here](/docs/v2024.8.21/setup/README).
-- Install KubeStash Enterprise in your cluster following the steps [here(link needed)]().
-- Install KubeStash `kubectl` plugin following the steps [here(link needed)]().
-- If you are not familiar with how KubeStash backup and restore MongoDB databases, please check the following guide [here](/docs/v2024.8.21/guides/mongodb/backup/kubestash/overview/_index).
+- Install KubeStash Enterprise in your cluster following the steps [here](https://kubestash.com/docs/latest/setup/install/kubestash/).
+- Install KubeStash `kubectl` plugin following the steps [here](https://kubestash.com/docs/latest/setup/install/kubectl-plugin/).
+- If you are not familiar with how KubeStash backup and restore MongoDB databases, please check the following guide [here](/docs/v2024.8.21/guides/mongodb/backup/kubestash/overview/).
 
 You have to be familiar with following custom resources:
 
 - [AppBinding](/docs/v2024.8.21/guides/mongodb/concepts/appbinding)
-- [Function](https://stash.run/docs/latest/concepts/crds/function/)
-- [Task](https://stash.run/docs/latest/concepts/crds/task/)
-- [BackupConfiguration](https://stash.run/docs/latest/concepts/crds/backupconfiguration/)
-- [RestoreSession](https://stash.run/docs/latest/concepts/crds/restoresession/)
+- [Function](https://kubestash.com/docs/latest/concepts/crds/function/)
+- [Addon](https://kubestash.com/docs/latest/concepts/crds/addon/)
+- [BackupConfiguration](https://kubestash.com/docs/latest/concepts/crds/backupconfiguration/)
+- [RestoreSession](https://kubestash.com/docs/latest/concepts/crds/restoresession/)
 
 To keep things isolated, we are going to use a separate namespace called `demo` throughout this tutorial. Create `demo` namespace if you haven't created yet.
 
@@ -180,7 +180,7 @@ Now, we are ready to backup this sample database.
 
 ### Prepare Backend
 
-We are going to store our backed up data into a S3 bucket. At first, we need to create a secret with S3 credentials then we need to create a `BackupStorage` crd. If you want to use a different backend, please read the respective backend configuration doc from [here](https://stash.run/docs/latest/guides/backends/overview/).
+We are going to store our backed up data into a S3 bucket. At first, we need to create a secret with S3 credentials then we need to create a `BackupStorage` crd. If you want to use a different backend, please read the respective backend configuration doc from [here](https://kubestash.com/docs/latest/guides/backends/overview/).
 
 **Create Storage Secret:**
 
@@ -213,7 +213,7 @@ spec:
       bucket: kubestash-testing
       region: us-east-1
       prefix: demo-replicaset
-      secret: s3-secret
+      secretName: s3-secret
   usagePolicy:
     allowedNamespaces:
       from: All
@@ -294,18 +294,20 @@ spec:
         name: s3-storage-replicaset
       retentionPolicy:
         name: backup-rp
-        namespace: demo        
+        namespace: demo
   sessions:
     - name: frequent
       scheduler:
+        jobTemplate:
+          backoffLimit: 1
         schedule: "*/3 * * * *"
       repositories:
         - name: s3-repo
           backend: s3-backend
           directory: /replicaset
           encryptionSecret:
-           name: encry-secret
-           namespace: demo
+            name: encry-secret
+            namespace: demo
       addon:
         name: mongodb-addon
         tasks:
