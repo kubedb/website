@@ -1,10 +1,11 @@
 ---
-title: RabbitMQ
+title: Scaling RabbitMQ
 menu:
   docs_v2024.8.21:
-    identifier: rm-guides
-    parent: guides
-    weight: 10
+    identifier: rm-scaling
+    name: Scaling
+    parent: rm-guides
+    weight: 43
 menu_name: docs_v2024.8.21
 info:
   autoscaler: v0.32.0

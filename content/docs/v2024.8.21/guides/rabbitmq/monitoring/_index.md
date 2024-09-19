@@ -1,10 +1,11 @@
 ---
-title: RabbitMQ
+title: Monitoring RabbitMQ
 menu:
   docs_v2024.8.21:
-    identifier: rm-guides
-    parent: guides
-    weight: 10
+    identifier: rm-monitoring-guides
+    name: Monitoring
+    parent: rm-guides
+    weight: 50
 menu_name: docs_v2024.8.21
 info:
   autoscaler: v0.32.0

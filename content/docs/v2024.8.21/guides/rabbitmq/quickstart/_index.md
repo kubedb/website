@@ -2,9 +2,9 @@
 title: RabbitMQ Quickstart
 menu:
   docs_v2024.8.21:
-    identifier: rm-quickstart-rabbitmq
+    identifier: rm-quickstart
     name: Quickstart
-    parent: guides-rabbitmq
+    parent: rm-guides
     weight: 10
 menu_name: docs_v2024.8.21
 info:

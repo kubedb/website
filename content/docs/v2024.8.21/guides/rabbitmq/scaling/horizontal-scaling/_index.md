@@ -1,9 +1,10 @@
 ---
-title: RabbitMQ
+title: Horizontal Scaling
 menu:
   docs_v2024.8.21:
-    identifier: rm-guides
-    parent: guides
+    identifier: rm-horizontal-scaling
+    name: Horizontal Scaling
+    parent: rm-scaling
     weight: 10
 menu_name: docs_v2024.8.21
 info:

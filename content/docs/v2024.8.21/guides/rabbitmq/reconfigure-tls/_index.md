@@ -1,10 +1,11 @@
 ---
-title: RabbitMQ
+title: Reconfigure RabbitMQ TLS/SSL
 menu:
   docs_v2024.8.21:
-    identifier: rm-guides
-    parent: guides
-    weight: 10
+    identifier: rm-reconfigure-tls
+    name: Reconfigure TLS/SSL
+    parent: rm-guides
+    weight: 46
 menu_name: docs_v2024.8.21
 info:
   autoscaler: v0.32.0
