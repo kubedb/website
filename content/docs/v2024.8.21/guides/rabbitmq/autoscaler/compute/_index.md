@@ -1,10 +1,11 @@
 ---
-title: RabbitMQ
+title: Compute Autoscaling
 menu:
   docs_v2024.8.21:
-    identifier: rm-guides
-    parent: guides
-    weight: 10
+    identifier: rm-autoscaling-compute
+    name: Compute Autoscaling
+    parent: rm-autoscaling
+    weight: 46
 menu_name: docs_v2024.8.21
 info:
   autoscaler: v0.32.0

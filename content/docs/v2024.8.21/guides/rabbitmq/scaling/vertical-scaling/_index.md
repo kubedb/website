@@ -1,10 +1,11 @@
 ---
-title: RabbitMQ
+title: Vertical Scaling
 menu:
   docs_v2024.8.21:
-    identifier: rm-guides
-    parent: guides
-    weight: 10
+    identifier: rm-vertical-scaling
+    name: Vertical Scaling
+    parent: rm-scaling
+    weight: 20
 menu_name: docs_v2024.8.21
 info:
   autoscaler: v0.32.0

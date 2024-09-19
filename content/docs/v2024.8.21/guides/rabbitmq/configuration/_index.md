@@ -1,10 +1,11 @@
 ---
-title: RabbitMQ
+title: Run RabbitMQ with Custom Configuration
 menu:
   docs_v2024.8.21:
-    identifier: rm-guides
-    parent: guides
-    weight: 10
+    identifier: rm-configuration
+    name: Custom Configuration
+    parent: rm-guides
+    weight: 30
 menu_name: docs_v2024.8.21
 info:
   autoscaler: v0.32.0
