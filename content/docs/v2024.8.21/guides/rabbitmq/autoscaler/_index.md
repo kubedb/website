@@ -5,7 +5,7 @@ menu:
     identifier: rm-autoscaling
     name: Autoscaling
     parent: rm-guides
-    weight: 46
+    weight: 90
 menu_name: docs_v2024.8.21
 info:
   autoscaler: v0.32.0

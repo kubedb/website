@@ -5,7 +5,7 @@ menu:
     identifier: rm-quickstart
     name: Quickstart
     parent: rm-guides
-    weight: 10
+    weight: 20
 menu_name: docs_v2024.8.21
 info:
   autoscaler: v0.32.0

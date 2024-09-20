@@ -4,7 +4,7 @@ menu:
   docs_v2024.8.21:
     identifier: rm-autoscaling-compute-overview
     name: Overview
-    parent: rm-autoscaling
+    parent: rm-autoscaling-compute
     weight: 10
 menu_name: docs_v2024.8.21
 section_menu_id: guides
