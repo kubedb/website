@@ -5,7 +5,7 @@ menu:
     identifier: rm-update-version
     name: Update Version
     parent: rm-guides
-    weight: 42
+    weight: 50
 menu_name: docs_v2024.8.21
 info:
   autoscaler: v0.32.0

@@ -3,7 +3,7 @@ title: Vertical Scaling RabbitMQ
 menu:
   docs_v2024.8.21:
     identifier: rm-vertical-scaling-ops
-    name: rabbitmq-vertical-scaling
+    name: Scale Vertically
     parent: rm-vertical-scaling
     weight: 20
 menu_name: docs_v2024.8.21

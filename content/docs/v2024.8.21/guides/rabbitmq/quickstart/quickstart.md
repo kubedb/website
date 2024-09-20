@@ -3,7 +3,7 @@ title: RabbitMQ Quickstart
 menu:
   docs_v2024.8.21:
     identifier: rm-quickstart-description
-    name: Overview
+    name: RabbitMQ
     parent: rm-quickstart
     weight: 15
 menu_name: docs_v2024.8.21

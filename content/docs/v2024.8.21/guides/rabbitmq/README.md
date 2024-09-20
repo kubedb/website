@@ -2,9 +2,9 @@
 title: RabbitMQ
 menu:
   docs_v2024.8.21:
-    identifier: guides-rabbitmq-readme
+    identifier: rm-guides-readme
     name: RabbitMQ
-    parent: guides-rabbitmq
+    parent: rm-guides
     weight: 10
 menu_name: docs_v2024.8.21
 section_menu_id: guides

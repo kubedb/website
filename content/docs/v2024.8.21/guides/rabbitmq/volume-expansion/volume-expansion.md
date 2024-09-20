@@ -3,7 +3,7 @@ title: RabbitMQ Volume Expansion
 menu:
   docs_v2024.8.21:
     identifier: rm-volume-expansion-describe
-    name: Standalone
+    name: Expand Storage Volume
     parent: rm-volume-expansion
     weight: 20
 menu_name: docs_v2024.8.21
@@ -25,7 +25,7 @@ info:
 
 # RabbitMQ Standalone Volume Expansion
 
-This guide will show you how to use `KubeDB` Ops-manager operator to expand the volume of a RabbitMQ standalone database.
+This guide will show you how to use `KubeDB` Ops-manager operator to expand the volume of a RabbitMQ database.
 
 ## Before You Begin
 
@@ -49,7 +49,7 @@ namespace/demo created
 
 > Note: The yaml files used in this tutorial are stored in [docs/examples/RabbitMQ](https://github.com/kubedb/docs/tree/{{< param "info.version" >}}/docs/examples/rabbitmq) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
 
-## Expand Volume of Standalone Database
+## Expand Volume of RabbitMQ Database
 
 Here, we are going to deploy a `RabbitMQ` standalone using a supported version by `KubeDB` operator. Then we are going to apply `RabbitMQOpsRequest` to expand its volume.
 
