@@ -14,31 +14,31 @@
   "keywords": "kubernetes appscode backup disaster recovery volume",
   "heroSlider": [
     {
-      "src": "https://cdn.appscode.com/images/products/stash/slider/applications.jpg",
+      "src": "/assets/images/products/stash/slider/applications.jpg",
       "alt": "Supported Applications"
     },
     {
-      "src": "https://cdn.appscode.com/images/products/stash/slider/platforms.jpg",
+      "src": "/assets/images/products/stash/slider/platforms.jpg",
       "alt": "Supported Platforms"
     },
     {
-      "src": "https://cdn.appscode.com/images/products/stash/slider/storage.jpg",
+      "src": "/assets/images/products/stash/slider/storage.jpg",
       "alt": "Supported Storage"
     }
   ],
   "logo": {
-    "src": "https://cdn.appscode.com/images/products/stash/stash.png",
+    "src": "/assets/images/products/stash/stash.png",
     "alt": "Stash"
   },
   "logoWhite": {
-    "src": "https://cdn.appscode.com/images/products/stash/stash-white.png",
+    "src": "/assets/images/products/stash/stash-white.png",
     "alt": "Stash"
   },
   "icon": {
-    "src": "https://cdn.appscode.com/images/products/stash/stash-icon.svg",
+    "src": "/assets/images/products/stash/stash-icon.svg",
     "alt": "Stash",
     "sizes": {
-      "192x192": "https://cdn.appscode.com/images/products/stash/icons/android-icon-192x192.png"
+      "192x192": "/assets/images/products/stash/icons/android-icon-192x192.png"
     }
   },
   "repoURL": "https://github.com/stashed/docs",
@@ -60,11 +60,11 @@
     {
       "title": "Declarative API",
       "image": {
-        "src": "https://cdn.appscode.com/images/addons/illustrations/declarative-api.png",
+        "src": "/assets/images/addons/illustrations/declarative-api.png",
         "alt": "http"
       },
       "icon": {
-        "src": "https://cdn.appscode.com/images/products/stash/features/declarative-api.svg",
+        "src": "/assets/images/products/stash/features/declarative-api.svg",
         "alt": "http"
       },
       "summary": "",
@@ -73,11 +73,11 @@
     {
       "title": "Backup Kubernetes Volumes",
       "image": {
-        "src": "https://cdn.appscode.com/images/addons/illustrations/backup-kubernetes-volumes.png",
+        "src": "/assets/images/addons/illustrations/backup-kubernetes-volumes.png",
         "alt": "http"
       },
       "icon": {
-        "src": "https://cdn.appscode.com/images/products/stash/features/vol.svg",
+        "src": "/assets/images/products/stash/features/vol.svg",
         "alt": "http"
       },
       "summary": "",
@@ -86,11 +86,11 @@
     {
       "title": "Backup Database",
       "image": {
-        "src": "https://cdn.appscode.com/images/addons/illustrations/backup-restore-databases.png",
+        "src": "/assets/images/addons/illustrations/backup-restore-databases.png",
         "alt": "http"
       },
       "icon": {
-        "src": "https://cdn.appscode.com/images/products/stash/features/backup-icon.png",
+        "src": "/assets/images/products/stash/features/backup-icon.png",
         "alt": "http"
       },
       "summary": "",
@@ -99,11 +99,11 @@
     {
       "title": "Multiple Storage Support",
       "image": {
-        "src": "https://cdn.appscode.com/images/addons/illustrations/multiple-storage-support.png",
+        "src": "/assets/images/addons/illustrations/multiple-storage-support.png",
         "alt": "http"
       },
       "icon": {
-        "src": "https://cdn.appscode.com/images/products/stash/features/storage-icon.png",
+        "src": "/assets/images/products/stash/features/storage-icon.png",
         "alt": "http"
       },
       "summary": "",
@@ -112,11 +112,11 @@
     {
       "title": "Deduplication",
       "image": {
-        "src": "https://cdn.appscode.com/images/addons/illustrations/deduplication.png",
+        "src": "/assets/images/addons/illustrations/deduplication.png",
         "alt": "http"
       },
       "icon": {
-        "src": "https://cdn.appscode.com/images/products/stash/features/compare-icon.png",
+        "src": "/assets/images/products/stash/features/compare-icon.png",
         "alt": "http"
       },
       "summary": "",
@@ -125,11 +125,11 @@
     {
       "title": "Data Encryption",
       "image": {
-        "src": "https://cdn.appscode.com/images/addons/illustrations/data-encryption.png",
+        "src": "/assets/images/addons/illustrations/data-encryption.png",
         "alt": "http"
       },
       "icon": {
-        "src": "https://cdn.appscode.com/images/products/stash/features/encryption-icon.png",
+        "src": "/assets/images/products/stash/features/encryption-icon.png",
         "alt": "http"
       },
       "summary": "",
@@ -138,11 +138,11 @@
     {
       "title": "Volume Snapshot",
       "image": {
-        "src": "https://cdn.appscode.com/images/addons/illustrations/volume-snapshot.png",
+        "src": "/assets/images/addons/illustrations/volume-snapshot.png",
         "alt": "http"
       },
       "icon": {
-        "src": "https://cdn.appscode.com/images/products/stash/features/volume-snapshot.png",
+        "src": "/assets/images/products/stash/features/volume-snapshot.png",
         "alt": "http"
       },
       "summary": "",
@@ -151,11 +151,11 @@
     {
       "title": "Policy Based Backup",
       "image": {
-        "src": "https://cdn.appscode.com/images/addons/illustrations/policy-based-backup.png",
+        "src": "/assets/images/addons/illustrations/policy-based-backup.png",
         "alt": "http"
       },
       "icon": {
-        "src": "https://cdn.appscode.com/images/products/stash/features/policy-based-icon.png",
+        "src": "/assets/images/products/stash/features/policy-based-icon.png",
         "alt": "http"
       },
       "summary": "",
@@ -164,11 +164,11 @@
     {
       "title": "Monitoring",
       "image": {
-        "src": "https://cdn.appscode.com/images/addons/illustrations/monitoring.png",
+        "src": "/assets/images/addons/illustrations/monitoring.png",
         "alt": "http"
       },
       "icon": {
-        "src": "https://cdn.appscode.com/images/products/stash/features/prometheus.svg",
+        "src": "/assets/images/products/stash/features/prometheus.svg",
         "alt": "http"
       },
       "summary": "",
@@ -180,6 +180,87 @@
       "version": "master",
       "hostDocs": false,
       "show": true
+    },
+    {
+      "version": "v2024.9.30",
+      "hostDocs": true,
+      "show": true,
+      "info": {
+        "cli": "v0.36.0",
+        "community": "v0.36.0",
+        "elasticsearch": [
+          "5.6.4-v32",
+          "6.2.4-v32",
+          "6.3.0-v32",
+          "6.4.0-v32",
+          "6.5.3-v32",
+          "6.8.0-v32",
+          "7.14.0-v18",
+          "7.2.0-v32",
+          "7.3.2-v32",
+          "8.2.0-v15"
+        ],
+        "enterprise": "v0.36.0",
+        "etcd": [
+          "3.5.0-v19"
+        ],
+        "installer": "v2024.9.30",
+        "kubedump": [
+          "0.1.0-v15"
+        ],
+        "mariadb": [
+          "10.5.8-v26"
+        ],
+        "mongodb": [
+          "3.4.17-v33",
+          "3.4.22-v33",
+          "3.6.13-v33",
+          "3.6.8-v33",
+          "4.0.11-v33",
+          "4.0.3-v33",
+          "4.0.5-v33",
+          "4.1.13-v33",
+          "4.1.4-v33",
+          "4.1.7-v33",
+          "4.2.3-v33",
+          "4.4.6-v24",
+          "5.0.15-v6",
+          "5.0.3-v21",
+          "6.0.5-v9"
+        ],
+        "mysql": [
+          "5.7.25-v32",
+          "8.0.14-v32",
+          "8.0.21-v26",
+          "8.0.3-v32"
+        ],
+        "nats": [
+          "2.6.1-v20",
+          "2.8.2-v15"
+        ],
+        "percona-xtradb": [
+          "5.7-v27"
+        ],
+        "postgres": [
+          "10.14-v31",
+          "11.9-v31",
+          "12.4-v31",
+          "13.1-v28",
+          "14.0-v20",
+          "15.1-v12",
+          "16.1-v1",
+          "9.6.19-v31"
+        ],
+        "redis": [
+          "5.0.13-v20",
+          "6.2.5-v20",
+          "7.0.5-v13"
+        ],
+        "ui-server": "v0.17.0",
+        "vault": [
+          "1.10.3-v12"
+        ]
+      }
     },
     {
       "version": "v2024.8.27",
@@ -3010,7 +3091,7 @@
       "hostDocs": false
     }
   ],
-  "latestVersion": "v2024.8.27",
+  "latestVersion": "v2024.9.30",
   "socialLinks": {
     "facebook": "https://facebook.com/appscode",
     "github": "https://github.com/stashed",
