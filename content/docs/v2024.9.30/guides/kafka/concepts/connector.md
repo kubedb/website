@@ -82,7 +82,7 @@ Deletion policy `WipeOut` will delete the connector from the ConnectCluster when
 ## Next Steps
 
 - Learn how to use KubeDB to run Apache Kafka cluster [here](/docs/v2024.9.30/guides/kafka/quickstart/kafka/).
-- Learn how to use KubeDB to run Apache Kafka Connect cluster [here](/docs/v2024.9.30/guides/kafka/connectcluster/overview).
+- Learn how to use KubeDB to run Apache Kafka Connect cluster [here](/docs/v2024.9.30/guides/kafka/connectcluster/quickstart).
 - Detail concepts of [KafkaConnectorVersion object](/docs/v2024.9.30/guides/kafka/concepts/kafkaconnectorversion).
 - Learn to use KubeDB managed Kafka objects using [CLIs](/docs/v2024.9.30/guides/kafka/cli/cli).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2024.9.30/CONTRIBUTING).

@@ -354,7 +354,7 @@ If you are just testing some basic functionalities, you might want to avoid addi
 ## Next Steps
 
 - [Quickstart Kafka](/docs/v2024.9.30/guides/kafka/quickstart/kafka/) with KubeDB Operator.
-- [Quickstart ConnectCluster](/docs/v2024.9.30/guides/kafka/connectcluster/overview) with KubeDB Operator.
+- [Quickstart ConnectCluster](/docs/v2024.9.30/guides/kafka/connectcluster/quickstart) with KubeDB Operator.
 - Use [kubedb cli](/docs/v2024.9.30/guides/kafka/cli/cli) to manage databases like kubectl for Kubernetes.
 - Detail concepts of [ConnectCluster object](/docs/v2024.9.30/guides/kafka/concepts/connectcluster).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2024.9.30/CONTRIBUTING).

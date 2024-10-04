@@ -5,7 +5,7 @@ menu:
     identifier: guides-druid-backup-overview
     name: Overview
     parent: guides-druid-backup
-    weight: 50
+    weight: 10
 menu_name: docs_v2024.9.30
 section_menu_id: guides
 info:
