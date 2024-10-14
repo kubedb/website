@@ -214,7 +214,7 @@ $ kubectl exec -it -n demo sample-redis-0 -c redis -- bash
 redis@sample-redis-0:/data$ redis-cli
 127.0.0.1:6379> set db redis
 OK
-127.0.0.1:6379> set name neaj
+127.0.0.1:6379> set name batman
 OK
 127.0.0.1:6379> set key value
 OK
@@ -256,7 +256,7 @@ spec:
   storage:
     provider: gcs
     gcs:
-      bucket: neaj-demo
+      bucket: kubestash-qa
       prefix: demo
       secretName: gcs-secret
   usagePolicy:
@@ -643,7 +643,7 @@ redis@sample-redis-0:/data$ redis-cli
 127.0.0.1:6379> get db
 "redis"
 127.0.0.1:6379> get name
-"neaj"
+"batman"
 127.0.0.1:6379> get key
 "value"
 127.0.0.1:6379> exit
