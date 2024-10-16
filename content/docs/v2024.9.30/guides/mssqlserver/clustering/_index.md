@@ -1,11 +1,11 @@
 ---
-title: Microsoft SQL Server Quickstart
+title: MSSQLServer Clustering
 menu:
   docs_v2024.9.30:
-    identifier: ms-quickstart
-    name: Quickstart
+    identifier: ms-clustering
+    name: Clustering
     parent: guides-mssqlserver
-    weight: 15
+    weight: 25
 menu_name: docs_v2024.9.30
 info:
   autoscaler: v0.33.0
