@@ -11,6 +11,7 @@ docs: hugo-tools
 	rm -rf static/files/cluster-api-provider-azure
 	rm -rf static/files/cluster-api-provider-gcp
 	rm -rf static/files/products/appscode/aws-marketplace
+	rm -rf static/files/products/appscode/azure-marketplace
 
 .PHONY: docs-skip-assets
 docs-skip-assets: hugo-tools
@@ -26,6 +27,7 @@ assets: hugo-tools
 	rm -rf static/files/cluster-api-provider-azure
 	rm -rf static/files/cluster-api-provider-gcp
 	rm -rf static/files/products/appscode/aws-marketplace
+	rm -rf static/files/products/appscode/azure-marketplace
 
 .PHONY: gen
 gen:
