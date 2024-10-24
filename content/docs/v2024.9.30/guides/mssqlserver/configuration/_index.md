@@ -1,11 +1,11 @@
 ---
-title: MSSQLServer Concepts
+title: Run Microsoft SQL Server with Custom Configuration
 menu:
   docs_v2024.9.30:
-    identifier: ms-concepts
-    name: Concepts
+    identifier: ms-configuration
+    name: Custom Configuration
     parent: guides-mssqlserver
-    weight: 20
+    weight: 30
 menu_name: docs_v2024.9.30
 info:
   autoscaler: v0.33.0

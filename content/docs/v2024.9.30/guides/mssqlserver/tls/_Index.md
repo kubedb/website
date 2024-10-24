@@ -1,11 +1,11 @@
 ---
-title: MSSQLServer Concepts
+title: Run Microsoft SQL Server with TLS
 menu:
   docs_v2024.9.30:
-    identifier: ms-concepts
-    name: Concepts
+    identifier: ms-tls
+    name: TLS/SSL Encryption
     parent: guides-mssqlserver
-    weight: 20
+    weight: 45
 menu_name: docs_v2024.9.30
 info:
   autoscaler: v0.33.0
