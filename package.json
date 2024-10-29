@@ -23,6 +23,6 @@
   "private": true,
   "dependencies": {
     "bulma": "^0.9.4",
-    "postcss": "^8.4.12"
+    "postcss": "^8.4.47"
   }
 }
