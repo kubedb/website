@@ -95,7 +95,7 @@ spec:
   deletionPolicy: WipeOut
 ```
 
-You can see the detailed yaml specifications in the [Kubernetes Memcached](https://kubedb.com/docs/latest/guides/Memcached/) documentation.
+You can see the detailed yaml specifications in the [Kubernetes Memcached](https://kubedb.com/docs/v2024.9.30/guides/memcached) documentation.
 
 We will save this yaml configuration to `memcached.yaml`. Then create the above Memcached object.
 
