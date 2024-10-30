@@ -185,7 +185,7 @@ END
 # Exit
 quit
 ```
-We’ve successfully Deploy Memcached to Kubernetes via **Kubernetes Memcached operator** KubeDB and insert some sample data into it.
+We’ve successfully deploy Memcached to Kubernetes via [**Kubernetes Memcached operator**](https://kubedb.com/kubernetes/databases/run-and-manage-memcached-on-kubernetes/) KubeDB and insert some sample data into it.
 
 ## Memcached on Kubernetes: Best Practices
 Implementing Memcached on Kubernetes with the Kubernetes Memcached Operator requires following best practices to ensure your application's reliability and stability. To optimize your Memcached deployment within a Kubernetes environment, adhere to these essential recommendations.
