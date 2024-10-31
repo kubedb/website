@@ -3,7 +3,7 @@ title: Application Level Backup & Restore Redis | KubeStash
 description: Application Level Backup and Restore using KubeStash
 menu:
   docs_v2024.9.30:
-    identifier: guides-application-level-backup-stashv2
+    identifier: guides-rd-application-level-backup-stashv2
     name: Application Level Backup
     parent: guides-rd-backup-stashv2
     weight: 40
