@@ -5,7 +5,7 @@ menu:
     identifier: guides-singlestore
     name: SingleStore
     parent: guides
-    weight: 10
+    weight: 20
 menu_name: docs_v2024.9.30
 info:
   autoscaler: v0.33.0

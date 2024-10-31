@@ -3,7 +3,7 @@ title: Application Level Backup & Restore SingleStore | KubeStash
 description: Application Level Backup and Restore using KubeStash
 menu:
   docs_v2024.9.30:
-    identifier: guides-application-level-backup-stashv2
+    identifier: guides-sdb-application-level-backup-stashv2
     name: Application Level Backup
     parent: guides-sdb-backup-stashv2
     weight: 40
@@ -176,7 +176,7 @@ sample-singlestore-pods   ClusterIP   None             <none>        3306/TCP   
 
 ```
 
-Here, we have to use service `sample-singlestore` and secret `sample-singlestore-root-cred` to connect with the database. `KubeDB` creates an [AppBinding](/docs/v2024.9.30/guides/mysql/concepts/appbinding/) CR that holds the necessary information to connect with the database.
+Here, we have to use service `sample-singlestore` and secret `sample-singlestore-root-cred` to connect with the database. `KubeDB` creates an [AppBinding](/docs/v2024.9.30/guides/singlestore/concepts/appbinding) CR that holds the necessary information to connect with the database.
 
 **Verify AppBinding:**
 
@@ -504,7 +504,7 @@ If everything goes well, the phase of the `BackupConfiguration` should be `Ready
 
 ```bash
 $ kubectl get backupconfiguration -n demo
-NAME                  PHASE   PAUSED   AGE
+NAME                        PHASE   PAUSED   AGE
 sample-singlestore-backup   Ready            2m50s
 ```
 
@@ -512,7 +512,7 @@ Additionally, we can verify that the `Repository` specified in the `BackupConfig
 
 ```bash
 $ kubectl get repo -n demo
-NAME               INTEGRITY   SNAPSHOT-COUNT   SIZE     PHASE   LAST-SUCCESSFUL-BACKUP   AGE
+NAME                     INTEGRITY   SNAPSHOT-COUNT   SIZE     PHASE   LAST-SUCCESSFUL-BACKUP   AGE
 gcs-singlestore-repo                 0                0 B      Ready                            3m
 ```
 
@@ -526,8 +526,8 @@ Verify that the `CronJob` has been created using the following command,
 
 ```bash
 $ kubectl get cronjob -n demo
-NAME                                          SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
-trigger-sample-singlestore-backup-frequent-backup   */5 * * * *             0        2m45s           3m25s
+NAME                                               SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+trigger-sample-singlestore-backup-frequent-backup   */5 * * * *             0        2m45s          3m25s
 ```
 
 **Verify BackupSession:**
@@ -539,7 +539,7 @@ Run the following command to watch `BackupSession` CR,
 ```bash
 $ kubectl get backupsession -n demo -w
 
-NAME                                             INVOKER-TYPE          INVOKER-NAME           PHASE       DURATION   AGE
+NAME                                                      INVOKER-TYPE          INVOKER-NAME                 PHASE       DURATION   AGE
 sample-singlestore-backup-frequent-backup-1724065200   BackupConfiguration   sample-singlestore-backup    Succeeded              7m22s
 ```
 
@@ -551,8 +551,8 @@ Once a backup is complete, KubeStash will update the respective `Repository` CR 
 
 ```bash
 $ kubectl get repository -n demo gcs-singlestore-repo
-NAME                    INTEGRITY   SNAPSHOT-COUNT   SIZE    PHASE   LAST-SUCCESSFUL-BACKUP   AGE
-gcs-singlestore-repo          true        1                806 B   Ready   8m27s                    9m18s
+NAME                       INTEGRITY   SNAPSHOT-COUNT   SIZE    PHASE   LAST-SUCCESSFUL-BACKUP   AGE
+gcs-singlestore-repo          true        1             806 B   Ready   8m27s                    9m18s
 ```
 
 At this moment we have one `Snapshot`. Run the following command to check the respective `Snapshot` which represents the state of a backup run for an application.

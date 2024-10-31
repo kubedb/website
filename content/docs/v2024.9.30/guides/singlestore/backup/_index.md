@@ -1,5 +1,5 @@
 ---
-title: Backup & Restore SingleStore
+title: Monitoring SingleStore
 menu:
   docs_v2024.9.30:
     identifier: guides-sdb-backup
