@@ -311,7 +311,7 @@ spec:
       addon:
         name: mongodb-addon
         tasks:
-          - name: LogicalBackup
+          - name: logical-backup
 ```
 
 Here,
@@ -519,7 +519,7 @@ spec:
   addon:
     name: mongodb-addon
     tasks:
-      - name: LogicalBackupRestore
+      - name: logical-backup-restore
 ```
 
 Here,

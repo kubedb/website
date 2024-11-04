@@ -873,6 +873,6 @@ If you are just testing some basic functionalities, you might want to avoid addi
 ## Next Steps
 
 - Learn about [backup and restore](/docs/v2024.9.30/guides/mssqlserver/backup/overview/) SQL Server using KubeStash.
-- Want to set up SQL Server Availability Group clusters? Check how to [Configure SQL Server Availability Gruop Cluster](/docs/v2024.9.30/guides/mssqlserver/clustering/ag_cluster)
-- Detail concepts of [MSSQLServer object](/docs/v2024.9.30/guides/mssqlserver/concepts/mssqlserver).
+- Want to set up SQL Server Availability Group clusters? Check how to [Configure SQL Server Availability Group Cluster](/docs/v2024.9.30/guides/mssqlserver/clustering/ag_cluster)
+- Detail concepts of [MSSQLServer Object](/docs/v2024.9.30/guides/mssqlserver/concepts/mssqlserver).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2024.9.30/CONTRIBUTING).
