@@ -230,7 +230,7 @@ metadata:
   name: sdbops-reconfigure-config
   namespace: demo
 spec:
-  type: Configuration
+  type: Reconfigure
   databaseRef:
     name: custom-sdb
   configuration:
@@ -243,7 +243,7 @@ spec:
 Here,
 
 - `spec.databaseRef.name` specifies that we are reconfiguring `custom-sdb` database.
-- `spec.type` specifies that we are performing `Configuration` on our database.
+- `spec.type` specifies that we are performing `Reconfigure` on our database.
 - `spec.configuration.aggregator.applyConfig` is a map where key supports 1 values, namely `sdb-apply.cnf` for aggregator nodes. You can also specifies `spec.configuration.leaf.applyConfig` which is a map where key supports 1 values, namely `sdb-apply.cnf` for leaf nodes.
 
 Let's create the `SinglestoreOpsRequest` CR we have shown above,
@@ -262,8 +262,7 @@ Let's wait for `SinglestoreOpsRequest` to be `Successful`.  Run the following co
 ```bash
 $ kubectl get singlestoreopsrequest --all-namespaces
 NAMESPACE   NAME                        TYPE            STATUS       AGE
-demo        sdbops-reconfigure-config   Configuration   Successful   10m
-
+demo        sdbops-reconfigure-config   Reconfigure     Successful   10m
 ```
 
 We can see from the above output that the `SinglestoreOpsRequest` has succeeded. If we describe the `SinglestoreOpsRequest` we will get an overview of the steps that were followed to reconfigure the database.
@@ -289,7 +288,7 @@ Spec:
         sdb-apply.cnf:  max_connections = 550
   Database Ref:
     Name:  custom-sdb
-  Type:    Configuration
+  Type:    Reconfigure
 Status:
   Conditions:
     Last Transition Time:  2024-10-04T10:18:22Z
@@ -408,7 +407,7 @@ metadata:
   name: sdbops-reconfigure-remove
   namespace: demo
 spec:
-  type: Configuration
+  type: Reconfigure
   databaseRef:
     name: custom-sdb
   configuration:
@@ -438,7 +437,7 @@ Let's wait for `SingleStoreOpsRequest` to be `Successful`.  Run the following co
 ```bash
 $ kubectl get singlestoreopsrequest -n demo
 NAME                        TYPE             STATUS       AGE
-sdbops-reconfigure-remove   Configuration    Successful  5m31s
+sdbops-reconfigure-remove   Reconfigure      Successful  5m31s
 ```
 
 Now let's connect to a singlestore instance and run a singlestore internal command to check the new configuration we have provided.
