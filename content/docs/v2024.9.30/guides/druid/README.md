@@ -48,7 +48,7 @@ info:
 
 KubeDB supports The following Druid versions.
 - `28.0.1`
-- `30.0.0`
+- `30.0.1`
 
 > The listed DruidVersions are tested and provided as a part of the installation process (ie. catalog chart), but you are open to create your own [DruidVersion](/docs/v2024.9.30/guides/druid/concepts/catalog) object with your custom Druid image.
 

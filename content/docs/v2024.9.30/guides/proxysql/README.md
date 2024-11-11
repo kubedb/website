@@ -29,7 +29,7 @@ info:
 ## Supported ProxySQL Features
 
 | Features                             | Availability |
-| ------------------------------------ | :----------: |
+|--------------------------------------|:------------:|
 | Load balance MySQL Group Replication |   &#10003;   |
 | Load balance PerconaXtraDB Cluster   |   &#10003;   |
 | Custom Configuration                 |   &#10003;   |
