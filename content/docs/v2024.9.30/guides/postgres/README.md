@@ -29,7 +29,7 @@ info:
 ## Supported PostgreSQL Features
 
 | Features                           | Availability |
-| ---------------------------------- |:------------:|
+|------------------------------------|:------------:|
 | Clustering                         |   &#10003;   |
 | Warm Standby                       |   &#10003;   |
 | Hot Standby                        |   &#10003;   |
