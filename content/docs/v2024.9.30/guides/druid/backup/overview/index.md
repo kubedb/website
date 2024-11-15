@@ -2,7 +2,7 @@
 title: Backup & Restore Druid Overview
 menu:
   docs_v2024.9.30:
-    identifier: guides-druid-backup-overview
+    identifier: guides-druid-backup-guide
     name: Overview
     parent: guides-druid-backup
     weight: 10
