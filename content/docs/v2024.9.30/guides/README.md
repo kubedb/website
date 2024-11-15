@@ -27,7 +27,7 @@ info:
 # Guides
 
 Guides to show you how to perform tasks with KubeDB:
-- [Druid](/docs/v2024.9.30/guides/kafka/README). Shows how to manage Druid using KubeDB.
+- [Druid](/docs/v2024.9.30/guides/druid/README). Shows how to manage Druid using KubeDB.
 - [Elasticsearch](/docs/v2024.9.30/guides/elasticsearch/README). Shows how to manage Elasticsearch & OpenSearch using KubeDB.
 - [Kafka](/docs/v2024.9.30/guides/kafka/README). Shows how to manage Kafka using KubeDB.
 - [FerretDB](/docs/v2024.9.30/guides/ferretdb/README). Shows how to manage FerretDB using KubeDB.

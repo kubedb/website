@@ -5,7 +5,7 @@ menu:
     identifier: guides-druid-quickstart
     name: Quickstart
     parent: guides-druid
-    weight: 15
+    weight: 10
 menu_name: docs_v2024.9.30
 info:
   autoscaler: v0.33.0

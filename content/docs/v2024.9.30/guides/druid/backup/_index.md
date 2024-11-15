@@ -5,7 +5,7 @@ menu:
     identifier: guides-druid-backup
     name: Backup & Restore
     parent: guides-druid
-    weight: 40
+    weight: 50
 menu_name: docs_v2024.9.30
 info:
   autoscaler: v0.33.0
