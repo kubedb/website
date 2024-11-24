@@ -36,7 +36,7 @@ info:
 | Synchronous Replication            |   &#10003;   |
 | Streaming Replication              |   &#10003;   |
 | Automatic Failover                 |   &#10003;   |
-| Continuous Archiving using `wal-g` |   &#10007;   |
+| Continuous Archiving using `wal-g` |   &#10003;   |
 | Initialization from WAL archive    |   &#10003;   |
 | Persistent Volume                  |   &#10003;   |
 | Instant Backup                     |   &#10003;   |
