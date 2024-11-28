@@ -1,9 +1,9 @@
 ---
 title: "KubeDB: Automating Database Management"
 description: "Learn how KubeDB automates database management to reduce overhead and improve efficiency."
-logo: "https://cdn.appscode.com/images/customers/2024/orange.png"
+logo: "https://cdn.appscode.com/images/customers/2024/vaimo.png"
 alt: "KubeDB Logo"
-tag: "orange Story"
+tag: "vaimo Story"
 metrics:
   - value: "$400K"
     label: "Amount Saved"

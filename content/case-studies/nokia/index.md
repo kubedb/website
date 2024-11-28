@@ -1,9 +1,9 @@
 ---
 title: "KubeDB: Automating Database Management"
 description: "Learn how KubeDB automates database management to reduce overhead and improve efficiency."
-logo: "https://cdn.appscode.com/images/customers/2024/orange.png"
+logo: "https://cdn.appscode.com/images/customers/2024/nokia.png"
 alt: "KubeDB Logo"
-tag: "orange Story"
+tag: "Nokia Story"
 metrics:
   - value: "$400K"
     label: "Amount Saved"
@@ -34,6 +34,20 @@ Managing production-grade databases on Kubernetes can be complex and time-consum
 - Limited Vendor Support
 - Increased Dependency on Automation
 - Security Concerns
+
+### Comparison Overview
+
+| Feature                       | Traditional Database Management | KubeDB (Kubernetes-native)                |
+|-------------------------------|----------------------------------|-------------------------------------------|
+| **Provisioning & Deployment**  | Manual setup of infrastructure  | Automated provisioning and deployment     |
+| **Scaling**                    | Manual scaling of resources     | Automatic scaling based on demand         |
+| **Backups & Restores**         | Manual backups, prone to error  | Automated backups and restores            |
+| **High Availability**          | Manual failover setup           | Automated failover with high availability |
+| **Security**                   | Security manually managed       | Integrated security with Kubernetes RBAC  |
+| **Resource Management**        | Fixed resource allocation       | Dynamic resource allocation               |
+| **Maintenance**                | Manual updates and patches      | Automatic patching and updates            |
+| **Cost Efficiency**            | High operational costs due to manual intervention | Reduced operational cost with automation |
+
 
 ### KubeDB Solutions
 
