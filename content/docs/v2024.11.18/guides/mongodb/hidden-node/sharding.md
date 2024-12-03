@@ -200,57 +200,6 @@ spec:
       controller: {}
       metadata: {}
       spec:
-        affinity:
-          podAntiAffinity:
-            preferredDuringSchedulingIgnoredDuringExecution:
-              - podAffinityTerm:
-                  labelSelector:
-                    matchLabels:
-                      app.kubernetes.io/instance: mongo-sh-hid
-                      app.kubernetes.io/managed-by: kubedb.com
-                      app.kubernetes.io/name: mongodbs.kubedb.com
-                      mongodb.kubedb.com/node.shard: mongo-sh-hid-shard${SHARD_INDEX}
-                  namespaces:
-                    - demo
-                  topologyKey: kubernetes.io/hostname
-                weight: 100
-              - podAffinityTerm:
-                  labelSelector:
-                    matchLabels:
-                      app.kubernetes.io/instance: mongo-sh-hid
-                      app.kubernetes.io/managed-by: kubedb.com
-                      app.kubernetes.io/name: mongodbs.kubedb.com
-                      mongodb.kubedb.com/node.shard: mongo-sh-hid-shard${SHARD_INDEX}
-                  namespaces:
-                    - demo
-                  topologyKey: failure-domain.beta.kubernetes.io/zone
-                weight: 50
-        livenessProbe:
-          exec:
-            command:
-              - bash
-              - -c
-              - "set -x; if [[ $(mongo admin --host=localhost  --username=$MONGO_INITDB_ROOT_USERNAME
-              --password=$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase=admin
-              --quiet --eval \"db.adminCommand('ping').ok\" ) -eq \"1\" ]]; then \n
-              \         exit 0\n        fi\n        exit 1"
-          failureThreshold: 3
-          periodSeconds: 10
-          successThreshold: 1
-          timeoutSeconds: 5
-        readinessProbe:
-          exec:
-            command:
-              - bash
-              - -c
-              - "set -x; if [[ $(mongo admin --host=localhost  --username=$MONGO_INITDB_ROOT_USERNAME
-              --password=$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase=admin
-              --quiet --eval \"db.adminCommand('ping').ok\" ) -eq \"1\" ]]; then \n
-              \         exit 0\n        fi\n        exit 1"
-          failureThreshold: 3
-          periodSeconds: 10
-          successThreshold: 1
-          timeoutSeconds: 1
         resources:
           limits:
             memory: 400Mi
@@ -274,57 +223,6 @@ spec:
         controller: {}
         metadata: {}
         spec:
-          affinity:
-            podAntiAffinity:
-              preferredDuringSchedulingIgnoredDuringExecution:
-                - podAffinityTerm:
-                    labelSelector:
-                      matchLabels:
-                        app.kubernetes.io/instance: mongo-sh-hid
-                        app.kubernetes.io/managed-by: kubedb.com
-                        app.kubernetes.io/name: mongodbs.kubedb.com
-                        mongodb.kubedb.com/node.config: mongo-sh-hid-configsvr
-                    namespaces:
-                      - demo
-                    topologyKey: kubernetes.io/hostname
-                  weight: 100
-                - podAffinityTerm:
-                    labelSelector:
-                      matchLabels:
-                        app.kubernetes.io/instance: mongo-sh-hid
-                        app.kubernetes.io/managed-by: kubedb.com
-                        app.kubernetes.io/name: mongodbs.kubedb.com
-                        mongodb.kubedb.com/node.config: mongo-sh-hid-configsvr
-                    namespaces:
-                      - demo
-                    topologyKey: failure-domain.beta.kubernetes.io/zone
-                  weight: 50
-          livenessProbe:
-            exec:
-              command:
-                - bash
-                - -c
-                - "set -x; if [[ $(mongo admin --host=localhost  --username=$MONGO_INITDB_ROOT_USERNAME
-                --password=$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase=admin
-                --quiet --eval \"db.adminCommand('ping').ok\" ) -eq \"1\" ]]; then
-                \n          exit 0\n        fi\n        exit 1"
-            failureThreshold: 3
-            periodSeconds: 10
-            successThreshold: 1
-            timeoutSeconds: 5
-          readinessProbe:
-            exec:
-              command:
-                - bash
-                - -c
-                - "set -x; if [[ $(mongo admin --host=localhost  --username=$MONGO_INITDB_ROOT_USERNAME
-                --password=$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase=admin
-                --quiet --eval \"db.adminCommand('ping').ok\" ) -eq \"1\" ]]; then
-                \n          exit 0\n        fi\n        exit 1"
-            failureThreshold: 3
-            periodSeconds: 10
-            successThreshold: 1
-            timeoutSeconds: 1
           resources:
             limits:
               memory: 1Gi
@@ -338,65 +236,6 @@ spec:
         controller: {}
         metadata: {}
         spec:
-          affinity:
-            podAntiAffinity:
-              preferredDuringSchedulingIgnoredDuringExecution:
-                - podAffinityTerm:
-                    labelSelector:
-                      matchLabels:
-                        app.kubernetes.io/instance: mongo-sh-hid
-                        app.kubernetes.io/managed-by: kubedb.com
-                        app.kubernetes.io/name: mongodbs.kubedb.com
-                        mongodb.kubedb.com/node.mongos: mongo-sh-hid-mongos
-                    namespaces:
-                      - demo
-                    topologyKey: kubernetes.io/hostname
-                  weight: 100
-                - podAffinityTerm:
-                    labelSelector:
-                      matchLabels:
-                        app.kubernetes.io/instance: mongo-sh-hid
-                        app.kubernetes.io/managed-by: kubedb.com
-                        app.kubernetes.io/name: mongodbs.kubedb.com
-                        mongodb.kubedb.com/node.mongos: mongo-sh-hid-mongos
-                    namespaces:
-                      - demo
-                    topologyKey: failure-domain.beta.kubernetes.io/zone
-                  weight: 50
-          lifecycle:
-            preStop:
-              exec:
-                command:
-                  - bash
-                  - -c
-                  - 'mongo admin --username=$MONGO_INITDB_ROOT_USERNAME --password=$MONGO_INITDB_ROOT_PASSWORD
-                  --quiet --eval "db.adminCommand({ shutdown: 1 })" || true'
-          livenessProbe:
-            exec:
-              command:
-                - bash
-                - -c
-                - "set -x; if [[ $(mongo admin --host=localhost  --username=$MONGO_INITDB_ROOT_USERNAME
-                --password=$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase=admin
-                --quiet --eval \"db.adminCommand('ping').ok\" ) -eq \"1\" ]]; then
-                \n          exit 0\n        fi\n        exit 1"
-            failureThreshold: 3
-            periodSeconds: 10
-            successThreshold: 1
-            timeoutSeconds: 5
-          readinessProbe:
-            exec:
-              command:
-                - bash
-                - -c
-                - "set -x; if [[ $(mongo admin --host=localhost  --username=$MONGO_INITDB_ROOT_USERNAME
-                --password=$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase=admin
-                --quiet --eval \"db.adminCommand('ping').ok\" ) -eq \"1\" ]]; then
-                \n          exit 0\n        fi\n        exit 1"
-            failureThreshold: 3
-            periodSeconds: 10
-            successThreshold: 1
-            timeoutSeconds: 1
           resources:
             limits:
               memory: 1Gi
@@ -411,57 +250,6 @@ spec:
         controller: {}
         metadata: {}
         spec:
-          affinity:
-            podAntiAffinity:
-              preferredDuringSchedulingIgnoredDuringExecution:
-                - podAffinityTerm:
-                    labelSelector:
-                      matchLabels:
-                        app.kubernetes.io/instance: mongo-sh-hid
-                        app.kubernetes.io/managed-by: kubedb.com
-                        app.kubernetes.io/name: mongodbs.kubedb.com
-                        mongodb.kubedb.com/node.shard: mongo-sh-hid-shard${SHARD_INDEX}
-                    namespaces:
-                      - demo
-                    topologyKey: kubernetes.io/hostname
-                  weight: 100
-                - podAffinityTerm:
-                    labelSelector:
-                      matchLabels:
-                        app.kubernetes.io/instance: mongo-sh-hid
-                        app.kubernetes.io/managed-by: kubedb.com
-                        app.kubernetes.io/name: mongodbs.kubedb.com
-                        mongodb.kubedb.com/node.shard: mongo-sh-hid-shard${SHARD_INDEX}
-                    namespaces:
-                      - demo
-                    topologyKey: failure-domain.beta.kubernetes.io/zone
-                  weight: 50
-          livenessProbe:
-            exec:
-              command:
-                - bash
-                - -c
-                - "set -x; if [[ $(mongo admin --host=localhost  --username=$MONGO_INITDB_ROOT_USERNAME
-                --password=$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase=admin
-                --quiet --eval \"db.adminCommand('ping').ok\" ) -eq \"1\" ]]; then
-                \n          exit 0\n        fi\n        exit 1"
-            failureThreshold: 3
-            periodSeconds: 10
-            successThreshold: 1
-            timeoutSeconds: 5
-          readinessProbe:
-            exec:
-              command:
-                - bash
-                - -c
-                - "set -x; if [[ $(mongo admin --host=localhost  --username=$MONGO_INITDB_ROOT_USERNAME
-                --password=$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase=admin
-                --quiet --eval \"db.adminCommand('ping').ok\" ) -eq \"1\" ]]; then
-                \n          exit 0\n        fi\n        exit 1"
-            failureThreshold: 3
-            periodSeconds: 10
-            successThreshold: 1
-            timeoutSeconds: 1
           resources:
             limits:
               memory: 1Gi

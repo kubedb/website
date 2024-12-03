@@ -60,16 +60,12 @@ KubeDB accept following fields to set in `spec.podTemplate:`
   - containers
   - imagePullSecrets
   - nodeSelector
-  - affinity
   - serviceAccountName
   - schedulerName
   - tolerations
   - priorityClassName
   - priority
   - securityContext
-  - livenessProbe
-  - readinessProbe
-  - lifecycle
 
 Read about the fields in details in [PodTemplate concept](/docs/v2024.11.18/guides/singlestore/concepts/singlestore#spectopology),
 

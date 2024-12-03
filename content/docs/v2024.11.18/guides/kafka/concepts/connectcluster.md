@@ -84,7 +84,7 @@ spec:
       annotations:
         passMe: ToPetSet
       labels:
-        thisLabel: willGoToSts
+        thisLabel: willGoToPetSet
   monitor:
     agent: prometheus.io/operator
     prometheus:
@@ -116,7 +116,7 @@ KubeDB uses `PodDisruptionBudget` to ensure that majority of these replicas are 
 
 ### spec.disableSecurity
 
-`spec.disableSecurity` is an optional field that specifies whether to disable all kind of security features like basic  authentication and tls. The default value of this field is `false`.
+`spec.disableSecurity` is an optional field that specifies whether to disable all kind of security features like basic authentication and tls. The default value of this field is `false`.
 
 ### spec.connectorPlugins
 
@@ -295,16 +295,12 @@ KubeDB accept following fields to set in `spec.podTemplate:`
     - containers
     - imagePullSecrets
     - nodeSelector
-    - affinity
     - serviceAccountName
     - schedulerName
     - tolerations
     - priorityClassName
     - priority
     - securityContext
-    - livenessProbe
-    - readinessProbe
-    - lifecycle
 
 You can check out the full list [here](https://github.com/kmodules/offshoot-api/blob/39bf8b2/api/v2/types.go#L44-L279). Uses of some field of `spec.podTemplate` is described below,
 
