@@ -62,15 +62,11 @@ KubeDB accept following fields to set in `spec.podTemplate:`
   - initContainers
   - imagePullSecrets
   - nodeSelector
-  - affinity
   - schedulerName
   - tolerations
   - priorityClassName
   - priority
   - securityContext
-  - livenessProbe
-  - readinessProbe
-  - lifecycle
 
 Read about the fields in details in [PodTemplate concept](/docs/v2024.11.18/guides/mssqlserver/concepts/mssqlserver#specpodtemplate),
 

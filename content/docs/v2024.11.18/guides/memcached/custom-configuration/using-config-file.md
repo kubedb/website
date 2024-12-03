@@ -3,7 +3,7 @@ title: Run Memcached with Custom Configuration
 menu:
   docs_v2024.11.18:
     identifier: mc-using-config-file-configuration
-    name: Config File
+    name: Customize Configurations
     parent: custom-configuration
     weight: 10
 menu_name: docs_v2024.11.18

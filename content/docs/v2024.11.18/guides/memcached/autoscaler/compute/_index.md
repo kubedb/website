@@ -5,7 +5,7 @@ menu:
     identifier: compute-auto-scaling
     name: Compute Autoscaling
     parent: auto-scaling
-    weight: 46
+    weight: 91
 menu_name: docs_v2024.11.18
 info:
   autoscaler: v0.34.0

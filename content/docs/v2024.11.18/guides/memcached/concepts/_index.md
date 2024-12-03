@@ -5,7 +5,7 @@ menu:
     identifier: mc-concepts-memcached
     name: Concepts
     parent: mc-memcached-guides
-    weight: 20
+    weight: 30
 menu_name: docs_v2024.11.18
 info:
   autoscaler: v0.34.0

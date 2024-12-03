@@ -40,6 +40,7 @@ metadata:
   name: kafka
   namespace: demo
 spec:
+  disableSecurity: false
   authSecret:
     name: kafka-admin-cred
   configSecret:
@@ -137,6 +138,10 @@ spec:
 If `spec.topology` is set, then `spec.replicas` needs to be empty. Instead use `spec.topology.controller.replicas` and `spec.topology.broker.replicas`. You need to set both of them for topology clustering.
 
 KubeDB uses `PodDisruptionBudget` to ensure that majority of these replicas are available during [voluntary disruptions](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/#voluntary-and-involuntary-disruptions) so that quorum is maintained.
+
+### spec.disableSecurity
+
+`spec.disableSecurity` is an optional field that specifies whether to disable security for Kafka cluster which means no authentication and authorization will be enabled. All the Kafka Brokers and controllers will be set to spin up with `security.protocol=PLAINTEXT` configuration. The default value of this field is `false`.
 
 ### spec.authSecret
 
@@ -336,16 +341,12 @@ KubeDB accept following fields to set in `spec.podTemplate:`
     - containers
     - imagePullSecrets
     - nodeSelector
-    - affinity
     - serviceAccountName
     - schedulerName
     - tolerations
     - priorityClassName
     - priority
     - securityContext
-    - livenessProbe
-    - readinessProbe
-    - lifecycle
 
 You can check out the full list [here](https://github.com/kmodules/offshoot-api/blob/master/api/v2/types.go#L26C1-L279C1).
 Uses of some field of `spec.podTemplate` is described below,

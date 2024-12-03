@@ -5,7 +5,7 @@ menu:
     identifier: mc-monitoring-memcached
     name: Monitoring
     parent: mc-memcached-guides
-    weight: 50
+    weight: 110
 menu_name: docs_v2024.11.18
 info:
   autoscaler: v0.34.0
