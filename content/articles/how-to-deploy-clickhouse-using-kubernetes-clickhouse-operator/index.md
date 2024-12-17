@@ -9,7 +9,7 @@ date: "2024-12-12"
 
 ![Kubernetes ClickHouse](./hero.jpg "Kubernetes ClickHouse")
 
-In today's data-driven world, high-performance and scalable databases are crucial for businesses to gain insights and drive innovation. ClickHouse, a column-oriented SQL database, is purpose-built for analytical processing and excels at managing large-scale, complex workloads with exceptional speed and efficiency. Kubernetes ClickHouse Operator enhances ClickHouse's capabilities, providing a powerful combination for building and scaling robust, data-driven applications with ease.
+In today's data-driven world, high-performance and scalable databases are crucial for businesses to gain insights and drive innovation. ClickHouse, a column-oriented SQL database, is purpose-built for analytical processing and excels at managing large-scale, complex workloads with exceptional speed and efficiency. **Kubernetes ClickHouse Operator** enhances ClickHouse's capabilities, providing a powerful combination for building and scaling robust, data-driven applications with ease.
 
 Kubernetes has transformed the way modern applications and services are deployed and managed. Its orchestration capabilities enable seamless scaling, rolling updates, and centralized monitoring, making it an ideal platform for running distributed databases like ClickHouse.
 
@@ -17,12 +17,12 @@ To simplify the deployment and operation of ClickHouse on Kubernetes, the ClickH
 
 In this article, we’ll explore the process of deploying ClickHouse using the Kubernetes ClickHouse Operator, highlighting its benefits and providing step-by-step instructions to help you optimize your database infrastructure.
 ## Why ClickHouse in Kubernetes
-Deploying ClickHouse in Kubernetes combines high-performance analytics with the flexibility and scalability of container orchestration. Kubernetes simplifies horizontal scaling by enabling the addition of replicas or shards to handle growing workloads while efficiently managing resources like CPU, memory, and storage. It ensures high availability by automatically restarting failed pods and preserving data integrity with Persistent Volumes (PVs) and replication. Tools like the Kubernetes ClickHouse Operator streamline complex tasks such as provisioning, configuration, and scaling, while Kubernetes enables seamless rolling updates with minimal downtime. 
+Deploying ClickHouse in Kubernetes combines high-performance analytics with the flexibility and scalability of container orchestration. Kubernetes simplifies horizontal scaling by enabling the addition of replicas or shards to handle growing workloads while efficiently managing resources like CPU, memory, and storage. It ensures high availability by automatically restarting failed pods and preserving data integrity with Persistent Volumes (PVs) and replication. Tools like the Kubernetes ClickHouse Operator streamline complex tasks such as provisioning, configuration, and scaling, while Kubernetes enables seamless rolling updates with minimal downtime.
 
 Additionally, Kubernetes provides consistent workflows for managing ClickHouse alongside other applications, optimizes resource utilization to reduce costs, and integrates seamlessly with monitoring tools like Prometheus and Grafana. This combination empowers organizations to deploy agile, resilient, and cost-efficient analytics platforms capable of meeting modern data demands.
 ## Deploy ClickHouse on Kubernetes
 ### Pre-requisites
-To deploy ClickHouse on Kubernetes using the Kubernetes ClickHouse Operator, you need to prepare your environment thoroughly. Here’s a step-by-step guide:
+To deploy ClickHouse on Kubernetes using the [Kubernetes ClickHouse Operator](https://kubedb.com/), you need to prepare your environment thoroughly. Here’s a step-by-step guide:
 
 Prepare a Kubernetes Cluster
 * Start with a functional Kubernetes cluster. This guide uses [Kind](https://kubernetes.io/docs/tasks/tools/#kind) to create the cluster, but any Kubernetes distribution will work. A basic understanding of ClickHouse is recommended to navigate the deployment process effectively.
