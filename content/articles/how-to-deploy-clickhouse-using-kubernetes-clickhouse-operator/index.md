@@ -22,19 +22,28 @@ Deploying ClickHouse in Kubernetes combines high-performance analytics with the 
 Additionally, Kubernetes provides consistent workflows for managing ClickHouse alongside other applications, optimizes resource utilization to reduce costs, and integrates seamlessly with monitoring tools like Prometheus and Grafana. This combination empowers organizations to deploy agile, resilient, and cost-efficient analytics platforms capable of meeting modern data demands.
 ## Deploy ClickHouse on Kubernetes
 ### Pre-requisites
+To deploy ClickHouse on Kubernetes using the Kubernetes ClickHouse Operator, you need to prepare your environment thoroughly. Here’s a step-by-step guide:
 
-We have to set up the environment to deploy ClickHouse on Kubernetes using a Kubernetes ClickHouse Operator. First, you must have a functional Kubernetes cluster. In this guide, we’ll create our cluster using [Kind](https://kubernetes.io/docs/tasks/tools/#kind). Additionally, you should have a basic understanding of ClickHouse, as this will help you navigate the deployment process more effectively. Additionally, you should install [Helm](https://helm.sh/docs/intro/install/) to your Kubernetes cluster, as it is necessary for managing packages. 
+Prepare a Kubernetes Cluster
+* Start with a functional Kubernetes cluster. This guide uses [Kind](https://kubernetes.io/docs/tasks/tools/#kind) to create the cluster, but any Kubernetes distribution will work. A basic understanding of ClickHouse is recommended to navigate the deployment process effectively.
 
-This guide utilizes the Kubernetes ClickHouse Operator [KubeDB](https://kubedb.com/), so you’ll need to have KubeDB installed in your Kubernetes environment. To use KubeDB, you’ll also require a license, which you can obtain for free from the [Appscode License Server](https://appscode.com/issue-license/).
+* Install Helm
+  Helm must be installed on your Kubernetes cluster, as it is essential for managing Kubernetes packages and dependencies.
 
-To get a license, use your Kubernetes cluster ID. Run the following command to retrieve your cluster ID:
- 
+* Install KubeDB
+  This guide utilizes the Kubernetes ClickHouse Operator provided by KubeDB. Install [KubeDB](https://kubedb.com/) in your Kubernetes environment. Note that KubeDB requires a valid license, which you can obtain for free.
+
+* Obtain a License for KubeDB
+  You’ll need a license to use KubeDB. Obtain it from the [Appscode License Server](https://appscode.com/issue-license/). Use your Kubernetes cluster ID to request the license.
+
+Run the following command in your Kubernetes environment to retrieve your cluster ID, which is required to generate the license:
+
 ```bash
 $ kubectl get ns kube-system -o jsonpath='{.metadata.uid}'
 250a26e3-2413-4ed2-99dc-57b0548407ff
 ```
 
-The license server will email us with a "license.txt" file attached after we provide the necessary data. Run the following commands listed below to install KubeDB. 
+The license server will email us with a "license.txt" file attached after we provide the necessary data. Run the following commands listed below to install KubeDB.
 
 ```bash
 $ helm install kubedb oci://ghcr.io/appscode-charts/kubedb \
@@ -358,17 +367,22 @@ Bye.
 > Great job! You’ve successfully deployed ClickHouse on Kubernetes using the ClickHouse Kubernetes Operator (KubeDB) and inserted sample data into a sharded cluster
 
 ## ClickHouse on Kubernetes: Best Practices
-To ensure the smooth operation of your ClickHouse applications within Kubernetes, consider implementing these best practices:
+To ensure your ClickHouse applications run efficiently on Kubernetes, follow these best practices:
 
-* **Optimize Resource Utilization:** Effectively manage ClickHouse resources for optimal performance and cost efficiency. Accurately determine and allocate CPU, memory, and storage requirements based on workload characteristics.
+* **Optimize Resource Usage**
+  Allocate CPU, memory, and storage thoughtfully based on the specific needs of your workloads. Proper resource management helps balance performance with cost efficiency while avoiding under- or over-provisioning.
 
-* **Implement High Availability:** Ensure continuous ClickHouse operations by implementing high availability strategies. Use ClickHouse replicated tables for data durability and distributed tables for load balancing. Utilize Kubernetes StatefulSets and persistent storage to protect against data loss and node failures. Implement comprehensive backup and recovery procedures.
+* **Achieve High Availability**
+  Maintain uninterrupted ClickHouse operations by employing high availability techniques. Utilize replicated tables to ensure data redundancy and distributed tables for effective load distribution. Leverage Kubernetes StatefulSets and persistent volumes to prevent data loss and handle node failures. Additionally, establish robust backup and recovery mechanisms to safeguard your system.
 
-* **Security Configurations:** Safeguard your ClickHouse environment by implementing stringent security measures. Protect data confidentiality, integrity, and availability through network segmentation, data encryption, and role-based access control. Comply with industry regulations and compliance standards.
+* **Strengthen Security**
+  Enhance the security of your ClickHouse setup with strong protective measures. Use network segmentation, encryption, and role-based access controls to secure data integrity, confidentiality, and availability. Adhere to relevant industry compliance standards to meet regulatory requirements.
 
-* **Monitoring and Observability:** Gain insights into ClickHouse performance and health through comprehensive monitoring. Track key metrics, identify performance bottlenecks, and optimize query execution plans. Implement alerting mechanisms to proactively address issues.
+* **Implement Monitoring and Observability**
+  Monitor key metrics to gain a clear understanding of your ClickHouse environment's performance and health. Use these insights to identify and resolve bottlenecks, optimize query performance, and maintain system reliability. Set up alerts to quickly address potential issues before they escalate.
 
-* **Using the Kubernetes ClickHouse Operator:** The Kubernetes ClickHouse Operator simplifies the management of ClickHouse clusters within Kubernetes environments. By automating deployment, scaling, and configuration tasks, the operator significantly reduces administrative overhead. It provides a declarative approach to managing ClickHouse, enabling easier configuration and scaling. Additionally, the operator offers valuable insights into cluster health and performance, aiding in troubleshooting and optimization.
+* **Utilize the Kubernetes ClickHouse Operator**
+  Simplify the management of ClickHouse clusters on Kubernetes with the ClickHouse Operator. This tool automates tasks like deployment, scaling, and configuration, reducing administrative complexity. Its declarative management approach ensures easy configuration and scaling. Moreover, it provides detailed insights into cluster health and performance, streamlining troubleshooting and optimization efforts.
 
 ## Conclusion
 
