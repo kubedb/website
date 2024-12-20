@@ -173,7 +173,7 @@ spec:
         labels:
           release: prometheus
         interval: 10s
-  version: 30.0.0
+  version: 30.0.1
 ```
 
 ### spec.version
@@ -181,7 +181,8 @@ spec:
 `spec.version` is a required field specifying the name of the [DruidVersion](/docs/v2024.12.18/guides/druid/concepts/druidversion) crd where the docker images are specified. Currently, when you install KubeDB, it creates the following `Druid` resources,
 
 - `28.0.1`
-- `30.0.0`
+- `30.0.1`
+- `31.0.1`
 
 ### spec.replicas
 
