@@ -91,7 +91,7 @@ issuer.cert-manager.io/kafka-ca-issuer created
 
 ### Provision TLS secure Kafka
 
-For this demo, we are going to provision kafka version `3.6.1` with 3 controllers and 3 brokers. To learn more about Kafka CR, visit [here](/docs/v2024.12.18/guides/kafka/concepts/kafka). visit [here](/docs/v2024.12.18/guides/kafka/concepts/kafkaversion) to learn more about KafkaVersion CR.
+For this demo, we are going to provision kafka version `3.9.0` with 3 controllers and 3 brokers. To learn more about Kafka CR, visit [here](/docs/v2024.12.18/guides/kafka/concepts/kafka). visit [here](/docs/v2024.12.18/guides/kafka/concepts/kafkaversion) to learn more about KafkaVersion CR.
 
 ```yaml
 apiVersion: kubedb.com/v1alpha2
@@ -100,7 +100,7 @@ metadata:
   name: kafka-prod
   namespace: demo
 spec:
-  version: 3.6.1
+  version: 3.9.0
   enableSSL: true
   tls:
     issuerRef:
@@ -142,10 +142,10 @@ Watch the bootstrap progress:
 ```bash
 $ kubectl get kf -n demo -w
 NAME         TYPE                  VERSION   STATUS         AGE
-kafka-prod   kubedb.com/v1alpha2   3.6.1     Provisioning   6s
-kafka-prod   kubedb.com/v1alpha2   3.6.1     Provisioning   14s
-kafka-prod   kubedb.com/v1alpha2   3.6.1     Provisioning   50s
-kafka-prod   kubedb.com/v1alpha2   3.6.1     Ready          68s
+kafka-prod   kubedb.com/v1alpha2   3.9.0     Provisioning   6s
+kafka-prod   kubedb.com/v1alpha2   3.9.0     Provisioning   14s
+kafka-prod   kubedb.com/v1alpha2   3.9.0     Provisioning   50s
+kafka-prod   kubedb.com/v1alpha2   3.9.0     Ready          68s
 ```
 
 Hence, the cluster is ready to use.
@@ -169,7 +169,7 @@ petset.apps.k8s.appscode.com/kafka-prod-broker       3/3     4m10s
 petset.apps.k8s.appscode.com/kafka-prod-controller   3/3     4m8s
 
 NAME                                            TYPE               VERSION   AGE
-appbinding.appcatalog.appscode.com/kafka-prod   kubedb.com/kafka   3.6.1     4m8s
+appbinding.appcatalog.appscode.com/kafka-prod   kubedb.com/kafka   3.9.0     4m8s
 
 NAME                                  TYPE                       DATA   AGE
 secret/kafka-prod-admin-cred          kubernetes.io/basic-auth   2      4m14s
