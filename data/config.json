@@ -54,14 +54,17 @@
   "productMenu": {
     "c0": [
       "kubedb",
-      "stash"
+      "kubestash"
     ],
     "c1": [
-      "kubevault",
-      "voyager"
+      "stash",
+      "kubevault"
     ],
     "c2": [
-      "configsyncer",
+      "voyager",
+      "configsyncer"
+    ],
+    "c3": [
       "guard"
     ]
   },
