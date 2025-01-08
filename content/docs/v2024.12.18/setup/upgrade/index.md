@@ -133,6 +133,7 @@ helm ls -A | grep kubedb
 # update license key keeping the current version
 helm upgrade -i kubedb oci://ghcr.io/appscode-charts/kubedb \
   --version=<cur_version> \
+  --namespace=<cur_namepace> \
   --reuse-values \
   --set-file global.license=/path/to/new/license.txt \
   --wait --burst-limit=10000 --debug
@@ -150,7 +151,7 @@ helm ls -A | grep kubedb
 # update license key keeping the current version
 helm template kubedb oci://ghcr.io/appscode-charts/kubedb \
   --version=<cur_version> \
-  --namespace kubedb --create-namespace \
+  --namespace=<cur_namepace> \
   --set global.skipCleaner=true \
   --show-only appscode/kubedb/templates/license.yaml \
   --set-file global.license=/path/to/new/license.txt | kubectl apply -f -
