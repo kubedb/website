@@ -59,6 +59,8 @@ kubedb      kubedb-sidekick-f8674fc4f-qkstf                 1/1     Running   0 
 ``` 
 Within a short time all the pods in kubedb namespace will start running. If all pod statuses are running, we can move on to the next phase.
 
+For any confusion reguarding KubeDB installation, you can follow the [KubeDB-Setup](https://kubedb.com/docs/latest/setup/) page.
+
 ### Create a Namespace
 After that, we'll create a new namespace in which we will deploy Cassandra. In this case, we have created cassandra-demo namespace, but you can create namespace with any name that you want. To create the namespace, we can use the following command:
 
@@ -110,7 +112,7 @@ $ kubectl create -f cassandra.yaml
 Cassandra.kubedb.com/cassandra-quickstart created
 ```
 
-This will create a cassandra custom resource. The kubernetes Cassandra Operator managed by KubeDB will watch this and create two pods of Cassandra.
+This will create a cassandra custom resource. The kubernetes Cassandra Operator will watch this and create two pods of Cassandra in the specified namespace.
 If all the above steps are handled correctly and the Cassandra is deployed, you will see that the following objects are created:
 
 ```bash
@@ -218,7 +220,7 @@ cqlsh:kubedb> select * from users;
 ```
 
 
-We’ve successfully deployed Cassandra to Kubernetes via **Kubernetes Cassandra operator** which is managed by KubeDB and insert some sample data into it.
+We’ve successfully deployed Cassandra to Kubernetes via **Kubernetes Cassandra operator** and insert some sample data into it.
 
 ## Cassandra on Kubernetes: Best Practices
 Implementing Cassandra on Kubernetes with the Kubernetes Cassandra Operator requires following best practices. These procedures ensure the stability and dependability of your application. To optimize your Cassandra deployment within a Kubernetes environment, adhere to these essential recommendations.
@@ -229,7 +231,7 @@ Implementing Cassandra on Kubernetes with the Kubernetes Cassandra Operator requ
 
 * **Version Compatibility:** Ensure that the Cassandra version you have decided to use is compatible with the Kubernetes version you are currently using, especially when deploying with the Kubernetes Cassandra Operator. Because compatibility problems can result in unexpected behavior, planning, and extensive testing are essential. For version upgrades, rolling upgrades can be used to minimize disruptions.
 
-* **Monitoring and Health Checks:** Configure your Cassandra pods for monitoring and health checks. Monitor key metrics such as query performance, CPU utilization, disk I/O, and memory consumption. Visualize performance data using programs like Prometheus and Grafana to see any problems or bottlenecks early. Make proactive use of alerting systems to be informed of irregularities before they affect system availability or performance. Kubernetes provides features for monitoring, whereas Cassandra delivers useful performance indicators. You can proactively find and then fix performance bottlenecks or problems by gathering and evaluating these metrics, guaranteeing peak Cassandra performance.
+* **Monitoring and Health Checks:** Configure your Cassandra pods for monitoring and health checks. Monitor key metrics such as query performance, CPU utilization, disk I/O, and memory consumption. Visualize performance data using programs like Prometheus and Grafana to see any problems or bottlenecks early. You can have a similar setup of Prometheus like [builtin-prometheus](https://kubedb.com/docs/v2025.1.9/setup/monitoring/builtin-prometheus/) for monitoring .Make proactive use of alerting systems to be informed of irregularities before they affect system availability or performance. Kubernetes provides features for monitoring, whereas Cassandra delivers useful performance indicators. You can proactively find and then fix performance bottlenecks or problems by gathering and evaluating these metrics, guaranteeing peak Cassandra performance. 
 
 * **Disaster Recovery Strategies:** Create a proper disaster recovery strategies for Cassandra to address data corruption, pod failures, and potential cluster-wide outages. By establishing clear, effective recovery plans, you can reduce downtime as well as safeguard data integrity, ensuring continuity even in adverse conditions.
 
@@ -240,4 +242,4 @@ Implementing Cassandra on Kubernetes with the Kubernetes Cassandra Operator requ
 
 ## Conclusion
 
-Cassandra an open-source and widely used data storage known for its scalability and high availability, especially in case of handling large amounts of data efficiently. By following the above process, you can successfully deploy a Cassandra database on Kubernetes, by utilizing the Kubernetes Cassandra Operator managed by KubeDB. Effective database maintenance, whether on-premises or in the cloud, requires skills as well as consistent procedures. To ensure that your database management fulfills high performance and availability standards, KubeDB offers a comprehensive suite of support tools. Regardless of whether your database infrastructure is built on cloud-based or database-as-a-service platforms, is hosted locally, or spans numerous regions, KubeDB optimizes and improves the entire process in a production-grade environment. By using **kubernetes cassandra operator** managed by **KubeDB**, one can simplify provisioning, Monitoring, Authentication  and the overall process to maintain cassandra database. That is how one can lower administrative burden, increase the manageability, and ensure a better performence for his cassandra cluster.  
+Cassandra an open-source and widely used data storage known for its scalability and high availability, especially in case of handling large amounts of data efficiently. By following the above process, you can successfully deploy a Cassandra database on Kubernetes, by utilizing the Kubernetes Cassandra Operator. Effective database maintenance, whether on-premises or in the cloud, requires skills as well as consistent procedures. To ensure that your database management fulfills high performance and availability standards, KubeDB offers a comprehensive suite of support tools. Regardless of whether your database infrastructure is built on cloud-based or database-as-a-service platforms, is hosted locally, or spans numerous regions, KubeDB optimizes and improves the entire process in a production-grade environment. By using **kubernetes cassandra operator**, one can simplify provisioning, Monitoring, Authentication  and the overall process to maintain cassandra database. That is how one can lower administrative burden, increase the manageability, and ensure a better performence for his cassandra cluster.  
