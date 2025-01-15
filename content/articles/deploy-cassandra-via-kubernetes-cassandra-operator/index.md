@@ -32,7 +32,7 @@ $ kubectl get ns kube-system -o jsonpath='{.metadata.uid}'
 e5b4a1a0-5a67-4657-b370-db7200108cae
 ```
 
-After providing the necessary information and hitting the submit button, the license server will email a "license.txt" file. To install KubeDB, run the following commands,
+After providing the necessary information and hitting the submit button, the license server will email a "license.txt" file. To install KubeDB, run the following commands:
 
 ```bash
 $ helm install kubedb oci://ghcr.io/appscode-charts/kubedb \
@@ -44,7 +44,7 @@ $ helm install kubedb oci://ghcr.io/appscode-charts/kubedb \
 ```
 
 
-Verify the installation by the following command,
+Verify the installation by the following command:
 
 ```bash
 $ kubectl get pods --all-namespaces -l "app.kubernetes.io/instance=kubedb"
@@ -57,10 +57,10 @@ kubedb      kubedb-petset-operator-6b5fddcd9-wl2dp          1/1     Running   0 
 kubedb      kubedb-petset-webhook-server-59ff65f4fd-tf52g   2/2     Running   0          5m
 kubedb      kubedb-sidekick-f8674fc4f-qkstf                 1/1     Running   0          5m
 ``` 
-If all pod statuses are running, we can move on to the next phase.
+Within a short time all the pods in kubedb namespace will start running. If all pod statuses are running, we can move on to the next phase.
 
 ### Create a Namespace
-After that, we'll create a new namespace in which we will deploy Cassandra. In this case, we have created cassandra-demo namespace. To create the namespace, we can use the following command:
+After that, we'll create a new namespace in which we will deploy Cassandra. In this case, we have created cassandra-demo namespace, but you can create namespace with any name that you want. To create the namespace, we can use the following command:
 
 ```bash
 $ kubectl create namespace cassandra-demo
@@ -68,7 +68,7 @@ namespace/cassandra-demo created
 ``` 
 
 ### Deploy Cassandra via Kubernetes Cassandra operator
-We need to create a yaml configuration to deploy Cassandra database on Kubernetes. And we will apply this yaml below,
+We need to create a yaml configuration to deploy Cassandra database on Kubernetes. We will apply this yaml below:
 
 ```yaml
 apiVersion: kubedb.com/v1alpha2
@@ -110,34 +110,36 @@ $ kubectl create -f cassandra.yaml
 Cassandra.kubedb.com/cassandra-quickstart created
 ```
 
+This will create a cassandra custom resource. The kubernetes Cassandra Operator managed by KubeDB will watch this and create two pods of Cassandra.
 If all the above steps are handled correctly and the Cassandra is deployed, you will see that the following objects are created:
 
 ```bash
 $ kubectl get all -n cassandra-demo
 NAME                         READY   STATUS    RESTARTS   AGE
 pod/cassandra-quickstart-0   1/1     Running   0          4m51s
+pod/cassandra-quickstart-1   1/1     Running   0          3m23s
 
 NAME                                TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)     AGE
-service/cassandra-quickstart        ClusterIP   10.96.70.253   <none>        9042/TCP   4m51s
-service/cassandra-quickstart-pods   ClusterIP   None           <none>        9042/TCP   4m51s
+service/cassandra-quickstart        ClusterIP   10.96.70.253   <none>        9042/TCP   5m51s
+service/cassandra-quickstart-pods   ClusterIP   None           <none>        9042/TCP   5m51s
 
 NAME                                                      TYPE                   VERSION   AGE
-appbinding.appcatalog.appscode.com/cassandra-quickstart   kubedb.com/Cassandra   1.6.22    4m51s
+appbinding.appcatalog.appscode.com/cassandra-quickstart   kubedb.com/Cassandra   1.6.22    5m51s
 
 NAME                                        VERSION   STATUS   AGE
-cassandra.kubedb.com/cassandra-quickstart   1.6.22    Ready    4m51s
+cassandra.kubedb.com/cassandra-quickstart   5.0.0    Ready    5m51s
 
 ```
 
 We have successfully deployed Cassandra to Kubernetes via the Kubernetes Cassandra operator. Now, we will connect to the Cassandra database to insert some sample data and verify whether our Cassandra database is usable or not. First, check the database status,
 
 ```bash
-$ kubectl get Cassandra -n cassandra-demo
+$ kubectl get cassandra -n cassandra-demo
 NAME                   VERSION   STATUS   AGE
-cassandra-quickstart   1.6.22    Ready    5m46s
+cassandra-quickstart   5.0.0    Ready    5m56s
 ```
 
-To connect to the database in this case, we should need have the required credentials. Let's export the credentials to our current shell as an environment variable. KubeDB will create Secret and Service for the database `cassandra-cluster` that we have deployed. Let’s check them,
+To connect to the database in this case, we should need the required credentials. Let's export the credentials to our current shell as an environment variable. KubeDB will create Secret and Service for the database `cassandra-cluster` that we have deployed. Let’s check them,
 
 ```bash
 $ kubectl get secret -n cassandra-demo -l=app.kubernetes.io/instance=cassandra-quickstart
@@ -166,7 +168,7 @@ cassandra-quickstart             ClusterIP   10.128.113.192   <none>        9042
 cassandra-quickstart-pods        ClusterIP   None             <none>        9042/TCP   8m37s
 ```
 
-From the above list, the `cassandra-quickstart-auth` Secret contains the admin-level credentials needed to connect to the database. Use the following commands to obtain the username and password:
+From the above list, the `cassandra-quickstart-auth` Secret contains the admin-level credentials needed to connect to the database. The credencials are stored as base64 format. So we need to decode those. Use the following commands to obtain the username and password:
 
 ```bash
 $ kubectl get secret -n demo cassandra-quickstart-auth  -o jsonpath='{.data.username}' | base64 -d
@@ -183,6 +185,7 @@ First of all, we need to connect to this database using cqlsh. A command-line ut
 $ kubectl get pods -n cassandra-demo
 NAME                             READY   STATUS    RESTARTS   AGE
 cassandra-quickstart-rack-r0-0   1/1     Running   0          13m
+cassandra-quickstart-rack-r0-1   1/1     Running   0          12m
 
 # We will connect to `cassandra-quickstart-0` pod using cqlsh.
 $ kubectl exec -it -n cassandra-demo cassandra-quickstart-0 -- cqlsh -u admin -p "dS57E93oLDi5wezv"
@@ -191,6 +194,7 @@ Connected to Test Cluster at 127.0.0.1:9042
 [cqlsh 6.2.0 | Cassandra 5.0.2 | CQL spec 3.4.7 | Native protocol v5]
 Use HELP for help.
 cqlsh> 
+
 # We have connected to cqlsh. Now we will create a keyspace named `kubedb` and within this `kubedb` keyspace, we will create a table named `users` and insert data into it.
 cqlsh> CREATE KEYSPACE kubedb  WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
 cqlsh> USE kubedb;
@@ -199,28 +203,41 @@ cqlsh:kubedb> CREATE TABLE users (
           ... name TEXT 
           ... );
 cqlsh:kubedb> INSERT INTO users (id, name, email) VALUES (uuid(), 'cassandra');
+cqlsh:kubedb> INSERT INTO kubedb.users (id, name) VALUES (uuid(), 'cassandra_kubedb');
+cqlsh:kubedb> INSERT INTO kubedb.users (id, name) VALUES (uuid(), 'kubedb_cassandra');
+
 
 # Now to see the contents of `users` table, we will use another query, and the output will be like below- 
 cqlsh:kubedb> select * from users;
  id                                   | name
 --------------------------------------+-----------
+ 65d2d071-7e65-4f82-b359-021893005a41 | kubedb_cassandra
  0e87779a-ca9c-4007-b281-a975a6991f9f | cassandra
+ 3c0e0fe8-b342-4cf3-97dc-90e111c3bce9 | cassandra_kubedb
 
 ```
+
+
 We’ve successfully deployed Cassandra to Kubernetes via **Kubernetes Cassandra operator** which is managed by KubeDB and insert some sample data into it.
 
 ## Cassandra on Kubernetes: Best Practices
 Implementing Cassandra on Kubernetes with the Kubernetes Cassandra Operator requires following best practices. These procedures ensure the stability and dependability of your application. To optimize your Cassandra deployment within a Kubernetes environment, adhere to these essential recommendations.
 
-* **Resource Availablility:** As Cassandra needs resources like CPU and Memory to run properly, so ensure that you have given enough CPU and Memory to your Cassandra pods.
+* **Resource Availablility:** As Cassandra needs resources like CPU and Memory to run properly, so ensure that you have given enough CPU and Memory to your Cassandra pods. Also define resource Requests and Limits efficiently for CPU and Memory. You may also need to monitor cluster's resource usage as well as the resource usage for each pods of Cassandra regularly. 
+
+* **Network Configuration:** For stable network identities and DNS resolution for Cassandra pods in your cluster, you may use Statefulset with headless service. While using network policies, ensure you are using it properly so that you do not mistakenly block communication between Cassandra nodes within the same cluster.
 
 * **Version Compatibility:** Ensure that the Cassandra version you have decided to use is compatible with the Kubernetes version you are currently using, especially when deploying with the Kubernetes Cassandra Operator. Because compatibility problems can result in unexpected behavior, planning, and extensive testing are essential. For version upgrades, rolling upgrades can be used to minimize disruptions.
 
 * **Monitoring and Health Checks:** Configure your Cassandra pods for monitoring and health checks. Monitor key metrics such as query performance, CPU utilization, disk I/O, and memory consumption. Visualize performance data using programs like Prometheus and Grafana to see any problems or bottlenecks early. Make proactive use of alerting systems to be informed of irregularities before they affect system availability or performance. Kubernetes provides features for monitoring, whereas Cassandra delivers useful performance indicators. You can proactively find and then fix performance bottlenecks or problems by gathering and evaluating these metrics, guaranteeing peak Cassandra performance.
 
-* **Disaster Recovery Strategies:** Create resilient disaster recovery strategies for Cassandra to address data corruption, pod failures, and potential cluster-wide outages. By establishing clear, effective recovery plans, you can reduce downtime as well as safeguard data integrity, ensuring continuity even in adverse conditions.
+* **Disaster Recovery Strategies:** Create a proper disaster recovery strategies for Cassandra to address data corruption, pod failures, and potential cluster-wide outages. By establishing clear, effective recovery plans, you can reduce downtime as well as safeguard data integrity, ensuring continuity even in adverse conditions.
+
+* **Scalability:** You may need to scale your database based on your need. This can be horizontal scaling or vertical scaling. While scaling, do it carefully, ensuring proper token allocation and data distribution across nodes.
+
+* **Security Practices:** One may store any sensetive and important data in the database. So, authentication and authorization is a must. You need to properly maintain the security concepts in your cluster. You may apply Password authentication and may need to modify the cassandra.yaml files to configure a proper security configuration. May be you need to use TLS for securing intra-node and client-server communication. You may also need to run Cassandra in a dedicated namespace which is isolated from other Kubernetes workloads. All these security concepts are based on your need and you must make proper decision of which one you want to use for your specific security need.
 
 
 ## Conclusion
 
-Cassandra an open-source and widely used data storage known for its scalability and high availability, especially in case of handling large amounts of data efficiently. By following the above process, you can successfully deploy a Cassandra database on Kubernetes, by utilizing the Kubernetes Cassandra Operator managed by KubeDB. Effective database maintenance, whether on-premises or in the cloud, requires skills as well as consistent procedures. To ensure that your database management fulfills high performance and availability standards, KubeDB offers a comprehensive suite of support tools. Regardless of whether your database infrastructure is built on cloud-based or database-as-a-service platforms, is hosted locally, or spans numerous regions, KubeDB optimizes and improves the entire process in a production-grade environment.
+Cassandra an open-source and widely used data storage known for its scalability and high availability, especially in case of handling large amounts of data efficiently. By following the above process, you can successfully deploy a Cassandra database on Kubernetes, by utilizing the Kubernetes Cassandra Operator managed by KubeDB. Effective database maintenance, whether on-premises or in the cloud, requires skills as well as consistent procedures. To ensure that your database management fulfills high performance and availability standards, KubeDB offers a comprehensive suite of support tools. Regardless of whether your database infrastructure is built on cloud-based or database-as-a-service platforms, is hosted locally, or spans numerous regions, KubeDB optimizes and improves the entire process in a production-grade environment. By using **kubernetes cassandra operator** managed by **KubeDB**, one can simplify provisioning, Monitoring, Authentication  and the overall process to maintain cassandra database. That is how one can lower administrative burden, increase the manageability, and ensure a better performence for his cassandra cluster.  
