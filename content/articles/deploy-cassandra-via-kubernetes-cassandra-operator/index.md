@@ -204,6 +204,7 @@ cqlsh:kubedb> CREATE TABLE users (
           ... id UUID PRIMARY KEY,
           ... name TEXT 
           ... );
+          
 cqlsh:kubedb> INSERT INTO users (id, name, email) VALUES (uuid(), 'cassandra');
 cqlsh:kubedb> INSERT INTO kubedb.users (id, name) VALUES (uuid(), 'cassandra_kubedb');
 cqlsh:kubedb> INSERT INTO kubedb.users (id, name) VALUES (uuid(), 'kubedb_cassandra');
