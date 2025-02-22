@@ -135,6 +135,7 @@ spec:
   configuration:   
     applyConfig:
       my-apply.cnf: |-
+        [mysqld]
         max_connections = 300
         read_buffer_size = 1234567
 status:
