@@ -7,6 +7,7 @@ menu:
     parent: guides-proxysql-quickstart
     weight: 25
 menu_name: docs_v2025.2.19
+section_menu_id: guides
 info:
   autoscaler: v0.37.0
   cli: v0.52.0
