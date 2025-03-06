@@ -3,7 +3,7 @@ title: Scaling Microsoft SQL Server
 menu:
   docs_v2025.2.19:
     identifier: ms-scaling
-    name: Scaling Microsoft SQL Server
+    name: Scaling SQL Server
     parent: guides-mssqlserver
     weight: 55
 menu_name: docs_v2025.2.19
