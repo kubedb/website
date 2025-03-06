@@ -4,7 +4,7 @@ menu:
   docs_v2025.2.19:
     identifier: arbiter-guides
     name: Arbiter Node for AG Cluster
-    parent: ms-arbiter
+    parent: ms-clustering
     weight: 15
 menu_name: docs_v2025.2.19
 section_menu_id: guides
