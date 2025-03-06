@@ -3,7 +3,7 @@ title: Arbiter node for PostgresSQL even node cluster
 menu:
   docs_v2025.2.19:
     identifier: arbiter-postgres-node
-    name: Overview
+    name: Arbiter node
     parent: pg-clustering-postgres
     weight: 20
 menu_name: docs_v2025.2.19
