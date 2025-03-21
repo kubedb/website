@@ -9,6 +9,7 @@ disableKinds:
 theme: hugo-product-theme
 params:
   product_key: kubedb
+  appscode_notification_show: true
   primary_color: 4d4dcb
   main_menu_dropdown_item: database
   domain_appscode: https://appscode.com
