@@ -46,6 +46,23 @@ params:
       category: KubeDB
       categoryId: DIC_kwDOG-h6r84COCFv
       map: title
+  custom_languages:
+    en:
+      name: English
+      url: /en/datasheet/
+    zh:
+      name: 中文
+      url: /zh/datasheet/
+    fr:
+      name: Français
+      url: /fr/datasheet/
+    ar:
+      name: العربية
+      url: /ar/datasheet/
+      direction: rtl
+    de:
+      name: Deutsch
+      url: /de/datasheet/
 menu:
   main:
   - name: Databases

@@ -1,6 +1,9 @@
 ---
-url: '/datasheet/'
-title: "One-stop Solution for Managing Databases on Kubernetes"
+type: "datasheet"
+id: "redis"
+data: "data/products/kubedb/databases/redis.json"
+url: "/en/datasheet/redis"
+title: One-stop Solution for Managing Redis on Kubernetes
 description: "KubeDB is a Kubernetes Native Database Management Solution that simplifies and automates routine database tasks such as Provisioning, Monitoring, Upgrading, Patching, Scaling, Volume Expansion, Backup, Recovery, Failure detection, and repair for various popular databases on any private and public clouds."
 hero_features:
   - "Manage Multiple Databases with ease."
