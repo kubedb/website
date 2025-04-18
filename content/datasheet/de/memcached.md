@@ -156,6 +156,7 @@ footer:
     - "AppsCode entwickelt beliebte Kubernetes-Produkte wie KubeDB, Stash, KubeVault, Kubeform und Voyager. Das Unternehmen hat seinen Hauptsitz in Las Vegas, Nevada, USA, mit Entwicklungsstandorten in Dhaka, Bangladesch."
   contact_us:
     title: "KONTAKTIEREN SIE UNS"
+  copy_right: "AppsCode Inc. Alle Rechte vorbehalten."
 
 
 ---

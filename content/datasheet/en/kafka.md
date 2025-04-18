@@ -154,4 +154,5 @@ footer:
     - "AppsCode develops a number of popular products for Kubernetes, namely KubeDB, Stash, KubeVault, Kubeform, Voyager. AppsCode is headquartered in Las Vegas, Nevada, USA with engineering offices in Dhaka, Bangladesh."
   contact_us:
     title: "CONTACT US"
+  copy_right: "AppsCode Inc. All rights reserved."
 ---

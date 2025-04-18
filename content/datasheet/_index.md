@@ -1,4 +1,5 @@
 ---
+url: '/datasheet/'
 title: "One-stop Solution for Managing Databases on Kubernetes"
 description: "KubeDB is a Kubernetes Native Database Management Solution that simplifies and automates routine database tasks such as Provisioning, Monitoring, Upgrading, Patching, Scaling, Volume Expansion, Backup, Recovery, Failure detection, and repair for various popular databases on any private and public clouds."
 hero_features:
@@ -149,4 +150,5 @@ footer:
     - "AppsCode develops a number of popular products for Kubernetes, namely KubeDB, Stash, KubeVault, Kubeform, Voyager. AppsCode is headquartered in Las Vegas, Nevada, USA with engineering offices in Dhaka, Bangladesh."
   contact_us:
     title: "CONTACT US"
+  copy_right: "AppsCode Inc. All rights reserved."
 ---
