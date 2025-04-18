@@ -48,25 +48,24 @@ params:
       map: title
   custom_languages:
     en:
-      name: "English"
-      url: "/en/datasheet/"
+      name: English
+      url: /en/datasheet/
     zh:
-      name: "中文"
-      url: "/zh/datasheet/"
+      name: 中文
+      url: /zh/datasheet/
     es:
-      name: "Español"
-      url: "/es/datasheet/"
+      name: Español
+      url: /es/datasheet/
     fr:
-      name: "Français"
-      url: "/fr/datasheet/"
+      name: Français
+      url: /fr/datasheet/
     ar:
-      name: "العربية"
-      url: "/ar/datasheet/"
-      direction: "rtl"
+      name: العربية
+      url: /ar/datasheet/
+      direction: rtl
     de:
-      name: "Deutsch"
-      url: "/de/datasheet/"
-
+      name: Deutsch
+      url: /de/datasheet/
 menu:
   main:
   - name: Databases
@@ -175,7 +174,6 @@ menu:
     parent: database
     weight: 22
     pre: /assets/images/databases/logos/png/zookeepers.png
-
 markup:
   goldmark:
     renderer:
