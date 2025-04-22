@@ -50,19 +50,24 @@ params:
     en:
       name: English
       url: /en/datasheet/
-    zh:
-      name: 中文
-      url: /zh/datasheet/
-    fr:
-      name: Français
-      url: /fr/datasheet/
+      weight: 1
     ar:
       name: العربية
       url: /ar/datasheet/
       direction: rtl
-    de:
-      name: Deutsch
-      url: /de/datasheet/
+      weight: 2
+    pt:
+      name: Português
+      url: /pt/datasheet/
+      weight: 3
+    zh-hk:
+      name: 中文（香港）
+      url: /zh-hk/datasheet/
+      weight: 4
+    ja:
+      name: 日本語
+      url: /ja/datasheet/
+      weight: 5
 menu:
   main:
   - name: Databases

@@ -3,7 +3,7 @@ type: "datasheet"
 id: "mysql"
 data: "data/products/kubedb/databases/mysql.json"
 url: "/en/datasheet/mysql"
-
+lang: 'ENGLISH'
 title: One-stop Solution for Managing MySQL on Kubernetes
 description: "KubeDB is a Kubernetes Native Database Management Solution that simplifies and automates routine database tasks such as Provisioning, Monitoring, Upgrading, Patching, Scaling, Volume Expansion, Backup, Recovery, Failure detection, and repair for various popular databases on any private and public clouds."
 hero_features:
@@ -30,7 +30,7 @@ features_section:
     - "Horizontal & Vertical Scaling"
     - "Volume Expansion"
     - "Self-service Web Portal"
-    - "TLS Management and certificate rotation"
+    - "TLS Management and renewals"
     - "GitOps (ArgoCD / FluxCD) Integration"
     - "Major, Minor, and Patch Version upgrades"
     - "Custom Database Plugin Support"
@@ -53,12 +53,15 @@ kubernetes_platform:
     - "Oracle Cloud"
     - "Alibaba Cloud"
     - "Digital Ocean"
-    - "Linode"
+    - "Akamai (Linode)"
     - "Exoscale Cloud Hosting"
+    - "Hetzner Cloud"
+    - "Kubermatic"
+    - "Scaleway"
 
 pricing_model:
   title: "Pricing Model"
-  description: "KubeDB is charged by the <strong class=\"has-text-primary\">memory limit set to database containers managed by KubeDB (not the memory of Ku bernetes worker nodes).</strong> Say, a 3 replicas PostgreSQL each with 8 GB RAM will count as 24GB memory for billing purposes."
+  description: "KubeDB Enterprise edition is charged by the <strong class='has-text-primary'>memory limit set to database containers managed by KubeDB (not the memory of Kubernetes worker nodes).</strong> Say, a 3 replicas PostgreSQL each with 8 GB RAM will count as 24GB memory for billing purposes."
 
 support_plans:
   title: "Support Plans"
@@ -104,6 +107,11 @@ support_plans:
         gold: "5"
         platinum: "10"
 
+      - title: "Onboarding Support"
+        silver: "Yes"
+        gold: "Yes"
+        platinum: "Yes"
+
       - title: "Remote Hands (via screen share) for addtl fee"
         silver: "Yes"
         gold: "Yes (Includes FREE 3 hrs/month)"
@@ -121,7 +129,7 @@ support_plans:
 
       - title: "Phone Support"
         silver: "No"
-        gold: "Yes"
+        gold: "No"
         platinum: "Yes ☎"
 
       - title: "Custom Features"
