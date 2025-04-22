@@ -1,0 +1,17 @@
+apiVersion: kubedb.com/v1alpha2
+kind: Postgres
+metadata:
+  name: sample-postgres
+  namespace: demo
+spec:
+  version: "14.10"
+  storageType: Durable
+  storage:
+    storageClassName: "standard"
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+  terminationPolicy: Delete
+
