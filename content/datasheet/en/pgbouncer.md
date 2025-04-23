@@ -3,6 +3,8 @@ type: "datasheet"
 id: "pgbouncer"
 data: "data/products/kubedb/databases/pgbouncer.json"
 url: "/en/datasheet/pgbouncer"
+aliases:
+- /datasheet/pgbouncer
 lang: 'ENGLISH'
 title: One-stop Solution for Managing PgBouncer on Kubernetes
 description: "KubeDB is a Kubernetes Native Database Management Solution that simplifies and automates routine database tasks such as Provisioning, Monitoring, Upgrading, Patching, Scaling, Volume Expansion, Backup, Recovery, Failure detection, and repair for various popular databases on any private and public clouds."

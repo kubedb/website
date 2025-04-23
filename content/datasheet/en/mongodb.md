@@ -3,6 +3,8 @@ type: "datasheet"
 id: "mongodb"
 data: "data/products/kubedb/databases/mongodb.json"
 url: "/en/datasheet/mongodb"
+aliases:
+- /datasheet/mongodb
 lang: 'ENGLISH'
 title: One-stop Solution for Managing MongoDB on Kubernetes
 description: "KubeDB is a Kubernetes Native Database Management Solution that simplifies and automates routine database tasks such as Provisioning, Monitoring, Upgrading, Patching, Scaling, Volume Expansion, Backup, Recovery, Failure detection, and repair for various popular databases on any private and public clouds."
