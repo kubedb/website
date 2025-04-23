@@ -1,4 +1,4 @@
 ---
 data: "data/products/kubedb/datasheets/english.json"
-url: "/datasheet"
+url: "/en/datasheet"
 ---
