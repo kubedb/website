@@ -189,5 +189,3 @@ outputs:
 build:
   writeStats: true
   timeout: 1800000
-ignoreLogs:
-- error-remote-getjson
