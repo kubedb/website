@@ -5,7 +5,7 @@ menu:
     identifier: guides-proxysql-concepts
     name: Concepts
     parent: guides-proxysql
-    weight: 20
+    weight: 10
 menu_name: docs_v2025.3.24
 info:
   autoscaler: v0.38.0

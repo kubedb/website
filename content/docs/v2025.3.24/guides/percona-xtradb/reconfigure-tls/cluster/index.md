@@ -58,7 +58,7 @@ metadata:
   name: sample-pxc
   namespace: demo
 spec:
-  version: "8.0.26"
+  version: "8.0.40"
   replicas: 3
   storageType: Durable
   storage:
@@ -83,7 +83,7 @@ Now, wait until `sample-pxc` has status `Ready`. i.e,
 ```bash
 $ kubectl get perconaxtradb -n demo
 NAME             VERSION   STATUS   AGE
-sample-pxc       8.0.26    Ready    9m17s
+sample-pxc       8.0.40    Ready    9m17s
 ```
 
 ```bash
@@ -97,7 +97,7 @@ $ kubectl exec -it -n demo sample-pxc-0 -c perconaxtradb  -- bash
 root@sample-pxc-0:/  mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the PerconaXtraDB monitor.  Commands end with ; or \g.
 Your PerconaXtraDB connection id is 108
-Server version: 8.0.26-PerconaXtraDB-1:8.0.26+maria~focal perconaxtradb.org binary distribution
+Server version: 8.0.40-PerconaXtraDB-1:8.0.40+maria~focal perconaxtradb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, PerconaXtraDB Corporation Ab and others.
 
@@ -239,7 +239,7 @@ ca.crt  tls.crt  tls.key
 root@sample-pxc-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the PerconaXtraDB monitor.  Commands end with ; or \g.
 Your PerconaXtraDB connection id is 58
-Server version: 8.0.26-PerconaXtraDB-1:8.0.26+maria~focal perconaxtradb.org binary distribution
+Server version: 8.0.40-PerconaXtraDB-1:8.0.40+maria~focal perconaxtradb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, PerconaXtraDB Corporation Ab and others.
 
@@ -544,7 +544,7 @@ $ kubectl exec -it -n demo sample-pxc-0 -c perconaxtradb  -- bash
 root@sample-pxc-0:/  mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the PerconaXtraDB monitor.  Commands end with ; or \g.
 Your PerconaXtraDB connection id is 108
-Server version: 8.0.26-PerconaXtraDB-1:8.0.26+maria~focal perconaxtradb.org binary distribution
+Server version: 8.0.40-PerconaXtraDB-1:8.0.40+maria~focal perconaxtradb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, PerconaXtraDB Corporation Ab and others.
 

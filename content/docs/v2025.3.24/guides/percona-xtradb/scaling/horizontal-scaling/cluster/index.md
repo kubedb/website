@@ -52,7 +52,7 @@ Here, we are going to deploy a  `PerconaXtraDB` cluster using a supported versio
 
 ### Prepare PerconaXtraDB Cluster Database
 
-Now, we are going to deploy a `PerconaXtraDB` cluster with version `8.0.26`.
+Now, we are going to deploy a `PerconaXtraDB` cluster with version `8.0.40`.
 
 ### Deploy PerconaXtraDB Cluster
 
@@ -65,7 +65,7 @@ metadata:
   name: sample-pxc
   namespace: demo
 spec:
-  version: "8.0.26"
+  version: "8.0.40"
   replicas: 3
   storageType: Durable
   storage:
@@ -90,7 +90,7 @@ Now, wait until `sample-pxc` has status `Ready`. i.e,
 ```bash
 $ kubectl get perconaxtradb -n demo
 NAME             VERSION   STATUS   AGE
-sample-pxc       8.0.26    Ready    2m36s
+sample-pxc       8.0.40    Ready    2m36s
 ```
 
 Let's check the number of replicas this database has from the PerconaXtraDB object, number of pods the petset have,

@@ -147,7 +147,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 3
-  version: "8.0.26"
+  version: "8.0.40"
   storageType: Durable
   podTemplate:
     spec:
@@ -180,7 +180,7 @@ Check the PerconaXtraDB custom resource to see if the database cluster is ready:
 ```bash
 ~ $ kubectl get perconaxtradb --all-namespaces
 NAMESPACE   NAME         VERSION   STATUS   AGE
-demo        sample-pxc   8.0.26    Ready    83m
+demo        sample-pxc   8.0.40    Ready    83m
 ```
 
 ## Reusing Service Account
@@ -204,7 +204,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 3
-  version: "8.0.26"
+  version: "8.0.40"
   storageType: Durable
   podTemplate:
     spec:
@@ -234,7 +234,7 @@ Check the PerconaXtraDB custom resource to see if the database cluster is ready:
 ```bash
 ~ $ kubectl get perconaxtradb --all-namespaces
 NAMESPACE                NAME         VERSION   STATUS   AGE
-another-perconaxtradb    sample-pxc   8.0.26    Ready    83m
+another-perconaxtradb    sample-pxc   8.0.40    Ready    83m
 ```
 
 ## Cleaning up

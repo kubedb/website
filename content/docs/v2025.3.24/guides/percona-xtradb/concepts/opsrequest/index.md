@@ -48,7 +48,7 @@ spec:
   databaseRef:
     name: sample-pxc
   updateVersion:
-    targetVersion: 8.0.26
+    targetVersion: 8.0.40
 status:
   conditions:
     - lastTransitionTime: "2020-08-25T18:22:38Z"
