@@ -1,9 +1,0 @@
-apiVersion: kubedb.com/v1alpha2
-kind: Elasticsearch
-metadata:
-  name: instant-elasticsearch
-  namespace: demo
-spec:
-  version: searchguard-7.9.3
-  replicas: 1
-  storageType: Ephemeral
