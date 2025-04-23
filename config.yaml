@@ -46,6 +46,28 @@ params:
       category: KubeDB
       categoryId: DIC_kwDOG-h6r84COCFv
       map: title
+  custom_languages:
+    en:
+      name: English
+      url: /en/datasheet/
+      weight: 1
+    ar:
+      name: العربية
+      url: /ar/datasheet/
+      direction: rtl
+      weight: 2
+    pt:
+      name: Português
+      url: /pt/datasheet/
+      weight: 3
+    zh-hk:
+      name: 中文（香港）
+      url: /zh-hk/datasheet/
+      weight: 4
+    ja:
+      name: 日本語
+      url: /ja/datasheet/
+      weight: 5
 menu:
   main:
   - name: Databases
@@ -167,3 +189,5 @@ outputs:
 build:
   writeStats: true
   timeout: 1800000
+ignoreLogs:
+- error-remote-getjson
