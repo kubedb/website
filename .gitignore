@@ -10,3 +10,4 @@
 .hugo_build.lock
 *.css.map
 main.css.map
+hugo_stats.json
