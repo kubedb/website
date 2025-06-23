@@ -40,7 +40,7 @@ The following figure shows a cluster of four MariaDB servers of multi-master rep
 
 ![MariaDB Cluster](/docs/v2025.5.30/guides/mariadb/clustering/overview/images/galera_small.png)
 
-Image ref: <https://mariadb.com/kb/en/what-is-mariadb-galera-cluster/+image/galera_small>
+Image ref: <https://mariadb.com/docs/galera-cluster>
 
 ## Galera Replication
 
