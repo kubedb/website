@@ -1,11 +1,11 @@
 ---
-title: Redis Initialization
+title: Redis External Connection
 menu:
   docs_v2025.6.30:
-    identifier: rd-initialization-redis
-    name: Initialization
+    identifier: rd-announce
+    name: External Connection
     parent: rd-redis-guides
-    weight: 41
+    weight: 31
 menu_name: docs_v2025.6.30
 info:
   autoscaler: v0.41.0
