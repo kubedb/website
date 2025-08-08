@@ -1,0 +1,20 @@
+apiVersion: kubedb.com/v1alpha2
+kind: PgBouncer
+metadata:
+  name: pgbouncer-server
+  namespace: demo
+spec:
+  version: "1.17.0"
+  database:
+    syncUsers: true
+    databaseName: "postgres"
+    databaseRef:
+      name: "quick-postgres"
+      namespace: demo
+  connectionPool:
+    maxClientConnections: 20
+    reservePoolSize: 5
+  podTemplate:
+    spec:
+      imagePullSecrets:
+        - name: myregistrykey

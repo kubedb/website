@@ -1,0 +1,67 @@
+apiVersion: kubedb.com/v1alpha2
+kind: Postgres
+metadata:
+  name: p1
+  namespace: demo
+spec:
+  version: "13.13"
+  replicas: 2
+  standbyMode: Hot
+  streamingMode: Asynchronous
+  authSecret:
+    name: p1-auth
+  storageType: "Durable"
+  storage:
+    storageClassName: standard
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+  init:
+    script:
+      configMap:
+        name: pg-init-script
+  monitor:
+    agent: prometheus.io/operator
+    prometheus:
+      serviceMonitor:
+        labels:
+          app: kubedb
+        interval: 10s
+  configSecret:
+    name: pg-custom-config
+  podTemplate:
+    metadata:
+      annotations:
+        passMe: ToDatabasePod
+    controller:
+      annotations:
+        passMe: ToStatefulSet
+    spec:
+      schedulerName: my-scheduler
+      nodeSelector:
+        disktype: ssd
+      imagePullSecrets:
+      - name: myregistrykey
+      env:
+      - name: POSTGRES_DB
+        value: pgdb
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+  serviceTemplates:
+  - alias: primary
+    metadata:
+      annotations:
+        passMe: ToService
+    spec:
+      type: NodePort
+      ports:
+      - name:  http
+        port:  5432
+  terminationPolicy: "DoNotTerminate"

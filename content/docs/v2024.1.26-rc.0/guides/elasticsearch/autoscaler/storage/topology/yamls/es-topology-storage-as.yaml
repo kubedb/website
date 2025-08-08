@@ -1,0 +1,13 @@
+apiVersion: autoscaling.kubedb.com/v1alpha1
+kind: ElasticsearchAutoscaler
+metadata:
+  name: es-topology-storage-as
+  namespace: demo
+spec:
+  databaseRef:
+    name: es-topology
+  storage:
+    data:
+      trigger: "On"
+      usageThreshold: 60
+      scalingThreshold: 50

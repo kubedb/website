@@ -1,0 +1,9 @@
+apiVersion: kubedb.com/v1alpha1
+kind: Elasticsearch
+metadata:
+  name: instant-elasticsearch
+  namespace: demo
+spec:
+  version: 7.3.2
+  replicas: 1
+  storageType: Ephemeral

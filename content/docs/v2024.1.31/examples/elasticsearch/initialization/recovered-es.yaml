@@ -1,0 +1,19 @@
+apiVersion: kubedb.com/v1alpha2
+kind: Elasticsearch
+metadata:
+  name: recovered-es
+  namespace: demo
+spec:
+  version: xpack-8.11.1
+  authSecret:
+    name: instant-elasticsearch-auth
+  storageType: Durable
+  storage:
+    storageClassName: "standard"
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+  init:
+    waitForInitialRestore: true
