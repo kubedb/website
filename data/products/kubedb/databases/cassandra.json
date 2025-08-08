@@ -56,22 +56,30 @@
     "apiVersion": "kubedb.com/v1alpha2",
     "kind": "Cassandra",
     "metadata": {
-      "name": "cassandra",
+      "name": "cassandra-quickstart",
       "namespace": "demo"
     },
     "spec": {
-      "version": "28.0.1",
-      "deepStorage": {
-        "type": "s3",
-        "configSecret": {
-          "name": "deep-storage-config"
-        }
-      },
+      "version": "5.0.3",
       "topology": {
-        "routers": {
-          "replicas": 1
-        }
-      }
+        "rack": [
+          {
+            "name": "r0",
+            "replicas": 2,
+            "storage": {
+              "accessModes": [
+                "ReadWriteOnce"
+              ],
+              "resources": {
+                "requests": {
+                  "storage": "600Mi"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "deletionPolicy": "Delete"
     }
   }
 }
