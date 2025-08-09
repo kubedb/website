@@ -2,8 +2,8 @@
 title: Run Redis with Custom Configuration
 menu:
   docs_v2025.7.31:
-    identifier: rd-using-config-file-configuration
-    name: Config File
+    identifier: rd-using-config-file-configuration-redis
+    name: Redis
     parent: rd-configuration
     weight: 10
 menu_name: docs_v2025.7.31
@@ -52,7 +52,7 @@ Redis allows configuration via a config file. When redis docker image starts, it
 
 At first, you have to create a config file named `redis.conf` with your desired configuration. Then you have to put this file into a [secret](https://kubernetes.io/docs/concepts/configuration/secret/). You have to specify this secret in `spec.configSecret` section while creating Redis crd. KubeDB will mount this secret into `/usr/local/etc/redis` directory of the pod and the `redis.conf` file path will be sent as an argument of `redis-server` command.
 
-In this tutorial, we will configure `databases` and `maxclients` via a custom config file. 
+In this tutorial, we will configure `databases` and `maxclients` via a custom config file.
 
 ## Custom Configuration
 
@@ -71,7 +71,7 @@ maxclients 425
 
 > Note that config file name must be `redis.conf`
 
-Now, create a Secret with this configuration file. 
+Now, create a Secret with this configuration file.
 
 ```bash
 $ kubectl create secret generic -n demo rd-configuration --from-file=./redis.conf
