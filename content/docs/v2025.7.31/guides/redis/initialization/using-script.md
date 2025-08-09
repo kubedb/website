@@ -25,7 +25,7 @@ info:
 
 # Initialize Redis using Script
 
-This tutorial will show you how to use KubeDB to initialize a Redis database with shell or lua script.
+This tutorial will show you how to use KubeDB to initialize a Redis and Valkey database with shell or lua script.
 
 ## Before You Begin
 

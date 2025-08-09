@@ -25,7 +25,7 @@ info:
 
 # Reconfiguring TLS of Redis Database
 
-This guide will give an overview on how KubeDB Ops-manager operator reconfigures TLS configuration i.e. add TLS, remove TLS, update issuer/cluster issuer or Certificates and rotate the certificates of a `Redis` database.
+This guide will give an overview on how KubeDB Ops-manager operator reconfigures TLS configuration i.e. add TLS, remove TLS, update issuer/cluster issuer or Certificates and rotate the certificates of a `Redis/Valkey` database.
 
 ## Before You Begin
 

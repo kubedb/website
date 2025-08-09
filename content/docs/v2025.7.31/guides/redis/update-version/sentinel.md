@@ -265,6 +265,8 @@ redis:7.0.4@sha256:091a7b5de688f283b30a4942280b64cf822bbdab0abfb2d2ce6db989f2d3c
 
 You can see from above, our `Redis` standalone database has been updated with the new version. So, the UpdateVersion process is successfully completed.
 
+> If you are a current `Redis` user and want to switch to `Valkey`, make sure to update `Redis` 7.\*.\* to `Valkey` 7.\*.\* and RedisSentinel [Distribution](/docs/v2025.7.31/guides/redis/concepts/catalog) and Redis [Distribution](/docs/v2025.7.31/guides/redis/concepts/catalog) are same.
+
 ## Cleaning Up
 
 To clean up the Kubernetes resources created by this tutorial, run:
