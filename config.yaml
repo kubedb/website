@@ -176,10 +176,15 @@ menu:
     parent: database
     weight: 22
     pre: /assets/images/databases/logos/png/solrs.png
+  - name: Valkey
+    identifier: valkey
+    parent: database
+    weight: 23
+    pre: /assets/images/databases/logos/png/valkeys.png
   - name: ZooKeeper
     identifier: zookeeper
     parent: database
-    weight: 23
+    weight: 24
     pre: /assets/images/databases/logos/png/zookeepers.png
 markup:
   goldmark:
