@@ -58,7 +58,7 @@ Solr is an open-source, Java-based, information retrieval library with support f
 ## Life Cycle of a Solr Object
 
 <p align="center">
-  <img alt="lifecycle"  src="/docs/v2025.8.31/guides/solr/quickstart/overview/images/Lifecycle-of-a-solr-instance.png">
+  <img alt="lifecycle"  src="/docs/v2025.8.31/guides/solr/quickstart/overview/images/Lifecycle-of-a-Solr-instance.png">
 </p>
 
 ## User Guide

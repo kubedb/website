@@ -4,7 +4,7 @@ menu:
   docs_v2025.8.31:
     identifier: ig-concepts-ignite
     name: Concepts
-    parent: ig-ignite-guides
+    parent: ignite-guides
     weight: 30
 menu_name: docs_v2025.8.31
 info:

@@ -4,7 +4,7 @@ menu:
   docs_v2025.8.31:
     identifier: ig-using-podtemplate-configuration
     name: Customize PodTemplate
-    parent: custom-configuration
+    parent: ig-custom-configuration
     weight: 10
 menu_name: docs_v2025.8.31
 section_menu_id: guides

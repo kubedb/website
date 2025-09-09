@@ -26,7 +26,7 @@ info:
 
 > New to KubeDB? Please start [here](/docs/v2025.8.31/README).
 
-## Supported MySQL Features
+## Supported ClickHouse Features
 
 | Features                                                      | Availability |
 |---------------------------------------------------------------|:------------:|
@@ -53,5 +53,5 @@ KubeDB supports the following ClickHouse Versions.
 
 ## User Guide
 
-- [Quickstart ClickHouse](/docs/v2025.8.31/guides/clickhouse/quickstart/) with KubeDB Operator.
+- [Quickstart ClickHouse](/docs/v2025.8.31/guides/clickhouse/quickstart/guide/quickstart) with KubeDB Operator.
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2025.8.31/CONTRIBUTING).

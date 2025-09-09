@@ -4,7 +4,7 @@ menu:
   docs_v2025.8.31:
     identifier: ig-monitoring-ignite
     name: Monitoring
-    parent: ig-ignite-guides
+    parent: ignite-guides
     weight: 110
 menu_name: docs_v2025.8.31
 info:

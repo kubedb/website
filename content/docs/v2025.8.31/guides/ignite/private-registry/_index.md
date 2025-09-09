@@ -4,7 +4,7 @@ menu:
   docs_v2025.8.31:
     identifier: ig-private-registry-ignite
     name: Private Registry
-    parent: ig-ignite-guides
+    parent: ignite-guides
     weight: 35
 menu_name: docs_v2025.8.31
 info:

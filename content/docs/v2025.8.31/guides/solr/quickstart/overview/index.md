@@ -28,7 +28,7 @@ info:
 This tutorial will show you how to use KubeDB to run a Solr database.
 
 <p align="center">
-  <img alt="lifecycle"  src="./images/Lifecycle-of-a-solr-instance.png">
+  <img alt="lifecycle"  src="./images/Lifecycle-of-a-Solr-instance.png">
 </p>
 
 ## Before You Begin

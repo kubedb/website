@@ -2,9 +2,9 @@
 title: Run Ignite with Custom Configuration
 menu:
   docs_v2025.8.31:
-    identifier: custom-configuration
+    identifier: ig-custom-configuration
     name: Custom Configuration
-    parent: ig-ignite-guides
+    parent: ignite-guides
     weight: 40
 menu_name: docs_v2025.8.31
 info:

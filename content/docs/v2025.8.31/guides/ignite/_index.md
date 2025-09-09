@@ -2,7 +2,7 @@
 title: Ignite
 menu:
   docs_v2025.8.31:
-    identifier: ig-ignite-guides
+    identifier: ignite-guides
     name: Ignite
     parent: guides
     weight: 10
