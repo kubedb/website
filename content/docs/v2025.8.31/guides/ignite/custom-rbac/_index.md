@@ -4,7 +4,7 @@ menu:
   docs_v2025.8.31:
     identifier: ig-custom-rbac
     name: Custom RBAC
-    parent: ig-ignite-guides
+    parent: ignite-guides
     weight: 31
 menu_name: docs_v2025.8.31
 info:

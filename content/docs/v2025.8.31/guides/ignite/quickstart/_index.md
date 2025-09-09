@@ -4,7 +4,7 @@ menu:
   docs_v2025.8.31:
     identifier: ig-quickstart-ignite
     name: Quickstart
-    parent: ig-ignite-guides
+    parent: ignite-guides
     weight: 20
 menu_name: docs_v2025.8.31
 info:

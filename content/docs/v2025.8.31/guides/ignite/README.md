@@ -4,7 +4,7 @@ menu:
   docs_v2025.8.31:
     identifier: ig-readme-ignite
     name: Ignite
-    parent: ig-ignite-guides
+    parent: ignite-guides
     weight: 10
 menu_name: docs_v2025.8.31
 section_menu_id: guides

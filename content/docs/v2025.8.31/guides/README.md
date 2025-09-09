@@ -28,6 +28,7 @@ info:
 
 Guides to show you how to perform tasks with KubeDB:
 - [Cassandra](/docs/v2025.8.31/guides/cassandra/README). Shows how to manage Cassandra using KubeDB.
+- [ClickHouse](/docs/v2025.8.31/guides/clickhouse/README). Shows how to manage ClickHouse using KubeDB.
 - [Druid](/docs/v2025.8.31/guides/druid/README). Shows how to manage Druid using KubeDB.
 - [Elasticsearch](/docs/v2025.8.31/guides/elasticsearch/README). Shows how to manage Elasticsearch & OpenSearch using KubeDB.
 - [Kafka](/docs/v2025.8.31/guides/kafka/README). Shows how to manage Kafka using KubeDB.
