@@ -1,8 +1,0 @@
-apiVersion: cert-manager.io/v1
-kind: Issuer
-metadata:
-  name: mongo-ca-issuer
-  namespace: demo
-spec:
-  ca:
-    name: mongo-ca
