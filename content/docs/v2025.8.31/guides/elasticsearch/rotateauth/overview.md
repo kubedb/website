@@ -4,7 +4,7 @@ menu:
   docs_v2025.8.31:
     identifier: es-rotate-auth-overview
     name: Overview
-    parent: es-rotateauth-Elasticsearch
+    parent: es-rotateauth-elasticsearch
     weight: 5
 menu_name: docs_v2025.8.31
 section_menu_id: guides

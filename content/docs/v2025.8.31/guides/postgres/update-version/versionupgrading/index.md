@@ -1,5 +1,5 @@
 ---
-title: Updating Postgres version
+title: Update Postgres Version
 menu:
   docs_v2025.8.31:
     identifier: guides-postgres-updating-version
@@ -23,7 +23,7 @@ info:
 
 > New to KubeDB? Please start [here](/docs/v2025.8.31/README).
 
-# update version of Postgres
+# Update Postgres Version
 
 This guide will show you how to use `KubeDB` ops-manager operator to update the version of `Postgres` cr.
 

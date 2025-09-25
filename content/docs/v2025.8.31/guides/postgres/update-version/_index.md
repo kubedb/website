@@ -3,7 +3,7 @@ title: Updating Postgres
 menu:
   docs_v2025.8.31:
     identifier: guides-postgres-updating
-    name: UpdateVersion Postgres
+    name: Update Version
     parent: pg-postgres-guides
     weight: 42
 menu_name: docs_v2025.8.31
