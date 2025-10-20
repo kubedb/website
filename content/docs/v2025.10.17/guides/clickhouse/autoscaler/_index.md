@@ -2,10 +2,10 @@
 title: Autoscaling
 menu:
   docs_v2025.10.17:
-    identifier: guides-perconaxtradb-autoscaling
+    identifier: ch-auto-scaling
     name: Autoscaling
-    parent: guides-perconaxtradb
-    weight: 80
+    parent: ch-clickhouse-guides
+    weight: 46
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0

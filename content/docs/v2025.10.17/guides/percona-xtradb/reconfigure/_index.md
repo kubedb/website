@@ -5,7 +5,7 @@ menu:
     identifier: guides-perconaxtradb-reconfigure
     name: Reconfigure
     parent: guides-perconaxtradb
-    weight: 46
+    weight: 60
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0

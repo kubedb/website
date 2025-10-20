@@ -1,11 +1,11 @@
 ---
-title: Autoscaling
+title: FerretDB failover
 menu:
   docs_v2025.10.17:
-    identifier: guides-perconaxtradb-autoscaling
-    name: Autoscaling
-    parent: guides-perconaxtradb
-    weight: 80
+    identifier: fr-failover-ferretdb
+    name: Failover and Recovery
+    parent: fr-ferretdb-guides
+    weight: 43
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0

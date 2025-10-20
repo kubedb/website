@@ -5,7 +5,7 @@ menu:
     identifier: guides-perconaxtradb-customrbac
     name: Custom RBAC
     parent: guides-perconaxtradb
-    weight: 50
+    weight: 90
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0

@@ -5,7 +5,7 @@ menu:
     identifier: fr-scaling
     name: Scaling
     parent: fr-ferretdb-guides
-    weight: 43
+    weight: 44
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0

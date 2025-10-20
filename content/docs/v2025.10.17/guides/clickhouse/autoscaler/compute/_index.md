@@ -1,11 +1,11 @@
 ---
-title: Autoscaling
+title: Compute Autoscaling
 menu:
   docs_v2025.10.17:
-    identifier: guides-perconaxtradb-autoscaling
-    name: Autoscaling
-    parent: guides-perconaxtradb
-    weight: 80
+    identifier: ch-compute-auto-scaling
+    name: Compute Autoscaling
+    parent: ch-auto-scaling
+    weight: 46
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0

@@ -5,7 +5,7 @@ menu:
     identifier: guides-perconaxtradb-updating
     name: UpdateVersion
     parent: guides-perconaxtradb
-    weight: 45
+    weight: 49
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0
