@@ -1,11 +1,11 @@
 ---
-title: Autoscaling
+title: Monitor ClickHouse with Prometheus & Grafana
 menu:
   docs_v2025.10.17:
-    identifier: guides-perconaxtradb-autoscaling
-    name: Autoscaling
-    parent: guides-perconaxtradb
-    weight: 80
+    identifier: ch-monitoring-clickhouse
+    name: Monitoring
+    parent: ch-clickhouse-guides
+    weight: 50
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0

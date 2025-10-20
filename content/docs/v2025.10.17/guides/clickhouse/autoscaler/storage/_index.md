@@ -1,11 +1,11 @@
 ---
-title: Autoscaling
+title: Storage Autoscaling
 menu:
   docs_v2025.10.17:
-    identifier: guides-perconaxtradb-autoscaling
-    name: Autoscaling
-    parent: guides-perconaxtradb
-    weight: 80
+    identifier: ch-storage-auto-scaling
+    name: Storage Autoscaling
+    parent: ch-auto-scaling
+    weight: 47
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0

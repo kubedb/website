@@ -5,7 +5,7 @@ menu:
     identifier: guides-perconaxtradb-privateregistry
     name: Private Registry
     parent: guides-perconaxtradb
-    weight: 60
+    weight: 100
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0

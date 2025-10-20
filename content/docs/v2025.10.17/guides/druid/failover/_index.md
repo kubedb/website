@@ -1,11 +1,11 @@
 ---
-title: Autoscaling
+title: Druid Failover & Disaster Recovery
 menu:
   docs_v2025.10.17:
-    identifier: guides-perconaxtradb-autoscaling
-    name: Autoscaling
-    parent: guides-perconaxtradb
-    weight: 80
+    identifier: guides-druid-fdr
+    name: Failover & Disaster Recovery
+    parent: guides-druid
+    weight: 40
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0

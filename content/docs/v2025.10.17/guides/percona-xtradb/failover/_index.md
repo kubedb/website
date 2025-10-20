@@ -1,11 +1,11 @@
 ---
-title: Autoscaling
+title: Failover PerconaXtraDB
 menu:
   docs_v2025.10.17:
-    identifier: guides-perconaxtradb-autoscaling
-    name: Autoscaling
+    identifier: guides-perconaxtradb-failover
+    name: Failover and Disaster Recovery
     parent: guides-perconaxtradb
-    weight: 80
+    weight: 46
 menu_name: docs_v2025.10.17
 info:
   autoscaler: v0.44.0
