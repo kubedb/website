@@ -1,0 +1,96 @@
+{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+<!-- new hero area start   -->
+<!-- style="background-image: url(/assets/images/products/kubedb/hero-product-bg-dark.png);" -->
+<section class="hero-area is-product is-gradient is-dark has-image-bg" style="background-image:
+url(./assets/images/bg-image/gradient-bg.webp);">
+  <div class="shape">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
+  <div class="shape">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div class="container">
+    <div class="columns is-vcentered is-multiline">
+      <div class="column is-6 is-full-touch">
+         <!-- news connect-message start  -->
+        <div class="news-message-wrapper">
+           <a href="" class="news-message is-hidden"><span>cool stuff!</a>
+        </div>
+
+         <script type="text/javascript">
+           (function () {
+             var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+             xhr.onreadystatechange = function () {
+               if (xhr.readyState === 4) {
+                 if (xhr.status === 200) {
+                   var result = JSON.parse(xhr.responseText);
+                   if (result.content) {
+                     let a = document.querySelector(".news-message");
+                     a.innerHTML = `<span>${result.content}</span>`;
+                     if (result.link) {
+                       a.href = result.link;
+                       a.target = "_blank";
+                     }
+                     a.classList.remove('is-hidden');
+                   }
+                 }
+               }
+             } //
+             xhr.open('GET', 'https://x.appscode.com/_/news?p={{$p.name}}');
+             xhr.send();
+           }());
+         </script>
+         <!-- news connect-message end -->
+        <h1> {{ $p.tagline | safeHTML }}</h1>
+        <!-- <h1> Run Production-Grade Databases on Kubernetes</h1> -->
+        <p>{{ $p.summary | safeHTML }}</p>
+        <div class="buttons">
+          <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-white">TRY NOW FREE</a>
+          <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary">
+             <span class="icon">
+              <iconify-icon icon="heroicons:chat-bubble-bottom-center" width="18" height="18"></iconify-icon>     
+             </span>
+             <span>GET IN TOUCH</span></a>
+        </div>
+      </div>
+      <div class="column is-6 is-full-touch">
+        <div class="hero-area-right">
+           <video
+            id="my-video"
+            class="video-js"
+            controls
+            preload="auto"
+            width="640"
+            height="264"
+            poster="https://placehold.co/600x400"
+            data-setup="{}"
+        >
+            <source src="https://youtu.be/Tqfv_msQA70?si=NdB15XffvBnntP1F" type="video/mp4" />
+            <source src="https://youtu.be/Tqfv_msQA70?si=NdB15XffvBnntP1F" type="video/webm" />
+            <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank"
+                >supports HTML5 video</a
+            >
+            </p>
+        </video>
+        </div>
+        <!-- code editor end  -->
+        <!-- <img src="/assets/images/products/kubedb/hero-right-image.png" alt=""> -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- new hero area end   -->
