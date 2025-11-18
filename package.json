@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/kubedb/website#readme",
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^6.0.0",
+    "@fullhuman/postcss-purgecss": "^7.0.2",
     "autoprefixer": "^9.6.1",
     "postcss-cli": "^9.1.0"
   },
