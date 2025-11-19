@@ -23,72 +23,124 @@ url(./assets/images/bg-image/gradient-bg.webp);">
   <div class="container">
     <div class="columns is-vcentered is-multiline">
       <div class="column is-6 is-full-touch">
-         <!-- news connect-message start  -->
+        <!-- news connect-message start  -->
         <div class="news-message-wrapper">
-           <a href="" class="news-message is-hidden"><span>cool stuff!</a>
+          <a href="" class="news-message is-hidden"><span>cool stuff!</a>
         </div>
 
-         <script type="text/javascript">
-           (function () {
-             var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-             xhr.onreadystatechange = function () {
-               if (xhr.readyState === 4) {
-                 if (xhr.status === 200) {
-                   var result = JSON.parse(xhr.responseText);
-                   if (result.content) {
-                     let a = document.querySelector(".news-message");
-                     a.innerHTML = `<span>${result.content}</span>`;
-                     if (result.link) {
-                       a.href = result.link;
-                       a.target = "_blank";
-                     }
-                     a.classList.remove('is-hidden');
-                   }
-                 }
-               }
-             } //
-             xhr.open('GET', 'https://x.appscode.com/_/news?p={{$p.name}}');
-             xhr.send();
-           }());
-         </script>
-         <!-- news connect-message end -->
+        <script type="text/javascript">
+          (function () {
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            xhr.onreadystatechange = function () {
+              if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                  var result = JSON.parse(xhr.responseText);
+                  if (result.content) {
+                    let a = document.querySelector(".news-message");
+                    a.innerHTML = `<span>${result.content}</span>`;
+                    if (result.link) {
+                      a.href = result.link;
+                      a.target = "_blank";
+                    }
+                    a.classList.remove('is-hidden');
+                  }
+                }
+              }
+            } //
+            xhr.open('GET', 'https://x.appscode.com/_/news?p={{$p.name}}');
+            xhr.send();
+          }());
+        </script>
+        <!-- news connect-message end -->
         <h1> {{ $p.tagline | safeHTML }}</h1>
         <!-- <h1> Run Production-Grade Databases on Kubernetes</h1> -->
         <p>{{ $p.summary | safeHTML }}</p>
         <div class="buttons">
           <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-white">TRY NOW FREE</a>
-          <a href="http://appscode.com/db" class="button ac-button is-secondary">
-             <span class="icon">
-              <iconify-icon icon="heroicons:eye" width="18" height="18"></iconify-icon>     
-             </span>
-             <span>EXPLORE KUBEDB UI</span></a>
+          <a href="#mechanics" class="button ac-button is-secondary">
+            <span class="icon">
+              <iconify-icon icon="heroicons:eye" width="18" height="18"></iconify-icon>
+            </span>
+            <span>EXPLORE KUBEDB UI</span></a>
         </div>
+        <ul class="is-flex is-align-items-center is-gap-32 has-text-white mt-32">
+          <li class="is-flex is-align-items-center is-gap-8"><span class="is-flex"><iconify-icon icon="heroicons:check"
+                width="18" height="18"></iconify-icon></span> No credit card required</li>
+          <li class="is-flex is-align-items-center is-gap-8"><span class="is-flex"><iconify-icon icon="heroicons:check"
+                width="18" height="18"></iconify-icon></span> 14-day free trial</li>
+          <li class="is-flex is-align-items-center is-gap-8"><span class="is-flex"><iconify-icon icon="heroicons:check"
+                width="18" height="18"></iconify-icon></span> Cancel anytime</li>
+        </ul>
       </div>
       <div class="column is-6 is-full-touch">
         <div class="hero-area-right">
-           <video
-            id="my-video"
-            class="video-js"
-            controls
-            preload="auto"
-            width="640"
-            height="400"
-            poster="http://kubedb.com/assets/images/products/kubedb/features/multi-cloud-lg.jpg"
-            data-setup="{}"
-        >
-            <source src="/assets/images/products/kubedb/updated-kubedb-ui.mp4" type="video/mp4" />
-            <source src="/assets/images/products/kubedb/updated-kubedb-ui.mp4" type="video/webm" />
-            <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a
-            web browser that
-            <a href="https://videojs.com/html5-video-support/" target="_blank"
-                >supports HTML5 video</a
-            >
-            </p>
-        </video>
+          <div class="tabs-area">
+            <ul>
+              <li class="active" onclick="openTab(event, 'dashboard-content')">Dashboard</li>
+              <li onclick="openTab(event, 'monitoring-content')">Monitoring</li>
+              <li onclick="openTab(event, 'backup-content')">Backup</li>
+              <li onclick="openTab(event, 'cli-content')">CLI</li>
+            </ul>
+          </div>
+          <div id="dashboard-content" class="tab-content-item">
+            <video id="my-video" class="video-js" controls preload="auto" style="width: 100%; height: 300px;"
+              data-setup="{}" poster="/assets/images/products/kubedb/ui/provisioning.gif">
+              <source src="/assets/images/products/kubedb/updated-kubedb-ui.mp4" type="video/mp4" />
+              <source src="/assets/images/products/kubedb/updated-kubedb-ui.mp4" type="video/webm" />
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+              </p>
+            </video>
+          </div>
+
+          <div id="monitoring-content" class="tab-content-item" style="display: none;">
+            <img src="/assets/images/products/kubedb/ui/monitoring.gif" alt="Monitoring UI"
+              style="width: 100%; height: 295px; object-fit: cover; border-radius: 0 0 8px 8px;">
+          </div>
+
+          <div id="backup-content" class="tab-content-item" style="display: none;">
+            <img src="/assets/images/products/kubedb/ui/disaster-recovery.gif" alt="Backup UI"
+              style="width: 100%; height: 295px; object-fit: cover; border-radius: 0 0 8px 8px;">
+          </div>
+
+          <div id="cli-content" class="tab-content-item" style="display: none;">
+            <div class="mock-terminal"
+              style="background-color: #1e1e1e; color: #d4d4d4; padding: 20px; height: 300px; border-radius: 0 0 8px 8px; font-family: monospace; overflow-y: auto; font-size: 14px; line-height: 1.5;">
+              <div class="terminal-line"><span style="color: #569cd6;">$</span> kubectl get elasticsearch</div>
+              <div class="terminal-line">NAME VERSION STATUS AGE</div>
+              <div class="terminal-line">es-demo 7.14.0 Ready 2m</div>
+              <br>
+              <div class="terminal-line"><span style="color: #569cd6;">$</span> kubectl get postgres</div>
+              <div class="terminal-line">NAME VERSION STATUS AGE</div>
+              <div class="terminal-line">pg-demo 13.2 Ready 5m</div>
+              <br>
+              <div class="terminal-line"><span style="color: #569cd6;">$</span> kubectl get mysql</div>
+              <div class="terminal-line">NAME VERSION STATUS AGE</div>
+              <div class="terminal-line">mysql-demo 8.0.26 Ready 10m</div>
+              <br>
+              <div class="terminal-line"><span style="color: #569cd6;">$</span> kubedb create -f redis.yaml</div>
+              <div class="terminal-line">redis.kubedb.com/redis-demo created</div>
+            </div>
+          </div>
+
+          <script>
+            function openTab(evt, tabName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tab-content-item");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.querySelectorAll(".tabs-area ul li");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+              }
+              document.getElementById(tabName).style.display = "block";
+              evt.currentTarget.classList.add("active");
+            }
+          </script>
         </div>
-        <!-- code editor end  -->
-        <!-- <img src="/assets/images/products/kubedb/hero-right-image.png" alt=""> -->
       </div>
     </div>
   </div>

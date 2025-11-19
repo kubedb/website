@@ -1,118 +1,96 @@
+{{ $ui_mechanics := .Site.Data.products.kubedb.ui_mechanics }}
+
+{{ with $ui_mechanics }}
+
 <section class="section-padding dark-bg mechanics-area" id="mechanics">
   <div class="container">
-    <!-- section title  -->
+
+    <!-- section title -->
     <div class="columns is-centered">
       <div class="column is-10-tablet is-8-desktop is-8-widescreen">
         <div class="section-title has-text-centered-tablet">
-          <h2>Manage Databases Visually — From Deployment to Recovery</h2>
-          <p>
-            Experience the new <strong>KubeDB UI</strong> — designed to help you deploy, manage, and monitor your favorite databases with just a few clicks.
-            Explore a seamless visual workflow that replaces complex YAML with intuitive controls.
-          </p>
+          <h2>{{ .section.title }}</h2>
+          <p>{{ .section.description }}</p>
         </div>
       </div>
     </div>
-    <!-- section title end -->
 
     <div class="columns is-vcentered" style="padding-bottom: 60px;">
+
       <!-- feature items -->
       <div class="column is-4">
-        <div class="is-flex is-flex-direction-column is-flex-wrap-wrap" style="gap: 8px;">
-          
-          <!-- single feature start -->
-          <div class="single-feature mechanism is-active">
-            <div class="icon">
-              <img src="https://img.icons8.com/ios-filled/100/E6E7E6/deployment.png" alt="Provisioning Databases" loading="lazy">
-            </div>
-            <div class="content">
-              <strong class="provisioning">1-Click Provisioning</strong>
-              <p class="is-ellipsis-2">Spin up production-ready database clusters instantly — no YAML, no CLI.</p>
-            </div>
-          </div>
-          <!-- single feature end -->
+        <div class="is-flex is-flex-direction-column is-flex-wrap-wrap"
+          style="gap: 8px;">
 
-          <div class="single-feature mechanism">
+          {{ range $i, $f := .features }}
+          <div
+            class="single-feature mechanism {{ if eq $i 0 }}is-active{{ end }}">
             <div class="icon">
-              <img src="https://img.icons8.com/ios-filled/100/E6E7E6/combo-chart.png" alt="Database Insights" loading="lazy">
+              <img src="{{ $f.icon }}" alt="{{ $f.title }}" loading="lazy">
             </div>
             <div class="content">
-              <strong class="database-insight">Live Insights</strong>
-              <p class="is-ellipsis-2">View performance, storage, and health metrics in real time with visual dashboards.</p>
+              <strong class="{{ $f.id }}">{{ $f.title }}</strong>
+              <p class="is-ellipsis-2">{{ $f.description }}</p>
             </div>
           </div>
+          {{ end }}
 
-          <div class="single-feature mechanism">
-            <div class="icon">
-              <img src="https://img.icons8.com/ios-filled/100/E6E7E6/robot-2.png" alt="Automated Management" loading="lazy">
-            </div>
-            <div class="content">
-              <strong class="managing">Automated DBA</strong>
-              <p class="is-ellipsis-2">Handle upgrades, scaling, and rolling restarts — all through the UI.</p>
-            </div>
-          </div>
-
-          <div class="single-feature mechanism">
-            <div class="icon">
-              <img src="https://img.icons8.com/ios-filled/50/E6E7E6/data-backup.png" alt="Disaster Recovery" loading="lazy">
-            </div>
-            <div class="content">
-              <strong class="disaster-recovery">Disaster Recovery</strong>
-              <p class="is-ellipsis-2">Create, schedule, and restore backups effortlessly to ensure data resilience.</p>
-            </div>
-          </div>
-
-          <div class="single-feature mechanism">
-            <div class="icon">
-              <img src="https://img.icons8.com/ios-filled/100/E6E7E6/monitor.png" alt="Database Monitoring" loading="lazy">
-            </div>
-            <div class="content">
-              <strong class="monitoring">Monitoring</strong>
-              <p class="is-ellipsis-2">Get full observability with built-in Grafana and Prometheus dashboards.</p>
-            </div>
-          </div>
-
-          <div class="single-feature mechanism">
-            <div class="icon">
-              <img src="https://img.icons8.com/ios-filled/100/E6E7E6/bell.png" alt="Database Alerts" loading="lazy">
-            </div>
-            <div class="content">
-              <strong class="alert">Smart Alerts</strong>
-              <p class="is-ellipsis-2">Stay informed with automated alerts for your mission-critical databases.</p>
-            </div>
-          </div>
         </div>
       </div>
-      <!-- feature items end -->
 
       <!-- UI visual area -->
       <div class="column is-8">
         <div class="ui-mechanism">
-          <div id="provisioning" class="single-ui-ss provisioning">
-            <img src="https://img.icons8.com/ios-filled/100/E6E7E6/deployment.png" alt="Provisioning">
-          </div>
 
-          <div id="database-insight" class="single-ui-ss database-insight is-hidden">
-            <img src="https://img.icons8.com/ios-filled/100/E6E7E6/combo-chart.png" alt="Database Insights">
+          {{ range $i, $f := .features }}
+          <div id="{{ $f.id }}"
+            class="single-ui-ss {{ $f.id }} {{ if ne $i 0 }}is-hidden{{ end }}">
+            <img src="{{ $f.image }}" alt="{{ $f.title }}">
           </div>
+          {{ end }}
 
-          <div id="managing" class="single-ui-ss managing is-hidden">
-           <img src="https://img.icons8.com/ios-filled/100/E6E7E6/robot-2.png" alt="Automated DBA">
-          </div>
-
-          <div id="disaster-recovery" class="single-ui-ss disaster-recovery is-hidden">
-           <img src="https://img.icons8.com/ios-filled/100/E6E7E6/life-buoy.png" alt="Disaster Recovery">
-          </div>
-
-          <div id="monitoring" class="single-ui-ss monitoring is-hidden">
-           <img src="https://img.icons8.com/ios-filled/100/E6E7E6/monitor.png" alt="Monitoring">
-          </div>
-
-          <div id="alert" class="single-ui-ss alert is-hidden">
-            <img src="https://img.icons8.com/ios-filled/100/E6E7E6/bell.png" alt="Smart Alerts">
-          </div>
         </div>
       </div>
-      <!-- UI visual area end -->
+
     </div>
   </div>
 </section>
+<script>
+  const singleFeatures = document.querySelectorAll('.single-feature.mechanism');
+
+  singleFeatures.forEach(function(feature) {
+
+      // FIXED event name
+      feature.addEventListener('mouseover', function() {
+
+          // FIXED selector
+          const title = feature.querySelector('.content strong');
+
+          const className = title.className;
+
+          showOnlySelectedDiv(className);
+
+          // Update active class
+          singleFeatures.forEach(function(f) {
+              f.classList.remove('is-active');
+          });
+
+          feature.classList.add('is-active');
+      });
+  });
+
+
+  function showOnlySelectedDiv(selectedId) {
+      const divs = document.querySelectorAll('.ui-mechanism > div');
+
+      divs.forEach(function(div) {
+          if (div.id === selectedId) {
+              div.classList.remove('is-hidden');
+          } else {
+              div.classList.add('is-hidden');
+          }
+      });
+  }
+</script>
+
+{{ end }}
