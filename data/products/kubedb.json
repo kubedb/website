@@ -3,7 +3,7 @@
   "name": "KubeDB",
   "fullname": "KubeDB by AppsCode",
   "tagline": "Run Production-Grade Databases on Kubernetes",
-  "summary": "KubeDB simplifies Provisioning, Upgrading, Scaling, Volume Expansion, Monitor, Backup, Restore for various Databases in Kubernetes on any Public & Private Cloud",
+  "summary": "Eliminate database complexity. Provision, scale, backup, and manage 30+ databases in minutes—not days. Reduce costs by 50% while maintaining enterprise reliability.",
   "published": true,
   "author": "AppsCode Inc.",
   "website": {
@@ -50,6 +50,8 @@
   "videos": {
     "intro": "CuQ6qvVBb0g"
   },
+  "features_title": "Focus on building, not managing databases",
+  "features_summary": "KubeDB automates every aspect of database operations—from provisioning to disaster recovery—so your team can ship faster",
   "features": [
     {
       "title": "Lower administrative burden",
