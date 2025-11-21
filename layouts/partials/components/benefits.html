@@ -1,30 +1,31 @@
 <section class="benefits-section">
     <div class="container py-6">
-        <div class="columns is-multiline is-mobile">
+        <div class="columns is-multiline is-mobile" id="benefits-container">
             <div class="column is-6-mobile is-3-tablet">
-                <div class="benefit-item has-text-centered">
-                    <div class="benefit-number has-text-primary mb-2">99.99%</div>
+                <div class="benefit-item has-text-centered" data-delay="0">
+                    <div class="benefit-number has-text-primary mb-2" data-target="99.99" data-suffix="%">0</div>
                     <div class="benefit-title mb-1">Uptime SLA</div>
                     <div class="benefit-subtitle">on enterprise plans</div>
                 </div>
             </div>
             <div class="column is-6-mobile is-3-tablet">
-                <div class="benefit-item has-text-centered">
-                    <div class="benefit-number has-text-primary mb-2">10M+</div>
+                <div class="benefit-item has-text-centered" data-delay="100">
+                    <div class="benefit-number has-text-primary mb-2" data-target="10" data-suffix="M+">0</div>
                     <div class="benefit-title mb-1">Databases</div>
                     <div class="benefit-subtitle">managed globally</div>
                 </div>
             </div>
             <div class="column is-6-mobile is-3-tablet">
-                <div class="benefit-item has-text-centered">
-                    <div class="benefit-number has-text-primary mb-2">50%</div>
+                <div class="benefit-item has-text-centered" data-delay="200">
+                    <div class="benefit-number has-text-primary mb-2" data-target="50" data-suffix="%">0</div>
                     <div class="benefit-title mb-1">Cost Reduction</div>
                     <div class="benefit-subtitle">vs managed services</div>
                 </div>
             </div>
             <div class="column is-6-mobile is-3-tablet">
-                <div class="benefit-item has-text-centered">
-                    <div class="benefit-number has-text-primary mb-2">&lt;5min</div>
+                <div class="benefit-item has-text-centered" data-delay="300">
+                    <div class="benefit-number has-text-primary mb-2" data-target="5" data-prefix="<" data-suffix="min">
+                        0</div>
                     <div class="benefit-title mb-1">Time to Deploy</div>
                     <div class="benefit-subtitle">production database</div>
                 </div>
@@ -32,3 +33,93 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const benefitsContainer = document.getElementById('benefits-container');
+        const benefitItems = document.querySelectorAll('.benefit-item');
+        const benefitNumbers = document.querySelectorAll('.benefit-number');
+
+        let hasAnimated = false;
+
+        // Animated counter function
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16); // 60fps
+            let current = start;
+            const suffix = element.dataset.suffix || '';
+            const prefix = element.dataset.prefix || '';
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+
+                // Format number based on target value
+                let displayValue;
+                if (target >= 10 && target < 100) {
+                    displayValue = Math.floor(current);
+                } else {
+                    displayValue = current.toFixed(2);
+                }
+
+                element.textContent = prefix + displayValue + suffix;
+
+                // Add pulse effect when complete
+                if (current >= target) {
+                    element.classList.add('count-complete');
+                }
+            }, 16);
+        }
+
+        // Intersection Observer for scroll-triggered animation
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+
+                    // Animate each benefit item with stagger
+                    benefitItems.forEach((item, index) => {
+                        const delay = parseInt(item.dataset.delay) || 0;
+
+                        setTimeout(() => {
+                            item.classList.add('animate-in');
+                        }, delay);
+                    });
+
+                    // Start counter animations
+                    benefitNumbers.forEach((number, index) => {
+                        const delay = parseInt(number.closest('.benefit-item').dataset.delay) || 0;
+                        const target = parseFloat(number.dataset.target);
+
+                        setTimeout(() => {
+                            animateCounter(number, target);
+                        }, delay + 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        if (benefitsContainer) {
+            observer.observe(benefitsContainer);
+        }
+
+        // Add hover sound effect (optional - visual feedback)
+        benefitItems.forEach(item => {
+            item.addEventListener('mouseenter', function () {
+                this.classList.add('hovered');
+            });
+
+            item.addEventListener('mouseleave', function () {
+                this.classList.remove('hovered');
+            });
+        });
+    });
+</script>

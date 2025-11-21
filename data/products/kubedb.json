@@ -53,7 +53,21 @@
   "features_title": "Focus on building, not managing databases",
   "features_summary": "KubeDB automates every aspect of database operations—from provisioning to disaster recovery—so your team can ship faster",
   "features": [
-    {
+     {
+      "title": "UI Dashboard",
+      "url": "manage-databases-on-kubernetes-with-ui",
+      "image": {
+        "src": "/assets/images/products/kubedb/features/easy-lg.jpg",
+        "alt": "Lower administrative burden"
+      },
+      "icon": {
+        "src": "/assets/images/products/kubedb/features/ui-dashboard.png",
+        "alt": "UI Dashboard"
+      },
+      "summary": "",
+      "description": "KubeDB simplifies many of the difficult or tedious management tasks of running a production grade databases on private and public clouds. Maintain one stack for all your stateless and stateful applications and simplify the operational complexity."
+    },
+     {
       "title": "Lower administrative burden",
       "url": "provision-databases-on-kubernetes",
       "image": {
@@ -67,6 +81,7 @@
       "summary": "",
       "description": "KubeDB simplifies many of the difficult or tedious management tasks of running a production grade databases on private and public clouds. Maintain one stack for all your stateless and stateful applications and simplify the operational complexity."
     },
+    
     {
       "title": "Native Kubernetes Support",
       "url": "deploy-databases-in-kubernetes-native-way",
@@ -150,6 +165,20 @@
       },
       "summary": "",
       "description": "You can secure your Databases with TLS using KubeDB. Also, KubeDB allows you to use encrypted storage for your databases using keys you manage through your cloud provider’s key management service."
+    },
+    {
+      "title": "24/7 Enterprise Support",
+      "url": "provision-databases-on-kubernetes",
+      "image": {
+        "src": "/assets/images/products/kubedb/features/easy-lg.jpg",
+        "alt": "Lower administrative burden"
+      },
+      "icon": {
+        "src": "https://img.icons8.com/0010dd/ios-filled/50/online-support.png",
+        "alt": "24/7 Enterprise Support"
+      },
+      "summary": "",
+      "description": "KubeDB simplifies many of the difficult or tedious management tasks of running a production grade databases on private and public clouds. Maintain one stack for all your stateless and stateful applications and simplify the operational complexity."
     }
   ],
   "versions": [
