@@ -245,32 +245,7 @@
     (function () {
         'use strict';
 
-        // Intersection Observer for scroll animations
-        function initScrollAnimations() {
-            const cards = document.querySelectorAll('.architecture-card');
-            const steps = document.querySelectorAll('.step-item');
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-
-            cards.forEach(card => {
-                card.style.animationPlayState = 'paused';
-                observer.observe(card);
-            });
-
-            steps.forEach(step => {
-                step.style.animationPlayState = 'paused';
-                observer.observe(step);
-            });
-        }
 
         // Add interactive hover effects to architecture cards
         function initCardInteractions() {
