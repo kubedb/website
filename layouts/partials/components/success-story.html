@@ -26,384 +26,145 @@
             </p>
         </div>
 
-        <!-- Stories Container -->
-        <div class="stories-container">
-            <!-- Story 1: Nokia -->
-            <div class="story-card" data-company="nokia">
-                <div class="story-content">
-                    <div class="story-grid">
-                        <!-- Left Column: Story -->
-                        <div>
-                            <div class="company-header">
-                                <div class="company-name blue">NOKIA</div>
-                                <div class="company-tags">
-                                    <span class="tag">Telecommunications</span>
-                                    <span class="tag">10,000+ employees</span>
-                                </div>
-                            </div>
+        <!-- Stories Carousel Container -->
+        <div class="stories-carousel-wrapper">
+            <!-- Navigation Arrows -->
+            <button class="carousel-nav prev" aria-label="Previous story">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6"></path>
+                </svg>
+            </button>
+            <button class="carousel-nav next" aria-label="Next story">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m9 18 6-6-6-6"></path>
+                </svg>
+            </button>
 
-                            <div class="story-section">
-                                <div class="section-label">Challenge</div>
-                                <p class="section-text">
-                                    Managing 200+ PostgreSQL instances across multiple regions with high availability
-                                    requirements and strict compliance needs.
-                                </p>
-                            </div>
-
-                            <div class="story-section">
-                                <div class="section-label">Solution</div>
-                                <p class="section-text">
-                                    Deployed KubeDB with automated backups, multi-region replication, and built-in
-                                    monitoring.
-                                </p>
-                            </div>
-
-                            <div class="quote-box blue">
-                                <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
-                                    </path>
-                                    <path
-                                        d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
-                                    </path>
-                                </svg>
-                                <p class="quote-text">
-                                    "KubeDB transformed our database operations. What used to take weeks now takes
-                                    hours. The automated backups and failover give us peace of mind."
-                                </p>
-                                <p class="quote-author">Senior DevOps Engineer, Nokia</p>
-                            </div>
-                        </div>
-
-                        <!-- Right Column: Results -->
-                        <div>
-                            <div class="results-container">
-                                <div class="results-label">Results</div>
-                                <div class="metrics-grid">
-                                    <div class="metric-card">
-                                        <div class="metric-icon blue">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
-                                                <polyline points="16 17 22 17 22 11"></polyline>
-                                            </svg>
-                                        </div>
-                                        <div class="metric-content">
-                                            <div class="metric-value" data-target="65">0%</div>
-                                            <div class="metric-label">Cost Reduction</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="metric-card">
-                                        <div class="metric-icon blue">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <circle cx="12" cy="12" r="10"></circle>
-                                                <polyline points="12 6 12 12 16 14"></polyline>
-                                            </svg>
-                                        </div>
-                                        <div class="metric-content">
-                                            <div class="metric-value" data-target="90">0%</div>
-                                            <div class="metric-label">Faster Deployments</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="metric-card">
-                                        <div class="metric-icon blue">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path
-                                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <div class="metric-content">
-                                            <div class="metric-value" data-target="99.99" data-decimal="true">0%</div>
-                                            <div class="metric-label">Uptime Achieved</div>
-                                        </div>
+            <div class="stories-container">
+                <!-- Story 1: Nokia -->
+                <div class="story-card active" data-company="nokia">
+                    <div class="story-content">
+                        <div class="story-grid">
+                            <!-- Left Column: Story -->
+                            <div>
+                                <div class="company-header">
+                                    <div class="company-name blue">NOKIA</div>
+                                    <div class="company-tags">
+                                        <span class="tag">Telecommunications</span>
+                                        <span class="tag">10,000+ employees</span>
                                     </div>
                                 </div>
 
-                                <div class="takeaways-box">
-                                    <div class="takeaways-title">Key Takeaways</div>
-                                    <div class="takeaways-list">
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot blue"></div>
-                                            <span>Reduced operational complexity</span>
-                                        </div>
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot blue"></div>
-                                            <span>Improved security and compliance</span>
-                                        </div>
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot blue"></div>
-                                            <span>Significant cost savings</span>
-                                        </div>
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot blue"></div>
-                                            <span>Faster time to market</span>
-                                        </div>
-                                    </div>
+                                <div class="story-section">
+                                    <div class="section-label">Challenge</div>
+                                    <p class="section-text">
+                                        Managing 200+ PostgreSQL instances across multiple regions with high
+                                        availability
+                                        requirements and strict compliance needs.
+                                    </p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Story 2: Huma -->
-            <div class="story-card" data-company="huma">
-                <div class="story-content">
-                    <div class="story-grid">
-                        <!-- Left Column: Story -->
-                        <div>
-                            <div class="company-header">
-                                <div class="company-name purple">HUMA</div>
-                                <div class="company-tags">
-                                    <span class="tag">HealthTech</span>
-                                    <span class="tag">500+ employees</span>
+                                <div class="story-section">
+                                    <div class="section-label">Solution</div>
+                                    <p class="section-text">
+                                        Deployed KubeDB with automated backups, multi-region replication, and built-in
+                                        monitoring.
+                                    </p>
+                                </div>
+
+                                <div class="quote-box blue">
+                                    <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+                                        </path>
+                                        <path
+                                            d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+                                        </path>
+                                    </svg>
+                                    <p class="quote-text">
+                                        "KubeDB transformed our database operations. What used to take weeks now takes
+                                        hours. The automated backups and failover give us peace of mind."
+                                    </p>
+                                    <p class="quote-author">Senior DevOps Engineer, Nokia</p>
                                 </div>
                             </div>
 
-                            <div class="story-section">
-                                <div class="section-label">Challenge</div>
-                                <p class="section-text">
-                                    HIPAA-compliant database management for sensitive healthcare data with strict
-                                    security and audit requirements.
-                                </p>
-                            </div>
-
-                            <div class="story-section">
-                                <div class="section-label">Solution</div>
-                                <p class="section-text">
-                                    Implemented KubeDB with encryption at rest, TLS, audit logging, and automated
-                                    compliance reporting.
-                                </p>
-                            </div>
-
-                            <div class="quote-box purple">
-                                <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
-                                    </path>
-                                    <path
-                                        d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
-                                    </path>
-                                </svg>
-                                <p class="quote-text">
-                                    "Security and compliance are non-negotiable in healthcare. KubeDB made it easy to
-                                    meet all our requirements while staying agile."
-                                </p>
-                                <p class="quote-author">CTO, Huma</p>
-                            </div>
-                        </div>
-
-                        <!-- Right Column: Results -->
-                        <div>
-                            <div class="results-container">
-                                <div class="results-label">Results</div>
-                                <div class="metrics-grid">
-                                    <div class="metric-card">
-                                        <div class="metric-icon purple">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path
-                                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <div class="metric-content">
-                                            <div class="metric-value" data-target="100">0%</div>
-                                            <div class="metric-label">HIPAA Compliant</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="metric-card">
-                                        <div class="metric-icon purple">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <circle cx="12" cy="12" r="10"></circle>
-                                                <polyline points="12 6 12 12 16 14"></polyline>
-                                            </svg>
-                                        </div>
-                                        <div class="metric-content">
-                                            <div class="metric-value" data-target="3" data-suffix=" weeks">0</div>
-                                            <div class="metric-label">To Production</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="metric-card">
-                                        <div class="metric-icon purple">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
-                                                <polyline points="16 17 22 17 22 11"></polyline>
-                                            </svg>
-                                        </div>
-                                        <div class="metric-content">
-                                            <div class="metric-value" data-target="50">0%</div>
-                                            <div class="metric-label">Cost Savings</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="takeaways-box">
-                                    <div class="takeaways-title">Key Takeaways</div>
-                                    <div class="takeaways-list">
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot purple"></div>
-                                            <span>Achieved full HIPAA compliance</span>
-                                        </div>
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot purple"></div>
-                                            <span>Enhanced data security</span>
-                                        </div>
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot purple"></div>
-                                            <span>Rapid deployment timeline</span>
-                                        </div>
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot purple"></div>
-                                            <span>Maintained agility</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Story 3: InterSystems -->
-            <div class="story-card" data-company="intersystems">
-                <div class="story-content">
-                    <div class="story-grid">
-                        <!-- Left Column: Story -->
-                        <div>
-                            <div class="company-header">
-                                <div class="company-name cyan">INTERSYSTEMS</div>
-                                <div class="company-tags">
-                                    <span class="tag">Enterprise Software</span>
-                                    <span class="tag">5,000+ employees</span>
-                                </div>
-                            </div>
-
-                            <div class="story-section">
-                                <div class="section-label">Challenge</div>
-                                <p class="section-text">
-                                    Supporting multiple database types (PostgreSQL, MongoDB, Redis) for different
-                                    product lines with unified management.
-                                </p>
-                            </div>
-
-                            <div class="story-section">
-                                <div class="section-label">Solution</div>
-                                <p class="section-text">
-                                    Standardized on KubeDB's universal API for all database types, reducing operational
-                                    complexity.
-                                </p>
-                            </div>
-
-                            <div class="quote-box cyan">
-                                <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
-                                    </path>
-                                    <path
-                                        d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
-                                    </path>
-                                </svg>
-                                <p class="quote-text">
-                                    "The unified API across all databases was a game-changer. Our platform team can now
-                                    support any database without learning new tools."
-                                </p>
-                                <p class="quote-author">VP of Engineering, InterSystems</p>
-                            </div>
-                        </div>
-
-                        <!-- Right Column: Results -->
-                        <div>
-                            <div class="results-container">
-                                <div class="results-label">Results</div>
-                                <div class="metrics-grid">
-                                    <div class="metric-card">
-                                        <div class="metric-icon cyan">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <circle cx="12" cy="12" r="10"></circle>
-                                                <polyline points="12 6 12 12 16 14"></polyline>
-                                            </svg>
-                                        </div>
-                                        <div class="metric-content">
-                                            <div class="metric-value" data-target="75">0%</div>
-                                            <div class="metric-label">Less Ops Time</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="metric-card">
-                                        <div class="metric-icon cyan">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path
-                                                    d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <div class="metric-content">
-                                            <div class="metric-value" data-target="30" data-suffix="+">0</div>
-                                            <div class="metric-label">DB Types Supported</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="metric-card">
-                                        <div class="metric-icon cyan">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
-                                                <polyline points="16 17 22 17 22 11"></polyline>
-                                            </svg>
-                                        </div>
-                                        <div class="metric-content">
-                                            <div class="metric-value" data-target="2" data-prefix="$" data-suffix="M">0
+                            <!-- Right Column: Results -->
+                            <div>
+                                <div class="results-container">
+                                    <div class="results-label">Results</div>
+                                    <div class="metrics-grid">
+                                        <div class="metric-card">
+                                            <div class="metric-icon blue">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
+                                                    <polyline points="16 17 22 17 22 11"></polyline>
+                                                </svg>
                                             </div>
-                                            <div class="metric-label">Annual Savings</div>
+                                            <div class="metric-content">
+                                                <div class="metric-value" data-target="65">0%</div>
+                                                <div class="metric-label">Cost Reduction</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="metric-card">
+                                            <div class="metric-icon blue">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                                </svg>
+                                            </div>
+                                            <div class="metric-content">
+                                                <div class="metric-value" data-target="90">0%</div>
+                                                <div class="metric-label">Faster Deployments</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="metric-card">
+                                            <div class="metric-icon blue">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="metric-content">
+                                                <div class="metric-value" data-target="99.99" data-decimal="true">0%
+                                                </div>
+                                                <div class="metric-label">Uptime Achieved</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="takeaways-box">
-                                    <div class="takeaways-title">Key Takeaways</div>
-                                    <div class="takeaways-list">
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot cyan"></div>
-                                            <span>Unified database management</span>
-                                        </div>
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot cyan"></div>
-                                            <span>Reduced learning curve</span>
-                                        </div>
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot cyan"></div>
-                                            <span>Massive cost savings</span>
-                                        </div>
-                                        <div class="takeaway-item">
-                                            <div class="takeaway-dot cyan"></div>
-                                            <span>Operational efficiency</span>
+                                    <div class="takeaways-box">
+                                        <div class="takeaways-title">Key Takeaways</div>
+                                        <div class="takeaways-list">
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot blue"></div>
+                                                <span>Reduced operational complexity</span>
+                                            </div>
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot blue"></div>
+                                                <span>Improved security and compliance</span>
+                                            </div>
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot blue"></div>
+                                                <span>Significant cost savings</span>
+                                            </div>
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot blue"></div>
+                                                <span>Faster time to market</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -411,162 +172,467 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Story 2: Huma -->
+                <div class="story-card" data-company="huma">
+                    <div class="story-content">
+                        <div class="story-grid">
+                            <!-- Left Column: Story -->
+                            <div>
+                                <div class="company-header">
+                                    <div class="company-name purple">HUMA</div>
+                                    <div class="company-tags">
+                                        <span class="tag">HealthTech</span>
+                                        <span class="tag">500+ employees</span>
+                                    </div>
+                                </div>
+
+                                <div class="story-section">
+                                    <div class="section-label">Challenge</div>
+                                    <p class="section-text">
+                                        HIPAA-compliant database management for sensitive healthcare data with strict
+                                        security and audit requirements.
+                                    </p>
+                                </div>
+
+                                <div class="story-section">
+                                    <div class="section-label">Solution</div>
+                                    <p class="section-text">
+                                        Implemented KubeDB with encryption at rest, TLS, audit logging, and automated
+                                        compliance reporting.
+                                    </p>
+                                </div>
+
+                                <div class="quote-box purple">
+                                    <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+                                        </path>
+                                        <path
+                                            d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+                                        </path>
+                                    </svg>
+                                    <p class="quote-text">
+                                        "Security and compliance are non-negotiable in healthcare. KubeDB made it easy
+                                        to
+                                        meet all our requirements while staying agile."
+                                    </p>
+                                    <p class="quote-author">CTO, Huma</p>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Results -->
+                            <div>
+                                <div class="results-container">
+                                    <div class="results-label">Results</div>
+                                    <div class="metrics-grid">
+                                        <div class="metric-card">
+                                            <div class="metric-icon purple">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="metric-content">
+                                                <div class="metric-value" data-target="100">0%</div>
+                                                <div class="metric-label">HIPAA Compliant</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="metric-card">
+                                            <div class="metric-icon purple">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                                </svg>
+                                            </div>
+                                            <div class="metric-content">
+                                                <div class="metric-value" data-target="3" data-suffix=" weeks">0</div>
+                                                <div class="metric-label">To Production</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="metric-card">
+                                            <div class="metric-icon purple">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
+                                                    <polyline points="16 17 22 17 22 11"></polyline>
+                                                </svg>
+                                            </div>
+                                            <div class="metric-content">
+                                                <div class="metric-value" data-target="50">0%</div>
+                                                <div class="metric-label">Cost Savings</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="takeaways-box">
+                                        <div class="takeaways-title">Key Takeaways</div>
+                                        <div class="takeaways-list">
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot purple"></div>
+                                                <span>Achieved full HIPAA compliance</span>
+                                            </div>
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot purple"></div>
+                                                <span>Enhanced data security</span>
+                                            </div>
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot purple"></div>
+                                                <span>Rapid deployment timeline</span>
+                                            </div>
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot purple"></div>
+                                                <span>Maintained agility</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 3: InterSystems -->
+                <div class="story-card" data-company="intersystems">
+                    <div class="story-content">
+                        <div class="story-grid">
+                            <!-- Left Column: Story -->
+                            <div>
+                                <div class="company-header">
+                                    <div class="company-name cyan">INTERSYSTEMS</div>
+                                    <div class="company-tags">
+                                        <span class="tag">Enterprise Software</span>
+                                        <span class="tag">5,000+ employees</span>
+                                    </div>
+                                </div>
+
+                                <div class="story-section">
+                                    <div class="section-label">Challenge</div>
+                                    <p class="section-text">
+                                        Supporting multiple database types (PostgreSQL, MongoDB, Redis) for different
+                                        product lines with unified management.
+                                    </p>
+                                </div>
+
+                                <div class="story-section">
+                                    <div class="section-label">Solution</div>
+                                    <p class="section-text">
+                                        Standardized on KubeDB's universal API for all database types, reducing
+                                        operational
+                                        complexity.
+                                    </p>
+                                </div>
+
+                                <div class="quote-box cyan">
+                                    <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+                                        </path>
+                                        <path
+                                            d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+                                        </path>
+                                    </svg>
+                                    <p class="quote-text">
+                                        "The unified API across all databases was a game-changer. Our platform team can
+                                        now
+                                        support any database without learning new tools."
+                                    </p>
+                                    <p class="quote-author">VP of Engineering, InterSystems</p>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Results -->
+                            <div>
+                                <div class="results-container">
+                                    <div class="results-label">Results</div>
+                                    <div class="metrics-grid">
+                                        <div class="metric-card">
+                                            <div class="metric-icon cyan">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                                </svg>
+                                            </div>
+                                            <div class="metric-content">
+                                                <div class="metric-value" data-target="75">0%</div>
+                                                <div class="metric-label">Less Ops Time</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="metric-card">
+                                            <div class="metric-icon cyan">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="metric-content">
+                                                <div class="metric-value" data-target="30" data-suffix="+">0</div>
+                                                <div class="metric-label">DB Types Supported</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="metric-card">
+                                            <div class="metric-icon cyan">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
+                                                    <polyline points="16 17 22 17 22 11"></polyline>
+                                                </svg>
+                                            </div>
+                                            <div class="metric-content">
+                                                <div class="metric-value" data-target="2" data-prefix="$"
+                                                    data-suffix="M">0
+                                                </div>
+                                                <div class="metric-label">Annual Savings</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="takeaways-box">
+                                        <div class="takeaways-title">Key Takeaways</div>
+                                        <div class="takeaways-list">
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot cyan"></div>
+                                                <span>Unified database management</span>
+                                            </div>
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot cyan"></div>
+                                                <span>Reduced learning curve</span>
+                                            </div>
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot cyan"></div>
+                                                <span>Massive cost savings</span>
+                                            </div>
+                                            <div class="takeaway-item">
+                                                <div class="takeaway-dot cyan"></div>
+                                                <span>Operational efficiency</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Dots -->
+            <div class="carousel-dots">
+                <button class="dot active" data-index="0" aria-label="Go to story 1"></button>
+                <button class="dot" data-index="1" aria-label="Go to story 2"></button>
+                <button class="dot" data-index="2" aria-label="Go to story 3"></button>
             </div>
         </div>
     </div>
 </section>
 
 <script>
-    // Success Story - Interactive Storytelling
+    // Success Story Carousel
     (function () {
         'use strict';
 
-        // Animated counter for metrics
-        function animateCounter(element) {
-            const target = parseFloat(element.dataset.target);
-            const isDecimal = element.dataset.decimal === 'true';
-            const prefix = element.dataset.prefix || '';
-            const suffix = element.dataset.suffix || '%';
-            const duration = 2000;
-            const steps = 60;
-            const increment = target / steps;
-            let current = 0;
+        let currentIndex = 0;
+        let autoPlayInterval;
+        const AUTO_PLAY_DELAY = 7000; // 7 seconds
 
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
+        const carousel = {
+            container: null,
+            cards: [],
+            dots: [],
+            prevBtn: null,
+            nextBtn: null,
+
+            init() {
+                this.container = document.querySelector('.stories-container');
+                this.cards = Array.from(document.querySelectorAll('.story-card'));
+                this.dots = Array.from(document.querySelectorAll('.carousel-dots .dot'));
+                this.prevBtn = document.querySelector('.carousel-nav.prev');
+                this.nextBtn = document.querySelector('.carousel-nav.next');
+
+                if (!this.container || this.cards.length === 0) return;
+
+                this.setupEventListeners();
+                this.startAutoPlay();
+                this.initScrollAnimations();
+            },
+
+            setupEventListeners() {
+                // Navigation buttons
+                this.prevBtn?.addEventListener('click', () => this.navigate('prev'));
+                this.nextBtn?.addEventListener('click', () => this.navigate('next'));
+
+                // Dots navigation
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                });
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.navigate('prev');
+                    if (e.key === 'ArrowRight') this.navigate('next');
+                });
+
+                // Touch/swipe support
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                this.container.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                });
+
+                this.container.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    this.handleSwipe(touchStartX, touchEndX);
+                });
+
+                // Pause auto-play on hover
+                const wrapper = document.querySelector('.stories-carousel-wrapper');
+                wrapper?.addEventListener('mouseenter', () => this.stopAutoPlay());
+                wrapper?.addEventListener('mouseleave', () => this.startAutoPlay());
+            },
+
+            navigate(direction) {
+                const newIndex = direction === 'prev'
+                    ? (currentIndex - 1 + this.cards.length) % this.cards.length
+                    : (currentIndex + 1) % this.cards.length;
+
+                this.goToSlide(newIndex);
+            },
+
+            goToSlide(index) {
+                if (index === currentIndex) return;
+
+                // Remove active class from current
+                this.cards[currentIndex].classList.remove('active');
+                this.dots[currentIndex].classList.remove('active');
+
+                // Add active class to new
+                currentIndex = index;
+                this.cards[currentIndex].classList.add('active');
+                this.dots[currentIndex].classList.add('active');
+
+                // Animate metrics for the new slide
+                this.animateMetrics(this.cards[currentIndex]);
+
+                // Reset auto-play
+                this.resetAutoPlay();
+            },
+
+            handleSwipe(startX, endX) {
+                const swipeThreshold = 50;
+                const diff = startX - endX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        this.navigate('next');
+                    } else {
+                        this.navigate('prev');
+                    }
                 }
+            },
 
-                const displayValue = isDecimal ? current.toFixed(2) : Math.round(current);
-                element.textContent = prefix + displayValue + suffix;
-            }, duration / steps);
-        }
+            startAutoPlay() {
+                this.stopAutoPlay();
+                autoPlayInterval = setInterval(() => {
+                    this.navigate('next');
+                }, AUTO_PLAY_DELAY);
+            },
 
-        // Intersection Observer for scroll animations
-        function initScrollAnimations() {
-            const cards = document.querySelectorAll('.story-card');
+            stopAutoPlay() {
+                if (autoPlayInterval) {
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = null;
+                }
+            },
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
+            resetAutoPlay() {
+                this.stopAutoPlay();
+                this.startAutoPlay();
+            },
 
-                        // Animate metrics when card is visible
-                        const metrics = entry.target.querySelectorAll('.metric-value');
-                        metrics.forEach((metric, index) => {
-                            setTimeout(() => {
-                                animateCounter(metric);
-                            }, index * 200);
-                        });
+            animateMetrics(card) {
+                const metrics = card.querySelectorAll('.metric-value');
+                metrics.forEach((metric, index) => {
+                    // Reset metric
+                    const target = parseFloat(metric.dataset.target);
+                    const isDecimal = metric.dataset.decimal === 'true';
+                    const prefix = metric.dataset.prefix || '';
+                    const suffix = metric.dataset.suffix || '%';
 
-                        // Unobserve after animation
-                        observer.unobserve(entry.target);
+                    metric.textContent = prefix + '0' + suffix;
+
+                    // Animate after a delay
+                    setTimeout(() => {
+                        this.animateCounter(metric, target, isDecimal, prefix, suffix);
+                    }, index * 200);
+                });
+            },
+
+            animateCounter(element, target, isDecimal, prefix, suffix) {
+                const duration = 2000;
+                const steps = 60;
+                const increment = target / steps;
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
                     }
+
+                    const displayValue = isDecimal ? current.toFixed(2) : Math.round(current);
+                    element.textContent = prefix + displayValue + suffix;
+                }, duration / steps);
+            },
+
+            initScrollAnimations() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Animate the active card's metrics when carousel comes into view
+                            const activeCard = this.cards[currentIndex];
+                            if (activeCard) {
+                                this.animateMetrics(activeCard);
+                            }
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.2,
+                    rootMargin: '0px 0px -100px 0px'
                 });
-            }, {
-                threshold: 0.2,
-                rootMargin: '0px 0px -100px 0px'
-            });
 
-            cards.forEach(card => {
-                card.style.animationPlayState = 'paused';
-                observer.observe(card);
-            });
-        }
+                if (this.container) {
+                    observer.observe(this.container);
+                }
+            }
+        };
 
-        // Add hover effects to metric cards
-        function initMetricInteractions() {
-            const metricCards = document.querySelectorAll('.metric-card');
-
-            metricCards.forEach(card => {
-                card.addEventListener('mouseenter', function () {
-                    const icon = this.querySelector('.metric-icon');
-                    icon.style.transform = 'scale(1.1) rotate(5deg)';
-                });
-
-                card.addEventListener('mouseleave', function () {
-                    const icon = this.querySelector('.metric-icon');
-                    icon.style.transform = '';
-                });
-            });
-        }
-
-        // Add progressive reveal to story sections
-        function initStoryReveal() {
-            const storySections = document.querySelectorAll('.story-section');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '0';
-                        entry.target.style.transform = 'translateY(20px)';
-                        entry.target.style.transition = 'all 0.6s ease';
-
-                        setTimeout(() => {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }, 100);
-
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.3
-            });
-
-            storySections.forEach(section => observer.observe(section));
-        }
-
-        // Add quote box animation
-        function initQuoteAnimations() {
-            const quoteBoxes = document.querySelectorAll('.quote-box');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const quoteIcon = entry.target.querySelector('.quote-icon');
-                        const quoteText = entry.target.querySelector('.quote-text');
-
-                        quoteIcon.style.opacity = '0';
-                        quoteIcon.style.transform = 'scale(0.8)';
-                        quoteIcon.style.transition = 'all 0.5s ease';
-
-                        quoteText.style.opacity = '0';
-                        quoteText.style.transform = 'translateY(10px)';
-                        quoteText.style.transition = 'all 0.6s ease 0.2s';
-
-                        setTimeout(() => {
-                            quoteIcon.style.opacity = '1';
-                            quoteIcon.style.transform = 'scale(1)';
-                            quoteText.style.opacity = '1';
-                            quoteText.style.transform = 'translateY(0)';
-                        }, 100);
-
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-
-            quoteBoxes.forEach(box => observer.observe(box));
-        }
-
-        // Initialize all effects
+        // Initialize carousel
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                initScrollAnimations();
-                initMetricInteractions();
-                initStoryReveal();
-                initQuoteAnimations();
-            });
+            document.addEventListener('DOMContentLoaded', () => carousel.init());
         } else {
-            initScrollAnimations();
-            initMetricInteractions();
-            initStoryReveal();
-            initQuoteAnimations();
+            carousel.init();
         }
     })();
 </script>
