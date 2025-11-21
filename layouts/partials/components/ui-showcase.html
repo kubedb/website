@@ -2,95 +2,193 @@
 
 {{ with $ui_mechanics }}
 
-<section class="section-padding dark-bg mechanics-area" id="mechanics">
+<section class="section-padding premium-ui-showcase mechanics-area" id="mechanics">
   <div class="container">
 
-    <!-- section title -->
+    <!-- Premium Section Header -->
     <div class="columns is-centered">
       <div class="column is-10-tablet is-8-desktop is-8-widescreen">
         <div class="section-title has-text-centered-tablet">
-          <h2>{{ .section.title }}</h2>
-          <p>{{ .section.description }}</p>
+          <!-- Premium Badge -->
+          <div class="showcase-badge">
+            <iconify-icon icon="heroicons:sparkles" width="18" height="18"></iconify-icon>
+            <span>Interactive UI</span>
+          </div>
+
+          <h2 class="showcase-title">
+            {{ .section.title }}
+          </h2>
+          <p class="showcase-subtitle">{{ .section.description }}</p>
         </div>
       </div>
     </div>
 
-    <div class="columns is-vcentered" style="padding-bottom: 60px;">
+    <div class="columns is-vcentered">
 
-      <!-- feature items -->
-      <div class="column is-4">
-        <div class="is-flex is-flex-direction-column is-flex-wrap-wrap"
-          style="gap: 8px;">
+      <!-- Premium Feature Cards -->
+      <div class="column is-5">
+        <div class="feature-cards-wrapper">
 
           {{ range $i, $f := .features }}
-          <div
-            class="single-feature mechanism {{ if eq $i 0 }}is-active{{ end }}">
-            <div class="icon">
-              <img src="{{ $f.icon }}" alt="{{ $f.title }}" loading="lazy">
+          <div class="premium-feature-card mechanism {{ if eq $i 0 }}is-active{{ end }}" data-feature="{{ $f.id }}">
+            <!-- Card Inner -->
+            <div class="card-inner">
+              <!-- Icon with Glow -->
+              <div class="feature-icon-wrapper">
+                <div class="feature-icon">
+                  <img src="{{ $f.icon }}" alt="{{ $f.title }}" loading="lazy">
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="feature-content">
+                <h3 class="feature-title {{ $f.id }}">{{ $f.title }}</h3>
+                <p class="feature-description">{{ $f.description }}</p>
+              </div>
             </div>
-            <div class="content">
-              <strong class="{{ $f.id }}">{{ $f.title }}</strong>
-              <p class="is-ellipsis-2">{{ $f.description }}</p>
-            </div>
+
+            <!-- Hover Effect Overlay -->
+            <div class="card-hover-effect"></div>
           </div>
           {{ end }}
 
         </div>
       </div>
 
-      <!-- UI visual area -->
-      <div class="column is-8">
-        <div class="ui-mechanism">
+      <!-- Premium UI Visual Area -->
+      <div class="column is-7">
+        <div class="ui-showcase-frame">
+          <!-- Decorative Elements -->
+          <div class="frame-decoration top-left"></div>
+          <div class="frame-decoration top-right"></div>
+          <div class="frame-decoration bottom-left"></div>
+          <div class="frame-decoration bottom-right"></div>
 
-          {{ range $i, $f := .features }}
-          <div id="{{ $f.id }}"
-            class="single-ui-ss {{ $f.id }} {{ if ne $i 0 }}is-hidden{{ end }}">
-            <img src="{{ $f.image }}" alt="{{ $f.title }}">
+          <!-- Image Container -->
+          <div class="ui-mechanism">
+            {{ range $i, $f := .features }}
+            <div id="{{ $f.id }}" class="single-ui-ss {{ $f.id }} {{ if ne $i 0 }}is-hidden{{ end }}">
+              <img src="{{ $f.image }}" alt="{{ $f.title }}">
+              <div class="image-overlay"></div>
+            </div>
+            {{ end }}
           </div>
-          {{ end }}
 
+          <!-- Floating Decorative Shapes -->
+          <div class="floating-shape shape-1"></div>
+          <div class="floating-shape shape-2"></div>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
 <script>
-  const singleFeatures = document.querySelectorAll('.single-feature.mechanism');
+  (function () {
+    'use strict';
 
-  singleFeatures.forEach(function(feature) {
+    // Feature Cards Interaction
+    const featureCards = document.querySelectorAll('.premium-feature-card.mechanism');
+    const uiImages = document.querySelectorAll('.single-ui-ss');
+    let currentActive = 0;
 
-      // FIXED event name
-      feature.addEventListener('mouseover', function() {
+    // Smooth fade transition
+    function showFeatureImage(featureId) {
+      uiImages.forEach(function (img, index) {
+        if (img.id === featureId) {
+          // Fade in
+          img.style.opacity = '0';
+          img.classList.remove('is-hidden');
 
-          // FIXED selector
-          const title = feature.querySelector('.content strong');
+          requestAnimationFrame(() => {
+            img.style.transition = 'opacity 0.5s ease-in-out';
+            img.style.opacity = '1';
+          });
+        } else {
+          // Fade out
+          img.style.transition = 'opacity 0.3s ease-in-out';
+          img.style.opacity = '0';
 
-          const className = title.className;
+          setTimeout(() => {
+            img.classList.add('is-hidden');
+          }, 300);
+        }
+      });
+    }
 
-          showOnlySelectedDiv(className);
+    // Card hover/click interaction
+    featureCards.forEach(function (card, index) {
+      card.addEventListener('mouseenter', function () {
+        const featureId = card.dataset.feature;
 
-          // Update active class
-          singleFeatures.forEach(function(f) {
-              f.classList.remove('is-active');
+        // Update active states
+        featureCards.forEach(c => c.classList.remove('is-active'));
+        card.classList.add('is-active');
+
+        // Show corresponding image
+        showFeatureImage(featureId);
+        currentActive = index;
+      });
+    });
+
+    // Intersection Observer for entrance animations
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Staggered animation for cards
+          featureCards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('animate-in');
+            }, index * 100);
           });
 
-          feature.classList.add('is-active');
-      });
-  });
-
-
-  function showOnlySelectedDiv(selectedId) {
-      const divs = document.querySelectorAll('.ui-mechanism > div');
-
-      divs.forEach(function(div) {
-          if (div.id === selectedId) {
-              div.classList.remove('is-hidden');
-          } else {
-              div.classList.add('is-hidden');
+          // Animate showcase frame
+          const frame = document.querySelector('.ui-showcase-frame');
+          if (frame) {
+            setTimeout(() => {
+              frame.classList.add('animate-in');
+            }, 300);
           }
+
+          observer.disconnect();
+        }
       });
-  }
+    }, observerOptions);
+
+    // Observe the section
+    const showcaseSection = document.querySelector('.premium-ui-showcase');
+    if (showcaseSection) {
+      observer.observe(showcaseSection);
+    }
+
+    // Auto-rotate feature showcase (optional)
+    let autoRotateInterval;
+    function startAutoRotate() {
+      autoRotateInterval = setInterval(() => {
+        currentActive = (currentActive + 1) % featureCards.length;
+        featureCards[currentActive].dispatchEvent(new Event('mouseenter'));
+      }, 5000);
+    }
+
+    function stopAutoRotate() {
+      clearInterval(autoRotateInterval);
+    }
+
+    // Start auto-rotate after initial load
+    setTimeout(startAutoRotate, 3000);
+
+    // Stop auto-rotate on user interaction
+    featureCards.forEach(card => {
+      card.addEventListener('mouseenter', stopAutoRotate);
+    });
+
+  })();
 </script>
 
 {{ end }}
