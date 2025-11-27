@@ -2,7 +2,7 @@
 
 {{ with $ui_mechanics }}
 
-<section class="section-padding premium-ui-showcase mechanics-area" id="mechanics">
+<section class="section-padding premium-ui-showcase mechanics-area is-clipped" id="mechanics">
   <div class="container">
 
     <!-- Premium Section Header -->
@@ -20,10 +20,10 @@
         </div>
     </div>
 
-    <div class="columns is-vcentered">
+    <div class="columns is-vcentered is-multiline">
 
       <!-- Premium Feature Cards -->
-      <div class="column is-5">
+      <div class="column is-5-desktop is-12-tablet">
         <div class="feature-cards-wrapper">
 
           {{ range $i, $f := .features }}
@@ -53,7 +53,7 @@
       </div>
 
       <!-- Premium UI Visual Area -->
-      <div class="column is-7">
+      <div class="column is-7-desktop is-12-tablet">
         <div class="ui-showcase-frame">
           <!-- Decorative Elements -->
           <div class="frame-decoration top-left"></div>
