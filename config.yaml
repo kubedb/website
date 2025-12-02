@@ -81,126 +81,201 @@ menu:
     parent: database
     weight: 3
     pre: /assets/images/databases/logos/png/cassandras.png
+    post: "4.x"
+    params:
+      status: beta
   - name: ClickHouse
     identifier: clickhouse
     parent: database
     weight: 4
     pre: /assets/images/databases/logos/png/clickhouses.png
+    post: "22.x-24.x"
+    params:
+      status: stable
   - name: Druid
     identifier: druid
     parent: database
     weight: 5
     pre: /assets/images/databases/logos/png/druids.png
+    post: "28.x+"
+    params:
+      status: stable
   - name: Elasticsearch
     identifier: elasticsearch
     parent: database
     weight: 6
     pre: /assets/images/databases/logos/png/elasticsearches.png
+    post: "7.x-8.x"
+    params:
+      status: stable
   - name: FerretDB
     identifier: ferretdb
     parent: database
     weight: 7
     pre: /assets/images/databases/logos/png/ferretdbs.png
+    post: "1.x"
+    params:
+      status: beta
   - name: Hazelcast
     identifier: hazelcast
     parent: database
     weight: 8
     pre: /assets/images/databases/logos/png/hazelcasts.png
+    post: "5.x"
+    params:
+      status: stable
   - name: Ignite
     identifier: ignite
     parent: database
     weight: 9
     pre: /assets/images/databases/logos/png/ignites.png
+    post: "2.x"
+    params:
+      status: stable
   - name: Kafka
     identifier: kafka
     parent: database
     weight: 10
     pre: /assets/images/databases/logos/png/kafkas.png
+    post: "3.x"
+    params:
+      status: stable
   - name: MariaDB
     identifier: mariadb
     parent: database
     weight: 11
     pre: /assets/images/databases/logos/png/mariadbs.png
+    post: "10.5-11.x"
+    params:
+      status: stable
   - name: Memcached
     identifier: memcached
     parent: database
     weight: 12
     pre: /assets/images/databases/logos/png/memcacheds.png
+    post: "1.6+"
+    params:
+      status: stable
   - name: Microsoft SQL Server
     identifier: mssqlserver
     parent: database
     weight: 13
     pre: /assets/images/databases/logos/png/mssqlservers.png
+    post: "2019-2022"
+    params:
+      status: beta
   - name: MongoDB
     identifier: mongodb
     parent: database
     weight: 14
     pre: /assets/images/databases/logos/png/mongodbs.png
+    post: "4.4-7.0"
+    params:
+      status: stable
   - name: MySQL
     identifier: mysql
     parent: database
     weight: 15
     pre: /assets/images/databases/logos/png/mysqls.png
+    post: "5.7-8.2"
+    params:
+      status: stable
   - name: OpenSearch
     identifier: opensearch
     parent: database
     weight: 16
     pre: /assets/images/databases/logos/png/opensearch.png
+    post: "1.x-2.x"
+    params:
+      status: stable
   - name: PerconaXtraDB
     identifier: percona-xtradb
     parent: database
     weight: 17
     pre: /assets/images/databases/logos/png/perconaxtradbs.png
+    post: "8.0"
+    params:
+      status: stable
   - name: PgBouncer
     identifier: pgbouncer
     parent: database
     weight: 18
     pre: /assets/images/databases/logos/png/pgbouncers.png
+    post: "1.17+"
+    params:
+      status: stable
   - name: Pgpool
     identifier: pgpool
     parent: database
     weight: 19
     pre: /assets/images/databases/logos/png/pgpools.png
+    post: "4.x"
+    params:
+      status: stable
   - name: PostgreSQL
     identifier: postgres
     parent: database
     weight: 20
     pre: /assets/images/databases/logos/png/postgreses.png
+    post: "12-16"
+    params:
+      status: stable
   - name: ProxySQL
     identifier: proxysql
     parent: database
     weight: 21
     pre: /assets/images/databases/logos/png/proxysqls.png
+    post: "2.x"
+    params:
+      status: stable
   - name: RabbitMQ
     identifier: rabbitmq
     parent: database
     weight: 22
     pre: /assets/images/databases/logos/png/rabbitmqs.png
+    post: "3.11+"
+    params:
+      status: stable
   - name: Redis
     identifier: redis
     parent: database
     weight: 23
     pre: /assets/images/databases/logos/png/redises.png
+    post: "6.x-7.x"
+    params:
+      status: stable
   - name: SingleStore
     identifier: singlestore
     parent: database
     weight: 24
     pre: /assets/images/databases/logos/png/singlestores.png
+    post: "8.x"
+    params:
+      status: stable
   - name: Solr
     identifier: solr
     parent: database
     weight: 25
     pre: /assets/images/databases/logos/png/solrs.png
+    post: "8.x-9.x"
+    params:
+      status: stable
   - name: Valkey
     identifier: valkey
     parent: database
     weight: 26
     pre: /assets/images/databases/logos/png/valkeys.png
+    post: "7.x"
+    params:
+      status: stable
   - name: ZooKeeper
     identifier: zookeeper
     parent: database
     weight: 27
     pre: /assets/images/databases/logos/png/zookeepers.png
+    post: "3.x"
+    params:
+      status: stable
 markup:
   goldmark:
     renderer:

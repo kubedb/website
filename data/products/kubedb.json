@@ -3,7 +3,7 @@
   "name": "KubeDB",
   "fullname": "KubeDB by AppsCode",
   "tagline": "Run Production-Grade Databases on Kubernetes",
-  "summary": "Eliminate database complexity. Provision, scale, backup, and manage 30+ databases in minutes—not days. Reduce costs by 50% while maintaining enterprise reliability.",
+  "summary": "Eliminate database complexity. Provision, scale, backup, and manage 20+ databases in minutes—not days. Reduce costs by 50% while maintaining enterprise reliability.",
   "published": true,
   "author": "AppsCode Inc.",
   "website": {
@@ -53,7 +53,7 @@
   "features_title": "Focus on building, not managing databases",
   "features_summary": "KubeDB automates every aspect of database operations—from provisioning to disaster recovery—so your team can ship faster",
   "features": [
-     {
+    {
       "title": "UI Dashboard",
       "url": "manage-databases-on-kubernetes-with-ui",
       "image": {
@@ -67,7 +67,7 @@
       "summary": "",
       "description": "KubeDB simplifies many of the difficult or tedious management tasks of running a production grade databases on private and public clouds. Maintain one stack for all your stateless and stateful applications and simplify the operational complexity."
     },
-     {
+    {
       "title": "Lower administrative burden",
       "url": "provision-databases-on-kubernetes",
       "image": {
@@ -81,7 +81,6 @@
       "summary": "",
       "description": "KubeDB simplifies many of the difficult or tedious management tasks of running a production grade databases on private and public clouds. Maintain one stack for all your stateless and stateful applications and simplify the operational complexity."
     },
-    
     {
       "title": "Native Kubernetes Support",
       "url": "deploy-databases-in-kubernetes-native-way",
