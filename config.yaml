@@ -81,7 +81,7 @@ menu:
     parent: database
     weight: 3
     pre: /assets/images/databases/logos/png/cassandras.png
-    post: "4.x"
+    post: 4.x
     params:
       status: beta
   - name: ClickHouse
@@ -89,7 +89,7 @@ menu:
     parent: database
     weight: 4
     pre: /assets/images/databases/logos/png/clickhouses.png
-    post: "22.x-24.x"
+    post: 22.x-24.x
     params:
       status: stable
   - name: Druid
@@ -97,7 +97,7 @@ menu:
     parent: database
     weight: 5
     pre: /assets/images/databases/logos/png/druids.png
-    post: "28.x+"
+    post: 28.x+
     params:
       status: stable
   - name: Elasticsearch
@@ -105,7 +105,7 @@ menu:
     parent: database
     weight: 6
     pre: /assets/images/databases/logos/png/elasticsearches.png
-    post: "7.x-8.x"
+    post: 7.x-8.x
     params:
       status: stable
   - name: FerretDB
@@ -113,7 +113,7 @@ menu:
     parent: database
     weight: 7
     pre: /assets/images/databases/logos/png/ferretdbs.png
-    post: "1.x"
+    post: 1.x
     params:
       status: beta
   - name: Hazelcast
@@ -121,7 +121,7 @@ menu:
     parent: database
     weight: 8
     pre: /assets/images/databases/logos/png/hazelcasts.png
-    post: "5.x"
+    post: 5.x
     params:
       status: stable
   - name: Ignite
@@ -129,7 +129,7 @@ menu:
     parent: database
     weight: 9
     pre: /assets/images/databases/logos/png/ignites.png
-    post: "2.x"
+    post: 2.x
     params:
       status: stable
   - name: Kafka
@@ -137,7 +137,7 @@ menu:
     parent: database
     weight: 10
     pre: /assets/images/databases/logos/png/kafkas.png
-    post: "3.x"
+    post: 3.x
     params:
       status: stable
   - name: MariaDB
@@ -145,7 +145,7 @@ menu:
     parent: database
     weight: 11
     pre: /assets/images/databases/logos/png/mariadbs.png
-    post: "10.5-11.x"
+    post: 10.5-11.x
     params:
       status: stable
   - name: Memcached
@@ -153,7 +153,7 @@ menu:
     parent: database
     weight: 12
     pre: /assets/images/databases/logos/png/memcacheds.png
-    post: "1.6+"
+    post: 1.6+
     params:
       status: stable
   - name: Microsoft SQL Server
@@ -161,7 +161,7 @@ menu:
     parent: database
     weight: 13
     pre: /assets/images/databases/logos/png/mssqlservers.png
-    post: "2019-2022"
+    post: 2019-2022
     params:
       status: beta
   - name: MongoDB
@@ -169,7 +169,7 @@ menu:
     parent: database
     weight: 14
     pre: /assets/images/databases/logos/png/mongodbs.png
-    post: "4.4-7.0"
+    post: 4.4-7.0
     params:
       status: stable
   - name: MySQL
@@ -177,7 +177,7 @@ menu:
     parent: database
     weight: 15
     pre: /assets/images/databases/logos/png/mysqls.png
-    post: "5.7-8.2"
+    post: 5.7-8.2
     params:
       status: stable
   - name: OpenSearch
@@ -185,7 +185,7 @@ menu:
     parent: database
     weight: 16
     pre: /assets/images/databases/logos/png/opensearch.png
-    post: "1.x-2.x"
+    post: 1.x-2.x
     params:
       status: stable
   - name: PerconaXtraDB
@@ -201,7 +201,7 @@ menu:
     parent: database
     weight: 18
     pre: /assets/images/databases/logos/png/pgbouncers.png
-    post: "1.17+"
+    post: 1.17+
     params:
       status: stable
   - name: Pgpool
@@ -209,7 +209,7 @@ menu:
     parent: database
     weight: 19
     pre: /assets/images/databases/logos/png/pgpools.png
-    post: "4.x"
+    post: 4.x
     params:
       status: stable
   - name: PostgreSQL
@@ -217,7 +217,7 @@ menu:
     parent: database
     weight: 20
     pre: /assets/images/databases/logos/png/postgreses.png
-    post: "12-16"
+    post: 12-16
     params:
       status: stable
   - name: ProxySQL
@@ -225,7 +225,7 @@ menu:
     parent: database
     weight: 21
     pre: /assets/images/databases/logos/png/proxysqls.png
-    post: "2.x"
+    post: 2.x
     params:
       status: stable
   - name: RabbitMQ
@@ -233,7 +233,7 @@ menu:
     parent: database
     weight: 22
     pre: /assets/images/databases/logos/png/rabbitmqs.png
-    post: "3.11+"
+    post: 3.11+
     params:
       status: stable
   - name: Redis
@@ -241,7 +241,7 @@ menu:
     parent: database
     weight: 23
     pre: /assets/images/databases/logos/png/redises.png
-    post: "6.x-7.x"
+    post: 6.x-7.x
     params:
       status: stable
   - name: SingleStore
@@ -249,7 +249,7 @@ menu:
     parent: database
     weight: 24
     pre: /assets/images/databases/logos/png/singlestores.png
-    post: "8.x"
+    post: 8.x
     params:
       status: stable
   - name: Solr
@@ -257,7 +257,7 @@ menu:
     parent: database
     weight: 25
     pre: /assets/images/databases/logos/png/solrs.png
-    post: "8.x-9.x"
+    post: 8.x-9.x
     params:
       status: stable
   - name: Valkey
@@ -265,7 +265,7 @@ menu:
     parent: database
     weight: 26
     pre: /assets/images/databases/logos/png/valkeys.png
-    post: "7.x"
+    post: 7.x
     params:
       status: stable
   - name: ZooKeeper
@@ -273,7 +273,7 @@ menu:
     parent: database
     weight: 27
     pre: /assets/images/databases/logos/png/zookeepers.png
-    post: "3.x"
+    post: 3.x
     params:
       status: stable
 markup:
