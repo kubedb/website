@@ -65,9 +65,9 @@ url(./assets/images/bg-image/gradient-bg.webp);">
 
         <p class="hero-subtitle mb-0">{{ $p.summary | safeHTML }}</p>
 
-        <!-- Key Value Points - Compact Grid -->
-        <div class="hero-value-grid mt-16">
-          <div class="value-item">
+        <!-- Key Value Points - List Style -->
+        <ul class="hero-value-list mt-16">
+          <li class="value-item">
             <div class="value-icon-small">
               <iconify-icon icon="heroicons:circle-stack" width="20" height="20"></iconify-icon>
             </div>
@@ -75,8 +75,8 @@ url(./assets/images/bg-image/gradient-bg.webp);">
               <strong>20+ databases</strong>
               <span>PostgreSQL, MySQL, MongoDB & more</span>
             </div>
-          </div>
-          <div class="value-item">
+          </li>
+          <li class="value-item">
             <div class="value-icon-small">
               <iconify-icon icon="heroicons:clock" width="20" height="20"></iconify-icon>
             </div>
@@ -84,8 +84,8 @@ url(./assets/images/bg-image/gradient-bg.webp);">
               <strong>Deploy in Minutes</strong>
               <span>Production-ready in under 10 min</span>
             </div>
-          </div>
-          <div class="value-item">
+          </li>
+          <li class="value-item">
             <div class="value-icon-small">
               <iconify-icon icon="heroicons:currency-dollar" width="20" height="20"></iconify-icon>
             </div>
@@ -93,8 +93,8 @@ url(./assets/images/bg-image/gradient-bg.webp);">
               <strong>50% Cost Savings</strong>
               <span>Reduce infrastructure costs</span>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
 
         <div class="buttons hero-cta-buttons">
           <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-white is-medium">
@@ -111,7 +111,7 @@ url(./assets/images/bg-image/gradient-bg.webp);">
           </a>
         </div>
 
-        <ul class="hero-features-list">
+        <!-- <ul class="hero-features-list">
           <li>
             <iconify-icon icon="heroicons:check-circle" width="18" height="18"></iconify-icon>
             <span>No credit card</span>
@@ -124,29 +124,21 @@ url(./assets/images/bg-image/gradient-bg.webp);">
             <iconify-icon icon="heroicons:check-circle" width="18" height="18"></iconify-icon>
             <span>24/7 support</span>
           </li>
-        </ul>
+        </ul> -->
       </div>
       <div class="column is-6 is-full-touch hero-right-column">
         <div class="hero-showcase-card">
           <!-- Card Header with Tabs -->
           <div class="showcase-header">
-            <div class="header-decoration">
+            <!-- <div class="header-decoration">
               <span class="dot"></span>
               <span class="dot"></span>
               <span class="dot"></span>
-            </div>
+            </div> -->
             <div class="showcase-tabs">
               <button class="tab-btn active" onclick="openShowcaseTab(event, 'dashboard-content')" data-tab="dashboard">
                 <iconify-icon icon="heroicons:squares-2x2" width="18" height="18"></iconify-icon>
                 <span>Dashboard</span>
-              </button>
-              <button class="tab-btn" onclick="openShowcaseTab(event, 'monitoring-content')" data-tab="monitoring">
-                <iconify-icon icon="heroicons:chart-bar" width="18" height="18"></iconify-icon>
-                <span>Monitoring</span>
-              </button>
-              <button class="tab-btn" onclick="openShowcaseTab(event, 'backup-content')" data-tab="backup">
-                <iconify-icon icon="heroicons:shield-check" width="18" height="18"></iconify-icon>
-                <span>Backup</span>
               </button>
               <button class="tab-btn" onclick="openShowcaseTab(event, 'cli-content')" data-tab="cli">
                 <iconify-icon icon="heroicons:command-line" width="18" height="18"></iconify-icon>
@@ -169,38 +161,6 @@ url(./assets/images/bg-image/gradient-bg.webp);">
                   <div class="play-button">
                     <iconify-icon icon="heroicons:play" width="32" height="32"></iconify-icon>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Monitoring Tab -->
-            <div id="monitoring-content" class="showcase-tab-content">
-
-              <div class="media-container">
-                <img src="/assets/images/products/kubedb/ui/monitoring.gif" alt="Monitoring Dashboard"
-                  class="showcase-image">
-                <div class="stats-overlay">
-                  <div class="stat-item">
-                    <span class="stat-value">99.9%</span>
-                    <span class="stat-label">Uptime</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-value">24/7</span>
-                    <span class="stat-label">Monitoring</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Backup Tab -->
-            <div id="backup-content" class="showcase-tab-content">
-
-              <div class="media-container">
-                <img src="/assets/images/products/kubedb/ui/disaster-recovery.gif" alt="Backup & Recovery"
-                  class="showcase-image">
-                <div class="security-badge">
-                  <iconify-icon icon="heroicons:lock-closed" width="16" height="16"></iconify-icon>
-                  <span>Encrypted Backups</span>
                 </div>
               </div>
             </div>
