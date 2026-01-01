@@ -1,0 +1,68 @@
+---
+title: Cassandra Storage Autoscaling Overview
+menu:
+  docs_v2025.12.31-rc.1:
+    identifier: cas-storage-auto-scaling-overview
+    name: Overview
+    parent: cas-storage-auto-scaling
+    weight: 10
+menu_name: docs_v2025.12.31-rc.1
+section_menu_id: guides
+info:
+  autoscaler: v0.45.0-rc.1
+  cli: v0.60.0-rc.1
+  dashboard: v0.36.0-rc.1
+  installer: v2025.12.31-rc.1
+  ops-manager: v0.47.0-rc.1
+  provisioner: v0.60.0-rc.1
+  schema-manager: v0.36.0-rc.1
+  ui-server: v0.36.0-rc.1
+  version: v2025.12.31-rc.1
+  webhook-server: v0.36.0-rc.1
+---
+
+> New to KubeDB? Please start [here](/docs/v2025.12.31-rc.1/README).
+
+# Cassandra Vertical Autoscaling
+
+This guide will give an overview on how KubeDB Autoscaler operator autoscales the database storage using `CassandraAutoscaler` crd.
+
+## Before You Begin
+
+- You should be familiar with the following `KubeDB` concepts:
+  - [Cassandra](/docs/v2025.12.31-rc.1/guides/cassandra/concepts/cassandra)
+  - [CassandraAutoscaler](/docs/v2025.12.31-rc.1/guides/cassandra/concepts/cassandraautoscaler)
+  - [CassandraOpsRequest](/docs/v2025.12.31-rc.1/guides/cassandra/concepts/cassandraopsrequest)
+
+## How Storage Autoscaling Works
+
+<figure align="center">
+  <img alt="Storage AutoScale process of Cassandra" src="/docs/v2025.12.31-rc.1/images/day-2-operation/cassandra/storageAutoScale.svg">
+<figcaption align="center">Fig: Storage Auto Scale process of Cassandra</figcaption>
+</figure>
+
+The following diagram shows how KubeDB Autoscaler operator autoscales the resources of `Cassandra` database components. Open the image in a new tab to see the enlarged version.
+
+
+The Auto Scaling process consists of the following steps:
+
+1. At first, a user creates a `Cassandra` Custom Resource (CR).
+
+2. `KubeDB` Provisioner  operator watches the `Cassandra` CR.
+
+3. When the operator finds a `Cassandra` CR, it creates required number of `StatefulSets` and related necessary stuff like secrets, services, etc.
+
+- Each StatefulSet creates a Persistent Volume according to the Volume Claim Template provided in the statefulset configuration.
+
+4. Then, in order to set up storage autoscaling of the `Cassandra` cluster, the user creates a `CassandraAutoscaler` CRO with desired configuration.
+
+5. `KubeDB` Autoscaler operator watches the `CassandraAutoscaler` CRO.
+
+6. `KubeDB` Autoscaler operator continuously watches persistent volumes of the databases to check if it exceeds the specified usage threshold.
+- If the usage exceeds the specified usage threshold, then `KubeDB` Autoscaler operator creates a `CassandraOpsRequest` to expand the storage of the database. 
+   
+7. `KubeDB` Ops-manager operator watches the `CassandraOpsRequest` CRO.
+
+8. Then the `KubeDB` Ops-manager operator will expand the storage of the database component as specified on the `CassandraOpsRequest` CRO.
+
+In the next docs, we are going to show a step by step guide on Autoscaling storage of various Cassandra database components using `CassandraAutoscaler` CRD.
