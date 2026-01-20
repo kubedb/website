@@ -1,0 +1,51 @@
+{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{ range .Data.Pages }}
+    {{- $isOldDocsVersion := false -}}
+
+    {{- /* Check if this is a docs page */ -}}
+    {{- if hasPrefix .RelPermalink "/docs/" -}}
+      {{- /* Extract version from URL like /docs/v2024.1.31/ */ -}}
+      {{- $urlParts := split .RelPermalink "/" -}}
+      {{- if gt (len $urlParts) 2 -}}
+        {{- $version := index $urlParts 2 -}}
+        {{- /* Exclude if it's not the latest version */ -}}
+        {{- if ne $version $p.latestVersion -}}
+          {{- $isOldDocsVersion = true -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- /* Only include if it's not an old docs version */ -}}
+    {{- if not $isOldDocsVersion -}}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{ if not .Lastmod.IsZero }}
+    <lastmod>{{ safeHTML ( .Lastmod.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>
+    {{ end }}
+    {{ with .Sitemap.ChangeFreq }}
+    <changefreq>{{ . }}</changefreq>
+    {{ end }}
+    {{ if ge .Sitemap.Priority 0.0 }}
+    <priority>{{ .Sitemap.Priority }}</priority>
+    {{ end }}
+    {{ if .IsTranslated }}
+    {{ range .Translations }}
+    <xhtml:link
+                rel="alternate"
+                hreflang="{{ .Language.Lang }}"
+                href="{{ .Permalink }}"
+                />
+    {{ end }}
+    <xhtml:link
+                rel="alternate"
+                hreflang="{{ .Language.Lang }}"
+                href="{{ .Permalink }}"
+                />
+    {{ end }}
+  </url>
+    {{- end -}}
+  {{ end }}
+</urlset>
