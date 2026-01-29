@@ -1,0 +1,191 @@
+<section class="section-padding premium-core-capabilities is-clipped">
+   <div class="container">
+
+      <!-- Section Header -->
+      <div class="columns is-centered">
+         <div class="column is-10-tablet is-8-desktop">
+            <div class="section-title has-text-centered mb-32">
+               <!-- Premium Badge -->
+               <div class="section-badge">
+                  <iconify-icon icon="heroicons:shield-check" width="18" height="18"></iconify-icon>
+                  <span>Enterprise Ready</span>
+               </div>
+
+               <h2>Core Capabilities of KubeDB</h2>
+               <p class="mb-0">
+                  Built on a powerful Kubernetes-native foundation — enabling automation, visibility, and security
+                  across every database lifecycle.
+               </p>
+            </div>
+         </div>
+      </div>
+
+      <!-- Capabilities Grid -->
+      <div class="capabilities-grid">
+
+         <!-- Automation Card -->
+         <div class="capability-card" data-capability="automation">
+            <div class="card-background"></div>
+
+            <!-- Icon Header -->
+            <div class="capability-icon-wrapper">
+               <div class="icon-background"></div>
+               <iconify-icon icon="heroicons:cog-6-tooth" width="40" height="40" class="capability-icon"></iconify-icon>
+            </div>
+
+            <!-- Content -->
+            <div class="capability-content">
+               <h3 class="capability-title">Automation</h3>
+               <p class="capability-description">
+                  KubeDB automates your entire database lifecycle — from deployment, scaling, backup, and failover to
+                  upgrades. With operators for every major engine, it eliminates manual ops and ensures production-grade
+                  consistency.
+               </p>
+
+               <!-- Features List -->
+               <ul class="capability-features">
+                  <li>
+                     <iconify-icon icon="heroicons:check-circle" width="20" height="20"></iconify-icon>
+                     <span>Zero manual scripts</span>
+                  </li>
+                  <li>
+                     <iconify-icon icon="heroicons:check-circle" width="20" height="20"></iconify-icon>
+                     <span>Lifecycle managed by custom controllers</span>
+                  </li>
+                  <li>
+                     <iconify-icon icon="heroicons:check-circle" width="20" height="20"></iconify-icon>
+                     <span>Declarative configuration through CRDs or UI</span>
+                  </li>
+               </ul>
+            </div>
+
+            <!-- Decorative Corner -->
+            <div class="card-corner"></div>
+         </div>
+
+         <!-- Observability Card -->
+         <div class="capability-card" data-capability="observability">
+            <div class="card-background"></div>
+
+            <!-- Icon Header -->
+            <div class="capability-icon-wrapper">
+               <div class="icon-background"></div>
+               <iconify-icon icon="heroicons:chart-bar" width="40" height="40" class="capability-icon"></iconify-icon>
+            </div>
+
+            <!-- Content -->
+            <div class="capability-content">
+               <h3 class="capability-title">Observability</h3>
+               <p class="capability-description">
+                  Gain deep insights into your databases with integrated metrics, logs, and health dashboards. KubeDB
+                  connects seamlessly with Prometheus and Grafana, delivering real-time observability from one
+                  interface.
+               </p>
+
+               <!-- Features List -->
+               <ul class="capability-features">
+                  <li>
+                     <iconify-icon icon="heroicons:check-circle" width="20" height="20"></iconify-icon>
+                     <span>Embedded Grafana dashboards</span>
+                  </li>
+                  <li>
+                     <iconify-icon icon="heroicons:check-circle" width="20" height="20"></iconify-icon>
+                     <span>Pod-level and cluster-level visibility</span>
+                  </li>
+                  <li>
+                     <iconify-icon icon="heroicons:check-circle" width="20" height="20"></iconify-icon>
+                     <span>Instant access to logs and metrics</span>
+                  </li>
+               </ul>
+            </div>
+
+            <!-- Decorative Corner -->
+            <div class="card-corner"></div>
+         </div>
+
+         <!-- Security Card -->
+         <div class="capability-card" data-capability="security">
+            <div class="card-background"></div>
+
+            <!-- Icon Header -->
+            <div class="capability-icon-wrapper">
+               <div class="icon-background"></div>
+               <iconify-icon icon="heroicons:lock-closed" width="40" height="40" class="capability-icon"></iconify-icon>
+            </div>
+
+            <!-- Content -->
+            <div class="capability-content">
+               <h3 class="capability-title">Security</h3>
+               <p class="capability-description">
+                  Enterprise-grade security built into every layer — with RBAC, TLS, password rotation, and secret
+                  management powered by KubeVault. Stay compliant and protect data integrity across all environments.
+               </p>
+
+               <!-- Features List -->
+               <ul class="capability-features">
+                  <li>
+                     <iconify-icon icon="heroicons:check-circle" width="20" height="20"></iconify-icon>
+                     <span>Namespace isolation</span>
+                  </li>
+                  <li>
+                     <iconify-icon icon="heroicons:check-circle" width="20" height="20"></iconify-icon>
+                     <span>Encrypted backups</span>
+                  </li>
+                  <li>
+                     <iconify-icon icon="heroicons:check-circle" width="20" height="20"></iconify-icon>
+                     <span>Managed secrets via KubeVault</span>
+                  </li>
+               </ul>
+            </div>
+
+            <!-- Decorative Corner -->
+            <div class="card-corner"></div>
+         </div>
+
+      </div>
+   </div>
+</section>
+
+<script>
+   (function () {
+      'use strict';
+
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+         threshold: 0.2,
+         rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+         entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+               // Staggered animation
+               setTimeout(() => {
+                  entry.target.classList.add('animate-in');
+               }, index * 150);
+            }
+         });
+      }, observerOptions);
+
+      // Observe all capability cards
+      const cards = document.querySelectorAll('.capability-card');
+      cards.forEach(card => observer.observe(card));
+
+      // Hover effect enhancement
+      cards.forEach(card => {
+         card.addEventListener('mouseenter', function () {
+            this.style.setProperty('--hover-x', '0');
+            this.style.setProperty('--hover-y', '0');
+         });
+
+         card.addEventListener('mousemove', function (e) {
+            const rect = this.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+            this.style.setProperty('--hover-x', `${x}%`);
+            this.style.setProperty('--hover-y', `${y}%`);
+         });
+      });
+   })();
+</script>

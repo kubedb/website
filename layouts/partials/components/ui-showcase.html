@@ -1,0 +1,191 @@
+{{ $ui_mechanics := .Site.Data.products.kubedb.ui_mechanics }}
+
+{{ with $ui_mechanics }}
+
+<section class="section-padding premium-ui-showcase mechanics-area is-clipped" id="mechanics">
+  <div class="container">
+
+    <!-- Premium Section Header -->
+    <div class="columns is-centered">
+        <div class="section-title has-text-centered mb-32">
+          <!-- Premium Badge -->
+          <div class="section-badge">
+            <iconify-icon icon="heroicons:sparkles" width="18" height="18"></iconify-icon>
+            <span>Interactive UI</span>
+          </div>
+          <h2>
+            {{ .section.title }}
+          </h2>
+          <p>{{ .section.description }}</p>
+        </div>
+    </div>
+
+    <div class="columns is-vcentered is-multiline">
+
+      <!-- Premium Feature Cards -->
+      <div class="column is-5-desktop is-12-tablet">
+        <div class="feature-cards-wrapper">
+
+          {{ range $i, $f := .features }}
+          <div class="premium-feature-card mechanism {{ if eq $i 0 }}is-active{{ end }}" data-feature="{{ $f.id }}">
+            <!-- Card Inner -->
+            <div class="card-inner">
+              <!-- Icon with Glow -->
+              <div class="feature-icon-wrapper">
+                <div class="feature-icon">
+                  <img src="{{ $f.icon }}" alt="{{ $f.title }}" loading="lazy">
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="feature-content">
+                <h3 class="feature-title {{ $f.id }}">{{ $f.title }}</h3>
+                <p class="feature-description">{{ $f.description }}</p>
+              </div>
+            </div>
+
+            <!-- Hover Effect Overlay -->
+            <div class="card-hover-effect"></div>
+          </div>
+          {{ end }}
+
+        </div>
+      </div>
+
+      <!-- Premium UI Visual Area -->
+      <div class="column is-7-desktop is-12-tablet">
+        <div class="ui-showcase-frame">
+          <!-- Decorative Elements -->
+          <div class="frame-decoration top-left"></div>
+          <div class="frame-decoration top-right"></div>
+          <div class="frame-decoration bottom-left"></div>
+          <div class="frame-decoration bottom-right"></div>
+
+          <!-- Image Container -->
+          <div class="ui-mechanism">
+            {{ range $i, $f := .features }}
+            <div id="{{ $f.id }}" class="single-ui-ss {{ $f.id }} {{ if ne $i 0 }}is-hidden{{ end }}">
+              <img src="{{ $f.image }}" alt="{{ $f.title }}">
+              <div class="image-overlay"></div>
+            </div>
+            {{ end }}
+          </div>
+
+          <!-- Floating Decorative Shapes -->
+          <div class="floating-shape shape-1"></div>
+          <div class="floating-shape shape-2"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    'use strict';
+
+    // Feature Cards Interaction
+    const featureCards = document.querySelectorAll('.premium-feature-card.mechanism');
+    const uiImages = document.querySelectorAll('.single-ui-ss');
+    let currentActive = 0;
+
+    // Smooth fade transition
+    function showFeatureImage(featureId) {
+      uiImages.forEach(function (img, index) {
+        if (img.id === featureId) {
+          // Fade in
+          img.style.opacity = '0';
+          img.classList.remove('is-hidden');
+
+          requestAnimationFrame(() => {
+            img.style.transition = 'opacity 0.5s ease-in-out';
+            img.style.opacity = '1';
+          });
+        } else {
+          // Fade out
+          img.style.transition = 'opacity 0.3s ease-in-out';
+          img.style.opacity = '0';
+
+          setTimeout(() => {
+            img.classList.add('is-hidden');
+          }, 300);
+        }
+      });
+    }
+
+    // Card hover/click interaction
+    featureCards.forEach(function (card, index) {
+      card.addEventListener('mouseenter', function () {
+        const featureId = card.dataset.feature;
+
+        // Update active states
+        featureCards.forEach(c => c.classList.remove('is-active'));
+        card.classList.add('is-active');
+
+        // Show corresponding image
+        showFeatureImage(featureId);
+        currentActive = index;
+      });
+    });
+
+    // Intersection Observer for entrance animations
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Staggered animation for cards
+          featureCards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('animate-in');
+            }, index * 100);
+          });
+
+          // Animate showcase frame
+          const frame = document.querySelector('.ui-showcase-frame');
+          if (frame) {
+            setTimeout(() => {
+              frame.classList.add('animate-in');
+            }, 300);
+          }
+
+          observer.disconnect();
+        }
+      });
+    }, observerOptions);
+
+    // Observe the section
+    const showcaseSection = document.querySelector('.premium-ui-showcase');
+    if (showcaseSection) {
+      observer.observe(showcaseSection);
+    }
+
+    // Auto-rotate feature showcase (optional)
+    let autoRotateInterval;
+    function startAutoRotate() {
+      autoRotateInterval = setInterval(() => {
+        currentActive = (currentActive + 1) % featureCards.length;
+        featureCards[currentActive].dispatchEvent(new Event('mouseenter'));
+      }, 5000);
+    }
+
+    function stopAutoRotate() {
+      clearInterval(autoRotateInterval);
+    }
+
+    // Start auto-rotate after initial load
+    setTimeout(startAutoRotate, 3000);
+
+    // Stop auto-rotate on user interaction
+    featureCards.forEach(card => {
+      card.addEventListener('mouseenter', stopAutoRotate);
+    });
+
+  })();
+</script>
+
+{{ end }}

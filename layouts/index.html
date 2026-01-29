@@ -1,0 +1,24 @@
+{{ define "main"}}
+{{/* Act 1: Awareness & Interest */}}
+{{ partial "components/heroarea.html" . }}
+{{ partial "components/social-prove.html" .}}
+{{ partial "components/why-kubedb.html" .}}
+
+{{/* Act 2: Consideration */}}
+{{ partial "components/features.html" .}}
+{{ partial "components/ui-showcase.html" . }}
+{{ partial "components/benefits.html" .}}
+{{ partial "components/supported-databases.html" . }}
+
+{{/* Act 3: Evaluation */}}
+{{ partial "components/how-its-work.html" . }}
+{{ partial "components/core-capabilities-of-kubedb.html" .}}
+{{ partial "components/success-story.html" .}}
+{{ if .Site.GetPage "section" "case-studies" }}
+{{ partial "components/casestudies.html" . }}
+{{ end }}
+
+{{/* Act 4: Conversion */}}
+{{ partial "components/roi.html" . }}
+{{ partial "components/build-for-team.html" . }}
+{{ end }}
