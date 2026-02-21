@@ -1,0 +1,20 @@
+apiVersion: kubedb.com/v1
+kind: Kafka
+metadata:
+  name: source-kafka
+  namespace: demo
+spec:
+  authSecret:
+    kind: Secret
+    name: source-kafka-auth
+  replicas: 2
+  version: 3.9.0
+  storage:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+    storageClassName: standard
+  storageType: Durable
+  deletionPolicy: WipeOut
