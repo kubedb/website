@@ -1,0 +1,248 @@
+{{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+<!-- new hero area start   -->
+<!-- style="background-image: url(/assets/images/products/kubedb/hero-product-bg-dark.png);" -->
+<section class="hero-area is-product is-gradient is-dark has-image-bg is-clipped" style="background-image:
+url(./assets/images/bg-image/gradient-bg.webp);">
+  <div class="shape">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
+  <div class="shape">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div class="container">
+    <div class="columns is-vcentered is-multiline">
+      <div class="column is-6 is-full-touch hero-left-content">
+        <!-- news connect-message start  -->
+        <div class="news-message-wrapper">
+          <a href="" class="news-message is-hidden"><span>cool stuff!</a>
+        </div>
+
+        <script type="text/javascript">
+          (function () {
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            xhr.onreadystatechange = function () {
+              if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                  var result = JSON.parse(xhr.responseText);
+                  if (result.content) {
+                    let a = document.querySelector(".news-message");
+                    a.innerHTML = `<span>${result.content}</span>`;
+                    if (result.link) {
+                      a.href = result.link;
+                      a.target = "_blank";
+                    }
+                    a.classList.remove('is-hidden');
+                  }
+                }
+              }
+            } //
+            xhr.open('GET', 'https://x.appscode.com/_/news?p={{$p.name}}');
+            xhr.send();
+          }());
+        </script>
+        <!-- news connect-message end -->
+
+        <!-- Value Proposition Badge -->
+        <!-- <div class="hero-badge">
+          <span class="badge-icon">
+            <iconify-icon icon="heroicons:rocket-launch" width="14" height="14"></iconify-icon>
+          </span>
+          <span class="badge-text ">Trusted by 1000+ Organizations</span>
+        </div> -->
+
+        <h1 class="hero-title">{{ $p.tagline | safeHTML }}</h1>
+
+        <p class="hero-subtitle mb-0">{{ $p.summary | safeHTML }}</p>
+
+        <!-- Key Value Points - List Style -->
+        <ul class="hero-value-list mt-16">
+          <li class="value-item">
+            <div class="value-icon-small">
+              <iconify-icon icon="heroicons:circle-stack" width="20" height="20"></iconify-icon>
+            </div>
+            <div class="value-text">
+              <strong>20+ databases</strong>
+              <span>PostgreSQL, MySQL, MongoDB & more</span>
+            </div>
+          </li>
+          <li class="value-item">
+            <div class="value-icon-small">
+              <iconify-icon icon="heroicons:clock" width="20" height="20"></iconify-icon>
+            </div>
+            <div class="value-text">
+              <strong>Deploy in Minutes</strong>
+              <span>Production-ready in under 10 min</span>
+            </div>
+          </li>
+          <li class="value-item">
+            <div class="value-icon-small">
+              <iconify-icon icon="heroicons:currency-dollar" width="20" height="20"></iconify-icon>
+            </div>
+            <div class="value-text">
+              <strong>50% Cost Savings</strong>
+              <span>Reduce infrastructure costs</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="buttons hero-cta-buttons">
+          <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-white is-medium">
+            <span class="icon">
+              <iconify-icon icon="heroicons:play" width="18" height="18"></iconify-icon>
+            </span>
+            <span>START FREE TRIAL</span>
+          </a>
+          <a href="#mechanics" class="button ac-button is-secondary is-medium">
+            <span class="icon">
+              <iconify-icon icon="heroicons:eye" width="18" height="18"></iconify-icon>
+            </span>
+            <span>WATCH DEMO</span>
+          </a>
+        </div>
+
+        <!-- <ul class="hero-features-list">
+          <li>
+            <iconify-icon icon="heroicons:check-circle" width="18" height="18"></iconify-icon>
+            <span>No credit card</span>
+          </li>
+          <li>
+            <iconify-icon icon="heroicons:check-circle" width="18" height="18"></iconify-icon>
+            <span>14-day trial</span>
+          </li>
+          <li>
+            <iconify-icon icon="heroicons:check-circle" width="18" height="18"></iconify-icon>
+            <span>24/7 support</span>
+          </li>
+        </ul> -->
+      </div>
+      <div class="column is-6 is-full-touch hero-right-column">
+        <div class="hero-showcase-card">
+          <!-- Card Header with Tabs -->
+          <div class="showcase-header">
+            <!-- <div class="header-decoration">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div> -->
+            <div class="showcase-tabs">
+              <button class="tab-btn active" onclick="openShowcaseTab(event, 'dashboard-content')" data-tab="dashboard">
+                <iconify-icon icon="heroicons:squares-2x2" width="18" height="18"></iconify-icon>
+                <span>Dashboard</span>
+              </button>
+              <button class="tab-btn" onclick="openShowcaseTab(event, 'cli-content')" data-tab="cli">
+                <iconify-icon icon="heroicons:command-line" width="18" height="18"></iconify-icon>
+                <span>CLI</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Content Area -->
+          <div class="showcase-content mt-0">
+            <!-- Dashboard Tab -->
+            <div id="dashboard-content" class="showcase-tab-content active">
+              <div class="media-container">
+                <video class="showcase-video" controls preload="auto"
+                  poster="/assets/images/products/kubedb/ui/provisioning.gif">
+                  <source src="/assets/images/products/kubedb/updated-kubedb-ui.mp4" type="video/mp4" />
+                  <p>Your browser doesn't support HTML5 video.</p>
+                </video>
+                <div class="media-overlay">
+                  <div class="play-button">
+                    <iconify-icon icon="heroicons:play" width="32" height="32"></iconify-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CLI Tab -->
+            <div id="cli-content" class="showcase-tab-content">
+
+              <div class="terminal-window">
+                <div class="terminal-header">
+                  <div class="terminal-controls">
+                    <span class="control-dot red"></span>
+                    <span class="control-dot yellow"></span>
+                    <span class="control-dot green"></span>
+                  </div>
+                  <div class="terminal-title">kubectl</div>
+                </div>
+                <div class="terminal-body">
+                  <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command">kubectl get elasticsearch</span>
+                  </div>
+                  <div class="terminal-line output-header">
+                    NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VERSION&nbsp;&nbsp;STATUS&nbsp;&nbsp;AGE</div>
+                  <div class="terminal-line success">
+                    es-demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.14.0&nbsp;&nbsp;Ready&nbsp;&nbsp;&nbsp;2m</div>
+
+                  <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command">kubectl get postgres</span>
+                  </div>
+                  <div class="terminal-line output-header">
+                    NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VERSION&nbsp;&nbsp;STATUS&nbsp;&nbsp;AGE</div>
+                  <div class="terminal-line success">
+                    pg-demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.2&nbsp;&nbsp;&nbsp;&nbsp;Ready&nbsp;&nbsp;&nbsp;5m</div>
+
+                  <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command">kubectl get mysql</span>
+                  </div>
+                  <div class="terminal-line output-header">
+                    NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VERSION&nbsp;&nbsp;STATUS&nbsp;&nbsp;AGE
+                  </div>
+                  <div class="terminal-line success">
+                    mysql-demo&nbsp;&nbsp;&nbsp;8.0.26&nbsp;&nbsp;Ready&nbsp;&nbsp;&nbsp;10m</div>
+
+                  <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command typing">kubedb create -f redis.yaml</span>
+                  </div>
+                  <div class="terminal-line success">redis.kubedb.com/redis-demo created</div>
+                  <div class="terminal-line cursor">
+                    <span class="prompt">$</span>
+                    <span class="blink">_</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openShowcaseTab(evt, tabName) {
+      // Hide all tab contents
+      const tabContents = document.getElementsByClassName("showcase-tab-content");
+      for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove("active");
+      }
+
+      // Remove active class from all tabs
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      for (let i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("active");
+      }
+
+      // Show the selected tab and mark button as active
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+</section>
+<!-- new hero area end   -->

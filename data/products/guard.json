@@ -12,22 +12,22 @@
     "themeColor": ""
   },
   "heroImage": {
-    "src": "/assets/images/products/guard/guard-hero.png",
+    "src": "https://cdn.appscode.com/images/products/guard/guard-hero.png",
     "alt": "Guard"
   },
   "logo": {
-    "src": "/assets/images/products/guard/guard.png",
+    "src": "https://cdn.appscode.com/images/products/guard/guard.png",
     "alt": "Guard"
   },
   "logoWhite": {
-    "src": "/assets/images/products/guard/guard-white.png",
+    "src": "https://cdn.appscode.com/images/products/guard/guard-white.png",
     "alt": "Guard"
   },
   "icon": {
-    "src": "/assets/images/products/guard/guard-512x512.svg",
+    "src": "https://cdn.appscode.com/images/products/guard/guard-512x512.svg",
     "alt": "Guard",
     "sizes": {
-      "192x192": "/assets/images/products/guard/icons/android-icon-192x192.png"
+      "192x192": "https://cdn.appscode.com/images/products/guard/icons/android-icon-192x192.png"
     }
   },
   "repoURL": "https://github.com/kubeguard/docs",
@@ -49,11 +49,11 @@
     {
       "title": "Identity Providers",
       "image": {
-        "src": "/assets/images/products/guard/features/identify-providers.jpg",
+        "src": "https://cdn.appscode.com/images/products/guard/features/identify-providers.jpg",
         "alt": "identify-providers"
       },
       "icon": {
-        "src": "/assets/images/products/guard/features/identity-providers.svg",
+        "src": "https://cdn.appscode.com/images/products/guard/features/identity-providers.svg",
         "alt": "identify-providers"
       },
       "summary": "",
@@ -62,11 +62,11 @@
     {
       "title": "CLI",
       "image": {
-        "src": "/assets/images/products/guard/features/cli.jpg",
+        "src": "https://cdn.appscode.com/images/products/guard/features/cli.jpg",
         "alt": "cli"
       },
       "icon": {
-        "src": "/assets/images/products/guard/features/cli.svg",
+        "src": "https://cdn.appscode.com/images/products/guard/features/cli.svg",
         "alt": "cli"
       },
       "summary": "",
@@ -75,11 +75,11 @@
     {
       "title": "RBAC",
       "image": {
-        "src": "/assets/images/products/guard/features/rbac.jpg",
+        "src": "https://cdn.appscode.com/images/products/guard/features/rbac.jpg",
         "alt": "rbac"
       },
       "icon": {
-        "src": "/assets/images/products/guard/features/rbac.svg",
+        "src": "https://cdn.appscode.com/images/products/guard/features/rbac.svg",
         "alt": "rbac"
       },
       "summary": "",

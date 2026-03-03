@@ -1,9 +1,0 @@
-apiVersion: catalog.appscode.com/v1alpha1
-kind: RedisBinding
-metadata:
-  name: redis-bind
-  namespace: demo
-spec:
-  sourceRef:
-    name: redis-announce
-    namespace: demo

@@ -1,0 +1,44 @@
+{
+  "id": "ui-dashboard",
+  "title": "Unified Database Management Dashboard",
+  "meta": "Manage and monitor your Databases on Kubernetes visually. KubeDB UI Dashboard lets you deploy, configure, and observe databases with just a few clicks — no CLI required.",
+  "innerContent": [
+    {
+      "id": 1,
+      "url": "visual-database-deployment",
+      "title": "Visual Database Deployment",
+      "description": "Create, configure, and deploy databases directly from an intuitive interface. Select your database engine, version, and resources — and KubeDB UI automatically generates the manifests and provisions your database in seconds.",
+      "img": "/assets/images/products/kubedb/features/visual-database-deployment.png"
+    },
+    {
+      "id": 2,
+      "title": "Real-time Status & Monitoring",
+      "description": "Stay informed with live status updates, health checks, and metrics. The dashboard provides a unified view of all database instances, showing pod health, storage usage, and resource consumption in real time.",
+      "img": "/assets/images/products/kubedb/features/real-time-status-monitoring.png"
+    },
+    {
+      "id": 3,
+      "title": "Easy Backup & Restore Management",
+      "description": "Schedule automated backups or perform instant restores through a visual workflow. KubeDB UI integrates with Stash to give you one-click access to backup policies, retention rules, and restore operations.",
+      "img": "/assets/images/products/kubedb/features/backup-restore-management.png"
+    },
+    {
+      "id": 4,
+      "title": "Database Scaling & Upgrades",
+      "description": "Effortlessly scale CPU, memory, and storage or upgrade database versions with minimal downtime. The UI provides a safe and guided process for adjusting resources or performing rolling upgrades.",
+      "img": "/assets/images/products/kubedb/features/database-scaling-upgrades.png"
+    },
+    {
+      "id": 5,
+      "title": "Comprehensive Access Control",
+      "description": "Assign user roles and manage permissions directly from the dashboard. KubeDB UI integrates with Kubernetes RBAC, allowing fine-grained control over who can view, modify, or delete specific databases.",
+      "img": "/assets/images/products/kubedb/features/access-control-dashboard.png"
+    },
+    {
+      "id": 6,
+      "title": "Insights & Event Logs",
+      "description": "Troubleshoot faster with detailed event logs, operation history, and audit trails — all accessible within the UI. Track configuration changes, deployment history, and user actions in one place.",
+      "img": "/assets/images/products/kubedb/features/insights-event-logs.png"
+    }
+  ]
+}

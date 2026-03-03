@@ -1,0 +1,42 @@
+<section class="supported-databases is-clipped">
+    <div class="container py-6">
+        <div class="section-title has-text-centered mb-32">
+            <h2 class="mb-0">Support for 20+ databases</h2>
+            <p>Run any database on Kubernetes with the same consistent management experience</p>
+        </div>
+        <div class="columns is-centered is-multiline">
+            {{ range .Site.Menus.main }}
+            {{ if eq .Identifier "database" }}
+            {{ range .Children.ByWeight }}
+            <div class="column is-6-tablet is-4-desktop is-3-widescreen">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="is-flex is-justify-content-space-between is-align-items-start mb-3">
+                            <figure class="image is-32x32 mb-12">
+                                <img src="{{ .Pre }}" alt="{{ .Name }}">
+                            </figure>
+                            {{ if .Params.status }}
+                            {{ if eq .Params.status "stable" }}
+                            <span class="tag has-text-primary is-light">Stable</span>
+                            {{ else if eq .Params.status "beta" }}
+                            <span class="tag is-warning is-light">Beta</span>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                        <h3 class="title is-5 mb-1">{{ .Name }}</h3>
+                        {{ if .Post }}
+                        <p class="is-size-7 has-text-grey">{{ .Post }}</p>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+        </div>
+        <div class="has-text-centered mt-6">
+            <p class="has-text-grey">Don't see your database? <a href="#"
+                    class="has-text-primary has-text-weight-medium">Request support</a></p>
+        </div>
+    </div>
+</section>

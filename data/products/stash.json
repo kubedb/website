@@ -14,31 +14,31 @@
   "keywords": "kubernetes appscode backup disaster recovery volume",
   "heroSlider": [
     {
-      "src": "/assets/images/products/stash/slider/applications.jpg",
+      "src": "https://cdn.appscode.com/images/products/stash/slider/applications.jpg",
       "alt": "Supported Applications"
     },
     {
-      "src": "/assets/images/products/stash/slider/platforms.jpg",
+      "src": "https://cdn.appscode.com/images/products/stash/slider/platforms.jpg",
       "alt": "Supported Platforms"
     },
     {
-      "src": "/assets/images/products/stash/slider/storage.jpg",
+      "src": "https://cdn.appscode.com/images/products/stash/slider/storage.jpg",
       "alt": "Supported Storage"
     }
   ],
   "logo": {
-    "src": "/assets/images/products/stash/stash.png",
+    "src": "https://cdn.appscode.com/images/products/stash/stash.png",
     "alt": "Stash"
   },
   "logoWhite": {
-    "src": "/assets/images/products/stash/stash-white.png",
+    "src": "https://cdn.appscode.com/images/products/stash/stash-white.png",
     "alt": "Stash"
   },
   "icon": {
-    "src": "/assets/images/products/stash/stash-icon.svg",
+    "src": "https://cdn.appscode.com/images/products/stash/stash-icon.svg",
     "alt": "Stash",
     "sizes": {
-      "192x192": "/assets/images/products/stash/icons/android-icon-192x192.png"
+      "192x192": "https://cdn.appscode.com/images/products/stash/icons/android-icon-192x192.png"
     }
   },
   "repoURL": "https://github.com/stashed/docs",
@@ -60,11 +60,11 @@
     {
       "title": "Declarative API",
       "image": {
-        "src": "/assets/images/addons/illustrations/declarative-api.png",
+        "src": "https://cdn.appscode.com/images/addons/illustrations/declarative-api.png",
         "alt": "http"
       },
       "icon": {
-        "src": "/assets/images/products/stash/features/declarative-api.svg",
+        "src": "https://cdn.appscode.com/images/products/stash/features/declarative-api.svg",
         "alt": "http"
       },
       "summary": "",
@@ -73,11 +73,11 @@
     {
       "title": "Backup Kubernetes Volumes",
       "image": {
-        "src": "/assets/images/addons/illustrations/backup-kubernetes-volumes.png",
+        "src": "https://cdn.appscode.com/images/addons/illustrations/backup-kubernetes-volumes.png",
         "alt": "http"
       },
       "icon": {
-        "src": "/assets/images/products/stash/features/vol.svg",
+        "src": "https://cdn.appscode.com/images/products/stash/features/vol.svg",
         "alt": "http"
       },
       "summary": "",
@@ -86,11 +86,11 @@
     {
       "title": "Backup Database",
       "image": {
-        "src": "/assets/images/addons/illustrations/backup-restore-databases.png",
+        "src": "https://cdn.appscode.com/images/addons/illustrations/backup-restore-databases.png",
         "alt": "http"
       },
       "icon": {
-        "src": "/assets/images/products/stash/features/backup-icon.png",
+        "src": "https://cdn.appscode.com/images/products/stash/features/backup-icon.png",
         "alt": "http"
       },
       "summary": "",
@@ -99,11 +99,11 @@
     {
       "title": "Multiple Storage Support",
       "image": {
-        "src": "/assets/images/addons/illustrations/multiple-storage-support.png",
+        "src": "https://cdn.appscode.com/images/addons/illustrations/multiple-storage-support.png",
         "alt": "http"
       },
       "icon": {
-        "src": "/assets/images/products/stash/features/storage-icon.png",
+        "src": "https://cdn.appscode.com/images/products/stash/features/storage-icon.png",
         "alt": "http"
       },
       "summary": "",
@@ -112,11 +112,11 @@
     {
       "title": "Deduplication",
       "image": {
-        "src": "/assets/images/addons/illustrations/deduplication.png",
+        "src": "https://cdn.appscode.com/images/addons/illustrations/deduplication.png",
         "alt": "http"
       },
       "icon": {
-        "src": "/assets/images/products/stash/features/compare-icon.png",
+        "src": "https://cdn.appscode.com/images/products/stash/features/compare-icon.png",
         "alt": "http"
       },
       "summary": "",
@@ -125,11 +125,11 @@
     {
       "title": "Data Encryption",
       "image": {
-        "src": "/assets/images/addons/illustrations/data-encryption.png",
+        "src": "https://cdn.appscode.com/images/addons/illustrations/data-encryption.png",
         "alt": "http"
       },
       "icon": {
-        "src": "/assets/images/products/stash/features/encryption-icon.png",
+        "src": "https://cdn.appscode.com/images/products/stash/features/encryption-icon.png",
         "alt": "http"
       },
       "summary": "",
@@ -138,11 +138,11 @@
     {
       "title": "Volume Snapshot",
       "image": {
-        "src": "/assets/images/addons/illustrations/volume-snapshot.png",
+        "src": "https://cdn.appscode.com/images/addons/illustrations/volume-snapshot.png",
         "alt": "http"
       },
       "icon": {
-        "src": "/assets/images/products/stash/features/volume-snapshot.png",
+        "src": "https://cdn.appscode.com/images/products/stash/features/volume-snapshot.png",
         "alt": "http"
       },
       "summary": "",
@@ -151,11 +151,11 @@
     {
       "title": "Policy Based Backup",
       "image": {
-        "src": "/assets/images/addons/illustrations/policy-based-backup.png",
+        "src": "https://cdn.appscode.com/images/addons/illustrations/policy-based-backup.png",
         "alt": "http"
       },
       "icon": {
-        "src": "/assets/images/products/stash/features/policy-based-icon.png",
+        "src": "https://cdn.appscode.com/images/products/stash/features/policy-based-icon.png",
         "alt": "http"
       },
       "summary": "",
@@ -164,11 +164,11 @@
     {
       "title": "Monitoring",
       "image": {
-        "src": "/assets/images/addons/illustrations/monitoring.png",
+        "src": "https://cdn.appscode.com/images/addons/illustrations/monitoring.png",
         "alt": "http"
       },
       "icon": {
-        "src": "/assets/images/products/stash/features/prometheus.svg",
+        "src": "https://cdn.appscode.com/images/products/stash/features/prometheus.svg",
         "alt": "http"
       },
       "summary": "",

@@ -1,0 +1,484 @@
+<section class="roi-section section-padding is-clipped">
+    <div class="container">
+        <div class="section-title has-text-centered mb-32">
+            <!-- Badge -->
+            <div class="section-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" x2="12" y1="2" y2="22"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                <span>ROI Calculator</span>
+            </div>
+
+            <!-- Title -->
+                <h2>Calculate your <span class="text-gradient">cost savings</span></h2>
+                <p>See how much you can save by switching from managed database services to KubeDB</p>
+        </div>
+
+        <div class="columns is-variable is-8">
+            <!-- Left Column - Controls -->
+            <div class="column is-half">
+                <!-- Slider 1: Number of Instances -->
+                <div class="slider-control">
+                    <label class="slider-label">
+                        <span>Number of database instances</span>
+                        <span class="slider-value" id="instances-value">15</span>
+                    </label>
+                    <div class="slider-wrapper" id="instances-slider" data-min="1" data-max="100" data-value="15">
+                        <div class="slider-track" style="width: 14.14%"></div>
+                        <div class="slider-thumb" style="left: 14.14%"></div>
+                    </div>
+                    <div class="slider-markers">
+                        <span>1</span>
+                        <span>50</span>
+                        <span>100</span>
+                    </div>
+                </div>
+
+                <!-- Slider 2: Engineer Salary -->
+                <div class="slider-control">
+                    <label class="slider-label">
+                        <span>Average engineer salary (annual)</span>
+                        <span class="slider-value" id="salary-value">$150,000</span>
+                    </label>
+                    <div class="slider-wrapper" id="salary-slider" data-min="80000" data-max="250000"
+                        data-value="150000">
+                        <div class="slider-track" style="width: 41.18%"></div>
+                        <div class="slider-thumb" style="left: 41.18%"></div>
+                    </div>
+                    <div class="slider-markers">
+                        <span>$80k</span>
+                        <span>$150k</span>
+                        <span>$250k</span>
+                    </div>
+                </div>
+
+                <!-- Slider 3: Downtime Hours -->
+                <div class="slider-control">
+                    <label class="slider-label">
+                        <span>Downtime hours per year (per instance)</span>
+                        <span class="slider-value" id="downtime-value">10h</span>
+                    </label>
+                    <div class="slider-wrapper" id="downtime-slider" data-min="0" data-max="50" data-value="10">
+                        <div class="slider-track" style="width: 20%"></div>
+                        <div class="slider-thumb" style="left: 20%"></div>
+                    </div>
+                    <div class="slider-markers">
+                        <span>0h</span>
+                        <span>25h</span>
+                        <span>50h</span>
+                    </div>
+                </div>
+
+                <!-- Savings Card -->
+                <div class="savings-card">
+                    <div class="savings-header">
+                        <div>
+                            <div class="savings-amount" id="total-savings">$227,985</div>
+                            <div class="savings-label">Total Annual Savings</div>
+                        </div>
+                        <div class="savings-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
+                                <polyline points="16 17 22 17 22 11"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="savings-details">
+                        <div class="detail-row">
+                            <span class="detail-label">You save</span>
+                            <span class="detail-value" id="savings-percent">78%</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Payback period</span>
+                            <span class="detail-value secondary" id="payback-period">3 months</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">3-year savings</span>
+                            <span class="detail-value secondary" id="three-year-savings">$683,956</span>
+                        </div>
+                    </div>
+                    <div class="savings-note">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <span>Based on real customer data from 500+ deployments</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Tabs and Stats -->
+            <div class="column is-half">
+                <div class="roi-tabs">
+                    <!-- Tabs Navigation -->
+                    <div class="tabs is-fullwidth">
+                        <ul>
+                            <li data-tab="managed">
+                                <a>Managed Services</a>
+                            </li>
+                            <li class="is-active" data-tab="kubedb">
+                                <a>KubeDB</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tab Content: Managed Services -->
+                    <div class="tab-content" id="tab-managed">
+                        <div class="cost-card">
+                            <div class="cost-header">
+                                <div class="cost-title">Managed Database Service</div>
+                                <div class="cost-badge">CURRENT COST</div>
+                            </div>
+                            <div class="cost-breakdown">
+                                <div class="cost-item">
+                                    <div class="cost-item-label">
+                                        <div class="cost-item-title">Service cost</div>
+                                        <div class="cost-item-detail" id="managed-service-detail">$800/mo × 15 × 12
+                                            months</div>
+                                    </div>
+                                    <span class="cost-item-value" id="managed-service-cost">$144,000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <div class="cost-item-label">
+                                        <div class="cost-item-title">Engineer time</div>
+                                        <div class="cost-item-detail" id="managed-engineer-detail">150 hours × $72/hr
+                                        </div>
+                                    </div>
+                                    <span class="cost-item-value" id="managed-engineer-cost">$10,817</span>
+                                </div>
+                                <div class="cost-item">
+                                    <div class="cost-item-label">
+                                        <div class="cost-item-title">Downtime cost</div>
+                                        <div class="cost-item-detail" id="managed-downtime-detail">10.0 hrs</div>
+                                    </div>
+                                    <span class="cost-item-value" id="managed-downtime-cost">$21,635</span>
+                                </div>
+                            </div>
+                            <div class="cost-total">
+                                <span class="cost-total-label">Total Annual Cost</span>
+                                <div class="cost-total-amount">
+                                    <div class="amount" id="managed-total">$176,451</div>
+                                    <div class="monthly" id="managed-monthly">$14,704/month</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: KubeDB (Active) -->
+                    <div class="tab-content is-active" id="tab-kubedb">
+                        <div class="cost-card">
+                            <div class="cost-header">
+                                <div class="cost-title">KubeDB Enterprise</div>
+                                <div class="cost-badge">RECOMMENDED</div>
+                            </div>
+                            <div class="cost-breakdown">
+                                <div class="cost-item">
+                                    <div class="cost-item-label">
+                                        <div class="cost-item-title">License cost</div>
+                                        <div class="cost-item-detail" id="kubedb-license-detail">$300/mo × 15 × 12
+                                            months</div>
+                                    </div>
+                                    <span class="cost-item-value" id="kubedb-license-cost">$54,000</span>
+                                </div>
+                                <div class="cost-item">
+                                    <div class="cost-item-label">
+                                        <div class="cost-item-title">Engineer time</div>
+                                        <div class="cost-item-detail" id="kubedb-engineer-detail">75 hours × $72/hr
+                                        </div>
+                                    </div>
+                                    <span class="cost-item-value" id="kubedb-engineer-cost">$5,409</span>
+                                </div>
+                                <div class="cost-item">
+                                    <div class="cost-item-label">
+                                        <div class="cost-item-title">Downtime cost</div>
+                                        <div class="cost-item-detail" id="kubedb-downtime-detail">2.0 hrs (80%
+                                            reduction)</div>
+                                    </div>
+                                    <span class="cost-item-value" id="kubedb-downtime-cost">$4,327</span>
+                                </div>
+                            </div>
+                            <div class="cost-total">
+                                <span class="cost-total-label">Total Annual Cost</span>
+                                <div class="cost-total-amount">
+                                    <div class="amount" id="kubedb-total">$63,735</div>
+                                    <div class="monthly" id="kubedb-monthly">$5,311/month</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid mt-5">
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="stat-value" id="weeks-saved">13</div>
+                        <div class="stat-label">Weeks Saved</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                                <polyline points="16 7 22 7 22 13"></polyline>
+                            </svg>
+                        </div>
+                        <div class="stat-value" id="cost-reduction">78%</div>
+                        <div class="stat-label">Cost Reduction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon cyan">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-value" id="downtime-reduction">80%</div>
+                        <div class="stat-label">Less Downtime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // ROI Calculator JavaScript
+    (function () {
+        'use strict';
+
+        // Configuration
+        const CONFIG = {
+            managedServiceCostPerMonth: 800,
+            kubedbLicenseCostPerMonth: 300,
+            managedEngineerHours: 150,
+            kubedbEngineerHours: 75,
+            downtimeReduction: 0.8, // 80% reduction with KubeDB
+            hoursPerYear: 2080 // Standard work hours
+        };
+
+        // State
+        let state = {
+            instances: 15,
+            salary: 150000,
+            downtime: 10
+        };
+
+        // Initialize sliders
+        function initSliders() {
+            const sliders = [
+                {
+                    id: 'instances-slider',
+                    valueId: 'instances-value',
+                    stateKey: 'instances',
+                    formatter: (val) => val.toString()
+                },
+                {
+                    id: 'salary-slider',
+                    valueId: 'salary-value',
+                    stateKey: 'salary',
+                    formatter: (val) => '$' + val.toLocaleString()
+                },
+                {
+                    id: 'downtime-slider',
+                    valueId: 'downtime-value',
+                    stateKey: 'downtime',
+                    formatter: (val) => val + 'h'
+                }
+            ];
+
+            sliders.forEach(slider => {
+                const wrapper = document.getElementById(slider.id);
+                if (!wrapper) return;
+
+                const track = wrapper.querySelector('.slider-track');
+                const thumb = wrapper.querySelector('.slider-thumb');
+                const valueDisplay = document.getElementById(slider.valueId);
+
+                const min = parseFloat(wrapper.dataset.min);
+                const max = parseFloat(wrapper.dataset.max);
+                let value = parseFloat(wrapper.dataset.value);
+
+                let isDragging = false;
+
+                function updateSlider(newValue) {
+                    value = Math.max(min, Math.min(max, newValue));
+                    const percent = ((value - min) / (max - min)) * 100;
+
+                    track.style.width = percent + '%';
+                    thumb.style.left = percent + '%';
+                    valueDisplay.textContent = slider.formatter(value);
+
+                    state[slider.stateKey] = value;
+                    calculateROI();
+                }
+
+                function handleMove(clientX) {
+                    if (!isDragging) return;
+
+                    const rect = wrapper.getBoundingClientRect();
+                    const percent = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+                    const newValue = min + (percent / 100) * (max - min);
+
+                    updateSlider(Math.round(newValue));
+                }
+
+                // Mouse events
+                wrapper.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    handleMove(e.clientX);
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    handleMove(e.clientX);
+                });
+
+                document.addEventListener('mouseup', () => {
+                    isDragging = false;
+                });
+
+                // Touch events
+                wrapper.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                    handleMove(e.touches[0].clientX);
+                });
+
+                document.addEventListener('touchmove', (e) => {
+                    if (isDragging) {
+                        e.preventDefault();
+                        handleMove(e.touches[0].clientX);
+                    }
+                });
+
+                document.addEventListener('touchend', () => {
+                    isDragging = false;
+                });
+
+                // Initialize
+                updateSlider(value);
+            });
+        }
+
+        // Calculate ROI
+        function calculateROI() {
+            const { instances, salary, downtime } = state;
+            const hourlyRate = salary / CONFIG.hoursPerYear;
+
+            // Managed Service Costs
+            const managedServiceCost = CONFIG.managedServiceCostPerMonth * instances * 12;
+            const managedEngineerCost = CONFIG.managedEngineerHours * hourlyRate;
+            const managedDowntimeCost = downtime * instances * hourlyRate;
+            const managedTotal = managedServiceCost + managedEngineerCost + managedDowntimeCost;
+
+            // KubeDB Costs
+            const kubedbLicenseCost = CONFIG.kubedbLicenseCostPerMonth * instances * 12;
+            const kubedbEngineerCost = CONFIG.kubedbEngineerHours * hourlyRate;
+            const kubedbDowntime = downtime * (1 - CONFIG.downtimeReduction);
+            const kubedbDowntimeCost = kubedbDowntime * instances * hourlyRate;
+            const kubedbTotal = kubedbLicenseCost + kubedbEngineerCost + kubedbDowntimeCost;
+
+            // Savings
+            const totalSavings = managedTotal - kubedbTotal;
+            const savingsPercent = Math.round((totalSavings / managedTotal) * 100);
+            const threeYearSavings = totalSavings * 3;
+            const paybackMonths = Math.ceil((kubedbLicenseCost / 12) / (totalSavings / 12));
+            const weeksSaved = Math.round((CONFIG.managedEngineerHours - CONFIG.kubedbEngineerHours) / 40);
+
+            // Update Managed Service UI
+            updateElement('managed-service-detail', `$${CONFIG.managedServiceCostPerMonth}/mo × ${instances} × 12 months`);
+            updateElement('managed-service-cost', formatCurrency(managedServiceCost));
+            updateElement('managed-engineer-detail', `${CONFIG.managedEngineerHours} hours × $${Math.round(hourlyRate)}/hr`);
+            updateElement('managed-engineer-cost', formatCurrency(managedEngineerCost));
+            updateElement('managed-downtime-detail', `${downtime.toFixed(1)} hrs`);
+            updateElement('managed-downtime-cost', formatCurrency(managedDowntimeCost));
+            updateElement('managed-total', formatCurrency(managedTotal));
+            updateElement('managed-monthly', formatCurrency(managedTotal / 12) + '/month');
+
+            // Update KubeDB UI
+            updateElement('kubedb-license-detail', `$${CONFIG.kubedbLicenseCostPerMonth}/mo × ${instances} × 12 months`);
+            updateElement('kubedb-license-cost', formatCurrency(kubedbLicenseCost));
+            updateElement('kubedb-engineer-detail', `${CONFIG.kubedbEngineerHours} hours × $${Math.round(hourlyRate)}/hr`);
+            updateElement('kubedb-engineer-cost', formatCurrency(kubedbEngineerCost));
+            updateElement('kubedb-downtime-detail', `${kubedbDowntime.toFixed(1)} hrs (${CONFIG.downtimeReduction * 100}% reduction)`);
+            updateElement('kubedb-downtime-cost', formatCurrency(kubedbDowntimeCost));
+            updateElement('kubedb-total', formatCurrency(kubedbTotal));
+            updateElement('kubedb-monthly', formatCurrency(kubedbTotal / 12) + '/month');
+
+            // Update Savings UI
+            updateElement('total-savings', formatCurrency(totalSavings));
+            updateElement('savings-percent', savingsPercent + '%');
+            updateElement('payback-period', paybackMonths + ' months');
+            updateElement('three-year-savings', formatCurrency(threeYearSavings));
+
+            // Update Stats
+            updateElement('weeks-saved', weeksSaved);
+            updateElement('cost-reduction', savingsPercent + '%');
+            updateElement('downtime-reduction', (CONFIG.downtimeReduction * 100) + '%');
+        }
+
+        // Helper functions
+        function updateElement(id, value) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.textContent = value;
+            }
+        }
+
+        function formatCurrency(value) {
+            return '$' + Math.round(value).toLocaleString();
+        }
+
+        // Tab switching
+        function initTabs() {
+            const tabButtons = document.querySelectorAll('.roi-tabs .tabs li');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabName = button.dataset.tab;
+
+                    // Update active states
+                    tabButtons.forEach(btn => btn.classList.remove('is-active'));
+                    button.classList.add('is-active');
+
+                    // Show/hide content
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('is-active');
+                    });
+
+                    const activeContent = document.getElementById('tab-' + tabName);
+                    if (activeContent) {
+                        activeContent.classList.add('is-active');
+                    }
+                });
+            });
+        }
+
+        // Initialize on DOM ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                initSliders();
+                initTabs();
+                calculateROI();
+            });
+        } else {
+            initSliders();
+            initTabs();
+            calculateROI();
+        }
+    })();
+</script>
