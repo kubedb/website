@@ -60,7 +60,7 @@ Here, we have `standard` StorageClass in our cluster from [Local Path Provisione
 
 ## Create an OpenSearch Cluster
 
-We are going to create a OpenSearch Cluster in topology mode. Our cluster will be consist of 2 master nodes, 3 data nodes, 2 ingest nodes. Here, we are using Elasticsearch version ( `opensearch-2.8.0` ) of OpenSearch distribution for this demo. To learn more about the Elasticsearch CR, visit [here](/docs/v2026.2.26/guides/elasticsearch/concepts/elasticsearch/).
+We are going to create a OpenSearch Cluster in topology mode. Our cluster will be consist of 2 master nodes, 3 data nodes, 2 ingest nodes. Here, we are using Elasticsearch version ( `opensearch-2.19.2` ) of OpenSearch distribution for this demo. To learn more about the Elasticsearch CR, visit [here](/docs/v2026.2.26/guides/elasticsearch/concepts/elasticsearch/).
 
 ```yaml
 apiVersion: kubedb.com/v1
@@ -70,7 +70,7 @@ metadata:
   namespace: demo
 spec:
   enableSSL: true 
-  version: opensearch-2.8.0
+  version: opensearch-2.19.2
   storageType: Durable
   topology:
     master:
@@ -104,7 +104,7 @@ spec:
 
 Here,
 
-- `spec.version` - is the name of the ElasticsearchVersion CR. Here, we are using Elasticsearch version `opensearch-2.8.0` of OpenSearch distribution.
+- `spec.version` - is the name of the ElasticsearchVersion CR. Here, we are using Elasticsearch version `opensearch-2.19.2` of OpenSearch distribution.
 - `spec.enableSSL` - specifies whether the HTTP layer is secured with certificates or not.
 - `spec.storageType` - specifies the type of storage that will be used for OpenSearch database. It can be `Durable` or `Ephemeral`. The default value of this field is `Durable`. If `Ephemeral` is used then KubeDB will create the OpenSearch database using `EmptyDir` volume. In this case, you don't have to specify `spec.storage` field. This is useful for testing purposes.
 - `spec.topology` - specifies the node-specific properties for the OpenSearch cluster.
@@ -129,7 +129,7 @@ KubeDB will create the necessary resources to deploy the OpenSearch cluster acco
 ```bash
 $ watch kubectl get elasticsearch -n demo
 NAME         VERSION            STATUS   AGE
-os-cluster   opensearch-2.8.0   Ready    3m25s
+os-cluster   opensearch-2.19.2   Ready    3m25s
 ```
 Here, OpenSearch is in `Ready` state. It means the database is ready to accept connections.
 
@@ -271,7 +271,7 @@ Spec:
             Storage:         1Gi
         Storage Class Name:  standard
       Suffix:                master
-  Version:                   opensearch-2.8.0
+  Version:                   opensearch-2.19.2
 Status:
   Conditions:
     Last Transition Time:  2022-06-08T06:01:54Z

@@ -145,7 +145,7 @@ spec:
     timeoutSeconds: 10
     failureThreshold: 2
     disableWriteCheck: false
-  version: xpack-8.11.1
+  version: xpack-8.19.9
 ```
 ### spec.autoOps
 AutoOps is an optional field to control the generation of versionUpdate & TLS-related recommendations.
@@ -155,11 +155,11 @@ AutoOps is an optional field to control the generation of versionUpdate & TLS-re
 
 - Name format: `{Security Plugin Name}-{Application Version}-{Modification Tag}`
 
-- Samples: `xpack-8.2.3`, `xpack-8.11.1`, `opensearch-1.3.0`, etc.
+- Samples: `xpack-8.2.3`, `xpack-8.19.9`, `opensearch-1.3.0`, etc.
 
 ```yaml
 spec:
-  version: xpack-8.11.1
+  version: xpack-8.19.9
 ```
 
 ### spec.kernelSettings

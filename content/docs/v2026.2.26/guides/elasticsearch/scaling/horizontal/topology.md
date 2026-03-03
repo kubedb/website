@@ -54,7 +54,7 @@ Here, we are going to deploy a  `Elasticsearch` Topology cluster using a support
 
 ### Prepare Elasticsearch Topology cluster
 
-Now, we are going to deploy a `Elasticsearch` Topology cluster with version `xpack-8.11.1`.
+Now, we are going to deploy a `Elasticsearch` Topology cluster with version `xpack-8.19.9`.
 
 ### Deploy Elasticsearch Topology cluster
 
@@ -68,7 +68,7 @@ metadata:
   namespace: demo
 spec:
   enableSSL: true
-  version: xpack-8.11.1
+  version: xpack-8.19.9
   storageType: Durable
   topology:
     master:
@@ -112,7 +112,7 @@ Now, wait until `es-hscale-topology` has status `Ready`. i.e,
 ```bash
 $ kubectl get es -n demo
 NAME                    VERSION       STATUS   AGE
-es-hscale-topology     xpack-8.11.1   Ready    3m53s
+es-hscale-topology     xpack-8.19.9   Ready    3m53s
 ```
 
 Let's check the number of replicas has from Elasticsearch object, number of pods the petset have,
