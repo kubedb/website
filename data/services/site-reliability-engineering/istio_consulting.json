@@ -15,14 +15,38 @@
   "title_with_small_cards": {
     "title": "Why Choose Istio Consulting Services?",
     "areas": [
-      { "icon": "fa fa-shield", "title": "Zero-Trust Security" },
-      { "icon": "fa fa-clock-o", "title": "Faster Failure Recovery" },
-      { "icon": "fa fa-cloud", "title": "Cloud & Platform Agnostic" },
-      { "icon": "fa fa-eye", "title": "Full Traffic Visibility" },
-      { "icon": "fa fa-cogs", "title": "Smart Load Balancing" },
-      { "icon": "fa fa-lock", "title": "Policy-Driven Security" },
-      { "icon": "fa fa-sliders", "title": "Flexible Configuration" },
-      { "icon": "fa fa-users", "title": "Secure Service Identity" }
+      {
+        "icon": "fa fa-shield",
+        "title": "Zero-Trust Security"
+      },
+      {
+        "icon": "fa fa-clock-o",
+        "title": "Faster Failure Recovery"
+      },
+      {
+        "icon": "fa fa-cloud",
+        "title": "Cloud & Platform Agnostic"
+      },
+      {
+        "icon": "fa fa-eye",
+        "title": "Full Traffic Visibility"
+      },
+      {
+        "icon": "fa fa-cogs",
+        "title": "Smart Load Balancing"
+      },
+      {
+        "icon": "fa fa-lock",
+        "title": "Policy-Driven Security"
+      },
+      {
+        "icon": "fa fa-sliders",
+        "title": "Flexible Configuration"
+      },
+      {
+        "icon": "fa fa-users",
+        "title": "Secure Service Identity"
+      }
     ]
   },
   "service_details": {
@@ -84,7 +108,7 @@
     "title": "Why Choose AppsCode as Your Istio Partner?",
     "items": [
       {
-        "logo": "https://img.icons8.com/00a651/ios-glyphs/30/certificate.png",
+        "logo": "/assets/images/services/icons8/ios-glyphs-30-certificate.png",
         "title": "Certified Experts",
         "description": "50+ engineers specializing in <a href=\"https://kubernetes.io/\">Kubernetes</a>, containers, and cloud-native platforms—helping you build, scale, and automate with confidence"
       },
@@ -96,7 +120,7 @@
       {
         "icon": "fa fa-trophy",
         "title": "Early Adopter",
-        "description": "US-based pioneer in<a href=\"https://kubedb.com/\">Kubernetes service</a>, establishing early leadership across APAC."
+        "description": "US-based pioneer in Kubernetes products and services with years of field expertise."
       },
       {
         "icon": "fa fa-graduation-cap",
@@ -104,9 +128,9 @@
         "description": "We focus on practical learning to empower your internal teams."
       },
       {
-        "logo": "https://img.icons8.com/00a651/ios-glyphs/30/certificate.png",
-        "title": "CNCF Certified Provider",
-        "description": "<a href=\"https://appscode.com/\">AppsCode </a> is a CNCF Silver Member & Kubernetes Certified Service Provider (KCSP)."
+        "logo": "/assets/images/services/icons8/ios-glyphs-30-certificate.png",
+        "title": "CNCF Silver Member",
+        "description": "A <a href=\"https://www.cncf.io/\">CNCF</a> Silver Member and a regular sponsor of KubeCon + CloudNativeCon."
       },
       {
         "icon": "fa fa-wrench",
@@ -152,38 +176,69 @@
       }
     ]
   },
-  "open_source": {
-    "title": "Built on Open Source Values",
-    "description": "We’re proud contributors to <a href=\"https://www.cncf.io/\">CNCF</a> and Istio ecosystem. Open source fuels our innovation and yours.",
-    "cta_text": "See Our OSS Contributions",
-    "image": {
-      "src": "/assets/images/services/open-source.png",
-      "alt": "We Love Open Source"
-    }
-  },
   "tech_stack": {
     "title": "Our Istio Tech Stack Expertise",
     "subtitle": "Certified consultants experienced with leading service mesh and observability tools.",
     "technologies": [
       {
-        "name": "Crossplane",
-        "logo": "/assets/images/technical-expertise/crossplane.svg"
-      },
-      {
         "name": "Kubernetes",
         "logo": "/assets/images/technical-expertise/kubernetes.svg"
+      },
+      {
+        "name": "Red Hat OpenShift",
+        "logo": "/assets/images/technical-expertise/openshift.svg"
+      },
+      {
+        "name": "Rancher by SUSE",
+        "logo": "/assets/images/technical-expertise/rancher.svg"
+      },
+      {
+        "name": "Amazon EKS",
+        "logo": "/assets/images/technical-expertise/eks.svg"
+      },
+      {
+        "name": "Azure AKS",
+        "logo": "/assets/images/technical-expertise/aks.svg"
+      },
+      {
+        "name": "Google GKE",
+        "logo": "/assets/images/technical-expertise/gke.svg"
+      },
+      {
+        "name": "ArgoCD",
+        "logo": "/assets/images/technical-expertise/argocd.svg"
+      },
+      {
+        "name": "FluxCD",
+        "logo": "/assets/images/technical-expertise/fluxcd.svg"
+      },
+      {
+        "name": "Helm",
+        "logo": "/assets/images/technical-expertise/helm.svg"
+      },
+      {
+        "name": "KubeDB",
+        "logo": "/assets/images/technical-expertise/kubedb.svg"
+      },
+      {
+        "name": "KubeStash",
+        "logo": "/assets/images/technical-expertise/stash.svg"
+      },
+      {
+        "name": "Voyager Gateway",
+        "logo": "/assets/images/technical-expertise/voyager.svg"
+      },
+      {
+        "name": "OpenTelemetry",
+        "logo": "/assets/images/technical-expertise/opentelemetry.svg"
       },
       {
         "name": "Prometheus",
         "logo": "/assets/images/technical-expertise/prometheus.svg"
       },
       {
-        "name": "GraphQL",
-        "logo": "/assets/images/technical-expertise/graphql.svg"
-      },
-      {
-        "name": "Open Policy Agent",
-        "logo": "/assets/images/technical-expertise/open-policy-agent.png"
+        "name": "Thanos",
+        "logo": "/assets/images/technical-expertise/thanos.svg"
       },
       {
         "name": "Grafana",
@@ -194,49 +249,52 @@
         "logo": "/assets/images/technical-expertise/terraform.svg"
       },
       {
-        "name": "Kasten",
-        "logo": "/assets/images/technical-expertise/kasten.svg"
+        "name": "Vault",
+        "logo": "/assets/images/technical-expertise/vault.svg"
       },
       {
-        "name": "Thanos",
-        "logo": "/assets/images/technical-expertise/thanos.svg"
+        "name": "Open Policy Agent",
+        "logo": "/assets/images/technical-expertise/open-policy-agent.png"
       },
-      { "name": "ArgoCD", "logo": "/assets/images/technical-expertise/argocd.svg" }
+      {
+        "name": "OpenFGA",
+        "logo": "/assets/images/technical-expertise/openfga.svg"
+      }
     ]
   },
   "faq": [
     {
-    "question": "What do your Istio Consulting Services include?",
-    "answer": "Our Istio Consulting Services help organizations implement and optimize Istio service mesh for Kubernetes. We cover traffic management, security policies, observability, fault tolerance, and deployment strategies to enable resilient and secure microservices communication."
-  },
-  {
-    "question": "Which technologies and practices are used in Istio consulting?",
-    "answer": "We leverage Istio, Envoy proxies, Kubernetes, Helm charts, Kustomize, CI/CD pipelines, and observability tools. Our approach ensures secure service-to-service communication, traffic routing, telemetry, and automated rollouts for cloud-native applications."
-  },
-  {
-    "question": "Can you integrate Istio with our existing Kubernetes clusters and applications?",
-    "answer": "Yes — we integrate Istio with your current clusters and workloads, optimize service mesh configurations, enforce security policies, and implement best practices to ensure reliable and observable communication between microservices."
-  },
-  {
-    "question": "What is the typical timeline and engagement model for Istio Consulting Services?",
-    "answer": "Engagements typically start with a 1–2 week assessment of your microservices architecture and current service mesh practices. Implementation follows in 4–8 week phases depending on scope. We offer fixed-scope projects, time-and-materials consulting, or long-term Istio advisory partnerships."
-  },
-  {
-    "question": "Do Istio Consulting Services support multi-cloud or hybrid deployments?",
-    "answer": "Absolutely. Our services are designed to work across AWS, Azure, GCP, and on-premises Kubernetes environments, ensuring consistent service mesh management, traffic routing, and security across platforms."
-  },
-  {
-    "question": "How do you ensure security, reliability, and observability with Istio?",
-    "answer": "We enforce mTLS for secure communication, role-based access control, traffic policies, monitoring, logging, tracing, automated retries, and fault injection for resilience. These measures maintain secure, reliable, and observable service-to-service communication."
-  },
-  {
-    "question": "What happens after Istio consulting and implementation?",
-    "answer": "After implementation, we provide ongoing guidance, monitoring, and optimization. Our services include knowledge transfer, best practice documentation, and continuous improvement recommendations for long-term Istio adoption success."
-  },
-  {
-    "question": "How much do Istio Consulting Services cost, and what are the pricing models?",
-    "answer": "Pricing depends on microservices complexity, number of clusters, and ongoing support requirements. We offer fixed-scope projects, hourly consulting, and long-term retainers. Detailed proposals are provided after the assessment phase."
-  }
+      "question": "What do your Istio Consulting Services include?",
+      "answer": "Our Istio Consulting Services help organizations implement and optimize Istio service mesh for Kubernetes. We cover traffic management, security policies, observability, fault tolerance, and deployment strategies to enable resilient and secure microservices communication."
+    },
+    {
+      "question": "Which technologies and practices are used in Istio consulting?",
+      "answer": "We leverage Istio, Envoy proxies, Kubernetes, Helm charts, Kustomize, CI/CD pipelines, and observability tools. Our approach ensures secure service-to-service communication, traffic routing, telemetry, and automated rollouts for cloud-native applications."
+    },
+    {
+      "question": "Can you integrate Istio with our existing Kubernetes clusters and applications?",
+      "answer": "Yes — we integrate Istio with your current clusters and workloads, optimize service mesh configurations, enforce security policies, and implement best practices to ensure reliable and observable communication between microservices."
+    },
+    {
+      "question": "What is the typical timeline and engagement model for Istio Consulting Services?",
+      "answer": "Engagements typically start with a 1–2 week assessment of your microservices architecture and current service mesh practices. Implementation follows in 4–8 week phases depending on scope. We offer fixed-scope projects, time-and-materials consulting, or long-term Istio advisory partnerships."
+    },
+    {
+      "question": "Do Istio Consulting Services support multi-cloud or hybrid deployments?",
+      "answer": "Absolutely. Our services are designed to work across AWS, Azure, GCP, and on-premises Kubernetes environments, ensuring consistent service mesh management, traffic routing, and security across platforms."
+    },
+    {
+      "question": "How do you ensure security, reliability, and observability with Istio?",
+      "answer": "We enforce mTLS for secure communication, role-based access control, traffic policies, monitoring, logging, tracing, automated retries, and fault injection for resilience. These measures maintain secure, reliable, and observable service-to-service communication."
+    },
+    {
+      "question": "What happens after Istio consulting and implementation?",
+      "answer": "After implementation, we provide ongoing guidance, monitoring, and optimization. Our services include knowledge transfer, best practice documentation, and continuous improvement recommendations for long-term Istio adoption success."
+    },
+    {
+      "question": "How much do Istio Consulting Services cost, and what are the pricing models?",
+      "answer": "Pricing depends on microservices complexity, number of clusters, and ongoing support requirements. We offer fixed-scope projects, hourly consulting, and long-term retainers. Detailed proposals are provided after the assessment phase."
+    }
   ],
   "final_cta": {
     "title": "Need Enterprise Istio Support?",
