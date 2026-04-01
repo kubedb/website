@@ -1,6 +1,6 @@
 .PHONY: run
 run:
-	hugo server --config=config.dev.yaml
+	hugo server --config=config.yaml
 
 .PHONY: docs
 docs: hugo-tools
@@ -44,7 +44,7 @@ qa: gen
 .PHONY: gen-prod
 gen-prod:
 	rm -rf public
-	hugo --minify --config=config.yaml
+	hugo --config=config.yaml
 
 .PHONY: release
 release: gen-prod
