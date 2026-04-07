@@ -11,3 +11,4 @@
 *.css.map
 main.css.map
 hugo_stats.json
+/react-app/
