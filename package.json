@@ -3,7 +3,8 @@
   "version": "0.2.0",
   "description": "KubeDB Website",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass --sourcemap=none --watch  ./themes/hugo-product-theme/assets/sass/main.scss:./themes/hugo-product-theme/assets/css/main.css"
   },
   "repository": {
     "type": "git",
