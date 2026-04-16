@@ -1,0 +1,65 @@
+---
+title: SingleStore Horizontal Scaling Overview
+menu:
+  docs_v2025.3.20-rc.1:
+    identifier: guides-sdb-scaling-horizontal-overview
+    name: Overview
+    parent: guides-sdb-scaling-horizontal
+    weight: 10
+menu_name: docs_v2025.3.20-rc.1
+section_menu_id: guides
+info:
+  autoscaler: v0.37.0-rc.1
+  cli: v0.53.0-rc.1
+  dashboard: v0.29.0-rc.1
+  installer: v2025.3.20-rc.1
+  ops-manager: v0.39.0-rc.1
+  provisioner: v0.53.0-rc.1
+  schema-manager: v0.29.0-rc.1
+  ui-server: v0.29.0-rc.1
+  version: v2025.3.20-rc.1
+  webhook-server: v0.29.0-rc.1
+---
+
+> New to KubeDB? Please start [here](/docs/v2025.3.20-rc.1/README).
+
+# SingleStore Horizontal Scaling
+
+This guide will give an overview on how KubeDB Ops Manager scales up or down `SingleStore Cluster`.
+
+## Before You Begin
+
+- You should be familiar with the following `KubeDB` concepts:
+  - [SingleStore](/docs/v2025.3.20-rc.1/guides/singlestore/concepts/singlestore)
+  - [SingleStoreOpsRequest](/docs/v2025.3.20-rc.1/guides/singlestore/concepts/opsrequest)
+
+## How Horizontal Scaling Process Works
+
+The following diagram shows how KubeDB Ops Manager scales up or down `SingleStore` database components. Open the image in a new tab to see the enlarged version.
+
+<figure align="center">
+  <img alt="Horizontal scaling process of SingleStore" src="/docs/v2025.3.20-rc.1/guides/singlestore/scaling/horizontal-scaling/overview/images/horizontal-scaling.svg">
+<figcaption align="center">Fig: Horizontal scaling process of SingleStore</figcaption>
+</figure>
+
+The Horizontal scaling process consists of the following steps:
+
+1. At first, a user creates a `SingleStore` Custom Resource (CR).
+
+2. `KubeDB` Provisioner operator watches the `SingleStore` CR.
+
+3. When the operator finds a `SingleStore` CR, it creates required number of `PetSets` and related necessary stuff like secrets, services, etc.
+
+4. Then, in order to scale the `SingleStore` database the user creates a `SingleStoreOpsRequest` CR with desired information.
+
+5. `KubeDB` Ops-manager operator watches the `SingleStoreOpsRequest` CR.
+
+6. When it finds a `SingleStoreOpsRequest` CR, it pauses the `SingleStore` object which is referred from the `SingleStoreOpsRequest`. So, the `KubeDB` Provisioner operator doesn't perform any operations on the `SingleStore` object during the horizontal scaling process.  
+
+7. Then the `KubeDB` Ops-manager operator will scale the related PetSet Pods to reach the expected number of replicas defined in the `SingleStoreOpsRequest` CR.
+
+8. After the successfully scaling the replicas of the PetSet Pods, the `KubeDB` Ops-manager operator updates the number of replicas in the `SingleStore` object to reflect the updated state.
+
+9. After the successful scaling of the `SingleStore` replicas, the `KubeDB` Ops-manager operator resumes the `SingleStore` object so that the `KubeDB` Provisioner operator resumes its usual operations.
+
+In the next docs, we are going to show a step by step guide on horizontal scaling of SingleStore database using `SingleStoreOpsRequest` CRD.
