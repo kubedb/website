@@ -1,0 +1,64 @@
+{{ define "main" }}
+{{ $pages := .Pages.ByDate.Reverse }}
+{{ $sectionJson := dict }}
+{{ with index site.Data.products.kubedb "case-studies" }}
+{{ $sectionJson = .section | default dict }}
+{{ end }}
+
+<div class="ac-ui">
+    <section class="cs-hero section is-relative is-overflow-hidden">
+        <div class="cs-hero-orb cs-hero-orb-1"></div>
+        <div class="cs-hero-orb cs-hero-orb-2"></div>
+        <div
+            class="cs-hero-noise is-absolute inset-0 is-pointer-events-none"></div>
+
+        <div class="container is-relative has-z-index-10">
+            <div
+                class="section-header mb-0! is-flex is-flex-direction-column is-align-items-center has-text-centered">
+                <div class="badge badge-primary mb-6">
+                    <span
+                        class="has-size-2 is-rounded has-background-primary"></span>
+                    <span>{{ $sectionJson.badge }}</span>
+                </div>
+                <h1
+                    class="display-lg has-text-heading mb-5 has-text-weight-black has-text-balance">{{
+                    $sectionJson.title }}</h1>
+                <p class="body-lg has-text-grey-600 has-max-width-lg mb-0">{{
+                    $sectionJson.description }}</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="case-studies-grid"
+        class="home-section home-section-white use-cases-section">
+        <div class="container">
+
+            {{ if gt (len $pages) 0 }}
+            <div class="columns is-multiline">
+                {{ range $index, $page := $pages }}
+                <div
+                    class="column is-12-mobile is-6-tablet is-4-desktop is-flex">
+                    {{ partial "case-studies/card.html" (dict "page" $page
+                    "index" $index) }}
+                </div>
+                {{ end }}
+            </div>
+            {{ else }}
+            <div class="has-text-centered">
+                <p class="section-header-desc">No case studies published
+                    yet.</p>
+            </div>
+            {{ end }}
+
+            <div class="has-text-centered" style="margin-top: 2.5rem;">
+                <a href="{{ $sectionJson.cta_href }}"
+                    class="button is-primary height-50">
+                    {{ $sectionJson.cta_button }}
+                    <iconify-icon icon="heroicons:arrow-right" width="16"
+                        height="16"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+{{ end }}
