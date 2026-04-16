@@ -1,11 +1,18 @@
 {{ define "main" }}
-{{ $p := .Params }}
+{{/* Load JSON data for this page and merge over front matter. JSON values take priority. */}}
+{{ $slug   := .File.ContentBaseName }}
+{{ $csData := index site.Data.products.kubedb "case-studies" }}
+{{ $d      := index $csData $slug | default dict }}
+{{ $.Scratch.Set "p" (dict) }}
+{{ range $k, $v := .Params }}{{ $.Scratch.SetInMap "p" $k $v }}{{ end }}
+{{ range $k, $v := $d }}{{ if $v }}{{ $.Scratch.SetInMap "p" $k $v }}{{ end }}{{ end }}
+{{ $p := $.Scratch.Get "p" }}
 {{ $contactURL := printf "%s/contact/" .Site.Params.domain_appscode }}
 
 <div class="ac-ui">
 
   <!-- 1. HERO -->
-  <section class="cs-hero section is-medium is-relative is-overflow-hidden">
+  <section class="cs-hero is-relative is-overflow-hidden">
     <div class="cs-hero-orb-tr is-absolute is-rounded is-pointer-events-none"></div>
     <div class="cs-hero-orb-bl is-absolute is-rounded is-pointer-events-none"></div>
     <div class="cs-hero-noise is-absolute inset-0 is-pointer-events-none"></div>
@@ -15,28 +22,28 @@
       <a href="/case-studies/"
         class="is-inline-flex is-align-items-center has-gap-2 mb-12 has-text-grey-500 has-text-weight-bold has-no-underline has-transition hover:has-text-primary">
         <iconify-icon icon="lucide:arrow-left" width="16" height="16"></iconify-icon>
-        <span>All Case Studies</span>
+        <span>{{ $p.back_link_text }}</span>
       </a>
 
       <div class="columns is-variable is-8 is-vcentered">
 
         <div class="column is-7-desktop">
 
-          {{ with $.Params.badge }}
+          {{ with $p.badge }}
           <div class="badge badge-primary mb-6">
             <span class="has-size-2 is-rounded has-background-primary"></span>
             <span>{{ . }}</span>
           </div>
           {{ end }}
 
-          <h1 class="display-lg has-text-heading mb-6 has-text-balance has-text-weight-black">{{ $.Params.tagline |
+          <h1 class="display-lg has-text-heading mb-6 has-text-balance has-text-weight-black">{{ $p.tagline |
             safeHTML }}</h1>
 
-          {{ with $.Params.description }}
+          {{ with $p.description }}
           <p class="body-lg has-text-grey-600 mb-10 has-max-width-lg">{{ . }}</p>
           {{ end }}
 
-          {{ with $.Params.hero_metrics }}
+          {{ with $p.hero_metrics }}
           <div class="is-flex is-flex-wrap-wrap has-gap-4 mb-10">
             {{ range . }}
             <div
@@ -53,14 +60,14 @@
           <div class="is-flex is-align-items-center has-gap-4 is-flex-wrap-wrap mb-10">
             <a href="#cs-results" class="button is-primary hero-btn-primary height-50">
               <iconify-icon icon="lucide:book-open" width="18" height="18"></iconify-icon>
-              <span>Read the full story</span>
+              <span>{{ $p.hero_primary_button_text }}</span>
               <iconify-icon icon="lucide:chevron-right" width="18" height="18"
                 class="has-transition group-hover:has-translate-x-1"></iconify-icon>
             </a>
-            <a href="https://github.com/kubedb" target="_blank" rel="noopener noreferrer"
+            <a href="{{ $p.hero_secondary_button_href }}" target="_blank" rel="noopener noreferrer"
               class="button is-outlined hero-btn-secondary height-50">
               <iconify-icon icon="lucide:github" width="18" height="18" class="has-text-muted"></iconify-icon>
-              <span>Explore on GitHub</span>
+              <span>{{ $p.hero_secondary_button_text }}</span>
             </a>
           </div>
 
@@ -83,26 +90,24 @@
               <div class="is-flex is-align-items-center has-gap-4 has-min-width-0">
                 <div
                   class="is-radius-xlarge is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 has-size-12 has-background-grey-50 has-border">
-                  {{ with $.Params.hero_right_logo_emoji }}{{ . }}
-                  {{ else }}{{ with $.Params.logo_emoji }}{{ . }}
-                  {{ else }}{{ with $.Params.logo }}<img src="{{ . }}" alt="{{ $.Params.company }}"
+                  {{ with $p.hero_right_logo_emoji }}{{ . }}
+                  {{ else }}{{ with $p.logo_emoji }}{{ . }}
+                  {{ else }}{{ with $p.logo }}<img src="{{ . }}" alt="{{ $p.company }}"
                     class="has-height-6 is-object-contain">{{ end }}
                   {{ end }}{{ end }}
                 </div>
                 <div class="min-w-0">
-                  <h3 class="is-text-base has-text-weight-black has-text-heading mb-0 has-text-truncated">{{ default
-                    $.Params.company $.Params.hero_right_company }}</h3>
-                  <p class="is-text-xs has-text-grey-500 mb-0 is-uppercase has-tracking-widest">{{ default
-                    $.Params.industry $.Params.hero_right_industry }}</p>
+                  <h3 class="is-text-base has-text-weight-black has-text-heading mb-0 has-text-truncated">{{ $p.hero_right_company }}</h3>
+                  <p class="is-text-xs has-text-grey-500 mb-0 is-uppercase has-tracking-widest">{{ $p.hero_right_industry }}</p>
                 </div>
               </div>
               <div class="badge badge-success">
                 <span class="cs-ping-dot"></span>
-                <span>{{ default "LIVE 24/7" $.Params.hero_live_badge }}</span>
+                <span>{{ $p.hero_live_badge }}</span>
               </div>
             </div>
 
-            {{ with $.Params.hero_right_metrics }}
+            {{ with $p.hero_right_metrics }}
             <div class="is-grid has-border-bottom" style="grid-template-columns: repeat({{ len . }}, 1fr);">
               {{ range . }}
               <div class="px-2 py-5 has-text-centered has-border-right">
@@ -118,7 +123,7 @@
             {{ end }}
 
             <div class="px-6 py-6">
-              {{ with $.Params.hero_right_tags }}
+              {{ with $p.hero_right_tags }}
               <div class="is-flex is-flex-wrap-wrap has-gap-2 mb-5">
                 {{ range . }}
                 <span class="tag">{{ . }}</span>
@@ -128,8 +133,7 @@
               <div class="is-flex is-align-items-center has-gap-3 is-text-xs has-text-grey-500">
                 <iconify-icon icon="lucide:shield-check" width="16" height="16"
                   class="has-text-success is-flex-shrink-0"></iconify-icon>
-                <span class="has-text-weight-medium">{{ default `Legacy DBs migrated &middot; Running on KubeDB`
-                  $.Params.hero_legacy_badge }}</span>
+                <span class="has-text-weight-medium">{{ $p.hero_legacy_badge }}</span>
               </div>
             </div>
 
@@ -141,41 +145,38 @@
   </section>
 
 
-
-
-
   <!-- 1.2 CUSTOMER HIGHLIGHT -->
-  {{ if or $.Params.customer_badge $.Params.customer_title $.Params.customer_description $.Params.customer_status }}
+  {{ if or $p.customer_badge $p.customer_title $p.customer_description $p.customer_status }}
   <section class="section-padding has-background-white">
     <div class="container">
       <div class="columns is-vcentered is-variable is-8">
         <div class="column is-6-desktop">
           <div class="section-header mb-10 is-flex is-flex-direction-column is-align-items-flex-start has-text-left">
-            {{ with $.Params.customer_badge }}
+            {{ with $p.customer_badge }}
             <div class="badge">
               <iconify-icon icon="lucide:building-2" width="16" height="16" class="has-text-secondary"></iconify-icon>
               <span class="badge-text">{{ . }}</span>
             </div>
             {{ end }}
-            {{ with $.Params.customer_title }}
+            {{ with $p.customer_title }}
             <h2 class="section-header-title has-text-heading has-text-weight-black">{{ . }}</h2>
             {{ end }}
-            {{ with $.Params.customer_description }}
+            {{ with $p.customer_description }}
             <p class="section-header-desc body-lg ml-0">{{ . }}</p>
             {{ end }}
           </div>
         </div>
         <div class="column is-6-desktop">
           <div class="is-flex is-align-items-center is-justify-content-flex-end is-flex-wrap-wrap has-gap-4">
-            {{ with $.Params.customer_website }}
+            {{ with $p.customer_website }}
             <a href="{{ . }}" target="_blank" rel="noopener noreferrer"
               class="btn is-outlined has-border-grey-200 is-radius-large px-6 py-3 is-inline-flex is-align-items-center has-gap-2 !has-text-heading has-shadow-tiny has-hover-lift has-transition">
               <iconify-icon icon="lucide:globe" width="16" height="16" class="has-text-secondary"></iconify-icon>
-              <span class="has-text-weight-bold">{{ default . $.Params.customer_website_label }}</span>
+              <span class="has-text-weight-bold">{{ $p.customer_website_label }}</span>
               <iconify-icon icon="lucide:external-link" width="14" height="14" class="opacity-50"></iconify-icon>
             </a>
             {{ end }}
-            {{ with $.Params.customer_status }}
+            {{ with $p.customer_status }}
             <div class="badge badge-success py-3 px-4">
               <span class="cs-ping-dot"></span>
               <span>{{ . }}</span>
@@ -190,19 +191,18 @@
 
 
   <!-- 1.5 COMPARISON TABLE -->
-  {{ with $.Params.comparison_rows }}
+  {{ with $p.comparison_rows }}
   <section class="section-padding has-background-grey-50 is-relative is-overflow-hidden">
     <div class="container">
       <div class="section-header mb-12">
-        {{ with $.Params.comparison_badge }}
+        {{ with $p.comparison_badge }}
         <div class="badge">
           <iconify-icon icon="lucide:git-compare" width="16" height="16" class="has-text-secondary"></iconify-icon>
           <span class="badge-text">{{ . }}</span>
         </div>
         {{ end }}
-        <h2 class="section-header-title has-text-heading has-text-weight-black">{{ default `Legacy to Cloud-Native
-          Transformation` $.Params.comparison_title }}</h2>
-        {{ with $.Params.comparison_description }}
+        <h2 class="section-header-title has-text-heading has-text-weight-black">{{ $p.comparison_title }}</h2>
+        {{ with $p.comparison_description }}
         <p class="section-header-desc body-lg">{{ . }}</p>
         {{ end }}
       </div>
@@ -211,15 +211,15 @@
           <thead>
             <tr class="has-background-grey-50">
               <th class="is-text-xs has-text-weight-black has-text-heading is-uppercase has-tracking-widest py-5 px-6" style="width: 25%;">
-                {{ default "Aspect" $.Params.comparison_header_aspect }}
+                {{ $p.comparison_header_aspect }}
               </th>
               <th class="is-text-xs has-text-weight-black has-text-heading is-uppercase has-tracking-widest py-5 px-6" style="width: 37.5%;">
-                {{ default "Before" $.Params.comparison_header_previous }}
+                {{ $p.comparison_header_previous }}
               </th>
               <th class="is-text-xs has-text-weight-black has-text-heading is-uppercase has-tracking-widest py-5 px-6" style="width: 37.5%;">
                 <div class="is-flex is-align-items-center has-gap-2">
                   <iconify-icon icon="lucide:check-circle-2" width="16" height="16" class="has-text-success"></iconify-icon>
-                  <span>{{ default "After KubeDB" $.Params.comparison_header_new }}</span>
+                  <span>{{ $p.comparison_header_new }}</span>
                 </div>
               </th>
             </tr>
@@ -256,26 +256,26 @@
       <div class="section-header mb-12">
         <div class="badge">
           <iconify-icon icon="lucide:alert-triangle" width="16" height="16" class="has-text-secondary"></iconify-icon>
-          <span class="badge-text">{{ default "The Challenge" $.Params.challenge_badge }}</span>
+          <span class="badge-text">{{ $p.challenge_badge }}</span>
         </div>
       </div>
 
       <div class="columns is-variable is-8">
         <div class="column is-4-desktop">
           <div class="is-sticky has-top-24">
-            {{ with $.Params.challenge_title }}
+            {{ with $p.challenge_title }}
             <h2 class="heading-xl has-text-heading has-text-weight-black mb-5">{{ . }}</h2>
             {{ end }}
-            {{ with $.Params.challenge_summary }}
+            {{ with $p.challenge_summary }}
             <div class="cs-quote-block mb-5 px-7 is-relative is-overflow-hidden has-transition">
               <p class="body-md text-body mb-0 is-italic is-relative has-z-index-10">{{ . }}</p>
             </div>
             {{ end }}
-            {{ with $.Params.challenge_key_pains }}
+            {{ with $p.challenge_key_pains }}
             <div class="is-radius-xlarge has-border has-border-secondary has-background-secondary-soft px-5 py-4">
               <div class="badge badge-secondary mb-2">
                 <span class="has-size-2 is-rounded has-background-secondary is-flex-shrink-0"></span>
-                <span>Key pain points</span>
+                <span>{{ $p.challenge_key_pains_label }}</span>
               </div>
               <p class="body-sm text-body mb-0">{{ . }}</p>
             </div>
@@ -284,7 +284,7 @@
         </div>
 
         <div class="column is-8-desktop">
-          {{ with $.Params.challenge_items }}
+          {{ with $p.challenge_items }}
           <div class="columns is-multiline">
             {{ range . }}
             <div class="column is-12-mobile is-4-tablet is-flex">
@@ -308,30 +308,30 @@
 
 
   <!-- 3. SOLUTION -->
-  {{ if or $.Params.solution_title $.Params.solution_description $.Params.solution_features $.Params.solution_steps }}
+  {{ if or $p.solution_title $p.solution_description $p.solution_features $p.solution_steps }}
   <section class="section-padding has-background-white">
     <div class="container">
 
       <div class="section-header mb-12">
         <div class="badge">
           <iconify-icon icon="lucide:sparkles" width="16" height="16" class="has-text-secondary"></iconify-icon>
-          <span class="badge-text">{{ default "The Solution" $.Params.solution_badge }}</span>
+          <span class="badge-text">{{ $p.solution_badge }}</span>
         </div>
       </div>
 
       <div class="columns is-variable is-8">
         <div class="column is-4-desktop">
-          {{ with $.Params.solution_title }}
+          {{ with $p.solution_title }}
           <h2 class="heading-xl has-text-heading has-text-weight-black mb-5">{{ . }}</h2>
           {{ end }}
-          {{ with $.Params.solution_description }}
+          {{ with $p.solution_description }}
           <p class="body-lg has-text-grey-600 mb-6">{{ . }}</p>
           {{ end }}
-          {{ with $.Params.solution_features }}
+          {{ with $p.solution_features }}
           <div class="is-radius-xlarge has-border has-border-primary has-background-primary-soft px-5 py-4 mt-6">
             <div class="badge badge-primary mb-3">
               <iconify-icon icon="lucide:database" width="12" height="12"></iconify-icon>
-              <span>Powered by KubeDB</span>
+              <span>{{ $p.solution_powered_by_label }}</span>
             </div>
             <ul class="has-no-bullets">
               {{ range . }}
@@ -347,8 +347,8 @@
         </div>
 
         <div class="column is-8-desktop">
-          {{ with $.Params.solution_steps }}
-          {{ with $.Params.solution_steps_title }}
+          {{ with $p.solution_steps }}
+          {{ with $p.solution_steps_title }}
           <h4 class="is-text-sm has-text-weight-extrabold has-text-secondary mb-5 is-uppercase has-tracking-wider">{{ .
             }}</h4>
           {{ end }}
@@ -376,29 +376,29 @@
 
 
   <!-- 3.5 BENEFITS DETAIL -->
-  {{ if or $.Params.benefits_title $.Params.benefits_items $.Params.supported_databases $.Params.delivered_features }}
+  {{ if or $p.benefits_title $p.benefits_items $p.supported_databases $p.delivered_features }}
   <section class="section-padding has-background-grey-50 is-relative is-overflow-hidden">
     <div class="container">
       <div class="columns is-variable is-8 is-flex-tablet">
         <div class="column is-12-mobile is-5-desktop">
           <div class="section-header mb-10 is-flex is-flex-direction-column is-align-items-flex-start has-text-left">
-            {{ with $.Params.benefits_badge }}
+            {{ with $p.benefits_badge }}
             <div class="badge">
               <iconify-icon icon="lucide:check-circle-2" width="16" height="16"
                 class="has-text-secondary"></iconify-icon>
               <span class="badge-text">{{ . }}</span>
             </div>
             {{ end }}
-            {{ with $.Params.benefits_title }}
+            {{ with $p.benefits_title }}
             <h2 class="section-header-title has-text-heading has-text-weight-black">{{ . }}</h2>
             {{ end }}
-            {{ with $.Params.benefits_description }}
+            {{ with $p.benefits_description }}
             <p class="section-header-desc body-lg ml-0">{{ . }}</p>
             {{ end }}
           </div>
-          {{ with $.Params.benefits_items }}
+          {{ with $p.benefits_items }}
           <div class="benefits-timeline mt-8 pl-1">
-            {{ with $.Params.benefits_items_title }}
+            {{ with $p.benefits_items_title }}
             <h4 class="is-flex is-align-items-center has-gap-2 is-text-xs has-text-weight-black has-text-secondary is-uppercase has-tracking-widest mb-8">
                <iconify-icon icon="lucide:check-circle-2" width="14" height="14"></iconify-icon>
                <span>{{ . }}</span>
@@ -428,10 +428,10 @@
           <div class="ds-card-base is-radius-2xlarge has-background-white has-border has-shadow-none is-overflow-hidden is-fullwidth">
             <div class="is-grid is-grid-cols-1 md:is-grid-cols-2 has-height-full">
               {{/* Databases Column */}}
-              {{ with $.Params.supported_databases }}
+              {{ with $p.supported_databases }}
               <div class="has-background-grey-50 p-10 is-flex is-flex-direction-column">
                 <h5 class="is-flex is-align-items-center has-gap-2 is-text-xs has-text-weight-black has-text-grey-400 is-uppercase has-tracking-widest mb-8">
-                  {{ default "Databases in Production" $.Params.supported_databases_title }}
+                  {{ $p.supported_databases_title }}
                 </h5>
                 <ul class="has-no-bullets is-flex-grow-1">
                   {{ range . }}
@@ -445,17 +445,17 @@
                 <div class="mt-8 pt-8" style="border-top: 1px solid rgba(0,0,0,0.05);">
                    <div class="is-flex is-align-items-center has-gap-2 opacity-50">
                       <iconify-icon icon="lucide:shield-check" width="14" height="14"></iconify-icon>
-                      <span class="is-text-xxs is-uppercase has-text-weight-bold has-tracking-wider">Enterprise Verified</span>
+                     <span class="is-text-xxs is-uppercase has-text-weight-bold has-tracking-wider">{{ $p.supported_databases_footer_label }}</span>
                    </div>
                 </div>
               </div>
               {{ end }}
 
               {{/* Features Column */}}
-              {{ with $.Params.delivered_features }}
+              {{ with $p.delivered_features }}
               <div class="has-background-white p-10 is-flex is-flex-direction-column" style="border-left: 1px solid rgba(0,0,0,0.05);">
                 <h5 class="is-flex is-align-items-center has-gap-2 is-text-xs has-text-weight-black has-text-secondary is-uppercase has-tracking-widest mb-8">
-                  {{ default "KubeDB Features Delivered" $.Params.delivered_features_title }}
+                  {{ $p.delivered_features_title }}
                 </h5>
                 <ul class="has-no-bullets is-flex-grow-1">
                   {{ range . }}
@@ -468,7 +468,7 @@
                 {{/* Bottom Accent */}}
                 <div class="mt-8 pt-8" style="border-top: 1px solid rgba(0,0,0,0.05);">
                    <div class="is-flex is-align-items-center is-justify-content-flex-end has-gap-2 opacity-50">
-                      <span class="is-text-xxs is-uppercase has-text-weight-bold has-tracking-wider">Powered by KubeDB</span>
+                     <span class="is-text-xxs is-uppercase has-text-weight-bold has-tracking-wider">{{ $p.delivered_features_footer_label }}</span>
                       <iconify-icon icon="lucide:zap" width="14" height="14" class="has-text-secondary"></iconify-icon>
                    </div>
                 </div>
@@ -484,16 +484,15 @@
 
 
   <!-- 4. TIMELINE -->
-  {{ with $.Params.timeline }}
+  {{ with $p.timeline }}
   <section class="section-padding has-background-white">
     <div class="container">
       <div class="section-header mb-12">
         <div class="badge">
           <iconify-icon icon="lucide:map-pin" width="16" height="16" class="has-text-secondary"></iconify-icon>
-          <span class="badge-text">{{ default "Journey" $.Params.timeline_badge }}</span>
+          <span class="badge-text">{{ $p.timeline_badge }}</span>
         </div>
-        <h2 class="section-header-title has-text-heading has-text-weight-black">{{ default `From Evaluation to
-          Production` $.Params.timeline_title }}</h2>
+        <h2 class="section-header-title has-text-heading has-text-weight-black">{{ $p.timeline_title }}</h2>
       </div>
       <div class="columns is-multiline">
         {{ range $i, $step := . }}
@@ -522,13 +521,12 @@
       <div class="section-header mb-12">
         <div class="badge">
           <iconify-icon icon="lucide:star" width="16" height="16" class="has-text-secondary"></iconify-icon>
-          <span class="badge-text">Why KubeDB</span>
+          <span class="badge-text">{{ $p.value_props_badge }}</span>
         </div>
-        <h2 class="section-header-title has-text-heading has-text-weight-black">Why teams choose KubeDB</h2>
-        <p class="section-header-desc body-lg">Same experience as cloud DBaaS — but with full control, any cloud, any
-          storage, and no lock-in.</p>
+        <h2 class="section-header-title has-text-heading has-text-weight-black">{{ $p.value_props_title }}</h2>
+        <p class="section-header-desc body-lg">{{ $p.value_props_description }}</p>
       </div>
-      {{ with $.Params.value_props }}
+      {{ with $p.value_props }}
       <div class="columns is-multiline">
         {{ range . }}
         <div class="column is-12-mobile is-4-tablet is-flex">
@@ -552,36 +550,31 @@
 
 
   <!-- 7. CTA -->
-  <!-- 7. CTA -->
-  <section class="home-section home-section-light cta-section">
+  <section class="">
     <div class="container">
       <div class="cta-block has-text-centered has-shadow-large py-12 px-8">
         <div class="cta-glow"></div>
         <div class="has-max-width-xl mx-auto is-relative has-z-index-10">
-          <h2 class="display-lg has-text-white mb-4 has-text-balance">{{ default `Ready to modernize your database
-            operations?` $.Params.cta_title }}</h2>
-          <p class="body-lg has-text-grey-200 mb-8 has-max-width-2xl mx-auto">{{ default `Deploy, scale, and operate
-            production-grade databases on Kubernetes with confidence.` $.Params.cta_description }}</p>
+          <h2 class="display-lg has-text-white mb-4 has-text-balance">{{ $p.cta_title }}</h2>
+          <p class="body-lg has-text-grey-200 mb-8 has-max-width-2xl mx-auto">{{ $p.cta_description }}</p>
 
           <div class="is-flex is-justify-content-center has-gap-4 is-flex-wrap-wrap mb-10">
             <a href="{{ $contactURL }}" class="button is-white height-50">
               <iconify-icon icon="lucide:calendar" width="18" height="18"></iconify-icon>
-              <span>{{ default "Get 30-day Enterprise Trial" $.Params.cta_primary }}</span>
+              <span>{{ $p.cta_primary }}</span>
               <iconify-icon icon="lucide:arrow-right" width="18" height="18"></iconify-icon>
             </a>
-            {{ with $.Params.cta_secondary_href }}
+            {{ with $p.cta_secondary_href }}
             <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="button is-ghost height-50">
-              <span>{{ default "View Docs" $.Params.cta_secondary }}</span>
+              <span>{{ $p.cta_secondary }}</span>
               <iconify-icon icon="lucide:external-link" width="16" height="16"></iconify-icon>
             </a>
             {{ end }}
           </div>
 
-          <div
-            class="badge badge-secondary mb-0 py-2 px-4 is-normal-case has-tracking-normal has-background-white-10 has-border-white-10 no-shadow">
+          <div class="is-flex is-align-items-center is-justify-content-center has-gap-2 opacity-50">
             <iconify-icon icon="lucide:shield-check" width="14" height="14" class="has-text-grey-100"></iconify-icon>
-            <span class="has-text-grey-100 is-text-xs">Open-core &middot; Apache 2.0 &middot; Certified on OpenShift,
-              Rancher, EKS, AKS, GKE &amp; more</span>
+            <span class="has-text-grey-100 is-text-xs">{{ $p.compliance_note }}</span>
           </div>
         </div>
       </div>
