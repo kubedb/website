@@ -1,0 +1,160 @@
+{
+  "productsTabs": [
+    {
+      "key": "kubedb",
+      "title": "KubeDB",
+      "tagline": "Kubernetes-native DBaaS Anywhere with Any Storage",
+      "description": "KubeDB simplifies and automates routine database tasks such as provisioning, monitoring, backup, recovery, failure detection, and repair for various popular databases on private and public clouds.",
+      "lucide_icon": "lucide:database",
+      "logo": "/assets/images/products/kubedb/kubedb-512x512_1.svg",
+      "website_url": "https://kubedb.com",
+      "docs_url": "https://kubedb.com/docs",
+      "github_url": "https://github.com/kubedb",
+      "key_features": [
+        "Managed DBaaS Platform Capabilities",
+        "Supports 25+ database engines including PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch",
+        "Automated Backup & Disaster Recovery",
+        "Centralized Multi-Cluster Management",
+        "Developer-Friendly Free Tier",
+        "Enterprise-grade SLA and support"
+      ],
+      "use_cases": [
+        "Enterprise DBaaS",
+        "GitOps Ready",
+        "Multi-tenant Multi-Cluster",
+        "White-labeled DBaaS"
+      ],
+      "stats": [
+        {
+          "value": "25+",
+          "label": "DATABASES"
+        },
+        {
+          "value": "100+",
+          "label": "ENTERPRISES"
+        },
+        {
+          "value": "10K+",
+          "label": "DEPLOYMENTS"
+        }
+      ]
+    },
+    {
+      "key": "kubestash",
+      "title": "KubeStash",
+      "tagline": "Kubernetes native disaster recovery solution",
+      "description": "KubeStash is a cloud-native data backup and recovery solution for Kubernetes workloads, volumes, and databases. It uses Kubernetes Custom Resources to define backup and restore operations in a declarative way.",
+      "lucide_icon": "lucide:archive",
+      "logo": "/assets/images/products/kubestash/kubestash-512x512.png",
+      "website_url": "https://kubestash.com",
+      "docs_url": "https://kubestash.com/docs",
+      "github_url": "https://github.com/kubestash",
+      "key_features": [
+        "Backup Kubernetes volumes, workloads, and databases",
+        "Schedule automatic backups with retention policies",
+        "Point-in-time recovery for databases",
+        "Cross-cluster and cross-namespace restore",
+        "Encryption at rest and in transit",
+        "Support for multiple storage backends (S3, GCS, Azure, NFS)"
+      ],
+      "use_cases": [
+        "Backup & Restore",
+        "Disaster Recovery",
+        "Application Mobility",
+        "Ransomware Protection"
+      ],
+      "stats": [
+        {
+          "value": "1M+",
+          "label": "BACKUPS"
+        },
+        {
+          "value": "Multi-Cloud",
+          "label": "STORAGE"
+        },
+        {
+          "value": "Minutes",
+          "label": "RECOVERY"
+        }
+      ]
+    },
+    {
+      "key": "voyager",
+      "title": "Voyager Gateway",
+      "tagline": "Secure Envoyproxy Gateway",
+      "description": "Voyager Gateway is a Envoyproxy-backed secure Gateway for Kubernetes. It provides L7 and L4 load balancing for microservices and databases, SSL termination, and advanced traffic management capabilities.",
+      "lucide_icon": "lucide:network",
+      "logo": "/assets/images/products/voyager/voyager-512x512.svg",
+      "website_url": "https://voyagermesh.com/",
+      "docs_url": "https://voyagermesh.com/docs",
+      "github_url": "https://github.com/voyagermesh",
+      "key_features": [
+        "HAProxy-powered ingress with 40Gbps+ throughput",
+        "Automatic SSL certificate provisioning with Let's Encrypt",
+        "TCP/UDP load balancing support",
+        "Blue-green and canary deployments",
+        "Rate limiting and authentication",
+        "Web Application Firewall (WAF) integration"
+      ],
+      "use_cases": [
+        "API Gateway",
+        "Microservices",
+        "Edge Routing",
+        "Advanced Traffic Management"
+      ],
+      "stats": [
+        {
+          "value": "Envoyproxy",
+          "label": "POWERED"
+        },
+        {
+          "value": "L3 & L7",
+          "label": "TRAFFIC"
+        },
+        {
+          "value": "Security",
+          "label": "FOCUSED"
+        }
+      ]
+    },
+    {
+      "key": "kubevault",
+      "title": "KubeVault",
+      "tagline": "Kubernetes native secrets management",
+      "description": "KubeVault is a Kubernetes operator for HashiCorp Vault. It provides a secure and automated way to manage secrets, tokens, passwords, certificates, and encryption keys for your Kubernetes applications.",
+      "lucide_icon": "lucide:shield-check",
+      "logo": "/assets/images/products/kubevault/kubevault-512x512.svg",
+      "website_url": "https://kubevault.com",
+      "docs_url": "https://kubevault.com/docs",
+      "github_url": "https://github.com/kubevault",
+      "key_features": [
+        "Native integration with HashiCorp Vault",
+        "Automated Vault deployment and management",
+        "Dynamic database credentials injection",
+        "PKI certificate management",
+        "Secret rotation and lifecycle management",
+        "Multi-tenancy with policy-based access control"
+      ],
+      "use_cases": [
+        "Secrets Management",
+        "Certificate Management",
+        "Credential Injection",
+        "Compliance"
+      ],
+      "stats": [
+        {
+          "value": "100K+",
+          "label": "SECRETS"
+        },
+        {
+          "value": "Automated",
+          "label": "ROTATION"
+        },
+        {
+          "value": "Vault & OpenBao",
+          "label": "SUPPORTED"
+        }
+      ]
+    }
+  ]
+}
