@@ -197,12 +197,7 @@
       <div class="columns is-mobile is-multiline mt-12 has-max-width-lg mx-auto">
         {{ range $data.stats }}
         <div class="column is-3-desktop is-6-mobile">
-          <div class="stat-item has-text-centered">
-            <h3 class="is-size-2-desktop is-size-3-mobile has-text-weight-black mb-1 has-line-height-tight"
-              style="color: var(--p-logo-color);">{{ .value }}</h3>
-            <p class="has-text-muted is-size-7 is-uppercase has-text-weight-bold has-tracking-widest">{{
-              .label }}</p>
-          </div>
+          {{ partial "common-cards/stat-card.html" (dict "stat" . "color" $p_color) }}
         </div>
         {{ end }}
       </div>
@@ -214,7 +209,7 @@
   {{ if $data.challenges }}
   <section id="conflict" class="home-section section-padding bg-white">
     <div class="container">
-      <div class="columns is-vcentered is-variable is-8">
+      <div class="columns is-vcentered">
         <!-- Left: Large Numbered List -->
         <div class="column is-6">
           <div class="badge mb-6" 
@@ -288,7 +283,7 @@
         <h2 class="title is-size-1 has-text-weight-bold" style="font-size: 3.5rem;">{{ $data.code_demo.title | safeHTML }}</h2>
       </div>
 
-      <div class="columns is-variable is-8 is-vcentered">
+      <div class="columns">
         <!-- Left: Large Code Card -->
         <div class="column is-7">
           <div class="p-12 is-radius-3xl has-background-white shadow-2xl" 
@@ -348,7 +343,7 @@
         <p class="is-size-5 has-text-grey-500">{{ $data.comparison.subtitle }}</p>
       </div>
 
-      <div class="columns is-variable is-8">
+      <div class="columns">
         {{/* Problem Side */}}
         <div class="column is-6">
           <div class="h-full p-10 is-radius-3xl border-red-soft" style="background: linear-gradient(to br, #fef2f2, #fff7ed); border: 1px solid #fee2e2;">
@@ -408,7 +403,7 @@
         <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.when_to_use_subtitle | safeHTML }}</p>
       </div>
       {{ $col_class := $data.when_to_use_column_class | default "is-3-desktop" }}
-      <div class="columns is-multiline is-variable is-4">
+      <div class="columns is-multiline">
         {{ range $data.when_to_use }}
         <div class="column {{ $col_class }} is-4-tablet is-6-mobile">
           {{ $g_class := lower .gradient_class }}
@@ -418,15 +413,7 @@
           {{ else if strings.Contains .title "Governance" }}{{ $c = "blue" }}{{ end }}
           {{ if .icon_bg }}{{ if strings.Contains .icon_bg "ef" }}{{ $c = "purple" }}{{ else if strings.Contains .icon_bg "10b" }}{{ $c = "green" }}{{ else if strings.Contains .icon_bg "3b8" }}{{ $c = "blue" }}{{ end }}{{ end }}
 
-          <div class="benefit-card p-10 has-border transition-all">
-            <div class="is-flex is-align-items-center mb-8">
-              <div class="benefit-icon-vibrant bg-grad-{{ $c }}">
-                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="26" height="26" class="has-text-white"></iconify-icon>
-              </div>
-            </div>
-            <h4 class="is-size-4 has-text-weight-bold mb-4 has-text-grey-900 tracking-tight">{{ .title }}</h4>
-            <p class="is-size-6 has-text-grey-500 has-line-height-relaxed">{{ .description }}</p>
-          </div>
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard" "color" $c) }}
         </div>
         {{ end }}
       </div>
@@ -445,25 +432,7 @@
       <div class="columns is-multiline">
         {{ range $data.platform_built_for_scale }}
         <div class="column is-4-desktop is-6-tablet">
-          <div class="p-10 is-radius-2xlarge has-background-white has-border h-full transition-all has-hover-lift" style="border-color: #e2e8f0;">
-            <div class="is-flex is-align-items-flex-start has-gap-6 mb-8">
-              <div class="has-size-14 is-radius-2xlarge has-background-gradient-primary is-flex is-align-items-center is-justify-content-center is-flex-shrink-0">
-                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="28" style="color: white;"></iconify-icon>
-              </div>
-              <div class="is-flex-grow-1">
-                <h3 class="is-size-4 has-text-weight-black mb-2 has-text-grey-900">{{ .title }}</h3>
-                <p class="is-size-6 has-opacity-70 has-text-grey-600 has-line-height-normal">{{ .description }}</p>
-              </div>
-            </div>
-            <div class="is-flex is-flex-direction-column has-gap-4">
-              {{ range .benefits }}
-              <div class="is-flex is-align-items-center has-gap-3">
-                <iconify-icon icon="heroicons:check-circle" width="20" has-text-success></iconify-icon>
-                <span class="is-text-base has-text-weight-semibold has-text-grey-700" style="font-size: 0.95rem;">{{ . }}</span>
-              </div>
-              {{ end }}
-            </div>
-          </div>
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
         </div>
         {{ end }}
       </div>
@@ -484,7 +453,7 @@
         <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.how_it_works_subtitle }}</p>
       </div>
 
-      <div class="columns is-variable is-8">
+      <div class="columns">
         <!-- Your Infrastructure -->
         <div class="column is-6">
           <div class="is-flex is-align-items-center mb-8">
@@ -544,7 +513,7 @@
         <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.benefits_title | safeHTML }}</h2>
         <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.benefits_subtitle | safeHTML }}</p>
       </div>
-      <div class="columns is-multiline is-variable is-8">
+      <div class="columns is-multiline">
         {{ range $data.benefits }}
         <div class="column is-4-desktop is-6-tablet">
           {{ $g_class := lower .gradient_class }}
@@ -555,15 +524,7 @@
           {{ else if strings.Contains $g_class "orange" }}{{ $c = "orange" }}
           {{ else if strings.Contains $g_class "yellow" }}{{ $c = "yellow" }}{{ end }}
           
-          <div class="benefit-card h-full p-10 has-background-white has-border transition-all">
-            <!-- Icon Box (Solid Background per image) -->
-            <div class="benefit-icon-solid mb-8 has-background-{{ $c }}">
-              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" height="24" class="has-text-white"></iconify-icon>
-            </div>
-            
-            <h4 class="is-size-4 has-text-weight-bold mb-3 has-text-grey-900 tracking-tight">{{ .title }}</h4>
-            <p class="is-size-6 has-line-height-relaxed has-text-grey-500">{{ .description }}</p>
-          </div>
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard" "color" $c) }}
         </div>
         {{ end }}
       </div>
@@ -586,16 +547,10 @@
         {{ end }}
       </div>
       
-      <div class="columns is-multiline is-variable is-6">
+      <div class="columns is-multiline">
         {{ range $index, $item := $data.use_cases }}
         <div class="column is-4">
-          <div class="benefit-card h-full p-10 has-background-white has-border transition-all">
-            <div class="benefit-icon-solid mb-8 has-background-indigo">
-              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" height="24" class="has-text-white"></iconify-icon>
-            </div>
-            <h3 class="is-size-4 has-text-weight-bold mb-4 has-text-grey-900 tracking-tight">{{ .title }}</h3>
-            <p class="is-size-6 has-text-grey-600 has-line-height-relaxed">{{ .description }}</p>
-          </div>
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
         </div>
         {{ end }}
       </div>
@@ -614,25 +569,7 @@
       <div class="columns is-multiline">
         {{ range $data.features }}
         <div class="column is-4-desktop is-6-tablet">
-          {{ $g_class := lower .gradient_class }}
-          {{ $c := "primary" }}
-          {{ if strings.Contains $g_class "blue" }}{{ $c = "info" }}
-          {{ else if strings.Contains $g_class "purple" }}{{ $c = "secondary" }}
-          {{ else if strings.Contains $g_class "green" }}{{ $c = "success" }}
-          {{ else if strings.Contains $g_class "orange" }}{{ $c = "warning" }}
-          {{ else if strings.Contains $g_class "yellow" }}{{ $c = "warning" }}{{ end }}
-
-          <div class="benefit-card h-full p-8 has-background-white has-border transition-all">
-            <div class="is-flex is-align-items-flex-start has-gap-6">
-              <div class="benefit-icon-solid is-flex-shrink-0 has-background-{{$c}}">
-                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" height="24" class="has-text-white"></iconify-icon>
-              </div>
-              <div class="feature-content">
-                <h4 class="is-size-5 has-text-weight-bold mb-2 has-text-grey-900">{{ .title }}</h4>
-                <p class="is-size-6 has-text-grey-600 has-line-height-normal">{{ .description }}</p>
-              </div>
-            </div>
-          </div>
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
         </div>
         {{ end }}
       </div>
@@ -656,17 +593,7 @@
       <div class="columns is-multiline">
         {{ range $data.why_not_cloud_dbaas }}
         <div class="column is-6">
-          <div class="p-8 is-radius-2xlarge has-border h-full transition-all hover:has-background-grey-50" style="background: rgba(248, 250, 252, 0.5); border-color: #e2e8f0;">
-            <div class="is-flex is-align-items-start has-gap-4">
-               <div class="has-size-10 is-radius-large has-background-primary-soft is-flex is-align-items-center is-justify-content-center is-flex-shrink-0">
-                 <iconify-icon icon="lucide:check-circle-2" width="20" class="has-text-info"></iconify-icon>
-               </div>
-               <div>
-                 <h3 class="is-size-5 has-text-weight-black mb-2 has-text-grey-900">{{ .title }}</h3>
-                 <p class="is-size-6 has-opacity-70 has-text-grey-600 has-line-height-normal">{{ .description }}</p>
-               </div>
-            </div>
-          </div>
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "horizontal-check") }}
         </div>
         {{ end }}
       </div>
@@ -686,7 +613,7 @@
         <h2 class="section-header-title has-text-weight-black is-size-2-desktop" style="letter-spacing: -0.04em;">{{ $data.team_benefits_title | default "Benefits For Every Team" }}</h2>
         <p class="section-header-desc mx-auto has-opacity-70 mt-4 is-text-lg has-max-width-800">{{ $data.team_benefits_subtitle }}</p>
       </div>
-      <div class="columns is-multiline is-variable is-6">
+      <div class="columns is-multiline">
         {{ range $index, $item := $data.team_benefits }}
         <div class="column is-4">
           <div class="p-12 is-radius-3xlarge has-background-white has-border is-fullheight transition-all has-hover-lift has-hover-shadow-xl" 
@@ -751,7 +678,7 @@
       {{ end }}
 
       <!-- Quick Summary Cards -->
-      <div class="columns is-multiline is-variable is-8 mb-16">
+      <div class="columns is-multiline mb-16">
         <!-- Operator Card -->
         <div class="column is-6">
           <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up"
@@ -906,21 +833,10 @@
         </p>
       </div>
 
-      <div class="columns is-multiline is-variable is-8">
+      <div class="columns is-multiline">
         {{ range $data.platform_features }}
         <div class="column is-4-desktop is-6-tablet">
-          <div class="h-full p-10 platform-feature-card has-border" style="border-radius: 32px !important;">
-            
-            <!-- Feature Icon (Unboxed) -->
-            <div class="is-flex mb-8">
-              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="36" height="36" style="color: #6366f1 !important;"></iconify-icon>
-            </div>
-            
-            <h3 class="is-size-4 has-text-weight-bold mb-3 platform-feature-title">{{ .title }}</h3>
-            <p class="is-size-6 has-text-grey-600 has-line-height-relaxed platform-feature-desc">
-              {{ .description | safeHTML }}
-            </p>
-          </div>
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
         </div>
         {{ end }}
       </div>
@@ -950,17 +866,10 @@
         <h2 class="title is-size-2 has-text-weight-bold mb-4">{{ $data.why_kubedb_title }}</h2>
       </div>
 
-      <div class="columns is-multiline is-variable is-6">
+      <div class="columns is-multiline">
         {{ range $data.why_kubedb_features }}
         <div class="column is-4-desktop is-6-tablet">
-          <div class="h-full p-8 is-radius-3xl has-background-white has-border transition-all hover-shadow-xl">
-            <div class="w-14 h-14 is-radius-2xl mb-6 is-flex is-align-items-center is-justify-content-center shadow-lg" 
-                 style="background: {{ .gradient }}; color: white;">
-              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="28"></iconify-icon>
-            </div>
-            <h3 class="is-size-4 has-text-weight-bold mb-3">{{ .title }}</h3>
-            <p class="has-text-grey-600 is-size-6 leading-relaxed">{{ .description }}</p>
-          </div>
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
         </div>
         {{ end }}
       </div>

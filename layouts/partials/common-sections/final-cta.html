@@ -55,7 +55,7 @@
               {{ end }}
               {{ range $index, $stat := $metrics }}
               <div class="column is-6">
-                <div class="trust-stat ds-card-base h-full">
+                <div class="ac-cta-stat-card trust-stat ds-card-base h-full">
                   <div class="trust-stat-icon trust-stat-icon-{{ $index }}" style="background: {{ .gradient | default .color | default "#7272E9" }};">
                     <iconify-icon {{ printf "icon=%q" (string .icon) | safeHTMLAttr }} width="24" class="has-text-white"></iconify-icon>
                   </div>

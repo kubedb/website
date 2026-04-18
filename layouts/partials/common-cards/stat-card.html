@@ -1,0 +1,12 @@
+{{ $stat := .stat }}
+{{ $color := .color | default "var(--ds-primary)" }}
+
+<div class="ac-stat-card stat-item has-text-centered p-6 transition-all hover-translate-up">
+  <h3 class="is-size-2-desktop is-size-3-tablet is-size-3-mobile has-text-weight-black mb-1 has-line-height-tight"
+    style="color: {{ $color }};">
+    {{ $stat.value }}
+  </h3>
+  <p class="has-text-grey-500 is-size-7 is-uppercase has-text-weight-bold has-tracking-widest">
+    {{ $stat.label }}
+  </p>
+</div>
