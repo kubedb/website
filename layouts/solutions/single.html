@@ -275,49 +275,59 @@
   </section>
   {{ end }}
 
-  {{/* High-Fidelity Code Demo Section */}}
+  <!-- High-Fidelity Code Demo Section (Matched to Screenshot) -->
   {{ if $data.code_demo }}
-  <section class="home-section section-padding has-background-white">
+  <section class="home-section section-padding" style="background: #F8FAFC;">
     <div class="container">
       <div class="has-text-centered mb-16">
-        <div class="inline-flex is-align-items-center has-gap-3 px-6 py-3 is-radius-full mb-6"
-             style="background: rgba(114, 114, 233, 0.1); border: 1px solid rgba(114, 114, 233, 0.3); color: #7272E9;">
-          <iconify-icon icon="lucide:git-branch" width="20" height="20"></iconify-icon>
-          <span class="is-size-7 font-bold uppercase tracking-widest">{{ $data.code_demo.subtitle }}</span>
+        <div class="badge is-justify-content-center mb-8" 
+             style="background: rgba(114, 114, 233, 0.1); border: 1px solid rgba(114, 114, 233, 0.2); color: #6366f1;">
+          <iconify-icon icon="lucide:git-branch" class="mr-2" width="14"></iconify-icon>
+          <span class="has-text-weight-bold is-size-7 uppercase tracking-widest">{{ $data.code_demo.subtitle }}</span>
         </div>
-        <h2 class="title is-size-2 has-text-weight-bold">{{ $data.code_demo.title | safeHTML }}</h2>
+        <h2 class="title is-size-1 has-text-weight-bold" style="font-size: 3.5rem;">{{ $data.code_demo.title | safeHTML }}</h2>
       </div>
 
-      <div class="columns is-variable is-8">
+      <div class="columns is-variable is-8 is-vcentered">
+        <!-- Left: Large Code Card -->
         <div class="column is-7">
-          <div class="code-window">
-            <div class="is-flex is-align-items-center is-justify-content-between mb-6">
+          <div class="p-12 is-radius-3xl has-background-white shadow-2xl" 
+               style="border: 1px solid #e2e8f0;">
+            <div class="is-flex is-align-items-center is-justify-content-between mb-8 px-2">
               <div class="is-flex is-align-items-center has-gap-3">
-                <iconify-icon icon="lucide:file-code" class="has-text-success" width="20" height="20"></iconify-icon>
-                <span class="font-semibold has-text-white">{{ $data.code_demo.filename }}</span>
+                <iconify-icon icon="lucide:file-code" class="has-text-success" width="24"></iconify-icon>
+                <span class="is-size-4 font-bold has-text-grey-900">{{ $data.code_demo.filename }}</span>
               </div>
-              <div class="is-size-7 px-3 py-1 is-radius-lg is-background-success has-text-success-dark font-bold" style="background: #d1fae5; color: #065f46;">Git</div>
+              <div class="px-4 py-1-5 is-radius-lg font-bold is-size-7" 
+                   style="background: #ECFDF5; color: #10B981; border: 1px solid #D1FAE5;">Git</div>
             </div>
-            <pre class="code-content">{{ $data.code_demo.code }}</pre>
+            
+            <div class="is-radius-2xl overflow-hidden shadow-inner" style="background: #0F172A;">
+              <pre class="p-10 font-mono is-size-6 leading-relaxed" 
+                   style="color: #6EE7B7; background: transparent; overflow-x: auto;"><code>{{ $data.code_demo.code }}</code></pre>
+            </div>
           </div>
         </div>
 
+        <!-- Right: Flow Steps -->
         <div class="column is-5">
           <div class="space-y-6">
             {{ range $data.code_demo.steps }}
-            <div class="p-8 is-radius-2xl has-border transition-all hover-shadow-lg {{ if .vibrant }}is-background-success-light{{ else }}has-background-white{{ end }}"
-                 {{ if .vibrant }}style="background: linear-gradient(to br, #ecfdf5, #f0fdf4); border-color: #d1fae5;"{{ end }}>
-              <div class="is-flex has-gap-4">
-                <div class="is-flex-shrink-0 w-10 h-10 is-radius-lg is-flex is-align-items-center is-justify-content-center {{ if .vibrant }}has-background-success has-text-white{{ else }}is-background-indigo-light has-text-indigo{{ end }}">
+            <div class="p-8 is-radius-2xl has-border transition-all hover-lift {{ if .vibrant }}is-background-success-light{{ else }}has-background-white shadow-sm{{ end }}"
+                 style="border-color: {{ if .vibrant }}#D1FAE5{{ else }}#E2E8F0{{ end }}; 
+                        background: {{ if .vibrant }}linear-gradient(to br, #F0FDF4, #DCFCE7){{ else }}#FFFFFF{{ end }};">
+              <div class="is-flex has-gap-6 is-align-items-center">
+                <div class="is-flex-shrink-0 w-12 h-12 is-radius-full is-flex is-align-items-center is-justify-content-center {{ if .vibrant }}has-background-success has-text-white shadow-lg{{ else }}has-background-indigo-light has-text-indigo{{ end }}"
+                     style="{{ if not .vibrant }}background: #F1F5F9; color: #6366F1;{{ end }}">
                   {{ if .vibrant }}
-                  <iconify-icon icon="lucide:rocket" width="20" height="20"></iconify-icon>
+                  <iconify-icon icon="lucide:rocket" width="24"></iconify-icon>
                   {{ else }}
-                  <span class="has-text-weight-bold">{{ .id }}</span>
+                  <span class="has-text-weight-black is-size-5" style="opacity: 0.5;">{{ .id }}</span>
                   {{ end }}
                 </div>
                 <div>
-                  <div class="has-text-weight-bold is-size-5 mb-1">{{ .title }}</div>
-                  <p class="has-text-grey-600 is-size-6">{{ .description }}</p>
+                  <h4 class="is-size-4 has-text-weight-bold mb-1 has-text-grey-900">{{ .title }}</h4>
+                  <p class="is-size-6 has-text-grey-600 leading-relaxed">{{ .description }}</p>
                 </div>
               </div>
             </div>
@@ -1157,7 +1167,6 @@
   {{ end }}
 
   <!-- High-Fidelity Call to Action -->
-  <section class="home-section section-padding is-relative is-overflow-hidden">
   <!-- Call to Action -->
   <section class="cta-section home-section section-padding is-relative is-overflow-hidden">
     <div class="container">
