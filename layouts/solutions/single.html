@@ -486,7 +486,7 @@
             {{ range $data.how_it_works_software.items }}
             <div class="is-flex is-align-items-center p-5 is-radius-large has-border has-transition has-hover-shadow-small has-background-white">
               <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-5 infra-box-indigo-small">
-                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="22" class="has-text-white"></iconify-icon>
+                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="22" ></iconify-icon>
               </div>
               <span class="is-text-base has-text-weight-black has-text-grey-900">{{ .text }}</span>
             </div>
@@ -616,30 +616,10 @@
       <div class="columns is-multiline">
         {{ range $index, $item := $data.team_benefits }}
         <div class="column is-4">
-          <div class="p-12 is-radius-3xlarge has-background-white has-border is-fullheight transition-all has-hover-lift has-hover-shadow-xl" 
-            style="border-color: #e2e8f0; position: relative; overflow: hidden;">
-            
-            <!-- Subtle backdrop gradient per persona -->
-            <div style="position: absolute; top: 0; right: 0; width: 120px; height: 120px; background: radial-gradient(circle at top right, {{ if eq $index 0 }}rgba(99,102,241,0.05){{ else if eq $index 1 }}rgba(168,85,247,0.05){{ else }}rgba(236,72,153,0.05){{ end }}, transparent 70%);"></div>
-
-            <div class="is-flex is-align-items-center is-justify-content-center is-radius-2xlarge mb-10 shadow-md"
-              style="width: 72px; height: 72px; background: linear-gradient(135deg, {{ if eq $index 0 }}#6366f1, #818cf8{{ else if eq $index 1 }}#a855f7, #c084fc{{ else }}#ec4899, #f472b6{{ end }});">
-              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="36" style="color: white;"></iconify-icon>
-            </div>
-            
-            <h3 class="is-size-4 has-text-weight-black mb-8 has-text-grey-900" style="letter-spacing: -0.03em;">{{ .team }}</h3>
-            
-            <div class="is-flex is-flex-direction-column has-gap-5">
-              {{ range .benefits }}
-              <div class="is-flex is-align-items-start has-gap-4">
-                <div class="is-flex is-align-items-center is-justify-content-center is-radius-rounded mt-1" style="width: 22px; height: 22px; background: #f0fdf4; border: 1px solid #dcfce7;">
-                   <iconify-icon icon="heroicons:check" width="14" style="color: #10b981; font-weight: bold;"></iconify-icon>
-                </div>
-                <span class="is-text-base has-text-weight-bold has-text-grey-700" style="line-height:1.4;">{{ . }}</span>
-              </div>
-              {{ end }}
-            </div>
-          </div>
+          {{ $color_soft := cond (eq $index 0) "rgba(99,102,241,0.05)" (cond (eq $index 1) "rgba(168,85,247,0.05)" "rgba(236,72,153,0.05)") }}
+          {{ $color_gradient := cond (eq $index 0) "linear-gradient(135deg, #6366f1, #818cf8)" (cond (eq $index 1) "linear-gradient(135deg, #a855f7, #c084fc)" "linear-gradient(135deg, #ec4899, #f472b6)") }}
+          
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "persona" "color_soft" $color_soft "color_gradient" $color_gradient) }}
         </div>
         {{ end }}
       </div>

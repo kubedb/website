@@ -38,7 +38,7 @@
 
 {{ else if eq $type "benefit-scale" }}
 <!-- Built For Scale Benefit Card -->
-<div class="ac-feature-benefit-scale p-10 is-radius-2xlarge has-background-white has-border h-full transition-all has-hover-lift has-shadow-small" style="border-color: #e2e8f0;">
+<div class="ac-feature-benefit-scale p-6 is-radius-2xlarge has-background-white has-border h-full transition-all has-hover-lift has-shadow-small" style="border-color: #e2e8f0;">
   <div class="is-flex is-align-items-flex-start has-gap-6 mb-8">
     {{ if $card.icon }}
     <div class="has-size-14 is-radius-2xlarge has-background-gradient-primary is-flex is-align-items-center is-justify-content-center is-flex-shrink-0">
@@ -63,7 +63,7 @@
 </div>
 {{ else if eq $type "centered" }}
 <!-- Centered Feature Card (Used in Use Cases) -->
-<div class="ac-feature-centered has-text-centered p-10 h-full transition-all hover-translate-up">
+<div class="ac-feature-centered has-text-centered p-6 h-full transition-all hover-translate-up">
   {{ if $card.icon }}
   <div class="is-flex is-justify-content-center mb-8">
     <div class="ds-icon-box shadow-lg is-flex is-align-items-center is-justify-content-center has-background-{{ $color }}"
@@ -92,5 +92,37 @@
        <p class="is-size-6 has-text-grey-600 has-line-height-normal">{{ $card.description }}</p>
      </div>
   </div>
+</div>
+{{ else if eq $type "persona" }}
+<!-- Persona / Team Benefit Card -->
+<div class="ac-feature-persona p-12 is-radius-3xlarge has-background-white has-border is-fullheight transition-all has-hover-lift has-hover-shadow-xl" 
+     style="border-color: #e2e8f0; position: relative; overflow: hidden;">
+  
+  {{ if .color_soft }}
+  <!-- Subtle backdrop gradient per persona -->
+  <div style="position: absolute; top: 0; right: 0; width: 120px; height: 120px; background: {{ (printf "radial-gradient(circle at top right, %s, transparent 70%%)" .color_soft) | safeCSS }};"></div>
+  {{ end }}
+
+  {{ if $card.icon }}
+  <div class="is-flex is-align-items-center is-justify-content-center is-radius-2xlarge mb-10 shadow-md"
+    {{ if .color_gradient }}style="width: 72px; height: 72px; background: {{ .color_gradient | safeCSS }};"{{ else }}style="width: 72px; height: 72px; background: var(--ds-primary);"{{ end }}>
+    <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="36" style="color: white;"></iconify-icon>
+  </div>
+  {{ end }}
+  
+  <h3 class="is-size-4 has-text-weight-black mb-8 has-text-grey-900" style="letter-spacing: -0.03em;">{{ $card.team | default $card.title }}</h3>
+  
+  {{ if $card.benefits }}
+  <div class="is-flex is-flex-direction-column has-gap-5">
+    {{ range $card.benefits }}
+    <div class="is-flex is-align-items-start has-gap-4">
+      <div class="is-flex is-align-items-center is-justify-content-center is-radius-rounded mt-1" style="width: 22px; height: 22px; background: #f0fdf4; border: 1px solid #dcfce7;">
+         <iconify-icon icon="heroicons:check" width="14" style="color: #10b981; font-weight: bold;"></iconify-icon>
+      </div>
+      <span class="is-text-base has-text-weight-bold has-text-grey-700" style="line-height:1.4;">{{ . }}</span>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
 </div>
 {{ end }}
