@@ -929,40 +929,8 @@
 
   {{ end }}
 
-  <!-- Workflow Steps Section (Case Study Style) -->
-  {{ if $data.workflow_steps }}
-  <section class="section-padding has-background-white cs-journey-section">
-    <div class="container">
-      <div class="section-header has-text-centered mb-20">
-        {{ with $data.workflow_badge | default "Streamlined Operations" }}
-        <div class="badge badge-primary mb-6">
-          <span class="has-size-2 is-rounded has-background-primary"></span>
-          <span>{{ . }}</span>
-        </div>
-        {{ end }}
-        <h2 class="section-header-title has-text-weight-black is-size-2-desktop" style="letter-spacing: -0.04em;">{{ $data.workflow_title | default "How It Works" }}</h2>
-        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.workflow_subtitle | default "From request to running database in minutes." }}</p>
-      </div>
-
-      <div class="cs-journey-wrapper px-4">
-        <div class="cs-journey-steps">
-          {{ range $i, $step := $data.workflow_steps }}
-          <div class="cs-journey-step">
-            <div class="cs-journey-node-wrap">
-              <div class="cs-journey-node">{{ .step }}</div>
-            </div>
-            <div class="cs-journey-period">STEP {{ .step }}</div>
-            <div class="cs-journey-card has-hover-lift has-transition">
-              <h4 class="has-text-heading mb-3">{{ .title }}</h4>
-              <p class="mb-0">{{ .description }}</p>
-            </div>
-          </div>
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </section>
-  {{ end }}
+  <!-- Workflow Steps Section (Premium Component) -->
+  {{ partial "common-sections/journey-timeline.html" $data }}
 
   <!-- Redundant styles removed -->
 
@@ -971,7 +939,6 @@
   {{ if (and $data.how_it_works (not $data.how_it_works_infra)) }}
   <section class="home-section section-padding has-text-white is-relative is-overflow-hidden has-background-black"
     style="padding: 80px 0;">
-...
 {{ end }}
 
   <!-- FAQs Section (Refactored to Two-Column Layout) -->

@@ -475,39 +475,8 @@
   {{ end }}
 
 
-  <!-- 4. JOURNEY / TIMELINE -->
-  {{ with $p.timeline }}
-  <section class="section-padding has-background-white cs-journey-section">
-    <div class="container">
-      <div class="section-header mb-16">
-        <div class="badge">
-          <iconify-icon icon="lucide:route" width="16" height="16" class="has-text-secondary"></iconify-icon>
-          <span class="badge-text">{{ $p.timeline_badge }}</span>
-        </div>
-        <h2 class="section-header-title has-text-heading has-text-weight-black">{{ $p.timeline_title }}</h2>
-      </div>
-
-      <div class="cs-journey-wrapper">
-        <!-- Desktop: horizontal steps -->
-        <div class="cs-journey-steps">
-          {{ range $i, $step := . }}
-          <div class="cs-journey-step">
-            <div class="cs-journey-node-wrap">
-              <div class="cs-journey-node">{{ add $i 1 }}</div>
-            </div>
-            <div class="cs-journey-period">{{ $step.period }}</div>
-            <div class="cs-journey-card has-hover-lift has-transition">
-              <h4 class="has-text-heading mb-2">{{ $step.title }}</h4>
-              <p class="mb-0">{{ $step.description }}</p>
-            </div>
-          </div>
-          {{ end }}
-        </div>
-      </div>
-
-    </div>
-  </section>
-  {{ end }}
+  <!-- 4. Premium Journey / Timeline -->
+  {{ partial "common-sections/journey-timeline.html" $p }}
 
 
   <!-- 6. VALUE PROPS -->
