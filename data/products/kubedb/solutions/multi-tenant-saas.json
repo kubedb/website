@@ -110,6 +110,17 @@
   },
   "cta_title": "Ready to scale your SaaS infrastructure?",
   "cta_description": "Join the leading SaaS teams who have built their internal DBaaS on KubeDB Platform.",
+  "cta_checklist": [
+    "Ultra-fast tenant on-boarding",
+    "Isolated multi-tenant architecture",
+    "Multi-cloud & hybrid portability"
+  ],
+  "final_cta_metrics": [
+    { "icon": "lucide:zap", "value": "< 60s", "label": "Provisioning Time", "gradient": "linear-gradient(135deg, #6366f1, #a855f7)" },
+    { "icon": "lucide:trending-up", "value": "5x", "label": "Operational efficiency", "gradient": "linear-gradient(135deg, #4ade80, #10b981)" },
+    { "icon": "lucide:globe", "value": "Any K8s", "label": "Cloud portability", "gradient": "linear-gradient(135deg, #fb923c, #ef4444)" },
+    { "icon": "lucide:shield-check", "value": "99.99%", "label": "SaaS availability", "gradient": "linear-gradient(135deg, #ec4899, #f43f5e)" }
+  ],
   "cta_button_text": "Get Started for Free",
   "cta_button_url": "/kubernetes/databases/run-and-manage-kubedb-on-kubernetes/"
 }

@@ -334,9 +334,21 @@
       "answer": "Yes. KubeDB enables consistent database operations across clusters and environments, making it easier to migrate workloads across cloud, on-prem, and hybrid deployments."
     }
   ],
-  "cta_title": "Ready to Modernize Your Database Infrastructure?",
+  "cta_badge": "Get Started Today",
+  "cta_title": "Ready to Automate Your <br><span style='color: #818cf8;'>Database Operations?</span>",
   "cta_description": "Join thousands of teams running production databases on Kubernetes with KubeDB Operator",
-  "cta_button_text": "Get Started Free",
+  "cta_checklist": [
+    "Free 30-day trial",
+    "Enterprise support & 99.9% uptime SLA",
+    "Deploy in minutes • Cancel anytime"
+  ],
+  "final_cta_metrics": [
+    { "icon": "lucide:trending-up", "value": "10K+", "label": "Active Users", "gradient": "linear-gradient(135deg, #60a5fa, #06b6d4)" },
+    { "icon": "lucide:shield-check", "value": "99.9%", "label": "Uptime SLA", "gradient": "linear-gradient(135deg, #4ade80, #10b981)" },
+    { "icon": "lucide:database", "value": "30+", "label": "Databases", "gradient": "linear-gradient(135deg, #c084fc, #ec4899)" },
+    { "icon": "lucide:check-circle", "value": "24/7", "label": "Support", "gradient": "linear-gradient(135deg, #fb923c, #ef4444)" }
+  ],
+  "cta_button_text": "Start Free Trial",
   "cta_button_url": "/docs/latest/setup/",
   "cta_bg_color": "#1e1b4b"
 }

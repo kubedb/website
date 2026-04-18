@@ -220,7 +220,7 @@
 
   <!-- Supported Databases Section -->
   {{ if not $data.hide_database_support }}
-  {{ partial "products/database-support.html" . }}
+  {{ partial "common-sections/database-support.html" . }}
   {{ end }}
   
   <!-- Why Not Cloud DBaaS Section -->
@@ -709,49 +709,8 @@
   </script>
   {{ end }}
 
-  <!-- Call to Action -->
-  <section class="cta-section section-padding is-relative is-overflow-hidden">
-    <div class="container">
-      {{ $cta_title := $data.cta_title | default "Ready to Modernize Your Infrastructure?" }}
-      {{ $cta_desc := $data.cta_description | default "Join thousands of teams scaling their infrastructure effortlessly with KubeDB." }}
-      {{ $cta_btn := $data.cta_button_text | default "Contact Us" }}
-      {{ $cta_url := $data.cta_button_url | default "#" }}
-
-      <div class="cta-block ds-card-base is-radius-2xlarge p-0 overflow-hidden" 
-        style="background: linear-gradient(135deg, #161d36, #4948a3 55%, #1a203d); position: relative; border: none;">
-        
-        <!-- Background Patterns from Homepage -->
-        <div class="cta-glow" style="position: absolute; inset: -80px; background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.15), transparent 35%); pointer-events: none;"></div>
-        <div class="cta-dot-pattern" style="position: absolute; inset: 0; opacity: 0.08; pointer-events: none; background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.7) 1px, transparent 0); background-size: 28px 28px;"></div>
-
-        <div class="cta-inner has-text-centered is-relative py-20 px-8 has-z-index-10">
-          <div class="is-flex is-justify-content-center mb-6">
-            <div class="badge badge-dark is-rounded is-flex is-align-items-center has-backdrop-blur" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 6px 16px;">
-              <iconify-icon icon="heroicons:rocket-launch" width="16" height="16" style="color: #60a5fa; margin-right: 8px; vertical-align: middle;"></iconify-icon>
-              <span class="has-text-white is-size-7 has-text-weight-bold uppercase tracking-widest">Get Started Today</span>
-            </div>
-          </div>
-
-          <h2 class="cta-title has-text-weight-black is-size-2-desktop is-size-3-mobile mb-6 has-text-white has-line-height-none">
-            {{ $cta_title | safeHTML }}
-          </h2>
-          
-          <p class="cta-desc mx-auto mb-10 is-size-5 has-text-white has-opacity-80 has-line-height-relaxed has-max-width-700">
-            {{ $cta_desc | safeHTML }}
-          </p>
-
-          <div class="buttons is-centered cta-buttons ds-button-group">
-            <a href="{{ $cta_url }}" class="button is-white is-large height-60 px-12" style="border-radius: 14px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);">
-              <strong style="color: #161d36;">{{ $cta_btn }}</strong>
-              <iconify-icon icon="heroicons:arrow-right" class="ml-2" width="22" height="22" style="color: #161d36;"></iconify-icon>
-            </a>
-          </div>
-        </div>
-
-        <div class="is-absolute" style="bottom: -50px; left: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%); filter: blur(40px); pointer-events: none;"></div>
-    </div>
-  </div>
-</section>
+  <!-- Premium Reusable Call to Action -->
+  {{ partial "common-sections/final-cta.html" $data }}
 </div>
 
 {{ end }}

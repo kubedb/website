@@ -344,9 +344,21 @@
       "answer": "Yes. KubeDB enables consistent database operations across clusters and environments, making it easier to migrate workloads across cloud, on-prem, and hybrid deployments."
     }
   ],
-  "cta_title": "Launch Your DBaaS Platform Today",
+  "cta_badge": "Launch Your Platform",
+  "cta_title": "Ready to Launch Your <br><span style='color: #818cf8;'>DBaaS Platform?</span>",
   "cta_description": "Join leading cloud providers offering managed database services with KubeDB Platform",
-  "cta_button_text": "Schedule a Strategy Call",
-  "cta_button_url": "/contact/",
-  "cta_bg_color": "#1e3a8a"
+  "cta_checklist": [
+    "Free 30-day trial",
+    "Enterprise support & 99.9% uptime SLA",
+    "Launch in minutes • Full white-label"
+  ],
+  "final_cta_metrics": [
+    { "icon": "lucide:users-2", "value": "500+", "label": "Cloud Providers", "gradient": "linear-gradient(135deg, #60a5fa, #06b6d4)" },
+    { "icon": "lucide:shield-check", "value": "99.9%", "label": "Uptime SLA", "gradient": "linear-gradient(135deg, #4ade80, #10b981)" },
+    { "icon": "lucide:database", "value": "30+", "label": "Databases", "gradient": "linear-gradient(135deg, #c084fc, #ec4899)" },
+    { "icon": "lucide:globe", "value": "24/7", "label": "Support", "gradient": "linear-gradient(135deg, #fb923c, #ef4444)" }
+  ],
+  "cta_button_text": "Start Free Trial",
+  "cta_button_url": "/docs/latest/setup/",
+  "cta_bg_color": "#1e1b4b"
 }

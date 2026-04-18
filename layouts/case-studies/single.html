@@ -545,37 +545,8 @@
   </section>
   {{ end }}
 
-  <!-- 7. CTA -->
-  <section class="cs-cta-area">
-    <div class="container">
-      <div class="cta-block has-text-centered has-shadow-large py-12 px-8">
-        <div class="cta-glow"></div>
-        <div class="has-max-width-xl mx-auto is-relative has-z-index-10">
-          <h2 class="display-lg has-text-white mb-4 has-text-balance">{{ $p.cta_title }}</h2>
-          <p class="body-lg has-text-grey-200 mb-8 has-max-width-2xl mx-auto">{{ $p.cta_description }}</p>
-
-          <div class="is-flex is-justify-content-center has-gap-4 is-flex-wrap-wrap mb-10">
-            <a href="{{ $contactURL }}" class="button is-white height-50">
-              <iconify-icon icon="lucide:calendar" width="18" height="18"></iconify-icon>
-              <span>{{ $p.cta_primary }}</span>
-              <iconify-icon icon="lucide:arrow-right" width="18" height="18"></iconify-icon>
-            </a>
-            {{ with $p.cta_secondary_href }}
-            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="button is-ghost height-50">
-              <span>{{ $p.cta_secondary }}</span>
-              <iconify-icon icon="lucide:external-link" width="16" height="16"></iconify-icon>
-            </a>
-            {{ end }}
-          </div>
-
-          <div class="is-flex is-align-items-center is-justify-content-center has-gap-2 opacity-50">
-            <iconify-icon icon="lucide:shield-check" width="14" height="14" class="has-text-grey-100"></iconify-icon>
-            <span class="has-text-grey-100 is-text-xs">{{ $p.compliance_note }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- 7. Premium Reusable Call to Action -->
+  {{ partial "common-sections/final-cta.html" $p }}
 
 </div>
 {{ end }}

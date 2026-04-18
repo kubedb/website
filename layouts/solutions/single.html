@@ -642,7 +642,7 @@
 
   <!-- Supported Databases Section -->
   {{ if not $data.hide_database_support }}
-  {{ partial "products/database-support.html" . }}
+  {{ partial "common-sections/database-support.html" . }}
   {{ end }}
   
   <!-- Why Not Cloud DBaaS Section -->
@@ -1167,68 +1167,8 @@
   {{ end }}
 
   <!-- High-Fidelity Call to Action -->
-  <!-- Call to Action -->
-  <section class="cta-section home-section section-padding is-relative is-overflow-hidden">
-    <div class="container">
-      <div class="cta-block ds-card-base">
-        <div class="cta-glow"></div>
-        <div class="cta-inner">
-          <div class="cta-dot-pattern" aria-hidden="true"></div>
-
-          <div class="columns is-vcentered is-variable is-8">
-            <div class="column is-6-desktop">
-              <div class="badge badge-dark">
-                <iconify-icon icon="lucide:git-branch" width="14" height="14" style="color:#7272E9;"></iconify-icon>
-                <span class="badge-text has-text-white">{{ $data.hero_badge | default "GitOps Native" }}</span>
-              </div>
-
-              <h2 class="cta-title">
-                {{ $data.cta_title }}
-                <span class="cta-title-gradient">{{ $data.cta_title_gradient }}</span>
-              </h2>
-              <p class="cta-desc mb-4 has-text-white has-opacity-80">{{ $data.cta_description }}</p>
-
-              <ul class="cta-checklist is-grid has-gap-3 my-8">
-                {{ range $data.cta_checklist }}
-                <li class="is-flex is-align-items-center has-gap-3 has-text-white font-semibold">
-                  <iconify-icon icon="heroicons:check-circle-solid" width="22" style="color:#7272E9;"></iconify-icon>
-                  {{ . }}
-                </li>
-                {{ end }}
-              </ul>
-
-              <div class="buttons cta-buttons ds-button-group mt-10">
-                <a href="{{ $data.cta_button_url }}" class="button is-white is-large height-60 px-10 shadow-lg hover-lift">
-                  <strong style="color: #161d36;">{{ $data.cta_button_text }}</strong>
-                  <iconify-icon icon="heroicons:arrow-right" class="ml-2" width="22" style="color: #161d36;"></iconify-icon>
-                </a>
-                <a href="/contact/" class="button is-ghost is-large height-60 has-text-white px-8">
-                  <iconify-icon icon="heroicons:play-solid" width="20" class="mr-2" style="color: #818cf8;"></iconify-icon>
-                  <strong>Watch Demo</strong>
-                </a>
-              </div>
-            </div>
-
-            <div class="column is-6-desktop mt-12-mobile">
-              <div class="columns is-multiline is-variable is-4 w-full">
-                {{ range $index, $stat := $data.final_cta_metrics }}
-                <div class="column is-6">
-                  <div class="trust-stat ds-card-base h-full">
-                    <div class="trust-stat-icon trust-stat-icon-{{ $index }}" style="background: {{ .gradient }};">
-                      <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" style="color: white;"></iconify-icon>
-                    </div>
-                    <div class="trust-stat-val has-text-white has-text-weight-black mb-1">{{ .value }}</div>
-                    <div class="trust-stat-label is-uppercase has-text-weight-bold tracking-widest is-size-7">{{ .label }}</div>
-                  </div>
-                </div>
-                {{ end }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Reusable Call to Action -->
+  {{ partial "common-sections/final-cta.html" $data }}
 </div>
 
 {{ end }}
