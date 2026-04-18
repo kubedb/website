@@ -70,9 +70,26 @@ params:
       weight: 5
 menu:
   main:
+  - name: Products
+    identifier: products
+    weight: 1
+  - name: KubeDB Operator
+    identifier: kubedb-operator
+    parent: products
+    weight: 1
+    url: /products/kubedb-operator/
+    pre: lucide:container
+    title: Run Databases Natively on Kubernetes
+  - name: KubeDB Platform
+    identifier: kubedb-platform
+    parent: products
+    weight: 2
+    url: /products/kubedb-platform/
+    pre: lucide:cloud
+    title: DBaaS Platform for Enterprises, MSPs, and CSPs
   - name: Databases
     identifier: database
-    weight: 1
+    weight: 2
     url: https://kubedb.com/docs/latest/setup/
   - name: Partners
     identifier: partners

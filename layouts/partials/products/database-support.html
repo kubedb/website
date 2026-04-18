@@ -1,0 +1,36 @@
+{{ $d := index $.Site.Data.products.kubedb.homepage "database-support" }}
+{{ $databaseMenu := index (where $.Site.Menus.main "Identifier" "database") 0 }}
+{{ $databases := slice }}
+{{ if $databaseMenu }}
+  {{ $databases = $databaseMenu.Children.ByWeight }}
+{{ end }}
+
+<section class="home-section section-padding" style="background-color: #fbfbfb; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9;">
+  <div class="container">
+    <div class="section-header has-text-centered mb-12">
+      <div class="badge mb-4">
+         <iconify-icon icon="lucide:database" class="has-text-info" width="16" height="16"></iconify-icon>
+         <span class="has-text-info is-text-xs has-text-weight-bold uppercase tracking-widest">{{ $d.badge | default "Database Support" }}</span>
+      </div>
+      <h2 class="is-size-2 has-text-weight-black mb-3">
+        <span class="text-gradient">{{ $d.title_gradient }}</span><br>
+        {{ $d.title_plain }}
+      </h2>
+      <p class="has-text-body is-size-6">{{ $d.description }}</p>
+    </div>
+
+    <!-- Reusing Homepage Component Styles -->
+    <div class="db-grid-wrap p-4">
+      <div class="db-grid is-flex is-flex-wrap-wrap is-align-items-stretch is-justify-content-center has-gap-4">
+        {{ range $databases }}
+        <a href="{{ if .URL }}{{ .URL }}{{ else }}/kubernetes/databases/run-and-manage-{{ .Identifier }}-on-kubernetes{{ end }}" class="db-card ds-card-base is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-gap-3 p-4">
+          <div class="db-card-logo">
+            <img src="{{ .Pre }}" alt="{{ .Name }}" loading="lazy">
+          </div>
+          <span class="db-card-name has-text-heading is-text-xs has-text-weight-bold has-text-centered">{{ .Name }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>

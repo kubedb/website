@@ -1,0 +1,283 @@
+{{ block "header" . }}
+<header>
+  {{ block "header-top" . }}
+  <!-- new navbar area start  -->
+  <div class="navbar-area header--fixed">
+
+
+    {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
+
+    <!-- notification message  -->
+    {{ if fileExists (printf "layouts/partials/components/notification-message.html") }}
+    {{ if ne $currentPageType "docs" }}
+    {{ partial "components/notification-message.html" . }}
+    {{ end }}
+    {{ end }}
+
+    <!-- iframe ".is-flex | is-hidden" -->
+    {{ if .Site.Params.appscode_notification_show }}
+    {{ $notif_class := cond (eq $currentPageType "docs") "is-hidden" "is-flex" }}
+    <iframe src="https://appscode.com/notification-top/" id="notification" class="is-hidden {{ $notif_class }}" frameborder="0" scrolling="no" onload="resizeIframe()" style="width: 100%; overflow: hidden;" title="Notification"></iframe>
+
+    <script>
+      function resizeIframe() {
+        var iframe = document.getElementById("notification");
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+      }
+    </script>
+    <!-- iframe  -->
+    {{ end }}
+    {{ block "header-bottom" . }}
+    {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+    {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
+    {{ $nav_wrapper_class := cond (eq $currentPageType "docs") "is-docs-page" "" }}
+    <div class="navbar-appscode-wrapper navbar-product {{ $nav_wrapper_class }}">
+      {{ $nav_container_class := cond (eq $currentPageType "docs") "bb-1" "container" }}
+      <div class="navbar-appscode {{ $nav_container_class }}">
+        <!-- navbar left start  -->
+        <div class="navbar-left">
+          <div class="navbar-brand">
+            <a href="{{ index $.Site.Params $p.website.domainKey }}{{ $p.website.path }}">
+              <img src="{{ $p.logo.src }}" alt="{{ $p.logo.alt }}" alt="{{ $p.logo.alt }}">
+              <h4>By <span>Apps</span><span class="green">Code</span></h4>
+            </a>
+
+            <!-- {{ $currentPageType := index (split .Page.Permalink "/") 3 }} -->
+            {{ if eq $currentPageType "docs" }}
+            <!-- version select start  -->
+            {{ $p := (index .Site.Data.products .Site.Params.product_key) }}
+            {{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
+            <div class="product-version ml-8">
+              <div class="dropdown">
+                <div class="dropdown-trigger">
+                  <button class="button is-justify-content-space-between" aria-haspopup="true"
+                    aria-controls="dropdown-menu3">
+
+
+                    {{ range $v := $p.versions }}
+                    {{ if $v.show }}
+                    {{ if and $v.hostDocs (eq $v.version $currentBranch) }}
+                    <span>{{ $v.version }}</span>
+                    {{ if eq $v.version $p.latestVersion }}
+                    <span class="new-item">Latest</span>
+                    {{ end }}
+                    {{ end }}
+                    {{ end }}
+                    {{ end }}
+                    <span class="arrow">
+                      <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                  <div class="dropdown-content">
+                    {{ range $v := $p.versions }}
+                    {{ if $v.show }}
+                    {{ if $v.hostDocs }}
+                    <a href="/docs/{{ $v.version }}/" class="dropdown-item">{{ $v.version }}
+                      {{ if eq $v.version $p.latestVersion }} <div class="new-item ml-15">Latest</div> {{ end }}</a>
+                    {{ else }}
+                    <a href="https://github.com/{{ $p.docRepo }}/tree/{{ $v.version }}/docs" target="_blank"
+                      class="dropdown-item">{{ $v.version }}</a>
+                    {{ end }}
+                    {{ end }}
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- version select end -->
+            {{ end }}
+
+            <a role="button"
+              class="navbar-burger is-flex is-align-items-center font-size-14 has-text-weight-bold pl-6 pr-6"
+              aria-label="menu" aria-expanded="false">
+              MENU <i class="fa fa-angle-down pl-5"></i>
+            </a>
+          </div>
+        </div>
+        <!-- navbar left end -->
+        <!-- navbar right start  -->
+        <div class="navbar-right">
+          <ul>
+
+            {{ $addons := "" }}
+            {{ range .Site.Menus.main }}
+            {{ if eq .Name "Addons" }}
+            {{ $addons = . }}
+            {{ end }}
+            {{ if .HasChildren }}
+            <li class="nav-item">
+              <button href="#" class="link">{{ .Name }} <i class="fa fa-angle-down"></i></button>
+
+              <!-- mega-menu wrapper -->
+              <div class="mega-menu-wrapper">
+
+                <!-- ac-grid-container -->
+                <div class="mega-menu-inner container">
+                  <button class="button ac-button inline-button back-button">
+                    <span class="icon arrow-back">
+                      <iconify-icon icon="heroicons:arrow-uturn-left"></iconify-icon>
+                    </span>
+                    <span>Back</span>
+                  </button>
+                  {{ $pm_class := cond (eq .Identifier "database") "database-list" (cond (eq .Identifier "products") "custom-products-list" "") }}
+                  <div class="product-menu {{ $pm_class }}">
+                    {{ range .Children }}
+                    {{ if eq .Parent $.Site.Params.main_menu_dropdown_item }}
+                    <!-- single product start  -->
+
+                    {{ $p_key := $.Site.Params.product_key }}
+                    <a href="{{ if eq $p_key "kubevault" }}/features/{{ .Identifier }}{{ else if $addons }}{{ .PageRef }}{{ else }}/kubernetes/databases/run-and-manage-{{ .Identifier }}-on-kubernetes{{ end }}" class="single-product">
+                      {{ if .Pre }}
+                      <div class="product-logo">
+                        <img src="{{ .Pre }}" alt="{{ .Name }}">
+                      </div>
+                      {{ end }}
+                      <div class="product-info">
+                        <h6>{{ .Name }}</h6>
+                        <!-- <p>static content</p> -->
+                      </div>
+                      <div class="navigate-icon">
+                        <span class="icon arrow-forward">
+                          <iconify-icon icon="heroicons:arrow-up-right" width="1.2rem" height="1.2rem"></iconify-icon>
+                        </span>
+                      </div>
+                    </a>
+                    {{ else if eq .Parent "products" }}
+                    <a href="{{.URL}}" class="single-product">
+                      <div class="product-logo">
+                        {{ if (and .Pre (strings.HasPrefix .Pre "/assets")) }}
+                        <img src="{{ .Pre }}" alt="{{ .Name }}" style="width: 2rem; height: 2rem; object-fit: contain;">
+                        {{ else }}
+                        <iconify-icon {{ printf "icon=%q" (default "lucide:box" .Pre) | safeHTMLAttr }} width="2rem"
+                          height="2rem"></iconify-icon>
+                        {{ end }}
+                      </div>
+                      <div class="product-info">
+                        <h6>{{ .Name }}</h6>
+                        <p>{{ .Title }}</p>
+                      </div>
+                      <div class="navigate-icon">
+                        <span class="icon arrow-forward">
+                          <iconify-icon icon="heroicons:arrow-up-right" width="1.2rem" height="1.2rem"></iconify-icon>
+                        </span>
+                      </div>
+                    </a>
+                    {{ else }}
+                    <a href="{{.URL}}" class="single-database">{{ .Name }}</a>
+                    {{ end }}
+                    {{ end }}
+
+                  </div>
+                  <!-- product end -->
+
+                  <!-- product description start  -->
+
+                  <!-- single product description start  -->
+                  <div class="product-description is-block">
+                    <div class="video-content">
+                      <div class="yt-thumbnail">
+                        <a href="https://www.youtube.com/watch?v=hBHxMtSjKo4" class="play-icon yt-video">
+                          <iconify-icon icon="heroicons:play-circle" style="color: white" width="48"
+                            height="48"></iconify-icon>
+                        </a>
+                        <img loading="lazy" src="https://img.youtube.com/vi/hBHxMtSjKo4/sddefault.jpg"
+                          alt="kubedb-youtube-intro">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single product description end  -->
+
+                  <!-- product description end -->
+                </div>
+              </div>
+              <!-- mega-menu wrapper -->
+            </li>
+            {{else}}
+            {{ if eq .Name "Documentation" }}
+            <li class="nav-item">
+              <a href="/docs/{{ $p.latestVersion }}/welcome/" class="link">{{ .Name }}</a>
+            </li>
+            {{ else }}
+            <li class="nav-item is-relative">
+              <a href="{{.URL}}" class="link">{{ .Name }}</a>
+            </li>
+            {{ end }}
+            {{ end }}
+            {{end}}
+          </ul>
+
+          <!-- Community link start  -->
+          <div class="community-items ml-70">
+            {{ if $p.socialLinks.github }}
+            <a href="{{$p.socialLinks.github}}" class="community-item" target="_blank" title="Github">
+              <img loading="auto" src="/assets/images/icon/community/github-icon.svg" alt="github-icon">
+            </a>
+            {{ end }}
+            {{ if $p.socialLinks.twitter }}
+            <a href="{{$p.socialLinks.twitter}}" class="community-item" target="_blank" title="X(Twitter)">
+              <img loading="auto" src="/assets/images/icon/community/twitterx-icon.svg" alt="twitterx-icon">
+            </a>
+            {{ end }}
+          </div>
+          <!-- Community link end -->
+          <!-- action button start  -->
+          {{ $currentPageType := index (split .Page.Permalink "/") 3 }}
+          {{ if eq $currentPageType "docs" }}
+          <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-primary ml-8 !height-40">TRY NOW
+            FREE</a>
+          {{ end }}
+          <!-- action button end -->
+
+        </div>
+        <!-- navbar right end -->
+      </div>
+      <!-- product navbar end -->
+      <!-- docs navbar start  -->
+      {{ block "documentation-menu" . }}
+      {{ end }}
+      <!-- docs navbar end -->
+
+    </div>
+    {{ end }}
+
+    <script type="text/javascript">
+      const navbarRightAll = document.querySelectorAll(".navbar-right");
+      const navbarBurgerAll = document.querySelectorAll(".navbar-burger");
+
+      // Create event listeners for each navbar-burger button
+      Array.from(navbarBurgerAll).forEach((el, idx) => {
+        el.addEventListener("click", function () {
+
+          // Remove visible class from previous selected navbar right
+          Array.from(navbarRightAll).forEach((rightEl, rightElIdx) => {
+            if (idx !== rightElIdx && navbarRightAll[rightElIdx].classList.contains("is-visible")) {
+              navbarRightAll[rightElIdx].classList.remove("is-visible");
+              navbarBurgerAll[rightElIdx].classList.remove("is-active");
+            }
+          });
+
+          const modalBackdropElement = document.querySelector(".modal-backdrop");
+
+          // if modal backdrop element is visible then hide it
+          if (modalBackdropElement && modalBackdropElement.classList.contains("is-show")) {
+            modalBackdropElement.classList.remove("is-show")
+          }
+
+          // if any nav element is visible then hide it
+          const activeNavItem = document.querySelector(".nav-item.is-active");
+          if (activeNavItem && activeNavItem.classList.contains("is-active")) {
+            activeNavItem.classList.remove("is-active");
+          }
+
+          navbarRightAll[idx].classList.toggle("is-visible");
+        });
+      })
+    </script>
+  </div>
+  <!-- new navbar area end -->
+  {{ end }}
+
+</header>
+{{ end }}
