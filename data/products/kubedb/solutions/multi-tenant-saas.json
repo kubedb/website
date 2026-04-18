@@ -1,0 +1,115 @@
+{
+  "product_name": "For SaaS Companies",
+  "product_color_primary": "#7c3aed",
+  "cta_bg_color": "#4c1d95",
+  "hero_title_1": "Multi-Tenant Database Infrastructure.",
+  "hero_title_2": "Done Right.",
+  "hero_description": "Deliver production-grade, secure, and cost-effective databases to every tenant with a single Kubernetes-native DBaaS platform. Built for internal developers and modern SaaS scalability.",
+  "primary_action_text": "Get Started with KubeDB",
+  "primary_action_url": "/kubernetes/databases/run-and-manage-kubedb-on-kubernetes/",
+  "secondary_action_text": "View Documentation",
+  "secondary_action_url": "/docs/v2026.1.19/welcome/",
+  "product_icon": "lucide:layers",
+  "stats": [
+    { "label": "Provisioning Time", "value": "<60s" },
+    { "label": "Operational Efficiency", "value": "5x" },
+    { "label": "Database Engines", "value": "25+" },
+    { "label": "Support SLA", "value": "99.99%" }
+  ],
+  "when_to_use_title": "The Multi-Tenant Challenge",
+  "when_to_use_subtitle": "Modern SaaS needs databases that scale with tenants — not against them.",
+  "when_to_use": [
+    {
+      "icon": "lucide:shield",
+      "title": "Security & Isolation",
+      "description": "Prevent noisy neighbors and credential sprawl with isolated namespaces and fine-grained access.",
+      "icon_bg": "#ef4444"
+    },
+    {
+      "icon": "lucide:zap",
+      "title": "Instant Self-Service",
+      "description": "Developers on-board customers faster with automated database provisioning via Helm or APIs.",
+      "icon_bg": "#f59e0b"
+    },
+    {
+      "icon": "lucide:trending-down",
+      "title": "Cost Optimization",
+      "description": "Bin-pack multi-tenant workloads more efficiently than hyperscaler DBaaS instances.",
+      "icon_bg": "#3b82f6"
+    },
+    {
+      "icon": "lucide:globe",
+      "title": "Multi-Cloud Portability",
+      "description": "Run your database layer consistently across EKS, GKE, AKS, or your own bare-metal clusters.",
+      "icon_bg": "#10b981"
+    }
+  ],
+  "platform_features_title": "Enterprise Multi-Tenancy Natively in K8s",
+  "platform_features_subtitle": "KubeDB provides the control plane you need for large-scale SaaS operations.",
+  "platform_features": [
+    {
+      "title": "Namespace Isolation",
+      "description": "Each tenant gets isolated namespaces with RBAC, network policies, and resource quotas.",
+      "icon": "lucide:boxes"
+    },
+    {
+      "title": "Centralized Governance",
+      "description": "Enforce security, backup schedules, and version upgrades across all tenants from one plane.",
+      "icon": "lucide:shield"
+    },
+    {
+      "title": "Built-in Observability",
+      "description": "Native Prometheus metrics and Grafana dashboards for every database instance.",
+      "icon": "lucide:activity"
+    },
+    {
+      "title": "KubeStash Backups",
+      "description": "Automated, incremental, encrypted backups to any object store with PITR support.",
+      "icon": "lucide:cloud-upload"
+    },
+    {
+      "title": "Zero-Downtime Operations",
+      "description": "Automated upgrades, scaling, and failover with full lifecycle management.",
+      "icon": "lucide:repeat"
+    },
+    {
+      "title": "Any Kubernetes, Anywhere",
+      "description": "Works on-prem, public cloud, hybrid, air-gapped, and multi-cluster environments.",
+      "icon": "lucide:globe"
+    },
+    {
+      "title": "Multi-Team Support",
+      "description": "Isolated namespaces and resources for different teams with fine-grained access control.",
+      "icon": "lucide:users"
+    },
+    {
+      "title": "Usage Metering",
+      "description": "Track resource consumption and costs per team with built-in chargeback capabilities.",
+      "icon": "lucide:bar-chart-3"
+    },
+    {
+      "title": "GitOps Integration",
+      "description": "Infrastructure as code with Git-based workflows for declarative database management.",
+      "icon": "lucide:git-branch"
+    }
+  ],
+  "comparison_header_1": "Requirement",
+  "comparison_header_2": "Cloud DBaaS",
+  "comparison_header_3": "KubeDB DBaaS",
+  "comparison_title": "KubeDB vs Traditional Cloud DBaaS",
+  "comparison_subtitle": "KubeDB provides more control and lower costs than standard hyperscaler database services.",
+  "comparison_table": {
+    "rows": [
+      ["Provisioning Time", "5–10 minutes", "< 60 seconds"],
+      ["Cost Model", "Expensive per-instance fees", "Pay for compute/storage actually used"],
+      ["Tenant Isolation", "Limited by hyperscaler VPCs", "Native K8s Namespaces + RBAC"],
+      ["Portability", "Vendor lock-in", "Run anywhere Kubernetes runs"],
+      ["Developer Experience", "Separate portals and tools", "Integrated GitOps & kubectl workflow"],
+      ["Observability", "Fragmented Dashboards", "Unified Prometheus + Grafana"]
+    ]
+  },
+  "cta_title": "Ready to scale your SaaS infrastructure?",
+  "cta_description": "Join the leading SaaS teams who have built their internal DBaaS on KubeDB Platform.",
+  "cta_button_text": "Get Started for Free",
+  "cta_button_url": "/kubernetes/databases/run-and-manage-kubedb-on-kubernetes/"
+}

@@ -100,7 +100,7 @@
                   class="has-text-white"></iconify-icon>
               </div>
             </div>
-            <h4 class="has-text-heading has-text-weight-black is-size-6 mb-3 has-line-height-snug has-text-grey-900">{{ .title }}</h4>
+            <h4 class="has-text-heading has-text-weight-black is-size-5 mb-3 has-line-height-snug has-text-grey-900">{{ .title }}</h4>
             <p class="has-text-body is-text-sm has-text-grey-600 has-line-height-normal">{{ .description }}
             </p>
           </div>
@@ -207,7 +207,7 @@
               </div>
               <div class="feature-content">
                 <h4 class="has-text-heading has-text-weight-black is-size-6 mb-2 has-line-height-snug has-text-grey-900">{{ .title }}</h4>
-                <p class="has-text-body is-text-xs has-opacity-70 has-text-grey-600 has-line-height-normal">{{ .description }}</p>
+                <p class="has-text-body is-text-sm has-opacity-70 has-text-grey-600 has-line-height-normal">{{ .description }}</p>
               </div>
             </div>
           </div>
@@ -414,15 +414,15 @@
             <!-- Header Row -->
             <div class="is-flex is-align-items-stretch"
               style="border-bottom: 2px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02);">
-              <div class="p-8 is-size-4 has-text-weight-black has-text-white"
-                style="flex: 1.2; background: rgba(255,255,255,0.02);">Capability</div>
-              <div class="p-8 is-size-4 has-text-weight-black has-text-white"
-                style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05);">KubeDB Operator</div>
-              <div class="p-8 is-size-4 has-text-weight-black has-text-info"
+              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white"
+                style="flex: 1.2; background: rgba(255,255,255,0.02);">{{ $data.comparison_header_1 | default "Capability" }}</div>
+              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white"
+                style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05);">{{ $data.comparison_header_2 | default "KubeDB Operator" }}</div>
+              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-info"
                 style="flex: 1; border-left: 1px solid rgba(37, 99, 235, 0.2); background: rgba(37, 99, 235, 0.05);">
                 <div class="is-flex is-align-items-center has-gap-2">
                   <iconify-icon icon="heroicons:sparkles" class="has-text-warning"></iconify-icon>
-                  KubeDB Platform
+                  {{ $data.comparison_header_3 | default "KubeDB Platform" }}
                 </div>
               </div>
             </div>

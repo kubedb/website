@@ -1,0 +1,103 @@
+{
+  "product_name": "For CSPs & MSPs",
+  "product_color_primary": "#2563eb",
+  "cta_bg_color": "#1e3a8a",
+  "hero_title_1": "Launch Your Own",
+  "hero_title_2": "Branded DBaaS Platform",
+  "hero_description": "Built on ACE (AppsCode Cloud Engine) — a fully managed, white-labeled, production-ready DBaaS platform that exceeds public cloud offerings while maintaining complete branding control and data sovereignty.",
+  "primary_action_text": "Schedule Demo",
+  "primary_action_url": "/contact/",
+  "product_icon": "lucide:award",
+  "stats": [
+    { "label": "Time to Launch", "value": "30 days" },
+    { "label": "Database Engines", "value": "25+" },
+    { "label": "Support Level", "value": "24×7" },
+    { "label": "Branding", "value": "Full" }
+  ],
+  "when_to_use_title": "Key Outcomes for CSPs & MSPs",
+  "when_to_use_subtitle": "Everything you need to compete with global hyperscalers and retain customer data sovereignty.",
+  "when_to_use": [
+    {
+      "icon": "lucide:palette",
+      "title": "Branding Control",
+      "description": "Full white-labeling of the portal, CLI, and documentation to match your brand identity.",
+      "icon_bg": "#3b82f6"
+    },
+    {
+      "icon": "lucide:dollar-sign",
+      "title": "Usage-Based Licensing",
+      "description": "Predictable costs aligned to your revenue growth with detailed metering APIs.",
+      "icon_bg": "#10b981"
+    },
+    {
+      "icon": "lucide:zap",
+      "title": "Fastest Time-to-Market",
+      "description": "Go from signing to production live in just 30 days with our expert onboarding.",
+      "icon_bg": "#f59e0b"
+    },
+    {
+      "icon": "lucide:shield",
+      "title": "Enterprise Support",
+      "description": "24×7 defined SLAs with comprehensive technical training for your operations team.",
+      "icon_bg": "#a855f7"
+    }
+  ],
+  "platform_built_for_scale_title": "Marketplace & Billing Ready",
+  "platform_built_for_scale_subtitle": "ACE provides the backend infrastructure to easily integrate DBaaS into your cloud marketplace.",
+  "platform_built_for_scale": [
+    {
+      "icon": "lucide:bar-chart-3",
+      "title": "Metering APIs",
+      "description": "Real-time REST and gRPC APIs for accurate usage tracking and automated customer billing.",
+      "benefits": ["Namespace level data", "Resource consumption", "Historical reporting"]
+    },
+    {
+      "icon": "lucide:settings",
+      "title": "Console Integration",
+      "description": "Embed the self-service UI directly into your existing cloud management console.",
+      "benefits": ["Single Sign-On (SSO)", "Branded UI components", "Custom CSS support"]
+    },
+    {
+      "icon": "lucide:rocket",
+      "title": "Rapid Provisioning",
+      "description": "Allow your customers to provision complex HA database clusters in under 60 seconds.",
+      "benefits": ["Multi-engine support", "Auto-healing", "One-click backups"]
+    },
+    {
+      "icon": "lucide:globe",
+      "title": "Data Sovereignty",
+      "description": "Keep all customer data within your own infrastructure and regional boundaries.",
+      "benefits": ["Local storage", "Private networking", "Compliance ready"]
+    }
+  ],
+  "how_it_works_title": "Rapid Go-Live Timeline",
+  "how_it_works": [
+    {
+      "title": "Agreement",
+      "desc": "Join our partner program and start comprehensive training."
+    },
+    {
+      "title": "Deployment",
+      "desc": "Progress through Dev, Staging, and Production clusters with our help."
+    },
+    {
+      "title": "Launch",
+      "desc": "Production go-live with 24×7 support and defined SLAs."
+    }
+  ],
+  "faqs_title": "CSP & MSP FAQ",
+  "faqs": [
+    {
+      "question": "Can I use my own billing system?",
+      "answer": "Yes. KubeDB provides comprehensive metering APIs that can be integrated into any existing billing or ERP system."
+    },
+    {
+      "question": "Does it support white-labeled documentation?",
+      "answer": "Yes. We provide a customizable documentation template that you can host on your own domain with your branding."
+    }
+  ],
+  "cta_title": "Ready to Launch Your DBaaS Business?",
+  "cta_description": "Compete with hyperscalers by offering managed database services on your own infrastructure.",
+  "cta_button_text": "Talk to Sales",
+  "cta_button_url": "/contact/"
+}

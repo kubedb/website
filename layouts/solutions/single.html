@@ -1,0 +1,1226 @@
+{{ define "main"}}
+{{ $data_id := .Params.data_id }}
+
+{{/* First try exact match in solutions folder */}}
+{{ $data := index .Site.Data.products.kubedb.solutions $data_id }}
+
+{{ if not $data }}
+  {{/* If it has a slash (e.g. solutions/saas), split it */}}
+  {{ if (findRE "/" $data_id) }}
+    {{ $parts := split $data_id "/" }}
+    {{ $scope := .Site.Data.products.kubedb }}
+    {{ range $parts }}
+      {{ if $scope }}
+        {{ $scope = index $scope . }}
+      {{ end }}
+    {{ end }}
+    {{ $data = $scope }}
+  {{ else }}
+    {{/* Fallback to replacing hyphens with underscores */}}
+    {{ $data_id_alt := replace $data_id "-" "_" }}
+    {{ $data = index .Site.Data.products.kubedb.solutions $data_id_alt }}
+  {{ end }}
+{{ end }}
+
+{{ if not $data }}
+  {{/* Global fallback to legacy products location just in case */}}
+  {{ $data = index .Site.Data.products.kubedb.products $data_id }}
+{{ end }}
+
+{{ if not $data }}
+<div class="container section">
+  <div class="notification is-danger">
+    <strong>Debug:</strong> Data for "{{ $data_id }}" not found.
+  </div>
+</div>
+{{ else }}
+
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ $bg_grad := cond (strings.Contains $data_id "platform") "#eff6ff" "#f5f3ff" }}
+  <style>
+    /* Premium Design System */
+    .benefit-card {
+      border-radius: 32px !important;
+      border: 1px solid #f1f5f9 !important;
+      background: #ffffff !important;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .benefit-card:hover {
+      border-color: #6366f133 !important;
+      box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.12) !important;
+      transform: translateY(-8px) !important;
+    }
+
+    .benefit-icon-vibrant {
+      width: 52px; height: 52px; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.4s ease;
+    }
+    .benefit-card:hover .benefit-icon-vibrant {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .bg-grad-orange { background: linear-gradient(135deg, #ff9d00, #ff6b00) !important; }
+    .bg-grad-purple { background: linear-gradient(135deg, #d946ef, #a855f7) !important; }
+    .bg-grad-green  { background: linear-gradient(135deg, #10b981, #059669) !important; }
+    .bg-grad-blue   { background: linear-gradient(135deg, #3b82f6, #2563eb) !important; }
+    .bg-grad-indigo { background: linear-gradient(135deg, #6366f1, #4f46e5) !important; }
+
+    /* Platform High-Fidelity Specs */
+    .platform-feature-card {
+      background: #ffffff; border: 1px solid #f1f5f9;
+      border-radius: 32px !important; transition: all 0.3s ease;
+    }
+    .platform-feature-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); transform: translateY(-4px);
+    }
+
+    /* FAQ System */
+    .faq-item-custom {
+      background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px;
+      margin-bottom: 16px; transition: all 0.3s ease;
+    }
+    .faq-item-custom.is-open { border-color: #6366f1 !important; box-shadow: 0 10px 15px -3px rgba(99,102,241,0.1); }
+    .faq-trigger-button { width: 100%; text-align: left; padding: 24px 32px; background: none; border: none; cursor: pointer; }
+    .faq-icon-box { width: 40px; height: 40px; border-radius: 12px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; }
+    .faq-item-custom.is-open .faq-icon-box { background: #6366f1 !important; color: white !important; }
+    .faq-inner-content { padding: 0 32px 32px 32px; border-top: 1px solid #f8fafc; margin-top: -8px; padding-top: 24px; }
+
+    .tracking-tight { letter-spacing: -0.04em; }
+    .indigo-icon { color: #6366f1 !important; }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #4948A3, #7272E9);
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      display: inline-block !important;
+    }
+
+    /* GitOps Specifics */
+    .gitops-gradient-text {
+      background: linear-gradient(to r, #4948A3, #7272E9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    .gitops-badge-secondary {
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #d1fae5;
+    }
+    .code-window {
+      background: #0f172a;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    .code-content {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      color: #34d399;
+      line-height: 1.6;
+    }
+    .conflict-box {
+      border: 1px solid #fee2e2;
+      background: #fff;
+    }
+    .bg-grad-vibrant {
+      transition: all 0.3s ease;
+    }
+    .bg-grad-vibrant:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
+  </style>
+
+  <div class="ac-ui product-redesign"
+  style="--p-logo-color: {{ $p_color }}; --cta-bg: {{ $cta_bg }}; background: linear-gradient(to bottom, #ffffff, {{ $bg_grad }} 15%, #ffffff 30%); ">
+  <!-- Hero Section -->
+  <section class=" home-hero is-relative is-overflow-hidden">
+    <div class="home-hero-bg">
+      <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
+      <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
+    </div>
+
+    <div class="container is-relative has-z-index-10 has-text-centered">
+      <div class="badge is-justify-content-center mb-10" style="background: {{ $p_color }}12; border-color: {{ $p_color }}22;">
+        {{ if $data.product_icon }}
+        <iconify-icon {{ printf "icon=%q" $data.product_icon | safeHTMLAttr }} width="18" height="18"
+          style="color: {{ $p_color }}"></iconify-icon>
+        {{ end }}
+        <span class="has-text-weight-bold is-size-7 uppercase tracking-widest ml-2" style="color: {{ $p_color }}">{{ $data.hero_badge | default $data.product_name | default "KubeDB" }}</span>
+      </div>
+
+      <div class="home-hero-content has-max-width-xl mx-auto">
+        <h1 class="home-hero-title mb-8">
+          <span class="home-hero-title-plain">{{ $data.hero_title_1 | safeHTML }}</span><br>
+          <span class="text-gradient">{{ $data.hero_title_2 | safeHTML }}</span>
+        </h1>
+
+        <p class="home-hero-desc">
+          {{ if $data.hero_subtitle_highlight }}
+            {{ replace $data.hero_description $data.hero_subtitle_highlight (printf "<span class='has-text-indigo has-text-weight-bold'>%s</span>" $data.hero_subtitle_highlight) | safeHTML }}
+          {{ else }}
+            {{ $data.hero_description | safeHTML }}
+          {{ end }}
+        </p>
+
+        {{ if $data.hero_badge }}
+        <div class="is-flex is-align-items-center is-justify-content-center has-gap-2 mb-10">
+          <span class="is-size-7 has-text-grey-500 font-semibold subtitle-font">Perfectly Integrated With:</span>
+          <div class="inline-flex is-align-items-center has-gap-2 px-4 py-1.5 is-radius-full badge-success-soft">
+            <iconify-icon icon="lucide:check-circle-2" class="has-text-success" width="16" height="16"></iconify-icon>
+            <span class="is-size-7 font-bold">KubeDB Operator</span>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      <div class="buttons is-centered home-hero-ctas ds-button-group has-gap-4">
+        {{ $primary_url := $data.primary_action_url | default "#" }}
+        <a href="{{ $primary_url }}" class="button is-primary hero-btn-primary height-50">
+          <strong>{{ $data.primary_action_text | default "Get Started"}}</strong>
+          <iconify-icon icon="heroicons:arrow-right" class="ml-2" width="20" height="20"></iconify-icon>
+        </a>
+        {{ if $data.secondary_action_url }}
+        <a href="{{ $data.secondary_action_url }}" class="button is-outlined hero-btn-secondary height-50">
+          <iconify-icon icon="heroicons:book-open" class="mr-2" width="20" height="20"></iconify-icon>
+          <strong>{{ $data.secondary_action_text }}</strong>
+        </a>
+        {{ end }}
+      </div>
+
+      {{ if $data.stats }}
+      <div class="columns is-mobile is-multiline mt-12 has-max-width-lg mx-auto">
+        {{ range $data.stats }}
+        <div class="column is-3-desktop is-6-mobile">
+          <div class="stat-item has-text-centered">
+            <h3 class="is-size-2-desktop is-size-3-mobile has-text-weight-black mb-1 has-line-height-tight"
+              style="color: var(--p-logo-color);">{{ .value }}</h3>
+            <p class="has-text-muted is-size-7 is-uppercase has-text-weight-bold has-tracking-widest">{{
+              .label }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- GitOps Challenge Section (Matched to Screenshot) -->
+  {{ if $data.challenges }}
+  <section id="conflict" class="home-section section-padding bg-white">
+    <div class="container">
+      <div class="columns is-vcentered is-variable is-8">
+        <!-- Left: Large Numbered List -->
+        <div class="column is-6">
+          <div class="badge mb-6" 
+               style="background: #FFF1F2; border: 1px solid #FECDD3;">
+            <iconify-icon icon="lucide:alert-triangle" class="has-text-danger" width="14"></iconify-icon>
+            <span class="is-size-7 font-bold has-text-danger tracking-wide">{{ $data.challenge_badge }}</span>
+          </div>
+          <h2 class="title is-size-1 has-text-weight-bold mb-12" style="font-size: 3.5rem; letter-spacing: -0.02em;">{{ $data.challenge_title }}</h2>
+          
+          <div class="space-y-12">
+            {{ range $data.challenges }}
+            <div class="is-flex has-gap-8">
+              <div class="is-size-1 has-text-weight-black has-opacity-60 leading-none" 
+                   style="color: #F87171; font-size: 4.5rem; width: 80px;">{{ .id }}</div>
+              <div class="pt-2">
+                <h4 class="is-size-4 has-text-weight-bold mb-3 has-text-grey-900">{{ .title }}</h4>
+                <p class="is-size-5 has-text-grey-600 leading-relaxed">{{ .description }}</p>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        
+        <!-- Right: Nested Conflict Box -->
+        <div class="column is-6">
+          <div class="p-16 is-radius-3xl has-background-white shadow-2xl" style="border: 1px solid #f1f5f9;">
+            <div class="is-radius-2xl p-10" style="background: #F8FAFC; border: 1.5px solid #FECDD3;">
+              <div class="is-flex is-align-items-center has-gap-3 mb-8">
+                <iconify-icon icon="lucide:x-circle" class="has-text-danger" width="28"></iconify-icon>
+                <h3 class="is-size-4 has-text-weight-black has-text-danger tracking-tight">Reconciliation Conflict</h3>
+              </div>
+              
+              <div class="font-mono is-size-6 space-y-5 mb-10 has-text-grey-700">
+                <div class="is-flex has-gap-3">
+                  <span class="opacity-50">&gt;</span>
+                  <span>{{ $data.reconciliation_conflict.command }}</span>
+                </div>
+                <div class="is-flex has-gap-3 has-text-success font-bold">
+                  <span class="opacity-50">&gt;</span>
+                  <span>{{ $data.reconciliation_conflict.status }}</span>
+                </div>
+                <div class="is-flex has-gap-3 has-text-danger font-bold">
+                  <span class="opacity-50">&gt;</span>
+                  <span>{{ $data.reconciliation_conflict.result }}</span>
+                </div>
+              </div>
+
+              <div class="pt-8 border-top" style="border-top: 1px solid #cbd5e1;">
+                <p class="is-size-7 font-mono has-text-grey-500 font-bold uppercase tracking-widest">
+                  Result: {{ $data.reconciliation_conflict.note }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* High-Fidelity Code Demo Section */}}
+  {{ if $data.code_demo }}
+  <section class="home-section section-padding has-background-white">
+    <div class="container">
+      <div class="has-text-centered mb-16">
+        <div class="inline-flex is-align-items-center has-gap-3 px-6 py-3 is-radius-full mb-6"
+             style="background: rgba(114, 114, 233, 0.1); border: 1px solid rgba(114, 114, 233, 0.3); color: #7272E9;">
+          <iconify-icon icon="lucide:git-branch" width="20" height="20"></iconify-icon>
+          <span class="is-size-7 font-bold uppercase tracking-widest">{{ $data.code_demo.subtitle }}</span>
+        </div>
+        <h2 class="title is-size-2 has-text-weight-bold">{{ $data.code_demo.title | safeHTML }}</h2>
+      </div>
+
+      <div class="columns is-variable is-8">
+        <div class="column is-7">
+          <div class="code-window">
+            <div class="is-flex is-align-items-center is-justify-content-between mb-6">
+              <div class="is-flex is-align-items-center has-gap-3">
+                <iconify-icon icon="lucide:file-code" class="has-text-success" width="20" height="20"></iconify-icon>
+                <span class="font-semibold has-text-white">{{ $data.code_demo.filename }}</span>
+              </div>
+              <div class="is-size-7 px-3 py-1 is-radius-lg is-background-success has-text-success-dark font-bold" style="background: #d1fae5; color: #065f46;">Git</div>
+            </div>
+            <pre class="code-content">{{ $data.code_demo.code }}</pre>
+          </div>
+        </div>
+
+        <div class="column is-5">
+          <div class="space-y-6">
+            {{ range $data.code_demo.steps }}
+            <div class="p-8 is-radius-2xl has-border transition-all hover-shadow-lg {{ if .vibrant }}is-background-success-light{{ else }}has-background-white{{ end }}"
+                 {{ if .vibrant }}style="background: linear-gradient(to br, #ecfdf5, #f0fdf4); border-color: #d1fae5;"{{ end }}>
+              <div class="is-flex has-gap-4">
+                <div class="is-flex-shrink-0 w-10 h-10 is-radius-lg is-flex is-align-items-center is-justify-content-center {{ if .vibrant }}has-background-success has-text-white{{ else }}is-background-indigo-light has-text-indigo{{ end }}">
+                  {{ if .vibrant }}
+                  <iconify-icon icon="lucide:rocket" width="20" height="20"></iconify-icon>
+                  {{ else }}
+                  <span class="has-text-weight-bold">{{ .id }}</span>
+                  {{ end }}
+                </div>
+                <div>
+                  <div class="has-text-weight-bold is-size-5 mb-1">{{ .title }}</div>
+                  <p class="has-text-grey-600 is-size-6">{{ .description }}</p>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* High-Fidelity Comparison Section */}}
+  {{ if $data.comparison }}
+  <section id="conflict" class="home-section section-padding">
+    <div class="container">
+      <div class="has-text-centered mb-12">
+        <h2 class="title is-size-2 has-text-weight-bold">{{ $data.comparison.title }}</h2>
+        <p class="is-size-5 has-text-grey-500">{{ $data.comparison.subtitle }}</p>
+      </div>
+
+      <div class="columns is-variable is-8">
+        {{/* Problem Side */}}
+        <div class="column is-6">
+          <div class="h-full p-10 is-radius-3xl border-red-soft" style="background: linear-gradient(to br, #fef2f2, #fff7ed); border: 1px solid #fee2e2;">
+            <div class="is-flex is-align-items-center has-gap-3 mb-8">
+              <iconify-icon icon="{{ $data.comparison.problem.icon }}" class="has-text-danger" width="40" height="40"></iconify-icon>
+              <h3 class="is-size-3 has-text-weight-bold">{{ $data.comparison.problem.title }}</h3>
+            </div>
+            <div class="space-y-8">
+              {{ range $index, $step := $data.comparison.problem.steps }}
+              <div class="is-flex has-gap-4">
+                <div class="is-flex-shrink-0 w-8 h-8 is-radius-lg is-flex is-align-items-center is-justify-content-center" style="background: #fee2e2; color: #dc2626;">
+                  <span class="has-text-weight-bold">{{ add $index 1 }}</span>
+                </div>
+                <div class="has-text-grey-700 font-medium">{{ $step }}</div>
+              </div>
+              {{ end }}
+            </div>
+            <div class="mt-10 p-6 is-radius-2xl border-red-medium" style="background: #fee2e2; border: 1px solid #fecaca;">
+              <p class="has-text-danger-dark font-semibold">{{ $data.comparison.problem.result }}</p>
+            </div>
+          </div>
+        </div>
+
+        {{/* Solution Side */}}
+        <div class="column is-6">
+          <div class="h-full p-10 is-radius-3xl border-success-soft" style="background: linear-gradient(to br, #f0fdf4, #f0fdfa); border: 1px solid #d1fae5;">
+            <div class="is-flex is-align-items-center has-gap-3 mb-8">
+              <iconify-icon icon="{{ $data.comparison.solution.icon }}" class="has-text-success" width="40" height="40"></iconify-icon>
+              <h3 class="is-size-3 has-text-weight-bold">{{ $data.comparison.solution.title }}</h3>
+            </div>
+            <div class="space-y-8">
+              {{ range $data.comparison.solution.steps }}
+              <div class="is-flex has-gap-4">
+                <div class="is-flex-shrink-0 w-8 h-8 is-radius-lg is-flex is-align-items-center is-justify-content-center {{ if or (strings.Contains .color "bg-grad") (strings.Contains .color "linear-gradient") }} {{ .color }} {{ else }} bg-grad-{{ .color }} {{ end }}">
+                  <iconify-icon icon="{{ .icon }}" class="has-text-white" width="16" height="16"></iconify-icon>
+                </div>
+                <div class="has-text-grey-700 font-medium">{{ .text }}</div>
+              </div>
+              {{ end }}
+            </div>
+            <div class="mt-10 p-6 is-radius-2xl border-success-medium" style="background: #d1fae5; border: 1px solid #a7f3d0;">
+              <p class="has-text-success-dark font-semibold">{{ $data.comparison.solution.result }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- When to Use Section -->
+  {{ if $data.when_to_use }}
+  <section class="home-section section-padding has-background-white">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.when_to_use_title | safeHTML }}</h2>
+        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.when_to_use_subtitle | safeHTML }}</p>
+      </div>
+      {{ $col_class := $data.when_to_use_column_class | default "is-3-desktop" }}
+      <div class="columns is-multiline is-variable is-4">
+        {{ range $data.when_to_use }}
+        <div class="column {{ $col_class }} is-4-tablet is-6-mobile">
+          {{ $g_class := lower .gradient_class }}
+          {{ $c := "orange" }}
+          {{ if strings.Contains .title "Autonomy" }}{{ $c = "purple" }}
+          {{ else if strings.Contains .title "Cost" }}{{ $c = "green" }}
+          {{ else if strings.Contains .title "Governance" }}{{ $c = "blue" }}{{ end }}
+          {{ if .icon_bg }}{{ if strings.Contains .icon_bg "ef" }}{{ $c = "purple" }}{{ else if strings.Contains .icon_bg "10b" }}{{ $c = "green" }}{{ else if strings.Contains .icon_bg "3b8" }}{{ $c = "blue" }}{{ end }}{{ end }}
+
+          <div class="benefit-card p-10 has-border transition-all">
+            <div class="is-flex is-align-items-center mb-8">
+              <div class="benefit-icon-vibrant bg-grad-{{ $c }}">
+                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="26" height="26" class="has-text-white"></iconify-icon>
+              </div>
+            </div>
+            <h4 class="is-size-4 has-text-weight-bold mb-4 has-text-grey-900 tracking-tight">{{ .title }}</h4>
+            <p class="is-size-6 has-text-grey-500 has-line-height-relaxed">{{ .description }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  
+  <!-- Built For Scale Section (Target Customers) -->
+  {{ if $data.platform_built_for_scale }}
+  <section class="home-section section-padding team-benefits-section">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.platform_built_for_scale_title }}</h2>
+        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.platform_built_for_scale_subtitle }}</p>
+      </div>
+      <div class="columns is-multiline">
+        {{ range $data.platform_built_for_scale }}
+        <div class="column is-4-desktop is-6-tablet">
+          <div class="p-10 is-radius-2xlarge has-background-white has-border h-full transition-all has-hover-lift" style="border-color: #e2e8f0;">
+            <div class="is-flex is-align-items-flex-start has-gap-6 mb-8">
+              <div class="has-size-14 is-radius-2xlarge has-background-gradient-primary is-flex is-align-items-center is-justify-content-center is-flex-shrink-0">
+                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="28" style="color: white;"></iconify-icon>
+              </div>
+              <div class="is-flex-grow-1">
+                <h3 class="is-size-4 has-text-weight-black mb-2 has-text-grey-900">{{ .title }}</h3>
+                <p class="is-size-6 has-opacity-70 has-text-grey-600 has-line-height-normal">{{ .description }}</p>
+              </div>
+            </div>
+            <div class="is-flex is-flex-direction-column has-gap-4">
+              {{ range .benefits }}
+              <div class="is-flex is-align-items-center has-gap-3">
+                <iconify-icon icon="heroicons:check-circle" width="20" has-text-success></iconify-icon>
+                <span class="is-text-base has-text-weight-semibold has-text-grey-700" style="font-size: 0.95rem;">{{ . }}</span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Infrastructure vs Software Section -->
+  {{ if $data.how_it_works_infra }}
+  <section class="home-section section-padding has-background-white">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <div class="badge badge-primary-soft mb-6 px-4 py-1.5 is-radius-rounded has-border">
+          <iconify-icon icon="lucide:database" width="16" class="has-text-info mr-2"></iconify-icon>
+          <span class="is-size-7 has-text-weight-bold uppercase tracking-widest has-text-info">Your Infrastructure, Our Software</span>
+        </div>
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.how_it_works_title | default "You Own The Infrastructure" }}</h2>
+        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.how_it_works_subtitle }}</p>
+      </div>
+
+      <div class="columns is-variable is-8">
+        <!-- Your Infrastructure -->
+        <div class="column is-6">
+          <div class="is-flex is-align-items-center mb-8">
+            <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-4 infra-box-blue">
+              <iconify-icon {{ printf "icon=%q" $data.how_it_works_infra.icon | safeHTMLAttr }} width="28" class="has-text-info"></iconify-icon>
+            </div>
+            <h3 class="is-size-4 has-text-weight-black has-text-grey-900">{{ $data.how_it_works_infra.title }}</h3>
+          </div>
+          <div class="is-flex is-flex-direction-column has-gap-4">
+            {{ range $data.how_it_works_infra.items }}
+            <div class="is-flex is-align-items-center p-5 is-radius-large has-border has-transition has-hover-shadow-small has-background-white">
+              <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-5 has-background-grey-100 infra-item-icon-box">
+                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="22" class="has-text-grey-500"></iconify-icon>
+              </div>
+              <span class="is-text-base has-text-weight-black has-text-grey-900">{{ .text }}</span>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+        <!-- KubeDB Software -->
+        <div class="column is-6">
+          <div class="is-flex is-align-items-center mb-8">
+            <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-4 infra-box-indigo">
+              <iconify-icon {{ printf "icon=%q" $data.how_it_works_software.icon | safeHTMLAttr }} width="28" class="has-text-white"></iconify-icon>
+            </div>
+            <h3 class="is-size-4 has-text-weight-black has-text-grey-900">{{ $data.how_it_works_software.title }}</h3>
+          </div>
+          <div class="is-flex is-flex-direction-column has-gap-4">
+            {{ range $data.how_it_works_software.items }}
+            <div class="is-flex is-align-items-center p-5 is-radius-large has-border has-transition has-hover-shadow-small has-background-white">
+              <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-5 infra-box-indigo-small">
+                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="22" class="has-text-white"></iconify-icon>
+              </div>
+              <span class="is-text-base has-text-weight-black has-text-grey-900">{{ .text }}</span>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 has-text-centered">
+        <div class="is-inline-flex is-align-items-center has-gap-3 px-8 py-4 is-radius-rounded has-border has-background-success-soft summary-badge-green">
+          <iconify-icon icon="lucide:check-circle" width="20" class="has-text-success"></iconify-icon>
+          <span class="is-size-6 has-text-weight-bold has-text-grey-800">{{ $data.how_it_works_summary | default "Your infrastructure • Your control • Your data sovereignty" }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  
+  <!-- Why Section (Benefits) -->
+  {{ if and $data.benefits (not $data.hide_benefits) }}
+  <section class="home-section section-padding has-background-white">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.benefits_title | safeHTML }}</h2>
+        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.benefits_subtitle | safeHTML }}</p>
+      </div>
+      <div class="columns is-multiline is-variable is-8">
+        {{ range $data.benefits }}
+        <div class="column is-4-desktop is-6-tablet">
+          {{ $g_class := lower .gradient_class }}
+          {{ $c := "indigo" }}
+          {{ if strings.Contains $g_class "blue" }}{{ $c = "blue" }}
+          {{ else if strings.Contains $g_class "purple" }}{{ $c = "purple" }}
+          {{ else if strings.Contains $g_class "green" }}{{ $c = "green" }}
+          {{ else if strings.Contains $g_class "orange" }}{{ $c = "orange" }}
+          {{ else if strings.Contains $g_class "yellow" }}{{ $c = "yellow" }}{{ end }}
+          
+          <div class="benefit-card h-full p-10 has-background-white has-border transition-all">
+            <!-- Icon Box (Solid Background per image) -->
+            <div class="benefit-icon-solid mb-8 has-background-{{ $c }}">
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" height="24" class="has-text-white"></iconify-icon>
+            </div>
+            
+            <h4 class="is-size-4 has-text-weight-bold mb-3 has-text-grey-900 tracking-tight">{{ .title }}</h4>
+            <p class="is-size-6 has-line-height-relaxed has-text-grey-500">{{ .description }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  
+  <!-- Use Cases -->
+  {{ if $data.use_cases }}
+  <section class="home-section section-padding has-background-white has-border-top">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <div class="badge badge-primary-soft mb-6 px-4 py-1.5 is-radius-rounded has-border">
+          <iconify-icon icon="lucide:star" width="16" height="16" class="has-text-info mr-2"></iconify-icon>
+          <span class="is-size-7 has-text-weight-bold uppercase tracking-widest has-text-info">WHY KUBEDB</span>
+        </div>
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.use_cases_title | default "Why teams choose KubeDB" }}</h2>
+        {{ if $data.use_cases_subtitle }}
+        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.use_cases_subtitle | safeHTML }}</p>
+        {{ end }}
+      </div>
+      
+      <div class="columns is-multiline is-variable is-6">
+        {{ range $index, $item := $data.use_cases }}
+        <div class="column is-4">
+          <div class="benefit-card h-full p-10 has-background-white has-border transition-all">
+            <div class="benefit-icon-solid mb-8 has-background-indigo">
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" height="24" class="has-text-white"></iconify-icon>
+            </div>
+            <h3 class="is-size-4 has-text-weight-bold mb-4 has-text-grey-900 tracking-tight">{{ .title }}</h3>
+            <p class="is-size-6 has-text-grey-600 has-line-height-relaxed">{{ .description }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  
+  <!-- Platform Features Section -->
+  {{ if $data.features }}
+  <section class="home-section section-padding has-background-white">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.features_title | default "Platform Features" }}</h2>
+        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.features_subtitle | safeHTML }}</p>
+      </div>
+      <div class="columns is-multiline">
+        {{ range $data.features }}
+        <div class="column is-4-desktop is-6-tablet">
+          {{ $g_class := lower .gradient_class }}
+          {{ $c := "primary" }}
+          {{ if strings.Contains $g_class "blue" }}{{ $c = "info" }}
+          {{ else if strings.Contains $g_class "purple" }}{{ $c = "secondary" }}
+          {{ else if strings.Contains $g_class "green" }}{{ $c = "success" }}
+          {{ else if strings.Contains $g_class "orange" }}{{ $c = "warning" }}
+          {{ else if strings.Contains $g_class "yellow" }}{{ $c = "warning" }}{{ end }}
+
+          <div class="benefit-card h-full p-8 has-background-white has-border transition-all">
+            <div class="is-flex is-align-items-flex-start has-gap-6">
+              <div class="benefit-icon-solid is-flex-shrink-0 has-background-{{$c}}">
+                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" height="24" class="has-text-white"></iconify-icon>
+              </div>
+              <div class="feature-content">
+                <h4 class="is-size-5 has-text-weight-bold mb-2 has-text-grey-900">{{ .title }}</h4>
+                <p class="is-size-6 has-text-grey-600 has-line-height-normal">{{ .description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Supported Databases Section -->
+  {{ if not $data.hide_database_support }}
+  {{ partial "products/database-support.html" . }}
+  {{ end }}
+  
+  <!-- Why Not Cloud DBaaS Section -->
+  {{ if $data.why_not_cloud_dbaas }}
+  <section class="home-section section-padding bg-white" style="font-family: 'Inter', sans-serif;">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.why_not_cloud_dbaas_title }}</h2>
+        <p class="section-header-desc mx-auto has-opacity-70 mt-4 is-text-lg has-max-width-800">{{ $data.why_not_cloud_dbaas_subtitle }}</p>
+      </div>
+      <div class="columns is-multiline">
+        {{ range $data.why_not_cloud_dbaas }}
+        <div class="column is-6">
+          <div class="p-8 is-radius-2xlarge has-border h-full transition-all hover:has-background-grey-50" style="background: rgba(248, 250, 252, 0.5); border-color: #e2e8f0;">
+            <div class="is-flex is-align-items-start has-gap-4">
+               <div class="has-size-10 is-radius-large has-background-primary-soft is-flex is-align-items-center is-justify-content-center is-flex-shrink-0">
+                 <iconify-icon icon="lucide:check-circle-2" width="20" class="has-text-info"></iconify-icon>
+               </div>
+               <div>
+                 <h3 class="is-size-5 has-text-weight-black mb-2 has-text-grey-900">{{ .title }}</h3>
+                 <p class="is-size-6 has-opacity-70 has-text-grey-600 has-line-height-normal">{{ .description }}</p>
+               </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  
+  <!-- Team Benefits Section -->
+  {{ if $data.team_benefits }}
+  <section class="home-section section-padding" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);">
+    <div class="container">
+      <div class="section-header has-text-centered mb-20">
+        <div class="badge mb-4">
+          <iconify-icon icon="lucide:users-2" width="16" style="color: #6366f1;"></iconify-icon>
+          <span class="is-size-7 has-text-weight-bold uppercase tracking-widest" style="color: #6366f1;">Total Ecosystem Alignment</span>
+        </div>
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop" style="letter-spacing: -0.04em;">{{ $data.team_benefits_title | default "Benefits For Every Team" }}</h2>
+        <p class="section-header-desc mx-auto has-opacity-70 mt-4 is-text-lg has-max-width-800">{{ $data.team_benefits_subtitle }}</p>
+      </div>
+      <div class="columns is-multiline is-variable is-6">
+        {{ range $index, $item := $data.team_benefits }}
+        <div class="column is-4">
+          <div class="p-12 is-radius-3xlarge has-background-white has-border is-fullheight transition-all has-hover-lift has-hover-shadow-xl" 
+            style="border-color: #e2e8f0; position: relative; overflow: hidden;">
+            
+            <!-- Subtle backdrop gradient per persona -->
+            <div style="position: absolute; top: 0; right: 0; width: 120px; height: 120px; background: radial-gradient(circle at top right, {{ if eq $index 0 }}rgba(99,102,241,0.05){{ else if eq $index 1 }}rgba(168,85,247,0.05){{ else }}rgba(236,72,153,0.05){{ end }}, transparent 70%);"></div>
+
+            <div class="is-flex is-align-items-center is-justify-content-center is-radius-2xlarge mb-10 shadow-md"
+              style="width: 72px; height: 72px; background: linear-gradient(135deg, {{ if eq $index 0 }}#6366f1, #818cf8{{ else if eq $index 1 }}#a855f7, #c084fc{{ else }}#ec4899, #f472b6{{ end }});">
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="36" style="color: white;"></iconify-icon>
+            </div>
+            
+            <h3 class="is-size-4 has-text-weight-black mb-8 has-text-grey-900" style="letter-spacing: -0.03em;">{{ .team }}</h3>
+            
+            <div class="is-flex is-flex-direction-column has-gap-5">
+              {{ range .benefits }}
+              <div class="is-flex is-align-items-start has-gap-4">
+                <div class="is-flex is-align-items-center is-justify-content-center is-radius-rounded mt-1" style="width: 22px; height: 22px; background: #f0fdf4; border: 1px solid #dcfce7;">
+                   <iconify-icon icon="heroicons:check" width="14" style="color: #10b981; font-weight: bold;"></iconify-icon>
+                </div>
+                <span class="is-text-base has-text-weight-bold has-text-grey-700" style="line-height:1.4;">{{ . }}</span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+
+
+  <!-- Comparison Section -->
+  {{ if $data.comparison_table }}
+  {{ $comp_title := $data.comparison_title | default "Operator vs Platform" }}
+  {{ $comp_desc := $data.comparison_subtitle | default "KubeDB Operator provides database automation inside a single Kubernetes cluster, while KubeDB Platform extends this into a centralized DBaaS across clusters, teams, and environments." }}
+  {{ $comp_analogy := $data.comparison_analogy | default "The Operator is the engine. The Platform is the car." }}
+
+  <section class="home-section section-padding bg-dark text-white is-relative is-overflow-hidden"
+    style="background: #0b1120;">
+    <div class="container is-relative">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-white has-text-weight-black is-size-2-desktop">{{ $comp_title }}</h2>
+        <p class="section-header-desc has-text-white has-opacity-70 mx-auto is-size-5 has-line-height-relaxed has-max-width-900">
+          {{ $comp_desc | safeHTML }}
+        </p>
+      </div>
+
+      <!-- Analogy Section -->
+      {{ if $comp_analogy }}
+      <div class="has-text-centered mb-16">
+        <p class="is-size-4 has-text-weight-bold has-tracking-wide is-uppercase has-opacity-50 mb-4" style="color: #94a3b8;">
+          Think of it this way:
+        </p>
+        <p class="is-size-2-desktop is-size-3-tablet has-text-weight-black has-text-info">
+          {{ $comp_analogy | safeHTML }}
+        </p>
+      </div>
+      {{ end }}
+
+      <!-- Quick Summary Cards -->
+      <div class="columns is-multiline is-variable is-8 mb-16">
+        <!-- Operator Card -->
+        <div class="column is-6">
+          <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up"
+            style="background: rgba(88, 28, 135, 0.15); border: 2px solid #a855f7; border-radius: 20px;">
+            <div class="is-flex is-align-items-center has-gap-4 mb-6">
+              <iconify-icon icon="lucide:container" class="has-text-secondary" width="40" height="40"
+                style="color: #c084fc;"></iconify-icon>
+              <h3 class="is-size-3 has-text-white has-text-weight-black">KubeDB Operator</h3>
+            </div>
+            <p class="has-text-white is-size-5 mb-8 has-line-height-relaxed has-opacity-90">
+              Best for teams that want to run and automate databases inside a Kubernetes cluster using declarative APIs.
+            </p>
+            <div class="space-y-4">
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-secondary" width="24" height="24"
+                  style="color: #c084fc;"></iconify-icon>
+                <span class="is-size-5 has-text-white">Single cluster deployment</span>
+              </div>
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-secondary" width="24" height="24"
+                  style="color: #c084fc;"></iconify-icon>
+                <span class="is-size-5 has-text-white">In-cluster automation</span>
+              </div>
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-secondary" width="24" height="24"
+                  style="color: #c084fc;"></iconify-icon>
+                <span class="is-size-5 has-text-white">Kubectl-based management</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platform Card -->
+        <div class="column is-6">
+          <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up"
+            style="background: rgba(30, 41, 59, 0.6); border: 2px solid #475569; border-radius: 20px;">
+            <div class="is-flex is-align-items-center has-gap-4 mb-6">
+              <iconify-icon icon="lucide:cloud" class="has-text-info" width="40" height="40"
+                style="color: #60a5fa;"></iconify-icon>
+              <h3 class="is-size-3 has-text-white has-text-weight-black">KubeDB Platform</h3>
+            </div>
+            <p class="has-text-white is-size-5 mb-8 has-line-height-relaxed has-opacity-90">
+              Designed for organizations that need to deliver a standardized, self-service DBaaS across multiple
+              clusters, teams, and environments with centralized control and governance.
+            </p>
+            <div class="space-y-4">
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-success" width="24" height="24"
+                  style="color: #4ade80;"></iconify-icon>
+                <span class="is-size-5 has-text-white">Multi-cluster control plane</span>
+              </div>
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-success" width="24" height="24"
+                  style="color: #4ade80;"></iconify-icon>
+                <span class="is-size-5 has-text-white">Self-service portal</span>
+              </div>
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-success" width="24" height="24"
+                  style="color: #4ade80;"></iconify-icon>
+                <span class="is-size-5 has-text-white">Policy-driven governance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analogy Diagram Box -->
+      <div class="mb-20">
+        <div class="p-12 is-radius-2xlarge has-text-centered"
+          style="background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid #334155;">
+          <h3 class="is-size-1 has-text-white has-text-weight-black mb-6">Think of it this way:</h3>
+          <p class="is-size-2 has-text-secondary has-text-weight-black mb-12" style="color: #c084fc;">
+            The Operator is the engine. The Platform is the car.
+          </p>
+
+
+          <div class="is-flex is-justify-content-center mb-10">
+            <div class="has-max-width-lg w-full">
+              <!-- Placeholder for the architecture diagram since it's a Figma asset -->
+              <img src="/assets/images/products/kubedb/kubedb-hero.png" alt="Architecture Diagram"
+                class="is-radius-large" style="opacity: 0.9;">
+            </div>
+          </div>
+
+          <p class="has-text-grey-100 is-size-5 mx-auto has-max-width-800">
+            The Platform provides centralized control and governance, orchestrating multiple Operator instances across
+            different clusters and environments.
+          </p>
+        </div>
+      </div>
+
+      <!-- Custom Premium Comparison Grid -->
+      <div class="columns is-centered">
+        <div class="column is-12">
+          <div class="comparison-grid-container"
+            style="background: rgba(255,255,255,0.02); border-radius: 24px; border: 1.5px solid rgba(255,255,255,0.05); overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+            <!-- Header Row -->
+            <div class="is-flex is-align-items-stretch"
+              style="border-bottom: 2px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02);">
+              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white"
+                style="flex: 1.2; background: rgba(255,255,255,0.02);">{{ $data.comparison_header_1 | default "Capability" }}</div>
+              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white"
+                style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05);">{{ $data.comparison_header_2 | default "KubeDB Operator" }}</div>
+              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-info"
+                style="flex: 1; border-left: 1px solid rgba(37, 99, 235, 0.2); background: rgba(37, 99, 235, 0.05);">
+                <div class="is-flex is-align-items-center has-gap-2">
+                  <iconify-icon icon="heroicons:sparkles" class="has-text-warning"></iconify-icon>
+                  {{ $data.comparison_header_3 | default "KubeDB Platform" }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Data Rows -->
+            {{ range $index, $row := $data.comparison_table.rows }}
+            <div class="is-flex is-align-items-center transition-all" {{ if lt (add $index 1) (len
+              $data.comparison_table.rows) }}style="border-bottom: 1px solid rgba(255,255,255,0.05);" {{ end }}>
+              <!-- Label -->
+              <div class="p-8 is-size-5 has-text-weight-bold has-text-white" style="flex: 1.2; opacity: 1;">
+                {{ index . 0 }}
+              </div>
+              <!-- Operator Value -->
+              <div class="p-8 is-size-5"
+                style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05); line-height: 1.5; color: #94a3b8;">
+                {{ index . 1 }}
+              </div>
+              <!-- Platform Value (Highlighted) -->
+              <div class="p-8 is-size-5 has-text-white has-text-weight-black"
+                style="flex: 1; border-left: 1px solid rgba(37, 99, 235, 0.3); background: rgba(37, 99, 235, 0.08); line-height: 1.4;">
+                <div class="is-flex is-align-items-start has-gap-3">
+                  <iconify-icon icon="heroicons:check-circle" class="has-text-info mt-1" width="22"
+                    style="color: #60a5fa;"></iconify-icon>
+                  <span>{{ index . 2 }}</span>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  {{ if $data.platform_features }}
+  <section class="section-padding platform-teams-section">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop tracking-tight">
+          {{ $data.platform_features_title | default "What Platform Teams Get with KubeDB" }}
+        </h2>
+        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">
+          {{ $data.platform_features_subtitle | default "Complete DBaaS platform software in your infrastructure" }}
+        </p>
+      </div>
+
+      <div class="columns is-multiline is-variable is-8">
+        {{ range $data.platform_features }}
+        <div class="column is-4-desktop is-6-tablet">
+          <div class="h-full p-10 platform-feature-card has-border" style="border-radius: 32px !important;">
+            
+            <!-- Feature Icon (Unboxed) -->
+            <div class="is-flex mb-8">
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="36" height="36" style="color: #6366f1 !important;"></iconify-icon>
+            </div>
+            
+            <h3 class="is-size-4 has-text-weight-bold mb-3 platform-feature-title">{{ .title }}</h3>
+            <p class="is-size-6 has-text-grey-600 has-line-height-relaxed platform-feature-desc">
+              {{ .description | safeHTML }}
+            </p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{ end }}
+
+  <!-- Workflow Steps Section (Case Study Style) -->
+  {{ if $data.workflow_steps }}
+  <section class="section-padding has-background-white cs-journey-section">
+    <div class="container">
+      <div class="section-header has-text-centered mb-20">
+        {{ with $data.workflow_badge | default "Streamlined Operations" }}
+        <div class="badge badge-primary mb-6">
+          <span class="has-size-2 is-rounded has-background-primary"></span>
+          <span>{{ . }}</span>
+        </div>
+        {{ end }}
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop" style="letter-spacing: -0.04em;">{{ $data.workflow_title | default "How It Works" }}</h2>
+        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.workflow_subtitle | default "From request to running database in minutes." }}</p>
+      </div>
+
+      <div class="cs-journey-wrapper px-4">
+        <div class="cs-journey-steps">
+          {{ range $i, $step := $data.workflow_steps }}
+          <div class="cs-journey-step">
+            <div class="cs-journey-node-wrap">
+              <div class="cs-journey-node">{{ .step }}</div>
+            </div>
+            <div class="cs-journey-period">STEP {{ .step }}</div>
+            <div class="cs-journey-card has-hover-lift has-transition">
+              <h4 class="has-text-heading mb-3">{{ .title }}</h4>
+              <p class="mb-0">{{ .description }}</p>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Redundant styles removed -->
+
+
+  <!-- How It Works Section (Compact Pipeline Strip) -->
+  {{ if (and $data.how_it_works (not $data.how_it_works_infra)) }}
+  <section class="home-section section-padding has-text-white is-relative is-overflow-hidden has-background-black"
+    style="padding: 80px 0;">
+...
+{{ end }}
+
+  <!-- FAQs Section (Refactored to Two-Column Layout) -->
+  {{/* High-Fidelity Why KubeDB Section (2x3 Grid) */}}
+  {{ if $data.why_kubedb_features }}
+  <section class="home-section section-padding">
+    <div class="container">
+      <div class="has-text-centered mb-16">
+        <h2 class="title is-size-2 has-text-weight-bold mb-4">{{ $data.why_kubedb_title }}</h2>
+      </div>
+
+      <div class="columns is-multiline is-variable is-6">
+        {{ range $data.why_kubedb_features }}
+        <div class="column is-4-desktop is-6-tablet">
+          <div class="h-full p-8 is-radius-3xl has-background-white has-border transition-all hover-shadow-xl">
+            <div class="w-14 h-14 is-radius-2xl mb-6 is-flex is-align-items-center is-justify-content-center shadow-lg" 
+                 style="background: {{ .gradient }}; color: white;">
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="28"></iconify-icon>
+            </div>
+            <h3 class="is-size-4 has-text-weight-bold mb-3">{{ .title }}</h3>
+            <p class="has-text-grey-600 is-size-6 leading-relaxed">{{ .description }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      <div class="mt-12 p-6 is-radius-2xl has-text-centered" style="background: #fff7ed; border: 1px solid #ffedd5;">
+        <p class="has-text-grey-700">
+          {{ $data.why_kubedb_note | safeHTML }}
+        </p>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ if $data.faqs }}
+  <section class="home-section section-padding is-relative is-overflow-hidden faq-section-container">
+    
+    <!-- Ambient Decor -->
+    <div class="is-absolute faq-ambient-glow-tl"></div>
+    <div class="is-absolute faq-ambient-glow-br"></div>
+
+    <div class="container">
+      <div class="columns is-variable is-8">
+        
+        <!-- Left Column: Headers & Support Prompt -->
+        <div class="column is-5-desktop">
+          <div class="is-sticky faq-sidebar-sticky">
+            <div class="badge badge-primary mb-6">
+              <iconify-icon icon="lucide:message-circle-question" width="16" height="16" class="mr-2"></iconify-icon>
+              <span>ANSWERS & INSIGHTS</span>
+            </div>
+            
+            <h2 class="section-header-title has-text-weight-black is-size-1-desktop mb-6 tracking-tight">
+              {{ $data.faqs_title | default "Frequently Asked Questions" }}
+            </h2>
+            
+            <p class="is-size-5 has-text-grey-500 mb-10 has-line-height-relaxed">
+              {{ $data.faqs_subtitle | default "Everything you need to know about the platform and its integration into your enterprise infrastructure." }}
+            </p>
+
+            <div class="p-8 is-radius-2xlarge has-background-white has-border shadow-sm faq-contact-card">
+              <h4 class="is-size-5 has-text-weight-black mb-2">Still have questions?</h4>
+              <p class="is-size-6 has-text-grey-500 mb-6">Can't find the answer you're looking for? Please reach out to our friendly team.</p>
+              <a href="/contact/" class="button is-primary is-fullwidth height-56"> Get in Touch </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: The Accordions -->
+        <div class="column is-7-desktop mt-6-mobile">
+          <div class="faqs-list-container">
+            {{ range $index, $faq := $data.faqs }}
+            <div class="faq-item group has-backdrop-blur faq-item-custom">
+              
+              <button class="faq-trigger is-flex is-align-items-center is-justify-content-space-between has-gap-5 faq-trigger-button">
+                <span class="faq-question is-size-5-desktop is-size-6-mobile has-text-weight-black faq-question-text">{{ .question }}</span>
+                <div class="faq-icon-box is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 has-transition">
+                  <iconify-icon icon="heroicons:plus" class="faq-icon" width="22" height="22"></iconify-icon>
+                </div>
+              </button>
+
+              <div class="faq-content-wrapper">
+                <div class="faq-inner-content">
+                  <div class="is-size-6 has-text-grey-600 faq-answer">
+                    {{ .answer | safeHTML }}
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Subtle Hover Background Overlay -->
+              <div class="faq-hover-overlay"></div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-item:hover {
+      border-color: #cbd5e1 !important;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+    .faq-item:hover .faq-hover-overlay {
+      opacity: 1;
+    }
+    .faq-item.is-open {
+      border-color: #6366f1 !important;
+      background: #ffffff !important;
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1);
+    }
+    .faq-item.is-open .faq-question {
+      color: #6366f1 !important;
+    }
+    .faq-item.is-open .faq-icon-box {
+      background: #6366f1 !important;
+      border-color: #6366f1 !important;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+    .faq-item.is-open .faq-icon {
+      color: #ffffff !important;
+      transform: rotate(45deg);
+    }
+    @media (max-width: 1024px) {
+      .is-sticky { position: static !important; }
+    }
+  </style>
+
+  <script>
+    (function() {
+      document.querySelectorAll('.faqs-list-container').forEach(faqList => {
+        faqList.querySelectorAll('.faq-trigger').forEach(trigger => {
+          trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            const item = trigger.closest('.faq-item');
+            const content = item.querySelector('.faq-content-wrapper');
+            const isOpen = item.classList.contains('is-open');
+
+            // Close all other FAQs in this specific list
+            faqList.querySelectorAll('.faq-item').forEach(other => {
+              if (other !== item) {
+                other.classList.remove('is-open');
+                const otherContent = other.querySelector('.faq-content-wrapper');
+                if (otherContent) otherContent.style.maxHeight = '0px';
+              }
+            });
+
+            // Toggle current FAQ
+            if (!isOpen) {
+              item.classList.add('is-open');
+              content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+              item.classList.remove('is-open');
+              content.style.maxHeight = '0px';
+            }
+          });
+        });
+      });
+    })();
+  </script>
+
+  <style>
+    /* Platform Features Section */
+    .platform-teams-section {
+       background: linear-gradient(180deg, #fdfdfd 0%, #ffffff 100%);
+    }
+    /* Feature Cards */
+    .platform-feature-card {
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      border-radius: 32px !important;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .platform-feature-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+      border-color: #e2e8f0 !important;
+      transform: translateY(-4px);
+    }
+    .platform-feature-title {
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+    .platform-feature-desc {
+      font-weight: 400;
+    }
+    .indigo-icon { color: #6366f1 !important; }
+
+  </style>
+  {{ end }}
+
+  <!-- High-Fidelity Call to Action -->
+  <section class="home-section section-padding is-relative is-overflow-hidden">
+  <!-- Call to Action -->
+  <section class="cta-section home-section section-padding is-relative is-overflow-hidden">
+    <div class="container">
+      <div class="cta-block ds-card-base">
+        <div class="cta-glow"></div>
+        <div class="cta-inner">
+          <div class="cta-dot-pattern" aria-hidden="true"></div>
+
+          <div class="columns is-vcentered is-variable is-8">
+            <div class="column is-6-desktop">
+              <div class="badge badge-dark">
+                <iconify-icon icon="lucide:git-branch" width="14" height="14" style="color:#7272E9;"></iconify-icon>
+                <span class="badge-text has-text-white">{{ $data.hero_badge | default "GitOps Native" }}</span>
+              </div>
+
+              <h2 class="cta-title">
+                {{ $data.cta_title }}
+                <span class="cta-title-gradient">{{ $data.cta_title_gradient }}</span>
+              </h2>
+              <p class="cta-desc mb-4 has-text-white has-opacity-80">{{ $data.cta_description }}</p>
+
+              <ul class="cta-checklist is-grid has-gap-3 my-8">
+                {{ range $data.cta_checklist }}
+                <li class="is-flex is-align-items-center has-gap-3 has-text-white font-semibold">
+                  <iconify-icon icon="heroicons:check-circle-solid" width="22" style="color:#7272E9;"></iconify-icon>
+                  {{ . }}
+                </li>
+                {{ end }}
+              </ul>
+
+              <div class="buttons cta-buttons ds-button-group mt-10">
+                <a href="{{ $data.cta_button_url }}" class="button is-white is-large height-60 px-10 shadow-lg hover-lift">
+                  <strong style="color: #161d36;">{{ $data.cta_button_text }}</strong>
+                  <iconify-icon icon="heroicons:arrow-right" class="ml-2" width="22" style="color: #161d36;"></iconify-icon>
+                </a>
+                <a href="/contact/" class="button is-ghost is-large height-60 has-text-white px-8">
+                  <iconify-icon icon="heroicons:play-solid" width="20" class="mr-2" style="color: #818cf8;"></iconify-icon>
+                  <strong>Watch Demo</strong>
+                </a>
+              </div>
+            </div>
+
+            <div class="column is-6-desktop mt-12-mobile">
+              <div class="columns is-multiline is-variable is-4 w-full">
+                {{ range $index, $stat := $data.final_cta_metrics }}
+                <div class="column is-6">
+                  <div class="trust-stat ds-card-base h-full">
+                    <div class="trust-stat-icon trust-stat-icon-{{ $index }}" style="background: {{ .gradient }};">
+                      <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" style="color: white;"></iconify-icon>
+                    </div>
+                    <div class="trust-stat-val has-text-white has-text-weight-black mb-1">{{ .value }}</div>
+                    <div class="trust-stat-label is-uppercase has-text-weight-bold tracking-widest is-size-7">{{ .label }}</div>
+                  </div>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{{ end }}
+{{ end }}

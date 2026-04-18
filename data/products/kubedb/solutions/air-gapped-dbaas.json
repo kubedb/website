@@ -1,0 +1,97 @@
+{
+  "product_name": "Air-Gapped / Regulated Environments",
+  "product_color_primary": "#4f46e5",
+  "cta_bg_color": "#312e81",
+  "hero_title_1": "Secure DBaaS for",
+  "hero_title_2": "Isolated Environments",
+  "hero_description": "Deploy production-grade database automation in air-gapped, disconnected, and high-security Kubernetes environments with complete offline installation support and pre-scanned container images.",
+  "primary_action_text": "Request Access",
+  "primary_action_url": "/contact/",
+  "secondary_action_text": "View Requirements",
+  "secondary_action_url": "/docs/v2026.1.19/setup/install/air-gapped/",
+  "product_icon": "lucide:shield-off",
+  "stats": [
+    { "label": "Security Level", "value": "Highest" },
+    { "label": "Internet Access", "value": "Zero" },
+    { "label": "Package Size", "value": "~50GB" },
+    { "label": "Updates", "value": "Offline" }
+  ],
+  "when_to_use_title": "Why Air-Gapped DBaaS?",
+  "when_to_use_subtitle": "Maximum security for your most sensitive workloads in regulated industries.",
+  "when_to_use": [
+    {
+      "icon": "lucide:lock",
+      "title": "Maximum Security",
+      "description": "Complete isolation from the public internet for the highest security requirements.",
+      "icon_bg": "#6366f1"
+    },
+    {
+      "icon": "lucide:file-check",
+      "title": "Compliance Ready",
+      "description": "Meet strict regulatory requirements like HIPAA, PCI-DSS, and FedRAMP.",
+      "icon_bg": "#06b6d4"
+    },
+    {
+      "icon": "lucide:hard-drive",
+      "title": "Self-Contained",
+      "description": "All components, images, and tools bundled for offline installation and maintenance.",
+      "icon_bg": "#10b981"
+    },
+    {
+      "icon": "lucide:zap",
+      "title": "Full Automation",
+      "description": "Retain all database automation capabilities even in disconnected environments.",
+      "icon_bg": "#d946ef"
+    }
+  ],
+  "platform_built_for_scale_title": "Trusted by Regulated Industries",
+  "platform_built_for_scale_subtitle": "KubeDB is the standard for offline database operations in secure sectors.",
+  "platform_built_for_scale": [
+    {
+      "icon": "lucide:building-2",
+      "title": "Gov & Defense",
+      "description": "Meet strict security requirements for classified systems and secure supply chains.",
+      "benefits": ["NIST compliance", "FedRAMP ready", "Secure delivery"]
+    },
+    {
+      "icon": "lucide:lock",
+      "title": "Financial Services",
+      "description": "Protect sensitive financial data in isolated environments with full audit trails.",
+      "benefits": ["PCI-DSS compliance", "Data sovereignty", "Audit logging"]
+    },
+    {
+      "icon": "lucide:shield",
+      "title": "Healthcare",
+      "description": "HIPAA-compliant database infrastructure with PHI protection and full encryption.",
+      "benefits": ["HIPAA ready", "Encryption at rest", "Access controls"]
+    },
+    {
+      "icon": "lucide:server",
+      "title": "Critical Infra",
+      "description": "Databases for power, water, and utility systems with high availability.",
+      "benefits": ["Zero-trust architecture", "Auto-failover", "Offline mode"]
+    }
+  ],
+  "how_it_works_title": "Offline Package Contents",
+  "how_it_works_infra": {
+    "items": [
+      { "text": "Air-gapped Kubernetes clusters" },
+      { "text": "Isolated storage systems" },
+      { "text": "Disconnected networks" },
+      { "text": "Secure offline object storage" }
+    ]
+  },
+  "how_it_works_software": {
+    "items": [
+      { "text": "Complete offline installation bundle" },
+      { "text": "Pre-scanned container images" },
+      { "text": "Offline documentation & tools" },
+      { "text": "Offline license management" }
+    ]
+  },
+  "how_it_works_summary": "Zero internet • Maximum security • Full air-gap compliance",
+  "cta_title": "Secure Your Critical Infrastructure",
+  "cta_description": "Deploy KubeDB in your air-gapped environment with confidence and maintain full operational efficiency.",
+  "cta_button_text": "Contact Security Team",
+  "cta_button_url": "/contact/"
+}
