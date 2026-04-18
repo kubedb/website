@@ -496,7 +496,7 @@
       </div>
 
       <div class="mt-16 has-text-centered">
-        <div class="is-inline-flex is-align-items-center has-gap-3 px-8 py-4 is-radius-rounded has-border has-background-success-soft summary-badge-green">
+        <div class="badge badge-success-soft has-background-success-soft">
           <iconify-icon icon="lucide:check-circle" width="20" class="has-text-success"></iconify-icon>
           <span class="is-size-6 has-text-weight-bold has-text-grey-800">{{ $data.how_it_works_summary | default "Your infrastructure • Your control • Your data sovereignty" }}</span>
         </div>
@@ -509,10 +509,12 @@
   {{ if and $data.benefits (not $data.hide_benefits) }}
   <section class="home-section section-padding has-background-white">
     <div class="container">
-      <div class="section-header has-text-centered mb-16">
-        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.benefits_title | safeHTML }}</h2>
-        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.benefits_subtitle | safeHTML }}</p>
-      </div>
+      {{ partial "common-sections/section-header.html" (dict 
+        "title" $data.benefits_title
+        "subtitle" $data.benefits_subtitle
+        "align" "center"
+        "class" "mb-16"
+      ) }}
       <div class="columns is-multiline">
         {{ range $data.benefits }}
         <div class="column is-4-desktop is-6-tablet">
@@ -536,16 +538,14 @@
   {{ if $data.use_cases }}
   <section class="home-section section-padding has-background-white has-border-top">
     <div class="container">
-      <div class="section-header has-text-centered mb-16">
-        <div class="badge badge-primary-soft mb-6 px-4 py-1.5 is-radius-rounded has-border">
-          <iconify-icon icon="lucide:star" width="16" height="16" class="has-text-info mr-2"></iconify-icon>
-          <span class="is-size-7 has-text-weight-bold uppercase tracking-widest has-text-info">WHY KUBEDB</span>
-        </div>
-        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.use_cases_title | default "Why teams choose KubeDB" }}</h2>
-        {{ if $data.use_cases_subtitle }}
-        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.use_cases_subtitle | safeHTML }}</p>
-        {{ end }}
-      </div>
+      {{ partial "common-sections/section-header.html" (dict 
+        "title" ($data.use_cases_title | default "Why teams choose KubeDB")
+        "subtitle" $data.use_cases_subtitle
+        "badge_text" "WHY KUBEDB"
+        "badge_icon" "lucide:star"
+        "align" "center"
+        "class" "mb-16"
+      ) }}
       
       <div class="columns is-multiline">
         {{ range $index, $item := $data.use_cases }}
@@ -562,10 +562,12 @@
   {{ if $data.features }}
   <section class="home-section section-padding has-background-white">
     <div class="container">
-      <div class="section-header has-text-centered mb-16">
-        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.features_title | default "Platform Features" }}</h2>
-        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.features_subtitle | safeHTML }}</p>
-      </div>
+      {{ partial "common-sections/section-header.html" (dict 
+        "title" ($data.features_title | default "Platform Features")
+        "subtitle" $data.features_subtitle
+        "align" "center"
+        "class" "mb-16"
+      ) }}
       <div class="columns is-multiline">
         {{ range $data.features }}
         <div class="column is-4-desktop is-6-tablet">
@@ -586,10 +588,12 @@
   {{ if $data.why_not_cloud_dbaas }}
   <section class="home-section section-padding bg-white" style="font-family: 'Inter', sans-serif;">
     <div class="container">
-      <div class="section-header has-text-centered mb-16">
-        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.why_not_cloud_dbaas_title }}</h2>
-        <p class="section-header-desc mx-auto has-opacity-70 mt-4 is-text-lg has-max-width-800">{{ $data.why_not_cloud_dbaas_subtitle }}</p>
-      </div>
+      {{ partial "common-sections/section-header.html" (dict 
+        "title" $data.why_not_cloud_dbaas_title
+        "subtitle" $data.why_not_cloud_dbaas_subtitle
+        "align" "center"
+        "class" "mb-16"
+      ) }}
       <div class="columns is-multiline">
         {{ range $data.why_not_cloud_dbaas }}
         <div class="column is-6">
@@ -605,14 +609,14 @@
   {{ if $data.team_benefits }}
   <section class="home-section section-padding" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);">
     <div class="container">
-      <div class="section-header has-text-centered mb-20">
-        <div class="badge mb-4">
-          <iconify-icon icon="lucide:users-2" width="16" style="color: #6366f1;"></iconify-icon>
-          <span class="is-size-7 has-text-weight-bold uppercase tracking-widest" style="color: #6366f1;">Total Ecosystem Alignment</span>
-        </div>
-        <h2 class="section-header-title has-text-weight-black is-size-2-desktop" style="letter-spacing: -0.04em;">{{ $data.team_benefits_title | default "Benefits For Every Team" }}</h2>
-        <p class="section-header-desc mx-auto has-opacity-70 mt-4 is-text-lg has-max-width-800">{{ $data.team_benefits_subtitle }}</p>
-      </div>
+      {{ partial "common-sections/section-header.html" (dict 
+        "title" ($data.team_benefits_title | default "Benefits For Every Team")
+        "subtitle" $data.team_benefits_subtitle
+        "badge_text" "Total Ecosystem Alignment"
+        "badge_icon" "lucide:users-2"
+        "align" "center"
+        "class" "mb-20"
+      ) }}
       <div class="columns is-multiline">
         {{ range $index, $item := $data.team_benefits }}
         <div class="column is-4">
@@ -638,12 +642,14 @@
   <section class="home-section section-padding bg-dark text-white is-relative is-overflow-hidden"
     style="background: #0b1120;">
     <div class="container is-relative">
-      <div class="section-header has-text-centered mb-16">
-        <h2 class="section-header-title has-text-white has-text-weight-black is-size-2-desktop">{{ $comp_title }}</h2>
-        <p class="section-header-desc has-text-white has-opacity-70 mx-auto is-size-5 has-line-height-relaxed has-max-width-900">
-          {{ $comp_desc | safeHTML }}
-        </p>
-      </div>
+      {{ partial "common-sections/section-header.html" (dict 
+        "title" $comp_title
+        "subtitle" $comp_desc
+        "align" "center"
+        "title_class" "has-text-white"
+        "subtitle_class" "has-text-white is-size-5 has-line-height-relaxed has-max-width-900"
+        "class" "mb-16"
+      ) }}
 
       <!-- Analogy Section -->
       {{ if $comp_analogy }}
@@ -804,14 +810,12 @@
   {{ if $data.platform_features }}
   <section class="section-padding platform-teams-section">
     <div class="container">
-      <div class="section-header has-text-centered mb-16">
-        <h2 class="section-header-title has-text-weight-black is-size-2-desktop tracking-tight">
-          {{ $data.platform_features_title | default "What Platform Teams Get with KubeDB" }}
-        </h2>
-        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">
-          {{ $data.platform_features_subtitle | default "Complete DBaaS platform software in your infrastructure" }}
-        </p>
-      </div>
+      {{ partial "common-sections/section-header.html" (dict 
+        "title" ($data.platform_features_title | default "What Platform Teams Get with KubeDB")
+        "subtitle" ($data.platform_features_subtitle | default "Complete DBaaS platform software in your infrastructure")
+        "align" "center"
+        "class" "mb-16"
+      ) }}
 
       <div class="columns is-multiline">
         {{ range $data.platform_features }}

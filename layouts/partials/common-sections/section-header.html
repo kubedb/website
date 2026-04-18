@@ -1,0 +1,29 @@
+{{ $title := .title }}
+{{ $subtitle := .subtitle }}
+{{ $badge_text := .badge_text }}
+{{ $badge_icon := .badge_icon }}
+{{ $align := .align | default "center" }}
+{{ $class := .class }}
+
+<div class="section-header mb-16 {{ if eq $align "center" }}has-text-centered{{ else }}is-flex is-flex-direction-column is-align-items-flex-start has-text-left{{ end }} {{ $class }}">
+  {{ if $badge_text }}
+  <div class="badge mb-4">
+    {{ if $badge_icon }}
+    <iconify-icon {{ printf "icon=%q" $badge_icon | safeHTMLAttr }} width="16" height="16" class="has-text-secondary mr-2"></iconify-icon>
+    {{ end }}
+    <span class="is-size-7 has-text-weight-bold uppercase tracking-widest">{{ $badge_text }}</span>
+  </div>
+  {{ end }}
+
+  {{ if $title }}
+  <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter {{ .title_class }}">
+    {{ $title | safeHTML }}
+  </h2>
+  {{ end }}
+
+  {{ if $subtitle }}
+  <p class="section-header-desc body-lg {{ if eq $align "center" }}mx-auto{{ else }}ml-0{{ end }} mt-4 has-opacity-70 has-max-width-800 {{ .subtitle_class }}">
+    {{ $subtitle | safeHTML }}
+  </p>
+  {{ end }}
+</div>

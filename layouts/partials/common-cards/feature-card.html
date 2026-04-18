@@ -30,7 +30,7 @@
     </div>
     {{ end }}
     <div class="feature-content">
-      <h4 class="has-text-heading has-text-weight-black is-size-6 mb-2 has-line-height-snug has-text-grey-900">{{ $card.title }}</h4>
+      <h4 class="has-text-heading has-line-height-tight has-text-weight-black is-size-6 mb-2 has-line-height-snug has-text-grey-900 is-fullheight">{{ $card.title }}</h4>
       <p class="has-text-body is-text-sm has-text-grey-500 has-line-height-normal">{{ $card.description }}</p>
     </div>
   </div>
@@ -38,7 +38,7 @@
 
 {{ else if eq $type "benefit-scale" }}
 <!-- Built For Scale Benefit Card -->
-<div class="ac-feature-benefit-scale p-6 is-radius-2xlarge has-background-white has-border h-full transition-all has-hover-lift has-shadow-small" style="border-color: #e2e8f0;">
+<div class="ac-feature-benefit-scale p-6 is-radius-2xlarge has-background-white has-border h-full transition-all has-hover-lift is-fullheight" style="border-color: #e2e8f0;">
   <div class="is-flex is-align-items-flex-start has-gap-6 mb-8">
     {{ if $card.icon }}
     <div class="has-size-14 is-radius-2xlarge has-background-gradient-primary is-flex is-align-items-center is-justify-content-center is-flex-shrink-0">
@@ -95,7 +95,7 @@
 </div>
 {{ else if eq $type "persona" }}
 <!-- Persona / Team Benefit Card -->
-<div class="ac-feature-persona p-12 is-radius-3xlarge has-background-white has-border is-fullheight transition-all has-hover-lift has-hover-shadow-xl" 
+<div class="ac-feature-persona p-6 is-radius-2xlarge has-background-white has-border is-fullheight transition-all has-hover-lift has-hover-shadow-xl" 
      style="border-color: #e2e8f0; position: relative; overflow: hidden;">
   
   {{ if .color_soft }}
