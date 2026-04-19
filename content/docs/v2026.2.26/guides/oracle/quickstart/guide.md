@@ -2,7 +2,7 @@
 title: Oracle Quickstart
 menu:
   docs_v2026.2.26:
-    identifier: guides-oracle-quickstart
+    identifier: guides-oracle-quickstart-guide
     name: Quickstart
     parent: guides-oracle
     weight: 15
