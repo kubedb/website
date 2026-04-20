@@ -1,4 +1,5 @@
 {{ define "main" }}
+<div class="ac-ui">
 <section class="hero-area is-product is-dark has-image-bg is-feature" style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);">
 	<div class="shape">
 		<div class="cube"></div>
@@ -34,10 +35,18 @@
 				<div class="full-info content">
 					<div class="content-body">
 						{{ .Content }}
+                        
+
+                       <div class="is-fullwidth">
+                         <button class="button ac-button is-primary width-200 mx-auto">STATIC BUTTON</button>
+                       </div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+</div>
+
 {{ end }}
