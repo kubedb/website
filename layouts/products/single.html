@@ -63,7 +63,7 @@
       </div>
 
       {{ if $data.stats }}
-      <div class="columns is-mobile is-multiline mt-12 has-max-width-lg mx-auto">
+      <div class="columns is-mobile is-multiline mt-12 has-max-width-xl mx-auto">
         {{ range $data.stats }}
         <div class="column is-3-desktop is-6-mobile">
           {{ partial "common-cards/stat-card.html" (dict "stat" . "color" $p_color) }}
