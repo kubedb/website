@@ -4,7 +4,7 @@
   "cta_bg_color": "#064e3b",
   "hero_title_1": "Automate Database Operations",
   "hero_title_2": "with True GitOps",
-  "hero_description": "The only Kubernetes-native DBaaS that brings full GitOps maturity to stateful workloads — at Operator Capability Level 5. Stop fighting your tools and start shipping database changes like code.",
+  "hero_description": "The only Kubernetes-native DBaaS that brings full GitOps maturity to stateful workloads — at Operator Capability Level 5",
   "hero_badge": "GitOps-First Database Automation",
   "hero_subtitle_highlight": "Operator Capability Level 5",
   "primary_action_text": "See GitOps in Action",

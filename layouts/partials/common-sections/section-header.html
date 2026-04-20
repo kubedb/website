@@ -5,7 +5,7 @@
 {{ $align := .align | default "center" }}
 {{ $class := .class }}
 
-<div class="section-header mb-16 {{ if eq $align "center" }}has-text-centered{{ else }}is-flex is-flex-direction-column is-align-items-flex-start has-text-left{{ end }} {{ $class }}">
+<div class="section-header {{ if not (strings.Contains .class "mb-") }}mb-16{{ end }} {{ if eq $align "center" }}has-text-centered{{ else }}is-flex is-flex-direction-column is-align-items-flex-start has-text-left{{ end }} {{ $class }}">
   {{ if $badge_text }}
   <div class="badge mb-4">
     {{ if $badge_icon }}

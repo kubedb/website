@@ -134,6 +134,35 @@
     .bg-grad-vibrant:hover {
       transform: scale(1.05) rotate(2deg);
     }
+
+    /* Light Theme Comparison Table */
+    .saas-comparison-table {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.05);
+    }
+    .saas-comparison-table thead th {
+      padding: 24px 32px;
+      font-size: 1rem;
+      font-weight: 800;
+      border-bottom: 1px solid #e2e8f0;
+      background: #F8FAFC;
+    }
+    .saas-comparison-table tbody td {
+      padding: 24px 32px;
+      border-bottom: 1px solid #F1F5F9;
+      vertical-align: middle;
+    }
+    .saas-comparison-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .saas-comparison-table .highlight-col {
+      background: #ffffff;
+      color: {{ $p_color }};
+      font-weight: 700;
+    }
   </style>
 
   <div class="ac-ui product-redesign"
@@ -160,7 +189,7 @@
           <span class="text-gradient">{{ $data.hero_title_2 | safeHTML }}</span>
         </h1>
 
-        <p class="home-hero-desc">
+        <p class="home-hero-desc mb-8">
           {{ if $data.hero_subtitle_highlight }}
             {{ replace $data.hero_description $data.hero_subtitle_highlight (printf "<span class='has-text-indigo has-text-weight-bold'>%s</span>" $data.hero_subtitle_highlight) | safeHTML }}
           {{ else }}
@@ -168,12 +197,14 @@
           {{ end }}
         </p>
 
-        {{ if $data.hero_badge }}
+       
+
+        {{ if $data.hero_best_with }}
         <div class="is-flex is-align-items-center is-justify-content-center has-gap-2 mb-10">
-          <span class="is-size-7 has-text-grey-500 font-semibold subtitle-font">Perfectly Integrated With:</span>
+          <span class="is-size-7 has-text-grey-500 font-semibold subtitle-font">Best with:</span>
           <div class="inline-flex is-align-items-center has-gap-2 px-4 py-1.5 is-radius-full badge-success-soft">
             <iconify-icon icon="lucide:check-circle-2" class="has-text-success" width="16" height="16"></iconify-icon>
-            <span class="is-size-7 font-bold">KubeDB Operator</span>
+            <span class="is-size-7 font-bold">{{ $data.hero_best_with }}</span>
           </div>
         </div>
         {{ end }}
@@ -193,6 +224,12 @@
         {{ end }}
       </div>
 
+       {{ if $data.hero_footer_text }}
+        <p class="mt-8 has-text-grey-600 has-text-weight-medium">
+          {{ $data.hero_footer_text | safeHTML }}
+        </p>
+        {{ end }}
+
       {{ if $data.stats }}
       <div class="columns is-mobile is-multiline mt-12 has-max-width-lg mx-auto">
         {{ range $data.stats }}
@@ -205,59 +242,57 @@
     </div>
   </section>
 
-  <!-- GitOps Challenge Section (Matched to Screenshot) -->
+  <!-- GitOps Challenge Section -->
   {{ if $data.challenges }}
-  <section id="conflict" class="home-section section-padding bg-white">
+  <section id="conflict" class="home-section section-padding has-background-white">
     <div class="container">
       <div class="columns is-vcentered">
         <!-- Left: Large Numbered List -->
         <div class="column is-6">
-          <div class="badge mb-6" 
-               style="background: #FFF1F2; border: 1px solid #FECDD3;">
+          <div class="badge mb-6 has-background-danger-softer has-border-danger-soft">
             <iconify-icon icon="lucide:alert-triangle" class="has-text-danger" width="14"></iconify-icon>
             <span class="is-size-7 font-bold has-text-danger tracking-wide">{{ $data.challenge_badge }}</span>
           </div>
-          <h2 class="title is-size-1 has-text-weight-bold mb-12" style="font-size: 3.5rem; letter-spacing: -0.02em;">{{ $data.challenge_title }}</h2>
-          
+          <h2 class="title is-size-1 is-size-1h has-text-weight-bold has-tracking-tight mb-12">{{ $data.challenge_title }}</h2>
+
           <div class="space-y-12">
             {{ range $data.challenges }}
             <div class="is-flex has-gap-8">
-              <div class="is-size-1 has-text-weight-black has-opacity-60 leading-none" 
-                   style="color: #F87171; font-size: 4.5rem; width: 80px;">{{ .id }}</div>
+              <div class="is-size-0 has-text-weight-black has-opacity-60 has-line-height-none has-text-danger-light has-width-20">{{ .id }}</div>
               <div class="pt-2">
                 <h4 class="is-size-4 has-text-weight-bold mb-3 has-text-grey-900">{{ .title }}</h4>
-                <p class="is-size-5 has-text-grey-600 leading-relaxed">{{ .description }}</p>
+                <p class="is-size-5 has-text-grey-600 has-line-height-relaxed">{{ .description }}</p>
               </div>
             </div>
             {{ end }}
           </div>
         </div>
-        
+
         <!-- Right: Nested Conflict Box -->
         <div class="column is-6">
-          <div class="p-16 is-radius-3xl has-background-white shadow-2xl" style="border: 1px solid #f1f5f9;">
-            <div class="is-radius-2xl p-10" style="background: #F8FAFC; border: 1.5px solid #FECDD3;">
+          <div class="p-16 is-radius-3xl has-background-white shadow-2xl has-border-grey-lightest">
+            <div class="is-radius-2xl p-10 has-background-grey-lightest has-border-danger-soft">
               <div class="is-flex is-align-items-center has-gap-3 mb-8">
                 <iconify-icon icon="lucide:x-circle" class="has-text-danger" width="28"></iconify-icon>
                 <h3 class="is-size-4 has-text-weight-black has-text-danger tracking-tight">Reconciliation Conflict</h3>
               </div>
-              
+
               <div class="font-mono is-size-6 space-y-5 mb-10 has-text-grey-700">
                 <div class="is-flex has-gap-3">
-                  <span class="opacity-50">&gt;</span>
+                  <span class="has-opacity-50">&gt;</span>
                   <span>{{ $data.reconciliation_conflict.command }}</span>
                 </div>
                 <div class="is-flex has-gap-3 has-text-success font-bold">
-                  <span class="opacity-50">&gt;</span>
+                  <span class="has-opacity-50">&gt;</span>
                   <span>{{ $data.reconciliation_conflict.status }}</span>
                 </div>
                 <div class="is-flex has-gap-3 has-text-danger font-bold">
-                  <span class="opacity-50">&gt;</span>
+                  <span class="has-opacity-50">&gt;</span>
                   <span>{{ $data.reconciliation_conflict.result }}</span>
                 </div>
               </div>
 
-              <div class="pt-8 border-top" style="border-top: 1px solid #cbd5e1;">
+              <div class="pt-8 has-border-top-grey-light">
                 <p class="is-size-7 font-mono has-text-grey-500 font-bold uppercase tracking-widest">
                   Result: {{ $data.reconciliation_conflict.note }}
                 </p>
@@ -270,36 +305,32 @@
   </section>
   {{ end }}
 
-  <!-- High-Fidelity Code Demo Section (Matched to Screenshot) -->
+  <!-- Code Demo Section -->
   {{ if $data.code_demo }}
-  <section class="home-section section-padding" style="background: #F8FAFC;">
+  <section class="home-section section-padding has-background-grey-lightest">
     <div class="container">
       <div class="has-text-centered mb-16">
-        <div class="badge is-justify-content-center mb-8" 
-             style="background: rgba(114, 114, 233, 0.1); border: 1px solid rgba(114, 114, 233, 0.2); color: #6366f1;">
+        <div class="badge is-justify-content-center mb-8 has-background-secondary-soft has-border-secondary has-text-indigo">
           <iconify-icon icon="lucide:git-branch" class="mr-2" width="14"></iconify-icon>
           <span class="has-text-weight-bold is-size-7 uppercase tracking-widest">{{ $data.code_demo.subtitle }}</span>
         </div>
-        <h2 class="title is-size-1 has-text-weight-bold" style="font-size: 3.5rem;">{{ $data.code_demo.title | safeHTML }}</h2>
+        <h2 class="title is-size-1 is-size-1h has-text-weight-bold">{{ $data.code_demo.title | safeHTML }}</h2>
       </div>
 
       <div class="columns">
         <!-- Left: Large Code Card -->
         <div class="column is-7">
-          <div class="p-12 is-radius-3xl has-background-white shadow-2xl" 
-               style="border: 1px solid #e2e8f0;">
+          <div class="p-12 is-radius-3xl has-background-white shadow-2xl has-border-grey-200">
             <div class="is-flex is-align-items-center is-justify-content-between mb-8 px-2">
               <div class="is-flex is-align-items-center has-gap-3">
                 <iconify-icon icon="lucide:file-code" class="has-text-success" width="24"></iconify-icon>
                 <span class="is-size-4 font-bold has-text-grey-900">{{ $data.code_demo.filename }}</span>
               </div>
-              <div class="px-4 py-1-5 is-radius-lg font-bold is-size-7" 
-                   style="background: #ECFDF5; color: #10B981; border: 1px solid #D1FAE5;">Git</div>
+              <div class="px-4 py-1-5 is-radius-lg font-bold is-size-7 has-background-success-soft has-text-success has-border-success-light">Git</div>
             </div>
-            
-            <div class="is-radius-2xl overflow-hidden shadow-inner" style="background: #0F172A;">
-              <pre class="p-10 font-mono is-size-6 leading-relaxed" 
-                   style="color: #6EE7B7; background: transparent; overflow-x: auto;"><code>{{ $data.code_demo.code }}</code></pre>
+
+            <div class="is-radius-2xl is-overflow-hidden shadow-inner has-background-code-dark">
+              <pre class="p-10 font-mono is-size-6 has-line-height-relaxed has-text-code-green has-background-transparent is-overflow-x-auto"><code>{{ $data.code_demo.code }}</code></pre>
             </div>
           </div>
         </div>
@@ -309,20 +340,20 @@
           <div class="space-y-6">
             {{ range $data.code_demo.steps }}
             <div class="p-8 is-radius-2xl has-border transition-all hover-lift {{ if .vibrant }}is-background-success-light{{ else }}has-background-white shadow-sm{{ end }}"
-                 style="border-color: {{ if .vibrant }}#D1FAE5{{ else }}#E2E8F0{{ end }}; 
-                        background: {{ if .vibrant }}linear-gradient(to br, #F0FDF4, #DCFCE7){{ else }}#FFFFFF{{ end }};">
+                 style="border-color: {{ if .vibrant }}#D1FAE5{{ else }}#E2E8F0{{ end }};
+                        background: {{ if .vibrant }}linear-gradient(to bottom right, #F0FDF4, #DCFCE7){{ else }}#FFFFFF{{ end }};">
               <div class="is-flex has-gap-6 is-align-items-center">
-                <div class="is-flex-shrink-0 w-12 h-12 is-radius-full is-flex is-align-items-center is-justify-content-center {{ if .vibrant }}has-background-success has-text-white shadow-lg{{ else }}has-background-indigo-light has-text-indigo{{ end }}"
+                <div class="is-flex-shrink-0 has-size-12 is-radius-full is-flex is-align-items-center is-justify-content-center {{ if .vibrant }}has-background-success has-text-white shadow-lg{{ else }}{{ end }}"
                      style="{{ if not .vibrant }}background: #F1F5F9; color: #6366F1;{{ end }}">
                   {{ if .vibrant }}
                   <iconify-icon icon="lucide:rocket" width="24"></iconify-icon>
                   {{ else }}
-                  <span class="has-text-weight-black is-size-5" style="opacity: 0.5;">{{ .id }}</span>
+                  <span class="has-text-weight-black is-size-5 has-opacity-50">{{ .id }}</span>
                   {{ end }}
                 </div>
                 <div>
                   <h4 class="is-size-4 has-text-weight-bold mb-1 has-text-grey-900">{{ .title }}</h4>
-                  <p class="is-size-6 has-text-grey-600 leading-relaxed">{{ .description }}</p>
+                  <p class="is-size-6 has-text-grey-600 has-line-height-relaxed">{{ .description }}</p>
                 </div>
               </div>
             </div>
@@ -334,7 +365,7 @@
   </section>
   {{ end }}
 
-  {{/* High-Fidelity Comparison Section */}}
+  {{/* Comparison Section */}}
   {{ if $data.comparison }}
   <section id="conflict" class="home-section section-padding">
     <div class="container">
@@ -343,49 +374,49 @@
         <p class="is-size-5 has-text-grey-500">{{ $data.comparison.subtitle }}</p>
       </div>
 
-      <div class="columns">
+      <div class="columns is-vcentered">
         {{/* Problem Side */}}
         <div class="column is-6">
-          <div class="h-full p-10 is-radius-3xl border-red-soft" style="background: linear-gradient(to br, #fef2f2, #fff7ed); border: 1px solid #fee2e2;">
+          <div class="is-fullheight p-10 is-radius-3xl has-background-gradient-danger-soft has-border-danger-light">
             <div class="is-flex is-align-items-center has-gap-3 mb-8">
-              <iconify-icon icon="{{ $data.comparison.problem.icon }}" class="has-text-danger" width="40" height="40"></iconify-icon>
+              <iconify-icon {{ printf "icon=%q" $data.comparison.problem.icon | safeHTMLAttr }} class="has-text-danger" width="40" height="40"></iconify-icon>
               <h3 class="is-size-3 has-text-weight-bold">{{ $data.comparison.problem.title }}</h3>
             </div>
             <div class="space-y-8">
               {{ range $index, $step := $data.comparison.problem.steps }}
-              <div class="is-flex has-gap-4">
-                <div class="is-flex-shrink-0 w-8 h-8 is-radius-lg is-flex is-align-items-center is-justify-content-center" style="background: #fee2e2; color: #dc2626;">
+              <div class="is-flex has-gap-4 is-align-items-center">
+                <div class="is-flex-shrink-0 has-size-8 is-radius-lg is-flex is-align-items-center is-justify-content-center has-background-danger-light has-text-danger">
                   <span class="has-text-weight-bold">{{ add $index 1 }}</span>
                 </div>
-                <div class="has-text-grey-700 font-medium">{{ $step }}</div>
+                <div class="has-text-grey-700 has-text-weight-medium">{{ $step }}</div>
               </div>
               {{ end }}
             </div>
-            <div class="mt-10 p-6 is-radius-2xl border-red-medium" style="background: #fee2e2; border: 1px solid #fecaca;">
-              <p class="has-text-danger-dark font-semibold">{{ $data.comparison.problem.result }}</p>
+            <div class="mt-10 p-6 is-radius-2xl has-background-danger-light has-border-danger-lightest">
+              <p class="has-text-danger-dark has-text-weight-semibold">{{ $data.comparison.problem.result }}</p>
             </div>
           </div>
         </div>
 
         {{/* Solution Side */}}
         <div class="column is-6">
-          <div class="h-full p-10 is-radius-3xl border-success-soft" style="background: linear-gradient(to br, #f0fdf4, #f0fdfa); border: 1px solid #d1fae5;">
+          <div class="is-fullheight p-10 is-radius-3xl has-background-gradient-success-soft has-border-success-light">
             <div class="is-flex is-align-items-center has-gap-3 mb-8">
-              <iconify-icon icon="{{ $data.comparison.solution.icon }}" class="has-text-success" width="40" height="40"></iconify-icon>
+              <iconify-icon {{ printf "icon=%q" $data.comparison.solution.icon | safeHTMLAttr }} class="has-text-success" width="40" height="40"></iconify-icon>
               <h3 class="is-size-3 has-text-weight-bold">{{ $data.comparison.solution.title }}</h3>
             </div>
             <div class="space-y-8">
               {{ range $data.comparison.solution.steps }}
-              <div class="is-flex has-gap-4">
-                <div class="is-flex-shrink-0 w-8 h-8 is-radius-lg is-flex is-align-items-center is-justify-content-center {{ if or (strings.Contains .color "bg-grad") (strings.Contains .color "linear-gradient") }} {{ .color }} {{ else }} bg-grad-{{ .color }} {{ end }}">
-                  <iconify-icon icon="{{ .icon }}" class="has-text-white" width="16" height="16"></iconify-icon>
+              <div class="is-flex has-gap-4 is-align-items-center">
+                <div class="is-flex-shrink-0 has-size-8 is-radius-lg is-flex is-align-items-center is-justify-content-center {{ if or (strings.Contains .color "bg-grad") (strings.Contains .color "linear-gradient") }} {{ .color }} {{ else }} bg-grad-{{ .color }} {{ end }}">
+                  <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} class="has-text-white" width="16" height="16"></iconify-icon>
                 </div>
-                <div class="has-text-grey-700 font-medium">{{ .text }}</div>
+                <div class="has-text-grey-700 has-text-weight-medium">{{ .text }}</div>
               </div>
               {{ end }}
             </div>
-            <div class="mt-10 p-6 is-radius-2xl border-success-medium" style="background: #d1fae5; border: 1px solid #a7f3d0;">
-              <p class="has-text-success-dark font-semibold">{{ $data.comparison.solution.result }}</p>
+            <div class="mt-10 p-6 is-radius-2xl has-background-success-light has-border-success-medium">
+              <p class="has-text-success-dark has-text-weight-semibold">{{ $data.comparison.solution.result }}</p>
             </div>
           </div>
         </div>
@@ -398,20 +429,23 @@
   {{ if $data.when_to_use }}
   <section class="home-section section-padding has-background-white">
     <div class="container">
-      <div class="section-header has-text-centered mb-16">
-        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.when_to_use_title | safeHTML }}</h2>
-        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.when_to_use_subtitle | safeHTML }}</p>
-      </div>
-      {{ $col_class := $data.when_to_use_column_class | default "is-3-desktop" }}
+      {{ partial "common-sections/section-header.html" (dict
+        "badge_text" ($data.when_to_use_title | default "The multi-tenant challenge")
+        "title" $data.when_to_use_subtitle
+        "subtitle" $data.when_to_use_description
+        "align" "center"
+        "class" "mb-12"
+      ) }}
+      {{ $col_class := $data.when_to_use_column_class | default (printf "is-%d" (div 12 (len $data.when_to_use))) }}
       <div class="columns is-multiline">
         {{ range $data.when_to_use }}
-        <div class="column {{ $col_class }} is-4-tablet is-6-mobile">
+        <div class="column {{ $col_class }}-desktop is-4-tablet is-6-mobile">
           {{ $g_class := lower .gradient_class }}
           {{ $c := "orange" }}
           {{ if strings.Contains .title "Autonomy" }}{{ $c = "purple" }}
-          {{ else if strings.Contains .title "Cost" }}{{ $c = "green" }}
-          {{ else if strings.Contains .title "Governance" }}{{ $c = "blue" }}{{ end }}
-          {{ if .icon_bg }}{{ if strings.Contains .icon_bg "ef" }}{{ $c = "purple" }}{{ else if strings.Contains .icon_bg "10b" }}{{ $c = "green" }}{{ else if strings.Contains .icon_bg "3b8" }}{{ $c = "blue" }}{{ end }}{{ end }}
+          {{ else if strings.Contains .title "Cost" }}{{ $c = "blue" }}
+          {{ else if strings.Contains .title "Isolation" }}{{ $c = "red" }}{{ end }}
+          {{ if .icon_bg }}{{ if strings.Contains .icon_bg "ef" }}{{ $c = "red" }}{{ else if strings.Contains .icon_bg "10b" }}{{ $c = "green" }}{{ else if strings.Contains .icon_bg "3b8" }}{{ $c = "blue" }}{{ end }}{{ end }}
 
           {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard" "color" $c) }}
         </div>
@@ -420,8 +454,90 @@
     </div>
   </section>
   {{ end }}
-  
-  <!-- Built For Scale Section (Target Customers) -->
+
+  <!-- Numbered Features Section -->
+  {{ if $data.numbered_features }}
+  <section class="home-section section-padding has-background-white">
+    <div class="container">
+      <div class="columns is-vcentered is-variable is-8">
+        <div class="column is-6">
+          {{ partial "common-sections/section-header.html" (dict
+            "title" $data.numbered_features_title
+            "subtitle" $data.numbered_features_subtitle
+            "align" "left"
+            "class" "mb-12"
+          ) }}
+
+          <div class="space-y-8">
+            {{ range $data.numbered_features }}
+            <div class="is-flex has-gap-6">
+              <div class="is-flex-shrink-0">
+                <div class="has-size-12 is-radius-xlarge has-background-gradient-primary is-flex is-align-items-center is-justify-content-center shadow-lg">
+                  <span class="is-size-5 has-text-weight-bold has-text-white">{{ .id }}</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="is-size-4 has-text-weight-bold mb-2 has-text-grey-900">{{ .title }}</h3>
+                <p class="is-size-6 has-text-grey-600 leading-relaxed">{{ .description }}</p>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="column is-6">
+          <div class="is-radius-2xl p-4 has-border-grey-light shadow-2xl has-background-white">
+            <img src="{{ $data.numbered_features_graphic | default "/assets/images/products/kubedb/kubedb-hero.png" }}" alt="Feature Diagram" class="is-radius-xl w-full">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Comparison Table Section -->
+  {{ if $data.comparison_table }}
+  <section class="home-section section-padding has-background-white pt-0">
+    <div class="container">
+      {{ partial "common-sections/section-header.html" (dict
+        "title" $data.comparison_title
+        "align" "center"
+        "class" "mb-16"
+      ) }}
+
+      <div class="columns is-centered">
+        <div class="column is-12">
+          <div class="saas-comparison-table shadow-2xl">
+            <table class="table is-fullwidth is-hoverable mb-0">
+              <thead>
+                <tr>
+                  <th class="has-text-grey-900">{{ $data.comparison_header_1 | default "Requirement" }}</th>
+                  <th class="has-text-grey-900">{{ $data.comparison_header_2 | default "Cloud DBaaS" }}</th>
+                  <th class="has-text-white" style="background: {{ $data.product_color_primary | default "#4948A3" }};">
+                    {{ $data.comparison_header_3 | default "KubeDB DBaaS" }}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {{ range $data.comparison_table.rows }}
+                <tr>
+                  <td class="has-text-weight-bold has-text-grey-900">{{ index . 0 }}</td>
+                  <td class="has-text-grey-600">{{ index . 1 }}</td>
+                  <td class="highlight-col is-size-5-desktop">
+                    {{ index . 2 | safeHTML }}
+                  </td>
+                </tr>
+                {{ end }}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Built For Scale Section -->
   {{ if $data.platform_built_for_scale }}
   <section class="home-section section-padding team-benefits-section">
     <div class="container">
@@ -504,12 +620,12 @@
     </div>
   </section>
   {{ end }}
-  
+
   <!-- Why Section (Benefits) -->
   {{ if and $data.benefits (not $data.hide_benefits) }}
   <section class="home-section section-padding has-background-white">
     <div class="container">
-      {{ partial "common-sections/section-header.html" (dict 
+      {{ partial "common-sections/section-header.html" (dict
         "title" $data.benefits_title
         "subtitle" $data.benefits_subtitle
         "align" "center"
@@ -525,7 +641,7 @@
           {{ else if strings.Contains $g_class "green" }}{{ $c = "green" }}
           {{ else if strings.Contains $g_class "orange" }}{{ $c = "orange" }}
           {{ else if strings.Contains $g_class "yellow" }}{{ $c = "yellow" }}{{ end }}
-          
+
           {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard" "color" $c) }}
         </div>
         {{ end }}
@@ -533,12 +649,12 @@
     </div>
   </section>
   {{ end }}
-  
+
   <!-- Use Cases -->
   {{ if $data.use_cases }}
   <section class="home-section section-padding has-background-white has-border-top">
     <div class="container">
-      {{ partial "common-sections/section-header.html" (dict 
+      {{ partial "common-sections/section-header.html" (dict
         "title" ($data.use_cases_title | default "Why teams choose KubeDB")
         "subtitle" $data.use_cases_subtitle
         "badge_text" "WHY KUBEDB"
@@ -546,7 +662,7 @@
         "align" "center"
         "class" "mb-16"
       ) }}
-      
+
       <div class="columns is-multiline">
         {{ range $index, $item := $data.use_cases }}
         <div class="column is-4">
@@ -557,12 +673,12 @@
     </div>
   </section>
   {{ end }}
-  
+
   <!-- Platform Features Section -->
   {{ if $data.features }}
   <section class="home-section section-padding has-background-white">
     <div class="container">
-      {{ partial "common-sections/section-header.html" (dict 
+      {{ partial "common-sections/section-header.html" (dict
         "title" ($data.features_title | default "Platform Features")
         "subtitle" $data.features_subtitle
         "align" "center"
@@ -579,16 +695,64 @@
   </section>
   {{ end }}
 
+  <!-- Everything You Need (Capabilities) Section -->
+  {{ if $data.capabilities }}
+  <section class="home-section section-padding has-background-white">
+    <div class="container">
+      {{ partial "common-sections/section-header.html" (dict
+        "title" ($data.everything_you_need_title | default "Everything You Need for Production")
+        "align" "center"
+        "class" "mb-12"
+      ) }}
+
+      <div class="columns is-multiline">
+        {{ range $data.capabilities }}
+        <div class="column is-4-desktop is-6-tablet">
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+
   <!-- Supported Databases Section -->
   {{ if not $data.hide_database_support }}
   {{ partial "common-sections/database-support.html" . }}
   {{ end }}
-  
+
+  <!-- Testimonial Section -->
+  {{ if $data.testimonial }}
+  <section class="home-section section-padding has-background-white">
+    <div class="container">
+      {{ partial "common-sections/section-header.html" (dict
+        "title" ($data.testimonial_title | default "Why Leading SaaS Teams Choose KubeDB")
+        "align" "center"
+        "class" "mb-12"
+      ) }}
+
+      <div class="max-w-4xl mx-auto is-radius-3xl p-12 has-max-width-xl shadow-2xl has-text-centered"
+           style="background: linear-gradient(135deg, {{ $data.testimonial.theme_color | default "#4948A3" }}, #7272E9);">
+        <div class="mb-8">
+           <iconify-icon icon="lucide:users" width="60" class="has-text-white has-opacity-80"></iconify-icon>
+        </div>
+        <blockquote class="is-size-3-desktop is-size-4-tablet has-text-white leading-relaxed mb-10 has-text-centered">
+          "{{ $data.testimonial.quote }}"
+        </blockquote>
+        <div class="has-text-white font-semibold is-size-5">
+           — {{ $data.testimonial.attribution }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
   <!-- Why Not Cloud DBaaS Section -->
   {{ if $data.why_not_cloud_dbaas }}
-  <section class="home-section section-padding bg-white" style="font-family: 'Inter', sans-serif;">
+  <section class="home-section section-padding has-background-white">
     <div class="container">
-      {{ partial "common-sections/section-header.html" (dict 
+      {{ partial "common-sections/section-header.html" (dict
         "title" $data.why_not_cloud_dbaas_title
         "subtitle" $data.why_not_cloud_dbaas_subtitle
         "align" "center"
@@ -604,12 +768,12 @@
     </div>
   </section>
   {{ end }}
-  
+
   <!-- Team Benefits Section -->
   {{ if $data.team_benefits }}
-  <section class="home-section section-padding" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);">
+  <section class="home-section section-padding has-background-gradient-light">
     <div class="container">
-      {{ partial "common-sections/section-header.html" (dict 
+      {{ partial "common-sections/section-header.html" (dict
         "title" ($data.team_benefits_title | default "Benefits For Every Team")
         "subtitle" $data.team_benefits_subtitle
         "badge_text" "Total Ecosystem Alignment"
@@ -622,7 +786,7 @@
         <div class="column is-4">
           {{ $color_soft := cond (eq $index 0) "rgba(99,102,241,0.05)" (cond (eq $index 1) "rgba(168,85,247,0.05)" "rgba(236,72,153,0.05)") }}
           {{ $color_gradient := cond (eq $index 0) "linear-gradient(135deg, #6366f1, #818cf8)" (cond (eq $index 1) "linear-gradient(135deg, #a855f7, #c084fc)" "linear-gradient(135deg, #ec4899, #f472b6)") }}
-          
+
           {{ partial "common-cards/feature-card.html" (dict "card" . "type" "persona" "color_soft" $color_soft "color_gradient" $color_gradient) }}
         </div>
         {{ end }}
@@ -632,185 +796,10 @@
   {{ end }}
 
 
-
-  <!-- Comparison Section -->
-  {{ if $data.comparison_table }}
-  {{ $comp_title := $data.comparison_title | default "Operator vs Platform" }}
-  {{ $comp_desc := $data.comparison_subtitle | default "KubeDB Operator provides database automation inside a single Kubernetes cluster, while KubeDB Platform extends this into a centralized DBaaS across clusters, teams, and environments." }}
-  {{ $comp_analogy := $data.comparison_analogy | default "The Operator is the engine. The Platform is the car." }}
-
-  <section class="home-section section-padding bg-dark text-white is-relative is-overflow-hidden"
-    style="background: #0b1120;">
-    <div class="container is-relative">
-      {{ partial "common-sections/section-header.html" (dict 
-        "title" $comp_title
-        "subtitle" $comp_desc
-        "align" "center"
-        "title_class" "has-text-white"
-        "subtitle_class" "has-text-white is-size-5 has-line-height-relaxed has-max-width-900"
-        "class" "mb-16"
-      ) }}
-
-      <!-- Analogy Section -->
-      {{ if $comp_analogy }}
-      <div class="has-text-centered mb-16">
-        <p class="is-size-4 has-text-weight-bold has-tracking-wide is-uppercase has-opacity-50 mb-4" style="color: #94a3b8;">
-          Think of it this way:
-        </p>
-        <p class="is-size-2-desktop is-size-3-tablet has-text-weight-black has-text-info">
-          {{ $comp_analogy | safeHTML }}
-        </p>
-      </div>
-      {{ end }}
-
-      <!-- Quick Summary Cards -->
-      <div class="columns is-multiline mb-16">
-        <!-- Operator Card -->
-        <div class="column is-6">
-          <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up"
-            style="background: rgba(88, 28, 135, 0.15); border: 2px solid #a855f7; border-radius: 20px;">
-            <div class="is-flex is-align-items-center has-gap-4 mb-6">
-              <iconify-icon icon="lucide:container" class="has-text-secondary" width="40" height="40"
-                style="color: #c084fc;"></iconify-icon>
-              <h3 class="is-size-3 has-text-white has-text-weight-black">KubeDB Operator</h3>
-            </div>
-            <p class="has-text-white is-size-5 mb-8 has-line-height-relaxed has-opacity-90">
-              Best for teams that want to run and automate databases inside a Kubernetes cluster using declarative APIs.
-            </p>
-            <div class="space-y-4">
-              <div class="is-flex is-align-items-center has-gap-4">
-                <iconify-icon icon="heroicons:check-badge" class="has-text-secondary" width="24" height="24"
-                  style="color: #c084fc;"></iconify-icon>
-                <span class="is-size-5 has-text-white">Single cluster deployment</span>
-              </div>
-              <div class="is-flex is-align-items-center has-gap-4">
-                <iconify-icon icon="heroicons:check-badge" class="has-text-secondary" width="24" height="24"
-                  style="color: #c084fc;"></iconify-icon>
-                <span class="is-size-5 has-text-white">In-cluster automation</span>
-              </div>
-              <div class="is-flex is-align-items-center has-gap-4">
-                <iconify-icon icon="heroicons:check-badge" class="has-text-secondary" width="24" height="24"
-                  style="color: #c084fc;"></iconify-icon>
-                <span class="is-size-5 has-text-white">Kubectl-based management</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Platform Card -->
-        <div class="column is-6">
-          <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up"
-            style="background: rgba(30, 41, 59, 0.6); border: 2px solid #475569; border-radius: 20px;">
-            <div class="is-flex is-align-items-center has-gap-4 mb-6">
-              <iconify-icon icon="lucide:cloud" class="has-text-info" width="40" height="40"
-                style="color: #60a5fa;"></iconify-icon>
-              <h3 class="is-size-3 has-text-white has-text-weight-black">KubeDB Platform</h3>
-            </div>
-            <p class="has-text-white is-size-5 mb-8 has-line-height-relaxed has-opacity-90">
-              Designed for organizations that need to deliver a standardized, self-service DBaaS across multiple
-              clusters, teams, and environments with centralized control and governance.
-            </p>
-            <div class="space-y-4">
-              <div class="is-flex is-align-items-center has-gap-4">
-                <iconify-icon icon="heroicons:check-badge" class="has-text-success" width="24" height="24"
-                  style="color: #4ade80;"></iconify-icon>
-                <span class="is-size-5 has-text-white">Multi-cluster control plane</span>
-              </div>
-              <div class="is-flex is-align-items-center has-gap-4">
-                <iconify-icon icon="heroicons:check-badge" class="has-text-success" width="24" height="24"
-                  style="color: #4ade80;"></iconify-icon>
-                <span class="is-size-5 has-text-white">Self-service portal</span>
-              </div>
-              <div class="is-flex is-align-items-center has-gap-4">
-                <iconify-icon icon="heroicons:check-badge" class="has-text-success" width="24" height="24"
-                  style="color: #4ade80;"></iconify-icon>
-                <span class="is-size-5 has-text-white">Policy-driven governance</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Analogy Diagram Box -->
-      <div class="mb-20">
-        <div class="p-12 is-radius-2xlarge has-text-centered"
-          style="background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid #334155;">
-          <h3 class="is-size-1 has-text-white has-text-weight-black mb-6">Think of it this way:</h3>
-          <p class="is-size-2 has-text-secondary has-text-weight-black mb-12" style="color: #c084fc;">
-            The Operator is the engine. The Platform is the car.
-          </p>
-
-
-          <div class="is-flex is-justify-content-center mb-10">
-            <div class="has-max-width-lg w-full">
-              <!-- Placeholder for the architecture diagram since it's a Figma asset -->
-              <img src="/assets/images/products/kubedb/kubedb-hero.png" alt="Architecture Diagram"
-                class="is-radius-large" style="opacity: 0.9;">
-            </div>
-          </div>
-
-          <p class="has-text-grey-100 is-size-5 mx-auto has-max-width-800">
-            The Platform provides centralized control and governance, orchestrating multiple Operator instances across
-            different clusters and environments.
-          </p>
-        </div>
-      </div>
-
-      <!-- Custom Premium Comparison Grid -->
-      <div class="columns is-centered">
-        <div class="column is-12">
-          <div class="comparison-grid-container"
-            style="background: rgba(255,255,255,0.02); border-radius: 24px; border: 1.5px solid rgba(255,255,255,0.05); overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
-            <!-- Header Row -->
-            <div class="is-flex is-align-items-stretch"
-              style="border-bottom: 2px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02);">
-              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white"
-                style="flex: 1.2; background: rgba(255,255,255,0.02);">{{ $data.comparison_header_1 | default "Capability" }}</div>
-              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white"
-                style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05);">{{ $data.comparison_header_2 | default "KubeDB Operator" }}</div>
-              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-info"
-                style="flex: 1; border-left: 1px solid rgba(37, 99, 235, 0.2); background: rgba(37, 99, 235, 0.05);">
-                <div class="is-flex is-align-items-center has-gap-2">
-                  <iconify-icon icon="heroicons:sparkles" class="has-text-warning"></iconify-icon>
-                  {{ $data.comparison_header_3 | default "KubeDB Platform" }}
-                </div>
-              </div>
-            </div>
-
-            <!-- Data Rows -->
-            {{ range $index, $row := $data.comparison_table.rows }}
-            <div class="is-flex is-align-items-center transition-all" {{ if lt (add $index 1) (len
-              $data.comparison_table.rows) }}style="border-bottom: 1px solid rgba(255,255,255,0.05);" {{ end }}>
-              <!-- Label -->
-              <div class="p-8 is-size-5 has-text-weight-bold has-text-white" style="flex: 1.2; opacity: 1;">
-                {{ index . 0 }}
-              </div>
-              <!-- Operator Value -->
-              <div class="p-8 is-size-5"
-                style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05); line-height: 1.5; color: #94a3b8;">
-                {{ index . 1 }}
-              </div>
-              <!-- Platform Value (Highlighted) -->
-              <div class="p-8 is-size-5 has-text-white has-text-weight-black"
-                style="flex: 1; border-left: 1px solid rgba(37, 99, 235, 0.3); background: rgba(37, 99, 235, 0.08); line-height: 1.4;">
-                <div class="is-flex is-align-items-start has-gap-3">
-                  <iconify-icon icon="heroicons:check-circle" class="has-text-info mt-1" width="22"
-                    style="color: #60a5fa;"></iconify-icon>
-                  <span>{{ index . 2 }}</span>
-                </div>
-              </div>
-            </div>
-            {{ end }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  {{ end }}
   {{ if $data.platform_features }}
   <section class="section-padding platform-teams-section">
     <div class="container">
-      {{ partial "common-sections/section-header.html" (dict 
+      {{ partial "common-sections/section-header.html" (dict
         "title" ($data.platform_features_title | default "What Platform Teams Get with KubeDB")
         "subtitle" ($data.platform_features_subtitle | default "Complete DBaaS platform software in your infrastructure")
         "align" "center"
@@ -826,23 +815,17 @@
       </div>
     </div>
   </section>
-
   {{ end }}
 
-  <!-- Workflow Steps Section (Premium Component) -->
+  <!-- Workflow Steps Section -->
   {{ partial "common-sections/journey-timeline.html" $data }}
 
-  <!-- Redundant styles removed -->
-
-
-  <!-- How It Works Section (Compact Pipeline Strip) -->
+  <!-- How It Works Section -->
   {{ if (and $data.how_it_works (not $data.how_it_works_infra)) }}
-  <section class="home-section section-padding has-text-white is-relative is-overflow-hidden has-background-black"
-    style="padding: 80px 0;">
-{{ end }}
+  <section class="home-section section-padding has-text-white is-relative is-overflow-hidden has-background-black py-20">
+  {{ end }}
 
-  <!-- FAQs Section (Refactored to Two-Column Layout) -->
-  {{/* High-Fidelity Why KubeDB Section (2x3 Grid) */}}
+  <!-- Why KubeDB Section -->
   {{ if $data.why_kubedb_features }}
   <section class="home-section section-padding">
     <div class="container">
@@ -858,7 +841,7 @@
         {{ end }}
       </div>
 
-      <div class="mt-12 p-6 is-radius-2xl has-text-centered" style="background: #fff7ed; border: 1px solid #ffedd5;">
+      <div class="mt-12 p-6 is-radius-2xl has-text-centered has-background-warning-softer has-border-warning-light">
         <p class="has-text-grey-700">
           {{ $data.why_kubedb_note | safeHTML }}
         </p>
@@ -867,11 +850,10 @@
   </section>
   {{ end }}
 
-  <!-- FAQs Section (Premium Component) -->
+  <!-- FAQs Section -->
   {{ partial "common-sections/faq-section.html" $data }}
 
-  <!-- High-Fidelity Call to Action -->
-  <!-- Reusable Call to Action -->
+  <!-- Call to Action -->
   {{ partial "common-sections/final-cta.html" $data }}
 </div>
 
