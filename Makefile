@@ -1,22 +1,19 @@
 .PHONY: run
 run:
-	hugo server --config=config.dev.yaml
+	hugo server --config=config.yaml
 
 .PHONY: docs
-docs: hugo-tools
-	$(HUGO_TOOLS) docs-aggregator
-	find ./data -name "*.json" -exec sed -i 's/https:\/\/cdn.appscode.com\/images/\/assets\/images/g' {} \;
-	rm -rf static/files/cluster-api
-	rm -rf static/files/cluster-api-provider-aws
-	rm -rf static/files/cluster-api-provider-azure
-	rm -rf static/files/cluster-api-provider-gcp
-	rm -rf static/files/products/appscode/aws-marketplace
-	rm -rf static/files/products/appscode/azure-marketplace
-	rm -rf static/files/products/appscode/gcp-marketplace
+docs: docs-operator docs-platform assets
+	@true
 
-.PHONY: docs-skip-assets
-docs-skip-assets: hugo-tools
-	$(HUGO_TOOLS) docs-aggregator --skip-assets
+.PHONY: docs-operator
+docs-operator: hugo-tools
+	$(HUGO_TOOLS) docs-aggregator --product=kubedb --docs-dir=docs --skip-assets
+	find ./data -name "*.json" -exec sed -i 's/https:\/\/cdn.appscode.com\/images/\/assets\/images/g' {} \;
+
+.PHONY: docs-platform
+docs-platform: hugo-tools
+	$(HUGO_TOOLS) docs-aggregator --product=kubedbplatform --docs-dir=docs/platform --skip-assets
 	find ./data -name "*.json" -exec sed -i 's/https:\/\/cdn.appscode.com\/images/\/assets\/images/g' {} \;
 
 .PHONY: assets
@@ -34,7 +31,7 @@ assets: hugo-tools
 .PHONY: gen
 gen:
 	rm -rf public
-	hugo --config=config.dev.yaml
+	hugo --config=config.yaml
 
 .PHONY: qa
 qa: gen
@@ -59,10 +56,15 @@ check-links:
 VERSION ?=
 
 # https://stackoverflow.com/a/38982011/244009
-.PHONY: set-version
-set-version:
+.PHONY: set-operator-version
+set-operator-version:
 	@mv firebase.json firebase.bk.json
 	@jq '(.hosting[] | .redirects[] | .destination) |= sub("\/docs\/.*\/"; "/docs/$(VERSION)/"; "l")' firebase.bk.json > firebase.json
+
+.PHONY: set-platform-version
+set-platform-version:
+	@mv firebase.json firebase.bk.json
+	@jq '(.hosting[] | .redirects[] | .destination) |= sub("\/docs\/platform\/.*\/"; "/docs/platform/$(VERSION)/"; "l")' firebase.bk.json > firebase.json
 
 ASSETS_REPO_URL ?=
 .PHONY: set-assets-repo

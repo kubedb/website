@@ -9,9 +9,9 @@ Hugo static website for KubeDB (Kubernetes database operator platform). Aggregat
 ## Build & Development Commands
 
 ```bash
-# Local development server (uses config.dev.yaml)
+# Local development server (uses config.yaml)
 make run
-hugo server --config=config.dev.yaml
+hugo server --config=config.yaml
 
 # Production build with minification
 make gen-prod
@@ -68,7 +68,7 @@ static/
 ## Configuration
 
 - **config.yaml** - Production domains (kubedb.com, appscode.com)
-- **config.dev.yaml** - Firebase preview domains (`*-hugo.web.app`)
+- **config.yaml** - Firebase preview domains (`*-hugo.web.app`)
 - **data/config.json** - Docs aggregation source repos and paths
 - **firebase.json** - Hosting rules and redirects
 
