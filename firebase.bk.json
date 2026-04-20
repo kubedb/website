@@ -43,6 +43,21 @@
       ],
       "redirects": [
         {
+          "source": "/docs/platform/latest/",
+          "destination": "/docs/platform/v2026.3.30/",
+          "type": 302
+        },
+        {
+          "source": "/docs/platform/latest/:rest*",
+          "destination": "/docs/platform/v2026.3.30/:rest",
+          "type": 302
+        },
+        {
+          "source": "/docs/platform",
+          "destination": "/docs/platform/v2026.3.30/",
+          "type": 302
+        },
+        {
           "source": "/docs/latest/",
           "destination": "/docs/v2026.2.26/",
           "type": 302

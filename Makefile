@@ -59,7 +59,7 @@ VERSION ?=
 .PHONY: set-operator-version
 set-operator-version:
 	@mv firebase.json firebase.bk.json
-	@jq '(.hosting[] | .redirects[] | .destination) |= sub("\/docs\/.*\/"; "/docs/$(VERSION)/"; "l")' firebase.bk.json > firebase.json
+	@jq '(.hosting[] | .redirects[] | .destination) |= sub("\/docs\/(?!platform\/).*\/"; "/docs/$(VERSION)/"; "l")' firebase.bk.json > firebase.json
 
 .PHONY: set-platform-version
 set-platform-version:
