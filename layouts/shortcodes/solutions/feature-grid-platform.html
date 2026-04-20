@@ -1,0 +1,32 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := index .Site.Data.products.kubedb.solutions $data_id }}
+{{ if not $data }}
+  {{ if (findRE "/" $data_id) }}
+    {{ $parts := split $data_id "/" }}
+    {{ $scope := .Site.Data.products.kubedb }}
+    {{ range $parts }}{{ if $scope }}{{ $scope = index $scope . }}{{ end }}{{ end }}
+    {{ $data = $scope }}
+  {{ end }}
+{{ end }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.platform_features }}
+<section class="section-padding platform-teams-section">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.platform_features_title | default "What Platform Teams Get with KubeDB")
+      "subtitle" ($data.platform_features_subtitle | default "Complete DBaaS platform software in your infrastructure")
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range $data.platform_features }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

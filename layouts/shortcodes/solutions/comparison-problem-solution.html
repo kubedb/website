@@ -1,0 +1,70 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := index .Site.Data.products.kubedb.solutions $data_id }}
+{{ if not $data }}
+  {{ if (findRE "/" $data_id) }}
+    {{ $parts := split $data_id "/" }}
+    {{ $scope := .Site.Data.products.kubedb }}
+    {{ range $parts }}{{ if $scope }}{{ $scope = index $scope . }}{{ end }}{{ end }}
+    {{ $data = $scope }}
+  {{ end }}
+{{ end }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.comparison }}
+<section id="conflict" class="home-section section-padding">
+  <div class="container">
+    <div class="has-text-centered mb-12">
+      <h2 class="title is-size-2 has-text-weight-bold">{{ $data.comparison.title }}</h2>
+      <p class="is-size-5 has-text-grey-500">{{ $data.comparison.subtitle }}</p>
+    </div>
+
+    <div class="columns is-vcentered">
+      {{/* Problem Side */}}
+      <div class="column is-6">
+        <div class="is-fullheight p-10 is-radius-3xl has-background-gradient-danger-soft has-border-danger-light">
+          <div class="is-flex is-align-items-center has-gap-3 mb-8">
+            <iconify-icon {{ printf "icon=%q" $data.comparison.problem.icon | safeHTMLAttr }} class="has-text-danger" width="40" height="40"></iconify-icon>
+            <h3 class="is-size-3 has-text-weight-bold">{{ $data.comparison.problem.title }}</h3>
+          </div>
+          <div class="space-y-8">
+            {{ range $index, $step := $data.comparison.problem.steps }}
+            <div class="is-flex has-gap-4 is-align-items-center">
+              <div class="is-flex-shrink-0 has-size-8 is-radius-lg is-flex is-align-items-center is-justify-content-center has-background-danger-light has-text-danger">
+                <span class="has-text-weight-bold">{{ add $index 1 }}</span>
+              </div>
+              <div class="has-text-grey-700 has-text-weight-medium">{{ $step }}</div>
+            </div>
+            {{ end }}
+          </div>
+          <div class="mt-10 p-6 is-radius-2xl has-background-danger-light has-border-danger-lightest">
+            <p class="has-text-danger-dark has-text-weight-semibold">{{ $data.comparison.problem.result }}</p>
+          </div>
+        </div>
+      </div>
+
+      {{/* Solution Side */}}
+      <div class="column is-6">
+        <div class="is-fullheight p-10 is-radius-3xl has-background-gradient-success-soft has-border-success-light">
+          <div class="is-flex is-align-items-center has-gap-3 mb-8">
+            <iconify-icon {{ printf "icon=%q" $data.comparison.solution.icon | safeHTMLAttr }} class="has-text-success" width="40" height="40"></iconify-icon>
+            <h3 class="is-size-3 has-text-weight-bold">{{ $data.comparison.solution.title }}</h3>
+          </div>
+          <div class="space-y-8">
+            {{ range $data.comparison.solution.steps }}
+            <div class="is-flex has-gap-4 is-align-items-center">
+              <div class="is-flex-shrink-0 has-size-8 is-radius-lg is-flex is-align-items-center is-justify-content-center {{ if or (strings.Contains .color "bg-grad") (strings.Contains .color "linear-gradient") }} {{ .color }} {{ else }} bg-grad-{{ .color }} {{ end }}">
+                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} class="has-text-white" width="16" height="16"></iconify-icon>
+              </div>
+              <div class="has-text-grey-700 has-text-weight-medium">{{ .text }}</div>
+            </div>
+            {{ end }}
+          </div>
+          <div class="mt-10 p-6 is-radius-2xl has-background-success-light has-border-success-medium">
+            <p class="has-text-success-dark has-text-weight-semibold">{{ $data.comparison.solution.result }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

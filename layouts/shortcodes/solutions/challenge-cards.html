@@ -1,0 +1,40 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := index .Site.Data.products.kubedb.solutions $data_id }}
+{{ if not $data }}
+  {{ if (findRE "/" $data_id) }}
+    {{ $parts := split $data_id "/" }}
+    {{ $scope := .Site.Data.products.kubedb }}
+    {{ range $parts }}{{ if $scope }}{{ $scope = index $scope . }}{{ end }}{{ end }}
+    {{ $data = $scope }}
+  {{ end }}
+{{ end }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.when_to_use }}
+<section class="home-section section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "badge_text" ($data.when_to_use_title | default "The multi-tenant challenge")
+      "title" $data.when_to_use_subtitle
+      "subtitle" $data.when_to_use_description
+      "align" "center"
+      "class" "mb-12"
+    ) }}
+    {{ $col_class := $data.when_to_use_column_class | default (printf "is-%d" (div 12 (len $data.when_to_use))) }}
+    <div class="columns is-multiline">
+      {{ range $data.when_to_use }}
+      <div class="column {{ $col_class }}-desktop is-4-tablet is-6-mobile">
+        {{ $g_class := lower .gradient_class }}
+        {{ $c := "orange" }}
+        {{ if strings.Contains .title "Autonomy" }}{{ $c = "purple" }}
+        {{ else if strings.Contains .title "Cost" }}{{ $c = "blue" }}
+        {{ else if strings.Contains .title "Isolation" }}{{ $c = "red" }}{{ end }}
+        {{ if .icon_bg }}{{ if strings.Contains .icon_bg "ef" }}{{ $c = "red" }}{{ else if strings.Contains .icon_bg "10b" }}{{ $c = "green" }}{{ else if strings.Contains .icon_bg "3b8" }}{{ $c = "blue" }}{{ end }}{{ end }}
+
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard" "color" $c) }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

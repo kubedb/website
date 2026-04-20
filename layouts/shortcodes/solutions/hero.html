@@ -1,0 +1,83 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := index .Site.Data.products.kubedb.solutions $data_id }}
+{{ if not $data }}
+  {{ if (findRE "/" $data_id) }}
+    {{ $parts := split $data_id "/" }}
+    {{ $scope := .Site.Data.products.kubedb }}
+    {{ range $parts }}{{ if $scope }}{{ $scope = index $scope . }}{{ end }}{{ end }}
+    {{ $data = $scope }}
+  {{ end }}
+{{ end }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+<section class="home-hero is-relative is-overflow-hidden">
+  <div class="home-hero-bg">
+    <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
+    <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
+  </div>
+
+  <div class="container is-relative has-z-index-10 has-text-centered">
+    <div class="badge is-justify-content-center mb-10" style="background: {{ $p_color }}12; border-color: {{ $p_color }}22;">
+      {{ if $data.product_icon }}
+      <iconify-icon {{ printf "icon=%q" $data.product_icon | safeHTMLAttr }} width="18" height="18"
+        style="color: {{ $p_color }}"></iconify-icon>
+      {{ end }}
+      <span class="has-text-weight-bold is-size-7 uppercase tracking-widest ml-2" style="color: {{ $p_color }}">{{ $data.hero_badge | default $data.product_name | default "KubeDB" }}</span>
+    </div>
+
+    <div class="home-hero-content has-max-width-xl mx-auto">
+      <h1 class="home-hero-title mb-8">
+        <span class="home-hero-title-plain">{{ $data.hero_title_1 | safeHTML }}</span><br>
+        <span class="text-gradient">{{ $data.hero_title_2 | safeHTML }}</span>
+      </h1>
+
+      <p class="home-hero-desc mb-8">
+        {{ if $data.hero_subtitle_highlight }}
+          {{ replace $data.hero_description $data.hero_subtitle_highlight (printf "<span class='has-text-indigo has-text-weight-bold'>%s</span>" $data.hero_subtitle_highlight) | safeHTML }}
+        {{ else }}
+          {{ $data.hero_description | safeHTML }}
+        {{ end }}
+      </p>
+
+      {{ if $data.hero_best_with }}
+      <div class="is-flex is-align-items-center is-justify-content-center has-gap-2 mb-10">
+        <span class="is-size-7 has-text-grey-500 font-semibold subtitle-font">Best with:</span>
+        <div class="inline-flex is-align-items-center has-gap-2 px-4 py-1.5 is-radius-full badge-success-soft">
+          <iconify-icon icon="lucide:check-circle-2" class="has-text-success" width="16" height="16"></iconify-icon>
+          <span class="is-size-7 font-bold">{{ $data.hero_best_with }}</span>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="buttons is-centered home-hero-ctas ds-button-group has-gap-4">
+      {{ $primary_url := $data.primary_action_url | default "#" }}
+      <a href="{{ $primary_url }}" class="button is-primary hero-btn-primary height-50">
+        <strong>{{ $data.primary_action_text | default "Get Started"}}</strong>
+        <iconify-icon icon="heroicons:arrow-right" class="ml-2" width="20" height="20"></iconify-icon>
+      </a>
+      {{ if $data.secondary_action_url }}
+      <a href="{{ $data.secondary_action_url }}" class="button is-outlined hero-btn-secondary height-50">
+        <iconify-icon icon="heroicons:book-open" class="mr-2" width="20" height="20"></iconify-icon>
+        <strong>{{ $data.secondary_action_text }}</strong>
+      </a>
+      {{ end }}
+    </div>
+
+     {{ if $data.hero_footer_text }}
+      <p class="mt-8 has-text-grey-600 has-text-weight-medium">
+        {{ $data.hero_footer_text | safeHTML }}
+      </p>
+      {{ end }}
+
+    {{ if $data.stats }}
+    <div class="columns is-mobile is-multiline mt-12 has-max-width-lg mx-auto">
+      {{ range $data.stats }}
+      <div class="column is-3-desktop is-6-mobile">
+        {{ partial "common-cards/stat-card.html" (dict "stat" . "color" $p_color) }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>

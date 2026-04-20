@@ -14,6 +14,19 @@
   "secondary_action_text": "View Documentation",
   "secondary_action_url": "/docs/v2026.1.19/welcome/",
   "product_icon": "lucide:users",
+  "sections": [
+    "hero",
+    "when_to_use",
+    "numbered_features",
+    "comparison_table",
+    "database_support",
+    "testimonial",
+    "why_not_cloud_dbaas",
+    "platform_built_for_scale",
+    "capabilities",
+    "benefits",
+    "final_cta"
+  ],
 
   "when_to_use_title": "The multi-tenant challenge",
   "when_to_use_subtitle": "Modern enterprises need databases that scale with tenants — not against them.",

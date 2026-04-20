@@ -1,0 +1,34 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := index .Site.Data.products.kubedb.solutions $data_id }}
+{{ if not $data }}
+  {{ if (findRE "/" $data_id) }}
+    {{ $parts := split $data_id "/" }}
+    {{ $scope := .Site.Data.products.kubedb }}
+    {{ range $parts }}{{ if $scope }}{{ $scope = index $scope . }}{{ end }}{{ end }}
+    {{ $data = $scope }}
+  {{ end }}
+{{ end }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.use_cases }}
+<section class="home-section section-padding has-background-white has-border-top">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.use_cases_title | default "Why teams choose KubeDB")
+      "subtitle" $data.use_cases_subtitle
+      "badge_text" "WHY KUBEDB"
+      "badge_icon" "lucide:star"
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range $index, $item := $data.use_cases }}
+      <div class="column is-4">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
