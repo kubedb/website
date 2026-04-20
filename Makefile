@@ -3,12 +3,12 @@ run:
 	hugo server --config=config.yaml
 
 .PHONY: docs
-docs: docs-operator docs-platform assets
+docs: assets docs-operator docs-platform
 	@true
 
 .PHONY: docs-operator
 docs-operator: hugo-tools
-	$(HUGO_TOOLS) docs-aggregator --product=kubedb --docs-dir=docs --skip-assets
+	$(HUGO_TOOLS) docs-aggregator --product=kubedb --docs-dir=docs --skip-assets --all-versions
 	find ./data -name "*.json" -exec sed -i 's/https:\/\/cdn.appscode.com\/images/\/assets\/images/g' {} \;
 
 .PHONY: docs-platform

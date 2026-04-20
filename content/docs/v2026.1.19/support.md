@@ -18,6 +18,7 @@ info:
   dashboard: v0.36.0
   installer: v2026.1.19
   ops-manager: v0.47.0
+  product: kubedb
   provisioner: v0.60.0
   schema-manager: v0.36.0
   ui-server: v0.36.0
