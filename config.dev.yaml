@@ -41,8 +41,11 @@ menu:
     identifier: database
     weight: 1
     url: https://kubedb.com/docs/latest/setup/
-  - name: Documentation
+  - name: Partners
+    identifier: partners
     weight: 2
+  - name: Documentation
+    weight: 3
   - name: Druid
     identifier: druid
     parent: database
@@ -143,6 +146,89 @@ menu:
     parent: database
     weight: 22
     pre: /assets/images/databases/logos/png/zookeepers.png
+  - name: Amazon EKS
+    identifier: amazon-eks
+    parent: partners
+    weight: 3
+    url: /partner/amazon-eks/
+    pre: /assets/images/technical-expertise/eks.svg
+    post: Run on Amazon Elastic Kubernetes Service
+  - name: Google GKE
+    identifier: google-gke
+    parent: partners
+    weight: 4
+    url: /partner/google-gke/
+    pre: /assets/images/technical-expertise/gke.svg
+    post: Run on Google Kubernetes Engine
+  - name: Microsoft AKS
+    identifier: microsoft-aks
+    parent: partners
+    weight: 5
+    url: /partner/microsoft-aks/
+    pre: /assets/images/technical-expertise/aks.svg
+    post: Run on Microsoft Azure Kubernetes Service
+  - name: Red Hat OpenShift
+    identifier: redhat-openshift
+    parent: partners
+    weight: 6
+    url: /partner/redhat-openshift/
+    pre: /assets/images/technical-expertise/openshift.svg
+    post: Run on Red Hat OpenShift Platform
+  - name: SUSE Rancher
+    identifier: suse-rancher
+    parent: partners
+    weight: 7
+    url: /partner/suse-rancher/
+    pre: /assets/images/technical-expertise/rancher.svg
+    post: Run on SUSE Rancher, REK2 & k3s
+  - name: Nutanix Kubernetes Platform
+    identifier: nutanix
+    parent: partners
+    weight: 8
+    url: /partner/nutanix/
+    post: Run on Nutanix Kubernetes Platform (NKP)
+  - name: Mirantis Kubernetes Engine
+    identifier: mirantis
+    parent: partners
+    weight: 9
+    url: /partner/mirantis/
+    post: Run on Mirantis Kubernetes Engine (MKE)
+  - name: VMware vSphere Kubernetes Service
+    identifier: vmware-vks
+    parent: partners
+    weight: 10
+    url: /partner/vmware-vks/
+    post: Run on VMware vSphere Kubernetes Service (VKS)
+  - name: Alliance Partners
+    identifier: alliance-partners
+    parent: partners
+    weight: 11
+    url: /partner/alliance-partners/
+    post: Strategic technology alliances
+  - name: Channel Resources
+    identifier: channel-resources
+    parent: partners
+    weight: 12
+    url: /partner/channel-resources/
+    post: Partner resources and materials
+  - name: Channel Partners
+    identifier: channel-partners
+    parent: partners
+    weight: 13
+    url: /partner/channel-partners/
+    post: Reseller partnership program
+  - name: Deal Registration
+    identifier: deal-registration
+    parent: partners
+    weight: 14
+    url: /partner/deal-registration/
+    post: Register and protect your deals
+  - name: Managed Service Providers
+    identifier: managed-service-providers
+    parent: partners
+    weight: 15
+    url: /partner/managed-service-providers/
+    post: MSP partnership opportunities
 markup:
   goldmark:
     renderer:

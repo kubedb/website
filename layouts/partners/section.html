@@ -1,0 +1,65 @@
+{{ $isHub := gt (len .Pages) 0 }}
+
+<section class="hero-area is-product is-dark has-image-bg is-feature" style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);">
+  <div class="shape">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
+  <div class="shape">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div class="container">
+    <div class="columns has-text-centered is-centered is-vcentered is-multiline">
+      <div class="column is-8 is-centered is-full-touch">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ if $isHub }}
+<section class="home-section home-section-white">
+  <div class="container">
+    <div class="product-menu database-list">
+      {{ range .Pages.ByTitle }}
+      <a href="{{ .RelPermalink }}" class="single-product">
+        <div class="product-info">
+          <h6>{{ .Title }}</h6>
+          {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+        </div>
+        <div class="navigate-icon">
+          <span class="icon arrow-forward">
+            <iconify-icon icon="heroicons:arrow-up-right" width="1.2rem" height="1.2rem"></iconify-icon>
+          </span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ else }}
+<section class="article-details-area">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-9">
+        <div class="full-info content">
+          <div class="content-body">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

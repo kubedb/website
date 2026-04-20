@@ -1,0 +1,43 @@
+{{ define "main" }}
+<section class="hero-area is-product is-dark has-image-bg is-feature" style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);">
+	<div class="shape">
+		<div class="cube"></div>
+		<div class="cube"></div>
+		<div class="cube"></div>
+		<div class="cube"></div>
+		<div class="cube"></div>
+		<div class="cube"></div>
+	</div>
+	<div class="shape">
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+	</div>
+	<div class="container">
+		<div class="columns has-text-centered is-centered is-vcentered is-multiline">
+			<div class="column is-8 is-centered is-full-touch">
+				<h1>{{ .Title }}</h1>
+				{{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="article-details-area">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-9">
+				<div class="full-info content">
+					<div class="content-body">
+						{{ .Content }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{{ end }}
