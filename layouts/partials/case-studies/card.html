@@ -1,15 +1,8 @@
-{{/*
-  Shared case-study card partial.
-  Context (dict):
-    page  — Hugo page object for the case study
-    index — card index (0-based) used for gradient class
-*/}}
 {{ $page := .page }}
 {{ $index := .index }}
 
 {{ $defaultIcons := slice "heroicons:currency-dollar" "heroicons:bolt" "heroicons:shield-check" }}
 
-{{/* Load JSON data for this page; fall back to page params for any missing field */}}
 {{ $slug   := $page.File.ContentBaseName }}
 {{ $csData := index site.Data.products.kubedb "case-studies" }}
 {{ $d      := index $csData $slug | default dict }}

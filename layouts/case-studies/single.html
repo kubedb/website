@@ -1,5 +1,4 @@
 {{ define "main" }}
-{{/* Load JSON data for this page and merge over front matter. JSON values take priority. */}}
 {{ $slug   := .File.ContentBaseName }}
 {{ $csData := index site.Data.products.kubedb "case-studies" }}
 {{ $d      := index $csData $slug | default dict }}
@@ -403,7 +402,6 @@
             </h4>
             {{ end }}
             <div class="is-flex is-flex-direction-column has-gap-12 is-relative">
-              {{/* Vertical line connector */}}
               <div class="is-absolute h-full has-background-grey-100" style="width: 2px; left: 17px; top: 0; z-index: 0;"></div>
               
               {{ range . }}
@@ -425,7 +423,6 @@
         <div class="column is-12-mobile is-7-desktop is-flex">
           <div class="ds-card-base is-radius-2xlarge has-background-white has-border has-shadow-none is-overflow-hidden is-fullwidth">
             <div class="is-grid is-grid-cols-1 md:is-grid-cols-2 has-height-full">
-              {{/* Databases Column */}}
               {{ with $p.supported_databases }}
               <div class="has-background-grey-50 p-10 is-flex is-flex-direction-column">
                 <h5 class="is-flex is-align-items-center has-gap-2 is-text-xs has-text-weight-black has-text-grey-400 is-uppercase has-tracking-widest mb-8">
@@ -439,7 +436,6 @@
                   </li>
                   {{ end }}
                 </ul>
-                {{/* Bottom Accent for Balance */}}
                 <div class="mt-8 pt-8" style="border-top: 1px solid rgba(0,0,0,0.05);">
                    <div class="is-flex is-align-items-center has-gap-2 opacity-50">
                       <iconify-icon icon="lucide:shield-check" width="14" height="14"></iconify-icon>
@@ -449,7 +445,6 @@
               </div>
               {{ end }}
 
-              {{/* Features Column */}}
               {{ with $p.delivered_features }}
               <div class="has-background-white p-10 is-flex is-flex-direction-column" style="border-left: 1px solid rgba(0,0,0,0.05);">
                 <h5 class="is-flex is-align-items-center has-gap-2 is-text-xs has-text-weight-black has-text-secondary is-uppercase has-tracking-widest mb-8">
@@ -463,7 +458,6 @@
                   </li>
                   {{ end }}
                 </ul>
-                {{/* Bottom Accent */}}
                 <div class="mt-8 pt-8" style="border-top: 1px solid rgba(0,0,0,0.05);">
                    <div class="is-flex is-align-items-center is-justify-content-flex-end has-gap-2 opacity-50">
                      <span class="is-text-xxs is-uppercase has-text-weight-bold has-tracking-wider">{{ $p.delivered_features_footer_label }}</span>
@@ -583,5 +577,5 @@
     </div>
   </section>
 
-</div>{{/* /.ac-ui */}}
+</div>
 {{ end }}
