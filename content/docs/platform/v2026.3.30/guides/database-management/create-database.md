@@ -15,7 +15,7 @@ info:
 
 # Creating a Database
 
-This guide explains how to create a new managed database instance using the AppsCode console. The creation process is a multi-step wizard that walks you through selecting a database engine, setting a name and namespace, configuring topology and resources, and enabling optional features like monitoring, TLS, and backups.
+This guide explains how to create a new managed database instance using the platform console. The creation process is a multi-step wizard that walks you through selecting a database engine, setting a name and namespace, configuring topology and resources, and enabling optional features like monitoring, TLS, and backups.
 
 ---
 

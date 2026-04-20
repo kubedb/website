@@ -36,7 +36,7 @@ Visit https://home.appscode.com/user/settings/credentials to manage credential.
 
 ## AWS
 
-To create or import EKS clusters to [AppsCode Dashboard](https://console.appscode.com/), you need to create a access-key with the following policies.
+To create or import EKS clusters to [Platform Console](https://console.appscode.com/), you need to create a access-key with the following policies.
 - AmazonEC2FullAccess (AWS Managed Policy)
 - AWSCloudFormationFullAccess (AWS Managed Policy)
 - EKSAllAccess

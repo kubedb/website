@@ -15,10 +15,10 @@ info:
 
 # Remove / Delete Cluster
 
-Removing an already imported cluster from the AppsCode Dashboard is a straightforward process, and you can also manage associated features during removal. Follow these steps to seamlessly remove a cluster:
+Removing an already imported cluster from the Platform Console is a straightforward process, and you can also manage associated features during removal. Follow these steps to seamlessly remove a cluster:
 
 1. **Navigate to the Cluster Overview Page:**
-   - Go to the [AppsCode Dashboard](https://console.appscode.com).
+   - Go to the [Platform Console](https://console.appscode.com).
    - Click on your imported cluster to access the Cluster Overview page.
 
    **OR**
@@ -33,9 +33,9 @@ Removing an already imported cluster from the AppsCode Dashboard is a straightfo
 
 4. **Manage Features:**
    - During the removal process, you have the option to disable features associated with the cluster.
-   - Utilize this feature to tailor your AppsCode Dashboard environment based on your evolving requirements.
+   - Utilize this feature to tailor your Platform Console environment based on your evolving requirements.
 
-This streamlined process ensures efficient cluster management within the AppsCode Dashboard, providing flexibility and control over your Kubernetes clusters.
+This streamlined process ensures efficient cluster management within the Platform Console, providing flexibility and control over your Kubernetes clusters.
 
 ---
 

@@ -13,9 +13,9 @@ info:
   version: v2026.3.30
 ---
 
-# Deploying AppsCode Platform: Open Shift Demo 
+# Deploying KubeDB Platform: Open Shift Demo 
 
-Welcome to the AppsCode Platform's **Open Shift Demo** deployment! In this mode, you have the flexibility to customize various aspects of the deployment to meet the specific requirements of your production environment. 
+Welcome to the KubeDB Platform's **Open Shift Demo** deployment! In this mode, you have the flexibility to customize various aspects of the deployment to meet the specific requirements of your production environment. 
 
 ### Prerequisites
 
@@ -134,10 +134,10 @@ Administrators can globally re-brand the Ace interface to match corporate identi
 
 Click the "Deploy" button to submit your information. AppsCode will generate the installer and provide the necessary documentation.
 
-### 12. Deploy AppsCode Platform
+### 12. Deploy KubeDB Platform
 
-Follow the documentation provided by AppsCode to deploy the AppsCode Platform on your system.
+Follow the documentation provided by AppsCode to deploy the KubeDB Platform on your system.
 
 ### 13. Explore the Deployed Platform
 
-Once deployed, access the **AppsCode Platform** using the specified domain. Log in with the admin account credentials provided during the creation process.
+Once deployed, access the **KubeDB Platform** using the specified domain. Log in with the admin account credentials provided during the creation process.

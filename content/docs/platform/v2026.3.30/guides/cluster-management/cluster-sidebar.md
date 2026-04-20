@@ -21,7 +21,7 @@ The **Cluster Sidebar** is your primary navigation panel inside a connected clus
 
 ## Step 1 — Open the Cluster Overview
 
-From the AppsCode console, click on your cluster (e.g., `default`) to open the **Cluster Overview** page. The left sidebar shows the default set of sections: **Kubernetes**, **Workloads**, **Helm**, **Datastore**, **Service & Discovery**, **Config**, **Storage**, **Monitoring**, **Security**, and **Admin**.
+From the platform console, click on your cluster (e.g., `default`) to open the **Cluster Overview** page. The left sidebar shows the default set of sections: **Kubernetes**, **Workloads**, **Helm**, **Datastore**, **Service & Discovery**, **Config**, **Storage**, **Monitoring**, **Security**, and **Admin**.
 
 ![The default Cluster Overview page with the default sidebar navigation](../images/cluster-sidebar/sidebar-before-update.png)
 

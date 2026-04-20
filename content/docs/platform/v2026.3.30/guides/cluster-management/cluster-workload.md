@@ -15,9 +15,9 @@ info:
 
 # Kubernetes Workload Management
 
-The Kubernetes Workload Management section in the AppsCode Dashboard offers robust capabilities for managing Kubernetes resources. Follow these steps to leverage this functionality:
+The Kubernetes Workload Management section in the Platform Console offers robust capabilities for managing Kubernetes resources. Follow these steps to leverage this functionality:
 
-1. Navigate to the [AppsCode Dashboard](https://console.appscode.com).
+1. Navigate to the [Platform Console](https://console.appscode.com).
 2. Click on your imported cluster to access the Cluster Overview page.
 
 ## Cluster Overview Page
@@ -100,4 +100,4 @@ The `Datastore` section is dedicated to KubeDB, an AppsCode product, providing m
 
 You can also create new resources directly from any resource list page by clicking the `➕ Create` button, filling out the form, and submitting to create the resource.
 
-Explore the power of Kubernetes workload management in the AppsCode Dashboard for a seamless and efficient experience.
+Explore the power of Kubernetes workload management in the Platform Console for a seamless and efficient experience.

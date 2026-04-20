@@ -15,7 +15,7 @@ info:
 
 # Database Usage & Insights
 
-This guide explains how to use the **Overview**, **Insights**, and **Users** pages available on every database detail page in the AppsCode console. These pages give you a live view of your database's connection details, performance metrics, query analytics, and access control bindings.
+This guide explains how to use the **Overview**, **Insights**, and **Users** pages available on every database detail page in the platform console. These pages give you a live view of your database's connection details, performance metrics, query analytics, and access control bindings.
 
 ---
 

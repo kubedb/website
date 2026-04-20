@@ -16,9 +16,9 @@ info:
   version: v2026.3.30
 ---
 
-# Host AppsCode Platform as Your Own
+# Host KubeDB Platform as Your Own
 
-Welcome to AppsCode Platform's Self-Hosted deployment! Whether you're looking for a quick trial in "Self Hosted Demo" mode or gearing up for a production-ready environment (`Self Hosted Production`), you're in control.
+Welcome to KubeDB Platform's Self-Hosted deployment! Whether you're looking for a quick trial in "Self Hosted Demo" mode or gearing up for a production-ready environment (`Self Hosted Production`), you're in control.
 
 Navigate to [AppsCode Self-Hosted](https://appscode.com/selfhost). Here you will find your previously generated self-hosted installers.
 

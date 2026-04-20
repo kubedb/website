@@ -15,7 +15,7 @@ info:
 
 # Backup Configuration
 
-This guide explains how to view and create **BackupConfiguration** resources using the AppsCode console. A BackupConfiguration defines a complete backup policy for a database — including the storage backend, retention policy, backup sessions with their schedules and tasks, and the target database to back up.
+This guide explains how to view and create **BackupConfiguration** resources using the platform console. A BackupConfiguration defines a complete backup policy for a database — including the storage backend, retention policy, backup sessions with their schedules and tasks, and the target database to back up.
 
 ---
 

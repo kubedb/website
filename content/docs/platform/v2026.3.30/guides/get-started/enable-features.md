@@ -18,11 +18,11 @@ info:
 
 Once your cluster is imported, you can enable or disable AppsCode features based on your requirements.
 
-1. Navigate to your Cluster Overview page, selecting your imported cluster in the [AppsCode Dashboard](https://console.appscode.com/).
+1. Navigate to your Cluster Overview page, selecting your imported cluster in the [Platform Console](https://console.appscode.com/).
 2. In the "Feature Sets" section, you'll find a list of FeatureSets associated with your cluster, along with their current status.
 3. Click on any FeatureSet in the list to go to the FeatureSet Management page.
 4. On the FeatureSet Management page, you can enable or disable specific features according to your needs.
 
-Managing features in the AppsCode Dashboard is a straightforward process that allows you to tailor your AppsCode Dashboard to meet your cluster's requirements. Feel free to explore the features and capabilities offered by AppsCode.
+Managing features in the Platform Console is a straightforward process that allows you to tailor your Platform Console to meet your cluster's requirements. Feel free to explore the features and capabilities offered by AppsCode.
 
 For more advanced configurations and detailed documentation, check out the [Features in Details](../cluster-management/cluster-features.md).

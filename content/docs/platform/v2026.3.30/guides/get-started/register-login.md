@@ -47,8 +47,8 @@ After registration, check your email inbox for a verification email from AppsCod
 3. Click on the `Sign In` button.
 4. Optionally, you can sign in using your connected External accounts.
 
-### 4. Explore AppsCode Dashboard
+### 4. Explore Platform Console
 
-You are now logged in to the AppsCode Dashboard! Take a moment to explore the features and navigate through the dashboard.
+You are now logged in to the Platform Console! Take a moment to explore the features and navigate through the dashboard.
 
 Congratulations! You have successfully registered, verified your email, and logged in to AppsCode. If you encounter any issues or have questions, refer to the [AppsCode Documentation](https://appscode.com/docs/) for detailed guidance.

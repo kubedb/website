@@ -15,7 +15,7 @@ info:
 
 # Snapshot
 
-This guide explains how to view and manage **Snapshot** resources using the AppsCode console. A Snapshot represents a point-in-time backup of a database stored in a backup repository, capturing the complete state of the database at the moment of creation.
+This guide explains how to view and manage **Snapshot** resources using the platform console. A Snapshot represents a point-in-time backup of a database stored in a backup repository, capturing the complete state of the database at the moment of creation.
 
 ---
 

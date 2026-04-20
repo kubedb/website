@@ -13,11 +13,11 @@ info:
   version: v2026.3.30
 ---
 
-# Adding a Vendor-Managed Cluster to AppsCode Dashboard
+# Adding a Vendor-Managed Cluster to Platform Console
 
-Enhance your AppsCode experience by seamlessly connecting your vendor-managed Kubernetes cluster to the [AppsCode Dashboard](https://console.appscode.com/). Follow these step-by-step instructions:
+Enhance your platform experience by seamlessly connecting your vendor-managed Kubernetes cluster to the [Platform Console](https://console.appscode.com/). Follow these step-by-step instructions:
 
-1. Visit [AppsCode Dashboard](https://console.appscode.com/).
+1. Visit [Platform Console](https://console.appscode.com/).
 2. Click on the `Add Cluster` button.
 
 ### Choose Provider
@@ -39,9 +39,9 @@ Enhance your AppsCode experience by seamlessly connecting your vendor-managed Ku
 
 ### Customize Feature and Import
 
-7. Complete the process by clicking `Import` to bring the selected cluster into the AppsCode Dashboard.
+7. Complete the process by clicking `Import` to bring the selected cluster into the Platform Console.
 
 ### Explore
 8. Once imported, explore the cluster's details and capabilities within the dashboard.
 
-By following these steps, you'll seamlessly integrate your vendor-managed Kubernetes cluster, unlocking its full potential within the AppsCode environment. Feel free to refer back to this tutorial for guidance.
+By following these steps, you'll seamlessly integrate your vendor-managed Kubernetes cluster, unlocking its full potential within the platform. Feel free to refer back to this tutorial for guidance.

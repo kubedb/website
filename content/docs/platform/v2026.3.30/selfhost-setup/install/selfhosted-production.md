@@ -13,9 +13,9 @@ info:
   version: v2026.3.30
 ---
 
-# Deploying AppsCode Platform: Self Hosted Production 
+# Deploying KubeDB Platform: Self Hosted Production 
 
-Welcome to the **Self-Hosted Production** deployment guide for the **AppsCode Platform**. This installation mode is designed for environments requiring high levels of customization and granular control. 
+Welcome to the **Self-Hosted Production** deployment guide for the **KubeDB Platform**. This installation mode is designed for environments requiring high levels of customization and granular control. 
 
 By following this walkthrough, you can tailor the deployment to meet your specific production requirements while ensuring a stable and optimized installation.
 
@@ -317,13 +317,13 @@ Administrators can globally re-brand the Ace interface to match corporate identi
 
 Click the "Deploy" button to submit your information. AppsCode will generate the installer and provide the necessary documentation.
 
-### 13. Deploy AppsCode Platform
+### 13. Deploy KubeDB Platform
 
-Follow the documentation provided by AppsCode to deploy the AppsCode Platform on your system.
+Follow the documentation provided by AppsCode to deploy the KubeDB Platform on your system.
 
 ### 14. Explore the Deployed Platform
 
-Once deployed, access the **AppsCode Platform** using the specified domain. Log in with the admin account credentials provided during the creation process.After the login process you will see the **ACE dashboard** user interface
+Once deployed, access the **KubeDB Platform** using the specified domain. Log in with the admin account credentials provided during the creation process.After the login process you will see the **ACE dashboard** user interface
 
 <br/>
 <img width="50%" src="../images/ace-dashboard.png">

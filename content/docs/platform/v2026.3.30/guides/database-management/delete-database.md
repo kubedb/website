@@ -15,7 +15,7 @@ info:
 
 # Delete Database
 
-This guide explains how to delete a database instance from the AppsCode console. There are two ways to trigger a deletion — from the **Datastore Overview** page (bulk or single) or from inside the **individual database page**. Both methods lead to the same confirmation step.
+This guide explains how to delete a database instance from the platform console. There are two ways to trigger a deletion — from the **Datastore Overview** page (bulk or single) or from inside the **individual database page**. Both methods lead to the same confirmation step.
 
 > **Warning:** Deleting a database is a permanent and irreversible action. Ensure you have a valid backup before proceeding.
 

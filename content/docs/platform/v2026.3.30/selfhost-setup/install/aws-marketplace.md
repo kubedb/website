@@ -13,9 +13,9 @@ info:
   version: v2026.3.30
 ---
 
-# Deploying AppsCode Platform: AWS Marketplace
+# Deploying KubeDB Platform: AWS Marketplace
 
-Welcome to the AppsCode Platform's **AWS Marketplace** deployment! This guide will walk you through the deployment process via the **AWS Marketplace**, ensuring your environment is configured correctly for a seamless installation.
+Welcome to the KubeDB Platform's **AWS Marketplace** deployment! This guide will walk you through the deployment process via the **AWS Marketplace**, ensuring your environment is configured correctly for a seamless installation.
 
 To install **ACE**, you need to have the permissions to manage **EC2**, **IAM**, **CloudFormation** etc.
 
@@ -308,7 +308,7 @@ Click the "Next" button to submit your information. AppsCode will generate the i
 
 You will find an `Installer URL` for this installer. You have to give this URL in the AWS Marketplace application.  
 
-### 9. Deploy AppsCode Platform
+### 9. Deploy KubeDB Platform
 
 The expiry time for this installer is 2 hours. You will find in detail deployment guideline after creating the installer.
 
@@ -521,4 +521,4 @@ and subscribe to **AppsCode Cloud w/Usage Billing** product.
 
 ### 10. Explore the Deployed Platform
 
-Once deployed, access the **AppsCode Platform** using the specified domain. Log in with the admin account credentials provided during the creation process.
+Once deployed, access the **KubeDB Platform** using the specified domain. Log in with the admin account credentials provided during the creation process.

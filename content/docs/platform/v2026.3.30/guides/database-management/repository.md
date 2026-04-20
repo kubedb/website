@@ -15,7 +15,7 @@ info:
 
 # Repository
 
-This guide explains how to view and create **Repository** resources using the AppsCode console. A Repository is the logical backup repository that stores individual snapshots of a database within a BackupStorage backend. It acts as the bridge between BackupConfigurations and the actual cloud storage.
+This guide explains how to view and create **Repository** resources using the platform console. A Repository is the logical backup repository that stores individual snapshots of a database within a BackupStorage backend. It acts as the bridge between BackupConfigurations and the actual cloud storage.
 
 ---
 

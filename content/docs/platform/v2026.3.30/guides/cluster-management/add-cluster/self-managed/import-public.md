@@ -13,11 +13,11 @@ info:
   version: v2026.3.30
 ---
 
-# Adding a Public Self-Managed Cluster to AppsCode Dashboard
+# Adding a Public Self-Managed Cluster to Platform Console
 
-Elevate your Kubernetes cluster management with AppsCode Dashboard by seamlessly integrating your public self-managed Kubernetes cluster. Follow these detailed steps for a smooth integration process:
+Elevate your Kubernetes cluster management with Platform Console by seamlessly integrating your public self-managed Kubernetes cluster. Follow these detailed steps for a smooth integration process:
 
-1. Navigate to the [AppsCode Dashboard](https://console.appscode.com/).
+1. Navigate to the [Platform Console](https://console.appscode.com/).
 2. Click on the `Add Cluster` button to initiate the integration.
 
 ### Cluster Type Selection - Public
@@ -26,15 +26,15 @@ Elevate your Kubernetes cluster management with AppsCode Dashboard by seamlessly
 
 ### Provide Public Kubeconfig
 
-4. Provide the public kubeconfig for your Kubernetes cluster. This file contains essential information for establishing a connection between your cluster and the AppsCode Dashboard.
+4. Provide the public kubeconfig for your Kubernetes cluster. This file contains essential information for establishing a connection between your cluster and the Platform Console.
 
 ### Feature Customization
 
-5. Proceed seamlessly to the feature customization step, enhancing your cluster's capabilities within the AppsCode environment.
+5. Proceed seamlessly to the feature customization step, enhancing your cluster's capabilities within the platform.
 
 ### Explore
 
-6. Once imported, explore the cluster's details and capabilities within the AppsCode Dashboard.
+6. Once imported, explore the cluster's details and capabilities within the Platform Console.
 
-By following these steps, you'll effortlessly integrate your public self-managed Kubernetes cluster, unlocking its full potential within the AppsCode environment. Feel free to refer back to this tutorial for guidance.
+By following these steps, you'll effortlessly integrate your public self-managed Kubernetes cluster, unlocking its full potential within the platform. Feel free to refer back to this tutorial for guidance.
 

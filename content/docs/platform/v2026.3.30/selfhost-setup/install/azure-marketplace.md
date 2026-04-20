@@ -13,9 +13,9 @@ info:
   version: v2026.3.30
 ---
 
-# 1. Deploying AppsCode Platform: Azure Marketplace
+# 1. Deploying KubeDB Platform: Azure Marketplace
 
-Welcome to the AppsCode Platform's **Azure Marketplace** deployment! This guide will walk you through the deployment process via the Azure Marketplace, ensuring your environment is configured correctly for a seamless installation.
+Welcome to the KubeDB Platform's **Azure Marketplace** deployment! This guide will walk you through the deployment process via the Azure Marketplace, ensuring your environment is configured correctly for a seamless installation.
 
 ### Prerequisites
 
@@ -129,7 +129,7 @@ Administrators can globally re-brand the Ace interface to match corporate identi
 
 Click the "Deploy" button to submit your information. AppsCode will generate the installer and provide the necessary documentation.
 
-### 10. Deploy AppsCode Platform
+### 10. Deploy KubeDB Platform
 
 #### Step 1: Create Azure application
 Go to Azure Marketplace and select AppsCode Cloud w/ Usage Billing application. [AppsCode Cloud w/ Usage Billing from Marketplace](https://portal.azure.com/#create/appscode.ace_paygace-payg)
@@ -170,4 +170,4 @@ You can monitor the deployment progress through the **Managed Resource Group's**
 
 ### 11. Explore the Deployed Platform
 
-Once deployed, access the **AppsCode Platform** using the specified domain. Log in with the admin account credentials provided during the creation process.
+Once deployed, access the **KubeDB Platform** using the specified domain. Log in with the admin account credentials provided during the creation process.

@@ -13,9 +13,9 @@ info:
   version: v2026.3.30
 ---
 
-# Adding a Rancher Managed Cluster to AppsCode Dashboard
+# Adding a Rancher Managed Cluster to Platform Console
 
-Adding a `Rancher-Managed` cluster to the AppsCode Dashboard involves a slightly different process. In order to import a `Rancher-Managed` cluster to the AppsCode Dashboard, you need to create a Rancher Managed Organization and a Rancher Type Credential.
+Adding a `Rancher-Managed` cluster to the Platform Console involves a slightly different process. In order to import a `Rancher-Managed` cluster to the Platform Console, you need to create a Rancher Managed Organization and a Rancher Type Credential.
 
 ## Create Rancher Type Credential
 
@@ -31,7 +31,7 @@ Unlike personal accounts, Rancher clusters are associated with Rancher Managed o
 
 ## Import the Cluster
 
-Before importing a Rancher Managed cluster into the AppsCode Dashboard, you must switch to the Rancher organization. Follow these steps:
+Before importing a Rancher Managed cluster into the Platform Console, you must switch to the Rancher organization. Follow these steps:
 
 1. Go to [AppsCode Console](https://console.appscode.com).
 2. Click on the Profile Icon or username.

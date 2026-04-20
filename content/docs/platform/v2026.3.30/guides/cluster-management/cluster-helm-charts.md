@@ -13,15 +13,15 @@ info:
   version: v2026.3.30
 ---
 
-# Manage Helm Charts in AppsCode Dashboard
+# Manage Helm Charts in Platform Console
 
-AppsCode Dashboard offers a robust Helm Chart Management feature, allowing users to effortlessly manage Helm releases within their Kubernetes clusters. This functionality streamlines the installation of new charts, interaction with existing releases, and provides an overall intuitive interface for Helm chart management.
+Platform Console offers a robust Helm Chart Management feature, allowing users to effortlessly manage Helm releases within their Kubernetes clusters. This functionality streamlines the installation of new charts, interaction with existing releases, and provides an overall intuitive interface for Helm chart management.
 
 ## Accessing Helm Chart Management
 
 To navigate to the Helm Chart Management page:
 
-1. From the [AppsCode Dashboard](https://console.appscode.com), click on your imported cluster to go to the Cluster Overview page.
+1. From the [Platform Console](https://console.appscode.com), click on your imported cluster to go to the Cluster Overview page.
 2. In the left sidebar, under **Helm**, select **Releases** to access the Helm Chart Management page.
 
 ## Helm Chart Management Features
@@ -43,6 +43,6 @@ Efficiently manage existing Helm releases:
 
 ### User-Friendly Interface
 
-The Helm Chart Management page in the AppsCode Dashboard ensures an intuitive and user-friendly interface. This allows users to manage Helm releases seamlessly, minimizing the reliance on complex Helm CLI commands.
+The Helm Chart Management page in the Platform Console ensures an intuitive and user-friendly interface. This allows users to manage Helm releases seamlessly, minimizing the reliance on complex Helm CLI commands.
 
-Explore the power of Helm chart management within the AppsCode Dashboard and enhance your Kubernetes experience.
+Explore the power of Helm chart management within the Platform Console and enhance your Kubernetes experience.

@@ -15,7 +15,7 @@ info:
 
 # Restore
 
-This guide explains how to view and create **Restore** resources using the AppsCode console. A Restore represents a database recovery operation that restores data from a previously captured snapshot or backup to a target database instance.
+This guide explains how to view and create **Restore** resources using the platform console. A Restore represents a database recovery operation that restores data from a previously captured snapshot or backup to a target database instance.
 
 ---
 
