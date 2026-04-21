@@ -4,5 +4,5 @@ menu:
   main:
     identifier: features
     name: Features
-    weight: 2
+    weight: 3
 ---

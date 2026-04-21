@@ -1,0 +1,13 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := index .Site.Data.products.kubedb.solutions $data_id }}
+{{ if not $data }}
+  {{ if (findRE "/" $data_id) }}
+    {{ $parts := split $data_id "/" }}
+    {{ $scope := .Site.Data.products.kubedb }}
+    {{ range $parts }}{{ if $scope }}{{ $scope = index $scope . }}{{ end }}{{ end }}
+    {{ $data = $scope }}
+  {{ end }}
+{{ end }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ partial "common-sections/final-cta.html" $data }}

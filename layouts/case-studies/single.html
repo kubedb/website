@@ -42,15 +42,11 @@
           <p class="body-lg has-text-grey-600 mb-10 has-max-width-lg">{{ . }}</p>
           {{ end }}
 
-          {{ with $p.hero_metrics }}
+          {{ if $p.hero_metrics }}
           <div class="is-flex is-flex-wrap-wrap has-gap-4 mb-10">
-            {{ range . }}
-            <div
-              class="is-inline-flex is-flex-direction-column has-background-white has-border has-border-soft is-radius-2xlarge px-6 py-4 has-shadow-soft has-hover-lift has-transition">
-              <span class="has-text-gradient has-text-weight-black is-size-4 has-line-height-none mb-1">{{ .value
-                }}</span>
-              <span class="is-text-xs has-text-weight-bold has-text-heading is-uppercase has-tracking-widest"
-                style="font-size: 0.65rem;">{{ .label }}</span>
+            {{ range $p.hero_metrics }}
+            <div style="width: 160px;">
+              {{ partial "common-cards/stat-card.html" (dict "stat" . "color" "var(--ds-primary)") }}
             </div>
             {{ end }}
           </div>
@@ -282,16 +278,8 @@
           {{ with $p.challenge_items }}
           <div class="columns is-multiline">
             {{ range . }}
-            <div class="column is-4 is-full-touch">
-              <div class="ds-card-base is-radius-xlarge p-6 h-full has-hover-lift has-transition">
-                <div
-                  class="is-inline-flex is-align-items-center is-justify-content-center has-size-12 is-radius-2xlarge has-background-secondary-soft mb-5">
-                  <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" height="24"
-                    class="has-text-secondary"></iconify-icon>
-                </div>
-                <h4 class="heading-sm has-text-heading mb-2">{{ .title }}</h4>
-                <p class="body-md has-text-grey-500 mb-0">{{ .description }}</p>
-              </div>
+            <div class="column is-4">
+              {{ partial "common-cards/feature-card.html" (dict "card" . "type" "compact" "color" "secondary") }}
             </div>
             {{ end }}
           </div>
@@ -475,39 +463,8 @@
   {{ end }}
 
 
-  <!-- 4. JOURNEY / TIMELINE -->
-  {{ with $p.timeline }}
-  <section class="section-padding has-background-white cs-journey-section">
-    <div class="container">
-      <div class="section-header mb-16">
-        <div class="badge">
-          <iconify-icon icon="lucide:route" width="16" height="16" class="has-text-secondary"></iconify-icon>
-          <span class="badge-text">{{ $p.timeline_badge }}</span>
-        </div>
-        <h2 class="section-header-title has-text-heading has-text-weight-black">{{ $p.timeline_title }}</h2>
-      </div>
-
-      <div class="cs-journey-wrapper">
-        <!-- Desktop: horizontal steps -->
-        <div class="cs-journey-steps">
-          {{ range $i, $step := . }}
-          <div class="cs-journey-step">
-            <div class="cs-journey-node-wrap">
-              <div class="cs-journey-node">{{ add $i 1 }}</div>
-            </div>
-            <div class="cs-journey-period">{{ $step.period }}</div>
-            <div class="cs-journey-card has-hover-lift has-transition">
-              <h4 class="has-text-heading mb-2">{{ $step.title }}</h4>
-              <p class="mb-0">{{ $step.description }}</p>
-            </div>
-          </div>
-          {{ end }}
-        </div>
-      </div>
-
-    </div>
-  </section>
-  {{ end }}
+  <!-- 4. Premium Journey / Timeline -->
+  {{ partial "common-sections/journey-timeline.html" $p }}
 
 
   <!-- 6. VALUE PROPS -->
@@ -522,21 +479,11 @@
         <h2 class="section-header-title has-text-heading has-text-weight-black">{{ $p.value_props_title }}</h2>
         <p class="section-header-desc body-lg">{{ $p.value_props_description }}</p>
       </div>
-      {{ with $p.value_props }}
+      {{ if $p.value_props }}
       <div class="columns is-multiline">
-        {{ range . }}
-        <div class="column is-12-mobile is-4-tablet">
-          <div class="ds-card-base is-radius-xlarge h-full has-hover-lift has-transition is-fullwidth">
-            <div class="p-6">
-              <div
-                class="is-inline-flex is-align-items-center is-justify-content-center has-size-12 is-radius-2xlarge has-background-secondary-soft mb-5">
-                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" height="24"
-                  class="has-text-secondary"></iconify-icon>
-              </div>
-              <p class="heading-sm has-text-heading mb-2">{{ .title }}</p>
-              <p class="body-md has-text-grey-500 mb-0">{{ .description }}</p>
-            </div>
-          </div>
+        {{ range $p.value_props }}
+        <div class="column is-4">
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "compact" "color" "secondary") }}
         </div>
         {{ end }}
       </div>
@@ -545,37 +492,8 @@
   </section>
   {{ end }}
 
-  <!-- 7. CTA -->
-  <section class="cs-cta-area">
-    <div class="container">
-      <div class="cta-block has-text-centered has-shadow-large py-12 px-8">
-        <div class="cta-glow"></div>
-        <div class="has-max-width-xl mx-auto is-relative has-z-index-10">
-          <h2 class="display-lg has-text-white mb-4 has-text-balance">{{ $p.cta_title }}</h2>
-          <p class="body-lg has-text-grey-200 mb-8 has-max-width-2xl mx-auto">{{ $p.cta_description }}</p>
-
-          <div class="is-flex is-justify-content-center has-gap-4 is-flex-wrap-wrap mb-10">
-            <a href="{{ $contactURL }}" class="button is-white height-50">
-              <iconify-icon icon="lucide:calendar" width="18" height="18"></iconify-icon>
-              <span>{{ $p.cta_primary }}</span>
-              <iconify-icon icon="lucide:arrow-right" width="18" height="18"></iconify-icon>
-            </a>
-            {{ with $p.cta_secondary_href }}
-            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="button is-ghost height-50">
-              <span>{{ $p.cta_secondary }}</span>
-              <iconify-icon icon="lucide:external-link" width="16" height="16"></iconify-icon>
-            </a>
-            {{ end }}
-          </div>
-
-          <div class="is-flex is-align-items-center is-justify-content-center has-gap-2 opacity-50">
-            <iconify-icon icon="lucide:shield-check" width="14" height="14" class="has-text-grey-100"></iconify-icon>
-            <span class="has-text-grey-100 is-text-xs">{{ $p.compliance_note }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- 7. Premium Reusable Call to Action -->
+  {{ partial "common-sections/final-cta.html" $p }}
 
 </div>
 {{ end }}

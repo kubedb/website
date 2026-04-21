@@ -1,0 +1,70 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := index .Site.Data.products.kubedb.solutions $data_id }}
+{{ if not $data }}
+  {{ if (findRE "/" $data_id) }}
+    {{ $parts := split $data_id "/" }}
+    {{ $scope := .Site.Data.products.kubedb }}
+    {{ range $parts }}{{ if $scope }}{{ $scope = index $scope . }}{{ end }}{{ end }}
+    {{ $data = $scope }}
+  {{ end }}
+{{ end }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.code_demo }}
+<section class="home-section section-padding has-background-grey-lightest">
+  <div class="container">
+    <div class="has-text-centered mb-16">
+      <div class="badge is-justify-content-center mb-8 has-background-secondary-soft has-border-secondary has-text-indigo">
+        <iconify-icon icon="lucide:git-branch" class="mr-2" width="14"></iconify-icon>
+        <span class="has-text-weight-bold is-size-7 uppercase tracking-widest">{{ $data.code_demo.subtitle }}</span>
+      </div>
+      <h2 class="title is-size-1 is-size-1h has-text-weight-bold">{{ $data.code_demo.title | safeHTML }}</h2>
+    </div>
+
+    <div class="columns">
+      <!-- Left: Large Code Card -->
+      <div class="column is-7">
+        <div class="p-12 is-radius-3xl has-background-white shadow-2xl has-border-grey-200">
+          <div class="is-flex is-align-items-center is-justify-content-between mb-8 px-2">
+            <div class="is-flex is-align-items-center has-gap-3">
+              <iconify-icon icon="lucide:file-code" class="has-text-success" width="24"></iconify-icon>
+              <span class="is-size-4 font-bold has-text-grey-900">{{ $data.code_demo.filename }}</span>
+            </div>
+            <div class="px-4 py-1-5 is-radius-lg font-bold is-size-7 has-background-success-soft has-text-success has-border-success-light">Git</div>
+          </div>
+
+          <div class="is-radius-2xl is-overflow-hidden shadow-inner has-background-code-dark">
+            <pre class="p-10 font-mono is-size-6 has-line-height-relaxed has-text-code-green has-background-transparent is-overflow-x-auto"><code>{{ $data.code_demo.code }}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Flow Steps -->
+      <div class="column is-5">
+        <div class="space-y-6">
+          {{ range $data.code_demo.steps }}
+          <div class="p-8 is-radius-2xl has-border transition-all hover-lift {{ if .vibrant }}is-background-success-light{{ else }}has-background-white shadow-sm{{ end }}"
+               style="border-color: {{ if .vibrant }}#D1FAE5{{ else }}#E2E8F0{{ end }};
+                      background: {{ if .vibrant }}linear-gradient(to bottom right, #F0FDF4, #DCFCE7){{ else }}#FFFFFF{{ end }};">
+            <div class="is-flex has-gap-6 is-align-items-center">
+              <div class="is-flex-shrink-0 has-size-12 is-radius-full is-flex is-align-items-center is-justify-content-center {{ if .vibrant }}has-background-success has-text-white shadow-lg{{ else }}{{ end }}"
+                   style="{{ if not .vibrant }}background: #F1F5F9; color: #6366F1;{{ end }}">
+                {{ if .vibrant }}
+                <iconify-icon icon="lucide:rocket" width="24"></iconify-icon>
+                {{ else }}
+                <span class="has-text-weight-black is-size-5 has-opacity-50">{{ .id }}</span>
+                {{ end }}
+              </div>
+              <div>
+                <h4 class="is-size-4 has-text-weight-bold mb-1 has-text-grey-900">{{ .title }}</h4>
+                <p class="is-size-6 has-text-grey-600 has-line-height-relaxed">{{ .description }}</p>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

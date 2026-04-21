@@ -1,0 +1,498 @@
+{{ define "main"}}
+{{ $data_id := .Params.data_id }}
+{{ $products := .Site.Data.products.kubedb.products }}
+{{ $data := index $products $data_id }}
+
+{{ if not $data }}
+{{ $data_id_alt := replace $data_id "-" "_" }}
+{{ $data = index $products $data_id_alt }}
+{{ end }}
+
+{{ if not $data }}
+<div class="container section">
+  <div class="notification is-danger">
+    <strong>Debug:</strong> Data for "{{ $data_id }}" not found.
+  </div>
+</div>
+{{ else }}
+
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ $bg_grad := cond (strings.Contains $data_id "platform") "#eff6ff" "#f5f3ff" }}
+<div class="ac-ui product-redesign"
+  style="--p-logo-color: {{ $p_color }}; --cta-bg: {{ $cta_bg }}; background: linear-gradient(to bottom, #ffffff, {{ $bg_grad }} 15%, #ffffff 30%); ">
+  <!-- Hero Section -->
+  <section class=" home-hero is-relative is-overflow-hidden">
+    <div class="home-hero-bg">
+      <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
+      <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
+    </div>
+
+    <div class="container is-relative has-z-index-10 has-text-centered">
+      <div class="badge" style="background: {{ $p_color }}12; border-color: {{ $p_color }}22;">
+        {{ if $data.product_icon }}
+        <iconify-icon {{ printf "icon=%q" $data.product_icon | safeHTMLAttr }} width="18" height="18"
+          style="color: {{ $p_color }}"></iconify-icon>
+        {{ end }}
+        <span class="has-text-weight-bold is-size-7 uppercase tracking-widest" style="color: {{ $p_color }}">{{ $data.product_name | default "KubeDB"}}</span>
+      </div>
+
+      <div class="home-hero-content has-max-width-xl mx-auto">
+        <h1 class="home-hero-title">
+          <span class="home-hero-title-plain">{{ $data.hero_title_1 | safeHTML }}</span><br>
+          <span class="text-gradient">{{ $data.hero_title_2 | safeHTML }}</span>
+        </h1>
+
+        <p class="home-hero-desc">
+          {{ $data.hero_description | safeHTML }}
+        </p>
+      </div>
+
+      <div class="buttons is-centered home-hero-ctas ds-button-group has-gap-4">
+        {{ $primary_url := $data.primary_action_url | default "#" }}
+        <a href="{{ $primary_url }}" class="button is-primary hero-btn-primary height-50">
+          <strong>{{ $data.primary_action_text | default "Get Started"}}</strong>
+          <iconify-icon icon="heroicons:arrow-right" class="ml-2" width="20" height="20"></iconify-icon>
+        </a>
+        {{ if $data.secondary_action_url }}
+        <a href="{{ $data.secondary_action_url }}" class="button is-outlined hero-btn-secondary height-50">
+          <iconify-icon icon="heroicons:book-open" class="mr-2" width="20" height="20"></iconify-icon>
+          <strong>{{ $data.secondary_action_text }}</strong>
+        </a>
+        {{ end }}
+      </div>
+
+      {{ if $data.stats }}
+      <div class="columns is-mobile is-multiline mt-12 has-max-width-xl mx-auto">
+        {{ range $data.stats }}
+        <div class="column is-3-desktop is-6-mobile">
+          {{ partial "common-cards/stat-card.html" (dict "stat" . "color" $p_color) }}
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- When to Use Section -->
+  {{ if $data.when_to_use }}
+  <section class="home-section section-padding bg-white">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.when_to_use_title | safeHTML }}</h2>
+        <p class="section-header-desc mx-auto has-opacity-70 mt-4 is-text-lg has-max-width-800">{{ $data.when_to_use_subtitle | safeHTML }}</p>
+      </div>
+      {{ $col_class := $data.when_to_use_column_class | default "is-3-desktop" }}
+      <div class="columns is-multiline">
+        {{ range $data.when_to_use }}
+        <div class="column {{ $col_class }} is-4-tablet is-6-mobile">
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  
+  <!-- Built For Scale Section (Target Customers) -->
+  {{ if $data.platform_built_for_scale }}
+  <section class="home-section section-padding" style="background: #f8fafc; font-family: 'Inter', sans-serif;">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop" style="letter-spacing: -0.04em;">{{ $data.platform_built_for_scale_title }}</h2>
+        <p class="section-header-desc mx-auto has-opacity-70 mt-4 is-text-lg has-max-width-800">{{ $data.platform_built_for_scale_subtitle }}</p>
+      </div>
+      <div class="columns is-multiline">
+        {{ range $data.platform_built_for_scale }}
+        <div class="column is-6">
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  
+  <!-- Why Section (Benefits) -->
+  {{ if and $data.benefits (not $data.hide_benefits) }}
+  <section class="home-section section-padding has-background-light">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black">{{ $data.benefits_title | safeHTML }}</h2>
+        <p class="section-header-desc mx-auto has-max-width-800">{{ $data.benefits_subtitle | safeHTML }}</p>
+      </div>
+      <div class="columns is-multiline">
+        {{ range $data.benefits }}
+        <div class="column is-4-desktop is-6-tablet">
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  
+  <!-- Platform Features Section -->
+  {{ if $data.features }}
+  <section class="home-section section-padding bg-white">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop">{{ $data.features_title | default "Platform Features" }}</h2>
+        <p class="section-header-desc mx-auto has-opacity-70 mt-4 has-max-width-800">{{ $data.features_subtitle | safeHTML }}</p>
+      </div>
+      <div class="columns is-multiline">
+        {{ range $data.features }}
+        <div class="column is-4-desktop is-6-tablet">
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "compact") }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Supported Databases Section -->
+  {{ if not $data.hide_database_support }}
+  {{ partial "common-sections/database-support.html" . }}
+  {{ end }}
+  
+  <!-- Why Not Cloud DBaaS Section -->
+  {{ if $data.why_not_cloud_dbaas }}
+  <section class="home-section section-padding bg-white" style="font-family: 'Inter', sans-serif;">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.why_not_cloud_dbaas_title }}</h2>
+        <p class="section-header-desc mx-auto has-opacity-70 mt-4 is-text-lg has-max-width-800">{{ $data.why_not_cloud_dbaas_subtitle }}</p>
+      </div>
+      <div class="columns is-multiline">
+        {{ range $data.why_not_cloud_dbaas }}
+        <div class="column is-6">
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "horizontal-check") }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  
+  <!-- Use Cases (Perfect For Every Team) -->
+  {{ if $data.use_cases }}
+  {{ $uc_title := $data.use_cases_title | default "Perfect For Every Team" }}
+  <section class="home-section section-padding bg-white">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black">{{ $uc_title }}</h2>
+        {{ if $data.use_cases_subtitle }}
+        <p class="section-header-desc mx-auto has-max-width-800">{{ $data.use_cases_subtitle | safeHTML }}</p>
+        {{ end }}
+      </div>
+      <div class="columns is-centered">
+        {{ range $data.use_cases }}
+        <div class="column is-4">
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "centered") }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+
+  <!-- Comparison Section -->
+  {{ if $data.comparison_table }}
+  {{ $comp_title := $data.comparison_title | default "Operator vs Platform" }}
+  {{ $comp_desc := $data.comparison_subtitle | default "KubeDB Operator provides database automation inside a single Kubernetes cluster, while KubeDB Platform extends this into a centralized DBaaS across clusters, teams, and environments." }}
+  {{ $comp_analogy := $data.comparison_analogy | default "The Operator is the engine. The Platform is the car." }}
+
+  <section class="home-section section-padding bg-dark text-white is-relative is-overflow-hidden"
+    style="background: #0b1120;">
+    <div class="container is-relative">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-white has-text-weight-black is-size-2-desktop">{{ $comp_title }}</h2>
+        <p class="section-header-desc has-text-white has-opacity-70 mx-auto is-size-5 has-line-height-relaxed has-max-width-900">
+          {{ $comp_desc | safeHTML }}
+        </p>
+      </div>
+
+      <!-- Analogy Section -->
+      {{ if $comp_analogy }}
+      <div class="has-text-centered mb-16">
+        <p class="is-size-4 has-text-weight-bold has-tracking-wide is-uppercase has-opacity-50 mb-4" style="color: #94a3b8;">
+          Think of it this way:
+        </p>
+        <p class="is-size-2-desktop is-size-3-tablet has-text-weight-black has-text-info">
+          {{ $comp_analogy | safeHTML }}
+        </p>
+      </div>
+      {{ end }}
+
+      <!-- Quick Summary Cards -->
+      <div class="columns is-multiline mb-16">
+        <!-- Operator Card -->
+        <div class="column is-6">
+          <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up"
+            style="background: rgba(88, 28, 135, 0.15); border: 2px solid #a855f7; border-radius: 20px;">
+            <div class="is-flex is-align-items-center has-gap-4 mb-6">
+              <iconify-icon icon="lucide:container" class="has-text-secondary" width="40" height="40"
+                style="color: #c084fc;"></iconify-icon>
+              <h3 class="is-size-3 has-text-white has-text-weight-black">KubeDB Operator</h3>
+            </div>
+            <p class="has-text-white is-size-5 mb-8 has-line-height-relaxed has-opacity-90">
+              Best for teams that want to run and automate databases inside a Kubernetes cluster using declarative APIs.
+            </p>
+            <div class="space-y-4">
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-secondary" width="24" height="24"
+                  style="color: #c084fc;"></iconify-icon>
+                <span class="is-size-5 has-text-white">Single cluster deployment</span>
+              </div>
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-secondary" width="24" height="24"
+                  style="color: #c084fc;"></iconify-icon>
+                <span class="is-size-5 has-text-white">In-cluster automation</span>
+              </div>
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-secondary" width="24" height="24"
+                  style="color: #c084fc;"></iconify-icon>
+                <span class="is-size-5 has-text-white">Kubectl-based management</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platform Card -->
+        <div class="column is-6">
+          <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up"
+            style="background: rgba(30, 41, 59, 0.6); border: 2px solid #475569; border-radius: 20px;">
+            <div class="is-flex is-align-items-center has-gap-4 mb-6">
+              <iconify-icon icon="lucide:cloud" class="has-text-info" width="40" height="40"
+                style="color: #60a5fa;"></iconify-icon>
+              <h3 class="is-size-3 has-text-white has-text-weight-black">KubeDB Platform</h3>
+            </div>
+            <p class="has-text-white is-size-5 mb-8 has-line-height-relaxed has-opacity-90">
+              Designed for organizations that need to deliver a standardized, self-service DBaaS across multiple
+              clusters, teams, and environments with centralized control and governance.
+            </p>
+            <div class="space-y-4">
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-success" width="24" height="24"
+                  style="color: #4ade80;"></iconify-icon>
+                <span class="is-size-5 has-text-white">Multi-cluster control plane</span>
+              </div>
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-success" width="24" height="24"
+                  style="color: #4ade80;"></iconify-icon>
+                <span class="is-size-5 has-text-white">Self-service portal</span>
+              </div>
+              <div class="is-flex is-align-items-center has-gap-4">
+                <iconify-icon icon="heroicons:check-badge" class="has-text-success" width="24" height="24"
+                  style="color: #4ade80;"></iconify-icon>
+                <span class="is-size-5 has-text-white">Policy-driven governance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analogy Diagram Box -->
+      <div class="mb-20">
+        <div class="p-12 is-radius-2xlarge has-text-centered"
+          style="background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid #334155;">
+          <h3 class="is-size-1 has-text-white has-text-weight-black mb-6">Think of it this way:</h3>
+          <p class="is-size-2 has-text-secondary has-text-weight-black mb-12" style="color: #c084fc;">
+            The Operator is the engine. The Platform is the car.
+          </p>
+
+
+          <div class="is-flex is-justify-content-center mb-10">
+            <div class="has-max-width-lg w-full">
+              <!-- Placeholder for the architecture diagram since it's a Figma asset -->
+              <img src="/assets/images/products/kubedb/kubedb-hero.png" alt="Architecture Diagram"
+                class="is-radius-large" style="opacity: 0.9;">
+            </div>
+          </div>
+
+          <p class="has-text-grey-100 is-size-5 mx-auto has-max-width-800">
+            The Platform provides centralized control and governance, orchestrating multiple Operator instances across
+            different clusters and environments.
+          </p>
+        </div>
+      </div>
+
+      <!-- Custom Premium Comparison Grid -->
+      <div class="columns is-centered">
+        <div class="column is-12">
+          <div class="comparison-grid-container"
+            style="background: rgba(255,255,255,0.02); border-radius: 24px; border: 1.5px solid rgba(255,255,255,0.05); overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+            <!-- Header Row -->
+            <div class="is-flex is-align-items-stretch"
+              style="border-bottom: 2px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02);">
+              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white"
+                style="flex: 1.2; background: rgba(255,255,255,0.02);">{{ $data.comparison_header_1 | default "Capability" }}</div>
+              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white"
+                style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05);">{{ $data.comparison_header_2 | default "KubeDB Operator" }}</div>
+              <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-info"
+                style="flex: 1; border-left: 1px solid rgba(37, 99, 235, 0.2); background: rgba(37, 99, 235, 0.05);">
+                <div class="is-flex is-align-items-center has-gap-2">
+                  <iconify-icon icon="heroicons:sparkles" class="has-text-warning"></iconify-icon>
+                  {{ $data.comparison_header_3 | default "KubeDB Platform" }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Data Rows -->
+            {{ range $index, $row := $data.comparison_table.rows }}
+            <div class="is-flex is-align-items-center transition-all" {{ if lt (add $index 1) (len
+              $data.comparison_table.rows) }}style="border-bottom: 1px solid rgba(255,255,255,0.05);" {{ end }}>
+              <!-- Label -->
+              <div class="p-8 is-size-5 has-text-weight-bold has-text-white" style="flex: 1.2; opacity: 1;">
+                {{ index . 0 }}
+              </div>
+              <!-- Operator Value -->
+              <div class="p-8 is-size-5"
+                style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05); line-height: 1.5; color: #94a3b8;">
+                {{ index . 1 }}
+              </div>
+              <!-- Platform Value (Highlighted) -->
+              <div class="p-8 is-size-5 has-text-white has-text-weight-black"
+                style="flex: 1; border-left: 1px solid rgba(37, 99, 235, 0.3); background: rgba(37, 99, 235, 0.08); line-height: 1.4;">
+                <div class="is-flex is-align-items-start has-gap-3">
+                  <iconify-icon icon="heroicons:check-circle" class="has-text-info mt-1" width="22"
+                    style="color: #60a5fa;"></iconify-icon>
+                  <span>{{ index . 2 }}</span>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- How It Works Section (Compact Pipeline Strip) -->
+  {{ if or $data.how_it_works $data.how_it_works_infra }}
+  <section class="home-section section-padding has-text-white is-relative is-overflow-hidden has-background-black"
+    style="padding: 80px 0;">
+
+    <!-- Technical Background Grid -->
+    <div class="is-absolute" style="top: 0; left: 0; width: 100%; height: 100%; 
+      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px; pointer-events: none;"></div>
+
+    <div class="container is-relative">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-white has-text-weight-black is-size-2-desktop mb-4 has-tracking-tighter">{{ $data.how_it_works_title | default "How It Works" }}</h2>
+        <p class="is-size-6 mx-auto has-opacity-50 has-text-white has-max-width-600">
+          A simple 3-stage transformation from infrastructure to managed DBaaS.
+        </p>
+      </div>
+
+      <div class="columns is-vcentered">
+        {{ if $data.how_it_works }}
+        {{ range $index, $step := $data.how_it_works }}
+        {{ if gt $index 0 }}
+        <!-- Connector -->
+        <div class="column is-narrow is-hidden-mobile">
+          <iconify-icon icon="lucide:arrow-right" class="opacity-20" width="24"
+            style="color: {{ if eq $index 1 }}#38bdf8{{ else }}#10b981{{ end }};"></iconify-icon>
+        </div>
+        {{ end }}
+
+        <div class="column">
+          <div class="p-8 is-radius-2xlarge has-border {{ if eq $index 1 }}has-border-primary has-background-primary-soft{{ else if eq $index 2 }}has-border-success has-background-success-soft{{ else }}has-border-grey-700 has-background-grey-800 is-opacity-75{{ end }} backdrop-blur-md h-full {{ if eq $index 2 }}has-text-centered{{ end }}">
+            <div class="is-flex is-align-items-center {{ if eq $index 2 }}is-justify-content-center{{ end }} has-gap-4 mb-6">
+              <div class="is-flex is-align-items-center is-justify-content-center has-text-weight-bold is-size-6"
+                style="width: 40px; height: 40px; border-radius: 12px; background: {{ if eq $index 1 }}rgba(99, 102, 241, 0.1){{ else if eq $index 2 }}rgba(34, 197, 94, 0.1){{ else }}rgba(255,255,255,0.1){{ end }}; color: {{ if eq $index 1 }}#818cf8{{ else if eq $index 2 }}#4ade80{{ else }}#94a3b8{{ end }};">
+                0{{ add $index 1 }}
+              </div>
+              <h3 class="is-size-4 has-text-white has-text-weight-black">{{ .title }}</h3>
+            </div>
+            <p class="is-size-6" style="color: {{ if eq $index 2 }}#34d399{{ else }}#94a3b8{{ end }};">{{ .desc }}</p>
+          </div>
+        </div>
+        {{ end }}
+
+        {{ else if $data.how_it_works_infra }}
+        <!-- Stage 01: You Bring -->
+        <div class="column is-4">
+          <div class="p-8 is-radius-2xlarge has-border has-border-grey-700 has-background-grey-800 is-opacity-75 backdrop-blur-md h-full">
+            <div class="is-flex is-align-items-center has-gap-4 mb-6">
+              <div class="has-size-10 is-radius-large has-background-grey-800 is-flex is-align-items-center is-justify-content-center has-text-grey-400 has-text-weight-bold is-size-6">
+                01</div>
+              <h3 class="is-size-4 has-text-white has-text-weight-black">You Bring:</h3>
+            </div>
+            <div class="is-flex is-flex-wrap-wrap has-gap-2">
+              {{ range $data.how_it_works_infra.items }}
+              <span
+                class="px-3 py-1.5 is-radius-normal has-background-grey-800 has-border has-border-grey-700 is-size-7 has-text-weight-bold"
+                style="color: #94a3b8;">{{ .text | safeHTML }}</span>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Connector 01 -->
+        <div class="column is-narrow is-hidden-mobile">
+          <iconify-icon icon="lucide:arrow-right" class="opacity-20" width="24" style="color: #38bdf8;"></iconify-icon>
+        </div>
+
+        <!-- Stage 02: KubeDB Provides -->
+        <div class="column is-4">
+          <div
+            class="p-8 is-radius-2xlarge has-border-primary has-background-primary-soft backdrop-blur-md h-full has-shadow-large">
+            <div class="is-flex is-align-items-center has-gap-4 mb-6">
+              <div class="is-flex is-align-items-center is-justify-content-center has-text-weight-bold is-size-6"
+                style="width: 40px; height: 40px; border-radius: 12px; background: rgba(99, 102, 241, 0.1); color: #818cf8;">
+                02</div>
+              <h3 class="is-size-4 has-text-white has-text-weight-black">We Provide:</h3>
+            </div>
+            <div class="is-flex is-flex-direction-column has-gap-3">
+              {{ range $data.how_it_works_software.items }}
+              <div class="is-flex is-align-items-center has-gap-3">
+                <iconify-icon icon="lucide:check-circle-2" width="14" style="color: #60a5fa;"></iconify-icon>
+                <span class="is-size-7 has-text-weight-bold" style="color: #e2e8f0;">{{ .text | safeHTML }}</span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Connector 02 -->
+        <div class="column is-narrow is-hidden-mobile">
+          <iconify-icon icon="lucide:arrow-right" class="opacity-20" width="24" style="color: #10b981;"></iconify-icon>
+        </div>
+
+        <!-- Stage 03: The Result -->
+        <div class="column">
+          <div
+            class="p-8 is-radius-2xlarge has-border-success has-background-success-soft backdrop-blur-md h-full has-text-centered">
+            <div class="has-size-12 is-radius-xlarge has-background-success-soft is-flex is-align-items-center is-justify-content-center mx-auto mb-4">
+              <iconify-icon icon="lucide:cloud-rocket" width="24" style="color: #34d399;"></iconify-icon>
+            </div>
+            <h3 class="is-size-4 has-text-white has-text-weight-black mb-2">Managed DBaaS</h3>
+            <p class="is-size-7 has-opacity-60 has-text-white">Production-grade & Fully Governed.</p>
+          </div>
+        </div>
+        {{ end }}
+
+      <!-- Compact Footer Summary -->
+      <div class="mt-12 has-text-centered">
+        <p class="is-size-7 tracking-widest uppercase has-text-weight-black opacity-30" style="color: #f8fafc;">
+          {{ $data.how_it_works_summary | default "No Vendor Lock-in • Multi-Cloud Portability • Complete Sovereignty" }}
+        </p>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- FAQs Section (Premium Component) -->
+  {{ partial "common-sections/faq-section.html" $data }}
+
+  <!-- Premium Reusable Call to Action -->
+  {{ partial "common-sections/final-cta.html" $data }}
+</div>
+
+{{ end }}
+{{ end }}
