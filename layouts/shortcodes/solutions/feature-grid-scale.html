@@ -20,7 +20,11 @@
     <div class="columns is-multiline">
       {{ range $data.platform_built_for_scale }}
       <div class="column is-4-desktop is-6-tablet">
+        {{ if eq $data_id "white-labeled-dbaas" }}
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "persona" "color_soft" .color_soft "color_gradient" .color_gradient) }}
+        {{ else }}
         {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+        {{ end }}
       </div>
       {{ end }}
     </div>

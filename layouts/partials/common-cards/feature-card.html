@@ -105,7 +105,7 @@
 
   {{ if $card.icon }}
   <div class="is-flex is-align-items-center is-justify-content-center is-radius-2xlarge mb-10 shadow-md"
-    {{ if .color_gradient }}style="width: 72px; height: 72px; background: {{ .color_gradient | safeCSS }};"{{ else }}style="width: 72px; height: 72px; background: var(--ds-primary);"{{ end }}>
+    {{ if .color_gradient }}style="width: 72px; height: 72px; background: {{ .color_gradient | safeCSS }};"{{ else }}style="width: 72px; height: 72px; background: linear-gradient(135deg, #3b82f6, #06b6d4);"{{ end }}>
     <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="36" style="color: white;"></iconify-icon>
   </div>
   {{ end }}

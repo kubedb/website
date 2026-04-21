@@ -32,5 +32,21 @@
         {{ end }}
       </div>
     </div>
+
+    <div class="db-cta is-flex is-justify-content-center mt-8">
+      <div class="db-cta-inner ds-card-base is-flex is-align-items-center is-justify-content-space-between has-gap-4 p-4 px-5">
+        <div class="db-cta-icon ds-icon-box">
+          <iconify-icon icon="heroicons:sparkles" width="20" height="20"></iconify-icon>
+        </div>
+        <div class="db-cta-text is-flex is-flex-direction-column has-gap-1 has-text-body">
+          <strong class="has-text-heading">{{ $d.cta_text | default "Need a specific database?" }}</strong>
+          <span>{{ $d.cta_sub | default "Contact us for custom implementations" }}</span>
+        </div>
+        <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button is-primary is-small">
+          {{ $d.cta_button | default "Contact Us" }}
+          <iconify-icon icon="heroicons:arrow-right" width="16" height="16"></iconify-icon>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
