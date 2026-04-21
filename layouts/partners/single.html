@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<div class="dbaas-page ac-ui">
+<div class="ac-ui">
 
   <!-- ===== HERO ===== -->
   <section class="hero-section">
@@ -41,33 +41,31 @@
 
         <div class="badge pricing-badge" style="margin:0 auto 1.5rem">
           <img src="{{ $d.hero.badge.icon }}" alt="{{ $d.hero.badge.name }}" width="{{ $d.hero.badge.width }}" height="{{ $d.hero.badge.height }}" loading="lazy" />
-          White-Labeled DBaaS for Cloud Service Providers
+          {{ $d.hero.badge.text }}
         </div>
 
         <h1 class="hero-title">
-          Launch Your Own
+          {{ $d.hero.title.part1 }}
           <span class="home-hero-title-gradient" style="display:block;margin-top:.5rem">
-            Production-Grade DBaaS Platform
+            {{ $d.hero.title.part2 }}
           </span>
         </h1>
 
         <p class="hero-subtitle">
-          Built on <strong>ACE (AppsCode Cloud Engine)</strong> — a fully managed, white-labeled, production-ready
-          Database-as-a-Service platform that exceeds public cloud offerings while maintaining complete branding
-          control and data sovereignty.
+          {{ $d.hero.subtitle | safeHTML }}
         </p>
 
         <div class="flex items-center justify-center flex-wrap gap-2" style="margin-bottom:2rem">
-          <span style="font-size:.875rem;color:var(--color-gray-600)">Best with:</span>
+          <span style="font-size:.875rem;color:var(--color-gray-600)">{{ $d.hero.kubedb_badge.label }}</span>
           <span class="badge badge-green" style="background-color:#d1fae5;">
            <img src="{{ $d.hero.kubedb_badge.icon }}" alt="{{ $d.hero.kubedb_badge.name }}" width="{{ $d.hero.kubedb_badge.width }}" height="{{ $d.hero.kubedb_badge.height }}" loading="lazy" />
-            KubeDB Platform
+            {{ $d.hero.kubedb_badge.text }}
           </span>
         </div>
 
         <div class="flex items-center justify-center flex-wrap gap-4">
-					<a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button is-primary hero-btn-primary height-50">
-						Schedule Demo
+					<a href="{{ $.Site.Params.domain_appscode }}{{ $d.hero.cta_button.href }}" class="button is-primary hero-btn-primary height-50">
+						{{ $d.hero.cta_button.text }}
 						<iconify-icon icon="heroicons:arrow-right" width="20" height="20"></iconify-icon>
 					</a>
         </div>
@@ -90,8 +88,8 @@
   <section class="section bg-white">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Key Outcomes for CSPs &amp; MSPs</h2>
-        <p class="section-subtitle">Everything you need to compete with global hyperscalers</p>
+        <h2 class="section-title">{{ $d.sections.outcomes.title }}</h2>
+        <p class="section-subtitle">{{ $d.sections.outcomes.subtitle }}</p>
       </div>
       <div class="grid-auto grid-4">
         {{ range $d.outcomes }}
@@ -111,12 +109,12 @@
   <section class="section bg-purple-blue">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Solution Architecture</h2>
-        <p class="section-subtitle">All components are containerized, CRD-driven, and designed for multi-cluster and multi-region deployments</p>
+        <h2 class="section-title">{{ $d.sections.architecture.title }}</h2>
+        <p class="section-subtitle">{{ $d.sections.architecture.subtitle }}</p>
       </div>
 
       <div class="arch-diagram-box " style="margin-top:3rem">
-        <h3 style="font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:1.5rem">ACE Platform Architecture Overview</h3>
+        <h3 style="font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:1.5rem">{{ $d.sections.architecture.diagramTitle }}</h3>
         <div class="">
           <img src="{{ $d.architecture.image }}" alt="{{ $d.architecture.imageAlt }}" loading="lazy" />
         </div>
@@ -145,12 +143,11 @@
   </section>
 
   <!-- ===== KEY FEATURES ===== -->
-  {{ $d := index $.Site.Data "dbaas" }}
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Key Features &amp; Capabilities</h2>
-        <p class="section-subtitle">Production-ready features that exceed public cloud offerings</p>
+        <h2 class="section-title">{{ $d.sections.features.title }}</h2>
+        <p class="section-subtitle">{{ $d.sections.features.subtitle }}</p>
       </div>
       <div class="grid-auto grid-3">
         {{ range $d.features }}
@@ -173,8 +170,8 @@
   <section class="section bg-white">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Comprehensive Billing &amp; Metering</h2>
-        <p class="section-subtitle">Real-time API access for accurate monthly client invoices with detailed usage tracking</p>
+        <h2 class="section-title">{{ $d.sections.billing.title }}</h2>
+        <p class="section-subtitle">{{ $d.sections.billing.subtitle }}</p>
       </div>
       <div class="grid-auto grid-3">
         {{ range $d.billing }}
@@ -199,8 +196,8 @@
   <section class="section bg-cyan-blue">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Universal Database Access</h2>
-        <p class="section-subtitle">Your customers' databases are accessible from anywhere — modern cloud-native apps and legacy VM-based applications alike</p>
+        <h2 class="section-title">{{ $d.sections.access.title }}</h2>
+        <p class="section-subtitle">{{ $d.sections.access.subtitle }}</p>
       </div>
       <div class="grid-auto grid-3">
         {{ range $d.access }}
@@ -237,8 +234,8 @@
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Perfect For Service Providers</h2>
-        <p class="section-subtitle">Expand your portfolio with managed database services</p>
+        <h2 class="section-title">{{ $d.sections.providers.title }}</h2>
+        <p class="section-subtitle">{{ $d.sections.providers.subtitle }}</p>
       </div>
       <div class="grid-auto grid-3">
         {{ range $d.providers }}
@@ -261,8 +258,8 @@
   <section class="section bg-green-emerald">
     <div class="container-md">
       <div class="section-header">
-        <h2 class="section-title">Implementation &amp; Go-Live</h2>
-        <p class="section-subtitle"><strong>Target Timeline:</strong> 30 days from signing to go-live (accelerable based on your readiness)</p>
+        <h2 class="section-title">{{ $d.sections.timeline.title }}</h2>
+        <p class="section-subtitle">{{ $d.sections.timeline.subtitle | safeHTML }}</p>
       </div>
       <div class="grid-auto grid-2">
         {{ range $d.timeline }}
@@ -299,16 +296,16 @@
 
             <div class="flex flex-col" style="justify-content:center;gap:1.5rem">
               <div class="badge" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;backdrop-filter:blur(4px);width:fit-content">
-                <img src="{{ $d.ctaBadge.icon }}" alt="White-Label Ready" width="{{ $d.ctaBadge.iconWidth }}" height="{{ $d.ctaBadge.iconHeight }}" loading="lazy" />
-                White-Label Ready
+                <img src="{{ $d.ctaBadge.icon }}" alt="{{ $d.sections.cta.badgeText }}" width="{{ $d.ctaBadge.iconWidth }}" height="{{ $d.ctaBadge.iconHeight }}" loading="lazy" />
+                {{ $d.sections.cta.badgeText }}
               </div>
 
               <div>
                 <h2 class="cta-title">
-                  Launch Your Own
-                  <span class="cta-gradient-text">DBaaS Business</span>
+                  {{ $d.sections.cta.mainTitle }}
+                  <span class="cta-gradient-text">{{ $d.sections.cta.mainTitleGradient }}</span>
                 </h2>
-                <p style="font-size:1rem;color:rgba(255,255,255,.9);line-height:1.6">Compete with global hyperscalers with your own branded database services</p>
+                <p style="font-size:1rem;color:rgba(255,255,255,.9);line-height:1.6">{{ $d.sections.cta.subtitle }}</p>
               </div>
 
               <div style="display:flex;flex-direction:column;gap:.625rem">
@@ -322,12 +319,12 @@
 
               <div class="flex flex-wrap gap-3" style="padding-top:.5rem">
                 <a href="#contact" class="btn btn-white">
-                  Contact Sales
+                  {{ $d.sections.cta.buttonContactText }}
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
                 <a href="#demo" class="btn btn-outline-white">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                  Watch Demo
+                  {{ $d.sections.cta.buttonDemoText }}
                 </a>
               </div>
             </div>

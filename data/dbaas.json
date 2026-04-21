@@ -1,18 +1,69 @@
 {
+  "sections": {
+    "outcomes": {
+      "title": "Key Outcomes for CSPs & MSPs",
+      "subtitle": "Everything you need to compete with global hyperscalers"
+    },
+    "architecture": {
+      "title": "Solution Architecture",
+      "subtitle": "All components are containerized, CRD-driven, and designed for multi-cluster and multi-region deployments",
+      "diagramTitle": "ACE Platform Architecture Overview"
+    },
+    "features": {
+      "title": "Key Features & Capabilities",
+      "subtitle": "Production-ready features that exceed public cloud offerings"
+    },
+    "billing": {
+      "title": "Comprehensive Billing & Metering",
+      "subtitle": "Real-time API access for accurate monthly client invoices with detailed usage tracking"
+    },
+    "access": {
+      "title": "Universal Database Access",
+      "subtitle": "Your customers' databases are accessible from anywhere — modern cloud-native apps and legacy VM-based applications alike"
+    },
+    "providers": {
+      "title": "Perfect For Service Providers",
+      "subtitle": "Expand your portfolio with managed database services"
+    },
+    "timeline": {
+      "title": "Implementation & Go-Live",
+      "subtitle": "Target Timeline: 30 days from signing to go-live (accelerable based on your readiness)"
+    },
+    "cta": {
+      "badgeText": "White-Label Ready",
+      "mainTitle": "Launch Your Own",
+      "mainTitleGradient": "DBaaS Business",
+      "subtitle": "Compete with global hyperscalers with your own branded database services",
+      "buttonContactText": "Contact Sales",
+      "buttonDemoText": "Watch Demo"
+    }
+  },
   "hero": {
     "badge": {
       "id": "hero-badge",
       "name": "Hero Badge",
       "icon": "/assets/images/icon/dbaas/badge.svg",
       "width": 16,
-      "height": 16
+      "height": 16,
+      "text": "White-Labeled DBaaS for Cloud Service Providers"
     },
+    "title": {
+      "part1": "Launch Your Own",
+      "part2": "Production-Grade DBaaS Platform"
+    },
+    "subtitle": "Built on <strong>ACE (AppsCode Cloud Engine)</strong> — a fully managed, white-labeled, production-ready Database-as-a-Service platform that exceeds public cloud offerings while maintaining complete branding control and data sovereignty.",
     "kubedb_badge": {
       "id": "kubedb-badge",
       "name": "KubeDB Check",
       "icon": "/assets/images/icon/dbaas/check-circle-outline.svg",
       "width": 16,
-      "height": 16
+      "height": 16,
+      "label": "Best with:",
+      "text": "KubeDB Platform"
+    },
+    "cta_button": {
+      "text": "Schedule Demo",
+      "href": "/contact/"
     }
   },
   "stats": [
