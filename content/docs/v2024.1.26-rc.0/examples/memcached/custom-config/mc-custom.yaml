@@ -1,0 +1,19 @@
+apiVersion: kubedb.com/v1alpha2
+kind: Memcached
+metadata:
+  name: custom-memcached
+  namespace: demo
+spec:
+  replicas: 1
+  version: "1.6.22"
+  configSecret:
+    name: mc-custom-config
+  podTemplate:
+    spec:
+      resources:
+        limits:
+          cpu: 500m
+          memory: 128Mi
+        requests:
+          cpu: 250m
+          memory: 64Mi
