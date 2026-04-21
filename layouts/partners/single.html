@@ -1,23 +1,52 @@
 {{ define "main" }}
 
-<div class="dbaas-page">
+<div class="dbaas-page ac-ui">
 
   <!-- ===== HERO ===== -->
   <section class="hero-section">
-    <div class="hero-bg-orb hero-bg-orb-1"></div>
-    <div class="hero-bg-orb hero-bg-orb-2"></div>
+    <!-- <div class="hero-bg-orb hero-bg-orb-1"></div>
+    <div class="hero-bg-orb hero-bg-orb-2"></div> -->
+		<div class="home-hero-bg">
+    <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
+    <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
+    <div class="hero-shapes-tr">
+      <div class="hero-shape-ring"></div>
+      <div class="hero-shape-square"></div>
+      <div class="hero-shape-blob"></div>
+    </div>
+    <div class="hero-shapes-bl">
+      <div class="hero-shape-diamond"></div>
+      <div class="hero-shape-rect"></div>
+      <div class="hero-shape-dot"></div>
+    </div>
+    <div class="hero-orb-center-a"></div>
+    <div class="hero-orb-center-b"></div>
+    <div class="hero-orb-center-c"></div>
+    <svg class="hero-dot-grid" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <pattern id="hero-dots" width="80" height="80" patternUnits="userSpaceOnUse">
+          <circle cx="40" cy="40" r="1" fill="#4948A3" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hero-dots)" />
+    </svg>
+    <div class="hero-ping hero-ping-1"></div>
+    <div class="hero-ping hero-ping-2"></div>
+    <div class="hero-ping hero-ping-3"></div>
+  </div>
 
-    <div class="container" style="position:relative">
+  {{ $d := index $.Site.Data "dbaas" }}
+    <div class="container home-hero-container" style="position:relative">
       <div class="text-center" style="margin-bottom:3rem">
 
-        <div class="badge badge-blue" style="margin:0 auto 1.5rem">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        <div class="badge pricing-badge" style="margin:0 auto 1.5rem">
+          <img src="{{ $d.hero.badge.icon }}" alt="{{ $d.hero.badge.name }}" width="{{ $d.hero.badge.width }}" height="{{ $d.hero.badge.height }}" loading="lazy" />
           White-Labeled DBaaS for Cloud Service Providers
         </div>
 
         <h1 class="hero-title">
           Launch Your Own
-          <span class="gradient-text" style="display:block;margin-top:.5rem">
+          <span class="home-hero-title-gradient" style="display:block;margin-top:.5rem">
             Production-Grade DBaaS Platform
           </span>
         </h1>
@@ -30,42 +59,29 @@
 
         <div class="flex items-center justify-center flex-wrap gap-2" style="margin-bottom:2rem">
           <span style="font-size:.875rem;color:var(--color-gray-600)">Best with:</span>
-          <span class="badge badge-green">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span class="badge badge-green" style="background-color:#d1fae5;">
+           <img src="{{ $d.hero.kubedb_badge.icon }}" alt="{{ $d.hero.kubedb_badge.name }}" width="{{ $d.hero.kubedb_badge.width }}" height="{{ $d.hero.kubedb_badge.height }}" loading="lazy" />
             KubeDB Platform
           </span>
         </div>
 
         <div class="flex items-center justify-center flex-wrap gap-4">
-          <a href="#contact" class="btn btn-primary">
-            Schedule Demo
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
+					<a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button is-primary hero-btn-primary height-50">
+						Schedule Demo
+						<iconify-icon icon="heroicons:arrow-right" width="20" height="20"></iconify-icon>
+					</a>
         </div>
       </div>
 
       <!-- Stats -->
       <div class="grid-auto grid-4" style="max-width:64rem;margin:0 auto">
+        {{ range $d.stats }}
         <div class="stat-card">
-          <svg style="display:block;margin:0 auto .75rem" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <div class="stat-value">30 days</div>
-          <div class="stat-label">Time to Launch</div>
+          <img src="{{ .icon }}" alt="{{ .name }}" width="{{ .width }}" height="{{ .height }}" loading="lazy" style="display:block;margin:0 auto .75rem" />
+          <div class="stat-value" style="font-size:1.75rem">{{ .value }}</div>
+          <div class="stat-label">{{ .label }}</div>
         </div>
-        <div class="stat-card">
-          <svg style="display:block;margin:0 auto .75rem" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
-          <div class="stat-value">25+</div>
-          <div class="stat-label">Database Engines</div>
-        </div>
-        <div class="stat-card">
-          <svg style="display:block;margin:0 auto .75rem" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <div class="stat-value">24×7</div>
-          <div class="stat-label">Support Level</div>
-        </div>
-        <div class="stat-card">
-          <svg style="display:block;margin:0 auto .75rem" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-          <div class="stat-value">Rapid</div>
-          <div class="stat-label">Target Go-Live</div>
-        </div>
+        {{ end }}
       </div>
     </div>
   </section>
@@ -78,34 +94,15 @@
         <p class="section-subtitle">Everything you need to compete with global hyperscalers</p>
       </div>
       <div class="grid-auto grid-4">
+        {{ range $d.outcomes }}
         <div class="card-light">
-          <div class="icon-box icon-box-sm icon-box-blue" style="margin-bottom:1rem">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="white"/><circle cx="17.5" cy="10.5" r=".5" fill="white"/><circle cx="8.5" cy="7.5" r=".5" fill="white"/><circle cx="6.5" cy="12.5" r=".5" fill="white"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+          <div class="icon-box icon-box-sm {{ .boxClass }}" style="margin-bottom:1rem">
+            <img src="{{ .icon }}" alt="{{ .name }}" width="{{ .width }}" height="{{ .height }}" loading="lazy" />
           </div>
-          <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">Complete Branding Control</h3>
-          <p style="font-size:.875rem;color:var(--color-gray-600)">Full branding with data sovereignty and white-label control</p>
+          <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">{{ .title }}</h3>
+          <p style="font-size:.875rem;color:var(--color-gray-600)">{{ .description }}</p>
         </div>
-        <div class="card-light">
-          <div class="icon-box icon-box-sm icon-box-green" style="margin-bottom:1rem">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">Usage-Based Licensing</h3>
-          <p style="font-size:.875rem;color:var(--color-gray-600)">Predictable costs aligned to your revenue growth</p>
-        </div>
-        <div class="card-light">
-          <div class="icon-box icon-box-sm icon-box-orange" style="margin-bottom:1rem">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">Fastest Time-to-Market</h3>
-          <p style="font-size:.875rem;color:var(--color-gray-600)">30 days from signing to production go-live</p>
-        </div>
-        <div class="card-light">
-          <div class="icon-box icon-box-sm icon-box-purple" style="margin-bottom:1rem">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">24×7 Enterprise Support</h3>
-          <p style="font-size:.875rem;color:var(--color-gray-600)">Defined SLAs with comprehensive training included</p>
-        </div>
+        {{ end }}
       </div>
     </div>
   </section>
@@ -118,45 +115,29 @@
         <p class="section-subtitle">All components are containerized, CRD-driven, and designed for multi-cluster and multi-region deployments</p>
       </div>
 
-      <div class="arch-diagram-box" style="margin-top:3rem">
+      <div class="arch-diagram-box " style="margin-top:3rem">
         <h3 style="font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:1.5rem">ACE Platform Architecture Overview</h3>
-        <div class="arch-diagram-img-wrap">
-          <img src="/images/architecture-diagram.png" alt="KubeDB Platform Architecture — layered stack from infrastructure through Kubernetes distributions, services, KubeDB Operator components, and KubeDB Platform features" />
+        <div class="">
+          <img src="{{ $d.architecture.image }}" alt="{{ $d.architecture.imageAlt }}" loading="lazy" />
         </div>
         <div class="grid-5" style="margin-top:1.5rem">
-          <div class="arch-layer-card" style="background:linear-gradient(135deg,#eff6ff,#ecfeff);border-color:#bfdbfe">
-            <h4 style="font-weight:700;margin-bottom:.5rem">KubeDB Platform</h4>
-            <p style="font-size:.875rem;color:var(--color-gray-600)">Web Console, Envoy Gateway, Hub/Spoke Model, and Policy Engine for complete DBaaS management</p>
+          {{ range $d.architecture.layers }}
+          <div class="arch-layer-card" style="background: {{ .gradient | safeCSS }}; border-color: {{ .borderColor | safeCSS }}">
+            <h5 style="font-weight:700;margin-bottom:.5rem">{{ .title }}</h5>
+            <p style="font-size:.875rem;color:var(--color-gray-600)">{{ .description }}</p>
           </div>
-          <div class="arch-layer-card" style="background:linear-gradient(135deg,#faf5ff,#fdf2f8);border-color:#e9d5ff">
-            <h4 style="font-weight:700;margin-bottom:.5rem">KubeDB Operator</h4>
-            <p style="font-size:.875rem;color:var(--color-gray-600)">Automated provisioning, operations, autoscaling, backup/restore, and database migration</p>
-          </div>
-          <div class="arch-layer-card" style="background:linear-gradient(135deg,#fff7ed,#fef2f2);border-color:#fed7aa">
-            <h4 style="font-weight:700;margin-bottom:.5rem">Kubernetes Services</h4>
-            <p style="font-size:.875rem;color:var(--color-gray-600)">ArgoCD, Open Cluster Management, Cert Manager, Prometheus, and Grafana integration</p>
-          </div>
-          <div class="arch-layer-card" style="background:linear-gradient(135deg,#ecfeff,#f0fdfa);border-color:#a5f3fc">
-            <h4 style="font-weight:700;margin-bottom:.5rem">Kubernetes Platform</h4>
-            <p style="font-size:.875rem;color:var(--color-gray-600)">Support for OpenShift, Rancher, EKS, GKE, AKS, and any CNCF-certified Kubernetes</p>
-          </div>
-          <div class="arch-layer-card" style="background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-color:#a7f3d0">
-            <h4 style="font-weight:700;margin-bottom:.5rem">Infrastructure</h4>
-            <p style="font-size:.875rem;color:var(--color-gray-600)">Deploy on-premises, in the cloud, or at the edge with complete flexibility</p>
-          </div>
+          {{ end }}
         </div>
       </div>
 
       <div class="info-box">
         <div class="icon-box icon-box-sm icon-box-blue flex-shrink-0" style="margin-top:.25rem">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          <img src="{{ $d.architecture.infoBox.icon }}" alt="settings" width="{{ $d.architecture.infoBox.iconWidth }}" height="{{ $d.architecture.infoBox.iconHeight }}" loading="lazy" />
         </div>
         <div>
-          <div style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">White-Labeled Self-Service UI + REST APIs</div>
+          <div style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">{{ $d.architecture.infoBox.title }}</div>
           <p style="font-size:.875rem;color:var(--color-gray-600)">
-            Beautiful, fully branded self-service portal with complete REST APIs for native integration
-            into your cloud console. No requirement to expose KubeDB Platform UI directly — integrate seamlessly
-            into your existing customer experience.
+            {{ $d.architecture.infoBox.description }}
           </p>
         </div>
       </div>
@@ -164,6 +145,7 @@
   </section>
 
   <!-- ===== KEY FEATURES ===== -->
+  {{ $d := index $.Site.Data "dbaas" }}
   <section class="section">
     <div class="container">
       <div class="section-header">
@@ -171,79 +153,18 @@
         <p class="section-subtitle">Production-ready features that exceed public cloud offerings</p>
       </div>
       <div class="grid-auto grid-3">
-
+        {{ range $d.features }}
         <div class="card">
           <div class="icon-box icon-box-sm icon-box-mixed" style="margin-bottom:1rem">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="6" height="6" rx="1"/><path d="M12 3H5a2 2 0 0 0-2 2v3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><rect x="15" y="11" width="6" height="6" rx="1"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M21 16v3a2 2 0 0 0-2 2h-3"/><rect x="9" y="3" width="6" height="6" rx="1"/></svg>
+            <img src="{{ .icon }}" alt="{{ .title }}" width="{{ .iconWidth }}" height="{{ .iconHeight }}" loading="lazy" />
           </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">Provisioning &amp; Lifecycle</h3>
-          <p style="font-size:.875rem;color:var(--color-gray-600);margin-bottom:1rem">Instant self-service launch via web portal, CLI, API, kubectl. Fully automated lifecycle: provisioning, upgrades, scaling, failover, repair, halt/resume.</p>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Self-service provisioning</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Automated upgrades</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Zero-downtime scaling</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Halt &amp; resume operations</span></div>
+          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">{{ .title }}</h3>
+          <p style="font-size:.875rem;color:var(--color-gray-600);margin-bottom:1rem">{{ .description }}</p>
+          {{ range .checks }}
+          <div class="check-item"><img src="/assets/images/icon/dbaas/check-circle-blue.svg" alt="check" width="16" height="16" loading="lazy" /><span>{{ . }}</span></div>
+          {{ end }}
         </div>
-
-        <div class="card">
-          <div class="icon-box icon-box-sm icon-box-mixed" style="margin-bottom:1rem">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">High Availability &amp; Resilience</h3>
-          <p style="font-size:.875rem;color:var(--color-gray-600);margin-bottom:1rem">Multi-AZ/multi-zone clustering with automatic failover and data replication. Continuous health checks with protection against accidental deletion.</p>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Multi-AZ clustering</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Auto failover</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>PodDisruptionBudgets</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Deletion protection</span></div>
-        </div>
-
-        <div class="card">
-          <div class="icon-box icon-box-sm icon-box-mixed" style="margin-bottom:1rem">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-          </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">Scaling &amp; Storage</h3>
-          <p style="font-size:.875rem;color:var(--color-gray-600);margin-bottom:1rem">Horizontal and vertical scaling with zero downtime. Dynamic volume expansion with full history tracking including initial size, expansions, and timestamps.</p>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Horizontal scaling</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Vertical scaling</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Dynamic volume expansion</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Full history tracking</span></div>
-        </div>
-
-        <div class="card">
-          <div class="icon-box icon-box-sm icon-box-mixed" style="margin-bottom:1rem">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
-          </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">Backup &amp; Disaster Recovery</h3>
-          <p style="font-size:.875rem;color:var(--color-gray-600);margin-bottom:1rem">Policy-driven scheduled &amp; on-demand backups to S3-compatible storage. Incremental, deduplicated, encrypted backups with snapshot lifecycle management.</p>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Scheduled backups</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Point-in-Time Recovery</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>One-click restore</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>S3-compatible storage</span></div>
-        </div>
-
-        <div class="card">
-          <div class="icon-box icon-box-sm icon-box-mixed" style="margin-bottom:1rem">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">Monitoring &amp; Observability</h3>
-          <p style="font-size:.875rem;color:var(--color-gray-600);margin-bottom:1rem">OpenTelemetry collectors for end-user monitoring. Metrics in Thanos, logs &amp; tracing in ClickHouse. Tenant-isolated Grafana and Perses dashboards.</p>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>OpenTelemetry integration</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Thanos metrics</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>ClickHouse logs</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Tenant isolation</span></div>
-        </div>
-
-        <div class="card">
-          <div class="icon-box icon-box-sm icon-box-mixed" style="margin-bottom:1rem">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">Security &amp; Compliance</h3>
-          <p style="font-size:.875rem;color:var(--color-gray-600);margin-bottom:1rem">Automated TLS/SSL via cert-manager. Transparent Data Encryption (TDE). RBAC, Pod Security Policies, Network Policies, Vault integration.</p>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Automated TLS/SSL</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Encryption at rest</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>RBAC &amp; policies</span></div>
-          <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Vault integration</span></div>
-        </div>
-
+        {{ end }}
       </div>
     </div>
   </section>
@@ -256,140 +177,23 @@
         <p class="section-subtitle">Real-time API access for accurate monthly client invoices with detailed usage tracking</p>
       </div>
       <div class="grid-auto grid-3">
-
+        {{ range $d.billing }}
         <div class="flex gap-4 card" style="flex-direction:row;align-items:flex-start;border-radius:.75rem">
           <div class="icon-box-green-soft flex items-center justify-center flex-shrink-0">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <img src="{{ .icon }}" alt="{{ .title }}" width="{{ .iconWidth }}" height="{{ .iconHeight }}" loading="lazy" />
           </div>
           <div>
-            <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">Real-Time Metering API</h3>
-            <p style="font-size:.875rem;color:var(--color-gray-600)">Access all required data with UTC timestamps</p>
+            <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">{{ .title }}</h3>
+            <p style="font-size:.875rem;color:var(--color-gray-600)">{{ .description }}</p>
           </div>
         </div>
-
-        <div class="flex gap-4 card" style="flex-direction:row;align-items:flex-start;border-radius:.75rem">
-          <div class="icon-box-green-soft flex items-center justify-center flex-shrink-0">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
-          </div>
-          <div>
-            <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">Namespace Level Data</h3>
-            <p style="font-size:.875rem;color:var(--color-gray-600)">Database type and tenant information</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4 card" style="flex-direction:row;align-items:flex-start;border-radius:.75rem">
-          <div class="icon-box-green-soft flex items-center justify-center flex-shrink-0">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-          </div>
-          <div>
-            <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">Database Level Metrics</h3>
-            <p style="font-size:.875rem;color:var(--color-gray-600)">Pod flavor (CPU/Memory), pod age, pod count (including autoscaling)</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4 card" style="flex-direction:row;align-items:flex-start;border-radius:.75rem">
-          <div class="icon-box-green-soft flex items-center justify-center flex-shrink-0">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>
-          </div>
-          <div>
-            <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">Storage Tracking</h3>
-            <p style="font-size:.875rem;color:var(--color-gray-600)">Volume name, initial size, expansion history (size + timestamp), creation/deletion timestamps</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4 card" style="flex-direction:row;align-items:flex-start;border-radius:.75rem">
-          <div class="icon-box-green-soft flex items-center justify-center flex-shrink-0">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <div>
-            <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">Usage Calculation</h3>
-            <p style="font-size:.875rem;color:var(--color-gray-600)">Sustained GiB RAM (730 hours/month) for accurate billing</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4 card" style="flex-direction:row;align-items:flex-start;border-radius:.75rem">
-          <div class="icon-box-green-soft flex items-center justify-center flex-shrink-0">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <div>
-            <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">Seamless Integration</h3>
-            <p style="font-size:.875rem;color:var(--color-gray-600)">RESTful and gRPC APIs for your billing platform</p>
-          </div>
-        </div>
-
+        {{ end }}
       </div>
     </div>
   </section>
 
   <!-- ===== DATABASE SUPPORT ===== -->
-  <section id="databases" class="db-section section-sm">
-    <div class="container-md" style="position:relative">
-      <div class="section-header">
-        <div class="badge badge-primary" style="margin:0 auto 1.5rem">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
-          Database Support
-        </div>
-        <h2 class="section-title">
-          <span class="gradient-text-primary">25+ Production-Ready</span>
-          <span style="display:block">Database Operators</span>
-        </h2>
-        <p class="section-subtitle" style="font-size:.875rem">Full lifecycle management for all major databases</p>
-      </div>
-
-      <div class="db-grid-wrapper">
-        <div class="db-grid">
-          <div class="db-card" title="PostgreSQL — Relational"><div class="db-icon">PG</div><div class="db-card-name">PostgreSQL</div></div>
-          <div class="db-card" title="MySQL — Relational"><div class="db-icon">MY</div><div class="db-card-name">MySQL</div></div>
-          <div class="db-card" title="MongoDB — NoSQL"><div class="db-icon">MG</div><div class="db-card-name">MongoDB</div></div>
-          <div class="db-card" title="Redis — Cache"><div class="db-icon">RD</div><div class="db-card-name">Redis</div></div>
-          <div class="db-card" title="Elasticsearch — Search"><div class="db-icon">ES</div><div class="db-card-name">Elasticsearch</div></div>
-          <div class="db-card" title="MariaDB — Relational"><div class="db-icon">MA</div><div class="db-card-name">MariaDB</div></div>
-          <div class="db-card" title="Kafka — Streaming"><div class="db-icon">KF</div><div class="db-card-name">Kafka</div></div>
-          <div class="db-card" title="Memcached — Cache"><div class="db-icon">MC</div><div class="db-card-name">Memcached</div></div>
-          <div class="db-card" title="Cassandra — NoSQL"><div class="db-icon">CS</div><div class="db-card-name">Cassandra</div></div>
-          <div class="db-card" title="RabbitMQ — Messaging"><div class="db-icon">RB</div><div class="db-card-name">RabbitMQ</div></div>
-          <div class="db-card" title="Percona — Relational"><div class="db-icon">PC</div><div class="db-card-name">Percona</div></div>
-          <div class="db-card" title="ProxySQL — Proxy"><div class="db-icon">PS</div><div class="db-card-name">ProxySQL</div></div>
-          <div class="db-card" title="PgBouncer — Proxy"><div class="db-icon">PB</div><div class="db-card-name">PgBouncer</div></div>
-          <div class="db-card" title="SingleStore — Distributed"><div class="db-icon">SS</div><div class="db-card-name">SingleStore</div></div>
-          <div class="db-card" title="Microsoft SQL — Relational"><div class="db-icon">MS</div><div class="db-card-name">Microsoft SQL</div></div>
-          <div class="db-card" title="Druid — Analytics"><div class="db-icon">DR</div><div class="db-card-name">Druid</div></div>
-          <div class="db-card" title="DocumentDB — NoSQL"><div class="db-icon">DC</div><div class="db-card-name">DocumentDB</div></div>
-          <div class="db-card" title="Solr — Search"><div class="db-icon">SL</div><div class="db-card-name">Solr</div></div>
-          <div class="db-card" title="ZooKeeper — Coordination"><div class="db-icon">ZK</div><div class="db-card-name">ZooKeeper</div></div>
-          <div class="db-card" title="ClickHouse — Analytics"><div class="db-icon">CH</div><div class="db-card-name">ClickHouse</div></div>
-          <div class="db-card" title="Pgpool — Proxy"><div class="db-icon">PP</div><div class="db-card-name">Pgpool</div></div>
-          <div class="db-card" title="Valkey — Cache"><div class="db-icon">VK</div><div class="db-card-name">Valkey</div></div>
-          <div class="db-card" title="OpenSearch — Search"><div class="db-icon">OS</div><div class="db-card-name">OpenSearch</div></div>
-          <div class="db-card" title="etcd — Coordination"><div class="db-icon">ET</div><div class="db-card-name">etcd</div></div>
-          <div class="db-card" title="NATS — Messaging"><div class="db-icon">NT</div><div class="db-card-name">NATS</div></div>
-          <div class="db-card" title="Redis Sentinel — Cache"><div class="db-icon">RS</div><div class="db-card-name">Redis Sentinel</div></div>
-          <div class="db-card" title="Pulsar — Streaming"><div class="db-icon">PL</div><div class="db-card-name">Pulsar</div></div>
-          <div class="db-card" title="Neo4j — Graph"><div class="db-icon">N4</div><div class="db-card-name">Neo4j</div></div>
-          <div class="db-card" title="YugabyteDB — Distributed"><div class="db-icon">YB</div><div class="db-card-name">YugabyteDB</div></div>
-          <div class="db-card" title="DuckDB — Analytics"><div class="db-icon">DK</div><div class="db-card-name">DuckDB</div></div>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <div class="flex items-center justify-center flex-wrap gap-4" style="background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(229,231,235,.5);border-radius:1rem;box-shadow:var(--shadow-xl);padding:1.5rem;display:inline-flex">
-          <div class="flex items-center gap-3">
-            <div class="icon-box icon-box-sm icon-box-primary">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3 4 6l-3 1 3 1 1 3 1-3 3-1-3-1-1-3z"/></svg>
-            </div>
-            <div style="text-align:left">
-              <div style="font-size:.875rem;font-weight:700">Need a specific database?</div>
-              <div style="font-size:.75rem;color:var(--color-gray-600)">Contact us for custom implementations</div>
-            </div>
-          </div>
-          <a href="#contact" class="btn btn-primary" style="padding:.625rem 1.25rem;font-size:.875rem">
-            Contact Us
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  {{ partial "homepage/database-support" . }}
 
   <!-- ===== UNIVERSAL DATABASE ACCESS ===== -->
   <section class="section bg-cyan-blue">
@@ -399,57 +203,29 @@
         <p class="section-subtitle">Your customers' databases are accessible from anywhere — modern cloud-native apps and legacy VM-based applications alike</p>
       </div>
       <div class="grid-auto grid-3">
-
-        <div class="card card-lg card-bordered-blue text-center">
-          <div class="icon-box icon-box-lg icon-box-blue" style="margin:0 auto 1.5rem">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/></svg>
+        {{ range $d.access }}
+        <div class="card card-lg{{ if eq .id "access-k8s" }} card-bordered-blue{{ else if eq .id "access-external" }} card-bordered-cyan{{ else }} card-bordered-green{{ end }} text-center">
+          <div class="icon-box icon-box-lg{{ if eq .id "access-k8s" }} icon-box-blue{{ else if eq .id "access-external" }} icon-box-cyan{{ else }} icon-box-green{{ end }}" style="margin:0 auto 1.5rem">
+            <img src="{{ .icon }}" alt="{{ .title }}" width="{{ .iconWidth }}" height="{{ .iconHeight }}" loading="lazy" />
           </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">Inside Kubernetes</h3>
-          <p style="color:var(--color-gray-600);margin-bottom:1rem">Cloud-native applications running in the same K8s cluster</p>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Service discovery</span></div>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>ClusterIP access</span></div>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Native K8s networking</span></div>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Low-latency connections</span></div>
+          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">{{ .title }}</h3>
+          <p style="color:var(--color-gray-600);margin-bottom:1rem">{{ .description }}</p>
+          {{ range .checks }}
+          <div class="check-item" style="justify-content:flex-start"><img src="{{ .icon }}" alt="check" width="20" height="20" loading="lazy" /><span>{{ .text }}</span></div>
+          {{ end }}
         </div>
-
-        <div class="card card-lg card-bordered-cyan text-center">
-          <div class="icon-box icon-box-lg icon-box-cyan" style="margin:0 auto 1.5rem">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">Outside Kubernetes</h3>
-          <p style="color:var(--color-gray-600);margin-bottom:1rem">External applications via load balancers and ingress</p>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Load balancer IPs</span></div>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>NodePort access</span></div>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Ingress controllers</span></div>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>VPN connections</span></div>
-        </div>
-
-        <div class="card card-lg card-bordered-green text-center">
-          <div class="icon-box icon-box-lg icon-box-green" style="margin:0 auto 1.5rem">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">Legacy VM Applications</h3>
-          <p style="color:var(--color-gray-600);margin-bottom:1rem">Traditional applications running on virtual machines</p>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Standard database protocols</span></div>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>No code changes required</span></div>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Hybrid cloud support</span></div>
-          <div class="check-item" style="justify-content:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Gradual migration path</span></div>
-        </div>
-
+        {{ end }}
       </div>
 
       <div class="text-center" style="margin-top:3rem">
         <div style="display:inline-block;background:#fff;border-radius:var(--radius-2xl);padding:1.5rem;border:2px solid #bfdbfe;box-shadow:var(--shadow-xl)">
           <div class="flex items-start gap-4" style="text-align:left;max-width:40rem">
             <div class="icon-box icon-box-sm icon-box-blue flex-shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              <img src="{{ $d.accessHybrid.icon }}" alt="{{ $d.accessHybrid.title }}" width="{{ $d.accessHybrid.iconWidth }}" height="{{ $d.accessHybrid.iconHeight }}" loading="lazy" />
             </div>
             <div>
-              <h4 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">Seamless Hybrid Access</h4>
-              <p style="font-size:.875rem;color:var(--color-gray-600)">
-                Your customers can connect from containerized microservices, serverless functions, traditional monoliths on VMs,
-                or external SaaS applications — all using standard database protocols. No special clients or SDKs required.
-              </p>
+              <h4 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem">{{ $d.accessHybrid.title }}</h4>
+              <p style="font-size:.875rem;color:var(--color-gray-600)">{{ $d.accessHybrid.description }}</p>
             </div>
           </div>
         </div>
@@ -465,46 +241,18 @@
         <p class="section-subtitle">Expand your portfolio with managed database services</p>
       </div>
       <div class="grid-auto grid-3">
-
+        {{ range $d.providers }}
         <div class="card card-lg" style="border-width:2px">
           <div class="icon-box icon-box-md icon-box-blue" style="margin-bottom:1.5rem">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            <img src="{{ .icon }}" alt="{{ .title }}" width="{{ .iconWidth }}" height="{{ .iconHeight }}" loading="lazy" />
           </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">Cloud Service Providers</h3>
-          <p style="color:var(--color-gray-600);margin-bottom:1rem">Add managed database services to your cloud platform and rival global hyperscalers</p>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Differentiate from AWS/Azure/GCP</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Complete data sovereignty</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Kubernetes-native advantage</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Multi-cloud capabilities</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Air-gapped deployment support</span></div>
+          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">{{ .title }}</h3>
+          <p style="color:var(--color-gray-600);margin-bottom:1rem">{{ .description }}</p>
+          {{ range .checks }}
+          <div class="check-item"><img src="/assets/images/icon/check-circle-green.svg" alt="check" width="20" height="20" loading="lazy" /><span>{{ . }}</span></div>
+          {{ end }}
         </div>
-
-        <div class="card card-lg" style="border-width:2px">
-          <div class="icon-box icon-box-md icon-box-blue" style="margin-bottom:1.5rem">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-          </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">Managed Service Providers</h3>
-          <p style="color:var(--color-gray-600);margin-bottom:1rem">Offer white-labeled DBaaS to enterprise clients with reduced operational burden</p>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Expand service portfolio</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Higher margin services</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Automated operations reduce costs</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Scale without adding headcount</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Focus on customer growth</span></div>
-        </div>
-
-        <div class="card card-lg" style="border-width:2px">
-          <div class="icon-box icon-box-md icon-box-blue" style="margin-bottom:1.5rem">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
-          </div>
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.75rem">System Integrators</h3>
-          <p style="color:var(--color-gray-600);margin-bottom:1rem">Provide branded database solutions with professional services upsell opportunities</p>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Recurring revenue model</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Professional services upsell</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Client retention tool</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Competitive advantage</span></div>
-          <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Multi-tenant governance</span></div>
-        </div>
-
+        {{ end }}
       </div>
     </div>
   </section>
@@ -517,59 +265,20 @@
         <p class="section-subtitle"><strong>Target Timeline:</strong> 30 days from signing to go-live (accelerable based on your readiness)</p>
       </div>
       <div class="grid-auto grid-2">
-
+        {{ range $d.timeline }}
         <div class="card card-lg card-bordered-green">
           <div class="flex items-start gap-4">
-            <div class="step-number">1</div>
+            <div class="step-number">{{ .step }}</div>
             <div class="flex-1">
               <div class="flex items-center gap-3" style="margin-bottom:.75rem">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
-                <h3 style="font-size:1.25rem;font-weight:700">Agreement &amp; Training</h3>
+                <img src="{{ .icon }}" alt="{{ .title }}" width="{{ .iconWidth }}" height="{{ .iconHeight }}" loading="lazy" />
+                <h3 style="font-size:1.25rem;font-weight:700">{{ .title }}</h3>
               </div>
-              <p style="color:var(--color-gray-600)">Final review and signing of Software Licence and Support Agreement. Joint kick-off meeting with comprehensive initial training.</p>
+              <p style="color:var(--color-gray-600)">{{ .description }}</p>
             </div>
           </div>
         </div>
-
-        <div class="card card-lg card-bordered-green">
-          <div class="flex items-start gap-4">
-            <div class="step-number">2</div>
-            <div class="flex-1">
-              <div class="flex items-center gap-3" style="margin-bottom:.75rem">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
-                <h3 style="font-size:1.25rem;font-weight:700">Deployment Progression</h3>
-              </div>
-              <p style="color:var(--color-gray-600)">Deploy on Dev → Staging → Production clusters with full support throughout the process.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card card-lg card-bordered-green">
-          <div class="flex items-start gap-4">
-            <div class="step-number">3</div>
-            <div class="flex-1">
-              <div class="flex items-center gap-3" style="margin-bottom:.75rem">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <h3 style="font-size:1.25rem;font-weight:700">Go-Live Confirmation</h3>
-              </div>
-              <p style="color:var(--color-gray-600)">Mutual confirmation of go-live date with readiness verification and final checks.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card card-lg card-bordered-green">
-          <div class="flex items-start gap-4">
-            <div class="step-number">4</div>
-            <div class="flex-1">
-              <div class="flex items-center gap-3" style="margin-bottom:.75rem">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-                <h3 style="font-size:1.25rem;font-weight:700">Production Launch</h3>
-              </div>
-              <p style="color:var(--color-gray-600)">24×7 support activation and production launch with defined SLAs.</p>
-            </div>
-          </div>
-        </div>
-
+        {{ end }}
       </div>
     </div>
   </section>
@@ -590,7 +299,7 @@
 
             <div class="flex flex-col" style="justify-content:center;gap:1.5rem">
               <div class="badge" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;backdrop-filter:blur(4px);width:fit-content">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7272E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="#7272E9"/><circle cx="17.5" cy="10.5" r=".5" fill="#7272E9"/><circle cx="8.5" cy="7.5" r=".5" fill="#7272E9"/><circle cx="6.5" cy="12.5" r=".5" fill="#7272E9"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+                <img src="{{ $d.ctaBadge.icon }}" alt="White-Label Ready" width="{{ $d.ctaBadge.iconWidth }}" height="{{ $d.ctaBadge.iconHeight }}" loading="lazy" />
                 White-Label Ready
               </div>
 
@@ -603,18 +312,12 @@
               </div>
 
               <div style="display:flex;flex-direction:column;gap:.625rem">
+                {{ range $d.ctaFeatures }}
                 <div class="flex items-center gap-3">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7272E9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="#7272E9"/><circle cx="17.5" cy="10.5" r=".5" fill="#7272E9"/><circle cx="8.5" cy="7.5" r=".5" fill="#7272E9"/><circle cx="6.5" cy="12.5" r=".5" fill="#7272E9"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-                  <span style="color:#fff;font-size:.875rem;font-weight:500">Complete branding control</span>
+                  <img src="{{ .icon }}" alt="{{ .text }}" width="{{ .iconWidth }}" height="{{ .iconHeight }}" loading="lazy" />
+                  <span style="color:#fff;font-size:.875rem;font-weight:500">{{ .text }}</span>
                 </div>
-                <div class="flex items-center gap-3">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7272E9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  <span style="color:#fff;font-size:.875rem;font-weight:500">Launch in 30 days</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7272E9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                  <span style="color:#fff;font-size:.875rem;font-weight:500">Data sovereignty guaranteed</span>
-                </div>
+                {{ end }}
               </div>
 
               <div class="flex flex-wrap gap-3" style="padding-top:.5rem">
@@ -631,34 +334,15 @@
 
             <div class="flex items-center justify-center">
               <div class="grid-auto grid-2" style="width:100%">
+                {{ range $d.ctaStats }}
                 <div class="cta-stat-card">
-                  <div class="icon-box icon-box-sm" style="background:linear-gradient(135deg,#60a5fa,#06b6d4);margin-bottom:.75rem">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <div class="icon-box icon-box-sm" style="background:{{ .gradient | safeCSS }}; margin-bottom:.75rem">
+                    <img src="{{ .icon }}" alt="{{ .label }}" width="{{ .iconWidth }}" height="{{ .iconHeight }}" loading="lazy" />
                   </div>
-                  <div class="cta-stat-value">30 Days</div>
-                  <div class="cta-stat-label">Time to Launch</div>
+                  <div class="cta-stat-value">{{ .value }}</div>
+                  <div class="cta-stat-label">{{ .label }}</div>
                 </div>
-                <div class="cta-stat-card">
-                  <div class="icon-box icon-box-sm" style="background:linear-gradient(135deg,#4ade80,#10b981);margin-bottom:.75rem">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
-                  </div>
-                  <div class="cta-stat-value">25+</div>
-                  <div class="cta-stat-label">DB Engines</div>
-                </div>
-                <div class="cta-stat-card">
-                  <div class="icon-box icon-box-sm" style="background:linear-gradient(135deg,#c084fc,#ec4899);margin-bottom:.75rem">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                  </div>
-                  <div class="cta-stat-value">24×7</div>
-                  <div class="cta-stat-label">Support</div>
-                </div>
-                <div class="cta-stat-card">
-                  <div class="icon-box icon-box-sm" style="background:linear-gradient(135deg,#fb923c,#ef4444);margin-bottom:.75rem">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-                  </div>
-                  <div class="cta-stat-value">Rapid</div>
-                  <div class="cta-stat-label">Go-Live</div>
-                </div>
+                {{ end }}
               </div>
             </div>
 

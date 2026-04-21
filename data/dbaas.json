@@ -1,0 +1,517 @@
+{
+  "hero": {
+    "badge": {
+      "id": "hero-badge",
+      "name": "Hero Badge",
+      "icon": "/assets/images/icon/dbaas/badge.svg",
+      "width": 16,
+      "height": 16
+    },
+    "kubedb_badge": {
+      "id": "kubedb-badge",
+      "name": "KubeDB Check",
+      "icon": "/assets/images/icon/dbaas/check-circle-outline.svg",
+      "width": 16,
+      "height": 16
+    }
+  },
+  "stats": [
+    {
+      "id": "stat-clock",
+      "name": "Clock Icon",
+      "icon": "/assets/images/icon/dbaas/clock.svg",
+      "width": 32,
+      "height": 32,
+      "value": "30 days",
+      "label": "Time to Launch"
+    },
+    {
+      "id": "stat-database",
+      "name": "Database Icon",
+      "icon": "/assets/images/icon/dbaas/database.svg",
+      "width": 32,
+      "height": 32,
+      "value": "25+",
+      "label": "Database Engines"
+    },
+    {
+      "id": "stat-shield",
+      "name": "Shield Icon",
+      "icon": "/assets/images/icon/dbaas/shield.svg",
+      "width": 32,
+      "height": 32,
+      "value": "24×7",
+      "label": "Support Level"
+    },
+    {
+      "id": "stat-target",
+      "name": "Target Icon",
+      "icon": "/assets/images/icon/dbaas/target.svg",
+      "width": 32,
+      "height": 32,
+      "value": "Rapid",
+      "label": "Target Go-Live"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "outcome-branding",
+      "name": "Lightbulb Icon",
+      "icon": "/assets/images/icon/dbaas/lightbulb.svg",
+      "width": 24,
+      "height": 24,
+      "boxClass": "icon-box-blue",
+      "title": "Complete Branding Control",
+      "description": "Full branding with data sovereignty and white-label control"
+    },
+    {
+      "id": "outcome-licensing",
+      "name": "Currency Icon",
+      "icon": "/assets/images/icon/dbaas/currency.svg",
+      "width": 24,
+      "height": 24,
+      "boxClass": "icon-box-green",
+      "title": "Usage-Based Licensing",
+      "description": "Predictable costs aligned to your revenue growth"
+    },
+    {
+      "id": "outcome-speed",
+      "name": "Lightning Icon",
+      "icon": "/assets/images/icon/dbaas/lightning.svg",
+      "width": 24,
+      "height": 24,
+      "boxClass": "icon-box-orange",
+      "title": "Fastest Time-to-Market",
+      "description": "30 days from signing to production go-live"
+    },
+    {
+      "id": "outcome-support",
+      "name": "Shield Icon",
+      "icon": "/assets/images/icon/dbaas/enterprise-shield.svg",
+      "width": 24,
+      "height": 24,
+      "boxClass": "icon-box-purple",
+      "title": "24×7 Enterprise Support",
+      "description": "Defined SLAs with comprehensive training included"
+    }
+  ],
+  "architecture": {
+    "image": "/assets/images/partners/amazon-eks-architecture.png",
+    "imageAlt": "KubeDB Platform Architecture — layered stack from infrastructure through Kubernetes distributions, services, KubeDB Operator components, and KubeDB Platform features",
+    "layers": [
+      {
+        "id": "arch-kubedb-platform",
+        "title": "KubeDB Platform",
+        "description": "Web Console, Envoy Gateway, Hub/Spoke Model, and Policy Engine for complete DBaaS management",
+        "gradient": "linear-gradient(135deg,#eff6ff,#ecfeff)",
+        "borderColor": "#bfdbfe"
+      },
+      {
+        "id": "arch-kubedb-operator",
+        "title": "KubeDB Operator",
+        "description": "Automated provisioning, operations, autoscaling, backup/restore, and database migration",
+        "gradient": "linear-gradient(135deg,#faf5ff,#fdf2f8)",
+        "borderColor": "#e9d5ff"
+      },
+      {
+        "id": "arch-k8s-services",
+        "title": "Kubernetes Services",
+        "description": "ArgoCD, Open Cluster Management, Cert Manager, Prometheus, and Grafana integration",
+        "gradient": "linear-gradient(135deg,#fff7ed,#fef2f2)",
+        "borderColor": "#fed7aa"
+      },
+      {
+        "id": "arch-k8s-platform",
+        "title": "Kubernetes Platform",
+        "description": "Support for OpenShift, Rancher, EKS, GKE, AKS, and any CNCF-certified Kubernetes",
+        "gradient": "linear-gradient(135deg,#ecfeff,#f0fdfa)",
+        "borderColor": "#a5f3fc"
+      },
+      {
+        "id": "arch-infrastructure",
+        "title": "Infrastructure",
+        "description": "Deploy on-premises, in the cloud, or at the edge with complete flexibility",
+        "gradient": "linear-gradient(135deg,#f0fdf4,#ecfdf5)",
+        "borderColor": "#a7f3d0"
+      }
+    ],
+    "infoBox": {
+      "icon": "/assets/images/icon/dbaas/settings.svg",
+      "iconWidth": 20,
+      "iconHeight": 20,
+      "title": "White-Labeled Self-Service UI + REST APIs",
+      "description": "Beautiful, fully branded self-service portal with complete REST APIs for native integration into your cloud console. No requirement to expose KubeDB Platform UI directly — integrate seamlessly into your existing customer experience."
+    }
+  },
+  "features": [
+    {
+      "id": "feature-provisioning",
+      "icon": "/assets/images/icon/dbaas/provisioning.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Provisioning & Lifecycle",
+      "description": "Instant self-service launch via web portal, CLI, API, kubectl. Fully automated lifecycle: provisioning, upgrades, scaling, failover, repair, halt/resume.",
+      "checks": [
+        "Self-service provisioning",
+        "Automated upgrades",
+        "Zero-downtime scaling",
+        "Halt & resume operations"
+      ]
+    },
+    {
+      "id": "feature-ha",
+      "icon": "/assets/images/icon/dbaas/ha-resilience.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "High Availability & Resilience",
+      "description": "Multi-AZ/multi-zone clustering with automatic failover and data replication. Continuous health checks with protection against accidental deletion.",
+      "checks": [
+        "Multi-AZ clustering",
+        "Auto failover",
+        "PodDisruptionBudgets",
+        "Deletion protection"
+      ]
+    },
+    {
+      "id": "feature-scaling",
+      "icon": "/assets/images/icon/dbaas/scaling-storage.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Scaling & Storage",
+      "description": "Horizontal and vertical scaling with zero downtime. Dynamic volume expansion with full history tracking including initial size, expansions, and timestamps.",
+      "checks": [
+        "Horizontal scaling",
+        "Vertical scaling",
+        "Dynamic volume expansion",
+        "Full history tracking"
+      ]
+    },
+    {
+      "id": "feature-backup",
+      "icon": "/assets/images/icon/dbaas/backup-disaster-recovery.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Backup & Disaster Recovery",
+      "description": "Policy-driven scheduled & on-demand backups to S3-compatible storage. Incremental, deduplicated, encrypted backups with snapshot lifecycle management.",
+      "checks": [
+        "Scheduled backups",
+        "Point-in-Time Recovery",
+        "One-click restore",
+        "S3-compatible storage"
+      ]
+    },
+    {
+      "id": "feature-monitoring",
+      "icon": "/assets/images/icon/dbaas/monitoring-observability.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Monitoring & Observability",
+      "description": "OpenTelemetry collectors for end-user monitoring. Metrics in Thanos, logs & tracing in ClickHouse. Tenant-isolated Grafana and Perses dashboards.",
+      "checks": [
+        "OpenTelemetry integration",
+        "Thanos metrics",
+        "ClickHouse logs",
+        "Tenant isolation"
+      ]
+    },
+    {
+      "id": "feature-security",
+      "icon": "/assets/images/icon/dbaas/security-compliance.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Security & Compliance",
+      "description": "Automated TLS/SSL via cert-manager. Transparent Data Encryption (TDE). RBAC, Pod Security Policies, Network Policies, Vault integration.",
+      "checks": [
+        "Automated TLS/SSL",
+        "Encryption at rest",
+        "RBAC & policies",
+        "Vault integration"
+      ]
+    }
+  ],
+  "billing": [
+    {
+      "id": "billing-realtime",
+      "icon": "/assets/images/icon/dbaas/metering-realtime.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Real-Time Metering API",
+      "description": "Access all required data with UTC timestamps"
+    },
+    {
+      "id": "billing-namespace",
+      "icon": "/assets/images/icon/dbaas/namespace-data.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Namespace Level Data",
+      "description": "Database type and tenant information"
+    },
+    {
+      "id": "billing-database",
+      "icon": "/assets/images/icon/dbaas/database-metrics.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Database Level Metrics",
+      "description": "Pod flavor (CPU/Memory), pod age, pod count (including autoscaling)"
+    },
+    {
+      "id": "billing-storage",
+      "icon": "/assets/images/icon/dbaas/storage-tracking.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Storage Tracking",
+      "description": "Volume name, initial size, expansion history (size + timestamp), creation/deletion timestamps"
+    },
+    {
+      "id": "billing-usage",
+      "icon": "/assets/images/icon/dbaas/usage-calculation.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Usage Calculation",
+      "description": "Sustained GiB RAM (730 hours/month) for accurate billing"
+    },
+    {
+      "id": "billing-integration",
+      "icon": "/assets/images/icon/dbaas/seamless-integration.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Seamless Integration",
+      "description": "RESTful and gRPC APIs for your billing platform"
+    }
+  ],
+  "access": [
+    {
+      "id": "access-k8s",
+      "icon": "/assets/images/icon/dbaas/inside-kubernetes.svg",
+      "iconWidth": 32,
+      "iconHeight": 32,
+      "title": "Inside Kubernetes",
+      "description": "Cloud-native applications running in the same K8s cluster",
+      "checks": [
+        {
+          "text": "Service discovery",
+          "icon": "/assets/images/icon/dbaas/check-circle-blue.svg"
+        },
+        {
+          "text": "ClusterIP access",
+          "icon": "/assets/images/icon/dbaas/check-circle-blue.svg"
+        },
+        {
+          "text": "Native K8s networking",
+          "icon": "/assets/images/icon/dbaas/check-circle-blue.svg"
+        },
+        {
+          "text": "Low-latency connections",
+          "icon": "/assets/images/icon/dbaas/check-circle-blue.svg"
+        }
+      ]
+    },
+    {
+      "id": "access-external",
+      "icon": "/assets/images/icon/dbaas/outside-kubernetes.svg",
+      "iconWidth": 32,
+      "iconHeight": 32,
+      "title": "Outside Kubernetes",
+      "description": "External applications via load balancers and ingress",
+      "checks": [
+        {
+          "text": "Load balancer IPs",
+          "icon": "/assets/images/icon/dbaas/check-circle-cyan.svg"
+        },
+        {
+          "text": "NodePort access",
+          "icon": "/assets/images/icon/dbaas/check-circle-cyan.svg"
+        },
+        {
+          "text": "Ingress controllers",
+          "icon": "/assets/images/icon/dbaas/check-circle-cyan.svg"
+        },
+        {
+          "text": "VPN connections",
+          "icon": "/assets/images/icon/dbaas/check-circle-cyan.svg"
+        }
+      ]
+    },
+    {
+      "id": "access-legacy",
+      "icon": "/assets/images/icon/dbaas/legacy-vm-applications.svg",
+      "iconWidth": 32,
+      "iconHeight": 32,
+      "title": "Legacy VM Applications",
+      "description": "Traditional applications running on virtual machines",
+      "checks": [
+        {
+          "text": "Standard database protocols",
+          "icon": "/assets/images/icon/dbaas/check-circle-green-20.svg"
+        },
+        {
+          "text": "No code changes required",
+          "icon": "/assets/images/icon/dbaas/check-circle-green-20.svg"
+        },
+        {
+          "text": "Hybrid cloud support",
+          "icon": "/assets/images/icon/dbaas/check-circle-green-20.svg"
+        },
+        {
+          "text": "Gradual migration path",
+          "icon": "/assets/images/icon/dbaas/check-circle-green-20.svg"
+        }
+      ]
+    }
+  ],
+  "accessHybrid": {
+    "icon": "/assets/images/icon/dbaas/sparkle-large.svg",
+    "iconWidth": 24,
+    "iconHeight": 24,
+    "title": "Seamless Hybrid Access",
+    "description": "Your customers can connect from containerized microservices, serverless functions, traditional monoliths on VMs, or external SaaS applications — all using standard database protocols. No special clients or SDKs required."
+  },
+  "providers": [
+    {
+      "id": "provider-csp",
+      "icon": "/assets/images/icon/dbaas/cloud-service-providers.svg",
+      "iconWidth": 28,
+      "iconHeight": 28,
+      "title": "Cloud Service Providers",
+      "description": "Add managed database services to your cloud platform and rival global hyperscalers",
+      "checks": [
+        "Differentiate from AWS/Azure/GCP",
+        "Complete data sovereignty",
+        "Kubernetes-native advantage",
+        "Multi-cloud capabilities",
+        "Air-gapped deployment support"
+      ]
+    },
+    {
+      "id": "provider-msp",
+      "icon": "/assets/images/icon/dbaas/managed-service-providers.svg",
+      "iconWidth": 28,
+      "iconHeight": 28,
+      "title": "Managed Service Providers",
+      "description": "Offer white-labeled DBaaS to enterprise clients with reduced operational burden",
+      "checks": [
+        "Expand service portfolio",
+        "Higher margin services",
+        "Automated operations reduce costs",
+        "Scale without adding headcount",
+        "Focus on customer growth"
+      ]
+    },
+    {
+      "id": "provider-si",
+      "icon": "/assets/images/icon/dbaas/system-integrators.svg",
+      "iconWidth": 28,
+      "iconHeight": 28,
+      "title": "System Integrators",
+      "description": "Provide branded database solutions with professional services upsell opportunities",
+      "checks": [
+        "Recurring revenue model",
+        "Professional services upsell",
+        "Client retention tool",
+        "Competitive advantage",
+        "Multi-tenant governance"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "timeline-1",
+      "step": "1",
+      "icon": "/assets/images/icon/dbaas/timeline-agreement.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Agreement & Training",
+      "description": "Final review and signing of Software Licence and Support Agreement. Joint kick-off meeting with comprehensive initial training."
+    },
+    {
+      "id": "timeline-2",
+      "step": "2",
+      "icon": "/assets/images/icon/dbaas/timeline-deployment.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Deployment Progression",
+      "description": "Deploy on Dev → Staging → Production clusters with full support throughout the process."
+    },
+    {
+      "id": "timeline-3",
+      "step": "3",
+      "icon": "/assets/images/icon/dbaas/timeline-golive.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Go-Live Confirmation",
+      "description": "Mutual confirmation of go-live date with readiness verification and final checks."
+    },
+    {
+      "id": "timeline-4",
+      "step": "4",
+      "icon": "/assets/images/icon/dbaas/timeline-production.svg",
+      "iconWidth": 24,
+      "iconHeight": 24,
+      "title": "Production Launch",
+      "description": "24×7 support activation and production launch with defined SLAs."
+    }
+  ],
+  "ctaBadge": {
+    "icon": "/assets/images/icon/dbaas/sparkle-small.svg",
+    "iconWidth": 14,
+    "iconHeight": 14
+  },
+  "ctaFeatures": [
+    {
+      "icon": "/assets/images/icon/dbaas/cta-checkmark.svg",
+      "iconWidth": 16,
+      "iconHeight": 16,
+      "text": "Complete branding control"
+    },
+    {
+      "icon": "/assets/images/icon/dbaas/cta-clock.svg",
+      "iconWidth": 16,
+      "iconHeight": 16,
+      "text": "Launch in 30 days"
+    },
+    {
+      "icon": "/assets/images/icon/dbaas/cta-shield.svg",
+      "iconWidth": 16,
+      "iconHeight": 16,
+      "text": "Data sovereignty guaranteed"
+    }
+  ],
+  "ctaStats": [
+    {
+      "id": "cta-stat-time",
+      "icon": "/assets/images/icon/dbaas/cta-stat-clock.svg",
+      "iconWidth": 20,
+      "iconHeight": 20,
+      "gradient": "linear-gradient(135deg,#60a5fa,#06b6d4)",
+      "value": "30 Days",
+      "label": "Time to Launch"
+    },
+    {
+      "id": "cta-stat-engines",
+      "icon": "/assets/images/icon/dbaas/cta-stat-database.svg",
+      "iconWidth": 20,
+      "iconHeight": 20,
+      "gradient": "linear-gradient(135deg,#4ade80,#10b981)",
+      "value": "25+",
+      "label": "DB Engines"
+    },
+    {
+      "id": "cta-stat-support",
+      "icon": "/assets/images/icon/dbaas/cta-stat-shield.svg",
+      "iconWidth": 20,
+      "iconHeight": 20,
+      "gradient": "linear-gradient(135deg,#c084fc,#ec4899)",
+      "value": "24×7",
+      "label": "Support"
+    },
+    {
+      "id": "cta-stat-golive",
+      "icon": "/assets/images/icon/dbaas/cta-stat-trending.svg",
+      "iconWidth": 20,
+      "iconHeight": 20,
+      "gradient": "linear-gradient(135deg,#fb923c,#ef4444)",
+      "value": "Rapid",
+      "label": "Go-Live"
+    }
+  ]
+}
