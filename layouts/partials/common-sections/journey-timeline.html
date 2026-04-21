@@ -1,5 +1,5 @@
 {{ $data := . }}
-{{ $steps := $data.timeline | default $data.workflow_steps | default $data.how_it_works }}
+{{ $steps := $data.timeline | default $data.workflow_steps | default $data.deployment_process | default $data.how_it_works }}
 <!-- Premium Journey / Workflow Timeline Component -->
 {{ with $steps }}
 <section class="section-padding has-background-white cs-journey-section">
@@ -7,12 +7,12 @@
     <div class="section-header mb-16">
       <div class="badge">
         <iconify-icon icon="lucide:route" width="16" height="16" class="has-text-secondary"></iconify-icon>
-        <span class="badge-text">{{ $data.timeline_badge | default $data.workflow_badge | default $data.how_it_works_badge | default "The Process" }}</span>
+        <span class="badge-text">{{ $data.timeline_badge | default $data.workflow_badge | default $data.deployment_process_badge | default $data.how_it_works_badge | default "The Process" }}</span>
       </div>
       <h2 class="section-header-title has-text-heading has-text-weight-black">
-        {{ $data.timeline_title | default $data.workflow_title | default $data.how_it_works_title | default "How It Works" }}
+        {{ $data.timeline_title | default $data.workflow_title | default $data.deployment_process_title | default $data.how_it_works_title | default "How It Works" }}
       </h2>
-      {{ with ($data.timeline_description | default $data.workflow_subtitle | default $data.how_it_works_subtitle) }}
+      {{ with ($data.timeline_description | default $data.workflow_subtitle | default $data.deployment_process_subtitle | default $data.how_it_works_subtitle) }}
       <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ . | safeHTML }}</p>
       {{ end }}
     </div>
