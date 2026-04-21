@@ -1,0 +1,40 @@
+{{ $data := . }}
+{{ $steps := $data.timeline | default $data.workflow_steps | default $data.deployment_process | default $data.how_it_works }}
+<!-- Premium Journey / Workflow Timeline Component -->
+{{ with $steps }}
+<section class="section-padding has-background-white cs-journey-section">
+  <div class="container">
+    <div class="section-header mb-16">
+      <div class="badge">
+        <iconify-icon icon="lucide:route" width="16" height="16" class="has-text-secondary"></iconify-icon>
+        <span class="badge-text">{{ $data.timeline_badge | default $data.workflow_badge | default $data.deployment_process_badge | default $data.how_it_works_badge | default "The Process" }}</span>
+      </div>
+      <h2 class="section-header-title has-text-heading has-text-weight-black">
+        {{ $data.timeline_title | default $data.workflow_title | default $data.deployment_process_title | default $data.how_it_works_title | default "How It Works" }}
+      </h2>
+      {{ with ($data.timeline_description | default $data.workflow_subtitle | default $data.deployment_process_subtitle | default $data.how_it_works_subtitle) }}
+      <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ . | safeHTML }}</p>
+      {{ end }}
+    </div>
+
+    <div class="cs-journey-wrapper">
+      <div class="cs-journey-steps">
+        {{ range $i, $step := . }}
+        <div class="cs-journey-step">
+          <div class="cs-journey-node-wrap">
+            <div class="cs-journey-node">{{ .step | default (add $i 1) }}</div>
+          </div>
+          <div class="cs-journey-period is-uppercase has-text-weight-bold has-tracking-wider is-size-7 has-text-grey-400 mb-4">
+            {{ .period | default (printf "Step %v" (.step | default (add $i 1))) }}
+          </div>
+          <div class="ac-journey-card cs-journey-card ds-card-base p-6 has-hover-lift has-transition">
+            <h4 class="has-text-centered has-text-heading has-text-weight-bold is-size-5 mb-2">{{ .title }}</h4>
+            <p class="has-text-centered is-size-6 has-text-grey-500 mb-0 has-line-height-relaxed">{{ (.description | default .desc) | safeHTML }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

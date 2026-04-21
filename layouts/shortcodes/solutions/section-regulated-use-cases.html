@@ -1,0 +1,54 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := index .Site.Data.products.kubedb.solutions $data_id }}
+{{ if not $data }}
+  {{ if (findRE "/" $data_id) }}
+    {{ $parts := split $data_id "/" }}
+    {{ $scope := .Site.Data.products.kubedb }}
+    {{ range $parts }}{{ if $scope }}{{ $scope = index $scope . }}{{ end }}{{ end }}
+    {{ $data = $scope }}
+  {{ end }}
+{{ end }}
+{{ if $data.regulated_use_cases }}
+<section class="home-section section-padding" style="background: linear-gradient(135deg, #faf5ff, #eef2ff);">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.regulated_use_cases_title | default "Industry Use Cases")
+      "subtitle" ($data.regulated_use_cases_subtitle | default "Trusted by organizations with the highest security requirements")
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range $data.regulated_use_cases }}
+      <div class="column is-6-desktop">
+        <div class="ds-card-base has-background-white p-8 is-radius-2xlarge is-fullheight has-border has-hover-lift has-hover-shadow-medium transition-all">
+          <div class="is-flex is-align-items-start has-gap-4 mb-5">
+            <div class="is-flex is-align-items-center is-justify-content-center is-radius-xlarge has-background-primary shadow-sm" style="width: 56px; height: 56px; background: linear-gradient(135deg, #7c3aed, #9333ea) !important;">
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="28" height="28" class="has-text-white"></iconify-icon>
+            </div>
+            <div>
+              <h3 class="is-size-4 has-text-weight-black has-text-grey-900 mb-2">{{ .title }}</h3>
+              <p class="is-size-6 has-text-grey-500 has-line-height-relaxed">{{ .description }}</p>
+            </div>
+          </div>
+
+          {{ if .requirements }}
+          <div class="ml-18">
+            <div class="is-size-6 has-text-weight-bold has-text-grey-800 mb-3">Key Requirements:</div>
+            <div class="is-flex is-flex-direction-column has-gap-2">
+              {{ range .requirements }}
+              <div class="is-flex is-align-items-center has-gap-3">
+                <iconify-icon icon="lucide:check-circle-2" width="20" class="has-text-success"></iconify-icon>
+                <span class="is-size-6 has-text-grey-700">{{ . }}</span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
