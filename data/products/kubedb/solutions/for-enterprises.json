@@ -12,14 +12,15 @@
   "secondary_action_text": "See Demo",
   "secondary_action_url": "/docs/v2026.1.19/welcome/",
   "product_icon": "lucide:users",
+  "hero_best_with_items": ["KubeDB Operator", "KubeDB Platform"],
   "stats": [
     { "label": "Faster Provisioning", "value": "10x" },
     { "label": "Reduction in Tickets", "value": "90%" },
     { "label": "Deploy Time", "value": "<5 min" },
     { "label": "Team Satisfaction", "value": "98%" }
   ],
-  "when_to_use_title": "Why Self-Service DBaaS?",
-  "when_to_use_subtitle": "Accelerate innovation while maintaining control across your entire organization.",
+  "when_to_use_subtitle": "Why Self-Service DBaaS?",
+  "when_to_use_description": "Accelerate innovation while maintaining control",
   "when_to_use": [
     {
       "icon": "lucide:zap",
@@ -229,7 +230,8 @@
       "icon": "lucide:users"
     }
   ],
-  "cta_title": "Empower Developers.<br><span style='color: #818cf8;'>Control for Platform Teams.</span>",
+  "cta_title": "Empower Developers.",
+  "cta_title_gradient": "Control for Platform Teams.",
   "cta_description": "Build an internal DBaaS that developers love and platform teams trust.",
   "cta_button_text": "Start Free Trial",
   "cta_button_url": "/kubernetes/databases/run-and-manage-kubedb-on-kubernetes/",

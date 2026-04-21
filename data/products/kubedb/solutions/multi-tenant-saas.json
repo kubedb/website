@@ -28,6 +28,7 @@
     "final_cta"
   ],
 
+  "when_to_use_badge": "The multi-tenant challenge",
   "when_to_use_title": "The multi-tenant challenge",
   "when_to_use_subtitle": "Modern enterprises need databases that scale with tenants — not against them.",
   "when_to_use_description": "Platform teams are stuck choosing between hyperscaler lock-in or painful manual Kubernetes operations. Developers wait weeks for databases while security teams lose sleep over isolation.",
@@ -143,7 +144,7 @@
 
   "cta_badge": "Multi-Tenant Ready",
   "cta_title": "Scale Your SaaS",
-  "cta_title_gradient": "With Every Tenant",
+  "cta_title_gradient": "<br/>With Every Tenant",
   "cta_description": "Deliver secure, isolated databases to thousands of tenants on Kubernetes",
   "cta_checklist": [
     "Tenant isolation & security",

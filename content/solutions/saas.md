@@ -11,12 +11,8 @@ data_id: multi-tenant-saas
 {{< solutions/challenge-cards >}}
 {{< solutions/feature-numbered-list >}}
 {{< solutions/comparison-table >}}
+{{< solutions/feature-grid-capabilities >}}
 {{< solutions/section-databases >}}
 {{< solutions/section-testimonial >}}
-{{< solutions/comparison-check-grid >}}
-{{< solutions/feature-grid-scale >}}
-{{< solutions/feature-grid-capabilities >}}
-{{< solutions/feature-grid-standard >}}
-{{< solutions/section-faq >}}
 {{< solutions/cta-bottom >}}
 

@@ -16,7 +16,7 @@
 
             <h2 class="cta-title">
               {{ $data.cta_title | default "Ready to Modernize Your <br>Data Management?" | safeHTML }}
-              <span class="cta-title-gradient">{{ $data.cta_title_gradient }}</span>
+              <span class="cta-title-gradient">{{ $data.cta_title_gradient | safeHTML }}</span>
             </h2>
             <p class="cta-desc mb-4 has-text-white has-opacity-80">{{ $data.cta_description | default "Join thousands of teams running production-grade databases on Kubernetes with KubeDB." | safeHTML }}</p>
 

@@ -14,9 +14,9 @@
 <section class="home-section section-padding has-background-white">
   <div class="container">
     {{ partial "common-sections/section-header.html" (dict
-      "badge_text" ($data.when_to_use_title | default "The multi-tenant challenge")
-      "title" $data.when_to_use_subtitle
-      "subtitle" $data.when_to_use_description
+      "badge_text" $data.when_to_use_badge
+      "title" ($data.when_to_use_subtitle | default $data.when_to_use_title)
+      "subtitle" ($data.when_to_use_description | default $data.when_to_use_subtitle2)
       "align" "center"
       "class" "mb-12"
     ) }}

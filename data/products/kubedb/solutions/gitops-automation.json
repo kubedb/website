@@ -75,8 +75,8 @@
       "result": "Result: Clean separation, no spec fights, auditable operations, single source of truth in Git"
     }
   },
-  "when_to_use_title": "GitOps Features",
-  "when_to_use_subtitle": "Built from the ground up for declarative infrastructure and conflict-free reconciliation.",
+  "when_to_use_subtitle": "GitOps Features",
+  "when_to_use_description": "Built from the ground up for declarative infrastructure and conflict-free reconciliation.",
   "when_to_use": [
     {
       "icon": "lucide:git-branch",

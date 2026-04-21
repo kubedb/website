@@ -39,13 +39,22 @@
         {{ end }}
       </p>
 
-      {{ if $data.hero_best_with }}
-      <div class="is-flex is-align-items-center is-justify-content-center has-gap-2 mb-10">
+      {{ if or $data.hero_best_with $data.hero_best_with_items }}
+      <div class="is-flex is-align-items-center is-justify-content-center has-gap-2 mb-10 is-flex-wrap-wrap">
         <span class="is-size-7 has-text-grey-500 font-semibold subtitle-font">Best with:</span>
+        {{ if $data.hero_best_with_items }}
+          {{ range $data.hero_best_with_items }}
+          <div class="inline-flex is-align-items-center has-gap-2 px-4 py-1.5 is-radius-full badge-success-soft">
+            <iconify-icon icon="lucide:check-circle-2" class="has-text-success" width="16" height="16"></iconify-icon>
+            <span class="is-size-7 font-bold">{{ . }}</span>
+          </div>
+          {{ end }}
+        {{ else }}
         <div class="inline-flex is-align-items-center has-gap-2 px-4 py-1.5 is-radius-full badge-success-soft">
           <iconify-icon icon="lucide:check-circle-2" class="has-text-success" width="16" height="16"></iconify-icon>
           <span class="is-size-7 font-bold">{{ $data.hero_best_with }}</span>
         </div>
+        {{ end }}
       </div>
       {{ end }}
     </div>
