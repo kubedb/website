@@ -239,7 +239,7 @@
     }
   ],
   "comparison_title": "Operator vs Platform: What's the Difference?",
-  "comparison_subtitle": "KubeDB Operator provides database automation inside a single cluster, while KubeDB Platform extends this into a centralized DBaaS.",
+  "comparison_subtitle": "KubeDB Operator provides database automation inside a single cluster, while KubeDB Platform extends this into a centralized DBaaS across clusters, teams and environments.",
   "comparison_analogy": "The Operator is the engine. The Platform is the car.",
   "comparison_table": {
     "headers": [
@@ -287,6 +287,16 @@
         "Use case",
         "Run databases",
         "Deliver DBaaS"
+      ],
+      [
+        "Branding",
+        "Use as KubeDB or internal tool",
+        "Complete white-labeling"
+      ],
+      [
+        "Monetization",
+        "Internal cost allocation",
+        "Full billing & metering system"
       ]
     ]
   },
