@@ -1,52 +1,715 @@
 {{ define "main" }}
-<div class="ac-ui">
-<section class="hero-area is-product is-dark has-image-bg is-feature" style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);">
-	<div class="shape">
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-	</div>
-	<div class="shape">
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-	</div>
-	<div class="container">
-		<div class="columns has-text-centered is-centered is-vcentered is-multiline">
-			<div class="column is-8 is-centered is-full-touch">
-				<h1>{{ .Title }}</h1>
-				{{ with .Params.description }}<p>{{ . }}</p>{{ end }}
-			</div>
-		</div>
-	</div>
-</section>
+{{ $partnerName := .Title }}
+{{ if hasPrefix $partnerName "Run KubeDB on " }}
+  {{ $partnerName = strings.TrimPrefix "Run KubeDB on " $partnerName }}
+{{ end }}
 
-<section class="article-details-area">
-	<div class="container">
-		<div class="columns is-centered">
-			<div class="column is-9">
-				<div class="full-info content">
-					<div class="content-body">
-						{{ .Content }}
-                        
+{{ $heroTitle := printf "Run Any Database Natively on %s -" $partnerName }}
+{{ $heroHighlight := "Without the Compromise." }}
+{{ $heroDescription := default .Params.hero_description .Params.description }}
+{{ $heroBadge := default .Params.hero_badge "Technology Partner" }}
+{{ $primaryCTA := default .Params.primary_cta_text "Start Free Trial" }}
+{{ $primaryCTAURL := default .Params.primary_cta_url "/docs/latest/setup/" }}
+{{ $secondaryCTA := default .Params.secondary_cta_text "Contact Sales" }}
+{{ $secondaryCTAURL := default .Params.secondary_cta_url "https://appscode.com/contact/" }}
+{{ $defaultProofPoints := slice
+  (dict "title" "25+ Database Engines" "text" "PostgreSQL, MySQL, Redis, Kafka & more")
+  (dict "title" "Level 5 Operator" "text" "Day-2 operations on auto pilot")
+  (dict "title" "100% GitOps Native" "text" "Declarative and developer-friendly")
+}}
+{{ $proofPoints := default .Params.proof_points $defaultProofPoints }}
+{{ $storyTitle := default .Params.story_title (printf "What This Means for %s Users" $partnerName) }}
+{{ $architecture := .Params.architecture }}
+{{ $featuresSection := .Params.features_section }}
+{{ $databaseSupport := .Params.database_support }}
+{{ $integrations := .Params.integrations }}
+{{ $additionalIntegrations := .Params.additional_integrations }}
+{{ $costEffective := .Params.cost_effective }}
+{{ $comparison := .Params.comparison }}
+{{ $benefitBlocks := .Params.benefit_blocks }}
+{{ $savingsCta := .Params.savings_cta }}
+{{ $industries := .Params.industries }}
+{{ $testimonial := .Params.testimonial }}
+{{ $gettingStarted := .Params.getting_started }}
+{{ $finalCta := .Params.final_cta }}
+{{ $rawContent := replaceRE "\r\n" "\n" .RawContent }}
+{{ $contentParts := split $rawContent "\n\n" }}
+{{ $introMarkdown := "" }}
+{{ $bodyMarkdown := "" }}
+{{ $storyLeadMarkdown := "" }}
+{{ $storyListItems := slice }}
+{{ if gt (len $contentParts) 0 }}
+  {{ $introMarkdown = index $contentParts 0 }}
+{{ end }}
+{{ if gt (len $contentParts) 1 }}
+  {{ $bodyMarkdown = delimit (after 1 $contentParts) "\n\n" }}
+{{ end }}
+{{ if $bodyMarkdown }}
+  {{ $bodySegments := split $bodyMarkdown "\n- " }}
+  {{ if gt (len $bodySegments) 0 }}
+    {{ $storyLeadMarkdown = trim (index $bodySegments 0) " \n\r\t" }}
+  {{ end }}
+  {{ if gt (len $bodySegments) 1 }}
+    {{ range after 1 $bodySegments }}
+      {{ $storyListItems = $storyListItems | append (trim . " \n\r\t") }}
+    {{ end }}
+  {{ end }}
+{{ end }}
 
-                       <div class="is-fullwidth">
-                         <button class="button ac-button is-primary width-200 mx-auto">STATIC BUTTON</button>
-                       </div>
+<div class="ac-ui partner-single-page">
+  <section class="home-hero">
+    <div class="home-hero-bg">
+      <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
+      <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
+      <div class="hero-shapes-tr">
+        <div class="hero-shape-ring"></div>
+        <div class="hero-shape-square"></div>
+        <div class="hero-shape-blob"></div>
+      </div>
+      <div class="hero-shapes-bl">
+        <div class="hero-shape-diamond"></div>
+        <div class="hero-shape-rect"></div>
+        <div class="hero-shape-dot"></div>
+      </div>
+      <div class="hero-orb-center-a"></div>
+      <div class="hero-orb-center-b"></div>
+      <div class="hero-orb-center-c"></div>
+    </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+    <div class="container home-hero-container">
+      <div class="badge badge-primary mb-5">
+        <iconify-icon icon="lucide:badge-check" width="16" height="16"></iconify-icon>
+        <span>{{ $heroBadge }}</span>
+      </div>
+
+      <h1 class="home-hero-title">
+        <span class="home-hero-title-line1">
+          <span class="home-hero-title-plain">{{ $heroTitle }}</span>
+        </span>
+        <span class="home-hero-title-line1">
+          <span class="home-hero-title-gradient text-gradient">{{ $heroHighlight }}</span>
+        </span>
+      </h1>
+
+      {{ with $heroDescription }}
+      <p class="home-hero-desc">{{ . | safeHTML }}</p>
+      {{ end }}
+
+      <div class="buttons is-centered home-hero-ctas ds-button-group has-gap-4 mb-8">
+        <a href="{{ $primaryCTAURL }}" class="button ac-button is-primary">
+          {{ $primaryCTA }}
+          <iconify-icon icon="heroicons:arrow-right" width="18" height="18"></iconify-icon>
+        </a>
+        <a href="{{ $secondaryCTAURL }}" class="button ac-button is-primary">
+          {{ $secondaryCTA }}
+        </a>
+      </div>
+
+      <div class="columns is-multiline is-centered mt-6">
+        {{ range $proofPoints }}
+        <div class="column is-4-desktop is-6-tablet">
+          <div class="is-flex is-flex-direction-column is-align-items-center has-text-centered px-4 py-2">
+            <iconify-icon icon="lucide:circle-check-big" width="22" height="22" class="has-text-primary mb-3"></iconify-icon>
+            <div class="has-text-heading is-text-base has-text-weight-extrabold has-line-height-tight">{{ .title }}</div>
+            <div class="has-text-body is-text-base has-line-height-snug">{{ .text }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-section-white pt-0">
+    <div class="container">
+      {{ with $introMarkdown }}
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet">
+          <div class="content has-text-centered mb-12">
+            {{ . | markdownify | safeHTML }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet">
+          <div class="ds-card-base is-radius-2xlarge p-8">
+            <div class="section-header mb-8 is-flex is-flex-direction-column is-align-items-flex-start has-text-left">
+              <h2 class="section-header-title has-text-heading has-text-weight-black mb-0">{{ $storyTitle }}</h2>
+            </div>
+
+            {{ with $storyLeadMarkdown }}
+            <div class="content mb-8">
+              {{ . | markdownify | safeHTML }}
+            </div>
+            {{ end }}
+
+            {{ if gt (len $storyListItems) 0 }}
+            <div class="columns is-multiline">
+              {{ range $index, $item := $storyListItems }}
+              <div class="column is-6-tablet is-3-desktop">
+                <div class="is-flex has-gap-4 partner-value-item">
+                  <div class="partner-value-icon">
+                    {{ if eq (mod $index 4) 0 }}
+                    <iconify-icon icon="heroicons:bolt" width="22" height="22"></iconify-icon>
+                    {{ else if eq (mod $index 4) 1 }}
+                    <iconify-icon icon="heroicons:arrow-trending-up" width="22" height="22"></iconify-icon>
+                    {{ else if eq (mod $index 4) 2 }}
+                    <iconify-icon icon="heroicons:circle-stack" width="22" height="22"></iconify-icon>
+                    {{ else }}
+                    <iconify-icon icon="heroicons:globe-alt" width="22" height="22"></iconify-icon>
+                    {{ end }}
+                  </div>
+                  <div class="is-text-base has-text-body">{{ $item | markdownify | safeHTML }}</div>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ with $architecture }}
+  <section class="home-section home-section-white pt-0">
+    <div class="container">
+      <div class="columns is-vcentered is-variable is-8">
+        <div class="column is-5-desktop">
+          {{ with .badge }}
+          <div class="badge badge-primary mb-5"><span>{{ . }}</span></div>
+          {{ end }}
+          {{ with .title }}
+          <h2 class="section-header-title has-text-heading has-text-weight-black mb-5">{{ . }}</h2>
+          {{ end }}
+          {{ with .description }}
+          <div class="content mb-6">
+            {{ . | markdownify | safeHTML }}
+          </div>
+          {{ end }}
+          {{ with .layers }}
+            {{ range $i, $layer := first 4 . }}
+            <div class="columns is-mobile is-vcentered mb-4 partner-layer-row">
+              <div class="column is-5">
+                <div class="badge partner-layer-badge is-fullwidth partner-layer-badge-{{ mod $i 4 }}"><span>{{ .label }}</span></div>
+              </div>
+              <div class="column is-7 has-text-body partner-layer-details">
+                {{ .details }}
+              </div>
+            </div>
+            {{ end }}
+          {{ end }}
+        </div>
+
+        <div class="column is-7-desktop">
+          <div class="ds-card-base is-radius-2xlarge p-6">
+            {{ with .image }}
+            <img src="{{ . }}" alt="{{ $.Params.architecture.title | default "Technical Architecture" }}" class="is-fullwidth">
+            {{ else }}
+            {{ with .layers }}
+            <div class="content">
+              {{ range . }}
+              <p><strong>{{ .label }}</strong>: {{ .details }}</p>
+              {{ end }}
+            </div>
+            {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $featuresSection }}
+  <section class="home-section home-section-white pt-0 partner-features-section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet has-text-centered">
+          {{ with .title }}
+          <h2 class="section-header-title has-text-heading has-text-weight-black mb-4">{{ . }}</h2>
+          {{ end }}
+          {{ with .subtitle }}
+          <p class="has-text-body is-text-base mb-10">{{ . }}</p>
+          {{ end }}
+        </div>
+      </div>
+
+      {{ with .items }}
+      <div class="columns is-multiline is-variable is-6">
+        {{ range $i, $item := . }}
+        <div class="column is-4-desktop is-6-tablet">
+          <div class="ds-card-base is-radius-xlarge p-6 partner-feature-card is-flex is-flex-direction-column has-gap-4 is-fullheight">
+            <div class="partner-feature-icon {{ if lt $i 3 }}is-filled{{ else }}is-outline{{ end }}">
+              <iconify-icon {{ printf `icon="%s"` (.icon | default "heroicons:sparkles") | safeHTMLAttr }} width="22" height="22"></iconify-icon>
+            </div>
+            <div>
+              <h3 class="has-text-heading has-text-weight-extrabold mb-2 partner-feature-title">{{ .title }}</h3>
+              <p class="has-text-body partner-feature-desc">{{ .description | safeHTML }}</p>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $databaseSupport }}
+  <section class="home-section home-section-white pt-0 partner-dbsupport-section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet">
+          <div class="ds-card-base is-radius-2xlarge partner-dbsupport-card">
+            <div class="partner-dbsupport-header">
+              {{ with .title }}
+              <h2 class="partner-dbsupport-title">{{ . }}</h2>
+              {{ end }}
+              {{ with .subtitle }}
+              <p class="partner-dbsupport-subtitle">{{ . }}</p>
+              {{ end }}
+            </div>
+            {{ with .categories }}
+            <div class="partner-dbsupport-body">
+              {{ range . }}
+              <div class="columns is-mobile is-vcentered partner-dbsupport-row">
+                <div class="column is-4-tablet is-5-mobile">
+                  <span class="badge partner-dbsupport-badge">{{ .label }}</span>
+                </div>
+                <div class="column is-8-tablet is-7-mobile has-text-body partner-dbsupport-items">
+                  {{ .items }}
+                </div>
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $integrations }}
+  <section class="home-section home-section-white pt-0 partner-integrations-section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet has-text-centered">
+          {{ with .title }}
+          <h2 class="section-header-title has-text-heading has-text-weight-black mb-4">{{ . }}</h2>
+          {{ end }}
+          {{ with .subtitle }}
+          <p class="has-text-body is-text-base mb-10">{{ . }}</p>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="columns is-vcentered is-variable is-8">
+        <div class="column is-6-desktop">
+          {{ with .items }}
+          {{ range $i, $item := . }}
+          <div class="partner-integration-card partner-integration-card-{{ mod $i 5 }} mb-4">
+            <div class="partner-integration-icon partner-integration-icon-{{ mod $i 5 }}">
+              <iconify-icon {{ printf `icon="%s"` (.icon | default "heroicons:sparkles") | safeHTMLAttr }} width="22" height="22"></iconify-icon>
+            </div>
+            <div class="partner-integration-body">
+              <h3 class="partner-integration-title">{{ .title }}</h3>
+              <p class="partner-integration-desc">{{ .description | safeHTML }}</p>
+            </div>
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+
+        <div class="column is-6-desktop">
+          {{ with .image }}
+          <div class="partner-integration-image-wrap">
+            <img src="{{ . }}" alt="{{ $.Params.integrations.title | default "Integration" }}" class="partner-integration-image">
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $additionalIntegrations }}
+  <section class="home-section home-section-white pt-0 partner-addons-section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet">
+          <div class="ds-card-base is-radius-2xlarge p-8 partner-addons-card">
+            {{ with .title }}
+            <h2 class="section-header-title has-text-heading has-text-weight-black has-text-centered mb-8">{{ . }}</h2>
+            {{ end }}
+            {{ with .items }}
+            <div class="columns is-multiline is-variable is-4">
+              {{ range . }}
+              <div class="column is-3-desktop is-6-tablet">
+                <div class="partner-addon-tile">
+                  <div class="partner-addon-icon">
+                    <iconify-icon {{ printf `icon="%s"` (.icon | default "heroicons:sparkles") | safeHTMLAttr }} width="22" height="22"></iconify-icon>
+                  </div>
+                  <h4 class="partner-addon-title">{{ .title }}</h4>
+                  <p class="partner-addon-desc">{{ .description | safeHTML }}</p>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+    {{ with $costEffective }}
+  <section class="home-section home-section-white pt-0 partner-cost-section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet">
+          {{ with .badge }}
+          <div class="has-text-centered mb-5">
+            <span class="partner-cost-badge">
+              <iconify-icon icon="heroicons:sparkles" width="16" height="16"></iconify-icon>
+              <span>{{ . }}</span>
+            </span>
+          </div>
+          {{ end }}
+          {{ with .title }}
+          <h2 class="section-header-title has-text-heading has-text-weight-black has-text-centered mb-4">{{ . }}</h2>
+          {{ end }}
+          {{ with .subtitle }}
+          <p class="section-header-desc has-text-centered mb-8">{{ . | safeHTML }}</p>
+          {{ end }}
+          {{ with .items }}
+          <div class="columns is-multiline is-variable is-5">
+            {{ range . }}
+            <div class="column is-6-desktop is-12-tablet">
+              <div class="partner-cost-card">
+                <div class="partner-cost-card-head">
+                  <span class="partner-cost-check">
+                    <iconify-icon {{ printf `icon="%s"` (.icon | default "heroicons:check-circle") | safeHTMLAttr }} width="22" height="22"></iconify-icon>
+                  </span>
+                  <div>
+                    <h4 class="partner-cost-title">{{ .title }}</h4>
+                    <p class="partner-cost-desc">{{ .description | safeHTML }}</p>
+                  </div>
+                </div>
+                {{ with .highlight }}
+                <span class="partner-cost-pill">{{ . }}</span>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $comparison }}
+  <section class="home-section home-section-white pt-0 partner-compare-section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet">
+          {{ with .title }}
+          <h2 class="section-header-title has-text-heading has-text-weight-black has-text-centered mb-4">{{ . }}</h2>
+          {{ end }}
+          {{ with .subtitle }}
+          <p class="section-header-desc has-text-centered mb-8">{{ . | safeHTML }}</p>
+          {{ end }}
+          <div class="partner-compare-card">
+            <div class="partner-compare-table">
+              <div class="partner-compare-row partner-compare-head">
+                <div class="partner-compare-cell partner-compare-feature">{{ .feature_label | default "Feature / Capability" }}</div>
+                <div class="partner-compare-cell partner-compare-col-a">{{ .column_a | default "Column A" }}</div>
+                <div class="partner-compare-cell partner-compare-col-b">{{ .column_b | default "Column B" }}</div>
+              </div>
+              {{ range .rows }}
+              <div class="partner-compare-row">
+                <div class="partner-compare-cell partner-compare-feature">{{ .feature }}</div>
+                <div class="partner-compare-cell partner-compare-col-a">{{ .a | safeHTML }}</div>
+                <div class="partner-compare-cell partner-compare-col-b">{{ .b | safeHTML }}</div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $benefitBlocks }}
+  <section class="home-section home-section-white pt-0 partner-benefits-section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet">
+          <div class="columns is-variable is-5">
+            {{ range . }}
+            <div class="column is-6-desktop">
+              <div class="partner-benefit-card partner-benefit-{{ .variant | default "blue" }}">
+                <div class="partner-benefit-header">
+                  <span class="partner-benefit-icon">
+                    <iconify-icon {{ printf `icon="%s"` (.icon | default "heroicons:users") | safeHTMLAttr }} width="22" height="22"></iconify-icon>
+                  </span>
+                  <h3 class="partner-benefit-title">{{ .title }}</h3>
+                </div>
+                {{ with .items }}
+                <ul class="partner-benefit-list">
+                  {{ range . }}
+                  <li>
+                    <iconify-icon icon="heroicons:check-circle" width="18" height="18"></iconify-icon>
+                    <span>{{ . | safeHTML }}</span>
+                  </li>
+                  {{ end }}
+                </ul>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $savingsCta }}
+  <section class="home-section home-section-white pt-0 partner-savings-section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet">
+          <div class="partner-savings-card">
+            <div class="partner-savings-shape partner-savings-shape-a"></div>
+            <div class="partner-savings-shape partner-savings-shape-b"></div>
+            <div class="partner-savings-content">
+              {{ with .title }}
+              <h2 class="partner-savings-title">{{ . }}</h2>
+              {{ end }}
+              {{ with .description }}
+              <p class="partner-savings-desc">{{ . | safeHTML }}</p>
+              {{ end }}
+              {{ with .stats }}
+              <div class="columns is-centered is-variable is-4 partner-savings-stats">
+                {{ range . }}
+                <div class="column is-4-desktop is-12-tablet">
+                  <div class="partner-savings-stat">
+                    <div class="partner-savings-stat-value">{{ .value }}</div>
+                    <div class="partner-savings-stat-label">{{ .label }}</div>
+                  </div>
+                </div>
+                {{ end }}
+              </div>
+              {{ end }}
+              {{ with .cta_text }}
+              <div class="has-text-centered">
+                <a href="{{ $.Params.savings_cta.cta_url | default "#" }}" class="partner-savings-btn">
+                  <iconify-icon icon="heroicons:currency-dollar" width="18" height="18"></iconify-icon>
+                  <span>{{ . }}</span>
+                </a>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $industries }}
+  <section class="home-section home-section-white pt-0 partner-industries-section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet">
+          {{ with .title }}
+          <h2 class="section-header-title has-text-heading has-text-weight-black has-text-centered mb-4">{{ . }}</h2>
+          {{ end }}
+          {{ with .subtitle }}
+          <p class="section-header-desc has-text-centered mb-8">{{ . | safeHTML }}</p>
+          {{ end }}
+          {{ with .items }}
+          <div class="columns is-multiline is-variable is-5">
+            {{ range . }}
+            <div class="column is-6-desktop">
+              <div class="partner-industry-card">
+                <h3 class="partner-industry-title">{{ .title }}</h3>
+                <p class="partner-industry-desc">{{ .description | safeHTML }}</p>
+                {{ with .stats }}
+                <div class="columns is-variable is-3 is-mobile partner-industry-stats">
+                  {{ range . }}
+                  <div class="column">
+                    <div class="partner-industry-stat">
+                      <div class="partner-industry-stat-label">{{ .label }}</div>
+                      <div class="partner-industry-stat-value">{{ .value }}</div>
+                    </div>
+                  </div>
+                  {{ end }}
+                </div>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $testimonial }}
+  <section class="home-section home-section-white pt-0 partner-testimonial-section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet">
+          <div class="partner-testimonial-card">
+            <div class="partner-testimonial-icon">
+              <iconify-icon {{ printf `icon="%s"` (.icon | default "heroicons:trophy") | safeHTMLAttr }} width="28" height="28"></iconify-icon>
+            </div>
+            <div class="partner-testimonial-body">
+              {{ with .quote }}
+              <p class="partner-testimonial-quote">&ldquo;{{ . | safeHTML }}&rdquo;</p>
+              {{ end }}
+              {{ with .author }}
+              <div class="partner-testimonial-author">{{ . }}</div>
+              {{ end }}
+              {{ with .role }}
+              <div class="partner-testimonial-role">{{ . }}</div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $gettingStarted }}
+  <section class="home-section home-section-white pt-0 partner-getstarted-section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-11-tablet">
+          {{ with .title }}
+          <h2 class="section-header-title has-text-heading has-text-weight-black has-text-centered mb-4">{{ . }}</h2>
+          {{ end }}
+          {{ with .subtitle }}
+          <p class="section-header-desc has-text-centered mb-8">{{ . | safeHTML }}</p>
+          {{ end }}
+          {{ with .steps }}
+          <div class="columns is-multiline is-variable is-4 mb-5">
+            {{ range $idx, $step := . }}
+            <div class="column is-3-desktop is-6-tablet">
+              <div class="partner-step-card">
+                <span class="partner-step-number">{{ add $idx 1 }}</span>
+                <h4 class="partner-step-title">{{ .title }}</h4>
+                <p class="partner-step-desc">{{ .description | safeHTML }}</p>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+          {{ with .links }}
+          <div class="columns is-multiline is-variable is-4">
+            {{ range . }}
+            <div class="column is-4-desktop is-12-tablet">
+              <a href="{{ .url | default "#" }}" class="partner-link-card{{ if .is_highlighted }} is-highlighted{{ end }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}>
+                <span class="partner-link-icon">
+                  <iconify-icon {{ printf `icon="%s"` (.icon | default "heroicons:globe-alt") | safeHTMLAttr }} width="22" height="22"></iconify-icon>
+                </span>
+                <span class="partner-link-body">
+                  <span class="partner-link-title">{{ .title }}</span>
+                  <span class="partner-link-desc">{{ .description }}</span>
+                </span>
+                <span class="partner-link-arrow">
+                  <iconify-icon icon="heroicons:arrow-right" width="18" height="18"></iconify-icon>
+                </span>
+              </a>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $finalCta }}
+  <section class="home-section home-section-white partner-finalcta-section">
+    <div class="container">
+      <div class="partner-finalcta-card">
+        <div class="partner-finalcta-grid-bg"></div>
+        <div class="columns is-vcentered is-variable is-6">
+          <div class="column is-6-desktop">
+            {{ with .badge }}
+            <div class="partner-finalcta-badge">
+              <iconify-icon {{ printf `icon="%s"` (.icon | default "heroicons:cloud") | safeHTMLAttr }} width="16" height="16"></iconify-icon>
+              <span>{{ .text }}</span>
+            </div>
+            {{ end }}
+            {{ with .title }}
+            <h2 class="partner-finalcta-title">
+              {{ .primary }}
+              {{ with .highlight }}<br><span class="partner-finalcta-title-accent">{{ . }}</span>{{ end }}
+            </h2>
+            {{ end }}
+            {{ with .subtitle }}
+            <p class="partner-finalcta-subtitle">{{ . | safeHTML }}</p>
+            {{ end }}
+            {{ with .bullets }}
+            <ul class="partner-finalcta-bullets">
+              {{ range . }}
+              <li>
+                <iconify-icon {{ printf `icon="%s"` (.icon | default "heroicons:bolt") | safeHTMLAttr }} width="16" height="16"></iconify-icon>
+                <span>{{ .text | safeHTML }}</span>
+              </li>
+              {{ end }}
+            </ul>
+            {{ end }}
+            <div class="partner-finalcta-buttons">
+              {{ with .primary_cta }}
+              <a href="{{ .url | default "#" }}" class="partner-finalcta-btn is-primary">
+                <span>{{ .text }}</span>
+                <iconify-icon icon="heroicons:arrow-right" width="16" height="16"></iconify-icon>
+              </a>
+              {{ end }}
+              {{ with .secondary_cta }}
+              <a href="{{ .url | default "#" }}" class="partner-finalcta-btn is-ghost">
+                <iconify-icon icon="heroicons:play" width="16" height="16"></iconify-icon>
+                <span>{{ .text }}</span>
+              </a>
+              {{ end }}
+            </div>
+          </div>
+          {{ with .stats }}
+          <div class="column is-6-desktop">
+            <div class="columns is-multiline is-variable is-4 partner-finalcta-stats">
+              {{ range . }}
+              <div class="column is-6">
+                <div class="partner-finalcta-stat">
+                  <span class="partner-finalcta-stat-icon partner-finalcta-stat-icon-{{ .color | default "primary" }}">
+                    <iconify-icon {{ printf `icon="%s"` (.icon | default "heroicons:sparkles") | safeHTMLAttr }} width="22" height="22"></iconify-icon>
+                  </span>
+                  <div class="partner-finalcta-stat-value">{{ .value | safeHTML }}</div>
+                  <div class="partner-finalcta-stat-label">{{ .label }}</div>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
 </div>
-
 {{ end }}
