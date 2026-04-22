@@ -1,4 +1,5 @@
 ---
+id: vmware-vks
 title: Run KubeDB on VMware vSphere Kubernetes Service
 description: Deploy and manage production-grade databases using KubeDB on VMware vSphere Kubernetes Service (VKS)
 url: /partner/vmware-vks/

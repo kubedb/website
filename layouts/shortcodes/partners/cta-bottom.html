@@ -1,0 +1,6 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.cta_section }}
+<div class="partners-final-cta">
+  {{ partial "common-sections/final-cta.html" . }}
+</div>
+{{ end }}

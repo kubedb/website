@@ -1,0 +1,87 @@
+{{ $data := . }}
+{{ with $data }}
+<section id="partner-form" class="section-padding has-background-white">
+  <div class="container">
+    <div class="has-max-width-lg mx-auto">
+
+      {{ partial "common-sections/section-header.html" (dict
+        "badge_text" .badge
+        "badge_icon" .badge_icon
+        "title" .title
+        "subtitle" .description
+        "align" "center"
+        "class" "mb-10"
+      ) }}
+
+      <div class="ds-card-base is-radius-2xlarge p-8 has-shadow-large">
+        <form action="{{ .action }}" method="POST">
+
+          <div class="columns is-multiline">
+            {{ range .fields }}
+            <div class="column is-6-tablet">
+              <div class="field">
+                <label class="label body-md has-text-heading has-text-weight-bold mb-2">
+                  {{ .label }}{{ if .required }} <span class="has-text-danger">*</span>{{ end }}
+                </label>
+                <div class="{{ if .icon }}control has-icons-left{{ else }}control{{ end }}">
+                  <input class="input" type="{{ .type }}" name="{{ .name }}" placeholder="{{ .placeholder }}"{{ if .required }} required{{ end }}>
+                  {{ if .icon }}
+                  <span class="icon is-left">
+                    {{ printf `<iconify-icon icon="%s" width="16" height="16" class="has-text-grey-400"></iconify-icon>` .icon | safeHTML }}
+                  </span>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+            {{ end }}
+
+            {{ with .partner_type_field }}
+            <div class="column is-6-tablet">
+              <div class="field">
+                <label class="label body-md has-text-heading has-text-weight-bold mb-2">
+                  {{ .label }}{{ if .required }} <span class="has-text-danger">*</span>{{ end }}
+                </label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select name="{{ .name }}" title="{{ .label }}"{{ if .required }} required{{ end }}>
+                      <option value="">{{ .placeholder }}</option>
+                      {{ range .options }}
+                      <option value="{{ .value }}">{{ .label }}</option>
+                      {{ end }}
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+
+          {{ with .message_field }}
+          <div class="field mb-6">
+            <label class="label body-md has-text-heading has-text-weight-bold mb-2">{{ .label }}</label>
+            <div class="control">
+              <textarea class="textarea" name="{{ .name }}" placeholder="{{ .placeholder }}" rows="{{ .rows }}"></textarea>
+            </div>
+          </div>
+          {{ end }}
+
+          <div class="is-flex is-flex-wrap-wrap has-gap-3">
+            <button type="submit" class="button is-primary is-flex-grow-1 height-50">
+              <span>{{ .cta_primary }}</span>
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+            </button>
+            <button type="button" class="button is-outlined height-50 px-6">
+              {{ printf `<iconify-icon icon="%s" width="16" height="16"></iconify-icon>` .cta_secondary_icon | safeHTML }}
+              <span>{{ .cta_secondary }}</span>
+            </button>
+          </div>
+
+          <p class="body-md has-text-grey-400 has-text-centered mt-4">{{ .disclaimer }}</p>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ end }}

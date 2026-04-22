@@ -1,4 +1,5 @@
 ---
+id: suse-rancher
 title: Run KubeDB on SUSE Rancher
 description: Deploy and manage production-grade databases using KubeDB on SUSE Rancher, RKE2, and k3s
 url: /partner/suse-rancher/

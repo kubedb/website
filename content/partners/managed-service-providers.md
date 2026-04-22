@@ -1,4 +1,5 @@
 ---
+id: managed-service-providers
 title: Managed Service Providers
 description: MSP partnership opportunities for operating databases with KubeDB
 url: /partner/managed-service-providers/

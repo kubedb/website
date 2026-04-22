@@ -1,4 +1,5 @@
 ---
+id: channel-resources
 title: Channel Resources
 description: Partner resources and enablement materials for KubeDB channel teams
 url: /partner/channel-resources/

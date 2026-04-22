@@ -1,0 +1,9 @@
+{{ $data := dict }}
+
+{{ if .Page.Params.data }}
+  {{ $data = getJSON .Page.Params.data }}
+{{ else }}
+  {{ $data = $.Site.Data.products.kubedb.partners.alliance }}
+{{ end }}
+
+{{ return $data }}

@@ -1,4 +1,5 @@
 ---
+id: microsoft-aks
 title: Run KubeDB on Microsoft Azure Kubernetes Service
 description: Deploy and manage production-grade databases using KubeDB on Microsoft Azure Kubernetes Service (AKS)
 url: /partner/microsoft-aks/

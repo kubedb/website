@@ -1,0 +1,63 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.grow_section }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+
+    <div class="section-header mb-10">
+      <div class="badge">
+        {{ printf `<iconify-icon icon="%s" width="14" height="14" class="has-text-secondary"></iconify-icon>` .badge_icon | safeHTML }}
+        <span class="badge-text">{{ .badge }}</span>
+      </div>
+      <h2 class="section-header-title has-text-heading has-text-weight-black">
+        {{ .title_plain }}<br>
+        <span class="has-text-gradient">{{ .title_gradient }}</span>
+      </h2>
+      <p class="section-header-desc body-lg">{{ .description }}</p>
+    </div>
+
+    <div class="columns mb-10">
+      {{ range .partner_models }}
+      <div class="column is-4-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="columns mb-10">
+      {{ range .registrations }}
+      <div class="column is-6-tablet">
+        {{ $card := merge . (dict "show_cta_in_card" true) }}
+        {{ partial "common-cards/feature-card.html" (dict "card" $card "type" "benefit-scale") }}
+      </div>
+      {{ end }}
+    </div>
+
+    {{ with .deal_process }}
+      {{ $timeline := slice }}
+      {{ range .steps }}
+        {{ $timeline = $timeline | append (dict
+          "step" .number
+          "period" (printf "Step %s" .number)
+          "title" .title
+          "description" .description
+        ) }}
+      {{ end }}
+      {{ partial "common-sections/journey-timeline.html" (dict
+        "timeline_badge" "Deal Registration"
+        "timeline_title" .title
+        "timeline_description" .subtitle
+        "timeline" $timeline
+      ) }}
+    {{ end }}
+
+    <div class="columns">
+      {{ range .stats }}
+      <div class="column is-3-tablet is-6-mobile">
+        {{ partial "common-cards/stat-card.html" (dict "stat" . "color" "var(--ds-primary)") }}
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}

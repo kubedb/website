@@ -1,4 +1,5 @@
 ---
+id: channel-partners
 title: Channel Partners
 description: Reseller and channel partnership opportunities with KubeDB
 url: /partner/channel-partners/

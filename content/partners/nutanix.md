@@ -1,4 +1,5 @@
 ---
+id: nutanix
 title: Run KubeDB on Nutanix Kubernetes Platform
 description: Deploy and manage production-grade databases using KubeDB on Nutanix Kubernetes Platform (NKP)
 url: /partner/nutanix/

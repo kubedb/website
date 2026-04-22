@@ -1,7 +1,13 @@
 {{ $stat := .stat }}
 {{ $color := .color | default "var(--ds-primary)" }}
+{{ $hasIcon := and $stat $stat.icon }}
 
 <div class="ac-stat-card stat-item has-text-centered p-6 transition-all hover-translate-up">
+  {{ if $hasIcon }}
+  <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-8 is-radius-large has-background-primary-soft mb-3">
+    <iconify-icon {{ printf "icon=%q" $stat.icon | safeHTMLAttr }} width="20" height="20" style="color: {{ $color }};"></iconify-icon>
+  </div>
+  {{ end }}
   <h3 class="is-size-2-desktop is-size-3-tablet is-size-3-mobile has-text-weight-black mb-1 has-line-height-tight"
     style="color: {{ $color }};">
     {{ $stat.value }}

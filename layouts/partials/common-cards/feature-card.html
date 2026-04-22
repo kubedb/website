@@ -60,6 +60,18 @@
     {{ end }}
   </div>
   {{ end }}
+
+  {{ if and $card.show_cta_in_card $card.cta_text $card.cta_href }}
+  <div class="mt-6">
+    <a href="{{ $card.cta_href }}" class="{{ printf `button is-%s is-fullwidth height-50` ($card.cta_style | default "primary") }}">
+      {{ if $card.cta_icon }}
+      <iconify-icon {{ printf "icon=%q" $card.cta_icon | safeHTMLAttr }} width="16" height="16"></iconify-icon>
+      {{ end }}
+      <span>{{ $card.cta_text }}</span>
+      <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+    </a>
+  </div>
+  {{ end }}
 </div>
 {{ else if eq $type "centered" }}
 <!-- Centered Feature Card (Used in Use Cases) -->
