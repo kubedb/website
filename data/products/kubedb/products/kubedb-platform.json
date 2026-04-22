@@ -162,19 +162,19 @@
   "features": [
     {
       "title": "Central Dashboard",
-      "description": "Single pane of glass across clusters, regions, and cloud providers",
+      "description": "Single pane of glass to view, manage, and monitor all databases across clusters, regions, and cloud providers",
       "icon": "lucide:layout-dashboard",
       "gradient_class": "gradient-box-blue"
     },
     {
       "title": "Policy Enforcement",
-      "description": "Enforce database policies and security standards across infrastructure",
+      "description": "Define and enforce database policies, security standards, and compliance requirements across your entire infrastructure",
       "icon": "lucide:file-text",
       "gradient_class": "gradient-box-purple"
     },
     {
       "title": "Multi-Cluster Visibility",
-      "description": "Track database health, performance, and usage across all environments",
+      "description": "Track database health, performance, and resource usage across all environments from development to production",
       "icon": "lucide:eye",
       "gradient_class": "gradient-box-orange"
     },

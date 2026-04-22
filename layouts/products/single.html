@@ -132,6 +132,25 @@
   </section>
   {{ end }}
 
+  <!-- Platform Features Section -->
+  {{ if and $data.features (strings.Contains $data_id "platform") }}
+  <section class="home-section section-padding bg-white">
+    <div class="container">
+      <div class="section-header has-text-centered mb-16">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.features_title | safeHTML }}</h2>
+        <p class="section-header-desc mx-auto has-opacity-70 mt-4 is-text-lg has-max-width-800">{{ $data.features_subtitle | safeHTML }}</p>
+      </div>
+      <div class="columns is-multiline">
+        {{ range $data.features }}
+        <div class="column is-4-desktop is-6-tablet is-12-mobile">
+          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
   <!-- Supported Databases Section -->
   {{ if not $data.hide_database_support }}
   {{ partial "common-sections/database-support.html" . }}
@@ -408,7 +427,7 @@
       <div class="mt-16 has-text-centered">
         <div class="badge badge-success-soft has-background-success-soft">
           <iconify-icon icon="lucide:check-circle" width="20" class="has-text-success"></iconify-icon>
-          <span class="is-size-6 has-text-weight-bold has-text-grey-800">{{ $data.how_it_works_footer | default "Your infrastructure &bull; Your control &bull; Your data sovereignty" }}</span>
+          <span class="is-size-6 has-text-weight-bold has-text-grey-800">{{ $data.how_it_works_footer | default "Your infrastructure; Your control; Your data sovereignty" }}</span>
         </div>
       </div>
     </div>
