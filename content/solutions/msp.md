@@ -1,10 +1,12 @@
 ---
+id: white-labeled-dbaas
 title: For CSPs & MSPs
 description: White-labeled DBaaS offering
 url: /solutions/msp/
 type: solutions
 layout: single
 data_id: white-labeled-dbaas
+data: 'data/products/kubedb/solutions/white-labeled-dbaas.json'
 ---
 
 {{< solutions/hero >}}
