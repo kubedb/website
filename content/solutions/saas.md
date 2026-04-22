@@ -2,9 +2,8 @@
 id: multi-tenant-saas
 title: For SaaS Companies
 description: Multi-tenant database infrastructure
-url: /solutions/saas/
-type: solutions
 layout: single
+url: /solutions/saas/
 data_id: multi-tenant-saas
 data: 'data/products/kubedb/solutions/multi-tenant-saas.json'
 ---

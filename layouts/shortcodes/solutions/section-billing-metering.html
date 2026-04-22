@@ -1,13 +1,5 @@
 {{ $data_id := .Page.Params.data_id }}
-{{ $data := index .Site.Data.products.kubedb.solutions $data_id }}
-{{ if not $data }}
-  {{ if (findRE "/" $data_id) }}
-    {{ $parts := split $data_id "/" }}
-    {{ $scope := .Site.Data.products.kubedb }}
-    {{ range $parts }}{{ if $scope }}{{ $scope = index $scope . }}{{ end }}{{ end }}
-    {{ $data = $scope }}
-  {{ end }}
-{{ end }}
+{{ $data := partial "solutions/page-data.html" . }}
 {{ if $data.billing_features }}
 <section class="home-section section-padding has-background-white">
   <div class="container">

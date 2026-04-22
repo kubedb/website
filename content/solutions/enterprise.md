@@ -2,9 +2,8 @@
 id: for-enterprises
 title: For Enterprises
 description: Internal DBaaS for platform teams
-url: /solutions/enterprise/
-type: solutions
 layout: single
+url: /solutions/enterprise/
 data_id: for-enterprises
 data: 'data/products/kubedb/solutions/for-enterprises.json'
 ---

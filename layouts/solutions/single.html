@@ -1,31 +1,6 @@
 {{ define "main"}}
 {{ $data_id := .Params.data_id }}
-
-{{/* First try exact match in solutions folder */}}
-{{ $data := index .Site.Data.products.kubedb.solutions $data_id }}
-
-{{ if not $data }}
-  {{/* If it has a slash (e.g. solutions/saas), split it */}}
-  {{ if (findRE "/" $data_id) }}
-    {{ $parts := split $data_id "/" }}
-    {{ $scope := .Site.Data.products.kubedb }}
-    {{ range $parts }}
-      {{ if $scope }}
-        {{ $scope = index $scope . }}
-      {{ end }}
-    {{ end }}
-    {{ $data = $scope }}
-  {{ else }}
-    {{/* Fallback to replacing hyphens with underscores */}}
-    {{ $data_id_alt := replace $data_id "-" "_" }}
-    {{ $data = index .Site.Data.products.kubedb.solutions $data_id_alt }}
-  {{ end }}
-{{ end }}
-
-{{ if not $data }}
-  {{/* Global fallback to legacy products location just in case */}}
-  {{ $data = index .Site.Data.products.kubedb.products $data_id }}
-{{ end }}
+{{ $data := partial "solutions/page-data.html" . }}
 
 {{ if not $data }}
 <div class="container section">
