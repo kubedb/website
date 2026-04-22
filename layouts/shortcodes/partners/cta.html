@@ -1,0 +1,20 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.cta }}
+  {{ $ctaTitle := .heading }}
+  {{ if .heading_highlight }}
+    {{ $ctaTitle = printf "%s <br>" .heading }}
+  {{ end }}
+  {{ $mapped := dict
+    "cta_badge" .badge
+    "cta_title" $ctaTitle
+    "cta_title_gradient" .heading_highlight
+    "cta_description" .description
+    "cta_checklist" (apply .features "index" "." "text")
+    "cta_button_text" (index .buttons 0).text
+    "cta_button_url" (index .buttons 0).href
+    "cta_stats" .stats
+  }}
+  <div class="partners-final-cta">
+    {{ partial "common-sections/final-cta.html" $mapped }}
+  </div>
+{{ end }}

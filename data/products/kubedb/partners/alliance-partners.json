@@ -281,21 +281,7 @@
         },
         { "number": "4", "title": "Close", "description": "Win together" }
       ]
-    },
-    "stats": [
-      {
-        "icon": "lucide:trending-up",
-        "value": "30%+",
-        "label": "Avg. Margins"
-      },
-      { "icon": "lucide:users", "value": "500+", "label": "Active Partners" },
-      {
-        "icon": "lucide:dollar-sign",
-        "value": "$5M+",
-        "label": "Partner Revenue"
-      },
-      { "icon": "lucide:award", "value": "24/7", "label": "Partner Support" }
-    ]
+    }
   },
 
   "form": {

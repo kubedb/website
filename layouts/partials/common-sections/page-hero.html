@@ -71,11 +71,35 @@
 
     {{ if $data.stats }}
     {{ $iconStats := false }}
+    {{ $statsStyle := $data.stats_style | default "" }}
     {{ if gt (len $data.stats) 0 }}
       {{ with index $data.stats 0 }}
         {{ if .icon }}{{ $iconStats = true }}{{ end }}
       {{ end }}
     {{ end }}
+    {{ if and (eq $statsStyle "hero-inline-metrics") (not $iconStats) }}
+    <div class="columns is-mobile is-multiline mt-12 has-max-width-xl mx-auto">
+      {{ range $data.stats }}
+      <div class="column is-4-desktop is-6-mobile">
+        {{ partial "common-cards/metric-card.html" . }}
+      </div>
+      {{ end }}
+    </div>
+    {{ else if and (eq $statsStyle "hero-diff-pill") (not $iconStats) }}
+    <div class="hero-diff-row is-flex is-align-items-stretch is-justify-content-center is-flex-wrap-wrap has-gap-4 mt-12">
+      {{ range $data.stats }}
+      <div class="hero-diff-pill">
+        <div class="hero-diff-pill-inner">
+          <div class="hero-diff-pill-head is-flex is-align-items-center has-gap-1 mb-1">
+            <iconify-icon icon="lucide:circle-check-big" width="20" height="20" style="color:#10B981;"></iconify-icon>
+            <span class="has-text-heading is-text-base has-text-weight-extrabold">{{ .title | default .value }}</span>
+          </div>
+          <div class="hero-diff-pill-sub has-text-body is-text-xs has-text-weight-medium has-text-left">{{ .desc | default .label }}</div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ else }}
     <div class="columns is-mobile is-multiline mt-12 has-max-width-xl mx-auto">
       {{ range $data.stats }}
       <div class="column is-3-desktop is-6-mobile">
@@ -93,6 +117,7 @@
       </div>
       {{ end }}
     </div>
+    {{ end }}
     {{ end }}
   </div>
 </section>

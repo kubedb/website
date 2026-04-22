@@ -1,0 +1,23 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.capabilities }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "badge_text" .badge
+      "badge_icon" "lucide:zap"
+      "title" .heading
+      "subtitle" .description
+      "align" "center"
+      "class" "mb-10"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range .items }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "compact") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

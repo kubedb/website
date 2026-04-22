@@ -1,0 +1,47 @@
+{{ $data := . }}
+
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    <div class="columns is-vcentered is-variable is-8">
+
+      <div class="column is-5-desktop">
+        {{ partial "common-sections/section-header.html" (dict
+          "badge_text" $data.badge
+          "badge_icon" ($data.badge_icon | default "lucide:layers")
+          "title" $data.heading
+          "subtitle" $data.description
+          "align" "left"
+          "class" "mb-8"
+        ) }}
+
+        <div class="is-flex is-flex-direction-column has-gap-3">
+          {{ range $data.layers }}
+          <div class="is-flex is-align-items-center has-gap-4">
+            {{ if eq .gradient "mke" }}
+            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large is-flex-shrink-0" style="min-width:230px;box-shadow:0 4px 12px rgba(0,0,0,0.15);background:linear-gradient(90deg,#2563EB,#4338CA);">{{ .label }}</div>
+            {{ else }}
+            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large has-background-gradient-{{ .gradient }} is-flex-shrink-0" style="min-width:230px;box-shadow:0 4px 12px rgba(0,0,0,0.15);">{{ .label }}</div>
+            {{ end }}
+            <div class="is-text-xs has-text-grey-500">{{ .desc }}</div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="column is-7-desktop">
+        <div class="has-background-white is-radius-2xlarge p-6 has-shadow-large has-border">
+          <img src="{{ $data.image }}" alt="{{ $data.image_alt }}" class="is-fullwidth is-radius-2xlarge is-block">
+          {{ if $data.image_tags }}
+          <div class="is-flex is-align-items-center has-gap-3 mt-5 is-justify-content-center">
+            {{ range $i, $tag := $data.image_tags }}
+            {{ if gt $i 0 }}<div class="is-flex-grow-1 has-background-grey-200" style="height:1px;"></div>{{ end }}
+            <span class="tag">{{ $tag }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
