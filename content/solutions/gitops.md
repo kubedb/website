@@ -2,9 +2,8 @@
 id: gitops-automation
 title: GitOps & Platform Engineering
 description: Automate database operations with GitOps
-url: /solutions/gitops/
-type: solutions
 layout: single
+url: /solutions/gitops/
 data_id: gitops-automation
 data: 'data/products/kubedb/solutions/gitops-automation.json'
 ---
