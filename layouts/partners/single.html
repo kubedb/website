@@ -1,52 +1,378 @@
 {{ define "main" }}
+
 <div class="ac-ui">
-<section class="hero-area is-product is-dark has-image-bg is-feature" style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);">
-	<div class="shape">
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-	</div>
-	<div class="shape">
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-	</div>
-	<div class="container">
-		<div class="columns has-text-centered is-centered is-vcentered is-multiline">
-			<div class="column is-8 is-centered is-full-touch">
-				<h1>{{ .Title }}</h1>
-				{{ with .Params.description }}<p>{{ . }}</p>{{ end }}
-			</div>
-		</div>
-	</div>
+
+<!-- ===================== HERO ===================== -->
+{{ with .Params.hero }}
+<section class="home-hero">
+  <div class="home-hero-bg">
+    <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
+    <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
+    <div class="hero-shapes-tr">
+      <div class="hero-shape-ring"></div>
+      <div class="hero-shape-square"></div>
+      <div class="hero-shape-blob"></div>
+    </div>
+    <div class="hero-shapes-bl">
+      <div class="hero-shape-diamond"></div>
+      <div class="hero-shape-rect"></div>
+      <div class="hero-shape-dot"></div>
+    </div>
+    <div class="hero-orb-center-a"></div>
+    <div class="hero-orb-center-b"></div>
+    <div class="hero-orb-center-c"></div>
+    <svg class="hero-dot-grid" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <pattern id="hero-dots" width="80" height="80" patternUnits="userSpaceOnUse">
+          <circle cx="40" cy="40" r="1" fill="#4948A3" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hero-dots)" />
+    </svg>
+    <div class="hero-ping hero-ping-1"></div>
+    <div class="hero-ping hero-ping-2"></div>
+    <div class="hero-ping hero-ping-3"></div>
+  </div>
+  <div class="container has-text-centered">
+  <div class="is-flex is-justify-content-center mb-6">
+	<div class="badge badge-primary">
+          <iconify-icon icon="heroicons:check-circle" width="16" height="16" style="color:#4948A3;"><template shadowrootmode="open"><style data-style="data-style">:host{display:inline-block;vertical-align:0}span,svg{display:block}</style><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257a3 3 0 0 0-3.758-3.848a5.25 5.25 0 0 0-10.233 2.33A4.5 4.5 0 0 0 2.25 15"></path></svg></template></iconify-icon>
+          <span class="badge-text"> {{ .badge }}</span>
+    </div>
+
+  </div>
+    <h1 class="display-xl has-text-heading has-text-weight-black mb-6 has-text-balance">
+      {{ .heading | safeHTML }}
+      <span class="has-text-gradient">{{ .heading_highlight }}</span>
+    </h1>
+
+    <p class="body-lg has-text-grey-600 mb-10 mx-auto" style="max-width:720px;">
+      {{ .description | safeHTML }}
+    </p>
+
+    <div class="is-flex is-justify-content-center is-flex-wrap-wrap has-gap-4 mb-12">
+      <a href="{{ .cta_primary.href }}" class="button is-primary height-50">
+        <iconify-icon icon="lucide:arrow-right" width="18" height="18"></iconify-icon>
+        <span>{{ .cta_primary.text }}</span>
+      </a>
+      <a href="{{ .cta_secondary.href }}" target="_blank" class="button is-primary height-50">
+        <iconify-icon icon="lucide:external-link" width="16" height="16"></iconify-icon>
+        <span>{{ .cta_secondary.text }}</span>
+      </a>
+    </div>
+
+    <div class="columns is-centered has-max-width-lg my-6 mx-auto">
+      {{ range .features }}
+      <div class="column is-4-tablet has-text-centered">
+        <div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-gap-2">
+          <i class="fa fa-check-circle is-primary is-text-xl"></i>
+          <div>
+            <div class="has-text-weight-bold is-text-sm has-text-grey-900">{{ .title }}</div>
+            <div class="is-text-xs has-text-grey-600">{{ .desc }}</div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
 </section>
+{{ end }}
 
-<section class="article-details-area">
-	<div class="container">
-		<div class="columns is-centered">
-			<div class="column is-9">
-				<div class="full-info content">
-					<div class="content-body">
-						{{ .Content }}
-                        
-
-                       <div class="is-fullwidth">
-                         <button class="button ac-button is-primary width-200 mx-auto">STATIC BUTTON</button>
-                       </div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<!-- ===================== MIRANTIS STACK ===================== -->
+{{ with .Params.platform }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <div class="section-header mb-12">
+      <div class="badge">
+        <iconify-icon icon="lucide:layers" width="16" height="16" class="has-text-secondary"></iconify-icon>
+        <span class="badge-text">{{ .badge }}</span>
+      </div>
+      <h2 class="section-header-title has-text-heading has-text-weight-black">{{ .heading }}</h2>
+      <p class="section-header-desc body-lg">{{ .description }}</p>
+    </div>
+    <div class="columns">
+      {{ range .cards }}
+      <div class="column">
+        {{ if .legacy }}
+        <div class="ds-card-base is-radius-xlarge p-6 h-full has-hover-lift has-transition" style="border-color:rgba(217,119,6,0.3);">
+          <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-12 is-radius-2xlarge has-background-warning-soft mb-5">
+            {{ printf `<iconify-icon icon="%s:%s" width="24" height="24" class="has-text-warning"></iconify-icon>` (index (split .icon ":") 0) (index (split .icon ":") 1) | safeHTML }}
+          </div>
+          <h3 class="heading-md has-text-heading mb-3">{{ .title }}</h3>
+          <p class="body-md has-text-grey-500 mb-4">{{ .description }}</p>
+          <p class="body-sm has-text-warning has-text-weight-medium mb-0">{{ .note }}</p>
+        </div>
+        {{ else }}
+        <div class="ds-card-base is-radius-xlarge p-6 h-full has-hover-lift has-transition{{ if .badge }} is-relative{{ end }}">
+          {{ if .badge }}
+          <div class="badge badge-success" style="position:absolute;top:-0.75rem;right:1rem;">
+            <span>{{ .badge }}</span>
+          </div>
+          {{ end }}
+          <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-12 is-radius-2xlarge has-background-info-soft mb-5">
+            {{ printf `<iconify-icon icon="%s:%s" width="24" height="24" class="has-text-info"></iconify-icon>` (index (split .icon ":") 0) (index (split .icon ":") 1) | safeHTML }}
+          </div>
+          <h3 class="heading-md has-text-heading mb-3">{{ .title }}</h3>
+          <p class="body-md has-text-grey-500 mb-4">{{ .description }}</p>
+          <ul class="has-no-bullets">
+            {{ range .features }}
+            <li class="is-flex is-align-items-flex-start has-gap-2 body-sm has-text-grey-600 mb-2">
+              <iconify-icon icon="lucide:check" width="14" height="14" class="has-text-success mt-1 is-flex-shrink-0"></iconify-icon>
+              <span>{{ . }}</span>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
 </section>
+{{ end }}
+
+
+<!-- ===================== COMPARISON TABLE ===================== -->
+{{ with .Params.comparison }}
+<section id="comparison" class="section-padding has-background-grey-50 is-relative is-overflow-hidden">
+  <div class="container">
+    <div class="section-header mb-12">
+      <div class="badge">
+        <iconify-icon icon="lucide:git-compare" width="16" height="16" class="has-text-secondary"></iconify-icon>
+        <span class="badge-text">{{ .badge }}</span>
+      </div>
+      <h2 class="section-header-title has-text-heading has-text-weight-black">{{ .heading }}</h2>
+      <p class="section-header-desc body-lg">{{ .description }}</p>
+    </div>
+    <div class="table-container is-overflow-x-auto is-radius-2xlarge has-border has-shadow-medium has-background-white is-relative has-z-index-10 has-transition">
+      <table class="table is-fullwidth mb-0 is-vcentered">
+        <thead>
+          <tr class="has-background-grey-50">
+            <th class="is-text-xs has-text-weight-black has-text-heading is-uppercase has-tracking-widest py-5 px-6" style="width:25%;">Capability</th>
+            <th class="is-text-xs has-text-weight-black has-text-warning is-uppercase has-tracking-widest py-5 px-6" style="width:37.5%;">{{ .col_traditional }}</th>
+            <th class="is-text-xs has-text-weight-black has-text-primary is-uppercase has-tracking-widest py-5 px-6" style="width:37.5%;">
+              <div class="is-flex is-align-items-center has-gap-2">
+                <iconify-icon icon="lucide:check-circle-2" width="16" height="16" class="has-text-success"></iconify-icon>
+                <span>{{ .col_kubedb }}</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="is-text-sm">
+          {{ range .rows }}
+          <tr class="has-transition">
+            <td class="px-6 py-6 has-text-heading has-text-weight-bold has-background-grey-50" style="border-right:1px solid rgba(0,0,0,0.03);">{{ .capability }}</td>
+            <td class="px-6 py-6 has-text-grey-500 has-line-height-relaxed">{{ .traditional }}</td>
+            <td class="px-6 py-6 has-background-success-soft has-text-weight-semibold">
+              <div class="is-flex has-gap-3">
+                <iconify-icon icon="lucide:check" width="16" height="16" class="has-text-success mt-1 is-flex-shrink-0"></iconify-icon>
+                <span class="has-line-height-relaxed">{{ .kubedb }}</span>
+              </div>
+            </td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== BENEFITS ===================== -->
+{{ with .Params.benefits }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <div class="section-header mb-12">
+      <div class="badge">
+        <iconify-icon icon="lucide:star" width="16" height="16" class="has-text-secondary"></iconify-icon>
+        <span class="badge-text">{{ .badge }}</span>
+      </div>
+      <h2 class="section-header-title has-text-heading has-text-weight-black">{{ .heading }}</h2>
+    </div>
+    <div class="columns is-multiline">
+      {{ range .items }}
+      <div class="column is-4-desktop is-6-tablet">
+        <div class="ds-card-base is-radius-xlarge p-6 h-full has-hover-lift has-transition">
+          <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-12 is-radius-2xlarge has-background-primary-soft mb-5">
+            {{ printf `<iconify-icon icon="%s:%s" width="24" height="24" class="has-text-primary"></iconify-icon>` (index (split .icon ":") 0) (index (split .icon ":") 1) | safeHTML }}
+          </div>
+          <h4 class="heading-sm has-text-heading mb-2">{{ .title }}</h4>
+          <p class="body-md has-text-grey-500 mb-0">{{ .description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== ARCHITECTURE ===================== -->
+{{ with .Params.architecture }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    <div class="columns is-vcentered is-variable is-8">
+
+      <div class="column is-5-desktop">
+        <div class="badge mb-4">
+          <iconify-icon icon="lucide:layers" width="16" height="16" class="has-text-secondary"></iconify-icon>
+          <span class="badge-text">{{ .badge }}</span>
+        </div>
+        <h2 class="heading-xl has-text-heading has-text-weight-black mb-5">
+          {{ .heading }}
+        </h2>
+        <p class="body-md has-text-grey-500 mb-8">
+          {{ .description }}
+        </p>
+        <div class="is-flex is-flex-direction-column has-gap-3">
+          {{ range .layers }}
+          <div class="is-flex is-align-items-center has-gap-4">
+            {{ if eq .gradient "mke" }}
+            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large is-flex-shrink-0" style="min-width:230px;box-shadow:0 4px 12px rgba(0,0,0,0.15);background:linear-gradient(90deg,#2563EB,#4338CA);">{{ .label }}</div>
+            {{ else }}
+            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large has-background-gradient-{{ .gradient }} is-flex-shrink-0" style="min-width:230px;box-shadow:0 4px 12px rgba(0,0,0,0.15);">{{ .label }}</div>
+            {{ end }}
+            <div class="is-text-xs has-text-grey-500">{{ .desc }}</div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="column is-7-desktop">
+        <div class="has-background-white is-radius-2xlarge p-6 has-shadow-large has-border">
+          <img src="{{ .image }}"
+               alt="{{ .image_alt }}"
+               class="is-fullwidth is-radius-2xlarge is-block">
+          <div class="is-flex is-align-items-center has-gap-3 mt-5 is-justify-content-center">
+            {{ range $i, $tag := .image_tags }}
+            {{ if gt $i 0 }}<div class="is-flex-grow-1 has-background-grey-200" style="height:1px;"></div>{{ end }}
+            <span class="tag">{{ $tag }}</span>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== CAPABILITIES ===================== -->
+{{ with .Params.capabilities }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <div class="section-header mb-12">
+      <div class="badge">
+        <iconify-icon icon="lucide:zap" width="16" height="16" class="has-text-secondary"></iconify-icon>
+        <span class="badge-text">{{ .badge }}</span>
+      </div>
+      <h2 class="section-header-title has-text-heading has-text-weight-black">{{ .heading }}</h2>
+    </div>
+    <div class="columns is-multiline">
+      {{ range .items }}
+      <div class="column is-4-desktop is-6-tablet">
+        <div class="ds-card-base is-radius-xlarge p-6 h-full has-hover-lift has-transition">
+          <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-12 is-radius-2xlarge has-background-secondary-soft mb-5">
+            {{ printf `<iconify-icon icon="%s:%s" width="24" height="24" class="has-text-secondary"></iconify-icon>` (index (split .icon ":") 0) (index (split .icon ":") 1) | safeHTML }}
+          </div>
+          <h4 class="heading-sm has-text-heading mb-2">{{ .title }}</h4>
+          <p class="body-md has-text-grey-500 mb-0">{{ .description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== DATABASE SUPPORT ===================== -->
+{{ with .Params.database_support }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    <div class="m-0 mx-auto is-radius-2xlarge is-overflow-hidden" style="box-shadow:0 8px 32px rgba(0,0,0,0.08);">
+      <div class="has-background-gradient-primary pr-8 pl-8 pt-11 pb-11">
+        <h3 class="has-text-white has-text-weight-black heading-lg mb-2">{{ .heading }}</h3>
+        <p class="is-text-sm mb-0" style="color:rgba(255,255,255,0.9);">{{ .description }}</p>
+      </div>
+      <div class="has-background-white has-border p-8" style="border-top:none;border-radius:0 0 1rem 1rem;">
+        {{ $cats := .categories }}
+        {{ $total := len $cats }}
+        {{ range $i, $cat := $cats }}
+        <div class="is-flex is-align-items-flex-center has-gap-4{{ if lt (add $i 1) $total }} pb-5 mb-5 has-border-bottom{{ end }}">
+          <span class="badge badge-primary is-flex-shrink-0 " style="min-width:130px;">{{ $cat.label }}</span>
+          <span class="is-text-sm has-text-grey-500 is-flex is-align-items-center is-justify-content-center">{{ $cat.items }}</span>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== CTA ===================== -->
+{{ with .Params.cta }}
+<section class="section-padding">
+  <div class="container">
+    <div class="cta-block has-shadow-large py-12 px-8">
+      <div class="cta-glow"></div>
+      <div class="columns is-vcentered is-relative has-z-index-10">
+
+        <div class="column is-6-desktop has-text-left">
+          <div class="badge mb-6 has-text-white" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);">
+            <iconify-icon icon="lucide:shield" width="16" height="16"></iconify-icon>
+            <span>{{ .badge }}</span>
+          </div>
+          <h2 class="display-lg has-text-white mb-4 has-text-balance">
+            {{ .heading }}
+            <span style="background:linear-gradient(90deg,#7272E9,#fff,#7272E9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;">{{ .heading_highlight }}</span>
+          </h2>
+          <p class="body-lg mb-6" style="color:rgba(255,255,255,0.85);">{{ .description }}</p>
+          <ul class="has-no-bullets mb-8">
+            {{ range .features }}
+            <li class="is-flex is-align-items-center has-gap-3 body-md has-text-white has-text-weight-medium mb-3">
+              {{ printf `<iconify-icon icon="%s:%s" width="16" height="16" class="has-text-secondary"></iconify-icon>` (index (split .icon ":") 0) (index (split .icon ":") 1) | safeHTML }}
+              {{ .text }}
+            </li>
+            {{ end }}
+          </ul>
+          <div class="is-flex is-flex-wrap-wrap has-gap-3">
+            {{ range .buttons }}
+            <a href="{{ .href }}"{{ if .target }} target="{{ .target }}"{{ end }} class="button is-{{ .style }} height-50">
+              {{ if eq .icon_position "left" }}{{ printf `<iconify-icon icon="%s:%s" width="16" height="16"></iconify-icon>` (index (split .icon ":") 0) (index (split .icon ":") 1) | safeHTML }}{{ end }}
+              <span>{{ .text }}</span>
+              {{ if eq .icon_position "right" }}{{ printf `<iconify-icon icon="%s:%s" width="18" height="18"></iconify-icon>` (index (split .icon ":") 0) (index (split .icon ":") 1) | safeHTML }}{{ end }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="column is-6-desktop">
+          <div class="columns is-multiline is-mobile">
+            {{ range .stats }}
+            <div class="column is-6">
+              <div class="is-radius-xlarge p-5" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);">
+                <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-10 is-radius-large mb-3 has-background-gradient-{{ .color }}">
+                  {{ printf `<iconify-icon icon="%s:%s" width="18" height="18" class="has-text-white"></iconify-icon>` (index (split .icon ":") 0) (index (split .icon ":") 1) | safeHTML }}
+                </div>
+                <div class="has-text-white has-text-weight-black is-size-4 has-line-height-none mb-1">{{ .value }}</div>
+                <div class="is-text-xs has-text-weight-bold is-uppercase has-tracking-widest" style="color:rgba(255,255,255,0.75);">{{ .label }}</div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
 </div>
 
 {{ end }}

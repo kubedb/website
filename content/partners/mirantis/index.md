@@ -2,13 +2,216 @@
 title: Run KubeDB on Mirantis Kubernetes Engine
 description: Deploy and manage production-grade databases using KubeDB on Mirantis Kubernetes Engine (MKE)
 url: /partner/mirantis/
+
+hero:
+  badge: "FOR EXISTING MIRANTIS CUSTOMERS"
+  heading: "Run Any Database Natively on <br>Mirantis Kubernetes Engine —<br>"
+  heading_highlight: "Without the Compromise."
+  description: "Deploy and manage <strong>25+ production-grade databases</strong> as native Kubernetes resources directly on your Mirantis Kubernetes Engine (MKE). Leverage Mirantis OpenStack for Kubernetes (MOSK) storage and MKE's enterprise security — with broader choice, zero extra licensing, and true GitOps agility."
+  cta_primary:
+    text: "Why KubeDB on MKE"
+    href: "#comparison"
+  cta_secondary:
+    text: "Deploy in Minutes on MKE"
+    href: "https://kubedb.com/docs"
+  features:
+    - title: "25+ Database Engines"
+      desc: "PostgreSQL, MySQL, Redis, Kafka & more"
+    - title: "Level 5 Operator"
+      desc: "Day-2 operations on Auto Pilot"
+    - title: "MKE + MOSK Native"
+      desc: "CSI storage, RBAC, observability"
+
+platform:
+  badge: "THE PLATFORM"
+  heading: "Your Mirantis Stack is Already Perfect for KubeDB"
+  description: "MKE delivers enterprise-grade Kubernetes. MOSK brings production OpenStack services on Kubernetes. KubeDB makes databases a first-class citizen — with no extra tools or licensing."
+  cards:
+    - title: "Mirantis Kubernetes Engine (MKE)"
+      icon: "lucide:cloud"
+      color: "info"
+      description: "CNCF-certified, hardened Kubernetes platform with FIPS 140-2, DISA STIG, RBAC, multi-cluster management, and composable architecture. Built for production at scale on any infrastructure."
+      features:
+        - "Full support for operators, Helm & CRDs"
+        - "Integrated observability & GitOps-ready"
+        - "MKE 4 on k0s — lightweight & performant"
+    - title: "Mirantis OpenStack for Kubernetes (MOSK)"
+      icon: "lucide:server"
+      color: "info"
+      badge: "STORAGE POWERHOUSE"
+      description: "Full OpenStack (Nova, Cinder, Neutron, Keystone, Ceph) running natively on MKE. Enterprise private cloud with software-defined storage and networking — all managed through Kubernetes."
+      features:
+        - "Ceph CSI driver for high-performance PVCs"
+        - "Cinder block storage integration"
+        - "Scalable, resilient storage for stateful workloads"
+    - title: "Traditional DB Management on Mirantis"
+      icon: "lucide:database"
+      color: "warning"
+      legacy: true
+      description: "VM-based databases, manual ops, or limited operators. Great for legacy, but lacks the speed, breadth, and developer agility of true Kubernetes-native databases."
+      note: "KubeDB fills the gap — turning MKE into a full-featured, open database platform."
+
+comparison:
+  badge: "COMPARISON"
+  heading: "KubeDB on MKE delivers what traditional DB management can't"
+  description: "25+ engines • Deep MKE + MOSK integration"
+  col_traditional: "Traditional / Manual on MKE/MOSK"
+  col_kubedb: "KubeDB on MKE + MOSK"
+  rows:
+    - capability: "Supported Databases"
+      traditional: "Limited (manual installs or basic operators)"
+      kubedb: "25+ production-grade engines (PostgreSQL, Redis, Kafka, Elasticsearch, ClickHouse, Cassandra, Neo4j & more)"
+    - capability: "Deployment Model"
+      traditional: "VMs or custom scripts"
+      kubedb: "100% native Kubernetes CRDs + Operators"
+    - capability: "Management Style"
+      traditional: "Console/scripts or basic operators"
+      kubedb: "Declarative GitOps (ArgoCD/Flux) — same as your apps"
+    - capability: "Cost Model"
+      traditional: "Licensing + ops overhead"
+      kubedb: "Licensed (per GB / Managed Database Memory)"
+    - capability: "Storage Integration"
+      traditional: "Manual or limited"
+      kubedb: "Native MOSK Ceph CSI + Cinder — sub-ms latency, erasure coding"
+    - capability: "Security & Compliance"
+      traditional: "Manual configuration"
+      kubedb: "Built-in TLS/encryption + MKE RBAC, FIPS, STIG policies"
+    - capability: "Observability"
+      traditional: "Separate tools"
+      kubedb: "Deep integration with MKE observability + Prometheus"
+
+benefits:
+  badge: "WHY KUBEDB"
+  heading: "Why Mirantis Customers Choose KubeDB on MKE + MOSK"
+  items:
+    - title: "Zero Extra Licensing Cost"
+      icon: "lucide:dollar-sign"
+      description: "Maximize your existing MKE and MOSK investment — no per-core database licensing or proprietary DBaaS fees."
+    - title: "True Developer Agility"
+      icon: "lucide:rocket"
+      description: "Databases are just Kubernetes objects. Enable self-service provisioning with the same GitOps workflows your teams already use on MKE."
+    - title: "Enterprise Security & Compliance"
+      icon: "lucide:shield"
+      description: "Built-in TLS, encryption, and seamless integration with MKE's RBAC, FIPS 140-2, and STIG-hardened policies — plus MOSK's secure networking."
+    - title: "High-Performance MOSK Storage"
+      icon: "lucide:hard-drive"
+      description: "Leverage Ceph CSI and Cinder from MOSK for blazing-fast, scalable persistent volumes. Sub-millisecond latency, erasure coding, and enterprise resilience for all your databases."
+    - title: "Hybrid & Multi-Cloud Freedom"
+      icon: "lucide:globe"
+      description: "Identical KubeDB manifests work across MKE on-prem, public cloud, or any CNCF Kubernetes — no vendor lock-in."
+    - title: "Unified App + Data Platform"
+      icon: "lucide:bar-chart-2"
+      description: "Run databases alongside your microservices on MKE. Use MKE observability, policies, and fleet management for everything — apps and data in one stack."
+
+architecture:
+  badge: "TECHNICAL ARCHITECTURE"
+  heading: "KubeDB runs natively on Mirantis Kubernetes Engine"
+  description: "The KubeDB Operator sits directly on top of your MKE infrastructure, leveraging Mirantis's enterprise-grade security, FIPS 140-2 certification, and high-performance storage with MOSK and Ceph."
+  layers:
+    - label: "KubeDB Platform"
+      desc: "Web Console • Envoy Gateway • Hub/Spoke Model • Policy Engine"
+      gradient: "primary"
+    - label: "KubeDB Operator"
+      desc: "Provisioner • OpsManager • AutoScaler • KubeDB • Migrator"
+      gradient: "purple"
+    - label: "Kubernetes Services"
+      desc: "ArgoCD • Cert Manager • Prometheus • Grafana"
+      gradient: "blue"
+    - label: "Mirantis Kubernetes Engine"
+      desc: "Kubernetes • MKE • k0rdent • k0s"
+      gradient: "mke"
+  image: "/assets/images/partners/KubeDB_Stack_Diagram.png"
+  image_alt: "KubeDB Platform Architecture on Mirantis Kubernetes Engine"
+  image_tags:
+    - "On-premises"
+    - "Cloud"
+    - "Edge"
+
+capabilities:
+  badge: "CAPABILITIES"
+  heading: "Key Capabilities of KubeDB on MKE + MOSK"
+  items:
+    - title: "Automated Lifecycle Management"
+      icon: "lucide:git-fork"
+      description: "Declarative operators handle provisioning, upgrades, scaling, and repair with zero-downtime where possible."
+    - title: "High Availability & Resiliency"
+      icon: "lucide:shield"
+      description: "Multi-zone clustering, automated failover, PodDisruptionBudgets, and continuous health checks with MKE integration."
+    - title: "Backup & Recovery"
+      icon: "lucide:database"
+      description: "Integrated with KubeStash for policy-driven, incremental, encrypted backups to S3-compatible storage. Support for point-in-time recovery."
+    - title: "Monitoring & Observability"
+      icon: "lucide:bar-chart-2"
+      description: "Native Prometheus + Grafana dashboards. Integrates with MKE monitoring stack for complete visibility."
+    - title: "Security & Governance"
+      icon: "lucide:lock"
+      description: "Automated TLS, Transparent Data Encryption, RBAC integration with MKE, network policies, FIPS 140-2, and STIG compliance."
+    - title: "MOSK Storage Integration"
+      icon: "lucide:layout-grid"
+      description: "Ceph CSI and Cinder integration with sub-millisecond latency, erasure coding, and enterprise resilience for all databases."
+
+database_support:
+  heading: "Comprehensive Database Support"
+  description: "25+ database engines managed with Kubernetes-native workflows"
+  categories:
+    - label: "Relational"
+      items: "PostgreSQL, MySQL, MariaDB, SQL Server, Percona XtraDB"
+    - label: "NoSQL/Document"
+      items: "MongoDB, DocumentDB, Cassandra"
+    - label: "In-Memory/Cache"
+      items: "Redis, Valkey, Memcached"
+    - label: "Search"
+      items: "Elasticsearch, OpenSearch, Solr"
+    - label: "Analytics"
+      items: "Druid, ClickHouse, SingleStore"
+    - label: "Messaging"
+      items: "Kafka, RabbitMQ"
+    - label: "Vector/AI"
+      items: "Milvus, Qdrant, Pgvector"
+    - label: "Graph"
+      items: "Neo4j"
+    - label: "Others"
+      items: "Hazelcast, ZooKeeper, PgBouncer, ProxySQL"
+
+cta:
+  badge: "Mirantis MKE Certified"
+  heading: "Run Databases Natively"
+  heading_highlight: "on Mirantis MKE"
+  description: "FIPS 140-2 compliance, enterprise security, hybrid cloud deployment"
+  features:
+    - text: "Deploy 25+ databases in <60s"
+      icon: "lucide:zap"
+    - text: "FIPS 140-2 & DISA STIG hardened"
+      icon: "lucide:shield"
+    - text: "Run anywhere: bare metal, cloud, edge"
+      icon: "lucide:globe"
+  buttons:
+    - text: "Start Free Trial"
+      href: "https://kubedb.com/docs"
+      style: "white"
+      target: "_blank"
+      icon: "lucide:arrow-right"
+      icon_position: "right"
+    - text: "Watch Demo"
+      href: "#"
+      style: "ghost"
+      icon: "lucide:play"
+      icon_position: "left"
+  stats:
+    - value: "FIPS"
+      label: "140-2 Compliant"
+      icon: "lucide:shield"
+      color: "green"
+    - value: "<60s"
+      label: "Provisioning"
+      icon: "lucide:zap"
+      color: "purple"
+    - value: "25+"
+      label: "DB Engines"
+      icon: "lucide:database"
+      color: "blue"
+    - value: "10K+"
+      label: "Deployments"
+      icon: "lucide:trending-up"
+      color: "red"
 ---
-
-Mirantis Kubernetes Engine (MKE) is an enterprise-grade Kubernetes platform designed for simplicity and security. KubeDB integrates seamlessly with Mirantis Kubernetes Engine to provide fully managed database operators.
-
-With KubeDB on Mirantis Kubernetes Engine, you can:
-- Deploy and manage multiple database types with enterprise features
-- Leverage Mirantis' secure-by-default platform architecture
-- Integrate with Mirantis' comprehensive container and Kubernetes tooling
-- Achieve industry-leading security and compliance standards
-- Get enterprise support from Mirantis for your Kubernetes and database infrastructure
