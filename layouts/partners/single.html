@@ -2,122 +2,22 @@
 {{ $slug := .File.ContentBaseName }}
 {{ $setupURL := printf "/docs/%s/setup/" .Site.Data.products.kubedb.latestVersion }}
 {{ $contactURL := printf "%s/contact/" .Site.Params.domain_appscode }}
-
-{{ $partnerDefaults := dict
-  "badge" "Certified Kubernetes Platform"
-  "highlight" "on your platform"
-  "subtitle" "Deploy production-grade databases with consistent Day 2 operations, policy controls, and enterprise-ready automation."
-  "primary_cta" "Start Free Trial"
-  "secondary_cta" "Contact Sales"
-  "bullets" (slice
-    "Deploy 25+ databases with a Kubernetes-native workflow"
-    "Automate provisioning, upgrades, backups, and recovery"
-    "Run consistently across self-managed and managed clusters")
-  "stats" (slice
-    (dict "value" "25+" "label" "DB engines" "icon" "lucide:database")
-    (dict "value" "24/7" "label" "Day 2 ops" "icon" "lucide:shield")
-    (dict "value" "HA" "label" "Production ready" "icon" "lucide:activity")
-    (dict "value" "Any" "label" "Cloud or on-prem" "icon" "lucide:globe"))
-  "features" (slice
-    (dict "title" "Platform-native operations" "description" "Provision, upgrade, scale, and heal databases using the workflows your Kubernetes teams already trust." "icon" "lucide:rocket")
-    (dict "title" "Security by default" "description" "Use secrets, TLS, RBAC, policy controls, and storage integrations that align with enterprise platform standards." "icon" "lucide:shield-check")
-    (dict "title" "Broad database coverage" "description" "Support relational, document, search, cache, messaging, and analytics engines with one operational model." "icon" "lucide:database-zap")
-    (dict "title" "Built for resilience" "description" "Run highly available databases with automated backup, restore, monitoring, and recovery workflows." "icon" "lucide:heart-pulse"))
-}}
-
-{{ $partnerProfiles := dict
-  "redhat-openshift" (dict
-    "badge" "Red Hat Certified"
-    "highlight" "on Red Hat OpenShift"
-    "subtitle" "Enterprise security, hybrid cloud freedom, and certified operators for production-grade database automation."
-    "bullets" (slice
-      "Deploy 25+ databases in under 60 seconds"
-      "Use OpenShift RBAC, SCC, and compliance-ready controls"
-      "Run across on-prem, AWS, Azure, and GCP environments")
-    "stats" (slice
-      (dict "value" "100%" "label" "Enterprise security" "icon" "lucide:shield")
-      (dict "value" "<60s" "label" "Provisioning" "icon" "lucide:zap")
-      (dict "value" "25+" "label" "DB engines" "icon" "lucide:database")
-      (dict "value" "Any" "label" "Cloud or on-prem" "icon" "lucide:globe"))
-    "features" (slice
-      (dict "title" "OpenShift-native lifecycle management" "description" "Operate PostgreSQL, MySQL, MongoDB, Redis, Kafka, Elasticsearch, and more with Kubernetes-native automation tuned for OpenShift." "icon" "lucide:rocket")
-      (dict "title" "Security and compliance alignment" "description" "Integrate with SCC, SELinux, Pod Security, TLS, RBAC, and air-gapped workflows for regulated environments." "icon" "lucide:shield-check")
-      (dict "title" "Deep platform integration" "description" "Use Operator Hub patterns, CSI-backed storage, monitoring stacks, and cluster services already standardized in OpenShift." "icon" "lucide:layout-dashboard")
-      (dict "title" "Hybrid deployment flexibility" "description" "Run the same operational model across self-managed data centers and major public clouds without fragmenting tooling." "icon" "lucide:globe")))
-  "amazon-eks" (dict
-    "badge" "AWS Ready"
-    "highlight" "on Amazon EKS"
-    "subtitle" "Managed Kubernetes with production-ready database automation, AWS integrations, and fast path to resilient deployments."
-    "bullets" (slice
-      "Launch database clusters quickly on managed Kubernetes"
-      "Integrate with AWS storage, networking, and backup services"
-      "Standardize operations across multi-account EKS fleets")
-    "stats" (slice
-      (dict "value" "AWS" "label" "Cloud native" "icon" "lucide:cloud")
-      (dict "value" "Multi-AZ" "label" "High availability" "icon" "lucide:shield")
-      (dict "value" "25+" "label" "DB engines" "icon" "lucide:database")
-      (dict "value" "Fast" "label" "Provisioning" "icon" "lucide:zap")))
-  "google-gke" (dict
-    "badge" "Google Cloud Ready"
-    "highlight" "on Google GKE"
-    "subtitle" "Production database operations on GKE with Google Cloud infrastructure, autoscaling, and observability built in."
-    "bullets" (slice
-      "Run production databases on Google-managed Kubernetes"
-      "Use Google Cloud primitives for networking and storage"
-      "Connect backup, monitoring, and logging workflows cleanly")
-    "stats" (slice
-      (dict "value" "GKE" "label" "Managed Kubernetes" "icon" "lucide:cloud")
-      (dict "value" "Auto" "label" "Scaling ready" "icon" "lucide:arrow-up-right")
-      (dict "value" "25+" "label" "DB engines" "icon" "lucide:database")
-      (dict "value" "SRE" "label" "Operational fit" "icon" "lucide:shield-check")))
-  "microsoft-aks" (dict
-    "badge" "Azure Ready"
-    "highlight" "on Microsoft AKS"
-    "subtitle" "Run KubeDB on AKS with enterprise governance, Azure integrations, and a consistent developer-to-production path."
-    "bullets" (slice
-      "Automate database lifecycle on fully managed AKS clusters"
-      "Pair KubeDB with Azure networking, identity, and storage"
-      "Simplify resilient deployments for enterprise platform teams")
-    "stats" (slice
-      (dict "value" "AKS" "label" "Managed Kubernetes" "icon" "lucide:cloud")
-      (dict "value" "AAD" "label" "Identity fit" "icon" "lucide:shield")
-      (dict "value" "25+" "label" "DB engines" "icon" "lucide:database")
-      (dict "value" "Any" "label" "Prod environment" "icon" "lucide:globe")))
-  "suse-rancher" (dict
-    "badge" "Rancher Compatible"
-    "highlight" "on SUSE Rancher"
-    "subtitle" "Operate databases across Rancher-managed Kubernetes, RKE2, and k3s with one consistent automation layer."
-    "bullets" (slice
-      "Manage databases across centralized multi-cluster estates"
-      "Support edge, core, and enterprise environments with one model"
-      "Use the same workflows on Rancher, RKE2, and k3s")
-    "stats" (slice
-      (dict "value" "RKE2" "label" "Enterprise distro" "icon" "lucide:shield")
-      (dict "value" "k3s" "label" "Edge ready" "icon" "lucide:cpu")
-      (dict "value" "25+" "label" "DB engines" "icon" "lucide:database")
-      (dict "value" "Multi" "label" "Cluster ops" "icon" "lucide:network")))
-}}
-
-{{ $profile := merge $partnerDefaults (index $partnerProfiles $slug | default dict) }}
-{{ $features := index $profile "features" }}
+{{ $partnerData := .Site.Data.products.kubedb.partners.redhat }}
+{{ $profileDefaults := index $partnerData "profile_defaults" }}
+{{ $profiles := index $partnerData "profiles" }}
+{{ $pageDefaults := index $partnerData "page_defaults" }}
+{{ $pages := index $partnerData "pages" }}
+{{ $profile := merge $profileDefaults (index $profiles $slug | default dict) }}
+{{ $page := index $pages $slug | default $pageDefaults }}
+{{ $hero := index $page "hero" }}
+{{ $intro := index $page "intro" }}
+{{ $meaning := index $page "meaning" }}
+{{ $architecture := index $page "architecture" }}
+{{ $comparison := index $page "comparison" }}
+{{ $production := index $page "production" }}
+{{ $databaseSupport := index $page "database_support" }}
 {{ $stats := index $profile "stats" }}
 {{ $bullets := index $profile "bullets" }}
-{{ $comparisonHeaders := dict
-  "aspect" "Feature / Capability"
-  "previous" "Traditional DBaaS (External or Limited Operators)"
-  "current" "OpenShift + KubeDB"
-}}
-{{ $comparisonRows := slice
-  (dict "aspect" "Supported Database Engines" "previous" "Limited (often 5-10 engines, vendor-specific like Postgres/MySQL via certified operators)" "current" "25+ engines including PostgreSQL, MySQL, MongoDB, Redis, Kafka, Elasticsearch, ClickHouse, Cassandra, Neo4j and more")
-  (dict "aspect" "Deployment & Management" "previous" "Console-driven or external service with limited Red Hat OpenShift integration" "current" "Native CRDs via Operator Lifecycle Manager (OLM). Full declarative GitOps support")
-  (dict "aspect" "Cost Model" "previous" "Per-core or usage licensing plus egress fees for external DBaaS" "current" "No licensing fees. Pay only for your Red Hat OpenShift nodes and storage")
-  (dict "aspect" "Provisioning Speed & Agility" "previous" "Minutes to hours, often with manual approval" "current" "Seconds via kubectl or GitOps with developer self-service")
-  (dict "aspect" "Storage Integration" "previous" "External or basic PVCs" "current" "Native ODF Ceph CSI with high performance, snapshots, and erasure coding")
-  (dict "aspect" "Security & Compliance" "previous" "Provider-managed or manual" "current" "Built-in TLS and encryption plus OpenShift RBAC, SELinux, and NetworkPolicy")
-  (dict "aspect" "Observability & Monitoring" "previous" "Separate dashboards" "current" "Deep integration with OpenShift Monitoring and Prometheus")
-  (dict "aspect" "Backup & Recovery" "previous" "Provider tools or manual" "current" "KubeStash integration, ODF snapshots, and point-in-time recovery")
-  (dict "aspect" "Portability & Lock-in" "previous" "High due to vendor-specific APIs" "current" "Same manifests across Red Hat OpenShift and CNCF-certified Kubernetes")
-}}
 
 <style>
   .partner-feature-card {
@@ -213,7 +113,7 @@
 </style>
 
 <div class="pricing-page ac-ui">
-	<section class="home-hero">
+  <section class="home-hero">
     <div class="home-hero-bg">
       <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
       <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
@@ -243,200 +143,134 @@
       <div class="hero-ping hero-ping-3"></div>
     </div>
     <div class="container has-text-centered">
-    <div class="is-flex is-justify-content-center mb-6">
-    <div class="badge badge-primary">
-      <iconify-icon icon="heroicons:check-circle" width="16" height="16" style="color:#4948A3;"><template shadowrootmode="open"><style data-style="data-style">:host{display:inline-block;vertical-align:0}span,svg{display:block}</style><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257a3 3 0 0 0-3.758-3.848a5.25 5.25 0 0 0-10.233 2.33A4.5 4.5 0 0 0 2.25 15"></path></svg></template></iconify-icon>
-      <span class="badge-text"> OFFICIALLY CERTIFIED OPERATOR </span>
+      <div class="is-flex is-justify-content-center mb-6">
+        <div class="badge badge-primary">
+          <iconify-icon {{ printf "icon=%q" (index $hero "badge_icon") | safeHTMLAttr }} width="16" height="16" style="color:#4948A3;"></iconify-icon>
+          <span class="badge-text">{{ index $hero "badge_text" }}</span>
+        </div>
+      </div>
+      <h1 class="display-xl has-text-heading has-text-weight-black mb-6 has-text-balance">
+        {{ index $hero "title" | safeHTML }}
+      </h1>
+
+      <p class="body-lg has-text-grey-600 mb-10 mx-auto" style="max-width:720px;">
+        {{ index $hero "description" | safeHTML }}
+      </p>
+
+      <div class="is-flex is-justify-content-center is-flex-wrap-wrap has-gap-4 mb-12">
+        {{ range index $hero "actions" }}
+        <a href="{{ .href }}"{{ if .target_blank }} target="_blank"{{ end }} class="button is-primary height-50">
+          <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="{{ .icon_width | default 18 }}" height="{{ .icon_height | default 18 }}"></iconify-icon>
+          <span>{{ .text }}</span>
+        </a>
+        {{ end }}
+      </div>
+
+      <div class="columns is-centered" style="max-width:52rem; margin:1.5rem auto;">
+        {{ range index $hero "highlights" }}
+        <div class="column is-4-tablet has-text-centered">
+          <div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-gap-2">
+            <i class="fa {{ .icon }} is-primary" style="font-size:1.4rem;"></i>
+            <div>
+              <div class="has-text-weight-bold is-text-sm" style="color:#111827;">{{ .title }}</div>
+              <div class="is-text-xs has-text-grey-600">{{ .description }}</div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
     </div>
-
-      </div>
-        <h1 class="display-xl has-text-heading has-text-weight-black mb-6 has-text-balance">
-          Run Any Database Natively on <br>Red Hat OpenShift —<br>
-          <span class="has-text-gradient">Without the Compromise.</span>
-        </h1>
-
-        <p class="body-lg has-text-grey-600 mb-10 mx-auto" style="max-width:720px;">
-          Deploy and manage <strong>25+ production-grade databases</strong> as native Kubernetes resources on Red Hat OpenShift. Run production databases with full automation, governance, and portability across on-prem, cloud, edge, and air-gapped environments.
-        </p>
-
-        <div class="is-flex is-justify-content-center is-flex-wrap-wrap has-gap-4 mb-12">
-          <a href="#comparison" class="button is-primary height-50">
-            <iconify-icon icon="lucide:arrow-right" width="18" height="18"></iconify-icon>
-            <span>Start Free Trial</span>
-          </a>
-          <a href="https://kubedb.com/docs" target="_blank" class="button is-primary height-50">
-            <iconify-icon icon="lucide:external-link" width="16" height="16"></iconify-icon>
-            <span>View on Red Hat Marketplace</span>
-          </a>
-        </div>
-
-        <div class="columns is-centered" style="max-width:52rem; margin:1.5rem auto;">
-          <div class="column is-4-tablet has-text-centered">
-            <div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-gap-2">
-              <i class="fa fa-check-circle is-primary" style="font-size:1.4rem;"></i>
-              <div>
-                <div class="has-text-weight-bold is-text-sm" style="color:#111827;">25+ Database Engines</div>
-                <div class="is-text-xs has-text-grey-600">PostgreSQL, MySQL, Redis, Kafka &amp; more</div>
-              </div>
-            </div>
-          </div>
-          <div class="column is-4-tablet has-text-centered">
-            <div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-gap-2">
-              <i class="fa fa-check-circle is-primary" style="font-size:1.4rem;"></i>
-              <div>
-                <div class="has-text-weight-bold is-text-sm" style="color:#111827;">Certified Operator</div>
-                <div class="is-text-xs has-text-grey-600">Red Hat Marketplace & OpenShift</div>
-              </div>
-            </div>
-          </div>
-          <div class="column is-4-tablet has-text-centered">
-            <div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-gap-2">
-              <i class="fa fa-check-circle is-primary" style="font-size:1.4rem;"></i>
-              <div>
-                <div class="has-text-weight-bold is-text-sm" style="color:#111827;">100% GitOps Native</div>
-                <div class="is-text-xs has-text-grey-600">Declarative & developer-friendly</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
   </section>
 
   <section class="section-padding has-background-white">
     <div class="container">
       <div class="section-header mb-12">
-        <p class="section-header-desc body-lg">KubeDB by AppsCode delivers a production-grade, Kubernetes-native Database-as-a-Service platform that runs seamlessly on Red Hat OpenShift and OpenShift Virtualization. It enables platform teams and developers to provision, manage, scale, backup, and recover databases using familiar Kubernetes APIs—without vendor lock-in while maintaining enterprise-grade security and compliance.</p>
+        <p class="section-header-desc body-lg">{{ index $intro "description" | safeHTML }}</p>
       </div>
       <div class="container">
-      <div class="box is-radius-2xlarge has-border has-shadow-medium p-6 p-7-desktop">
-        <h2 class="section-header-title has-text-heading has-text-weight-black mb-5">
-          What This Means for Red Hat OpenShift Users
-        </h2>
-        <p class="body-lg has-text-grey-600 mb-6">
-          If you're running applications on Red Hat OpenShift, you benefit from enterprise Kubernetes with enhanced security and developer experience. KubeDB extends these benefits to your database layer with native operator patterns.
-        </p>
-        <p class="body-lg has-text-grey-600 mb-6">
-          <span class="has-text-primary has-text-weight-bold">KubeDB enhances OpenShift</span> by making databases first-class citizens in your platform:
-        </p>
+        <div class="box is-radius-2xlarge has-border has-shadow-medium p-6 p-7-desktop">
+          <h2 class="section-header-title has-text-heading has-text-weight-black mb-5">
+            {{ index $meaning "title" }}
+          </h2>
+          <p class="body-lg has-text-grey-600 mb-6">
+            {{ index $meaning "description" }}
+          </p>
+          <p class="body-lg has-text-grey-600 mb-6">
+            {{ index $meaning "emphasis" | safeHTML }}
+          </p>
 
-        <div class="columns is-multiline is-variable is-6">
-          <div class="column is-12-mobile is-6-tablet is-3-desktop">
-            <div class="is-flex has-gap-4">
-              <div class="pricing-icon-chip is-plan-2 is-flex-shrink-0">
-                <iconify-icon icon="lucide:zap" width="20" height="20"></iconify-icon>
-              </div>
-              <div>
-                <h3 class="is-text-sm has-text-heading has-text-weight-black mb-2">Faster Time-to-Value</h3>
-                <p class="body-sm has-text-grey-600 mb-0">Launch databases in minutes with OpenShift Operators.</p>
+          <div class="columns is-multiline is-variable is-6">
+            {{ range index $meaning "items" }}
+            <div class="column is-12-mobile is-6-tablet is-3-desktop">
+              <div class="is-flex has-gap-4">
+                <div class="pricing-icon-chip is-plan-2 is-flex-shrink-0">
+                  <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="20" height="20"></iconify-icon>
+                </div>
+                <div>
+                  <h3 class="is-text-sm has-text-heading has-text-weight-black mb-2">{{ .title }}</h3>
+                  <p class="body-sm has-text-grey-600 mb-0">{{ .description }}</p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="column is-12-mobile is-6-tablet is-3-desktop">
-            <div class="is-flex has-gap-4">
-              <div class="pricing-icon-chip is-plan-2 is-flex-shrink-0">
-                <iconify-icon icon="lucide-trending-up" width="20" height="20"></iconify-icon>
-              </div>
-              <div>
-                <h3 class="is-text-sm has-text-heading has-text-weight-black mb-2">Enterprise Compliance</h3>
-                <p class="body-sm has-text-grey-600 mb-0">Meet regulatory requirements with OpenShift security.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="column is-12-mobile is-6-tablet is-3-desktop">
-            <div class="is-flex has-gap-4">
-              <div class="pricing-icon-chip is-plan-2 is-flex-shrink-0">
-                <iconify-icon icon="lucide:server" width="20" height="20"></iconify-icon>
-              </div>
-              <div>
-                <h3 class="is-text-sm has-text-heading has-text-weight-black mb-2">Hybrid Flexibility</h3>
-                <p class="body-sm has-text-grey-600 mb-0">Run on-prem, cloud, or edge with consistent workflows.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="column is-12-mobile is-6-tablet is-3-desktop">
-            <div class="is-flex has-gap-4">
-              <div class="pricing-icon-chip is-plan-2 is-flex-shrink-0">
-                <iconify-icon icon="lucide:globe" width="20" height="20"></iconify-icon>
-              </div>
-              <div>
-                <h3 class="is-text-sm has-text-heading has-text-weight-black mb-2">VM &amp; Container Support</h3>
-                <p class="body-sm has-text-grey-600 mb-0">Run databases on OpenShift Virtualization or containers.</p>
-              </div>
-            </div>
+            {{ end }}
           </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
 
   <section class="section-padding has-background-grey-50">
     <div class="container">
       <div class="columns is-vcentered is-variable is-8">
-
         <div class="column is-5-desktop">
           <div class="badge mb-4">
-            <iconify-icon icon="lucide:layers" width="16" height="16" class="has-text-secondary"></iconify-icon>
-            <span class="badge-text">TECHNICAL ARCHITECTURE</span>
+            <iconify-icon {{ printf "icon=%q" (index $architecture "badge_icon") | safeHTMLAttr }} width="16" height="16" class="has-text-secondary"></iconify-icon>
+            <span class="badge-text">{{ index $architecture "badge_text" }}</span>
           </div>
           <h2 class="heading-xl has-text-heading has-text-weight-black mb-5">
-            KubeDB runs natively on Red Hat OpenShift
+            {{ index $architecture "title" }}
           </h2>
           <p class="body-md has-text-grey-500 mb-8">
-            The KubeDB Operator sits directly on top of your OpenShift platform, leveraging OpenShift's enterprise security, operator framework, and multi-cluster capabilities.
+            {{ index $architecture "description" }}
           </p>
           <div class="is-flex is-flex-direction-column has-gap-3">
+            {{ range index $architecture "layers" }}
             <div class="is-flex is-align-items-center has-gap-4">
-              <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large has-background-gradient-primary is-flex-shrink-0" style="min-width:230px;box-shadow:0 4px 12px rgba(0,0,0,0.15);">KubeDB Platform</div>
-              <div class="is-text-xs has-text-grey-500">Web Console • Envoy Gateway • Hub/Spoke Model • Policy Engine</div>
+              <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large is-flex-shrink-0 {{ .chip_class }}" style="min-width:230px;box-shadow:0 4px 12px rgba(0,0,0,0.15);{{ with .chip_style }}{{ . }}{{ end }}">{{ .title }}</div>
+              <div class="is-text-xs has-text-grey-500">{{ .description }}</div>
             </div>
-            <div class="is-flex is-align-items-center has-gap-4">
-              <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large has-background-gradient-purple is-flex-shrink-0" style="min-width:230px;box-shadow:0 4px 12px rgba(0,0,0,0.15);">KubeDB Operator</div>
-              <div class="is-text-xs has-text-grey-500">Provisioner • OpsManager • AutoScaler • KubeDB • Migrator</div>
-            </div>
-            <div class="is-flex is-align-items-center has-gap-4">
-              <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large has-background-gradient-blue is-flex-shrink-0" style="min-width:230px;box-shadow:0 4px 12px rgba(0,0,0,0.15);">Kubernetes Services</div>
-              <div class="is-text-xs has-text-grey-500">ArgoCD • Open Cluster Management • Cert Manager • Prometheus • Grafana</div>
-            </div>
-            <div class="is-flex is-align-items-center has-gap-4">
-              <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large is-flex-shrink-0" style="min-width:230px;box-shadow:0 4px 12px rgba(0,0,0,0.15);background:linear-gradient(90deg,#2563EB,#4338CA);">Red Hat OpenShift</div>
-              <div class="is-text-xs has-text-grey-500">OCP • ROSA • ARO • OSD • OKE • OCP+</div>
-            </div>
+            {{ end }}
           </div>
         </div>
 
         <div class="column is-7-desktop">
           <div class="has-background-white is-radius-2xlarge p-6 has-shadow-large has-border">
-            <img src="/assets/images/partners/redhat.png"
-                alt="KubeDB Platform Architecture on Red Hat OpenShift"
-                style="width:100%;border-radius:1rem;display:block;">
+            <img src="{{ index $architecture "image" "src" }}"
+              alt="{{ index $architecture "image" "alt" }}"
+              style="width:100%;border-radius:1rem;display:block;">
             <div class="is-flex is-align-items-center has-gap-3 mt-5 is-justify-content-center">
-              <span class="tag">On-premises</span>
+              {{ range $idx, $tag := index $architecture "environment_tags" }}
+              {{ if gt $idx 0 }}
               <div style="flex:1;height:1px;background:#E5E7EB;"></div>
-              <span class="tag">Cloud</span>
-              <div style="flex:1;height:1px;background:#E5E7EB;"></div>
-              <span class="tag">Edge</span>
+              {{ end }}
+              <span class="tag">{{ $tag }}</span>
+              {{ end }}
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <section class="section-padding has-background-grey-50 is-relative is-overflow-hidden">
+  <section id="comparison" class="section-padding has-background-grey-50 is-relative is-overflow-hidden">
     <div class="container">
       <div class="section-header mb-12">
         <div class="badge">
-          <iconify-icon icon="lucide:git-compare" width="16" height="16" class="has-text-secondary"></iconify-icon>
-          <span class="badge-text">Why this architecture wins</span>
+          <iconify-icon {{ printf "icon=%q" (index $comparison "badge_icon") | safeHTMLAttr }} width="16" height="16" class="has-text-secondary"></iconify-icon>
+          <span class="badge-text">{{ index $comparison "badge_text" }}</span>
         </div>
-        <h2 class="section-header-title has-text-heading has-text-weight-black">OpenShift with Traditional DBaaS vs OpenShift + KubeDB</h2>
-        <p class="section-header-desc body-lg">KubeDB delivers broader support, lower cost, and true Kubernetes-native experience on your existing OpenShift platform.</p>
+        <h2 class="section-header-title has-text-heading has-text-weight-black">{{ index $comparison "title" }}</h2>
+        <p class="section-header-desc body-lg">{{ index $comparison "description" }}</p>
       </div>
 
       <div class="table-container is-overflow-x-auto is-radius-2xlarge has-border has-shadow-medium has-background-white is-relative has-z-index-10 has-transition">
@@ -444,18 +278,18 @@
           <thead>
             <tr class="has-background-grey-50">
               <th class="is-text-xs has-text-weight-black has-text-heading is-uppercase has-tracking-widest py-5 px-6" style="width: 22%;">
-                {{ index $comparisonHeaders "aspect" }}
+                {{ index $comparison "headers" "aspect" }}
               </th>
               <th class="is-text-xs has-text-weight-black has-tracking-widest py-5 px-6 has-text-warning" style="width: 39%;">
-                {{ index $comparisonHeaders "previous" }}
+                {{ index $comparison "headers" "previous" }}
               </th>
               <th class="is-text-xs has-text-weight-black has-tracking-widest py-5 px-6 has-text-secondary" style="width: 39%;">
-                {{ index $comparisonHeaders "current" }}
+                {{ index $comparison "headers" "current" }}
               </th>
             </tr>
           </thead>
           <tbody class="is-text-sm">
-            {{ range $comparisonRows }}
+            {{ range index $comparison "rows" }}
             <tr class="has-hover-background-grey-50-soft has-transition">
               <td class="px-6 py-6 has-text-heading has-text-weight-bold" style="border-right: 1px solid rgba(0,0,0,0.03);">
                 {{ .aspect }}
@@ -477,100 +311,28 @@
   <section class="section-padding has-background-white">
     <div class="container">
       <div class="section-header mb-12">
-        <h2 class="section-header-title has-text-heading has-text-weight-black">Production databases. Fully automated on Red Hat OpenShift.</h2>
-        <p class="section-header-desc body-lg">25+ database engines with HA, scaling, backup, TLS, monitoring, and GitOps support</p>
+        <h2 class="section-header-title has-text-heading has-text-weight-black">{{ index $production "title" }}</h2>
+        <p class="section-header-desc body-lg">{{ index $production "description" }}</p>
       </div>
 
       <div class="columns is-multiline is-variable is-6">
+        {{ range index $production "cards" }}
         <div class="column is-12-mobile is-6-tablet is-4-desktop">
           <div class="partner-feature-card is-radius-2xlarge has-background-white has-border p-6 p-7-desktop h-100">
+            {{ if eq (.icon_variant | default "outline") "badge" }}
             <div class="partner-feature-card-badge is-inline-flex is-align-items-center is-justify-content-center mb-5">
-              <iconify-icon icon="lucide:cloud" width="22" height="22"></iconify-icon>
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="22" height="22"></iconify-icon>
             </div>
-            <h3 class="is-text-h4 has-text-heading has-text-weight-black mb-4">Run Databases Natively on Red Hat OpenShift</h3>
-            <p class="body-md has-text-grey-600 mb-0">KubeDB integrates deeply with Red Hat OpenShift, supporting OpenShift Data Foundation (ODF), CSI drivers, and both containerized and virtualized workloads. Databases run with full security context constraints and enterprise-grade isolation.</p>
-          </div>
-        </div>
-
-        <div class="column is-12-mobile is-6-tablet is-4-desktop">
-          <div class="partner-feature-card is-radius-2xlarge has-background-white has-border p-6 p-7-desktop h-100">
-            <div class="partner-feature-card-badge is-inline-flex is-align-items-center is-justify-content-center mb-5">
-              <iconify-icon icon="lucide:lock" width="22" height="22"></iconify-icon>
-            </div>
-            <h3 class="is-text-h4 has-text-heading has-text-weight-black mb-4">Enterprise-Grade Security &amp; Compliance</h3>
-            <p class="body-md has-text-grey-600 mb-0">Complete data ownership with Red Hat OpenShift's security features including SELinux, seccomp, and Pod Security Admission. Support for air-gapped, FIPS-140-2, and highly regulated environments.</p>
-          </div>
-        </div>
-
-        <div class="column is-12-mobile is-6-tablet is-4-desktop">
-          <div class="partner-feature-card is-radius-2xlarge has-background-white has-border p-6 p-7-desktop h-100">
-            <div class="partner-feature-card-badge is-inline-flex is-align-items-center is-justify-content-center mb-5">
-              <iconify-icon icon="lucide:database-zap" width="22" height="22"></iconify-icon>
-            </div>
-            <h3 class="is-text-h4 has-text-heading has-text-weight-black mb-4">Broad Database Support</h3>
-            <p class="body-md has-text-grey-600 mb-0">Manage 25+ database engines including PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, Kafka, and more, all with consistent Kubernetes-native workflows on both containers and VMs.</p>
-          </div>
-        </div>
-
-        <div class="column is-12-mobile is-6-tablet is-4-desktop">
-          <div class="partner-feature-card is-radius-2xlarge has-background-white has-border p-6 p-7-desktop h-100">
+            {{ else }}
             <div class="partner-feature-card-icon mb-5">
-              <iconify-icon icon="lucide:git-branch-plus" width="34" height="34"></iconify-icon>
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="34" height="34"></iconify-icon>
             </div>
-            <h3 class="is-text-h4 has-text-heading has-text-weight-black mb-4">Automated Lifecycle Management</h3>
-            <p class="body-md has-text-grey-600 mb-0">Declarative operators handle provisioning, upgrades, scaling, and repair with zero-downtime where possible.</p>
+            {{ end }}
+            <h3 class="is-text-h4 has-text-heading has-text-weight-black mb-4">{{ .title }}</h3>
+            <p class="body-md has-text-grey-600 mb-0">{{ .description }}</p>
           </div>
         </div>
-
-        <div class="column is-12-mobile is-6-tablet is-4-desktop">
-          <div class="partner-feature-card is-radius-2xlarge has-background-white has-border p-6 p-7-desktop h-100">
-            <div class="partner-feature-card-icon mb-5">
-              <iconify-icon icon="lucide:shield-check" width="34" height="34"></iconify-icon>
-            </div>
-            <h3 class="is-text-h4 has-text-heading has-text-weight-black mb-4">High Availability &amp; Resiliency</h3>
-            <p class="body-md has-text-grey-600 mb-0">Multi-zone clustering, automated failover, PodDisruptionBudgets, and continuous health checks with Red Hat OpenShift Operator Hub integration.</p>
-          </div>
-        </div>
-
-        <div class="column is-12-mobile is-6-tablet is-4-desktop">
-          <div class="partner-feature-card is-radius-2xlarge has-background-white has-border p-6 p-7-desktop h-100">
-            <div class="partner-feature-card-icon mb-5">
-              <iconify-icon icon="lucide:database-backup" width="34" height="34"></iconify-icon>
-            </div>
-            <h3 class="is-text-h4 has-text-heading has-text-weight-black mb-4">Backup &amp; Recovery</h3>
-            <p class="body-md has-text-grey-600 mb-0">Integrated with KubeStash for policy-driven, incremental, encrypted backups to S3-compatible storage. Support for point-in-time recovery.</p>
-          </div>
-        </div>
-
-        <div class="column is-12-mobile is-6-tablet is-4-desktop">
-          <div class="partner-feature-card is-radius-2xlarge has-background-white has-border p-6 p-7-desktop h-100">
-            <div class="partner-feature-card-icon mb-5">
-              <iconify-icon icon="lucide:chart-column" width="34" height="34"></iconify-icon>
-            </div>
-            <h3 class="is-text-h4 has-text-heading has-text-weight-black mb-4">Monitoring &amp; Observability</h3>
-            <p class="body-md has-text-grey-600 mb-0">Native Prometheus + Grafana dashboards. Integrates with Red Hat OpenShift monitoring stack and Red Hat Advanced Cluster Management.</p>
-          </div>
-        </div>
-
-        <div class="column is-12-mobile is-6-tablet is-4-desktop">
-          <div class="partner-feature-card is-radius-2xlarge has-background-white has-border p-6 p-7-desktop h-100">
-            <div class="partner-feature-card-icon mb-5">
-              <iconify-icon icon="lucide:lock" width="34" height="34"></iconify-icon>
-            </div>
-            <h3 class="is-text-h4 has-text-heading has-text-weight-black mb-4">Security &amp; Governance</h3>
-            <p class="body-md has-text-grey-600 mb-0">Automated TLS, Transparent Data Encryption, RBAC integration with Red Hat OpenShift OAuth, network policies, and Red Hat Compliance Operator support.</p>
-          </div>
-        </div>
-
-        <div class="column is-12-mobile is-6-tablet is-4-desktop">
-          <div class="partner-feature-card is-radius-2xlarge has-background-white has-border p-6 p-7-desktop h-100">
-            <div class="partner-feature-card-icon mb-5">
-              <iconify-icon icon="lucide:layers-3" width="34" height="34"></iconify-icon>
-            </div>
-            <h3 class="is-text-h4 has-text-heading has-text-weight-black mb-4">Legacy Workloads</h3>
-            <p class="body-md has-text-grey-600 mb-0">Run databases on Red Hat OpenShift alongside legacy virtualized workloads, Windows applications, or Bare Metal deployments.</p>
-          </div>
-        </div>
+        {{ end }}
       </div>
     </div>
   </section>
@@ -579,87 +341,23 @@
     <div class="container">
       <div class="database-support-panel has-border">
         <div class="database-support-header">
-          <h2 class="is-text-h3 has-text-white has-text-weight-black mb-3">Comprehensive Database Support</h2>
-          <p class="database-support-subtitle body-md has-text-white mb-0">25+ database engines managed with Kubernetes-native workflows</p>
+          <h2 class="is-text-h3 has-text-white has-text-weight-black mb-3">{{ index $databaseSupport "title" }}</h2>
+          <p class="database-support-subtitle body-md has-text-white mb-0">{{ index $databaseSupport "description" }}</p>
         </div>
 
         <div class="database-support-content">
+          {{ range index $databaseSupport "groups" }}
           <div class="database-support-row">
             <div class="database-support-grid columns is-mobile is-vcentered is-multiline">
               <div class="database-support-label-col column is-12-mobile is-3-desktop">
-                <span class="database-support-tag has-text-weight-bold">Relational</span>
+                <span class="database-support-tag has-text-weight-bold">{{ .label }}</span>
               </div>
               <div class="database-support-value-col column is-12-mobile is-9-desktop">
-                <p class="body-md has-text-grey-700 mb-0">PostgreSQL, MySQL, MariaDB, SQL Server, Percona XtraDB</p>
+                <p class="body-md has-text-grey-700 mb-0">{{ .values }}</p>
               </div>
             </div>
           </div>
-
-          <div class="database-support-row">
-            <div class="database-support-grid columns is-mobile is-vcentered is-multiline">
-              <div class="database-support-label-col column is-12-mobile is-3-desktop">
-                <span class="database-support-tag has-text-weight-bold">NoSQL/Document</span>
-              </div>
-              <div class="database-support-value-col column is-12-mobile is-9-desktop">
-                <p class="body-md has-text-grey-700 mb-0">MongoDB, DocumentDB, Cassandra</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="database-support-row">
-            <div class="database-support-grid columns is-mobile is-vcentered is-multiline">
-              <div class="database-support-label-col column is-12-mobile is-3-desktop">
-                <span class="database-support-tag has-text-weight-bold">In-Memory/Cache</span>
-              </div>
-              <div class="database-support-value-col column is-12-mobile is-9-desktop">
-                <p class="body-md has-text-grey-700 mb-0">Redis, Valkey, Memcached</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="database-support-row">
-            <div class="database-support-grid columns is-mobile is-vcentered is-multiline">
-              <div class="database-support-label-col column is-12-mobile is-3-desktop">
-                <span class="database-support-tag has-text-weight-bold">Search</span>
-              </div>
-              <div class="database-support-value-col column is-12-mobile is-9-desktop">
-                <p class="body-md has-text-grey-700 mb-0">Elasticsearch, OpenSearch, Solr</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="database-support-row">
-            <div class="database-support-grid columns is-mobile is-vcentered is-multiline">
-              <div class="database-support-label-col column is-12-mobile is-3-desktop">
-                <span class="database-support-tag has-text-weight-bold">Analytics</span>
-              </div>
-              <div class="database-support-value-col column is-12-mobile is-9-desktop">
-                <p class="body-md has-text-grey-700 mb-0">Druid, ClickHouse, SingleStore</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="database-support-row">
-            <div class="database-support-grid columns is-mobile is-vcentered is-multiline">
-              <div class="database-support-label-col column is-12-mobile is-3-desktop">
-                <span class="database-support-tag has-text-weight-bold">Messaging</span>
-              </div>
-              <div class="database-support-value-col column is-12-mobile is-9-desktop">
-                <p class="body-md has-text-grey-700 mb-0">Kafka, RabbitMQ</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="database-support-row">
-            <div class="database-support-grid columns is-mobile is-vcentered is-multiline">
-              <div class="database-support-label-col column is-12-mobile is-3-desktop">
-                <span class="database-support-tag has-text-weight-bold">Others</span>
-              </div>
-              <div class="database-support-value-col column is-12-mobile is-9-desktop">
-                <p class="body-md has-text-grey-700 mb-0">Hazelcast, ZooKeeper, PgBouncer, ProxySQL</p>
-              </div>
-            </div>
-          </div>
+          {{ end }}
         </div>
       </div>
     </div>
@@ -721,7 +419,7 @@
                 <div class="pricing-feature-card is-feature-{{ add $idx 1 }}" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.16); backdrop-filter: blur(6px);">
                   <div class="card-content">
                     <span class="pricing-icon-chip">
-                      <iconify-icon icon="{{ $stat.icon }}" width="22" height="22"></iconify-icon>
+                      <iconify-icon {{ printf "icon=%q" $stat.icon | safeHTMLAttr }} width="22" height="22"></iconify-icon>
                     </span>
                     <p class="title is-3 has-text-white has-text-weight-black mb-2">{{ $stat.value }}</p>
                     <p class="is-text-xs has-text-weight-bold is-uppercase" style="letter-spacing: 0.08em; color: rgba(255,255,255,0.82);">{{ $stat.label }}</p>
@@ -735,7 +433,6 @@
       </div>
     </div>
   </section>
-
 </div>
 
 {{ end }}

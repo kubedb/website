@@ -1,0 +1,398 @@
+{
+  "profile_defaults": {
+    "badge": "Certified Kubernetes Platform",
+    "highlight": "on your platform",
+    "subtitle": "Deploy production-grade databases with consistent Day 2 operations, policy controls, and enterprise-ready automation.",
+    "primary_cta": "Start Free Trial",
+    "secondary_cta": "Contact Sales",
+    "bullets": [
+      "Deploy 25+ databases with a Kubernetes-native workflow",
+      "Automate provisioning, upgrades, backups, and recovery",
+      "Run consistently across self-managed and managed clusters"
+    ],
+    "stats": [
+      { "value": "25+", "label": "DB engines", "icon": "lucide:database" },
+      { "value": "24/7", "label": "Day 2 ops", "icon": "lucide:shield" },
+      { "value": "HA", "label": "Production ready", "icon": "lucide:activity" },
+      { "value": "Any", "label": "Cloud or on-prem", "icon": "lucide:globe" }
+    ],
+    "features": [
+      {
+        "title": "Platform-native operations",
+        "description": "Provision, upgrade, scale, and heal databases using the workflows your Kubernetes teams already trust.",
+        "icon": "lucide:rocket"
+      },
+      {
+        "title": "Security by default",
+        "description": "Use secrets, TLS, RBAC, policy controls, and storage integrations that align with enterprise platform standards.",
+        "icon": "lucide:shield-check"
+      },
+      {
+        "title": "Broad database coverage",
+        "description": "Support relational, document, search, cache, messaging, and analytics engines with one operational model.",
+        "icon": "lucide:database-zap"
+      },
+      {
+        "title": "Built for resilience",
+        "description": "Run highly available databases with automated backup, restore, monitoring, and recovery workflows.",
+        "icon": "lucide:heart-pulse"
+      }
+    ]
+  },
+  "profiles": {
+    "redhat-openshift": {
+      "badge": "Red Hat Certified",
+      "highlight": "on Red Hat OpenShift",
+      "subtitle": "Enterprise security, hybrid cloud freedom, and certified operators for production-grade database automation.",
+      "bullets": [
+        "Deploy 25+ databases in under 60 seconds",
+        "Use OpenShift RBAC, SCC, and compliance-ready controls",
+        "Run across on-prem, AWS, Azure, and GCP environments"
+      ],
+      "stats": [
+        { "value": "100%", "label": "Enterprise security", "icon": "lucide:shield" },
+        { "value": "<60s", "label": "Provisioning", "icon": "lucide:zap" },
+        { "value": "25+", "label": "DB engines", "icon": "lucide:database" },
+        { "value": "Any", "label": "Cloud or on-prem", "icon": "lucide:globe" }
+      ],
+      "features": [
+        {
+          "title": "OpenShift-native lifecycle management",
+          "description": "Operate PostgreSQL, MySQL, MongoDB, Redis, Kafka, Elasticsearch, and more with Kubernetes-native automation tuned for OpenShift.",
+          "icon": "lucide:rocket"
+        },
+        {
+          "title": "Security and compliance alignment",
+          "description": "Integrate with SCC, SELinux, Pod Security, TLS, RBAC, and air-gapped workflows for regulated environments.",
+          "icon": "lucide:shield-check"
+        },
+        {
+          "title": "Deep platform integration",
+          "description": "Use Operator Hub patterns, CSI-backed storage, monitoring stacks, and cluster services already standardized in OpenShift.",
+          "icon": "lucide:layout-dashboard"
+        },
+        {
+          "title": "Hybrid deployment flexibility",
+          "description": "Run the same operational model across self-managed data centers and major public clouds without fragmenting tooling.",
+          "icon": "lucide:globe"
+        }
+      ]
+    },
+    "amazon-eks": {
+      "badge": "AWS Ready",
+      "highlight": "on Amazon EKS",
+      "subtitle": "Managed Kubernetes with production-ready database automation, AWS integrations, and fast path to resilient deployments.",
+      "bullets": [
+        "Launch database clusters quickly on managed Kubernetes",
+        "Integrate with AWS storage, networking, and backup services",
+        "Standardize operations across multi-account EKS fleets"
+      ],
+      "stats": [
+        { "value": "AWS", "label": "Cloud native", "icon": "lucide:cloud" },
+        { "value": "Multi-AZ", "label": "High availability", "icon": "lucide:shield" },
+        { "value": "25+", "label": "DB engines", "icon": "lucide:database" },
+        { "value": "Fast", "label": "Provisioning", "icon": "lucide:zap" }
+      ]
+    },
+    "google-gke": {
+      "badge": "Google Cloud Ready",
+      "highlight": "on Google GKE",
+      "subtitle": "Production database operations on GKE with Google Cloud infrastructure, autoscaling, and observability built in.",
+      "bullets": [
+        "Run production databases on Google-managed Kubernetes",
+        "Use Google Cloud primitives for networking and storage",
+        "Connect backup, monitoring, and logging workflows cleanly"
+      ],
+      "stats": [
+        { "value": "GKE", "label": "Managed Kubernetes", "icon": "lucide:cloud" },
+        { "value": "Auto", "label": "Scaling ready", "icon": "lucide:arrow-up-right" },
+        { "value": "25+", "label": "DB engines", "icon": "lucide:database" },
+        { "value": "SRE", "label": "Operational fit", "icon": "lucide:shield-check" }
+      ]
+    },
+    "microsoft-aks": {
+      "badge": "Azure Ready",
+      "highlight": "on Microsoft AKS",
+      "subtitle": "Run KubeDB on AKS with enterprise governance, Azure integrations, and a consistent developer-to-production path.",
+      "bullets": [
+        "Automate database lifecycle on fully managed AKS clusters",
+        "Pair KubeDB with Azure networking, identity, and storage",
+        "Simplify resilient deployments for enterprise platform teams"
+      ],
+      "stats": [
+        { "value": "AKS", "label": "Managed Kubernetes", "icon": "lucide:cloud" },
+        { "value": "AAD", "label": "Identity fit", "icon": "lucide:shield" },
+        { "value": "25+", "label": "DB engines", "icon": "lucide:database" },
+        { "value": "Any", "label": "Prod environment", "icon": "lucide:globe" }
+      ]
+    },
+    "suse-rancher": {
+      "badge": "Rancher Compatible",
+      "highlight": "on SUSE Rancher",
+      "subtitle": "Operate databases across Rancher-managed Kubernetes, RKE2, and k3s with one consistent automation layer.",
+      "bullets": [
+        "Manage databases across centralized multi-cluster estates",
+        "Support edge, core, and enterprise environments with one model",
+        "Use the same workflows on Rancher, RKE2, and k3s"
+      ],
+      "stats": [
+        { "value": "RKE2", "label": "Enterprise distro", "icon": "lucide:shield" },
+        { "value": "k3s", "label": "Edge ready", "icon": "lucide:cpu" },
+        { "value": "25+", "label": "DB engines", "icon": "lucide:database" },
+        { "value": "Multi", "label": "Cluster ops", "icon": "lucide:network" }
+      ]
+    }
+  },
+  "page_defaults": {
+    "hero": {
+      "badge_icon": "heroicons:check-circle",
+      "badge_text": "OFFICIALLY CERTIFIED OPERATOR",
+      "title": "Run Any Database Natively on <br>Red Hat OpenShift -<br><span class=\"has-text-gradient\">Without the Compromise.</span>",
+      "description": "Deploy and manage <strong>25+ production-grade databases</strong> as native Kubernetes resources on Red Hat OpenShift. Run production databases with full automation, governance, and portability across on-prem, cloud, edge, and air-gapped environments.",
+      "actions": [
+        {
+          "href": "#comparison",
+          "icon": "lucide:arrow-right",
+          "text": "Start Free Trial"
+        },
+        {
+          "href": "https://kubedb.com/docs",
+          "icon": "lucide:external-link",
+          "icon_width": 16,
+          "icon_height": 16,
+          "text": "View on Red Hat Marketplace",
+          "target_blank": true
+        }
+      ],
+      "highlights": [
+        {
+          "icon": "fa-check-circle",
+          "title": "25+ Database Engines",
+          "description": "PostgreSQL, MySQL, Redis, Kafka & more"
+        },
+        {
+          "icon": "fa-check-circle",
+          "title": "Certified Operator",
+          "description": "Red Hat Marketplace & OpenShift"
+        },
+        {
+          "icon": "fa-check-circle",
+          "title": "100% GitOps Native",
+          "description": "Declarative & developer-friendly"
+        }
+      ]
+    },
+    "intro": {
+      "description": "KubeDB by AppsCode delivers a production-grade, Kubernetes-native Database-as-a-Service platform that runs seamlessly on Red Hat OpenShift and OpenShift Virtualization. It enables platform teams and developers to provision, manage, scale, backup, and recover databases using familiar Kubernetes APIs without vendor lock-in while maintaining enterprise-grade security and compliance."
+    },
+    "meaning": {
+      "title": "What This Means for Red Hat OpenShift Users",
+      "description": "If you're running applications on Red Hat OpenShift, you benefit from enterprise Kubernetes with enhanced security and developer experience. KubeDB extends these benefits to your database layer with native operator patterns.",
+      "emphasis": "<span class=\"has-text-primary has-text-weight-bold\">KubeDB enhances OpenShift</span> by making databases first-class citizens in your platform:",
+      "items": [
+        {
+          "icon": "lucide:zap",
+          "title": "Faster Time-to-Value",
+          "description": "Launch databases in minutes with OpenShift Operators."
+        },
+        {
+          "icon": "lucide:trending-up",
+          "title": "Enterprise Compliance",
+          "description": "Meet regulatory requirements with OpenShift security."
+        },
+        {
+          "icon": "lucide:server",
+          "title": "Hybrid Flexibility",
+          "description": "Run on-prem, cloud, or edge with consistent workflows."
+        },
+        {
+          "icon": "lucide:globe",
+          "title": "VM & Container Support",
+          "description": "Run databases on OpenShift Virtualization or containers."
+        }
+      ]
+    },
+    "architecture": {
+      "badge_icon": "lucide:layers",
+      "badge_text": "TECHNICAL ARCHITECTURE",
+      "title": "KubeDB runs natively on Red Hat OpenShift",
+      "description": "The KubeDB Operator sits directly on top of your OpenShift platform, leveraging OpenShift's enterprise security, operator framework, and multi-cluster capabilities.",
+      "layers": [
+        {
+          "title": "KubeDB Platform",
+          "description": "Web Console • Envoy Gateway • Hub/Spoke Model • Policy Engine",
+          "chip_class": "has-background-gradient-primary"
+        },
+        {
+          "title": "KubeDB Operator",
+          "description": "Provisioner • OpsManager • AutoScaler • KubeDB • Migrator",
+          "chip_class": "has-background-gradient-purple"
+        },
+        {
+          "title": "Kubernetes Services",
+          "description": "ArgoCD • Open Cluster Management • Cert Manager • Prometheus • Grafana",
+          "chip_class": "has-background-gradient-blue"
+        },
+        {
+          "title": "Red Hat OpenShift",
+          "description": "OCP • ROSA • ARO • OSD • OKE • OCP+",
+          "chip_style": "background:linear-gradient(90deg,#2563EB,#4338CA);"
+        }
+      ],
+      "image": {
+        "src": "/assets/images/partners/redhat.png",
+        "alt": "KubeDB Platform Architecture on Red Hat OpenShift"
+      },
+      "environment_tags": ["On-premises", "Cloud", "Edge"]
+    },
+    "comparison": {
+      "badge_icon": "lucide:git-compare",
+      "badge_text": "Why this architecture wins",
+      "title": "OpenShift with Traditional DBaaS vs OpenShift + KubeDB",
+      "description": "KubeDB delivers broader support, lower cost, and true Kubernetes-native experience on your existing OpenShift platform.",
+      "headers": {
+        "aspect": "Feature / Capability",
+        "previous": "Traditional DBaaS (External or Limited Operators)",
+        "current": "OpenShift + KubeDB"
+      },
+      "rows": [
+        {
+          "aspect": "Supported Database Engines",
+          "previous": "Limited (often 5-10 engines, vendor-specific like Postgres/MySQL via certified operators)",
+          "current": "25+ engines including PostgreSQL, MySQL, MongoDB, Redis, Kafka, Elasticsearch, ClickHouse, Cassandra, Neo4j and more"
+        },
+        {
+          "aspect": "Deployment & Management",
+          "previous": "Console-driven or external service with limited Red Hat OpenShift integration",
+          "current": "Native CRDs via Operator Lifecycle Manager (OLM). Full declarative GitOps support"
+        },
+        {
+          "aspect": "Cost Model",
+          "previous": "Per-core or usage licensing plus egress fees for external DBaaS",
+          "current": "No licensing fees. Pay only for your Red Hat OpenShift nodes and storage"
+        },
+        {
+          "aspect": "Provisioning Speed & Agility",
+          "previous": "Minutes to hours, often with manual approval",
+          "current": "Seconds via kubectl or GitOps with developer self-service"
+        },
+        {
+          "aspect": "Storage Integration",
+          "previous": "External or basic PVCs",
+          "current": "Native ODF Ceph CSI with high performance, snapshots, and erasure coding"
+        },
+        {
+          "aspect": "Security & Compliance",
+          "previous": "Provider-managed or manual",
+          "current": "Built-in TLS and encryption plus OpenShift RBAC, SELinux, and NetworkPolicy"
+        },
+        {
+          "aspect": "Observability & Monitoring",
+          "previous": "Separate dashboards",
+          "current": "Deep integration with OpenShift Monitoring and Prometheus"
+        },
+        {
+          "aspect": "Backup & Recovery",
+          "previous": "Provider tools or manual",
+          "current": "KubeStash integration, ODF snapshots, and point-in-time recovery"
+        },
+        {
+          "aspect": "Portability & Lock-in",
+          "previous": "High due to vendor-specific APIs",
+          "current": "Same manifests across Red Hat OpenShift and CNCF-certified Kubernetes"
+        }
+      ]
+    },
+    "production": {
+      "title": "Production databases. Fully automated on Red Hat OpenShift.",
+      "description": "25+ database engines with HA, scaling, backup, TLS, monitoring, and GitOps support",
+      "cards": [
+        {
+          "icon": "lucide:cloud",
+          "icon_variant": "badge",
+          "title": "Run Databases Natively on Red Hat OpenShift",
+          "description": "KubeDB integrates deeply with Red Hat OpenShift, supporting OpenShift Data Foundation (ODF), CSI drivers, and both containerized and virtualized workloads. Databases run with full security context constraints and enterprise-grade isolation."
+        },
+        {
+          "icon": "lucide:lock",
+          "icon_variant": "badge",
+          "title": "Enterprise-Grade Security & Compliance",
+          "description": "Complete data ownership with Red Hat OpenShift's security features including SELinux, seccomp, and Pod Security Admission. Support for air-gapped, FIPS-140-2, and highly regulated environments."
+        },
+        {
+          "icon": "lucide:database-zap",
+          "icon_variant": "badge",
+          "title": "Broad Database Support",
+          "description": "Manage 25+ database engines including PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, Kafka, and more, all with consistent Kubernetes-native workflows on both containers and VMs."
+        },
+        {
+          "icon": "lucide:git-branch-plus",
+          "title": "Automated Lifecycle Management",
+          "description": "Declarative operators handle provisioning, upgrades, scaling, and repair with zero-downtime where possible."
+        },
+        {
+          "icon": "lucide:shield-check",
+          "title": "High Availability & Resiliency",
+          "description": "Multi-zone clustering, automated failover, PodDisruptionBudgets, and continuous health checks with Red Hat OpenShift Operator Hub integration."
+        },
+        {
+          "icon": "lucide:database-backup",
+          "title": "Backup & Recovery",
+          "description": "Integrated with KubeStash for policy-driven, incremental, encrypted backups to S3-compatible storage. Support for point-in-time recovery."
+        },
+        {
+          "icon": "lucide:chart-column",
+          "title": "Monitoring & Observability",
+          "description": "Native Prometheus + Grafana dashboards. Integrates with Red Hat OpenShift monitoring stack and Red Hat Advanced Cluster Management."
+        },
+        {
+          "icon": "lucide:lock",
+          "title": "Security & Governance",
+          "description": "Automated TLS, Transparent Data Encryption, RBAC integration with Red Hat OpenShift OAuth, network policies, and Red Hat Compliance Operator support."
+        },
+        {
+          "icon": "lucide:layers-3",
+          "title": "Legacy Workloads",
+          "description": "Run databases on Red Hat OpenShift alongside legacy virtualized workloads, Windows applications, or Bare Metal deployments."
+        }
+      ]
+    },
+    "database_support": {
+      "title": "Comprehensive Database Support",
+      "description": "25+ database engines managed with Kubernetes-native workflows",
+      "groups": [
+        {
+          "label": "Relational",
+          "values": "PostgreSQL, MySQL, MariaDB, SQL Server, Percona XtraDB"
+        },
+        {
+          "label": "NoSQL/Document",
+          "values": "MongoDB, DocumentDB, Cassandra"
+        },
+        {
+          "label": "In-Memory/Cache",
+          "values": "Redis, Valkey, Memcached"
+        },
+        {
+          "label": "Search",
+          "values": "Elasticsearch, OpenSearch, Solr"
+        },
+        {
+          "label": "Analytics",
+          "values": "Druid, ClickHouse, SingleStore"
+        },
+        {
+          "label": "Messaging",
+          "values": "Kafka, RabbitMQ"
+        },
+        {
+          "label": "Others",
+          "values": "Hazelcast, ZooKeeper, PgBouncer, ProxySQL"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "redhat-openshift": {}
+  }
+}
