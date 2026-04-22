@@ -1,0 +1,4 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.form }}
+  {{ partial "common-sections/partner-application-form.html" . }}
+{{ end }}

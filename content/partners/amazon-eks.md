@@ -1,4 +1,5 @@
 ---
+id: amazon-eks
 title: Run KubeDB on Amazon EKS
 description: Deploy and manage production-grade databases using KubeDB on Amazon Elastic Kubernetes Service
 url: /partner/amazon-eks/

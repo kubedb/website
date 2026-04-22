@@ -1,0 +1,193 @@
+{{ $d := dict }}
+{{ if .Page.Params.data }}
+  {{ $d = getJSON .Page.Params.data }}
+{{ else }}
+  {{ $d = $.Site.Data.products.kubedb.partners.alliance }}
+{{ end }}
+
+<!-- ===================== HERO ===================== -->
+{{ with $d.hero }}
+  {{ partial "common-sections/page-hero.html" . }}
+{{ end }}
+
+
+<!-- ===================== SHOWCASE PARTNERS ===================== -->
+{{ with $d.showcase_partners }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "badge_text" .badge
+      "badge_icon" .badge_icon
+      "title" .title
+      "subtitle" .description
+      "align" "center"
+      "class" "mb-10"
+    ) }}
+
+    <div class="columns is-centered">
+      {{ range .partners }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ partial "common-cards/partner-logo-card.html" (dict
+          "card" .
+          "showDetails" true
+          "logoMaxHeight" "4rem"
+        ) }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== TECHNOLOGY PARTNERS ===================== -->
+{{ with $d.technology_partners }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <div class="section-header mb-10">
+      <div class="badge">
+        {{ printf `<iconify-icon icon="%s" width="14" height="14" class="has-text-secondary"></iconify-icon>` .badge_icon | safeHTML }}
+        <span class="badge-text">{{ .badge }}</span>
+      </div>
+      <h2 class="section-header-title has-text-heading has-text-weight-black">{{ .title }}</h2>
+      <p class="section-header-desc body-lg">{{ .description }}</p>
+    </div>
+
+    <div class="columns is-multiline is-centered">
+      {{ range .partners }}
+      <div class="column is-2-desktop is-4-tablet is-6-mobile">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+           class="ds-card-base is-radius-xlarge p-6 has-transition has-hover-lift is-flex is-align-items-center is-justify-content-center has-no-underline" style="min-height:5rem;">
+          <img src="{{ .logo }}" alt="{{ .name }}" class="is-fullwidth is-object-contain" style="max-height:3rem;">
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== PARTNERSHIP OPPORTUNITIES ===================== -->
+{{ with $d.partnership_types }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" .title
+      "subtitle" .description
+      "align" "center"
+      "class" "mb-10"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range .types }}
+      <div class="column is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== PARTNER BENEFITS ===================== -->
+{{ with $d.partner_benefits }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" .title
+      "subtitle" .description
+      "align" "center"
+      "class" "mb-10"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range .benefits }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== GROW YOUR BUSINESS ===================== -->
+{{ with $d.grow_section }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+
+    <div class="section-header mb-10">
+      <div class="badge">
+        {{ printf `<iconify-icon icon="%s" width="14" height="14" class="has-text-secondary"></iconify-icon>` .badge_icon | safeHTML }}
+        <span class="badge-text">{{ .badge }}</span>
+      </div>
+      <h2 class="section-header-title has-text-heading has-text-weight-black">
+        {{ .title_plain }}<br>
+        <span class="has-text-gradient">{{ .title_gradient }}</span>
+      </h2>
+      <p class="section-header-desc body-lg">{{ .description }}</p>
+    </div>
+
+    <div class="columns mb-10">
+      {{ range .partner_models }}
+      <div class="column is-4-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="columns mb-10">
+      {{ range .registrations }}
+      <div class="column is-6-tablet">
+        {{ $card := merge . (dict "show_cta_in_card" true) }}
+        {{ partial "common-cards/feature-card.html" (dict "card" $card "type" "benefit-scale") }}
+      </div>
+      {{ end }}
+    </div>
+
+    {{ with .deal_process }}
+      {{ $timeline := slice }}
+      {{ range .steps }}
+        {{ $timeline = $timeline | append (dict
+          "step" .number
+          "period" (printf "Step %s" .number)
+          "title" .title
+          "description" .description
+        ) }}
+      {{ end }}
+      {{ partial "common-sections/journey-timeline.html" (dict
+        "timeline_badge" "Deal Registration"
+        "timeline_title" .title
+        "timeline_description" .subtitle
+        "timeline" $timeline
+      ) }}
+    {{ end }}
+
+    <div class="columns">
+      {{ range .stats }}
+      <div class="column is-3-tablet is-6-mobile">
+        {{ partial "common-cards/stat-card.html" (dict "stat" . "color" "var(--ds-primary)") }}
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== PARTNER APPLICATION FORM ===================== -->
+{{ with $d.form }}
+{{ partial "common-sections/partner-application-form.html" . }}
+{{ end }}
+
+
+<!-- ===================== BOTTOM CTA ===================== -->
+{{ with $d.cta_section }}
+<div class="partners-final-cta">
+  {{ partial "common-sections/final-cta.html" . }}
+</div>
+{{ end }}

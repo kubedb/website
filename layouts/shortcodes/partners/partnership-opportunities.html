@@ -1,0 +1,21 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.partnership_types }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" .title
+      "subtitle" .description
+      "align" "center"
+      "class" "mb-10"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range .types }}
+      <div class="column is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

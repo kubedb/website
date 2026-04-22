@@ -1,4 +1,5 @@
 ---
+id: redhat-openshift
 title: Run KubeDB on Red Hat OpenShift
 description: Deploy and manage production-grade databases using KubeDB on Red Hat OpenShift Platform
 url: /partner/redhat-openshift/
