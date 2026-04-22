@@ -68,21 +68,37 @@
             const content = item.querySelector('.faq-content-wrapper');
             const isOpen = item.classList.contains('is-open');
 
-            // Toggle logic
+            const toggleIcons = (element, isOpen) => {
+              const plus = element.querySelector('.faq-icon-plus');
+              const minus = element.querySelector('.faq-icon-minus');
+              if (isOpen) {
+                if (plus) plus.classList.add('is-hidden');
+                if (minus) minus.classList.remove('is-hidden');
+              } else {
+                if (plus) plus.classList.remove('is-hidden');
+                if (minus) minus.classList.add('is-hidden');
+              }
+            };
+
+            // Close other items
             faqList.querySelectorAll('.faq-card-item').forEach(other => {
               if (other !== item) {
                 other.classList.remove('is-open');
                 const otherContent = other.querySelector('.faq-content-wrapper');
                 if (otherContent) otherContent.style.maxHeight = '0px';
+                toggleIcons(other, false);
               }
             });
 
+            // Toggle current item
             if (!isOpen) {
               item.classList.add('is-open');
               content.style.maxHeight = content.scrollHeight + "px";
+              toggleIcons(item, true);
             } else {
               item.classList.remove('is-open');
               content.style.maxHeight = '0px';
+              toggleIcons(item, false);
             }
           });
         });

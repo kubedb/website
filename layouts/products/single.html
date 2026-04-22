@@ -131,25 +131,6 @@
     </div>
   </section>
   {{ end }}
-  
-  <!-- Platform Features Section -->
-  {{ if $data.features }}
-  <section class="home-section section-padding bg-white">
-    <div class="container">
-      <div class="section-header has-text-centered mb-16">
-        <h2 class="section-header-title has-text-weight-black is-size-2-desktop">{{ $data.features_title | default "Platform Features" }}</h2>
-        <p class="section-header-desc mx-auto has-opacity-70 mt-4 has-max-width-800">{{ $data.features_subtitle | safeHTML }}</p>
-      </div>
-      <div class="columns is-multiline">
-        {{ range $data.features }}
-        <div class="column is-4-desktop is-6-tablet">
-          {{ partial "common-cards/feature-card.html" (dict "card" . "type" "compact") }}
-        </div>
-        {{ end }}
-      </div>
-    </div>
-  </section>
-  {{ end }}
 
   <!-- Supported Databases Section -->
   {{ if not $data.hide_database_support }}
@@ -213,18 +194,6 @@
           {{ $comp_desc | safeHTML }}
         </p>
       </div>
-
-      <!-- Analogy Section -->
-      {{ if $comp_analogy }}
-      <div class="has-text-centered mb-16">
-        <p class="is-size-4 has-text-weight-bold has-tracking-wide is-uppercase has-opacity-50 mb-4" style="color: #94a3b8;">
-          Think of it this way:
-        </p>
-        <p class="is-size-2-desktop is-size-3-tablet has-text-weight-black has-text-info">
-          {{ $comp_analogy | safeHTML }}
-        </p>
-      </div>
-      {{ end }}
 
       <!-- Quick Summary Cards -->
       <div class="columns is-multiline mb-16">
@@ -354,7 +323,7 @@
                 {{ index . 1 }}
               </div>
               <!-- Platform Value (Highlighted) -->
-              <div class="p-8 is-size-5 has-text-white has-text-weight-black"
+              <div class="p-8 is-size-5 has-text-white has-text-weight-semibold"
                 style="flex: 1; border-left: 1px solid rgba(37, 99, 235, 0.3); background: rgba(37, 99, 235, 0.08); line-height: 1.4;">
                 <div class="is-flex is-align-items-start has-gap-3">
                   <iconify-icon icon="heroicons:check-circle" class="has-text-info mt-1" width="22"
@@ -371,117 +340,76 @@
   </section>
   {{ end }}
 
-  <!-- How It Works Section (Compact Pipeline Strip) -->
-  {{ if or $data.how_it_works $data.how_it_works_infra }}
-  <section class="home-section section-padding has-text-white is-relative is-overflow-hidden has-background-black"
-    style="padding: 80px 0;">
-
-    <!-- Technical Background Grid -->
-    <div class="is-absolute" style="top: 0; left: 0; width: 100%; height: 100%; 
-      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px; pointer-events: none;"></div>
-
-    <div class="container is-relative">
+  <!-- How It Works - Infrastructure & Software Section -->
+  {{ if $data.how_it_works_infra }}
+  <section class="home-section section-padding has-background-white">
+    <div class="container">
       <div class="section-header has-text-centered mb-16">
-        <h2 class="section-header-title has-text-white has-text-weight-black is-size-2-desktop mb-4 has-tracking-tighter">{{ $data.how_it_works_title | default "How It Works" }}</h2>
-        <p class="is-size-6 mx-auto has-opacity-50 has-text-white has-max-width-600">
-          A simple 3-stage transformation from infrastructure to managed DBaaS.
-        </p>
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.how_it_works_title | default "You Own The Infrastructure" }}</h2>
+        <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.how_it_works_subtitle }}</p>
       </div>
 
-      <div class="columns is-vcentered">
-        {{ if $data.how_it_works }}
-        {{ range $index, $step := $data.how_it_works }}
-        {{ if gt $index 0 }}
-        <!-- Connector -->
-        <div class="column is-narrow is-hidden-mobile">
-          <iconify-icon icon="lucide:arrow-right" class="opacity-20" width="24"
-            style="color: {{ if eq $index 1 }}#38bdf8{{ else }}#10b981{{ end }};"></iconify-icon>
-        </div>
-        {{ end }}
-
-        <div class="column">
-          <div class="p-8 is-radius-2xlarge has-border {{ if eq $index 1 }}has-border-primary has-background-primary-soft{{ else if eq $index 2 }}has-border-success has-background-success-soft{{ else }}has-border-grey-700 has-background-grey-800 is-opacity-75{{ end }} backdrop-blur-md h-full {{ if eq $index 2 }}has-text-centered{{ end }}">
-            <div class="is-flex is-align-items-center {{ if eq $index 2 }}is-justify-content-center{{ end }} has-gap-4 mb-6">
-              <div class="is-flex is-align-items-center is-justify-content-center has-text-weight-bold is-size-6"
-                style="width: 40px; height: 40px; border-radius: 12px; background: {{ if eq $index 1 }}rgba(99, 102, 241, 0.1){{ else if eq $index 2 }}rgba(34, 197, 94, 0.1){{ else }}rgba(255,255,255,0.1){{ end }}; color: {{ if eq $index 1 }}#818cf8{{ else if eq $index 2 }}#4ade80{{ else }}#94a3b8{{ end }};">
-                0{{ add $index 1 }}
-              </div>
-              <h3 class="is-size-4 has-text-white has-text-weight-black">{{ .title }}</h3>
-            </div>
-            <p class="is-size-6" style="color: {{ if eq $index 2 }}#34d399{{ else }}#94a3b8{{ end }};">{{ .desc }}</p>
-          </div>
-        </div>
-        {{ end }}
-
-        {{ else if $data.how_it_works_infra }}
-        <!-- Stage 01: You Bring -->
-        <div class="column is-4">
-          <div class="p-8 is-radius-2xlarge has-border has-border-grey-700 has-background-grey-800 is-opacity-75 backdrop-blur-md h-full">
-            <div class="is-flex is-align-items-center has-gap-4 mb-6">
-              <div class="has-size-10 is-radius-large has-background-grey-800 is-flex is-align-items-center is-justify-content-center has-text-grey-400 has-text-weight-bold is-size-6">
-                01</div>
-              <h3 class="is-size-4 has-text-white has-text-weight-black">You Bring:</h3>
-            </div>
-            <div class="is-flex is-flex-wrap-wrap has-gap-2">
-              {{ range $data.how_it_works_infra.items }}
-              <span
-                class="px-3 py-1.5 is-radius-normal has-background-grey-800 has-border has-border-grey-700 is-size-7 has-text-weight-bold"
-                style="color: #94a3b8;">{{ .text | safeHTML }}</span>
+      <div class="columns">
+        <!-- Your Infrastructure -->
+        <div class="column is-6">
+          <div class="is-flex is-align-items-center mb-8">
+            <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-4 infra-box-blue">
+              {{ if $data.how_it_works_infra.icon }}
+              <iconify-icon {{ printf "icon=%q" $data.how_it_works_infra.icon | safeHTMLAttr }} width="28" class="has-text-info"></iconify-icon>
+              {{ else }}
+              <iconify-icon icon="lucide:inbox" width="28" class="has-text-info"></iconify-icon>
               {{ end }}
             </div>
+            <h3 class="is-size-4 has-text-weight-black has-text-grey-900">{{ $data.how_it_works_infra.title | default "You Bring:" }}</h3>
+          </div>
+          <div class="is-flex is-flex-direction-column has-gap-4">
+            {{ range $data.how_it_works_infra.items }}
+            <div class="is-flex is-align-items-center p-5 is-radius-large has-border has-transition has-hover-shadow-small has-background-white">
+              <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-5 has-background-grey-100 infra-item-icon-box">
+                {{ if .icon }}
+                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="22" class="has-text-grey-500"></iconify-icon>
+                {{ end }}
+              </div>
+              <span class="is-text-base has-text-weight-black has-text-grey-900">{{ .text }}</span>
+            </div>
+            {{ end }}
           </div>
         </div>
 
-        <!-- Connector 01 -->
-        <div class="column is-narrow is-hidden-mobile">
-          <iconify-icon icon="lucide:arrow-right" class="opacity-20" width="24" style="color: #38bdf8;"></iconify-icon>
-        </div>
-
-        <!-- Stage 02: KubeDB Provides -->
-        <div class="column is-4">
-          <div
-            class="p-8 is-radius-2xlarge has-border-primary has-background-primary-soft backdrop-blur-md h-full has-shadow-large">
-            <div class="is-flex is-align-items-center has-gap-4 mb-6">
-              <div class="is-flex is-align-items-center is-justify-content-center has-text-weight-bold is-size-6"
-                style="width: 40px; height: 40px; border-radius: 12px; background: rgba(99, 102, 241, 0.1); color: #818cf8;">
-                02</div>
-              <h3 class="is-size-4 has-text-white has-text-weight-black">We Provide:</h3>
-            </div>
-            <div class="is-flex is-flex-direction-column has-gap-3">
-              {{ range $data.how_it_works_software.items }}
-              <div class="is-flex is-align-items-center has-gap-3">
-                <iconify-icon icon="lucide:check-circle-2" width="14" style="color: #60a5fa;"></iconify-icon>
-                <span class="is-size-7 has-text-weight-bold" style="color: #e2e8f0;">{{ .text | safeHTML }}</span>
-              </div>
+        <!-- KubeDB Software -->
+        <div class="column is-6">
+          <div class="is-flex is-align-items-center mb-8">
+            <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-4 infra-box-indigo">
+              {{ if $data.how_it_works_software.icon }}
+              <iconify-icon {{ printf "icon=%q" $data.how_it_works_software.icon | safeHTMLAttr }} width="28" class="has-text-white"></iconify-icon>
+              {{ else }}
+              <iconify-icon icon="lucide:sparkles" width="28" class="has-text-white"></iconify-icon>
               {{ end }}
             </div>
+            <h3 class="is-size-4 has-text-weight-black has-text-grey-900">{{ $data.how_it_works_software.title | default "KubeDB Provides:" }}</h3>
           </div>
-        </div>
-
-        <!-- Connector 02 -->
-        <div class="column is-narrow is-hidden-mobile">
-          <iconify-icon icon="lucide:arrow-right" class="opacity-20" width="24" style="color: #10b981;"></iconify-icon>
-        </div>
-
-        <!-- Stage 03: The Result -->
-        <div class="column">
-          <div
-            class="p-8 is-radius-2xlarge has-border-success has-background-success-soft backdrop-blur-md h-full has-text-centered">
-            <div class="has-size-12 is-radius-xlarge has-background-success-soft is-flex is-align-items-center is-justify-content-center mx-auto mb-4">
-              <iconify-icon icon="lucide:cloud-rocket" width="24" style="color: #34d399;"></iconify-icon>
+          <div class="is-flex is-flex-direction-column has-gap-4">
+            {{ range $data.how_it_works_software.items }}
+            <div class="is-flex is-align-items-center p-5 is-radius-large has-border has-transition has-hover-shadow-small has-background-white">
+              <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-5 infra-box-indigo-small">
+                {{ if .icon }}
+                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="22"></iconify-icon>
+                {{ else }}
+                <iconify-icon icon="lucide:check-circle-2" width="22"></iconify-icon>
+                {{ end }}
+              </div>
+              <span class="is-text-base has-text-weight-black has-text-grey-900">{{ .text }}</span>
             </div>
-            <h3 class="is-size-4 has-text-white has-text-weight-black mb-2">Managed DBaaS</h3>
-            <p class="is-size-7 has-opacity-60 has-text-white">Production-grade & Fully Governed.</p>
+            {{ end }}
           </div>
         </div>
-        {{ end }}
+      </div>
 
-      <!-- Compact Footer Summary -->
-      <div class="mt-12 has-text-centered">
-        <p class="is-size-7 tracking-widest uppercase has-text-weight-black opacity-30" style="color: #f8fafc;">
-          {{ $data.how_it_works_summary | default "No Vendor Lock-in • Multi-Cloud Portability • Complete Sovereignty" }}
-        </p>
+      <div class="mt-16 has-text-centered">
+        <div class="badge badge-success-soft has-background-success-soft">
+          <iconify-icon icon="lucide:check-circle" width="20" class="has-text-success"></iconify-icon>
+          <span class="is-size-6 has-text-weight-bold has-text-grey-800">{{ $data.how_it_works_footer | default "Your infrastructure &bull; Your control &bull; Your data sovereignty" }}</span>
+        </div>
       </div>
     </div>
   </section>
