@@ -118,7 +118,7 @@
   "challenge_title": "Legacy databases couldn't keep pace with 5G demands",
   "challenge_badge": "THE TELCO CHALLENGE",
   "challenge_key_pains": "Slow provisioning · Manual scaling · Operational risk · Backup complexity · Governance gaps",
-  "challenge_summary": "Legacy databases couldn't keep pace with 5G demands — manual provisioning, scaling, backups, and upgrades created bottlenecks.",
+  "challenge_summary": "Manual provisioning, scaling, backups, and upgrades created bottlenecks for ultra-low latency, high availability, and rapid service innovation.",
   "challenge_items": [
     {
       "icon": "lucide:database",
@@ -145,7 +145,7 @@
   "solution_features": [],
   "solution_steps": [],
   "benefits_title": "Production-grade DBaaS delivered by KubeDB",
-  "benefits_description": "Production-grade DBaaS with KubeDB automating full database lifecycle on Kubernetes with zero-downtime operations.",
+  "benefits_description": "KubeDB automates the full database lifecycle — provisioning, upgrades, scaling, failover, backups, and monitoring — giving Orange self-service, governed, and resilient databases directly on their Kubernetes platform.",
   "benefits_items_title": "Key KubeDB Benefits Realized by Orange",
   "benefits_items": [
     {
