@@ -1,0 +1,4 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.comparison }}
+  {{ partial "common-sections/comparison-table.html" . }}
+{{ end }}

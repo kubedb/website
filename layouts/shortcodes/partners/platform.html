@@ -1,0 +1,57 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.platform }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "badge_text" .badge
+      "badge_icon" "lucide:layers"
+      "title" .heading
+      "subtitle" .description
+      "align" "center"
+      "class" "mb-12"
+    ) }}
+
+    <div class="columns is-multiline is-variable is-5">
+      {{ range .cards }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ if .legacy }}
+        <div class="ds-card-base is-radius-xlarge p-6 h-full has-hover-lift has-transition" style="border-color:rgba(217,119,6,0.3);">
+          <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-12 is-radius-2xlarge has-background-warning-soft mb-5">
+            <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" height="24" class="has-text-warning"></iconify-icon>
+          </div>
+          <h3 class="heading-md has-text-heading mb-3">{{ .title }}</h3>
+          <p class="body-md has-text-grey-500 mb-4">{{ .description }}</p>
+          {{ if .note }}
+          <p class="body-sm has-text-warning has-text-weight-medium mb-0">{{ .note }}</p>
+          {{ end }}
+        </div>
+        {{ else }}
+        <div class="ds-card-base is-radius-xlarge p-6 h-full has-hover-lift has-transition{{ if .badge }} is-relative{{ end }}">
+          {{ if .badge }}
+          <div class="badge badge-success" style="position:absolute;top:-0.75rem;right:1rem;">
+            <span>{{ .badge }}</span>
+          </div>
+          {{ end }}
+          <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-12 is-radius-2xlarge has-background-info-soft mb-5">
+            <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="24" height="24" class="has-text-info"></iconify-icon>
+          </div>
+          <h3 class="heading-md has-text-heading mb-3">{{ .title }}</h3>
+          <p class="body-md has-text-grey-500 mb-4">{{ .description }}</p>
+          {{ if .features }}
+          <ul class="has-no-bullets">
+            {{ range .features }}
+            <li class="is-flex is-align-items-flex-start has-gap-2 body-sm has-text-grey-600 mb-2">
+              <iconify-icon icon="lucide:check" width="14" height="14" class="has-text-success mt-1 is-flex-shrink-0"></iconify-icon>
+              <span>{{ . }}</span>
+            </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

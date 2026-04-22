@@ -1,0 +1,8 @@
+{{ $card := . }}
+{{ $icon := $card.icon | default "lucide:circle-check-big" }}
+
+<div class="has-text-centered">
+  <iconify-icon {{ printf "icon=%q" $icon | safeHTMLAttr }} width="22" height="22"  class="mb-2 has-text-primary"></iconify-icon>
+  <div class="heading-md has-text-gradient mb-1">{{ $card.title | default $card.value }}</div>
+  <div class="body-sm has-text-grey-500">{{ $card.desc | default $card.label }}</div>
+</div>

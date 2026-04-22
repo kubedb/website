@@ -1,0 +1,4 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.architecture }}
+  {{ partial "common-sections/architecture.html" . }}
+{{ end }}
