@@ -69,6 +69,7 @@
     ]
   },
   "products": [
-    "kubedb"
+    "kubedb",
+    "kubedbplatform"
   ]
 }
