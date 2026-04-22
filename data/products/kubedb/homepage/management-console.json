@@ -4,6 +4,7 @@
   "description": "A single pane of glass for managing your databases across all your Kubernetes clusters.",
   "screenshots": [
     {
+      
       "image": "/assets/images/products/kubedb/ui/db-details-overview.png",
       "alt": "KubeDB management console screenshot 1",
       "kicker": "Overview",
