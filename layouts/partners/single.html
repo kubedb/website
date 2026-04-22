@@ -1,52 +1,414 @@
 {{ define "main" }}
+{{ $d := $.Site.Data.products.kubedb.partners.single }}
 <div class="ac-ui">
-<section class="hero-area is-product is-dark has-image-bg is-feature" style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);">
-	<div class="shape">
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-		<div class="cube"></div>
-	</div>
-	<div class="shape">
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-	</div>
-	<div class="container">
-		<div class="columns has-text-centered is-centered is-vcentered is-multiline">
-			<div class="column is-8 is-centered is-full-touch">
-				<h1>{{ .Title }}</h1>
-				{{ with .Params.description }}<p>{{ . }}</p>{{ end }}
-			</div>
-		</div>
-	</div>
+
+<!-- ===================== HERO ===================== -->
+{{ with $d.hero }}
+<section class="home-hero">
+  <div class="home-hero-bg">
+    <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
+    <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
+    <div class="hero-orb-center-a"></div>
+    <div class="hero-orb-center-b"></div>
+  </div>
+  <div class="container has-text-centered">
+
+    <div class="is-flex is-justify-content-center mb-5">
+      <div class="badge badge-primary">
+        {{ printf `<iconify-icon icon="%s" width="14" height="14" class="has-text-primary"></iconify-icon>` .badge_icon | safeHTML }}
+        <span class="badge-text">{{ .badge }}</span>
+      </div>
+    </div>
+
+    <h1 class="display-xl has-text-heading has-text-weight-black mb-4 has-text-balance">
+      {{ .title_plain }} <span class="has-text-gradient">{{ .title_gradient }}</span>
+    </h1>
+
+    <p class="body-lg has-text-grey-600 mb-8 has-max-width-md mx-auto">{{ .description }}</p>
+
+    <div class="is-flex is-justify-content-center is-flex-wrap-wrap has-gap-3 mb-10">
+      <a href="{{ .cta_primary_href }}" class="button is-primary height-50">
+        <span>{{ .cta_primary }}</span>
+        <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+      </a>
+      <a href="{{ .cta_secondary_href }}" class="button is-outlined height-50">
+        <span>{{ .cta_secondary }}</span>
+      </a>
+    </div>
+
+    <div class="columns is-centered is-variable is-4 mx-auto" style="max-width:56rem;">
+      {{ range .stats }}
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="ds-card-base is-radius-xlarge p-5 has-text-centered has-transition has-hover-lift">
+          <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-8 is-radius-large has-background-primary-soft mb-3">
+            {{ printf `<iconify-icon icon="%s" width="24" height="24" class="has-text-primary"></iconify-icon>` .icon | safeHTML }}
+          </div>
+          <div class="heading-md has-text-heading mb-1">{{ .value }}</div>
+          <div class="body-md has-text-grey-500">{{ .label }}</div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
 </section>
+{{ end }}
 
-<section class="article-details-area">
-	<div class="container">
-		<div class="columns is-centered">
-			<div class="column is-9">
-				<div class="full-info content">
-					<div class="content-body">
-						{{ .Content }}
-                        
 
-                       <div class="is-fullwidth">
-                         <button class="button ac-button is-primary width-200 mx-auto">STATIC BUTTON</button>
-                       </div>
+<!-- ===================== SHOWCASE PARTNERS ===================== -->
+{{ with $d.showcase_partners }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    <div class="section-header mb-10">
+      <div class="badge">
+        {{ printf `<iconify-icon icon="%s" width="14" height="14" class="has-text-secondary"></iconify-icon>` .badge_icon | safeHTML }}
+        <span class="badge-text">{{ .badge }}</span>
+      </div>
+      <h2 class="section-header-title has-text-heading has-text-weight-black">{{ .title }}</h2>
+      <p class="section-header-desc body-lg">{{ .description }}</p>
+    </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="columns is-centered">
+      {{ range .partners }}
+      <div class="column is-4-desktop is-6-tablet">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+           class="ds-card-base is-radius-xlarge p-8 has-text-centered has-transition has-hover-lift is-flex is-flex-direction-column is-align-items-center has-no-underline">
+          <div class="is-flex is-align-items-center is-justify-content-center has-height-20 mb-4">
+            <img src="{{ .logo }}" alt="{{ .name }}" class="is-fullwidth is-object-contain" style="max-height:4rem;">
+          </div>
+          <div class="heading-sm has-text-heading mb-1">{{ .name }}</div>
+          <div class="body-md has-text-grey-500">{{ .description }}</div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
 </section>
+{{ end }}
+
+
+<!-- ===================== TECHNOLOGY PARTNERS ===================== -->
+{{ with $d.technology_partners }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <div class="section-header mb-10">
+      <div class="badge">
+        {{ printf `<iconify-icon icon="%s" width="14" height="14" class="has-text-secondary"></iconify-icon>` .badge_icon | safeHTML }}
+        <span class="badge-text">{{ .badge }}</span>
+      </div>
+      <h2 class="section-header-title has-text-heading has-text-weight-black">{{ .title }}</h2>
+      <p class="section-header-desc body-lg">{{ .description }}</p>
+    </div>
+
+    <div class="columns is-multiline is-centered">
+      {{ range .partners }}
+      <div class="column is-2-desktop is-4-tablet is-6-mobile">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+           class="ds-card-base is-radius-xlarge p-6 has-transition has-hover-lift is-flex is-align-items-center is-justify-content-center has-no-underline" style="min-height:5rem;">
+          <img src="{{ .logo }}" alt="{{ .name }}" class="is-fullwidth is-object-contain" style="max-height:3rem;">
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== PARTNERSHIP OPPORTUNITIES ===================== -->
+{{ with $d.partnership_types }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    <div class="section-header mb-10">
+      <h2 class="section-header-title has-text-heading has-text-weight-black">{{ .title }}</h2>
+      <p class="section-header-desc body-lg">{{ .description }}</p>
+    </div>
+
+    <div class="columns is-multiline">
+      {{ range .types }}
+      <div class="column is-6-tablet">
+        <div class="ds-card-base is-radius-xlarge p-6has-transition has-hover-lift">
+          <div class="is-flex is-align-items-flex-start has-gap-4 mb-5">
+            <div class="{{ printf `is-inline-flex is-align-items-center is-justify-content-center has-size-12 is-radius-xlarge has-background-gradient-%s is-flex-shrink-0` .gradient }}">
+              {{ printf `<iconify-icon icon="%s" width="22" height="22" class="has-text-white"></iconify-icon>` .icon | safeHTML }}
+            </div>
+            <div>
+              <h3 class="heading-sm has-text-heading mb-1">{{ .title }}</h3>
+              <p class="body-md has-text-grey-500">{{ .description }}</p>
+            </div>
+          </div>
+          <div>
+            {{ range .benefits }}
+            <div class="is-flex is-align-items-flex-start has-gap-2 body-md has-text-grey-600 mb-2">
+              <iconify-icon icon="lucide:check-circle-2" width="16" height="16" class="has-text-primary mt-1 is-flex-shrink-0"></iconify-icon>
+              <span>{{ . | safeHTML }}</span>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== PARTNER BENEFITS ===================== -->
+{{ with $d.partner_benefits }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <div class="section-header mb-10">
+      <h2 class="section-header-title has-text-heading has-text-weight-black">{{ .title }}</h2>
+      <p class="section-header-desc body-lg">{{ .description }}</p>
+    </div>
+
+    <div class="columns is-multiline">
+      {{ range .benefits }}
+      <div class="column is-4-desktop is-6-tablet">
+        <div class="ds-card-base is-radius-xlarge p-6has-hover-lift has-transition">
+          <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-12 is-radius-xlarge has-background-gradient-primary mb-5">
+            {{ printf `<iconify-icon icon="%s" width="22" height="22" class="has-text-white"></iconify-icon>` .icon | safeHTML }}
+          </div>
+          <h4 class="heading-sm has-text-heading mb-2">{{ .title | safeHTML }}</h4>
+          <p class="body-md has-text-grey-500 mb-0">{{ .description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== GROW YOUR BUSINESS ===================== -->
+{{ with $d.grow_section }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+
+    <div class="section-header mb-10">
+      <div class="badge">
+        {{ printf `<iconify-icon icon="%s" width="14" height="14" class="has-text-secondary"></iconify-icon>` .badge_icon | safeHTML }}
+        <span class="badge-text">{{ .badge }}</span>
+      </div>
+      <h2 class="section-header-title has-text-heading has-text-weight-black">
+        {{ .title_plain }}<br>
+        <span class="has-text-gradient">{{ .title_gradient }}</span>
+      </h2>
+      <p class="section-header-desc body-lg">{{ .description }}</p>
+    </div>
+
+    <!-- Partner model cards -->
+    <div class="columns mb-10">
+      {{ range .partner_models }}
+      <div class="column is-4-tablet">
+        <div class="ds-card-base is-radius-xlarge p-6has-transition has-hover-lift">
+          <div class="{{ printf `is-inline-flex is-align-items-center is-justify-content-center has-size-10 is-radius-large has-background-gradient-%s mb-4` .gradient }}">
+            {{ printf `<iconify-icon icon="%s" width="20" height="20" class="has-text-white"></iconify-icon>` .icon | safeHTML }}
+          </div>
+          <h3 class="heading-sm has-text-heading mb-2">{{ .title }}</h3>
+          <p class="body-md has-text-grey-500 mb-4">{{ .description }}</p>
+          <div>
+            {{ range .benefits }}
+            <div class="is-flex is-align-items-flex-start has-gap-2 body-md has-text-grey-600 mb-2">
+              <iconify-icon icon="lucide:check-circle" width="14" height="14" class="has-text-primary mt-1 is-flex-shrink-0"></iconify-icon>
+              <span>{{ . | safeHTML }}</span>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- Registration cards -->
+    <div class="columns mb-10">
+      {{ range .registrations }}
+      <div class="column is-6-tablet">
+        <div class="ds-card-base is-radius-xlarge p-6has-shadow-large has-transition">
+          <div class="is-flex is-align-items-flex-start has-gap-4 mb-5">
+            <div class="{{ printf `is-inline-flex is-align-items-center is-justify-content-center has-size-10 is-radius-large has-background-gradient-%s is-flex-shrink-0` .gradient }}">
+              {{ printf `<iconify-icon icon="%s" width="20" height="20" class="has-text-white"></iconify-icon>` .icon | safeHTML }}
+            </div>
+            <div>
+              <h3 class="heading-sm has-text-heading mb-1">{{ .title }}</h3>
+              <p class="body-md has-text-grey-500">{{ .description }}</p>
+            </div>
+          </div>
+          <div class="mb-6">
+            {{ range .benefits }}
+            <div class="is-flex is-align-items-center has-gap-2 body-md has-text-grey-600 mb-3">
+              <iconify-icon icon="lucide:check-circle" width="14" height="14" class="has-text-primary is-flex-shrink-0"></iconify-icon>
+              <span>{{ . | safeHTML }}</span>
+            </div>
+            {{ end }}
+          </div>
+          <a href="{{ .cta_href }}" class="{{ printf `button is-%s is-fullwidth height-50` .cta_style }}">
+            {{ printf `<iconify-icon icon="%s" width="16" height="16"></iconify-icon>` .cta_icon | safeHTML }}
+            <span>{{ .cta_text }}</span>
+            <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+          </a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- Deal registration process -->
+    {{ with .deal_process }}
+    <div class="has-background-grey-900 is-radius-2xlarge p-8 mb-8">
+      <div class="has-text-centered mb-8">
+        <h3 class="heading-lg has-text-white mb-2">{{ .title }}</h3>
+        <p class="body-md has-text-grey-400">{{ .subtitle }}</p>
+      </div>
+      <div class="columns is-centered">
+        {{ range .steps }}
+        <div class="column is-3-tablet has-text-centered">
+          <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-12 is-rounded has-background-gradient-primary mb-3">
+            <span class="heading-md has-text-white">{{ .number }}</span>
+          </div>
+          <div class="body-lg has-text-white has-text-weight-bold mb-1">{{ .title }}</div>
+          <div class="body-md has-text-grey-500">{{ .description }}</div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    <!-- Stats -->
+    <div class="columns">
+      {{ range .stats }}
+      <div class="column is-3-tablet is-6-mobile">
+        <div class="ds-card-base is-radius-xlarge p-5 has-text-centered has-transition has-hover-lift">
+          <div class="is-inline-flex is-align-items-center is-justify-content-center has-size-8 is-radius-large has-background-primary-soft mb-3">
+            {{ printf `<iconify-icon icon="%s" width="20" height="20" class="has-text-primary"></iconify-icon>` .icon | safeHTML }}
+          </div>
+          <div class="heading-md has-text-gradient mb-1">{{ .value }}</div>
+          <div class="body-sm has-text-grey-500 is-uppercase has-tracking-widest">{{ .label }}</div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== PARTNER APPLICATION FORM ===================== -->
+{{ with $d.form }}
+<section id="partner-form" class="section-padding has-background-white">
+  <div class="container">
+    <div class="has-max-width-lg mx-auto">
+
+      <div class="section-header mb-10">
+        <div class="badge">
+          {{ printf `<iconify-icon icon="%s" width="14" height="14" class="has-text-secondary"></iconify-icon>` .badge_icon | safeHTML }}
+          <span class="badge-text">{{ .badge }}</span>
+        </div>
+        <h2 class="section-header-title has-text-heading has-text-weight-black">{{ .title }}</h2>
+        <p class="section-header-desc body-lg">{{ .description }}</p>
+      </div>
+
+      <div class="ds-card-base is-radius-2xlarge p-8 has-shadow-large">
+        <form action="{{ .action }}" method="POST">
+
+          <div class="columns is-multiline">
+            {{ range .fields }}
+            <div class="column is-6-tablet">
+              <div class="field">
+                <label class="label body-md has-text-heading has-text-weight-bold mb-2">
+                  {{ .label }}{{ if .required }} <span class="has-text-danger">*</span>{{ end }}
+                </label>
+                <div class="{{ if .icon }}control has-icons-left{{ else }}control{{ end }}">
+                  <input class="input" type="{{ .type }}" name="{{ .name }}" placeholder="{{ .placeholder }}"{{ if .required }} required{{ end }}>
+                  {{ if .icon }}
+                  <span class="icon is-left">
+                    {{ printf `<iconify-icon icon="%s" width="16" height="16" class="has-text-grey-400"></iconify-icon>` .icon | safeHTML }}
+                  </span>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+            {{ end }}
+
+            <!-- Partner Type select (inserted after website field, before country) -->
+            {{ with .partner_type_field }}
+            <div class="column is-6-tablet">
+              <div class="field">
+                <label class="label body-md has-text-heading has-text-weight-bold mb-2">
+                  {{ .label }}{{ if .required }} <span class="has-text-danger">*</span>{{ end }}
+                </label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select name="{{ .name }}" title="{{ .label }}"{{ if .required }} required{{ end }}>
+                      <option value="">{{ .placeholder }}</option>
+                      {{ range .options }}
+                      <option value="{{ .value }}">{{ .label }}</option>
+                      {{ end }}
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+
+          <!-- Message -->
+          {{ with .message_field }}
+          <div class="field mb-6">
+            <label class="label body-md has-text-heading has-text-weight-bold mb-2">{{ .label }}</label>
+            <div class="control">
+              <textarea class="textarea" name="{{ .name }}" placeholder="{{ .placeholder }}" rows="{{ .rows }}"></textarea>
+            </div>
+          </div>
+          {{ end }}
+
+          <div class="is-flex is-flex-wrap-wrap has-gap-3">
+            <button type="submit" class="button is-primary is-flex-grow-1 height-50">
+              <span>{{ .cta_primary }}</span>
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+            </button>
+            <button type="button" class="button is-outlined height-50 px-6">
+              {{ printf `<iconify-icon icon="%s" width="16" height="16"></iconify-icon>` .cta_secondary_icon | safeHTML }}
+              <span>{{ .cta_secondary }}</span>
+            </button>
+          </div>
+
+          <p class="body-md has-text-grey-400 has-text-centered mt-4">{{ .disclaimer }}</p>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+<!-- ===================== BOTTOM CTA ===================== -->
+{{ with $d.cta }}
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-block has-shadow-large py-12 px-8">
+      <div class="cta-glow"></div>
+      <div class="has-text-centered is-relative has-z-index-10 has-max-width-lg mx-auto">
+        <h2 class="display-lg has-text-white mb-3 has-text-balance">{{ .title }}</h2>
+        <p class="body-lg has-text-white mb-8">{{ .description }}</p>
+        <div class="is-flex is-justify-content-center is-flex-wrap-wrap has-gap-3">
+          <a href="{{ .cta_primary_href }}" class="button is-white height-50">
+            {{ printf `<iconify-icon icon="%s" width="16" height="16"></iconify-icon>` .cta_primary_icon | safeHTML }}
+            <span>{{ .cta_primary }}</span>
+          </a>
+          <a href="{{ .cta_secondary_href }}" class="button is-ghost height-50">
+            {{ printf `<iconify-icon icon="%s" width="16" height="16"></iconify-icon>` .cta_secondary_icon | safeHTML }}
+            <span>{{ .cta_secondary }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
 </div>
-
 {{ end }}
