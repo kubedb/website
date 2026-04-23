@@ -34,9 +34,10 @@ fs.readFile(cssFilePath, (err, css) => {
         'single-result-item h2',
         'search-content',
         'is-show',
+        'iconify-icon', // Safelist Iconify custom element
       ],
       deep: [
-        /^fserv-/, 
+        /^fserv-/,
         /^fs-/,
         /^select2-/,
         /^formserv/,
