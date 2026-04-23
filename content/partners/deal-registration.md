@@ -3,8 +3,14 @@ id: deal-registration
 title: Deal Registration
 description: Register and protect qualified opportunities in the KubeDB partner program
 url: /partner/deal-registration/
+data: 'data/products/kubedb/partners/deal-registration.json'
 ---
 
-KubeDB deal registration helps partners protect qualified opportunities and align go-to-market activities.
-
-Registering deals improves collaboration, accelerates engagement, and ensures a clear path for joint execution.
+{{< partners/hero >}}
+{{< partners/showcase-partners >}}
+{{< partners/technology-partners >}}
+{{< partners/partnership-opportunities >}}
+{{< partners/partner-benefits >}}
+{{< partners/grow-your-business >}}
+{{< partners/application-form >}}
+{{< partners/cta-bottom >}}

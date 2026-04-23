@@ -3,8 +3,14 @@ id: channel-partners
 title: Channel Partners
 description: Reseller and channel partnership opportunities with KubeDB
 url: /partner/channel-partners/
+data: 'data/products/kubedb/partners/channel-partners.json'
 ---
 
-KubeDB channel partners help customers run production-grade databases on Kubernetes with expert delivery and support services.
-
-The program is designed for resellers and solution providers who want to expand their Kubernetes data platform offerings.
+{{< partners/hero >}}
+{{< partners/showcase-partners >}}
+{{< partners/technology-partners >}}
+{{< partners/partnership-opportunities >}}
+{{< partners/partner-benefits >}}
+{{< partners/grow-your-business >}}
+{{< partners/application-form >}}
+{{< partners/cta-bottom >}}
