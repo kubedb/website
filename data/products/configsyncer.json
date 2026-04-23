@@ -12,22 +12,22 @@
     "themeColor": ""
   },
   "heroImage": {
-    "src": "https://cdn.appscode.com/images/products/configsyncer/configsyncer-hero.png",
+    "src": "/assets/images/products/configsyncer/configsyncer-hero.png",
     "alt": "configsyncer"
   },
   "logo": {
-    "src": "https://cdn.appscode.com/images/products/configsyncer/configsyncer.png",
+    "src": "/assets/images/products/configsyncer/configsyncer.png",
     "alt": "configsyncer"
   },
   "logoWhite": {
-    "src": "https://cdn.appscode.com/images/products/configsyncer/configsyncer-white.png",
+    "src": "/assets/images/products/configsyncer/configsyncer-white.png",
     "alt": "configsyncer"
   },
   "icon": {
-    "src": "https://cdn.appscode.com/images/products/configsyncer/configsyncer-512x512.svg",
+    "src": "/assets/images/products/configsyncer/configsyncer-512x512.svg",
     "alt": "configsyncer",
     "sizes": {
-      "192x192": "https://cdn.appscode.com/images/products/configsyncer/icons/android-icon-192x192.png"
+      "192x192": "/assets/images/products/configsyncer/icons/android-icon-192x192.png"
     }
   },
   "repoURL": "https://github.com/config-syncer/docs",
@@ -44,11 +44,11 @@
     {
       "title": "Configuration Syncer",
       "image": {
-        "src": "https://cdn.appscode.com/images/products/configsyncer/features/configuration-syncer.jpg",
+        "src": "/assets/images/products/configsyncer/features/configuration-syncer.jpg",
         "alt": "configuration-syncer"
       },
       "icon": {
-        "src": "https://cdn.appscode.com/images/products/configsyncer/features/configuration.svg",
+        "src": "/assets/images/products/configsyncer/features/configuration.svg",
         "alt": "configuration-syncer"
       },
       "summary": "",
