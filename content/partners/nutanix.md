@@ -1,7 +1,7 @@
 ---
-id: mirantis
-title: Run KubeDB on Mirantis Kubernetes Engine
-description: Deploy and manage production-grade databases using KubeDB on Mirantis Kubernetes Engine (MKE)
+id: nutanix
+title: Run KubeDB on Nutanix Kubernetes Platform
+description: Deploy and manage production-grade databases using KubeDB on Nutanix Kubernetes Platform (NKP)
 url: /partner/nutanix/
 data: 'data/products/kubedb/partners/nutanix.json'
 ---
