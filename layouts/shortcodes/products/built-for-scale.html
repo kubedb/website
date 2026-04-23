@@ -1,0 +1,20 @@
+{{ $data := partial "products/page-data.html" . }}
+{{ if $data.platform_built_for_scale }}
+<section class="home-section section-padding" style="background: #f8fafc; font-family: 'Inter', sans-serif;">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $data.platform_built_for_scale_title
+      "subtitle" $data.platform_built_for_scale_subtitle
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+    <div class="columns is-multiline">
+      {{ range $data.platform_built_for_scale }}
+      <div class="column is-6">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

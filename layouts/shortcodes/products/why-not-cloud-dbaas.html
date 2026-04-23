@@ -1,0 +1,20 @@
+{{ $data := partial "products/page-data.html" . }}
+{{ if $data.why_not_cloud_dbaas }}
+<section class="home-section section-padding bg-white" style="font-family: 'Inter', sans-serif;">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $data.why_not_cloud_dbaas_title
+      "subtitle" $data.why_not_cloud_dbaas_subtitle
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+    <div class="columns is-multiline">
+      {{ range $data.why_not_cloud_dbaas }}
+      <div class="column is-6">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "horizontal-check") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

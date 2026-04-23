@@ -1,0 +1,32 @@
+{{ $data := dict }}
+
+{{ if .Page.Params.data }}
+  {{ $data = getJSON .Page.Params.data }}
+{{ end }}
+
+{{ if not $data }}
+  {{ $data_id := .Page.Params.data_id }}
+  {{ $data = index .Site.Data.products.kubedb.products $data_id }}
+
+  {{ if not $data }}
+    {{ if (findRE "/" $data_id) }}
+      {{ $parts := split $data_id "/" }}
+      {{ $scope := .Site.Data.products.kubedb }}
+      {{ range $parts }}
+        {{ if $scope }}
+          {{ $scope = index $scope . }}
+        {{ end }}
+      {{ end }}
+      {{ $data = $scope }}
+    {{ else }}
+      {{ $data_id_alt := replace $data_id "-" "_" }}
+      {{ $data = index .Site.Data.products.kubedb.products $data_id_alt }}
+    {{ end }}
+  {{ end }}
+
+  {{ if not $data }}
+    {{ $data = index .Site.Data.products.kubedb.solutions $data_id }}
+  {{ end }}
+{{ end }}
+
+{{ return $data }}

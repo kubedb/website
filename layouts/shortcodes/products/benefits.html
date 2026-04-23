@@ -1,0 +1,20 @@
+{{ $data := partial "products/page-data.html" . }}
+{{ if and $data.benefits (not $data.hide_benefits) }}
+<section class="home-section section-padding has-background-light">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $data.benefits_title
+      "subtitle" $data.benefits_subtitle
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+    <div class="columns is-multiline">
+      {{ range $data.benefits }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

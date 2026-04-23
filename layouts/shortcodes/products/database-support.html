@@ -1,0 +1,4 @@
+{{ $data := partial "products/page-data.html" . }}
+{{ if not $data.hide_database_support }}
+{{ partial "common-sections/database-support.html" . }}
+{{ end }}
