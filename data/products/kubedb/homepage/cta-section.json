@@ -10,6 +10,7 @@
   ],
   "cta_primary": "Start Free Trial",
   "cta_secondary": "Watch Demo",
+  "watch_demo_url": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
   "trust_stats": [
     { "icon": "heroicons:arrow-trending-up",          "icon_gradient": "linear-gradient(135deg, #60a5fa, #06b6d4)", "val": "10K+", "label": "Active Users" },
     { "icon": "heroicons:shield-check",               "icon_gradient": "linear-gradient(135deg, #4ade80, #10b981)", "val": "99.9%","label": "Uptime SLA" },
