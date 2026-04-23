@@ -1,0 +1,23 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.cost_comparison }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "badge_text" .badge
+      "badge_icon" "lucide:sparkles"
+      "title" .heading
+      "subtitle" .description
+      "align" "center"
+      "class" "mb-10"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range .savings_cards }}
+      <div class="column is-6-desktop is-6-tablet">
+        {{ partial "common-cards/effective-card.html" (dict "effectiveCard" .) }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
