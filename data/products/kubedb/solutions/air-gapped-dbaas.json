@@ -210,6 +210,9 @@
   ],
   "cta_button_text": "Request Access",
   "cta_button_url": "/contact/",
+  "cta_secondary_button_text": "Download Spec",
+  "cta_secondary_button_url": "/docs/v2026.1.19/setup/install/air-gapped/",
+  "cta_secondary_button_icon": "lucide:download",
   "final_cta_metrics": [
     { "icon": "lucide:lock", "value": "Zero", "label": "Internet Access", "gradient": "linear-gradient(135deg, #c084fc, #ec4899)" },
     { "icon": "lucide:shield", "value": "Highest", "label": "Security Level", "gradient": "linear-gradient(135deg, #60a5fa, #06b6d4)" },

@@ -4,75 +4,92 @@
   <div class="container">
     <div class="has-max-width-lg mx-auto">
 
-      {{ partial "common-sections/section-header.html" (dict
-        "badge_text" .badge
-        "badge_icon" .badge_icon
-        "title" .title
-        "subtitle" .description
-        "align" "center"
-        "class" "mb-10"
-      ) }}
+      <div class="section-header has-text-centered mb-10">
+        <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">Ready to become a partner? <br> Join our program today and start earning!</h2>
+      </div>
 
       <div class="ds-card-base is-radius-2xlarge p-8 has-shadow-large">
         <form action="{{ .action }}" method="POST">
 
           <div class="columns is-multiline">
-            {{ range .fields }}
             <div class="column is-6-tablet">
               <div class="field">
-                <label class="label body-md has-text-heading has-text-weight-bold mb-2">
-                  {{ .label }}{{ if .required }} <span class="has-text-danger">*</span>{{ end }}
-                </label>
-                <div class="{{ if .icon }}control has-icons-left{{ else }}control{{ end }}">
-                  <input class="input" type="{{ .type }}" name="{{ .name }}" placeholder="{{ .placeholder }}"{{ if .required }} required{{ end }}>
-                  {{ if .icon }}
-                  <span class="icon is-left">
-                    {{ printf `<iconify-icon icon="%s" width="16" height="16" class="has-text-grey-400"></iconify-icon>` .icon | safeHTML }}
-                  </span>
-                  {{ end }}
-                </div>
-              </div>
-            </div>
-            {{ end }}
-
-            {{ with .partner_type_field }}
-            <div class="column is-6-tablet">
-              <div class="field">
-                <label class="label body-md has-text-heading has-text-weight-bold mb-2">
-                  {{ .label }}{{ if .required }} <span class="has-text-danger">*</span>{{ end }}
-                </label>
+                <label class="label body-md has-text-heading has-text-weight-bold mb-2">First name <span class="has-text-danger">*</span></label>
                 <div class="control">
-                  <div class="select is-fullwidth">
-                    <select name="{{ .name }}" title="{{ .label }}"{{ if .required }} required{{ end }}>
-                      <option value="">{{ .placeholder }}</option>
-                      {{ range .options }}
-                      <option value="{{ .value }}">{{ .label }}</option>
-                      {{ end }}
-                    </select>
-                  </div>
+                  <input class="input" type="text" name="first_name" placeholder="Start typing..." required>
                 </div>
               </div>
             </div>
-            {{ end }}
-          </div>
-
-          {{ with .message_field }}
-          <div class="field mb-6">
-            <label class="label body-md has-text-heading has-text-weight-bold mb-2">{{ .label }}</label>
-            <div class="control">
-              <textarea class="textarea" name="{{ .name }}" placeholder="{{ .placeholder }}" rows="{{ .rows }}"></textarea>
+            <div class="column is-6-tablet">
+              <div class="field">
+                <label class="label body-md has-text-heading has-text-weight-bold mb-2">Last name <span class="has-text-danger">*</span></label>
+                <div class="control">
+                  <input class="input" type="text" name="last_name" placeholder="Start typing..." required>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6-tablet">
+              <div class="field">
+                <label class="label body-md has-text-heading has-text-weight-bold mb-2">Company name <span class="has-text-danger">*</span></label>
+                <div class="control">
+                  <input class="input" type="text" name="company_name" placeholder="Start typing..." required>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6-tablet">
+              <div class="field">
+                <label class="label body-md has-text-heading has-text-weight-bold mb-2">Job title <span class="has-text-danger">*</span></label>
+                <div class="control">
+                  <input class="input" type="text" name="job_title" placeholder="Start typing..." required>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6-tablet">
+              <div class="field">
+                <label class="label body-md has-text-heading has-text-weight-bold mb-2">Work email <span class="has-text-danger">*</span></label>
+                <div class="control has-icons-left">
+                  <input class="input" type="email" name="work_email" placeholder="Start typing..." required>
+                  <span class="icon is-left">
+                    <iconify-icon icon="lucide:mail" width="16" height="16" class="has-text-grey-400"></iconify-icon>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6-tablet">
+              <div class="field">
+                <label class="label body-md has-text-heading has-text-weight-bold mb-2">Phone number</label>
+                <div class="control has-icons-left">
+                  <input class="input" type="tel" name="phone_number" placeholder="Enter number">
+                  <span class="icon is-left">
+                    <iconify-icon icon="lucide:phone" width="16" height="16" class="has-text-grey-400"></iconify-icon>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-          {{ end }}
+
+          <div class="field mb-6">
+            <label class="label body-md has-text-heading has-text-weight-bold mb-2">How can we help?</label>
+            <div class="control">
+              <textarea class="textarea" name="message" placeholder="I would like more information on ..." rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="field mb-6">
+            <label class="checkbox is-flex is-align-items-center has-gap-2">
+              <input type="checkbox" name="newsletter_consent" checked>
+              <span class="body-md has-text-grey-600">I agree to receive communication on newsletters, promotional content, offers and events.</span>
+            </label>
+          </div>
 
           <div class="is-flex is-flex-wrap-wrap has-gap-3">
             <button type="submit" class="button is-primary is-flex-grow-1 height-50">
-              <span>{{ .cta_primary }}</span>
+              <span>Submit Application</span>
               <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
             </button>
             <button type="button" class="button is-outlined height-50 px-6">
-              {{ printf `<iconify-icon icon="%s" width="16" height="16"></iconify-icon>` .cta_secondary_icon | safeHTML }}
-              <span>{{ .cta_secondary }}</span>
+              <iconify-icon icon="lucide:message-square" width="16" height="16"></iconify-icon>
+              <span>Contact Sales</span>
             </button>
           </div>
 
