@@ -307,6 +307,7 @@
   },
   "faqs_title": "Frequently Asked Questions",
   "faqs_subtitle": "Everything you need to know about KubeDB Platform",
+  "faqs_contact_url": "https://appscode.com/contact/",
   "faqs": [
     {
       "question": "What's the difference between KubeDB Operator and KubeDB Platform?",
@@ -365,5 +366,6 @@
   ],
   "cta_button_text": "Start Free Trial",
   "cta_button_url": "/docs/latest/setup/",
+  "watch_demo_url": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
   "cta_bg_color": "#1e1b4b"
 }

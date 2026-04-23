@@ -31,7 +31,7 @@
             </ul>
 
             <div class="buttons cta-buttons ds-button-group mt-10">
-              <a href="{{ $data.cta_button_url | default "/docs/latest/setup/" }}" class="button is-white is-large height-60 px-10 shadow-lg hover-lift">
+              <a href="/docs/latest/setup/" class="button is-white is-large height-60 px-10 shadow-lg hover-lift">
                 <strong class="has-text-black">{{ $data.cta_button_text | default "Start Free Trial" }}</strong>
                 <iconify-icon icon="heroicons:arrow-right" class="ml-2 has-text-black" width="22"></iconify-icon>
               </a>
@@ -41,7 +41,7 @@
                 <strong>{{ $data.cta_secondary_button_text }}</strong>
               </a>
               {{ else }}
-              <a href="/contact/" class="button is-ghost is-large height-60 has-text-white px-8">
+              <a href="{{ $data.watch_demo_url }}" target="_blank" class="button is-ghost is-large height-60 has-text-white px-8">
                 <iconify-icon icon="heroicons:play-solid" width="20" class="mr-2 has-text-secondary"></iconify-icon>
                 <strong>Watch Demo</strong>
               </a>
