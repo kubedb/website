@@ -3,13 +3,15 @@ id: nutanix
 title: Run KubeDB on Nutanix Kubernetes Platform
 description: Deploy and manage production-grade databases using KubeDB on Nutanix Kubernetes Platform (NKP)
 url: /partner/nutanix/
+data: 'data/products/kubedb/partners/nutanix.json'
 ---
 
-Nutanix Kubernetes Platform (NKP) is an enterprise Kubernetes platform that works across hybrid and multi-cloud environments. KubeDB integrates seamlessly with Nutanix Kubernetes Platform to provide fully managed database operators.
+{{< partners/hero >}}
+{{< partners/platform >}}
+{{< partners/comparison >}}
+{{< partners/benefits >}}
+{{< partners/architecture >}}
+{{< partners/capabilities >}}
+{{< partners/database-support >}}
+{{< partners/cta >}}
 
-With KubeDB on Nutanix Kubernetes Platform, you can:
-- Deploy and manage multiple database types on Nutanix infrastructure
-- Leverage Nutanix's consistency and reliability across on-premises and cloud
-- Integrate with Nutanix data protection and disaster recovery capabilities
-- Achieve enterprise security and governance with KubeDB on Nutanix
-- Reduce operational complexity with unified infrastructure management
