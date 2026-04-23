@@ -1,0 +1,34 @@
+{{ $card := .card }}
+{{ $colorMap := dict
+  "orange" "#f97316"
+  "blue"   "#3b82f6"
+  "green"  "#10b981"
+  "purple" "#a855f7"
+  "red"    "#ef4444"
+  "indigo" "#6366f1"
+  "yellow" "#eab308"
+  "pink"   "#ec4899"
+  "teal"   "#14b8a6"
+}}
+{{ $raw := $card.color | default "indigo" }}
+{{ $color := "" }}
+{{ if hasPrefix $raw "#" }}
+  {{ $color = $raw }}
+{{ else }}
+  {{ $color = index $colorMap $raw | default "#6366f1" }}
+{{ end }}
+<div class="is-radius-large p-5"
+     style="background-color: {{ $color }}0d; border: 1px solid {{ $color }}40;">
+  <div class="is-flex is-align-items-flex-start has-gap-4">
+    {{ if $card.icon }}
+    <div class="is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large"
+         style="width: 44px; height: 44px; background-color: {{ $color }};">
+      <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="22" height="22" class="has-text-white"></iconify-icon>
+    </div>
+    {{ end }}
+    <div>
+      <h4 class="is-size-6 has-text-weight-bold has-text-grey-900 has-line-height-tight mb-2">{{ $card.title }}</h4>
+      <p class="is-size-7 has-text-grey-600 has-line-height-normal">{{ $card.description }}</p>
+    </div>
+  </div>
+</div>
