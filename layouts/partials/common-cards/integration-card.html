@@ -1,0 +1,10 @@
+{{ $integrationCard := .integrationCard }}
+<div class="ds-card-base has-background-white is-radius-xlarge p-5 is-fullheight has-border transition-all has-hover-lift has-hover-shadow-medium" style="border-color: #e2e8f0;">
+  {{ if $integrationCard.icon }}
+  <div class="is-flex is-align-items-center is-justify-content-center is-radius-large has-background-primary-soft mb-4" style="width: 40px; height: 40px;">
+    <iconify-icon {{ printf "icon=%q" $integrationCard.icon | safeHTMLAttr }} width="22" height="22" class="has-text-primary"></iconify-icon>
+  </div>
+  {{ end }}
+  <h4 class="is-size-6 has-text-weight-bold has-text-grey-900 has-line-height-tight mb-1">{{ $integrationCard.title }}</h4>
+  <p class="is-size-7 has-text-grey-600 has-line-height-normal">{{ $integrationCard.description }}</p>
+</div>
