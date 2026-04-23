@@ -1,0 +1,22 @@
+{{ $data := partial "products/page-data.html" . }}
+{{ if $data.comparison_table }}
+{{ $comp_title := $data.comparison_title | default "Operator vs Platform" }}
+{{ $comp_desc := $data.comparison_subtitle | default "KubeDB Operator provides database automation inside a single Kubernetes cluster, while KubeDB Platform extends this into a centralized DBaaS across clusters, teams, and environments." }}
+
+<section class="home-section section-padding bg-dark text-white is-relative is-overflow-hidden"
+  style="background: #0b1120;">
+  <div class="container is-relative">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $comp_title
+      "subtitle" $comp_desc
+      "align" "center"
+      "class" "mb-16"
+      "title_class" "has-text-white"
+      "subtitle_class" "has-text-white is-size-5 has-line-height-relaxed has-max-width-900"
+    ) }}
+    {{ partial "products/comparison-summary-cards.html" $data }}
+    {{ partial "products/comparison-analogy.html" $data }}
+    {{ partial "products/comparison-grid.html" $data }}
+  </div>
+</section>
+{{ end }}

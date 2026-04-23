@@ -1,0 +1,21 @@
+{{ $data := partial "products/page-data.html" . }}
+{{ if $data.use_cases }}
+{{ $uc_title := $data.use_cases_title | default "Perfect For Every Team" }}
+<section class="home-section section-padding bg-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $uc_title
+      "subtitle" $data.use_cases_subtitle
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+    <div class="columns is-centered">
+      {{ range $data.use_cases }}
+      <div class="column is-4">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "centered") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

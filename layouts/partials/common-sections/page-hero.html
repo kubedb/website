@@ -51,13 +51,15 @@
 
     <div class="buttons is-centered home-hero-ctas ds-button-group has-gap-4">
       {{ $primary_url := $data.primary_action_url | default "#" }}
+      {{ $primary_icon := $data.primary_action_icon | default "heroicons:arrow-right" }}
       <a href="{{ $primary_url }}" class="button is-primary hero-btn-primary height-50">
         <strong>{{ $data.primary_action_text | default "Get Started"}}</strong>
-        <iconify-icon icon="{{ $data.primary_action_icon | default "heroicons:arrow-right" }}" class="ml-2" width="20" height="20"></iconify-icon>
+        <iconify-icon {{ printf "icon=%q" $primary_icon | safeHTMLAttr }} class="ml-2" width="20" height="20"></iconify-icon>
       </a>
       {{ if $data.secondary_action_url }}
+      {{ $secondary_icon := $data.secondary_action_icon | default "heroicons:book-open" }}
       <a href="{{ $data.secondary_action_url }}" class="button is-outlined hero-btn-secondary height-50">
-        <iconify-icon icon="{{ $data.secondary_action_icon | default "heroicons:book-open" }}" class="mr-2" width="20" height="20"></iconify-icon>
+        <iconify-icon {{ printf "icon=%q" $secondary_icon | safeHTMLAttr }} class="mr-2" width="20" height="20"></iconify-icon>
         <strong>{{ $data.secondary_action_text }}</strong>
       </a>
       {{ end }}
