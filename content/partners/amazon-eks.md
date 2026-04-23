@@ -7,6 +7,8 @@ data: 'data/products/kubedb/partners/amazon-eks.json'
 ---
 
 {{< partners/hero >}}
+{{< partners/paragraph >}}
+{{< partners/what-this-means >}}
 {{< partners/platform >}}
 {{< partners/comparison >}}
 {{< partners/benefits >}}

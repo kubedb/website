@@ -26,14 +26,14 @@
     ]
   },
 
-  "intro": {
+  "paragraph": {
     "content": "KubeDB by AppsCode delivers a production-grade, Kubernetes-native Database-as-a-Service platform that runs seamlessly on <strong>Amazon Elastic Kubernetes Service (Amazon EKS)</strong>. It enables platform teams and developers to provision, manage, scale, backup, and recover a wide range of databases using familiar Kubernetes APIs and declarative workflows—<strong>without vendor lock-in</strong> or reliance on hyperscaler-managed database services."
   },
 
   "what_this_means": {
     "heading": "What This Means for AWS and EKS Users",
     "description": "If you're running applications on Amazon EKS, you already enjoy scalable, managed Kubernetes. However, databases often introduce complexity through separate tooling, manual operations, or cloud-specific DBaaS services that create lock-in.",
-    "subtitle": "KubeDB changes that by making databases first-class Kubernetes resources directly inside your EKS clusters:",
+    "subtitle": "<strong class=\"has-text-primary\">KubeDB changes that</strong> by making databases first-class Kubernetes resources directly inside your EKS clusters:",
     "items": [
       {
         "icon": "lucide:zap",

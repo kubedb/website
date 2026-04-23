@@ -1,0 +1,32 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.what_this_means }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <div class="ds-card-base is-radius-2xlarge p-10" style="background-color: #f8fafc; border: 1px solid #e2e8f0;">
+      <h2 class="is-size-3 has-text-weight-black has-text-grey-900 has-tracking-tight mb-5">
+        {{ .heading | safeHTML }}
+      </h2>
+
+      {{ with .description }}
+      <p class="is-size-5 has-text-grey-600 has-line-height-relaxed mb-5">
+        {{ . | safeHTML }}
+      </p>
+      {{ end }}
+
+      {{ with .subtitle }}
+      <p class="is-size-5 has-text-grey-700 has-line-height-relaxed mb-8">
+        {{ . | safeHTML }}
+      </p>
+      {{ end }}
+
+      <div class="columns is-multiline">
+        {{ range .items }}
+        <div class="column is-3-desktop is-6-tablet">
+          {{ partial "common-cards/icon-text-card.html" (dict "card" .) }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
