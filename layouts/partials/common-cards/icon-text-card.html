@@ -1,0 +1,13 @@
+{{ $card := .card }}
+<div class="is-flex is-align-items-flex-start has-gap-4">
+  {{ if $card.icon }}
+  <div class="is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large has-background-primary"
+       style="width: 48px; height: 48px;">
+    <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="24" height="24" class="has-text-white"></iconify-icon>
+  </div>
+  {{ end }}
+  <div>
+    <h4 class="is-size-6 has-text-weight-bold has-text-grey-900 has-line-height-tight">{{ $card.title }}</h4>
+    <p class="is-size-7 has-text-grey-600 has-line-height-normal">{{ $card.description }}</p>
+  </div>
+</div>
