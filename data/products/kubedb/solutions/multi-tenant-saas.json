@@ -55,7 +55,7 @@
 
   "numbered_features_title": "KubeDB gives you <span class='text-gradient'>enterprise multi-tenant DBaaS</span> natively inside Kubernetes.",
   "numbered_features_subtitle": "Run production-ready databases for hundreds of teams and tenants — with complete governance, security, and self-service — on Red Hat OpenShift, SUSE Rancher Prime, or any Kubernetes.",
-  "numbered_features_graphic": "/assets/images/products/kubedb/kubedb-hero.png",
+  "numbered_features_graphic": "/assets/images/products/kubedb/kubedb-multi-tenancy-diagram.png",
   "numbered_features": [
     {
       "id": "01",

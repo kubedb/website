@@ -35,10 +35,17 @@
                 <strong class="has-text-black">{{ $data.cta_button_text | default "Start Free Trial" }}</strong>
                 <iconify-icon icon="heroicons:arrow-right" class="ml-2 has-text-black" width="22"></iconify-icon>
               </a>
+              {{ if $data.cta_secondary_button_text }}
+              <a href="{{ $data.cta_secondary_button_url | default "/contact/" }}" class="button is-ghost is-large height-60 has-text-white px-8">
+                <iconify-icon {{ printf "icon=%q" ($data.cta_secondary_button_icon | default "heroicons:play-solid") | safeHTMLAttr }} width="20" class="mr-2 has-text-secondary"></iconify-icon>
+                <strong>{{ $data.cta_secondary_button_text }}</strong>
+              </a>
+              {{ else }}
               <a href="/contact/" class="button is-ghost is-large height-60 has-text-white px-8">
                 <iconify-icon icon="heroicons:play-solid" width="20" class="mr-2 has-text-secondary"></iconify-icon>
                 <strong>Watch Demo</strong>
               </a>
+              {{ end }}
             </div>
           </div>
 

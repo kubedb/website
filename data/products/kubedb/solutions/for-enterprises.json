@@ -230,6 +230,7 @@
       "icon": "lucide:users"
     }
   ],
+  "cta_badge": "Developer Self-Service",
   "cta_title": "Empower Developers.",
   "cta_title_gradient": "Control for Platform Teams.",
   "cta_description": "Build an internal DBaaS that developers love and platform teams trust.",
