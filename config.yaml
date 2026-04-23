@@ -132,9 +132,30 @@ menu:
   - name: Partners
     identifier: partners
     weight: 5
+  - name: Resources
+    identifier: resources
+    weight: 6
   - name: Documentation
-    weight: 7
-    url: /docs/latest/
+    identifier: documentation-resources
+    parent: resources
+    weight: 1
+    pre: lucide:book-open
+    title: Product guides, setup docs, and operator overview
+    url: /docs/latest/welcome/
+  - name: Operator
+    identifier: resources-operator
+    parent: documentation-resources
+    weight: 1
+    pre: lucide:container
+    title: Product overview and capabilities
+    url: /products/kubedb-operator/
+  - name: Documentation
+    identifier: resources-documentation
+    parent: documentation-resources
+    weight: 2
+    pre: lucide:book-open
+    title: Setup, guides, and operations
+    url: /docs/latest/welcome/
   - name: Cassandra
     identifier: cassandra
     parent: database

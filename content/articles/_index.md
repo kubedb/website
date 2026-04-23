@@ -4,5 +4,8 @@ menu:
   main:
     identifier: articles
     name: Articles
-    weight: 6
+    parent: resources
+    weight: 2
+    pre: lucide:newspaper
+    title: Latest tutorials, releases, and engineering stories
 ---
