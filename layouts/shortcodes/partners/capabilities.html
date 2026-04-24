@@ -1,6 +1,8 @@
 {{ $d := partial "partners/page-data.html" . }}
 {{ with $d.capabilities }}
-<section class="section-padding has-background-grey-50">
+{{ $hasItems := false }}
+{{ with .items }}{{ if gt (len .) 0 }}{{ $hasItems = true }}{{ end }}{{ end }}
+<section class="has-background-grey-50 {{ if $hasItems }}section-padding{{ else }}pt-16 pb-0{{ end }}">
   <div class="container">
     {{ partial "common-sections/section-header.html" (dict
       "badge_text" .badge
@@ -8,9 +10,10 @@
       "title" .heading
       "subtitle" .description
       "align" "center"
-      "class" "mb-10"
+      "class" (cond $hasItems "mb-10" "mb-0")
     ) }}
 
+    {{ if $hasItems }}
     <div class="columns is-multiline">
       {{ range .items }}
       <div class="column is-4-desktop is-6-tablet">
@@ -18,6 +21,7 @@
       </div>
       {{ end }}
     </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}
