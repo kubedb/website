@@ -14,7 +14,7 @@
       <div class="column is-6">
         <div class="is-flex is-flex-direction-column has-gap-4">
           {{ range .integrations }}
-          {{ partial "common-cards/kubernetes-integration-card" (dict "card" .) }}
+          {{ partial "common-cards/kubernetes-integration-card.html" (dict "card" .) }}
           {{ end }}
         </div>
       </div>
