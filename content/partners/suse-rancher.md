@@ -9,7 +9,6 @@ data: 'data/products/kubedb/partners/suse-rancher.json'
 {{< partners/hero >}}
 {{< partners/platform >}}
 {{< partners/architecture >}}
-{{< partners/benefits >}}
 {{< partners/database-support >}}
 {{< partners/comparison >}}
 {{< partners/capabilities >}}
