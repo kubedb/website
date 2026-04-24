@@ -8,9 +8,10 @@
   "hero_title_2": "Self-Service Databases",
   "hero_description": "Build an internal database platform where teams can provision, manage, and scale databases on-demand while maintaining centralized governance and cost control.",
   "primary_action_text": "Start Free Trial",
-  "primary_action_url": "/kubernetes/databases/run-and-manage-kubedb-on-kubernetes/",
+  "primary_action_url": "/docs/latest/setup/",
+  "watch_demo_url": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
   "secondary_action_text": "See Demo",
-  "secondary_action_url": "/docs/v2026.1.19/welcome/",
+  "secondary_action_url": "/docs/latest/welcome/",
   "product_icon": "lucide:users",
   "hero_best_with_items": ["KubeDB Operator", "KubeDB Platform"],
   "stats": [
@@ -235,7 +236,7 @@
   "cta_title_gradient": "Control for Platform Teams.",
   "cta_description": "Build an internal DBaaS that developers love and platform teams trust.",
   "cta_button_text": "Start Free Trial",
-  "cta_button_url": "/kubernetes/databases/run-and-manage-kubedb-on-kubernetes/",
+  "cta_button_url": "/docs/latest/setup/",
   "cta_stats": [
     {
       "value": "10x",

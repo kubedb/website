@@ -6,9 +6,10 @@
     "hero_title_1": "Run Any Database Natively on SUSE Rancher Prime — <span class=\"text-gradient\">Without the Compromise.</span>",
     "hero_description": "Deploy and manage 25+ production-grade databases as native Kubernetes resources on SUSE Rancher Prime. Run production databases with full automation, governance, and portability across on-prem, cloud, edge, and air-gapped environments.",
     "primary_action_text": "Deploy Your First Database",
-    "primary_action_url": "#comparison",
+    "primary_action_url": "/docs/latest/setup/",
     "secondary_action_text": "See the Architecture",
-    "secondary_action_url": "https://kubedb.com/docs",
+    "secondary_action_url": "/docs/latest/welcome/",
+    "watch_demo_url": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
     "stats_style": "hero-inline-metrics",
     "stats": [
       {
@@ -300,7 +301,7 @@
     "buttons": [
       {
         "text": "Start Free Trial",
-        "href": "https://kubedb.com/docs",
+        "href": "/docs/latest/setup/",
         "style": "white",
         "target": "_blank",
         "icon": "lucide:arrow-right",
@@ -308,7 +309,7 @@
       },
       {
         "text": "Watch Demo",
-        "href": "#",
+        "href": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
         "style": "ghost",
         "icon": "lucide:play",
         "icon_position": "left"

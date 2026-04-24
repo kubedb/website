@@ -8,7 +8,8 @@
     "primary_action_text": "See full NDB vs KubeDB comparison",
     "primary_action_url": "#comparison",
     "secondary_action_text": "Deploy in Minutes on NKP",
-    "secondary_action_url": "https://kubedb.com/docs",
+    "secondary_action_url": "/docs/latest/setup/",
+    "watch_demo_url": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
     "stats_style": "hero-inline-metrics",
     "stats": [
       {
@@ -294,7 +295,7 @@
     "buttons": [
       {
         "text": "Start Free Trial",
-        "href": "https://kubedb.com/docs",
+        "href": "/docs/latest/setup/",
         "style": "white",
         "target": "_blank",
         "icon": "lucide:arrow-right",
@@ -302,7 +303,7 @@
       },
       {
         "text": "Watch Demo",
-        "href": "#",
+        "href": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
         "style": "ghost",
         "icon": "lucide:play",
         "icon_position": "left"

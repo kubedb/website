@@ -9,6 +9,7 @@
   "hero_best_with": "KubeDB Platform",
   "primary_action_text": "Schedule Demo",
   "primary_action_url": "/contact/",
+  "watch_demo_url": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
   "product_icon": "lucide:award",
   "stats": [
     { "label": "Time to Launch", "value": "30 days", "icon": "lucide:timer" },
@@ -356,7 +357,7 @@
     "Data sovereignty guaranteed"
   ],
   "cta_button_text": "Contact Sales",
-  "cta_button_url": "/contact/",
+  "cta_button_url": "https://appscode.com/contact/",
   "final_cta_metrics": [
     { "icon": "lucide:timer", "value": "30", "label": "Days to Launch", "gradient": "linear-gradient(135deg, #60a5fa, #06b6d4)" },
     { "icon": "lucide:database", "value": "25+", "label": "DB Engines", "gradient": "linear-gradient(135deg, #4ade80, #10b981)" },

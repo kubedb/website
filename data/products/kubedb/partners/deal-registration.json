@@ -12,6 +12,7 @@
     "secondary_action_text": "Partner Login",
     "secondary_action_url": "#",
     "secondary_action_icon": "lucide:log-in",
+    "watch_demo_url": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
     "badge": "Deal Registration",
     "badge_icon": "lucide:file-text",
     "title_plain": "Protect Your Deals and",
@@ -255,7 +256,7 @@
           "Dedicated partner account manager"
         ],
         "cta_text": "Become a Partner",
-        "cta_href": "/partner/alliance-partners/",
+        "cta_href": "#partner-form",
         "cta_style": "outlined",
         "cta_icon": "lucide:users"
       }

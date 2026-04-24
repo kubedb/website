@@ -6,9 +6,10 @@
     "hero_title_1": "Run Any Database Natively on <br>Amazon EKS —<br><span class=\"text-gradient\">Without the Compromise.</span>",
     "hero_description": "Deploy and manage <strong>25+ production-grade databases</strong> as native Kubernetes resources on Amazon EKS. Leverage AWS infrastructure with broader choice, zero extra licensing, and true GitOps agility.",
     "primary_action_text": "Start Free Trial",
-    "primary_action_url": "#",
+    "primary_action_url": "/docs/latest/setup/",
     "secondary_action_text": "View on AWS Marketplace",
     "secondary_action_url": "#",
+    "watch_demo_url": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
     "stats_style": "hero-inline-metrics",
     "stats": [
       {
@@ -455,7 +456,7 @@
     "buttons": [
       {
         "text": "Start Free Trial",
-        "href": "#",
+        "href": "/docs/latest/setup/",
         "style": "white",
         "target": "_blank",
         "icon": "lucide:arrow-right",
@@ -463,7 +464,7 @@
       },
       {
         "text": "Watch Demo",
-        "href": "#",
+        "href": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
         "style": "ghost",
         "icon": "lucide:play",
         "icon_position": "left"

@@ -10,9 +10,10 @@
   "hero_best_with": "KubeDB Platform",
   "hero_footer_text": "Runs on any Kubernetes • 25+ database engines • Centralized Governance",
   "primary_action_text": "Get Started with KubeDB",
-  "primary_action_url": "/kubernetes/databases/run-and-manage-kubedb-on-kubernetes/",
+  "primary_action_url": "/docs/latest/setup/",
+  "watch_demo_url": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
   "secondary_action_text": "View Documentation",
-  "secondary_action_url": "/docs/v2026.1.19/welcome/",
+  "secondary_action_url": "/docs/latest/welcome/",
   "product_icon": "lucide:users",
   "sections": [
     "hero",
@@ -152,7 +153,7 @@
     "60% lower costs vs cloud DBaaS"
   ],
   "cta_button_text": "Start Free Trial",
-  "cta_button_url": "/kubernetes/databases/run-and-manage-kubedb-on-kubernetes/",
+  "cta_button_url": "/docs/latest/setup/",
   "final_cta_metrics": [
     { "icon": "lucide:users", "value": "1000s", "label": "Tenants", "gradient": "linear-gradient(135deg, #60a5fa, #06b6d4)" },
     { "icon": "lucide:zap", "value": "<60s", "label": "Provisioning", "gradient": "linear-gradient(135deg, #4ade80, #10b981)" },
