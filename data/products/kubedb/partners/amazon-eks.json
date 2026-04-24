@@ -181,13 +181,13 @@
     "description": "KubeDB leverages the full power of AWS and Kubernetes to deliver a complete database platform",
     "integrations": [
       {
-        "icon": "lucide:box",
+        "icon": "lucide:server",
         "color": "orange",
         "title": "Amazon EKS & Kubernetes",
         "description": "Deploy databases natively on Amazon EKS, Red Hat OpenShift, Rancher, or any Kubernetes distribution. Full support for Kubernetes operators, Custom Resource Definitions (CRDs), and GitOps workflows."
       },
       {
-        "icon": "lucide:archive",
+        "icon": "lucide:database",
         "color": "blue",
         "title": "Amazon S3",
         "description": "Automated backup and archival to S3 with lifecycle policies, versioning, cross-region replication, and support for GCS, Azure Blob, and other object stores."
@@ -199,7 +199,7 @@
         "description": "Deep integration with CloudWatch and native Prometheus support. Pre-built Grafana dashboards, custom alerts, and automated incident response."
       },
       {
-        "icon": "lucide:user-check",
+        "icon": "lucide:shield",
         "color": "purple",
         "title": "AWS IAM & Kubernetes RBAC",
         "description": "Use AWS IAM for authentication and support for Kubernetes RBAC for fine-grained access control. Support for IAM roles, service accounts, and HashiCorp Vault for credential management."
@@ -211,7 +211,7 @@
         "description": "Deploy databases in your VPC with custom network configurations, security groups, and private subnets. Full support for Kubernetes NetworkPolicies."
       }
     ],
-    "image": "/assets/images/partners/aws-kubernetes-integration.jpeg",
+    "image": "/assets/images/cloud.jpeg",
     "image_alt": "AWS & Kubernetes Integration"
   },
 
