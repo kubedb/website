@@ -7,33 +7,43 @@
 {{ end }}
 {{ with $data }}
 {{ $btnIcon := .button_icon | default "lucide:dollar-sign" }}
-<section class="section-padding has-background-light">
+{{ $statIcons := slice "lucide:dollar-sign" "lucide:zap" "lucide:unlock" "lucide:shield-check" }}
+
+<section class="cta-section home-section section-padding is-relative is-overflow-hidden">
   <div class="container">
-    <div class="is-radius-2xlarge p-10 has-background-success has-shadow-large">
-      <div class="has-text-centered">
-        <h2 class="is-size-3 has-text-weight-black has-text-white has-tracking-tight mb-4">
+    <div class="cta-block ds-card-base">
+      <div class="cta-glow"></div>
+      <div class="cta-inner has-text-centered">
+        <div class="cta-dot-pattern" aria-hidden="true"></div>
+
+        <h2 class="cta-title has-text-centered">
           {{ .heading | safeHTML }}
         </h2>
 
         {{ with .description }}
-        <p class="is-size-6 has-text-white has-line-height-relaxed mx-auto has-max-width-md mb-8">
+        <p class="cta-desc has-text-white has-opacity-80 mx-auto has-max-width-lg mb-8">
           {{ . | safeHTML }}
         </p>
         {{ end }}
 
         {{ with .stats }}
-        <div class="is-grid grid-cols-1 sm:grid-cols-3 has-gap-4 mx-auto has-max-width-lg mb-8">
-          {{ range . }}
-            {{ partial "common-cards/savings-stat-card.html" (dict "card" .) }}
+        <div class="columns is-multiline is-variable is-4 mx-auto has-max-width-lg mb-8">
+          {{ range $i, $stat := . }}
+          <div class="column is-12-mobile is-4-tablet">
+            {{ $stat := merge $stat (dict "icon" (index $statIcons $i)) }}
+            {{ partial "common-cards/savings-stat-card.html" (dict "card" $stat "index" $i) }}
+          </div>
           {{ end }}
         </div>
         {{ end }}
 
         {{ with .button_text }}
-        <a href="{{ $data.button_url | default "#" }}" class="is-inline-flex is-align-items-center has-gap-2 has-background-white has-text-success has-text-weight-bold px-5 py-3 is-radius-large has-no-underline has-transition-all has-hover-lift-small has-shadow-medium">
-          <iconify-icon {{ printf "icon=%q" $btnIcon | safeHTMLAttr }} width="18" height="18"></iconify-icon>
-          <span>{{ . }}</span>
-        </a>
+        <div class="buttons cta-buttons ds-button-group is-justify-content-center">
+          <a href="{{ $data.button_url | default "#" }}" class="button is-white is-large height-60 px-10 shadow-lg hover-lift">
+            <iconify-icon {{ printf "icon=%q" $btnIcon | safeHTMLAttr }} width="22" class="mr-2 has-text-black"></iconify-icon>
+            <strong class="has-text-black">{{ . }}</strong>
+          </a>
+        </div>
         {{ end }}
       </div>
     </div>
