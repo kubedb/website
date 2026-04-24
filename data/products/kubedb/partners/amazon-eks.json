@@ -287,58 +287,12 @@
         "highlight": "100% free for dev/test"
       }
     ],
-    "table": {
-      "col_capability": "Feature / Capability",
-      "col_rds": "AWS RDS",
-      "col_kubedb": "EKS + KubeDB",
-      "rows": [
-        {
-          "capability": "Provisioning Speed",
-          "rds": "5-10 minutes",
-          "kubedb": "< 60 seconds"
-        },
-        {
-          "capability": "Multiple DBs per Host",
-          "rds": "No",
-          "kubedb": "Yes"
-        },
-        {
-          "capability": "Spot Instance Support",
-          "rds": "Limited",
-          "kubedb": "Full support"
-        },
-        {
-          "capability": "Management Fee",
-          "rds": "High premium",
-          "kubedb": "Low"
-        },
-        {
-          "capability": "Developer Productivity",
-          "rds": "Shared instances",
-          "kubedb": "Preview environments, per-dev DBs"
-        },
-        {
-          "capability": "Latency",
-          "rds": "Cross-VPC (higher)",
-          "kubedb": "Same cluster (low)"
-        },
-        {
-          "capability": "Vendor Lock-in",
-          "rds": "AWS only",
-          "kubedb": "None - portable"
-        },
-        {
-          "capability": "Tooling",
-          "rds": "Separate tools",
-          "kubedb": "Same as apps (Helm, Prometheus, etc.)"
-        }
-      ]
-    },
     "benefit_panels": [
       {
         "icon": "lucide:users",
         "title": "Developer Productivity Benefits",
-        "items": [
+        "description": "",
+        "benefits": [
           "Every developer gets their own database instance",
           "Preview environments for every pull request",
           "Different databases for different environments",
@@ -349,7 +303,8 @@
       {
         "icon": "lucide:server",
         "title": "Operational Advantages",
-        "items": [
+        "description": "",
+        "benefits": [
           "No vendor lock-in—reuse DevOps workflows on-prem or any cloud",
           "Lower latency with databases in same cluster as apps",
           "No cross-VPC connections required",
@@ -369,6 +324,21 @@
       "button_text": "Get a Cost Analysis",
       "button_url": "#"
     }
+  },
+
+  "comparison": {
+    "col_traditional": "AWS RDS",
+    "col_kubedb": "EKS + KubeDB",
+    "rows": [
+      { "capability": "Provisioning Speed", "traditional": "5-10 minutes", "kubedb": "< 60 seconds" },
+      { "capability": "Multiple DBs per Host", "traditional": "No", "kubedb": "Yes" },
+      { "capability": "Spot Instance Support", "traditional": "Limited", "kubedb": "Full support" },
+      { "capability": "Management Fee", "traditional": "High premium", "kubedb": "Low" },
+      { "capability": "Developer Productivity", "traditional": "Shared instances", "kubedb": "Preview environments, per-dev DBs" },
+      { "capability": "Latency", "traditional": "Cross-VPC (higher)", "kubedb": "Same cluster (low)" },
+      { "capability": "Vendor Lock-in", "traditional": "AWS only", "kubedb": "None - portable" },
+      { "capability": "Tooling", "traditional": "Separate tools", "kubedb": "Same as apps (Helm, Prometheus, etc.)" }
+    ]
   },
 
   "industries": {

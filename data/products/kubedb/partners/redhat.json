@@ -5,12 +5,10 @@
     "hero_badge": "OFFICIALLY CERTIFIED OPERATOR",
     "hero_title_1": "Run Any Database Natively on Red Hat OpenShift — <span class=\"text-gradient\">Without the Compromise.</span>",
     "hero_description": "Deploy and manage 25+ production-grade databases as native Kubernetes resources on Red Hat OpenShift. Run production databases with full automation, governance, and portability across on-prem, cloud, edge, and air-gapped environments.",
-    "primary_action_text": "Start Free Trial",
+    "primary_action_text": "Why KubeDB on MKE",
     "primary_action_url": "#comparison",
-    "secondary_action_text": "View on Red Hat Marketplace",
+    "secondary_action_text": "Deploy in Minutes on MKE",
     "secondary_action_url": "https://kubedb.com/docs",
-    "secondary_style": "primary",
-    "secondary_action_icon": "none",
     "stats_style": "hero-inline-metrics",
     "stats": [
       {
@@ -28,14 +26,10 @@
     ]
   },
 
-  "paragraph": {
-    "content": "KubeDB by AppsCode delivers a production-grade, Kubernetes-native Database-as-a-Service platform that runs seamlessly on <strong>Red Hat OpenShift</strong> and <strong>OpenShift Virtualization</strong>. It enables platform teams and developers to provision, manage, scale, backup, and recover databases using familiar Kubernetes APIs—<strong>without vendor lock-in</strong> while maintaining enterprise-grade security and compliance."
-  },
-
   "what_this_means": {
     "heading": "What This Means for Red Hat OpenShift Users",
     "description": "If you're running applications on Red Hat OpenShift, you benefit from enterprise Kubernetes with enhanced security and developer experience. KubeDB extends these benefits to your database layer with native operator patterns.",
-    "subtitle": "KubeDB enhances OpenShift by making databases first-class citizens in your platform:",
+    "subtitle": "<strong class=\"has-text-primary\">KubeDB enhances OpenShift</strong> by making databases first-class citizens in your platform:",
     "items": [
       {
         "icon": "lucide:zap",
@@ -43,12 +37,12 @@
         "description": "Launch databases in minutes with OpenShift Operators."
       },
       {
-        "icon": "lucide:trending-up",
+        "icon": "lucide:shield-check",
         "title": "Enterprise Compliance",
         "description": "Meet regulatory requirements with OpenShift security."
       },
       {
-        "icon": "lucide:layout-dashboard",
+        "icon": "lucide:layers",
         "title": "Hybrid Flexibility",
         "description": "Run on-prem, cloud, or edge with consistent workflows."
       },
@@ -81,7 +75,8 @@
         "title": "Broad Database Support",
         "icon": "lucide:boxes",
         "color": "info",
-        "description": "Manage 25+ database engines including PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, Kafka, and more — all with consistent Kubernetes-native workflows on both containers and VMs."
+        "description": "Manage 25+ database engines including PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, Kafka, and more — all with consistent Kubernetes-native workflows on both containers and VMs.",
+        "note": "KubeDB fills the gap — turning MKE into a full-featured, open database platform."
       },
       {
         "title": "Automated Lifecycle Management",
@@ -123,7 +118,7 @@
   },
   "comparison": {
     "badge": "COMPARISON",
-    "heading": "OpenShift with Traditional DBaaS vs OpenShift + KubeDB",
+    "heading": "KubeDB on MKE delivers what traditional DB management can't",
     "description": "KubeDB delivers broader support, lower cost, and true Kubernetes-native experience on your existing OpenShift platform.",
     "col_traditional": "Traditional DBaaS (External or Limited Operators)",
     "col_kubedb": "OpenShift + KubeDB",
@@ -240,7 +235,7 @@
     ]
   },
   "cta": {
-    "badge": "Red Hat Certified",
+    "badge": "Red Hat OpenShift Certified",
     "heading": "Run Databases Natively",
     "heading_highlight": "on Red Hat OpenShift",
     "description": "Enterprise security, hybrid cloud freedom, certified operators",

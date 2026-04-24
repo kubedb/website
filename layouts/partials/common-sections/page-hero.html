@@ -58,14 +58,8 @@
       </a>
       {{ if $data.secondary_action_url }}
       {{ $secondary_icon := $data.secondary_action_icon | default "heroicons:book-open" }}
-      {{ $secondary_class := "is-outlined hero-btn-secondary" }}
-      {{ if eq $data.secondary_style "primary" }}
-        {{ $secondary_class = "is-primary hero-btn-primary" }}
-      {{ end }}
-      <a href="{{ $data.secondary_action_url }}" class="button {{ $secondary_class }} height-50">
-        {{ if ne $data.secondary_action_icon "none" }}
+      <a href="{{ $data.secondary_action_url }}" class="button is-outlined hero-btn-secondary height-50">
         <iconify-icon {{ printf "icon=%q" $secondary_icon | safeHTMLAttr }} class="mr-2" width="20" height="20"></iconify-icon>
-        {{ end }}
         <strong>{{ $data.secondary_action_text }}</strong>
       </a>
       {{ end }}
