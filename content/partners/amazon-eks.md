@@ -15,5 +15,6 @@ data: 'data/products/kubedb/partners/amazon-eks.json'
 {{< partners/architecture >}}
 {{< partners/capabilities >}}
 {{< partners/database-support >}}
-{{< partners/kubernetes-integration >}}
+{{< partners/enterprise-integrations >}}
+{{< partners/cost-comparison >}}
 {{< partners/cta >}}
