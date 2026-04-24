@@ -41,7 +41,7 @@
                 <strong>{{ $data.cta_secondary_button_text }}</strong>
               </a>
               {{ else }}
-              <a href="{{ $data.watch_demo_url }}" target="_blank" class="button is-ghost is-large height-60 has-text-white px-8">
+              <a href="{{ $data.watch_demo_url | default "https://www.youtube.com/watch?v=hBHxMtSjKo4" }}" target="_blank" class="button is-ghost is-large height-60 has-text-white px-8">
                 <iconify-icon icon="heroicons:play-solid" width="20" class="mr-2 has-text-secondary"></iconify-icon>
                 <strong>Watch Demo</strong>
               </a>

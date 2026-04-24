@@ -12,6 +12,7 @@
     "secondary_action_text": "Partner Login",
     "secondary_action_url": "#",
     "secondary_action_icon": "lucide:log-in",
+    "watch_demo_url": "https://www.youtube.com/watch?v=hBHxMtSjKo4",
     "badge": "Channel Partners",
     "badge_icon": "lucide:store",
     "title_plain": "Expand Your Revenue with",
@@ -255,7 +256,7 @@
           "Sales &amp; solution architect assistance"
         ],
         "cta_text": "Register a Deal",
-        "cta_href": "#",
+        "cta_href": "#partner-form",
         "cta_style": "outlined",
         "cta_icon": "lucide:file-text"
       }
