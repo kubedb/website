@@ -1,0 +1,17 @@
+{{ $d := index $.Site.Data.products.kubedb.homepage "stats" }}
+
+<section class="home-section home-section-white stats-section">
+  <div class="container">
+    <div class="columns is-variable is-6 is-vcentered">
+      {{ range $d.stats }}
+      <div class="column has-text-centered">
+        <div class="stat p-4">
+          <div class="stat-value text-gradient has-text-weight-black">{{ .value }}</div>
+          <div class="stat-label has-text-heading is-text-xl has-text-weight-extrabold mt-4">{{ .label }}</div>
+          <div class="stat-sub has-text-body is-text-base">{{ .sub }}</div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

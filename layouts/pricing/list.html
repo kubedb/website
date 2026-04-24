@@ -1,0 +1,260 @@
+{{ define "main" }}
+
+{{ $p := (index .Site.Data.products (default .Site.Params.product_key .Params.info.product)) }}
+{{ $pricing := $p.pricing }}
+{{ $setupURL := printf "/docs/%s/setup/" $p.latestVersion }}
+{{ $contactURL := printf "%s/contact/" .Site.Params.domain_appscode }}
+
+<div class="pricing-page ac-ui">
+	<section class="pricing-hero">
+		<div class="container has-text-centered">
+			<p class="pricing-badge mb-4 is-text-xs has-text-weight-extrabold is-uppercase has-text-secondary">
+				<iconify-icon icon="lucide:sparkles" width="12" height="12"></iconify-icon>
+				{{ $pricing.hero.badge }}
+			</p>
+			<h1 class="is-2 has-text-weight-black has-text-heading mb-2">{{ $pricing.hero.title }}</h1>
+			<p class="is-5 mx-auto has-max-width-lg is-text-base has-text-body">
+				{{ $pricing.hero.subtitle }}
+			</p>
+		</div>
+	</section>
+
+	<section class="section-padding pricing-key-features">
+		<div class="container">
+			<div class="columns is-multiline">
+				{{ range $idx, $feature := $pricing.key_features.items }}
+				<div class="column is-12-mobile is-6-tablet is-3-desktop">
+					<div class="card is-shadowless is-fullheight pricing-feature-card is-feature-{{ add $idx 1 }}">
+						<div class="card-content">
+							<span class="pricing-icon-chip">
+								{{ if eq $idx 0 }}<iconify-icon icon="lucide:database" width="22"
+									height="22"></iconify-icon>{{ end }}
+								{{ if eq $idx 1 }}<iconify-icon icon="lucide:layout-dashboard" width="22"
+									height="22"></iconify-icon>{{ end }}
+								{{ if eq $idx 2 }}<iconify-icon icon="lucide:award" width="22"
+									height="22"></iconify-icon>{{ end }}
+								{{ if eq $idx 3 }}<iconify-icon icon="lucide:users" width="22"
+									height="22"></iconify-icon>{{ end }}
+							</span>
+						<p class="title is-5 is-text-sm has-text-weight-bold has-text-heading mb-2">{{ $feature.title }}</p>
+						<p class="content has-text-body">{{ $feature.description }}</p>
+						</div>
+					</div>
+				</div>
+				{{ end }}
+			</div>
+		</div>
+	</section>
+
+	<section class="section-padding pricing-model-section">
+		<div class="container">
+			<div class="columns is-centered">
+				<div class="column is-12-mobile is-10-tablet is-8-desktop">
+					<div class="box pricing-model-box">
+						<div class="section-header">
+							<h2 class="section-header-title has-text-weight-black has-text-heading">{{ $pricing.pricing_model.title }}</h2>
+							<p class="section-header-desc is-text-base has-text-body mt-2">{{ $pricing.pricing_model.subtitle }}</p>
+						</div>
+
+						<ul class="pricing-included-list mb-24">
+							{{ range $pricing.pricing_model.included_items }}
+							<li class="pricing-included-item is-flex is-align-items-start mb-4 is-text-sm has-text-body">
+								<span class="pricing-included-check"><iconify-icon icon="lucide:check-circle-2"
+										width="16" height="16"></iconify-icon></span>
+								<span>{{ . }}</span>
+							</li>
+							{{ end }}
+						</ul>
+
+						<div class="ds-button-group pricing-button-group is-justify-content-center">
+							<a href="{{ $setupURL }}" class="button ac-button is-primary">
+								<iconify-icon icon="lucide:rocket" width="16" height="16"></iconify-icon>
+								<span>{{ $pricing.pricing_model.cta_primary }}</span>
+							</a>
+							<a href="{{ $contactURL }}" class="button ac-button is-outlined">
+								{{ $pricing.pricing_model.cta_secondary }}
+							</a>
+						</div>
+
+						<div class="pricing-model-note">
+						<p class="is-text-xs has-text-body mb-4"><strong>{{ $pricing.pricing_model.labels.note }}</strong> {{ $pricing.pricing_model.note
+							}}</p>
+						<p class="is-text-xs has-text-body"><strong>{{ $pricing.pricing_model.labels.sku }}</strong> {{ $pricing.pricing_model.sku }}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-padding pricing-support-section">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-header-title has-text-weight-black has-text-heading">{{ $pricing.support_plans.title }}</h2>
+				<p class="section-header-desc is-text-base has-text-body mt-2">{{ $pricing.support_plans.subtitle }}</p>
+			</div>
+			<div class="columns is-multiline">
+				{{ range $idx, $plan := $pricing.support_plans.plans }}
+				<div class="column is-12-mobile is-6-tablet is-6-desktop">
+					<div
+						class="pricing-support-card is-flex is-flex-direction-column{{ if eq $idx 0 }} is-featured{{ end }}">
+						<div class="psc-header">
+							<span class="pricing-icon-chip is-plan-{{ add $idx 1 }}">
+								{{ if eq $idx 0 }}<iconify-icon icon="lucide:shield" width="22"
+									height="22"></iconify-icon>{{ end }}
+								{{ if eq $idx 1 }}<iconify-icon icon="lucide:crown" width="22"
+									height="22"></iconify-icon>{{ end }}
+							</span>
+							<p class="psc-name is-text-xl has-text-weight-black has-text-heading mb-2">{{ $plan.name }}</p>
+							<p class="psc-desc is-text-sm has-text-body">{{ $plan.description }}</p>
+						</div>
+						<div class="psc-price-block">
+							<p class="psc-price is-text-4xl has-text-weight-black has-text-heading mb-1">{{ $plan.price }}</p>
+							<p class="psc-period is-text-sm has-text-body">{{ $plan.period }}</p>
+						</div>
+						{{ $supportButtonClass := cond (eq $plan.cta_type "primary") "is-primary" "is-outlined" }}
+						{{ $ctaURL := cond (eq $plan.cta_type "primary") $setupURL $contactURL }}
+						<div class="psc-cta">
+							<a href="{{ $ctaURL }}" class="button {{ $supportButtonClass }} is-fullwidth">
+								<span>{{ $plan.cta }}</span>
+								<iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+							</a>
+						</div>
+						<ul class="pricing-features-list">
+							{{ range $plan.features }}
+							<li class="pricing-feature-row is-flex is-align-items-start is-text-sm has-text-body">
+								<span class="pf-icon pf-check"><iconify-icon icon="lucide:check-circle-2" width="18"
+										height="18"></iconify-icon></span>
+								<span>{{ . }}</span>
+							</li>
+							{{ end }}
+							{{ range $plan.excluded_features }}
+							<li class="pricing-feature-row is-excluded is-flex is-align-items-start is-text-sm">
+								<span class="pf-icon pf-ex"><iconify-icon icon="lucide:x-circle" width="18"
+										height="18"></iconify-icon></span>
+								<span>{{ . }}</span>
+							</li>
+							{{ end }}
+						</ul>
+					</div>
+				</div>
+				{{ end }}
+			</div>
+			{{ with $pricing.support_plans.footer_note }}
+			<p class="has-text-centered psc-footer-note mt-24 is-text-sm has-text-body">{{ . }}</p>
+			{{ end }}
+		</div>
+	</section>
+
+	<section class="section-padding pricing-sla-section">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-header-title has-text-weight-black has-text-heading">{{ $pricing.sla.title }}</h2>
+				<p class="section-header-desc is-text-base has-text-body mt-2">{{ $pricing.sla.subtitle }}</p>
+			</div>
+
+			<div class="pricing-severity-box">
+				<p class="sev-box-title is-text-xl has-text-weight-black has-text-heading mb-4">{{ $pricing.sla.labels.severity_definitions }}</p>
+				<div class="columns is-multiline">
+					{{ range $pricing.sla.severity_definitions }}
+					<div class="column is-12-mobile is-6-tablet is-6-desktop">
+					<p class="sev-label {{ .class }} is-text-sm has-text-weight-bold mb-2">{{ .name }}</p>
+					<p class="sev-desc is-text-xs has-text-body">{{ .description }}</p>
+					</div>
+					{{ end }}
+				</div>
+			</div>
+
+			<div class="columns is-multiline">
+				{{ range $idx, $table := $pricing.sla.tables }}
+				<div class="column is-12-mobile is-6-tablet is-flex is-flex-direction-column">
+					<div class="pricing-sla-card is-sla-{{ add $idx 1 }}">
+						<div class="sla-card-header">
+						<p class="sla-card-title is-text-base has-text-weight-bold">{{ $table.name }}</p>
+						</div>
+						<div class="sla-card-body">
+							<div class="sla-grid">
+								<div class="sla-head">
+									<span class="sla-head-cell is-text-xs has-text-weight-bold has-text-heading">{{ $pricing.sla.labels.severity_column }}</span>
+									<span class="sla-head-cell is-text-xs has-text-weight-bold has-text-heading">{{ $pricing.sla.labels.response_column }}</span>
+								</div>
+								{{ range $table.rows }}
+								<div class="sla-row">
+								<span class="sla-severity is-text-xs has-text-weight-bold">{{ .severity }}</span>
+								<div class="sla-response-cell">
+									<p class="sla-response-item is-text-xs has-text-body"><strong>{{ $pricing.sla.labels.ack }}</strong>
+										<span class="sla-response">{{ .ack }}</span>
+									</p>
+									<p class="sla-response-item is-text-xs has-text-body"><strong>{{ $pricing.sla.labels.assessment
+											}}</strong> <span class="sla-response">{{ .assessment }}</span></p>
+									<p class="sla-response-item is-text-xs has-text-body"><strong>{{ $pricing.sla.labels.resolution
+												}}</strong> <span class="sla-response">{{ .resolution }}</span></p>
+									</div>
+								</div>
+								{{ end }}
+							</div>
+						</div>
+					</div>
+				</div>
+				{{ end }}
+			</div>
+		</div>
+	</section>
+
+	<section class="section-padding pricing-faq-section">
+		<div class="container">
+			<div class="section-header">
+				<p class="pricing-badge mb-4 is-text-xs has-text-weight-extrabold is-uppercase has-text-secondary">{{ $pricing.faq.badge }}</p>
+				<h2 class="section-header-title has-text-weight-black has-text-heading">{{ $pricing.faq.title }}</h2>
+				<p class="section-header-desc is-text-base has-text-body mt-2">{{ $pricing.faq.subtitle }}</p>
+			</div>
+			<div class="content">
+				{{ range $pricing.faq.items }}
+				<details class="pricing-faq-item mb-4">
+				<summary class="is-text-base has-text-weight-bold has-text-heading">{{ .question }}</summary>
+				<p class="faq-answer is-text-sm has-text-body">{{ .answer }}</p>
+				</details>
+				{{ end }}
+			</div>
+		</div>
+	</section>
+
+	<section class="p-0 ">
+		<div class="container">
+			<div class="cta-block">
+				<div class="cta-glow"></div>
+				<div class="cta-inner is-flex is-flex-direction-column is-align-items-center has-text-centered">
+					<div class="cta-dot-pattern" aria-hidden="true"></div>
+
+					<div class="pricing-cta-icon-wrapper mb-6">
+						<iconify-icon icon="heroicons:rocket-launch" width="72" height="72"
+							class="has-text-white"></iconify-icon>
+					</div>
+
+					<h2 class="cta-title mt-0">
+						{{ $pricing.cta.title }}
+					</h2>
+					<p class="cta-desc subtitle is-5 has-text-white is-opacity-80 mx-auto has-max-width-lg mt-2">
+						{{ $pricing.cta.subtitle }}
+					</p>
+
+					<div class="buttons cta-buttons is-justify-content-center mt-8">
+						<a href="{{ $setupURL }}" class="button is-white ac-button">
+							<span>{{ $pricing.cta.cta_primary }}</span>
+							<iconify-icon icon="lucide:arrow-right" width="18" height="18"></iconify-icon>
+						</a>
+						<a href="{{ $contactURL }}" class="button is-ghost ac-button has-text-white px-8">
+							{{ $pricing.cta.cta_secondary }}
+						</a>
+					</div>
+
+					<p class="cta-footnote mt-8 is-opacity-60 has-text-white">
+						{{ $pricing.cta.footnote }}
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+{{ end }}

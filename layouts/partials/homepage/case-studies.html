@@ -1,0 +1,61 @@
+{{ $section := site.GetPage "/case-studies" }}
+{{ $pages := slice }}
+{{ if $section }}
+{{ $pages = first 3 ($section.Pages.ByDate.Reverse) }}
+{{ else }}
+{{ $pages = first 3 ((where site.RegularPages "Section"
+"case-studies").ByDate.Reverse) }}
+{{ end }}
+
+{{ $sectionJson := dict }}
+{{ with index site.Data.products.kubedb "case-studies" }}
+{{ $sectionJson = .section | default dict }}
+{{ end }}
+
+{{ $sectionBadge := "Customer Success Stories" }}
+{{ $sectionTitle := "Proven Results Across Industries" }}
+{{ $sectionDescription :=
+"See how leading companies transformed their database operations with KubeDB" }}
+{{ $sectionCTA := "View All Case Studies" }}
+{{ if $section }}
+{{ $sectionBadge = default $sectionBadge $section.Params.badge }}
+{{ $sectionTitle = default $sectionTitle $section.Title }}
+{{ $sectionDescription = default $sectionDescription $section.Params.description
+}}
+{{ $sectionCTA = default $sectionCTA $section.Params.cta_button }}
+{{ end }}
+{{ $sectionBadge = default $sectionBadge $sectionJson.badge }}
+{{ $sectionTitle = default $sectionTitle $sectionJson.title }}
+{{ $sectionDescription = default $sectionDescription $sectionJson.description }}
+{{ $sectionCTA = default $sectionCTA $sectionJson.cta_button }}
+
+<section class="home-section home-section-white use-cases-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge">
+        <iconify-icon icon="heroicons:arrow-trending-up" width="16" height="16"
+          style="color:#4948A3;"></iconify-icon>
+        <span class="badge-text">{{ $sectionBadge }}</span>
+      </div>
+      <h2 class="section-header-title">{{ $sectionTitle }}</h2>
+      <p class="section-header-desc">{{ $sectionDescription }}</p>
+    </div>
+
+    <div class="columns is-multiline">
+      {{ range $index, $page := $pages }}
+      <div class="column is-4-desktop is-flex">
+        {{ partial "case-studies/card.html" (dict "page" $page "index" $index)
+        }}
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="has-text-centered" style="margin-top: 2.5rem;">
+      <a href="/case-studies/" class="button is-primary height-50">
+        {{ $sectionCTA }}
+        <iconify-icon icon="heroicons:arrow-right" width="16"
+          height="16"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</section>

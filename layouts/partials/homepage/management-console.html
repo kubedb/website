@@ -1,0 +1,40 @@
+{{ $d := index $.Site.Data.products.kubedb.homepage "management-console" }}
+
+<section class="home-section home-section-light">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge">
+        <iconify-icon icon="heroicons:rectangle-group" width="16" height="16" style="color:#4948A3;"></iconify-icon>
+        <span class="badge-text">{{ $d.badge }}</span>
+      </div>
+      <h2 class="section-header-title">{{ $d.title }}</h2>
+      <p class="section-header-desc">{{ $d.description }}</p>
+    </div>
+
+    <div class="console-wrap">
+      <div class="console ds-card-base">
+        <div class="console-screenshot-carousel owl-carousel">
+          {{ range $index, $shot := $d.screenshots }}
+          <div class="console-slide">
+            <div class="console-slide-head is-flex is-align-items-start is-justify-content-space-between has-gap-4 mb-4 is-fullwidth">
+              <div class="is-flex is-align-items-center is-justify-content-center is-flex-direction-column is-fullwidth">
+                <div class="console-slide-kicker is-text-xs has-text-weight-extrabold is-uppercase">{{ or $shot.kicker "Overview" }}</div>
+                <h3 class="console-slide-title has-text-heading has-text-weight-black">{{ or $shot.title "Database Overview" }}</h3>
+                <p class="console-slide-desc has-text-body is-text-base">{{ or $shot.description "Monitor all your databases from a single dashboard." }}</p>
+              </div>
+              <span class="console-slide-index is-text-xs has-text-weight-bold">#{{ add $index 1 }}</span>
+            </div>
+            <img class="console-screenshot" src="{{ $shot.image }}" alt="{{ $shot.alt }}" loading="lazy">
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      <button class="console-nav-btn console-prev-btn" type="button" aria-label="Previous screenshot">
+        <iconify-icon icon="heroicons:chevron-left" width="18" height="18"></iconify-icon>
+      </button>
+      <button class="console-nav-btn console-next-btn" type="button" aria-label="Next screenshot">
+        <iconify-icon icon="heroicons:chevron-right" width="18" height="18"></iconify-icon>
+      </button>
+    </div>
+  </div>
+</section>

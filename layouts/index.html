@@ -1,0 +1,17 @@
+{{ define "main"}}
+
+<div class="homepage-redesign ac-ui">
+	{{ partial "homepage/hero.html" . }}
+	{{ partial "homepage/core-platform.html" . }}
+	{{ partial "homepage/deployment-flexibility.html" . }}
+	{{ partial "homepage/database-support.html" . }}
+	{{ partial "homepage/security.html" . }}
+	{{ partial "homepage/own-dbaas.html" . }}
+	{{ partial "homepage/stats.html" . }}
+	{{ partial "homepage/management-console.html" . }}
+	{{ partial "homepage/case-studies.html" . }}
+	{{ partial "common-sections/final-cta.html" (index .Site.Data.products.kubedb.homepage "cta-section") }}
+</div>
+
+{{ end }}
+

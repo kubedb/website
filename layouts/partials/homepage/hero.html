@@ -1,0 +1,84 @@
+{{ $d := index $.Site.Data.products.kubedb.homepage "hero" }}
+
+<section class="home-hero">
+  <div class="home-hero-bg">
+    <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
+    <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
+    <div class="hero-shapes-tr">
+      <div class="hero-shape-ring"></div>
+      <div class="hero-shape-square"></div>
+      <div class="hero-shape-blob"></div>
+    </div>
+    <div class="hero-shapes-bl">
+      <div class="hero-shape-diamond"></div>
+      <div class="hero-shape-rect"></div>
+      <div class="hero-shape-dot"></div>
+    </div>
+    <div class="hero-orb-center-a"></div>
+    <div class="hero-orb-center-b"></div>
+    <div class="hero-orb-center-c"></div>
+    <svg class="hero-dot-grid" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <pattern id="hero-dots" width="80" height="80" patternUnits="userSpaceOnUse">
+          <circle cx="40" cy="40" r="1" fill="#4948A3" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hero-dots)" />
+    </svg>
+    <div class="hero-ping hero-ping-1"></div>
+    <div class="hero-ping hero-ping-2"></div>
+    <div class="hero-ping hero-ping-3"></div>
+  </div>
+
+  <div class="container home-hero-container">
+    <h1 class="home-hero-title">
+      {{ $d.title_plain | safeHTML }}
+    </h1>
+
+    <p class="home-hero-desc">{{ $d.description | safeHTML }}</p>
+
+    <div class="hero-diff-row is-flex is-align-items-stretch is-justify-content-center is-flex-wrap-wrap has-gap-4 mb-8">
+      {{ range $d.differentiators }}
+      <div class="hero-diff-pill">
+        <div class="hero-diff-pill-inner">
+          <div class="hero-diff-pill-head is-flex is-align-items-center has-gap-1 mb-1">
+            <iconify-icon icon="lucide:circle-check-big" width="20" height="20" style="color:#10B981;"></iconify-icon>
+            <span class="has-text-heading is-text-base has-text-weight-extrabold">{{ .title }}</span>
+          </div>
+          <div class="hero-diff-pill-sub has-text-body is-text-xs has-text-weight-medium has-text-left">{{ .desc }}</div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="buttons is-centered home-hero-ctas ds-button-group has-gap-4">
+      <a href="{{ "/docs/latest/setup/" | relLangURL }}" class="button is-primary hero-btn-primary height-50">
+        {{ $d.cta_primary }}
+        <iconify-icon icon="heroicons:arrow-right" width="20" height="20"></iconify-icon>
+      </a>
+      <a href="{{ "/docs/latest/welcome/" | relLangURL }}" class="button is-outlined hero-btn-secondary height-50">
+        <iconify-icon icon="heroicons:book-open" width="20" height="20"></iconify-icon>
+        {{ $d.cta_secondary }}
+      </a>
+    </div>
+
+    <div class="social-prove-brand-area mt-80">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-12">
+            <h4>{{ $d.trusted_label }}</h4>
+            <div class="brand-image-wrapper owl-carousel">
+              {{ range $customer := $.Site.Data.customers }}
+              {{ if $customer.show }}
+              <div class="single-brand has-background-white"><img src="{{ $customer.logo }}" alt="{{ $customer.name }}"
+                  loading="lazy"></div>
+              {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
