@@ -135,34 +135,6 @@ menu:
   - name: Resources
     identifier: resources
     weight: 6
-  - name: Case Studies
-    identifier: case-studies
-    parent: resources
-    weight: 2
-    pre: lucide:briefcase
-    title: Customer success stories and real-world use cases
-    url: /case-studies/
-  - name: Webinars
-    identifier: webinars
-    parent: resources
-    weight: 3
-    pre: lucide:video
-    title: Live and on-demand database sessions
-    url: https://www.youtube.com/c/AppsCodeInc
-  - name: Blog
-    identifier: blog
-    parent: resources
-    weight: 4
-    pre: lucide:pen-line
-    title: Articles, tutorials, and engineering insights
-    url: https://appscode.com/blog
-  - name: Videos
-    identifier: videos
-    parent: resources
-    weight: 5
-    pre: lucide:youtube
-    title: Tutorials, demos, and product walkthroughs
-    url: https://www.youtube.com/@AppsCode
   - name: Documentation
     identifier: documentation-resources
     parent: resources
@@ -170,6 +142,34 @@ menu:
     pre: lucide:book-open
     title: Product guides, setup docs, and operator overview
     url: /docs/latest/welcome/
+  - name: Case Studies
+    identifier: case-studies
+    parent: resources
+    weight: 2
+    pre: lucide:briefcase
+    title: Customer success stories and real-world use cases
+    url: /case-studies/
+  - name: Blog
+    identifier: blog
+    parent: resources
+    weight: 3
+    pre: lucide:pen-line
+    title: Insights from the team building KubeDB
+    url: https://appscode.com/blog
+  - name: Webinars
+    identifier: webinars
+    parent: resources
+    weight: 4
+    pre: lucide:video
+    title: Live and on-demand database sessions
+    url: https://appscode.com/webinar
+  - name: Videos
+    identifier: videos
+    parent: resources
+    weight: 5
+    pre: lucide:youtube
+    title: Tutorials, demos, and product walkthroughs
+    url: https://www.youtube.com/@AppsCode
   - name: Operator Documentation
     identifier: resources-operator
     parent: documentation-resources
