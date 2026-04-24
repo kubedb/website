@@ -202,23 +202,13 @@
 		</div>
 	</section>
 
-	<section class="section-padding pricing-faq-section">
-		<div class="container">
-			<div class="section-header">
-				<p class="pricing-badge mb-4 is-text-xs has-text-weight-extrabold is-uppercase has-text-secondary">{{ $pricing.faq.badge }}</p>
-				<h2 class="section-header-title has-text-weight-black has-text-heading">{{ $pricing.faq.title }}</h2>
-				<p class="section-header-desc is-text-base has-text-body mt-2">{{ $pricing.faq.subtitle }}</p>
-			</div>
-			<div class="content">
-				{{ range $pricing.faq.items }}
-				<details class="pricing-faq-item mb-4">
-				<summary class="is-text-base has-text-weight-bold has-text-heading">{{ .question }}</summary>
-				<p class="faq-answer is-text-sm has-text-body">{{ .answer }}</p>
-				</details>
-				{{ end }}
-			</div>
-		</div>
-	</section>
+	{{ partial "common-sections/faq-section.html" (dict
+		"faqs_badge" $pricing.faq.badge
+		"faqs_title" $pricing.faq.title
+		"faqs_subtitle" $pricing.faq.subtitle
+		"faqs" $pricing.faq.items
+		"faqs_contact_url" $contactURL
+	) }}
 
 	<section class="p-0 ">
 		<div class="container">
