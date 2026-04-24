@@ -1,0 +1,64 @@
+{{ $d := index $.Site.Data.products.kubedb.homepage "cta-section" }}
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-block ds-card-base">
+      <div class="cta-glow"></div>
+      <div class="cta-inner">
+        <div class="cta-dot-pattern" aria-hidden="true"></div>
+
+        <div class="columns is-vcentered">
+          <div class="column is-6-desktop">
+            <div class="badge badge-dark">
+              <iconify-icon icon="heroicons:rocket-launch" width="14" height="14" style="color:#7272E9;"></iconify-icon>
+              <span class="badge-text has-text-white">{{ $d.badge }}</span>
+            </div>
+
+            <h2 class="cta-title">
+              {{ $d.title_plain }}
+              <span class="cta-title-gradient">{{ $d.title_gradient }}</span>
+            </h2>
+            <p class="cta-desc mb-4">{{ $d.description }}</p>
+
+            <ul class="cta-checklist is-grid has-gap-3 my-5">
+              {{ range $d.checklist }}
+              <li class="is-flex is-align-items-center has-gap-2 has-text-white is-text-base has-text-weight-semibold">
+                <iconify-icon icon="heroicons:check-circle" width="16" height="16"
+                  style="color:#7272E9;"></iconify-icon>
+                {{ . }}
+              </li>
+              {{ end }}
+            </ul>
+
+            <div class="buttons cta-buttons ds-button-group">
+              <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button is-white">
+                {{ $d.cta_primary }}
+                <iconify-icon icon="heroicons:arrow-right" width="18" height="18"></iconify-icon>
+              </a>
+              <a href="{{ $.Site.Params.youtube_url }}" target="_blank" class="button is-ghost">
+                <iconify-icon icon="heroicons:play-circle" width="18" height="18"></iconify-icon>
+                {{ $d.cta_secondary }}
+              </a>
+            </div>
+          </div>
+
+          <div class="column is-6-desktop">
+            <div class="columns is-multiline is-variable is-3">
+              {{ range $index, $stat := $d.trust_stats }}
+              <div class="column is-6">
+                <div class="trust-stat ds-card-base is-fullheight">
+                  <div class="trust-stat-icon trust-stat-icon-{{ $index }}">
+                    {{ printf `<iconify-icon icon="%s" width="20" height="20"></iconify-icon>` $stat.icon | safeHTML }}
+                  </div>
+                  <div class="trust-stat-val has-text-white has-text-weight-black">{{ $stat.val }}</div>
+                  <div class="trust-stat-label is-uppercase is-text-xs has-text-weight-bold">{{ $stat.label }}</div>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

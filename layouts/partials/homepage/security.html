@@ -1,0 +1,31 @@
+{{ $d := index $.Site.Data.products.kubedb.homepage "security" }}
+
+<section class="home-section home-section-white">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge">
+        <iconify-icon icon="heroicons:shield-check" width="16" height="16" style="color:#4948A3;"></iconify-icon>
+        <span class="badge-text">{{ $d.badge }}</span>
+      </div>
+      <h2 class="section-header-title">
+        {{ $d.title_plain }}<br>
+        <span class="text-gradient">{{ $d.title_gradient }}</span>
+      </h2>
+      <p class="section-header-desc">{{ $d.description }}</p>
+    </div>
+
+    <div class="columns is-multiline">
+      {{ range $index, $feature := $d.features }}
+      <div class="column is-4-desktop is-6-tablet">
+        <div class="feature-card ds-card-base is-fullheight">
+          <div class="feature-card-icon feature-card-icon-security-{{ $index }} mb-4">
+            {{ printf `<iconify-icon icon="%s" width="28" height="28"></iconify-icon>` $feature.icon | safeHTML }}
+          </div>
+          <h3 class="feature-card-title has-text-heading is-text-base has-text-weight-extrabold mb-2">{{ $feature.title }}</h3>
+          <p class="feature-card-desc has-text-body is-text-base">{{ $feature.desc }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
