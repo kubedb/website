@@ -1,0 +1,45 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.getting_started }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" .heading
+      "subtitle" .description
+      "align" "center"
+      "class" "mb-10"
+    ) }}
+
+    {{ with .steps }}
+    <div class="columns is-multiline mb-8">
+      {{ range . }}
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="ds-card-base has-background-white p-6 is-fullheight is-radius-2xlarge has-border has-hover-lift has-transition">
+          <div class="is-inline-flex is-align-items-center is-justify-content-center is-radius-rounded has-background-primary mb-5"
+               style="width:40px;height:40px;">
+            <span class="has-text-white has-text-weight-black is-size-6">{{ .number }}</span>
+          </div>
+          <h4 class="is-size-5 has-text-weight-bold mb-3 has-text-grey-900 has-line-height-tight">{{ .title }}</h4>
+          <p class="is-size-6 has-text-grey-500 has-line-height-relaxed mb-0">{{ .description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ with .links }}
+    <div class="columns is-multiline">
+      {{ range . }}
+      <div class="column is-4-desktop is-6-tablet">
+        <a href="{{ .url | default "#" }}" class="is-block has-no-underline">
+          <div class="ds-card-base has-background-white p-5 is-fullheight is-radius-2xlarge has-border has-hover-lift has-transition is-flex is-align-items-center is-justify-content-space-between has-gap-4">
+            {{ partial "common-cards/icon-text-card.html" (dict "card" .) }}
+            <iconify-icon icon="lucide:arrow-right" width="20" height="20" class="has-text-grey-400 is-flex-shrink-0"></iconify-icon>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

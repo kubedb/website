@@ -5,12 +5,25 @@
 {{ else if and $d.cost_comparison $d.cost_comparison.savings_cta }}
   {{ $data = $d.cost_comparison.savings_cta }}
 {{ end }}
+{{ $benefitPanels := "" }}
+{{ if and $d.cost_comparison $d.cost_comparison.benefit_panels }}
+  {{ $benefitPanels = $d.cost_comparison.benefit_panels }}
+{{ end }}
 {{ with $data }}
 {{ $btnIcon := .button_icon | default "lucide:dollar-sign" }}
 {{ $statIcons := slice "lucide:dollar-sign" "lucide:zap" "lucide:unlock" "lucide:shield-check" }}
 
 <section class="cta-section home-section section-padding is-relative is-overflow-hidden">
   <div class="container">
+    {{ with $benefitPanels }}
+    <div class="columns is-multiline mb-10">
+      {{ range . }}
+      <div class="column is-6-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
     <div class="cta-block ds-card-base">
       <div class="cta-glow"></div>
       <div class="cta-inner has-text-centered">

@@ -7,10 +7,14 @@ data: 'data/products/kubedb/partners/google-gke.json'
 ---
 
 {{< partners/hero >}}
-{{< partners/platform >}}
-{{< partners/comparison >}}
-{{< partners/benefits >}}
+{{< partners/paragraph >}}
+{{< partners/what-this-means >}}
 {{< partners/architecture >}}
 {{< partners/capabilities >}}
 {{< partners/database-support >}}
+{{< partners/kubernetes-integration >}}
+{{< partners/enterprise-integrations >}}
+{{< partners/cost-comparison >}}
+{{< partners/comparison >}}
+{{< partners/savings-cta >}}
 {{< partners/cta >}}

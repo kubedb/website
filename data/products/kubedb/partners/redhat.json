@@ -26,6 +26,34 @@
     ]
   },
 
+  "what_this_means": {
+    "heading": "What This Means for Red Hat OpenShift Users",
+    "description": "If you're running applications on Red Hat OpenShift, you benefit from enterprise Kubernetes with enhanced security and developer experience. KubeDB extends these benefits to your database layer with native operator patterns.",
+    "subtitle": "<strong class=\"has-text-primary\">KubeDB enhances OpenShift</strong> by making databases first-class citizens in your platform:",
+    "items": [
+      {
+        "icon": "lucide:zap",
+        "title": "Faster Time-to-Value",
+        "description": "Launch databases in minutes with OpenShift Operators."
+      },
+      {
+        "icon": "lucide:shield-check",
+        "title": "Enterprise Compliance",
+        "description": "Meet regulatory requirements with OpenShift security."
+      },
+      {
+        "icon": "lucide:layers",
+        "title": "Hybrid Flexibility",
+        "description": "Run on-prem, cloud, or edge with consistent workflows."
+      },
+      {
+        "icon": "lucide:globe",
+        "title": "VM & Container Support",
+        "description": "Run databases on OpenShift Virtualization or containers."
+      }
+    ]
+  },
+
   "platform": {
     "badge": "THE PLATFORM",
     "heading": "Production databases. Fully automated on Red Hat OpenShift.",

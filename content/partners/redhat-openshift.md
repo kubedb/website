@@ -7,6 +7,8 @@ data: 'data/products/kubedb/partners/redhat.json'
 ---
 
 {{< partners/hero >}}
+{{< partners/paragraph >}}
+{{< partners/what-this-means >}}
 {{< partners/architecture >}}
 {{< partners/platform >}}
 {{< partners/database-support >}}
