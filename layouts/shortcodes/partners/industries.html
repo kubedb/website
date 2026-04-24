@@ -1,0 +1,23 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.industries }}
+<section class="section-padding has-background-light">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "badge_text" .badge
+      "badge_icon" "lucide:building-2"
+      "title" .heading
+      "subtitle" .description
+      "align" "center"
+      "class" "mb-10"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range .items }}
+      <div class="column is-6-desktop is-6-tablet">
+        {{ partial "common-cards/industry-card.html" (dict "card" .) }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
