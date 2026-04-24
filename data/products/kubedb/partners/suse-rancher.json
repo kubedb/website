@@ -66,6 +66,55 @@
       }
     ]
   },
+  "suse_table": {
+    "heading": "Why SUSE Rancher Prime + KubeDB wins together",
+    "reasons": [
+      {
+        "title": "Centralized Kubernetes management",
+        "description": "Rancher Prime gives you a single pane of glass for all clusters. KubeDB adds automated database operations on top."
+      },
+      {
+        "title": "Enterprise-grade security & governance",
+        "description": "Combine Rancher's policy engine with KubeDB's RBAC, TLS, encryption, and multi-tenancy."
+      },
+      {
+        "title": "Run any database anywhere",
+        "description": "25+ production databases with the same consistent experience across all Rancher-managed environments."
+      }
+    ],
+    "table": {
+      "col_capability": "Capability",
+      "col_rancher": "SUSE Rancher Prime",
+      "col_kubedb": "+ KubeDB",
+      "rows": [
+        {
+          "capability": "Kubernetes management",
+          "rancher": "Centralized control plane",
+          "kubedb": "+ Automated DB lifecycle"
+        },
+        {
+          "capability": "Self-service for developers",
+          "rancher": "Rancher dashboard & GitOps",
+          "kubedb": "+ KubeDB CRDs & Web Console"
+        },
+        {
+          "capability": "Backup & recovery",
+          "rancher": "Basic volume snapshots",
+          "kubedb": "+ Application-consistent, incremental backups with KubeStash"
+        },
+        {
+          "capability": "Multi-tenancy & RBAC",
+          "rancher": "Namespace & project isolation",
+          "kubedb": "+ Database-level RBAC & policies"
+        },
+        {
+          "capability": "Sovereignty",
+          "rancher": "Air-gapped support",
+          "kubedb": "+ Full data placement control"
+        }
+      ]
+    }
+  },
   "comparison": {
     "badge": "COMPARISON",
     "heading": "SUSE Rancher Prime with Traditional DBaaS vs SUSE Rancher Prime + KubeDB",

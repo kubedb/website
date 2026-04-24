@@ -1,0 +1,52 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.suse_table }}
+{{ $ctx := . }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <div class="columns is-variable is-8 is-vcentered">
+      <div class="column is-5-desktop is-12-tablet">
+        <h2 class="heading-xl has-text-weight-black has-text-heading has-tracking-tighter mb-8">
+          {{ .heading | safeHTML }}
+        </h2>
+
+        <ul class="has-no-bullets">
+          {{ range $i, $item := .reasons }}
+          <li class="is-flex is-align-items-flex-start has-gap-5 {{ if ne $i (sub (len $ctx.reasons) 1) }}mb-6{{ end }}">
+            <div
+              class="is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 has-size-8 is-radius-large"
+              style="background: linear-gradient(135deg, #7272e9, #4948a3);">
+              <span class="has-text-white has-text-weight-bold">{{ add $i 1 }}</span>
+            </div>
+            <div class="is-flex-grow-1">
+              <h3 class="body-lg has-text-weight-bold has-text-heading mb-2">{{ .title }}</h3>
+              <p class="body-md has-text-grey-600 has-line-height-relaxed mb-0">{{ .description }}</p>
+            </div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <div class="column is-7-desktop is-12-tablet">
+        {{ with .table }}
+        {{ $rows := .rows }}
+        <div class="has-background-grey-900 is-radius-2xl p-8 has-shadow-xlarge">
+          <div class="is-grid grid-cols-3 has-gap-5">
+            <div class="has-text-grey-400 body-sm has-text-weight-medium pb-3 has-border-bottom has-border-grey-800">{{ .col_capability }}</div>
+            <div class="has-text-grey-400 body-sm has-text-weight-medium pb-3 has-border-bottom has-border-grey-800">{{ .col_rancher }}</div>
+            <div class="body-sm has-text-weight-semibold has-text-purple-light pb-3 has-border-bottom has-border-grey-800">{{ .col_kubedb }}</div>
+
+            {{ range $i, $row := $rows }}
+            {{ $divider := "" }}
+            {{ if ne $i (sub (len $rows) 1) }}{{ $divider = "has-border-bottom has-border-grey-800" }}{{ end }}
+            <div class="has-text-white body-md has-text-weight-medium py-3 {{ $divider }}">{{ .capability }}</div>
+            <div class="has-text-grey-300 body-md py-3 {{ $divider }}">{{ .rancher }}</div>
+            <div class="body-md has-text-weight-medium has-text-purple-light py-3 {{ $divider }}">{{ .kubedb }}</div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
