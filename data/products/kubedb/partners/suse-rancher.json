@@ -240,6 +240,10 @@
     "image_alt": "KubeDB Platform Architecture on SUSE Rancher Prime",
     "image_tags": ["On-premises", "Cloud", "Edge"]
   },
+  "capabilities": {
+    "heading": "Production databases. Fully automated on Rancher.",
+    "description": "25+ database engines with HA, scaling, backup, TLS, monitoring, and GitOps support"
+  },
   "database_support": {
     "heading": "Comprehensive Database Support",
     "description": "25+ database engines managed with Kubernetes-native workflows",
