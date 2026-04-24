@@ -241,6 +241,40 @@
   "comparison_title": "Operator vs Platform: What's the Difference?",
   "comparison_subtitle": "KubeDB Operator provides database automation inside a single cluster, while KubeDB Platform extends this into a centralized DBaaS across clusters, teams and environments.",
   "comparison_analogy": "The Operator is the engine. The Platform is the car.",
+  "comparison_analogy_heading": "Think of it this way:",
+  "comparison_analogy_image": "/assets/images/products/kubedb/kubedb-hero.png",
+  "comparison_analogy_image_alt": "Architecture Diagram",
+  "comparison_analogy_explanation": "The Platform provides centralized control and governance, orchestrating multiple Operator instances across different clusters and environments.",
+  "comparison_summary_cards": [
+    {
+      "title": "KubeDB Operator",
+      "icon": "lucide:container",
+      "icon_color": "#c084fc",
+      "check_color": "#c084fc",
+      "bg": "rgba(88, 28, 135, 0.15)",
+      "border": "#a855f7",
+      "description": "Best for teams that want to run and automate databases inside a Kubernetes cluster using declarative APIs.",
+      "items": [
+        "Single cluster deployment",
+        "In-cluster automation",
+        "Kubectl-based management"
+      ]
+    },
+    {
+      "title": "KubeDB Platform",
+      "icon": "lucide:cloud",
+      "icon_color": "#60a5fa",
+      "check_color": "#4ade80",
+      "bg": "rgba(30, 41, 59, 0.6)",
+      "border": "#475569",
+      "description": "Designed for organizations that need to deliver a standardized, self-service DBaaS across multiple clusters, teams, and environments with centralized control and governance.",
+      "items": [
+        "Multi-cluster control plane",
+        "Self-service portal",
+        "Policy-driven governance"
+      ]
+    }
+  ],
   "comparison_table": {
     "headers": [
       "Capability",

@@ -1,55 +1,27 @@
 {{ $data := . }}
+{{ $cards := $data.comparison_summary_cards }}
+{{ if $cards }}
 <div class="columns is-multiline mb-16">
+  {{ range $card := $cards }}
   <div class="column is-6">
-    <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up" style="background: rgba(88, 28, 135, 0.15); border: 2px solid #a855f7; border-radius: 20px;">
+    <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up" style="background: {{ $card.bg }}; border: 2px solid {{ $card.border }}; border-radius: 20px;">
       <div class="is-flex is-align-items-center has-gap-4 mb-6">
-        <iconify-icon icon="lucide:container" width="40" height="40" style="color: #c084fc;"></iconify-icon>
-        <h3 class="is-size-3 has-text-white has-text-weight-black">KubeDB Operator</h3>
+        <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="40" height="40" style="color: {{ $card.icon_color }};"></iconify-icon>
+        <h3 class="is-size-3 has-text-white has-text-weight-black">{{ $card.title }}</h3>
       </div>
       <p class="has-text-white is-size-5 mb-8 has-line-height-relaxed has-opacity-90">
-        Best for teams that want to run and automate databases inside a Kubernetes cluster using declarative APIs.
+        {{ $card.description }}
       </p>
       <div class="space-y-4">
+        {{ range $card.items }}
         <div class="is-flex is-align-items-center has-gap-4">
-          <iconify-icon icon="heroicons:check-badge" width="24" height="24" style="color: #c084fc;"></iconify-icon>
-          <span class="is-size-5 has-text-white">Single cluster deployment</span>
+          <iconify-icon icon="heroicons:check-badge" width="24" height="24" style="color: {{ $card.check_color }};"></iconify-icon>
+          <span class="is-size-5 has-text-white">{{ . }}</span>
         </div>
-        <div class="is-flex is-align-items-center has-gap-4">
-          <iconify-icon icon="heroicons:check-badge" width="24" height="24" style="color: #c084fc;"></iconify-icon>
-          <span class="is-size-5 has-text-white">In-cluster automation</span>
-        </div>
-        <div class="is-flex is-align-items-center has-gap-4">
-          <iconify-icon icon="heroicons:check-badge" width="24" height="24" style="color: #c084fc;"></iconify-icon>
-          <span class="is-size-5 has-text-white">Kubectl-based management</span>
-        </div>
+        {{ end }}
       </div>
     </div>
   </div>
-
-  <div class="column is-6">
-    <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up" style="background: rgba(30, 41, 59, 0.6); border: 2px solid #475569; border-radius: 20px;">
-      <div class="is-flex is-align-items-center has-gap-4 mb-6">
-        <iconify-icon icon="lucide:cloud" width="40" height="40" style="color: #60a5fa;"></iconify-icon>
-        <h3 class="is-size-3 has-text-white has-text-weight-black">KubeDB Platform</h3>
-      </div>
-      <p class="has-text-white is-size-5 mb-8 has-line-height-relaxed has-opacity-90">
-        Designed for organizations that need to deliver a standardized, self-service DBaaS across multiple
-        clusters, teams, and environments with centralized control and governance.
-      </p>
-      <div class="space-y-4">
-        <div class="is-flex is-align-items-center has-gap-4">
-          <iconify-icon icon="heroicons:check-badge" width="24" height="24" style="color: #4ade80;"></iconify-icon>
-          <span class="is-size-5 has-text-white">Multi-cluster control plane</span>
-        </div>
-        <div class="is-flex is-align-items-center has-gap-4">
-          <iconify-icon icon="heroicons:check-badge" width="24" height="24" style="color: #4ade80;"></iconify-icon>
-          <span class="is-size-5 has-text-white">Self-service portal</span>
-        </div>
-        <div class="is-flex is-align-items-center has-gap-4">
-          <iconify-icon icon="heroicons:check-badge" width="24" height="24" style="color: #4ade80;"></iconify-icon>
-          <span class="is-size-5 has-text-white">Policy-driven governance</span>
-        </div>
-      </div>
-    </div>
-  </div>
+  {{ end }}
 </div>
+{{ end }}
