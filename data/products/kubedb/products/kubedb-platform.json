@@ -10,7 +10,7 @@
   "hero_title_2": "For Database Operations",
   "hero_description": "Deliver a standardized, self-service DBaaS across multiple clusters, teams, and environments with centralized control and governance.",
   "primary_action_text": "Schedule Demo",
-  "primary_action_url": "/contact/",
+  "primary_action_url": "https://appscode.com/contact/",
   "secondary_action_text": "View Pricing",
   "secondary_action_url": "/pricing/",
   "stats": [
