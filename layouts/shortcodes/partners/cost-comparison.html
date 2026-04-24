@@ -14,7 +14,7 @@
     <div class="columns is-multiline">
       {{ range .savings_cards }}
       <div class="column is-6-desktop is-6-tablet">
-        {{ partial "common-cards/effective-card.html" (dict "effectiveCard" .) }}
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "cost-effective") }}
       </div>
       {{ end }}
     </div>

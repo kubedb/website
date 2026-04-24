@@ -105,6 +105,27 @@
      </div>
   </div>
 </div>
+{{ else if eq $type "cost-effective" }}
+<!-- Cost-Effective Card (Used in Cost Comparison) -->
+<div class="ac-feature-cost-effective ds-card-base is-radius-2xlarge p-6 is-fullheight has-border transition-all has-hover-lift has-hover-shadow-medium"
+  style="background-color: hsl(var(--ds-primary) / 0.04); border-color: hsl(var(--ds-primary) / 0.15);">
+  <div class="is-flex is-align-items-flex-start has-gap-4">
+    <div class="is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large has-background-primary"
+      style="width: 44px; height: 44px;">
+      <iconify-icon {{ printf "icon=%q" ($card.icon | default "lucide:check-circle-2") | safeHTMLAttr }} width="24" height="24" class="has-text-white"></iconify-icon>
+    </div>
+    <div class="is-flex-grow-1">
+      <h4 class="is-size-5 has-text-weight-bold has-text-grey-900 has-line-height-tight mb-2">{{ $card.title }}</h4>
+      <p class="is-size-6 has-text-grey-600 has-line-height-normal mb-4">{{ $card.description }}</p>
+      {{ with $card.highlight }}
+      <span class="is-inline-flex is-align-items-center has-text-weight-bold is-size-7 has-text-primary"
+        style="background-color: hsl(var(--ds-primary) / 0.12); padding: 6px 12px; border-radius: 8px;">
+        {{ . }}
+      </span>
+      {{ end }}
+    </div>
+  </div>
+</div>
 {{ else if eq $type "persona" }}
 <!-- Persona / Team Benefit Card -->
 <div class="ac-feature-persona p-6 is-radius-2xlarge has-background-white has-border is-fullheight transition-all has-hover-lift has-hover-shadow-xl" 
