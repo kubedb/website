@@ -7,7 +7,13 @@
   </div>
   {{ end }}
   <div>
-    <h4 class="is-size-6 has-text-weight-bold has-text-grey-900 has-line-height-tight">{{ $card.title }}</h4>
-    <p class="is-text-sm has-text-grey-600 has-line-height-normal">{{ $card.description }}</p>
+    <!-- Title: clear hierarchy, strong contrast, modern weight -->
+    <h4 class="is-size-5-desktop is-size-6-tablet is-size-6-mobile has-text-weight-semibold has-text-primary has-line-height-tight mb-1" style="letter-spacing:-0.01em;">
+      {{ $card.title }}
+    </h4>
+    <!-- Description: readable, muted, accessible -->
+    <p class="is-size-6-desktop is-size-7-tablet is-size-7-mobile has-text-regular has-text-secondary has-line-height-md" style="max-width: 420px;">
+      {{ $card.description }}
+    </p>
   </div>
 </div>

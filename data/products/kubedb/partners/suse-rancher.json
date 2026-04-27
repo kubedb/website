@@ -234,7 +234,7 @@
       {
         "label": "SUSE Rancher Prime",
         "desc": "SUSE Rancher Prime • RKE2 • K3s",
-        "gradient": "nkp"
+        "gradient": "purple"
       }
     ],
     "image": "/assets/images/partners/KubeDB_Stack_Diagram_Rancher_Prime.png",
