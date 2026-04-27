@@ -18,11 +18,11 @@
           {{ range $data.layers }}
           <div class="is-flex is-align-items-center has-gap-4">
             {{ if eq .gradient "mke" }}
-            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large is-flex-shrink-0" style="min-width:230px;box-shadow:0 4px 12px rgba(0,0,0,0.15);background:linear-gradient(90deg,#2563EB,#4338CA);">{{ .label }}</div>
+            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large is-flex-shrink-0 min-width-230 has-shadow-arch has-background-gradient-mke">{{ .label }}</div>
             {{ else }}
-            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large has-background-gradient-{{ .gradient }} is-flex-shrink-0" style="min-width:230px;box-shadow:0 4px 12px rgba(0,0,0,0.15);">{{ .label }}</div>
+            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large has-background-gradient-{{ .gradient }} is-flex-shrink-0 min-width-230 has-shadow-arch">{{ .label }}</div>
             {{ end }}
-            <div class="is-text-xs has-text-grey-500">{{ .desc }}</div>
+            <div class="is-text-sm has-text-grey-500">{{ .desc }}</div>
           </div>
           {{ end }}
         </div>
@@ -34,7 +34,7 @@
           {{ if $data.image_tags }}
           <div class="is-flex is-align-items-center has-gap-3 mt-5 is-justify-content-center">
             {{ range $i, $tag := $data.image_tags }}
-            {{ if gt $i 0 }}<div class="is-flex-grow-1 has-background-grey-200" style="height:1px;"></div>{{ end }}
+            {{ if gt $i 0 }}<div class="is-flex-grow-1 has-background-grey-200 height-1"></div>{{ end }}
             <span class="tag">{{ $tag }}</span>
             {{ end }}
           </div>
