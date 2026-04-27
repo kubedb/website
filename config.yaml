@@ -1,11 +1,10 @@
-title: KubeDB - Run Production-Grade Databases on Kubernetes
+title: KubeDB - Kubernetes-native DBaaS Anywhere with Any Storage
 baseurl: https://kubedb.com
 languageCode: en-us
 assetDir: static
 googleAnalytics: UA-62096468-4
 disableKinds:
 - taxonomy
-- taxonomyTerm
 theme: hugo-product-theme
 params:
   product_key: kubedb
