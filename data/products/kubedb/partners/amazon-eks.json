@@ -1,6 +1,5 @@
 {
   "hero": {
-    "product_color_primary": "#FF9900",
     "product_icon": "lucide:check-circle-2",
     "hero_badge": "AWS MARKETPLACE PARTNER",
     "hero_title_1": "Run Any Database Natively on <br>Amazon EKS —<br><span class=\"text-gradient\">Without the Compromise.</span>",
@@ -13,7 +12,7 @@
     "stats_style": "hero-inline-metrics",
     "stats": [
       {
-        "value": "25+ Database Engines",
+        "value": "20+ Database Engines",
         "label": "PostgreSQL, MySQL, Redis, Kafka & more"
       },
       {
@@ -92,7 +91,7 @@
 
   "capabilities": {
     "heading": "Production databases. Fully automated on EKS.",
-    "description": "25+ database engines with HA, scaling, backup, TLS, monitoring, and GitOps support",
+    "description": "20+ Database engines with HA, scaling, backup, TLS, monitoring, and GitOps support",
     "items": [
       {
         "icon": "lucide:cloud",
@@ -107,7 +106,7 @@
       {
         "icon": "lucide:layout-grid",
         "title": "Broad Database Support",
-        "description": "Manage 25+ database engines including PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, Kafka, and more — all with consistent Kubernetes-native workflows."
+        "description": "Manage 20+ Database engines including PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, Kafka, and more — all with consistent Kubernetes-native workflows."
       },
       {
         "icon": "lucide:git-fork",
@@ -144,7 +143,7 @@
 
   "database_support": {
     "heading": "Comprehensive Database Support",
-    "description": "25+ database engines managed with Kubernetes-native workflows",
+    "description": "20+ Database engines managed with Kubernetes-native workflows",
     "categories": [
       {
         "label": "Relational",
