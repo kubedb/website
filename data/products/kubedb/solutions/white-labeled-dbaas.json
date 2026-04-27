@@ -165,6 +165,7 @@
     }
   ],
   "platform_architecture_image": "/assets/images/products/kubedb/ace-platform-architecture.png",
+  "platform_architecture_title": "ACE Platform Architecture Overview",
   "platform_features_title": "Solution Architecture",
   "platform_features_subtitle": "All components are containerized, CRD-driven, and designed for multi-cluster and multi-region deployments",
   "platform_features": [
