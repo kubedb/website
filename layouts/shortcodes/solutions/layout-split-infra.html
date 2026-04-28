@@ -3,6 +3,8 @@
 {{ $p_color := $data.product_color_primary | default "#4948a3" }}
 {{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
 {{ $howItWorksSummary := $data.how_it_works_summary | default "Your infrastructure • Your control • Your data sovereignty" }}
+{{ $howItWorksSummary = replaceRE "\\s*[•·]\\s*" " • " $howItWorksSummary }}
+{{ $howItWorksSummary = replaceRE "\\s*;\\s*" " • " $howItWorksSummary }}
 {{ if $data.how_it_works_infra }}
 <section class="home-section section-padding has-background-white">
   <div class="container">
@@ -40,7 +42,7 @@
       <div class="column is-6">
         <div class="is-flex is-align-items-center mb-8">
           <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-4 infra-box-indigo">
-            <iconify-icon {{ printf "icon=%q" $data.how_it_works_software.icon | safeHTMLAttr }} width="28" class="has-text-white"></iconify-icon>
+            <iconify-icon {{ printf "icon=%q" $data.how_it_works_software.icon | safeHTMLAttr }} width="28" class="has-text-info"></iconify-icon>
           </div>
           <h3 class="is-size-4 has-text-weight-black has-text-grey-900">{{ $data.how_it_works_software.title }}</h3>
         </div>

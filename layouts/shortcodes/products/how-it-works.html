@@ -1,6 +1,8 @@
 {{ $data := partial "products/page-data.html" . }}
 {{ if $data.how_it_works_infra }}
-{{ $howItWorksFooter := $data.how_it_works_footer | default "Your infrastructure • Your control • Your data sovereignty" }}
+{{ $howItWorksFooter := $data.how_it_works_footer | default "Your infrastructure; Your control; Your data sovereignty" }}
+{{ $howItWorksFooter = replaceRE "\\s*[•·]\\s*" " • " $howItWorksFooter }}
+{{ $howItWorksFooter = replaceRE "\\s*;\\s*" " • " $howItWorksFooter }}
 <section class="home-section section-padding has-background-white">
   <div class="container">
     {{ partial "common-sections/section-header.html" (dict
@@ -41,9 +43,9 @@
         <div class="is-flex is-align-items-center mb-8">
           <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-4 infra-box-indigo">
             {{ if $data.how_it_works_software.icon }}
-            <iconify-icon {{ printf "icon=%q" $data.how_it_works_software.icon | safeHTMLAttr }} width="28" class="has-text-white"></iconify-icon>
+            <iconify-icon {{ printf "icon=%q" $data.how_it_works_software.icon | safeHTMLAttr }} width="28" class="has-text-info"></iconify-icon>
             {{ else }}
-            <iconify-icon icon="lucide:sparkles" width="28" class="has-text-white"></iconify-icon>
+            <iconify-icon icon="lucide:sparkles" width="28" class="has-text-info"></iconify-icon>
             {{ end }}
           </div>
           <h3 class="is-size-4 has-text-weight-black has-text-grey-900">{{ $data.how_it_works_software.title | default "KubeDB Provides:" }}</h3>
