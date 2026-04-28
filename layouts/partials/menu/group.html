@@ -1,0 +1,26 @@
+{{ .page.Scratch.Add "idx" 1 }}
+{{ $id := .page.Scratch.Get "idx" | printf "%v-%v" .uid }}
+
+{{ $name := .entry.Name }}
+{{if eq .entry.Weight -1}}
+  {{ $name = .page.Scratch.Get "leftMenuHeadline" }}
+{{end}}
+
+<!-- single menu item start -->
+<div class="item">
+  <input type="checkbox" id="{{ $id }}" {{if .page.HasMenuCurrent .menu .entry }}checked{{end}}>
+  <label for="{{ $id }}"><a>{{ $name }}</a> <span><i class="fa fa-angle-right"
+              aria-hidden="true"></i></span></label>
+  <div class="item">
+    <ul>
+      {{ range .entry.Children }}
+        {{ if .HasChildren }}
+          {{ partial "menu/group.html" (dict "uid" $.uid "page" $.page "menu" $.menu "entry" .) }}
+        {{ else if ne .Weight -1 }}
+          <li {{if $.page.IsMenuCurrent $.menu . }}class="is-active"{{end}}><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</div>
+<!-- single menu item end -->

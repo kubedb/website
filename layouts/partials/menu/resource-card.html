@@ -1,0 +1,21 @@
+{{ $url := .url | default "#" }}
+{{ $icon := .icon | default "lucide:box" }}
+{{ $arrow := .arrowIcon | default "heroicons:arrow-up-right" }}
+<a href="{{ $url }}" class="single-product"{{ if .external }} target="_blank" rel="noopener"{{ end }}>
+  <div class="product-logo">
+    {{ if .iconImg }}
+      <img src="{{ .iconImg }}" alt="{{ .title }}" class="resource-card-icon-img">
+    {{ else }}
+      <iconify-icon {{ printf "icon=%q" $icon | safeHTMLAttr }} width="1.5rem" height="1.5rem"></iconify-icon>
+    {{ end }}
+  </div>
+  <div class="product-info">
+    <h6>{{ .title }}</h6>
+    <p>{{ .desc }}</p>
+  </div>
+  <div class="navigate-icon">
+    <span class="icon arrow-forward">
+      <iconify-icon {{ printf "icon=%q" $arrow | safeHTMLAttr }} width="1.2rem" height="1.2rem"></iconify-icon>
+    </span>
+  </div>
+</a>

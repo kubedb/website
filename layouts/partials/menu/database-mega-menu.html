@@ -1,0 +1,104 @@
+{{/*
+  database-mega-menu.html
+  Left: database categories (tabs)
+  Right: database engines in each category
+*/}}
+
+{{ $categories := slice
+  (dict "id" "relational" "name" "Relational" "desc" "SQL databases for transactional workloads")
+  (dict "id" "nosql" "name" "NoSQL / Document" "desc" "Document and NoSQL engines")
+  (dict "id" "inmemory" "name" "In-Memory / Cache" "desc" "High-speed caching and ephemeral data")
+  (dict "id" "search" "name" "Search" "desc" "Full-text and search engines")
+  (dict "id" "analytics" "name" "Analytics" "desc" "Analytics and OLAP engines")
+  (dict "id" "messaging" "name" "Messaging / Streaming" "desc" "Streaming and message brokers")
+  (dict "id" "datagrid" "name" "In-Memory Data Grid" "desc" "Distributed data grid engines")
+  (dict "id" "coordination" "name" "Coordination" "desc" "Cluster coordination and consensus")
+  (dict "id" "proxy" "name" "Proxy / Pooler" "desc" "Connection poolers and proxies")
+}}
+
+{{ $databases := dict
+  "relational" (slice
+    (dict "name" "PostgreSQL" "id" "postgres" "icon" "/assets/images/databases/logos/png/postgreses.png")
+    (dict "name" "MySQL" "id" "mysql" "icon" "/assets/images/databases/logos/png/mysqls.png")
+    (dict "name" "MariaDB" "id" "mariadb" "icon" "/assets/images/databases/logos/png/mariadbs.png")
+    (dict "name" "Microsoft SQL Server" "id" "mssqlserver" "icon" "/assets/images/databases/logos/png/mssqlservers.png")
+    (dict "name" "PerconaXtraDB" "id" "percona-xtradb" "icon" "/assets/images/databases/logos/png/perconaxtradbs.png")
+  )
+  "nosql" (slice
+    (dict "name" "MongoDB" "id" "mongodb" "icon" "/assets/images/databases/logos/png/mongodbs.png")
+    (dict "name" "FerretDB" "id" "ferretdb" "icon" "/assets/images/databases/logos/png/ferretdbs.png")
+    (dict "name" "Cassandra" "id" "cassandra" "icon" "/assets/images/databases/logos/png/cassandras.png")
+  )
+  "inmemory" (slice
+    (dict "name" "Redis" "id" "redis" "icon" "/assets/images/databases/logos/png/redises.png")
+    (dict "name" "Memcached" "id" "memcached" "icon" "/assets/images/databases/logos/png/memcacheds.png")
+    (dict "name" "Valkey" "id" "valkey" "icon" "/assets/images/databases/logos/png/valkeys.png")
+  )
+  "search" (slice
+    (dict "name" "Elasticsearch" "id" "elasticsearch" "icon" "/assets/images/databases/logos/png/elasticsearches.png")
+    (dict "name" "OpenSearch" "id" "opensearch" "icon" "/assets/images/databases/logos/png/opensearch.png")
+    (dict "name" "Solr" "id" "solr" "icon" "/assets/images/databases/logos/png/solrs.png")
+  )
+  "analytics" (slice
+    (dict "name" "Druid" "id" "druid" "icon" "/assets/images/databases/logos/png/druids.png")
+    (dict "name" "ClickHouse" "id" "clickhouse" "icon" "/assets/images/databases/logos/png/clickhouses.png")
+    (dict "name" "SingleStore" "id" "singlestore" "icon" "/assets/images/databases/logos/png/singlestores.png")
+  )
+  "messaging" (slice
+    (dict "name" "Kafka" "id" "kafka" "icon" "/assets/images/databases/logos/png/kafkas.png")
+    (dict "name" "RabbitMQ" "id" "rabbitmq" "icon" "/assets/images/databases/logos/png/rabbitmqs.png")
+  )
+  "datagrid" (slice
+    (dict "name" "Hazelcast" "id" "hazelcast" "icon" "/assets/images/databases/logos/png/hazelcasts.png")
+    (dict "name" "Ignite" "id" "ignite" "icon" "/assets/images/databases/logos/png/ignites.png")
+  )
+  "coordination" (slice
+    (dict "name" "ZooKeeper" "id" "zookeeper" "icon" "/assets/images/databases/logos/png/zookeepers.png")
+  )
+  "proxy" (slice
+    (dict "name" "PgBouncer" "id" "pgbouncer" "icon" "/assets/images/databases/logos/png/pgbouncers.png")
+    (dict "name" "Pgpool" "id" "pgpool" "icon" "/assets/images/databases/logos/png/pgpools.png")
+    (dict "name" "ProxySQL" "id" "proxysql" "icon" "/assets/images/databases/logos/png/proxysqls.png")
+  )
+}}
+
+
+<div class="resource-menu columns is-variable is-6 is-multiline">
+  <!-- Left: categories (tabs) -->
+  <div class="column is-12-mobile is-5-tablet is-5-desktop">
+    <div class="resource-menu-nav is-flex is-flex-direction-column">
+      {{ range $i, $cat := $categories }}
+      <button type="button" class="resource-menu-tab {{ if eq $i 0 }}is-active{{ end }}" data-resource-target="{{ $cat.id }}">
+        <span class="resource-menu-tab-title">{{ $cat.name }}</span>
+      </button>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Right: database lists -->
+  <div class="column is-12-mobile is-7-tablet is-7-desktop">
+    <div class="resource-menu-panels">
+      {{ range $i, $cat := $categories }}
+      <div class="resource-menu-panel {{ if eq $i 0 }}is-active{{ end }}" data-resource-panel="{{ $cat.id }}">
+        <div class="product-menu resources-products-list">
+          {{ range (index $databases $cat.id) }}
+            {{ $url := .url | default (printf "/kubernetes/databases/run-and-manage-%s-on-kubernetes" .id) }}
+            <a href="{{ $url | relURL }}" class="single-product">
+              <div class="product-logo">
+                {{ if .icon }}
+                  <img src="{{ .icon | relURL }}" alt="{{ .name }}" style="width: 1.5rem; height: 1.5rem; object-fit: contain;" onerror="this.onerror=null;this.src='https://api.iconify.design/lucide:database.svg'" />
+                {{ else }}
+                  <iconify-icon icon="lucide:database" width="1.5rem" height="1.5rem"></iconify-icon>
+                {{ end }}
+              </div>
+              <div class="product-info">
+                <h6>{{ .name }}</h6>
+              </div>
+            </a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
