@@ -11,11 +11,12 @@
 {{ $company     := default (default $page.Title $p.company) $d.company }}
 {{ $industry    := default (default $p.tag $p.industry) $d.industry }}
 {{ $challenge   := default (default $p.description $p.challenge_summary) $d.challenge_summary }}
-{{ $solution    := default (default $p.benefits_description $p.solution_description) $d.benefits_description }}
+{{ $solution    := default $p.solution_description $d.solution_description }}
 {{ $logoEmoji   := default $p.logo_emoji $d.logo_emoji }}
 {{ $logo        := default $p.logo $d.logo }}
-{{ $quote       := default $p.results_quote $d.results_quote }}
-{{ $quoteAuthor := default $p.results_quote_author $d.results_quote_author }}
+{{ $quote           := default $p.results_quote $d.results_quote }}
+{{ $quoteAuthor     := default $p.results_quote_author $d.results_quote_author }}
+{{ $quoteAuthorRole := default $p.results_quote_author_role $d.results_quote_author_role }}
 {{ $resultsExtras := default $p.results_extras $d.results_extras }}
 
 {{ $metrics := default $p.hero_metrics $d.hero_metrics }}
@@ -76,7 +77,8 @@
     <p class="is-text-base has-line-height-relaxed is-italic has-text-body">"{{ . }}"</p>
     {{ with $quoteAuthor }}
     <footer class="is-text-xs mt-2 has-text-body">
-      <strong>{{ . }}</strong> — {{ $company }}
+      <strong>{{ . }}</strong>
+      <br>{{ with $quoteAuthorRole }}{{ . }}, {{ end }}{{ $company }}
     </footer>
     {{ end }}
   </blockquote>
