@@ -1,10 +1,22 @@
 {{ $data := . }}
 {{ $cards := $data.comparison_summary_cards }}
+{{ $active_col := $data.comparison_active_col | default "platform" }}
 {{ if $cards }}
 <div class="columns is-multiline mb-16">
-  {{ range $card := $cards }}
+  {{ range $i, $card := $cards }}
+  {{ $is_operator := eq $i 0 }}
+  {{ $card_class := "" }}
+  {{ if $card.active }}
+    {{ if $is_operator }}
+      {{ $card_class = "comparison-card-active-operator" }}
+    {{ else }}
+      {{ $card_class = "comparison-card-active-platform" }}
+    {{ end }}
+  {{ else }}
+    {{ $card_class = "comparison-card-inactive" }}
+  {{ end }}
   <div class="column is-6">
-    <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up" style="background: {{ $card.bg }}; border: 2px solid {{ $card.border }}; border-radius: 20px;">
+    <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up {{ $card_class }}" style="border: 2px solid {{ $card.border }}; border-radius: 20px;">
       <div class="is-flex is-align-items-center has-gap-4 mb-6">
         <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="40" height="40" style="color: {{ $card.icon_color }};"></iconify-icon>
         <h3 class="is-size-3 has-text-white has-text-weight-black">{{ $card.title }}</h3>

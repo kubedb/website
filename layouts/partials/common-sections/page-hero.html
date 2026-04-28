@@ -1,5 +1,6 @@
 {{ $data := . }}
 {{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $stats_color := $data.stats_color | default $p_color }}
 <section class="home-hero is-relative is-overflow-hidden">
   <div class="home-hero-bg">
     <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
@@ -114,7 +115,7 @@
           <div class="body-md has-text-grey-500">{{ .label }}</div>
         </div>
         {{ else }}
-        {{ partial "common-cards/stat-card.html" (dict "stat" . "color" $p_color) }}
+        {{ partial "common-cards/stat-card.html" (dict "stat" . "color" $stats_color) }}
         {{ end }}
       </div>
       {{ end }}

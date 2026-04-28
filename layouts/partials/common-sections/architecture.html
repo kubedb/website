@@ -18,9 +18,9 @@
           {{ range $data.layers }}
           <div class="is-flex is-align-items-center has-gap-4">
             {{ if eq .gradient "mke" }}
-            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large is-flex-shrink-0 min-width-230 has-shadow-arch has-background-gradient-mke">{{ .label }}</div>
+            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large is-flex-shrink-0 has-shadow-arch width-200" style="background: linear-gradient(135deg, #1e40af, #1e3a8a);">{{ .label }}</div>
             {{ else }}
-            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large has-background-gradient-{{ .gradient }} is-flex-shrink-0 min-width-230 has-shadow-arch">{{ .label }}</div>
+            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large has-background-gradient-{{ .gradient }} is-flex-shrink-0 has-shadow-arch width-200">{{ .label }}</div>
             {{ end }}
             <div class="is-text-sm has-text-grey-500">{{ .desc }}</div>
           </div>
