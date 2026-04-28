@@ -1,8 +1,6 @@
 {{ $data := partial "products/page-data.html" . }}
 {{ if $data.how_it_works_infra }}
-{{ $howItWorksFooter := $data.how_it_works_footer | default "Your infrastructure; Your control; Your data sovereignty" }}
-{{ $howItWorksFooter = replaceRE "\\s*[•·]\\s*" " &bull; " $howItWorksFooter }}
-{{ $howItWorksFooter = replaceRE "\\s*;\\s*" " &bull; " $howItWorksFooter }}
+{{ $howItWorksFooter := $data.how_it_works_footer | default "Your infrastructure • Your control • Your data sovereignty" }}
 <section class="home-section section-padding has-background-white">
   <div class="container">
     {{ partial "common-sections/section-header.html" (dict

@@ -94,13 +94,13 @@
       </div>
 
       <div class="buttons is-centered home-hero-ctas ds-button-group has-gap-4">
-        <a href="{{ "/docs/latest/setup/" | relLangURL }}"
+        <a href="{{ $d.cta_primary_url | relLangURL }}"
           class="button is-primary hero-btn-primary height-50">
           {{ $d.cta_primary }}
           <iconify-icon icon="heroicons:arrow-right" width="20"
             height="20"></iconify-icon>
         </a>
-        <a href="{{ "/docs/latest/welcome/" | relLangURL }}"
+        <a href="{{ $d.cta_secondary_url | relLangURL }}"
           class="button is-outlined hero-btn-secondary height-50">
           <iconify-icon icon="heroicons:book-open" width="20"
             height="20"></iconify-icon>
