@@ -10,7 +10,7 @@
       "class" "mb-10"
     ) }}
 
-    <div class="columns is-vcentered">
+    <div class="columns ">
       <div class="column is-6">
         <div class="is-flex is-flex-direction-column has-gap-4">
           {{ range .integrations }}
@@ -20,7 +20,7 @@
       </div>
       {{ with .image }}
       <div class="column is-6">
-        <img src="{{ . }}" alt="{{ $alt }}" class="is-fullwidth is-object-contain is-radius-2xlarge">
+        <img src="{{ . }}" alt="{{ $alt }}" class="is-fullwidth is-radius-2xlarge" style="height: 100%; object-fit: contain; background-color: #F4F5F9;">
       </div>
       {{ end }}
     </div>

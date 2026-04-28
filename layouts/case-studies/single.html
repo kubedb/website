@@ -45,8 +45,16 @@
           {{ if $p.hero_metrics }}
           <div class="is-flex is-flex-wrap-wrap has-gap-4 mb-10">
             {{ range $p.hero_metrics }}
-            <div style="width: 160px;">
-              {{ partial "common-cards/stat-card.html" (dict "stat" . "color" "var(--ds-primary)") }}
+            <div class="is-flex is-align-items-center is-justify-content-center has-background-primary-soft is-radius-lg" style="width: 200px;">
+              <div class="ac-stat-card stat-item has-text-centered p-6 transition-all hover-translate-up" >
+                <h3 class="is-size-4-desktop is-size-4-tablet is-size-4-mobile has-text-weight-black mb-1 has-line-height-tight"
+                  style="color: var(--ds-primary);">
+                  {{ .value }}
+                </h3>
+                <p class="has-text-grey-500 is-size-7 is-uppercase has-text-weight-bold has-tracking-widest">
+                  {{ .label }}
+                </p>
+              </div>
             </div>
             {{ end }}
           </div>
@@ -291,99 +299,29 @@
 
 
   <!-- 3. SOLUTION -->
-  {{ if or $p.solution_title $p.solution_description $p.solution_features $p.solution_steps }}
-  <section class="section-padding has-background-white">
-    <div class="container">
-      <div class="columns is-variable is-8 is-vcentered">
-
-        <!-- Left: badge, title, description -->
-        <div class="column is-4-desktop">
-          <div class="badge badge-primary mb-4">
-            <iconify-icon icon="lucide:sparkles" width="16" height="16"></iconify-icon>
-            <span>{{ $p.solution_badge }}</span>
-          </div>
-          {{ with $p.solution_title }}
-          <h2 class="heading-xl has-text-heading has-text-weight-black mb-5">{{ . }}</h2>
-          {{ end }}
-          {{ with $p.solution_description }}
-          <p class="body-lg has-text-grey-600 mb-0">{{ . }}</p>
-          {{ end }}
-          {{ with $p.solution_features }}
-          <div class="is-radius-xlarge has-border has-border-primary has-background-primary-soft px-5 py-4 mt-6">
-            <div class="badge badge-primary mb-3">
-              <iconify-icon icon="lucide:database" width="12" height="12"></iconify-icon>
-              <span>{{ $p.solution_powered_by_label }}</span>
-            </div>
-            <ul class="has-no-bullets">
-              {{ range . }}
-              <li class="is-flex is-align-items-flex-start has-gap-2 body-sm has-text-body mb-2">
-                <iconify-icon icon="lucide:check" width="14" height="14"
-                  class="has-text-primary is-flex-shrink-0"></iconify-icon>
-                <span>{{ . }}</span>
-              </li>
-              {{ end }}
-            </ul>
-          </div>
-          {{ end }}
-        </div>
-
-        <!-- Right: dark card with numbered steps grid -->
-        <div class="column is-8-desktop">
-          {{ with $p.solution_steps }}
-          <div class="has-background-white is-radius-2xlarge p-8 has-border has-shadow-medium">
-            {{ with $p.solution_steps_title }}
-            <p class="has-text-secondary has-text-weight-extrabold is-text-sm is-uppercase has-tracking-wider mb-8">{{ . }}</p>
-            {{ end }}
-            <div class="columns is-multiline mb-0">
-              {{ range . }}
-              <div class="column is-12-mobile is-6-tablet">
-                <div class="is-flex has-gap-4">
-                  <div
-                    class="is-inline-flex is-align-items-center is-justify-content-center has-size-10 is-rounded has-background-gradient-primary has-text-white has-text-weight-black is-text-xs is-flex-shrink-0">
-                    {{ .number }}
-                  </div>
-                  <div>
-                    <h4 class="heading-sm has-text-heading mb-1">{{ .title }}</h4>
-                    <p class="body-md has-text-grey-500 mb-0">{{ .description }}</p>
-                  </div>
-                </div>
-              </div>
-              {{ end }}
-            </div>
-          </div>
-          {{ end }}
-        </div>
-
-      </div>
-    </div>
-  </section>
-  {{ end }}
-
-
-  <!-- 3.5 BENEFITS DETAIL -->
-  {{ if or $p.benefits_title $p.benefits_items $p.supported_databases $p.delivered_features }}
+  {{if or $p.solution_items $p.supported_databases $p.delivered_features }}
   <section class="section-padding has-background-grey-50 is-relative is-overflow-hidden">
     <div class="container">
       <div class="columns is-variable is-8 is-flex-tablet">
         <div class="column is-12-mobile is-5-desktop">
           <div class="section-header mb-10 is-flex is-flex-direction-column is-align-items-flex-start has-text-left">
-            {{ with $p.benefits_badge }}
+            {{ with $p.solution_badge }}
             <div class="badge">
               <iconify-icon icon="lucide:check-circle-2" width="16" height="16"
                 class="has-text-secondary"></iconify-icon>
               <span class="badge-text">{{ . }}</span>
             </div>
             {{ end }}
-            {{ with $p.benefits_title }}
+            {{ with $p.solution_title }}
             <h2 class="section-header-title has-text-heading has-text-weight-black">{{ . }}</h2>
             {{ end }}
-            {{ with $p.benefits_description }}
+            {{ with $p.solution_description }}
             <p class="section-header-desc body-lg ml-0">{{ . }}</p>
             {{ end }}
           </div>
-          {{ with $p.benefits_items }}
+          {{ with $p.solution_items }}
           <div class="benefits-timeline mt-8 pl-1">
-            {{ with $p.benefits_items_title }}
+            {{ with $p.solution_items_title }}
             <h4 class="is-flex is-align-items-center has-gap-2 is-text-xs has-text-weight-black has-text-secondary is-uppercase has-tracking-widest mb-8">
                <iconify-icon icon="lucide:check-circle-2" width="14" height="14"></iconify-icon>
                <span>{{ . }}</span>
@@ -460,6 +398,74 @@
       </div>
     </div>
   </section>
+  <!-- 3.5 SOLUTION DETAIL -->
+  {{ else if or $p.solution_title $p.solution_description $p.solution_features $p.solution_steps }}
+  <section class="section-padding has-background-white">
+    <div class="container">
+      <div class="columns is-variable is-8 is-vcentered">
+
+        <!-- Left: badge, title, description -->
+        <div class="column is-4-desktop">
+          <div class="badge badge-primary mb-4">
+            <iconify-icon icon="lucide:sparkles" width="16" height="16"></iconify-icon>
+            <span>{{ $p.solution_badge }}</span>
+          </div>
+          {{ with $p.solution_title }}
+          <h2 class="heading-xl has-text-heading has-text-weight-black mb-5">{{ . }}</h2>
+          {{ end }}
+          {{ with $p.solution_description }}
+          <p class="body-lg has-text-grey-600 mb-0">{{ . }}</p>
+          {{ end }}
+          {{ with $p.solution_features }}
+          <div class="is-radius-xlarge has-border has-border-primary has-background-primary-soft px-5 py-4 mt-6">
+            <div class="badge badge-primary mb-3">
+              <iconify-icon icon="lucide:database" width="12" height="12"></iconify-icon>
+              <span>{{ $p.solution_powered_by_label }}</span>
+            </div>
+            <ul class="has-no-bullets">
+              {{ range . }}
+              <li class="is-flex is-align-items-flex-start has-gap-2 body-sm has-text-body mb-2">
+                <iconify-icon icon="lucide:check" width="14" height="14"
+                  class="has-text-primary is-flex-shrink-0"></iconify-icon>
+                <span>{{ . }}</span>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
+        </div>
+
+        <!-- Right: dark card with numbered steps grid -->
+        <div class="column is-8-desktop">
+          {{ with $p.solution_steps }}
+          <div class="has-background-white is-radius-2xlarge p-8 has-border has-shadow-medium">
+            {{ with $p.solution_steps_title }}
+            <p class="has-text-secondary has-text-weight-extrabold is-text-sm is-uppercase has-tracking-wider mb-8">{{ . }}</p>
+            {{ end }}
+            <div class="columns is-multiline mb-0">
+              {{ range . }}
+              <div class="column is-12-mobile is-6-tablet">
+                <div class="is-flex has-gap-4">
+                  <div
+                    class="is-inline-flex is-align-items-center is-justify-content-center has-size-10 is-rounded has-background-gradient-primary has-text-white has-text-weight-black is-text-xs is-flex-shrink-0">
+                    {{ .number }}
+                  </div>
+                  <div>
+                    <h4 class="heading-sm has-text-heading mb-1">{{ .title }}</h4>
+                    <p class="body-md has-text-grey-500 mb-0">{{ .description }}</p>
+                  </div>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   {{ end }}
 
 
