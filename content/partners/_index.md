@@ -3,6 +3,7 @@ id: partners
 title: Partners
 description: Strategic partnerships and integrations for KubeDB
 url: /partner/
+layout: single
 ---
 
-KubeDB partners with leading cloud platforms, Kubernetes distributions, and managed service providers to deliver comprehensive database solutions on Kubernetes.
+{{< partners/tabbed-page >}}
