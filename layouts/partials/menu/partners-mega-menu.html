@@ -1,0 +1,73 @@
+{{ $partnerTabs := slice
+  (dict "id" "technology" "name" "Technology Partner Platform" "desc" "Certified Kubernetes platforms" )
+  (dict "id" "msp" "name" "Partner and MSP" "desc" "Alliances, resellers, MSPs" )
+}}
+
+{{ $partners := dict
+  "technology" (slice
+    (dict "name" "Amazon EKS" "desc" "Run on Amazon Elastic Kubernetes Service" "icon" "/assets/images/technical-expertise/eks.svg" "url" "/partner/amazon-eks/" )
+    (dict "name" "Google GKE" "desc" "Run on Google Kubernetes Engine" "icon" "/assets/images/technical-expertise/gke.svg" "url" "/partner/google-gke/" )
+    (dict "name" "Microsoft AKS" "desc" "Run on Microsoft Azure Kubernetes Service" "icon" "/assets/images/technical-expertise/aks.svg" "url" "/partner/microsoft-aks/" )
+    (dict "name" "Red Hat OpenShift" "desc" "Run on Red Hat OpenShift Platform" "icon" "/assets/images/technical-expertise/openshift.svg" "url" "/partner/redhat-openshift/" )
+    (dict "name" "SUSE Rancher" "desc" "Run on SUSE Rancher, REK2 & k3s" "icon" "/assets/images/technical-expertise/rancher.svg" "url" "/partner/suse-rancher/" )
+    (dict "name" "Nutanix Kubernetes Platform" "desc" "Run on Nutanix Kubernetes Platform (NKP)" "icon" "lucide:box" "url" "/partner/nutanix/" )
+    (dict "name" "Mirantis Kubernetes Engine" "desc" "Run on Mirantis Kubernetes Engine (MKE)" "icon" "lucide:box" "url" "/partner/mirantis/" )
+    (dict "name" "VMware vSphere Kubernetes Service" "desc" "Run on VMware vSphere Kubernetes Service (VKS)" "icon" "/assets/images/technical-expertise/vmware.svg" "url" "/partner/vmware-vks/" )
+  )
+  "msp" (slice
+    (dict "name" "Alliance Partners" "desc" "Strategic technology alliances" "icon" "lucide:handshake" "url" "/partner/alliance-partners/" )
+    (dict "name" "Channel Resources" "desc" "Partner resources and materials" "icon" "lucide:book-open" "url" "/partner/channel-resources/" )
+    (dict "name" "Channel Partners" "desc" "Reseller partnership program" "icon" "lucide:users" "url" "/partner/channel-partners/" )
+    (dict "name" "Deal Registration" "desc" "Register and protect your deals" "icon" "lucide:shield-check" "url" "/partner/deal-registration/" )
+    (dict "name" "Managed Service Providers" "desc" "MSP partnership opportunities" "icon" "lucide:server" "url" "/partner/managed-service-providers/" )
+  )
+}}
+
+<div class="resource-menu columns is-variable is-6 is-multiline">
+  <!-- Left: partner types -->
+  <div class="column is-12-mobile is-5-tablet is-5-desktop">
+    <div class="resource-menu-nav is-flex is-flex-direction-column">
+      {{ range $i, $tab := $partnerTabs }}
+      <button type="button" class="resource-menu-tab {{ if eq $i 0 }}is-active{{ end }}" data-resource-target="{{ $tab.id }}">
+        <span class="resource-menu-tab-title">{{ $tab.name }}</span>
+        <span class="resource-menu-tab-desc">{{ $tab.desc }}</span>
+      </button>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Right: partner lists -->
+  <div class="column is-12-mobile is-7-tablet is-7-desktop">
+    <div class="resource-menu-panels">
+      {{ range $i, $tab := $partnerTabs }}
+      <div class="resource-menu-panel {{ if eq $i 0 }}is-active{{ end }}" data-resource-panel="{{ $tab.id }}">
+        <div class="product-menu resources-products-list">
+          {{ range (index $partners $tab.id) }}
+            {{ $icon := .icon }}
+            {{ $url := .url | default "#" }}
+            {{ $isImg := and $icon (or (hasPrefix $icon "/") (hasPrefix $icon "http")) }}
+            <a href="{{ $url }}" class="single-product">
+              <div class="product-logo">
+                {{ if and $isImg (ne $icon "") }}
+                  <img src="{{ $icon }}" alt="{{ .name }}" style="width: 1.5rem; height: 1.5rem; object-fit: contain;" onerror="this.onerror=null;this.src='https://api.iconify.design/lucide:box.svg'" />
+                {{ else }}
+                  <iconify-icon icon="lucide:box" width="1.5rem" height="1.5rem"></iconify-icon>
+                {{ end }}
+              </div>
+              <div class="product-info">
+                <h6>{{ .name }}</h6>
+                <p>{{ .desc }}</p>
+              </div>
+              <div class="navigate-icon">
+                <span class="icon arrow-forward">
+                  <iconify-icon icon="heroicons:arrow-up-right" width="1.2rem" height="1.2rem"></iconify-icon>
+                </span>
+              </div>
+            </a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
