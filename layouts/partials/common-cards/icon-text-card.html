@@ -1,0 +1,19 @@
+{{ $card := .card }}
+<div class="is-flex is-align-items-flex-start has-gap-4">
+  {{ if $card.icon }}
+  <div class="is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large has-background-primary"
+       style="width: 48px; height: 48px;">
+    <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="24" height="24" class="has-text-white"></iconify-icon>
+  </div>
+  {{ end }}
+  <div>
+    <!-- Title: clear hierarchy, strong contrast, modern weight -->
+    <h4 class="is-text-base has-text-weight-semibold has-line-height-tight mb-1" style="letter-spacing:-0.01em;">
+      {{ $card.title }}
+    </h4>
+    <!-- Description: readable, muted, accessible -->
+    <p class="is-text-sm has-line-height-md" style="max-width: 420px;">
+      {{ $card.description }}
+    </p>
+  </div>
+</div>

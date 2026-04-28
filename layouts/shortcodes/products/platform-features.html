@@ -1,0 +1,21 @@
+{{ $data := partial "products/page-data.html" . }}
+{{ $data_id := .Page.Params.data_id }}
+{{ if and $data.features (strings.Contains $data_id "platform") }}
+<section class="home-section section-padding bg-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $data.features_title
+      "subtitle" $data.features_subtitle
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+    <div class="columns is-multiline">
+      {{ range $data.features }}
+      <div class="column is-4-desktop is-6-tablet is-12-mobile">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

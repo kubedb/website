@@ -1,0 +1,65 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ $data := "" }}
+{{ if $d.savings_cta }}
+  {{ $data = $d.savings_cta }}
+{{ else if and $d.cost_comparison $d.cost_comparison.savings_cta }}
+  {{ $data = $d.cost_comparison.savings_cta }}
+{{ end }}
+{{ $benefitPanels := "" }}
+{{ if and $d.cost_comparison $d.cost_comparison.benefit_panels }}
+  {{ $benefitPanels = $d.cost_comparison.benefit_panels }}
+{{ end }}
+{{ with $data }}
+{{ $btnIcon := .button_icon | default "lucide:dollar-sign" }}
+{{ $statIcons := slice "lucide:dollar-sign" "lucide:zap" "lucide:unlock" "lucide:shield-check" }}
+
+<section class="cta-section home-section section-padding is-relative is-overflow-hidden">
+  <div class="container">
+    {{ with $benefitPanels }}
+    <div class="columns is-multiline mb-10">
+      {{ range . }}
+      <div class="column is-6-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+    <div class="cta-block ds-card-base">
+      <div class="cta-glow"></div>
+      <div class="cta-inner has-text-centered">
+        <div class="cta-dot-pattern" aria-hidden="true"></div>
+
+        <h2 class="cta-title has-text-centered">
+          {{ .heading | safeHTML }}
+        </h2>
+
+        {{ with .description }}
+        <p class="cta-desc has-text-white has-opacity-80 mx-auto has-max-width-lg mb-8">
+          {{ . | safeHTML }}
+        </p>
+        {{ end }}
+
+        {{ with .stats }}
+        <div class="columns is-multiline is-variable is-4 mx-auto has-max-width-lg mb-8">
+          {{ range $i, $stat := . }}
+          <div class="column is-12-mobile is-4-tablet">
+            {{ $stat := merge $stat (dict "icon" (index $statIcons $i)) }}
+            {{ partial "common-cards/savings-stat-card.html" (dict "card" $stat "index" $i) }}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{ with .button_text }}
+        <div class="buttons cta-buttons ds-button-group is-justify-content-center">
+          <a href="{{ $data.button_url | default "#" }}" class="button is-white is-large height-60 px-10 shadow-lg hover-lift">
+            <iconify-icon {{ printf "icon=%q" $btnIcon | safeHTMLAttr }} width="22" class="mr-2 has-text-black"></iconify-icon>
+            <strong class="has-text-black">{{ . }}</strong>
+          </a>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

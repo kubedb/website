@@ -1,0 +1,28 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.technology_partners }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "badge_text" .badge
+      "badge_icon" .badge_icon
+      "title" .title
+      "subtitle" .description
+      "align" "center"
+      "class" "mb-10"
+    ) }}
+
+    <div class="columns is-multiline is-centered">
+      {{ range .partners }}
+      <div class="column is-2-desktop is-4-tablet is-6-mobile">
+        {{ partial "common-cards/partner-logo-card.html" (dict
+          "card" .
+          "showDetails" false
+          "logoMaxHeight" "3rem"
+          "minHeight" "5rem"
+        ) }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

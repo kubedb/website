@@ -1,0 +1,80 @@
+{{ $data := . }}
+<!-- Premium Call to Action Area -->
+<section class="cta-section home-section section-padding is-relative is-overflow-hidden">
+  <div class="container">
+    <div class="cta-block ds-card-base">
+      <div class="cta-glow"></div>
+      <div class="cta-inner">
+        <div class="cta-dot-pattern" aria-hidden="true"></div>
+
+        <div class="columns is-vcentered is-variable is-8">
+          <div class="column is-6-desktop">
+            <div class="badge badge-dark">
+              <iconify-icon icon="lucide:zap" width="14" height="14" class="has-text-secondary"></iconify-icon>
+              <span class="badge-text has-text-white">{{ $data.cta_badge | default $data.hero_badge | default "Get Started Today" }}</span>
+            </div>
+
+            <h2 class="cta-title">
+              {{ $data.cta_title | default "Ready to Modernize Your <br>Data Management?" | safeHTML }}
+              <span class="cta-title-gradient">{{ $data.cta_title_gradient | safeHTML }}</span>
+            </h2>
+            <p class="cta-desc mb-4 has-text-white has-opacity-80">{{ $data.cta_description | default "Join thousands of teams running production-grade databases on Kubernetes with KubeDB." | safeHTML }}</p>
+
+            {{ $checklist := $data.cta_checklist | default (slice "Production-grade reliability" "Automated lifecycle management" "Multi-cloud database portability") }}
+            <ul class="cta-checklist is-grid has-gap-3 my-8">
+              {{ range $checklist }}
+              <li class="is-flex is-align-items-center has-gap-3 has-text-white font-semibold">
+                <iconify-icon icon="heroicons:check-circle-solid" width="22" class="has-text-secondary"></iconify-icon>
+                {{ . }}
+              </li>
+              {{ end }}
+            </ul>
+
+            <div class="buttons cta-buttons ds-button-group mt-10">
+              <a href={{ $data.cta_button_url | default "/docs/latest/setup/" }} class="button is-white is-large height-60 px-10 shadow-lg hover-lift">
+                <strong class="has-text-black">{{ $data.cta_button_text | default "Start Free Trial" }}</strong>
+                <iconify-icon icon="heroicons:arrow-right" class="ml-2 has-text-black" width="22"></iconify-icon>
+              </a>
+              {{ if $data.cta_secondary_button_text }}
+              <a href="{{ $data.cta_secondary_button_url | default "/contact/" }}" class="button is-ghost is-large height-60 has-text-white px-8">
+                <iconify-icon {{ printf "icon=%q" ($data.cta_secondary_button_icon | default "heroicons:play-solid") | safeHTMLAttr }} width="20" class="mr-2 has-text-secondary"></iconify-icon>
+                <strong>{{ $data.cta_secondary_button_text }}</strong>
+              </a>
+              {{ else }}
+              <a href="{{ $data.watch_demo_url | default "https://www.youtube.com/watch?v=hBHxMtSjKo4" }}" target="_blank" class="button is-ghost is-large height-60 has-text-white px-8">
+                <iconify-icon icon="heroicons:play-solid" width="20" class="mr-2 has-text-secondary"></iconify-icon>
+                <strong>Watch Demo</strong>
+              </a>
+              {{ end }}
+            </div>
+          </div>
+
+          <div class="column is-6-desktop mt-12-mobile">
+            <div class="columns is-multiline is-variable is-4 w-full">
+              {{ $metrics := $data.final_cta_metrics | default $data.cta_stats }}
+              {{ if not $metrics }}
+                {{ $metrics = slice 
+                   (dict "icon" "lucide:database" "value" "30+" "label" "Databases" "gradient" "linear-gradient(135deg, #6366f1, #a855f7)")
+                   (dict "icon" "lucide:trending-up" "value" "10K+" "label" "Active Users" "gradient" "linear-gradient(135deg, #4ade80, #10b981)")
+                   (dict "icon" "lucide:shield-check" "value" "99.9%" "label" "Uptime SLA" "gradient" "linear-gradient(135deg, #fb923c, #ef4444)")
+                   (dict "icon" "lucide:check-circle" "value" "24/7" "label" "Expert Support" "gradient" "linear-gradient(135deg, #a855f7, #ec4899)")
+                }}
+              {{ end }}
+              {{ range $index, $stat := $metrics }}
+              <div class="column is-6">
+                <div class="ac-cta-stat-card trust-stat ds-card-base h-full">
+                  <div class="trust-stat-icon trust-stat-icon-{{ $index }}" style="background: {{ .gradient | default .color | default "#7272E9" }};">
+                    <iconify-icon {{ printf "icon=%q" (string .icon) | safeHTMLAttr }} width="24" class="has-text-white"></iconify-icon>
+                  </div>
+                  <div class="trust-stat-val has-text-white has-text-weight-black mb-1">{{ .value }}</div>
+                  <div class="trust-stat-label is-uppercase has-text-weight-bold tracking-widest is-size-7">{{ .label }}</div>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.capabilities }}
+<section class="home-section section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.everything_you_need_title | default "Everything You Need for Production")
+      "align" "center"
+      "class" "mb-12"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range $data.capabilities }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ if eq $data_id "white-labeled-dbaas" }}
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "persona") }}
+        {{ else }}
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

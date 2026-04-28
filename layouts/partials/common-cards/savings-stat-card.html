@@ -1,0 +1,12 @@
+{{ $card := .card }}
+{{ $index := .index | default 0 }}
+
+<div class="ac-cta-stat-card trust-stat ds-card-base h-full">
+  {{ if $card.icon }}
+  <div class="trust-stat-icon trust-stat-icon-{{ $index }}">
+    <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="24" class="has-text-white"></iconify-icon>
+  </div>
+  {{ end }}
+  <div class="trust-stat-val has-text-white has-text-weight-black mb-1">{{ $card.value }}</div>
+  <div class="trust-stat-label is-uppercase has-text-weight-bold tracking-widest is-size-7">{{ $card.label }}</div>
+</div>

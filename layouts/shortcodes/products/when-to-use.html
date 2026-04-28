@@ -1,0 +1,21 @@
+{{ $data := partial "products/page-data.html" . }}
+{{ if $data.when_to_use }}
+<section class="home-section section-padding bg-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $data.when_to_use_title
+      "subtitle" $data.when_to_use_subtitle
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+    {{ $col_class := $data.when_to_use_column_class | default "is-3-desktop" }}
+    <div class="columns is-multiline">
+      {{ range $data.when_to_use }}
+      <div class="column {{ $col_class }} is-4-tablet is-6-mobile">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

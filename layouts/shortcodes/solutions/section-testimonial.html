@@ -1,0 +1,28 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.testimonial }}
+<section class="home-section section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.testimonial_title | default "Why Leading SaaS Teams Choose KubeDB")
+      "align" "center"
+      "class" "mb-12"
+    ) }}
+
+    <div class="max-w-4xl mx-auto is-radius-3xl p-12 has-max-width-xl shadow-2xl has-text-centered"
+         style="background: linear-gradient(135deg, {{ $data.testimonial.theme_color | default "#4948A3" }}, #7272E9);">
+      <div class="mb-8">
+         <iconify-icon icon="lucide:users" width="60" class="has-text-white has-opacity-80"></iconify-icon>
+      </div>
+      <blockquote class="is-size-3-desktop is-size-4-tablet has-text-white leading-relaxed mb-10 has-text-centered">
+        "{{ $data.testimonial.quote }}"
+      </blockquote>
+      <div class="has-text-white font-semibold is-size-5">
+         &mdash; {{ $data.testimonial.attribution }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

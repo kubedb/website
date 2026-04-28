@@ -1,0 +1,91 @@
+{{ $page := .page }}
+{{ $index := .index }}
+
+{{ $defaultIcons := slice "heroicons:currency-dollar" "heroicons:bolt" "heroicons:shield-check" }}
+
+{{ $slug   := $page.File.ContentBaseName }}
+{{ $csData := index site.Data.products.kubedb "case-studies" }}
+{{ $d      := index $csData $slug | default dict }}
+{{ $p      := $page.Params }}
+
+{{ $company     := default (default $page.Title $p.company) $d.company }}
+{{ $industry    := default (default $p.tag $p.industry) $d.industry }}
+{{ $challenge   := default (default $p.description $p.challenge_summary) $d.challenge_summary }}
+{{ $solution    := default $p.solution_description $d.solution_description }}
+{{ $logoEmoji   := default $p.logo_emoji $d.logo_emoji }}
+{{ $logo        := default $p.logo $d.logo }}
+{{ $quote           := default $p.results_quote $d.results_quote }}
+{{ $quoteAuthor     := default $p.results_quote_author $d.results_quote_author }}
+{{ $quoteAuthorRole := default $p.results_quote_author_role $d.results_quote_author_role }}
+{{ $resultsExtras := default $p.results_extras $d.results_extras }}
+
+{{ $metrics := default $p.hero_metrics $d.hero_metrics }}
+{{ if not $metrics }}
+  {{ $metrics = default $p.results_metrics $d.results_metrics }}
+{{ end }}
+
+<a href="{{ $page.RelPermalink }}" class="case-card ds-card-base is-fullheight">
+  <div class="case-card-header is-flex is-align-items-center has-gap-3 mb-4">
+    <div class="case-card-logo">
+      {{ with $logoEmoji }}
+        {{ . }}
+      {{ else }}
+        {{ with $logo }}
+          <img src="{{ . }}" alt="{{ $company }}" loading="lazy">
+        {{ else }}
+          <iconify-icon icon="heroicons:building-office-2" width="18" height="18"></iconify-icon>
+        {{ end }}
+      {{ end }}
+    </div>
+    <div>
+      <h3 class="case-card-company has-text-heading is-text-base has-text-weight-extrabold">{{ $company }}</h3>
+      <p class="case-card-industry has-text-body">{{ $industry }}</p>
+    </div>
+  </div>
+
+  <div class="case-card-section mb-3">
+    <h4 class="case-card-label is-text-xs has-text-weight-extrabold is-uppercase">Challenge</h4>
+    <p class="case-card-text is-text-base">{{ $challenge }}</p>
+  </div>
+
+  <div class="case-card-section mb-3">
+    <h4 class="case-card-label is-text-xs has-text-weight-extrabold is-uppercase">Solution</h4>
+    <p class="case-card-text is-text-base">{{ $solution }}</p>
+  </div>
+
+  {{ with $metrics }}
+  <div class="case-card-metrics is-grid has-gap-3 p-4 mb-4">
+    {{ range $metricIndex, $metric := first 3 . }}
+    {{ $metricIcon := index $defaultIcons (mod $metricIndex (len $defaultIcons)) }}
+    {{ if and $resultsExtras (lt $metricIndex (len $resultsExtras)) }}
+      {{ $candidate := (index $resultsExtras $metricIndex).icon }}
+      {{ if $candidate }}{{ $metricIcon = $candidate }}{{ end }}
+    {{ end }}
+    <div class="case-card-metric has-text-centered">
+      <div class="case-card-metric-icon case-card-metric-gradient-{{ mod $metricIndex 3 }}">
+        <iconify-icon {{ printf "icon=%q" $metricIcon | safeHTMLAttr }} width="16" height="16"></iconify-icon>
+      </div>
+      <div class="case-card-metric-val has-text-heading is-text-xs has-text-weight-extrabold">{{ default $metric.val $metric.value }}</div>
+      <div class="case-card-metric-sub is-text-xs has-text-weight-semibold">{{ default (default (default $metric.label $metric.sub) $metric.note) $metric.sublabel }}</div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ with $quote }}
+  <blockquote class="case-card-quote mt-4 p-4">
+    <p class="is-text-base has-line-height-relaxed is-italic has-text-body">"{{ . }}"</p>
+    {{ with $quoteAuthor }}
+    <footer class="is-text-xs mt-2 has-text-body">
+      <strong>{{ . }}</strong>
+      <br>{{ with $quoteAuthorRole }}{{ . }}, {{ end }}{{ $company }}
+    </footer>
+    {{ end }}
+  </blockquote>
+  {{ end }}
+
+  <button class="button is-ghost ac-button is-small mt-auto">
+    Read Full Case Study
+    <iconify-icon icon="heroicons:arrow-right" width="14" height="14"></iconify-icon>
+  </button>
+</a>

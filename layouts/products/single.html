@@ -1,0 +1,22 @@
+{{ define "main"}}
+{{ $data_id := .Params.data_id }}
+{{ $data := partial "products/page-data.html" . }}
+
+{{ if not $data }}
+<div class="container section">
+  <div class="notification is-danger">
+    <strong>Debug:</strong> Data for "{{ $data_id }}" not found.
+  </div>
+</div>
+{{ else }}
+
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ $bg_grad := cond (strings.Contains $data_id "platform") "#eff6ff" "#f5f3ff" }}
+<div class="ac-ui product-redesign"
+  style="--p-logo-color: {{ $p_color }}; --cta-bg: {{ $cta_bg }}; background: linear-gradient(to bottom, #ffffff, {{ $bg_grad }} 15%, #ffffff 30%); ">
+  {{ .Content }}
+</div>
+
+{{ end }}
+{{ end }}

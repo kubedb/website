@@ -1,0 +1,42 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.numbered_features }}
+<section class="home-section section-padding has-background-white">
+  <div class="container">
+    <div class="columns is-vcentered is-variable is-8">
+      <div class="column is-6">
+        {{ partial "common-sections/section-header.html" (dict
+          "title" $data.numbered_features_title
+          "subtitle" $data.numbered_features_subtitle
+          "align" "left"
+          "class" "mb-12"
+        ) }}
+
+        <div class="space-y-8">
+          {{ range $data.numbered_features }}
+          <div class="is-flex has-gap-6">
+            <div class="is-flex-shrink-0">
+              <div class="has-size-12 is-radius-xlarge has-background-gradient-primary is-flex is-align-items-center is-justify-content-center shadow-lg">
+                <span class="is-size-5 has-text-weight-bold has-text-white">{{ .id }}</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="is-size-4 has-text-weight-bold mb-2 has-text-grey-900">{{ .title }}</h3>
+              <p class="is-size-6 has-text-grey-600 leading-relaxed">{{ .description }}</p>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="is-radius-2xl p-4 has-border-grey-light shadow-2xl has-background-white">
+          <img src="{{ $data.numbered_features_graphic | default "/assets/images/products/kubedb/kubedb-hero.png" }}" alt="Feature Diagram" class="is-radius-xl w-full">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

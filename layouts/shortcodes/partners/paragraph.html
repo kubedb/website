@@ -1,0 +1,10 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.paragraph }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <p class="is-size-5 has-text-centered mx-auto has-max-width-800 has-text-grey-500 has-line-height-relaxed">
+      {{ .content | safeHTML }}
+    </p>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,65 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.challenges }}
+<section id="conflict" class="home-section section-padding has-background-white">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <!-- Left: Large Numbered List -->
+      <div class="column is-6">
+        <div class="badge mb-6 has-background-danger-softer has-border-danger-soft">
+          <iconify-icon icon="lucide:alert-triangle" class="has-text-danger" width="14"></iconify-icon>
+          <span class="is-size-7 font-bold has-text-danger tracking-wide">{{ $data.challenge_badge }}</span>
+        </div>
+        <h2 class="title is-size-1 is-size-1h has-text-weight-bold has-tracking-tight mb-12">{{ $data.challenge_title }}</h2>
+
+        <div class="space-y-12">
+          {{ range $data.challenges }}
+          <div class="is-flex has-gap-8">
+            <div class="is-size-0 has-text-weight-black has-opacity-60 has-line-height-none has-text-danger-light has-width-20">{{ .id }}</div>
+            <div class="pt-2">
+              <h4 class="is-size-4 has-text-weight-bold mb-3 has-text-grey-900">{{ .title }}</h4>
+              <p class="is-size-5 has-text-grey-600 has-line-height-relaxed">{{ .description }}</p>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Right: Nested Conflict Box -->
+      <div class="column is-6">
+        <div class="p-16 is-radius-3xl has-background-white shadow-2xl has-border-grey-lightest">
+          <div class="is-radius-2xl p-10 has-background-grey-lightest has-border-danger-soft">
+            <div class="is-flex is-align-items-center has-gap-3 mb-8">
+              <iconify-icon icon="lucide:x-circle" class="has-text-danger" width="28"></iconify-icon>
+              <h3 class="is-size-4 has-text-weight-black has-text-danger tracking-tight">Reconciliation Conflict</h3>
+            </div>
+
+            <div class="font-mono is-size-6 space-y-5 mb-10 has-text-grey-700">
+              <div class="is-flex has-gap-3">
+                <span class="has-opacity-50">&gt;</span>
+                <span>{{ $data.reconciliation_conflict.command }}</span>
+              </div>
+              <div class="is-flex has-gap-3 has-text-success font-bold">
+                <span class="has-opacity-50">&gt;</span>
+                <span>{{ $data.reconciliation_conflict.status }}</span>
+              </div>
+              <div class="is-flex has-gap-3 has-text-danger font-bold">
+                <span class="has-opacity-50">&gt;</span>
+                <span>{{ $data.reconciliation_conflict.result }}</span>
+              </div>
+            </div>
+
+            <div class="pt-8 has-border-top-grey-light">
+              <p class="is-size-7 font-mono has-text-grey-500 font-bold uppercase tracking-widest">
+                Result: {{ $data.reconciliation_conflict.note }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,67 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ if $data.universal_access_cards }}
+<section class="home-section section-padding" style="background: linear-gradient(135deg, #ecfeff, #eff6ff);">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.universal_access_title | default "Universal Database Access")
+      "subtitle" ($data.universal_access_subtitle | default "Your customers' databases are accessible from anywhere—modern cloud-native apps and legacy VM-based applications alike")
+      "align" "center"
+      "class" "mb-12"
+    ) }}
+
+    <div class="columns is-multiline is-variable">
+      {{ range $data.universal_access_cards }}
+      {{ $card := . }}
+      {{ $borderColor := .border_color | default "#e2e8f0" }}
+      {{ $checkColor := .check_color | default "#2563eb" }}
+      {{ $cardStyle := printf "border: 2px solid %s; position: relative; overflow: hidden;" $borderColor }}
+      {{ $checkStyle := printf "color: %s; margin-top: 2px; flex-shrink: 0;" $checkColor }}
+      <div class="column is-4-desktop is-6-tablet">
+        <div class="ac-feature-persona p-6 is-radius-2xlarge has-background-white has-border is-fullheight transition-all has-hover-lift has-hover-shadow-xl" {{ printf "style=%q" $cardStyle | safeHTMLAttr }}>
+          {{ if .icon }}
+          <div class="is-flex is-align-items-center is-justify-content-center is-radius-2xlarge mb-10 shadow-md" style="width: 72px; height: 72px; background: {{ .icon_gradient | default "linear-gradient(135deg, #3b82f6, #06b6d4)" | safeCSS }};">
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="36" height="36" style="color: white;"></iconify-icon>
+            </div>
+          {{ end }}
+
+          <h3 class="is-size-4 has-text-weight-black has-text-grey-900 mb-4" style="letter-spacing: -0.03em;">{{ .title }}</h3>
+          <p class="has-text-grey-600 is-size-6 mb-6 has-line-height-relaxed">{{ .description }}</p>
+
+          {{ if .items }}
+          <div class="is-flex is-flex-direction-column has-gap-4">
+            {{ range .items }}
+            <div class="is-flex is-align-items-start has-gap-3">
+              <iconify-icon icon="lucide:check-circle-2" width="20" height="20" {{ printf "style=%q" $checkStyle | safeHTMLAttr }}></iconify-icon>
+              <span class="is-size-6 has-text-weight-bold has-text-grey-700" style="line-height: 1.45;">{{ . }}</span>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    {{ if $data.universal_access_message_title }}
+    {{ $messageBorder := $data.universal_access_message_border | default "#bfdbfe" }}
+    {{ $messageStyle := printf "border: 2px solid %s; max-width: 760px; width: 100%%;" $messageBorder }}
+    <div class="is-flex is-justify-content-center mt-12">
+      <div class="has-background-white is-radius-2xlarge p-6 shadow-lg" {{ printf "style=%q" $messageStyle | safeHTMLAttr }}>
+        <div class="is-flex is-align-items-flex-start has-gap-4">
+          {{ if $data.universal_access_message_icon }}
+          <div class="is-flex is-align-items-center is-justify-content-center is-radius-large is-flex-shrink-0" style="width: 48px; height: 48px; background: {{ $data.universal_access_message_gradient | default "linear-gradient(135deg, #3b82f6, #06b6d4)" | safeCSS }};">
+            <iconify-icon {{ printf "icon=%q" $data.universal_access_message_icon | safeHTMLAttr }} width="24" height="24" style="color: white;"></iconify-icon>
+          </div>
+          {{ end }}
+          <div>
+            <h4 class="is-size-5 has-text-weight-black has-text-grey-900 mb-2">{{ $data.universal_access_message_title }}</h4>
+            <p class="has-text-grey-600 is-size-6 has-line-height-relaxed">{{ $data.universal_access_message_body }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

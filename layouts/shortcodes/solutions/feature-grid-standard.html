@@ -1,0 +1,31 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.benefits }}
+<section class="home-section section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $data.benefits_title
+      "subtitle" $data.benefits_subtitle
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+    <div class="columns is-multiline">
+      {{ range $data.benefits }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ $g_class := lower .gradient_class }}
+        {{ $c := "indigo" }}
+        {{ if strings.Contains $g_class "blue" }}{{ $c = "blue" }}
+        {{ else if strings.Contains $g_class "purple" }}{{ $c = "purple" }}
+        {{ else if strings.Contains $g_class "green" }}{{ $c = "green" }}
+        {{ else if strings.Contains $g_class "orange" }}{{ $c = "orange" }}
+        {{ else if strings.Contains $g_class "yellow" }}{{ $c = "yellow" }}{{ end }}
+
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard" "color" $c) }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

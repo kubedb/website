@@ -1,0 +1,28 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.team_benefits }}
+<section class="home-section section-padding has-background-gradient-light">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.team_benefits_title | default "Benefits For Every Team")
+      "subtitle" $data.team_benefits_subtitle
+      "badge_text" "Total Ecosystem Alignment"
+      "badge_icon" "lucide:users-2"
+      "align" "center"
+      "class" "mb-20"
+    ) }}
+    <div class="columns is-multiline">
+      {{ range $index, $item := $data.team_benefits }}
+      <div class="column is-4">
+        {{ $color_soft := cond (eq $index 0) "rgba(99,102,241,0.05)" (cond (eq $index 1) "rgba(168,85,247,0.05)" "rgba(236,72,153,0.05)") }}
+        {{ $color_gradient := cond (eq $index 0) "linear-gradient(135deg, #6366f1, #818cf8)" (cond (eq $index 1) "linear-gradient(135deg, #a855f7, #c084fc)" "linear-gradient(135deg, #ec4899, #f472b6)") }}
+
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "persona" "color_soft" $color_soft "color_gradient" $color_gradient) }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,29 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ if $data.offline_package_contents }}
+<section class="home-section section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.offline_package_title | default "Complete Offline Package")
+      "subtitle" ($data.offline_package_subtitle | default "Everything included in the air-gap installation bundle")
+      "align" "center"
+      "class" "mb-12"
+    ) }}
+
+    <div class="is-flex is-justify-content-center">
+      <div class="ds-card-base p-8 is-radius-2xlarge has-border has-background-white" style="max-width: 920px; width: 100%; background: linear-gradient(135deg, #faf5ff, #eef2ff); border-color: #d8b4fe;">
+        <div class="columns is-multiline is-variable is-4">
+          {{ range $data.offline_package_contents }}
+          <div class="column is-6-desktop">
+            <div class="is-flex is-align-items-start has-gap-3">
+              <iconify-icon icon="lucide:check-circle-2" width="22" class="has-text-primary is-flex-shrink-0" style="margin-top: 2px;"></iconify-icon>
+              <span class="is-size-5 has-text-grey-700">{{ . }}</span>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

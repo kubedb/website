@@ -1,0 +1,4 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.database_support }}
+  {{ partial "common-sections/database-support-list.html" . }}
+{{ end }}

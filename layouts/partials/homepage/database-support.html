@@ -1,0 +1,51 @@
+{{ $d := index $.Site.Data.products.kubedb.homepage "database-support" }}
+{{ $databaseMenu := index (where $.Site.Menus.main "Identifier" "database") 0 }}
+{{ $databases := slice }}
+{{ if $databaseMenu }}
+  {{ $databases = $databaseMenu.Children.ByWeight }}
+{{ end }}
+
+<section class="home-section home-section-light">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge">
+        <iconify-icon icon="heroicons:circle-stack" width="16" height="16" style="color:#4948A3;"></iconify-icon>
+        <span class="badge-text">{{ $d.badge }}</span>
+      </div>
+      <h2 class="section-header-title">
+        <span class="text-gradient">{{ $d.title_gradient }}</span><br>
+        {{ $d.title_plain }}
+      </h2>
+      <p class="section-header-desc">{{ $d.description }}</p>
+    </div>
+
+    <div class="db-grid-wrap p-4">
+      <div class="db-grid is-flex is-flex-wrap-wrap is-align-items-stretch is-justify-content-center has-gap-4">
+        {{ range $databases }}
+        <a href="{{ if .URL }}{{ .URL }}{{ else }}/kubernetes/databases/run-and-manage-{{ .Identifier }}-on-kubernetes{{ end }}" class="db-card ds-card-base is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-gap-3 p-4">
+          <div class="db-card-logo">
+            <img src="{{ .Pre }}" alt="{{ .Name }}" loading="lazy">
+          </div>
+          <span class="db-card-name has-text-heading is-text-xs has-text-weight-bold has-text-centered">{{ .Name }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="db-cta is-flex is-justify-content-center">
+      <div class="db-cta-inner ds-card-base is-flex is-align-items-center is-justify-content-space-between has-gap-4 p-4 px-5">
+        <div class="db-cta-icon ds-icon-box">
+          <iconify-icon icon="heroicons:sparkles" width="20" height="20"></iconify-icon>
+        </div>
+        <div class="db-cta-text is-flex is-flex-direction-column has-gap-1 has-text-body">
+          <strong class="has-text-heading">{{ $d.cta_text }}</strong>
+          <span>{{ $d.cta_sub }}</span>
+        </div>
+        <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button is-primary is-small">
+          {{ $d.cta_button }}
+          <iconify-icon icon="heroicons:arrow-right" width="16" height="16"></iconify-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ if $data.billing_features }}
+<section class="home-section section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.billing_and_metering_title | default "Comprehensive Billing & Metering")
+      "subtitle" ($data.billing_and_metering_subtitle | default "Real-time API access for accurate monthly client invoices with detailed usage tracking")
+      "align" "center"
+      "class" "mb-12"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range $data.billing_features }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "compact") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

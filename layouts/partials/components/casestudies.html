@@ -1,0 +1,43 @@
+{{ $p := (index .Site.Data.products (default .Site.Params.product_key .Params.info.product)) }}
+
+<!-- product features area start  -->
+<section class="casestudies-area section-padding">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="section-title has-text-centered">
+          <h2 class="is-gradient">Discover Real Success Stories</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <!-- is-centered -->
+    <div class="columns is-multiline is-centered">
+      {{ range where .Site.RegularPages "Section" "case-studies" }}
+      <!-- single feature information start  -->
+      <div class="column is-half-tablet is-one-third-widescreen">
+        <a href="{{ .RelPermalink }}" class="single-case-study has-border has-border-grey-200 is-radius-large has-transition has-background-white is-flex is-flex-direction-column is-relative has-z-index-10 is-fullheight is-overflow-hidden has-no-underline">
+          <div class="brand-logo is-flex is-align-items-center is-justify-content-center has-border-bottom">
+            <img src="{{.Params.logo}}" alt="brand-logo" class="has-height-14 is-object-contain">
+          </div>
+          <div class="bottom-content has-border-top is-flex is-flex-direction-column is-flex-grow-1 px-6 py-4">
+            <div class="tag is-text-xs has-text-weight-semibold is-uppercase has-tracking-wider mb-3">{{.Params.tag}}</div>
+            <h2 class="is-text-lg has-text-weight-bold has-text-grey-900 has-transition mb-2">{{ .Params.Title }}</h2>
+            <p class="is-ellipsis-2 has-text-grey-700 is-text-base is-flex-grow-1 mb-4">{{ .Params.Description }}</p>
+            <button class="is-inline-flex is-align-items-center has-gap-2 has-background-transparent has-no-border is-text-base has-text-weight-semibold p-0 is-cursor-pointer has-text-primary has-transition">
+              <span>Read More</span>
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </a>
+      </div>
+     {{ end }}
+    </div>
+  </div>
+</section>
+<!-- product features area end -->

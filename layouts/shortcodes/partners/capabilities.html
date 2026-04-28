@@ -1,0 +1,27 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.capabilities }}
+{{ $hasItems := false }}
+{{ with .items }}{{ if gt (len .) 0 }}{{ $hasItems = true }}{{ end }}{{ end }}
+<section class="has-background-grey-50 {{ if $hasItems }}section-padding{{ else }}pt-16 pb-0{{ end }}">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "badge_text" .badge
+      "badge_icon" "lucide:zap"
+      "title" .heading
+      "subtitle" .description
+      "align" "center"
+      "class" (cond $hasItems "mb-10" "mb-0")
+    ) }}
+
+    {{ if $hasItems }}
+    <div class="columns is-multiline">
+      {{ range .items }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "compact") }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

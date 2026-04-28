@@ -1,0 +1,31 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.platform_features }}
+<section class="section-padding platform-teams-section">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.platform_features_title | default "What Platform Teams Get with KubeDB")
+      "subtitle" ($data.platform_features_subtitle | default "Complete DBaaS platform software in your infrastructure")
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+
+    {{ if $data.platform_architecture_image }}
+    <div class="ds-card-base is-radius-2xl p-6 mb-12 has-text-centered">
+      <h4 class="is-size-4 has-text-weight-bold mb-6">{{ $data.platform_architecture_title }}</h4>
+      <img src="{{ $data.platform_architecture_image }}" alt="Platform Architecture Overview" class="w-full is-radius-xl" style="max-width:900px; margin: 0 auto; display: block;">
+    </div>
+    {{ end }}
+
+    <div class="columns is-multiline">
+      {{ range $data.platform_features }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

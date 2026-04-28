@@ -1,0 +1,26 @@
+{{ $d := partial "partners/page-data.html" . }}
+{{ with $d.additional_integrations }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <div class="ds-card-base is-radius-2xlarge p-10" style="background-color: #f8fafc; border: 1px solid #e2e8f0;">
+      <h2 class="is-size-3 has-text-weight-black has-text-grey-900 has-tracking-tight has-text-centered mb-8">
+        {{ .heading | safeHTML }}
+      </h2>
+
+      {{ with .description }}
+      <p class="is-size-5 has-text-grey-600 has-line-height-relaxed has-text-centered mb-8">
+        {{ . | safeHTML }}
+      </p>
+      {{ end }}
+
+      <div class="columns is-multiline">
+        {{ range .items }}
+        <div class="column is-3-desktop is-6-tablet">
+          {{ partial "common-cards/integration-card.html" (dict "integrationCard" .) }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

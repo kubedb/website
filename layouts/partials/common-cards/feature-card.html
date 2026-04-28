@@ -1,0 +1,162 @@
+{{ $card := .card }}
+{{ $type := .type | default "standard" }}
+{{ $color := .color | default "primary" }}
+
+{{ if eq $type "standard" }}
+<!-- Standard Feature Card (Used in Benefits/When-to-Use) -->
+<div class="ac-feature-standard faq-card-item ds-card-base has-background-white p-6 is-fullheight is-radius-2xlarge transition-all has-hover-lift has-hover-shadow-medium has-border">
+  {{ if $card.icon }}
+  <div class="is-flex is-align-items-center mb-8">
+    <div class="is-flex is-align-items-center is-justify-content-center is-radius-xlarge has-background-{{ $color }} shadow-sm vibrant-icon-box"
+      style="width: 52px; height: 52px; {{ if $card.icon_bg }}background-color: {{ $card.icon_bg }} !important;{{ end }}">
+      <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="26" height="26" class="has-text-white"></iconify-icon>
+    </div>
+  </div>
+  {{ end }}
+  <h4 class="is-size-4-desktop is-size-5-tablet has-text-weight-bold mb-4 has-text-grey-900 has-line-height-tight has-tracking-tight">{{ $card.title }}</h4>
+  <p class="is-size-6 has-text-grey-500 has-line-height-relaxed">
+    {{ $card.description }}
+  </p>
+</div>
+
+{{ else if eq $type "compact" }}
+<!-- Compact Feature Card (Used in Platform Features) -->
+<div class="ac-feature-compact ds-card-base ds-card-hover p-8 is-fullheight has-background-white is-radius-xlarge transition-all">
+  <div class="is-flex is-align-items-flex-start has-gap-5">
+    {{ if $card.icon }}
+    <div class="is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large has-background-primary-soft has-text-primary"
+      style="width: 48px; height: 48px; {{ if $card.icon_bg }}background-color: {{ $card.icon_bg }} !important;{{ end }}">
+      <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="24" height="24"></iconify-icon>
+    </div>
+    {{ end }}
+    <div class="feature-content">
+      <h4 class="has-text-heading has-line-height-tight has-text-weight-black is-size-6 mb-2 has-line-height-snug has-text-grey-900 is-fullheight">{{ $card.title }}</h4>
+      <p class="is-text-sm has-text-grey-600 has-line-height-normal">{{ $card.description }}</p>
+    </div>
+  </div>
+</div>
+
+{{ else if eq $type "benefit-scale" }}
+<!-- Built For Scale Benefit Card -->
+<div class="ac-feature-benefit-scale p-6 is-radius-2xlarge has-background-white has-border h-full transition-all has-hover-lift is-fullheight" style="border-color: #e2e8f0;">
+  <div class="is-flex is-align-items-center has-gap-6 mb-8">
+    {{ if $card.icon }}
+    <div class="has-size-14 is-radius-2xlarge has-background-gradient-primary is-flex is-align-items-center is-justify-content-center is-flex-shrink-0">
+      <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="28" style="color: white;"></iconify-icon>
+    </div>
+    {{ end }}
+    <div class="is-flex-grow-1">
+      <h3 class="is-size-4 has-text-weight-black mb-2 has-text-grey-900">{{ $card.title }}</h3>
+      <p class="is-size-6 has-opacity-70 has-text-grey-600 has-line-height-normal">{{ $card.description }}</p>
+    </div>
+  </div>
+  {{ if $card.benefits }}
+  <div class="is-flex is-flex-direction-column has-gap-4">
+    {{ range $card.benefits }}
+    <div class="is-flex is-align-items-center has-gap-3">
+      <iconify-icon icon="heroicons:check-circle" width="20" class="has-text-success"></iconify-icon>
+      <span class="is-text-base has-text-weight-semibold has-text-grey-700" style="font-size: 0.95rem;">{{ . }}</span>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ if and $card.show_cta_in_card $card.cta_text $card.cta_href }}
+  <div class="mt-6">
+    <a href="{{ $card.cta_href }}" class="{{ printf `button is-%s is-fullwidth height-50` ($card.cta_style | default "primary") }}">
+      {{ if $card.cta_icon }}
+      <iconify-icon {{ printf "icon=%q" $card.cta_icon | safeHTMLAttr }} width="16" height="16"></iconify-icon>
+      {{ end }}
+      <span>{{ $card.cta_text }}</span>
+      <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+    </a>
+  </div>
+  {{ end }}
+</div>
+{{ else if eq $type "centered" }}
+<!-- Centered Feature Card (Used in Use Cases) -->
+<div class="ac-feature-centered has-text-centered p-6 h-full transition-all hover-translate-up">
+  {{ if $card.icon }}
+  <div class="is-flex is-justify-content-center mb-8">
+    <div class="ds-icon-box shadow-lg is-flex is-align-items-center is-justify-content-center has-background-{{ $color }}"
+      style="width: 72px; height: 72px; border-radius: 20px; {{ if $card.icon_bg }}background-color: {{ $card.icon_bg }} !important;{{ end }}">
+      <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="36" height="36" style="color: white"></iconify-icon>
+    </div>
+  </div>
+  {{ end }}
+  <h3 class="is-size-4 has-text-weight-black mb-4 has-text-grey-900">{{ $card.title }}</h3>
+  <p class="has-text-body is-size-6 has-line-height-relaxed has-text-grey-600">
+    {{ $card.description }}
+  </p>
+</div>
+
+{{ else if eq $type "horizontal-check" }}
+<!-- Horizontal Check Card (Used in Why Not Cloud DBaaS) -->
+<div class="ac-feature-horizontal-check p-8 is-radius-2xlarge has-border h-full transition-all hover:has-background-grey-50" 
+     style="background: rgba(248, 250, 252, 0.5); border-color: #e2e8f0;">
+  <div class="is-flex is-align-items-start has-gap-4">
+     <div class="is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large has-background-primary-soft"
+          style="width: 40px; height: 40px;">
+       <iconify-icon icon="lucide:check-circle-2" width="20" class="has-text-info"></iconify-icon>
+     </div>
+     <div>
+       <h3 class="is-size-5 has-text-weight-black mb-2 has-text-grey-900">{{ $card.title }}</h3>
+       <p class="is-size-6 has-text-grey-600 has-line-height-normal">{{ $card.description }}</p>
+     </div>
+  </div>
+</div>
+{{ else if eq $type "cost-effective" }}
+<!-- Cost-Effective Card (Used in Cost Comparison) -->
+<div class="ac-feature-cost-effective ds-card-base is-radius-2xlarge p-6 is-fullheight has-border transition-all has-hover-lift has-hover-shadow-medium"
+  style="background-color: hsl(var(--ds-primary) / 0.04); border-color: hsl(var(--ds-primary) / 0.15);">
+  <div class="is-flex is-align-items-flex-start has-gap-4">
+    <div class="is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large has-background-primary"
+      style="width: 44px; height: 44px;">
+      <iconify-icon {{ printf "icon=%q" ($card.icon | default "lucide:check-circle-2") | safeHTMLAttr }} width="24" height="24" class="has-text-white"></iconify-icon>
+    </div>
+    <div class="is-flex-grow-1">
+      <h4 class="is-size-5 has-text-weight-bold has-text-grey-900 has-line-height-tight mb-2">{{ $card.title }}</h4>
+      <p class="is-text-sm has-text-grey-600 has-line-height-normal mb-4">{{ $card.description }}</p>
+      {{ with $card.highlight }}
+      <span class="is-inline-flex is-align-items-center has-text-weight-bold is-size-7 has-text-primary"
+        style="background-color: hsl(var(--ds-primary) / 0.12); padding: 6px 12px; border-radius: 8px;">
+        {{ . }}
+      </span>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ else if eq $type "persona" }}
+<!-- Persona / Team Benefit Card -->
+<div class="ac-feature-persona p-6 is-radius-2xlarge has-background-white has-border is-fullheight transition-all has-hover-lift has-hover-shadow-xl" 
+     style="border-color: #e2e8f0; position: relative; overflow: hidden;">
+  
+  {{ if .color_soft }}
+  <!-- Subtle backdrop gradient per persona -->
+  <div style="position: absolute; top: 0; right: 0; width: 120px; height: 120px; background: {{ (printf "radial-gradient(circle at top right, %s, transparent 70%%)" .color_soft) | safeCSS }};"></div>
+  {{ end }}
+
+  {{ if $card.icon }}
+  <div class="is-flex is-align-items-center is-justify-content-center is-radius-2xlarge mb-10 shadow-md"
+    {{ if .color_gradient }}style="width: 72px; height: 72px; background: {{ .color_gradient | safeCSS }};"{{ else }}style="width: 72px; height: 72px; background: linear-gradient(135deg, #3b82f6, #06b6d4);"{{ end }}>
+    <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="36" style="color: white;"></iconify-icon>
+  </div>
+  {{ end }}
+  
+  <h3 class="is-size-4 has-text-weight-black mb-2 has-text-grey-900" style="letter-spacing: -0.03em;">{{ $card.team | default $card.title }}</h3>
+  <p class="is-text-sm has-text-grey-600 has-line-height-normal mb-5">{{ $card.description }}</p>
+  
+  {{ if $card.benefits }}
+  <div class="is-flex is-flex-direction-column has-gap-5">
+    {{ range $card.benefits }}
+    <div class="is-flex is-align-items-start has-gap-4">
+      <div class="is-flex is-align-items-center is-justify-content-center is-radius-rounded mt-1" style="width: 22px; height: 22px; background: #f0fdf4; border: 1px solid #dcfce7;">
+         <iconify-icon icon="heroicons:check" width="14" style="color: #10b981; font-weight: bold;"></iconify-icon>
+      </div>
+      <span class="is-text-base has-text-weight-bold has-text-grey-700" style="line-height:1.4;">{{ . }}</span>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}

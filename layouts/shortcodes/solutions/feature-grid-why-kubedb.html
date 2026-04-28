@@ -1,0 +1,36 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.why_kubedb_features }}
+<section class="home-section section-padding">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $data.why_kubedb_title
+      "subtitle" $data.why_kubedb_subtitle
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+
+    <div class="columns is-multiline">
+      {{ range $data.why_kubedb_features }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ if eq $data_id "white-labeled-dbaas" }}
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "persona") }}
+        {{ else }}
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+
+    {{ if $data.why_kubedb_note }}
+    <div class="mt-12 p-6 is-radius-2xl has-text-centered has-background-warning-softer has-border-warning-light">
+      <p class="has-text-grey-700">
+        {{ $data.why_kubedb_note | safeHTML }}
+      </p>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,44 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.comparison_table }}
+<section class="home-section section-padding has-background-white pt-0">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $data.comparison_title
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+
+    <div class="columns is-centered">
+      <div class="column is-12">
+        <div class="saas-comparison-table shadow-2xl">
+          <table class="table is-fullwidth is-hoverable mb-0">
+            <thead>
+              <tr>
+                <th class="has-text-grey-900">{{ $data.comparison_header_1 | default "Requirement" }}</th>
+                <th class="has-text-grey-900">{{ $data.comparison_header_2 | default "Cloud DBaaS" }}</th>
+                <th class="has-text-white" style="background: {{ $p_color }};">
+                  {{ $data.comparison_header_3 | default "KubeDB DBaaS" }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {{ range $data.comparison_table.rows }}
+              <tr>
+                <td class="has-text-weight-bold has-text-grey-900">{{ index . 0 }}</td>
+                <td class="has-text-grey-600">{{ index . 1 }}</td>
+                <td class="highlight-col is-size-5-desktop">
+                  {{ index . 2 | safeHTML }}
+                </td>
+              </tr>
+              {{ end }}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

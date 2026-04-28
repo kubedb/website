@@ -1,0 +1,16 @@
+{{ $card := .card }}
+{{ $showDetails := .showDetails | default false }}
+{{ $logoMaxHeight := .logoMaxHeight | default "4rem" }}
+{{ $minHeight := .minHeight | default "" }}
+
+<a href="{{ $card.url }}" target="_blank" rel="noopener noreferrer"
+   class="ds-card-base is-radius-xlarge {{ if $showDetails }}p-8 has-text-centered is-flex is-flex-direction-column is-align-items-center{{ else }}p-6 is-flex is-align-items-center is-justify-content-center{{ end }} has-transition has-hover-lift has-no-underline"
+   {{ if $minHeight }}style="min-height:{{ $minHeight }};"{{ end }}>
+  <div class="is-flex is-align-items-center is-justify-content-center {{ if $showDetails }}has-height-20 mb-4{{ end }}">
+    <img src="{{ $card.logo }}" alt="{{ $card.name }}" class="is-fullwidth is-object-contain" style="max-height:{{ $logoMaxHeight }};">
+  </div>
+  {{ if $showDetails }}
+  <div class="heading-sm has-text-heading mb-1">{{ $card.name }}</div>
+  <div class="body-md has-text-grey-500">{{ $card.description }}</div>
+  {{ end }}
+</a>

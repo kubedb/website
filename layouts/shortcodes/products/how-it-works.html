@@ -1,0 +1,78 @@
+{{ $data := partial "products/page-data.html" . }}
+{{ if $data.how_it_works_infra }}
+{{ $howItWorksFooter := $data.how_it_works_footer | default "Your infrastructure; Your control; Your data sovereignty" }}
+{{ $howItWorksFooter = replaceRE "\\s*[•·]\\s*" " • " $howItWorksFooter }}
+{{ $howItWorksFooter = replaceRE "\\s*;\\s*" " • " $howItWorksFooter }}
+<section class="home-section section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.how_it_works_title | default "You Own The Infrastructure")
+      "subtitle" $data.how_it_works_subtitle
+      "align" "center"
+      "class" "mb-16"
+      "subtitle_class" "has-text-grey-500"
+    ) }}
+
+    <div class="columns">
+      <div class="column is-6">
+        <div class="is-flex is-align-items-center mb-8">
+          <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-4 infra-box-blue">
+            {{ if $data.how_it_works_infra.icon }}
+            <iconify-icon {{ printf "icon=%q" $data.how_it_works_infra.icon | safeHTMLAttr }} width="28" class="has-text-info"></iconify-icon>
+            {{ else }}
+            <iconify-icon icon="lucide:inbox" width="28" class="has-text-info"></iconify-icon>
+            {{ end }}
+          </div>
+          <h3 class="is-size-4 has-text-weight-black has-text-grey-900">{{ $data.how_it_works_infra.title | default "You Bring:" }}</h3>
+        </div>
+        <div class="is-flex is-flex-direction-column has-gap-4">
+          {{ range $data.how_it_works_infra.items }}
+          <div class="is-flex is-align-items-center p-5 is-radius-large has-border has-transition has-hover-shadow-small has-background-white">
+            <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-5 has-background-grey-100 infra-item-icon-box">
+              {{ if .icon }}
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="22" class="has-text-grey-500"></iconify-icon>
+              {{ end }}
+            </div>
+            <span class="is-text-base has-text-weight-black has-text-grey-900">{{ .text }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="is-flex is-align-items-center mb-8">
+          <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-4 infra-box-indigo">
+            {{ if $data.how_it_works_software.icon }}
+            <iconify-icon {{ printf "icon=%q" $data.how_it_works_software.icon | safeHTMLAttr }} width="28" class="has-text-info"></iconify-icon>
+            {{ else }}
+            <iconify-icon icon="lucide:sparkles" width="28" class="has-text-info"></iconify-icon>
+            {{ end }}
+          </div>
+          <h3 class="is-size-4 has-text-weight-black has-text-grey-900">{{ $data.how_it_works_software.title | default "KubeDB Provides:" }}</h3>
+        </div>
+        <div class="is-flex is-flex-direction-column has-gap-4">
+          {{ range $data.how_it_works_software.items }}
+          <div class="is-flex is-align-items-center p-5 is-radius-large has-border has-transition has-hover-shadow-small has-background-white">
+            <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-5 infra-box-indigo-small">
+              {{ if .icon }}
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="22"></iconify-icon>
+              {{ else }}
+              <iconify-icon icon="lucide:check-circle-2" width="22"></iconify-icon>
+              {{ end }}
+            </div>
+            <span class="is-text-base has-text-weight-black has-text-grey-900">{{ .text }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 has-text-centered">
+      <div class="badge badge-success-soft has-background-success-soft">
+        <iconify-icon icon="lucide:check-circle" width="20" class="has-text-success"></iconify-icon>
+        <span class="is-size-6 has-text-weight-bold has-text-grey-800">{{ $howItWorksFooter | safeHTML }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

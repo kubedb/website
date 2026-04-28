@@ -1,0 +1,25 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ if or $data.messages_title $data.messages_subtitle }}
+<section class="pb-12 has-background-white">
+  <div class="container">
+    <div class="ac-message-card ds-card-base p-6 is-radius-2xlarge has-background-white has-border">
+      <div class="is-flex is-align-items-flex-start has-gap-4">
+        {{ if $data.message_icon }}
+        <div class="is-flex is-align-items-center is-justify-content-center is-radius-large has-background-primary-soft has-text-primary is-flex-shrink-0" style="width: 48px; height: 48px;">
+          <iconify-icon {{ printf "icon=%q" $data.message_icon | safeHTMLAttr }} width="24" height="24"></iconify-icon>
+        </div>
+        {{ end }}
+        <div>
+          {{ if $data.messages_title }}
+          <h3 class="is-size-4 has-text-weight-black has-text-grey-900 mb-3">{{ $data.messages_title }}</h3>
+          {{ end }}
+          {{ if $data.messages_subtitle }}
+          <p class="is-size-6 has-text-grey-600 has-line-height-relaxed">{{ $data.messages_subtitle }}</p>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

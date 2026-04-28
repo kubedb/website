@@ -1,0 +1,19 @@
+{{ $card := .card }}
+
+<div class="ac-industry-card ds-card-base has-background-white p-6 is-fullheight is-radius-2xlarge transition-all has-hover-lift has-hover-shadow-medium has-border">
+  <h4 class="is-size-5-desktop has-text-weight-bold mb-2 has-text-grey-900 has-line-height-tight has-tracking-tight">{{ $card.title }}</h4>
+  <p class="is-text-sm has-text-grey-500 has-line-height-relaxed mb-5">{{ $card.description }}</p>
+
+  {{ if $card.stats }}
+  <div class="columns is-multiline is-mobile">
+    {{ range $card.stats }}
+    <div class="column is-6">
+      <div class="has-background-grey-50 is-radius-large p-4 is-fullheight">
+        <p class="has-text-grey-500 is-size-7 mb-1">{{ .label }}</p>
+        <p class="has-text-grey-900 has-text-weight-bold is-size-6">{{ .value }}</p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>

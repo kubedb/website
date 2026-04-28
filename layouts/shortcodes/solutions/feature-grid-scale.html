@@ -1,0 +1,25 @@
+{{ $data_id := .Page.Params.data_id }}
+{{ $data := partial "solutions/page-data.html" . }}
+{{ $p_color := $data.product_color_primary | default "#4948a3" }}
+{{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
+{{ if $data.platform_built_for_scale }}
+<section class="home-section section-padding team-benefits-section">
+  <div class="container">
+    <div class="section-header has-text-centered mb-16">
+      <h2 class="section-header-title has-text-weight-black is-size-2-desktop has-tracking-tighter">{{ $data.platform_built_for_scale_title }}</h2>
+      <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.platform_built_for_scale_subtitle }}</p>
+    </div>
+    <div class="columns is-multiline">
+      {{ range $data.platform_built_for_scale }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ if eq $data_id "white-labeled-dbaas" }}
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "persona" "color_soft" .color_soft "color_gradient" .color_gradient) }}
+        {{ else }}
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

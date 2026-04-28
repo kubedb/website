@@ -1,0 +1,36 @@
+{{ $d := index $.Site.Data.products.kubedb.homepage "deployment-flexibility" }}
+
+<section class="home-section home-section-white">
+  <div class="container">
+    <div class="card-wrap ds-card-base">
+      <div class="card-wrap-blob card-wrap-blob-tl"></div>
+      <div class="card-wrap-blob card-wrap-blob-br"></div>
+
+      <div class="section-header">
+        <div class="badge">
+          <iconify-icon icon="heroicons:cloud" width="16" height="16" style="color:#4948A3;"></iconify-icon>
+          <span class="badge-text">{{ $d.badge }}</span>
+        </div>
+        <h2 class="section-header-title">
+          {{ $d.title_plain }}<br>
+          <span class="text-gradient">{{ $d.title_gradient }}</span>
+        </h2>
+        <p class="section-header-desc">{{ $d.description }}</p>
+      </div>
+
+      <div class="columns is-multiline is-variable">
+        {{ range $index, $feature := $d.features }}
+        <div class="column is-3-widescreen is-6-desktop is-6-tablet">
+          <div class="feature-card ds-card-base is-fullheight{{ if $feature.card_class }} {{ $feature.card_class }}{{ end }}">
+            <div class="feature-card-icon feature-card-icon-deploy-{{ $index }} mb-4">
+              {{ printf `<iconify-icon icon="%s" width="28" height="28"></iconify-icon>` $feature.icon | safeHTML }}
+            </div>
+            <h3 class="feature-card-title has-text-heading is-text-base has-text-weight-extrabold mb-2">{{ $feature.title }}</h3>
+            <p class="feature-card-desc has-text-body is-text-base">{{ $feature.desc }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
