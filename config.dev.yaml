@@ -257,31 +257,31 @@ menu:
     identifier: alliance-partners
     parent: partners
     weight: 11
-    url: /partner/alliance-partners/
+    url: /partner/#alliance
     post: Strategic technology alliances
   - name: Channel Resources
     identifier: channel-resources
     parent: partners
     weight: 12
-    url: /partner/channel-resources/
+    url: /partner/#channel-resources
     post: Partner resources and materials
   - name: Channel Partners
     identifier: channel-partners
     parent: partners
     weight: 13
-    url: /partner/channel-partners/
+    url: /partner/#channel-partners
     post: Reseller partnership program
   - name: Deal Registration
     identifier: deal-registration
     parent: partners
     weight: 14
-    url: /partner/deal-registration/
+    url: /partner/#deal-registration
     post: Register and protect your deals
   - name: Managed Service Providers
     identifier: managed-service-providers
     parent: partners
     weight: 15
-    url: /partner/managed-service-providers/
+    url: /partner/#msp
     post: MSP partnership opportunities
 markup:
   goldmark:
