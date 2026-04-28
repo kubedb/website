@@ -143,7 +143,8 @@
   </div>
   {{ end }}
   
-  <h3 class="is-size-4 has-text-weight-black mb-8 has-text-grey-900" style="letter-spacing: -0.03em;">{{ $card.team | default $card.title }}</h3>
+  <h3 class="is-size-4 has-text-weight-black mb-2 has-text-grey-900" style="letter-spacing: -0.03em;">{{ $card.team | default $card.title }}</h3>
+  <p class="is-text-sm has-text-grey-600 has-line-height-normal mb-5">{{ $card.description }}</p>
   
   {{ if $card.benefits }}
   <div class="is-flex is-flex-direction-column has-gap-5">

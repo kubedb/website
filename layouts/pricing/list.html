@@ -14,7 +14,7 @@
 			</p>
 			<h1 class="is-2 has-text-weight-black has-text-heading mb-2">{{ $pricing.hero.title }}</h1>
 			<p class="is-5 mx-auto has-max-width-lg is-text-base has-text-body">
-				{{ $pricing.hero.subtitle }}
+				{{ $pricing.hero.subtitle | safeHTML }}
 			</p>
 		</div>
 	</section>
@@ -142,7 +142,7 @@
 				{{ end }}
 			</div>
 			{{ with $pricing.support_plans.footer_note }}
-			<p class="has-text-centered psc-footer-note mt-24 is-text-sm has-text-body">{{ . }}</p>
+			<p class="has-text-centered psc-footer-note mt-24 is-text-sm has-text-body">{{ . | safeHTML }}</p>
 			{{ end }}
 		</div>
 	</section>
