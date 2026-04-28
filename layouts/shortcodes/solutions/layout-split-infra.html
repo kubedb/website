@@ -2,9 +2,7 @@
 {{ $data := partial "solutions/page-data.html" . }}
 {{ $p_color := $data.product_color_primary | default "#4948a3" }}
 {{ $cta_bg := $data.cta_bg_color | default "#1e1b4b" }}
-{{ $howItWorksSummary := $data.how_it_works_summary | default "Your infrastructure &bull; Your control &bull; Your data sovereignty" }}
-{{ $howItWorksSummary = replaceRE "\\s*[•·]\\s*" " &bull; " $howItWorksSummary }}
-{{ $howItWorksSummary = replaceRE "\\s*;\\s*" " &bull; " $howItWorksSummary }}
+{{ $howItWorksSummary := $data.how_it_works_summary | default "Your infrastructure • Your control • Your data sovereignty" }}
 {{ if $data.how_it_works_infra }}
 <section class="home-section section-padding has-background-white">
   <div class="container">
