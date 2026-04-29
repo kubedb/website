@@ -254,11 +254,18 @@
     window.scrollTo({ behavior: 'smooth', top: top });
   });
 
-  // Support deep-linking via URL hash (e.g. /partner/#channel-partners)
-  var hash = window.location.hash.replace('#', '');
-  if (hash) {
-    var target = document.querySelector('[data-tab="' + hash + '"]');
-    if (target) activateTab(target, true);
+  function activateFromHash(scroll) {
+    var hash = window.location.hash.replace('#', '');
+    if (hash) {
+      var target = document.querySelector('[data-tab="' + hash + '"]');
+      if (target) activateTab(target, scroll);
+    }
   }
+
+  // Support deep-linking on page load
+  activateFromHash(true);
+
+  // Support hash changes while already on the page (e.g. clicking nav links)
+  window.addEventListener('hashchange', function () { activateFromHash(true); });
 })();
 </script>
