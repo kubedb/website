@@ -75,12 +75,12 @@
 
 <div id="partner-tab">
 {{/* Sticky tab navigation */}}
-<div class="partner-tabs-nav-wrap is-sticky has-top-0 has-z-index-30 has-background-white has-shadow-small">
+<div class="partner-tabs-nav-wrap is-sticky has-z-index-30 has-background-grey-50" style="top: 60px;">
   <div class="container">
-    <div class="is-flex is-align-items-center has-gap-3 is-overflow-x-auto py-4">
+    <div class="is-flex is-align-items-center is-justify-content-center has-gap-3 is-overflow-x-auto py-4">
       {{ range $i, $tab := $tabs }}
       <button
-        class="partner-tab-btn is-inline-flex is-align-items-center is-radius-xlarge px-6 py-3 is-text-sm has-text-weight-bold has-border-0 has-cursor-pointer is-uppercase has-letter-spacing-wide{{ if eq $i 0 }} has-background-gradient-primary has-text-white{{ else }} has-background-grey-100 has-text-grey-800{{ end }}"
+        class="button height-48 is-rounded{{ if eq $i 0 }} is-primary{{ else }} is-outlined{{ end }}"
         data-tab="{{ $tab.id }}"
         type="button"
       >
@@ -213,17 +213,17 @@
 <script>
 (function () {
   var panelBlock = document.getElementById('partner-tab');
-  var btns = document.querySelectorAll('.partner-tab-btn');
+  var btns = document.querySelectorAll('[data-tab]');
   var panels = document.querySelectorAll('.partner-tab-panel');
 
   function activateTab(btn, scroll) {
     btns.forEach(function (b) {
-      b.classList.remove('has-background-gradient-primary', 'has-text-white');
-      b.classList.add('has-background-grey-100', 'has-text-grey-800');
+      b.classList.remove('is-primary');
+      b.classList.add('is-outlined');
     });
     panels.forEach(function (p) { p.style.display = 'none'; });
-    btn.classList.add('has-background-gradient-primary', 'has-text-white');
-    btn.classList.remove('has-background-grey-100', 'has-text-grey-800');
+    btn.classList.add('is-primary');
+    btn.classList.remove('is-outlined');
     var tab = btn.getAttribute('data-tab');
     var panel = document.getElementById('partner-tab-' + tab);
     if (panel) panel.style.display = 'block';
