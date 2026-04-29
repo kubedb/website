@@ -39,20 +39,20 @@ menu:
   - name: Products
     identifier: products
     weight: 1
-  - name: KubeDB Operator
+  - name: Run Databases Natively on Kubernetes
     identifier: kubedb-operator
     parent: products
     weight: 1
     url: /products/kubedb-operator/
     pre: lucide:container
-    title: Run Databases Natively on Kubernetes
-  - name: KubeDB Platform
+    title: KubeDB Operator
+  - name: DBaaS Platform for Enterprises, MSPs, and CSPs
     identifier: kubedb-platform
     parent: products
     weight: 2
     url: /products/kubedb-platform/
     pre: lucide:cloud
-    title: DBaaS Platform for Enterprises, MSPs, and CSPs
+    title: KubeDB Platform
   - name: Solutions
     identifier: solutions
     weight: 2
