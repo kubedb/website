@@ -73,7 +73,7 @@
 </section>
 {{ end }}
 
-<div id="partner-tab">
+<div id="partner-tab" class="section-padding !pb-0 has-background-grey-50">
 {{/* Sticky tab navigation */}}
 <div class="partner-tabs-nav-wrap is-sticky has-z-index-30 has-background-grey-50" style="top: 60px;">
   <div class="container">
@@ -98,7 +98,7 @@
 
   {{/* Partnership Opportunities */}}
   {{ with $d.partnership_types }}
-  <section class="section-padding has-background-grey-50">
+  <section class="section-padding has-background-grey-50 !pt-30">
     <div class="container">
       {{ partial "common-sections/section-header.html" (dict
         "title" .title

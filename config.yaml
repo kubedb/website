@@ -360,7 +360,7 @@ menu:
     identifier: alliance-partners
     parent: partners
     weight: 11
-    url: /partner/#alliance
+    url: /partner
     post: Strategic technology alliances
   - name: Channel Resources
     identifier: channel-resources
