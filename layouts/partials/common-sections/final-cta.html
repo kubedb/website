@@ -53,10 +53,10 @@
             <div class="columns is-multiline is-variable is-4 w-full">
               {{ $metrics := $data.final_cta_metrics | default $data.cta_stats }}
               {{ if not $metrics }}
-                {{ $metrics = slice 
-                   (dict "icon" "lucide:database" "value" "30+" "label" "Databases" "gradient" "linear-gradient(135deg, #6366f1, #a855f7)")
-                   (dict "icon" "lucide:trending-up" "value" "10K+" "label" "Active Users" "gradient" "linear-gradient(135deg, #4ade80, #10b981)")
-                   (dict "icon" "lucide:shield-check" "value" "99.9%" "label" "Uptime SLA" "gradient" "linear-gradient(135deg, #fb923c, #ef4444)")
+                {{ $metrics = slice
+                   (dict "icon" "lucide:database" "value" "25+" "label" "DB Engines" "gradient" "linear-gradient(135deg, #6366f1, #a855f7)")
+                   (dict "icon" "lucide:trending-up" "value" "10K+" "label" "Active Databases" "gradient" "linear-gradient(135deg, #4ade80, #10b981)")
+                   (dict "icon" "lucide:shield-check" "value" "99.9%" "label" "Response SLA" "gradient" "linear-gradient(135deg, #fb923c, #ef4444)")
                    (dict "icon" "lucide:check-circle" "value" "24/7" "label" "Expert Support" "gradient" "linear-gradient(135deg, #a855f7, #ec4899)")
                 }}
               {{ end }}
