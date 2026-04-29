@@ -303,6 +303,41 @@ menu:
     parent: database
     weight: 24
     pre: /assets/images/databases/logos/png/zookeepers.png
+  - name: DB2
+    identifier: db2
+    parent: database
+    weight: 25
+    pre: /assets/images/databases/logos/png/db2s.png
+  - name: DocumentDB
+    identifier: documentdb
+    parent: database
+    weight: 26
+    pre: /assets/images/databases/logos/png/documentdbs.png
+  - name: HanaDB
+    identifier: hanadb
+    parent: database
+    weight: 27
+    pre: /assets/images/databases/logos/png/hanadbs.png
+  - name: Milvus
+    identifier: milvus
+    parent: database
+    weight: 28
+    pre: /assets/images/databases/logos/png/milvuss.png
+  - name: Neo4j
+    identifier: neo4j
+    parent: database
+    weight: 29
+    pre: /assets/images/databases/logos/png/neo4js.png
+  - name: Qdrant
+    identifier: qdrant
+    parent: database
+    weight: 30
+    pre: /assets/images/databases/logos/png/qdrants.png
+  - name: Weaviate
+    identifier: weaviate
+    parent: database
+    weight: 31
+    pre: /assets/images/databases/logos/png/weaviates.png
   - name: Amazon EKS
     identifier: amazon-eks
     parent: partners
