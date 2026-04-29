@@ -13,22 +13,22 @@
   },
   "keywords": "kubernetes, hashicorp vault, vault kubernetes, appscode, vault secret, certificates, security, access tokens, tls, secret engines, user management",
   "heroImage": {
-    "src": "https://cdn.appscode.com/images/products/kubevault/kubevault-hero.png",
+    "src": "/assets/images/products/kubevault/kubevault-hero.png",
     "alt": "KubeVault"
   },
   "logo": {
-    "src": "https://cdn.appscode.com/images/products/kubevault/kubevault.png",
+    "src": "/assets/images/products/kubevault/kubevault.png",
     "alt": "KubeVault"
   },
   "logoWhite": {
-    "src": "https://cdn.appscode.com/images/products/kubevault/kubevault-white.png",
+    "src": "/assets/images/products/kubevault/kubevault-white.png",
     "alt": "KubeVault"
   },
   "icon": {
-    "src": "https://cdn.appscode.com/images/products/kubevault/kubevault-icon.svg",
+    "src": "/assets/images/products/kubevault/kubevault-icon.svg",
     "alt": "KubeVault",
     "sizes": {
-      "192x192": "https://cdn.appscode.com/images/products/kubevault/icons/android-icon-192x192.png"
+      "192x192": "/assets/images/products/kubevault/icons/android-icon-192x192.png"
     }
   },
   "repoURL": "https://github.com/kubevault/kubevault",
