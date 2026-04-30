@@ -1,0 +1,218 @@
+{{ define "main" }}
+
+{{ $p := (index .Site.Data.products (default .Site.Params.product_key .Params.info.product)) }}
+{{ $data:=""}}
+{{ if .Params.data }}
+  {{ $data = getJSON .Params.data }}
+{{ end }}
+
+{{ with $data }}
+<!-- ==========================new hero area start ==========================   -->
+<!-- style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);" -->
+<section class="hero-area is-product is-overview {{.id}}">
+  <div class="shape">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
+  <div class="shape">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div class="container">
+    <div class="columns is-vcentered is-multiline">
+      <div class="column is-6 is-full-touch">
+        <h1>{{.title | markdownify }}</h1>
+        <p>{{.summary | markdownify }}</p>
+        
+        {{- $hideGuides := in (slice "hanadb" "db2" "documentdb" "neo4j" "weaviate" "qdrant" "milvus") .id -}}
+        {{- if not $hideGuides }}
+        <div class="buttons">
+            {{- /* Determine helper variables for clarity */ -}}
+            {{- $latestVersion := $p.latestVersion -}}
+            {{- $hasAddons := gt (len (where site.Menus.main "Name" "Addons")) 0 -}}
+
+            {{- /* Decide whether to show Addons or Guides */ -}}
+            {{- $showAddons := or
+              (and $hasAddons (ne site.Params.product_key "kubestash"))
+              (and (eq site.Params.product_key "kubestash") (ne .id "kubedump"))
+            -}}
+
+            {{- /* Predeclare $page to avoid scoping issue */ -}}
+            {{- $page := "" -}}
+            {{- if eq .id "opensearch" -}}
+              {{- $page = "elasticsearch/quickstart/overview/opensearch" -}}
+            {{- else if eq .id "valkey" -}}
+              {{- $page = "redis/quickstart/overview/valkey" -}}
+            {{- else -}}
+              {{- $page = .id -}}
+            {{- end -}}
+
+            {{- /* Determine overview part if needed */ -}}
+            {{- $overview := cond (eq .id "kubedump") "overview/" "" -}}
+
+            <a
+              href="/docs/{{ $latestVersion }}/{{ if $showAddons }}addons{{ else }}guides{{ end }}/{{ $page }}/{{ $overview }}"
+              class="button ac-button is-primary"
+            >
+              USER GUIDES
+            </a>
+        </div>
+        {{- end }}
+      </div>
+      <div class="column is-6 is-full-touch">
+        <div class="hero-area-right">
+          <!-- code editor start  -->
+          <div class="hero-area-code-editor">
+            <div class="editor-header">
+              <span class="action close"></span>
+              <span class="action maximize"></span>
+              <span class="action minimize"></span>
+            </div>
+            {{ highlight (transform.Remarshal "yaml" .example) "yaml" "lineNos=inline, style=dracula" }}
+          </div>
+        </div>
+        <!-- code editor end  -->
+        <!-- <img src="/assets/images/products/kubedb/hero-right-image.png" alt=""> -->
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- ========================== new hero area end ==========================  -->
+
+<!-- ========================== social prove logo area start ==========================  -->
+<div class="social-prove-brand-area">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-12">
+        <div class="brand-image-wrapper owl-carousel">
+          {{ range $customer := $.Site.Data.customers }}
+          {{ if $customer.show }}
+          <div class="single-brand"><img loading="lazy" src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--========================== social prove logo area end ==========================-->
+
+<!--========================== product features area start ========================== -->
+<section class="features-area mb-50">
+  <div class="container">
+    <!-- is-centered -->
+    <div class="columns is-multiline is-vcentered">
+
+      <!-- description content start  -->
+      <div class="column is-5">
+        <div class="features-description">
+          
+          <h1>{{ .title | markdownify }}</h1>
+
+          <p>{{.description | markdownify }}</p>
+
+        </div>
+      </div>
+      <!-- description content end  -->
+      <!-- features image start  -->
+      <div class="column is-5 is-offset-2-desktop">
+        <div class="features-image">
+          <ul class="check-list" data-aos="flip-left">
+            <h2 class="is-size-6 mb-15">Why Choose KubeDB?🤔</h2>
+            {{ range .features }}
+            <li>
+              <span class="icon"><img loading="lazy" src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span>
+            <span>{{.title}}</span>
+            </li>
+            {{ end }}
+
+          </ul>
+          <img loading="lazy" src="{{.hero}}" alt="{{.title}}">
+        </div>
+      </div>
+      <!-- features image end -->
+    </div>
+
+    <!-- features items start  -->
+    <div class="columns is-multiline is-centered">
+       <div class="line-shapes">
+         <div class="line line-1"></div>
+         <div class="line line-2"></div>
+         <div class="line line-3"></div>
+         <div class="line line-4"></div>
+         <div class="line line-5"></div>
+       </div>
+      <div class="column is-12">
+        {{ $odd:="true"}}
+        {{ range .features }}
+        <!-- single features start  -->
+        <div
+          class="columns is-multiline is-vcentered {{if eq $odd "false" }}is-flex-direction-row-reverse-mobile{{end}}">
+          {{ if eq $odd "true" }}
+          <div class="column is-6">
+            <div data-aos="flip-left"
+              class="features-thumbnail has-text-left">
+              <img loading="lazy" src="{{ .image }}" alt="{{.title}}">
+            </div>
+          </div>
+          {{ end }}
+          <div class="column is-6">
+            <h3>{{.title}}</h3>
+            <p>{{.description}}</p>
+          </div>
+          {{ if eq $odd "false" }}
+          <div class="column is-6" >
+            <div data-aos="flip-left" class="features-thumbnail has-text-right">
+              <img src="{{.image}}" alt="{{.title}}">
+            </div>
+          </div>
+          {{end}}
+
+          {{ if eq $odd "true"}}
+          {{ $odd = "false"}}
+          {{ else }}
+          {{ $odd = "true" }}
+          {{end}}
+        </div>
+        <!-- single features end  -->
+        {{ end }}
+      </div>
+
+    </div>
+    <!-- features items end -->
+  </div>
+</section>
+<!--========================== product features area end ==========================-->
+
+{{ with .legalNotice }}
+<!--========================== legal notice area start ==========================-->
+<section class="legal-notice-area ac-ui mb-50">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-12">
+        <div class="legal-notice has-background-warning-softer has-border-warning-light is-radius-xl p-6 has-shadow-small">
+          <div class="is-flex is-align-items-center has-gap-3 mb-3">
+            <span class="icon-box bg-grad-yellow has-size-8 is-flex is-align-items-center is-justify-content-center is-radius-md has-text-white has-text-weight-bold">!</span>
+            <h3 class="heading-md has-text-warning-dark m-0">Legal Notice</h3>
+          </div>
+          <p class="body-md has-text-grey-700 has-line-height-relaxed m-0">{{ . | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--========================== legal notice area end ==========================-->
+{{ end }}
+{{ end }}
+
+{{ end }}

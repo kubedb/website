@@ -9,8 +9,10 @@
   (dict "id" "nosql" "name" "NoSQL / Document" "desc" "Document and NoSQL engines")
   (dict "id" "inmemory" "name" "In-Memory / Cache" "desc" "High-speed caching and ephemeral data")
   (dict "id" "search" "name" "Search" "desc" "Full-text and search engines")
-  (dict "id" "analytics" "name" "Analytics" "desc" "Analytics and OLAP engines")
   (dict "id" "messaging" "name" "Messaging / Streaming" "desc" "Streaming and message brokers")
+  (dict "id" "analytics" "name" "Analytics" "desc" "Analytics and OLAP engines")
+  (dict "id" "vector" "name" "Vector" "desc" "Vector databases for AI and similarity search")
+  (dict "id" "graph" "name" "Graph" "desc" "Graph databases for connected data")
   (dict "id" "datagrid" "name" "In-Memory Data Grid" "desc" "Distributed data grid engines")
   (dict "id" "coordination" "name" "Coordination" "desc" "Cluster coordination and consensus")
   (dict "id" "proxy" "name" "Proxy / Pooler" "desc" "Connection poolers and proxies")
@@ -18,20 +20,23 @@
 
 {{ $databases := dict
   "relational" (slice
-    (dict "name" "PostgreSQL" "id" "postgres" "icon" "/assets/images/databases/logos/png/postgreses.png")
-    (dict "name" "MySQL" "id" "mysql" "icon" "/assets/images/databases/logos/png/mysqls.png")
+    (dict "name" "IBM DB2" "id" "db2" "icon" "/assets/images/databases/logos/png/db2s.png")
     (dict "name" "MariaDB" "id" "mariadb" "icon" "/assets/images/databases/logos/png/mariadbs.png")
     (dict "name" "Microsoft SQL Server" "id" "mssqlserver" "icon" "/assets/images/databases/logos/png/mssqlservers.png")
-    (dict "name" "Percona XtraDB" "id" "percona-xtradb" "icon" "/assets/images/databases/logos/png/perconaxtradbs.png")
+    (dict "name" "MySQL" "id" "mysql" "icon" "/assets/images/databases/logos/png/mysqls.png")
+    (dict "name" "Oracle" "id" "oracle" "icon" "/assets/images/databases/logos/png/oracles.png")
+    (dict "name" "PerconaXtraDB" "id" "percona-xtradb" "icon" "/assets/images/databases/logos/png/perconaxtradbs.png")
+    (dict "name" "PostgreSQL" "id" "postgres" "icon" "/assets/images/databases/logos/png/postgreses.png")
+    (dict "name" "SAP HanaDB" "id" "hanadb" "icon" "/assets/images/databases/logos/png/hanadbs.png")
   )
   "nosql" (slice
-    (dict "name" "MongoDB" "id" "mongodb" "icon" "/assets/images/databases/logos/png/mongodbs.png")
-    (dict "name" "FerretDB" "id" "ferretdb" "icon" "/assets/images/databases/logos/png/ferretdbs.png")
     (dict "name" "Cassandra" "id" "cassandra" "icon" "/assets/images/databases/logos/png/cassandras.png")
+    (dict "name" "DocumentDB" "id" "documentdb" "icon" "/assets/images/databases/logos/png/documentdbs.png")
+    (dict "name" "MongoDB" "id" "mongodb" "icon" "/assets/images/databases/logos/png/mongodbs.png")
   )
   "inmemory" (slice
-    (dict "name" "Redis" "id" "redis" "icon" "/assets/images/databases/logos/png/redises.png")
     (dict "name" "Memcached" "id" "memcached" "icon" "/assets/images/databases/logos/png/memcacheds.png")
+    (dict "name" "Redis" "id" "redis" "icon" "/assets/images/databases/logos/png/redises.png")
     (dict "name" "Valkey" "id" "valkey" "icon" "/assets/images/databases/logos/png/valkeys.png")
   )
   "search" (slice
@@ -39,14 +44,22 @@
     (dict "name" "OpenSearch" "id" "opensearch" "icon" "/assets/images/databases/logos/png/opensearch.png")
     (dict "name" "Solr" "id" "solr" "icon" "/assets/images/databases/logos/png/solrs.png")
   )
-  "analytics" (slice
-    (dict "name" "Druid" "id" "druid" "icon" "/assets/images/databases/logos/png/druids.png")
-    (dict "name" "ClickHouse" "id" "clickhouse" "icon" "/assets/images/databases/logos/png/clickhouses.png")
-    (dict "name" "SingleStore" "id" "singlestore" "icon" "/assets/images/databases/logos/png/singlestores.png")
-  )
   "messaging" (slice
     (dict "name" "Kafka" "id" "kafka" "icon" "/assets/images/databases/logos/png/kafkas.png")
     (dict "name" "RabbitMQ" "id" "rabbitmq" "icon" "/assets/images/databases/logos/png/rabbitmqs.png")
+  )
+  "analytics" (slice
+    (dict "name" "ClickHouse" "id" "clickhouse" "icon" "/assets/images/databases/logos/png/clickhouses.png")
+    (dict "name" "Druid" "id" "druid" "icon" "/assets/images/databases/logos/png/druids.png")
+    (dict "name" "SingleStore" "id" "singlestore" "icon" "/assets/images/databases/logos/png/singlestores.png")
+  )
+  "vector" (slice
+    (dict "name" "Milvus" "id" "milvus" "icon" "/assets/images/databases/logos/png/milvus.png")
+    (dict "name" "Qdrant" "id" "qdrant" "icon" "/assets/images/databases/logos/png/qdrants.png")
+    (dict "name" "Weaviate" "id" "weaviate" "icon" "/assets/images/databases/logos/png/weaviates.png")
+  )
+  "graph" (slice
+    (dict "name" "Neo4j" "id" "neo4j" "icon" "/assets/images/databases/logos/png/neo4js.png")
   )
   "datagrid" (slice
     (dict "name" "Hazelcast" "id" "hazelcast" "icon" "/assets/images/databases/logos/png/hazelcasts.png")
