@@ -150,7 +150,7 @@ menu:
     parent: database
     weight: 10
     pre: /assets/images/databases/logos/png/opensearch.png
-  - name: PerconaXtraDB
+  - name: Percona XtraDB
     identifier: percona-xtradb
     parent: database
     weight: 11
