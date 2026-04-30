@@ -322,7 +322,7 @@ menu:
     identifier: milvus
     parent: database
     weight: 28
-    pre: /assets/images/databases/logos/png/milvuss.png
+    pre: /assets/images/databases/logos/png/milvus.png
   - name: Neo4j
     identifier: neo4j
     parent: database
