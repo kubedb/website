@@ -13,9 +13,8 @@
   (dict "id" "analytics" "name" "Analytics" "desc" "Analytics and OLAP engines")
   (dict "id" "vector" "name" "Vector" "desc" "Vector databases for AI and similarity search")
   (dict "id" "graph" "name" "Graph" "desc" "Graph databases for connected data")
-  (dict "id" "datagrid" "name" "In-Memory Data Grid" "desc" "Distributed data grid engines")
-  (dict "id" "coordination" "name" "Coordination" "desc" "Cluster coordination and consensus")
   (dict "id" "proxy" "name" "Proxy / Pooler" "desc" "Connection poolers and proxies")
+  (dict "id" "coordination" "name" "Coordination" "desc" "Cluster coordination and consensus")
 }}
 
 {{ $databases := dict
@@ -25,7 +24,7 @@
     (dict "name" "Microsoft SQL Server" "id" "mssqlserver" "icon" "/assets/images/databases/logos/png/mssqlservers.png")
     (dict "name" "MySQL" "id" "mysql" "icon" "/assets/images/databases/logos/png/mysqls.png")
     (dict "name" "Oracle" "id" "oracle" "icon" "/assets/images/databases/logos/png/oracles.png")
-    (dict "name" "PerconaXtraDB" "id" "percona-xtradb" "icon" "/assets/images/databases/logos/png/perconaxtradbs.png")
+    (dict "name" "Percona XtraDB" "id" "percona-xtradb" "icon" "/assets/images/databases/logos/png/perconaxtradbs.png")
     (dict "name" "PostgreSQL" "id" "postgres" "icon" "/assets/images/databases/logos/png/postgreses.png")
     (dict "name" "SAP HanaDB" "id" "hanadb" "icon" "/assets/images/databases/logos/png/hanadbs.png")
   )
@@ -35,6 +34,8 @@
     (dict "name" "MongoDB" "id" "mongodb" "icon" "/assets/images/databases/logos/png/mongodbs.png")
   )
   "inmemory" (slice
+    (dict "name" "Hazelcast" "id" "hazelcast" "icon" "/assets/images/databases/logos/png/hazelcasts.png")
+    (dict "name" "Ignite" "id" "ignite" "icon" "/assets/images/databases/logos/png/ignites.png")
     (dict "name" "Memcached" "id" "memcached" "icon" "/assets/images/databases/logos/png/memcacheds.png")
     (dict "name" "Redis" "id" "redis" "icon" "/assets/images/databases/logos/png/redises.png")
     (dict "name" "Valkey" "id" "valkey" "icon" "/assets/images/databases/logos/png/valkeys.png")
@@ -60,10 +61,6 @@
   )
   "graph" (slice
     (dict "name" "Neo4j" "id" "neo4j" "icon" "/assets/images/databases/logos/png/neo4js.png")
-  )
-  "datagrid" (slice
-    (dict "name" "Hazelcast" "id" "hazelcast" "icon" "/assets/images/databases/logos/png/hazelcasts.png")
-    (dict "name" "Ignite" "id" "ignite" "icon" "/assets/images/databases/logos/png/ignites.png")
   )
   "coordination" (slice
     (dict "name" "ZooKeeper" "id" "zookeeper" "icon" "/assets/images/databases/logos/png/zookeepers.png")
