@@ -89,16 +89,13 @@
 {{ with $d.deal_registration }}
 <section class="section-padding has-background-white">
   <div class="container">
-    <div class="is-radius-2xlarge is-overflow-hidden has-text-centered has-text-white" style="background:linear-gradient(135deg,#4948A3,#7272e9); padding:5rem 2rem; position:relative;">
-      <div style="position:absolute;inset:0;opacity:0.1;background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:32px 32px;"></div>
-      <div style="position:relative;">
-        <h2 class="has-text-white has-text-weight-black mb-4" style="font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em;">{{ .title }}</h2>
-        <p class="mb-8 mx-auto has-line-height-relaxed" style="max-width:520px; font-size:1.1rem; color:rgba(255,255,255,0.85);">{{ .description }}</p>
-        <a href="{{ .cta_url | default "#" }}" class="button is-white has-text-weight-bold height-50 px-10 shadow-lg" style="color:#4948A3;">
-          {{ .cta_text }}
-          <iconify-icon icon="lucide:arrow-right" width="18" height="18" class="ml-2"></iconify-icon>
-        </a>
-      </div>
+    <div class="is-radius-2xlarge is-overflow-hidden has-text-centered has-text-white" style="background:linear-gradient(135deg,#4948A3,#7272e9); padding:4rem 3rem; position:relative;">
+      <h2 class="has-text-white has-text-weight-black mb-4" style="font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em;">{{ .title }}</h2>
+      <p class="mb-8 mx-auto has-line-height-relaxed" style="max-width:600px; font-size:1.05rem; color:rgba(255,255,255,0.9);">{{ .description }}</p>
+      <a href="{{ .cta_url | default "#" }}" class="button is-white has-text-weight-bold height-50 px-10" style="color:#4948A3;">
+        {{ .cta_text }}
+        <iconify-icon icon="lucide:arrow-right" width="18" height="18" class="ml-2"></iconify-icon>
+      </a>
     </div>
   </div>
 </section>
@@ -126,11 +123,4 @@
 {{/* ── Application Form ─────────────────────────────────────────────── */}}
 {{ with $d.form }}
   {{ partial "common-sections/partner-application-form.html" . }}
-{{ end }}
-
-{{/* ── CTA ─────────────────────────────────────────────────────────── */}}
-{{ with $d.cta_section }}
-<div class="partners-final-cta">
-  {{ partial "common-sections/final-cta.html" . }}
-</div>
 {{ end }}

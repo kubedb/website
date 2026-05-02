@@ -2,8 +2,7 @@
   "hero": {
     "hero_badge": "MSP Program",
     "hero_badge_sub": "White-Label • Recurring Revenue • Production Grade",
-    "hero_title_1": "Deliver Managed DBaaS",
-    "hero_title_2": "on Any Kubernetes",
+    "hero_title_1": "Deliver <span class=\"text-gradient\">Managed DBaaS</span> <br/> on Any Kubernetes",
     "hero_description": "Give your customers production-grade databases across 25+ engines with full automation, data sovereignty, and white-label branding.",
     "primary_action_text": "Join the MSP Partner Program",
     "primary_action_url": "#partner-form",
@@ -155,7 +154,7 @@
       "title": "Connect with us to Learn More",
       "description": "Reach out for a personalized consultation to request a demo. Learn how KubeDB can be integrated into your service portfolio, and how leading MSPs use KubeDB to deliver value to their clients.",
       "cta_text": "Contact Us",
-      "cta_url": "mailto:partners@appscode.com"
+      "cta_url": "https://appscode.com/contact/"
     }
   },
 

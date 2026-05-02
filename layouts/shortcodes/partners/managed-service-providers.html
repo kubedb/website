@@ -5,6 +5,8 @@
 {{ $hero := . }}
 {{ partial "common-sections/page-hero.html" (dict
   "hero_badge"           $hero.hero_badge
+  "hero_badge_sub"       $hero.hero_badge_sub
+  "hero_trust_items"     $hero.trust_items
   "product_icon"         ($hero.badge_icon | default "lucide:server")
   "hero_title_1"         $hero.hero_title_1
   "hero_title_2"         $hero.hero_title_2
@@ -15,24 +17,7 @@
   "secondary_action_text" $hero.secondary_action_text
   "secondary_action_url"  ($hero.secondary_action_url | default "#core-features")
   "secondary_action_icon" "lucide:eye"
-  "hero_footer_text"     $hero.hero_badge_sub
 ) }}
-
-{{/* Trust bar */}}
-{{ with $hero.trust_items }}
-<div class="has-background-white py-4" style="border-bottom:1px solid #e5e7eb;">
-  <div class="container">
-    <div class="is-flex is-justify-content-center is-flex-wrap-wrap has-gap-5">
-      {{ range . }}
-      <span class="is-flex is-align-items-center has-gap-2 is-text-sm {{ if .highlight }}has-text-weight-bold has-text-primary{{ else }}has-text-grey-600{{ end }}">
-        <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="15" height="15" class="{{ if .highlight }}has-text-primary{{ else }}has-text-success{{ end }}"></iconify-icon>
-        {{ .text }}
-      </span>
-      {{ end }}
-    </div>
-  </div>
-</div>
-{{ end }}
 {{ end }}
 
 {{/* ── Platform Logos Bar ───────────────────────────────────────────── */}}
@@ -101,29 +86,15 @@
 
 {{/* ── Database Support ─────────────────────────────────────────────── */}}
 {{ with $d.databases }}
-<section class="section-padding has-background-grey-50">
-  <div class="container">
-    {{ partial "common-sections/section-header.html" (dict "title" .title "subtitle" .description "align" "center") }}
-    <div class="table-container is-overflow-x-auto is-radius-2xlarge has-border has-shadow-medium has-background-white" style="max-width:860px; margin:0 auto;">
-      <table class="table is-fullwidth mb-0 is-vcentered">
-        <thead>
-          <tr style="background:#4948A3;">
-            <th class="has-text-white is-text-xs has-text-weight-black is-uppercase has-tracking-widest py-5 px-6" style="width:200px; border:none;">Category</th>
-            <th class="has-text-white is-text-xs has-text-weight-black is-uppercase has-tracking-widest py-5 px-6" style="border:none;">Database Engines</th>
-          </tr>
-        </thead>
-        <tbody class="is-text-sm">
-          {{ range $i, $row := .categories }}
-          <tr style="background:{{ if eq (mod $i 2) 0 }}#ffffff{{ else }}#f8f9ff{{ end }}; border-bottom:1px solid #e5e7eb;">
-            <td class="has-text-weight-bold py-5 px-6" style="color:#4948A3; vertical-align:middle; border:none;">{{ $row.category }}</td>
-            <td class="has-text-grey-600 py-5 px-6 has-line-height-relaxed" style="vertical-align:middle; border:none;">{{ $row.engines }}</td>
-          </tr>
-          {{ end }}
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+  {{ $categories := slice }}
+  {{ range .categories }}
+    {{ $categories = $categories | append (dict "label" .category "items" .engines) }}
+  {{ end }}
+  {{ partial "common-sections/database-support-list.html" (dict
+    "heading" .title
+    "description" .description
+    "categories" $categories
+  ) }}
 {{ end }}
 
 {{/* ── Testimonials ─────────────────────────────────────────────────── */}}
@@ -180,7 +151,3 @@
 </section>
 {{ end }}
 
-{{/* ── Application Form ─────────────────────────────────────────────── */}}
-{{ with $d.form }}
-  {{ partial "common-sections/partner-application-form.html" . }}
-{{ end }}

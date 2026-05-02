@@ -6,4 +6,4 @@ url: /partner/msp/
 data: 'data/products/kubedb/partners/managed-service-providers.json'
 ---
 
-{{< partners/msp-partner-page >}}
+{{< partners/managed-service-providers >}}
