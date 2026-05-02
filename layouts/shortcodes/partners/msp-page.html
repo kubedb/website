@@ -1,0 +1,172 @@
+{{ $d := partial "partners/page-data.html" . }}
+
+{{/* ── Hero ─────────────────────────────────────────────────────────── */}}
+{{ with $d.hero }}
+{{ $hero := . }}
+{{ partial "common-sections/page-hero.html" (dict
+  "hero_badge"          $hero.hero_badge
+  "badge_icon"          ($hero.badge_icon | default "lucide:handshake")
+  "hero_title_1"        $hero.hero_title
+  "hero_description"    $hero.hero_description
+  "primary_action_text" $hero.primary_action_text
+  "primary_action_url"  ($hero.primary_action_url | default "#partner-form")
+  "primary_action_icon" "lucide:arrow-right"
+) }}
+
+{{/* Intro paragraph */}}
+{{ with $hero.intro_text }}
+<section class="py-6 has-background-white" style="border-bottom:1px solid #e5e7eb;">
+  <div class="container">
+    <p class="has-text-grey-600 has-line-height-relaxed has-text-centered mx-auto body-lg" style="max-width:680px;">{{ . }}</p>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{/* ── Partner Groups ───────────────────────────────────────────────── */}}
+{{ with $d.partner_groups }}
+{{ range $i, $group := . }}
+<section class="section-padding {{ if eq (mod $i 2) 0 }}has-background-grey-50{{ else }}has-background-white{{ end }}">
+  <div class="container">
+    <div class="is-flex is-align-items-center has-gap-3 mb-8">
+      <div class="is-flex is-align-items-center is-justify-content-center is-radius-large has-background-primary-soft" style="width:2.5rem; height:2.5rem;">
+        <iconify-icon {{ printf "icon=%q" $group.badge_icon | safeHTMLAttr }} width="20" height="20" class="has-text-primary"></iconify-icon>
+      </div>
+      <h2 class="has-text-heading has-text-weight-black is-size-4" style="letter-spacing:-0.01em;">{{ $group.badge }}</h2>
+    </div>
+
+    {{ $type := $group.type | default "" }}
+
+    {{/* Cloud partners — logo image or colored name */}}
+    {{ if eq $type "cloud" }}
+    <div class="columns is-multiline">
+      {{ range $group.partners }}
+      {{ $hasLogo := and .logo (or (hasPrefix .logo "/") (hasPrefix .logo "http")) }}
+      <div class="column is-3-desktop is-6-tablet">
+        <a href="{{ .url | default "#" }}" class="ds-card-base is-radius-xlarge p-6 is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-transition has-hover-lift has-no-underline" style="min-height:130px; gap:0.75rem;">
+          <div style="height:3.5rem; display:flex; align-items:center; justify-content:center;">
+            {{ if $hasLogo }}
+              <img src="{{ .logo }}" alt="{{ .name }}" style="max-height:3rem; max-width:8rem; object-fit:contain;">
+            {{ else if .icon }}
+              <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="48" height="48" class="has-text-primary"></iconify-icon>
+            {{ else }}
+              <span class="has-text-weight-black" style="font-size:2rem; color:{{ if eq .color "orange" }}#ea580c{{ else if eq .color "purple" }}#7c3aed{{ else if eq .color "blue" }}#2563eb{{ else }}#4948A3{{ end }};">{{ .name }}</span>
+            {{ end }}
+          </div>
+          <p class="has-text-grey-500 is-text-sm has-text-centered">{{ .label }}</p>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+
+    {{/* K8s platform partners */}}
+    {{ else if eq $type "k8s" }}
+    <div class="columns is-multiline">
+      {{ range $group.partners }}
+      {{ $color := "" }}
+      {{ if eq .color "red" }}{{ $color = "#dc2626" }}{{ else if eq .color "green" }}{{ $color = "#16a34a" }}{{ else if eq .color "purple" }}{{ $color = "#7c3aed" }}{{ else if eq .color "blue" }}{{ $color = "#1d4ed8" }}{{ else if eq .color "indigo" }}{{ $color = "#4338ca" }}{{ else }}{{ $color = "#4948A3" }}{{ end }}
+      <div class="column is-one-fifth-desktop is-4-tablet is-6-mobile">
+        <a href="{{ .url | default "#" }}" class="ds-card-base is-radius-2xlarge p-8 is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-transition has-hover-lift has-no-underline has-text-centered" style="min-height:190px; gap:0.75rem; position:relative; overflow:hidden;">
+          <div style="position:absolute; top:-20px; right:-20px; width:80px; height:80px; border-radius:50%; background:{{ $color }}; opacity:0.06;"></div>
+          <div style="height:5rem; display:flex; align-items:center; justify-content:center;">
+            <span class="has-text-weight-black" style="font-size:1.9rem; color:{{ $color }}; letter-spacing:-0.02em; line-height:1;">{{ .name }}</span>
+          </div>
+          <p class="has-text-weight-semibold has-text-heading is-text-sm">{{ .label }}</p>
+          {{ if .certified }}
+          <span class="is-flex is-align-items-center has-gap-1 is-text-xs has-text-weight-bold" style="color:#16a34a; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:999px; padding:0.2rem 0.65rem;">
+            <iconify-icon icon="lucide:check-circle-2" width="12" height="12"></iconify-icon>
+            Certified
+          </span>
+          {{ end }}
+        </a>
+      </div>
+      {{ end }}
+    </div>
+
+    {{/* Storage partners */}}
+    {{ else }}
+    <div class="columns is-multiline">
+      {{ range $group.partners }}
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="ds-card-base is-radius-2xlarge p-8 is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-transition has-hover-lift has-text-centered" style="min-height:190px; gap:1rem; position:relative; overflow:hidden;">
+          {{/* Subtle background glow */}}
+          <div style="position:absolute; bottom:-24px; right:-24px; width:96px; height:96px; border-radius:50%; background:hsl(var(--ds-primary)); opacity:0.05;"></div>
+          <iconify-icon {{ printf "icon=%q" (.icon | default "lucide:server") | safeHTMLAttr }} width="48" height="48" class="has-text-primary" style="opacity:0.85;"></iconify-icon>
+          <div>
+            <p class="has-text-weight-bold has-text-heading is-size-6 mb-1">{{ .name }}</p>
+            <p class="has-text-grey-500 is-text-sm">{{ .description }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{/* ── Why Partner ──────────────────────────────────────────────────── */}}
+{{ with $d.why_partner }}
+{{ $wp := . }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <div class="is-radius-2xlarge is-overflow-hidden" style="background:linear-gradient(135deg,#f5f3ff 0%,#eff6ff 100%); border:1px solid #e5e7eb; padding:3.5rem;">
+      <div class="columns is-vcentered has-gap-8">
+
+        {{/* Left: title + numbered reasons */}}
+        <div class="column is-6-desktop">
+          <h2 class="has-text-heading has-text-weight-black mb-8" style="font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.03em; line-height:1.1;">{{ $wp.title }}</h2>
+          <div class="is-flex is-flex-direction-column has-gap-6">
+            {{ range $wp.reasons }}
+            <div class="is-flex is-align-items-flex-start has-gap-4">
+              <div class="{{ .gradient }} is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 has-text-white has-text-weight-black is-radius-xlarge shadow-sm" style="width:2.75rem; height:2.75rem; font-size:1.1rem; border-radius:14px;">{{ .number }}</div>
+              <div style="padding-top:0.2rem;">
+                <p class="has-text-heading has-text-weight-bold mb-1" style="font-size:1rem;">{{ .title }}</p>
+                <p class="has-text-grey-500 is-text-sm has-line-height-relaxed">{{ .description }}</p>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+        {{/* Right: white stat card */}}
+        <div class="column is-6-desktop">
+          <div class="has-background-white is-radius-2xlarge has-text-centered" style="padding:2.5rem; border:1px solid #e5e7eb; box-shadow:0 4px 24px rgba(73,72,163,0.08);">
+            <div class="mb-2">
+              <span class="has-text-weight-black" style="font-size:clamp(4rem,9vw,5.5rem); line-height:1; letter-spacing:-0.04em; background:linear-gradient(135deg,#4948A3,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">{{ $wp.stat_value }}</span>
+            </div>
+            <p class="is-size-7 has-text-weight-bold has-text-grey-500 mb-8" style="text-transform:uppercase; letter-spacing:0.12em;">{{ $wp.stat_label }}</p>
+            {{ with $wp.stat_items }}
+            <div class="columns is-multiline is-mobile" style="row-gap:0.75rem;">
+              {{ range . }}
+              <div class="column is-6">
+                <div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center is-radius-xlarge has-text-centered" style="background:linear-gradient(135deg,#f8fafc,#ffffff); border:1px solid #e5e7eb; padding:1rem 0.5rem; gap:0.4rem;">
+                  <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="22" height="22" class="has-text-primary"></iconify-icon>
+                  <p class="is-size-7 has-text-weight-semibold has-text-grey-700">{{ .label }}</p>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Application Form ─────────────────────────────────────────────── */}}
+{{ with $d.form }}
+  {{ partial "common-sections/partner-application-form.html" . }}
+{{ end }}
+
+{{/* ── CTA ─────────────────────────────────────────────────────────── */}}
+{{ with $d.cta_section }}
+<div class="partners-final-cta">
+  {{ partial "common-sections/final-cta.html" . }}
+</div>
+{{ end }}

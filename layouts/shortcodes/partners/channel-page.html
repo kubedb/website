@@ -1,0 +1,117 @@
+{{ $d := partial "partners/page-data.html" . }}
+
+{{/* ── Hero ─────────────────────────────────────────────────────────── */}}
+{{ with $d.hero }}
+{{ $hero := . }}
+{{ partial "common-sections/page-hero.html" (dict
+  "hero_badge"          $hero.hero_badge
+  "badge_icon"          ($hero.badge_icon | default "lucide:store")
+  "hero_title_1"        $hero.hero_title_1
+  "hero_title_2"        $hero.hero_title_2
+  "hero_description"    $hero.hero_description
+  "primary_action_text" $hero.primary_action_text
+  "primary_action_url"  ($hero.primary_action_url | default "#partner-form")
+  "primary_action_icon" "lucide:arrow-right"
+) }}
+{{ end }}
+
+{{/* ── Benefits ─────────────────────────────────────────────────────── */}}
+{{ with $d.benefits }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict "title" .title "subtitle" .description "align" "center") }}
+    <div class="columns is-multiline">
+      {{ range .items }}
+      <div class="column is-3-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Channel Resources ────────────────────────────────────────────── */}}
+{{ with $d.resources }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    <div class="ds-card-base is-radius-2xlarge" style="padding:3rem; background:hsl(var(--ds-primary) / 0.04); border-color:hsl(var(--ds-primary) / 0.15);">
+      {{ partial "common-sections/section-header.html" (dict "title" .title "align" "center" "class" "mb-10") }}
+      <div class="columns mb-8">
+        {{ range .columns }}
+        <div class="column is-4-desktop has-text-centered">
+          <div class="is-flex is-align-items-center is-justify-content-center has-background-white is-radius-xlarge mx-auto mb-5 shadow-sm" style="width:4rem; height:4rem;">
+            <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="28" height="28" class="has-text-primary"></iconify-icon>
+          </div>
+          <h3 class="has-text-heading has-text-weight-bold mb-4 is-size-6">{{ .title }}</h3>
+          <ul style="list-style:none; margin:0; padding:0;">
+            {{ range .items }}
+            <li class="is-flex is-align-items-center is-justify-content-center has-gap-2 mb-3">
+              <iconify-icon icon="lucide:check-circle-2" width="16" height="16" class="has-text-primary" style="flex-shrink:0;"></iconify-icon>
+              <span class="has-text-grey-600 is-text-sm">{{ . }}</span>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+      <div class="has-text-centered">
+        <a href="{{ .handbook_url | default "#" }}" class="button is-primary is-outlined height-50 px-8">
+          <iconify-icon icon="lucide:download" width="16" height="16" class="mr-2"></iconify-icon>
+          {{ .handbook_cta }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Deal Registration Banner ─────────────────────────────────────── */}}
+{{ with $d.deal_registration }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    <div class="is-radius-2xlarge is-overflow-hidden has-text-centered has-text-white" style="background:linear-gradient(135deg,#4948A3,#7272e9); padding:4rem 2rem; position:relative;">
+      <div style="position:absolute;inset:0;opacity:0.08;background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:32px 32px;"></div>
+      <div style="position:relative;">
+        <h2 class="has-text-white has-text-weight-black mb-4 is-size-3">{{ .title }}</h2>
+        <p class="mb-8 mx-auto has-line-height-relaxed" style="max-width:520px; font-size:1.05rem; color:rgba(255,255,255,0.85);">{{ .description }}</p>
+        <a href="{{ .cta_url | default "#" }}" class="button is-white has-text-weight-bold height-50 px-8" style="color:#4948A3;">
+          {{ .cta_text }}
+          <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="ml-2"></iconify-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Featured Channel Partners ────────────────────────────────────── */}}
+{{ with $d.featured_partners }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict "title" .title "align" "center") }}
+    <div class="columns is-multiline">
+      {{ range .partners }}
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="ds-card-base is-radius-xlarge p-6 has-text-centered has-transition has-hover-lift" style="min-height:140px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem;">
+          <iconify-icon icon="lucide:building-2" width="48" height="48" class="has-text-grey-300"></iconify-icon>
+          <p class="has-text-weight-semibold has-text-body is-text-sm">{{ .name }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Application Form ─────────────────────────────────────────────── */}}
+{{ with $d.form }}
+  {{ partial "common-sections/partner-application-form.html" . }}
+{{ end }}
+
+{{/* ── CTA ─────────────────────────────────────────────────────────── */}}
+{{ with $d.cta_section }}
+<div class="partners-final-cta">
+  {{ partial "common-sections/final-cta.html" . }}
+</div>
+{{ end }}
