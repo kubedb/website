@@ -17,11 +17,26 @@
   },
 
   "platform_logos": [
-    "Red Hat OpenShift",
-    "SUSE Rancher",
-    "Nutanix",
-    "VMware",
-    "Any Kubernetes"
+    {
+      "name": "Red Hat OpenShift",
+      "logo": "/assets/images/products/kubedb/partners/red-hat-openshift.svg"
+    },
+    {
+      "name": "SUSE Rancher",
+      "logo": "/assets/images/products/kubedb/partners/rancher.svg"
+    },
+    {
+      "name": "Nutanix",
+      "logo": "/assets/images/products/kubedb/partners/nutanix.svg"
+    },
+    {
+      "name": "VMware",
+      "logo": "/assets/images/products/kubedb/partners/vmware.svg"
+    },
+    {
+      "name": "Any Kubernetes",
+      "logo": "/assets/images/products/kubedb/partners/kubernetese.svg"
+    }
   ],
 
   "why_msp": {

@@ -55,30 +55,35 @@
           "label": "OpenShift",
           "color": "red",
           "certified": true,
+          "logo": "/assets/images/products/kubedb/partners/red-hat.svg",
           "url": "/partner/redhat-openshift/"
         },
         {
           "name": "SUSE",
           "label": "Rancher Prime",
           "color": "green",
+          "logo": "/assets/images/products/kubedb/partners/suse.svg",
           "url": "/partner/suse-rancher/"
         },
         {
           "name": "Nutanix",
           "label": "Kubernetes Platform",
           "color": "purple",
+          "logo": "/assets/images/products/kubedb/partners/nutanix.svg",
           "url": "/partner/nutanix/"
         },
         {
           "name": "VMware",
           "label": "Tanzu",
           "color": "blue",
+          "logo": "/assets/images/products/kubedb/partners/vmware.svg",
           "url": "/partner/vmware-vks/"
         },
         {
           "name": "Mirantis",
           "label": "Kubernetes Engine",
           "color": "indigo",
+          "logo": "/assets/images/products/kubedb/partners/mirantis.svg",
           "url": "/partner/mirantis/"
         }
       ]

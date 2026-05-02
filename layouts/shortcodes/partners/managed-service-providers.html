@@ -22,14 +22,22 @@
 
 {{/* ── Platform Logos Bar ───────────────────────────────────────────── */}}
 {{ with $d.platform_logos }}
-<section class="py-5 has-background-grey-50" style="border-bottom:1px solid #e5e7eb;">
+<section class="py-5 has-background-white bt-1 bb-1">
   <div class="container">
-    <div class="is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap has-gap-4">
-      <span class="badge">
-        <span class="is-size-7 has-text-weight-bold uppercase tracking-widest">Runs on:</span>
-      </span>
+    <div class="is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap has-gap-12">
+  
       {{ range . }}
+      {{ if reflect.IsMap . }}
+      <span class="is-flex is-align-items-center is-justify-content-center" >
+        {{ if .logo }}
+        <img src="{{ .logo }}" alt="{{ .name }}" style="max-height:2.5rem; max-width:7.5rem; object-fit:contain;">
+        {{ else }}
+        <span>{{ .name }}</span>
+        {{ end }}
+      </span>
+      {{ else }}
       <span class="badge">{{ . }}</span>
+      {{ end }}
       {{ end }}
     </div>
   </div>
@@ -149,5 +157,10 @@
     </div>
   </div>
 </section>
+{{ end }}
+
+{{/* ── Application Form ─────────────────────────────────────────────── */}}
+{{ with $d.form }}
+  {{ partial "common-sections/partner-application-form.html" . }}
 {{ end }}
 

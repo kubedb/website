@@ -74,12 +74,12 @@
         </div>
         {{ end }}
       </div>
-      <div class="has-text-centered">
+      <!-- <div class="has-text-centered">
         <a href="{{ .handbook_url | default "#" }}" class="button is-primary is-outlined height-50 px-8">
           <iconify-icon icon="lucide:download" width="16" height="16" class="mr-2"></iconify-icon>
           {{ .handbook_cta }}
         </a>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -87,15 +87,23 @@
 
 {{/* ── Deal Registration ─────────────────────────────────────────────── */}}
 {{ with $d.deal_registration }}
-<section class="section-padding has-background-white">
+<section class="cta-section home-section section-padding is-relative is-overflow-hidden">
   <div class="container">
-    <div class="is-radius-2xlarge is-overflow-hidden has-text-centered has-text-white" style="background:linear-gradient(135deg,#4948A3,#7272e9); padding:4rem 3rem; position:relative;">
-      <h2 class="has-text-white has-text-weight-black mb-4" style="font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em;">{{ .title }}</h2>
-      <p class="mb-8 mx-auto has-line-height-relaxed" style="max-width:600px; font-size:1.05rem; color:rgba(255,255,255,0.9);">{{ .description }}</p>
-      <a href="{{ .cta_url | default "#" }}" class="button is-white has-text-weight-bold height-50 px-10" style="color:#4948A3;">
-        {{ .cta_text }}
-        <iconify-icon icon="lucide:arrow-right" width="18" height="18" class="ml-2"></iconify-icon>
-      </a>
+    <div class="cta-block ds-card-base">
+      <div class="cta-glow"></div>
+      <div class="cta-inner">
+        <div class="cta-dot-pattern" aria-hidden="true"></div>
+        <div class="is-relative has-z-index-10 has-text-centered py-12 px-8">
+          <h2 class="cta-title mb-4">{{ .title }}</h2>
+          <p class="cta-desc has-text-white has-opacity-80 mb-8 mx-auto has-max-width-700">{{ .description }}</p>
+          <div class="buttons is-centered cta-buttons ds-button-group">
+            <a href="{{ .cta_url | default "#" }}" class="button is-white is-large height-60 px-10 shadow-lg hover-lift">
+              <strong class="has-text-black">{{ .cta_text }}</strong>
+              <iconify-icon icon="heroicons:arrow-right" class="ml-2 has-text-black" width="20"></iconify-icon>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -108,11 +116,42 @@
     {{ partial "common-sections/section-header.html" (dict "title" .title "align" "center") }}
     <div class="columns is-multiline">
       {{ range .partners }}
-      <div class="column is-3-desktop is-6-tablet">
-        <div class="ds-card-base is-radius-2xlarge has-transition has-hover-lift has-text-centered" style="padding:2.5rem 1.5rem; min-height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem; background:linear-gradient(135deg,#f8fafc,#ffffff);">
-          <iconify-icon icon="lucide:building-2" width="52" height="52" class="has-text-grey-300"></iconify-icon>
+      <div class="column is-6-desktop is-6-tablet">
+        {{ if .url }}
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="ds-card-base is-radius-2xlarge has-transition has-hover-lift has-no-underline has-text-centered is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-gap-3 py-10 px-6 has-height-40 has-background-gradient-light">
+          {{ if eq .name "SoftwareOne" }}
+          <div class="is-flex is-align-items-center is-justify-content-center has-height-14 py-2 px-3 is-radius-large">
+          {{ else }}
+          <div class="is-flex is-align-items-center is-justify-content-center has-height-14">
+          {{ end }}
+            {{ if .logo }}
+            <img src="{{ .logo }}" alt="{{ .name }}" class="has-height-12 has-width-48 is-object-contain">
+            {{ else }}
+            <iconify-icon icon="lucide:building-2" width="52" height="52" class="has-text-grey-300"></iconify-icon>
+            {{ end }}
+          </div>
+          {{ if .name }}
           <p class="has-text-weight-semibold has-text-heading is-text-sm">{{ .name }}</p>
+          {{ end }}
+        </a>
+        {{ else }}
+        <div class="ds-card-base is-radius-2xlarge has-transition has-hover-lift has-text-centered is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-gap-3 py-10 px-6 has-height-40 has-background-gradient-light">
+          {{ if eq .name "SoftwareOne" }}
+          <div class="is-flex is-align-items-center is-justify-content-center has-height-14 py-2 px-3 is-radius-large">
+          {{ else }}
+          <div class="is-flex is-align-items-center is-justify-content-center has-height-14">
+          {{ end }}
+            {{ if .logo }}
+            <img src="{{ .logo }}" alt="{{ .name }}" class="has-height-12 has-width-48 is-object-contain">
+            {{ else }}
+            <iconify-icon icon="lucide:building-2" width="52" height="52" class="has-text-grey-300"></iconify-icon>
+            {{ end }}
+          </div>
+          {{ if .name }}
+          <p class="has-text-weight-semibold has-text-heading is-text-sm">{{ .name }}</p>
+          {{ end }}
         </div>
+        {{ end }}
       </div>
       {{ end }}
     </div>
