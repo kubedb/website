@@ -87,26 +87,16 @@
 
 {{/* ── Deal Registration ─────────────────────────────────────────────── */}}
 {{ with $d.deal_registration }}
-<section class="cta-section home-section section-padding is-relative is-overflow-hidden">
-  <div class="container">
-    <div class="cta-block ds-card-base">
-      <div class="cta-glow"></div>
-      <div class="cta-inner">
-        <div class="cta-dot-pattern" aria-hidden="true"></div>
-        <div class="is-relative has-z-index-10 has-text-centered py-12 px-8">
-          <h2 class="cta-title mb-4">{{ .title }}</h2>
-          <p class="cta-desc has-text-white has-opacity-80 mb-8 mx-auto has-max-width-700">{{ .description }}</p>
-          <div class="buttons is-centered cta-buttons ds-button-group">
-            <a href="{{ .cta_url | default "#" }}" class="button is-white is-large height-60 px-10 shadow-lg hover-lift">
-              <strong class="has-text-black">{{ .cta_text }}</strong>
-              <iconify-icon icon="heroicons:arrow-right" class="ml-2 has-text-black" width="20"></iconify-icon>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{{ $cta := merge ($d.cta_section | default dict) (dict
+  "cta_title" .title
+  "cta_description" .description
+  "cta_button_text" .cta_text
+  "cta_button_url" .cta_url
+  "hide_secondary_cta" true
+) }}
+<div class="partners-final-cta">
+  {{ partial "common-sections/final-cta.html" $cta }}
+</div>
 {{ end }}
 
 {{/* ── Featured Partners ─────────────────────────────────────────────── */}}

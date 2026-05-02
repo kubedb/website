@@ -163,14 +163,15 @@
 </section>
 {{ end }}
 
-{{/* ── Application Form ─────────────────────────────────────────────── */}}
-{{ with $d.form }}
-  {{ partial "common-sections/partner-application-form.html" . }}
-{{ end }}
 
 {{/* ── CTA ─────────────────────────────────────────────────────────── */}}
 {{ with $d.cta_section }}
 <div class="partners-final-cta">
   {{ partial "common-sections/final-cta.html" . }}
 </div>
+{{ end }}
+
+{{/* ── Application Form ─────────────────────────────────────────────── */}}
+{{ with $d.form }}
+  {{ partial "common-sections/partner-application-form.html" . }}
 {{ end }}
