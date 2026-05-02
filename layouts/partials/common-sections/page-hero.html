@@ -14,6 +14,10 @@
         style="color: {{ $p_color }}"></iconify-icon>
       {{ end }}
       <span class="has-text-weight-bold is-size-7 uppercase tracking-widest ml-2" style="color: {{ $p_color }}">{{ $data.hero_badge | default $data.product_name | default "KubeDB" }}</span>
+      {{ if $data.hero_badge_sub }}
+      <span class="mx-2 has-text-grey-400">•</span>
+      <span class="is-size-7 has-text-weight-semibold" style="color: {{ $p_color }}">{{ $data.hero_badge_sub }}</span>
+      {{ end }}
     </div>
 
     <div class="home-hero-content has-max-width-xl mx-auto">
@@ -65,6 +69,17 @@
       </a>
       {{ end }}
     </div>
+
+    {{ with $data.hero_trust_items }}
+    <div class="is-flex is-justify-content-center is-flex-wrap-wrap has-gap-5 mt-6">
+      {{ range . }}
+      <span class="is-flex is-align-items-center has-gap-2 is-text-sm {{ if .highlight }}has-text-weight-bold has-text-primary{{ else }}has-text-grey-600{{ end }}">
+        <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="15" height="15" class="{{ if .highlight }}has-text-primary{{ else }}has-text-success{{ end }}"></iconify-icon>
+        {{ .text }}
+      </span>
+      {{ end }}
+    </div>
+    {{ end }}
 
     {{ if $data.hero_footer_text }}
     <p class="mt-8 has-text-grey-600 has-text-weight-medium">

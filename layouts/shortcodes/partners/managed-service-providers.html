@@ -1,0 +1,166 @@
+{{ $d := partial "partners/page-data.html" . }}
+
+{{/* ── Hero ─────────────────────────────────────────────────────────── */}}
+{{ with $d.hero }}
+{{ $hero := . }}
+{{ partial "common-sections/page-hero.html" (dict
+  "hero_badge"           $hero.hero_badge
+  "hero_badge_sub"       $hero.hero_badge_sub
+  "hero_trust_items"     $hero.trust_items
+  "product_icon"         ($hero.badge_icon | default "lucide:server")
+  "hero_title_1"         $hero.hero_title_1
+  "hero_title_2"         $hero.hero_title_2
+  "hero_description"     $hero.hero_description
+  "primary_action_text"  $hero.primary_action_text
+  "primary_action_url"   ($hero.primary_action_url | default "#partner-form")
+  "primary_action_icon"  "lucide:arrow-right"
+  "secondary_action_text" $hero.secondary_action_text
+  "secondary_action_url"  ($hero.secondary_action_url | default "#core-features")
+  "secondary_action_icon" "lucide:eye"
+) }}
+{{ end }}
+
+{{/* ── Platform Logos Bar ───────────────────────────────────────────── */}}
+{{ with $d.platform_logos }}
+<section class="py-5 has-background-white bt-1 bb-1">
+  <div class="container">
+    <div class="is-flex is-align-items-center is-justify-content-center is-flex-wrap-wrap has-gap-12">
+  
+      {{ range . }}
+      {{ if reflect.IsMap . }}
+      <span class="is-flex is-align-items-center is-justify-content-center" >
+        {{ if .logo }}
+        <img src="{{ .logo }}" alt="{{ .name }}" style="max-height:2.5rem; max-width:7.5rem; object-fit:contain;">
+        {{ else }}
+        <span>{{ .name }}</span>
+        {{ end }}
+      </span>
+      {{ else }}
+      <span class="badge">{{ . }}</span>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Why MSP ──────────────────────────────────────────────────────── */}}
+{{ with $d.why_msp }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict "title" .title "subtitle" .description "align" "center") }}
+    <div class="columns is-multiline">
+      {{ range .features }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Benefits ─────────────────────────────────────────────────────── */}}
+{{ with $d.benefits }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict "title" .title "subtitle" .description "align" "center") }}
+    <div class="columns is-multiline">
+      {{ range .items }}
+      <div class="column is-3-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Core Features ────────────────────────────────────────────────── */}}
+{{ with $d.core_features }}
+<section id="core-features" class="section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict "title" .title "subtitle" .description "align" "center") }}
+    <div class="columns is-multiline">
+      {{ range .items }}
+      <div class="column is-4-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" (dict "icon" "lucide:check-circle-2" "title" .title "description" .description) "type" "compact") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Database Support ─────────────────────────────────────────────── */}}
+{{ with $d.databases }}
+  {{ $categories := slice }}
+  {{ range .categories }}
+    {{ $categories = $categories | append (dict "label" .category "items" .engines) }}
+  {{ end }}
+  {{ partial "common-sections/database-support-list.html" (dict
+    "heading" .title
+    "description" .description
+    "categories" $categories
+  ) }}
+{{ end }}
+
+{{/* ── Testimonials ─────────────────────────────────────────────────── */}}
+{{ with $d.testimonials }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict "title" .title "align" "center") }}
+    <div class="columns is-multiline">
+      {{ range .items }}
+      <div class="column is-4-desktop is-6-tablet">
+        <div class="ds-card-base is-radius-xlarge p-8 is-fullheight">
+          <iconify-icon icon="lucide:quote" width="28" height="28" class="has-text-primary mb-5" style="display:block; opacity:0.5;"></iconify-icon>
+          <p class="has-text-grey-700 has-line-height-relaxed mb-6" style="font-style:italic;">"{{ .quote }}"</p>
+          <p class="has-text-weight-bold has-text-primary is-text-sm">— {{ .author }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Two-Column CTA ───────────────────────────────────────────────── */}}
+{{ with $d.cta_section }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    <div class="columns has-gap-6">
+      {{ with .left }}
+      <div class="column is-6-desktop">
+        <div class="is-radius-2xlarge p-8 has-text-white is-fullheight" style="background:linear-gradient(135deg,#4948A3,#7272e9);">
+          <h3 class="has-text-white has-text-weight-black mb-4 is-size-4">{{ .title }}</h3>
+          <p class="mb-8 has-line-height-relaxed" style="color:rgba(255,255,255,0.85);">{{ .description }}</p>
+          <a href="{{ .cta_url | default "#" }}" class="button is-white has-text-weight-bold height-50 px-6" style="color:#4948A3;">
+            {{ .cta_text }}
+            <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="ml-2"></iconify-icon>
+          </a>
+        </div>
+      </div>
+      {{ end }}
+      {{ with .right }}
+      <div class="column is-6-desktop">
+        <div class="ds-card-base is-radius-xlarge p-8 is-fullheight">
+          <h3 class="has-text-heading has-text-weight-black mb-4 is-size-4">{{ .title }}</h3>
+          <p class="has-text-grey-600 mb-8 has-line-height-relaxed">{{ .description }}</p>
+          <a href="{{ .cta_url | default "mailto:partners@appscode.com" }}" class="button is-primary height-50 px-6">
+            {{ .cta_text }}
+            <iconify-icon icon="lucide:mail" width="16" height="16" class="ml-2"></iconify-icon>
+          </a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Application Form ─────────────────────────────────────────────── */}}
+{{ with $d.form }}
+  {{ partial "common-sections/partner-application-form.html" . }}
+{{ end }}
+

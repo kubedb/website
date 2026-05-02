@@ -1,0 +1,155 @@
+{{ $d := partial "partners/page-data.html" . }}
+
+{{/* ── Hero ─────────────────────────────────────────────────────────── */}}
+{{ with $d.hero }}
+{{ $hero := . }}
+<section class="home-hero is-relative is-overflow-hidden">
+  <div class="home-hero-bg">
+    <div class="hero-mesh-orb hero-mesh-orb-tr" style="background:radial-gradient(circle, rgba(16,185,129,0.12), transparent 70%);"></div>
+    <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
+  </div>
+  <div class="container is-relative has-z-index-10 has-text-centered">
+    {{ with $hero.hero_badge }}
+    <div class="is-flex is-justify-content-center mb-6">
+      <span class="badge" style="background:#d1fae5; border-color:#6ee7b7;">
+        <iconify-icon {{ printf "icon=%q" ($hero.badge_icon | default "lucide:store") | safeHTMLAttr }} width="14" height="14" style="color:#065f46;"></iconify-icon>
+        <span class="is-size-7 has-text-weight-bold" style="color:#065f46; text-transform:uppercase; letter-spacing:0.06em;">{{ . }}</span>
+      </span>
+    </div>
+    {{ end }}
+    <h1 class="home-hero-title mb-6">
+      <span class="home-hero-title-plain">{{ $hero.hero_title_1 }}</span><br>
+      <span class="text-gradient">{{ $hero.hero_title_2 }}</span>
+    </h1>
+    <p class="home-hero-desc mb-8 mx-auto" style="max-width:640px;">{{ $hero.hero_description }}</p>
+    <div class="buttons is-centered ds-button-group has-gap-4">
+      {{ with $hero.primary_action_text }}
+      <a href="{{ $hero.primary_action_url | default "#partner-form" }}" class="button is-primary hero-btn-primary height-50 px-8">
+        <strong>{{ . }}</strong>
+        <iconify-icon icon="lucide:arrow-right" width="18" height="18" class="ml-2"></iconify-icon>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Benefits ─────────────────────────────────────────────────────── */}}
+{{ with $d.benefits }}
+<section class="section-padding has-background-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict "title" .title "subtitle" .description "align" "center") }}
+    <div class="columns is-multiline">
+      {{ range .items }}
+      <div class="column is-3-desktop is-6-tablet">
+        {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Channel Resources ────────────────────────────────────────────── */}}
+{{ with $d.resources }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    <div class="is-radius-2xlarge is-overflow-hidden" style="background:linear-gradient(135deg,#f5f3ff 0%,#eff6ff 100%); border:1px solid #e5e7eb; padding:3.5rem;">
+      {{ partial "common-sections/section-header.html" (dict "title" .title "align" "center" "class" "mb-10") }}
+      <div class="columns mb-10">
+        {{ range .columns }}
+        <div class="column is-4-desktop has-text-left">
+          <div class="is-flex is-align-items-center is-justify-content-center mb-5" style="width:4rem; height:4rem; border-radius:16px; background:hsl(var(--ds-primary) / 0.1); border:1px solid hsl(var(--ds-primary) / 0.15); flex-shrink:0;">
+            <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="28" height="28" class="has-text-primary"></iconify-icon>
+          </div>
+          <h3 class="has-text-heading has-text-weight-bold mb-5 is-size-6">{{ .title }}</h3>
+          <ul style="list-style:none; margin:0; padding:0;">
+            {{ range .items }}
+            <li class="is-flex is-align-items-center has-gap-2 mb-3" style="justify-content:flex-start;">
+              <iconify-icon icon="lucide:check-circle-2" width="15" height="15" class="has-text-primary" style="flex-shrink:0;"></iconify-icon>
+              <span class="has-text-grey-600 is-text-sm">{{ . }}</span>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+      <!-- <div class="has-text-centered">
+        <a href="{{ .handbook_url | default "#" }}" class="button is-primary is-outlined height-50 px-8">
+          <iconify-icon icon="lucide:download" width="16" height="16" class="mr-2"></iconify-icon>
+          {{ .handbook_cta }}
+        </a>
+      </div> -->
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Deal Registration ─────────────────────────────────────────────── */}}
+{{ with $d.deal_registration }}
+{{ $cta := merge ($d.cta_section | default dict) (dict
+  "cta_title" .title
+  "cta_description" .description
+  "cta_button_text" .cta_text
+  "cta_button_url" .cta_url
+  "hide_secondary_cta" true
+) }}
+<div class="partners-final-cta">
+  {{ partial "common-sections/final-cta.html" $cta }}
+</div>
+{{ end }}
+
+{{/* ── Featured Partners ─────────────────────────────────────────────── */}}
+{{ with $d.featured_partners }}
+<section class="section-padding has-background-grey-50">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict "title" .title "align" "center") }}
+    <div class="columns is-multiline">
+      {{ range .partners }}
+      <div class="column is-6-desktop is-6-tablet">
+        {{ if .url }}
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="ds-card-base is-radius-2xlarge has-transition has-hover-lift has-no-underline has-text-centered is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-gap-3 py-10 px-6 has-height-40 has-background-gradient-light">
+          {{ if eq .name "SoftwareOne" }}
+          <div class="is-flex is-align-items-center is-justify-content-center has-height-14 py-2 px-3 is-radius-large">
+          {{ else }}
+          <div class="is-flex is-align-items-center is-justify-content-center has-height-14">
+          {{ end }}
+            {{ if .logo }}
+            <img src="{{ .logo }}" alt="{{ .name }}" class="has-height-12 has-width-48 is-object-contain">
+            {{ else }}
+            <iconify-icon icon="lucide:building-2" width="52" height="52" class="has-text-grey-300"></iconify-icon>
+            {{ end }}
+          </div>
+          {{ if .name }}
+          <p class="has-text-weight-semibold has-text-heading is-text-sm">{{ .name }}</p>
+          {{ end }}
+        </a>
+        {{ else }}
+        <div class="ds-card-base is-radius-2xlarge has-transition has-hover-lift has-text-centered is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-gap-3 py-10 px-6 has-height-40 has-background-gradient-light">
+          {{ if eq .name "SoftwareOne" }}
+          <div class="is-flex is-align-items-center is-justify-content-center has-height-14 py-2 px-3 is-radius-large">
+          {{ else }}
+          <div class="is-flex is-align-items-center is-justify-content-center has-height-14">
+          {{ end }}
+            {{ if .logo }}
+            <img src="{{ .logo }}" alt="{{ .name }}" class="has-height-12 has-width-48 is-object-contain">
+            {{ else }}
+            <iconify-icon icon="lucide:building-2" width="52" height="52" class="has-text-grey-300"></iconify-icon>
+            {{ end }}
+          </div>
+          {{ if .name }}
+          <p class="has-text-weight-semibold has-text-heading is-text-sm">{{ .name }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Application Form ─────────────────────────────────────────────── */}}
+{{ with $d.form }}
+  {{ partial "common-sections/partner-application-form.html" . }}
+{{ end }}
