@@ -6,4 +6,4 @@ url: /partner/alliance-partners/
 data: 'data/products/kubedb/partners/alliance-partners.json'
 ---
 
-{{< partners/msp-page >}}
+{{< partners/alliance-partners >}}

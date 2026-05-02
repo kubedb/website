@@ -5,7 +5,7 @@
 {{ $hero := . }}
 {{ partial "common-sections/page-hero.html" (dict
   "hero_badge"          $hero.hero_badge
-  "badge_icon"          ($hero.badge_icon | default "lucide:handshake")
+  "product_icon"        ($hero.badge_icon | default "lucide:handshake")
   "hero_title_1"        $hero.hero_title
   "hero_description"    $hero.hero_description
   "primary_action_text" $hero.primary_action_text
@@ -66,17 +66,13 @@
       {{ $color := "" }}
       {{ if eq .color "red" }}{{ $color = "#dc2626" }}{{ else if eq .color "green" }}{{ $color = "#16a34a" }}{{ else if eq .color "purple" }}{{ $color = "#7c3aed" }}{{ else if eq .color "blue" }}{{ $color = "#1d4ed8" }}{{ else if eq .color "indigo" }}{{ $color = "#4338ca" }}{{ else }}{{ $color = "#4948A3" }}{{ end }}
       <div class="column is-one-fifth-desktop is-4-tablet is-6-mobile">
-        <a href="{{ .url | default "#" }}" class="ds-card-base is-radius-2xlarge p-8 is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-transition has-hover-lift has-no-underline has-text-centered" style="min-height:190px; gap:0.75rem; position:relative; overflow:hidden;">
-          <div style="position:absolute; top:-20px; right:-20px; width:80px; height:80px; border-radius:50%; background:{{ $color }}; opacity:0.06;"></div>
-          <div style="height:5rem; display:flex; align-items:center; justify-content:center;">
-            <span class="has-text-weight-black" style="font-size:1.9rem; color:{{ $color }}; letter-spacing:-0.02em; line-height:1;">{{ .name }}</span>
+        <a href="{{ .url | default "#" }}" class="ds-card-base is-radius-2xlarge is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-transition has-hover-lift has-no-underline has-text-centered" style="min-height:175px; padding:2rem 1rem; gap:0.6rem;">
+          <div style="height:4.5rem; display:flex; align-items:center; justify-content:center;">
+            <span class="has-text-weight-black" style="font-size:2rem; color:{{ $color }}; letter-spacing:-0.02em; line-height:1;">{{ .name }}</span>
           </div>
-          <p class="has-text-weight-semibold has-text-heading is-text-sm">{{ .label }}</p>
+          <p class="has-text-weight-semibold has-text-grey-700 is-text-sm">{{ .label }}</p>
           {{ if .certified }}
-          <span class="is-flex is-align-items-center has-gap-1 is-text-xs has-text-weight-bold" style="color:#16a34a; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:999px; padding:0.2rem 0.65rem;">
-            <iconify-icon icon="lucide:check-circle-2" width="12" height="12"></iconify-icon>
-            Certified
-          </span>
+          <span class="is-text-xs has-text-weight-bold" style="color:#16a34a;">✓ Certified</span>
           {{ end }}
         </a>
       </div>
@@ -88,14 +84,10 @@
     <div class="columns is-multiline">
       {{ range $group.partners }}
       <div class="column is-3-desktop is-6-tablet">
-        <div class="ds-card-base is-radius-2xlarge p-8 is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-transition has-hover-lift has-text-centered" style="min-height:190px; gap:1rem; position:relative; overflow:hidden;">
-          {{/* Subtle background glow */}}
-          <div style="position:absolute; bottom:-24px; right:-24px; width:96px; height:96px; border-radius:50%; background:hsl(var(--ds-primary)); opacity:0.05;"></div>
-          <iconify-icon {{ printf "icon=%q" (.icon | default "lucide:server") | safeHTMLAttr }} width="48" height="48" class="has-text-primary" style="opacity:0.85;"></iconify-icon>
-          <div>
-            <p class="has-text-weight-bold has-text-heading is-size-6 mb-1">{{ .name }}</p>
-            <p class="has-text-grey-500 is-text-sm">{{ .description }}</p>
-          </div>
+        <div class="ds-card-base is-radius-2xlarge is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-transition has-hover-lift has-text-centered" style="min-height:160px; padding:2rem; gap:0.85rem;">
+          <iconify-icon {{ printf "icon=%q" (.icon | default "lucide:server") | safeHTMLAttr }} width="44" height="44" class="has-text-primary"></iconify-icon>
+          <p class="has-text-weight-bold has-text-heading is-size-6 mb-1">{{ .name }}</p>
+          <p class="has-text-grey-500 is-text-sm">{{ .description }}</p>
         </div>
       </div>
       {{ end }}

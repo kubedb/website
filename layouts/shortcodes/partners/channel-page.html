@@ -3,21 +3,40 @@
 {{/* ── Hero ─────────────────────────────────────────────────────────── */}}
 {{ with $d.hero }}
 {{ $hero := . }}
-{{ partial "common-sections/page-hero.html" (dict
-  "hero_badge"          $hero.hero_badge
-  "badge_icon"          ($hero.badge_icon | default "lucide:store")
-  "hero_title_1"        $hero.hero_title_1
-  "hero_title_2"        $hero.hero_title_2
-  "hero_description"    $hero.hero_description
-  "primary_action_text" $hero.primary_action_text
-  "primary_action_url"  ($hero.primary_action_url | default "#partner-form")
-  "primary_action_icon" "lucide:arrow-right"
-) }}
+<section class="home-hero is-relative is-overflow-hidden">
+  <div class="home-hero-bg">
+    <div class="hero-mesh-orb hero-mesh-orb-tr" style="background:radial-gradient(circle, rgba(16,185,129,0.12), transparent 70%);"></div>
+    <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
+  </div>
+  <div class="container is-relative has-z-index-10 has-text-centered">
+    {{ with $hero.hero_badge }}
+    <div class="is-flex is-justify-content-center mb-6">
+      <span class="badge" style="background:#d1fae5; border-color:#6ee7b7;">
+        <iconify-icon {{ printf "icon=%q" ($hero.badge_icon | default "lucide:store") | safeHTMLAttr }} width="14" height="14" style="color:#065f46;"></iconify-icon>
+        <span class="is-size-7 has-text-weight-bold" style="color:#065f46; text-transform:uppercase; letter-spacing:0.06em;">{{ . }}</span>
+      </span>
+    </div>
+    {{ end }}
+    <h1 class="home-hero-title mb-6">
+      <span class="home-hero-title-plain">{{ $hero.hero_title_1 }}</span><br>
+      <span class="text-gradient">{{ $hero.hero_title_2 }}</span>
+    </h1>
+    <p class="home-hero-desc mb-8 mx-auto" style="max-width:640px;">{{ $hero.hero_description }}</p>
+    <div class="buttons is-centered ds-button-group has-gap-4">
+      {{ with $hero.primary_action_text }}
+      <a href="{{ $hero.primary_action_url | default "#partner-form" }}" class="button is-primary hero-btn-primary height-50 px-8">
+        <strong>{{ . }}</strong>
+        <iconify-icon icon="lucide:arrow-right" width="18" height="18" class="ml-2"></iconify-icon>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
 {{ end }}
 
 {{/* ── Benefits ─────────────────────────────────────────────────────── */}}
 {{ with $d.benefits }}
-<section class="section-padding has-background-grey-50">
+<section class="section-padding has-background-white">
   <div class="container">
     {{ partial "common-sections/section-header.html" (dict "title" .title "subtitle" .description "align" "center") }}
     <div class="columns is-multiline">
@@ -33,21 +52,21 @@
 
 {{/* ── Channel Resources ────────────────────────────────────────────── */}}
 {{ with $d.resources }}
-<section class="section-padding has-background-white">
+<section class="section-padding has-background-grey-50">
   <div class="container">
-    <div class="ds-card-base is-radius-2xlarge" style="padding:3rem; background:hsl(var(--ds-primary) / 0.04); border-color:hsl(var(--ds-primary) / 0.15);">
+    <div class="is-radius-2xlarge is-overflow-hidden" style="background:linear-gradient(135deg,#f5f3ff 0%,#eff6ff 100%); border:1px solid #e5e7eb; padding:3.5rem;">
       {{ partial "common-sections/section-header.html" (dict "title" .title "align" "center" "class" "mb-10") }}
-      <div class="columns mb-8">
+      <div class="columns mb-10">
         {{ range .columns }}
-        <div class="column is-4-desktop has-text-centered">
-          <div class="is-flex is-align-items-center is-justify-content-center has-background-white is-radius-xlarge mx-auto mb-5 shadow-sm" style="width:4rem; height:4rem;">
+        <div class="column is-4-desktop has-text-left">
+          <div class="is-flex is-align-items-center is-justify-content-center mb-5" style="width:4rem; height:4rem; border-radius:16px; background:hsl(var(--ds-primary) / 0.1); border:1px solid hsl(var(--ds-primary) / 0.15); flex-shrink:0;">
             <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="28" height="28" class="has-text-primary"></iconify-icon>
           </div>
-          <h3 class="has-text-heading has-text-weight-bold mb-4 is-size-6">{{ .title }}</h3>
+          <h3 class="has-text-heading has-text-weight-bold mb-5 is-size-6">{{ .title }}</h3>
           <ul style="list-style:none; margin:0; padding:0;">
             {{ range .items }}
-            <li class="is-flex is-align-items-center is-justify-content-center has-gap-2 mb-3">
-              <iconify-icon icon="lucide:check-circle-2" width="16" height="16" class="has-text-primary" style="flex-shrink:0;"></iconify-icon>
+            <li class="is-flex is-align-items-center has-gap-2 mb-3" style="justify-content:flex-start;">
+              <iconify-icon icon="lucide:check-circle-2" width="15" height="15" class="has-text-primary" style="flex-shrink:0;"></iconify-icon>
               <span class="has-text-grey-600 is-text-sm">{{ . }}</span>
             </li>
             {{ end }}
@@ -66,18 +85,18 @@
 </section>
 {{ end }}
 
-{{/* ── Deal Registration Banner ─────────────────────────────────────── */}}
+{{/* ── Deal Registration ─────────────────────────────────────────────── */}}
 {{ with $d.deal_registration }}
-<section class="section-padding has-background-grey-50">
+<section class="section-padding has-background-white">
   <div class="container">
-    <div class="is-radius-2xlarge is-overflow-hidden has-text-centered has-text-white" style="background:linear-gradient(135deg,#4948A3,#7272e9); padding:4rem 2rem; position:relative;">
-      <div style="position:absolute;inset:0;opacity:0.08;background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:32px 32px;"></div>
+    <div class="is-radius-2xlarge is-overflow-hidden has-text-centered has-text-white" style="background:linear-gradient(135deg,#4948A3,#7272e9); padding:5rem 2rem; position:relative;">
+      <div style="position:absolute;inset:0;opacity:0.1;background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:32px 32px;"></div>
       <div style="position:relative;">
-        <h2 class="has-text-white has-text-weight-black mb-4 is-size-3">{{ .title }}</h2>
-        <p class="mb-8 mx-auto has-line-height-relaxed" style="max-width:520px; font-size:1.05rem; color:rgba(255,255,255,0.85);">{{ .description }}</p>
-        <a href="{{ .cta_url | default "#" }}" class="button is-white has-text-weight-bold height-50 px-8" style="color:#4948A3;">
+        <h2 class="has-text-white has-text-weight-black mb-4" style="font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em;">{{ .title }}</h2>
+        <p class="mb-8 mx-auto has-line-height-relaxed" style="max-width:520px; font-size:1.1rem; color:rgba(255,255,255,0.85);">{{ .description }}</p>
+        <a href="{{ .cta_url | default "#" }}" class="button is-white has-text-weight-bold height-50 px-10 shadow-lg" style="color:#4948A3;">
           {{ .cta_text }}
-          <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="ml-2"></iconify-icon>
+          <iconify-icon icon="lucide:arrow-right" width="18" height="18" class="ml-2"></iconify-icon>
         </a>
       </div>
     </div>
@@ -85,17 +104,17 @@
 </section>
 {{ end }}
 
-{{/* ── Featured Channel Partners ────────────────────────────────────── */}}
+{{/* ── Featured Partners ─────────────────────────────────────────────── */}}
 {{ with $d.featured_partners }}
-<section class="section-padding has-background-white">
+<section class="section-padding has-background-grey-50">
   <div class="container">
     {{ partial "common-sections/section-header.html" (dict "title" .title "align" "center") }}
     <div class="columns is-multiline">
       {{ range .partners }}
       <div class="column is-3-desktop is-6-tablet">
-        <div class="ds-card-base is-radius-xlarge p-6 has-text-centered has-transition has-hover-lift" style="min-height:140px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem;">
-          <iconify-icon icon="lucide:building-2" width="48" height="48" class="has-text-grey-300"></iconify-icon>
-          <p class="has-text-weight-semibold has-text-body is-text-sm">{{ .name }}</p>
+        <div class="ds-card-base is-radius-2xlarge has-transition has-hover-lift has-text-centered" style="padding:2.5rem 1.5rem; min-height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem; background:linear-gradient(135deg,#f8fafc,#ffffff);">
+          <iconify-icon icon="lucide:building-2" width="52" height="52" class="has-text-grey-300"></iconify-icon>
+          <p class="has-text-weight-semibold has-text-heading is-text-sm">{{ .name }}</p>
         </div>
       </div>
       {{ end }}

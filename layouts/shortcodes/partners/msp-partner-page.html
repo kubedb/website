@@ -5,7 +5,7 @@
 {{ $hero := . }}
 {{ partial "common-sections/page-hero.html" (dict
   "hero_badge"           $hero.hero_badge
-  "badge_icon"           ($hero.badge_icon | default "lucide:server")
+  "product_icon"         ($hero.badge_icon | default "lucide:server")
   "hero_title_1"         $hero.hero_title_1
   "hero_title_2"         $hero.hero_title_2
   "hero_description"     $hero.hero_description
