@@ -1,8 +1,10 @@
 {
+  "title": "KubeDB for SUSE Rancher Joint Solution Brief",
+  "description": "Solutions brief for running KubeDB on SUSE Rancher",
   "subtitle": "Delivering DBaaS Across Hybrid, Multi-Cloud, and Sovereign Kubernetes Environments",
-  "intro": "KubeDB by AppsCode and SUSE Rancher Prime deliver a Kubernetes-native Database-as-a-Service (DBaaS) platform that lets organizations run production databases anywhere Kubernetes runs—on-prem, cloud, edge, and air-gapped environments. The joint solution combines SUSE's centralized Kubernetes management with KubeDB's automated database lifecycle management, including provisioning, scaling, high availability, backup, and recovery. The result is a portable, governed, and operationally consistent DBaaS platform that eliminates cloud lock-in.",
+  "intro": "KubeDB by AppsCode and SUSE Rancher Prime deliver a Kubernetes-native Database-as-a-Service (DBaaS) platform that enables organizations to run production databases anywhere Kubernetes runs—on-prem, cloud, edge, and air-gapped environments. This joint solution combines SUSE's centralized Kubernetes management with KubeDB's automated database lifecycle management, including provisioning, scaling, high availability, backup, and recovery.",
   "download": {
-    "label": "Download",
+    "label": "Download PDF",
     "url": "/files/solutions-brief/kubedb-suse-solution.pdf",
     "external": false
   },
@@ -11,45 +13,45 @@
     "items": [
       {
         "name": "Unified DBaaS Across Any Kubernetes",
-        "description": "Deliver a consistent DBaaS experience across on-prem, cloud, and edge. Move databases across hybrid and multi-cloud infrastructure without re-architecting."
+        "description": "KubeDB with SUSE Rancher Prime delivers a consistent DBaaS experience across on-prem, cloud, and edge environments. Databases can be deployed and moved across hybrid and multi-cloud infrastructures without re-architecting, eliminating reliance on hyperscaler-managed DBaaS."
       },
       {
         "name": "Automated Database Lifecycle Management",
-        "description": "Provisioning, scaling, upgrades, and high availability are fully automated through Kubernetes APIs—reducing manual effort and ensuring consistency."
+        "description": "Database operations are fully automated using Kubernetes APIs, including provisioning, scaling, upgrades, and high availability. This reduces manual effort, simplifies operations, and ensures consistent management across environments."
       },
       {
         "name": "Built-In Backup, Recovery, and Resilience",
-        "description": "Application-consistent backup and recovery for stateful workloads, with reliable restores and disaster recovery across clusters."
+        "description": "Integrated backup and recovery provide application-consistent data protection for stateful workloads. This simplifies operations while enabling reliable restores and supporting disaster recovery across clusters."
       },
       {
         "name": "Governance, Security, and Multi-Tenancy",
-        "description": "RBAC, policy-driven access, and namespace-based multi-tenancy enable secure self-service database access at enterprise scale."
+        "description": "Policy-driven access control, RBAC, and namespace-based multi-tenancy enable secure self-service database access. Organizations can enforce governance and compliance while maintaining developer agility."
       },
       {
         "name": "Data Sovereignty and Infrastructure Control",
-        "description": "Deploy on-prem, in-region, or in air-gapped environments with full control over data placement to meet compliance requirements."
+        "description": "Databases can be deployed on-prem, in-region, or in air-gapped environments with full control over data placement. This ensures compliance and avoids the limitations of managed DBaaS services."
       }
     ]
   },
   "highlights": {
-    "title": "Why SUSE Rancher Prime + KubeDB",
+    "title": "Why SUSE Rancher Prime and KubeDB",
     "subtitle": "DBaaS Anywhere. Any Kubernetes. Any Storage. Full Control.",
     "items": [
       {
         "name": "Streamlined Kubernetes Operations",
-        "description": "Unified Kubernetes management across on-prem, cloud, and edge—standardizing platform operations at scale."
+        "description": "Unified, consistent Kubernetes management across on-premises, cloud, and edge environments, simplifying platform operations and enabling standardization at scale."
       },
       {
         "name": "Automated Database Operations",
-        "description": "Kubernetes-native APIs to provision, scale, upgrade, and manage databases—removing manual day-2 toil."
+        "description": "Provision, scale, upgrade, and manage databases using Kubernetes-native APIs, eliminating manual processes and simplifying day-2 operations."
       },
       {
         "name": "Trusted and Secure Platform",
-        "description": "Centralized policy enforcement and access control with enterprise-grade governance across clusters."
+        "description": "Centralized security, policy enforcement, and access control with enterprise-grade governance across clusters and teams."
       },
       {
         "name": "Run Any Database Anywhere",
-        "description": "PostgreSQL, MySQL, MariaDB, MongoDB, Redis, Kafka, Elasticsearch, MSSQL, Oracle, and more—running consistently on any CNCF-certified Kubernetes."
+        "description": "Support for PostgreSQL, MySQL, MariaDB, MongoDB, Redis, Kafka, Elasticsearch, MSSQLServer, Oracle and more—running consistently across on-prem, cloud, and edge Kubernetes environments."
       }
     ]
   }

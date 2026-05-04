@@ -14,27 +14,23 @@
     </svg>
 
     <div class="container">
-      <div class="columns is-vcentered">
-        <div class="column is-8">
-          <h1 class="display-lg has-text-heading mt-4 mb-3 has-text-balance">{{ .Title }}</h1>
+      <div class="has-max-width-900 mx-auto has-text-centered">
+        <h1 class="display-lg has-text-heading mt-4 mb-3 has-text-balance">{{ $d.title | default .Title }}</h1>
 
-          {{ with $d.subtitle }}
-          <p class="heading-md has-text-primary has-text-weight-semibold mb-5">{{ . | safeHTML }}</p>
-          {{ end }}
+        {{ with $d.subtitle }}
+        <p class="heading-md has-text-primary has-text-weight-semibold mb-5">{{ . | safeHTML }}</p>
+        {{ end }}
 
-          {{ with $d.intro }}
-          <p class="body-lg has-text-body has-max-width-800">{{ . | safeHTML }}</p>
-          {{ end }}
-        </div>
+        {{ with $d.intro }}
+        <p class="body-lg has-text-body mx-auto has-max-width-800 mb-6">{{ . | safeHTML }}</p>
+        {{ end }}
 
-        <div class="column is-4 has-text-right-tablet">
-          {{ with $d.download }}
-          <a href="{{ .url | default "#" }}" class="button is-primary is-medium has-text-weight-semibold"{{ if .external }} target="_blank" rel="noopener"{{ end }}>
-            <span>{{ .label | default "Download" }}</span>
-            <span class="ml-2"><iconify-icon icon="lucide:download" width="18" height="18"></iconify-icon></span>
-          </a>
-          {{ end }}
-        </div>
+        {{ with $d.download }}
+        <a href="{{ .url | default "#" }}" class="button is-primary is-medium has-text-weight-semibold"{{ if .external }} target="_blank" rel="noopener"{{ end }}>
+          <span>{{ .label | default "Download" }}</span>
+          <span class="ml-2"><iconify-icon icon="lucide:download" width="18" height="18"></iconify-icon></span>
+        </a>
+        {{ end }}
       </div>
     </div>
   </section>
