@@ -15,7 +15,7 @@
 
     <div class="container">
       <div class="has-max-width-900 mx-auto has-text-centered">
-        <h1 class="display-lg has-text-heading mt-4 mb-3 has-text-balance">{{ $d.title | default .Title }}</h1>
+        <h1 class="display-lg has-text-heading mt-4 mb-3 has-text-balance">{{ $d.title | default .Title | safeHTML }}</h1>
 
         {{ with $d.subtitle }}
         <p class="heading-md has-text-primary has-text-weight-semibold mb-5">{{ . | safeHTML }}</p>
