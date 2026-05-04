@@ -1,0 +1,30 @@
+{
+  "intro": "Dive into the capabilities of KubeDB with this comprehensive Solution Brief designed for Red Hat OpenShift environments. Discover how KubeDB offers a robust, multi-tenant cloud-native data protection platform, tailored for enterprises and service providers managing cloud-native applications across diverse environments.",
+  "download": {
+    "label": "Download",
+    "url": "/files/solutions-brief/kubedb-redhat-openshift.pdf",
+    "external": false
+  },
+  "benefits": {
+    "title": "Key Benefits of the Solution Brief",
+    "items": [
+      {
+        "name": "Multi-Cluster and Multi-Cloud Data Protection",
+        "description": "Experience centralized data protection strategies that span private clouds, public clouds, and edge environments ensuring consistent operations across all your Red Hat OpenShift deployments."
+      },
+      {
+        "name": "Advanced Security and Ransomware Protection",
+        "description": "Benefit from immutable backups and advanced security measures to protect against data loss and ransomware threats."
+      },
+      {
+        "name": "Granular Recovery and Migration Capabilities",
+        "description": "Utilize detailed recovery options and seamless migration capabilities for virtual machines and container applications, promoting operational efficiency and minimizing downtime."
+      },
+      {
+        "name": "Flexible Deployment Options",
+        "description": "Choose between SaaS or self-hosted solutions to best meet your specific business requirements."
+      }
+    ]
+  },
+  "closing": "This Solution Brief is ideal for those looking to enhance their data protection and operational efficiencies in Red Hat OpenShift environments."
+}

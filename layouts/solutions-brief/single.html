@@ -1,0 +1,74 @@
+{{ define "main" }}
+{{ $d := index .Site.Data (split (replace .Params.data ".json" "") "/") }}
+<div class="ac-ui solutions-brief-page">
+
+  {{/* ── Hero band (light, matches homepage palette) ───────────── */}}
+  <section class="solutions-brief-hero section-padding is-relative is-overflow-hidden" style="background: radial-gradient(circle at 20% 20%, rgba(114, 114, 233, 0.18), transparent 35%), radial-gradient(circle at 85% 10%, rgba(73, 72, 163, 0.15), transparent 40%), linear-gradient(135deg, #f5f5fb 0%, #ffffff 55%, #eef0fb 100%); margin-top: 58px;">
+    <svg class="hero-dot-grid is-absolute has-inset-0 has-opacity-60" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <pattern id="sb-hero-dots" width="80" height="80" patternUnits="userSpaceOnUse">
+          <circle cx="40" cy="40" r="1" fill="#4948A3" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#sb-hero-dots)" />
+    </svg>
+
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-8">
+          <h1 class="display-lg has-text-heading mt-4 mb-5 has-text-balance">{{ .Title }}</h1>
+
+          {{ with $d.intro }}
+          <p class="body-lg has-text-body has-max-width-800">{{ . | safeHTML }}</p>
+          {{ end }}
+        </div>
+
+        <div class="column is-4 has-text-right-tablet">
+          {{ with $d.download }}
+          <a href="{{ .url | default "#" }}" class="button is-primary is-medium has-text-weight-semibold"{{ if .external }} target="_blank" rel="noopener"{{ end }}>
+            <span>{{ .label | default "Download" }}</span>
+            <span class="ml-2"><iconify-icon icon="lucide:download" width="18" height="18"></iconify-icon></span>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{/* ── Body ────────────────────────────────────────────── */}}
+  <section class="section-padding has-background-white">
+    <div class="container">
+      <div class="has-max-width-900 mx-auto">
+
+        {{ with .Content }}
+        <div class="solutions-brief-intro body-lg has-text-body mb-8">{{ . }}</div>
+        {{ end }}
+
+        {{ with $d.benefits }}
+        <h2 class="heading-xl has-text-heading mb-5">{{ .title | default "Key Benefits of the Solution Brief" }}</h2>
+
+        <ul class="solutions-brief-benefits has-no-bullets space-y-4">
+          {{ range .items }}
+          <li class="body-lg has-text-body is-flex has-gap-3 is-align-items-flex-start">
+            <span class="has-text-primary mt-1 is-flex-shrink-0">
+              <iconify-icon icon="lucide:circle-check-big" width="20" height="20"></iconify-icon>
+            </span>
+            <span>
+              <span class="has-text-weight-bold has-text-heading">{{ .name }}:</span>
+              {{ .description | safeHTML }}
+            </span>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+
+        {{ with $d.closing }}
+        <p class="body-lg has-text-body mt-8">{{ . | safeHTML }}</p>
+        {{ end }}
+
+      </div>
+    </div>
+  </section>
+
+</div>
+{{ end }}
