@@ -69,7 +69,8 @@
       {{ $m := index $meta $child.Identifier }}
       {{ $ctaText   := or (and $m (index $m "ctaText"))   (index $defaults "ctaText") }}
       {{ $footerMsg := or (and $m (index $m "footerMsg")) (index $defaults "footerMsg") }}
-      {{ $footerURL := $child.URL | default "#" }}
+      {{ $footerURL := $child.URL | default "" }}
+      {{ $hasFooter := ne $footerURL "" }}
       {{ $footerExternal := and (or (hasPrefix $footerURL "http://") (hasPrefix $footerURL "https://")) (not (in $footerURL "appscode.com")) }}
 
       <div class="resource-menu-panel {{ if eq $index 0 }}is-active{{ end }}" data-resource-panel="{{ $child.Identifier }}">
@@ -131,6 +132,7 @@
           {{ end }}
         </div>
 
+        {{ if $hasFooter }}
         <div class="resource-menu-panel-footer">
           <p>{{ $footerMsg }}</p>
           <a href="{{ $footerURL }}" class="resource-menu-view-all"{{ if $footerExternal }} target="_blank" rel="noopener"{{ end }}>
@@ -138,6 +140,7 @@
             <iconify-icon icon="heroicons:arrow-up-right" width="16" height="16"></iconify-icon>
           </a>
         </div>
+        {{ end }}
       </div>
       {{ end }}
     </div>
