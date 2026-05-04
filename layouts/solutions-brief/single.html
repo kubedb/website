@@ -16,7 +16,11 @@
     <div class="container">
       <div class="columns is-vcentered">
         <div class="column is-8">
-          <h1 class="display-lg has-text-heading mt-4 mb-5 has-text-balance">{{ .Title }}</h1>
+          <h1 class="display-lg has-text-heading mt-4 mb-3 has-text-balance">{{ .Title }}</h1>
+
+          {{ with $d.subtitle }}
+          <p class="heading-md has-text-primary has-text-weight-semibold mb-5">{{ . | safeHTML }}</p>
+          {{ end }}
 
           {{ with $d.intro }}
           <p class="body-lg has-text-body has-max-width-800">{{ . | safeHTML }}</p>
@@ -62,13 +66,55 @@
         </ul>
         {{ end }}
 
-        {{ with $d.closing }}
-        <p class="body-lg has-text-body mt-8">{{ . | safeHTML }}</p>
+        {{ with $d.capabilities }}
+        <h2 class="heading-xl has-text-heading mt-12 mb-5">{{ .title }}</h2>
+
+        <ul class="solutions-brief-capabilities has-no-bullets space-y-5">
+          {{ range .items }}
+          <li class="body-lg has-text-body is-flex has-gap-3 is-align-items-flex-start">
+            <span class="has-text-primary mt-1 is-flex-shrink-0">
+              <iconify-icon icon="lucide:zap" width="20" height="20"></iconify-icon>
+            </span>
+            <span>
+              <span class="has-text-weight-bold has-text-heading">{{ .name }}:</span>
+              {{ .description | safeHTML }}
+            </span>
+          </li>
+          {{ end }}
+        </ul>
         {{ end }}
 
       </div>
     </div>
   </section>
+
+  {{/* ── Highlights (used by SUSE) ─────────────────────────── */}}
+  {{ with $d.highlights }}
+  <section class="section-padding has-background-white">
+    <div class="container">
+      <div class="has-max-width-900 mx-auto">
+        <h2 class="heading-xl has-text-heading mb-3">{{ .title }}</h2>
+        {{ with .subtitle }}
+        <p class="body-lg has-text-gradient has-text-weight-semibold mb-5">{{ . }}</p>
+        {{ end }}
+
+        <ul class="solutions-brief-highlights has-no-bullets space-y-4">
+          {{ range .items }}
+          <li class="body-lg has-text-body is-flex has-gap-3 is-align-items-flex-start">
+            <span class="has-text-primary mt-1 is-flex-shrink-0">
+              <iconify-icon icon="lucide:circle-check-big" width="20" height="20"></iconify-icon>
+            </span>
+            <span>
+              <span class="has-text-weight-bold has-text-heading">{{ .name }}:</span>
+              {{ .description | safeHTML }}
+            </span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+  {{ end }}
 
 </div>
 {{ end }}

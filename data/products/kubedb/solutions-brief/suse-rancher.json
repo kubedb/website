@@ -1,30 +1,56 @@
 {
-  "intro": "Dive into the capabilities of KubeDB with this comprehensive Solution Brief designed for SUSE Rancher environments. Discover how KubeDB offers a robust, multi-tenant cloud-native data protection platform, tailored for enterprises and service providers managing cloud-native applications across diverse environments.",
+  "subtitle": "Delivering DBaaS Across Hybrid, Multi-Cloud, and Sovereign Kubernetes Environments",
+  "intro": "KubeDB by AppsCode and SUSE Rancher Prime deliver a Kubernetes-native Database-as-a-Service (DBaaS) platform that lets organizations run production databases anywhere Kubernetes runs—on-prem, cloud, edge, and air-gapped environments. The joint solution combines SUSE's centralized Kubernetes management with KubeDB's automated database lifecycle management, including provisioning, scaling, high availability, backup, and recovery. The result is a portable, governed, and operationally consistent DBaaS platform that eliminates cloud lock-in.",
   "download": {
     "label": "Download",
-    "url": "/files/solutions-brief/kubedb-suse-rancher.pdf",
+    "url": "/files/solutions-brief/kubedb-suse-solution.pdf",
     "external": false
   },
   "benefits": {
-    "title": "Key Benefits of the Solution Brief",
+    "title": "Key Benefits",
     "items": [
       {
-        "name": "Multi-Cluster and Multi-Cloud Data Protection",
-        "description": "Experience centralized data protection strategies that span private clouds, public clouds, and edge environments ensuring consistent operations across all your SUSE Rancher deployments."
+        "name": "Unified DBaaS Across Any Kubernetes",
+        "description": "Deliver a consistent DBaaS experience across on-prem, cloud, and edge. Move databases across hybrid and multi-cloud infrastructure without re-architecting."
       },
       {
-        "name": "Advanced Security and Ransomware Protection",
-        "description": "Benefit from immutable backups and advanced security measures to protect against data loss and ransomware threats."
+        "name": "Automated Database Lifecycle Management",
+        "description": "Provisioning, scaling, upgrades, and high availability are fully automated through Kubernetes APIs—reducing manual effort and ensuring consistency."
       },
       {
-        "name": "Granular Recovery and Migration Capabilities",
-        "description": "Utilize detailed recovery options and seamless migration capabilities for virtual machines and container applications, promoting operational efficiency and minimizing downtime."
+        "name": "Built-In Backup, Recovery, and Resilience",
+        "description": "Application-consistent backup and recovery for stateful workloads, with reliable restores and disaster recovery across clusters."
       },
       {
-        "name": "Flexible Deployment Options",
-        "description": "Choose between SaaS or self-hosted solutions to best meet your specific business requirements."
+        "name": "Governance, Security, and Multi-Tenancy",
+        "description": "RBAC, policy-driven access, and namespace-based multi-tenancy enable secure self-service database access at enterprise scale."
+      },
+      {
+        "name": "Data Sovereignty and Infrastructure Control",
+        "description": "Deploy on-prem, in-region, or in air-gapped environments with full control over data placement to meet compliance requirements."
       }
     ]
   },
-  "closing": "This Solution Brief is ideal for those looking to enhance their data protection and operational efficiencies in SUSE Rancher environments."
+  "highlights": {
+    "title": "Why SUSE Rancher Prime + KubeDB",
+    "subtitle": "DBaaS Anywhere. Any Kubernetes. Any Storage. Full Control.",
+    "items": [
+      {
+        "name": "Streamlined Kubernetes Operations",
+        "description": "Unified Kubernetes management across on-prem, cloud, and edge—standardizing platform operations at scale."
+      },
+      {
+        "name": "Automated Database Operations",
+        "description": "Kubernetes-native APIs to provision, scale, upgrade, and manage databases—removing manual day-2 toil."
+      },
+      {
+        "name": "Trusted and Secure Platform",
+        "description": "Centralized policy enforcement and access control with enterprise-grade governance across clusters."
+      },
+      {
+        "name": "Run Any Database Anywhere",
+        "description": "PostgreSQL, MySQL, MariaDB, MongoDB, Redis, Kafka, Elasticsearch, MSSQL, Oracle, and more—running consistently on any CNCF-certified Kubernetes."
+      }
+    ]
+  }
 }

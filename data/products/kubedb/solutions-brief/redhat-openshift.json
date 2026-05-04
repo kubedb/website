@@ -1,30 +1,59 @@
 {
-  "intro": "Dive into the capabilities of KubeDB with this comprehensive Solution Brief designed for Red Hat OpenShift environments. Discover how KubeDB offers a robust, multi-tenant cloud-native data protection platform, tailored for enterprises and service providers managing cloud-native applications across diverse environments.",
+  "subtitle": "Multi-Tenant DBaaS for Red Hat OpenShift",
+  "intro": "Enterprises running modern applications on Red Hat OpenShift struggle to deliver databases quickly. They must maintain security, governance, and operational control, but are often forced to choose between restrictive cloud-managed services or complex manual Kubernetes operations. KubeDB delivers a cloud-native Database-as-a-Service (DBaaS) platform directly on Red Hat OpenShift, enabling platform teams to standardize and govern production-ready databases across hybrid and air-gapped environments while giving developers self-service access through Kubernetes-native workflows.",
   "download": {
     "label": "Download",
-    "url": "/files/solutions-brief/kubedb-redhat-openshift.pdf",
+    "url": "/files/solutions-brief/rh-openshift-kubedb-solution-brief.pdf",
     "external": false
   },
   "benefits": {
-    "title": "Key Benefits of the Solution Brief",
+    "title": "Implementation Benefits",
     "items": [
       {
-        "name": "Multi-Cluster and Multi-Cloud Data Protection",
-        "description": "Experience centralized data protection strategies that span private clouds, public clouds, and edge environments ensuring consistent operations across all your Red Hat OpenShift deployments."
+        "name": "Lower operational overhead",
+        "description": "KubeDB standardizes database provisioning, upgrades, scaling, and recovery through declarative workflows, eliminating custom automation and reducing operational risk."
       },
       {
-        "name": "Advanced Security and Ransomware Protection",
-        "description": "Benefit from immutable backups and advanced security measures to protect against data loss and ransomware threats."
+        "name": "DBaaS without cloud lock-in",
+        "description": "By running entirely inside Red Hat OpenShift, KubeDB delivers DBaaS consistently across on-premises, public cloud, sovereign, and air-gapped environments."
       },
       {
-        "name": "Granular Recovery and Migration Capabilities",
-        "description": "Utilize detailed recovery options and seamless migration capabilities for virtual machines and container applications, promoting operational efficiency and minimizing downtime."
+        "name": "Predictable cost and storage flexibility",
+        "description": "KubeDB works with existing enterprise storage platforms and Kubernetes storage classes, letting organizations optimize for performance, resilience, and cost while keeping full data ownership."
       },
       {
-        "name": "Flexible Deployment Options",
-        "description": "Choose between SaaS or self-hosted solutions to best meet your specific business requirements."
+        "name": "Built-in governance and multi-tenancy",
+        "description": "Platform teams can enforce security, access controls, resource limits, and lifecycle policies, enabling secure multi-tenant DBaaS at scale."
+      },
+      {
+        "name": "Accelerated developer productivity",
+        "description": "Developers gain self-service access to production-ready databases through Kubernetes-native interfaces, removing ticket-based provisioning."
       }
     ]
   },
-  "closing": "This Solution Brief is ideal for those looking to enhance their data protection and operational efficiencies in Red Hat OpenShift environments."
+  "capabilities": {
+    "title": "Capabilities Overview",
+    "items": [
+      {
+        "name": "Native Red Hat OpenShift integration",
+        "description": "First-class OpenShift platform service using Kubernetes APIs and declarative configuration to manage databases as governed, reusable services."
+      },
+      {
+        "name": "Automated database lifecycle management",
+        "description": "Provisioning, upgrades, scaling, and failover are driven by policy, ensuring consistency across clusters and environments."
+      },
+      {
+        "name": "Multi-database platform support",
+        "description": "Supports SQL, NoSQL, caches, and message brokers from a single DBaaS control plane."
+      },
+      {
+        "name": "Integrated data protection and availability",
+        "description": "Built-in backup, restore, and high-availability mechanisms reduce reliance on external, database-specific tooling."
+      },
+      {
+        "name": "Centralized governance",
+        "description": "Operate distributed Red Hat OpenShift environments across clouds and data centers with centralized policy and local execution."
+      }
+    ]
+  }
 }
