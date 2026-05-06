@@ -193,14 +193,14 @@ menu:
     identifier: solution-briefs-redhat-openshift
     parent: solution-briefs
     weight: 1
-    pre: lucide:file-text
+    pre: /assets/images/products/kubedb/partners/logo-maskot/openshift.svg
     title: KubeDB on Red Hat OpenShift
     url: /solution-briefs/redhat-openshift/
   - name: SUSE Rancher
     identifier: solution-briefs-suse-rancher
     parent: solution-briefs
     weight: 2
-    pre: lucide:file-text
+    pre: /assets/images/products/kubedb/partners/logo-maskot/suse.svg
     title: KubeDB on SUSE Rancher
     url: /solution-briefs/suse-rancher/
   - name: Cassandra
