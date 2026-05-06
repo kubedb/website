@@ -169,8 +169,8 @@ menu:
     pre: lucide:youtube
     title: Tutorials, demos, and product walkthroughs
     url: https://www.youtube.com/@AppsCode
-  - name: Solutions Brief
-    identifier: solutions-brief
+  - name: Solution Briefs
+    identifier: solution-briefs
     parent: resources
     weight: 6
     pre: lucide:file-text
@@ -190,19 +190,19 @@ menu:
     title: Setup, guides, and operations
     url: /docs/platform/
   - name: Red Hat OpenShift
-    identifier: solutions-brief-redhat-openshift
-    parent: solutions-brief
+    identifier: solution-briefs-redhat-openshift
+    parent: solution-briefs
     weight: 1
     pre: lucide:file-text
     title: KubeDB on Red Hat OpenShift
-    url: /solutions-brief/redhat-openshift/
+    url: /solution-briefs/redhat-openshift/
   - name: SUSE Rancher
-    identifier: solutions-brief-suse-rancher
-    parent: solutions-brief
+    identifier: solution-briefs-suse-rancher
+    parent: solution-briefs
     weight: 2
     pre: lucide:file-text
     title: KubeDB on SUSE Rancher
-    url: /solutions-brief/suse-rancher/
+    url: /solution-briefs/suse-rancher/
   - name: Cassandra
     identifier: cassandra
     parent: database

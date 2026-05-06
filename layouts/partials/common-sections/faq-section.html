@@ -21,8 +21,8 @@
     <div class="faqs-list-container">
       {{ range $index, $faq := $data.faqs }}
       <div class="ac-faq-item faq-card-item has-background-white mb-4 has-transition is-overflow-hidden is-radius-2xlarge">
-        <button class="faq-trigger is-flex is-align-items-center is-justify-content-space-between p-8 is-fullwidth has-background-transparent has-no-border is-cursor-pointer">
-          <span class="faq-question is-size-5-desktop is-size-6-mobile has-text-weight-bold has-text-left pr-6">
+        <button class="faq-trigger is-flex is-align-items-center is-justify-content-space-between px-8 py-4 is-fullwidth has-background-transparent has-no-border is-cursor-pointer">
+          <span class="faq-question is-size-5-desktop is-size-6-mobile has-text-weight-medium has-text-left pr-6">
             {{ .question }}
           </span>
           <div class="faq-icon-box is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 transition-all is-radius-large has-background-grey-100 has-text-grey-500" style="width: 32px; height: 32px;">
