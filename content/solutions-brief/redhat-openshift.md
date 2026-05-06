@@ -1,5 +1,5 @@
 ---
-id: solutions-brief-redhat-openshift
-url: /solutions-brief/redhat-openshift/
-data: products/kubedb/solutions-brief/redhat-openshift.json
+id: solution-briefs-redhat-openshift
+url: /solution-briefs/redhat-openshift/
+data: products/kubedb/solution-briefs/redhat-openshift.json
 ---

@@ -1,5 +1,5 @@
 ---
-id: solutions-brief-suse-rancher
-url: /solutions-brief/suse-rancher/
-data: products/kubedb/solutions-brief/suse-rancher.json
+id: solution-briefs-suse-rancher
+url: /solution-briefs/suse-rancher/
+data: products/kubedb/solution-briefs/suse-rancher.json
 ---
