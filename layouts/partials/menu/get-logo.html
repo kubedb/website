@@ -3,10 +3,11 @@
 {{ range .menus }}
   {{ if eq .Name $.target}}
     {{ $logo = .Pre }}
-  {{ end }}
-
-  {{ if .HasChildren}}
-    {{ $logo = partial "menu/get-logo.html" (dict "target" $.target "menus" .Children) }}
+  {{ else if .HasChildren}}
+    {{ $childLogo := partial "menu/get-logo.html" (dict "target" $.target "menus" .Children) }}
+    {{ if ne $childLogo "https://cdn.appscode.com/k8s/icons/apiextensions.k8s.io/customresourcedefinitions.svg" }}
+      {{ $logo = $childLogo }}
+    {{ end }}
   {{ end }}
 {{ end }}
 
