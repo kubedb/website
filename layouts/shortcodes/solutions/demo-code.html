@@ -5,28 +5,32 @@
 {{ if $data.code_demo }}
 <section class="home-section section-padding has-background-grey-lightest">
   <div class="container">
-    <div class="has-text-centered mb-16">
-      <div class="badge is-justify-content-center mb-8 has-background-secondary-soft has-border-secondary has-text-indigo">
-        <iconify-icon icon="lucide:git-branch" class="mr-2" width="14"></iconify-icon>
-        <span class="has-text-weight-bold is-size-7 uppercase tracking-widest">{{ $data.code_demo.subtitle }}</span>
-      </div>
-      <h2 class="title is-size-1 is-size-1h has-text-weight-bold">{{ $data.code_demo.title | safeHTML }}</h2>
-    </div>
+    {{ partial "common-sections/section-header.html" (dict
+      "badge_icon" "lucide:git-branch"
+      "badge_text" $data.code_demo.subtitle
+      "title" $data.code_demo.title
+      "align" "center"
+      "class" "mb-12"
+    ) }}
 
     <div class="columns">
       <!-- Left: Large Code Card -->
-      <div class="column is-7">
-        <div class="p-12 is-radius-3xl has-background-white shadow-2xl has-border-grey-200">
-          <div class="is-flex is-align-items-center is-justify-content-between mb-8 px-2">
+      <div class="column is-12-mobile is-12-tablet is-7-desktop">
+        <div class="is-radius-2xlarge has-background-white has-border has-shadow-medium is-overflow-hidden">
+          <!-- card header -->
+          <div class="is-flex is-align-items-center is-justify-content-space-between px-6 py-4 has-border-bottom">
             <div class="is-flex is-align-items-center has-gap-3">
-              <iconify-icon icon="lucide:file-code" class="has-text-success" width="24"></iconify-icon>
-              <span class="is-size-4 font-bold has-text-grey-900">{{ $data.code_demo.filename }}</span>
+              <iconify-icon icon="lucide:file-code" class="has-text-success" width="18" height="18"></iconify-icon>
+              <span class="is-size-6 has-text-weight-bold has-text-grey-900">{{ $data.code_demo.filename }}</span>
             </div>
-            <div class="px-4 py-1-5 is-radius-lg font-bold is-size-7 has-background-success-soft has-text-success has-border-success-light">Git</div>
+            <div class="badge badge-success">
+              <iconify-icon icon="lucide:git-branch" width="12" height="12"></iconify-icon>
+              <span class="has-text-weight-bold">Git</span>
+            </div>
           </div>
-
-          <div class="is-radius-2xl is-overflow-hidden shadow-inner has-background-code-dark">
-            <pre class="p-10 font-mono is-size-6 has-line-height-relaxed has-text-code-green has-background-transparent is-overflow-x-auto"><code>{{ $data.code_demo.code }}</code></pre>
+          <!-- code block -->
+          <div class="has-background-code-dark">
+            <pre class="px-6 py-6 font-mono is-size-6 has-line-height-relaxed has-text-code-green has-background-transparent is-overflow-x-auto" style="margin:0;"><code>{{ $data.code_demo.code }}</code></pre>
           </div>
         </div>
       </div>

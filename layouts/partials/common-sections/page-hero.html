@@ -35,7 +35,7 @@
       </p>
 
       {{ if or $data.hero_best_with $data.hero_best_with_items }}
-      <div class="is-flex is-align-items-center is-justify-content-center has-gap-2 mb-10 is-flex-wrap-wrap">
+      <div class="is-flex is-align-items-center is-justify-content-center has-gap-2 mb-10 is-flex-wrap-wrap is-flex-direction-column-mobile">
         <span class="is-size-7 has-text-grey-500 font-semibold subtitle-font">Best with:</span>
         {{ if $data.hero_best_with_items }}
           {{ range $data.hero_best_with_items }}
