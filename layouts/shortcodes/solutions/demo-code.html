@@ -13,10 +13,10 @@
       "class" "mb-12"
     ) }}
 
-    <div class="columns">
+    <div class="columns is-multiline" style="align-items:stretch;">
       <!-- Left: Large Code Card -->
-      <div class="column is-12-mobile is-12-tablet is-7-desktop">
-        <div class="is-radius-2xlarge has-background-white has-border has-shadow-medium is-overflow-hidden">
+      <div class="column is-12-mobile is-12-tablet is-7-desktop is-flex is-flex-direction-column">
+        <div class="is-radius-2xlarge has-background-white has-border has-shadow-medium is-overflow-hidden is-flex is-flex-direction-column is-flex-grow-1">
           <!-- card header -->
           <div class="is-flex is-align-items-center is-justify-content-space-between px-6 py-4 has-border-bottom">
             <div class="is-flex is-align-items-center has-gap-3">
@@ -28,34 +28,40 @@
               <span class="has-text-weight-bold">Git</span>
             </div>
           </div>
-          <!-- code block -->
-          <div class="has-background-code-dark">
-            <pre class="px-6 py-6 font-mono is-size-6 has-line-height-relaxed has-text-code-green has-background-transparent is-overflow-x-auto" style="margin:0;"><code>{{ $data.code_demo.code }}</code></pre>
+          <!-- code block fills remaining height -->
+          <div class="has-background-code-dark is-flex-grow-1">
+            <pre class="px-6 py-6 font-mono is-size-6 has-line-height-relaxed has-text-code-green has-background-transparent is-overflow-x-auto" style="margin:0;height:100%;"><code>{{ $data.code_demo.code }}</code></pre>
           </div>
         </div>
       </div>
 
       <!-- Right: Flow Steps -->
-      <div class="column is-5">
-        <div class="space-y-6">
-          {{ range $data.code_demo.steps }}
-          <div class="p-8 is-radius-2xl has-border transition-all hover-lift {{ if .vibrant }}is-background-success-light{{ else }}has-background-white shadow-sm{{ end }}"
-               style="border-color: {{ if .vibrant }}#D1FAE5{{ else }}#E2E8F0{{ end }};
-                      background: {{ if .vibrant }}linear-gradient(to bottom right, #F0FDF4, #DCFCE7){{ else }}#FFFFFF{{ end }};">
-            <div class="is-flex has-gap-6 is-align-items-center">
-              <div class="is-flex-shrink-0 has-size-12 is-radius-full is-flex is-align-items-center is-justify-content-center {{ if .vibrant }}has-background-success has-text-white shadow-lg{{ else }}{{ end }}"
-                   style="{{ if not .vibrant }}background: #F1F5F9; color: #6366F1;{{ end }}">
-                {{ if .vibrant }}
-                <iconify-icon icon="lucide:rocket" width="24"></iconify-icon>
-                {{ else }}
-                <span class="has-text-weight-black is-size-5 has-opacity-50">{{ .id }}</span>
-                {{ end }}
-              </div>
-              <div>
-                <h4 class="is-size-4 has-text-weight-bold mb-1 has-text-grey-900">{{ .title }}</h4>
-                <p class="is-size-6 has-text-grey-600 has-line-height-relaxed">{{ .description }}</p>
-              </div>
+      <div class="column is-12-mobile is-12-tablet is-5-desktop is-flex is-flex-direction-column">
+        <div class="is-flex is-flex-direction-column is-flex-grow-1 is-relative" style="gap:0;">
+          <!-- vertical connector line -->
+          <div class="is-absolute is-pointer-events-none" style="left:19px;top:20px;bottom:20px;width:2px;background:linear-gradient(to bottom,hsl(var(--ds-primary)/0.2),hsl(var(--ds-secondary)/0.2));z-index:0;"></div>
+
+          {{ $steps := $data.code_demo.steps }}
+          {{ $count := len $steps }}
+          {{ range $i, $step := $steps }}
+          <div class="is-flex is-align-items-flex-start has-gap-4 is-relative has-z-index-1 is-flex-grow-1{{ if gt $i 0 }} mt-4{{ end }}">
+
+            <!-- step node -->
+            {{ if .vibrant }}
+            <div class="is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-rounded has-text-white has-shadow-small" style="width:40px;height:40px;min-width:40px;background:linear-gradient(135deg,hsl(var(--ds-primary)),hsl(var(--ds-secondary)));">
+              <iconify-icon icon="lucide:rocket" width="18" height="18"></iconify-icon>
             </div>
+            {{ else }}
+            <div class="is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-rounded has-background-white has-border has-text-weight-black" style="width:40px;height:40px;min-width:40px;font-size:0.8rem;color:hsl(var(--ds-primary));border-color:hsl(var(--ds-primary)/0.25);box-shadow:0 2px 6px rgba(0,0,0,0.06);">{{ .id }}</div>
+            {{ end }}
+
+            <!-- step card fills its row -->
+            <div class="is-flex-grow-1 is-radius-xlarge has-border has-transition has-hover-lift px-5 py-4{{ if .vibrant }} has-shadow-small{{ else }} has-background-white{{ end }}"
+              style="{{ if .vibrant }}background:linear-gradient(135deg,hsl(var(--ds-primary)/0.06),hsl(var(--ds-secondary)/0.06));border-color:hsl(var(--ds-primary)/0.2);{{ else }}border-color:hsl(var(--ds-gray-200));{{ end }}">
+              <h4 class="is-size-6 has-text-weight-black has-text-heading mb-1">{{ .title }}</h4>
+              <p class="is-size-7 has-text-grey-600 has-line-height-relaxed mb-0">{{ .description }}</p>
+            </div>
+
           </div>
           {{ end }}
         </div>

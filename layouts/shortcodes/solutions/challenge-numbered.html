@@ -5,9 +5,9 @@
 {{ if $data.challenges }}
 <section id="conflict" class="home-section section-padding has-background-white">
   <div class="container">
-    <div class="columns is-multiline is-vcentered">
+    <div class="columns is-multiline" style="align-items:stretch;">
       <!-- Left: Large Numbered List -->
-      <div class="column is-12-mobile is-12-tablet is-6-desktop">
+      <div class="column is-12-mobile is-12-tablet is-6-desktop is-flex is-flex-direction-column">
 
         {{ partial "common-sections/section-header.html" (dict
           "badge_icon" "lucide:alert-triangle"
@@ -32,8 +32,8 @@
       </div>
 
       <!-- Right: Nested Conflict Box -->
-      <div class="column is-12-mobile is-12-tablet is-6-desktop">
-        <div class="is-radius-2xlarge has-border has-shadow-medium is-overflow-hidden" style="border-color:hsl(var(--ds-danger,0 84% 60%)/0.2);">
+      <div class="column is-12-mobile is-12-tablet is-6-desktop is-flex is-flex-direction-column">
+        <div class="is-radius-2xlarge has-border has-shadow-medium is-overflow-hidden is-flex is-flex-direction-column is-flex-grow-1" style="border-color:hsl(var(--ds-danger,0 84% 60%)/0.2);">
 
           <!-- terminal header bar -->
           <div class="is-flex is-align-items-center is-justify-content-space-between px-5 py-3" style="background:#1e1e2e;">
@@ -50,7 +50,7 @@
           </div>
 
           <!-- terminal body -->
-          <div class="px-6 py-6" style="background:#0f1117;">
+          <div class="px-6 py-6 is-flex-grow-1" style="background:#0f1117;">
 
             <!-- title inside terminal -->
             <div class="is-flex is-align-items-center has-gap-3 mb-6 pb-5" style="border-bottom:1px solid rgba(255,255,255,0.06);">
