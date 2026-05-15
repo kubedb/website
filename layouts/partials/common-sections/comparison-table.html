@@ -1,7 +1,7 @@
 {{ $data := . }}
 {{ $sectionId := $data.section_id | default "comparison" }}
 
-<section id="{{ $sectionId }}" class="section-padding has-background-grey-50 is-relative is-overflow-hidden">
+<section id="{{ $sectionId }}" class="section-padding has-background-grey-50 is-relative">
   <div class="container">
     {{ partial "common-sections/section-header.html" (dict
       "badge_text" $data.badge
@@ -12,29 +12,29 @@
       "class" "mb-12"
     ) }}
 
-    <div class="table-container is-overflow-x-auto is-radius-2xlarge has-border has-shadow-medium has-background-white is-relative has-z-index-10 has-transition">
-      <table class="table is-fullwidth mb-0 is-vcentered">
+    <div style="display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:1.5rem;border:1px solid hsl(var(--ds-gray-200));box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+      <table class="table mb-0 is-vcentered" style="width:100%;min-width:600px;background:#fff;border-radius:1.5rem;overflow:hidden;">
         <thead>
-          <tr class="has-background-grey-50">
-            <th class="is-text-xs has-text-weight-black has-text-heading is-uppercase has-tracking-widest py-5 px-6" style="width:25%;">Capability</th>
-            <th class="is-text-xs has-text-weight-black has-text-warning is-uppercase has-tracking-widest py-5 px-6" style="width:37.5%;">{{ $data.col_traditional }}</th>
-            <th class="is-text-xs has-text-weight-black has-text-primary is-uppercase has-tracking-widest py-5 px-6" style="width:37.5%;">
+          <tr style="background:hsl(var(--ds-gray-50,220 20% 97%));">
+            <th style="width:25%;font-size:0.65rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:hsl(var(--ds-gray-600));padding:1.25rem 1.5rem;white-space:nowrap;">Capability</th>
+            <th style="width:37.5%;font-size:0.65rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:hsl(38 92% 50%);padding:1.25rem 1.5rem;white-space:nowrap;">{{ $data.col_traditional }}</th>
+            <th style="width:37.5%;font-size:0.65rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:hsl(var(--ds-primary));padding:1.25rem 1.5rem;white-space:nowrap;">
               <div class="is-flex is-align-items-center has-gap-2">
-                <iconify-icon icon="lucide:check-circle-2" width="16" height="16" class="has-text-success"></iconify-icon>
+                <iconify-icon icon="lucide:check-circle-2" width="14" height="14" style="color:hsl(142 76% 36%);flex-shrink:0;"></iconify-icon>
                 <span>{{ $data.col_kubedb }}</span>
               </div>
             </th>
           </tr>
         </thead>
-        <tbody class="is-text-sm">
+        <tbody>
           {{ range $data.rows }}
-          <tr class="has-transition">
-            <td class="px-6 py-6 has-text-heading has-text-weight-bold has-background-grey-50" style="border-right:1px solid rgba(0,0,0,0.03);">{{ .capability }}</td>
-            <td class="px-6 py-6 has-text-grey-500 has-line-height-relaxed">{{ .traditional }}</td>
-            <td class="px-6 py-6 has-background-success-soft has-text-weight-semibold">
+          <tr style="border-top:1px solid hsl(var(--ds-gray-100));">
+            <td style="padding:1.25rem 1.5rem;font-size:0.875rem;font-weight:700;color:hsl(var(--ds-gray-900));background:hsl(var(--ds-gray-50,220 20% 97%));border-right:1px solid hsl(var(--ds-gray-100));vertical-align:top;">{{ .capability }}</td>
+            <td style="padding:1.25rem 1.5rem;font-size:0.875rem;color:hsl(var(--ds-gray-500));line-height:1.6;vertical-align:top;">{{ .traditional }}</td>
+            <td style="padding:1.25rem 1.5rem;font-size:0.875rem;font-weight:600;background:hsl(142 76% 36%/0.05);vertical-align:top;">
               <div class="is-flex has-gap-3">
-                <iconify-icon icon="lucide:check" width="16" height="16" class="has-text-success mt-1 is-flex-shrink-0"></iconify-icon>
-                <span class="has-line-height-relaxed">{{ .kubedb }}</span>
+                <iconify-icon icon="lucide:check" width="14" height="14" style="color:hsl(142 76% 36%);flex-shrink:0;margin-top:3px;"></iconify-icon>
+                <span style="line-height:1.6;">{{ .kubedb }}</span>
               </div>
             </td>
           </tr>
