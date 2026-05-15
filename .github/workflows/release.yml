@@ -14,11 +14,12 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
-          fetch-depth: 1
-          fetch-tags: true
+          fetch-depth: 0
           submodules: true
 
       - name: Set up Go 1.x
@@ -30,7 +31,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: '20'
+          node-version: '22'
           check-latest: true
 
       - name: Install yq
