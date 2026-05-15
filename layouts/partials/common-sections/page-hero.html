@@ -96,7 +96,7 @@
       {{ end }}
     {{ end }}
     {{ if and (eq $statsStyle "hero-inline-metrics") (not $iconStats) }}
-    <div class="columns is-mobile is-multiline mt-12 has-max-width-xl mx-auto">
+    <div class="columns is-mobile is-multiline mt-12 has-max-width-xl mx-auto is-centered">
       {{ range $data.stats }}
       <div class="column is-4-desktop is-6-mobile">
         {{ partial "common-cards/metric-card.html" . }}
