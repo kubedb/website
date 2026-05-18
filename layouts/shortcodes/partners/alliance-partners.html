@@ -46,10 +46,10 @@
 
     {{/* Cloud partners — logo image or colored name */}}
     {{ if eq $type "cloud" }}
-    <div class="columns is-multiline">
+    <div class="columns is-mobile is-multiline is-centered">
       {{ range $group.partners }}
       {{ $hasLogo := and .logo (or (hasPrefix .logo "/") (hasPrefix .logo "http")) }}
-      <div class="column is-3-desktop is-6-tablet">
+      <div class="column is-3-desktop is-6-tablet is-6-mobile">
         <a href="{{ .url | default "#" }}" class="ds-card-base is-radius-xlarge p-6 is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-transition has-hover-lift has-no-underline" style="min-height:130px; gap:0.75rem;">
           <div style="height:3.5rem; display:flex; align-items:center; justify-content:center;">
             {{ if $hasLogo }}
@@ -68,11 +68,11 @@
 
     {{/* K8s platform partners */}}
     {{ else if eq $type "k8s" }}
-    <div class="columns is-multiline">
+    <div class="columns is-mobile is-multiline is-centered">
       {{ range $group.partners }}
       {{ $color := "" }}
       {{ if eq .color "red" }}{{ $color = "#dc2626" }}{{ else if eq .color "green" }}{{ $color = "#16a34a" }}{{ else if eq .color "purple" }}{{ $color = "#7c3aed" }}{{ else if eq .color "blue" }}{{ $color = "#1d4ed8" }}{{ else if eq .color "indigo" }}{{ $color = "#4338ca" }}{{ else }}{{ $color = "#4948A3" }}{{ end }}
-      <div class="column is-one-fifth-desktop is-4-tablet is-6-mobile">
+      <div class="column is-6-tablet is-12-mobile">
         <a href="{{ .url | default "#" }}" class="ds-card-base is-radius-2xlarge is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-transition has-hover-lift has-no-underline has-text-centered" style="min-height:175px; padding:2rem 1rem; gap:0.6rem;">
           <div class="is-flex mb-2">
             {{ if .logo }}
@@ -93,9 +93,9 @@
 
     {{/* Storage partners */}}
     {{ else }}
-    <div class="columns is-multiline">
+    <div class="columns is-multiline is-centered">
       {{ range $group.partners }}
-      <div class="column is-3-desktop is-6-tablet">
+      <div class="column is-3-desktop is-6-tablet is-12-mobile">
         <a href="{{ .url | default "#" }}" class="ds-card-base is-radius-2xlarge is-flex is-flex-direction-column is-align-items-center is-justify-content-center has-transition has-hover-lift has-text-centered has-no-underline" style="min-height:160px; padding:2rem; gap:0.85rem;">
           <div style="height:3rem; display:flex; align-items:center; justify-content:center;">
             {{ if .logo }}
@@ -122,8 +122,8 @@
 {{ $wp := . }}
 <section class="section-padding has-background-white">
   <div class="container">
-    <div class="is-radius-2xlarge is-overflow-hidden" style="background:linear-gradient(135deg,#f5f3ff 0%,#eff6ff 100%); border:1px solid #e5e7eb; padding:3.5rem;">
-      <div class="columns is-vcentered has-gap-8">
+    <div class="is-radius-2xlarge is-overflow-hidden" style="background:linear-gradient(135deg,#f5f3ff 0%,#eff6ff 100%); border:1px solid #e5e7eb; padding:2rem;">
+      <div class="columns is-vcentered">
 
         {{/* Left: title + numbered reasons */}}
         <div class="column is-6-desktop">
@@ -143,7 +143,7 @@
 
         {{/* Right: white stat card */}}
         <div class="column is-6-desktop">
-          <div class="has-background-white is-radius-2xlarge has-text-centered" style="padding:2.5rem; border:1px solid #e5e7eb; box-shadow:0 4px 24px rgba(73,72,163,0.08);">
+          <div class="has-background-white is-radius-2xlarge has-text-centered" style="padding:2rem; border:1px solid #e5e7eb; box-shadow:0 4px 24px rgba(73,72,163,0.08);">
             <div class="mb-2">
               <span class="has-text-weight-black" style="font-size:clamp(4rem,9vw,5.5rem); line-height:1; letter-spacing:-0.04em; background:linear-gradient(135deg,#4948A3,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">{{ $wp.stat_value }}</span>
             </div>

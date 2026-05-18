@@ -8,7 +8,7 @@
   </div>
 
   <div class="container is-relative has-z-index-10 has-text-centered">
-    <div class="badge is-justify-content-center mb-4" style="background: {{ $p_color }}12; border-color: {{ $p_color }}22;">
+    <div class="badge is-justify-content-center mb-4" style="background: {{ $p_color }}12; border-color: {{ $p_color }}22; white-space: normal; text-align: left;">
       {{ if $data.product_icon }}
       <iconify-icon {{ printf "icon=%q" $data.product_icon | safeHTMLAttr }} width="18" height="18"
         style="color: {{ $p_color }}"></iconify-icon>

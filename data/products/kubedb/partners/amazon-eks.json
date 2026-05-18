@@ -1,6 +1,6 @@
 {
   "hero": {
-    "product_color_primary": "#7272E9",
+    "product_color_primary": "#FF9900",
     "product_icon": "lucide:check-circle-2",
     "hero_badge": "AWS MARKETPLACE PARTNER",
     "hero_title_1": "Run Any Database Natively on <br>Amazon EKS —<br><span class=\"text-gradient\">Without the Compromise</span>",
