@@ -5,7 +5,7 @@
 {{ $align := .align | default "center" }}
 {{ $class := .class }}
 
-<div class="section-header {{ if not (strings.Contains .class "mb-") }}mb-16{{ end }} {{ if eq $align "center" }}has-text-centered{{ else }}is-flex is-flex-direction-column is-align-items-flex-start has-text-left{{ end }} {{ $class }}">
+<div class="section-header {{ if not (strings.Contains .class "mb-") }}mb-16{{ end }} {{ if eq $align "center" }}has-text-centered{{ else }}is-flex is-flex-direction-column is-align-items-flex-start has-text-left{{ end }} {{ $class }}"{{ if ne $align "center" }} style="margin-left:0;margin-right:0;text-align:left;"{{ end }}>
   {{ if $badge_text }}
   <div class="badge mb-4">
     {{ if $badge_icon }}
@@ -22,7 +22,7 @@
   {{ end }}
 
   {{ if $subtitle }}
-  <p class="section-header-desc body-lg {{ if eq $align "center" }}mx-auto{{ else }}ml-0{{ end }} mt-4 has-opacity-70 has-max-width-800 {{ .subtitle_class }}">
+  <p class="section-header-desc body-lg mt-4 has-opacity-70 has-max-width-800 {{ .subtitle_class }}"{{ if eq $align "center" }} style="margin-left:auto;margin-right:auto;"{{ else }} style="margin-left:0;margin-right:0;"{{ end }}>
     {{ $subtitle | safeHTML }}
   </p>
   {{ end }}

@@ -24,12 +24,14 @@
           <div class="cs-journey-node-wrap">
             <div class="cs-journey-node">{{ .step | default (add $i 1) }}</div>
           </div>
-          <div class="cs-journey-period is-uppercase has-text-weight-bold has-tracking-wider is-size-7 has-text-grey-400 mb-4">
-            {{ .period | default (printf "Step %v" (.step | default (add $i 1))) }}
-          </div>
-          <div class="ac-journey-card cs-journey-card ds-card-base p-6 has-hover-lift has-transition">
-            <h4 class="has-text-centered has-text-heading has-text-weight-bold is-size-5 mb-2">{{ .title }}</h4>
-            <p class="has-text-centered is-size-6 has-text-grey-500 mb-0 has-line-height-relaxed">{{ (.description | default .desc) | safeHTML }}</p>
+          <div class="cs-journey-content">
+            <div class="cs-journey-period is-uppercase has-text-weight-bold has-tracking-wider is-size-7 has-text-grey-400 mb-4">
+              {{ .period | default (printf "Step %v" (.step | default (add $i 1))) }}
+            </div>
+            <div class="ac-journey-card cs-journey-card ds-card-base p-6 has-hover-lift has-transition">
+              <h4 class="has-text-centered has-text-heading has-text-weight-bold is-size-5 mb-2">{{ .title }}</h4>
+              <p class="has-text-centered is-size-6 has-text-grey-500 mb-0 has-line-height-relaxed">{{ (.description | default .desc) | safeHTML }}</p>
+            </div>
           </div>
         </div>
         {{ end }}

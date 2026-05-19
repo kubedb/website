@@ -1,8 +1,8 @@
 {{ $data := . }}
 <div class="mb-20">
-  <div class="p-12 is-radius-2xlarge has-text-centered" style="background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid #334155;">
-    <h3 class="is-size-1 has-text-white has-text-weight-black mb-6">{{ $data.comparison_analogy_heading | default "Think of it this way:" }}</h3>
-    <p class="is-size-2 has-text-secondary has-text-weight-black mb-12" style="color: #c084fc;">
+  <div class="comparison-analogy-panel p-12 is-radius-2xlarge has-text-centered" style="background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid #334155;">
+    <h3 class="product-section-title has-text-white has-text-weight-black mb-6">{{ $data.comparison_analogy_heading | default "Think of it this way:" }}</h3>
+    <p class="is-size-2-desktop is-size-4-mobile has-text-secondary has-text-weight-black mb-12" style="color: #c084fc;">
       {{ $data.comparison_analogy | default "The Operator is the engine. The Platform is the car." }}
     </p>
 
@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <p class="has-text-grey-100 is-size-5 mx-auto has-max-width-800">
+    <p class="has-text-grey-100 is-size-5-desktop is-size-6-mobile mx-auto has-max-width-800">
       {{ $data.comparison_analogy_explanation | default "The Platform provides centralized control and governance, orchestrating multiple Operator instances across different clusters and environments." }}
     </p>
   </div>

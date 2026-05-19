@@ -5,57 +5,83 @@
 {{ if $data.comparison }}
 <section id="conflict" class="home-section section-padding">
   <div class="container">
-    <div class="has-text-centered mb-12">
-      <h2 class="title is-size-2 has-text-weight-bold">{{ $data.comparison.title }}</h2>
-      <p class="is-size-5 has-text-grey-500">{{ $data.comparison.subtitle }}</p>
-    </div>
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $data.comparison.title
+      "subtitle" $data.comparison.subtitle
+      "align" "center"
+      "class" "mb-12"
+    ) }}
 
-    <div class="columns is-vcentered">
+    <div class="columns is-multiline is-vcentered">
+
       {{/* Problem Side */}}
-      <div class="column is-6">
-        <div class="is-fullheight p-10 is-radius-3xl has-background-gradient-danger-soft has-border-danger-light">
-          <div class="is-flex is-align-items-center has-gap-3 mb-8">
-            <iconify-icon {{ printf "icon=%q" $data.comparison.problem.icon | safeHTMLAttr }} class="has-text-danger" width="40" height="40"></iconify-icon>
-            <h3 class="is-size-3 has-text-weight-bold">{{ $data.comparison.problem.title }}</h3>
+      <div class="column is-12-mobile is-12-tablet is-6-desktop">
+        <div class="is-radius-2xlarge is-overflow-hidden has-border has-shadow-medium is-fullheight" style="border-color:hsl(0 84% 60%/0.2);">
+
+          <!-- header -->
+          <div class="px-6 py-5 is-flex is-align-items-center has-gap-3" style="background:hsl(0 84% 60%/0.06);border-bottom:1px solid hsl(0 84% 60%/0.15);">
+            <div class="is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large" style="width:40px;height:40px;background:hsl(0 84% 60%/0.1);border:1px solid hsl(0 84% 60%/0.2);">
+              <iconify-icon {{ printf "icon=%q" $data.comparison.problem.icon | safeHTMLAttr }} width="20" height="20" style="color:hsl(0 84% 60%);"></iconify-icon>
+            </div>
+            <h3 class="is-size-5 has-text-weight-black has-text-heading mb-0">{{ $data.comparison.problem.title }}</h3>
           </div>
-          <div class="space-y-8">
+
+          <!-- steps -->
+          <div class="px-6 py-6 is-flex is-flex-direction-column has-gap-4">
             {{ range $index, $step := $data.comparison.problem.steps }}
-            <div class="is-flex has-gap-4 is-align-items-center">
-              <div class="is-flex-shrink-0 has-size-8 is-radius-lg is-flex is-align-items-center is-justify-content-center has-background-danger-light has-text-danger">
-                <span class="has-text-weight-bold">{{ add $index 1 }}</span>
-              </div>
-              <div class="has-text-grey-700 has-text-weight-medium">{{ $step }}</div>
+            <div class="is-flex is-align-items-flex-start has-gap-4">
+              <div class="is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large has-text-weight-black" style="width:28px;height:28px;min-width:28px;background:hsl(0 84% 60%/0.1);border:1px solid hsl(0 84% 60%/0.2);font-size:0.72rem;color:hsl(0 84% 60%);">{{ add $index 1 }}</div>
+              <p class="has-text-grey-700 has-text-weight-medium mb-0 has-line-height-relaxed" style="padding-top:3px;">{{ $step }}</p>
             </div>
             {{ end }}
           </div>
-          <div class="mt-10 p-6 is-radius-2xl has-background-danger-light has-border-danger-lightest">
-            <p class="has-text-danger-dark has-text-weight-semibold">{{ $data.comparison.problem.result }}</p>
+
+          <!-- result footer -->
+          <div class="px-6 pb-6">
+            <div class="is-flex is-align-items-flex-start has-gap-3 px-4 py-4 is-radius-large" style="background:hsl(0 84% 60%/0.08);border:1px solid hsl(0 84% 60%/0.2);">
+              <iconify-icon icon="lucide:x-circle" width="16" height="16" style="color:hsl(0 84% 60%);flex-shrink:0;margin-top:2px;"></iconify-icon>
+              <p class="has-text-weight-semibold mb-0 has-line-height-relaxed" style="font-size:0.875rem;color:hsl(0 70% 40%);">{{ $data.comparison.problem.result }}</p>
+            </div>
           </div>
+
         </div>
       </div>
 
       {{/* Solution Side */}}
-      <div class="column is-6">
-        <div class="is-fullheight p-10 is-radius-3xl has-background-gradient-success-soft has-border-success-light">
-          <div class="is-flex is-align-items-center has-gap-3 mb-8">
-            <iconify-icon {{ printf "icon=%q" $data.comparison.solution.icon | safeHTMLAttr }} class="has-text-success" width="40" height="40"></iconify-icon>
-            <h3 class="is-size-3 has-text-weight-bold">{{ $data.comparison.solution.title }}</h3>
+      <div class="column is-12-mobile is-12-tablet is-6-desktop">
+        <div class="is-radius-2xlarge is-overflow-hidden has-border has-shadow-medium is-fullheight" style="border-color:hsl(142 76% 36%/0.2);">
+
+          <!-- header -->
+          <div class="px-6 py-5 is-flex is-align-items-center has-gap-3" style="background:hsl(142 76% 36%/0.06);border-bottom:1px solid hsl(142 76% 36%/0.15);">
+            <div class="is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large" style="width:40px;height:40px;background:hsl(142 76% 36%/0.1);border:1px solid hsl(142 76% 36%/0.2);">
+              <iconify-icon {{ printf "icon=%q" $data.comparison.solution.icon | safeHTMLAttr }} width="20" height="20" style="color:hsl(142 76% 36%);"></iconify-icon>
+            </div>
+            <h3 class="is-size-5 has-text-weight-black has-text-heading mb-0">{{ $data.comparison.solution.title }}</h3>
           </div>
-          <div class="space-y-8">
+
+          <!-- steps -->
+          <div class="px-6 py-6 is-flex is-flex-direction-column has-gap-4">
             {{ range $data.comparison.solution.steps }}
-            <div class="is-flex has-gap-4 is-align-items-center">
-              <div class="is-flex-shrink-0 has-size-8 is-radius-lg is-flex is-align-items-center is-justify-content-center {{ if or (strings.Contains .color "bg-grad") (strings.Contains .color "linear-gradient") }} {{ .color }} {{ else }} bg-grad-{{ .color }} {{ end }}">
-                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} class="has-text-white" width="16" height="16"></iconify-icon>
+            <div class="is-flex is-align-items-flex-start has-gap-4">
+              <div class="is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large" style="width:28px;height:28px;min-width:28px;background:linear-gradient(135deg,hsl(var(--ds-primary)),hsl(var(--ds-secondary)));">
+                <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="14" height="14" style="color:#fff;"></iconify-icon>
               </div>
-              <div class="has-text-grey-700 has-text-weight-medium">{{ .text }}</div>
+              <p class="has-text-grey-700 has-text-weight-medium mb-0 has-line-height-relaxed" style="padding-top:3px;">{{ .text }}</p>
             </div>
             {{ end }}
           </div>
-          <div class="mt-10 p-6 is-radius-2xl has-background-success-light has-border-success-medium">
-            <p class="has-text-success-dark has-text-weight-semibold">{{ $data.comparison.solution.result }}</p>
+
+          <!-- result footer -->
+          <div class="px-6 pb-6">
+            <div class="is-flex is-align-items-flex-start has-gap-3 px-4 py-4 is-radius-large" style="background:hsl(142 76% 36%/0.08);border:1px solid hsl(142 76% 36%/0.2);">
+              <iconify-icon icon="lucide:check-circle-2" width="16" height="16" style="color:hsl(142 76% 36%);flex-shrink:0;margin-top:2px;"></iconify-icon>
+              <p class="has-text-weight-semibold mb-0 has-line-height-relaxed" style="font-size:0.875rem;color:hsl(142 60% 28%);">{{ $data.comparison.solution.result }}</p>
+            </div>
           </div>
+
         </div>
       </div>
+
     </div>
   </div>
 </section>

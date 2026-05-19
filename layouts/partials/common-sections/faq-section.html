@@ -4,18 +4,13 @@
 <section class="section-padding faq-section-modern has-background-light">
   <div class="container" style="max-width: 900px;">
     
-    <!-- Centered Header (Utilities Only) -->
-    <div class="section-header has-text-centered mb-16">
-      <div class="badge">
-        {{ $data.faqs_badge | default "FAQ" }}
-      </div>
-      <h2 class="section-header-title has-text-weight-black is-text-6xl mb-4 has-tracking-tighter">
-        {{ $data.faqs_title | default "Frequently Asked Questions" }}
-      </h2>
-      <p class="is-size-5 has-text-grey-500 mx-auto has-max-width-600">
-        {{ $data.faqs_subtitle | default "Everything you need to know about KubeDB" }}
-      </p>
-    </div>
+    {{ partial "common-sections/section-header.html" (dict
+      "title" ($data.faqs_title | default "Frequently Asked Questions")
+      "subtitle" ($data.faqs_subtitle | default "Everything you need to know about KubeDB")
+      "badge_text" ($data.faqs_badge | default "FAQ")
+      "align" "center"
+      "class" "mb-16"
+    ) }}
 
     <!-- Accordion List (Utilities Only) -->
     <div class="faqs-list-container">

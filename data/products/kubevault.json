@@ -13,22 +13,22 @@
   },
   "keywords": "kubernetes, hashicorp vault, vault kubernetes, appscode, vault secret, certificates, security, access tokens, tls, secret engines, user management",
   "heroImage": {
-    "src": "https://cdn.appscode.com/images/products/kubevault/kubevault-hero.png",
+    "src": "/assets/images/products/kubevault/kubevault-hero.png",
     "alt": "KubeVault"
   },
   "logo": {
-    "src": "https://cdn.appscode.com/images/products/kubevault/kubevault.png",
+    "src": "/assets/images/products/kubevault/kubevault.png",
     "alt": "KubeVault"
   },
   "logoWhite": {
-    "src": "https://cdn.appscode.com/images/products/kubevault/kubevault-white.png",
+    "src": "/assets/images/products/kubevault/kubevault-white.png",
     "alt": "KubeVault"
   },
   "icon": {
-    "src": "https://cdn.appscode.com/images/products/kubevault/kubevault-icon.svg",
+    "src": "/assets/images/products/kubevault/kubevault-icon.svg",
     "alt": "KubeVault",
     "sizes": {
-      "192x192": "https://cdn.appscode.com/images/products/kubevault/icons/android-icon-192x192.png"
+      "192x192": "/assets/images/products/kubevault/icons/android-icon-192x192.png"
     }
   },
   "repoURL": "https://github.com/kubevault/kubevault",
@@ -223,6 +223,28 @@
       "show": true
     },
     {
+      "version": "v2026.5.18-rc.1",
+      "hostDocs": true,
+      "show": true,
+      "info": {
+        "cli": "v0.25.0-rc.1",
+        "installer": "v2026.5.18-rc.1",
+        "operator": "v0.25.0-rc.1",
+        "unsealer": "v0.25.0-rc.1"
+      }
+    },
+    {
+      "version": "v2026.5.14-rc.0",
+      "hostDocs": false,
+      "show": false,
+      "info": {
+        "cli": "v0.25.0-rc.0",
+        "installer": "v2026.5.14-rc.0",
+        "operator": "v0.25.0-rc.0",
+        "unsealer": "v0.25.0-rc.0"
+      }
+    },
+    {
       "version": "v2026.2.27",
       "hostDocs": true,
       "show": true,
@@ -235,8 +257,8 @@
     },
     {
       "version": "v2026.1.8-rc.0",
-      "hostDocs": true,
-      "show": true,
+      "hostDocs": false,
+      "show": false,
       "info": {
         "cli": "v0.24.0-rc.0",
         "installer": "v2026.1.8-rc.0",

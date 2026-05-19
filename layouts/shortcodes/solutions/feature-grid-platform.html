@@ -15,11 +15,11 @@
     {{ if $data.platform_architecture_image }}
     <div class="ds-card-base is-radius-2xl p-6 mb-12 has-text-centered">
       <h4 class="is-size-4 has-text-weight-bold mb-6">{{ $data.platform_architecture_title }}</h4>
-      <img src="{{ $data.platform_architecture_image }}" alt="Platform Architecture Overview" class="w-full is-radius-xl" style="max-width:900px; margin: 0 auto; display: block;">
+      <img src="{{ $data.platform_architecture_image }}" alt="Platform Architecture Overview" class="w-full is-radius-xl" style="margin: 0 auto; display: block;">
     </div>
     {{ end }}
 
-    <div class="columns is-multiline">
+    <div class="columns is-multiline is-centered">
       {{ range $data.platform_features }}
       <div class="column is-4-desktop is-6-tablet">
         {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}

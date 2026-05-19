@@ -11,33 +11,25 @@
       "class" "mb-16"
     ) }}
 
-    <div class="columns is-centered">
-      <div class="column is-12">
-        <div class="saas-comparison-table shadow-2xl">
-          <table class="table is-fullwidth is-hoverable mb-0">
-            <thead>
-              <tr>
-                <th class="has-text-grey-900">{{ $data.comparison_header_1 | default "Requirement" }}</th>
-                <th class="has-text-grey-900">{{ $data.comparison_header_2 | default "Cloud DBaaS" }}</th>
-                <th class="has-text-white" style="background: {{ $p_color }};">
-                  {{ $data.comparison_header_3 | default "KubeDB DBaaS" }}
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {{ range $data.comparison_table.rows }}
-              <tr>
-                <td class="has-text-weight-bold has-text-grey-900">{{ index . 0 }}</td>
-                <td class="has-text-grey-600">{{ index . 1 }}</td>
-                <td class="highlight-col is-size-5-desktop">
-                  {{ index . 2 | safeHTML }}
-                </td>
-              </tr>
-              {{ end }}
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <div class="is-fullwidth is-overflow-x-auto is-radius-2xlarge has-border has-shadow-medium has-background-white" style="-webkit-overflow-scrolling:touch;">
+      <table class="table is-hoverable mb-0 is-fullwidth has-background-white" style="min-width:640px;border-collapse:collapse;">
+        <thead>
+          <tr class="has-background-grey-50 has-border-bottom">
+            <th class="px-6 py-5 is-text-xs has-text-weight-black is-uppercase has-tracking-widest has-text-grey-600" style="width:30%;">{{ $data.comparison_header_1 | default "Requirement" }}</th>
+            <th class="px-6 py-5 is-text-xs has-text-weight-black is-uppercase has-tracking-widest has-text-warning" style="width:35%;">{{ $data.comparison_header_2 | default "Cloud DBaaS" }}</th>
+            <th class="px-6 py-5 is-text-xs has-text-weight-black is-uppercase has-tracking-widest has-text-white" style="width:35%;background:{{ $p_color }};">{{ $data.comparison_header_3 | default "KubeDB DBaaS" }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $data.comparison_table.rows }}
+          <tr class="has-border-bottom">
+            <td class="px-6 py-5 is-text-sm has-text-weight-bold has-text-grey-900 has-background-grey-50 is-align-top">{{ index . 0 }}</td>
+            <td class="px-6 py-5 is-text-sm has-text-grey-500 has-line-height-relaxed is-align-top">{{ index . 1 }}</td>
+            <td class="px-6 py-5 is-text-sm has-text-weight-semibold has-text-primary has-background-primary-soft is-align-top">{{ index . 2 | safeHTML }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
     </div>
   </div>
 </section>

@@ -11,9 +11,9 @@
   <div class="container is-relative has-z-index-10 has-text-centered">
     {{ with $hero.hero_badge }}
     <div class="is-flex is-justify-content-center mb-6">
-      <span class="badge" style="background:#d1fae5; border-color:#6ee7b7;">
-        <iconify-icon {{ printf "icon=%q" ($hero.badge_icon | default "lucide:store") | safeHTMLAttr }} width="14" height="14" style="color:#065f46;"></iconify-icon>
-        <span class="is-size-7 has-text-weight-bold" style="color:#065f46; text-transform:uppercase; letter-spacing:0.06em;">{{ . }}</span>
+      <span class="badge" style="background:#4948a312; border-color:#4948a322;">
+        <iconify-icon {{ printf "icon=%q" ($hero.badge_icon | default "lucide:store") | safeHTMLAttr }} width="14" height="14" style="color:#4948a3;"></iconify-icon>
+        <span class="is-size-7 has-text-weight-bold" style="color:#4948a3; text-transform:uppercase; letter-spacing:0.06em;">{{ . }}</span>
       </span>
     </div>
     {{ end }}

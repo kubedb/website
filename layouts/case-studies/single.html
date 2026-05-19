@@ -12,132 +12,133 @@
 
   <!-- 1. HERO -->
   <section class="cs-hero is-relative is-overflow-hidden">
-    <div class="cs-hero-orb-tr is-absolute is-rounded is-pointer-events-none"></div>
-    <div class="cs-hero-orb-bl is-absolute is-rounded is-pointer-events-none"></div>
     <div class="cs-hero-noise is-absolute inset-0 is-pointer-events-none"></div>
+    <!-- ambient color blobs -->
+    <div class="is-absolute is-pointer-events-none" style="width:800px;height:800px;top:-300px;right:-250px;border-radius:50%;background:radial-gradient(circle,hsl(var(--ds-primary)/0.08),transparent 60%);filter:blur(100px);"></div>
+    <div class="is-absolute is-pointer-events-none" style="width:500px;height:500px;bottom:-200px;left:-150px;border-radius:50%;background:radial-gradient(circle,hsl(var(--ds-secondary)/0.07),transparent 60%);filter:blur(80px);"></div>
 
     <div class="container is-relative has-z-index-10">
 
-      <a href="/case-studies/"
-        class="is-inline-flex is-align-items-center has-gap-2 mb-12 has-text-grey-500 has-text-weight-bold has-no-underline has-transition hover:has-text-primary">
-        <iconify-icon icon="lucide:arrow-left" width="16" height="16"></iconify-icon>
+      <!-- back nav -->
+      <a href="/case-studies/" class="is-inline-flex is-align-items-center has-gap-2 mb-10 has-no-underline has-transition" style="color:hsl(var(--ds-gray-400));font-size:0.8rem;font-weight:700;letter-spacing:0.02em;">
+        <iconify-icon icon="lucide:arrow-left" width="14" height="14"></iconify-icon>
         <span>{{ $p.back_link_text }}</span>
       </a>
 
       <div class="columns is-variable is-8 is-vcentered">
 
-        <div class="column is-7-desktop">
+        <!-- ── LEFT ── -->
+        <div class="column is-12-mobile is-12-tablet is-7-desktop">
 
-          {{ with $p.badge }}
-          <div class="badge badge-primary mb-6">
-            <span class="has-size-2 is-rounded has-background-primary"></span>
-            <span>{{ . }}</span>
+          <!-- page type pill -->
+          <div class="is-flex is-align-items-center has-gap-2 mb-6">
+            <span style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.3rem 0.8rem;border-radius:999px;background:hsl(var(--ds-primary)/0.08);border:1px solid hsl(var(--ds-primary)/0.2);font-size:0.65rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:hsl(var(--ds-primary));">
+              <iconify-icon icon="lucide:file-text" width="11" height="11"></iconify-icon>
+              Case Study
+            </span>
+            <span style="color:hsl(var(--ds-gray-300));font-size:0.9rem;">·</span>
+            <span style="font-size:0.7rem;font-weight:700;color:hsl(var(--ds-gray-400));text-transform:uppercase;letter-spacing:0.1em;">{{ $p.industry | default $p.tag }}</span>
           </div>
-          {{ end }}
 
-          <h1 class="display-lg has-text-heading mb-6 has-text-balance has-text-weight-black">{{ $p.tagline |
-            safeHTML }}</h1>
+          <!-- headline — the most important element -->
+          <h1 class="has-text-heading has-text-weight-black mb-5 has-text-balance" style="font-size:clamp(2rem,4vw,3.1rem);line-height:1.1;letter-spacing:-0.03em;">{{ $p.tagline | safeHTML }}</h1>
 
+          <!-- description -->
           {{ with $p.description }}
-          <p class="body-lg has-text-grey-600 mb-10 has-max-width-lg">{{ . }}</p>
+          <p class="has-text-grey-600 has-line-height-relaxed mb-8" style="font-size:1.05rem;max-width:500px;line-height:1.7;">{{ . }}</p>
           {{ end }}
 
+          <!-- outcome metrics strip -->
           {{ if $p.hero_metrics }}
-          <div class="is-flex is-flex-wrap-wrap has-gap-4 mb-10">
+          <div class="is-flex is-flex-wrap-wrap has-gap-3 mb-8">
             {{ range $p.hero_metrics }}
-            <div class="is-flex is-align-items-center is-justify-content-center has-background-primary-soft is-radius-lg" style="width: 200px;">
-              <div class="ac-stat-card stat-item has-text-centered p-6 transition-all hover-translate-up" >
-                <h3 class="is-size-4-desktop is-size-4-tablet is-size-4-mobile has-text-weight-black mb-1 has-line-height-tight"
-                  style="color: var(--ds-primary);">
-                  {{ .value }}
-                </h3>
-                <p class="has-text-grey-500 is-size-7 is-uppercase has-text-weight-bold has-tracking-widest">
-                  {{ .label }}
-                </p>
-              </div>
+            <div class="cs-hero-stat">
+              <span class="cs-hero-stat-value">{{ .value }}</span>
+              <span class="cs-hero-stat-label">{{ .label }}</span>
             </div>
             {{ end }}
           </div>
           {{ end }}
 
-          <div class="is-flex is-align-items-center has-gap-4 is-flex-wrap-wrap mb-10">
+          <!-- CTA buttons -->
+          <div class="is-flex is-align-items-center has-gap-3 is-flex-wrap-wrap mb-8">
             <a href="#cs-results" class="button is-primary hero-btn-primary height-50">
-              <iconify-icon icon="lucide:book-open" width="18" height="18"></iconify-icon>
+              <iconify-icon icon="lucide:book-open" width="17" height="17"></iconify-icon>
               <span>{{ $p.hero_primary_button_text }}</span>
-              <iconify-icon icon="lucide:chevron-right" width="18" height="18"
-                class="has-transition group-hover:has-translate-x-1"></iconify-icon>
+              <iconify-icon icon="lucide:chevron-right" width="17" height="17"></iconify-icon>
             </a>
-            <a href="{{ $p.hero_secondary_button_href }}" target="_blank" rel="noopener noreferrer"
-              class="button is-outlined hero-btn-secondary height-50">
-              <iconify-icon icon="lucide:github" width="18" height="18" class="has-text-muted"></iconify-icon>
+            {{ with $p.hero_secondary_button_href }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="button is-outlined hero-btn-secondary height-50">
+              <iconify-icon icon="lucide:github" width="17" height="17" class="has-text-muted"></iconify-icon>
               <span>{{ $p.hero_secondary_button_text }}</span>
             </a>
+            {{ end }}
           </div>
 
-          <div class="badge badge-neutral mb-0 py-2 px-5">
+          <!-- trust / powered-by -->
+          <div class="is-flex is-align-items-center has-gap-3" style="padding:0.6rem 1rem;background:#fff;border:1px solid hsl(var(--ds-gray-200));border-radius:999px;display:inline-flex;width:fit-content;">
             <span class="cs-ping-dot"></span>
-            <span class="is-text-xs has-text-grey-600 has-text-weight-medium is-normal-case has-tracking-normal">Powered
-              by <strong class="has-text-heading">KubeDB</strong> &amp; <strong
-                class="has-text-heading">KubeStash</strong> &middot; Enterprise Support</span>
+            <span class="has-text-grey-500 has-text-weight-semibold" style="font-size:0.78rem;">Powered by <strong class="has-text-heading">KubeDB</strong> &amp; <strong class="has-text-heading">KubeStash</strong> &middot; Enterprise Support</span>
           </div>
 
         </div>
 
-        <div class="column is-5-desktop">
-          <div
-            class="has-background-white has-border is-radius-2xlarge is-overflow-hidden has-shadow-large has-hover-lift has-transition is-relative">
-            <div class="is-height-1 has-background-gradient-primary"></div>
+        <!-- ── RIGHT — live deployment card ── -->
+        <div class="column is-12-mobile is-12-tablet is-5-desktop">
+          <div class="cs-hero-card">
 
-            <div
-              class="is-flex is-align-items-center is-justify-content-space-between has-gap-3 px-6 py-6 has-border-bottom">
-              <div class="is-flex is-align-items-center has-gap-4 has-min-width-0">
-                <div
-                  class="is-radius-xlarge is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 has-size-12 has-background-grey-50 has-border">
-                  {{ with $p.hero_right_logo_emoji }}{{ . }}
-                  {{ else }}{{ with $p.logo_emoji }}{{ . }}
-                  {{ else }}{{ with $p.logo }}<img src="{{ . }}" alt="{{ $p.company }}"
-                    class="has-height-6 is-object-contain">{{ end }}
-                  {{ end }}{{ end }}
+            <!-- gradient top bar -->
+            <div style="height:4px;background:linear-gradient(90deg,hsl(var(--ds-primary)),hsl(var(--ds-secondary)));"></div>
+
+            <!-- company header -->
+            <div class="is-flex is-align-items-center is-justify-content-space-between has-gap-3 px-6 py-5" style="border-bottom:1px solid hsl(var(--ds-gray-100));">
+              <div class="is-flex is-align-items-center has-gap-3 has-min-width-0">
+                <div class="is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0" style="width:44px;height:44px;border-radius:12px;background:hsl(var(--ds-gray-50));border:1px solid hsl(var(--ds-gray-200));font-size:1.5rem;">
+                  {{ with $p.hero_right_logo_emoji }}{{ . }}{{ else }}{{ with $p.logo_emoji }}{{ . }}{{ else }}<iconify-icon icon="lucide:building-2" width="22" height="22" class="has-text-grey-400"></iconify-icon>{{ end }}{{ end }}
                 </div>
-                <div class="min-w-0">
-                  <h3 class="is-text-base has-text-weight-black has-text-heading mb-0 has-text-truncated">{{ $p.hero_right_company }}</h3>
-                  <p class="is-text-xs has-text-grey-500 mb-0 is-uppercase has-tracking-widest">{{ $p.hero_right_industry }}</p>
+                <div class="has-min-width-0">
+                  <p class="has-text-weight-black has-text-heading mb-0" style="font-size:0.92rem;">{{ $p.hero_right_company }}</p>
+                  <p class="mb-0 has-text-weight-bold" style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.09em;color:hsl(var(--ds-gray-400));">{{ $p.hero_right_industry }}</p>
                 </div>
               </div>
-              <div class="badge badge-success">
+              <div class="badge badge-success is-flex-shrink-0">
                 <span class="cs-ping-dot"></span>
-                <span>{{ $p.hero_live_badge }}</span>
+                <span class="has-text-weight-black">{{ $p.hero_live_badge }}</span>
               </div>
             </div>
 
+            <!-- key metrics grid -->
             {{ with $p.hero_right_metrics }}
-            <div class="is-grid has-border-bottom" style="grid-template-columns: repeat({{ len . }}, 1fr);">
-              {{ range . }}
-              <div class="px-2 py-5 has-text-centered has-border-right">
-                <div class="has-text-gradient has-text-weight-black is-size-4 has-line-height-none mb-1">{{ .value }}
-                </div>
-                <div
-                  class="is-text-xs has-text-weight-extrabold has-text-secondary is-uppercase has-tracking-widest mb-1"
-                  style="font-size: 0.6rem;">{{ .label }}</div>
-                <div class="is-text-xs has-text-grey-400 has-line-height-snug px-2">{{ .sublabel }}</div>
+            <div style="display:grid;grid-template-columns:repeat({{ len . }},1fr);border-bottom:1px solid hsl(var(--ds-gray-100));">
+              {{ range $i, $m := . }}
+              <div class="has-text-centered py-5 px-3" style="{{ if lt $i (sub (len $p.hero_right_metrics) 1) }}border-right:1px solid hsl(var(--ds-gray-100));{{ end }}">
+                <div class="has-text-weight-black has-line-height-none mb-1" style="font-size:1.35rem;background:linear-gradient(135deg,hsl(var(--ds-primary)),hsl(var(--ds-secondary)));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">{{ $m.value }}</div>
+                <div class="has-text-weight-black is-uppercase mb-1" style="font-size:0.52rem;letter-spacing:0.12em;color:hsl(var(--ds-secondary));">{{ $m.label }}</div>
+                <div class="has-line-height-snug" style="font-size:0.68rem;color:hsl(var(--ds-gray-400));">{{ $m.sublabel }}</div>
               </div>
               {{ end }}
             </div>
             {{ end }}
 
-            <div class="px-6 py-6">
-              {{ with $p.hero_right_tags }}
-              <div class="is-flex is-flex-wrap-wrap has-gap-2 mb-5">
+            <!-- active feature chips -->
+            {{ with $p.hero_right_tags }}
+            <div class="px-6 py-5" style="border-bottom:1px solid hsl(var(--ds-gray-100));">
+              <p class="mb-3 has-text-weight-black is-uppercase" style="font-size:0.58rem;letter-spacing:0.12em;color:hsl(var(--ds-gray-400));">Active Features</p>
+              <div class="is-flex is-flex-wrap-wrap has-gap-2">
                 {{ range . }}
-                <span class="tag">{{ . }}</span>
+                <span class="cs-hero-tag">
+                  <iconify-icon icon="lucide:check" width="10" height="10"></iconify-icon>
+                  {{ . }}
+                </span>
                 {{ end }}
               </div>
-              {{ end }}
-              <div class="is-flex is-align-items-center has-gap-3 is-text-xs has-text-grey-500">
-                <iconify-icon icon="lucide:shield-check" width="16" height="16"
-                  class="has-text-success is-flex-shrink-0"></iconify-icon>
-                <span class="has-text-weight-medium">{{ $p.hero_legacy_badge }}</span>
-              </div>
+            </div>
+            {{ end }}
+
+            <!-- card footer -->
+            <div class="px-6 py-4 is-flex is-align-items-center has-gap-2" style="background:hsl(var(--ds-gray-50)/0.8);">
+              <iconify-icon icon="lucide:shield-check" width="14" height="14" class="has-text-success is-flex-shrink-0"></iconify-icon>
+              <span class="has-text-weight-semibold" style="font-size:0.75rem;color:hsl(var(--ds-gray-500));">{{ $p.hero_legacy_badge }}</span>
             </div>
 
           </div>
@@ -152,39 +153,86 @@
   {{ if or $p.customer_badge $p.customer_title $p.customer_description $p.customer_status }}
   <section class="section-padding has-background-white">
     <div class="container">
-      <div class="columns is-vcentered is-variable is-8">
-        <div class="column is-6-desktop">
-          <div class="section-header mb-10 is-flex is-flex-direction-column is-align-items-flex-start has-text-left">
-            {{ with $p.customer_badge }}
-            <div class="badge">
-              <iconify-icon icon="lucide:building-2" width="16" height="16" class="has-text-secondary"></iconify-icon>
-              <span class="badge-text">{{ . }}</span>
+      <div class="is-relative is-overflow-hidden is-radius-2xlarge has-border has-shadow-medium" style="background: linear-gradient(135deg, hsl(var(--ds-primary) / 0.04) 0%, hsl(var(--ds-secondary) / 0.04) 100%); border-color: hsl(var(--ds-primary) / 0.12) !important;">
+
+        <!-- top gradient accent line -->
+        <div style="height: 3px; background: linear-gradient(90deg, hsl(var(--ds-primary)), hsl(var(--ds-secondary)));"></div>
+
+        <!-- subtle orb -->
+        <div class="is-absolute is-pointer-events-none" style="width: 500px; height: 500px; top: -200px; right: -100px; border-radius: 50%; background: radial-gradient(circle, hsl(var(--ds-primary) / 0.07), transparent 70%);"></div>
+
+        <div class="is-relative has-z-index-10 p-8 p-10-desktop">
+          <div class="columns is-vcentered is-variable is-10 mb-0">
+
+            <!-- Left: identity + quote -->
+            <div class="column is-12-mobile is-12-tablet is-7-desktop">
+
+              <div class="is-flex is-align-items-center has-gap-4 mb-6">
+                <div class="is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-xlarge has-background-white has-border has-shadow-small" style="width: 68px; height: 68px;">
+                  {{ with $p.logo_emoji }}
+                  <span style="font-size: 2rem;">{{ . }}</span>
+                  {{ else }}{{ with $p.logo }}
+                  <img src="{{ . }}" alt="{{ $p.customer_title }}" style="height: 36px; object-fit: contain;">
+                  {{ else }}
+                  <iconify-icon icon="lucide:building-2" width="28" height="28" class="has-text-grey-400"></iconify-icon>
+                  {{ end }}{{ end }}
+                </div>
+                <div>
+                  {{ with $p.customer_badge }}
+                  <p class="is-text-xs has-text-weight-black is-uppercase has-tracking-widest mb-1" style="color: hsl(var(--ds-primary)); letter-spacing: 0.12em;">{{ . }}</p>
+                  {{ end }}
+                  {{ with $p.customer_title }}
+                  <h2 class="is-size-3 has-text-heading has-text-weight-black mb-0 has-line-height-tight">{{ . }}</h2>
+                  {{ end }}
+                </div>
+              </div>
+
+              <div class="pl-6" style="border-left: 3px solid hsl(var(--ds-primary) / 0.3);">
+                <p class="is-size-5 has-text-grey-600 has-line-height-relaxed mb-0 is-italic">{{ $p.customer_description }}</p>
+              </div>
+
             </div>
-            {{ end }}
-            {{ with $p.customer_title }}
-            <h2 class="section-header-title has-text-heading has-text-weight-black">{{ . }}</h2>
-            {{ end }}
-            {{ with $p.customer_description }}
-            <p class="section-header-desc body-lg ml-0">{{ . }}</p>
-            {{ end }}
-          </div>
-        </div>
-        <div class="column is-6-desktop">
-          <div class="is-flex is-align-items-center is-justify-content-flex-end is-flex-wrap-wrap has-gap-4">
-            {{ with $p.customer_website }}
-            <a href="{{ . }}" target="_blank" rel="noopener noreferrer"
-              class="btn is-outlined has-border-grey-200 is-radius-large px-6 py-3 is-inline-flex is-align-items-center has-gap-2 !has-text-heading has-shadow-tiny has-hover-lift has-transition">
-              <iconify-icon icon="lucide:globe" width="16" height="16" class="has-text-secondary"></iconify-icon>
-              <span class="has-text-weight-bold">{{ $p.customer_website_label }}</span>
-              <iconify-icon icon="lucide:external-link" width="14" height="14" class="opacity-50"></iconify-icon>
-            </a>
-            {{ end }}
-            {{ with $p.customer_status }}
-            <div class="badge badge-success py-3 px-4">
-              <span class="cs-ping-dot"></span>
-              <span>{{ . }}</span>
+
+            <!-- Right: status card -->
+            <div class="column is-12-mobile is-12-tablet is-5-desktop">
+              <div class="has-background-white is-radius-xlarge has-border has-shadow-small p-6">
+
+                {{ with $p.customer_status }}
+                <div class="is-flex is-align-items-center has-gap-3 mb-5 pb-5 has-border-bottom">
+                  <span class="cs-ping-dot"></span>
+                  <span class="has-text-weight-bold is-text-sm has-text-heading">{{ . }}</span>
+                </div>
+                {{ end }}
+
+                <ul class="has-no-bullets mb-0">
+                  <li class="is-flex is-align-items-center has-gap-3 mb-4">
+                    <iconify-icon icon="lucide:shield-check" width="16" height="16" class="has-text-primary is-flex-shrink-0"></iconify-icon>
+                    <span class="is-text-sm has-text-grey-600">Enterprise-grade KubeDB deployment</span>
+                  </li>
+                  <li class="is-flex is-align-items-center has-gap-3 mb-4">
+                    <iconify-icon icon="lucide:zap" width="16" height="16" class="has-text-secondary is-flex-shrink-0"></iconify-icon>
+                    <span class="is-text-sm has-text-grey-600">Automated operations &amp; zero-downtime</span>
+                  </li>
+                  <li class="is-flex is-align-items-center has-gap-3">
+                    <iconify-icon icon="lucide:lock" width="16" height="16" class="is-flex-shrink-0" style="color: #22c55e;"></iconify-icon>
+                    <span class="is-text-sm has-text-grey-600">Full data sovereignty &amp; compliance</span>
+                  </li>
+                </ul>
+
+                {{ with $p.customer_website }}
+                <div class="mt-5 pt-5 has-border-top">
+                  <a href="{{ . }}" target="_blank" rel="noopener noreferrer"
+                    class="is-inline-flex is-align-items-center has-gap-2 has-no-underline has-transition is-text-sm has-text-weight-bold has-text-primary">
+                    <iconify-icon icon="lucide:globe" width="14" height="14"></iconify-icon>
+                    <span>{{ $p.customer_website_label }}</span>
+                    <iconify-icon icon="lucide:arrow-up-right" width="13" height="13" class="opacity-50"></iconify-icon>
+                  </a>
+                </div>
+                {{ end }}
+
+              </div>
             </div>
-            {{ end }}
+
           </div>
         </div>
       </div>
@@ -255,8 +303,8 @@
   <!-- 2. CHALLENGE -->
   <section class="section-padding has-background-grey-50 is-relative is-overflow-hidden">
     <div class="container">
-      <div class="columns is-variable is-8">
-        <div class="column is-4-desktop">
+      <div class="columns is-variable is-8 is-multiline">
+        <div class="column is-12-mobile is-12-tablet is-4-desktop">
           <div class="has-top-24">
              <div class="badge mb-2">
                 <iconify-icon icon="lucide:alert-triangle" width="16" height="16" class="has-text-secondary"></iconify-icon>
@@ -282,11 +330,11 @@
           </div>
         </div>
 
-        <div class="column is-8-desktop">
+        <div class="column is-12-mobile is-12-tablet is-8-desktop">
           {{ with $p.challenge_items }}
           <div class="columns is-multiline">
             {{ range . }}
-            <div class="column is-4">
+            <div class="column is-12-mobile is-6-tablet is-6-desktop">
               {{ partial "common-cards/feature-card.html" (dict "card" . "type" "compact" "color" "secondary") }}
             </div>
             {{ end }}
@@ -488,7 +536,7 @@
       {{ if $p.value_props }}
       <div class="columns is-multiline">
         {{ range $p.value_props }}
-        <div class="column is-4">
+        <div class="column is-12-mobile is-6-tablet is-4-desktop">
           {{ partial "common-cards/feature-card.html" (dict "card" . "type" "compact" "color" "secondary") }}
         </div>
         {{ end }}

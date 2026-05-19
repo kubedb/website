@@ -10,18 +10,16 @@
       "class" "mb-12"
     ) }}
 
-    <div class="is-flex is-justify-content-center">
-      <div class="ds-card-base p-8 is-radius-2xlarge has-border has-background-white" style="max-width: 920px; width: 100%; background: linear-gradient(135deg, #faf5ff, #eef2ff); border-color: #d8b4fe;">
-        <div class="columns is-multiline is-variable is-4">
-          {{ range $data.offline_package_contents }}
-          <div class="column is-6-desktop">
-            <div class="is-flex is-align-items-start has-gap-3">
-              <iconify-icon icon="lucide:check-circle-2" width="22" class="has-text-primary is-flex-shrink-0" style="margin-top: 2px;"></iconify-icon>
-              <span class="is-size-5 has-text-grey-700">{{ . }}</span>
-            </div>
+    <div class="ds-card-base px-6 py-6 is-radius-2xlarge has-border has-border-secondary has-max-width-900 is-fullwidth mx-auto" style="background:linear-gradient(135deg,#faf5ff,#eef2ff);">
+      <div class="columns is-multiline is-variable is-3">
+        {{ range $data.offline_package_contents }}
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="is-flex is-align-items-start has-gap-2">
+            <iconify-icon icon="lucide:check-circle-2" width="20" class="has-text-primary is-flex-shrink-0 mt-1"></iconify-icon>
+            <span class="is-size-6 has-text-grey-700">{{ . }}</span>
           </div>
-          {{ end }}
         </div>
+        {{ end }}
       </div>
     </div>
   </div>

@@ -5,35 +5,33 @@
 {{ if $data.numbered_features }}
 <section class="home-section section-padding has-background-white">
   <div class="container">
-    <div class="columns is-vcentered is-variable is-8">
-      <div class="column is-6">
+    <div class="columns is-vcentered is-multiline is-variable is-8" style="align-items:stretch;">
+      <!-- Left: Numbered Feature List -->
+      <div class="column is-12-mobile is-12-tablet is-6-desktop is-flex is-flex-direction-column">
         {{ partial "common-sections/section-header.html" (dict
           "title" $data.numbered_features_title
           "subtitle" $data.numbered_features_subtitle
           "align" "left"
-          "class" "mb-12"
+          "class" "mb-10"
         ) }}
 
-        <div class="space-y-8">
+        <div class="is-flex is-flex-direction-column has-gap-8">
           {{ range $data.numbered_features }}
-          <div class="is-flex has-gap-6">
-            <div class="is-flex-shrink-0">
-              <div class="has-size-12 is-radius-xlarge has-background-gradient-primary is-flex is-align-items-center is-justify-content-center shadow-lg">
-                <span class="is-size-5 has-text-weight-bold has-text-white">{{ .id }}</span>
-              </div>
-            </div>
-            <div>
-              <h3 class="is-size-4 has-text-weight-bold mb-2 has-text-grey-900">{{ .title }}</h3>
-              <p class="is-size-6 has-text-grey-600 leading-relaxed">{{ .description }}</p>
+          <div class="is-flex has-gap-5 is-align-items-flex-start">
+            <div class="is-inline-flex is-align-items-center is-justify-content-center is-flex-shrink-0 is-radius-large has-text-weight-black has-line-height-none has-text-white" style="width:48px;height:48px;min-width:48px;font-size:1rem;background:linear-gradient(135deg,hsl(var(--ds-primary)),hsl(var(--ds-secondary)));box-shadow:0 4px 14px hsl(var(--ds-primary)/0.3);">{{ .id }}</div>
+            <div class="pt-1">
+              <h3 class="is-size-5 has-text-weight-black has-text-heading mb-2">{{ .title }}</h3>
+              <p class="is-size-6 has-text-grey-600 has-line-height-relaxed mb-0">{{ .description }}</p>
             </div>
           </div>
           {{ end }}
         </div>
       </div>
 
-      <div class="column is-6">
-        <div class="is-radius-2xl p-4 has-border-grey-light shadow-2xl has-background-white">
-          <img src="{{ $data.numbered_features_graphic | default "/assets/images/products/kubedb/kubedb-hero.png" }}" alt="Feature Diagram" class="is-radius-xl w-full">
+      <!-- Right: Feature Graphic -->
+      <div class="column is-12-mobile is-12-tablet is-6-desktop is-flex is-flex-direction-column is-justify-content-center">
+        <div class="is-radius-2xlarge has-border has-shadow-medium is-overflow-hidden is-flex is-align-items-center is-justify-content-center">
+          <img src="{{ $data.numbered_features_graphic | default "/assets/images/products/kubedb/kubedb-hero.png" }}" alt="Feature Diagram" style="width:100%;height:auto;display:block;">
         </div>
       </div>
     </div>

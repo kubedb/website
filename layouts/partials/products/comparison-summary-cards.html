@@ -19,16 +19,16 @@
     <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up {{ $card_class }}" style="border: 2px solid {{ $card.border }}; border-radius: 20px;">
       <div class="is-flex is-align-items-center has-gap-4 mb-6">
         <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="40" height="40" style="color: {{ $card.icon_color }};"></iconify-icon>
-        <h3 class="is-size-3 has-text-white has-text-weight-black">{{ $card.title }}</h3>
+        <h3 class="is-size-3-desktop is-size-4-mobile has-text-white has-text-weight-black">{{ $card.title }}</h3>
       </div>
-      <p class="has-text-white is-size-5 mb-8 has-line-height-relaxed has-opacity-90">
+      <p class="has-text-white is-size-5-desktop is-size-6-mobile mb-8 has-line-height-relaxed has-opacity-90">
         {{ $card.description }}
       </p>
       <div class="space-y-4">
         {{ range $card.items }}
         <div class="is-flex is-align-items-center has-gap-4">
           <iconify-icon icon="heroicons:check-badge" width="24" height="24" style="color: {{ $card.check_color }};"></iconify-icon>
-          <span class="is-size-5 has-text-white">{{ . }}</span>
+          <span class="is-size-5-desktop is-size-6-mobile has-text-white">{{ . }}</span>
         </div>
         {{ end }}
       </div>
