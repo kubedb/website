@@ -3,20 +3,20 @@
 {{ $op_active := eq $active "operator" }}
 <div class="columns is-centered">
   <div class="column is-12">
-    <div class="is-overflow-hidden is-radius-xlarge shadow-xl" style="background: rgba(255,255,255,0.02); border: 1.5px solid rgba(255,255,255,0.05); border-radius: 24px;">
-      <div class="is-flex is-align-items-stretch" style="border-bottom: 2px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02);">
-        <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white" style="flex: 1.2;">{{ $data.comparison_header_1 | default "Capability" }}</div>
+    <div class="comparison-grid-table is-overflow-hidden is-radius-xlarge shadow-xl" style="background: rgba(255,255,255,0.02); border: 1.5px solid rgba(255,255,255,0.05); border-radius: 24px;">
+      <div class="comparison-grid-row comparison-grid-header is-flex is-align-items-stretch" style="border-bottom: 2px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02);">
+        <div class="comparison-grid-col p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white" style="flex: 1.2;">{{ $data.comparison_header_1 | default "Capability" }}</div>
         {{ if $op_active }}
-        <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black" style="flex: 1; border-left: 1px solid rgba(168,85,247,0.4); background: rgba(88,28,135,0.2); color: #c084fc;">
+        <div class="comparison-grid-col p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black" style="flex: 1; border-left: 1px solid rgba(168,85,247,0.4); background: rgba(88,28,135,0.2); color: #c084fc;">
           <div class="is-flex is-align-items-center has-gap-2">
             <iconify-icon icon="heroicons:sparkles" style="color: #c084fc;"></iconify-icon>
             {{ $data.comparison_header_2 | default "KubeDB Operator" }}
           </div>
         </div>
-        <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white" style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05);">{{ $data.comparison_header_3 | default "KubeDB Platform" }}</div>
+        <div class="comparison-grid-col p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white" style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05);">{{ $data.comparison_header_3 | default "KubeDB Platform" }}</div>
         {{ else }}
-        <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white" style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05);">{{ $data.comparison_header_2 | default "KubeDB Operator" }}</div>
-        <div class="p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-info" style="flex: 1; border-left: 1px solid rgba(37,99,235,0.2); background: rgba(37,99,235,0.05);">
+        <div class="comparison-grid-col p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-white" style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05);">{{ $data.comparison_header_2 | default "KubeDB Operator" }}</div>
+        <div class="comparison-grid-col p-8 is-size-4-desktop is-size-5-mobile has-text-weight-black has-text-info" style="flex: 1; border-left: 1px solid rgba(37,99,235,0.2); background: rgba(37,99,235,0.05);">
           <div class="is-flex is-align-items-center has-gap-2">
             <iconify-icon icon="heroicons:sparkles" class="has-text-warning"></iconify-icon>
             {{ $data.comparison_header_3 | default "KubeDB Platform" }}
@@ -26,25 +26,25 @@
       </div>
 
       {{ range $index, $row := $data.comparison_table.rows }}
-      <div class="is-flex is-align-items-center transition-all" {{ if lt (add $index 1) (len $data.comparison_table.rows) }}style="border-bottom: 1px solid rgba(255,255,255,0.05);"{{ end }}>
-        <div class="p-8 is-size-5 has-text-weight-bold has-text-white" style="flex: 1.2;">
+      <div class="comparison-grid-row is-flex is-align-items-center transition-all" {{ if lt (add $index 1) (len $data.comparison_table.rows) }}style="border-bottom: 1px solid rgba(255,255,255,0.05);"{{ end }}>
+        <div class="comparison-grid-col p-8 is-size-5 has-text-weight-bold has-text-white" style="flex: 1.2;">
           {{ index . 0 }}
         </div>
         {{ if $op_active }}
-        <div class="p-8 is-size-5 has-text-white has-text-weight-semibold" style="flex: 1; border-left: 1px solid rgba(168,85,247,0.3); background: rgba(88,28,135,0.1); line-height: 1.4;">
+        <div class="comparison-grid-col p-8 is-size-5 has-text-white has-text-weight-semibold" style="flex: 1; border-left: 1px solid rgba(168,85,247,0.3); background: rgba(88,28,135,0.1); line-height: 1.4;">
           <div class="is-flex is-align-items-start has-gap-3">
             <iconify-icon icon="heroicons:check-circle" width="22" style="color: #c084fc;"></iconify-icon>
             <span>{{ index . 1 }}</span>
           </div>
         </div>
-        <div class="p-8 is-size-5" style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05); line-height: 1.5; color: #94a3b8;">
+        <div class="comparison-grid-col p-8 is-size-5" style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05); line-height: 1.5; color: #94a3b8;">
           {{ index . 2 }}
         </div>
         {{ else }}
-        <div class="p-8 is-size-5" style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05); line-height: 1.5; color: #94a3b8;">
+        <div class="comparison-grid-col p-8 is-size-5" style="flex: 1; border-left: 1px solid rgba(255,255,255,0.05); line-height: 1.5; color: #94a3b8;">
           {{ index . 1 }}
         </div>
-        <div class="p-8 is-size-5 has-text-white has-text-weight-semibold" style="flex: 1; border-left: 1px solid rgba(37,99,235,0.3); background: rgba(37,99,235,0.08); line-height: 1.4;">
+        <div class="comparison-grid-col p-8 is-size-5 has-text-white has-text-weight-semibold" style="flex: 1; border-left: 1px solid rgba(37,99,235,0.3); background: rgba(37,99,235,0.08); line-height: 1.4;">
           <div class="is-flex is-align-items-start has-gap-3">
             <iconify-icon icon="heroicons:check-circle" class="has-text-info mt-1" width="22" style="color: #60a5fa;"></iconify-icon>
             <span>{{ index . 2 }}</span>
