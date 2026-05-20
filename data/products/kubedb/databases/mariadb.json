@@ -6,14 +6,14 @@
   "summary": "Provision, Upgrade, Scaling, Volume Expansion, Monitor, Backup & Restore, Security for MariaDB Databases in Kubernetes on any Public & Private Cloud",
   "description": "As the world’s enterprises rapidly move to the cloud, and containers are taking over the world of software development, Kubernetes is the platform that lets users seamlessly deploy, scale, run containers, and manage their application life-cycle.  <br />  <br />But, running databases and stateful applications in Kubernetes has always been a challenge. And it is really difficult to **Run and Manage Production-Grade Databases on Kubernetes**. Every Enterprise needs a Production-Grade operator to deploy its databases and manage its life cycle on Kubernetes. <br />   <br />KubeDB is the leader in Kubernetes Native Database Management Solutions which simplifies and automates routine database tasks such as **Provisioning, Monitoring, Upgrading, Patching, Scaling, Volume Expansion, Backup & Restore, Failure detection, and Recovery** for various popular databases on private and public clouds. KubeDB developed the first-ever Production-Grade **Kubernetes operator for MariaDB** to manage its Day-2 operations. KubeDB is a managed DBaaS that allows developers to run their databases alongside the respective application. You can simply deploy a MariaDB server on Kubernetes and manage its Day-2 operations via KubeDB MariaDB Operator.",
   "keywords": [
-    "Provision",
+    "Provisioning",
     "Failure Detection",
-    "Upgrade",
+    "Version Upgrades",
     "Scaling",
     "Volume Expansion",
     "Backup & Recovery",
-    "Monitor",
-    "Data Protection for MariaDB Databases in Kubernetes on Public and Private Cloud"
+    "Monitoring",
+    "Data Protection"
   ],
   "features": [
     {

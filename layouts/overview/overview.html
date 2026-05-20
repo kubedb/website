@@ -7,8 +7,9 @@
 {{ end }}
 
 {{ with $data }}
-<!-- ==========================new hero area start ==========================   -->
-<!-- style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);" -->
+<div class="ac-ui">
+
+<!-- ==========================hero area start ==========================   -->
 <section class="hero-area is-product is-overview {{.id}}">
   <div class="shape">
     <div class="cube"></div>
@@ -30,12 +31,14 @@
   <div class="container">
     <div class="columns is-vcentered is-multiline">
       <div class="column is-6 is-full-touch">
-        <h1>{{.title | markdownify }}</h1>
-        <p>{{.summary | markdownify }}</p>
-        
+        <div class="mb-6">
+          <h1 class="is-size-1 has-text-weight-extrabold mb-4" style="line-height: 1.2;">{{.title | markdownify }}</h1>
+          <p class="is-size-5 has-line-height-relaxed has-text-grey-700">{{.summary | markdownify }}</p>
+        </div>
+
         {{- $hideGuides := in (slice "hanadb" "db2" "documentdb" "neo4j" "weaviate" "qdrant" "milvus") .id -}}
         {{- if not $hideGuides }}
-        <div class="buttons">
+        <div class="buttons is-flex is-align-items-center has-gap-4 mt-6">
             {{- /* Determine helper variables for clarity */ -}}
             {{- $latestVersion := $p.latestVersion -}}
             {{- $hasAddons := gt (len (where site.Menus.main "Name" "Addons")) 0 -}}
@@ -61,17 +64,18 @@
 
             <a
               href="/docs/{{ $latestVersion }}/{{ if $showAddons }}addons{{ else }}guides{{ end }}/{{ $page }}/{{ $overview }}"
-              class="button ac-button is-primary"
+              class="button is-primary height-50"
             >
               USER GUIDES
+              <iconify-icon icon="heroicons:arrow-right" width="20" height="20"></iconify-icon>
             </a>
         </div>
         {{- end }}
       </div>
       <div class="column is-6 is-full-touch">
-        <div class="hero-area-right">
+        <div class="hero-area-right" data-aos="fade-up">
           <!-- code editor start  -->
-          <div class="hero-area-code-editor">
+          <div class="hero-area-code-editor ds-card-base has-shadow-lg">
             <div class="editor-header">
               <span class="action close"></span>
               <span class="action maximize"></span>
@@ -81,23 +85,22 @@
           </div>
         </div>
         <!-- code editor end  -->
-        <!-- <img src="/assets/images/products/kubedb/hero-right-image.png" alt=""> -->
       </div>
     </div>
   </div>
-  </div>
 </section>
-<!-- ========================== new hero area end ==========================  -->
+<!-- ========================== hero area end ==========================  -->
 
 <!-- ========================== social prove logo area start ==========================  -->
-<div class="social-prove-brand-area">
+<div class="social-prove-brand-area" style="padding: 4rem 0;">
   <div class="container">
     <div class="columns">
-      <div class="column is-12">
+      <div class="column is-12 has-text-centered">
+        <h4 class="has-text-body is-text-xs has-text-weight-bold has-text-grey-600 mb-5 is-uppercase" style="letter-spacing: 0.05em;">Trusted by Leading Companies</h4>
         <div class="brand-image-wrapper owl-carousel">
           {{ range $customer := $.Site.Data.customers }}
           {{ if $customer.show }}
-          <div class="single-brand"><img loading="lazy" src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
+          <div class="single-brand has-background-white is-radius-md" style="padding: 0.75rem;"><img loading="lazy" src="{{ $customer.logo }}" alt="{{ $customer.name }}" style="max-height: 40px; object-fit: contain;"></div>
           {{ end }}
           {{ end }}
         </div>
@@ -108,104 +111,104 @@
 <!--========================== social prove logo area end ==========================-->
 
 <!--========================== product features area start ========================== -->
-<section class="features-area mb-50">
+<section class="home-section home-section-light">
   <div class="container">
-    <!-- is-centered -->
-    <div class="columns is-multiline is-vcentered">
 
-      <!-- description content start  -->
-      <div class="column is-5">
-        <div class="features-description">
-          
-          <h1>{{ .title | markdownify }}</h1>
+    <!-- Section intro: left=description, right=illustration+keyword card -->
+    <div class="columns is-vcentered is-variable is-6 mb-80">
 
-          <p>{{.description | markdownify }}</p>
-
+      <!-- Left: badge + title + description -->
+      <div class="column is-6-desktop is-12-tablet">
+        <div class="section-header has-text-left" style="margin-bottom:0;">
+          <div class="badge mb-5">
+            <span class="badge-dot"></span>
+            <span class="badge-text">Key Features</span>
+          </div>
+          <h2 class="section-header-title has-text-left mb-4">
+            <span class="text-gradient">Powerful capabilities</span><br>
+            {{ .title | markdownify }}
+          </h2>
+          <p class="section-header-desc has-text-left">{{ .description | markdownify }}</p>
         </div>
       </div>
-      <!-- description content end  -->
-      <!-- features image start  -->
-      <div class="column is-5 is-offset-2-desktop">
-        <div class="features-image">
-          <ul class="check-list" data-aos="flip-left">
-            <h2 class="is-size-6 mb-15">Why Choose KubeDB?🤔</h2>
-            {{ range .features }}
-            <li>
-              <span class="icon"><img loading="lazy" src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span>
-            <span>{{.title}}</span>
-            </li>
-            {{ end }}
 
-          </ul>
-          <img loading="lazy" src="{{.hero}}" alt="{{.title}}">
-        </div>
-      </div>
-      <!-- features image end -->
-    </div>
-
-    <!-- features items start  -->
-    <div class="columns is-multiline is-centered">
-       <div class="line-shapes">
-         <div class="line line-1"></div>
-         <div class="line line-2"></div>
-         <div class="line line-3"></div>
-         <div class="line line-4"></div>
-         <div class="line line-5"></div>
-       </div>
-      <div class="column is-12">
-        {{ $odd:="true"}}
-        {{ range .features }}
-        <!-- single features start  -->
-        <div
-          class="columns is-multiline is-vcentered {{if eq $odd "false" }}is-flex-direction-row-reverse-mobile{{end}}">
-          {{ if eq $odd "true" }}
-          <div class="column is-6">
-            <div data-aos="flip-left"
-              class="features-thumbnail has-text-left">
-              <img loading="lazy" src="{{ .image }}" alt="{{.title}}">
-            </div>
+      <!-- Right: hero illustration with keyword checklist card overlaid -->
+      <div class="column is-6-desktop is-12-tablet">
+        <div class="ds-card-base p-4">
+          {{ if .hero }}
+          <div style="display:flex;justify-content:flex-end;align-items:center;min-height:420px;">
+            <img loading="lazy" src="{{ .hero }}" alt="{{ .title }}" style="width:82%;max-height:400px;object-fit:contain;display:block;">
           </div>
           {{ end }}
-          <div class="column is-6">
-            <h3>{{.title}}</h3>
-            <p>{{.description}}</p>
+          {{ with .keywords }}
+          <div class="ds-card-base p-4 is-hidden-touch" style="position:absolute;left:1.5rem;top:50%;transform:translateY(-50%);max-width:300px;background:rgba(255,255,255,0.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.5);box-shadow:0 10px 30px rgba(73,72,163,0.14);">
+            <p class="has-text-weight-extrabold has-text-heading is-text-sm mb-4">Why Choose KubeDB?</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.62rem;">
+              {{ range . }}
+              <li style="display:flex;align-items:flex-start;gap:0.55rem;font-size:0.84rem;font-weight:600;line-height:1.35;">
+                <iconify-icon icon="heroicons:check-circle" width="15" height="15" style="color:#10B981;flex-shrink:0;margin-top:2px;"></iconify-icon>
+                <span>{{ . }}</span>
+              </li>
+              {{ end }}
+            </ul>
           </div>
-          {{ if eq $odd "false" }}
-          <div class="column is-6" >
-            <div data-aos="flip-left" class="features-thumbnail has-text-right">
-              <img src="{{.image}}" alt="{{.title}}">
-            </div>
-          </div>
-          {{end}}
 
-          {{ if eq $odd "true"}}
-          {{ $odd = "false"}}
-          {{ else }}
-          {{ $odd = "true" }}
-          {{end}}
+          <div class="ds-card-base p-5 mt-4 is-hidden-desktop">
+            <p class="has-text-weight-extrabold has-text-heading is-text-sm mb-3">Why Choose KubeDB?</p>
+            <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 0.9rem;">
+              {{ range . }}
+              <li style="display:flex;align-items:flex-start;gap:0.45rem;font-size:0.8rem;font-weight:600;line-height:1.25;">
+                <iconify-icon icon="heroicons:check-circle" width="15" height="15" style="color:#10B981;flex-shrink:0;margin-top:1px;"></iconify-icon>
+                <span>{{ . }}</span>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
         </div>
-        <!-- single features end  -->
-        {{ end }}
       </div>
 
     </div>
-    <!-- features items end -->
+
+    <!-- Features Grid - 2 Column on desktop for better balance -->
+    <div class="columns is-multiline is-variable is-6">
+      {{ range $index, $feature := .features }}
+      <div class="column is-6-desktop is-6-tablet">
+        <div class="feature-card ds-card-base is-fullheight p-5">
+          <div class="feature-card-icon-core-{{ $index }} mb-5" style="height: 260px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; background: transparent !important;">
+            {{ if $feature.image }}
+            <img loading="lazy" src="{{ $feature.image }}" alt="{{ $feature.title }}" style="max-width: 100%; max-height: 260px; object-fit: contain;">
+            {{ else }}
+            <span style="font-size: 3rem; opacity: 0.1;">■</span>
+            {{ end }}
+          </div>
+          <div class="is-flex is-align-items-center has-gap-2 mb-3">
+            <iconify-icon icon="heroicons:check-circle" width="24" height="24" style="color: #10B981; flex-shrink: 0;"></iconify-icon>
+            <h3 class="feature-card-title has-text-heading is-text-lg has-text-weight-extrabold m-0">{{ $feature.title }}</h3>
+          </div>
+          <p class="feature-card-desc has-text-body is-text-sm has-line-height-relaxed">{{ $feature.description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
   </div>
 </section>
 <!--========================== product features area end ==========================-->
 
 {{ with .legalNotice }}
 <!--========================== legal notice area start ==========================-->
-<section class="legal-notice-area ac-ui mb-50">
+<section class="home-section home-section-white">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-12">
-        <div class="legal-notice has-background-warning-softer has-border-warning-light is-radius-xl p-6 has-shadow-small">
-          <div class="is-flex is-align-items-center has-gap-3 mb-3">
-            <span class="icon-box bg-grad-yellow has-size-8 is-flex is-align-items-center is-justify-content-center is-radius-md has-text-white has-text-weight-bold">!</span>
-            <h3 class="heading-md has-text-warning-dark m-0">Legal Notice</h3>
+      <div class="column is-10-desktop">
+        <div class="legal-notice ds-card-base has-background-warning-softer has-border-warning-light is-radius-xl p-6">
+          <div class="is-flex is-align-items-flex-start has-gap-4 mb-3">
+            <span class="icon-box bg-grad-yellow has-size-10 is-flex is-align-items-center is-justify-content-center is-radius-md has-text-white has-text-weight-bold mt-1" style="flex-shrink: 0;">!</span>
+            <div>
+              <h3 class="heading-md has-text-warning-dark m-0 mb-2">Important Notice</h3>
+              <p class="body-sm has-text-grey-700 has-line-height-relaxed m-0">{{ . | markdownify }}</p>
+            </div>
           </div>
-          <p class="body-md has-text-grey-700 has-line-height-relaxed m-0">{{ . | markdownify }}</p>
         </div>
       </div>
     </div>
@@ -213,6 +216,8 @@
 </section>
 <!--========================== legal notice area end ==========================-->
 {{ end }}
+
+</div>
 {{ end }}
 
 {{ end }}
