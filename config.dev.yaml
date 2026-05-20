@@ -200,6 +200,11 @@ menu:
     parent: database
     weight: 20
     pre: /assets/images/databases/logos/png/zookeepers.png
+  - name: Aerospike
+    identifier: aerospike
+    parent: database
+    weight: 21
+    pre: /assets/images/databases/logos/png/aerospikes.png
   - name: Amazon EKS
     identifier: amazon-eks
     parent: partners
