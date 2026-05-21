@@ -1,0 +1,39 @@
+<!-- Balanced, Professional Decorative Graphics -->
+<div class="is-absolute" style="top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; pointer-events: none; z-index: 0; border-radius: inherit;">
+  <svg width="100%" height="100%" viewBox="0 0 400 600" preserveAspectRatio="xMidYMin slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Clean, subtle grid pattern -->
+      <pattern id="why-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#326CE5" stroke-opacity="0.04" stroke-width="1"/>
+      </pattern>
+      <!-- Soft ambient glow -->
+      <radialGradient id="glow-grad" cx="80%" cy="10%" r="60%">
+        <stop offset="0%" stop-color="#326CE5" stop-opacity="0.08"/>
+        <stop offset="50%" stop-color="#6366F1" stop-opacity="0.03"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    
+    <!-- Base grid -->
+    <rect width="100%" height="100%" fill="url(#why-grid)" />
+    <!-- Gradient orb -->
+    <rect width="100%" height="100%" fill="url(#glow-grad)" />
+
+    <!-- Abstract connected data nodes (subtle) -->
+    <g transform="translate(240, 60)" opacity="0.6">
+      <!-- Connection lines -->
+      <path d="M 80 20 L 120 70 L 40 100 Z" stroke="#326CE5" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="4 4" />
+      <path d="M 40 100 L 70 160" stroke="#6366F1" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="4 4" />
+      
+      <!-- Nodes -->
+      <circle cx="80" cy="20" r="4" fill="#326CE5" fill-opacity="0.5" />
+      <circle cx="120" cy="70" r="6" fill="#6366F1" fill-opacity="0.4" />
+      <circle cx="40" cy="100" r="5" fill="#06B6D4" fill-opacity="0.5" />
+      <circle cx="70" cy="160" r="3" fill="#326CE5" fill-opacity="0.4" />
+      
+      <!-- Pulsing rings (static SVG rings for clean look) -->
+      <circle cx="120" cy="70" r="14" stroke="#6366F1" stroke-opacity="0.1" stroke-width="1" />
+      <circle cx="40" cy="100" r="12" stroke="#06B6D4" stroke-opacity="0.1" stroke-width="1" />
+    </g>
+  </svg>
+</div>

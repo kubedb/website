@@ -36,21 +36,21 @@
         <div class="ov2-hero-content">
 
           <!-- Badge -->
-          <div class="ov2-hero-badge">
+          <div class="ov2-hero-badge mb-6">
             <span class="ov2-hero-badge-dot"></span>
-            <span class="ov2-hero-badge-text">KubeDB {{ .id | title }} Operator</span>
+            <span class="is-text-xs has-text-weight-bold has-tracking-wider is-uppercase has-text-primary">KubeDB {{ .id | title }} Operator</span>
           </div>
 
           <!-- Title -->
-          <h1 class="ov2-hero-title">{{ .title | markdownify }}</h1>
+          <h1 class="ov2-hero-title is-text-5xl has-text-weight-extrabold has-text-heading mb-5">{{ .title | markdownify }}</h1>
 
           <!-- Description (short) -->
-          <p class="ov2-hero-desc">{{ .summary | markdownify }}</p>
+          <p class="ov2-hero-desc is-text-base has-text-body mb-8">{{ .summary | markdownify }}</p>
 
           <!-- CTA Buttons -->
           {{- $hideGuides := in (slice "hanadb" "db2" "documentdb" "neo4j" "weaviate" "qdrant" "milvus") .id -}}
           {{- if not $hideGuides }}
-          <div class="ov2-hero-ctas">
+          <div class="ov2-hero-ctas is-flex is-align-items-center">
             {{- $latestVersion := $p.latestVersion -}}
             {{- $hasAddons := gt (len (where site.Menus.main "Name" "Addons")) 0 -}}
             {{- $showAddons := or
@@ -101,136 +101,32 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════
-     TRUSTED BY — Reuse homepage social prove partial
-══════════════════════════════════════════════════════════════ -->
-{{ partial "components/social-prove.html" $ }}
-
-<!-- ══════════════════════════════════════════════════════════════
+<!-- <!-- ══════════════════════════════════════════════════════════════
      FEATURES INTRO — Description + Why Choose panel
 ══════════════════════════════════════════════════════════════ -->
 <section class="ov2-features-intro">
   <div class="container">
     <!-- Section header — centered, matching Key Features style -->
-    <div class="ov2-intro-header">
-      <div class="ov2-features-badge">
-        <span class="badge-dot"></span>
-        <span class="badge-text">About {{ .name }}</span>
-      </div>
-      <h2 class="ov2-intro-title">Enterprise-grade <strong>{{ .name }}</strong> Management for Kubernetes</h2>
-      <p class="ov2-intro-subtitle">Simplify Day-2 operations with the most advanced Kubernetes-native database operator.</p>
-    </div>
+    {{ partial "common-sections/section-header.html" (dict "badge_text" (printf "About %s" .name) "title" .title "subtitle" "Simplify Day-2 operations with the most advanced Kubernetes-native database operator." "class" "mb-12") }}
 
     <!-- Content cards -->
     <div class="ov2-intro-grid">
       <!-- Left: Why Choose panel -->
       <div class="ov2-why-panel">
         <div class="ov2-why-accent"></div>
-        <!-- Premium Kubernetes Heptagon + Database Cluster network illustration -->
-        <svg class="ov2-why-decor" viewBox="0 0 320 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <!-- Core gradients -->
-            <linearGradient id="k8s-grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#326CE5" stop-opacity="0.15"/>
-              <stop offset="100%" stop-color="#6366F1" stop-opacity="0.05"/>
-            </linearGradient>
-            <linearGradient id="k8s-glow" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#326CE5" stop-opacity="0.25"/>
-              <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.05"/>
-            </linearGradient>
-            <linearGradient id="db-grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.12"/>
-              <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.02"/>
-            </linearGradient>
-            <!-- Soft radial glow behind K8s helm -->
-            <radialGradient id="helm-glow" cx="80%" cy="20%" r="60%">
-              <stop offset="0%" stop-color="#326CE5" stop-opacity="0.06"/>
-              <stop offset="50%" stop-color="#6366F1" stop-opacity="0.02"/>
-              <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-
-          <!-- Soft ambient glow -->
-          <rect width="100%" height="100%" fill="url(#helm-glow)" />
-
-          <!-- A. Kubernetes Heptagonal steering wheel (top-right) -->
-          <g transform="translate(250, 110)">
-            <!-- Outer Heptagonal Ring -->
-            <polygon points="0,-70 54.8,-43.5 68.7,15.6 30.4,63 0,70 -30.4,63 -68.7,15.6 -54.8,-43.5" stroke="url(#k8s-grad-main)" stroke-width="2" fill="none"/>
-            
-            <!-- Inner Heptagon Ring -->
-            <polygon points="0,-50 39.1,-31.1 49.1,11.1 21.7,45 0,50 -21.7,45 -49.1,11.1 -39.1,-31.1" stroke="url(#k8s-grad-main)" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
-            
-            <!-- Center Hub -->
-            <circle cx="0" cy="0" r="18" fill="url(#k8s-grad-main)"/>
-            <circle cx="0" cy="0" r="6" fill="#326CE5" opacity="0.3"/>
-            
-            <!-- 7 Spokes from Center to Vertices -->
-            <line x1="0" y1="0" x2="0" y2="-70" stroke="url(#k8s-grad-main)" stroke-width="1.5"/>
-            <line x1="0" y1="0" x2="54.8" y2="-43.5" stroke="url(#k8s-grad-main)" stroke-width="1.5"/>
-            <line x1="0" y1="0" x2="68.7" y2="15.6" stroke="url(#k8s-grad-main)" stroke-width="1.5"/>
-            <line x1="0" y1="0" x2="30.4" y2="63" stroke="url(#k8s-grad-main)" stroke-width="1.5"/>
-            <line x1="0" y1="0" x2="-30.4" y2="63" stroke="url(#k8s-grad-main)" stroke-width="1.5"/>
-            <line x1="0" y1="0" x2="-68.7" y2="15.6" stroke="url(#k8s-grad-main)" stroke-width="1.5"/>
-            <line x1="0" y1="0" x2="-54.8" y2="-43.5" stroke="url(#k8s-grad-main)" stroke-width="1.5"/>
-
-            <!-- 7 Vertices Nodes (Glow circles) -->
-            <circle cx="0" cy="-70" r="5" fill="#326CE5" opacity="0.4"/>
-            <circle cx="54.8" cy="-43.5" r="5" fill="#326CE5" opacity="0.4"/>
-            <circle cx="68.7" cy="15.6" r="5" fill="#326CE5" opacity="0.4"/>
-            <circle cx="30.4" cy="63" r="5" fill="#326CE5" opacity="0.4"/>
-            <circle cx="-30.4" cy="63" r="5" fill="#326CE5" opacity="0.4"/>
-            <circle cx="-68.7" cy="15.6" r="5" fill="#326CE5" opacity="0.4"/>
-            <circle cx="-54.8" cy="-43.5" r="5" fill="#326CE5" opacity="0.4"/>
-          </g>
-
-          <!-- B. Database Cluster Nodes (bottom-left) -->
-          <g transform="translate(50, 420)">
-            <!-- Main DB Cylinder -->
-            <ellipse cx="0" cy="0" rx="30" ry="9" fill="url(#db-grad-main)"/>
-            <rect x="-30" y="0" width="60" height="36" fill="url(#db-grad-main)"/>
-            <ellipse cx="0" cy="36" rx="30" ry="9" fill="url(#db-grad-main)"/>
-            
-            <ellipse cx="0" cy="0" rx="30" ry="9" stroke="url(#db-grad-main)" stroke-width="1.5" fill="none"/>
-            <ellipse cx="0" cy="12" rx="30" ry="9" stroke="url(#db-grad-main)" stroke-width="1.5" fill="none" opacity="0.5"/>
-            <ellipse cx="0" cy="24" rx="30" ry="9" stroke="url(#db-grad-main)" stroke-width="1.5" fill="none" opacity="0.3"/>
-            <ellipse cx="0" cy="36" rx="30" ry="9" stroke="url(#db-grad-main)" stroke-width="1.5" fill="none"/>
-
-            <!-- Secondary DB node (smaller, slightly offset) -->
-            <g transform="translate(45, -20)">
-              <ellipse cx="0" cy="0" rx="18" ry="5.5" fill="url(#db-grad-main)"/>
-              <rect x="-18" y="0" width="36" height="20" fill="url(#db-grad-main)"/>
-              <ellipse cx="0" cy="20" rx="18" ry="5.5" fill="url(#db-grad-main)"/>
-              <ellipse cx="0" cy="0" rx="18" ry="5.5" stroke="url(#db-grad-main)" stroke-width="1" fill="none"/>
-              <ellipse cx="0" cy="20" rx="18" ry="5.5" stroke="url(#db-grad-main)" stroke-width="1" fill="none"/>
-            </g>
-          </g>
-
-          <!-- C. Orchestration / Connected Paths & Orbits -->
-          <!-- Circular Orbit Ring around K8s Helm -->
-          <circle cx="250" cy="110" r="105" stroke="url(#k8s-grad-main)" stroke-width="1" stroke-dasharray="5 5" fill="none"/>
-          
-          <!-- Long diagonal connection paths (orchestration streams) -->
-          <path d="M250 215 C200 280, 150 320, 95 400" stroke="url(#k8s-glow)" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
-          <path d="M181.3 125.6 C140 200, 90 280, 50 420" stroke="url(#k8s-glow)" stroke-width="1.5" fill="none"/>
-
-          <!-- Glowing packets/data nodes traveling on lines -->
-          <circle cx="178" cy="265" r="4" fill="#326CE5" opacity="0.6"/>
-          <circle cx="118" cy="345" r="3" fill="#6366F1" opacity="0.5"/>
-          <circle cx="140" cy="200" r="3.5" fill="#06B6D4" opacity="0.6"/>
-        </svg>
-        <div class="ov2-why-body">
-          <div class="ov2-why-header">
-            <div class="ov2-why-icon-wrap">
+        {{ partial "components/k8s-decor.html" . }}
+        <div class="is-relative has-z-index-10 p-8">
+          <div class="is-flex is-align-items-center has-gap-3 mb-4">
+            <div class="is-flex is-align-items-center is-justify-content-center mr-3 is-radius-large has-background-primary-soft has-text-primary" style="width: 34px; height: 34px; min-width: 34px;">
               <iconify-icon icon="lucide:shield-check" width="18" height="18"></iconify-icon>
             </div>
-            <h3 class="ov2-why-title">Why Choose KubeDB?</h3>
+            <h3 class="is-text-lg has-text-weight-bold has-text-heading m-0">Why Choose KubeDB?</h3>
           </div>
-          <div class="ov2-why-divider"></div>
-          <ul class="ov2-why-list">
+          <div class="has-border-top my-4"></div>
+          <ul class="has-no-bullets is-flex is-flex-direction-column has-gap-1">
             {{ range .features }}
-            <li class="ov2-why-item">
-              <span class="ov2-why-feat-icon">
+            <li class="ov2-why-item is-flex is-align-items-center">
+              <span class="ov2-why-feat-icon is-flex is-align-items-center is-justify-content-center mr-3">
                 {{ if eq .title "Provisioning" }}
                   <iconify-icon icon="lucide:rocket" width="16" height="16"></iconify-icon>
                 {{ else if eq .title "Version Upgrade" }}
@@ -250,6 +146,9 @@
                 {{ end }}
               </span>
               <span>{{ .title }}</span>
+              <span class="ml-auto has-text-success is-flex is-align-items-center">
+                <iconify-icon icon="heroicons:check-circle-solid" width="18" height="18"></iconify-icon>
+              </span>
             </li>
             {{ end }}
           </ul>
@@ -258,8 +157,8 @@
       <!-- Right: Description card -->
       <div class="ov2-intro-card">
         <div class="ov2-intro-card-accent"></div>
-        <div class="ov2-intro-card-body">
-          <div class="ov2-intro-desc">{{ .description | markdownify }}</div>
+        <div class="is-relative has-z-index-10 is-fullheight is-flex is-flex-direction-column p-8">
+          <div class="ov2-intro-desc is-text-base has-text-body">{{ .description | markdownify }}</div>
         </div>
       </div>
     </div>
@@ -272,14 +171,7 @@
 <section class="ov2-features">
   <div class="container">
     <!-- Section header -->
-    <div class="ov2-features-header">
-      <div class="ov2-features-badge">
-        <span class="badge-dot"></span>
-        <span class="badge-text">Key Features</span>
-      </div>
-      <h2 class="ov2-features-section-title">Everything you need to run <strong>{{ .name }}</strong> on Kubernetes</h2>
-      <p class="ov2-features-section-desc">Production-grade tooling for the entire lifecycle of your {{ .name }} databases.</p>
-    </div>
+    {{ partial "common-sections/section-header.html" (dict "badge_text" "Key Features" "title" (printf "Everything you need to run <strong class=\"has-text-gradient\">%s</strong> on Kubernetes" .name) "subtitle" (printf "Production-grade tooling for the entire lifecycle of your %s databases." .name) "class" "mb-16") }}
 
     <!-- Feature cards -->
     {{ $odd := "true" }}
@@ -287,13 +179,13 @@
     <div class="ov2-spotlight">
       <div class="ov2-spotlight-card{{ if eq $odd "false" }} ov2-spotlight-card--reversed{{ end }}">
         <!-- Text content -->
-        <div class="ov2-spotlight-content">
-          <span class="ov2-spotlight-number">{{ printf "%02d" (add $i 1) }}</span>
-          <h3 class="ov2-spotlight-title">{{ $feat.title }}</h3>
-          <p class="ov2-spotlight-desc">{{ $feat.description }}</p>
+        <div class="ov2-spotlight-content p-12 is-flex is-flex-direction-column is-justify-content-center">
+          <span class="ov2-spotlight-number is-flex is-align-items-center is-justify-content-center is-text-xs has-text-weight-extrabold mb-5">{{ printf "%02d" (add $i 1) }}</span>
+          <h3 class="is-text-2xl has-text-weight-extrabold has-text-heading mb-4">{{ $feat.title }}</h3>
+          <p class="is-text-base has-text-body m-0">{{ $feat.description }}</p>
         </div>
         <!-- Visual / Image -->
-        <div class="ov2-spotlight-visual">
+        <div class="ov2-spotlight-visual is-flex is-align-items-center is-justify-content-center p-8">
           <img loading="lazy" src="{{ $feat.image }}" alt="{{ $feat.title }}">
         </div>
       </div>
@@ -314,12 +206,12 @@
 {{ with .legalNotice }}
 <section class="ov2-legal">
   <div class="container">
-    <div class="ov2-legal-card">
-      <div class="ov2-legal-header">
-        <span class="ov2-legal-icon">!</span>
-        <h3 class="ov2-legal-title">Legal Notice</h3>
+    <div class="is-relative has-z-index-2 has-background-white has-border is-radius-xl p-8 is-flex is-flex-direction-column is-align-items-center has-text-centered">
+      <div class="is-flex is-align-items-center has-gap-3 mb-5">
+        <span class="is-flex is-align-items-center is-justify-content-center is-rounded has-background-warning-soft has-text-warning has-text-weight-extrabold is-text-sm" style="width: 24px; height: 24px;">!</span>
+        <h3 class="is-text-xl has-text-weight-bold has-text-heading m-0">Legal Notice</h3>
       </div>
-      <p class="ov2-legal-text">{{ . | markdownify }}</p>
+      <p class="is-text-base has-text-body m-0 mx-auto has-max-width-800">{{ . | markdownify }}</p>
     </div>
   </div>
 </section>
