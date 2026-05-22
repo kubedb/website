@@ -168,7 +168,7 @@
 <!-- ══════════════════════════════════════════════════════════════
      FEATURE SPOTLIGHTS — Alternating cards
 ══════════════════════════════════════════════════════════════ -->
-<section class="ov2-features">
+<section class="ov2-features !pb-0">
   <div class="container">
     <!-- Section header -->
     {{ partial "common-sections/section-header.html" (dict "badge_text" "Key Features" "title" (printf "Everything you need to run <strong class=\"has-text-gradient\">%s</strong> on Kubernetes" .name) "subtitle" (printf "Production-grade tooling for the entire lifecycle of your %s databases." .name) "class" "mb-16") }}
@@ -200,6 +200,14 @@
   </div>
 </section>
 
+
+<!-- cta area  -->
+ {{ $finalCTA := index .Site.Data.products.kubedb.homepage "cta-section" }}
+ {{ $databaseName := .name | default (.id | title) | default "Data" }}
+ {{ $ctaTitle := .cta_title | default (printf "Ready to Modernize Your <br>%s Management?" $databaseName) }}
+ {{ partial "common-sections/final-cta.html" (merge $finalCTA (dict "cta_title" $ctaTitle)) }}
+ <!-- cta area end  -->
+
 <!-- ══════════════════════════════════════════════════════════════
      LEGAL NOTICE (conditional)
 ══════════════════════════════════════════════════════════════ -->
@@ -217,7 +225,7 @@
 </section>
 {{ end }}
 
-</div><!-- /.overview-v2 -->
+</div>
 {{ end }}
 
 {{ end }}
