@@ -1,0 +1,15 @@
+apiVersion: kubedb.com/v1alpha2
+kind: Elasticsearch
+metadata:
+  name: custom-certificate-es-ssl
+  namespace: demo
+spec:
+  version: xpack-8.11.1
+  enableSSL: true
+  storage:
+    storageClassName: "standard"
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi

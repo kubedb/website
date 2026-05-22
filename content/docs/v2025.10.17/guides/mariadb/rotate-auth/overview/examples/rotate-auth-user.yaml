@@ -1,0 +1,15 @@
+apiVersion: ops.kubedb.com/v1alpha1
+kind: MariaDBOpsRequest
+metadata:
+  name: mdops-rotate-auth-user
+  namespace: demo
+spec:
+  type: RotateAuth
+  databaseRef:
+    name: sample-mariadb
+  authentication:
+    secretRef:
+      kind: Secret
+      name: sample-mariadb-auth-user
+  timeout: 5m
+  apply: IfReady
