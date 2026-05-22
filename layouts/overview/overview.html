@@ -7,46 +7,56 @@
 {{ end }}
 
 {{ with $data }}
-<!-- ==========================new hero area start ==========================   -->
-<!-- style="background-image: url(/assets/images/products/kubedb/features/hero-images.png);" -->
-<section class="hero-area is-product is-overview {{.id}}">
-  <div class="shape">
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
+<div class="overview-v2 ac-ui">
+
+<!-- ══════════════════════════════════════════════════════════════
+     HERO SECTION — Light, clean, enterprise-grade
+══════════════════════════════════════════════════════════════ -->
+<section class="ov2-hero" id="ov2-hero-{{ .id }}">
+  <!-- Decorative background (reuses homepage orb system) -->
+  <div class="home-hero-bg">
+    <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
+    <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
+    <svg class="hero-dot-grid" width="100%" height="100%"
+      xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <pattern id="ov2-hero-dots" width="80" height="80"
+          patternUnits="userSpaceOnUse">
+          <circle cx="40" cy="40" r="1" fill="#4948A3" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#ov2-hero-dots)" />
+    </svg>
   </div>
-  <div class="shape">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-  </div>
+
   <div class="container">
     <div class="columns is-vcentered is-multiline">
+      <!-- Left: Content -->
       <div class="column is-6 is-full-touch">
-        <h1>{{.title | markdownify }}</h1>
-        <p>{{.summary | markdownify }}</p>
-        
-        {{- $hideGuides := in (slice "hanadb" "db2" "documentdb" "neo4j" "weaviate" "qdrant" "milvus") .id -}}
-        {{- if not $hideGuides }}
-        <div class="buttons">
-            {{- /* Determine helper variables for clarity */ -}}
+        <div class="ov2-hero-content">
+
+          <!-- Badge -->
+          <div class="ov2-hero-badge mb-6">
+            <span class="ov2-hero-badge-dot"></span>
+            <span class="is-text-xs has-text-weight-bold has-tracking-wider is-uppercase has-text-primary">KubeDB {{ .id | title }} Operator</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="ov2-hero-title is-text-5xl has-text-weight-extrabold has-text-heading mb-5">{{ .title | markdownify }}</h1>
+
+          <!-- Description (short) -->
+          <p class="ov2-hero-desc is-text-base has-text-body mb-8">{{ .summary | markdownify }}</p>
+
+          <!-- CTA Buttons -->
+          {{- $hideGuides := in (slice "hanadb" "db2" "documentdb" "neo4j" "weaviate" "qdrant" "milvus") .id -}}
+         
+          <div class="ov2-hero-ctas is-flex is-align-items-center">
             {{- $latestVersion := $p.latestVersion -}}
             {{- $hasAddons := gt (len (where site.Menus.main "Name" "Addons")) 0 -}}
-
-            {{- /* Decide whether to show Addons or Guides */ -}}
             {{- $showAddons := or
               (and $hasAddons (ne site.Params.product_key "kubestash"))
               (and (eq site.Params.product_key "kubestash") (ne .id "kubedump"))
             -}}
-
-            {{- /* Predeclare $page to avoid scoping issue */ -}}
             {{- $page := "" -}}
             {{- if eq .id "opensearch" -}}
               {{- $page = "elasticsearch/quickstart/overview/opensearch" -}}
@@ -55,164 +65,167 @@
             {{- else -}}
               {{- $page = .id -}}
             {{- end -}}
-
-            {{- /* Determine overview part if needed */ -}}
             {{- $overview := cond (eq .id "kubedump") "overview/" "" -}}
-
-            <a
-              href="/docs/{{ $latestVersion }}/{{ if $showAddons }}addons{{ else }}guides{{ end }}/{{ $page }}/{{ $overview }}"
-              class="button ac-button is-primary"
-            >
-              USER GUIDES
+             {{- if not $hideGuides }}
+            <a href="/docs/{{ $latestVersion }}/{{ if $showAddons }}addons{{ else }}guides{{ end }}/{{ $page }}/{{ $overview }}"
+               class="button is-primary hero-btn-primary height-50">
+              User Guides
+              <iconify-icon icon="heroicons:arrow-right" width="18" height="18"></iconify-icon>
             </a>
-        </div>
-        {{- end }}
-      </div>
-      <div class="column is-6 is-full-touch">
-        <div class="hero-area-right">
-          <!-- code editor start  -->
-          <div class="hero-area-code-editor">
-            <div class="editor-header">
-              <span class="action close"></span>
-              <span class="action maximize"></span>
-              <span class="action minimize"></span>
-            </div>
-            {{ highlight (transform.Remarshal "yaml" .example) "yaml" "lineNos=inline, style=dracula" }}
+            {{- end }}
+             <a href="{{ $.Site.Params.domain_appscode }}/contact/"
+               class="button is-outlined hero-btn-secondary height-50">
+              <iconify-icon icon="heroicons:chat-bubble-bottom-center" width="18" height="18"></iconify-icon>
+              Get in Touch
+            </a>
           </div>
         </div>
-        <!-- code editor end  -->
-        <!-- <img src="/assets/images/products/kubedb/hero-right-image.png" alt=""> -->
+      </div>
+
+      <!-- Right: Code Editor -->
+      <div class="column is-6 is-full-touch">
+        <div class="ov2-hero-code-wrap">
+          <div class="ov2-code-editor">
+            <div class="ov2-code-header">
+              <span class="ov2-code-dot ov2-code-dot--close"></span>
+              <span class="ov2-code-dot ov2-code-dot--min"></span>
+              <span class="ov2-code-dot ov2-code-dot--max"></span>
+            </div>
+            <div class="ov2-code-body">
+              {{ highlight (transform.Remarshal "yaml" .example) "yaml" "lineNos=inline, style=dracula" }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </section>
-<!-- ========================== new hero area end ==========================  -->
 
-<!-- ========================== social prove logo area start ==========================  -->
-<div class="social-prove-brand-area">
+<!-- <!-- ══════════════════════════════════════════════════════════════
+     FEATURES INTRO — Description + Why Choose panel
+══════════════════════════════════════════════════════════════ -->
+<section class="ov2-features-intro">
   <div class="container">
-    <div class="columns">
-      <div class="column is-12">
-        <div class="brand-image-wrapper owl-carousel">
-          {{ range $customer := $.Site.Data.customers }}
-          {{ if $customer.show }}
-          <div class="single-brand"><img loading="lazy" src="{{ $customer.logo }}" alt="{{ $customer.name }}"></div>
-          {{ end }}
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--========================== social prove logo area end ==========================-->
+    <!-- Section header — centered, matching Key Features style -->
+    {{ partial "common-sections/section-header.html" (dict "badge_text" (printf "About %s" .name) "title" .title "subtitle" "Simplify Day-2 operations with the most advanced Kubernetes-native database operator." "class" "mb-12") }}
 
-<!--========================== product features area start ========================== -->
-<section class="features-area mb-50">
-  <div class="container">
-    <!-- is-centered -->
-    <div class="columns is-multiline is-vcentered">
-
-      <!-- description content start  -->
-      <div class="column is-5">
-        <div class="features-description">
-          
-          <h1>{{ .title | markdownify }}</h1>
-
-          <p>{{.description | markdownify }}</p>
-
-        </div>
-      </div>
-      <!-- description content end  -->
-      <!-- features image start  -->
-      <div class="column is-5 is-offset-2-desktop">
-        <div class="features-image">
-          <ul class="check-list" data-aos="flip-left">
-            <h2 class="is-size-6 mb-15">Why Choose KubeDB?🤔</h2>
+    <!-- Content cards -->
+    <div class="ov2-intro-grid">
+      <!-- Left: Why Choose panel -->
+      <div class="ov2-why-panel">
+        <div class="ov2-why-accent"></div>
+        {{ partial "components/k8s-decor.html" . }}
+        <div class="is-relative has-z-index-10 p-8">
+          <div class="is-flex is-align-items-center has-gap-3 mb-4">
+            <div class="is-flex is-align-items-center is-justify-content-center mr-3 is-radius-large has-background-primary-soft has-text-primary" style="width: 34px; height: 34px; min-width: 34px;">
+              <iconify-icon icon="lucide:shield-check" width="18" height="18"></iconify-icon>
+            </div>
+            <h3 class="is-text-lg has-text-weight-bold has-text-heading m-0">Why Choose KubeDB?</h3>
+          </div>
+          <div class="has-border-top my-4"></div>
+          <ul class="has-no-bullets is-flex is-flex-direction-column has-gap-1">
             {{ range .features }}
-            <li>
-              <span class="icon"><img loading="lazy" src="/assets/images/products/appscode/icons/global/check-box.webp" alt="check-box" loading="lazy"></span>
-            <span>{{.title}}</span>
+            <li class="ov2-why-item is-flex is-align-items-center">
+              <span class="ov2-why-feat-icon is-flex is-align-items-center is-justify-content-center mr-3">
+                {{ if eq .title "Provisioning" }}
+                  <iconify-icon icon="lucide:rocket" width="16" height="16"></iconify-icon>
+                {{ else if eq .title "Version Upgrade" }}
+                  <iconify-icon icon="lucide:arrow-up-circle" width="16" height="16"></iconify-icon>
+                {{ else if eq .title "Scaling" }}
+                  <iconify-icon icon="lucide:maximize-2" width="16" height="16"></iconify-icon>
+                {{ else if eq .title "Volume Expansion" }}
+                  <iconify-icon icon="lucide:hard-drive" width="16" height="16"></iconify-icon>
+                {{ else if or (eq .title "Backup & Restore") (eq .title "Backup & Recovery") }}
+                  <iconify-icon icon="lucide:database-backup" width="16" height="16"></iconify-icon>
+                {{ else if eq .title "Monitoring" }}
+                  <iconify-icon icon="lucide:activity" width="16" height="16"></iconify-icon>
+                {{ else if eq .title "Security" }}
+                  <iconify-icon icon="lucide:lock" width="16" height="16"></iconify-icon>
+                {{ else }}
+                  <iconify-icon icon="lucide:check-circle" width="16" height="16"></iconify-icon>
+                {{ end }}
+              </span>
+              <span>{{ .title }}</span>
+              <span class="ml-auto has-text-success is-flex is-align-items-center">
+                <iconify-icon icon="heroicons:check-circle-solid" width="18" height="18"></iconify-icon>
+              </span>
             </li>
             {{ end }}
-
           </ul>
-          <img loading="lazy" src="{{.hero}}" alt="{{.title}}">
         </div>
       </div>
-      <!-- features image end -->
-    </div>
-
-    <!-- features items start  -->
-    <div class="columns is-multiline is-centered">
-       <div class="line-shapes">
-         <div class="line line-1"></div>
-         <div class="line line-2"></div>
-         <div class="line line-3"></div>
-         <div class="line line-4"></div>
-         <div class="line line-5"></div>
-       </div>
-      <div class="column is-12">
-        {{ $odd:="true"}}
-        {{ range .features }}
-        <!-- single features start  -->
-        <div
-          class="columns is-multiline is-vcentered {{if eq $odd "false" }}is-flex-direction-row-reverse-mobile{{end}}">
-          {{ if eq $odd "true" }}
-          <div class="column is-6">
-            <div data-aos="flip-left"
-              class="features-thumbnail has-text-left">
-              <img loading="lazy" src="{{ .image }}" alt="{{.title}}">
-            </div>
-          </div>
-          {{ end }}
-          <div class="column is-6">
-            <h3>{{.title}}</h3>
-            <p>{{.description}}</p>
-          </div>
-          {{ if eq $odd "false" }}
-          <div class="column is-6" >
-            <div data-aos="flip-left" class="features-thumbnail has-text-right">
-              <img src="{{.image}}" alt="{{.title}}">
-            </div>
-          </div>
-          {{end}}
-
-          {{ if eq $odd "true"}}
-          {{ $odd = "false"}}
-          {{ else }}
-          {{ $odd = "true" }}
-          {{end}}
+      <!-- Right: Description card -->
+      <div class="ov2-intro-card">
+        <div class="ov2-intro-card-accent"></div>
+        <div class="is-relative has-z-index-10 is-fullheight is-flex is-flex-direction-column p-8">
+          <div class="ov2-intro-desc is-text-base has-text-body">{{ .description | markdownify }}</div>
         </div>
-        <!-- single features end  -->
-        {{ end }}
       </div>
-
     </div>
-    <!-- features items end -->
   </div>
 </section>
-<!--========================== product features area end ==========================-->
 
-{{ with .legalNotice }}
-<!--========================== legal notice area start ==========================-->
-<section class="legal-notice-area ac-ui mb-50">
+<!-- ══════════════════════════════════════════════════════════════
+     FEATURE SPOTLIGHTS — Alternating cards
+══════════════════════════════════════════════════════════════ -->
+<section class="ov2-features !pb-0">
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-12">
-        <div class="legal-notice has-background-warning-softer has-border-warning-light is-radius-xl p-6 has-shadow-small">
-          <div class="is-flex is-align-items-center has-gap-3 mb-3">
-            <span class="icon-box bg-grad-yellow has-size-8 is-flex is-align-items-center is-justify-content-center is-radius-md has-text-white has-text-weight-bold">!</span>
-            <h3 class="heading-md has-text-warning-dark m-0">Legal Notice</h3>
-          </div>
-          <p class="body-md has-text-grey-700 has-line-height-relaxed m-0">{{ . | markdownify }}</p>
+    <!-- Section header -->
+    {{ partial "common-sections/section-header.html" (dict "badge_text" "Key Features" "title" (printf "Everything you need to run <strong class=\"has-text-gradient\">%s</strong> on Kubernetes" .name) "subtitle" (printf "Production-grade tooling for the entire lifecycle of your %s databases." .name) "class" "mb-16") }}
+
+    <!-- Feature cards -->
+    {{ $odd := "true" }}
+    {{ range $i, $feat := .features }}
+    <div class="ov2-spotlight">
+      <div class="ov2-spotlight-card{{ if eq $odd "false" }} ov2-spotlight-card--reversed{{ end }}">
+        <!-- Text content -->
+        <div class="ov2-spotlight-content p-12 is-flex is-flex-direction-column is-justify-content-center">
+          <span class="ov2-spotlight-number is-flex is-align-items-center is-justify-content-center is-text-xs has-text-weight-extrabold mb-5">{{ printf "%02d" (add $i 1) }}</span>
+          <h3 class="is-text-2xl has-text-weight-extrabold has-text-heading mb-4">{{ $feat.title }}</h3>
+          <p class="is-text-base has-text-body m-0">{{ $feat.description }}</p>
+        </div>
+        <!-- Visual / Image -->
+        <div class="ov2-spotlight-visual is-flex is-align-items-center is-justify-content-center p-8">
+          <img loading="lazy" src="{{ $feat.image }}" alt="{{ $feat.title }}">
         </div>
       </div>
     </div>
+
+    {{ if eq $odd "true" }}
+    {{ $odd = "false" }}
+    {{ else }}
+    {{ $odd = "true" }}
+    {{ end }}
+    {{ end }}
   </div>
 </section>
-<!--========================== legal notice area end ==========================-->
+
+
+<!-- cta area  -->
+ {{ $finalCTA := index .Site.Data.products.kubedb.homepage "cta-section" }}
+ {{ $databaseName := .name | default (.id | title) | default "Data" }}
+ {{ $ctaTitle := .cta_title | default (printf "Ready to Modernize Your <br>%s Management?" $databaseName) }}
+ {{ partial "common-sections/final-cta.html" (merge $finalCTA (dict "cta_title" $ctaTitle)) }}
+ <!-- cta area end  -->
+
+<!-- ══════════════════════════════════════════════════════════════
+     LEGAL NOTICE (conditional)
+══════════════════════════════════════════════════════════════ -->
+{{ with .legalNotice }}
+<section class="ov2-legal">
+  <div class="container">
+    <div class="is-relative has-z-index-2 has-background-white has-border is-radius-xl p-8 is-flex is-flex-direction-column is-align-items-center has-text-centered">
+      <div class="is-flex is-align-items-center has-gap-3 mb-5">
+        <span class="is-flex is-align-items-center is-justify-content-center is-rounded has-background-warning-soft has-text-warning has-text-weight-extrabold is-text-sm" style="width: 24px; height: 24px;">!</span>
+        <h3 class="is-text-xl has-text-weight-bold has-text-heading m-0">Legal Notice</h3>
+      </div>
+      <p class="is-text-base has-text-body m-0 mx-auto has-max-width-800">{{ . | markdownify }}</p>
+    </div>
+  </div>
+</section>
 {{ end }}
+
+</div>
 {{ end }}
 
 {{ end }}
