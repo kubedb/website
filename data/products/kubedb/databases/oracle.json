@@ -15,32 +15,32 @@
   "features": [
     {
       "title": "Provisioning Oracle Database",
-      "image": "/assets/images/databases/illustrations/colud-chair.png",
+      "image": "/assets/images/databases/illustrations/provisioning.png",
       "description": "Provision Oracle Database workloads on Kubernetes using standard Kubernetes CLI and API. Users must supply their own validly licensed Oracle container images (e.g., from Oracle Container Registry with proper credentials) and are solely responsible for ensuring full compliance with Oracle's licensing terms, including container/Kubernetes-specific rules."
     },
     {
       "title": "Version Upgrade",
-      "image": "/assets/images/databases/illustrations/version-control.png",
+      "image": "/assets/images/databases/illustrations/version-upgrade.png",
       "description": "Orchestrate version upgrades for Oracle Database containers following user-defined maintenance windows. Note: Upgrades must comply with Oracle's support policies for containerized deployments."
     },
     {
       "title": "Scaling",
-      "image": "/assets/images/databases/illustrations/scalling.png",
+      "image": "/assets/images/databases/illustrations/scaling.png",
       "description": "Scale Oracle Database deployments vertically or horizontally within Kubernetes cluster constraints. Scaling depends on Oracle-specific configurations (e.g., Oracle RAC) and licensing."
     },
     {
       "title": "Volume Expansion",
-      "image": "/assets/images/databases/illustrations/expansion.png",
+      "image": "/assets/images/databases/illustrations/volume-expansion.png",
       "description": "Expand persistent volume claims for Oracle Database storage using Kubernetes-native volume expansion features."
     },
     {
       "title": "Backup & Restore",
-      "image": "/assets/images/databases/illustrations/backup.png",
+      "image": "/assets/images/databases/illustrations/backup-restore.png",
       "description": "Configure backup and restore operations using Stash. Users are responsible for validating backup integrity and recovery procedures with their Oracle Database version."
     },
     {
       "title": "Monitoring",
-      "image": "/assets/images/databases/illustrations/overview.png",
+      "image": "/assets/images/databases/illustrations/monitoring.png",
       "description": "Monitor Oracle Database workloads using Prometheus-compatible metrics and visualize them with Grafana dashboards."
     },
     {

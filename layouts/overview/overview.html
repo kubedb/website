@@ -49,7 +49,7 @@
 
           <!-- CTA Buttons -->
           {{- $hideGuides := in (slice "hanadb" "db2" "documentdb" "neo4j" "weaviate" "qdrant" "milvus") .id -}}
-          {{- if not $hideGuides }}
+         
           <div class="ov2-hero-ctas is-flex is-align-items-center">
             {{- $latestVersion := $p.latestVersion -}}
             {{- $hasAddons := gt (len (where site.Menus.main "Name" "Addons")) 0 -}}
@@ -66,19 +66,19 @@
               {{- $page = .id -}}
             {{- end -}}
             {{- $overview := cond (eq .id "kubedump") "overview/" "" -}}
+             {{- if not $hideGuides }}
             <a href="/docs/{{ $latestVersion }}/{{ if $showAddons }}addons{{ else }}guides{{ end }}/{{ $page }}/{{ $overview }}"
-               class="ov2-btn-primary">
+               class="button is-primary hero-btn-primary height-50">
               User Guides
               <iconify-icon icon="heroicons:arrow-right" width="18" height="18"></iconify-icon>
             </a>
-            <a href="{{ $.Site.Params.domain_appscode }}/contact/"
-               class="ov2-btn-secondary">
+            {{- end }}
+             <a href="{{ $.Site.Params.domain_appscode }}/contact/"
+               class="button is-outlined hero-btn-secondary height-50">
               <iconify-icon icon="heroicons:chat-bubble-bottom-center" width="18" height="18"></iconify-icon>
               Get in Touch
             </a>
           </div>
-          {{- end }}
-
         </div>
       </div>
 
