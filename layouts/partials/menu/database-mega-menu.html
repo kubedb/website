@@ -19,26 +19,26 @@
 
 {{ $databases := dict
   "relational" (slice
-    (dict "name" "IBM DB2" "id" "db2" "icon" "/assets/images/databases/logos/png/db2s.png")
+    (dict "name" "PostgreSQL" "id" "postgres" "icon" "/assets/images/databases/logos/png/postgreses.png")
+    (dict "name" "MySQL" "id" "mysql" "icon" "/assets/images/databases/logos/png/mysqls.png")
     (dict "name" "MariaDB" "id" "mariadb" "icon" "/assets/images/databases/logos/png/mariadbs.png")
     (dict "name" "Microsoft SQL Server" "id" "mssqlserver" "icon" "/assets/images/databases/logos/png/mssqlservers.png")
-    (dict "name" "MySQL" "id" "mysql" "icon" "/assets/images/databases/logos/png/mysqls.png")
     (dict "name" "Oracle" "id" "oracle" "icon" "/assets/images/databases/logos/png/oracles.png")
     (dict "name" "Percona XtraDB" "id" "percona-xtradb" "icon" "/assets/images/databases/logos/png/perconaxtradbs.png")
-    (dict "name" "PostgreSQL" "id" "postgres" "icon" "/assets/images/databases/logos/png/postgreses.png")
     (dict "name" "SAP HanaDB" "id" "hanadb" "icon" "/assets/images/databases/logos/png/hanadbs.png")
+    (dict "name" "IBM DB2" "id" "db2" "icon" "/assets/images/databases/logos/png/db2s.png")
   )
   "nosql" (slice
+    (dict "name" "MongoDB" "id" "mongodb" "icon" "/assets/images/databases/logos/png/mongodbs.png")
     (dict "name" "Cassandra" "id" "cassandra" "icon" "/assets/images/databases/logos/png/cassandras.png")
     (dict "name" "DocumentDB" "id" "documentdb" "icon" "/assets/images/databases/logos/png/documentdbs.png")
-    (dict "name" "MongoDB" "id" "mongodb" "icon" "/assets/images/databases/logos/png/mongodbs.png")
   )
   "inmemory" (slice
-    (dict "name" "Hazelcast" "id" "hazelcast" "icon" "/assets/images/databases/logos/png/hazelcasts.png")
-    (dict "name" "Ignite" "id" "ignite" "icon" "/assets/images/databases/logos/png/ignites.png")
-    (dict "name" "Memcached" "id" "memcached" "icon" "/assets/images/databases/logos/png/memcacheds.png")
     (dict "name" "Redis" "id" "redis" "icon" "/assets/images/databases/logos/png/redises.png")
     (dict "name" "Valkey" "id" "valkey" "icon" "/assets/images/databases/logos/png/valkeys.png")
+    (dict "name" "Memcached" "id" "memcached" "icon" "/assets/images/databases/logos/png/memcacheds.png")
+    (dict "name" "Ignite" "id" "ignite" "icon" "/assets/images/databases/logos/png/ignites.png")
+    (dict "name" "Hazelcast" "id" "hazelcast" "icon" "/assets/images/databases/logos/png/hazelcasts.png")
   )
   "search" (slice
     (dict "name" "Elasticsearch" "id" "elasticsearch" "icon" "/assets/images/databases/logos/png/elasticsearches.png")
