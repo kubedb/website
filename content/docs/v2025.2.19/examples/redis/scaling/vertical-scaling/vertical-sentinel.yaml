@@ -1,0 +1,18 @@
+apiVersion: ops.kubedb.com/v1alpha1
+kind: RedisSentinelOpsRequest
+metadata:
+  name: sen-ops-vertical
+  namespace: demo
+spec:
+  type: VerticalScaling
+  databaseRef:
+    name: sen-sample
+  verticalScaling:
+    redissentinel:
+      resources:
+        requests:
+          memory: "300Mi"
+          cpu: "200m"
+        limits:
+          memory: "800Mi"
+          cpu: "500m"
