@@ -110,11 +110,6 @@ menu:
     parent: database
     weight: 2
     pre: /assets/images/databases/logos/png/elasticsearches.png
-  - name: FerretDB
-    identifier: ferretdb
-    parent: database
-    weight: 3
-    pre: /assets/images/databases/logos/png/ferretdbs.png
   - name: Kafka
     identifier: kafka
     parent: database
