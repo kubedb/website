@@ -1,13 +1,16 @@
 ---
-title: Reference
-description: KubeDB CLI Reference
+title: operatormanual | KubeDB
 menu:
   docs_v2026.6.5-rc.1:
-    identifier: reference
-    name: Reference
-    weight: 50
-    pre: dropdown
+    identifier: operatormanual-readme
+    name: Readme
+    parent: operatormanual
+    weight: -1
 menu_name: docs_v2026.6.5-rc.1
+section_menu_id: operatormanual
+url: /docs/v2026.6.5-rc.1/operatormanual/
+aliases:
+- /docs/v2026.6.5-rc.1/operatormanual/README/
 info:
   autoscaler: v0.50.0-rc.1
   cli: v0.65.0-rc.1

@@ -1,12 +1,11 @@
 ---
-title: Reference
-description: KubeDB CLI Reference
+title: Elasticsearch Recommendation
 menu:
   docs_v2026.6.5-rc.1:
-    identifier: reference
-    name: Reference
-    weight: 50
-    pre: dropdown
+    identifier: es-recommendation-elasticsearch
+    name: Recommendation
+    parent: es-elasticsearch-guides
+    weight: 130
 menu_name: docs_v2026.6.5-rc.1
 info:
   autoscaler: v0.50.0-rc.1

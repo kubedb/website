@@ -37,6 +37,7 @@ From here you can learn all about KubeDB's architecture and how to deploy and us
 
 - [Guides](/docs/v2026.6.5-rc.1/guides/). Guides to show you how to perform tasks with KubeDB.
 
+- [Operator Manual](/docs/v2026.6.5-rc.1/operatormanual/). Operator manual for configuring KubeDB recommendations and maintenance windows.
 
 - Detailed exhaustive lists of command-line options, configuration options, API definitions, and procedures. Specially, [CLI](/docs/v2026.6.5-rc.1/reference/cli/), [operator](/docs/v2026.6.5-rc.1/reference/operator/) & [webhook-server](/docs/v2026.6.5-rc.1/reference/webhook-server/).
 

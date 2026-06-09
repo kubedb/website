@@ -1,13 +1,13 @@
 ---
-title: Oracle Quickstart
+title: Operator Manual
+description: KubeDB Operator Manual — Recommendations and Maintenance Windows
 menu:
   docs_v2026.6.5-rc.1:
-    identifier: guides-oracle-quickstart
-    name: Quickstart
-    parent: guides-oracle
-    weight: 15
+    identifier: operatormanual
+    name: Operator Manual
+    weight: 60
+    pre: dropdown
 menu_name: docs_v2026.6.5-rc.1
-section_menu_id: guides
 info:
   autoscaler: v0.50.0-rc.1
   cli: v0.65.0-rc.1

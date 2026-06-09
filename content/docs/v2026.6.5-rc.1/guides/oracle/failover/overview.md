@@ -61,6 +61,22 @@ local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsu
 $ kubectl create ns demo
 ```
 
+**Create an Oracle Container Registry token, if you haven't created one already, by following the instructions in the guide below:**
+
+[here](/docs/v2026.6.5-rc.1/guides/oracle/quickstart/guide#create-oracle-image-pull-secret-important)
+
+Then create the image pull secret:
+
+```shell
+kubectl create secret docker-registry orclcred \
+  --docker-server=container-registry.oracle.com \
+  --docker-username="<your-oracle-account-email>" \
+  --docker-password="<registry-token>" \
+  --docker-email="<your-docker-account-email>" \
+  --namespace=demo
+```
+
+
 ---
 
 ### Step 1: Deploy Oracle with Data Guard Enabled
@@ -98,6 +114,8 @@ spec:
     observer:
       podTemplate:
         spec:
+          imagePullSecrets:
+            - name: orclcred  #created this secret in the 'Before You Start' section
           containers:
           - name: observer
             resources:
@@ -118,6 +136,8 @@ spec:
 
   podTemplate:
     spec:
+      imagePullSecrets:
+        - name: orclcred    #created this secret in the 'Before You Start' section
       serviceAccountName: oracle-sample
       securityContext:
         runAsUser: 54321
@@ -531,4 +551,15 @@ kubectl delete oracle -n demo oracle-sample
 kubectl delete ns demo
 ```
 
-
+> ## ⚠️ Legal Notice
+>
+> Oracle® and Oracle Database® are registered trademarks of Oracle Corporation.  
+> KubeDB is not affiliated with, endorsed by, or sponsored by Oracle Corporation.
+>
+> KubeDB provides only orchestration and management tooling for Kubernetes.  
+> It does not distribute, bundle, ship, or include any Oracle Database software or binaries.
+>
+> Users must provide their own Oracle container images and hold valid Oracle licenses.  
+> Users are solely responsible for compliance with Oracle’s licensing terms, including all rules regarding containers, Docker, and Kubernetes environments.
+>
+> KubeDB makes no representations or warranties regarding Oracle licensing compliance.

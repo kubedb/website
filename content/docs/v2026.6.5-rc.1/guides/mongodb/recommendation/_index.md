@@ -1,12 +1,11 @@
 ---
-title: Reference
-description: KubeDB CLI Reference
+title: MongoDB Recommendation
 menu:
   docs_v2026.6.5-rc.1:
-    identifier: reference
-    name: Reference
-    weight: 50
-    pre: dropdown
+    identifier: mg-recommendation-mongodb
+    name: Recommendation
+    parent: mg-mongodb-guides
+    weight: 60
 menu_name: docs_v2026.6.5-rc.1
 info:
   autoscaler: v0.50.0-rc.1
