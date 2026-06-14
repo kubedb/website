@@ -83,7 +83,7 @@ Follow the documentation provided by AppsCode to deploy the KubeDB Platform on y
 Once deployed, access the KubeDB Platform using the specified domain. Log in with the admin account credentials provided during the creation process.
 
 <br/>
-<img width="50%" src="../images/ace-dashboard.png">
+![Ace Dashboard](../images/ace-dashboard.png)
 
 ## Get Support
 

@@ -51,7 +51,7 @@ Use the **Monitoring** section to configure Alertmanager notifications for platf
   * **Send Resolved:** Sends a follow-up notification when an alert returns to a healthy state.
 
 <br/>
-<img width="50%" src="../images/monitoring-alertmanager.png">
+![Monitoring Alertmanager](../images/monitoring-alertmanager.png)
 
 > **Tip:** For Google Chat, a supported workaround is to generate a space email address in Google Chat settings and use that address in the **To** field.
 
@@ -82,7 +82,7 @@ Configure NATS, which is used as the internal messaging system for the platform.
 **Resources:** Configure CPU Requests, CPU Limits, Memory Request and  Memory Limit
 
 <br/>
-<img width="50%" src="../images/nats.png">
+![Nats](../images/nats.png)
 
 ## Branding & UI Customization
 
@@ -96,7 +96,7 @@ Administrators can globally re-brand the KubeDB Platform interface to match corp
 * **App Tag:** Toggle **"Show App Tag"** to display or hide the version/tagging info in the UI.
 
 <br/>
-<img width="50%" src="../images/branding.png">
+![Branding](../images/branding.png)
 
 
 ## Prerequisites
@@ -120,7 +120,7 @@ These credentials define the primary super-user and the initial organizational s
   - **Initial Organization Name:** You can choose what will be the initial organization name for your account
 
 <br/>
-<img width="50%" src="../images/admin-setting.png">
+![Admin Setting](../images/admin-setting.png)
 
 ## Additional configuration for EKS cluster
 
@@ -151,7 +151,7 @@ aws ec2 describe-subnets --filters "Name=vpc-id,Values=$(aws eks describe-cluste
 * Put Login and Logout URL for your app
 
 <br/>
-<img width="50%" src="../images/domain-whitelisting.png">
+![Domain Whitelisting](../images/domain-whitelisting.png)
 
 ## Ingress & Gateway
 
@@ -160,11 +160,11 @@ Configure how the application is exposed to the internet or your internal networ
 * **Ingress & Gateway:** Enable either the **Gateway API** or standard **Ingress**.
 
 <br/>
-<img width="50%" src="../images/ingress-gateway.png">
+![Ingress Gateway](../images/ingress-gateway.png)
 
 ## Self Management
 
 In this section you can enable or disable features.
 
 <br/>
-<img width="50%" src="../images/features.png">
+![Features](../images/features.png)
