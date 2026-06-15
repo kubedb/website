@@ -19,7 +19,7 @@ Site administrators can view all organizations on the platform and create new on
 
 ## 1. View All Organizations
 
-![View All Organizations](../images/site-admin-organizations-1.png)
+![View All Organizations](../../images/site-admin-organizations-1.png)
 
 Go to **SITE ADMINISTRATION > Organizations** to see the full list of organizations.
 
@@ -30,7 +30,7 @@ Go to **SITE ADMINISTRATION > Organizations** to see the full list of organizati
 
 ## 2. Create a New Organization
 
-![Create New Organization](../images/site-admin-organizations-2.png)
+![Create New Organization](../../images/site-admin-organizations-2.png)
 
 Click **+ New Organization** to open the creation form.
 

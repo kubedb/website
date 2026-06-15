@@ -15,7 +15,7 @@ info:
 
 # User Access Management
 
-![permission](../images/permission/permission.png)
+![permission](../../images/permission/permission.png)
 
 Here you can assign a user one cluster or many cluster (clusterset) and grant access of different level
 
@@ -34,20 +34,20 @@ Here you can assign a user one cluster or many cluster (clusterset) and grant ac
 
 1. Go to **Platform UI**
 
-![go to platform](../images/permission/go_to_platform.png)
+![go to platform](../../images/permission/go_to_platform.png)
 
 2. Create a **Team**
 
-![create team](../images/permission/create_team.png)
+![create team](../../images/permission/create_team.png)
 
 3. Add members
 
-![Add Member](../images/permission/add_member.png)
+![Add Member](../../images/permission/add_member.png)
 
 4. Go to Hub → **Access**
 5. Click **Assign Permission**
 
-![Grant Permission](../images/permission/grant_permission.png)
+![Grant Permission](../../images/permission/grant_permission.png)
 
 
 ### Fields Explained

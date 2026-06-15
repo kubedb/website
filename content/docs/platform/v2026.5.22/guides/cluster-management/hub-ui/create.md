@@ -20,27 +20,27 @@ info:
 ### Steps
 
 1. Go to import cluster and choose your preferred method
-![Hub & Spoke Model](../images/import/select-cluster.png)
+![Hub & Spoke Model](../../images/import/select-cluster.png)
 2. After filling up necessary steps for your preferred method Choose Generic as cluster profile 
-![Cluster Profile](../images/import/cluster-profile.png)
+![Cluster Profile](../../images/import/cluster-profile.png)
 3. Open **Cluster Details**  
 You won't see the hub UI button initially
 
-![Cluster Details](../images/import/cluster-details.png)
+![Cluster Details](../../images/import/cluster-details.png)
 
 4. Go to **Feature Set Settings**
 5. Select **OCM Hub Feature Set**
 
 All the features will be white leveled if you are enabling it for the first time.
 
-![Cluster Feature-set](../images/import/feature-set.png)
+![Cluster Feature-set](../../images/import/feature-set.png)
 
 In the top right corner there will be enable button. 
 1. Click in the enable button 
 2. Select all features ( will be auto-selected)
 3. Click Preview then Deploy 
 
-![Deploy](../images/import/deploy.png)
+![Deploy](../../images/import/deploy.png)
 
 
 

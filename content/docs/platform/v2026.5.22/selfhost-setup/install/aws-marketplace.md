@@ -373,12 +373,14 @@ The expiry time for this installer is 2 hours. You will find in detail deploymen
 ```
 
 <br/>
-![Policy 1](../images/policy-1.png)
+
+![Policy 1](../../images/policy-1.png)
 
   * Give the policy the name **AWSMarketplacePolicyForCloudFormation** and click **Create Policy**.
 
 <br/>
-![Policy 2](../images/policy-2.png)  
+
+![Policy 2](../../images/policy-2.png)  
 
 
 
@@ -388,20 +390,24 @@ The expiry time for this installer is 2 hours. You will find in detail deploymen
   * Select **Trusted entity** type: `AWS service`.
   * Select **Use case**: `CloudFormation` and click **Next**.
 <br/>
-![Policy 3](../images/policy-3.png)
+
+![Policy 3](../../images/policy-3.png)
   * Search for and select the **AWSMarketplacePolicyForCloudFormation** policy you just created, then click **Next**.
   <br/>
-![Policy 4](../images/policy-4.png)
+
+![Policy 4](../../images/policy-4.png)
   * Name the role **AWSMarketplaceMeteringRoleForCloudFormation** and click **Create role**.
 <br/>
-![Policy 5](../images/policy-5.png)
+
+![Policy 5](../../images/policy-5.png)
 
 
 ### Step 3: PassRole Permission
 
   * Copy the **Role ARN** of the role you just created: `arn:aws:iam::xxxxxxxx:role/AWSMarketplaceMeteringRoleForCloudFormation`.
  <br/>
-![Policy 7](../images/policy-7.png) 
+
+![Policy 7](../../images/policy-7.png) 
 
 
 
@@ -427,7 +433,8 @@ The expiry time for this installer is 2 hours. You will find in detail deploymen
 ```
 
 <br/>
-![Policy 8](../images/policy-8.png) 
+
+![Policy 8](../../images/policy-8.png) 
 
 
 
@@ -436,7 +443,8 @@ The expiry time for this installer is 2 hours. You will find in detail deploymen
   * Provide a name for this policy (e.g., **AllowPassingMeterUsageRoleToCloudFormation**) and click **Create policy**.
   
    <br/>
-![Policy 9](../images/policy-9.png) 
+
+![Policy 9](../../images/policy-9.png) 
 
 
 
@@ -447,7 +455,8 @@ The expiry time for this installer is 2 hours. You will find in detail deploymen
   * Select the **AllowPassingMeterUsageRoleToCloudFormation** policy you just created to attach it.
 
  <br/>
-![Policy 10](../images/policy-10.png) 
+
+![Policy 10](../../images/policy-10.png) 
 
 Now follow the steps to configure the stack
 
@@ -458,14 +467,16 @@ and subscribe to **AppsCode Cloud w/Usage Billing** product.
   * Click on Continue To Configuration.
 
  <br/>
-![Aws Step 1](../images/awsStep1.png) 
+
+![Aws Step 1](../../images/awsStep1.png) 
 
 ### Step 2: Configuration
 
   * Select the latest software version, and region for the Application and click on **Continue to Launch.**
 
  <br/>
-![Aws Step 2](../images/awsStep2.png) 
+
+![Aws Step 2](../../images/awsStep2.png) 
 
 ### Step 3: Create stack
 
@@ -473,7 +484,8 @@ and subscribe to **AppsCode Cloud w/Usage Billing** product.
   * Keep the default selected template and click on **Next.**
 
  <br/>
-![Aws Step 3](../images/awsStep3.png) 
+
+![Aws Step 3](../../images/awsStep3.png) 
 
 ### Step 4: Specify stack details
 
@@ -485,7 +497,8 @@ and subscribe to **AppsCode Cloud w/Usage Billing** product.
   * Click **Next** and you will be forwarded to the **review and create page.**
 
  <br/>
-![Aws Step 4](../images/awsStep4.png) 
+
+![Aws Step 4](../../images/awsStep4.png) 
 
 ### Step 5: Attach role to CloudFormation (Optional)
 
@@ -493,7 +506,8 @@ and subscribe to **AppsCode Cloud w/Usage Billing** product.
   * When applying the cloudformation template (CFT), attach **AWSMarketplaceMeteringRoleForCloudFormation** role to the template. This way the CFT will have all the necessary permission to deploy the resources.
 
  <br/>
-![Aws Step 5](../images/awsStep5.png) 
+
+![Aws Step 5](../../images/awsStep5.png) 
 
 ### Step 6: Review & Deployment
 
@@ -502,7 +516,8 @@ and subscribe to **AppsCode Cloud w/Usage Billing** product.
   * Once the Cloudformation is created it will take **5-10min** to spin up the application.
 
  <br/>
-![Aws Step 7](../images/awsStep7.png) 
+
+![Aws Step 7](../../images/awsStep7.png) 
 
 ### 10. Explore the Deployed Platform
 

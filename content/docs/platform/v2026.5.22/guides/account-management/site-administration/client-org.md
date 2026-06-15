@@ -37,13 +37,13 @@ Once your Hub is ready and your Spoke is licensed, you can create the organizati
 
 > **Note:** Make sure the user who will be the organization admin already exists. If not, create one first via **SITE ADMINISTRATION > User Accounts**.
 
-![Client Organizations List](../images/client-org-4.png)
+![Client Organizations List](../../images/client-org-4.png)
 
 Go to **USER SETTINGS > Client Organizations** and click **+ Add Organization**.
 
 ### Step 1 — Basic Info
 
-![Basic Info](../images/client-org-1.png)
+![Basic Info](../../images/client-org-1.png)
 
 - **Organization Name:** Enter a display name for the organization (e.g., `test-final`).
 - **Custom Annotations:** Optionally add key-value annotations applied to the organization's namespace.
@@ -53,7 +53,7 @@ Go to **USER SETTINGS > Client Organizations** and click **+ Add Organization**.
 
 ### Step 2 — Select Cluster
 
-![Select Cluster and Node Pool](../images/client-org-2.png)
+![Select Cluster and Node Pool](../../images/client-org-2.png)
 
 - **Hub Cluster:** Select the Hub cluster to use as the management plane.
 - **Spoke Cluster:** Select the licensed Spoke cluster where the organization's workloads will run.
@@ -62,7 +62,7 @@ Go to **USER SETTINGS > Client Organizations** and click **+ Add Organization**.
 
 ### Step 3 — Gateway Configuration
 
-![Gateway Configuration](../images/client-org-3.png)
+![Gateway Configuration](../../images/client-org-3.png)
 
 - **Use Shared Gateway:** No dedicated gateway configuration is applied. The organization shares the existing gateway.
 - **Use Dedicated Gateway:** Select from available gateway configurations to assign a dedicated gateway for this organization.
@@ -72,7 +72,7 @@ Go to **USER SETTINGS > Client Organizations** and click **+ Add Organization**.
 
 ## Verification
 
-![Organization Details](../images/client-org-5.png)
+![Organization Details](../../images/client-org-5.png)
 
 After submission, the organization is created and visible in the list. Clicking on it shows its details — including the assigned Spoke cluster and its status.
 

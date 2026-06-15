@@ -19,7 +19,7 @@ Site administrators can control who is allowed to register on the platform by ma
 
 ## Overview
 
-![Sign-up Configuration Overview](../images/sign-up-config-1.png)
+![Sign-up Configuration Overview](../../images/sign-up-config-1.png)
 
 Go to **SITE ADMINISTRATION > Sign-up Configuration** to manage registration settings.
 
@@ -38,7 +38,7 @@ Restrict sign-ups to users with email addresses from specific approved domains.
 
 ## Add a New Allowed Domain
 
-![Add Allowed Domain](../images/sign-up-config-2.png)
+![Add Allowed Domain](../../images/sign-up-config-2.png)
 
 Click **+ Add Domains** to open the form.
 

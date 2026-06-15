@@ -108,7 +108,7 @@ updating the cluster set.
 3. Select your spoke cluster.
 4. Click **Update KubeDB Platform Resources → Update Version → Yes**.
 
-![Upgrade](images/upgrade/upgrade_1.png)
+![Upgrade](../images/upgrade/upgrade_1.png)
 
 ```bash
 # After triggering, watch the QB operator start the upgrade on the spoke

@@ -19,7 +19,7 @@ When a user account is deleted from the **User Accounts** list, it is soft-delet
 
 ## 1. View Deleted Accounts
 
-![View Deleted Accounts](../images/site-admin-deleted-account-1.png)
+![View Deleted Accounts](../../images/site-admin-deleted-account-1.png)
 
 Go to **SITE ADMINISTRATION > Deleted Accounts** to see the list of deleted user accounts.
 
@@ -28,7 +28,7 @@ Go to **SITE ADMINISTRATION > Deleted Accounts** to see the list of deleted user
 
 ## 2. Confirm Reactivation
 
-![Confirm Account Reactivation](../images/site-admin-deleted-account-2.png)
+![Confirm Account Reactivation](../../images/site-admin-deleted-account-2.png)
 
 Clicking **Reactive** opens a confirmation dialog.
 

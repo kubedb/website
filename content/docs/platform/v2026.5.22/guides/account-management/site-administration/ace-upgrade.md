@@ -31,7 +31,7 @@ Before starting the upgrade, download the required values file from the AppsCode
 
 ## Step 1 — Open KubeDB Platform Upgrade
 
-![KubeDB Platform Version Page](../images/upgrade-version-1.png)
+![KubeDB Platform Version Page](../../images/upgrade-version-1.png)
 
 Go to **SITE ADMINISTRATION > KubeDB Platform Upgrade** from the left-hand menu.
 
@@ -41,7 +41,7 @@ The page displays the current KubeDB Platform version and the upgrade status of 
 
 ## Step 2 — Upload the Values File
 
-![Upload Values File](../images/upgrade-version-2.png)
+![Upload Values File](../../images/upgrade-version-2.png)
 
 On the **Upgrade KubeDB Platform** screen:
 
@@ -52,7 +52,7 @@ On the **Upgrade KubeDB Platform** screen:
 
 ## Step 3 — Monitor Upgrade Progress
 
-![Upgrade In Progress](../images/upgrade-version-3.png)
+![Upgrade In Progress](../../images/upgrade-version-3.png)
 
 The platform will upgrade individual components one by one. You can track progress directly on this page:
 
@@ -64,6 +64,6 @@ The platform will upgrade individual components one by one. You can track progre
 
 ## Step 4 — Verify Completion
 
-![Upgrade Complete](../images/upgrade-version-4.png)
+![Upgrade Complete](../../images/upgrade-version-4.png)
 
 Once all components have been updated, the status changes to **Updated**. Confirm that the new version number is correctly reflected at the top of the page.

@@ -19,7 +19,7 @@ As a site administrator, you can view all registered user accounts and create ne
 
 ## 1. View All Users
 
-![View All User Accounts](../images/site-admin-user-account-1.png)
+![View All User Accounts](../../images/site-admin-user-account-1.png)
 
 Go to **SITE ADMINISTRATION > User Accounts** to see the full list of registered accounts.
 
@@ -30,7 +30,7 @@ Go to **SITE ADMINISTRATION > User Accounts** to see the full list of registered
 
 ## 2. Create a New User Account
 
-![Create New User Account](../images/site-admin-user-account-2.png)
+![Create New User Account](../../images/site-admin-user-account-2.png)
 
 Click **Create User Account** to open the new user form.
 

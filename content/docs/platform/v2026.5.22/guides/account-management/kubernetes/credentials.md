@@ -265,7 +265,7 @@ Details:
 
 Then add the credential [here](https://appscode.com/id/{user}/user/settings/credentials/create) you got from previous step.
 
-![Aws Cred](images/aws-cred.png)
+![Aws Cred](../images/aws-cred.png)
 
 <!-- ![Add AWS Credential](../images/aws-cred.png) -->
 
@@ -286,7 +286,7 @@ The command will output a JSON response containing the service principal details
 Then add the credential [here](https://appscode.com/id/{user}/user/settings/credentials/create).
 
 
-![Do Cred](images/do-cred.png)
+![Do Cred](../images/do-cred.png)
 
 ## Digital Ocean
 To access Digital Ocean Managed clusters, you need to create a API token from Digital Ocean.
@@ -326,7 +326,7 @@ To access GKE clusters, you need to create a GCP service account with with conta
 
 Then add the service account credentials [here](https://appscode.com/id/{user}/user/settings/credentials/create).
 
-![Gcp Oauth](images/gcp-oauth.png)
+![Gcp Oauth](../images/gcp-oauth.png)
 
 ## Google OAuth
 
@@ -341,7 +341,7 @@ This will create a credential, you will be able to access your k8s cluster with.
 
 <br><br><br>
 
-![Linode Cred](images/linode-cred.png)
+![Linode Cred](../images/linode-cred.png)
 
 ## Linode
 
@@ -355,7 +355,7 @@ Then add the credential [here](https://appscode.com/id/{user}/user/settings/cred
 
 <br><br><br>
 
-![Rancher Cred](images/rancher-cred.png)
+![Rancher Cred](../images/rancher-cred.png)
 
 ## Rancher
 
@@ -373,7 +373,7 @@ Copy the generated access key, secret key, and API endpoint from the `Account & 
 
 Next, add these credentials to the [KubeDB Platform user settings credentials page](https://appscode.com/id/{user}/user/settings/credentials/create).
 
-![Azure Storage](../images/credentials/azureStorage.png)
+![Azure Storage](../../images/credentials/azureStorage.png)
 
 ## Azure Storage
 
@@ -386,7 +386,7 @@ Then add the credential [here](https://appscode.com/id/{user}/user/settings/cred
 
 <br><br><br><br>
 
-![Cloudflare Storage](../images/credentials/cloudflareStorage.png)
+![Cloudflare Storage](../../images/credentials/cloudflareStorage.png)
 
 ## Cloudflare R2 Storage
 
@@ -399,7 +399,7 @@ Then add the credential [here](https://appscode.com/id/{user}/user/settings/cred
 
 <br><br><br><br>
 
-![Hetzner](../images/credentials/Hetzner.png)
+![Hetzner](../../images/credentials/Hetzner.png)
 
 ## Hetzner
 
@@ -414,7 +414,7 @@ Then add the credential [here](https://appscode.com/id/{user}/user/settings/cred
 
 <br><br><br>
 
-![Scaleway](../images/credentials/Scaleway.png)
+![Scaleway](../../images/credentials/Scaleway.png)
 
 ## Scaleway
 
@@ -429,7 +429,7 @@ Then add the credential [here](https://appscode.com/id/{user}/user/settings/cred
 
 <br><br><br>
 
-![Vultr](../images/credentials/vultr.png)
+![Vultr](../../images/credentials/vultr.png)
 
 ## Vultr
 

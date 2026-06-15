@@ -19,7 +19,7 @@ Site administrators can customize the platform's appearance and identity — inc
 
 ## Configure Branding
 
-![Configure Branding](../images/Branding.png)
+![Configure Branding](../../images/Branding.png)
 
 Go to **SITE ADMINISTRATION > Branding** to update the platform's visual identity.
 

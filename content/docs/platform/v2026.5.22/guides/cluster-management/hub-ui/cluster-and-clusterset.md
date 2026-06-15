@@ -31,7 +31,7 @@ ClusterSets group multiple clusters together.
 1. Go to **ClusterSets**
 2. Click **Add ClusterSet**
 
-![ClusterSet](../images/cluster_and_clusterset/clusterset.png)
+![ClusterSet](../../images/cluster_and_clusterset/clusterset.png)
 
 3. Provide a name
 
@@ -43,9 +43,9 @@ ClusterSets group multiple clusters together.
 
 * Select any feature you want to change in all of your connected spokes 
 
-![ClusterSet](../images/cluster_and_clusterset/clusterset_feature_1.png)
+![ClusterSet](../../images/cluster_and_clusterset/clusterset_feature_1.png)
 
-![ClusterSet](../images/cluster_and_clusterset/clusterset_feature_2.png)
+![ClusterSet](../../images/cluster_and_clusterset/clusterset_feature_2.png)
 
 
 * Apply configurations across all clusters
@@ -55,11 +55,11 @@ ClusterSets group multiple clusters together.
 
 ### Unaligned cluster: If any spoke cluster has extra features enabled than hub that's unaligned 
 
-![Unaligned](../images/cluster_and_clusterset/unaligned.png)
+![Unaligned](../../images/cluster_and_clusterset/unaligned.png)
 
 Like in the image secret management have 1 unaligned cluster 
 
-![Unaligned](../images/cluster_and_clusterset/unaligned_2.png)
+![Unaligned](../../images/cluster_and_clusterset/unaligned_2.png)
 
 You can see config-syncer is enabled in spoke but not in hub
 
@@ -72,11 +72,11 @@ You can see config-syncer is enabled in spoke but not in hub
 You can add cluster from another clusterset if you want 
 
 
-![ClusterSet](../images/cluster_and_clusterset/add_cluster_1.png)
+![ClusterSet](../../images/cluster_and_clusterset/add_cluster_1.png)
 
 1. Select cluster(s)
 
-![ClusterSet](../images/cluster_and_clusterset/add_cluster_2.png)
+![ClusterSet](../../images/cluster_and_clusterset/add_cluster_2.png)
 
 2. Add to ClusterSet
 

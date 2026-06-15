@@ -17,7 +17,7 @@ info:
 
 Hub UI lets you manage multiple clusters from a single point.
 
-![Hub & Spoke Model](../images/introduction/hub-spoke-model.png)
+![Hub & Spoke Model](../../images/introduction/hub-spoke-model.png)
 
 ### What is OCM?
 

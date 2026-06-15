@@ -19,7 +19,7 @@ Site administrators can configure external authentication backends (such as LDAP
 
 ## Add an Authentication Source
 
-![Add Authentication Source](../images/authentication-sources.png)
+![Add Authentication Source](../../images/authentication-sources.png)
 
 Go to **SITE ADMINISTRATION > Authentication Sources** and configure a new source using the form below.
 

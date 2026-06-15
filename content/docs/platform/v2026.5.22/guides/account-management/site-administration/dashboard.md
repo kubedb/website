@@ -19,7 +19,7 @@ The Site Admin Dashboard gives administrators a high-level overview of the entir
 
 ## Accessing the Dashboard
 
-![Site Administration Dashboard](../images/site-admin-dashboard.png)
+![Site Administration Dashboard](../../images/site-admin-dashboard.png)
 
 Navigate to **SITE ADMINISTRATION > Dashboard** from the top navigation bar.
 

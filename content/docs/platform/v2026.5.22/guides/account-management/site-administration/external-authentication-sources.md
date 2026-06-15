@@ -19,7 +19,7 @@ Site administrators can enable third-party OAuth login providers (such as GitHub
 
 ## Add an External Authentication Source
 
-![Add External Authentication Source](../images/external-authentication.png)
+![Add External Authentication Source](../../images/external-authentication.png)
 
 Go to **SITE ADMINISTRATION > External Authentication Sources** and fill in the form.
 

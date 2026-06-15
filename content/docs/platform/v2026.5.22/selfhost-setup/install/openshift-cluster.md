@@ -102,14 +102,16 @@ Follow the documentation provided by AppsCode to deploy the KubeDB Platform on y
 4. **Run the remaining install steps.** Continue with the rest of the generated instructions (flux install, `helm upgrade`, and the ACE install) using the reconfigured values.
 
 <br/>
-![Ip Reconfigure Openshift](../images/ip-reconfigure-openshift.png)
+
+![Ip Reconfigure Openshift](../../images/ip-reconfigure-openshift.png)
 
 ### 6. Explore the Deployed Platform
 
 Once deployed, access the **KubeDB Platform** using the configured IP (IP mode) or domain (DNS mode). Log in with the admin account credentials provided during the creation process.
 
 <br/>
-![Ace Dashboard](../images/ace-dashboard.png)
+
+![Ace Dashboard](../../images/ace-dashboard.png)
 
 ## Notes
 
