@@ -1,0 +1,13 @@
+apiVersion: ops.kubedb.com/v1alpha1
+kind: MongoDBOpsRequest
+metadata:
+  name: mops-volume-exp-shard
+  namespace: demo
+spec:
+  type: VolumeExpansion
+  databaseRef:
+    name: mg-sharding
+  volumeExpansion:
+    mode: "Online"
+    shard: 2Gi
+    configServer: 2Gi
