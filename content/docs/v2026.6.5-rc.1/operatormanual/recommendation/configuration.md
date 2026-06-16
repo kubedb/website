@@ -31,7 +31,7 @@ info:
 Before using KubeDB Recommendations, ensure that:
 
 * You have a running Kubernetes cluster with `kubectl` configured (e.g. via [kind](https://kind.sigs.k8s.io/docs/user/quick-start/)).
-* KubeDB is installed following the [setup guide](/docs/v2026.6.5-rc.1/setup/install/kubedb), with the Supervisor enabled:
+* KubeDB is installed following the [setup guide](/docs/v2026.6.5-rc.1/setup/install/kubedb/_index), with the Supervisor enabled:
 
   ```bash
   --set supervisor.enabled=true
