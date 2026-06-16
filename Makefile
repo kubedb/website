@@ -8,7 +8,7 @@ docs: assets docs-operator docs-platform
 
 .PHONY: docs-operator
 docs-operator: hugo-tools
-	$(HUGO_TOOLS) docs-aggregator --product=kubedb --docs-dir=docs --skip-assets --all-versions
+	$(HUGO_TOOLS) docs-aggregator --product=kubedb --docs-dir=docs --skip-assets
 	find ./data -name "*.json" -exec sed -i 's/https:\/\/cdn.appscode.com\/images/\/assets\/images/g' {} \;
 
 .PHONY: docs-platform
