@@ -51,7 +51,7 @@ release: gen-prod
 
 .PHONY: check-links
 check-links:
-	lychee --base http://localhost:1313 --max-concurrency 10 --exclude '^http://localhost:9090$$' 'public/**/*.html'
+	lychee --base-url http://localhost:1313 --max-concurrency 10 --exclude '^http://localhost:9090$$' 'public/**/*.html'
 
 VERSION ?=
 
