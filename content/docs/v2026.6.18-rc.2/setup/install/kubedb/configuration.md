@@ -26,7 +26,7 @@ info:
 
 # Common Configuration
 
-The steps below apply regardless of which [installation method](/docs/v2026.6.18-rc.2/setup/install/kubedb/_index) you used.
+The steps below apply regardless of which [installation method](/docs/v2026.6.18-rc.2/setup/install/kubedb/) you used.
 
 ## Enable Database Engines
 
