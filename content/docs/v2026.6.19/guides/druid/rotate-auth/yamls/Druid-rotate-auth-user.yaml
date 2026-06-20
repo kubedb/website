@@ -1,0 +1,15 @@
+apiVersion: ops.kubedb.com/v1alpha1
+kind: DruidOpsRequest
+metadata:
+  name: drops-rotate-auth-user
+  namespace: demo
+spec:
+  type: RotateAuth
+  databaseRef:
+    name: druid-quickstart
+  authentication:
+    secretRef:
+      kind: Secret
+      name: sample-druid-auth-user
+  timeout: 5m
+  apply: IfReady
