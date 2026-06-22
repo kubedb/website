@@ -1,9 +1,9 @@
 ---
-title: Kubectl-Dba Debug Zookeeper
+title: Kubectl-Dba Debug Qdrant
 menu:
   docs_v2026.6.19:
-    identifier: kubectl-dba-debug-zookeeper
-    name: Kubectl-Dba Debug Zookeeper
+    identifier: kubectl-dba-debug-qdrant
+    name: Kubectl-Dba Debug Qdrant
     parent: reference-cli
 menu_name: docs_v2026.6.19
 section_menu_id: reference
@@ -21,24 +21,24 @@ info:
   webhook-server: v0.41.0
 ---
 
-## kubectl-dba debug zookeeper
+## kubectl-dba debug qdrant
 
-Debug helper for ZooKeeper database
+Debug helper for Qdrant database
 
 ```
-kubectl-dba debug zookeeper [flags]
+kubectl-dba debug qdrant [flags]
 ```
 
 ### Examples
 
 ```
-kubectl dba debug zookeeper -n demo sample-zookeeper --operator-namespace kubedb
+kubectl dba debug qdrant -n demo sample-qdrant --operator-namespace kubedb
 ```
 
 ### Options
 
 ```
-  -h, --help                        help for zookeeper
+  -h, --help                        help for qdrant
   -o, --operator-namespace string   the namespace where the kubedb operator is installed (default "kubedb")
 ```
 

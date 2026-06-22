@@ -1,9 +1,9 @@
 ---
-title: Kubectl-Dba Debug Zookeeper
+title: Kubectl-Dba Debug Documentdb
 menu:
   docs_v2026.6.19:
-    identifier: kubectl-dba-debug-zookeeper
-    name: Kubectl-Dba Debug Zookeeper
+    identifier: kubectl-dba-debug-documentdb
+    name: Kubectl-Dba Debug Documentdb
     parent: reference-cli
 menu_name: docs_v2026.6.19
 section_menu_id: reference
@@ -21,24 +21,24 @@ info:
   webhook-server: v0.41.0
 ---
 
-## kubectl-dba debug zookeeper
+## kubectl-dba debug documentdb
 
-Debug helper for ZooKeeper database
+Debug helper for DocumentDB database
 
 ```
-kubectl-dba debug zookeeper [flags]
+kubectl-dba debug documentdb [flags]
 ```
 
 ### Examples
 
 ```
-kubectl dba debug zookeeper -n demo sample-zookeeper --operator-namespace kubedb
+kubectl dba debug documentdb -n demo sample-documentdb --operator-namespace kubedb
 ```
 
 ### Options
 
 ```
-  -h, --help                        help for zookeeper
+  -h, --help                        help for documentdb
   -o, --operator-namespace string   the namespace where the kubedb operator is installed (default "kubedb")
 ```
 

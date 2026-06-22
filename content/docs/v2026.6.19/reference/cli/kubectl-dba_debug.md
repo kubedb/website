@@ -84,27 +84,36 @@ kubectl-dba debug
 ### SEE ALSO
 
 * [kubectl-dba](/docs/v2026.6.19/reference/cli/kubectl-dba)	 - kubectl plugin for KubeDB
+* [kubectl-dba debug aerospike](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_aerospike)	 - Debug helper for Aerospike database
 * [kubectl-dba debug cassandra](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_cassandra)	 - Debug helper for Cassandra database
 * [kubectl-dba debug clickhouse](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_clickhouse)	 - Debug helper for ClickHouse database
+* [kubectl-dba debug db2](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_db2)	 - Debug helper for DB2 database
+* [kubectl-dba debug documentdb](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_documentdb)	 - Debug helper for DocumentDB database
 * [kubectl-dba debug druid](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_druid)	 - Debug helper for Druid database
 * [kubectl-dba debug elasticsearch](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_elasticsearch)	 - Debug helper for Elasticsearch database
+* [kubectl-dba debug hanadb](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_hanadb)	 - Debug helper for HanaDB database
 * [kubectl-dba debug hazelcast](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_hazelcast)	 - Debug helper for Hazelcast database
 * [kubectl-dba debug ignite](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_ignite)	 - Debug helper for Ignite database
 * [kubectl-dba debug kafka](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_kafka)	 - Debug helper for Kafka database
 * [kubectl-dba debug mariadb](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_mariadb)	 - Debug helper for MariaDB database
 * [kubectl-dba debug memcached](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_memcached)	 - Debug helper for Memcached database
+* [kubectl-dba debug milvus](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_milvus)	 - Debug helper for Milvus database
 * [kubectl-dba debug mongodb](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_mongodb)	 - Debug helper for MongoDB database
 * [kubectl-dba debug mssqlserver](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_mssqlserver)	 - Debug helper for MSSQLServer database
 * [kubectl-dba debug mysql](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_mysql)	 - Debug helper for MySQL database
+* [kubectl-dba debug neo4j](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_neo4j)	 - Debug helper for Neo4j database
 * [kubectl-dba debug oracle](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_oracle)	 - Debug helper for Oracle database
 * [kubectl-dba debug perconaxtradb](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_perconaxtradb)	 - Debug helper for PerconaXtraDB database
 * [kubectl-dba debug pgbouncer](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_pgbouncer)	 - Debug helper for PgBouncer database
 * [kubectl-dba debug pgpool](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_pgpool)	 - Debug helper for Pgpool database
 * [kubectl-dba debug postgres](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_postgres)	 - Debug helper for Postgres database
 * [kubectl-dba debug proxysql](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_proxysql)	 - Debug helper for ProxySQL database
-* [kubectl-dba debug rabbitmq](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_rabbitmq)	 - Debug helper for Rabbitmq database
+* [kubectl-dba debug qdrant](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_qdrant)	 - Debug helper for Qdrant database
+* [kubectl-dba debug rabbitmq](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_rabbitmq)	 - Debug helper for RabbitMQ database
 * [kubectl-dba debug redis](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_redis)	 - Debug helper for Redis database
+* [kubectl-dba debug redissentinel](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_redissentinel)	 - Debug helper for RedisSentinel database
 * [kubectl-dba debug singlestore](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_singlestore)	 - Debug helper for Singlestore database
 * [kubectl-dba debug solr](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_solr)	 - Debug helper for Solr database
-* [kubectl-dba debug zookeeper](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_zookeeper)	 - Debug helper for Zookeeper database
+* [kubectl-dba debug weaviate](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_weaviate)	 - Debug helper for Weaviate database
+* [kubectl-dba debug zookeeper](/docs/v2026.6.19/reference/cli/kubectl-dba_debug_zookeeper)	 - Debug helper for ZooKeeper database
 
