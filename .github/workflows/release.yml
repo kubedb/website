@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - "*.*"
+      - "akp/*.*"
   workflow_dispatch:
 
 concurrency:
