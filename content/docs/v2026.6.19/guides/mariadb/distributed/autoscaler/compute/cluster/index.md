@@ -3,7 +3,7 @@ title: Distributed MariaDB Cluster Compute Autoscaling
 menu:
   docs_v2026.6.19:
     identifier: guides-mariadb-distributed-autoscaling-compute-cluster
-    name: Cluster
+    name: Galera Cluster
     parent: guides-mariadb-distributed-autoscaling-compute
     weight: 20
 menu_name: docs_v2026.6.19
