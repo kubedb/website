@@ -51,7 +51,7 @@ Now, we are going to deploy a  `PerconaXtraDB` Cluster using a supported version
 
 ### Prepare PerconaXtraDB Cluster
 
-Now, we are going to deploy a `PerconaXtraDB` Cluster database with version `10.6.16`.
+Now, we are going to deploy a `PerconaXtraDB` Cluster database with version `8.0.40`.
 
 ### Deploy PerconaXtraDB
 

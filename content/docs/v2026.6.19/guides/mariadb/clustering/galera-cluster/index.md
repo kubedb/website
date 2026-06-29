@@ -58,7 +58,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "10.5.23"
+  version: "11.8.5"
   replicas: 3
   topology:
     mode: GaleraCluster
@@ -92,7 +92,7 @@ kind: MariaDB
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"kubedb.com/v1","kind":"MariaDB","metadata":{"annotations":{},"name":"sample-mariadb","namespace":"demo"},"spec":{"replicas":3,"storage":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"standard"},"storageType":"Durable","deletionPolicy":"WipeOut","version":"10.5.23"}}
+      {"apiVersion":"kubedb.com/v1","kind":"MariaDB","metadata":{"annotations":{},"name":"sample-mariadb","namespace":"demo"},"spec":{"replicas":3,"storage":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"standard"},"storageType":"Durable","deletionPolicy":"WipeOut","version":"11.8.5"}}
   creationTimestamp: "2021-03-16T09:39:01Z"
   finalizers:
   - kubedb.com
@@ -116,7 +116,7 @@ spec:
     storageClassName: standard
   storageType: Durable
   deletionPolicy: WipeOut
-  version: 10.5.23
+  version: 11.8.5
 status:
   conditions:
   - lastTransitionTime: "2021-03-16T09:39:01Z"
@@ -190,7 +190,7 @@ $ kubectl exec -it -n demo sample-mariadb-0 -- bash
 root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 26
-Server version: 10.5.23-MariaDB-1:10.5.23+maria~focal mariadb.org binary distribution
+Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
@@ -213,7 +213,7 @@ $ kubectl exec -it -n demo sample-mariadb-1 -- bash
 root@sample-mariadb-1:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 94
-Server version: 10.5.23-MariaDB-1:10.5.23+maria~focal mariadb.org binary distribution
+Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
@@ -236,7 +236,7 @@ $ kubectl exec -it -n demo sample-mariadb-2 -- bash
 root@sample-mariadb-2:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 78
-Server version: 10.5.23-MariaDB-1:10.5.23+maria~focal mariadb.org binary distribution
+Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
@@ -263,7 +263,7 @@ $ kubectl exec -it -n demo sample-mariadb-0 -- bash
 root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 137
-Server version: 10.5.23-MariaDB-1:10.5.23+maria~focal mariadb.org binary distribution
+Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
@@ -289,7 +289,7 @@ $ kubectl exec -it -n demo sample-mariadb-0 -- bash
 root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 202
-Server version: 10.5.23-MariaDB-1:10.5.23+maria~focal mariadb.org binary distribution
+Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
@@ -323,7 +323,7 @@ exit
 root@sample-mariadb-1:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
-Server version: 10.5.23-MariaDB-1:10.5.23+maria~focal mariadb.org binary distribution
+Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
@@ -360,7 +360,7 @@ exit
 root@sample-mariadb-2:/  mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
-Server version: 10.5.23-MariaDB-1:10.5.23+maria~focal mariadb.org binary distribution
+Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
@@ -398,7 +398,7 @@ kubectl exec -it -n demo sample-mariadb-0 -- bash
 root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 11
-Server version: 10.5.23-MariaDB-1:10.5.23+maria~focal mariadb.org binary distribution
+Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
@@ -429,7 +429,7 @@ $ kubectl exec -it -n demo sample-mariadb-0 -- bash
 root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 10
-Server version: 10.5.23-MariaDB-1:10.5.23+maria~focal mariadb.org binary distribution
+Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
