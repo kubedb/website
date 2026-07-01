@@ -59,12 +59,14 @@ VERSION ?=
 .PHONY: set-operator-version
 set-operator-version:
 	@mv firebase.json firebase.bk.json
-	@jq '(.hosting[] | .redirects[] | .destination) |= sub("\/docs\/(?!platform\/).*\/"; "/docs/$(VERSION)/"; "l")' firebase.bk.json > firebase.json
+	@jq '(.hosting[] | .redirects[] | .destination) |= sub("\/docs\/(?!platform\/)[^\/]*"; "/docs/$(VERSION)")' firebase.bk.json > firebase.json
+	@rm -f firebase.bk.json
 
 .PHONY: set-platform-version
 set-platform-version:
 	@mv firebase.json firebase.bk.json
-	@jq '(.hosting[] | .redirects[] | .destination) |= sub("\/docs\/platform\/.*\/"; "/docs/platform/$(VERSION)/"; "l")' firebase.bk.json > firebase.json
+	@jq '(.hosting[] | .redirects[] | .destination) |= sub("\/docs\/platform\/[^\/]*"; "/docs/platform/$(VERSION)")' firebase.bk.json > firebase.json
+	@rm -f firebase.bk.json
 
 ASSETS_REPO_URL ?=
 .PHONY: set-assets-repo

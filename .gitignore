@@ -11,5 +11,6 @@
 *.css.map
 main.css.map
 hugo_stats.json
+*.bk.json
 /react-app/
 /old-app/
