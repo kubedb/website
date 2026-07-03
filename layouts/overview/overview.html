@@ -90,6 +90,10 @@
               <span class="ov2-code-dot ov2-code-dot--close"></span>
               <span class="ov2-code-dot ov2-code-dot--min"></span>
               <span class="ov2-code-dot ov2-code-dot--max"></span>
+              <button type="button" class="ov2-code-copy-btn" title="Copy" aria-label="Copy code to clipboard">
+                <iconify-icon icon="lucide:copy" width="15" height="15" class="ov2-code-copy-icon"></iconify-icon>
+                <iconify-icon icon="lucide:check" width="15" height="15" class="ov2-code-copy-icon ov2-code-copy-icon--success"></iconify-icon>
+              </button>
             </div>
             <div class="ov2-code-body">
               {{ highlight (transform.Remarshal "yaml" .example) "yaml" "lineNos=inline, style=dracula" }}
@@ -226,6 +230,32 @@
 {{ end }}
 
 </div>
+
+<script>
+  (function () {
+    var btn = document.querySelector(".ov2-code-copy-btn");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var code = btn.closest(".ov2-code-editor").querySelector(".ov2-code-body code");
+      if (!code) return;
+      var lines = Array.from(code.querySelectorAll('[style*="display:flex"]')).map(function (row) {
+        var clone = row.cloneNode(true);
+        var lineNo = clone.querySelector('[style*="user-select:none"]');
+        if (lineNo) lineNo.remove();
+        return clone.textContent.replace(/\n$/, "");
+      });
+      var text = lines.length ? lines.join("\n") : code.textContent;
+      navigator.clipboard.writeText(text).then(function () {
+        btn.classList.add("is-copied");
+        btn.title = "Copied";
+        setTimeout(function () {
+          btn.classList.remove("is-copied");
+          btn.title = "Copy";
+        }, 1800);
+      });
+    });
+  })();
+</script>
 {{ end }}
 
 {{ end }}

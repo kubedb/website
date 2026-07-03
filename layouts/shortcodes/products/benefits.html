@@ -10,7 +10,7 @@
     ) }}
     <div class="columns is-multiline">
       {{ range $data.benefits }}
-      <div class="column is-4-desktop is-6-tablet">
+      <div class="column is-4-desktop is-6-tablet is-12-mobile">
         {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
       </div>
       {{ end }}

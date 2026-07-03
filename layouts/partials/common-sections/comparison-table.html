@@ -12,8 +12,9 @@
       "class" "mb-12"
     ) }}
 
-    <div style="display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:1.5rem;border:1px solid hsl(var(--ds-gray-200));box-shadow:0 4px 24px rgba(0,0,0,0.07);">
-      <table class="table mb-0 is-vcentered" style="width:100%;min-width:600px;background:#fff;border-radius:1.5rem;overflow:hidden;">
+    <div class="comparison-table-scroll-outer" style="border-radius:1.5rem;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+      <div class="comparison-table-scroll" style="display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:1.5rem;border:1px solid hsl(var(--ds-gray-200));">
+        <table class="table mb-0 is-vcentered" style="width:100%;min-width:600px;background:#fff;border-radius:1.5rem;overflow:hidden;">
         <thead>
           <tr style="background:hsl(var(--ds-gray-50,220 20% 97%));">
             <th style="width:25%;font-size:0.65rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:hsl(var(--ds-gray-600));padding:1.25rem 1.5rem;white-space:nowrap;">Capability</th>
@@ -40,7 +41,8 @@
           </tr>
           {{ end }}
         </tbody>
-      </table>
+        </table>
+      </div>
     </div>
   </div>
 </section>

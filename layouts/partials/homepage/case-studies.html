@@ -43,7 +43,7 @@
 
     <div class="columns is-multiline">
       {{ range $index, $page := $pages }}
-      <div class="column is-4-desktop is-flex">
+      <div class="column is-4-desktop is-6-tablet is-12-mobile is-flex">
         {{ partial "case-studies/card.html" (dict "page" $page "index" $index)
         }}
       </div>

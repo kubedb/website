@@ -10,7 +10,7 @@
     ) }}
     <div class="columns is-multiline">
       {{ range $data.platform_built_for_scale }}
-      <div class="column is-6">
+      <div class="column is-6-tablet is-12-mobile">
         {{ partial "common-cards/feature-card.html" (dict "card" . "type" "benefit-scale") }}
       </div>
       {{ end }}

@@ -12,19 +12,19 @@
 <section class="section-padding has-background-grey-50">
   <div class="container">
     <div class="m-0 mx-auto is-radius-2xlarge is-overflow-hidden" style="box-shadow:0 8px 32px rgba(0,0,0,0.08);">
-      <div class="has-background-gradient-primary pr-8 pl-8 pt-11 pb-11">
+      <div class="db-support-header has-background-gradient-primary pr-8 pl-8 pt-11 pb-11">
         <h3 class="has-text-white has-text-weight-black heading-lg mb-2">{{ $data.heading }}</h3>
         <p class="is-text-sm mb-0" style="color:rgba(255,255,255,0.9);">{{ $data.description }}</p>
       </div>
-      <div class="has-background-white has-border p-8" style="border-top:none;border-radius:0 0 1rem 1rem;">
+      <div class="db-support-body has-background-white has-border p-8" style="border-top:none;border-radius:0 0 1rem 1rem;">
         {{ $cats := $data.categories }}
         {{ $total := len $cats }}
         {{ range $i, $cat := $cats }}
-        <div class="is-flex is-align-items-flex-center has-gap-4{{ if lt (add $i 1) $total }} pb-5 mb-5 has-border-bottom{{ end }}">
-          <div style="width: 200px;">
+        <div class="db-support-row is-flex is-align-items-center has-gap-4{{ if lt (add $i 1) $total }} pb-5 mb-5 has-border-bottom{{ end }}">
+          <div class="db-support-label" style="width: 200px;">
             <span class="badge badge-primary is-flex-shrink-0">{{ $cat.label }}</span>
           </div>
-          <span class="is-text-sm has-text-grey-500 is-flex is-align-items-center is-justify-content-center">{{ $cat.items }}</span>
+          <span class="is-text-sm has-text-grey-500">{{ $cat.items }}</span>
         </div>
         {{ end }}
       </div>

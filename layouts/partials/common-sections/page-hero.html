@@ -1,19 +1,19 @@
 {{ $data := . }}
 {{ $p_color := $data.product_color_primary | default "#4948a3" }}
 {{ $stats_color := $data.stats_color | default $p_color }}
-<section class="home-hero is-relative is-overflow-hidden">
+<section class="home-hero page-hero is-relative is-overflow-hidden">
   <div class="home-hero-bg">
     <div class="hero-mesh-orb hero-mesh-orb-tr"></div>
     <div class="hero-mesh-orb hero-mesh-orb-bl"></div>
   </div>
 
   <div class="container is-relative has-z-index-10 has-text-centered">
-    <div class="badge is-justify-content-center mb-4" style="background: {{ $p_color }}12; border-color: {{ $p_color }}22; white-space: normal; text-align: left;">
+    <div class="badge hero-page-badge is-justify-content-center mb-4" style="background: {{ $p_color }}12; border-color: {{ $p_color }}22; white-space: normal; text-align: center;">
       {{ if $data.product_icon }}
       <iconify-icon {{ printf "icon=%q" $data.product_icon | safeHTMLAttr }} width="18" height="18"
         style="color: {{ $p_color }}"></iconify-icon>
       {{ end }}
-      <span class="has-text-weight-bold is-size-7 uppercase tracking-widest ml-2" style="color: {{ $p_color }}">{{ $data.hero_badge | default $data.product_name | default "KubeDB" }}</span>
+      <span class="has-text-weight-bold is-size-7 uppercase tracking-widest" style="color: {{ $p_color }}">{{ $data.hero_badge | default $data.product_name | default "KubeDB" }}</span>
       {{ if $data.hero_badge_sub }}
       <span class="mx-2 has-text-grey-400">•</span>
       <span class="is-size-7 has-text-weight-semibold" style="color: {{ $p_color }}">{{ $data.hero_badge_sub }}</span>
@@ -96,9 +96,9 @@
       {{ end }}
     {{ end }}
     {{ if and (eq $statsStyle "hero-inline-metrics") (not $iconStats) }}
-    <div class="columns is-mobile is-multiline mt-12 has-max-width-xl mx-auto is-centered">
+    <div class="columns is-multiline mt-12 has-max-width-xl mx-auto is-centered">
       {{ range $data.stats }}
-      <div class="column is-4-desktop is-6-mobile">
+      <div class="column is-4-desktop is-12-mobile">
         {{ partial "common-cards/metric-card.html" . }}
       </div>
       {{ end }}

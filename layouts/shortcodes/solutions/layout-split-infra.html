@@ -17,9 +17,9 @@
       <p class="section-header-desc mx-auto has-text-grey-500 mt-4 is-text-lg has-max-width-800">{{ $data.how_it_works_subtitle }}</p>
     </div>
 
-    <div class="columns">
+    <div class="columns is-multiline">
       <!-- Your Infrastructure -->
-      <div class="column is-6">
+      <div class="column is-6-tablet is-12-mobile">
         <div class="is-flex is-align-items-center mb-8">
           <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-4 infra-box-blue">
             <iconify-icon {{ printf "icon=%q" $data.how_it_works_infra.icon | safeHTMLAttr }} width="28" class="has-text-info"></iconify-icon>
@@ -39,7 +39,7 @@
       </div>
 
       <!-- KubeDB Software -->
-      <div class="column is-6">
+      <div class="column is-6-tablet is-12-mobile">
         <div class="is-flex is-align-items-center mb-8">
           <div class="is-flex is-align-items-center is-justify-content-center is-radius-large mr-4 infra-box-indigo">
             <iconify-icon {{ printf "icon=%q" $data.how_it_works_software.icon | safeHTMLAttr }} width="28" class="has-text-info"></iconify-icon>
@@ -60,8 +60,8 @@
     </div>
 
     <div class="mt-16 has-text-centered">
-      <div class="badge badge-success-soft has-background-success-soft">
-        <iconify-icon icon="lucide:check-circle" width="20" class="has-text-success"></iconify-icon>
+      <div class="badge badge-success-soft has-background-success-soft hiw-footer-badge">
+        <iconify-icon icon="lucide:check-circle" width="20" class="has-text-success" style="flex-shrink:0;"></iconify-icon>
         <span class="is-size-6 has-text-weight-bold has-text-grey-800">{{ $howItWorksSummary | safeHTML }}</span>
       </div>
     </div>

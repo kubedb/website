@@ -15,7 +15,7 @@
     {{ $col_class := $data.when_to_use_column_class | default (printf "is-%d" (div 12 (len $data.when_to_use))) }}
     <div class="columns is-multiline is-centered">
       {{ range $data.when_to_use }}
-      <div class="column {{ $col_class }}-desktop is-4-tablet is-12-mobile">
+      <div class="column {{ $col_class }}-desktop is-6-tablet is-12-mobile">
         {{ $g_class := lower .gradient_class }}
         {{ $c := "orange" }}
         {{ if strings.Contains .title "Autonomy" }}{{ $c = "purple" }}

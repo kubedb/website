@@ -16,11 +16,11 @@
 
         <div class="is-flex is-flex-direction-column has-gap-3">
           {{ range $data.layers }}
-          <div class="is-flex is-align-items-center has-gap-4">
+          <div class="arch-layer-row is-flex is-align-items-center has-gap-4">
             {{ if eq .gradient "mke" }}
-            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large is-flex-shrink-0 has-shadow-arch width-200" style="background: linear-gradient(135deg, #1e40af, #1e3a8a);">{{ .label }}</div>
+            <div class="arch-layer-label has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large is-flex-shrink-0 has-shadow-arch width-200" style="background: linear-gradient(135deg, #1e40af, #1e3a8a);">{{ .label }}</div>
             {{ else }}
-            <div class="has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large has-background-gradient-{{ .gradient }} is-flex-shrink-0 has-shadow-arch width-200">{{ .label }}</div>
+            <div class="arch-layer-label has-text-white has-text-weight-bold is-text-sm px-5 py-3 is-radius-large has-background-gradient-{{ .gradient }} is-flex-shrink-0 has-shadow-arch width-200">{{ .label }}</div>
             {{ end }}
             <div class="is-text-sm has-text-grey-500">{{ .desc }}</div>
           </div>
@@ -29,8 +29,10 @@
       </div>
 
       <div class="column is-7-desktop">
-        <div class="has-background-white is-radius-2xlarge p-6 has-shadow-large has-border">
-          <img src="{{ $data.image }}" alt="{{ $data.image_alt }}" class="is-fullwidth is-radius-2xlarge is-block">
+        <div class="arch-diagram-card has-background-white is-radius-2xlarge p-6 has-shadow-large has-border">
+          <div class="arch-diagram-scroll">
+            <img src="{{ $data.image }}" alt="{{ $data.image_alt }}" class="arch-diagram-img is-radius-2xlarge is-block">
+          </div>
           {{ if $data.image_tags }}
           <div class="is-flex is-align-items-center has-gap-3 mt-5 is-justify-content-center">
             {{ range $i, $tag := $data.image_tags }}

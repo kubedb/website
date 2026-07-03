@@ -11,7 +11,7 @@
     {{ $col_class := $data.when_to_use_column_class | default "is-3-desktop" }}
     <div class="columns is-multiline is-centered">
       {{ range $data.when_to_use }}
-      <div class="column {{ $col_class }} is-4-tablet is-12-mobile">
+      <div class="column {{ $col_class }} is-6-tablet is-12-mobile">
         {{ partial "common-cards/feature-card.html" (dict "card" . "type" "standard") }}
       </div>
       {{ end }}

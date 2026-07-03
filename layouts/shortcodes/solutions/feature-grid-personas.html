@@ -15,7 +15,7 @@
     ) }}
     <div class="columns is-multiline">
       {{ range $index, $item := $data.team_benefits }}
-      <div class="column is-4">
+      <div class="column is-4-desktop is-6-tablet is-12-mobile">
         {{ $color_soft := cond (eq $index 0) "rgba(99,102,241,0.05)" (cond (eq $index 1) "rgba(168,85,247,0.05)" "rgba(236,72,153,0.05)") }}
         {{ $color_gradient := cond (eq $index 0) "linear-gradient(135deg, #6366f1, #818cf8)" (cond (eq $index 1) "linear-gradient(135deg, #a855f7, #c084fc)" "linear-gradient(135deg, #ec4899, #f472b6)") }}
 

@@ -15,7 +15,7 @@
   {{ else }}
     {{ $card_class = "comparison-card-inactive" }}
   {{ end }}
-  <div class="column is-6">
+  <div class="column is-6-tablet is-12-mobile">
     <div class="p-10 is-radius-xlarge is-fullheight shadow-xl transition-all hover-translate-up {{ $card_class }}" style="border: 2px solid {{ $card.border }}; border-radius: 20px;">
       <div class="is-flex is-align-items-center has-gap-4 mb-6">
         <iconify-icon {{ printf "icon=%q" $card.icon | safeHTMLAttr }} width="40" height="40" style="color: {{ $card.icon_color }};"></iconify-icon>
