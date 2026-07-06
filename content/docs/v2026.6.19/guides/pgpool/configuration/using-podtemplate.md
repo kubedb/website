@@ -87,7 +87,7 @@ metadata:
   name: pp-misc-config
   namespace: demo
 spec:
-  version: "4.4.5"
+  version: "4.6.0"
   replicas: 1
   postgresRef:
     name: ha-postgres
@@ -220,7 +220,7 @@ metadata:
   name: pgpool-custom-sidecar
   namespace: demo
 spec:
-  version: "4.4.5"
+  version: "4.6.0"
   replicas: 1
   postgresRef:
     name: ha-postgres
@@ -368,7 +368,7 @@ metadata:
   name: pgpool-node-selector
   namespace: demo
 spec:
-  version: "4.4.5"
+  version: "4.6.0"
   replicas: 1
   postgresRef:
     name: ha-postgres
@@ -460,7 +460,7 @@ metadata:
   name: pgpool-without-tolerations
   namespace: demo
 spec:
-  version: "4.4.5"
+  version: "4.6.0"
   replicas: 1
   postgresRef:
     name: ha-postgres
@@ -558,7 +558,7 @@ metadata:
   name: pgpool-with-tolerations
   namespace: demo
 spec:
-  version: "4.4.5"
+  version: "4.6.0"
   replicas: 1
   postgresRef:
     name: ha-postgres

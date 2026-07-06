@@ -43,7 +43,7 @@ info:
   namespace/demo created
   ```
 
-> Note: YAML files used in this tutorial are stored in [docs/guides/percona-xtradb/tls/configure/examples](https://github.com/kubedb/docs/tree/{{< param "info.version" >}}/docs/guides/mysql/tls/configure/yamls) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
+> Note: YAML files used in this tutorial are stored in [docs/guides/percona-xtradb/tls/configure/examples](https://github.com/kubedb/docs/tree/{{< param "info.version" >}}/docs/guides/percona-xtradb/tls/configure/examples) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
 
 ### Deploy PerconaXtraDB database with TLS/SSL configuration
 
@@ -104,7 +104,7 @@ metadata:
   name: sample-pxc
   namespace: demo
 spec:
-  version: "8.0.40"
+  version: "8.4.3"
   replicas: 3
   storageType: Durable
   storage:
@@ -146,7 +146,7 @@ Now, wait for `PerconaXtraDB` going on `Running` state and also wait for `PetSet
 ```bash
 $ kubectl get perconaxtradb -n demo sample-pxc
 NAME         VERSION   STATUS   AGE
-sample-pxc   8.0.40    Ready    3m23s
+sample-pxc   8.4.3    Ready    3m23s
 
 
 $ kubectl get pod -n demo | grep sample-pxc
@@ -192,7 +192,7 @@ bash-4.4$ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 78
-Server version: 8.0.40-16.1 Percona XtraDB Cluster (GPL), Release rel16, Revision b141904, WSREP version 26.4.3
+Server version: 8.4.3-3.1 Percona XtraDB Cluster (GPL), Release rel3, Revision cf742b4, WSREP version 26.1.4.3
 
 Copyright (c) 2009-2021 Percona LLC and/or its affiliates
 Copyright (c) 2000, 2021, Oracle and/or its affiliates.
@@ -261,7 +261,7 @@ bash-4.4$ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 186
-Server version: 8.0.40-16.1 Percona XtraDB Cluster (GPL), Release rel16, Revision b141904, WSREP version 26.4.3
+Server version: 8.4.3-3.1 Percona XtraDB Cluster (GPL), Release rel3, Revision cf742b4, WSREP version 26.1.4.3
 
 Copyright (c) 2009-2021 Percona LLC and/or its affiliates
 Copyright (c) 2000, 2021, Oracle and/or its affiliates.
@@ -331,7 +331,7 @@ bash-4.4$ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 232
-Server version: 8.0.40-16.1 Percona XtraDB Cluster (GPL), Release rel16, Revision b141904, WSREP version 26.4.3
+Server version: 8.4.3-3.1 Percona XtraDB Cluster (GPL), Release rel3, Revision cf742b4, WSREP version 26.1.4.3
 
 Copyright (c) 2009-2021 Percona LLC and/or its affiliates
 Copyright (c) 2000, 2021, Oracle and/or its affiliates.
@@ -357,7 +357,7 @@ bash-4.4$ mysql -unew_user -p1234 --ssl-ca=/etc/mysql/certs/server/ca.crt  --ssl
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 242
-Server version: 8.0.40-16.1 Percona XtraDB Cluster (GPL), Release rel16, Revision b141904, WSREP version 26.4.3
+Server version: 8.4.3-3.1 Percona XtraDB Cluster (GPL), Release rel3, Revision cf742b4, WSREP version 26.1.4.3
 
 Copyright (c) 2009-2021 Percona LLC and/or its affiliates
 Copyright (c) 2000, 2021, Oracle and/or its affiliates.
@@ -382,7 +382,7 @@ From the above output, you can see that only using client certificate we can acc
 To clean up the Kubernetes resources created by this tutorial, run:
 
 ```bash
-$ kubectl delete  perconaxtradb demo  sample-pxc
+$ kubectl delete perconaxtradb -n demo sample-pxc
 perconaxtradb.kubedb.com "sample-pxc" deleted
 $ kubectl delete ns demo
 namespace "demo" deleted

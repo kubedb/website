@@ -69,7 +69,7 @@ metadata:
   name: neo4j-test
   namespace: demo
 spec:
-  version: "2025.10.1"
+  version: "2025.12.1"
   replicas: 3
   storage:
     resources:
@@ -93,7 +93,7 @@ Wait until `STATUS` shows `Ready` before proceeding.
 
 ```
 NAME         VERSION     STATUS   AGE
-neo4j-test   2025.10.1   Ready    3m
+neo4j-test   2025.12.1   Ready    3m
 ```
 
 ---

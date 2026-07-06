@@ -60,7 +60,7 @@ metadata:
   name: my-group
   namespace: demo
 spec:
-  version: "8.4.8"
+  version: "9.6.0"
   replicas: 3
   topology:
     mode: GroupReplication
@@ -281,7 +281,7 @@ spec:
     group:
       name: dc002fc3-c412-4d18-b1d4-66c1fbfbbc9b
     mode: GroupReplication
-  version: 8.4.8
+  version: 9.6.0
 status:
   phase: Ready
 ```
@@ -295,10 +295,10 @@ If you want to use an existing secret please specify that when creating the MySQ
 Now, you can connect to this database from your terminal using the `mysql` user and password.
 
 ```bash
-$ kubectl get secrets -n demo my-group-auth -o jsonpath='{.data.\username}' | base64 -d
+$ kubectl get secrets -n demo my-group-auth -o jsonpath='{.data.username}' | base64 -d
 root
 
-$ kubectl get secrets -n demo my-group-auth -o jsonpath='{.data.\password}' | base64 -d
+$ kubectl get secrets -n demo my-group-auth -o jsonpath='{.data.password}' | base64 -d
 d)q2MVmJK$Oex=mW
 ```
 

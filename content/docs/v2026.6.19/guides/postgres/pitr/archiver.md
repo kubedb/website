@@ -117,7 +117,7 @@ spec:
     last: 2
 ```
 ```bash
-$ kubectl apply -f  https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/postgres/pitr/yamls/retention-policy.yaml 
+$ kubectl apply -f  https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/postgres/pitr/yamls/retentionPolicy.yaml 
 retentionpolicy.storage.kubestash.com/postgres-retention-policy created
 ```
 
@@ -184,9 +184,9 @@ stringData:
 ```
 
 ```bash 
- $ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/postgres/pirt/yamls/postgresarchiver.yaml
+ $ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/postgres/pitr/yamls/postgresarchiver.yaml
  postgresarchiver.archiver.kubedb.com/postgresarchiver-sample created
- $ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/postgres/pirt/yamls/encryptionSecret.yaml
+ $ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/postgres/pitr/yamls/encryptionSecret.yaml
 ```
 
 ## Ensure volumeSnapshotClass
@@ -229,7 +229,7 @@ metadata:
   labels:
     archiver: "true"
 spec:
-  version: "17.8"
+  version: "18.3"
   replicas: 3
   standbyMode: Hot
   storageType: Durable
@@ -378,7 +378,7 @@ spec:
         name: demo-pg-manifest
         namespace: demo
       recoveryTimestamp: "2023-12-12T13:43:41.300216Z"
-  version: "17.8"
+  version: "18.3"
   replicas: 3
   standbyMode: Hot
   storageType: Durable
@@ -412,8 +412,8 @@ restore-pg-restoresession-2tsbv                      0/1     Completed   0      
 ```bash
 $ kubectl get pg -n demo
 NAME         VERSION   STATUS   AGE
-demo-pg      17.8      Ready    44m
-restore-pg   17.8      Ready    2m36s
+demo-pg      18.3      Ready    44m
+restore-pg   18.3      Ready    2m36s
 ```
 
 **Validating data on Restored PostgreSQL**

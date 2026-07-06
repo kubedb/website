@@ -53,7 +53,7 @@ Here, we are going to deploy a  `MariaDB` cluster using a supported version by `
 
 ### Prepare MariaDB Cluster Database
 
-Now, we are going to deploy a `MariaDB` cluster with version `11.8.5`.
+Now, we are going to deploy a `MariaDB` cluster with version `12.1.2`.
 
 ### Deploy MariaDB Cluster
 
@@ -66,7 +66,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   replicas: 3
   storageType: Durable
   storage:
@@ -99,7 +99,7 @@ Let's check the number of replicas this database has from the MariaDB object, nu
 ```bash
 $ kubectl get mariadb -n demo sample-mariadb -o json | jq '.spec.replicas'
 3
-$ kubectl get sts -n demo sample-mariadb -o json | jq '.spec.replicas'
+$ kubectl get petset -n demo sample-mariadb -o json | jq '.spec.replicas'
 3
 ```
 
@@ -109,10 +109,10 @@ Also, we can verify the replicas of the replicaset from an internal mariadb comm
 
 First we need to get the username and password to connect to a mariadb instance,
 ```bash
-$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.\username}' | base64 -d
+$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.username}' | base64 -d
 root
 
-$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.\password}' | base64 -d
+$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.password}' | base64 -d
 nrKuxni0wDSMrgwy
 ```
 
@@ -120,7 +120,7 @@ Now let's connect to a mariadb instance and run a mariadb internal command to ch
 
 ```bash
 $  kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
-root@sample-mariadb-0:/ mysql -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
+root@sample-mariadb-0:/ mariadb -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
 +--------------------+-------+
 | Variable_name      | Value |
 +--------------------+-------+
@@ -186,15 +186,15 @@ We can see from the above output that the `MariaDBOpsRequest` has succeeded. Now
 ```bash
 $ kubectl get mariadb -n demo sample-mariadb -o json | jq '.spec.replicas'
 5
-$ kubectl get sts -n demo sample-mariadb -o json | jq '.spec.replicas'
+$ kubectl get petset -n demo sample-mariadb -o json | jq '.spec.replicas'
 5
 ```
 
 Now let's connect to a mariadb instance and run a mariadb internal command to check the number of replicas,
 
 ```bash
-$ $  kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
-root@sample-mariadb-0:/ mysql -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
+$ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+root@sample-mariadb-0:/ mariadb -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
 +--------------------+-------+
 | Variable_name      | Value |
 +--------------------+-------+
@@ -257,14 +257,14 @@ We can see from the above output that the `MariaDBOpsRequest` has succeeded. Now
 ```bash
 $ kubectl get mariadb -n demo sample-mariadb -o json | jq '.spec.replicas' 
 3
-$ kubectl get sts -n demo sample-mariadb -o json | jq '.spec.replicas'
+$ kubectl get petset -n demo sample-mariadb -o json | jq '.spec.replicas'
 3
 ```
 
 Now let's connect to a mariadb instance and run a mariadb internal command to check the number of replicas,
 ```bash
-$ $  kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
-root@sample-mariadb-0:/ mysql -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
+$ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+root@sample-mariadb-0:/ mariadb -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
 +--------------------+-------+
 | Variable_name      | Value |
 +--------------------+-------+

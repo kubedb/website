@@ -70,7 +70,7 @@ Now, we are going to deploy a `PerconaXtraDB` replicaset using a supported versi
 
 #### Deploy PerconaXtraDB Cluster
 
-In this section, we are going to deploy a PerconaXtraDB replicaset database with version `8.0.40`.  Then, in the next section we will set up autoscaling for this database using `PerconaXtraDBAutoscaler` CRD. Below is the YAML of the `PerconaXtraDB` CR that we are going to create,
+In this section, we are going to deploy a PerconaXtraDB replicaset database with version `8.4.3`.  Then, in the next section we will set up autoscaling for this database using `PerconaXtraDBAutoscaler` CRD. Below is the YAML of the `PerconaXtraDB` CR that we are going to create,
 
 > If you want to autoscale PerconaXtraDB `Standalone`, Just remove the `spec.Replicas` from the below yaml and rest of the steps are same.
 
@@ -81,7 +81,7 @@ metadata:
   name: sample-pxc
   namespace: demo
 spec:
-  version: "8.0.40"
+  version: "8.4.3"
   replicas: 3
   storageType: Durable
   storage:
@@ -106,7 +106,7 @@ Now, wait until `sample-pxc` has status `Ready`. i.e,
 ```bash
 $ kubectl get perconaxtradb -n demo
 NAME             VERSION   STATUS   AGE
-sample-pxc      8.0.40    Ready    3m46s
+sample-pxc      8.4.3    Ready    3m46s
 ```
 
 Let's check volume size from petset, and from the persistent volume,

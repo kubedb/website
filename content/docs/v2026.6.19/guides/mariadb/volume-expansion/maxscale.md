@@ -78,10 +78,10 @@ Then, in the next section we will expand its volume to 100Mi using `MariaDBOpsRe
 apiVersion: kubedb.com/v1
 kind: MariaDB
 metadata:
-  name: mariadb-replication
+  name: md-replication
   namespace: demo
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   replicas: 3
   topology:
     mode: MariaDBReplication
@@ -114,7 +114,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" 
 mariadb.kubedb.com/md-replication created
 ```
 
-Now, wait until `mariadb-replication` has status `Ready`. i.e,
+Now, wait until `md-replication` has status `Ready`. i.e,
 
 ```bash
 $ kubectl get mariadb -n demo

@@ -98,20 +98,20 @@ spec:
       apiGroup: cert-manager.io
       kind: Issuer
       name: md-issuer
-  version: 11.8.5
+  version: 12.1.2
 ```
 
 ### spec.version
 
 `spec.version` is a required field specifying the name of the [MariaDBVersion](/docs/v2026.6.19/guides/mariadb/concepts/mariadb-version) crd where the docker images are specified. Currently, when you install KubeDB, it creates the following `MariaDBVersion` resources,
 
-- `11.8.5`, `10.4.32`
+- `12.1.2`, `10.4.32`
 
 ### spec.authSecret
 
 `spec.authSecret` is an optional field that points to a Secret used to hold credentials for `mariadb` root user. If not set, the KubeDB operator creates a new Secret `{mariadb-object-name}-auth` for storing the password for `mariadb` root user for each MariaDB object. If you want to use an existing secret please specify that when creating the MariaDB object using `spec.authSecret.name`.
 
-This secret contains a `user` key and a `password` key which contains the `username` and `password` respectively for `mariadb` root user. Here, the value of `user` key is fixed to be `root`.
+This secret contains a `username` key and a `password` key which contains the `username` and `password` respectively for `mariadb` root user. Here, the value of `username` key is fixed to be `root`.
 
 Secrets provided by users are not managed by KubeDB, and therefore, won't be modified or garbage collected by the KubeDB operator (version 0.13.0 and higher).
 
@@ -119,7 +119,7 @@ Example:
 
 ```bash
 kubectl create secret generic mariadb-auth -n demo \
-    --from-literal=user=root \
+    --from-literal=username=root \
     --from-literal=password=6q8u_2jMOW-OOZXk
 secret/mariadb-auth created
 ```
@@ -128,7 +128,7 @@ secret/mariadb-auth created
 apiVersion: v1
 data:
   password: NnE4dV8yak1PVy1PT1pYaw==
-  user: cm9vdA==
+  username: cm9vdA==
 kind: Secret
 metadata:
   name: mariadb-auth
@@ -174,7 +174,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: 11.8.5
+  version: 12.1.2
   init:
     script:
       configMap:
@@ -371,7 +371,7 @@ KubeDB allows following fields to set in `spec.serviceTemplates`:
 
 ```bash
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   serviceTemplates:
     - alias: primary
       metadata:

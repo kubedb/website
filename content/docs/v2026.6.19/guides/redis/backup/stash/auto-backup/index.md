@@ -143,7 +143,7 @@ metadata:
   annotations:
     stash.appscode.com/backup-blueprint: redis-backup-template
 spec:
-  version: 6.0.20
+  version: 8.2.2
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -167,7 +167,7 @@ redis.kubedb.com/sample-redis-1 created
 Now, let's insert some sample data into it.
 
 ```bash
-❯ export PASSWORD=$(kubectl get secrets -n demo-1 sample-redis-1-auth -o jsonpath='{.data.\password}' | base64 -d)
+❯ export PASSWORD=$(kubectl get secrets -n demo-1 sample-redis-1-auth -o jsonpath='{.data.password}' | base64 -d)
 ❯ kubectl exec -it -n demo-1 sample-redis-1-0 -- redis-cli -a $PASSWORD
 Warning: Using a password with '-a' or '-u' option on the command line interface may not be safe.
 127.0.0.1:6379> set key1 value1
@@ -326,7 +326,7 @@ metadata:
     stash.appscode.com/backup-blueprint: redis-backup-template
     stash.appscode.com/schedule: "*/3 * * * *"
 spec:
-  version: 6.0.20
+  version: 8.2.2
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -350,7 +350,7 @@ redis.kubedb.com/sample-redis-2 created
 Now, let's insert some sample data into it.
 
 ```bash
-❯ export PASSWORD=$(kubectl get secrets -n demo-2 sample-redis-2-auth -o jsonpath='{.data.\password}' | base64 -d)
+❯ export PASSWORD=$(kubectl get secrets -n demo-2 sample-redis-2-auth -o jsonpath='{.data.password}' | base64 -d)
 ❯ kubectl exec -it -n demo-2 sample-redis-2-0 -- redis-cli -a $PASSWORD
 Warning: Using a password with '-a' or '-u' option on the command line interface may not be safe.
 127.0.0.1:6379> set key1 value1
@@ -503,7 +503,7 @@ metadata:
     stash.appscode.com/backup-blueprint: redis-backup-template
     params.stash.appscode.com/args: "-db 0"
 spec:
-  version: 6.0.20
+  version: 8.2.2
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -527,7 +527,7 @@ redis.kubedb.com/sample-redis-3 created
 Now, let's insert some sample data into it.
 
 ```bash
-❯ export PASSWORD=$(kubectl get secrets -n demo-3 sample-redis-3-auth -o jsonpath='{.data.\password}' | base64 -d)
+❯ export PASSWORD=$(kubectl get secrets -n demo-3 sample-redis-3-auth -o jsonpath='{.data.password}' | base64 -d)
 ❯ kubectl exec -it -n demo-3 sample-redis-3-0 -- redis-cli -a $PASSWORD
 Warning: Using a password with '-a' or '-u' option on the command line interface may not be safe.
 127.0.0.1:6379> set key1 value1

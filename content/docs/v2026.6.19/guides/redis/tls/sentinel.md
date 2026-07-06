@@ -111,7 +111,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 3
-  version: "6.2.14"
+  version: "8.2.2"
   tls:
     issuerRef:
       apiGroup: "cert-manager.io"
@@ -182,7 +182,7 @@ metadata:
   name: rd-tls
   namespace: demo
 spec:
-  version: "6.2.14"
+  version: "8.2.2"
   mode: Sentinel
   replicas: 3
   sentinelRef:

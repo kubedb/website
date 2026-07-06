@@ -100,7 +100,7 @@ metadata:
   name: cas-custom-config
   namespace: demo
 spec:
-  version: 5.0.3
+  version: 5.0.7
   configuration:
     secretName: cas-configuration
   topology:

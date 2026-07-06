@@ -23,7 +23,7 @@ In offline mode, AppsCode never receives any of your KubeDB usage data. AppsCode
 
 ### Prerequisites
 
-See [Prerequisites](common-config.md#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note.
+See [Prerequisites](../common-config/#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note.
 
 ### 1. Visit the KubeDB Platform Self-Hosted Page
 
@@ -50,7 +50,7 @@ This is the requirement that distinguishes an offline deployment from a standard
 
 ### 4. Complete the Remaining Configuration
 
-Aside from enabling the offline toggle and providing the Cluster ID, all other sections are identical to a standard Self Hosted Production deployment (Global Administrative Settings, Release, Registry, Settings, Monitoring, Infra, TLS, Ingress & Gateway, NATS, and more). For the complete field-by-field walkthrough, follow the [Self Hosted Production](selfhosted-production.md) guide.
+Aside from enabling the offline toggle and providing the Cluster ID, all other sections are identical to a standard Self Hosted Production deployment (Global Administrative Settings, Release, Registry, Settings, Monitoring, Infra, TLS, Ingress & Gateway, NATS, and more). For the complete field-by-field walkthrough, follow the [Self Hosted Production](../selfhosted-production.md) guide.
 
 ### 5. Generate Installer and Documentation
 

@@ -35,7 +35,9 @@ Core platform capabilities. Must be installed before any other Feature Set.
 | **OpenShift Adapter** | Adapts the platform to OpenShift. Enable only on OpenShift clusters. | — |
 | **Opscenter Features** *(Required)* | Internal configurator that renders feature definitions. Platform-managed. | — |
 
-Note: If you are an ArgoCD user, AppsCode provides a way to convert the flux HelmRelease to an Argo Application via a custom operator called FargoCD. This is configurable in the [selfhost](../../selfhost-setup/install/_index.md) page.
+Note: If you are an ArgoCD user, AppsCode provides a way to convert the flux HelmRelease to an Argo Application via a custom operator called FargoCD. This is configurable in the [selfhost](../../../selfhost-setup/install/_index.md) page.
+
+![Configure Opscenter Core feature set showing Opscenter Features, Kube UI Server, License Proxyserver, FluxCD, and OpenShift Adapter](../images/feature-reference-images/featureset-opscenter-core.png)
 
 ---
 
@@ -50,6 +52,8 @@ Scheduled backup and recovery for Kubernetes applications and databases.
 | **Stash** | Legacy backup operator (Stash 1.0). Enable only to keep existing Stash 1.0 setups working. | License Proxyserver |
 | **Stash Opscenter** | UI and Grafana monitoring for Stash. | Stash, Panopticon, Grafana Operator |
 
+![Configure Backup & Recovery feature set showing Stash Opscenter, Stash 2.0, Stash, and Stash Presets](../images/feature-reference-images/featureset-backup-recovery.png)
+
 ---
 
 ## Databases
@@ -62,6 +66,8 @@ Production-grade database management powered by KubeDB.
 | **KubeDB Opscenter** *(Recommended)* | UI and monitoring dashboards for KubeDB. | KubeDB, Panopticon, Grafana Operator |
 | **KubeDB UI Presets** *(Recommended)* | Default presets for the database creation forms. | — |
 | **Prepare Cluster** | Pre-pulls images and prepares nodes for KubeDB. | — |
+
+![Configure Databases feature set showing KubeDB Opscenter, Prepare Cluster, KubeDB UI Presets, and KubeDB with supported database types](../images/feature-reference-images/featureset-databases.png)
 
 ---
 
@@ -84,6 +90,8 @@ Cluster monitoring, metrics, and dashboards.
 | **Tenant Operator** *(Recommended)* | Isolates monitoring resources and access per tenant. | Prometheus Label Proxy, Thanos Operator |
 | **Inbox Agent / Server / UI** *(ALPHA)* | Cluster event inbox components. | — |
 
+![Configure Observability feature set showing Panopticon, Prometheus Metrics Adapter, Monitoring Operator, Kube Prometheus Stack, Grafana Operator, and Inbox components](../images/feature-reference-images/featureset-observability.png)
+
 ---
 
 ## Cost Management
@@ -96,6 +104,8 @@ Measure and allocate infrastructure and container costs.
 | **Keda HTTP Addon** *(Recommended)* | Scale workloads based on HTTP traffic. | Keda |
 | **Opencost** *(ALPHA)* | Measure and allocate infrastructure and container costs. | Kube Prometheus Stack, Monitoring Operator |
 | **OpenCost Grafana Dashboards** | Cost visualization dashboards. | Opencost, Grafana Operator |
+
+![Configure Cost Management feature set showing Keda HTTP Addon, OpenCost Grafana Dashboards, Opencost, and Keda](../images/feature-reference-images/featureset-cost-management.png)
 
 ---
 
@@ -110,6 +120,8 @@ TLS certificates, runtime security, and image scanning.
 | **CA Cert CSI Driver** | CSI driver that adds CA certificates to the OS trusted certificate issuers | Cert Manager |
 | **Falco** | Container-native runtime threat detection. | — |
 | **Falco UI Server** | UI for Falco runtime alerts. | Falco, Grafana Operator |
+
+![Configure Security feature set showing Falco UI Server, Falco, CA Cert CSI Driver, Cert Manager, and Scanner](../images/feature-reference-images/featureset-security.png)
 
 ---
 
@@ -134,6 +146,8 @@ Secure secret storage, syncing, and distribution.
 | **Virtual Secrets** *(ALPHA)* | Virtual Secrets server for not to actually keep the secrets in k8s level. | — |
 | **Virtual Secrets provider** *(ALPHA)* | Virtual Secrets backend for the CSI driver. | Virtual Secrets, Secrets Store CSI Driver |
 
+![Configure Secret Management feature set showing External Secrets, Kubevault, Config Syncer, Reloader, Sealed Secrets, CSI driver providers, and Virtual Secrets](../images/feature-reference-images/featureset-secret-management.png)
+
 ---
 
 ## Policy Management
@@ -149,6 +163,8 @@ Platform-level policy enforcement.
 | **Kyverno** | Kubernetes-native policy management. | — |
 | **Kyverno Policies** | Pod Security Standards implemented as Kyverno policies. | Kyverno |
 
+![Configure Policy Management feature set showing Kyverno Policies, Gatekeeper, Kyverno, GateKeeper Policy Grafana Dashboards, Gatekeeper Templates, and Gatekeeper Constraints](../images/feature-reference-images/featureset-policy-management.png)
+
 ---
 
 ## Storage Addons
@@ -161,6 +177,8 @@ Additional storage drivers and integrations.
 | **Longhorn** | Cloud-native distributed block storage. | — |
 | **CSI Volume Snapshotter** | Snapshot controller and validation webhook for CSI volumes. | — |
 | **TopoLVM** | Local LVM-backed CSI storage. | — |
+
+![Configure Storage Addons feature set showing Longhorn, NFS CSI driver, CSI Volume Snapshotter, and TopoLVM](../images/feature-reference-images/featureset-storage-addons.png)
 
 ---
 
@@ -175,6 +193,8 @@ Networking plugins and extensions.
 | **Voyager Ingress** | HAProxy-based ingress controller. | — |
 | **Voyager Gateway** | Envoy-based gateway distro by AppsCode. | — |
 
+![Configure Networking Addons feature set showing Voyager Gateway, Kubernetes Gateway API, External DNS Operator, and Voyager Ingress](../images/feature-reference-images/featureset-networking-addons.png)
+
 ---
 
 ## Opscenter Tools
@@ -187,6 +207,8 @@ DevOps tooling and management utilities.
 | **Sidekick** *(Recommended)* | Run a one-off container as a pod (sidecar-as-a-pod). | — |
 | **Operator Shard Manager** *(Recommended)* | Scale operators by sharding responsibility across instances. | — |
 
+![Configure Opscenter Tools feature set showing Operator Shard Manager, Sidekick, and Supervisor](../images/feature-reference-images/featureset-opscenter-tools.png)
+
 ---
 
 ## Cluster Management
@@ -198,6 +220,8 @@ Cluster provisioning and management tools (Cluster API core).
 | **CAPI Catalog** | Catalog of Cluster API cluster templates. | — |
 | **CAPI Ops Manager** | Day-2 operations for Cluster API clusters. | — |
 | **Cluster Presets** | Preset configurations for cluster provisioning. Work with cloud NodePools | — |
+
+![Configure Cluster Management feature set showing CAPI Catalog, CAPI Ops Manager, and Cluster Presets](../images/feature-reference-images/featureset-cluster-management.png)
 
 ---
 
@@ -213,6 +237,8 @@ Lifecycle management for clusters running on AWS.
 | **AWS VPC Peering Operator** *(Recommended)* | Manage AWS VPC peering connections. | — |
 | **Cluster Autoscaler** *(Recommended)* | Node autoscaling for Cluster API clusters. | — |
 
+![Configure Cluster API AWS (CAPA) feature set showing AWS VPC Peering Operator, AWS Credential Manager, Cluster Autoscaler, AWS Load Balancer Controller, and AWS EBS CSI Driver](../images/feature-reference-images/featureset-capi-aws.png)
+
 ---
 
 ## Cluster API GCP (CAPG)
@@ -223,6 +249,8 @@ Lifecycle management for clusters running on GCP.
 |---|---|---|
 | **GCP Credential Manager** *(Recommended)* | Manage GCP credentials used by CAPG. | — |
 
+![Configure Cluster API GCP (CAPG) feature set showing GCP Credential Manager](../images/feature-reference-images/featureset-capi-gcp.png)
+
 ---
 
 ## Cluster API Azure (CAPZ)
@@ -232,6 +260,8 @@ Lifecycle management for clusters running on Azure.
 | Feature | Why enable | Prerequisites |
 |---|---|---|
 | **Azure Credential Manager** *(Recommended)* | Manage Azure credentials used by CAPZ. | — |
+
+![Configure Cluster API Azure (CAPZ) feature set showing Azure Credential Manager](../images/feature-reference-images/featureset-capi-azure.png)
 
 ---
 
@@ -245,6 +275,8 @@ Control-plane framework for infrastructure as code.
 | **KubeDB AWS Provider** | Provision KubeDB databases on AWS through Crossplane. | Crossplane |
 | **KubeDB Azure Provider** | Provision KubeDB databases on Azure through Crossplane. | Crossplane |
 | **KubeDB GCP Provider** | Provision KubeDB databases on GCP through Crossplane. | Crossplane |
+
+![Configure Crossplane feature set showing KubeDB GCP Provider, KubeDB Azure Provider, KubeDB AWS Provider, and Crossplane](../images/feature-reference-images/featureset-crossplane.png)
 
 ---
 
@@ -264,6 +296,8 @@ Central hub for managing a fleet of clusters.
 | **License Proxyserver Manager** *(Recommended)* | Distribute AppsCode licenses to spoke clusters. | Multicluster Hub, Cluster Profile Manager |
 | **Hub Cluster Robot** *(Recommended)* | Automation account for hub-driven operations. | Multicluster Hub, Cluster Auth Manager |
 
+![Configure Multicluster Hub feature set showing Cluster Gateway Manager, Cluster Profile Manager, Managed ServiceAccount Manager, Cluster Auth Manager, Hub Cluster Robot, FluxCD Manager, License Proxyserver Manager, Cluster Proxy Manager, and Multicluster Hub](../images/feature-reference-images/featureset-multicluster-hub.png)
+
 ---
 
 ## Multicluster Spoke
@@ -273,6 +307,8 @@ Connect this cluster as a spoke to an existing hub.
 | Feature | Why enable | Prerequisites |
 |---|---|---|
 | **Multicluster Spoke** *(Recommended)* | Register this cluster as a spoke of a Multicluster Hub. | — |
+
+![Configure Multicluster Spoke feature set showing Multicluster Spoke component with Hub Information and Spoke Information fields](../images/feature-reference-images/featureset-multicluster-spoke.png)
 
 ---
 
@@ -286,3 +322,5 @@ Components for Kubernetes-native service patterns.
 | **Service Gateway Presets** *(Recommended)* | A preset that holds the root 'ace' gateway configurations | Cert Manager, External DNS Operator |
 | **Service Connector Backend** | Backend for the service connector. | — |
 | **Service Provider** | Service provider component. | — |
+
+![Configure Kubernetes Native Service feature set showing Service Catalog, Service Connector Backend, Service Gateway Presets, and Service Provider](../images/feature-reference-images/featureset-kubernetes-native-service.png)

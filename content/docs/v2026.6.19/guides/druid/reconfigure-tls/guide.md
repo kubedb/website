@@ -60,7 +60,7 @@ metadata:
   name: druid-cluster
   namespace: demo
 spec:
-  version: 28.0.1
+  version: 36.0.0
   deepStorage:
     type: s3
     configSecret:
@@ -83,11 +83,11 @@ Now, wait until `druid-cluster` has status `Ready`. i.e,
 ```bash
 $ kubectl get dr -n demo -w
 NAME            TYPE                  VERSION   STATUS         AGE
-druid-cluster   kubedb.com/v1alpha2   28.0.1    Provisioning   15s
-druid-cluster   kubedb.com/v1alpha2   28.0.1    Provisioning   37s
+druid-cluster   kubedb.com/v1alpha2   36.0.0    Provisioning   15s
+druid-cluster   kubedb.com/v1alpha2   36.0.0    Provisioning   37s
 .
 .
-druid-cluster   kubedb.com/v1alpha2   28.0.1    Ready          2m27s
+druid-cluster   kubedb.com/v1alpha2   36.0.0    Ready          2m27s
 ```
 
 Now, we can exec one druid broker pod and verify configuration that the TLS is disabled.
@@ -169,14 +169,14 @@ Now hit the `http://localhost:8888` from any browser, and you will be prompted t
 - Username:
 
   ```bash
-  $ kubectl get secret -n demo druid-cluster-admin-cred -o jsonpath='{.data.username}' | base64 -d
+  $ kubectl get secret -n demo druid-cluster-auth -o jsonpath='{.data.username}' | base64 -d
   admin
   ```
 
 - Password:
 
   ```bash
-  $ kubectl get secret -n demo druid-cluster-admin-cred -o jsonpath='{.data.password}' | base64 -d
+  $ kubectl get secret -n demo druid-cluster-auth -o jsonpath='{.data.password}' | base64 -d
   LzJtVRX5E8MorFaf
   ```
 
@@ -229,7 +229,7 @@ spec:
 Let's apply the `YAML` file:
 
 ```bash
-$ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/druid/reconfigure-tls/yamls/druid-issuer.yaml
+$ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/druid/reconfigure-tls/yamls/druid-ca-issuer.yaml
 issuer.cert-manager.io/druid-ca-issuer created
 ```
 
@@ -618,14 +618,14 @@ After that you will be prompted to provide the credential of the druid database.
 - Username:
 
   ```bash
-  $ kubectl get secret -n demo druid-cluster-tls-admin-cred -o jsonpath='{.data.username}' | base64 -d
+  $ kubectl get secret -n demo druid-cluster-tls-auth -o jsonpath='{.data.username}' | base64 -d
   admin
   ```
 
 - Password:
 
   ```bash
-  $ kubectl get secret -n demo druid-cluster-tls-admin-cred -o jsonpath='{.data.password}' | base64 -d
+  $ kubectl get secret -n demo druid-cluster-tls-auth -o jsonpath='{.data.password}' | base64 -d
   LzJtVRX5E8MorFaf
   ```
 

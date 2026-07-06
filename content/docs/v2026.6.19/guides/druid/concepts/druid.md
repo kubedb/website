@@ -56,7 +56,7 @@ spec:
     externallyManaged: true
   authSecret:
     kind: Secret
-    name: druid-admin-cred
+    name: druid-auth
   configuration:
     secretName: druid-custom-config
   enableSSL: true
@@ -176,7 +176,7 @@ spec:
         labels:
           release: prometheus
         interval: 10s
-  version: 30.0.1
+  version: 36.0.0
 ```
 
 ### spec.version
@@ -185,7 +185,8 @@ spec:
 
 - `28.0.1`
 - `30.0.1`
-- `31.0.1`
+- `31.0.0`
+- `36.0.0`
 
 ### spec.replicas
 
@@ -215,7 +216,7 @@ authSecret:
 
 3. Let KubeDB do everything for you. In this case, no work for you.
 
-AuthSecret contains a `user` key and a `password` key which contains the `username` and `password` respectively for Druid `admin` user.
+AuthSecret contains a `username` key and a `password` key which contains the `username` and `password` respectively for Druid `admin` user.
 
 Example:
 
@@ -257,7 +258,7 @@ spec:
 ```
 ### spec.topology
 
-`spec.topology` represents the topology configuration for Druid cluster in KRaft mode.
+`spec.topology` represents the topology configuration for Druid cluster.
 
 When `spec.topology` is set, the following fields needs to be empty, otherwise validating webhook will throw error.
 
@@ -519,7 +520,7 @@ The `spec.<node-name>.podTemplate.spec.containers[].name` field used to specify 
 
 ##### spec.<node-name>.podTemplate.spec.containers[].env
 
-`spec.<node-name>.podTemplate.spec.containers[].env` is an optional field that specifies the environment variables to pass to the Redis containers.
+`spec.<node-name>.podTemplate.spec.containers[].env` is an optional field that specifies the environment variables to pass to the Druid containers.
 
 ##### spec.<node-name>.podTemplate.spec.containers[].resources
 

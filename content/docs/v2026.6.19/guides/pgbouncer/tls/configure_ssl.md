@@ -137,12 +137,12 @@ metadata:
   namespace: demo
 spec:
   replicas: 1
-  version: "1.18.0"
+  version: "1.24.0"
   database:
     syncUsers: true
     databaseName: "postgres"
     databaseRef:
-      name: "pg"
+      name: "ha-postgres"
       namespace: demo
   connectionPool:
     poolMode: session
@@ -157,7 +157,7 @@ spec:
   tls:
     issuerRef:
       apiGroup: cert-manager.io
-      name: pb-ca-issuer
+      name: pgbouncer-ca-issuer
       kind: Issuer
     certificates:
       - alias: server

@@ -77,7 +77,7 @@ metadata:
   name: sample-mongodb
   namespace: demo
 spec:
-  version: "4.4.26"
+  version: "8.0.17"
   replicaSet:
     name: "replicaset"
   replicas: 3
@@ -189,7 +189,7 @@ spec:
   secret:
     name: sample-mongodb-auth
   type: kubedb.com/mongodb
-  version: 4.4.26
+  version: "8.0.17"
 
 ```
 
@@ -216,11 +216,11 @@ sample-mongodb-2   2/2     Running   0          13m
 Now, let’s exec into the pod and create a table,
 
 ```bash
-$ export USER=$(kubectl get secrets -n demo sample-mongodb-auth -o jsonpath='{.data.\username}' | base64 -d)
+$ export USER=$(kubectl get secrets -n demo sample-mongodb-auth -o jsonpath='{.data.username}' | base64 -d)
 
-$ export PASSWORD=$(kubectl get secrets -n demo sample-mongodb-auth -o jsonpath='{.data.\password}' | base64 -d)
+$ export PASSWORD=$(kubectl get secrets -n demo sample-mongodb-auth -o jsonpath='{.data.password}' | base64 -d)
 
-$ kubectl exec -it -n demo sample-mongodb-0 -- mongo admin -u $USER -p $PASSWORD
+$ kubectl exec -it -n demo sample-mongodb-0 -- mongosh admin -u $USER -p $PASSWORD
 
 replicaset:PRIMARY> show dbs
 admin          0.000GB
@@ -666,11 +666,11 @@ sample-mongodb-2    2/2     Running   0          12m
 Now, lets exec one of the Pod and verify restored data.
 
 ```bash
-$ export USER=$(kubectl get secrets -n dev sample-mongodb-auth -o jsonpath='{.data.\username}' | base64 -d)
+$ export USER=$(kubectl get secrets -n dev sample-mongodb-auth -o jsonpath='{.data.username}' | base64 -d)
 
-$ export PASSWORD=$(kubectl get secrets -n dev sample-mongodb-auth -o jsonpath='{.data.\password}' | base64 -d)
+$ export PASSWORD=$(kubectl get secrets -n dev sample-mongodb-auth -o jsonpath='{.data.password}' | base64 -d)
 
-$ kubectl exec -it -n demo sample-mongodb-0 -- mongo admin -u $USER -p $PASSWORD
+$ kubectl exec -it -n dev sample-mongodb-0 -- mongosh admin -u $USER -p $PASSWORD
 
 ---
 replicaset:PRIMARY> show dbs

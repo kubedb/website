@@ -70,7 +70,7 @@ metadata:
   name: sample-sdb
   namespace: demo
 spec:
-  version: "8.7.10"
+  version: "8.9.3"
   topology:
     aggregator:
       replicas: 2
@@ -130,7 +130,7 @@ Now, wait until `sample-sdb` has status `Ready`. i.e,
 ```bash
 $ kubectl get sdb -n demo
 NAME         TYPE                  VERSION   STATUS   AGE
-sample-sdb   kubedb.com/v1alpha2   8.7.10    Ready    38m
+sample-sdb   kubedb.com/v1alpha2   8.9.3    Ready    38m
 
 ```
 

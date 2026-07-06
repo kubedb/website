@@ -73,7 +73,7 @@ metadata:
   name: es-custom-config
   namespace: demo
 spec:
-  version: xpack-8.19.9
+  version: xpack-9.2.3
   configuration:
     secretName: es-custom-config
 ```

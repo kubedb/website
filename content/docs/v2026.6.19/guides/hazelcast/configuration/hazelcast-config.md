@@ -95,7 +95,7 @@ stringData:
 ```
 
 ```bash
-$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/hazelcast/configuration/configsecret-combine.yaml
+$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/hazelcast/configuration/configsecret.yaml
 secret/hz created
 ```
 Before deploying hazelcast we need to create license secret since we are running enterprise version of hazelcast.
@@ -114,7 +114,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 2
-  version: 5.5.2
+  version: 5.5.6
   licenseSecret:
     name: hz-license-key
   configuration:

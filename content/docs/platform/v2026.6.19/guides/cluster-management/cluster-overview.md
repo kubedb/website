@@ -110,7 +110,7 @@ Hover over any **Not Installed** card to see a tooltip like *"No feature enabled
 
 ![Feature Sets grid with status badges — Ready (green) and Not Installed (red)](../images/cluster-overview/cluster-overview-4.png)
 
-Click any Feature Set card to open the **Feature Set Management** page where you can enable or configure its components. See [Feature Management](cluster-features.md) for a full walkthrough.
+Click any Feature Set card to open the **Feature Set Management** page where you can enable or configure its components. See [Feature Management](../cluster-features.md) for a full walkthrough.
 
 ---
 

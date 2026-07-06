@@ -191,7 +191,7 @@ metadata:
 spec:
   version: "1.17.0"
   storage:
-    storageClassName: "longhorn"
+    storageClassName: "standard"
     accessModes:
       - ReadWriteOnce
     resources:

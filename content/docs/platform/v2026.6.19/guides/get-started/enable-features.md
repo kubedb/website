@@ -27,4 +27,4 @@ Once your cluster is imported, you can enable or disable KubeDB Platform feature
 
 Managing features in the Platform Console is a straightforward process that allows you to tailor your Platform Console to meet your cluster's requirements. Feel free to explore the features and capabilities offered by KubeDB Platform.
 
-For more advanced configurations and detailed documentation, check out the [Features in Details](../cluster-management/cluster-features.md).
+For more advanced configurations and detailed documentation, check out the [Features in Details](../../cluster-management/cluster-features.md).

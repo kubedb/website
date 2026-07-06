@@ -145,7 +145,7 @@ metadata:
   name: mssqlserver-ag-cluster
   namespace: demo
 spec:
-  version: "2022-cu12"
+  version: "2025-cu0"
   replicas: 3
   topology:
     mode: AvailabilityGroup
@@ -238,7 +238,7 @@ sa⏎
 $ kubectl get secret -n demo mssqlserver-ag-cluster-auth -o jsonpath='{.data.\password}' | base64 -d
 tZQpzrowQQ20xbCf⏎         
 $ kubectl exec -it -n demo mssqlserver-ag-cluster-0 -c mssql -- bash
-mssql@mssqlserver-ag-cluster-0:/$ /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf"
+mssql@mssqlserver-ag-cluster-0:/$ /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf" -No
 1> select name from sys.databases
 2> go
 name                                                                                                                            
@@ -283,7 +283,7 @@ Verify the table creation in secondary's.
 
 ```shell
 $ kubectl exec -it -n demo mssqlserver-ag-cluster-1 -c mssql -- bash
-mssql@mssqlserver-ag-cluster-1:/$ /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf"
+mssql@mssqlserver-ag-cluster-1:/$ /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf" -No
 1> select name from sys.databases
 2> go
 name                                                                                                                            
@@ -358,7 +358,7 @@ Now we know how failover is done, let's check if the new primary `mssqlserver-ag
 
 ```shell
 $ kubectl exec -it -n demo mssqlserver-ag-cluster-2 -c mssql -- bash
-mssql@mssqlserver-ag-cluster-2:/$ /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf"
+mssql@mssqlserver-ag-cluster-2:/$ /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf" -No
 1> use agdb1
 2> go
 Changed database context to 'agdb1'.
@@ -398,7 +398,7 @@ Let's check if the secondary(`mssqlserver-ag-cluster-0`) got the updated data fr
 
 ```shell
 $ kubectl exec -it -n demo mssqlserver-ag-cluster-0 -c mssql -- bash
-mssql@mssqlserver-ag-cluster-0:/$ /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf"
+mssql@mssqlserver-ag-cluster-0:/$ /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf" -No
 1> use agdb1
 2> go
 Changed database context to 'agdb1'.
@@ -442,7 +442,7 @@ Let's validate the cluster state from new primary(`mssqlserver-ag-cluster-0`).
 
 ```shell
 $ kubectl exec -it -n demo mssqlserver-ag-cluster-0 -c mssql -- bash
-mssql@mssqlserver-ag-cluster-0:/$ /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf"
+mssql@mssqlserver-ag-cluster-0:/$ /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf" -No
 1> use agdb1
 2> go
 Changed database context to 'agdb1'.
@@ -479,7 +479,7 @@ mssqlserver-ag-cluster-2 secondary
 Let's verify cluster state.
 ```shell
 $ kubectl exec -it -n demo mssqlserver-ag-cluster-0 -c mssql -- bash
-mssql@mssqlserver-ag-cluster-0:/$ /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf" 
+mssql@mssqlserver-ag-cluster-0:/$ /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf" -No 
 1> use agdb1
 2> go
 Changed database context to 'agdb1'.
@@ -524,7 +524,7 @@ Let's verify the cluster state now.
 
 ```shell
 $  kubectl exec -it -n demo mssqlserver-ag-cluster-0 -c mssql -- bash
-mssql@mssqlserver-ag-cluster-0:/$ /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf" 
+mssql@mssqlserver-ag-cluster-0:/$ /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "tZQpzrowQQ20xbCf" -No 
 1> use agdb1
 2> go
 1> SELECT * FROM sys.dm_hadr_availability_replica_states;

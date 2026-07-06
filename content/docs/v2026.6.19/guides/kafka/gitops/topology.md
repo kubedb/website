@@ -773,7 +773,7 @@ kafkaopsrequest.ops.kubedb.com/kafka-gitops-volumeexpansion-9e85tf     VolumeExp
 
 List Kafka versions using `kubectl get kafkaversion` and choose desired version that is compatible for upgrade from current version. Check the version constraints and ops request [here](/docs/v2026.6.19/guides/kafka/update-version/update-version).
 
-Let's choose `4.0.0` in this example.
+Let's choose `4.2.0` in this example.
 
 Update the `Kafka.yaml` with the following,
 ```yaml
@@ -783,7 +783,7 @@ metadata:
   name: kafka-gitops
   namespace: demo
 spec:
-  version: 4.0.0
+  version: 4.2.0
   authSecret:
     kind: Secret
     name: kf-rotate-auth
@@ -838,7 +838,7 @@ spec:
   deletionPolicy: WipeOut
 ```
 
-Update the `version` field to `4.0.0`. Commit the changes and push to your Git repository. Your repository is synced with `ArgoCD` and the `Kafka` CR is updated in your cluster.
+Update the `version` field to `4.2.0`. Commit the changes and push to your Git repository. Your repository is synced with `ArgoCD` and the `Kafka` CR is updated in your cluster.
 
 Now, `gitops` operator will detect the version changes and create a `VersionUpdate` KafkaOpsRequest to update the `Kafka` database version. List the resources created by `gitops` operator in the `demo` namespace.
 
@@ -888,7 +888,7 @@ metadata:
   name: kafka-gitops
   namespace: demo
 spec:
-  version: 4.0.0
+  version: 4.2.0
   authSecret:
     kind: Secret
     name: kf-rotate-auth

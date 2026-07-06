@@ -45,6 +45,8 @@ info:
 KubeDB supports the following ClickHouse Versions.
 - `24.4.1`
 - `25.7.1`
+- `25.12.3`
+- `26.2.6`
 
 ## Life Cycle of a ClickHouse Object
 

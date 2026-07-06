@@ -25,9 +25,9 @@ A Client Organization provides logical separation between different clients shar
 
 Before creating a Client Organization, make sure the following are already in place:
 
-- **A Hub cluster is set up** — See [Create Hub & Spoke](../../cluster-management/hub-ui/create.md) for the full setup guide.
+- **A Hub cluster is set up** — See [Create Hub & Spoke](../../../cluster-management/hub-ui/create.md) for the full setup guide.
 - **A Spoke cluster is connected to the Hub** — The Spoke must be linked and accepted by the Hub administrator.
-- **The Spoke cluster is licensed** — A valid license certificate must be applied to the Spoke. Without it, database features remain in a **Warning** state and the organization cannot be created. See [License Management](../../cluster-management/hub-ui/license-management.md) for details.
+- **The Spoke cluster is licensed** — A valid license certificate must be applied to the Spoke. Without it, database features remain in a **Warning** state and the organization cannot be created. See [License Management](../../../cluster-management/hub-ui/license-management.md) for details.
 
 > ⚠️ Always perform these steps from an **Organization/Work account**. Personal accounts do not support Hub-Spoke features.
 

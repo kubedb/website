@@ -23,7 +23,7 @@ To install **KubeDB Platform**, you need to have the permissions to manage **EC2
 
 ### Prerequisite
 
-See [Prerequisites](common-config.md#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note.
+See [Prerequisites](../common-config/#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note.
 
 You have to create an `Access Key` and `Secret Key` with following policies attached. Check out similar [eksctl docs](https://eksctl.io/usage/minimum-iam-policies/) for reference. 
 
@@ -268,11 +268,11 @@ These credentials define the primary super-user and the initial organizational s
 For openshift cluster toggle Red Hat OpenShift cluster and give Kube API Server endpoint 
 
 ### 4. Registry
-See [Registry](common-config.md#registry) in the Common Configuration guide for Docker registry proxies, Helm repositories, credentials, certs, and image pull secrets.
+See [Registry](../common-config/#registry) in the Common Configuration guide for Docker registry proxies, Helm repositories, credentials, certs, and image pull secrets.
 
 ### 5. Monitoring
 
-See [Monitoring](common-config.md#monitoring) in the Common Configuration guide for Alertmanager email and webhook configuration.
+See [Monitoring](../common-config/#monitoring) in the Common Configuration guide for Alertmanager email and webhook configuration.
 
 
 ### 6. Settings
@@ -287,7 +287,7 @@ In this section you can enable or disable features. You can also create an initi
 
 
 ### 8. Branding & UI Customization
-See [Branding & UI Customization](common-config.md#branding--ui-customization) in the Common Configuration guide to re-brand the platform interface.
+See [Branding & UI Customization](../common-config/#branding--ui-customization) in the Common Configuration guide to re-brand the platform interface.
 
 ### 9. Generate Installer and Documentation
 

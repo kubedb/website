@@ -25,13 +25,27 @@ info:
 
 ### Select Credential
 
-3. Choose a credential with permission to access and import the cluster, then click `Next`. To create one, use the `+Create Credential` button (see [Credentials](../../account-management/kubernetes/credentials.html)).
+3. Choose a credential with permission to access and import the cluster, then click `Next`. To create one, use the `+Create Credential` button (see [Credentials](../../../account-management/kubernetes/credentials.md)).
+
+![AWS credential form showing Access Key and Secret Key fields](../../images/add_cluster/credential-aws.png)
+
+![DigitalOcean credential form showing Token field](../../images/add_cluster/credential-digitalocean.png)
+
+![Azure credential form](../../images/add_cluster/credential-azure.png)
+
+![GCP credential form showing Service Account JSON field](../../images/add_cluster/credential-gcp.png)
+
+![Hetzner credential form showing SSH Key Name and Token fields](../../images/add_cluster/credential-hetzner.png)
+
+![KubeVirt credential form showing Kubeconfig YAML field](../../images/add_cluster/credential-kubevirt.png)
 
 ### Select Cluster
 
 4. Selection depends on the provider:
    - `Linode` / `Digital Ocean`: select the cluster directly.
    - `AKS` / `EKS` / `GKE`: choose the `Resource Group`, `Region`, or `Project`, then select the cluster.
+
+![EKS Select Cluster screen showing Region dropdown and cluster list table](../../images/add_cluster/select-cluster-eks.png)
 
 ### Customize Features and Import
 

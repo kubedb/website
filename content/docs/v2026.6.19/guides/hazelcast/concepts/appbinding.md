@@ -79,7 +79,7 @@ spec:
   secret:
     name: hazelcast-sample-auth
   type: kubedb.com/hazelcast
-  version: 5.5.2
+  version: 5.5.6
 
 ```
 

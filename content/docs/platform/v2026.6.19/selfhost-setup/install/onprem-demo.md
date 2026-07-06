@@ -21,7 +21,7 @@ Welcome to the KubeDB Platform's "Onprem Demo" deployment! Follow these steps to
 
 ### Prerequisites
 
-See [Prerequisites](common-config.md#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note. 
+See [Prerequisites](../common-config/#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note. 
 
 ### 1. Visit the KubeDB Platform Self-Hosted Page
 
@@ -39,41 +39,41 @@ Before beginning the installation, identify your target infrastructure and clust
   * **Target IP:** Provide the static IP addresses for your cluster nodes or load balancer.
 * **Cluster Type:** Determine if you are installing on **Red Hat OpenShift Cluster**.
 
-> For Red Hat OpenShift clusters, see the [Deploying KubeDB Platform in OpenShift Cluster](openshift-cluster.md) guide.
+> For Red Hat OpenShift clusters, see the [Deploying KubeDB Platform in OpenShift Cluster](../openshift-cluster.md) guide.
 
 ### 3. Global Administrative Settings
-See [Global Administrative Settings](common-config.md#global-administrative-settings) in the Common Configuration guide for the System Admin account fields (display name, email, password, and initial organization).
+See [Global Administrative Settings](../common-config/#global-administrative-settings) in the Common Configuration guide for the System Admin account fields (display name, email, password, and initial organization).
 
 ### 4. Registry
-See [Registry](common-config.md#registry) in the Common Configuration guide for Docker registry proxies, Helm repositories, credentials, certs, and image pull secrets.
+See [Registry](../common-config/#registry) in the Common Configuration guide for Docker registry proxies, Helm repositories, credentials, certs, and image pull secrets.
 
 ### 5. Monitoring
 
-See [Monitoring](common-config.md#monitoring) in the Common Configuration guide for Alertmanager email and webhook configuration.
+See [Monitoring](../common-config/#monitoring) in the Common Configuration guide for Alertmanager email and webhook configuration.
 
 
 ### 6. Settings
 
 #### Domain White List and Proxy Servers
 
-See [Domain White List and Proxy Servers](common-config.md#domain-white-list-and-proxy-servers) in the Common Configuration guide for whitelisting domains, proxy servers, and login/logout URLs.
+See [Domain White List and Proxy Servers](../common-config/#domain-white-list-and-proxy-servers) in the Common Configuration guide for whitelisting domains, proxy servers, and login/logout URLs.
 
 ### 7. TLS
-See [TLS](common-config.md#tls) in the Common Configuration guide for configuring the certificate issuer (External or CA).
+See [TLS](../common-config/#tls) in the Common Configuration guide for configuring the certificate issuer (External or CA).
 
 ### 8. Ingress & Gateway
 
-See [Ingress & Gateway](common-config.md#ingress--gateway) in the Common Configuration guide for exposing the platform via the Gateway API or standard Ingress.
+See [Ingress & Gateway](../common-config/#ingress--gateway) in the Common Configuration guide for exposing the platform via the Gateway API or standard Ingress.
 
 ### 9. NATS
 
-See [NATS](common-config.md#nats) in the Common Configuration guide for configuring the internal messaging system (expose method, replicas, and resources).
+See [NATS](../common-config/#nats) in the Common Configuration guide for configuring the internal messaging system (expose method, replicas, and resources).
 
 ### 10. Self Management
-See [Self Management](common-config.md#self-management) in the Common Configuration guide to enable or disable platform features.
+See [Self Management](../common-config/#self-management) in the Common Configuration guide to enable or disable platform features.
 
 ### 11. Branding & UI Customization
-See [Branding & UI Customization](common-config.md#branding--ui-customization) in the Common Configuration guide to re-brand the platform interface.
+See [Branding & UI Customization](../common-config/#branding--ui-customization) in the Common Configuration guide to re-brand the platform interface.
 
 ### 12. Generate Installer and Documentation
 

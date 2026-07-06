@@ -25,6 +25,6 @@ Follow these steps to add your credentials:
 2. Choose your `Credential Type` or authentication method and enter the required details.
 3. Click on the `Done` button to securely save your credentials.
 
-For detailed documentation refer to [Credential Management](../account-management/kubernetes/credentials.md)
+For detailed documentation refer to [Credential Management](../../account-management/kubernetes/credentials.md)
 
 After adding your credentials, you'll be ready to import your Kubernetes cluster and unlock a world of possibilities within the platform.

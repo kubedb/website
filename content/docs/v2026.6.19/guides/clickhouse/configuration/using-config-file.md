@@ -101,7 +101,7 @@ metadata:
   name: ch-standalone
   namespace: demo
 spec:
-  version: 24.4.1
+  version: 26.2.6
   configuration:
     secretName: clickhouse-configuration
   replicas: 1
@@ -115,7 +115,7 @@ spec:
 ```
 
 ```bash
-➤ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/clickhouse/configuration/ch-custom-config-standalone.yaml
+➤ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/clickhouse/custom-config/ch-custom-config-standalone.yaml
 clickhouse.kubedb.com/ch-standalone created
 ```
 

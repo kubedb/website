@@ -113,7 +113,7 @@ $ tree .
     └── ms-issuer.yaml
 1 directories, 1 files
 
-Now, we are going to deploy a `MSSQLServer` availability group with version `2022-cu12`.
+Now, we are going to deploy a `MSSQLServer` availability group with version `2022-cu22`.
 
 
 ### Create a Mssqlserver GitOps CR
@@ -124,7 +124,7 @@ metadata:
   name: mssql-gitops
   namespace: demo
 spec:
-  version: "2022-cu12"
+  version: "2022-cu22"
   replicas: 4
   topology:
     mode: AvailabilityGroup
@@ -227,7 +227,7 @@ metadata:
   name: mssql-gitops
   namespace: demo
 spec:
-  version: "2022-cu19"
+  version: "2022-cu22"
   replicas: 3
   topology:
     mode: AvailabilityGroup
@@ -311,7 +311,7 @@ metadata:
   name: mssql-gitops
   namespace: demo
 spec:
-  version: "2022-cu19"
+  version: "2022-cu22"
   replicas: 3
   topology:
     mode: AvailabilityGroup
@@ -396,7 +396,7 @@ metadata:
   name: mssql-gitops
   namespace: demo
 spec:
-  version: "2022-cu19"
+  version: "2022-cu22"
   replicas: 3
   topology:
     mode: AvailabilityGroup
@@ -500,7 +500,7 @@ metadata:
   name: mssql-gitops
   namespace: demo
 spec:
-  version: "2022-cu19"
+  version: "2022-cu22"
   replicas: 3
   topology:
     mode: AvailabilityGroup
@@ -602,7 +602,7 @@ metadata:
   name: mssql-gitops
   namespace: demo
 spec:
-  version: "2022-cu19"
+  version: "2022-cu22"
   replicas: 3
   topology:
     mode: AvailabilityGroup
@@ -673,7 +673,7 @@ mssqlserveropsrequest.ops.kubedb.com/mssql-gitops-volumeexpansion-rsa80j     Vol
 
 List Mssqlserver versions using `kubectl get msversion` and choose desired version that is compatible for upgrade from current version. Check the version constraints and ops request [here](/docs/v2026.6.19/guides/mssqlserver/update-version/overview).
 
-Let's choose `2022-cu22` in this example.
+Let's choose `2025-cu0` in this example.
 
 Update the `mssqlserver.yaml` with the following,
 ```yaml
@@ -683,7 +683,7 @@ metadata:
   name: mssql-gitops
   namespace: demo
 spec:
-  version: "2022-cu22"
+  version: "2025-cu0"
   replicas: 3
   topology:
     mode: AvailabilityGroup
@@ -729,7 +729,7 @@ spec:
   deletionPolicy: WipeOut
 ```
 
-Update the `version` field to `2022-cu22`. Commit the changes and push to your Git repository. Your repository is synced with `ArgoCD` and the `Mssqlserver` CR is updated in your cluster.
+Update the `version` field to `2025-cu0`. Commit the changes and push to your Git repository. Your repository is synced with `ArgoCD` and the `Mssqlserver` CR is updated in your cluster.
 
 Now, `gitops` operator will detect the version changes and create a `VersionUpdate` mssqlserverOpsRequest to update the `Mssqlserver` database version. List the resources created by `gitops` operator in the `demo` namespace.
 
@@ -776,7 +776,7 @@ metadata:
   name: mssql-gitops
   namespace: demo
 spec:
-  version: "2022-cu22"
+  version: "2025-cu0"
   replicas: 3
   topology:
     mode: AvailabilityGroup
@@ -873,7 +873,7 @@ metadata:
   name: mssql-gitops
   namespace: demo
 spec:
-  version: "2022-cu22"
+  version: "2025-cu0"
   replicas: 3
   topology:
     mode: AvailabilityGroup

@@ -71,7 +71,7 @@ spec:
         storage: 1Gi
     storageClassName: standard
   storageType: Durable
-  version: xpack-8.19.9
+  version: xpack-9.2.3
 
 
 ```
@@ -88,7 +88,7 @@ Now, wait until `es-demo` has status `Ready`. i.e,
 ```bash
 $ kubectl get es -n demo -w
 NAME      VERSION        STATUS   AGE
-es-demo   xpack-8.19.9   Ready    26h
+es-demo   xpack-9.2.3   Ready    26h
 
 ```
 

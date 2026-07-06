@@ -59,7 +59,7 @@ What you’ll see in the Billable table
   - Usage covered by the **30‑day free contract** when there’s no paid contract for the selected product.
 
 **How to influence these numbers:**
-  - Cluster mode (`PROD` vs `NON‑PROD`) and namespace trials are configured in Cost Management: [Cost Management](./cost-management.md)
+  - Cluster mode (`PROD` vs `NON‑PROD`) and namespace trials are configured in Cost Management: [Cost Management](../cost-management.md)
   - Contract behavior (`paid` vs. `30‑day free` when none exists) is described here: [Contract docs](http://appscode.com/docs/en/guides/license-management/contract.html)
 
 **For more details, please contact** [AppsCode administrators](https://appscode.com/contact/).

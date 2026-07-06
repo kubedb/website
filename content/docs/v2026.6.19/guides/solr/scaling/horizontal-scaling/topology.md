@@ -55,7 +55,7 @@ Here, we are going to deploy a `Solr` topology cluster using a supported version
 
 ### Prepare Solr Topology cluster
 
-Now, we are going to deploy a `Solr` topology cluster with version `9.4.1`.
+Now, we are going to deploy a `Solr` topology cluster with version `9.8.0`.
 
 ### Deploy Solr topology cluster
 
@@ -68,7 +68,7 @@ metadata:
   name: solr-cluster
   namespace: demo
 spec:
-  version: 9.4.1
+  version: 9.8.0
   zookeeperRef:
     name: zoo
     namespace: demo

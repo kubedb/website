@@ -103,7 +103,7 @@ Now, create MariaDB crd specifying `spec.configuration.secretName` field.
 
 ```bash
 $ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/mariadb/configuration/using-config-file/examples/md-custom.yaml
-mysql.kubedb.com/custom-mysql created
+mariadb.kubedb.com/sample-mariadb created
 ```
 
 Below is the YAML for the MariaDB crd we just created.
@@ -115,7 +115,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "10.5.23"
+  version: "12.1.2"
   configuration:
     secretName: md-configuration
   storageType: Durable
@@ -153,7 +153,7 @@ Now, we will check if the database has started with the custom configuration we 
 ```bash
 # Connceting to the database
  $ kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution

@@ -43,7 +43,7 @@ metadata:
 spec:
   autoOps:
     disabled: true
-  version: "4.4.26"
+  version: "8.0.17"
   replicas: 3
   authSecret:
     kind: Secret
@@ -454,7 +454,7 @@ metadata:
   name: mgo1
   namespace: demo
 spec:
-  version: 4.4.26
+  version: "8.0.17"
   init:
     script:
       configMap:

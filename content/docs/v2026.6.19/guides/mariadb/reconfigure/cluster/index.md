@@ -51,7 +51,7 @@ Now, we are going to deploy a  `MariaDB` Cluster using a supported version by `K
 
 ### Prepare MariaDB Cluster
 
-Now, we are going to deploy a `MariaDB` Cluster database with version `11.8.5`.
+Now, we are going to deploy a `MariaDB` Cluster database with version `12.1.2`.
 
 ### Deploy MariaDB
 
@@ -82,7 +82,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   replicas: 3
   configuration:
     secretName: md-configuration
@@ -117,10 +117,10 @@ Now, we will check if the database has started with the custom configuration we 
 First we need to get the username and password to connect to a mariadb instance,
 
 ```bash
-$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.\username}' | base64 -d                                                                       
+$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.username}' | base64 -d                                                                       
 root
 
-$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.\password}' | base64 -d                                                                         
+$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.password}' | base64 -d                                                                         
 nrKuxni0wDSMrgwy
 ```
 
@@ -128,7 +128,7 @@ Now, we will check if the database has started with the custom configuration we 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -282,7 +282,7 @@ Now let's connect to a mariadb instance and run a mariadb internal command to ch
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -351,7 +351,7 @@ Before applying this yaml we are going to check the existing value of our new fi
 
 ```bash
 $ kubectl exec -it sample-mariadb-0 -n demo -c mariadb -- bash
-root@sample-mariadb-0:/# mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/# mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -461,7 +461,7 @@ Now let's connect to a mariadb instance and run a mariadb internal command to ch
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -555,7 +555,7 @@ Now let's connect to a mariadb instance and run a mariadb internal command to ch
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution

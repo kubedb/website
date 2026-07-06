@@ -83,7 +83,7 @@ metadata:
   name: kafka-prod-tiered
   namespace: demo
 spec:
-  version: 4.0.0
+  version: 4.2.0
   tieredStorage:
     provider: s3
     s3:
@@ -252,7 +252,7 @@ metadata:
   name: kafka-prod-tiered
   namespace: demo
 spec:
-  version: 4.0.0
+  version: 4.2.0
   tieredStorage:
     provider: azure
     azure:
@@ -319,7 +319,7 @@ metadata:
   name: kafka-prod-tiered
   namespace: demo
 spec:
-  version: 4.0.0
+  version: 4.2.0
   tieredStorage:
     provider: gcs
     gcs:

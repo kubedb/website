@@ -35,7 +35,7 @@ This guide provides a structured approach to deploying the platform manually. We
 
 > **Note:** Ensure your infrastructure meets the minimum system requirements before proceeding to the configuration steps.
 
-See [Prerequisites](common-config.md#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note. 
+See [Prerequisites](../common-config/#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note. 
 
 
 ### 1. Visit the KubeDB Platform Self-Hosted Page
@@ -52,7 +52,7 @@ Before beginning the installation, identify your target infrastructure and clust
 * **DNS & Connectivity:** 
   * **Enable DNS:** Toggle this to allow the installer to manage or integrate with your DNS provider.
   * **Target IP:** Provide the static IP addresses for your cluster nodes or load balancer.
-* **Cluster Type:** Determine if you are installing on **AWS EKS Cluster** or **Red Hat OpenShift Cluster**. For openshift cluster toggle Red Hat OpenShift cluster and give Kube API Server endpoint. See the [Deploying KubeDB Platform in OpenShift Cluster](openshift-cluster.md) guide.
+* **Cluster Type:** Determine if you are installing on **AWS EKS Cluster** or **Red Hat OpenShift Cluster**. For openshift cluster toggle Red Hat OpenShift cluster and give Kube API Server endpoint. See the [Deploying KubeDB Platform in OpenShift Cluster](../openshift-cluster.md) guide.
 * **Credential-Less Mode:** Enable this if you are using IAM roles for service accounts (IRSA) to avoid manual secret management.
 <br/>
 
@@ -60,7 +60,7 @@ Before beginning the installation, identify your target infrastructure and clust
 
 ### Additional configuration for EKS cluster
 
-See [Additional configuration for EKS cluster](common-config.md#additional-configuration-for-eks-cluster) in the Common Configuration guide for the EBS CSI / AWS Load Balancer Controller prerequisites and the commands to fetch the Kube API server endpoint, subnet IDs, and EIP allocation IDs.
+See [Additional configuration for EKS cluster](../common-config/#additional-configuration-for-eks-cluster) in the Common Configuration guide for the EBS CSI / AWS Load Balancer Controller prerequisites and the commands to fetch the Kube API server endpoint, subnet IDs, and EIP allocation IDs.
 
 ### Configuring AWS credentialless mode
 
@@ -174,7 +174,7 @@ aws eks associate-access-policy \
 Provide the output role arn as Ace Installer Role ARN `echo $ROLE_ARN`in the **Ace Installer Role ARN** field. 
 
 ### 3. Global Administrative Settings
-See [Global Administrative Settings](common-config.md#global-administrative-settings) in the Common Configuration guide for the System Admin account fields (display name, email, password, and initial organization).
+See [Global Administrative Settings](../common-config/#global-administrative-settings) in the Common Configuration guide for the System Admin account fields (display name, email, password, and initial organization).
 
 ### 4. Release
 Define the specific Kubernetes namespace and release information for the KubeDB Platform components.
@@ -184,7 +184,7 @@ Define the specific Kubernetes namespace and release information for the KubeDB 
 * **Namespace Automation:** Toggle **"Create namespaces during Helm install"** if you want the installer to handle namespace lifecycle management.
 
 ### 5. Registry
-See [Registry](common-config.md#registry) in the Common Configuration guide for Docker registry proxies, Helm repositories, credentials, certs, and image pull secrets.
+See [Registry](../common-config/#registry) in the Common Configuration guide for Docker registry proxies, Helm repositories, credentials, certs, and image pull secrets.
 
 ### 6. Settings
 This secton is for Persistence & Resource Allocation. Properly sizing your resources is critical for production stability. Configure CPU Requests, CPU Limits, Memory Request and  Memory Limit for both cache and Database
@@ -198,7 +198,7 @@ This secton is for Persistence & Resource Allocation. Properly sizing your resou
 
 #### Domain White List and Proxy Servers
 
-See [Domain White List and Proxy Servers](common-config.md#domain-white-list-and-proxy-servers) in the Common Configuration guide for whitelisting domains, proxy servers, and login/logout URLs.
+See [Domain White List and Proxy Servers](../common-config/#domain-white-list-and-proxy-servers) in the Common Configuration guide for whitelisting domains, proxy servers, and login/logout URLs.
 
 
 #### KubeStash
@@ -210,7 +210,7 @@ KubeDB Platform uses **KubeStash** for automated backups and disaster recovery.
 
 ### 7. Monitoring
 
-See [Monitoring](common-config.md#monitoring) in the Common Configuration guide for Alertmanager email and webhook configuration.
+See [Monitoring](../common-config/#monitoring) in the Common Configuration guide for Alertmanager email and webhook configuration.
 
 ### 8. Infra 
 
@@ -229,17 +229,17 @@ See [Monitoring](common-config.md#monitoring) in the Common Configuration guide 
   * **letsencrypt-staging:** Use this for testing your installation
 
 ### 9. Ingress & Gateway
-See [Ingress & Gateway](common-config.md#ingress--gateway) in the Common Configuration guide for exposing the platform via the Gateway API or standard Ingress.
+See [Ingress & Gateway](../common-config/#ingress--gateway) in the Common Configuration guide for exposing the platform via the Gateway API or standard Ingress.
 
 ### 10. NATS
 
-See [NATS](common-config.md#nats) in the Common Configuration guide for configuring the internal messaging system (expose method, replicas, and resources).
+See [NATS](../common-config/#nats) in the Common Configuration guide for configuring the internal messaging system (expose method, replicas, and resources).
 
 ### 11. Self Management
-See [Self Management](common-config.md#self-management) in the Common Configuration guide to enable or disable platform features.
+See [Self Management](../common-config/#self-management) in the Common Configuration guide to enable or disable platform features.
 
 ### 12. Branding & UI Customization
-See [Branding & UI Customization](common-config.md#branding--ui-customization) in the Common Configuration guide to re-brand the platform interface.
+See [Branding & UI Customization](../common-config/#branding--ui-customization) in the Common Configuration guide to re-brand the platform interface.
 
 ### 13. Generate Installer and Documentation
 

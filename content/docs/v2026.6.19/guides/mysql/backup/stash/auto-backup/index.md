@@ -147,7 +147,7 @@ metadata:
   annotations:
     stash.appscode.com/backup-blueprint: mysql-backup-template
 spec:
-  version: "8.4.8"
+  version: "9.6.0"
   replicas: 1
   storageType: Durable
   storage:
@@ -333,7 +333,7 @@ metadata:
     stash.appscode.com/backup-blueprint: mysql-backup-template
     stash.appscode.com/schedule: "*/3 * * * *"
 spec:
-  version: "8.4.8"
+  version: "9.6.0"
   replicas: 1
   storageType: Durable
   storage:
@@ -522,7 +522,7 @@ metadata:
     stash.appscode.com/backup-blueprint: mysql-backup-template
     params.stash.appscode.com/args: --databases mysql
 spec:
-  version: "8.4.8"
+  version: "9.6.0"
   replicas: 1
   storageType: Durable
   storage:

@@ -41,7 +41,7 @@ KubeDB supports providing custom configuration for MariaDB via [PodTemplate](/do
   namespace/demo created
   ```
 
-> Note: YAML files used in this tutorial are stored in [docs/examples/mysql](https://github.com/kubedb/docs/tree/{{< param "info.version" >}}/docs/guides/mariadb/configuration/using-pod-template/examples) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
+> Note: YAML files used in this tutorial are stored in [docs/guides/mariadb/configuration/using-pod-template/examples](https://github.com/kubedb/docs/tree/{{< param "info.version" >}}/docs/guides/mariadb/configuration/using-pod-template/examples) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
 
 ## Overview
 
@@ -80,7 +80,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -116,7 +116,7 @@ Now, wait a few minutes. KubeDB operator will create necessary PVC, petset, serv
 Check that the petset's pod is running
 
 ```bash
-$ $ kubectl get pod -n demo
+$ kubectl get pod -n demo
 NAME               READY   STATUS    RESTARTS   AGE
 sample-mariadb-0   1/1     Running   0          96s
 ```
@@ -140,7 +140,7 @@ Now, we will check if the database has started with the custom configuration we 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 22
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution

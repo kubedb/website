@@ -54,7 +54,7 @@ Here, we are going to deploy a  `Memcahced` database using a supported version b
 
 ### Prepare Memcahced Database
 
-Now, we are going to deploy a `Memcached` database with version `1.6.22`.
+Now, we are going to deploy a `Memcached` database with version `1.6.40`.
 
 ### Deploy Memcahced
 
@@ -68,7 +68,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 1
-  version: "1.6.22"
+  version: "1.6.40"
   podTemplate:
     spec:
       containers:
@@ -95,7 +95,7 @@ Now, wait until `memcd-quickstart` has status `Ready`. i.e. ,
 ```bash
 $ kubectl get memcached -n demo
 NAME               VERSION   STATUS   AGE
-memcd-quickstart   1.6.22    Ready    5m
+memcd-quickstart   1.6.40    Ready    5m
 ```
 
 Let's check the Pod containers resources,
@@ -197,7 +197,7 @@ To clean up the Kubernetes resources created by this turorial, run:
 
 ```bash
 
-$ kubectl patch -n demo mc/memcached-quickstart -p '{"spec":{"deletionPolicy":"WipeOut"}}' --type="merge"
+$ kubectl patch -n demo mc/memcd-quickstart -p '{"spec":{"deletionPolicy":"WipeOut"}}' --type="merge"
 memcached.kubedb.com/memcd-quickstart patched
 
 $ kubectl delete -n demo memcached memcd-quickstart

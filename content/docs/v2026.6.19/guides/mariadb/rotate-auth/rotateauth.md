@@ -59,7 +59,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -163,7 +163,7 @@ Here,
 
 Let's create the `MariaDBOpsRequest` CR we have shown above,
 ```shell
- $ kubectl apply -f kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/mariadb/rotate-auth/overview/examples/Mariadb-rotate-auth-generated.yaml
+ $ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/mariadb/rotate-auth/overview/examples/Mariadb-rotate-auth-generated.yaml
  mariadbopsrequest.ops.kubedb.com/mdops-rotate-auth-generated created
 ```
 Let's wait for `MariaDBOpsrequest` to be `Successful`. Run the following command to watch `MariaDBOpsrequest` CRO

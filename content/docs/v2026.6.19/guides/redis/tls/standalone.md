@@ -106,7 +106,7 @@ metadata:
   name: rd-tls
   namespace: demo
 spec:
-  version: "6.2.14"
+  version: "8.2.2"
   tls:
     issuerRef:
       apiGroup: "cert-manager.io"

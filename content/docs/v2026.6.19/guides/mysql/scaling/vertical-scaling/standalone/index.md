@@ -79,7 +79,7 @@ NAME            VERSION   DISTRIBUTION   DB_IMAGE                               
 9.6.0           9.6.0     Official       ghcr.io/appscode-images/mysql:9.6.0-oracle                 45h
 ```
 
-The version above that does not show `DEPRECATED` `true` is supported by `KubeDB` for `MySQL`. You can use any non-deprecated version. Here, we are going to create a standalone using non-deprecated `MySQL`  version `8.4.8`.
+The version above that does not show `DEPRECATED` `true` is supported by `KubeDB` for `MySQL`. You can use any non-deprecated version. Here, we are going to create a standalone using non-deprecated `MySQL`  version `9.6.0`.
 
 **Deploy MySQL Standalone:**
 
@@ -92,7 +92,7 @@ metadata:
   name: my-standalone
   namespace: demo
 spec:
-  version: "8.4.8"
+  version: "9.6.0"
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -123,8 +123,8 @@ Every 3.0s: kubectl get my -n demo my-standalone                 suaas-appscode:
 NAME            VERSION      STATUS    AGE
 my-standalone   8.4.8    Running   2m58s
 
-$ watch -n 3 kubectl get sts -n demo my-standalone
-Every 3.0s: kubectl get sts -n demo my-standalone                suaas-appscode: Wed Jul  1 17:48:52 2020
+$ watch -n 3 kubectl get petset -n demo my-standalone
+Every 3.0s: kubectl get petset -n demo my-standalone                suaas-appscode: Wed Jul  1 17:48:52 2020
 
 NAME            READY   AGE
 my-standalone   1/1     3m36s

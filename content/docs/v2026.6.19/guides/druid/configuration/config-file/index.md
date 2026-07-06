@@ -135,7 +135,7 @@ Let's create a k8s secret containing the above configuration where the file name
 apiVersion: v1
 kind: Secret
 metadata:
-  name: configsecret
+  name: config-secret
   namespace: demo
 stringData:
   middleManagers.properties: |-
@@ -165,7 +165,7 @@ metadata:
   name: druid-with-config
   namespace: demo
 spec:
-  version: 28.0.1
+  version: 36.0.0
   configuration:
     secretName: config-secret
   deepStorage:
@@ -181,7 +181,7 @@ spec:
 Now, create the Druid object by the following command:
 
 ```bash
-$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/druid/configuration/config-file/yamls/druid-with-monitoring.yaml
+$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/druid/configuration/config-file/yamls/druid-with-config.yaml
 druid.kubedb.com/druid-with-config created
 ```
 
@@ -190,11 +190,11 @@ Now, wait for the Druid to become ready:
 ```bash
 $ kubectl get dr -n demo -w
 NAME                TYPE                  VERSION   STATUS         AGE
-druid-with-config   kubedb.com/v1alpha2   28.0.1     Provisioning   5s
-druid-with-config   kubedb.com/v1alpha2   28.0.1    Provisioning   7s
+druid-with-config   kubedb.com/v1alpha2   36.0.0     Provisioning   5s
+druid-with-config   kubedb.com/v1alpha2   36.0.0    Provisioning   7s
 .
 .
-druid-with-config   kubedb.com/v1alpha2   28.0.1     Ready          2m
+druid-with-config   kubedb.com/v1alpha2   36.0.0     Ready          2m
 ```
 
 ## Verify Configuration
@@ -253,14 +253,14 @@ Now hit the `http://localhost:8888` from any browser, and you will be prompted t
 - Username:
 
   ```bash
-  $ kubectl get secret -n demo druid-with-config-admin-cred -o jsonpath='{.data.username}' | base64 -d
+  $ kubectl get secret -n demo druid-with-config-auth -o jsonpath='{.data.username}' | base64 -d
   admin
   ```
 
 - Password:
 
   ```bash
-  $ kubectl get secret -n demo druid-with-config-admin-cred -o jsonpath='{.data.password}' | base64 -d
+  $ kubectl get secret -n demo druid-with-config-auth -o jsonpath='{.data.password}' | base64 -d
   LzJtVRX5E8MorFaf
   ```
 
@@ -278,9 +278,9 @@ You can see that there are 5 task slots reflecting with our provided custom conf
 To cleanup the Kubernetes resources created by this tutorial, run:
 
 ```bash
-$ kubectl delete dr -n demo druid-dev 
+$ kubectl delete dr -n demo druid-with-config 
 
-$ kubectl delete secret -n demo configsecret-combined 
+$ kubectl delete secret -n demo config-secret 
 
 $ kubectl delete namespace demo
 ```

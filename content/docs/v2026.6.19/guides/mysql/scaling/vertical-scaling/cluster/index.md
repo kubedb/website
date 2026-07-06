@@ -79,7 +79,7 @@ NAME            VERSION   DISTRIBUTION   DB_IMAGE                               
 9.6.0           9.6.0     Official       ghcr.io/appscode-images/mysql:9.6.0-oracle                 45h
 ```
 
-The version above that does not show `DEPRECATED` `true` is supported by `KubeDB` for `MySQL`. You can use any non-deprecated version. Here, we are going to create a MySQL Group Replication using non-deprecated `MySQL` version `8.4.8`.
+The version above that does not show `DEPRECATED` `true` is supported by `KubeDB` for `MySQL`. You can use any non-deprecated version. Here, we are going to create a MySQL Group Replication using non-deprecated `MySQL` version `9.6.0`.
 
 **Deploy MySQL Cluster:**
 
@@ -111,7 +111,7 @@ metadata:
   name: my-group
   namespace: demo
 spec:
-  version: "8.4.8"
+  version: "9.6.0"
   replicas: 3
   topology:
     mode: GroupReplication
@@ -184,7 +184,7 @@ metadata:
   name: my-group
   namespace: demo
 spec:
-  version: "8.4.8"
+  version: "9.6.0"
   replicas: 3
   topology:
     mode: SemiSync
@@ -228,8 +228,8 @@ Every 3.0s: kubectl get my -n demo my-group                     suaas-appscode: 
 NAME       VERSION   STATUS    AGE
 my-group   8.4.8    Running   16m
 
-$ watch -n 3 kubectl get sts -n demo my-group
-Every 3.0s: kubectl get sts -n demo my-group                     Every 3.0s: kubectl get sts -n demo my-group                    suaas-appscode: Tue Jun 30 22:44:35 2020
+$ watch -n 3 kubectl get petset -n demo my-group
+Every 3.0s: kubectl get petset -n demo my-group                     Every 3.0s: kubectl get petset -n demo my-group                    suaas-appscode: Tue Jun 30 22:44:35 2020
 
 NAME       READY   AGE
 my-group   3/3     16m

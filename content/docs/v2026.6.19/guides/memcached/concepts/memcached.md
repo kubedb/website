@@ -42,7 +42,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 1
-  version: 1.6.22
+  version: 1.6.40
   monitor:
     agent: prometheus.io/operator
     prometheus:
@@ -104,7 +104,7 @@ KubeDB uses `PodDisruptionBudget` to ensure that majority of these replicas are 
 `spec.version` is a required field specifying the name of the [MemcachedVersion](/docs/v2026.6.19/guides/memcached/concepts/memcached-version) crd where the docker images are specified. Currently, when you install KubeDB, it creates the following `MemcachedVersion` crds,
 
 - `1.5.22`
-- `1.6.22`
+- `1.6.40`
 - `1.6.29`
 
 ### spec.monitor

@@ -17,24 +17,44 @@ info:
 
 # Remove / Delete Cluster
 
-You can remove an imported cluster from the Platform Console and manage its associated features during removal.
+From the cluster list, click the **⋮** (three-dot) menu on any cluster card to access two actions: **Remove** and **Delete**.
 
-1. **Navigate to the Cluster Overview Page:**
-   - Go to the [Platform Console](https://console.appscode.com).
-   - Click on your imported cluster to access the Cluster Overview page.
-
-   **OR**
-
-2. **Access Removal Options from Cluster List:**
-   - On the [Cluster List](https://console.appscode.com) page, locate your cluster.
-   - Click the three dots attached to your cluster to find the removal button.
-
-3. **Remove Cluster:**
-   - In both instances, you will find the option to remove the cluster.
-   - Confirm the removal to complete the process.
-
-4. **Manage Features:**
-   - During the removal process, you have the option to disable features associated with the cluster.
+![Cluster options menu showing KubeConfig, Remove, and Delete actions](../images/remove-cluster/cluster-options-menu.png)
 
 ---
 
+## Remove
+
+**Remove** unregisters the cluster from the Cluster UI. The actual Kubernetes cluster and its workloads are left untouched.
+
+1. Click **⋮** on your cluster card.
+2. Click **Remove**.
+3. A confirmation modal opens. Optionally check any cleanup actions to run before removal:
+   - **Remove FluxCD** — uninstalls FluxCD from the cluster.
+   - **Remove All Features** — uninstalls all installed feature-sets from the cluster.
+4. Click **Yes, Remove**.
+
+![Remove Cluster modal with optional checkboxes for Remove FluxCD and Remove All Features](../images/remove-cluster/remove-cluster-modal.png)
+
+---
+
+## Delete
+
+**Delete** permanently destroys the cluster and its underlying infrastructure. This action is irreversible.
+
+1. Click **⋮** on your cluster card.
+2. Click **Delete**.
+3. Confirm in the modal by clicking **Yes, Delete**.
+
+![Delete Cluster modal asking for confirmation with Yes, Delete button](../images/remove-cluster/delete-cluster-modal.png)
+
+> **Warning:** Delete tears down the actual infrastructure. Use **Remove** if you only want to unregister the cluster from the UI.
+
+---
+
+## Quick Reference
+
+| Action | What happens | Cluster destroyed? |
+|---|---|---|
+| **Remove** | Unregisters cluster from Cluster UI | No |
+| **Delete** | Destroys cluster + infrastructure | Yes |
