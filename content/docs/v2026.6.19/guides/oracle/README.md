@@ -48,5 +48,5 @@ info:
 
 ## User Guide
 
-- [Quickstart Oracle](/docs/v2026.6.19/guides/oracle/quickstart/guide) with KubeDB Operator.
+- [Quickstart Oracle](/docs/v2026.6.19/guides/oracle/quickstart/) with KubeDB Operator.
 

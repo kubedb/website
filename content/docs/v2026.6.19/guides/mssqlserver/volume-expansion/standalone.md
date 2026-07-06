@@ -69,7 +69,7 @@ standard-static        driver.standard.io      Delete          Immediate        
 We can see from the output that `standard (default)` storage class has `ALLOWVOLUMEEXPANSION` field as true. So, this storage class supports volume expansion. We will use this storage class.
 
 
-Now, we are going to deploy a `MSSQLServer` in `AvailabilityGroup` Mode with version `2022-cu12`.
+Now, we are going to deploy a `MSSQLServer` in `AvailabilityGroup` Mode with version `2025-cu0`.
 
 ### Deploy MSSQLServer Standalone
 
@@ -116,7 +116,7 @@ metadata:
   name: mssql-standalone
   namespace: demo
 spec:
-  version: "2022-cu12"
+  version: "2025-cu0"
   replicas: 1
   storageType: Durable
   tls:
@@ -218,7 +218,7 @@ During `Online` VolumeExpansion KubeDB expands volume without deleting the pods,
 Let's create the `MSSQLServerOpsRequest` CR we have shown above,
 
 ```bash
-$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/example/mssqlserver/volume-expansion/mops-volume-exp-std.yaml
+$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/mssqlserver/volume-expansion/mops-volume-exp-std.yaml
 mssqlserveropsrequest.ops.kubedb.com/mops-volume-exp-std created
 ```
 

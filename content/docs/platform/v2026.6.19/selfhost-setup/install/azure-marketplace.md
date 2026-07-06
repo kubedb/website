@@ -21,7 +21,7 @@ Welcome to the KubeDB Platform's **Azure Marketplace** deployment! This guide wi
 
 ### Prerequisites
 
-See [Prerequisites](common-config.md#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note.
+See [Prerequisites](../common-config/#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note.
 
 ## Getting Started
 
@@ -71,17 +71,17 @@ Put **Subscription ID**, **Tenant ID**, **Client ID** and **Client Secret** in t
 
 ### 4. Global Administrative Settings
 
-See [Global Administrative Settings](common-config.md#global-administrative-settings) in the Common Configuration guide for the System Admin account fields (display name, email, password, and initial organization).
+See [Global Administrative Settings](../common-config/#global-administrative-settings) in the Common Configuration guide for the System Admin account fields (display name, email, password, and initial organization).
 
 For openshift cluster toggle Red Hat OpenShift cluster and give Kube API Server endpoint 
 
 ### 5. Registry
 
-See [Registry](common-config.md#registry) in the Common Configuration guide for Docker registry proxies, Helm repositories, credentials, certs, and image pull secrets.
+See [Registry](../common-config/#registry) in the Common Configuration guide for Docker registry proxies, Helm repositories, credentials, certs, and image pull secrets.
 
 ### 6. Monitoring
 
-See [Monitoring](common-config.md#monitoring) in the Common Configuration guide for Alertmanager email and webhook configuration.
+See [Monitoring](../common-config/#monitoring) in the Common Configuration guide for Alertmanager email and webhook configuration.
 
 ### 7. Settings
 
@@ -99,7 +99,7 @@ In this section you can enable or disable features.  You can also create an init
 
 ### 9. Branding & UI Customization
 
-See [Branding & UI Customization](common-config.md#branding--ui-customization) in the Common Configuration guide to re-brand the platform interface.
+See [Branding & UI Customization](../common-config/#branding--ui-customization) in the Common Configuration guide to re-brand the platform interface.
 
 ### 10. Generate Installer and Documentation
 

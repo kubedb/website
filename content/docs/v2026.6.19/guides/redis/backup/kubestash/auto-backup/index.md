@@ -230,7 +230,7 @@ metadata:
     blueprint.kubestash.com/name: redis-default-backup-blueprint
     blueprint.kubestash.com/namespace: demo
 spec:
-  version: 7.4.0
+  version: 8.2.2
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -579,7 +579,7 @@ metadata:
     variables.kubestash.com/namespace: demo
     variables.kubestash.com/targetName: redis-standalone-2
 spec:
-  version: 7.4.0
+  version: 8.2.2
   storageType: Durable
   storage:
     storageClassName: "standard"

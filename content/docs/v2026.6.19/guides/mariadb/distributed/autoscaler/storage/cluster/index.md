@@ -138,7 +138,7 @@ placementpolicy.apps.k8s.appscode.com/distributed-mariadb created
 
 ### Deploy Distributed MariaDB Cluster
 
-In this section, we are going to deploy a distributed MariaDB replicaset database with version `11.5.2`. Then, in the next section we will set up autoscaling for this database using `MariaDBAutoscaler` CRD.
+In this section, we are going to deploy a distributed MariaDB replicaset database with version `12.1.2`. Then, in the next section we will set up autoscaling for this database using `MariaDBAutoscaler` CRD.
 
 Below is the YAML of the `MariaDB` CR that we are going to create. Note that `spec.distributed` is set to `true` and the `PlacementPolicy` is referenced via `spec.podTemplate.spec.podPlacementPolicy`:
 
@@ -149,7 +149,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "11.5.2"
+  version: "12.1.2"
   distributed: true
   replicas: 3
   storageType: Durable
@@ -198,7 +198,7 @@ sample-mariadb-1   3/3     Running   0          3m46s
 Let's check volume size from petset, and from the persistent volume on `demo-worker`,
 
 ```bash
-$ kubectl get sts -n demo sample-mariadb -o json --context demo-worker | jq '.spec.volumeClaimTemplates[].spec.resources.requests.storage'
+$ kubectl get petset -n demo sample-mariadb -o json --context demo-worker | jq '.spec.volumeClaimTemplates[].spec.resources.requests.storage'
 "1Gi"
 
 $ kubectl get pv -n demo --context demo-worker
@@ -349,7 +349,7 @@ Status:
 Now, we are going to verify from the `Petset` and the `Persistent Volume` whether the volume of the distributed replicaset database has expanded to meet the desired state, Let's check,
 
 ```bash
-$ kubectl get sts -n demo sample-mariadb -o json --context demo-worker | jq '.spec.volumeClaimTemplates[].spec.resources.requests.storage'
+$ kubectl get petset -n demo sample-mariadb -o json --context demo-worker | jq '.spec.volumeClaimTemplates[].spec.resources.requests.storage'
 "1594884096"
 $ kubectl get pv -n demo --context demo-worker
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                        STORAGECLASS          REASON   AGE

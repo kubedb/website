@@ -1,5 +1,5 @@
 ---
-bastitle: PgBouncer Quickstart
+title: PgBouncer Quickstart
 menu:
   docs_v2026.6.19:
     identifier: pb-quickstart-quickstart
@@ -66,7 +66,7 @@ $ kubectl get pgbouncerversions
 
 Notice the `DEPRECATED` column. Here, `true` means that this PgBouncerVersion is deprecated for current KubeDB version. KubeDB will not work for deprecated PgBouncerVersion.
 
-In this tutorial, we will use `1.18.0` PgBouncerVersion crd to create PgBouncer. To know more about what `PgBouncerVersion` crd is, please visit [here](/docs/v2026.6.19/guides/pgbouncer/concepts/catalog). You can also see supported PgBouncerVersion [here](/docs/v2026.6.19/guides/pgbouncer/README#supported-pgbouncerversion-crd).
+In this tutorial, we will use `1.24.0` PgBouncerVersion crd to create PgBouncer. To know more about what `PgBouncerVersion` crd is, please visit [here](/docs/v2026.6.19/guides/pgbouncer/concepts/catalog). You can also see supported PgBouncerVersion [here](/docs/v2026.6.19/guides/pgbouncer/README#supported-pgbouncerversion-crd).
 
 ## Get PostgreSQL Server ready
 
@@ -179,7 +179,7 @@ metadata:
   name: pgbouncer-server
   namespace: demo
 spec:
-  version: "1.18.0"
+  version: "1.24.0"
   replicas: 1
   database:
     syncUsers: true
@@ -206,7 +206,7 @@ metadata:
   name: pgbouncer-server
   namespace: demo
 spec:
-  version: "1.18.0"
+  version: "1.24.0"
   replicas: 1
   database:
     syncUsers: true
@@ -228,7 +228,7 @@ pgbouncer.kubedb.com/pgbouncer-server created
 
 Here,
 
-- `spec.version` is name of the PgBouncerVersion crd where the docker images are specified. In this tutorial, a PgBouncer with base image version 1.17.0 is created.
+- `spec.version` is name of the PgBouncerVersion crd where the docker images are specified. In this tutorial, a PgBouncer with base image version 1.24.0 is created.
 - `spec.replicas` specifies the number of replica pgbouncer server pods to be created for the PgBouncer object.
 - `spec.database` specifies the database that are going to be served via PgBouncer.
 - `spec.connectionPool` specifies the configurations for connection pool.

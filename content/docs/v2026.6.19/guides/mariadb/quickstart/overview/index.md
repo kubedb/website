@@ -90,7 +90,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -114,7 +114,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -133,7 +133,7 @@ mariadb.kubedb.com/sample-mariadb created
 
 Here,
 
-- `spec.version` is the name of the MariaDBVersion CRD where the docker images are specified. In this tutorial, a MariaDB `11.8.5` database is going to create.
+- `spec.version` is the name of the MariaDBVersion CRD where the docker images are specified. In this tutorial, a MariaDB `12.1.2` database is going to create.
 - `spec.storageType` specifies the type of storage that will be used for MariaDB database. It can be `Durable` or `Ephemeral`. Default value of this field is `Durable`. If `Ephemeral` is used then KubeDB will create MariaDB database using `EmptyDir` volume. In this case, you don't have to specify `spec.storage` field. This is useful for testing purposes.
 - `spec.storage` specifies the StorageClass of PVC dynamically allocated to store data for this database. This storage spec will be passed to the PetSet created by KubeDB operator to run database pods. You can specify any StorageClass available in your cluster with appropriate resource requests.
 - `spec.terminationPolicy` or `spec.deletionPolicy` gives flexibility whether to `nullify`(reject) the delete operation of `MariaDB` crd or which resources KubeDB should keep or delete when you delete `MariaDB` crd. If admission webhook is enabled, It prevents users from deleting the database as long as the `spec.terminationPolicy` is set to `DoNotTerminate`.
@@ -270,7 +270,7 @@ spec:
     storageClassName: standard
   storageType: Durable
   deletionPolicy: Delete
-  version: 11.8.5
+  version: 12.1.2
 status:
   observedGeneration: 2
   phase: Ready
@@ -285,10 +285,10 @@ If you want to use an existing secret please specify that when creating the Mari
 Now, we need `username` and `password` to connect to this database from `kubeclt exec` command. In this example, `sample-mariadb-auth`  secret holds username and password.
 
 ```bash
-$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.\username}' | base64 -d
+$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.username}' | base64 -d
 root
 
-$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.\password}' | base64 -d
+$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.password}' | base64 -d
 w*yOU$b53dTbjsjJ
 ```
 
@@ -348,7 +348,7 @@ mariadb.kubedb.com "sample-mariadb" deleted
 Now, run the following command to get all mariadb resources in `demo` namespaces,
 
 ```bash
-$ kubectl get sts,svc,secret,pvc -n demo
+$ kubectl get petset,svc,secret,pvc -n demo
 NAME                         TYPE                                  DATA   AGE
 secret/default-token-w2pgw   kubernetes.io/service-account-token   3      31m
 secret/sample-mariadb-auth   kubernetes.io/basic-auth              2      39s
@@ -375,7 +375,7 @@ mariadb.kubedb.com "sample-mariadb" deleted
 Now, run the following command to get all mariadb resources in `demo` namespaces,
 
 ```bash
-$ kubectl get sts,svc,secret,pvc -n demo
+$ kubectl get petset,svc,secret,pvc -n demo
 NAME                         TYPE                                  DATA   AGE
 secret/default-token-w2pgw   kubernetes.io/service-account-token   3      31m
 secret/sample-mariadb-auth   kubernetes.io/basic-auth              2      39s
@@ -399,7 +399,7 @@ mariadb.kubedb.com "sample-mariadb" deleted
 Now, run the following command to get all mariadb resources in `demo` namespaces,
 
 ```bash
-$ kubectl get sts,svc,secret,pvc -n demo
+$ kubectl get petset,svc,secret,pvc -n demo
 No resources found in demo namespace.
 ```
 

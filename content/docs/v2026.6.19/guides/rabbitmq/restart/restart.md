@@ -54,7 +54,7 @@ metadata:
   name: rm
   namespace: demo
 spec:
-  version: "3.13.2"
+  version: "4.2.4"
   replicas: 3
   storageType: Durable
   storage:

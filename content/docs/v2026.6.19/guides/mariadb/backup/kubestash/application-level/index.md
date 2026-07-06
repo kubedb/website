@@ -77,7 +77,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: 11.1.3
+  version: 12.1.2
   replicas: 3
   storageType: Durable
   storage:
@@ -196,7 +196,7 @@ items:
         
         
       type: kubedb.com/mariadb
-      version: 11.1.3
+      version: 12.1.2
 kind: List
 metadata:
   resourceVersion: ""
@@ -411,7 +411,7 @@ spec:
 Let's create the `BackupConfiguration` CR that we have shown above,
 
 ```bash
-$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/mariadb/kubestash/application-level/examples/backupconfiguration.yaml
+$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/mariadb/backup/kubestash/application-level/examples/backupconfiguration.yaml
 backupconfiguration.core.kubestash.com/sample-mariadb-backup created
 ```
 

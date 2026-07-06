@@ -154,7 +154,7 @@ spec:
       apiGroup: cert-manager.io
       kind: ClusterIssuer
       name: self-signed-issuer
-  version: 5.5.2
+  version: 5.5.6
 ```
 
 

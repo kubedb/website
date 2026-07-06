@@ -36,7 +36,7 @@ KubeDB operator supports using private Docker registry. This tutorial will show 
 
 - You will also need a docker private [registry](https://docs.docker.com/registry/) or [private repository](https://docs.docker.com/docker-hub/repos/#private-repositories).  In this tutorial we will use private repository of [docker hub](https://hub.docker.com/).
 
-- You have to push the required images from KubeDB's [Docker hub account](https://hub.docker.com/u/kubedb) into your private registry. For mysql, push `DB_IMAGE`, `EXPORTER_IMAGE`, `INITCONTAINER_IMAGE` of following MariaDBVersions, where `deprecated` is not true, to your private registry.
+- You have to push the required images from KubeDB's [Docker hub account](https://hub.docker.com/u/kubedb) into your private registry. For mariadb, push `DB_IMAGE`, `EXPORTER_IMAGE`, `INITCONTAINER_IMAGE` of following MariaDBVersions, where `deprecated` is not true, to your private registry.
 
 ```bash
 $ kubectl get mariadbversions -n kube-system  -o=custom-columns=NAME:.metadata.name,VERSION:.spec.version,DB_IMAGE:.spec.db.image,EXPORTER_IMAGE:.spec.exporter.image,INITCONTAINER_IMAGE:.spec.initContainer.image,DEPRECATED:.spec.deprecated
@@ -74,7 +74,7 @@ Docker hub repositories:
       coordinator:
         image: PRIVATE_REGISTRY/mariadb-coordinator:v0.40.0
       db:
-        image: PRIVATE_REGISTRY/mysql:11.8.5
+        image: PRIVATE_REGISTRY/mariadb:11.8.5
       exporter:
         image: PRIVATE_REGISTRY/mysqld-exporter:v0.11.0
       initContainer:
@@ -85,7 +85,7 @@ Docker hub repositories:
           runAsUser: 995
       podSecurityPolicies:
         databasePolicyName: maria-db
-      version: 11.8.5
+      version: 12.1.2
     ```
 
 - To keep things isolated, this tutorial uses a separate namespace called `demo` throughout this tutorial. Run the following command to prepare your cluster for this tutorial:
@@ -130,7 +130,7 @@ metadata:
   name: md-pvt-reg
   namespace: demo
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   storage:
     storageClassName: "standard"
     accessModes:

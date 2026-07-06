@@ -26,7 +26,7 @@ Regardless of the mode, an OpenShift deployment always requires you to toggle th
 
 ### Prerequisites
 
-See [Prerequisites](common-config.md#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note.
+See [Prerequisites](../common-config/#prerequisites) in the Common Configuration guide for the minimum cluster requirements and the optional k3s setup note.
 
 ### 1. Visit the KubeDB Platform Self-Hosted Page
 
@@ -69,7 +69,7 @@ Use this mode when you want to reach the platform through a static IP instead of
 > [!IMPORTANT]
 > The LoadBalancer IP is not known yet, so the random Target IP must be fixed later (see [Deploy KubeDB Platform](#5-deploy-kubedb-platform)).
 
-Once OpenShift is enabled and the Kube API Server is set, follow the standard configuration sections for the deployment type you picked. See the [Cloud Demo](cloud-demo.md) or [Onprem Demo](onprem-demo.md) guide for the full walkthrough of these sections.
+Once OpenShift is enabled and the Kube API Server is set, follow the standard configuration sections for the deployment type you picked. See the [Cloud Demo](../cloud-demo.md) or [Onprem Demo](../onprem-demo.md) guide for the full walkthrough of these sections.
 
 #### DNS mode (DNS preferred)
 
@@ -82,13 +82,13 @@ Use this mode when you want to reach the platform through a DNS name. In this mo
 > [!IMPORTANT]
 > The LoadBalancer IP is not known yet, so the random Target IP and the DNS `A` record must be fixed later (see [Deploy KubeDB Platform](#5-deploy-kubedb-platform)).
 
-Once OpenShift is enabled and the Kube API Server is set, follow the standard configuration sections for the deployment type you picked. See the [Onprem Demo](onprem-demo.md) or [Self Hosted Production](selfhosted-production.md) guide for the full walkthrough of these sections.
+Once OpenShift is enabled and the Kube API Server is set, follow the standard configuration sections for the deployment type you picked. See the [Onprem Demo](../onprem-demo.md) or [Self Hosted Production](../selfhosted-production.md) guide for the full walkthrough of these sections.
 
 > [!NOTE]
 > This guide only covers the fields that are **specific to an OpenShift deployment**. Each deployment type has many more configuration sections (Global Administrative Settings, Registry, Monitoring, TLS, Ingress & Gateway, NATS, and more). For the complete field-by-field walkthrough, follow the guide for the deployment type you choose:
-> * **[Cloud Demo](cloud-demo.md)**
-> * **[Onprem Demo](onprem-demo.md)**
-> * **[Self Hosted Production](selfhosted-production.md)**
+> * **[Cloud Demo](../cloud-demo.md)**
+> * **[Onprem Demo](../onprem-demo.md)**
+> * **[Self Hosted Production](../selfhosted-production.md)**
 
 ### 4. Generate Installer and Documentation
 

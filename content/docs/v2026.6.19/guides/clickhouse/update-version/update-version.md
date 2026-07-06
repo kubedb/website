@@ -46,11 +46,11 @@ $ kubectl create ns demo
 namespace/demo created
 ```
 
-> **Note:** YAML files used in this tutorial are stored in [docs/examples/clickhouse](/docs/v2026.6.19/examples/clickhouse) directory of [kubedb/docs](https://github.com/kube/docs) repository.
+> **Note:** YAML files used in this tutorial are stored in [docs/examples/clickhouse](/docs/v2026.6.19/examples/clickhouse) directory of [kubedb/docs](https://github.com/kubedb/docs) repository.
 
 ## Prepare ClickHouse
 
-Now, we are going to deploy a `ClickHouse` replicaset database with version `24.4.1`.
+Now, we are going to deploy a `ClickHouse` replicaset database with version `25.12.3`.
 
 ### Deploy ClickHouse
 
@@ -63,7 +63,7 @@ metadata:
   name: clickhouse-prod
   namespace: demo
 spec:
-  version: 24.4.1
+  version: 25.12.3
   clusterTopology:
     clickHouseKeeper:
       externallyManaged: false
@@ -130,7 +130,7 @@ We are now ready to apply the `ClickHouseOpsRequest` CR to update.
 
 ### update ClickHouse Version
 
-Here, we are going to update `ClickHouse` from `24.4.1` to `25.7.1`.
+Here, we are going to update `ClickHouse` from `25.12.3` to `26.2.6`.
 
 #### Create ClickHouseOpsRequest:
 
@@ -147,7 +147,7 @@ spec:
   databaseRef:
     name: clickhouse-prod
   updateVersion:
-    targetVersion: 25.7.1
+    targetVersion: 26.2.6
   timeout: 5m
   apply: IfReady
 ```
@@ -156,7 +156,7 @@ Here,
 
 - `spec.databaseRef.name` specifies that we are performing operation on `clickhouse-prod` ClickHouse.
 - `spec.type` specifies that we are going to perform `UpdateVersion` on our database.
-- `spec.updateVersion.targetVersion` specifies the expected version of the database `25.7.1`.
+- `spec.updateVersion.targetVersion` specifies the expected version of the database `26.2.6`.
 
 Let's create the `ClickHouseOpsRequest` CR we have shown above,
 

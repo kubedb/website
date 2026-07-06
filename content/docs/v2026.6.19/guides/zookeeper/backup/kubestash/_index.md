@@ -1,5 +1,5 @@
 ---
-title: Backup & Restore PostgreSQL | KubeStash
+title: Backup & Restore ZooKeeper | KubeStash
 menu:
   docs_v2026.6.19:
     identifier: guides-zk-backup-stashv2

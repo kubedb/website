@@ -43,7 +43,7 @@ KubeDB supports reconfigure i.e. add, remove, update and rotation of TLS/SSL cer
   namespace/demo created
   ```
 
-> Note: YAML files used in this tutorial are stored in [docs/guides/mysql/reconfigure-tls/yamls](https://github.com/kubedb/docs/tree/{{< param "info.version" >}}/docs/guides/mysql folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
+> Note: YAML files used in this tutorial are stored in [docs/guides/mysql/reconfigure-tls/reconfigure/yamls](https://github.com/kubedb/docs/tree/{{< param "info.version" >}}/docs/guides/mysql/reconfigure-tls/reconfigure/yamls) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
 
 ## Add TLS to a MySQL database
 
@@ -83,7 +83,7 @@ metadata:
   name: mysql
   namespace: demo
 spec:
-  version: "8.4.8"
+  version: "9.6.0"
   topology:
     mode: GroupReplication
   storageType: Durable
@@ -150,7 +150,7 @@ metadata:
   name: semi-sync-mysql
   namespace: demo
 spec:
-  version: "8.4.8"
+  version: "9.6.0"
   replicas: 3
   topology:
     mode: SemiSync
@@ -188,7 +188,7 @@ metadata:
   name: mysql
   namespace: demo
 spec:
-  version: "8.4.8"
+  version: "9.6.0"
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -341,10 +341,10 @@ Now, we can connect to this database through `mysql-shell` and verify that the T
 
 
 ```bash
-$ kubectl get secrets -n demo mysql-auth -o jsonpath='{.data.\username}' | base64 -d
+$ kubectl get secrets -n demo mysql-auth -o jsonpath='{.data.username}' | base64 -d
 root
 
-$ kubectl get secrets -n demo mysql-auth -o jsonpath='{.data.\password}' | base64 -d
+$ kubectl get secrets -n demo mysql-auth -o jsonpath='{.data.password}' | base64 -d
 f8EyKG)mNMIMdS~a
 
 $ kubectl exec -it mysql-0 -n demo -- mysql -u root --password='f8EyKG)mNMIMdS~a'  --host=mysql-0.mysql-pods.demo -e "show variables like '%require_secure_transport%';";
@@ -1209,7 +1209,7 @@ To cleanup the Kubernetes resources created by this tutorial, run:
 ```bash
 kubectl delete mysql -n demo mysql
 kubectl delete issuer -n demo my-issuer my-new-issuer
-kubectl delete mysqlopsrequest myops-add-tls myops-remove mops-rotate myps-change-issuer
+kubectl delete mysqlopsrequest -n demo myops-add-tls myops-remove myops-rotate myops-change-issuer
 kubectl delete ns demo
 ```
 

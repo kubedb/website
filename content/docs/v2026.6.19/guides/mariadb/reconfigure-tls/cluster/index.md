@@ -59,7 +59,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   replicas: 3
   storageType: Durable
   storage:
@@ -88,14 +88,14 @@ sample-mariadb   11.8.5    Ready    9m17s
 ```
 
 ```bash
-$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.\username}' | base64 -d
+$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.username}' | base64 -d
 root
 
-$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.\password}' | base64 -d
+$ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.password}' | base64 -d
 U6(h_pYrekLZ2OOd
 
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb  -- bash
-root@sample-mariadb-0:/  mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/  mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 108
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -237,7 +237,7 @@ root@sample-mariadb-0:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
 root@sample-mariadb-0:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 58
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -542,7 +542,7 @@ Now, Let's exec into the database and find out that TLS is disabled or not.
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb  -- bash
-root@sample-mariadb-0:/  mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/  mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 108
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution

@@ -156,7 +156,7 @@ metadata:
   name: quick-redis
   namespace: demo
 spec:
-  version: 6.2.14
+  version: 8.2.2
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -206,7 +206,7 @@ metadata:
   name: minute-redis
   namespace: demo
 spec:
-  version: 6.2.14
+  version: 8.2.2
   podTemplate:
     spec:
       serviceAccountName: my-custom-serviceaccount

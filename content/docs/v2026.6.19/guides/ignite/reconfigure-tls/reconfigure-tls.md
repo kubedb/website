@@ -84,14 +84,15 @@ Now, wait until `ig` has status `Ready`. i.e,
 $ kubectl get ig -n demo
 NAME    VERSION    STATUS    AGE
 ig      2.17.0     Ready     10m
-
+```
 
 ```bash
-$ kubectl get secrets -n demo ig-admin-cred -o jsonpath='{.data.\username}' | base64 -d
-root
+$ kubectl get secrets -n demo ig-auth -o jsonpath='{.data.username}' | base64 -d
+ignite
 
-$ kubectl get secrets -n demo ig-admin-cred -o jsonpath='{.data.\password}' | base64 -d
+$ kubectl get secrets -n demo ig-auth -o jsonpath='{.data.password}' | base64 -d
 U6(h_pYrekLZ2OOd
+```
 
 We can verify from the above output that TLS is disabled for this database.
 
@@ -309,7 +310,7 @@ Now we are going to rotate the certificate of this database. First let's check t
 
 ```bash
 $ kubectl exec -it ig-2 -n demo bash
-root@ig-2:/# openssl x509 -in /var/private/ssl/client.pem -inform PEM -enddate -nameopt RFC2253 -noout
+root@ig-2:/# openssl x509 -in /ignite/certs/client/tls.crt -inform PEM -enddate -nameopt RFC2253 -noout
 notAfter=Jun  9 13:32:20 2025 GMT
 ```
 
@@ -456,7 +457,7 @@ Now, let's check the expiration date of the certificate.
 
 ```bash
 $ kubectl exec -it ig-2 -n demo bash
-root@ig-2:/# openssl x509 -in /var/run/ignite/tls/client.pem -inform PEM -enddate -nameopt RFC2253 -noout
+root@ig-2:/# openssl x509 -in /ignite/certs/client/tls.crt -inform PEM -enddate -nameopt RFC2253 -noout
 notAfter=Jun  9 16:17:55 2025 GMT
 ```
 
@@ -652,7 +653,7 @@ Now, Let's exec into a database node and find out the ca subject to see if it ma
 
 ```bash
 $ kubectl exec -it ig-2 -n demo bash
-root@mgo-rs-tls-2:/$ openssl x509 -in /var/run/ignite/tls/ca.crt -inform PEM -subject -nameopt RFC2253 -noout
+root@ig-2:/$ openssl x509 -in /ignite/certs/client/ca.crt -inform PEM -subject -nameopt RFC2253 -noout
 subject=O=kubedb-updated,CN=ca-updated
 ```
 

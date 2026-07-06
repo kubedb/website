@@ -23,9 +23,13 @@ info:
 
 2. In the `Self Managed` section, choose the public cluster option.
 
+![Add Cluster provider selection screen showing Vendor Managed and Self Managed sections with Public option](../../../images/add_cluster/add-cluster-select-provider.png)
+
 ### Provide Kubeconfig
 
 3. Provide the kubeconfig for your cluster.
+
+![Provide Kubeconfig screen showing YAML editor for public self-managed cluster](../../../images/add_cluster/public-cluster-kubeconfig.png)
 
 ### Customize Features
 

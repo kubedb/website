@@ -25,7 +25,7 @@ This guide explores the Billing Console, covering its key components, contract m
 
 ## AppsCode Billing Console <br>
 
-A centralized web-based platform serving as the primary interface for licensing operations in the AppsCode ecosystem. Hosted on [AppsCode Billing Console](https://appsCode.com/billing), this self-managed system allows customers to manage `contracts` by associating clusters, generating `license-proxyserver` installers and tracking clusters for which licenses are generated.
+A centralized web-based platform serving as the primary interface for licensing operations in the AppsCode ecosystem. Hosted on [AppsCode Billing Console](https://appscode.com/billing), this self-managed system allows customers to manage `contracts` by associating clusters, generating `license-proxyserver` installers and tracking clusters for which licenses are generated.
 
 While AppsCode administrators are responsible for the core lifecycle of contracts—including their `creation`, `modification`, `revocation`, and `extension`—customers retain the ability to perform specific operations pertinent to the licensing lifecycle. This includes `associating` and `disassociating` their Kubernetes clusters with allocated contracts, generating `installers` for the `license-proxyserver` through the console, and track the `clusters` for which licenses have been issued.
 
@@ -33,7 +33,7 @@ While AppsCode administrators are responsible for the core lifecycle of contract
 
 ### Key Components
 
-- **Contracts:** Digital agreements, typically established by [AppsCode administrators](https://appsCode.com/contact/) within the Billing Console, that define the terms of AppsCode's product (e.g., KubeDB Platform, KubeDB, KubeStash, KubeVault etc.) usage. This includes the specific AppsCode products which can be licensed, the duration of the contract, applicable features, and the clusters authorized to use these licenses. Contracts ensure that usage aligns with legal and financial terms, providing a foundation for all subsequent actions in the console. Contracts can be configured for either online or offline license validation.
+- **Contracts:** Digital agreements, typically established by [AppsCode administrators](https://appscode.com/contact/) within the Billing Console, that define the terms of AppsCode's product (e.g., KubeDB Platform, KubeDB, KubeStash, KubeVault etc.) usage. This includes the specific AppsCode products which can be licensed, the duration of the contract, applicable features, and the clusters authorized to use these licenses. Contracts ensure that usage aligns with legal and financial terms, providing a foundation for all subsequent actions in the console. Contracts can be configured for either online or offline license validation.
 <br> <br>
 - **Licensed cluster:** The `Licensed Cluster` section within the AppsCode Billing Console offers a comprehensive overview and detailed management capabilities for Kubernetes clusters that have been issued KubeDB Platform product licenses. This component is pivotal for administrators to monitor the cluster(s) `licences` and `events` of licensed products across their infrastructure.
 <br> <br>

@@ -55,7 +55,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 1
-  version: "1.6.22"
+  version: "1.6.40"
   podTemplate:
     spec:
       containers:

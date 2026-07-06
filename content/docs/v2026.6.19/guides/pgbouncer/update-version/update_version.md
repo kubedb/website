@@ -53,7 +53,7 @@ Prepare a KubeDB Postgres cluster using this [tutorial](/docs/v2026.6.19/guides/
 
 ### Prepare PgBouncer
 
-Now, we are going to deploy a `PgBouncer` with version `1.18.0`.
+Now, we are going to deploy a `PgBouncer` with version `1.23.1`.
 
 ### Deploy PgBouncer:
 
@@ -67,7 +67,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 1
-  version: "1.18.0"
+  version: "1.23.1"
   database:
     syncUsers: true
     databaseName: "postgres"
@@ -104,7 +104,7 @@ We are now ready to apply the `PgBouncerOpsRequest` CR to update this PgBouncer.
 
 ### update PgBouncer Version
 
-Here, we are going to update `PgBouncer` from `1.18.0` to `1.23.1`.
+Here, we are going to update `PgBouncer` from `1.23.1` to `1.24.0`.
 
 #### Create PgBouncerOpsRequest:
 
@@ -121,14 +121,14 @@ spec:
   databaseRef:
     name: pb-update
   updateVersion:
-    targetVersion: 1.23.1
+    targetVersion: 1.24.0
 ```
 
 Here,
 
 - `spec.databaseRef.name` specifies that we are performing operation on `pb-update` PgBouncer.
 - `spec.type` specifies that we are going to perform `UpdateVersion` on our PgBouncer.
-- `spec.updateVersion.targetVersion` specifies the expected version of the PgBouncer `1.23.1`.
+- `spec.updateVersion.targetVersion` specifies the expected version of the PgBouncer `1.24.0`.
 
 
 Let's create the `PgBouncerOpsRequest` CR we have shown above,

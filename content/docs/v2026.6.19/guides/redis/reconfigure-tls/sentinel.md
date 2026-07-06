@@ -61,7 +61,7 @@ metadata:
   name: sen-sample
   namespace: demo
 spec:
-  version: 6.2.14
+  version: 8.2.2
   replicas: 3
   storageType: Durable
   storage:
@@ -100,7 +100,7 @@ metadata:
   name: rd-sample
   namespace: demo
 spec:
-  version: 6.2.14
+  version: 8.2.2
   replicas: 3
   sentinelRef:
     name: sen-sample

@@ -86,7 +86,7 @@ metadata:
   name: solr-misc-config
   namespace: demo
 spec:
-  version: "9.6.1"
+  version: "9.8.0"
   topology:
     data:
       replicas: 1
@@ -274,7 +274,7 @@ metadata:
   name: solr-custom-nodeselector
   namespace: demo
 spec:
-  version: 9.6.1
+  version: 9.8.0
   replicas: 2
   podTemplate:
     spec:
@@ -438,7 +438,7 @@ metadata:
   name: solr-without-toleration
   namespace: demo
 spec:
-  version: 9.6.1
+  version: 9.8.0
   replicas: 2
   zookeeperRef:
     name: zoo
@@ -617,7 +617,7 @@ metadata:
   name: solr-with-toleration
   namespace: demo
 spec:
-  version: 9.6.1
+  version: 9.8.0
   replicas: 2
   podTemplate:
     spec:

@@ -266,7 +266,7 @@ spec:
     ref:
       name: sample-mssqlserverarchiver
       namespace: demo
-  version: "2022-cu12"
+  version: "2025-cu0"
   replicas: 2
   topology:
     mode: AvailabilityGroup
@@ -365,7 +365,7 @@ sa⏎
 $ kubectl get secret -n demo  sample-mssqlserver-ag-auth -o jsonpath='{.data.password}'| base64 -d
 XhGrsDvJ7ATrPp7n⏎
 
-$ kubectl exec -it -n demo sample-mssqlserver-ag-0 -c mssql -- /opt/mssql-tools/bin/sqlcmd -S sample-mssqlserver-ag -U sa -P "XhGrsDvJ7ATrPp7n"
+$ kubectl exec -it -n demo sample-mssqlserver-ag-0 -c mssql -- /opt/mssql-tools18/bin/sqlcmd -S sample-mssqlserver-ag -U sa -P "XhGrsDvJ7ATrPp7n" -No
 1> SELECT name from sys.databases;
 2> GO
 name                                                                                                                            
@@ -443,7 +443,7 @@ Point-In-Time Recovery allows you to restore a `Microsoft SQL Server` database t
 Let’s say accidentally drops the table `equipment`.
 
 ```bash
-$ kubectl exec -it -n demo sample-mssqlserver-ag-0 -c mssql -- /opt/mssql-tools/bin/sqlcmd -S sample-mssqlserver-ag -U sa -P "XhGrsDvJ7ATrPp7n"
+$ kubectl exec -it -n demo sample-mssqlserver-ag-0 -c mssql -- /opt/mssql-tools18/bin/sqlcmd -S sample-mssqlserver-ag -U sa -P "XhGrsDvJ7ATrPp7n" -No
 1> use demo
 2> DROP table equipment;
 3> GO
@@ -487,7 +487,7 @@ spec:
       fullDBRepository:
         name: sample-mssqlserver-ag-archiver
         namespace: demo
-  version: "2022-cu12"
+  version: "2025-cu0"
   replicas: 2
   topology:
     mode: AvailabilityGroup
@@ -559,7 +559,7 @@ sa⏎
 $ kubectl get secret -n demo  restored-mssqlserver-ag-auth -o jsonpath='{.data.password}'| base64 -d
 Q2YKiGgqr5ju62NL⏎
 
-$ kubectl exec -it -n demo restored-mssqlserver-ag-0 -c mssql -- /opt/mssql-tools/bin/sqlcmd -S restored-mssqlserver-ag -U sa -P "Q2YKiGgqr5ju62NL"
+$ kubectl exec -it -n demo restored-mssqlserver-ag-0 -c mssql -- /opt/mssql-tools18/bin/sqlcmd -S restored-mssqlserver-ag -U sa -P "Q2YKiGgqr5ju62NL" -No
 1> SELECT name from sys.databases;
 2> GO
 name                                                                                                                            

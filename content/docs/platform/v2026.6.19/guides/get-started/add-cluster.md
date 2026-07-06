@@ -27,6 +27,6 @@ Follow these steps to import your Kubernetes cluster:
 4. Select the credentials you added in the previous step.
 5. Follow the provider-specific instructions to complete the import process.
 
-For detailed instructions and troubleshooting tips, refer to our comprehensive [Import Kubernetes Cluster Guide](../cluster-management/add-cluster/overview.md).
+For detailed instructions and troubleshooting tips, refer to our comprehensive [Import Kubernetes Cluster Guide](../../cluster-management/add-cluster/overview.md).
 
 Once your cluster is imported, you can explore its details and capabilities directly from the Platform Console.

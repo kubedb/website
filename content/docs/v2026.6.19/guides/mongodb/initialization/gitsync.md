@@ -66,7 +66,7 @@ spec:
           - --root=/git
           # terminate after successful sync
           - --one-time
-  version: "8.0.10"
+  version: "8.0.17"
   storageType: Durable
   storage:
     storageClassName: "standard"
@@ -202,7 +202,7 @@ spec:
       # permission for reading ssh key
       securityContext:
         fsGroup: 65533
-  version: "8.0.10"
+  version: "8.0.17"
   storageType: Durable
   storage:
     storageClassName: "local-path"
@@ -310,7 +310,7 @@ spec:
       # permission for reading ssh key
       securityContext:
         fsGroup: 65533
-  version: "8.0.10"
+  version: "8.0.17"
   storageType: Durable
   storage:
     storageClassName: "local-path"

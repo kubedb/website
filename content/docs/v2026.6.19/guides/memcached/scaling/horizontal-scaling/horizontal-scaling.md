@@ -55,7 +55,7 @@ Here, we are going to deploy a `Memcached` database using a supported version by
 
 ### Prepare Memcached Database
 
-Now, we are going to deploy a `Memcached` database with version `1.6.22`.
+Now, we are going to deploy a `Memcached` database with version `1.6.40`.
 
 ### Deploy Memcached Database
 
@@ -69,7 +69,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 3
-  version: "1.6.22"
+  version: "1.6.40"
   podTemplate:
     spec:
       containers:
@@ -96,7 +96,7 @@ Now, wait until `memcd-quickstart` has status `Ready`. i.e. ,
 ```bash
 $ kubectl get memcached -n demo
 NAME               VERSION   STATUS   AGE
-memcd-quickstart   1.6.22    Ready    5m
+memcd-quickstart   1.6.40    Ready    5m
 ```
 
 Let's check the number of replicas this database has from the Memcached object

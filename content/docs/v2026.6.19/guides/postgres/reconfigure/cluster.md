@@ -50,7 +50,7 @@ Now, we are going to deploy a  `Postgres` Cluster using a supported version by `
 
 ### Prepare Postgres Cluster
 
-Now, we are going to deploy a `Postgres` Cluster database with version `16.1`.
+Now, we are going to deploy a `Postgres` Cluster database with version `18.3`.
 
 ### Deploy Postgres
 
@@ -78,7 +78,7 @@ metadata:
   name: ha-postgres
   namespace: demo
 spec:
-  version: "16.1"
+  version: "18.3"
   replicas: 3
   configuration:
     secretName: pg-configuration
@@ -110,7 +110,7 @@ pod/ha-postgres-1   2/2     Running   0          59s
 pod/ha-postgres-2   2/2     Running   0          51s
 
 NAME                              VERSION   STATUS   AGE
-postgres.kubedb.com/ha-postgres   16.1      Ready    2m38s
+postgres.kubedb.com/ha-postgres   18.3      Ready    2m38s
 
 ```
 
@@ -119,7 +119,7 @@ Now lets check these parameters,
 $ kubectl exec -it -n demo ha-postgres-0 -- bash
 Defaulted container "postgres" out of: postgres, pg-coordinator, postgres-init-container (init)
 ha-postgres-0:/$ psql
-psql (16.1)
+psql (18.3)
 Type "help" for help.
 
 postgres=# show max_connections;
@@ -177,7 +177,7 @@ Here,
 
 - `spec.databaseRef.name` specifies that we are reconfiguring `ha-postgres` database.
 - `spec.type` specifies that we are performing `Reconfigure` on our database.
-- `spec.configuration.secretName` specifies the name of the new secret.
+- `spec.configuration.configSecret.name` specifies the name of the new secret.
 
 Let's create the `PostgresOpsRequest` CR we have shown above,
 
@@ -205,7 +205,7 @@ Now let's connect to a postgres instance and run a postgres internal command to 
 $ kubectl exec -it -n demo ha-postgres-0 -- bash
 Defaulted container "postgres" out of: postgres, pg-coordinator, postgres-init-container (init)
 ha-postgres-0:/$ psql
-psql (16.1)
+psql (18.3)
 Type "help" for help.
 
 postgres=# show max_connections;
@@ -278,7 +278,7 @@ shared_buffers=512MB
 ha-postgres-0:/$ 
 ha-postgres-0:/$ 
 ha-postgres-0:/$ psql
-psql (16.1)
+psql (18.3)
 Type "help" for help.
 
 postgres=# show max_connections;
@@ -352,7 +352,7 @@ Now let's connect to a postgres instance and run a postgres internal command to 
 $ kubectl exec -it -n demo ha-postgres-0 -- bash
 Defaulted container "postgres" out of: postgres, pg-coordinator, postgres-init-container (init)
 ha-postgres-0:/$ psql
-psql (16.1)
+psql (18.3)
 Type "help" for help.
 
 postgres=# show max_connections;

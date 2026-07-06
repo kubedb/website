@@ -55,7 +55,7 @@ Here, we are going to deploy a `Elasticsearch` combined cluster using a supporte
 
 ### Prepare Elasticsearch Combined Cluster
 
-Now, we are going to deploy a `Elasticsearch` combined cluster database with version `xpack-8.19.9`.
+Now, we are going to deploy a `Elasticsearch` combined cluster database with version `xpack-9.2.3`.
 
 ### Deploy Elasticsearch Combined Cluster
 
@@ -68,7 +68,7 @@ metadata:
   name: es-combined
   namespace: demo
 spec:
-  version: xpack-8.19.9
+  version: xpack-9.2.3
   enableSSL: true
   replicas: 1
   storageType: Durable
@@ -95,7 +95,7 @@ Now, wait until `es-combined` has status `Ready`. i.e,
 ```bash
 $ kubectl get elasticsearch -n demo -w
 NAME          VERSION        STATUS   AGE
-es-combined   xpack-8.19.9   Ready    3h17m
+es-combined   xpack-9.2.3   Ready    3h17m
 
 ```
 

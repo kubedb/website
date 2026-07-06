@@ -67,7 +67,7 @@ local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsu
 
 We can see from the output the `local-path` storage class has `ALLOWVOLUMEEXPANSION` field as false. So, this storage class supports volume expansion. We can use it.
 
-Now, we are going to deploy a `Solr` combined cluster with version `9.4.1`.
+Now, we are going to deploy a `Solr` combined cluster with version `9.8.0`.
 
 ### Deploy Solr
 
@@ -80,7 +80,7 @@ metadata:
   name: solr-cluster
   namespace: demo
 spec:
-  version: 9.4.1
+  version: 9.8.0
   zookeeperRef:
     name: zoo
     namespace: demo

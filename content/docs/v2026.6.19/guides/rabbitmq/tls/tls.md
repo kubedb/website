@@ -109,7 +109,7 @@ metadata:
   name: rabbitmq-tls
   namespace: demo
 spec:
-  version: "3.13.2"
+  version: "4.2.4"
   tls:
     issuerRef:
       apiGroup: "cert-manager.io"
@@ -137,7 +137,7 @@ Now, wait until `rabbitmq-tls created` has status `Ready`. i.e,
 $ watch kubectl get rm -n demo
 Every 2.0s: kubectl get rm -n demo
 NAME            VERSION     STATUS     AGE
-rabbitmq-tls    3.13.2      Ready      14s
+rabbitmq-tls    4.2.4      Ready      14s
 ```
 
 ## Cleaning up
@@ -153,7 +153,7 @@ kubectl delete ns demo
 ## Next Steps
 
 - Detail concepts of [RabbitMQ object](/docs/v2026.6.19/guides/rabbitmq/concepts/rabbitmq).
-(/docs/v2026.6.19/guides/RabbitMQ/monitoring/using-prometheus-operator).
+(/docs/v2026.6.19/guides/rabbitmq/monitoring/using-prometheus-operator).
 - Monitor your RabbitMQ database with KubeDB using [out-of-the-box builtin-Prometheus](/docs/v2026.6.19/guides/rabbitmq/monitoring/using-builtin-prometheus).
 - Detail concepts of [RabbitMQ object](/docs/v2026.6.19/guides/rabbitmq/concepts/rabbitmq).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2026.6.19/CONTRIBUTING).

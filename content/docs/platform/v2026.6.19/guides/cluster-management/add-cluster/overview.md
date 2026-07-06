@@ -21,9 +21,9 @@ Adding a Kubernetes cluster to the Platform Console takes two steps:
 
 ## Step 1: Select the Cluster
 
-- **Vendor-Managed:** [Import Vendor Managed Clusters](import-vendor-managed.md)
-- **Rancher-Managed:** [Import Rancher Managed Clusters](import-rancher-cluster.md)
-- **Self-Managed:** [Import Self-Managed Clusters](self-managed/import-self-managed.md)
+- **Vendor-Managed:** [Import Vendor Managed Clusters](../import-vendor-managed.md)
+- **Rancher-Managed:** [Import Rancher Managed Clusters](../import-rancher-cluster.md)
+- **Self-Managed:** [Import Self-Managed Clusters](../self-managed/import-self-managed.md)
 
 ## Step 2: Customize Features
 

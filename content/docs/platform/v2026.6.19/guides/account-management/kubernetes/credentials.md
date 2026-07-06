@@ -425,7 +425,7 @@ To access Scaleway resources, you need your Organization ID and an API secret ke
 - **Organization:** Your Scaleway Organization ID (a UUID), found under **Organization Settings** in the Scaleway Console.
 - **Token:** Your API Secret Key. Navigate to **Identity and Access Management (IAM) > API Keys**, create a new API key, and copy the **Secret Key**.
 
-Ref: [Scaleway API Keys](https://www.scaleway.com/en/docs/iam/api-keys/)
+Ref: [Scaleway API Keys](https://www.scaleway.com/en/docs/iam/how-to/create-api-keys/)
 
 Then add the credential [here](https://appscode.com/id/{user}/user/settings/credentials/create).
 

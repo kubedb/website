@@ -66,7 +66,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   replicas: 1
   storageType: Durable
   storage:
@@ -133,7 +133,7 @@ Here, we are going to use the root user (`MYSQL_ROOT_USERNAME`) credential `MYSQ
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -417,7 +417,7 @@ Now, let's simulate an accidental deletion scenario. Here, we are going to exec 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -514,7 +514,7 @@ Now, let's exec into the database pod and verify whether data actual data was re
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution

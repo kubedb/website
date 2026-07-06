@@ -68,7 +68,7 @@ $ kubectl get pgpoolversions
 
 Notice the `DEPRECATED` column. Here, `true` means that this PgpoolVersion is deprecated for current KubeDB version. KubeDB will not work for deprecated PgpoolVersion.
 
-In this tutorial, we will use `4.5.0` PgpoolVersion CRD to create Pgpool. To know more about what `PgpoolVersion` CRD is, please visit [here](/docs/v2026.6.19/guides/pgpool/concepts/catalog). You can also see supported PgpoolVersion [here](/docs/v2026.6.19/guides/pgpool/README#supported-pgpoolversion-CRD).
+In this tutorial, we will use `4.6.0` PgpoolVersion CRD to create Pgpool. To know more about what `PgpoolVersion` CRD is, please visit [here](/docs/v2026.6.19/guides/pgpool/concepts/catalog). You can also see supported PgpoolVersion [here](/docs/v2026.6.19/guides/pgpool/README#supported-pgpoolversion-CRD).
 
 ## Get PostgreSQL Server ready
 
@@ -176,7 +176,7 @@ metadata:
   name: quick-pgpool
   namespace: pool
 spec:
-  version: "4.5.0"
+  version: "4.6.0"
   replicas: 1
   postgresRef:
     name: quick-postgres
@@ -189,7 +189,7 @@ spec:
 
 Here,
 
-- `spec.version` is name of the PgpoolVersion CRD where the docker images are specified. In this tutorial, a Pgpool with base image version `4.5.0` is created.
+- `spec.version` is name of the PgpoolVersion CRD where the docker images are specified. In this tutorial, a Pgpool with base image version `4.6.0` is created.
 - `spec.replicas` specifies the number of replica pgpool server pods to be created for the Pgpool object.
 - `spec.postgresRef` specifies the name and the namespace of the appbinding that points to the PostgreSQL server.
 - `spec.sslMode` specifies ssl mode for clients.

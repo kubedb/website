@@ -52,7 +52,7 @@ Now, we are going to deploy a  `PgBouncer` using a supported version by `KubeDB`
 
 ### Prepare PgBouncer
 
-Now, we are going to deploy a `PgBouncer` with version `1.18.0`.
+Now, we are going to deploy a `PgBouncer` with version `1.24.0`.
 
 ## Add TLS to a PgBouncer database
 
@@ -70,7 +70,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 1
-  version: "1.18.0"
+  version: "1.24.0"
   database:
     syncUsers: true
     databaseName: "postgres"

@@ -390,7 +390,7 @@ mysql> show variables like 'read_buffer_size';
 
 ```
 At first, we will create a secret containing `user.conf` file with required configuration settings.
-To know more about this configuration file, check [here](/docs/v2026.6.19/guides/mysql/configuration/using-config-file)
+To know more about this configuration file, check the [Run MySQL with Custom Configuration](/docs/v2026.6.19/guides/mysql/configuration/config-file/) guide.
 ```yaml
 apiVersion: v1
 stringData:
@@ -821,7 +821,7 @@ mysql> SHOW VARIABLES LIKE '%require_secure_transport%';
 
 ### Update Version
 
-List MySQL versions using `kubectl get MySQLversion` and choose desired version that is compatible for umyrade from current version. Check the version constraints and ops request [here](/docs/v2026.6.19/guides/mysql/update-version/versionumyrading/).
+List MySQL versions using `kubectl get MySQLversion` and choose desired version that is compatible for upgrade from current version. Check the version constraints and ops request in the [Updating MySQL Overview](/docs/v2026.6.19/guides/mysql/update-version/overview/).
 
 Let's choose `9.6.0` in this example.
 
@@ -995,10 +995,10 @@ Verify the monitoring is enabled by checking the prometheus targets.
 
 ## Next Steps
 
-- Learn MySQL [GitOps](/docs/v2026.6.19/guides/mysql/concepts/MySQL-gitops)
+- Learn MySQL [GitOps](/docs/v2026.6.19/guides/mysql/gitops/overview)
 - Learn MySQL Scaling 
   - [Horizontal Scaling](/docs/v2026.6.19/guides/mysql/scaling/horizontal-scaling/overview/)
   - [Vertical Scaling](/docs/v2026.6.19/guides/mysql/scaling/vertical-scaling/overview/)
-- Learn Version Update Ops Request and Constraints [here](/docs/v2026.6.19/guides/mysql/update-version/versionumyrading/)
+- Learn Version Update Ops Request and Constraints in the [Updating MySQL Overview](/docs/v2026.6.19/guides/mysql/update-version/overview/)
 - Monitor your MySQL database with KubeDB using [built-in Prometheus](/docs/v2026.6.19/guides/mysql/monitoring/using-builtin-prometheus).
 - Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2026.6.19/CONTRIBUTING).

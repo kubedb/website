@@ -45,7 +45,7 @@ Before proceeding:
   namespace/demo created
   ```
 
-> Note: The yaml files used in this tutorial are stored in [docs/examples/mysql](https://github.com/kubedb/docs/tree/{{< param "info.version" >}}/docs/examples/mysql) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
+> Note: The yaml files used in this tutorial are stored in [docs/guides/mariadb/clustering/galera-cluster/examples](https://github.com/kubedb/docs/tree/{{< param "info.version" >}}/docs/guides/mariadb/clustering/galera-cluster/examples) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
 
 ## Deploy MariaDB Cluster
 
@@ -58,7 +58,7 @@ metadata:
   name: sample-mariadb
   namespace: demo
 spec:
-  version: "11.8.5"
+  version: "12.1.2"
   replicas: 3
   topology:
     mode: GaleraCluster
@@ -116,7 +116,7 @@ spec:
     storageClassName: standard
   storageType: Durable
   deletionPolicy: WipeOut
-  version: 11.8.5
+  version: 12.1.2
 status:
   conditions:
   - lastTransitionTime: "2021-03-16T09:39:01Z"
@@ -136,7 +136,7 @@ status:
     status: "True"
     type: AcceptingConnection
   - lastTransitionTime: "2021-03-16T09:39:50Z"
-    message: 'The MySQL: demo/sample-mariadb is ready.'
+    message: 'The MariaDB: demo/sample-mariadb is ready.'
     observedGeneration: 2
     reason: ReadinessCheckSucceeded
     status: "True"
@@ -151,7 +151,7 @@ status:
   phase: Ready
 
 
-$ kubectl get sts,svc,secret,pvc,pv,pod -n demo
+$ kubectl get petset,svc,secret,pvc,pv,pod -n demo
 NAME                              READY   AGE
 petset.apps/sample-mariadb   3/3     116m
 
@@ -187,7 +187,7 @@ Once the database is in running state we can conncet to each of three nodes. We 
 ```bash
 # First Node
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 26
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -210,7 +210,7 @@ Bye
 
 # Second Node
 $ kubectl exec -it -n demo sample-mariadb-1 -- bash
-root@sample-mariadb-1:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-1:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 94
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -233,7 +233,7 @@ Bye
 
 # Third Node
 $ kubectl exec -it -n demo sample-mariadb-2 -- bash
-root@sample-mariadb-2:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-2:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 78
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -260,7 +260,7 @@ Now, we are ready to check newly created cluster status. Connect and run the fol
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 137
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -286,7 +286,7 @@ In a MariaDB Galera Cluster, Each member can read and write. In this section, we
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 202
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -320,7 +320,7 @@ Bye
 root@sample-mariadb-0:/ exit
 exit
 ~ $ kubectl exec -it -n demo sample-mariadb-1 -- bash
-root@sample-mariadb-1:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-1:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -357,7 +357,7 @@ Bye
 root@sample-mariadb-1:/ exit
 exit
 ~ $ kubectl exec -it -n demo sample-mariadb-2 -- bash
-root@sample-mariadb-2:/  mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-2:/  mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -395,7 +395,7 @@ To test automatic failover, we will force the one of three pods to restart and c
 
 ```bash
 kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 11
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -426,7 +426,7 @@ pod "sample-mariadb-0" deleted
 
 # Wait for sample-mariadb-0 to restart
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
-root@sample-mariadb-0:/ mysql -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
+root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 10
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution

@@ -83,7 +83,7 @@ spec:
     resources:
       requests:
         storage: 7Gi
-  version: "17.2"
+  version: "18.3"
 ```
 
 Now, create the namespace and apply the manifest:
@@ -105,7 +105,7 @@ See the database is ready.
 ```shell
 ➤ kubectl get pg,petset,pods -n demo
 NAME                             VERSION   STATUS   AGE
-postgres.kubedb.com/pg-ha-demo   17.2      Ready    4m45s
+postgres.kubedb.com/pg-ha-demo   18.3      Ready    4m45s
 
 NAME                                      AGE
 petset.apps.k8s.appscode.com/pg-ha-demo   4m41s
@@ -142,7 +142,7 @@ pg-ha-demo-0
 ➤ kubectl exec -it -n demo pg-ha-demo-0  -- bash
 Defaulted container "postgres" out of: postgres, pg-coordinator, postgres-init-container (init)
 pg-ha-demo-0:/$ psql
-psql (17.2)
+psql (18.3)
 Type "help" for help.
 
 postgres=# create table hello(id int);
@@ -156,7 +156,7 @@ Verify the table creation in standby's.
 ➤ kubectl exec -it -n demo pg-ha-demo-1  -- bash
 Defaulted container "postgres" out of: postgres, pg-coordinator, postgres-init-container (init)
 pg-ha-demo-1:/$ psql
-psql (17.2)
+psql (18.3)
 Type "help" for help.
 
 postgres=# \dt
@@ -234,7 +234,7 @@ Now we know how failover is done, let's check if the new primary is working.
 ➤ kubectl exec -it -n demo pg-ha-demo-1  -- bash
 Defaulted container "postgres" out of: postgres, pg-coordinator, postgres-init-container (init)
 pg-ha-demo-1:/$ psql
-psql (17.2)
+psql (18.3)
 Type "help" for help.
 
 postgres=# create table hi(id int);
@@ -255,7 +255,7 @@ Lets check if the standby(`pg-ha-demo-0`) got the updated data from new primary 
 ➤ kubectl exec -it -n demo pg-ha-demo-0  -- bash
 Defaulted container "postgres" out of: postgres, pg-coordinator, postgres-init-container (init)
 pg-ha-demo-0:/$ psql
-psql (17.2)
+psql (18.3)
 Type "help" for help.
 
 postgres=# \dt
@@ -290,7 +290,7 @@ Lets validate the cluster state from new primary(`pg-ha-demo-0`).
 ➤ kubectl exec -it -n demo pg-ha-demo-0  -- bash
 Defaulted container "postgres" out of: postgres, pg-coordinator, postgres-init-container (init)
 pg-ha-demo-0:/$ psql
-psql (17.2)
+psql (18.3)
 Type "help" for help.
 
 postgres=# select * from pg_stat_replication;
@@ -324,7 +324,7 @@ Lets verify cluster state.
 ➤ kubectl exec -it -n demo pg-ha-demo-0  -- bash
 Defaulted container "postgres" out of: postgres, pg-coordinator, postgres-init-container (init)
 pg-ha-demo-0:/$ psql
-psql (17.2)
+psql (18.3)
 Type "help" for help.
 
 postgres=# select * from pg_stat_replication;
@@ -360,7 +360,7 @@ Lets verify the cluster state now.
 ➤ kubectl exec -it -n demo pg-ha-demo-0  -- bash
 Defaulted container "postgres" out of: postgres, pg-coordinator, postgres-init-container (init)
 pg-ha-demo-0:/$ psql
-psql (17.2)
+psql (18.3)
 Type "help" for help.
 
 postgres=# select * from pg_stat_replication;

@@ -64,7 +64,7 @@ Here, we are going to deploy a `Hazelcast`  Cluster using a supported version by
 
 #### Deploy Hazelcast  Cluster
 
-In this section, we are going to deploy a Hazelcast Topology database with version `5.5.2`.  Then, in the next section we will set up autoscaling for this database using `HazelcastAutoscaler` CRD. Below is the YAML of the `Hazelcast` CR that we are going to create,
+In this section, we are going to deploy a Hazelcast Topology database with version `5.5.6`.  Then, in the next section we will set up autoscaling for this database using `HazelcastAutoscaler` CRD. Below is the YAML of the `Hazelcast` CR that we are going to create,
 
 ```yaml
 apiVersion: kubedb.com/v1alpha2
@@ -74,7 +74,7 @@ metadata:
   namespace: demo
 spec:
   replicas: 2
-  version: 5.5.2
+  version: 5.5.6
   licenseSecret:
     name: hz-license-key
   podTemplate:
@@ -411,7 +411,7 @@ Status:
     Status:                True
     Type:                  EvictPod--hazelcast-dev-1
     Last Transition Time:  2025-08-20T05:08:24Z
-    Message:               Successfully completed the vertical scaling for RabbitMQ
+    Message:               Successfully completed the vertical scaling for Hazelcast
     Observed Generation:   1
     Reason:                Successful
     Status:                True
