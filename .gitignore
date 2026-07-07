@@ -14,3 +14,4 @@ hugo_stats.json
 *.bk.json
 /react-app/
 /old-app/
+.agents
