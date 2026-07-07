@@ -48,7 +48,7 @@
           <p class="ov2-hero-desc is-text-base has-text-body mb-8">{{ .summary | markdownify }}</p>
 
           <!-- CTA Buttons -->
-          {{- $hideGuides := in (slice "hanadb" "db2" "documentdb" "weaviate" "milvus") .id -}}
+          {{- $hideGuides := in (slice "db2") .id -}}
          
           <div class="ov2-hero-ctas is-flex is-align-items-center">
             {{- $latestVersion := $p.latestVersion -}}
