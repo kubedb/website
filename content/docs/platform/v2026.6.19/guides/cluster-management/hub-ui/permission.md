@@ -8,11 +8,6 @@ menu:
     weight: 60
 menu_name: docsplatform_v2026.6.19
 section_menu_id: guides
-info:
-  kubedb-installer: v2026.6.19
-  kubeops-installer: v2026.6.19
-  product: kubedbplatform
-  version: v2026.6.19
 ---
 
 # User Access Management
@@ -71,4 +66,3 @@ Here you can assign a user one cluster or many cluster (clusterset) and grant ac
   * `create`
   * `view`
 * **Namespace** → Scope (if applicable)
-

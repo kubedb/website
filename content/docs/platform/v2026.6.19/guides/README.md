@@ -11,11 +11,6 @@ section_menu_id: guides
 url: /docs/platform/v2026.6.19/guides/
 aliases:
 - /docs/platform/v2026.6.19/guides/README/
-info:
-  kubedb-installer: v2026.6.19
-  kubeops-installer: v2026.6.19
-  product: kubedbplatform
-  version: v2026.6.19
 ---
 
 # Platform Guides

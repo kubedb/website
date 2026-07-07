@@ -12,12 +12,7 @@ menu_name: docs_v2026.6.19
 section_menu_id: welcome
 url: /docs/v2026.6.19/welcome/changelog-v2026.6.19/
 aliases:
-- /docs/v2026.6.19/CHANGELOG-v2026.6.19/
-info:
-  kubedb-installer: v2026.6.19
-  kubeops-installer: v2026.6.19
-  product: kubedbplatform
-  version: v2026.6.19
+  - /docs/v2026.6.19/CHANGELOG-v2026.6.19/
 ---
 
 # ACE v2026.6.19 (2026-06-21)
@@ -101,7 +96,3 @@ info:
 - [c12c4ce7](https://github.com/kubepack/lib-app/commit/c12c4ce7b) Prepare for release v0.23.0 (#172)
 - [6840206e](https://github.com/kubepack/lib-app/commit/6840206e0) Update vulnerable dependencies (#171)
 - [6dcb8a92](https://github.com/kubepack/lib-app/commit/6dcb8a924) Remove FerretDB support (#169)
-
-
-
-

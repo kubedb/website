@@ -8,11 +8,6 @@ menu:
     weight: 40
 menu_name: docsplatform_v2026.6.19
 section_menu_id: guides
-info:
-  kubedb-installer: v2026.6.19
-  kubeops-installer: v2026.6.19
-  product: kubedbplatform
-  version: v2026.6.19
 ---
 
 ## **Cluster and Namespace Configuration for Cost Management**
@@ -77,4 +72,3 @@ kubectl annotate namespace my-app-ns ace.appscode.com/enable-resource-trial=true
 ```
 
 Once this annotation is applied, eligible KubeDB resources in this namespace will receive trial benefits as described above.
-

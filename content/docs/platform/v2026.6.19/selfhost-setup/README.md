@@ -11,11 +11,6 @@ section_menu_id: selfhost-setup
 url: /docs/platform/v2026.6.19/selfhost-setup/
 aliases:
 - /docs/platform/v2026.6.19/selfhost-setup/README/
-info:
-  kubedb-installer: v2026.6.19
-  kubeops-installer: v2026.6.19
-  product: kubedbplatform
-  version: v2026.6.19
 ---
 
 # Host KubeDB Platform as Your Own

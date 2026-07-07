@@ -8,12 +8,10 @@ menu:
     weight: 80
 menu_name: docsplatform_v2026.6.19
 section_menu_id: guides
-info:
-  kubedb-installer: v2026.6.19
-  kubeops-installer: v2026.6.19
-  product: kubedbplatform
-  version: v2026.6.19
 ---
+
+
+
 
 # Upgrade spoke cluster 
 
@@ -30,5 +28,3 @@ To give a spoke different features than the hub, configure them here.
 3. Go to **Upgrade Version** from the sidebar. If a latest version is available, click the upgrade button.
 
 ![Upgrade](../../images/upgrade/upgrade_3.png)
-
-

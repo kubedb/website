@@ -13,11 +13,6 @@ url: /docs/platform/v2026.6.19/welcome/
 aliases:
 - /docs/platform/v2026.6.19/
 - /docs/platform/v2026.6.19/README/
-info:
-  kubedb-installer: v2026.6.19
-  kubeops-installer: v2026.6.19
-  product: kubedbplatform
-  version: v2026.6.19
 ---
 
 # KubeDB Platform Documentation

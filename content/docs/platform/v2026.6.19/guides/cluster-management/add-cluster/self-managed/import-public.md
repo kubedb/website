@@ -8,12 +8,8 @@ menu:
     weight: 30
 menu_name: docsplatform_v2026.6.19
 section_menu_id: guides
-info:
-  kubedb-installer: v2026.6.19
-  kubeops-installer: v2026.6.19
-  product: kubedbplatform
-  version: v2026.6.19
 ---
+
 
 # Adding a Public Self-Managed Cluster to Platform Console
 
@@ -38,4 +34,3 @@ info:
 ### Explore
 
 5. Once imported, explore the cluster in the Platform Console.
-
