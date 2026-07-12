@@ -3,8 +3,10 @@ name: Release
 on:
   push:
     tags:
+      # Matches version tags including semver build-metadata suffixes,
+      # e.g. v2026.7.10 and v2026.7.10+akp. The `*` spans the `+akp`
+      # suffix (it only stops at `/`), so no separate pattern is needed.
       - "*.*"
-      - "akp/*.*"
   workflow_dispatch:
 
 concurrency:
