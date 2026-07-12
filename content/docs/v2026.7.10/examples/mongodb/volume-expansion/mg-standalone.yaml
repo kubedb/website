@@ -1,0 +1,15 @@
+apiVersion: kubedb.com/v1
+kind: MongoDB
+metadata:
+  name: mg-standalone
+  namespace: demo
+spec:
+  version: "8.0.17"
+  storageType: Durable
+  storage:
+    storageClassName: "longhorn"
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
