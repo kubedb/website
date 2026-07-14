@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-ace-upgrade-readme
+    identifier: api-ace-upgrade-overview
     name: Overview
     parent: api-ace-upgrade
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/ace-upgrade/
-aliases:
-- /docs/platform/v2026.7.10/api/ace-upgrade/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -53,11 +50,11 @@ Platform and per-cluster upgrades (FluxCD-driven).
 
 ## Pages
 
-- [Platform Upgrade](../platform-upgrade.md) — the
+- [Platform Upgrade](../platform-upgrade) — the
   `/api/v1/upgrade*` endpoints: platform upgrade status, job status, history, and
   current version, plus triggering a platform upgrade. Requires site-admin org
   authorization.
-- [Cluster Upgrade](../cluster-upgrade.md) — the
+- [Cluster Upgrade](../cluster-upgrade) — the
   `/api/v1/clusters/{owner}/{cluster}/upgrade*` and `.../spoke/upgrade*`
   endpoints: imported-cluster and spoke-cluster upgrade status, history, current
   and latest versions, plus triggering cluster/spoke upgrades. Gated by cluster

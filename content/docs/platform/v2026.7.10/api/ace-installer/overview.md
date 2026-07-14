@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-ace-installer-readme
+    identifier: api-ace-installer-overview
     name: Overview
     parent: api-ace-installer
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/ace-installer/
-aliases:
-- /docs/platform/v2026.7.10/api/ace-installer/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -53,6 +50,6 @@ Generates and manages self-host installer bundles. Token + org context; per-acti
 
 ## Pages
 
-- [Platform Installer](../ace-installer.md) — schema/model, generate/import,
+- [Platform Installer](../ace-installer) — schema/model, generate/import,
   installer metadata and latest version, installers CRUD, reconfigure/upgrade,
   versions/archives, and marketplace installer status.

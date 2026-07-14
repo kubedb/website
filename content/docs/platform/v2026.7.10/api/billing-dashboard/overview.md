@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-billing-dashboard-readme
+    identifier: api-billing-dashboard-overview
     name: Overview
     parent: api-billing-dashboard
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/billing-dashboard/
-aliases:
-- /docs/platform/v2026.7.10/api/billing-dashboard/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -91,13 +88,13 @@ Available on billing-enabled deployments.
 
 ## Pages
 
-- [Admin Billing Dashboard](../admin-dashboard.md) — the
+- [Admin Billing Dashboard](../admin-dashboard) — the
   site-admin `/api/v1/dashboard/*` routes: licensed users, their clusters,
   per-cluster licenses and licensed products, resource/event histories, marketplace
   subscriptions, and system-outage records.
-- [User Billing Dashboard](../user-dashboard.md) — the
+- [User Billing Dashboard](../user-dashboard) — the
   owner-scoped `/api/v1/dashboard/clusters/*` routes (`view:contracts`): an
   organization's own active clusters, licenses, licensed products, and event counts.
-- [Usage Reports](../usage-reports.md) — the
+- [Usage Reports](../usage-reports) — the
   `/api/v1/dashboard/summary/*` monthly usage-report views and PDF download, plus
   the `/api/v1/dbaas/billing/*` namespace billing reports.

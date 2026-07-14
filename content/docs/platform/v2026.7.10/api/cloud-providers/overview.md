@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-cloud-providers-readme
+    identifier: api-cloud-providers-overview
     name: Overview
     parent: api-cloud-providers
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/cloud-providers/
-aliases:
-- /docs/platform/v2026.7.10/api/cloud-providers/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -55,6 +52,6 @@ cloud credentials.
 
 ## Pages
 
-- [Cloud Providers](../cloud-providers.md) — the public provider
+- [Cloud Providers](../cloud-providers) — the public provider
   list, CAPI cluster provisioning, and per-provider discovery for GKE, AKS, EKS,
   DigitalOcean, Linode, Rancher, Hetzner, and KubeVirt.

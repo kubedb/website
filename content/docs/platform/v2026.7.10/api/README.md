@@ -109,24 +109,24 @@ The v1 API surface is organized into the following logical groups:
 
 | # | Group | Base path(s) | What it covers | Availability |
 |---|-------|--------------|----------------|--------------|
-| 1 | [Identity: Users & Settings](../api/users-settings/) | `/api/v1/user`, `/api/v1/users` | Accounts, profile/security settings, tokens, credentials | always |
-| 2 | [Identity: Organizations & Teams](../api/organizations-teams/) | `/api/v1/orgs`, `/api/v1/teams` | Orgs, members, teams, org tokens | always |
-| 3 | [Administration](../api/administration/) | `/api/v1/admin`, `/api/v1/accounts/admin` | Admin console, site settings | always |
-| 4 | [Authorization (Roles & Permissions)](../api/authorization/) | `/api/v1/authz` | Custom roles & permissions | always |
-| 5 | [Cluster Management (v1 + K8s proxy + Helm)](../api/cluster-management-v1/) | `/api/v1/clusters` | Cluster lifecycle, Kubernetes proxy, Helm | always |
-| 6 | [Cluster Management v2](../api/cluster-management-v2/) | `/api/v1/clustersv2` | Hub-aware cluster API, subscriptions, gateways | always |
-| 7 | [Multi-cluster (OCM hub/spoke)](../api/multicluster-ocm/) | `/api/v1/clusters/:owner/:cluster/...` | Hub/spoke, cluster sets, feature sets | always |
-| 8 | [Client Organizations](../api/client-organizations/) | `/api/v1/user/client*`, `/api/v1/clusters/.../permission` | Managed-service client orgs | always |
-| 9 | [Cloud Providers](../api/cloud-providers/) | `/api/v1/clouds` | Provider discovery for provisioning | always |
-| 10 | [Platform Installer](../api/ace-installer/) | `/api/v1/ace-installer` | Self-host installer bundles | AppsCode-hosted only |
-| 11 | [Platform Upgrade](../api/ace-upgrade/) | `/api/v1/upgrade`, `/api/v1/clusters/.../upgrade` | Platform & cluster upgrades | always |
-| 12 | [Licensing & Contracts](../api/licensing-contracts/) | `/api/v1/contracts`, `/api/v1/user/contracts`, `/api/v1/register`, `/api/v1/license` | Contracts, licenses, registration | contracts: AppsCode-hosted |
-| 13 | [Billing Dashboard & Usage Reports](../api/billing-dashboard/) | `/api/v1/dashboard`, `/api/v1/user/dashboard`, `/api/v1/dbaas` | Usage reports & billing dashboards | billing-enabled deployments |
-| 14 | [Marketplace](../api/marketplace/) | `/api/v1/marketplaces` (separate service), `/api/v1/proxy/metered-billing` | Cloud-marketplace webhooks & metering | marketplace deployments |
-| 15 | [Monitoring & Telemetry](../api/monitoring-telemetry/) | `/api/v1/telemetry`, `/api/v1/trickster` | Telemetry stack, Trickster auth proxy | always |
-| 16 | [Rancher Integration](../api/rancher/) | `/api/v1/rancher` | Rancher sync & proxy | always |
-| 17 | [Helm Chart Repositories (public)](../api/chart-repositories/) | `/api/v1/chartrepositories` | Public Helm chart repositories | always |
-| 18 | [Miscellaneous & Site Settings](../api/miscellaneous/) | `/api/v1/version`, `/api/v1/markdown`, `/api/v1/branding`, ... | Version, markdown, health | always |
+| 1 | [Identity: Users & Settings](../api/users-settings/overview/) | `/api/v1/user`, `/api/v1/users` | Accounts, profile/security settings, tokens, credentials | always |
+| 2 | [Identity: Organizations & Teams](../api/organizations-teams/overview/) | `/api/v1/orgs`, `/api/v1/teams` | Orgs, members, teams, org tokens | always |
+| 3 | [Administration](../api/administration/overview/) | `/api/v1/admin`, `/api/v1/accounts/admin` | Admin console, site settings | always |
+| 4 | [Authorization (Roles & Permissions)](../api/authorization/overview/) | `/api/v1/authz` | Custom roles & permissions | always |
+| 5 | [Cluster Management (v1 + K8s proxy + Helm)](../api/cluster-management-v1/overview/) | `/api/v1/clusters` | Cluster lifecycle, Kubernetes proxy, Helm | always |
+| 6 | [Cluster Management v2](../api/cluster-management-v2/overview/) | `/api/v1/clustersv2` | Hub-aware cluster API, subscriptions, gateways | always |
+| 7 | [Multi-cluster (OCM hub/spoke)](../api/multicluster-ocm/overview/) | `/api/v1/clusters/:owner/:cluster/...` | Hub/spoke, cluster sets, feature sets | always |
+| 8 | [Client Organizations](../api/client-organizations/overview/) | `/api/v1/user/client*`, `/api/v1/clusters/.../permission` | Managed-service client orgs | always |
+| 9 | [Cloud Providers](../api/cloud-providers/overview/) | `/api/v1/clouds` | Provider discovery for provisioning | always |
+| 10 | [Platform Installer](../api/ace-installer/overview/) | `/api/v1/ace-installer` | Self-host installer bundles | AppsCode-hosted only |
+| 11 | [Platform Upgrade](../api/ace-upgrade/overview/) | `/api/v1/upgrade`, `/api/v1/clusters/.../upgrade` | Platform & cluster upgrades | always |
+| 12 | [Licensing & Contracts](../api/licensing-contracts/overview/) | `/api/v1/contracts`, `/api/v1/user/contracts`, `/api/v1/register`, `/api/v1/license` | Contracts, licenses, registration | contracts: AppsCode-hosted |
+| 13 | [Billing Dashboard & Usage Reports](../api/billing-dashboard/overview/) | `/api/v1/dashboard`, `/api/v1/user/dashboard`, `/api/v1/dbaas` | Usage reports & billing dashboards | billing-enabled deployments |
+| 14 | [Marketplace](../api/marketplace/overview/) | `/api/v1/marketplaces` (separate service), `/api/v1/proxy/metered-billing` | Cloud-marketplace webhooks & metering | marketplace deployments |
+| 15 | [Monitoring & Telemetry](../api/monitoring-telemetry/overview/) | `/api/v1/telemetry`, `/api/v1/trickster` | Telemetry stack, Trickster auth proxy | always |
+| 16 | [Rancher Integration](../api/rancher/overview/) | `/api/v1/rancher` | Rancher sync & proxy | always |
+| 17 | [Helm Chart Repositories (public)](../api/chart-repositories/overview/) | `/api/v1/chartrepositories` | Public Helm chart repositories | always |
+| 18 | [Miscellaneous & Site Settings](../api/miscellaneous/overview/) | `/api/v1/version`, `/api/v1/markdown`, `/api/v1/branding`, ... | Version, markdown, health | always |
 
 ![KubeDB Platform /api/v1 API group map](../api/images/api-groups.svg)
 

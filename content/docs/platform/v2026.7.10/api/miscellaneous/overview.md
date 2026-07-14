@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-miscellaneous-readme
+    identifier: api-miscellaneous-overview
     name: Overview
     parent: api-miscellaneous
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/miscellaneous/
-aliases:
-- /docs/platform/v2026.7.10/api/miscellaneous/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -42,7 +39,7 @@ account activation & recovery, 2FA/WebAuthn login, and static assets.
 
 ## Pages
 
-- [Miscellaneous Endpoints](../miscellaneous.md) — server version
+- [Miscellaneous Endpoints](../miscellaneous) — server version
   (`/api/v1/version`), markdown rendering (`/api/v1/markdown`, `/api/v1/markdown/raw`),
   the Swagger UI (`/api/v1/swagger`), the health check (`/healthz`), and OIDC discovery
   (`/.well-known/openid-configuration`).

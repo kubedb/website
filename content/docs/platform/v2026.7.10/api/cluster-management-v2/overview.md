@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-cluster-management-v2-readme
+    identifier: api-cluster-management-v2-overview
     name: Overview
     parent: api-cluster-management-v2
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/cluster-management-v2/
-aliases:
-- /docs/platform/v2026.7.10/api/cluster-management-v2/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -76,8 +73,8 @@ Related: `GET /api/v1/agent/:clusterName/:clusterID/token` (Token) — inbox age
 
 ## Pages
 
-- [Clusters](../clusters.md) — providers, hubs, cluster identity,
+- [Clusters](../clusters) — providers, hubs, cluster identity,
   listing, status, import/connect/remove, reconcile, reconfigure, Kubernetes version
   upgrades, gateway configs, feature conversion, and vclusters.
-- [Subscriptions & Inbox](../subscriptions.md) — cluster,
+- [Subscriptions & Inbox](../subscriptions) — cluster,
   namespace, and resource notification subscriptions, plus the inbox agent token.

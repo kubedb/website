@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-rancher-readme
+    identifier: api-rancher-overview
     name: Overview
     parent: api-rancher
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/rancher/
-aliases:
-- /docs/platform/v2026.7.10/api/rancher/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -49,5 +46,5 @@ token.
 
 ## Pages
 
-- [Rancher Integration](../rancher.md) — user sync, acerproxy install
+- [Rancher Integration](../rancher) — user sync, acerproxy install
   command, CA download, proxy-server token, and NATS credentials.

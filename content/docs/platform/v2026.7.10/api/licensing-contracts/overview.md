@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-licensing-contracts-readme
+    identifier: api-licensing-contracts-overview
     name: Overview
     parent: api-licensing-contracts
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/licensing-contracts/
-aliases:
-- /docs/platform/v2026.7.10/api/licensing-contracts/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -84,11 +81,11 @@ Related: `POST /api/v1/user/license-proxy` — generate the `license-proxyserver
 
 ## Pages
 
-- [License Registration](../registration.md) — `POST /register`,
+- [License Registration](../registration) — `POST /register`,
   `POST /license/issue`, `POST /user/license-proxy`.
-- [Contracts — Admin](../contracts-admin.md) — `/contracts/*`
+- [Contracts — Admin](../contracts-admin) — `/contracts/*`
   (AppsCode-hosted, site-admin).
-- [Contracts — User](../contracts-user.md) — `/user/contracts/*`
+- [Contracts — User](../contracts-user) — `/user/contracts/*`
   (AppsCode-hosted, token).
 
 ## Common concepts

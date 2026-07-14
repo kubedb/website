@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-multicluster-ocm-readme
+    identifier: api-multicluster-ocm-overview
     name: Overview
     parent: api-multicluster-ocm
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/multicluster-ocm/
-aliases:
-- /docs/platform/v2026.7.10/api/multicluster-ocm/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -69,13 +66,13 @@ All require Token + org/user resolution + cluster mapping.
 
 ## Pages
 
-- [Hubs & Spokes](../hubs-spokes.md) — list hub clusters, inspect
+- [Hubs & Spokes](../hubs-spokes) — list hub clusters, inspect
   spoke inventories (managed / accepted / not-accepted / available), accept spoke
   join requests, generate the spoke install command, import or convert a cluster to
   a spoke, remove a managed cluster, validate profiles, and sync account objects.
-- [Cluster Sets & Feature Sets](../cluster-sets.md) — create,
+- [Cluster Sets & Feature Sets](../cluster-sets) — create,
   delete, and populate cluster sets; install/disable/update feature sets; check
   feature sync status and auto-update; and bind namespaces to cluster sets.
-- [OCM Users](../ocm-users.md) — list, create, inspect, update, and
+- [OCM Users](../ocm-users) — list, create, inspect, update, and
   delete OCM users and their per-cluster / per-cluster-set permissions, and fetch a
   user's kubeconfig for a spoke cluster.

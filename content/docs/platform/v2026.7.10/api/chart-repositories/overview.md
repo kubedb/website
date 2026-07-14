@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-chart-repositories-readme
+    identifier: api-chart-repositories-overview
     name: Overview
     parent: api-chart-repositories
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/chart-repositories/
-aliases:
-- /docs/platform/v2026.7.10/api/chart-repositories/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -41,6 +38,6 @@ role is required. Only `GET` requests are exposed here.
 
 ## Pages
 
-- [Chart Repositories](../chart-repositories.md) — list the
+- [Chart Repositories](../chart-repositories) — list the
   known chart repositories, list the charts inside a repository, and list the
   versions of a named chart.

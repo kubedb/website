@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-authorization-readme
+    identifier: api-authorization-overview
     name: Overview
     parent: api-authorization
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/authorization/
-aliases:
-- /docs/platform/v2026.7.10/api/authorization/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -45,6 +42,6 @@ Custom role management backed by the relationship-based authorization model.
 
 ## Pages
 
-- [Roles & Permissions](../roles-permissions.md) — object
+- [Roles & Permissions](../roles-permissions) — object
   allowed-permissions lookups (single and batch), the available-permissions
   catalog, role CRUD, and role principal listings.

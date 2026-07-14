@@ -2,15 +2,12 @@
 layout: docs
 menu:
   docsplatform_v2026.7.10:
-    identifier: api-administration-readme
+    identifier: api-administration-overview
     name: Overview
     parent: api-administration
     weight: 1
 menu_name: docsplatform_v2026.7.10
 section_menu_id: api
-url: /docs/platform/v2026.7.10/api/administration/
-aliases:
-- /docs/platform/v2026.7.10/api/administration/overview/
 info:
   kubedb-installer: v2026.7.10
   kubeops-installer: v2026.7.10
@@ -90,6 +87,6 @@ Two admin surfaces: the legacy `/admin` group (administrative-org admins) and `/
 
 ## Pages
 
-- [Administrative-Org Admin](../admin-org.md) — `/api/v1/admin/*`: manage users and their organizations.
-- [Site Admin Console](../site-admin-console.md) — `/api/v1/accounts/admin/*`: dashboard, users, orgs, clusters, auth sources.
-- [Site Settings](../site-settings.md) — `/allowed-domains`, `/disable-registration`, `/branding`.
+- [Administrative-Org Admin](../admin-org) — `/api/v1/admin/*`: manage users and their organizations.
+- [Site Admin Console](../site-admin-console) — `/api/v1/accounts/admin/*`: dashboard, users, orgs, clusters, auth sources.
+- [Site Settings](../site-settings) — `/allowed-domains`, `/disable-registration`, `/branding`.
