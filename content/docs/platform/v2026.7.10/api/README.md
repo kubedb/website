@@ -34,9 +34,9 @@ marketplace webhook service is a separate listener rooted at `/marketplace/api/v
 
 A machine-readable [OpenAPI 3.0.3 specification](../api/openapi.yaml) of this API is
 also available (`openapi.yaml`) — load it into any OpenAPI tool (Swagger UI, Redoc,
-`openapi-generator`) to explore the API or generate a client. A self-contained
-Swagger UI viewer (`api.html`, with the spec inlined) is available at the repository
-root.
+`openapi-generator`) to explore the API or generate a client. A self-contained,
+interactive [Swagger UI viewer](../api/reference/) (with the spec inlined) is also
+published for this release — open it to browse and try every endpoint in the browser.
 
 ## Overview
 
