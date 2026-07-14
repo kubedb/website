@@ -29,7 +29,7 @@ organization (this is the org's "hosted mode / view contracts" grant — not
 site-admin). This group is available only on **billing-enabled deployments**.
 
 > **Verified:** every endpoint on this page returned `404 Not Found` against
-> `appscode` on `<ace-host>` on 2026-07-14 — this deployment is not billing-enabled,
+> `appscode` on `<akp-host>` on 2026-07-14 — this deployment is not billing-enabled,
 > so the `/dashboard/clusters/*` routes are not registered. (Sanity: `GET /version`
 > and `GET /user` returned `200` with the same token.)
 
@@ -70,8 +70,8 @@ the query.
 ```
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/dashboard/clusters/active?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/dashboard/clusters/active?org=appscode"
 ```
 
 > **Verified:** returned `404` against `appscode` — billing not enabled on this deployment.

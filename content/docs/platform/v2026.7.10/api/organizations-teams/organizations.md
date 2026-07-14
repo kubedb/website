@@ -21,14 +21,14 @@ Endpoints for creating and managing organizations, their members, avatars, Ranch
 integration tokens, and organization-scoped access/NATS tokens.
 
 All paths below are relative to the API root `/api/v1`. For example, `GET /orgs/{orgname}`
-is `GET https://<ace-host>/api/v1/orgs/{orgname}`. In these paths `orgname` is the
+is `GET https://<akp-host>/api/v1/orgs/{orgname}`. In these paths `orgname` is the
 organization slug (e.g. `appscode`).
 
 Unless noted, authenticated endpoints accept a personal access token:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/orgs/appscode
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/orgs/appscode
 ```
 
 Authorization checks (e.g. `edit:org`, `admin:org`, `view:avatar`) are
@@ -76,7 +76,7 @@ Create a new organization owned by the authenticated user.
   "id": 42,
   "username": "acme",
   "full_name": "Acme Inc.",
-  "avatar_url": "https://<ace-host>/accounts/avatars?obj=avatars/42-<hash>",
+  "avatar_url": "https://<akp-host>/accounts/avatars?obj=avatars/42-<hash>",
   "description": "Acme engineering org",
   "website": "https://acme.example.com",
   "location": "Remote",
@@ -143,7 +143,7 @@ Get an organization's details (returned if visible to the requesting user).
   "id": 3,
   "username": "appscode",
   "full_name": "",
-  "avatar_url": "https://<ace-host>/accounts/avatars?obj=avatars/3-<hash>",
+  "avatar_url": "https://<akp-host>/accounts/avatars?obj=avatars/3-<hash>",
   "description": "",
   "website": "",
   "location": "",
@@ -440,7 +440,7 @@ Get the organization's avatar URL.
 **Response:** `200 OK` — a JSON string containing the avatar URL:
 
 ```json
-"https://<ace-host>/accounts/avatars?obj=avatars/3-<hash>"
+"https://<akp-host>/accounts/avatars?obj=avatars/3-<hash>"
 ```
 
 ### POST /orgs/{orgname}/avatar/

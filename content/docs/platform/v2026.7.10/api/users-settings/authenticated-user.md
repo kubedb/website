@@ -19,7 +19,7 @@ info:
 
 The `/api/v1/user/*` endpoints operate on the currently authenticated user
 identified by the request token. All paths on this page are relative to the API root
-`/api/v1` (for example, `/user/emails` is `https://<ace-host>/api/v1/user/emails`).
+`/api/v1` (for example, `/user/emails` is `https://<akp-host>/api/v1/user/emails`).
 
 Unless noted otherwise:
 
@@ -75,8 +75,8 @@ page.
 Example:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/user
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/user
 ```
 
 ### GET /user/signout
@@ -370,7 +370,7 @@ List clusters the authenticated user owns or can access.
 [
   {
     "id": 1,
-    "displayName": "ACE Hub",
+    "displayName": "KubeDB Platform Hub",
     "name": "ace",
     "uid": "<uid>",
     "ownerName": "appscode",
@@ -572,5 +572,5 @@ Validate email availability.
 The high-level design also lists deployment-order endpoints under the authenticated
 user (`POST /user/deploy/orders` and the `/user/deploy/orders/{id}/render/*` preview
 routes). These are not part of the machine-readable OpenAPI specification for this
-group and are therefore not documented in detail here; consult the `b3` source
+group and are therefore not documented in detail here; consult the KubeDB Platform API Server source
 (`routers/api/v1`) for their current request/response shapes.

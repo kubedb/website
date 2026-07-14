@@ -45,8 +45,8 @@ Helm library objects, passed through verbatim; those are noted per endpoint.
 A documented call looks like:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/ace/helm/v3/releases/
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/ace/helm/v3/releases/
 ```
 
 ---

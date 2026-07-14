@@ -31,7 +31,7 @@ Authorization: token <YOUR_TOKEN>
 Every endpoint here is **site-admin only** — the caller must be a platform site
 admin acting within an organization. Non-admin callers receive `403`.
 
-Illustrative curl calls use a placeholder host `<ace-host>` and `$ACE_TOKEN`.
+Illustrative curl calls use a placeholder host `<akp-host>` and `$AKP_TOKEN`.
 
 > **Platform note:** On the verification platform there are currently **no client
 > organizations** — `GET /user/clients` returns an empty list (`[]`, HTTP `200`).
@@ -74,8 +74,8 @@ client orgs exist.
 ```
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/user/clients?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/user/clients?org=appscode"
 ```
 
 > **Verified:** `GET` returned `200` against `appscode` on 2026-07-14; the platform
@@ -105,8 +105,8 @@ Fetch a single client organization by its numeric ID.
 items above). `404` if no client org has that ID.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/user/client/42?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/user/client/42?org=appscode"
 ```
 
 > **Verified:** returned `500` against `appscode` — no client org exists with the
@@ -137,8 +137,8 @@ Aggregate deletion/active status across all clusters of the client organization.
 ```
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/user/client/acme-client/status?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/user/client/acme-client/status?org=appscode"
 ```
 
 > **Verified:** returned `500` against `appscode` — `appscode` is not itself a
@@ -163,8 +163,8 @@ Deletion/active status of a single cluster within the client organization.
 **Response:** `200 OK` — a `ClientOrgStatus` envelope (see above).
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/user/client/acme-client/cluster/acme-prod/status?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/user/client/acme-client/cluster/acme-prod/status?org=appscode"
 ```
 
 > **Verified:** returned `500` against `appscode/ace` — `appscode` is not a client

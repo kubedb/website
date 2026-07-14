@@ -17,7 +17,7 @@ info:
 
 # Cluster Upgrade
 
-Endpoints for upgrading the ACE feature stack running inside a member cluster.
+Endpoints for upgrading the KubeDB Platform feature stack running inside a member cluster.
 There are two flavours:
 
 - **Imported cluster** routes (`/clusters/{owner}/{cluster}/upgrade*`) upgrade the
@@ -30,7 +30,7 @@ There are two flavours:
 
 Paths below are relative to the API root `/api/v1` (so
 `/clusters/{owner}/{cluster}/upgrade` means
-`https://<ace-host>/api/v1/clusters/{owner}/{cluster}/upgrade`).
+`https://<akp-host>/api/v1/clusters/{owner}/{cluster}/upgrade`).
 
 **Authentication & authorization.** All routes require a personal access token
 (`Authorization: token <YOUR_TOKEN>`). Access is gated by **cluster assignment**
@@ -79,8 +79,8 @@ Returns `400` when no upgrade status is recorded in the cluster yet.
 > been run on this cluster, so there is no upgrader ConfigMap. On 2026-07-14.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/ace/upgrade
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/ace/upgrade
 ```
 
 ---
@@ -107,8 +107,8 @@ maps.
 > against `appscode/ace` (hub) (empty list `[]`) on 2026-07-14.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/ace/upgrade/history
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/ace/upgrade/history
 ```
 
 ---
@@ -136,8 +136,8 @@ cluster.
 > `200` against `appscode/ace` (hub) (`{"version":"v2026.6.19"}`) on 2026-07-14.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/ace/upgrade/current-version
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/ace/upgrade/current-version
 ```
 
 ---
@@ -165,8 +165,8 @@ the target used for imported-cluster upgrades.
 > against `appscode/ace` (hub) (`{"version":"v2026.6.19"}`) on 2026-07-14.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/ace/upgrade/latest-version
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/ace/upgrade/latest-version
 ```
 
 ---
@@ -185,8 +185,8 @@ progress is tracked in an upgrader `ConfigMap` (poll
 is not assigned to the caller.
 
 ```
-curl -X POST -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/ace/upgrade
+curl -X POST -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/ace/upgrade
 ```
 
 > Not verified live: this is a mutating (`POST`) endpoint and is documented from
@@ -219,8 +219,8 @@ Returns `400` when no upgrade status is recorded for the spoke yet.
 > upgrade recorded on the hub for this cluster. On 2026-07-14.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/arnob-dev/spoke/upgrade
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/arnob-dev/spoke/upgrade
 ```
 
 ---
@@ -247,8 +247,8 @@ Returns the upgrade history for a spoke cluster as a list of `ConfigMap` data ma
 > `200` against `appscode/arnob-dev` (spoke) (empty list `[]`) on 2026-07-14.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/arnob-dev/spoke/upgrade/history
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/arnob-dev/spoke/upgrade/history
 ```
 
 ---
@@ -266,8 +266,8 @@ asynchronous post-processing.
 cluster is not assigned to the caller.
 
 ```
-curl -X POST -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/arnob-dev/spoke/upgrade
+curl -X POST -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/arnob-dev/spoke/upgrade
 ```
 
 > Not verified live: this is a mutating (`POST`) endpoint and is documented from

@@ -3,7 +3,7 @@ layout: docs
 menu:
   docsplatform_v2026.7.10:
     identifier: api-ace-installer-ace-installer
-    name: ACE Installer
+    name: Platform Installer
     parent: api-ace-installer
     weight: 10
 menu_name: docsplatform_v2026.7.10
@@ -15,15 +15,15 @@ info:
   version: v2026.7.10
 ---
 
-# ACE Installer
+# Platform Installer
 
-The ACE Installer endpoints generate and manage self-host installer bundles for the
-AppsCode Container Engine (ACE) platform. All paths on this page are relative to the
+The Platform Installer endpoints generate and manage self-host installer bundles for the
+KubeDB Platform. All paths on this page are relative to the
 API root `/api/v1` — for example `/ace-installer/schema.json` is
 `/api/v1/ace-installer/schema.json`.
 
 > **AppsCode-hosted only.** These routes exist only on the AppsCode-hosted (SaaS)
-> deployment. On self-hosted ACE installations the `/ace-installer` routes are not
+> deployment. On self-hosted KubeDB Platform installations the `/ace-installer` routes are not
 > registered and every call returns `404 Not Found`. (This was confirmed live — see the
 > verification notes below.)
 
@@ -49,7 +49,7 @@ organization's hosted-mode capability:
 A documented call looks like:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
+curl -H "Authorization: token $AKP_TOKEN" \
   "https://appscode.com/api/v1/ace-installer/latest-version?org=appscode"
 ```
 
@@ -63,7 +63,7 @@ curl -H "Authorization: token $ACE_TOKEN" \
 
 ### InstallerMetadata
 
-Metadata describing a generated or imported ACE installer.
+Metadata describing a generated or imported installer.
 
 ```json
 {
@@ -94,7 +94,7 @@ Metadata describing a generated or imported ACE installer.
 |-------|------|-------------|
 | `ID` | string | Installer ID. |
 | `installerName` | string | Installer name (installers are grouped by name). |
-| `deploymentType` | string | ACE deployment type. |
+| `deploymentType` | string | KubeDB Platform deployment type. |
 | `requestedDomain` | string | Domain requested for the installer. |
 | `host` | string | Effective host for the deployment. |
 | `hostType` | string | Host type. |
@@ -106,7 +106,7 @@ Metadata describing a generated or imported ACE installer.
 | `adminEmail` | string | Email of the platform admin. |
 | `accessTokenID` | integer (int64) | ID of the access token that created the installer. |
 | `clusterID` | string | Cluster identifier bound to the installer. |
-| `version` | string | ACE installer chart version. |
+| `version` | string | installer chart version. |
 | `promotedToProduction` | boolean | Whether the installer has been promoted to production. |
 | `createTimestamp` | string (date-time) | Creation time. |
 | `expiryTimestamp` | string (date-time) | Expiry time. |
@@ -158,7 +158,7 @@ Metadata describing a generated or imported ACE installer.
 
 ### GET /ace-installer/schema.json
 
-Returns the raw OpenAPI v3 JSON schema for ACE installer options
+Returns the raw OpenAPI v3 JSON schema for installer options
 (`ace-options/values.openapiv3_schema.yaml`) as a dynamic JSON object.
 
 - **Auth:** token; org resolved from the `org` query param.
@@ -173,12 +173,12 @@ Returns the raw OpenAPI v3 JSON schema for ACE installer options
   documented here.
 
 > **Verified:** returned `404` against `appscode` on the self-hosted platform
-> (`<ace-host>`) on 2026-07-14 — the ace-installer routes are AppsCode-hosted only and are
+> (`<akp-host>`) on 2026-07-14 — the ace-installer routes are AppsCode-hosted only and are
 > not registered on this install (body: `{"message":"Not Found"}`).
 
 ### GET /ace-installer/model.json
 
-Returns the default ACE options model (`AceOptionsSpec`) pre-filled with the requesting
+Returns the default options model (`AceOptionsSpec`) pre-filled with the requesting
 user's admin details, as a dynamic JSON object.
 
 - **Auth:** token; org context.
@@ -194,7 +194,7 @@ user's admin details, as a dynamic JSON object.
 
 ### POST /ace-installer/generate
 
-Generates a new ACE installer from the supplied `AceOptionsSpec` options and returns the
+Generates a new installer from the supplied `AceOptionsSpec` options and returns the
 resulting installer metadata.
 
 - **Auth:** token; org context; requires `create_installers`.
@@ -247,7 +247,7 @@ request.
 
 ### GET /ace-installer/latest-version
 
-Returns the latest available ACE installer chart version.
+Returns the latest available installer chart version.
 
 - **Auth:** token; org context; requires `view_installers`.
 - **Query parameters:** `org` (string, required).
@@ -259,7 +259,7 @@ Returns the latest available ACE installer chart version.
 
   | Field | Type | Description |
   |-------|------|-------------|
-  | `version` | string | Latest ACE installer chart version. |
+  | `version` | string | Latest installer chart version. |
 
 > **Verified:** returned `404` against `appscode` on the self-hosted platform on
 > 2026-07-14 (AppsCode-hosted only; route not registered).
@@ -361,7 +361,7 @@ Reconfigures an existing installer using the supplied `AceOptionsSpec` options.
 
 ### POST /ace-installer/installers/{name}/{id}/upgrade
 
-Upgrades an existing installer to the latest ACE installer version and returns the updated
+Upgrades an existing installer to the latest installer version and returns the updated
 installer metadata.
 
 - **Auth:** token; org context; requires `upgrade_installers`.

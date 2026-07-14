@@ -36,8 +36,8 @@ Common conventions:
 Example request:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clustersv2/appscode/ace/status
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clustersv2/appscode/ace/status
 ```
 
 ---
@@ -76,7 +76,7 @@ provider or insufficient permissions). Both return a `SkipCredentialsResponse`:
 | reason | string | Machine-readable reason (when not skippable). |
 | message | string | Human-readable detail. |
 
-> **Verified:** `GET` returned `400` for `providers/eks/skip-credentials` on 2026-07-14 — this ACE instance is not an EKS environment with the required IAM permissions, which is the expected non-skippable outcome.
+> **Verified:** `GET` returned `400` for `providers/eks/skip-credentials` on 2026-07-14 — this KubeDB Platform instance is not an EKS environment with the required IAM permissions, which is the expected non-skippable outcome.
 
 ---
 
@@ -144,7 +144,7 @@ bearer `token`. `400` if listing OCM manager clusters fails.
 ```json
 {
   "ace": {
-    "apiServer": "https://<ace-host>:6443",
+    "apiServer": "https://<akp-host>:6443",
     "token": "<bearer-token>"
   }
 }
@@ -218,7 +218,7 @@ platform/admin flows.)
   "provider": "Generic",
   "ownerID": "3",
   "ownerType": "org",
-  "apiEndpoint": "https://<ace-host>:6443",
+  "apiEndpoint": "https://<akp-host>:6443",
   "caBundle": "<base64-ca>",
   "managerID": "",
   "hubClusterID": "<uid>",
@@ -296,7 +296,7 @@ List clusters for an owner (each with a resolved provider).
     "vendor": "",
     "infraNamespace": "",
     "isMonitoringCluster": false,
-    "endpoint": "https://<ace-host>:6443",
+    "endpoint": "https://<akp-host>:6443",
     "kubernetesVersion": "v1.36.2+k3s1",
     "nodeCount": 1,
     "createdAt": "2026-07-05T06:49:31Z",
@@ -761,7 +761,7 @@ List gateway configurations.
     "configName": "ace",
     "configNamespace": "ace",
     "version": "v2026.6.19",
-    "host": "<ace-host>",
+    "host": "<akp-host>",
     "hostType": "ip",
     "isDefault": true,
     "updateAvailable": false

@@ -26,8 +26,8 @@ Except for the public provider list, every endpoint requires a personal access
 token:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clouds/appscode/providers/eks/regions
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clouds/appscode/providers/eks/regions
 ```
 
 The per-provider discovery routes talk to the cloud provider's API using a

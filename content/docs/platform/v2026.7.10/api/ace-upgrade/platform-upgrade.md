@@ -17,9 +17,9 @@ info:
 
 # Platform Upgrade
 
-Endpoints for upgrading the ACE platform (the `ace-installer` Helm release) as a
+Endpoints for upgrading the KubeDB Platform (the `ace-installer` Helm release) as a
 whole and for inspecting its upgrade state. Paths below are relative to the API
-root `/api/v1` (so `/upgrade` means `https://<ace-host>/api/v1/upgrade`).
+root `/api/v1` (so `/upgrade` means `https://<akp-host>/api/v1/upgrade`).
 
 **Authentication & authorization.** All routes require a personal access token
 (`Authorization: token <YOUR_TOKEN>`). Platform upgrade routes are scoped to an
@@ -49,7 +49,7 @@ These apply to every endpoint on this page.
 
 ## GET /upgrade
 
-Returns the most recent ACE platform upgrade status, taken from the latest
+Returns the most recent KubeDB Platform upgrade status, taken from the latest
 upgrader `ConfigMap` data. The response is a dynamic key/value map.
 
 - **Auth:** token; site-admin org authz `view_upgrade_history:org`.
@@ -73,15 +73,15 @@ Returns `400` when no upgrade status is recorded yet.
 > environment, so there is no upgrader ConfigMap to report. On 2026-07-14.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/upgrade?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/upgrade?org=appscode"
 ```
 
 ---
 
 ## GET /upgrade/status
 
-Returns the status of the most recent ACE platform upgrade job — either `pending`
+Returns the status of the most recent KubeDB Platform upgrade job — either `pending`
 (with the target `version`) or `completed`.
 
 - **Auth:** token; site-admin org authz `view_upgrade_history:org`.
@@ -104,15 +104,15 @@ Returns the status of the most recent ACE platform upgrade job — either `pendi
 > `appscode` (`{"status":"completed"}`) on 2026-07-14.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/upgrade/status?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/upgrade/status?org=appscode"
 ```
 
 ---
 
 ## GET /upgrade/history
 
-Returns the ACE platform upgrade history as a list of `ConfigMap` data maps, each
+Returns the KubeDB Platform upgrade history as a list of `ConfigMap` data maps, each
 augmented with a `status` field.
 
 - **Auth:** token; site-admin org authz `view_upgrade_history:org`.
@@ -135,15 +135,15 @@ are `ConfigMap` `data` entries plus a `status`). Example:
 > `appscode` (empty list `[]` — no upgrades recorded) on 2026-07-14.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/upgrade/history?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/upgrade/history?org=appscode"
 ```
 
 ---
 
 ## GET /upgrade/current-version
 
-Returns the currently installed ACE platform version (the `ace-installer` Helm
+Returns the currently installed KubeDB Platform version (the `ace-installer` Helm
 release version).
 
 - **Auth:** token; site-admin org authz `view_upgrade_history:org`.
@@ -167,15 +167,15 @@ Returns `400` when no version can be determined.
 > against `appscode` (`{"version":"v2026.6.19"}`) on 2026-07-14.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/upgrade/current-version?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/upgrade/current-version?org=appscode"
 ```
 
 ---
 
 ## POST /upgrade
 
-Triggers an ACE platform upgrade. The request is a `multipart/form-data` body
+Triggers an KubeDB Platform upgrade. The request is a `multipart/form-data` body
 carrying the target version, a Helm values file, and an optional flag to use the
 latest upgrader image. The upgrade runs asynchronously; poll `GET /upgrade/status`
 for progress.
@@ -196,11 +196,11 @@ for an invalid form or values file, and `403` when the caller lacks
 `upgrade_platform:org` authorization.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
+curl -H "Authorization: token $AKP_TOKEN" \
   -F "version=v2026.6.19" \
   -F "valuesFile=@values.yaml" \
   -F "useLatestImage=false" \
-  "https://<ace-host>/api/v1/upgrade?org=appscode"
+  "https://<akp-host>/api/v1/upgrade?org=appscode"
 ```
 
 > Not verified live: this is a mutating (`POST`) endpoint and is documented from

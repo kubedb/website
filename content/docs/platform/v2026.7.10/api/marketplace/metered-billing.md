@@ -29,7 +29,7 @@ token. Send it as `Authorization: token <YOUR_TOKEN>` (or as a `token` /
 unauthenticated callers receive `401`.
 
 > **Deployment gating.** Each provider's routes are registered **only** for the
-> matching b3 deployment type:
+> matching KubeDB Platform deployment type:
 > - `aws/*` → `AWSMarketplaceDeployment`
 > - `gcp/*` → `GCPMarketplaceDeployment`
 >
@@ -119,8 +119,8 @@ required.
 **Example**
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/proxy/metered-billing/marketplaces/aws/check/readiness?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/proxy/metered-billing/marketplaces/aws/check/readiness?org=appscode"
 ```
 
 > **Verified:** returned `404` against `appscode` on 2026-07-14 — the AWS metering
@@ -180,8 +180,8 @@ required.
 **Example**
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/proxy/metered-billing/marketplaces/gcp/check/readiness?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/proxy/metered-billing/marketplaces/gcp/check/readiness?org=appscode"
 ```
 
 > **Verified:** returned `404` against `appscode` on 2026-07-14 — the GCP metering

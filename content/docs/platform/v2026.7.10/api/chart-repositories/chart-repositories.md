@@ -18,7 +18,7 @@ info:
 # Chart Repositories
 
 These endpoints provide a read-only view over the public Helm Hub chart
-repository index used by ACE. You can list the known repositories, load a
+repository index used by the KubeDB Platform. You can list the known repositories, load a
 repository by URL and list the charts inside it, and list the versions of a
 named chart.
 
@@ -29,7 +29,7 @@ All three endpoints are **public** (no `security` requirement, no organization
 context). Clients typically still send their bearer token, but no membership or
 role is required. Only `GET` is supported.
 
-Examples below use a placeholder host `<ace-host>` and a `$ACE_TOKEN`
+Examples below use a placeholder host `<akp-host>` and a `$AKP_TOKEN`
 environment variable holding the caller's token.
 
 ---
@@ -76,8 +76,8 @@ Fields of each `ChartRepositoryEntry`:
 **Example:**
 
 ```bash
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/chartrepositories
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/chartrepositories
 ```
 
 > **Verified:** `GET` returned `200` on 2026-07-14 (public endpoint; not
@@ -125,8 +125,8 @@ Other statuses:
 **Example:**
 
 ```bash
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/chartrepositories/charts?url=https://charts.appscode.com/stable"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/chartrepositories/charts?url=https://charts.appscode.com/stable"
 ```
 
 > **Verified:** `GET` returned `200` on 2026-07-14 for
@@ -202,8 +202,8 @@ Other statuses:
 **Example:**
 
 ```bash
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/chartrepositories/charts/kubedb/versions?url=https://charts.appscode.com/stable"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/chartrepositories/charts/kubedb/versions?url=https://charts.appscode.com/stable"
 ```
 
 > **Verified:** `GET` returned `200` on 2026-07-14 for chart `kubedb` with

@@ -36,8 +36,8 @@ name. Common path parameters used throughout this page:
 A documented call looks like:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/ace/
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/ace/
 ```
 
 ---
@@ -64,7 +64,7 @@ Get summary information about a cluster.
   "vendor": "",
   "infraNamespace": "",
   "isMonitoringCluster": false,
-  "endpoint": "https://<ace-host>:6443",
+  "endpoint": "https://<akp-host>:6443",
   "location": "",
   "project": "",
   "kubernetesVersion": "v1.36.2+k3s1",
@@ -123,7 +123,7 @@ than deleting synchronously.
 
 ### POST /clusters/{owner}/{cluster}/remove
 
-Remove a cluster's registration from ACE (does not delete the underlying cluster).
+Remove a cluster's registration from the KubeDB Platform (does not delete the underlying cluster).
 
 - **Auth:** token.
 - **Response:** `200` with an empty body.
@@ -176,7 +176,7 @@ The empty-string key (`""`) is the legacy Kubernetes core group.
 
 ### GET /clusters/{owner}/{cluster}/is-server
 
-Check whether this cluster is the ACE server (hub) cluster.
+Check whether this cluster is the KubeDB Platform hub cluster.
 
 - **Auth:** token.
 - **Response:** `200` with `{"server": "yes"|"no"}`.

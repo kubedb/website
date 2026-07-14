@@ -21,7 +21,7 @@ The `/api/v1/user/settings/*` endpoints back the account-settings screens: profi
 and avatar, password and account emails, two-factor and WebAuthn security, active
 sessions, personal access and NATS tokens, and OAuth2 applications. All paths on this
 page are relative to the API root `/api/v1` (for example, `/user/settings/profile`
-is `https://<ace-host>/api/v1/user/settings/profile`).
+is `https://<akp-host>/api/v1/user/settings/profile`).
 
 Unless noted otherwise:
 

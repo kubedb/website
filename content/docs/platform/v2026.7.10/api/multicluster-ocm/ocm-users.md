@@ -36,8 +36,8 @@ Common path parameters:
 Example call:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/ace/users
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/ace/users
 ```
 
 The `Permission` object is used throughout this page (in `UserOptions` and

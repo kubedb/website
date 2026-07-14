@@ -25,7 +25,7 @@ and a write endpoint gated by a site-admin (or, for branding, org-admin)
 authorization relation. Write endpoints require org context via `?org=<slug>`.
 
 ```
-curl https://<ace-host>/api/v1/branding
+curl https://<akp-host>/api/v1/branding
 ```
 
 ---

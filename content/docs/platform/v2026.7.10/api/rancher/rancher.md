@@ -17,7 +17,7 @@ info:
 
 # Rancher Integration
 
-Endpoints for integrating ACE with a Rancher management cluster: syncing Rancher
+Endpoints for integrating the KubeDB Platform with a Rancher management cluster: syncing Rancher
 users, generating the `acerproxy` installation command, downloading the platform
 CA certificate, minting Rancher proxy-server tokens, and fetching NATS
 credentials for the authenticated Rancher user.
@@ -51,8 +51,8 @@ Authorization requirements differ per route:
 
 ### GET /rancher/org/{orgname}/sync/users
 
-Imports users from the organization's Rancher management cluster into ACE. For
-each Rancher user it creates a matching ACE user (when missing) and adds them to
+Imports users from the organization's Rancher management cluster into the KubeDB Platform. For
+each Rancher user it creates a matching platform user (when missing) and adds them to
 the organization's viewer team.
 
 - **Auth:** token — **site-admin** required, and `{orgname}` must be a
@@ -108,7 +108,7 @@ with a freshly issued Rancher extended server token and the platform base URL.
 
 ```json
 {
-  "helm": "helm upgrade -i acerproxy oci://ghcr.io/appscode-charts/acerproxy --set token=<token> --set baseURL=https://<ace-host> ..."
+  "helm": "helm upgrade -i acerproxy oci://ghcr.io/appscode-charts/acerproxy --set token=<token> --set baseURL=https://<akp-host> ..."
 }
 ```
 
@@ -205,7 +205,7 @@ primary NATS account before returning fresh credentials.
 {
   "user-jwt": "<user-jwt>",
   "user-seed": "SUAB...<snip>...XYZ",
-  "url": "wss://<ace-host>/nats"
+  "url": "wss://<akp-host>/nats"
 }
 ```
 

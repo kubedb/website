@@ -20,7 +20,7 @@ info:
 Endpoints for looking up users, a user's organizations, social follow relationships,
 managing a user's access tokens over HTTP Basic auth, and public sign-in. All paths
 on this page are relative to the API root `/api/v1` (for example, `/users/search` is
-`https://<ace-host>/api/v1/users/search`).
+`https://<akp-host>/api/v1/users/search`).
 
 Authentication varies per endpoint:
 
@@ -74,8 +74,8 @@ Search for users by keyword or user ID.
 Example:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/users/search?q=alice&limit=10"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/users/search?q=alice&limit=10"
 ```
 
 (The token is optional here since the endpoint is public.)

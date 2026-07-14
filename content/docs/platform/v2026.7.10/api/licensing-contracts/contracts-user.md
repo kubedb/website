@@ -66,8 +66,8 @@ List the contracts owned by the resolved owner.
 Errors: `401`, `403`.
 
 ```bash
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/user/contracts?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/user/contracts?org=appscode"
 ```
 
 ---

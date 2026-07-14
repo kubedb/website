@@ -19,7 +19,7 @@ info:
 
 > **Separate listener.** Unlike every other page in this reference, these routes are
 > **not** served under `/api/v1`. They live on a dedicated marketplace webhook
-> listener rooted at **`/marketplace/api/v1`**, run by the b3 `marketplace`
+> listener rooted at **`/marketplace/api/v1`**, run by the API Server's `marketplace`
 > subcommand. Paths below are relative to that root
 > (`/marketplace/api/v1/...`). This listener exists only on marketplace
 > deployments (AWS / Azure / GCP marketplace modes).
@@ -33,7 +33,7 @@ server's `/api/v1/version`.
 claimable check and version endpoint are **public**. The three notification
 endpoints are authenticated by the **webhook itself** — by verifying the payload and
 either the source IP range (AWS) or a per-installer `secret` query parameter
-(Azure / GCP) — not by ACE token/session security.
+(Azure / GCP) — not by KubeDB Platform token/session security.
 
 > **Availability on this platform.** The `/marketplace/api/v1/*` root is **not
 > served** on the reference deployment (`appscode`, a standard non-marketplace
@@ -88,7 +88,7 @@ rules. Error bodies use the marketplace `ApiError` shape:
 **Example**
 
 ```
-curl https://<ace-host>/marketplace/api/v1/marketplaces/standalone-organizations/<claimID>/claimable
+curl https://<akp-host>/marketplace/api/v1/marketplaces/standalone-organizations/<claimID>/claimable
 ```
 
 > **Verified:** returned `200` with `Content-Type: text/html` against the reference
@@ -154,7 +154,7 @@ Handle an AWS Marketplace bind-event notification.
 **Response — `200`:** subscription bound; returns the installer archive link.
 
 ```json
-{ "link": "https://<ace-host>/.../installer-archive.tgz" }
+{ "link": "https://<akp-host>/.../installer-archive.tgz" }
 ```
 
 **Other statuses:** `400` payload / binding-info / option processing failed; `403`
@@ -256,7 +256,7 @@ Handle a GCP Marketplace bind-event notification.
 **Response — `200`:** subscription bound; returns the installer archive link.
 
 ```json
-{ "link": "https://<ace-host>/.../installer-archive.tgz" }
+{ "link": "https://<akp-host>/.../installer-archive.tgz" }
 ```
 
 **Other statuses:** `400` invalid binding info / installer lookup failure; `403`
@@ -286,7 +286,7 @@ main server's `GET /api/v1/version`.
 **Example**
 
 ```
-curl https://<ace-host>/marketplace/api/v1/version
+curl https://<akp-host>/marketplace/api/v1/version
 ```
 
 > **Verified:** returned `200` with `Content-Type: text/html` against the reference

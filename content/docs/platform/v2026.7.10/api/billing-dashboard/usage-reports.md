@@ -29,7 +29,7 @@ ownership when an org is set. This group is available only on **billing-enabled
 deployments**.
 
 > **Verified:** every endpoint on this page returned `404 Not Found` against
-> `appscode` on `<ace-host>` on 2026-07-14 — this deployment is not billing-enabled,
+> `appscode` on `<akp-host>` on 2026-07-14 — this deployment is not billing-enabled,
 > so neither the `/dashboard/summary/*` nor the `/dbaas/billing/*` routes are
 > registered. (Sanity: `GET /version` and `GET /user` returned `200` with the same
 > token.)
@@ -76,8 +76,8 @@ the owner.
 ```
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/dashboard/summary/generated-months?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/dashboard/summary/generated-months?org=appscode"
 ```
 
 > **Verified:** returned `404` against `appscode` — billing not enabled on this deployment.
@@ -270,8 +270,8 @@ Renders and returns the KubeDB usage summary as a PDF document for the given mon
   `application/octet-stream`) as a binary body.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/dashboard/summary/2026/June/download?org=appscode" \
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/dashboard/summary/2026/June/download?org=appscode" \
   -o usage-report.pdf
 ```
 
@@ -291,8 +291,8 @@ Returns the DBaaS namespace report list (V1) for the owner.
 - **Response:** `200 OK` — a `UsageView` (free-form namespace report list).
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/dbaas/billing/reports/namespaces?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/dbaas/billing/reports/namespaces?org=appscode"
 ```
 
 > **Verified:** returned `404` against `appscode` — billing not enabled on this deployment.

@@ -39,8 +39,8 @@ identified cluster.
 A documented call looks like:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/trickster/auth/<uid>.<clusterid>/api/v1/query
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/trickster/auth/<uid>.<clusterid>/api/v1/query
 ```
 
 ---
@@ -106,7 +106,7 @@ response.
 ```json
 {
   "grafana": {
-    "url": "https://<ace-host>/api/v1/trickster/...",
+    "url": "https://<akp-host>/api/v1/trickster/...",
     "service": { "scheme": "https", "name": "trickster", "namespace": "monitoring", "port": "8480", "path": "/", "query": "" },
     "basicAuth": { "username": "user", "password": "<redacted>" },
     "bearerToken": "<redacted>",
@@ -178,7 +178,7 @@ response. Same request body as `/trickster/register`.
 ```json
 {
   "perses": {
-    "url": "https://<ace-host>/api/v1/trickster/...",
+    "url": "https://<akp-host>/api/v1/trickster/...",
     "service": { "scheme": "https", "name": "trickster", "namespace": "monitoring", "port": "8480", "path": "/", "query": "" },
     "basicAuth": { "username": "user", "password": "<redacted>" },
     "bearerToken": "<redacted>",

@@ -17,7 +17,7 @@ info:
 
 # Roles & Permissions
 
-This page documents ACE's custom authorization API: inspecting the permissions
+This page documents the KubeDB Platform's custom authorization API: inspecting the permissions
 the caller holds on an object, discovering assignable permissions, and managing
 custom roles.
 
@@ -44,7 +44,7 @@ Error responses use a standard envelope:
 ```json
 {
   "message": "human-readable error",
-  "url": "https://<ace-host>/api/swagger"
+  "url": "https://<akp-host>/api/swagger"
 }
 ```
 
@@ -111,8 +111,8 @@ list of relation strings the requester holds on that object (empty array if none
 if forbidden.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/authz/objects/team/1/allowed-permissions?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/authz/objects/team/1/allowed-permissions?org=appscode"
 ```
 
 > **Verified:** `GET` returned `200` against `appscode` (org context) on 2026-07-14 for `objectType=team`, `objID=1` (returned `["can_view","can_edit","can_add_member"]`). Note: `objectType=organization` returned `500` in this environment ("Team does not exist"), and an unsupported `objectType` returns `400`.
@@ -212,8 +212,8 @@ The `namespace`/`action` pairs are exactly the values you supply in a role's
 `permissions` list (see below). `401` unauthenticated, `403` forbidden.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/authz/roles/available_permissions?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/authz/roles/available_permissions?org=appscode"
 ```
 
 > **Verified:** `GET` returned `200` against `appscode` (org context) on 2026-07-14; returned a `permissions` catalog spanning namespaces such as `org_mgmt` and `cluster_mgmt`.
@@ -261,8 +261,8 @@ Lists the custom roles defined in the organization.
 returns an empty array `[]`.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/authz/roles?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/authz/roles?org=appscode"
 ```
 
 > **Verified:** `GET` returned `200` against `appscode` (org context) on 2026-07-14; the response was `[]` (no custom roles defined in this org).
@@ -331,8 +331,8 @@ Fetches a single role by ID.
 unauthenticated, `403` forbidden (missing `view:role`), `404` role not found.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/authz/roles/12?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/authz/roles/12?org=appscode"
 ```
 
 > **Verified:** `GET /authz/roles/1?org=appscode` returned `403` against `appscode` on 2026-07-14 — the caller lacks the `view:role` relation on that role (no matching role exists in this org, so no relation is granted).
@@ -431,8 +431,8 @@ one entry per principal assigned to the role. `401` unauthenticated, `403`
 forbidden (missing `viewer:role`).
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/authz/roles/12/principals?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/authz/roles/12/principals?org=appscode"
 ```
 
 > **Verified:** `GET /authz/roles/1/principals?org=appscode` returned `403` against `appscode` on 2026-07-14 — the caller lacks the `viewer:role` relation (no matching role exists in this org).

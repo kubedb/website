@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
-  title: AppsCode Cloud Engine (ACE) Platform API (b3)
-  description: 'REST API for the AppsCode Cloud Engine (ACE) platform backend (`b3`). Provides identity
+  title: KubeDB Platform API
+  description: 'REST API for the KubeDB Platform. Provides identity
     (users, organizations, teams, authentication) plus multi-cluster Kubernetes management, licensing,
     and billing.
 
@@ -36,7 +36,7 @@ info:
     url: http://opensource.org/licenses/MIT
 servers:
 - url: https://{host}/api/v1
-  description: ACE platform API server
+  description: KubeDB Platform API server
   variables:
     host:
       default: appscode.com
@@ -63,8 +63,8 @@ tags:
 - name: Multi-cluster (OCM)
 - name: Client Organizations
 - name: Cloud Providers
-- name: ACE Installer
-- name: ACE Upgrade
+- name: Platform Installer
+- name: Platform Upgrade
 - name: Licensing & Contracts
 - name: Billing Dashboard
 - name: Marketplace
@@ -13555,9 +13555,9 @@ paths:
   /ace-installer/schema.json:
     get:
       tags:
-      - ACE Installer
-      summary: Serve the ACE options OpenAPI v3 JSON schema
-      description: Returns the raw OpenAPI v3 JSON schema for ACE installer options (ace-options/values.openapiv3_schema.yaml)
+      - Platform Installer
+      summary: Serve the installer options OpenAPI v3 JSON schema
+      description: Returns the raw OpenAPI v3 JSON schema for installer options (ace-options/values.openapiv3_schema.yaml)
         as a dynamic JSON object. The ace-installer APIs are AppsCode-hosted only. Requires an org resolved
         from the `org` query param.
       operationId: installer_ServeACESchema
@@ -13581,9 +13581,9 @@ paths:
   /ace-installer/model.json:
     get:
       tags:
-      - ACE Installer
-      summary: Serve default ACE installer options
-      description: Returns the default ACE options model (AceOptionsSpec) pre-filled with the requesting
+      - Platform Installer
+      summary: Serve default installer options
+      description: Returns the default options model (AceOptionsSpec) pre-filled with the requesting
         user's admin details. The response is a complex Kubernetes-style options object returned as dynamic
         JSON. The ace-installer APIs are AppsCode-hosted only.
       operationId: installer_ServeDefaultOptions
@@ -13605,9 +13605,9 @@ paths:
   /ace-installer/generate:
     post:
       tags:
-      - ACE Installer
-      summary: Generate a new ACE installer
-      description: Generates a new ACE installer from the supplied AceOptionsSpec options and returns
+      - Platform Installer
+      summary: Generate a new installer
+      description: Generates a new installer from the supplied AceOptionsSpec options and returns
         the resulting installer metadata. The request body is a free-form AceOptionsSpec object (bound
         as a dynamic JSON map, then decoded into AceOptionsSpec). The ace-installer APIs are AppsCode-hosted
         only. Requires the `create_installers` authorization (Organization_HostedModeCanCreateInstallers).
@@ -13640,8 +13640,8 @@ paths:
   /ace-installer/import:
     post:
       tags:
-      - ACE Installer
-      summary: Import an existing ACE installer
+      - Platform Installer
+      summary: Import an existing installer
       description: Imports an existing installer described by the supplied AceOptionsSpec options and
         returns the resulting installer metadata. The request body is a free-form AceOptionsSpec object
         (bound as a dynamic JSON map, then decoded into AceOptionsSpec). The ace-installer APIs are AppsCode-hosted
@@ -13675,7 +13675,7 @@ paths:
   /ace-installer/installer-meta:
     get:
       tags:
-      - ACE Installer
+      - Platform Installer
       summary: Get installer metadata for the current access token
       description: Returns the installer metadata associated with the access token used to authenticate
         the request. The ace-installer APIs are AppsCode-hosted only. Requires the `view_installers` authorization
@@ -13701,9 +13701,9 @@ paths:
   /ace-installer/latest-version:
     get:
       tags:
-      - ACE Installer
-      summary: Get the latest ACE installer version
-      description: Returns the latest available ACE installer chart version. The ace-installer APIs are
+      - Platform Installer
+      summary: Get the latest installer version
+      description: Returns the latest available installer chart version. The ace-installer APIs are
         AppsCode-hosted only. Requires the `view_installers` authorization (Organization_HostedModeCanViewInstallers).
       operationId: installer_GetAceLatestInstallerVersion
       security:
@@ -13727,7 +13727,7 @@ paths:
   /ace-installer/installers/:
     get:
       tags:
-      - ACE Installer
+      - Platform Installer
       summary: List installers grouped by name
       description: Lists the installers for the owner organization, grouped by installer name (one metadata
         entry per group). The ace-installer APIs are AppsCode-hosted only. Requires the `view_installers`
@@ -13755,7 +13755,7 @@ paths:
   /ace-installer/installers/{name}:
     get:
       tags:
-      - ACE Installer
+      - Platform Installer
       summary: List generated installers for an installer name
       description: Lists all generated installers matching the given installer name for the owner organization.
         The ace-installer APIs are AppsCode-hosted only. Requires the `view_installers` authorization
@@ -13792,7 +13792,7 @@ paths:
   /ace-installer/installers/{name}/{id}:
     get:
       tags:
-      - ACE Installer
+      - Platform Installer
       summary: Get installer details
       description: Returns detailed metadata for a single generated installer, including readme and archive
         download URLs. May return 428 Precondition Required (redirect) when a marketplace installer is
@@ -13836,7 +13836,7 @@ paths:
           description: Internal server error.
     delete:
       tags:
-      - ACE Installer
+      - Platform Installer
       summary: Delete a generated installer
       description: Deletes a generated installer by ID. Installers owned by a marketplace organization
         cannot be deleted. The ace-installer APIs are AppsCode-hosted only. Requires the `delete_installers`
@@ -13872,7 +13872,7 @@ paths:
   /ace-installer/installers/{name}/{id}/reconfigure:
     post:
       tags:
-      - ACE Installer
+      - Platform Installer
       summary: Reconfigure a generated installer
       description: Reconfigures an existing installer using the supplied AceOptionsSpec options. The `installerOps`
         query parameter selects the operation (`reconfigure` or `promote-to-prod`). The request body is
@@ -13932,9 +13932,9 @@ paths:
   /ace-installer/installers/{name}/{id}/upgrade:
     post:
       tags:
-      - ACE Installer
+      - Platform Installer
       summary: Upgrade a generated installer
-      description: Upgrades an existing installer to the latest ACE installer version and returns the
+      description: Upgrades an existing installer to the latest installer version and returns the
         updated installer metadata. The ace-installer APIs are AppsCode-hosted only. Requires the `upgrade_installers`
         authorization (Organization_HostedModeCanUpgradeInstallers).
       operationId: installer_UpgradeInstaller
@@ -13973,7 +13973,7 @@ paths:
   /ace-installer/installers/{name}/{id}/versions:
     get:
       tags:
-      - ACE Installer
+      - Platform Installer
       summary: List installer versions
       description: Lists the available versions (archives) for a generated installer. The ace-installer
         APIs are AppsCode-hosted only. Requires the `view_installers` authorization (Organization_HostedModeCanViewInstallers).
@@ -14015,7 +14015,7 @@ paths:
   /ace-installer/installers/{name}/{id}/archives/{archiveName}:
     get:
       tags:
-      - ACE Installer
+      - Platform Installer
       summary: Get installer details from a tar archive
       description: Extracts and returns installer details (readme, archive URL) from the specified tar
         archive of a generated installer. The ace-installer APIs are AppsCode-hosted only. Requires the
@@ -14062,7 +14062,7 @@ paths:
   /ace-installer/installers/{name}/{id}/model.json:
     get:
       tags:
-      - ACE Installer
+      - Platform Installer
       summary: Serve installer options
       description: Returns the stored AceOptionsSpec options for a generated installer. When `configureProductionOptions=true`,
         options are adjusted for a self-hosted production deployment. The response is a complex Kubernetes-style
@@ -14108,7 +14108,7 @@ paths:
   /ace-installer/deployment/marketplace/installers/{installerID}/status:
     get:
       tags:
-      - ACE Installer
+      - Platform Installer
       summary: Get marketplace installer status
       description: Returns the marketplace subscription status (`Pending` or `Bound`) for a marketplace-type
         installer, along with its metadata, download link, and expiry state. When `redirect=true` and
@@ -14154,9 +14154,9 @@ paths:
   /upgrade:
     get:
       tags:
-      - ACE Upgrade
+      - Platform Upgrade
       summary: Get platform upgrade status
-      description: Returns the most recent ACE platform upgrade status (from the latest upgrader ConfigMap
+      description: Returns the most recent KubeDB Platform upgrade status (from the latest upgrader ConfigMap
         data). Platform upgrade routes require site-admin organization authorization `view_upgrade_history:org`
         (Organization_SiteAdminCanViewUpgradeHistory). The response is dynamic ConfigMap key/value data.
       operationId: upgrade_GetUpgradeStatus
@@ -14181,9 +14181,9 @@ paths:
           description: Internal server error.
     post:
       tags:
-      - ACE Upgrade
-      summary: Upgrade the ACE platform
-      description: Triggers an ACE platform upgrade using a multipart form containing a target version,
+      - Platform Upgrade
+      summary: Upgrade the KubeDB Platform
+      description: Triggers an KubeDB Platform upgrade using a multipart form containing a target version,
         a values file, and an optional flag to use the latest image. The version may be overridden by
         an `installerVersion` field inside the uploaded values file. Platform upgrade routes require site-admin
         organization authorization `upgrade_platform:org` (Organization_SiteAdminCanUpgradePlatform).
@@ -14212,9 +14212,9 @@ paths:
   /upgrade/status:
     get:
       tags:
-      - ACE Upgrade
+      - Platform Upgrade
       summary: Get platform upgrade job status
-      description: Returns the status of the most recent ACE platform upgrade job (`pending` with version,
+      description: Returns the status of the most recent KubeDB Platform upgrade job (`pending` with version,
         or `completed`). Platform upgrade routes require site-admin organization authorization `view_upgrade_history:org`
         (Organization_SiteAdminCanViewUpgradeHistory).
       operationId: upgrade_GetJobStatus
@@ -14243,9 +14243,9 @@ paths:
   /upgrade/history:
     get:
       tags:
-      - ACE Upgrade
+      - Platform Upgrade
       summary: Get platform upgrade history
-      description: Returns the ACE platform upgrade history as a list of ConfigMap data maps (each augmented
+      description: Returns the KubeDB Platform upgrade history as a list of ConfigMap data maps (each augmented
         with a `status` field). Platform upgrade routes require site-admin organization authorization
         `view_upgrade_history:org` (Organization_SiteAdminCanViewUpgradeHistory).
       operationId: upgrade_UpgradeHistory
@@ -14273,9 +14273,9 @@ paths:
   /upgrade/current-version:
     get:
       tags:
-      - ACE Upgrade
-      summary: Get the current ACE platform version
-      description: Returns the currently installed ACE platform (ace-installer helm release) version.
+      - Platform Upgrade
+      summary: Get the current KubeDB Platform version
+      description: Returns the currently installed KubeDB Platform (ace-installer helm release) version.
         Platform upgrade routes require site-admin organization authorization `view_upgrade_history:org`
         (Organization_SiteAdminCanViewUpgradeHistory).
       operationId: upgrade_CurrentVersion
@@ -14304,7 +14304,7 @@ paths:
   /clusters/{owner}/{cluster}/upgrade:
     get:
       tags:
-      - ACE Upgrade
+      - Platform Upgrade
       summary: Get imported cluster upgrade status
       description: Returns the most recent upgrade status for an imported cluster (from the latest upgrader
         ConfigMap data in the cluster). Access is controlled by cluster assignment for the given owner/cluster.
@@ -14334,7 +14334,7 @@ paths:
           description: Internal server error.
     post:
       tags:
-      - ACE Upgrade
+      - Platform Upgrade
       summary: Upgrade imported cluster resources
       description: Triggers an upgrade of the opscenter-features helm release and managed features in
         an imported cluster to the server's current version. Runs asynchronously; progress is tracked
@@ -14359,7 +14359,7 @@ paths:
   /clusters/{owner}/{cluster}/upgrade/history:
     get:
       tags:
-      - ACE Upgrade
+      - Platform Upgrade
       summary: Get imported cluster upgrade history
       description: Returns the upgrade history for an imported cluster as a list of ConfigMap data maps.
         Access is controlled by cluster assignment for the given owner/cluster.
@@ -14391,7 +14391,7 @@ paths:
   /clusters/{owner}/{cluster}/upgrade/current-version:
     get:
       tags:
-      - ACE Upgrade
+      - Platform Upgrade
       summary: Get imported cluster current version
       description: Returns the currently installed opscenter-features chart version in an imported cluster.
         Access is controlled by cluster assignment for the given owner/cluster.
@@ -14422,8 +14422,8 @@ paths:
   /clusters/{owner}/{cluster}/upgrade/latest-version:
     get:
       tags:
-      - ACE Upgrade
-      summary: Get latest ACE version for imported cluster
+      - Platform Upgrade
+      summary: Get latest KubeDB Platform version for imported cluster
       description: Returns the latest available opscenter-features chart version from the server, used
         as the target for imported cluster upgrades. Access is controlled by cluster assignment for the
         given owner/cluster.
@@ -14454,7 +14454,7 @@ paths:
   /clusters/{owner}/{cluster}/spoke/upgrade:
     get:
       tags:
-      - ACE Upgrade
+      - Platform Upgrade
       summary: Get spoke cluster upgrade status
       description: Returns the most recent upgrade status for a spoke cluster (read from the hub cluster's
         upgrader ConfigMap data for the spoke). Access is controlled by cluster assignment for the given
@@ -14484,7 +14484,7 @@ paths:
           description: Internal server error.
     post:
       tags:
-      - ACE Upgrade
+      - Platform Upgrade
       summary: Upgrade spoke cluster resources
       description: Triggers an upgrade of a spoke cluster by updating its managed cluster profile binding
         and related features to the hub's opscenter-features version. Runs asynchronous post-processing.
@@ -14509,7 +14509,7 @@ paths:
   /clusters/{owner}/{cluster}/spoke/upgrade/history:
     get:
       tags:
-      - ACE Upgrade
+      - Platform Upgrade
       summary: Get spoke cluster upgrade history
       description: Returns the upgrade history for a spoke cluster as a list of ConfigMap data maps (read
         from the hub cluster). Access is controlled by cluster assignment for the given owner/cluster.
@@ -16055,7 +16055,7 @@ paths:
       - Billing Dashboard
       summary: List licensed users
       description: Lists all users that have ever reported a license to this deployment. Site-admin only
-        (`view_licensed_users:site_admin`). Requires a billing-enabled b3 deployment.
+        (`view_licensed_users:site_admin`). Requires a billing-enabled KubeDB Platform deployment.
       operationId: dashboard_ListLicensedUsers
       security:
       - AuthorizationHeaderToken: []
@@ -17013,7 +17013,7 @@ paths:
       tags:
       - Billing Dashboard
       summary: Ping a marketplace subscription endpoint
-      description: Pings the hosted b3 metering readiness endpoint for a subscription (AWS or GCP only).
+      description: Pings the hosted KubeDB Platform metering readiness endpoint for a subscription (AWS or GCP only).
         Site-admin only (`view_marketplace_usage:site_admin`). Requires a billing-enabled deployment.
       operationId: dashboard_PingMarketplaceEndpoint
       security:
@@ -18418,7 +18418,7 @@ paths:
       - Marketplace
       summary: Proxy a metered-usage report to AWS Marketplace Metering
       description: Forwards a usage report to the AWS Marketplace Metering service. Requires site-admin
-        privileges. This route is only registered when the b3 deployment type is `AWSMarketplaceDeployment`;
+        privileges. This route is only registered when the KubeDB Platform deployment type is `AWSMarketplaceDeployment`;
         on other deployments it does not exist.
       operationId: marketplace_ReportAwsUsage
       security:
@@ -18463,7 +18463,7 @@ paths:
       - Marketplace
       summary: Check readiness of the AWS metering proxy endpoint
       description: Readiness probe for the AWS metering proxy. Requires site-admin privileges. This route
-        is only registered when the b3 deployment type is `AWSMarketplaceDeployment`; on other deployments
+        is only registered when the KubeDB Platform deployment type is `AWSMarketplaceDeployment`; on other deployments
         it does not exist.
       operationId: marketplace_ReadinessCheckAwsMeteringEndpoint
       security:
@@ -18483,7 +18483,7 @@ paths:
       - Marketplace
       summary: Proxy a metered-usage report to GCP Service Control
       description: Forwards a usage report to the GCP Service Control reporting API. Requires site-admin
-        privileges. This route is only registered when the b3 deployment type is `GCPMarketplaceDeployment`;
+        privileges. This route is only registered when the KubeDB Platform deployment type is `GCPMarketplaceDeployment`;
         on other deployments it does not exist.
       operationId: marketplace_ReportGcpUsage
       security:
@@ -18517,7 +18517,7 @@ paths:
       - Marketplace
       summary: Check readiness of the GCP metering proxy endpoint
       description: Readiness probe for the GCP metering proxy. Requires site-admin privileges. This route
-        is only registered when the b3 deployment type is `GCPMarketplaceDeployment`; on other deployments
+        is only registered when the KubeDB Platform deployment type is `GCPMarketplaceDeployment`; on other deployments
         it does not exist.
       operationId: marketplace_ReadinessCheckGcpMeteringEndpoint
       security:
@@ -18685,7 +18685,7 @@ paths:
       - Monitoring & Telemetry
       summary: List tenant owners on a monitoring cluster
       description: Lists the Tenant custom resources present on the given monitoring cluster, returning
-        a map of tenant owner identifier (`ace.user.{id}`) to the ACE user name. Requires the caller to
+        a map of tenant owner identifier (`ace.user.{id}`) to the KubeDB Platform user name. Requires the caller to
         be an admin of the {owner} organization.
       operationId: telemetry_GetTenantOwner
       security:
@@ -18702,7 +18702,7 @@ paths:
         description: Name of the monitoring cluster.
       responses:
         '200':
-          description: Map of tenant owner identifier to ACE user name.
+          description: Map of tenant owner identifier to KubeDB Platform user name.
           content:
             application/json:
               schema:
@@ -18891,7 +18891,7 @@ paths:
       tags:
       - Rancher
       summary: Sync Rancher users into the organization
-      description: Imports users from the org's Rancher management cluster into ACE, creating ACE users
+      description: Imports users from the org's Rancher management cluster into the KubeDB Platform, creating KubeDB Platform users
         and adding them to the viewer team. Requires site-admin privileges and a Rancher-managed organization.
       operationId: rancher_SyncRancherUsers
       security:
@@ -21566,7 +21566,7 @@ components:
       - memory
     InstallerMetadata:
       type: object
-      description: Metadata describing a generated or imported ACE installer (selfclient.InstallerMetadata).
+      description: Metadata describing a generated or imported installer (selfclient.InstallerMetadata).
       properties:
         ID:
           type: string
@@ -21574,7 +21574,7 @@ components:
           type: string
         deploymentType:
           type: string
-          description: ACE deployment type (api.DeploymentType).
+          description: KubeDB Platform deployment type (api.DeploymentType).
         requestedDomain:
           type: string
         host:
@@ -21662,7 +21662,7 @@ components:
           type: boolean
     UpgradeOptions:
       type: object
-      description: Multipart form options for triggering an ACE platform upgrade (upgrader.UpgradeOptions).
+      description: Multipart form options for triggering an KubeDB Platform upgrade (upgrader.UpgradeOptions).
       properties:
         version:
           type: string

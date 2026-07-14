@@ -25,8 +25,8 @@ User and organization management performed by admins of the platform's
 relation. Send the token as a header:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/admin/orgs?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/admin/orgs?org=appscode"
 ```
 
 All endpoints accept the common **query parameter**:
@@ -52,7 +52,7 @@ List all organizations on the platform.
     "id": 3,
     "username": "appscode",
     "full_name": "",
-    "avatar_url": "https://<ace-host>/accounts/avatars?obj=avatars/3-<hash>",
+    "avatar_url": "https://<akp-host>/accounts/avatars?obj=avatars/3-<hash>",
     "description": "",
     "website": "",
     "location": "",
@@ -84,7 +84,7 @@ List all users on the platform.
     "username": "example-user",
     "full_name": "Example User",
     "email": "user@example.com",
-    "avatar_url": "https://<ace-host>/accounts/avatars?obj=avatars/5-<hash>",
+    "avatar_url": "https://<akp-host>/accounts/avatars?obj=avatars/5-<hash>",
     "is_admin": false,
     "active": true,
     "type": 0,

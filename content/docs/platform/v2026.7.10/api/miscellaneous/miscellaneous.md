@@ -17,8 +17,8 @@ info:
 
 # Miscellaneous Endpoints
 
-Utility endpoints of the `b3` backend. Unless noted otherwise, paths on this page are
-relative to `/api/v1` — the full base path is `https://<ace-host>/api/v1`. Two
+Utility endpoints of the KubeDB Platform API Server. Unless noted otherwise, paths on this page are
+relative to `/api/v1` — the full base path is `https://<akp-host>/api/v1`. Two
 endpoints (`/healthz` and `/.well-known/openid-configuration`) are served at the
 **host root** and are shown with their full path.
 
@@ -42,12 +42,12 @@ Returns the version of the server application.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `version` | string | The `b3` server application version. |
+| `version` | string | The KubeDB Platform API Server application version. |
 
 Example:
 
 ```
-curl https://<ace-host>/api/v1/version
+curl https://<akp-host>/api/v1/version
 ```
 
 > **Verified:** `GET` returned `200` against `appscode/ace` (hub) on 2026-07-14, body `{"version":"v2026.6.19"}`.
@@ -130,7 +130,7 @@ document that loads the interactive API explorer).
 Example:
 
 ```
-curl https://<ace-host>/api/v1/swagger
+curl https://<akp-host>/api/v1/swagger
 ```
 
 > **Verified:** `GET` returned `200` (Swagger UI HTML page) against the platform on 2026-07-14; Swagger is enabled on this deployment.
@@ -151,14 +151,14 @@ Liveness/health check for the server.
 Example:
 
 ```
-curl https://<ace-host>/healthz
+curl https://<akp-host>/healthz
 ```
 
-> **Verified:** `GET https://<ace-host>/healthz` returned `200` on 2026-07-14. On this deployment the host root serves the ACE web console single-page app, so the response body was the console HTML (catch-all) rather than a plain health payload; the `200` still confirms the server is reachable and healthy.
+> **Verified:** `GET https://<akp-host>/healthz` returned `200` on 2026-07-14. On this deployment the host root serves the KubeDB Platform web console single-page app, so the response body was the console HTML (catch-all) rather than a plain health payload; the `200` still confirms the server is reachable and healthy.
 
 ### GET /.well-known/openid-configuration
 
-Standard OpenID Connect discovery document. `b3` is itself an OIDC provider (for SSO),
+Standard OpenID Connect discovery document. The KubeDB Platform API Server is itself an OIDC provider (for SSO),
 and this endpoint advertises its issuer and the authorization/token/userinfo/JWKS
 endpoints so OIDC clients can auto-configure.
 
@@ -169,11 +169,11 @@ scopes, response types, and signing algorithms), for example:
 
 ```json
 {
-  "issuer": "https://<ace-host>",
-  "authorization_endpoint": "https://<ace-host>/login/oauth/authorize",
-  "token_endpoint": "https://<ace-host>/login/oauth/access_token",
-  "userinfo_endpoint": "https://<ace-host>/login/oauth/userinfo",
-  "jwks_uri": "https://<ace-host>/login/oauth/keys",
+  "issuer": "https://<akp-host>",
+  "authorization_endpoint": "https://<akp-host>/login/oauth/authorize",
+  "token_endpoint": "https://<akp-host>/login/oauth/access_token",
+  "userinfo_endpoint": "https://<akp-host>/login/oauth/userinfo",
+  "jwks_uri": "https://<akp-host>/login/oauth/keys",
   "response_types_supported": ["code"],
   "subject_types_supported": ["public"],
   "id_token_signing_alg_values_supported": ["RS256"]
@@ -183,7 +183,7 @@ scopes, response types, and signing algorithms), for example:
 Example:
 
 ```
-curl https://<ace-host>/.well-known/openid-configuration
+curl https://<akp-host>/.well-known/openid-configuration
 ```
 
-> **Verified:** `GET https://<ace-host>/.well-known/openid-configuration` returned `200` on 2026-07-14. On this deployment the host root serves the ACE web console single-page app, so the request was answered by the console catch-all (HTML) rather than the OIDC discovery JSON documented above. The example above reflects the endpoint's documented shape; the exact endpoint URLs vary by deployment.
+> **Verified:** `GET https://<akp-host>/.well-known/openid-configuration` returned `200` on 2026-07-14. On this deployment the host root serves the KubeDB Platform web console single-page app, so the request was answered by the console catch-all (HTML) rather than the OIDC discovery JSON documented above. The example above reflects the endpoint's documented shape; the exact endpoint URLs vary by deployment.

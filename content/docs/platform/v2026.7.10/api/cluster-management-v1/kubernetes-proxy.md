@@ -17,7 +17,7 @@ info:
 
 # Kubernetes Proxy
 
-A generic passthrough to a member cluster's Kubernetes API, powering the ACE
+A generic passthrough to a member cluster's Kubernetes API, powering the KubeDB Platform
 console's resource pages. You can perform CRUD on any group/version/resource (GVR),
 read subresources (status, scale, events, controller), stream pod logs, exec into
 pods, read node/pod metrics, run access reviews, drive the `meta.k8s.appscode.com`
@@ -52,8 +52,8 @@ content filtering and `convertToTable` for table output.
 A documented list call looks like:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/clusters/appscode/ace/proxy/apps/v1/namespaces/kube-system/deployments/
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/clusters/appscode/ace/proxy/apps/v1/namespaces/kube-system/deployments/
 ```
 
 ---

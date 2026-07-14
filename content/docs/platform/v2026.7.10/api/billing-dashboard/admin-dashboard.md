@@ -28,7 +28,7 @@ All paths on this page are relative to `/api/v1`. Every endpoint requires
 that org. This whole group is available only on **billing-enabled deployments**.
 
 > **Verified:** every endpoint on this page returned `404 Not Found` against
-> `appscode` on `<ace-host>` on 2026-07-14 — this deployment is not billing-enabled,
+> `appscode` on `<akp-host>` on 2026-07-14 — this deployment is not billing-enabled,
 > so none of the `/dashboard/*` routes are registered. (Sanity: `GET /version` and
 > `GET /user` returned `200` with the same token, confirming the platform and token
 > are live.) Response bodies were the standard `{"message":"Not Found"}`.
@@ -72,8 +72,8 @@ Lists all users that have ever reported a license to this deployment.
 `403` is returned when the caller is not a site admin; `401` when unauthenticated.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/dashboard/users/?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/dashboard/users/?org=appscode"
 ```
 
 > **Verified:** returned `404` against `appscode` — billing not enabled on this deployment.
@@ -123,7 +123,7 @@ Lists cluster information for the given licensed user.
 [
   {
     "id": 101,
-    "displayName": "ACE Hub",
+    "displayName": "KubeDB Platform Hub",
     "name": "ace",
     "uid": "<cluster-uid>",
     "ownerID": 42,
@@ -607,7 +607,7 @@ Revokes a revocable marketplace subscription and all associated contracts.
 
 ### GET /dashboard/marketplaces/{marketplace}/{subscriptionId}/ping
 
-Pings the hosted `b3` metering-readiness endpoint for a subscription (AWS or GCP
+Pings the hosted KubeDB Platform metering-readiness endpoint for a subscription (AWS or GCP
 only).
 
 - **Auth:** token; site-admin (`view_marketplace_usage:site_admin`). Requires `?org=`.

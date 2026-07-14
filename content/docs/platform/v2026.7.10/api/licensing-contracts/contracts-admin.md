@@ -92,8 +92,8 @@ List all contracts across accounts (scoped by `org`).
 Errors: `401` Unauthorized, `403` Forbidden (site-admin authorization required).
 
 ```bash
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/contracts?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/contracts?org=appscode"
 ```
 
 ---

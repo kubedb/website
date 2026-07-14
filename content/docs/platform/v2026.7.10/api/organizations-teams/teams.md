@@ -22,15 +22,15 @@ created under an organization (`/orgs/{orgname}/teams`) and then addressed by th
 numeric ID under `/teams/{teamid}`.
 
 All paths below are relative to the API root `/api/v1`. For example,
-`GET /teams/{teamid}` is `GET https://<ace-host>/api/v1/teams/{teamid}`. In these
+`GET /teams/{teamid}` is `GET https://<akp-host>/api/v1/teams/{teamid}`. In these
 paths `orgname` is the organization slug (e.g. `appscode`) and `teamid` is the
 team's numeric ID.
 
 All team endpoints authenticate with a personal access token:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  https://<ace-host>/api/v1/teams/1
+curl -H "Authorization: token $AKP_TOKEN" \
+  https://<akp-host>/api/v1/teams/1
 ```
 
 Authorization checks (e.g. `view:team`, `edit:team`, `add:team-member`) are

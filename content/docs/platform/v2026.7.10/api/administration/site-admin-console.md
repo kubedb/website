@@ -17,7 +17,7 @@ info:
 
 # Site Admin Console
 
-The endpoints powering the ACE site-administration UI: usage analytics, users,
+The endpoints powering the KubeDB Platform site-administration UI: usage analytics, users,
 organizations, clusters, and authentication-source management. All paths below are
 relative to `/api/v1`.
 
@@ -26,8 +26,8 @@ relative to `/api/v1`.
 endpoints) a specific `:site_admin` authorization relation named per endpoint below.
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/accounts/admin/users?org=appscode"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/accounts/admin/users?org=appscode"
 ```
 
 All endpoints accept the common **query parameter**:
@@ -450,7 +450,7 @@ Create an external OAuth2 authentication source.
   "provider": "github",
   "clientID": "<client-id>",
   "clientSecret": "<client-secret>",
-  "callbackURL": "https://<ace-host>/user/oauth2/github/callback"
+  "callbackURL": "https://<akp-host>/user/oauth2/github/callback"
 }
 ```
 

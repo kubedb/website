@@ -34,8 +34,8 @@ organization or user that owns the cluster.
 A documented call looks like:
 
 ```
-curl -H "Authorization: token $ACE_TOKEN" \
-  "https://<ace-host>/api/v1/telemetry/appscode/monitoring-clusters?targetClusterName=arnob-dev"
+curl -H "Authorization: token $AKP_TOKEN" \
+  "https://<akp-host>/api/v1/telemetry/appscode/monitoring-clusters?targetClusterName=arnob-dev"
 ```
 
 ---
@@ -205,7 +205,7 @@ telemetry collectors as their upstream endpoint.
 ### GET /telemetry/{owner}/{cluster}/tenants/ownerlist
 
 Lists the `Tenant` custom resources present on the given monitoring cluster, returning a
-map of tenant owner identifier (`ace.user.{id}`) to the ACE user/organization name.
+map of tenant owner identifier (`ace.user.{id}`) to the KubeDB Platform user/organization name.
 
 - **Auth:** token + org admin (admin of `{owner}`).
 

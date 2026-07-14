@@ -63,7 +63,7 @@ for the deployment type.
 | `500` | License verification or user creation failed. |
 
 ```bash
-curl -X POST https://<ace-host>/api/v1/register \
+curl -X POST https://<akp-host>/api/v1/register \
   -H "Content-Type: application/json" \
   -d '{"clusterUID":"<uid>","features":"kubedb","license":"<base64>"}'
 ```
@@ -116,9 +116,9 @@ certificate bytes (base64-encoded in JSON). Error responses:
 | `500` | Internal server error. |
 
 ```bash
-curl -X POST -H "Authorization: token $ACE_TOKEN" \
+curl -X POST -H "Authorization: token $AKP_TOKEN" \
   -H "Content-Type: application/json" \
-  https://<ace-host>/api/v1/license/issue \
+  https://<akp-host>/api/v1/license/issue \
   -d '{"cluster":"<uid>","features":["kubedb"]}'
 ```
 
