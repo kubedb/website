@@ -21,7 +21,7 @@ We will discuss the resources requirements. networking requirements & best pract
 ## Requirements for KubeDB Platform Cluster
 
 ### 1. Resources
-**Minimum**: Single node with 4 cpu, 16 GB ram, 100 GB disk attached. A k3s cluster will be deployed on that VM. And then the ui-components will be installed.
+**Minimum**: Single node with 8 cpu, 32 GB ram, 100 GB disk attached. A k3s cluster will be deployed on that VM. And then the ui-components will be installed.
 
 **HA Deployment**: 3 worker nodes, each with 4 cpu, 16 GB ram, PVC support (3000 iops, 200 GB disk across multiple pvcs) and LB service support. The Kubernetes control plane should be also HA.
 

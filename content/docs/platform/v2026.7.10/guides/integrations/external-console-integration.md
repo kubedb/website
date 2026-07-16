@@ -66,6 +66,13 @@ Because both consoles share the registrable domain `acme.com`, the browser treat
 
 ## 2. Prerequisites
 
+- When generating the KubeDB Platform deployment installer, the CSP console's **Login URL**
+  and **Logout URL** must be provided in the installer **Settings**. The platform redirects
+  unauthenticated users to the Login URL and sends users to the Logout URL after sign-out,
+  keeping both consoles' sessions in step.
+
+  ![Login URL and Logout URL fields in the installer Settings](../images/login-logout-url.png)
+
 - A per-CSP KubeDB Platform deployment reachable at the subdomain (`https://db.acme.com`),
   serving both the web console and the `/api/v1` REST API.
 - A site-admin **personal access token** issued to the CSP, held **only** by the CSP

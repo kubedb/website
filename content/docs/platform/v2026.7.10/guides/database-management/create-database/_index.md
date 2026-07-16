@@ -26,6 +26,9 @@ The overall flow is the same for every engine and is documented once in
 and a handful of engine-specific settings — pick your engine below for a guide tailored to
 it, then follow the common steps for everything else.
 
+Prefer to automate this instead of using the UI? See
+[**Using the API**](using-api/_index.md) for the equivalent flow driven entirely by API calls.
+
 ---
 
 ## Supported Engines

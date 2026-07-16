@@ -108,8 +108,8 @@ Administrators can globally re-brand the KubeDB Platform interface to match corp
 
 Before you begin, please ensure your Kubernetes cluster meets the following minimum system requirements:
 * **Worker Nodes**: At least one dedicated worker node.
-* **CPU**: 4–6 vCPUs.
-* **Memory**: 16 GB of RAM.
+* **CPU**: 8 vCPUs.
+* **Memory**: 32 GB of RAM.
 * **Networking**: A routable IP address for external connectivity.
 
 You will get an instruction to deploy a k3s cluster in Ubuntu VM, or you can skip this step if you already have a cluster.
