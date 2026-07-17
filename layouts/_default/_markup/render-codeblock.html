@@ -1,0 +1,8 @@
+{{- $lang := .Type | default "text" -}}
+<div class="doc-code-block">
+  <button type="button" class="doc-code-copy-btn" title="Copy" aria-label="Copy code to clipboard">
+    <iconify-icon icon="lucide:copy" width="15" height="15" class="doc-code-copy-icon"></iconify-icon>
+    <iconify-icon icon="lucide:check" width="15" height="15" class="doc-code-copy-icon doc-code-copy-icon--success"></iconify-icon>
+  </button>
+  {{- highlight .Inner $lang "" -}}
+</div>
