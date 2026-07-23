@@ -90,6 +90,10 @@
               <span class="ov2-code-dot ov2-code-dot--close"></span>
               <span class="ov2-code-dot ov2-code-dot--min"></span>
               <span class="ov2-code-dot ov2-code-dot--max"></span>
+              <button type="button" class="ov2-code-copy-btn" title="Copy" aria-label="Copy code to clipboard">
+                <iconify-icon icon="lucide:copy" width="15" height="15" class="ov2-code-copy-icon"></iconify-icon>
+                <iconify-icon icon="lucide:check" width="15" height="15" class="ov2-code-copy-icon ov2-code-copy-icon--success"></iconify-icon>
+              </button>
             </div>
             <div class="ov2-code-body">
               {{ highlight (transform.Remarshal "yaml" .example) "yaml" "lineNos=inline, style=dracula" }}
