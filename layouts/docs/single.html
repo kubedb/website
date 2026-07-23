@@ -1,0 +1,388 @@
+{{ define "documentation-menu" }}
+
+{{ $currentPage := . }}
+{{ $menu := .Params.menu_name }}
+{{ $p := (index .Site.Data.products (default .Site.Params.product_key .Params.info.product)) }}
+<!-- documentation and search start   -->
+<div class="responsive-menu is-hidden-desktop is-flex is-justify-content-center">
+  <div class="is-flex is-justify-content-space-between is-fullwidth pl-20 pr-20">
+    <button class="button"><span class="icon">
+      <iconify-icon icon="heroicons:bars-3-bottom-left" width="18" height="18"></iconify-icon>
+
+      </span></button>
+    <button class="button">Docs</button>
+    <button class="button">On this page</button>
+    <button class="button p-10"><i class="fa fa-search"></i></button>
+  </div>
+</div>
+<div class="navbar-appscode documentation-menu !pl-8 !pr-8">
+
+  <!-- searchbar component start  -->
+  <div class="navbar-right">
+
+    <ul>
+      <button class="button ac-button inline-button back-button" aria-label="Close navigation menu">
+        <span>Docs</span>
+        <span class="icon arrow-close p-0">
+          <iconify-icon icon="heroicons:x-mark" width="20" height="20"></iconify-icon>
+      </span>
+      </button>
+      {{ $sectionMenuId := .Params.section_menu_id }}
+      {{ if isset .Params "menu_name" }}
+      {{ range (index .Site.Menus .Params.menu_name) }}
+      {{ if eq (string .Pre) "dropdown" }}
+      <li class="nav-item">
+        <button class="link"> {{ .Name }} <i class="fa fa-angle-down"></i></button>
+
+
+        <!-- mega-menu wrapper start  -->
+        {{ $menuClass := cond (eq .Identifier "guides") "guides-mega-menu" "reference-mega-menu" }}
+        <div class="mega-menu-wrapper {{ $menuClass }}">
+          <div class="mega-menu-inner ac-grid-container">
+            <button class="button ac-button inline-button back-button">
+              <span class="icon arrow-back">
+                <iconify-icon icon="heroicons:arrow-small-left" width="18" height="18"></iconify-icon>
+              </span>
+              <span>Back</span>
+            </button>
+
+            <!-- product start  -->
+            <div class="product-menu database-list">
+              {{ range .Children.ByName }}
+                {{ if ne .Weight -1 }}
+                <!-- databases  start  -->
+                <a href="{{ .URL }}" class="single-product">
+                  <div class="product-logo">
+                    <img src="{{ partial "menu/get-logo.html" (dict "target" .Name "menus" site.Menus.main ) }}" alt="{{ .Name }}" loading="lazy">
+                  </div>
+                  <div class="product-info">
+                    <h6>{{ .Name }}</h6>
+                    <!-- <p>static content</p> -->
+                  </div>
+                  <div class="navigate-icon">
+                    <span class="icon arrow-forward">
+                      <iconify-icon icon="heroicons:arrow-small-right" width="18" height="18"></iconify-icon>
+                    </span>
+                  </div>
+                </a>
+                <!-- databases  end -->
+                {{ end }}
+              {{ end }}
+
+            </div>
+            <!-- product end -->
+
+            <!-- product description end -->
+          </div>
+        </div>
+        <script type="text/javascript">
+          (function () {
+            var backBtn2 = document.currentScript.previousElementSibling.querySelector('.back-button');
+            if (!backBtn2) return;
+
+            backBtn2.addEventListener('click', function handleBackButtonClick() {
+              var modalBackdropElement = document.querySelector(".modal-backdrop");
+              // if modal backdrop element is visible then hide it
+              if (modalBackdropElement && modalBackdropElement.classList.contains("is-show")) {
+                modalBackdropElement.classList.remove("is-show")
+              }
+            });
+          })();
+        </script>
+        <!-- mega-menu wrapper end  -->
+      </li>
+      {{ else }}
+      <li class="nav-item">
+        <a href="{{ .URL }}" class="{{ if eq $sectionMenuId .Identifier }} is-active {{ end }} link">{{ .Name }}</a>
+      </li>
+      {{ end }}
+      {{ end }}
+      {{ end }}
+    </ul>
+    <!-- =============searchbar area start  ===========================-->
+    <div class="ac-searchbar is-flex is-align-items-center">
+      <label for="acSearch" class="is-flex">
+       <span class="icon">
+        <iconify-icon icon="heroicons:magnifying-glass" width="18" height="18"></iconify-icon>      
+       </span>
+      </label>
+
+      <input id="acSearch" type="search" placeholder="Search in {{ $p.name }} documentation!" autocomplete="off">
+
+      <!-- search result start  -->
+      <div id="meilisearch-hideid" class="search-result-box is-hidden">
+        <!-- add ".is-hidden" for hide item -->
+        <div class="search-content" id="meilisearch-hits">
+          <!-- Search List component will be generate here from dom -->
+        </div>
+      </div>
+      <!-- search result end  -->
+    </div>
+    <!-- =============searchbar area end  ===========================-->
+  </div>
+
+</div>
+<!-- documentation and search end  -->
+{{ end }}
+
+{{ define "main" }}
+
+{{ $currentPage := . }}
+{{ $menu := .Params.menu_name }}
+{{ $p := (index .Site.Data.products (default .Site.Params.product_key .Params.info.product)) }}
+
+<!-- init idx -->
+{{ .Scratch.Add "idx" 0 }}
+
+{{ $currentBranch := (index (split .Params.menu_name "_") 1) }}
+<!-- documentation area start -->
+<div class="documentation-area">
+  <!-- documentation area start -->
+  <div class="left-sidebar-wrapper">
+    <button class="button ac-button inline-button back-button pl-15 is-hidden-desktop" aria-label="Close navigation menu">
+      <span>{{ $p.name }}</span>
+      <span class="icon arrow-close p-0">
+        <iconify-icon icon="heroicons:x-mark" width="20" height="20"></iconify-icon>
+      </span>
+    </button>
+    <div class="ac-product-left-sidebar">
+
+      {{ if isset .Params "menu_name" }}
+      {{ $sectionMenuId := .Params.section_menu_id }}
+      {{ range (index .Site.Menus .Params.menu_name) }}
+      {{ if eq $sectionMenuId .Identifier }}
+      {{ if .HasChildren }}
+      {{ $hasPreDropdown := eq (string .Pre) "dropdown" }}
+
+      {{ $.Scratch.Set "leftMenuHeadline" .Name }}
+      {{ range .Children }}
+      {{ if and ( and .HasChildren $hasPreDropdown) ($currentPage.HasMenuCurrent $menu .)  }}
+
+      {{ $.Scratch.Set "leftMenuHeadline" .Name }}
+
+      {{ end }}
+      {{ end }}
+      {{ end }}
+      {{ end }}
+      {{ end }}
+      {{ end }}
+
+      <!-- sidebar menu start -->
+      <div class="product-sidebar-menu">
+        {{ if isset .Params "menu_name" }}
+        {{ $sectionMenuId := .Params.section_menu_id }}
+
+        <!-- first child -> section menu -->
+        {{ range (index .Site.Menus .Params.menu_name ) }}
+
+        {{ if eq $sectionMenuId .Identifier }}
+        {{ $hasPreDropdown := eq (string .Pre) "dropdown" }}
+
+        <!-- second child -> left menu level 1-->
+        {{ range .Children }}
+
+        {{ if .HasChildren }}
+        {{ if $hasPreDropdown }}
+        {{ if $currentPage.HasMenuCurrent $menu . }}
+
+        {{ range .Children }}
+        {{ if .HasChildren }}
+        {{ partial "menu/group.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
+        {{ else }}
+        {{ partial "menu/leaf.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
+        {{ end }}
+        {{ end }}
+
+        {{ end }}
+        {{ else }}
+        {{ partial "menu/group.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
+        {{ end }}
+
+        {{ else }}
+        {{ partial "menu/leaf.html" (dict "uid" $.File.UniqueID "page" $currentPage "menu" $menu "entry" .) }}
+        {{ end }}
+        <!-- end of menu item rendering -->
+        {{ end }}
+        <!-- end second child -> left level 1-->
+
+        {{ end }}
+        {{ end }}
+        <!-- end first child -> section menu -->
+        {{ end }}
+      </div>
+      <!-- sidebar menu end -->
+    </div>
+  </div>
+  <!-- left sidebar area end -->
+
+
+  <!-- documentation body start  -->
+  <div class="documentation-body">
+   
+    <div class="left-content is-clipped">
+      <!-- notification message  -->
+      {{ if fileExists (printf "layouts/partials/components/notification-message.html") }}
+        <div class="mb-16" style="border-radius: 4px; overflow: hidden;">
+          {{ partial "components/notification-message.html" . }}
+        </div>
+      {{ end }}
+
+      {{ if not (eq $p.latestVersion $currentBranch) }}
+      <article class="message is-warning">
+         <div class="icon" style="width: 52px; margin-right: 8px; height: auto;">
+          <iconify-icon icon="heroicons:exclamation-triangle" width="52" height="52"  style="color: #ffdd57"></iconify-icon>      
+         </div>
+        <div class="message-body">
+          {{ $url := urls.Parse (absURL .Permalink) }}
+          {{ $nurl := "/docs/latest/" }}
+          {{ $nf := replace .File.Path (print "/" $currentBranch "/") (print "/" $p.latestVersion "/") }}
+          {{ if fileExists $nf }}
+          {{ $nurl = replace $url.Path (print "/" $currentBranch) (print "/" $p.latestVersion) }}
+          {{ end }}
+          You are looking at the documentation of a prior release. To read the documentation of the latest release, please
+          visit <a href="{{ $nurl }}">here</a>.
+        </div>
+      </article>
+      {{ end }}
+
+      <div class="content">
+       <div class="full-info content-body">
+        {{ .Content }}
+      </div>
+      </div>
+  
+      <!-- comments area start -->
+      {{ if site.Params.comments.enable }}
+        <section class="comments-area">
+          <div class="container">
+            {{ partial "comments.html" . }}
+          </div>
+        </section>
+      {{ end }}
+      <!-- comments area end -->
+
+    </div>
+
+      <!-- right sidebar start  -->
+      <div class="right-sidebar">
+        <div class="right-sidebar-area">
+          <!-- search item -->
+          <!-- <div class="search-area">
+            <form action="#">
+              <input id="acSearch" type="text" placeholder="Search..." />
+              <button class="search-button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div> -->
+          <!-- search item end -->
+
+          <!-- table of contents area start -->
+          <div class="tbl-of-contents">
+            <button class="button ac-button inline-button back-button is-hidden-desktop" aria-label="Close table of contents">
+              <span>On this page</span>
+              <span class="icon arrow-close p-0">
+                <iconify-icon icon="heroicons:x-mark" width="20" height="20"></iconify-icon>
+            </span>
+            </button>
+            <h4>What's on this Page</h4>
+            {{.TableOfContents}}
+          </div>
+          <!-- table of contents area end -->
+        </div>
+      </div>
+      <!-- right sidebar end  -->
+
+  </div>
+  <!-- documentation body end -->
+
+
+
+
+  <script>
+    // kd version dropdown js
+    var kdDropdown = document.querySelector(".js-version-dropdown");
+    var kdDropdownBtn = document.querySelector(".js-version-trigger");
+    if (kdDropdown && kdDropdownBtn) {
+      kdDropdownBtn.addEventListener("click", function () {
+        if (kdDropdownBtn.dataset.hostDocs === "false" && kdDropdownBtn.dataset.versionUrl) {
+          window.open(kdDropdownBtn.dataset.versionUrl, "_blank", "noopener,noreferrer");
+          return;
+        }
+        kdDropdown.classList.toggle("is-active");
+      })
+    }
+  </script>
+</div>
+<!-- documentation area end -->
+
+<!-- sidebar search area start -->
+
+<div class="sidebar-search-area">
+  <button class="button ac-button inline-button back-button" aria-label="Close search">
+    <span>Search</span>
+    <span class="icon arrow-close p-0">
+    <iconify-icon icon="heroicons:x-mark" width="20" height="20"></iconify-icon>
+    </span>
+  </button>
+  <div class="search-area-top">
+    <h5>Search</h5>
+
+    <div class="searchbar-area">
+      <input type="search" name="search" id="searchbox" placeholder="Search in {{ $p.name }} documentation!" />
+      <button>
+        <span class="icon">
+          <iconify-icon icon="heroicons:magnifying-glass" width="18" height="18"></iconify-icon>    
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- search content start -->
+  <div id="meilisearch-hideid-mobile">
+    <div class="search-content" id="meilisearch-mobile-hits">
+      <!-- Generated search list for mobile device will be generate here -->
+    </div>
+  </div>
+  <!-- search content end -->
+
+</div>
+
+<!-- overlay start -->
+<div class="overlay-bg"></div>
+<!-- overlay end -->
+
+
+
+<!-- improve page section start  -->
+<div class="improve-section-area">
+  <div class="container">
+    <div class="columns has-text-centered">
+      {{ $urlToken := (split .File.Path "/") }}
+      <div class="column is-12">
+        <a
+          href="{{ $p.repoURL }}/edit/master/docs/{{ if (gt $urlToken 2) }} {{- range after 2 $urlToken -}}{{.}}/{{- end -}}{{ end }}">Improve
+          This Page</a>
+      </div>
+      <!-- <div class="column is-6 has-text-right">
+            <p>Last Update 3 days ago</p>
+          </div> -->
+    </div>
+  </div>
+</div>
+<!-- improve page section end -->
+{{ end }}
+
+{{ define "hide-bottom-content" }}
+<section></section>
+{{ end }}
+
+
+{{ define "footer-script" }}
+{{ $js := resources.Get "/js/meilisearch.js" | minify }}
+<script src="{{ $js.RelPermalink }}"></script>
+<script type="text/javascript">
+  activate_search({{ .Site.Params.product_key }}, {{ .Site.Params.search_api_key }}, "acSearch","meilisearch-hits", "meilisearch-hideid");
+  activate_search({{ .Site.Params.product_key }}, {{ .Site.Params.search_api_key }}, "searchbox","meilisearch-mobile-hits", "meilisearch-hideid-mobile");
+</script>
+{{ end }}
