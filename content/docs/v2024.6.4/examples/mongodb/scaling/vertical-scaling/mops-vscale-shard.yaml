@@ -1,0 +1,34 @@
+apiVersion: ops.kubedb.com/v1alpha1
+kind: MongoDBOpsRequest
+metadata:
+  name: mops-vscale-shard
+  namespace: demo
+spec:
+  type: VerticalScaling
+  databaseRef:
+    name: mg-sharding
+  verticalScaling:
+    shard:
+      resources:
+        requests:
+          memory: "1100Mi"
+          cpu: "0.55"
+        limits:
+          memory: "1100Mi"
+          cpu: "0.55"
+    configServer:
+      resources:
+        requests:
+          memory: "1100Mi"
+          cpu: "0.55"
+        limits:
+          memory: "1100Mi"
+          cpu: "0.55"
+    mongos:
+      resources:
+        requests:
+          memory: "1100Mi"
+          cpu: "0.55"
+        limits:
+          memory: "1100Mi"
+          cpu: "0.55"

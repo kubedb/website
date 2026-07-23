@@ -1,0 +1,19 @@
+apiVersion: kubedb.com/v1alpha2
+kind: Elasticsearch
+metadata:
+  name: es-kibana-demo
+  namespace: demo
+spec:
+  version: xpack-8.11.1
+  replicas: 1
+  authSecret:
+    name: es-auth
+  configSecret:
+    name: es-custom-config
+  storage:
+    storageClassName: "standard"
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
