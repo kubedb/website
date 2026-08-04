@@ -428,4 +428,4 @@ Common `reason` values:
 - Read the [Reconfigure TLS guide](/docs/v2026.7.10/guides/neo4j/reconfigure-tls/overview) for certificate rotation, removal, or issuer updates.
 - Read the [Restart guide](/docs/v2026.7.10/guides/neo4j/restart/restart), [Rotate Auth guide](/docs/v2026.7.10/guides/neo4j/rotate-auth/overview), and [Update Version guide](/docs/v2026.7.10/guides/neo4j/update-version/overview).
 - Read the [Horizontal Scaling guide](/docs/v2026.7.10/guides/neo4j/scaling/horizontal-scaling/overview), [Vertical Scaling guide](/docs/v2026.7.10/guides/neo4j/scaling/vertical-scaling/overview), and [Volume Expansion guide](/docs/v2026.7.10/guides/neo4j/volume-expansion/overview).
-- Read the [Storage Migration guide](/docs/v2026.7.10/guides/neo4j/migration/storageMigration) for persistent volume and storage class migration.
+- Read the [Storage Migration guide](/docs/v2026.7.10/guides/neo4j/migration/storagemigration) for persistent volume and storage class migration.
