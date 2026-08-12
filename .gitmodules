@@ -1,3 +1,4 @@
 [submodule "themes/hugo-product-theme"]
 	path = themes/hugo-product-theme
 	url = https://github.com/appscode/hugo-product-theme.git
+	branch = mohin/refactoring-full-ui
