@@ -44,8 +44,8 @@
     {
       "title": "Configuration Syncer",
       "image": {
-        "src": "/assets/images/products/configsyncer/features/configuration-syncer.jpg",
-        "alt": "configuration-syncer"
+        "src": "/assets/images/products/configsyncer/features/configuration-syncer.svg",
+        "alt": "Configuration Syncer"
       },
       "icon": {
         "src": "/assets/images/products/configsyncer/features/configuration.svg",
