@@ -1,0 +1,21 @@
+apiVersion: autoscaling.kubedb.com/v1alpha1
+kind: ElasticsearchAutoscaler
+metadata:
+  name: es-combined-as
+  namespace: demo
+spec:
+  databaseRef:
+    name: es-combined
+  compute:
+    node:
+      trigger: "On"
+      podLifeTimeThreshold: 5m
+      resourceDiffPercentage: 5
+      minAllowed:
+        cpu: 1
+        memory: "2.1Gi"
+      maxAllowed:
+        cpu: 2
+        memory: 3Gi
+      controlledResources: ["cpu", "memory"]
+      containerControlledValues: "RequestsAndLimits"

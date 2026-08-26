@@ -1,0 +1,18 @@
+apiVersion: kubedb.com/v1
+kind: MongoDB
+metadata:
+  name: mg-replicaset
+  namespace: demo
+spec:
+  version: "8.0.17"
+  replicaSet:
+    name: "replicaset"
+  replicas: 3
+  storageType: Durable
+  storage:
+    storageClassName: "longhorn"
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
