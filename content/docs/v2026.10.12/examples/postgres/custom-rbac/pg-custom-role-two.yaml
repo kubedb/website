@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: my-custom-role-two
+  namespace: demo
+rules:
+  - apiGroups:
+      - apps.k8s.appscode.com
+    resourceNames:
+      - minute-postgres
+    resources:
+      - petsets
+    verbs:
+      - get
+  - apiGroups:
+      - ""
+    resourceNames:
+      - minute-postgres-leader-lock
+    resources:
+      - configmaps
+    verbs:
+      - get
+      - update
