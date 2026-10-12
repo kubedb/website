@@ -1,0 +1,363 @@
+---
+title: Monitoring Redis using Prometheus Operator
+menu:
+  docs_v2026.10.12:
+    identifier: rd-using-prometheus-operator-monitoring
+    name: Prometheus Operator
+    parent: rd-monitoring-redis
+    weight: 15
+menu_name: docs_v2026.10.12
+section_menu_id: guides
+info:
+  autoscaler: v0.53.0
+  cli: v0.68.0
+  dashboard: v0.44.0
+  installer: v2026.10.12
+  ops-manager: v0.55.0
+  product: kubedb
+  provisioner: v0.68.0
+  schema-manager: v0.44.0
+  ui-server: v0.44.0
+  version: v2026.10.12
+  webhook-server: v0.44.0
+---
+
+> New to KubeDB? Please start [here](/docs/v2026.10.12/README).
+
+# Monitoring Redis Using Prometheus operator
+
+[Prometheus operator](https://github.com/prometheus-operator/prometheus-operator) provides simple and Kubernetes native way to deploy and configure Prometheus server. This tutorial will show you how to use Prometheus operator to monitor Redis server deployed with KubeDB.
+
+## Before You Begin
+
+- At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
+
+- To learn how Prometheus monitoring works with KubeDB in general, please visit [here](/docs/v2026.10.12/guides/redis/monitoring/overview).
+
+- To keep Prometheus resources isolated, we are going to use a separate namespace called `monitoring` to deploy respective monitoring resources. We are going to deploy database in `demo` namespace.
+
+  ```bash
+  $ kubectl create ns monitoring
+  namespace/monitoring created
+
+  $ kubectl create ns demo
+  namespace/demo created
+  ```
+
+- We need a [Prometheus operator](https://github.com/prometheus-operator/prometheus-operator) instance running. If you don't already have a running instance, deploy one following the docs from [here](https://github.com/appscode/third-party-tools/blob/master/monitoring/prometheus/operator/README.md).
+
+- If you already don't have a Prometheus server running, deploy one following tutorial from [here](https://github.com/appscode/third-party-tools/blob/master/monitoring/prometheus/operator/README.md#deploy-prometheus-server).
+
+> Note: YAML files used in this tutorial are stored in [docs/examples/redis](https://github.com/kubedb/docs/tree/{{< param "info.version" >}}/docs/examples/redis) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
+
+## Configuration
+
+> Step 1 (`kube-prometheus-stack`) is required to follow this tutorial. Step 2 (Panopticon) is **not** needed for the Prometheus Operator / ServiceMonitor scraping documented on this page — install it only if you also plan to use the KubeDB Grafana dashboards' status panels, or phase-based Alerting. If you have already completed the step(s) you need in another guide, skip ahead.
+
+### Step 1: Deploy kube-prometheus-stack
+
+`kube-prometheus-stack` installs Prometheus, Prometheus Operator, Alertmanager, and Grafana together. This is the recommended way to get the full monitoring stack on Kubernetes. This is where Grafana itself gets installed for this tutorial track — the Grafana Dashboard guide's "Access Grafana" step assumes it's already running from here; you do not install Grafana again there.
+
+Add the prometheus-community Helm repo and install:
+
+```bash
+$ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+$ helm repo update
+
+$ helm upgrade --install prometheus prometheus-community/kube-prometheus-stack \
+  --namespace monitoring \
+  --set grafana.image.tag=7.5.5
+```
+
+Wait for all pods to be ready:
+
+```bash
+$ kubectl get pods -n monitoring
+NAME                                                   READY   STATUS    RESTARTS   AGE
+alertmanager-prometheus-kube-prometheus-alertmanager-0 2/2     Running   0          2m
+prometheus-grafana-xxxx                                3/3     Running   0          2m
+prometheus-kube-prometheus-operator-xxxx               1/1     Running   0          2m
+prometheus-kube-prometheus-prometheus-0                2/2     Running   0          2m
+prometheus-kube-state-metrics-xxxx                     1/1     Running   0          2m
+```
+
+Find the `serviceMonitorSelector` label that Prometheus uses to pick up `ServiceMonitor` objects. You will need this label when enabling monitoring on the Redis instance.
+
+```bash
+$ kubectl get prometheus -n monitoring -o jsonpath='{.items[0].spec.serviceMonitorSelector}'
+{"matchLabels":{"release":"prometheus"}}
+```
+
+The label is `release: prometheus`.
+
+### Step 2: Install Panopticon (optional — only for Grafana dashboards & Alerting)
+
+Panopticon is the Appscode operator that reads `MetricsConfiguration` objects (created by `kubedb-metrics`) and exposes them to Prometheus. It is **not required** for the Prometheus Operator / ServiceMonitor scraping covered on this page — skip it, and skip enabling `kubedb-metrics` too, if you only need raw metrics in Prometheus. Install it only if you also plan to use the phase/status panels of the KubeDB Grafana dashboards, or phase-based Alerting — and install it **before** enabling `kubedb-metrics`.
+
+```bash
+$ helm repo add appscode https://charts.appscode.com/stable/
+$ helm repo update
+
+$ helm upgrade --install panopticon appscode/panopticon \
+  --version v2026.4.30 \
+  --namespace kubeops --create-namespace \
+  --set monitoring.agent=prometheus.io/operator \
+  --set monitoring.serviceMonitor.labels.release=prometheus \
+  --set-file license=/path/to/kubedb-license.txt \
+  --wait --timeout 5m0s
+```
+
+Verify panopticon is running:
+
+```bash
+$ kubectl get pods -n kubeops
+NAME                          READY   STATUS    RESTARTS   AGE
+panopticon-xxxx               1/1     Running   0          1m
+```
+
+## Find out required labels for ServiceMonitor
+
+We need to know the labels used to select `ServiceMonitor` by a `Prometheus` crd. We are going to provide these labels in `spec.monitor.prometheus.labels` field of Redis crd so that KubeDB creates `ServiceMonitor` object accordingly.
+
+At first, let's find out the available Prometheus server in our cluster.
+
+```bash
+$ kubectl get prometheus --all-namespaces
+NAMESPACE    NAME         AGE
+monitoring   prometheus   18m
+```
+
+> If you don't have any Prometheus server running in your cluster, deploy one following the guide specified in **Before You Begin** section.
+
+Now, let's view the YAML of the available Prometheus server `prometheus` in `monitoring` namespace.
+
+```yaml
+$ kubectl get prometheus -n monitoring prometheus -o yaml
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"monitoring.coreos.com/v1","kind":"Prometheus","metadata":{"annotations":{},"labels":{"prometheus":"prometheus"},"name":"prometheus","namespace":"monitoring"},"spec":{"replicas":1,"resources":{"requests":{"memory":"400Mi"}},"serviceAccountName":"prometheus","serviceMonitorSelector":{"matchLabels":{"release":"prometheus"}}}}
+  creationTimestamp: 2019-01-03T13:41:51Z
+  generation: 1
+  labels:
+    prometheus: prometheus
+  name: prometheus
+  namespace: monitoring
+  resourceVersion: "44402"
+  selfLink: /apis/monitoring.coreos.com/v1/namespaces/monitoring/prometheuses/prometheus
+  uid: 5324ad98-0f5d-11e9-b230-080027f306f3
+spec:
+  replicas: 1
+  resources:
+    requests:
+      memory: 400Mi
+  serviceAccountName: prometheus
+  serviceMonitorSelector:
+    matchLabels:
+      release: prometheus
+```
+
+Notice the `spec.serviceMonitorSelector` section. Here, `release: prometheus` label is used to select `ServiceMonitor` crd. So, we are going to use this label in `spec.monitor.prometheus.labels` field of Redis crd.
+
+## Deploy Redis with Monitoring Enabled
+
+At first, let's deploy an Redis server with monitoring enabled. Below is the Redis object that we are going to create.
+
+```yaml
+apiVersion: kubedb.com/v1
+kind: Redis
+metadata:
+  name: coreos-prom-redis
+  namespace: demo
+spec:
+  version: 8.2.2
+  deletionPolicy: WipeOut
+  storage:
+    storageClassName: "standard"
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+  monitor:
+    agent: prometheus.io/operator
+    prometheus:
+      serviceMonitor:
+        labels:
+          release: prometheus
+        interval: 10s
+```
+
+Here,
+
+- `monitor.agent:  prometheus.io/operator` indicates that we are going to monitor this server using Prometheus operator.
+- `monitor.prometheus.namespace: monitoring` specifies that KubeDB should create `ServiceMonitor` in `monitoring` namespace.
+
+- `monitor.prometheus.labels` specifies that KubeDB should create `ServiceMonitor` with these labels.
+
+- `monitor.prometheus.interval` indicates that the Prometheus server should scrape metrics from this database with 10 seconds interval.
+
+Let's create the Redis object that we have shown above,
+
+```bash
+$ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/redis/monitoring/coreos-prom-redis.yaml
+redis.kubedb.com/coreos-prom-redis created
+```
+
+Now, wait for the database to go into `Running` state.
+
+```bash
+$ kubectl get rd -n demo coreos-prom-redis
+NAME                VERSION   STATUS    AGE
+coreos-prom-redis   4.0-v1    Running   15s
+```
+
+KubeDB will create a separate stats service with name `{Redis crd name}-stats` for monitoring purpose.
+
+```bash
+$ kubectl get svc -n demo --selector="app.kubernetes.io/instance=coreos-prom-redis"
+NAME                      TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)     AGE
+coreos-prom-redis         ClusterIP   10.110.70.53   <none>        6379/TCP    35s
+coreos-prom-redis-stats   ClusterIP   10.99.161.76   <none>        56790/TCP   31s
+```
+
+Here, `coreos-prom-redis-stats` service has been created for monitoring purpose.
+
+Let's describe this stats service.
+
+```yaml
+$ kubectl describe svc -n demo coreos-prom-redis-stats
+Name:              coreos-prom-redis-stats
+Namespace:         demo
+Labels:            app.kubernetes.io/name=redises.kubedb.com
+                   app.kubernetes.io/instance=coreos-prom-redis
+Annotations:       monitoring.appscode.com/agent: prometheus.io/operator
+Selector:          app.kubernetes.io/name=redises.kubedb.com,app.kubernetes.io/instance=coreos-prom-redis
+Type:              ClusterIP
+IP:                10.99.161.76
+Port:              prom-http  56790/TCP
+TargetPort:        prom-http/TCP
+Endpoints:         172.17.0.7:56790
+Session Affinity:  None
+Events:            <none>
+```
+
+Notice the `Labels` and `Port` fields. `ServiceMonitor` will use these information to target its endpoints.
+
+KubeDB will also create a `ServiceMonitor` crd in `monitoring` namespace that select the endpoints of `coreos-prom-redis-stats` service. Verify that the `ServiceMonitor` crd has been created.
+
+```bash
+$ kubectl get servicemonitor -n demo
+NAME                            AGE
+kubedb-demo-coreos-prom-redis   1m
+```
+
+Let's verify that the `ServiceMonitor` has the label that we had specified in `spec.monitor` section of Redis crd.
+
+```bash
+$ kubectl get servicemonitor -n demo kubedb-demo-coreos-prom-redis -o yaml
+```
+
+```yaml
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  creationTimestamp: 2019-01-03T15:55:23Z
+  generation: 1
+  labels:
+    release: prometheus
+    monitoring.appscode.com/service: coreos-prom-redis-stats.demo
+  name: kubedb-demo-coreos-prom-redis
+  namespace: monitoring
+  resourceVersion: "54802"
+  selfLink: /apis/monitoring.coreos.com/v1/namespaces/monitoring/servicemonitors/kubedb-demo-coreos-prom-redis
+  uid: fafceb49-0f6f-11e9-b230-080027f306f3
+spec:
+  endpoints:
+  - honorLabels: true
+    interval: 10s
+    path: /metrics
+    port: prom-http
+  namespaceSelector:
+    matchNames:
+    - demo
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: redises.kubedb.com
+      app.kubernetes.io/instance: coreos-prom-redis
+```
+
+Notice that the `ServiceMonitor` has label `release: prometheus` that we had specified in Redis crd.
+
+Also notice that the `ServiceMonitor` has selector which match the labels we have seen in the `coreos-prom-redis-stats` service. It also, target the `prom-http` port that we have seen in the stats service.
+
+## Verify Monitoring Metrics
+
+At first, let's find out the respective Prometheus pod for `prometheus` Prometheus server.
+
+```bash
+$ kubectl get pod -n monitoring -l=app=prometheus
+NAME                      READY   STATUS    RESTARTS   AGE
+prometheus-prometheus-0   3/3     Running   1          63m
+```
+
+Prometheus server is listening to port `9090` of `prometheus-prometheus-0` pod. We are going to use [port forwarding](https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/) to access Prometheus dashboard.
+
+Run following command on a separate terminal to forward the port 9090 of `prometheus-prometheus-0` pod,
+
+```bash
+$ kubectl port-forward -n monitoring prometheus-prometheus-0 9090
+Forwarding from 127.0.0.1:9090 -> 9090
+Forwarding from [::1]:9090 -> 9090
+```
+
+Now, we can access the dashboard at `localhost:9090`. Open [http://localhost:9090](http://localhost:9090) in your browser. You should see `prom-http` endpoint of `coreos-prom-redis-stats` service as one of the targets.
+
+<p align="center">
+  <img alt="Prometheus Target" src="/docs/v2026.10.12/images/redis/monitoring/redis-coreos-prom-target.png" style="padding:10px">
+</p>
+
+Check the `endpoint` and `service` labels marked by red rectangle. It verifies that the target is our expected database. Now, you can view the collected metrics and create a graph from homepage of this Prometheus dashboard. You can also use this Prometheus server as data source for [Grafana](https://grafana.com/) and create a dashboard with the collected metrics — see [Visualize Redis Metrics with Grafana Dashboard](/docs/v2026.10.12/guides/redis/monitoring/grafana-dashboard), which builds on this tutorial.
+
+## Cleaning up
+
+To cleanup the Kubernetes resources created by this tutorial, run following commands
+
+```bash
+# cleanup database
+kubectl delete -n demo rd/coreos-prom-redis
+
+# cleanup panopticon
+helm uninstall panopticon -n kubeops
+
+# if you also completed the Grafana Dashboard tutorial, clean that up first —
+# see https://kubedb.com/docs/guides/redis/monitoring/grafana-dashboard.md#cleaning-up
+
+# cleanup prometheus resources
+kubectl delete -n monitoring prometheus prometheus
+kubectl delete -n monitoring clusterrolebinding prometheus
+kubectl delete -n monitoring clusterrole prometheus
+kubectl delete -n monitoring serviceaccount prometheus
+kubectl delete -n monitoring service prometheus-operated
+
+# cleanup prometheus operator resources
+kubectl delete -n monitoring deployment prometheus-operator
+kubectl delete -n dmeo serviceaccount prometheus-operator
+kubectl delete clusterrolebinding prometheus-operator
+kubectl delete clusterrole prometheus-operator
+
+# delete namespace
+kubectl delete ns monitoring
+kubectl delete ns demo
+```
+
+## Next Steps
+
+- Visualize these metrics in Grafana using the pre-built [KubeDB dashboards](/docs/v2026.10.12/guides/redis/monitoring/grafana-dashboard).
+- Monitor your Redis server with KubeDB using [out-of-the-box builtin-Prometheus](/docs/v2026.10.12/guides/redis/monitoring/using-builtin-prometheus).
+- Detail concepts of [RedisVersion object](/docs/v2026.10.12/guides/redis/concepts/catalog).
+- Detail concepts of [Redis object](/docs/v2026.10.12/guides/redis/concepts/redis).
+- Use [private Docker registry](/docs/v2026.10.12/guides/redis/private-registry/using-private-registry) to deploy Redis with KubeDB.
+- Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2026.10.12/CONTRIBUTING).
