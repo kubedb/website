@@ -86,6 +86,7 @@ Cluster monitoring, metrics, and dashboards.
 | **Kubernetes Grafana Dashboards** *(Recommended)* | Prebuilt Kubernetes Grafana dashboards. | Grafana Operator |
 | **AppsCode OTEL Stack** *(Recommended)* | OpenTelemetry collectors and pipelines for traces, metrics, and logs. | Monitoring Operator |
 | **Thanos Operator** *(Recommended)* | Long-term, highly available Prometheus storage and global querying. | — |
+| **VictoriaMetrics Operator** | Manage VictoriaMetrics, VictoriaLogs and VictoriaTraces as backends for the telemetry stack. Use it instead of Thanos Operator for a VictoriaMetrics and VictoriaLogs setup. | None |
 | **Prometheus Label Proxy** *(Recommended)* | Enforces label-based tenant isolation on Prometheus queries. | Thanos Operator, Gateway API, Service Catalog |
 | **Tenant Operator** *(Recommended)* | Isolates monitoring resources and access per tenant. | Prometheus Label Proxy, Thanos Operator |
 | **Inbox Agent / Server / UI** *(ALPHA)* | Cluster event inbox components. | — |

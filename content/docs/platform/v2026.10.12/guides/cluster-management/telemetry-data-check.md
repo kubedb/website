@@ -18,8 +18,18 @@ info:
 # Verifying Telemetry Data (Logs & Metrics)
 
 This guide shows how to confirm your logs and metrics are actually being stored — not just
-collected — in the monitoring stack: **ClickHouse** for logs, **Thanos + S3** for metrics.
-See [OpenTelemetry Monitoring](otel-monitoring.md) for how the stack is set up.
+collected — in the monitoring stack. The stack stores logs in **ClickHouse** or
+**VictoriaLogs**, and metrics in **Thanos + S3** or **VictoriaMetrics**. See
+[OpenTelemetry Monitoring](otel-monitoring.md) for how the stack is set up.
+
+Sections 1 to 3 cover Thanos, ClickHouse, and S3. If your stack uses
+VictoriaMetrics and VictoriaLogs, go to
+[section 4](#4-check-victoriametrics-and-victorialogs). To see which backends
+your stack uses:
+
+```bash
+kubectl get telemetrystack -n monitoring -o jsonpath='{.items[0].spec.metrics.backend}{"\n"}{.items[0].spec.logs.backend}{"\n"}'
+```
 
 ## Basics
 
@@ -102,7 +112,7 @@ kubectl exec -n monitoring <thanos-receive-ingester-pod> -- wget -qO- http://loc
 
 If this timestamp is stale (not advancing over successive checks), metrics are not being
 ingested. Metrics are shipped from each connected cluster by the OpenTelemetry stack
-(`appscode-otel-stack`). See the [Troubleshooting](#troubleshooting-metrics-stale-but-logs-healthy)
+(`appscode-otel-stack`). See the [Troubleshooting](#troubleshooting-data-is-missing)
 section below for how to trace that pipeline.
 
 ---
@@ -178,135 +188,287 @@ matching your retention/compaction schedule.
 
 ---
 
+## 4. Check VictoriaMetrics and VictoriaLogs
+
+These checks apply when the stack uses the `VictoriaMetrics` and `VictoriaLogs`
+backends. Nothing is stored in S3, so section 3 does not apply. All commands run
+from your machine with `kubectl port-forward` against the monitoring cluster. To
+look at the data in a browser instead of with `curl`, jump to
+[step e](#e-browse-the-data-in-the-built-in-web-uis).
+
+### a. Find the tenant's account and instances
+
+Each tenant is stored under an **account ID**, on the instances that match its
+retention. List them:
+
+```bash
+kubectl get tenants -o custom-columns=NAME:.metadata.name,ACCOUNT:.status.accountID,METRICS:.status.metrics.instance,LOGS:.status.logs.instance
+kubectl get vmsingle,vlsingle -n monitoring
+```
+
+**Healthy result:** every tenant has an `ACCOUNT`, a `METRICS` instance, and a `LOGS`
+instance, and each instance shows `operational` (a `VLSingle` can show an empty
+status and still work). In Cluster mode the instances are `vmcluster` and `vlcluster`
+instead, and the services have different names.
+
+### b. Check metrics in VictoriaMetrics
+
+Port-forward the metrics instance for your tenant (use the name from step a):
+
+```bash
+kubectl port-forward -n monitoring svc/vmsingle-<metrics-instance> 8428:8428 &
+sleep 3
+```
+
+Count the series for each tenant and cluster, then check how fresh the newest
+sample is:
+
+```bash
+curl -s -G localhost:8428/api/v1/query \
+  --data-urlencode 'query=count by (vm_account_id, cluster) ({__name__=~".+"})'
+curl -s -G localhost:8428/api/v1/query \
+  --data-urlencode 'query=time() - max by (vm_account_id) (timestamp({__name__=~".+"}))'
+```
+
+**Healthy result:** your tenant's account appears as `vm_account_id` with the
+expected `cluster`. The second command prints one value for each tenant: the age in
+seconds of that tenant's newest sample. It should be small, for example under 30.
+
+### c. Check logs in VictoriaLogs
+
+Port-forward the logs instance for your tenant:
+
+```bash
+kubectl port-forward -n monitoring svc/vlsingle-<logs-instance> 9428:9428 &
+sleep 3
+```
+
+Query the last 30 minutes for the tenant's account. The `AccountID` header selects
+the tenant, so always send it:
+
+```bash
+curl -s -H 'AccountID: <account>' -H 'ProjectID: 0' localhost:9428/select/logsql/query \
+  --data-urlencode 'query=_time:30m | stats by (cluster, k8s.namespace.name) count() n, max(_time) last'
+```
+
+**Healthy result:** the tenant's namespaces are listed and `last` is recent. A quiet
+workload can have few lines. That is normal.
+
+### d. Check tenants are kept apart
+
+Ask for an account that should have no data on this instance. Data with no tenant
+goes to account `0`, which must stay empty:
+
+```bash
+curl -s -H 'AccountID: 0' -H 'ProjectID: 0' localhost:9428/select/logsql/query \
+  --data-urlencode 'query=_time:30m | stats count() n'
+```
+
+**Healthy result:** no output. Repeat with another tenant's account on this instance
+and expect no output too.
+
+When finished, stop the port-forwards with `kill %1 %2`.
+
+### e. Browse the data in the built-in web UIs
+
+This is the easiest way to look at the data. VictoriaMetrics and VictoriaLogs each have
+a web UI built in, so there is nothing to install.
+
+1. Find the tenant's account number and instances with the command in step a.
+2. Open a port-forward for each, in two separate terminals (use your instance names):
+
+   ```bash
+   kubectl port-forward -n monitoring svc/vmsingle-<metrics-instance> 8428:8428
+   kubectl port-forward -n monitoring svc/vlsingle-<logs-instance> 9428:9428
+   ```
+
+3. Open the UIs in your browser:
+
+   | Data | URL |
+   |---|---|
+   | Metrics | `http://localhost:8428/vmui/` |
+   | Logs | `http://localhost:9428/select/vmui/?#/?accountID=<account>&projectID=0&g0.range_input=6h&g0.relative_time=last_6_hours&query=*` |
+
+A port-forward skips the proxy, so you see everything stored on that instance, not what
+a client organization sees in its dashboards.
+
+**Metrics UI.** One metrics instance holds several tenants. Add `vm_account_id="<account>"`
+to a query to look at one tenant. Type a query and click **Execute query**:
+
+| What you want to see | Query |
+|---|---|
+| Which jobs the tenant has | `count by (job) ({vm_account_id="<account>"})` |
+| Targets the tenant scrapes | `up{vm_account_id="<account>"}` |
+| A Redis database is ready | `kubedb_com_redis_status_phase{vm_account_id="<account>", namespace="<org>"} == 1` |
+| CPU of each pod | `sum by (pod) (irate(container_cpu_usage_seconds_total{vm_account_id="<account>", namespace="<org>", container!=""}[5m]))` |
+
+**Logs UI.** The logs instance holds one retention, and its tenants are separated by
+account. The UI uses the `accountID` in the URL, and it is `0` when the URL has none.
+Account `0` has no data, so a page without `accountID` is empty. You can also change it
+with the tenant selector at the top right of the page, which shows `0:0` by default.
+Type a query and click **Execute Query**:
+
+| What you want to see | Query |
+|---|---|
+| The latest lines | `_time:1h \| limit 20` |
+| Lines of one namespace | `_time:1h k8s.namespace.name:"<org>"` |
+| Lines that contain a word | `_time:6h error` |
+| How many lines each namespace has | `_time:6h \| stats by (k8s.namespace.name) count() n` |
+
+If a page is empty, check these in order:
+
+1. **The account.** The metrics query must have the right `vm_account_id`, and the logs
+   URL the right `accountID`. Use the account from step a.
+2. **The instance.** Tenants with different retentions are on different instances. The
+   logs UI only shows the tenants of the instance you forwarded.
+3. **The time range.** A quiet workload may have no data in the last 5 minutes. Try 1 or 6
+   hours.
+4. **New tenant.** Data takes a minute or two to arrive after a client organization or
+   cluster is created.
+
+Press `Ctrl+C` in each terminal to stop the port-forwards.
+
+### Where the tenant's data lands
+
+A client organization's own workloads and `kubelet` metrics are stored under the
+organization's account. Cluster-level exporters such as `kube-state-metrics` and
+`panopticon` are stored under the owner's account, and the proxy also writes a copy
+of the series that belong to the organization's namespace into the organization's
+account. So the organization's dashboards can read them, and it sees only its own
+namespace. The owner keeps the full data.
+
+This copy happens when data is written, so it applies only to new data. If a
+dashboard panel for a client organization is empty, check that the organization's
+account has the series:
+
+```bash
+curl -s -G localhost:8428/api/v1/query \
+  --data-urlencode 'query=count by (vm_account_id, job) ({vm_account_id="<account>"})'
+```
+
+You should see `kube-state-metrics` and `panopticon` next to the organization's own
+jobs. Panels that use Prometheus recording rules (metric names containing `:`, such as
+`node_namespace_pod_container:...`) stay empty, because recording rules are not sent
+to the monitoring cluster.
+
+---
+
 ## Summary
 
 | Pipeline | Where to look | Healthy signal |
 |---|---|---|
-| Logs | ClickHouse `<tenant-db>.otel_logs` | `max(Timestamp)` ≈ now, non-zero rows in last 5 min |
-| Metrics | Thanos Query `/api/v1/stores`, receive ingester `/metrics` | `maxTime`/head timestamp advancing, close to now |
+| Logs (ClickHouse) | ClickHouse `<tenant-db>.otel_logs` | `max(Timestamp)` ≈ now, non-zero rows in last 5 min |
+| Metrics (Thanos) | Thanos Query `/api/v1/stores`, receive ingester `/metrics` | `maxTime`/head timestamp advancing, close to now |
+| Logs (VictoriaLogs) | VictoriaLogs `/select/logsql/query` with the tenant's `AccountID` | Tenant's namespaces listed, `last` is recent |
+| Metrics (VictoriaMetrics) | VictoriaMetrics `/api/v1/query`, `count by (vm_account_id, cluster)` | Tenant's account present, newest sample a few seconds old |
 | S3 | `<bucket>/logs/` and `<bucket>/metrics/` prefixes | Recent objects under both prefixes |
 
 ---
 
-## Troubleshooting: metrics stale but logs healthy
+## Troubleshooting: data is missing
 
-There is no Prometheus doing remote-write in this setup. Telemetry is shipped from each
-connected cluster by the **`appscode-otel-stack`** chart (built on `opentelemetry-kube-stack`),
-which runs two OpenTelemetry collectors in the `monitoring` namespace of the *connected*
-cluster:
+Telemetry takes this path:
 
-- **Daemonset (agent) collector**: runs on every node. Its `prometheus` receiver scrapes
-  targets assigned by the **Target Allocator** (which discovers `ServiceMonitor`/`PodMonitor`
-  CRs), and its `filelog` receiver collects container logs. Everything is forwarded over
-  OTLP to the gateway collector.
-- **Gateway collector** (deployment): receives OTLP and exports to the monitoring cluster
-  through `prom-label-proxy`:
-  - **Metrics** → `prometheusremotewrite` exporter → `https://<ingest-endpoint>:10001/api/v1/receive`
-    → Thanos receive. The `THANOS-TENANT` header is injected per batch by the
-    `headers_setter` extension.
-  - **Logs** → `clickhouse` exporter → the same `prom-label-proxy` endpoint → ClickHouse
-    (`otel_logs` table).
-
-The `<ingest-endpoint>` depends on how the platform is deployed:
-
-- **DNS mode**: the exporters point at the monitoring cluster's domain name.
-- **IP mode**: the exporters use the fixed hostname `prom-label-proxy.monitoring.svc.cluster.local`,
-  which is mapped to the monitoring cluster's IP via a `hostAliases` entry on the gateway
-  collector pod (required for TLS certificate verification against a bare IP).
-
-Confirm the endpoint actually in use from the gateway collector's config:
-
-```bash
-kubectl get opentelemetrycollectors -n monitoring -o yaml | grep -B2 -A2 'endpoint:'
+```
+spoke cluster: agent collector -> gateway collector
+      |
+      v
+monitoring cluster: NATS (buffer) -> otel-forwarder -> prom-label-proxy -> storage
 ```
 
-Logs and metrics share the daemon → gateway OTLP hop and the mTLS client cert
-(`otel-client-cert`), but split into different exporters at the gateway. So if logs are
-healthy and metrics are stale, connectivity and certs are fine; the problem is specific
-to the metrics path: either **scraping** (daemon collector / Target Allocator) or the
-**remote-write export** (gateway → Thanos). Run these checks **on the connected cluster**:
+- **Agent collector** (daemonset, spoke): scrapes metrics and reads container logs, then
+  sends them to the gateway over OTLP.
+- **Gateway collector** (deployment, spoke): adds the cluster name and the tenant, then
+  publishes to NATS on the monitoring cluster. The subject is `ingest.<cluster>.otel`.
+- **NATS** (`otel-nats`, 3 pods): buffers the data in the `OTEL_METRICS` and `OTEL_LOGS`
+  streams. Messages that are permanently rejected go to `OTEL_DLQ`.
+- **otel-forwarder** (3 pods): reads from NATS and writes through `prom-label-proxy`.
+- **prom-label-proxy**: picks the tenant and writes to Thanos, ClickHouse, VictoriaMetrics,
+  or VictoriaLogs.
 
-### a. Collector pods are running
+Check each hop in order. The first hop that looks wrong is the problem.
 
-```bash
-kubectl get pods -n monitoring -l otel-collector-type=daemonset
-kubectl get pods -n monitoring -l otel-collector-type=deployment
-```
+### a. Spoke: collectors are running and exporting
 
-The daemonset collector must have one Running pod per node; a node without an agent pod
-silently drops that node's scrape targets (allocation is per-node).
-
-### b. Gateway is exporting metrics without errors
-
-Check the gateway collector's own telemetry for sent vs. failed metric points. The
-collector image is minimal (no shell or `wget` inside), so `kubectl exec` will not work;
-port-forward its internal telemetry port (8888) and query it from your machine instead:
+On the **spoke** cluster:
 
 ```bash
-kubectl port-forward -n monitoring <gateway-collector-pod> 8888:8888 &
-sleep 2   # give the port-forward a moment to establish
-curl -s http://localhost:8888/metrics \
-  | grep -E 'otelcol_exporter_(sent|send_failed|enqueue_failed).*metric_points'
+kubectl get pods -n monitoring | grep -E 'agent-collector|gateway-collector|targetallocator'
 ```
 
-These counters are cumulative since the pod started, so a single reading proves nothing:
-a large `send_failed` value may just be leftover from a past incident (for example a
-monitoring-cluster restart) while everything is healthy now. Run the `curl` again after
-30 seconds or so and compare the two readings; only the counters that are still
-*advancing* matter. There are three possible outcomes:
-
-1. **`sent_metric_points{exporter="prometheusremotewrite"}` is increasing and
-   `send_failed`/`enqueue_failed` stay flat.** The gateway is exporting successfully, so
-   this cluster's pipeline is healthy. The problem is downstream (prom-label-proxy or
-   Thanos receive on the monitoring cluster) or a tenant mismatch; continue with step (d).
-2. **`send_failed_metric_points` is climbing.** Exports are failing. Read the gateway logs
-   for the actual `prometheusremotewrite` error (HTTP status codes, TLS failures) against
-   the `prom-label-proxy` endpoint:
-
-   ```bash
-   kubectl logs -n monitoring <gateway-collector-pod> --tail=100 | grep -iE "error|prometheusremotewrite"
-   ```
-
-   TLS or certificate errors point at the `otel-client-cert` secret (check it exists and
-   is not expired). Connection refused or timeout points at a wrong or unreachable ingest
-   endpoint. HTTP 4xx/5xx responses point at the prom-label-proxy / Thanos receive side
-   on the monitoring cluster.
-3. **All counters are flat or zero.** The gateway has nothing to export, which means the
-   daemon collectors are not scraping anything. Continue with step (c).
-
-A growing `enqueue_failed_metric_points` means the exporter's sending queue is
-overflowing because sends are too slow or failing, and those points are dropped; treat
-it the same as outcome 2.
-
-Note the exporter retries for a bounded time (`max_elapsed_time: 120s`) and then drops the
-batch, so persistent export errors mean permanent data loss, not delayed delivery.
-
-When finished, stop the background port-forward with `kill %1`.
-
-### c. Scrape targets exist and are being allocated
-
-If the gateway shows nothing to export (`sent` flat, no errors), the daemon collectors
-aren't scraping anything. Check that the Target Allocator is running and that
-`ServiceMonitor`/`PodMonitor` resources exist for your workloads:
+Port-forward the gateway's own metrics and look at what it sends to NATS:
 
 ```bash
-kubectl get pods -n monitoring -l app.kubernetes.io/component=opentelemetry-targetallocator
-kubectl get servicemonitors,podmonitors -A
+kubectl port-forward -n monitoring deploy/appscode-otel-stack-gateway-collector 8888:8888 &
+sleep 2
+curl -s http://localhost:8888/metrics | grep -E 'otelcol_exporter_(sent|send_failed|enqueue_failed)_(metric_points|log_records)'
+kill %1
 ```
 
-The Target Allocator watches these CRs and distributes their scrape targets across the
-daemonset collectors. No matching monitors (or an unhealthy allocator) means the
-`prometheus` receiver has nothing to scrape: no data flows and no errors are logged
-anywhere, which is exactly the "silently stale" symptom.
+These counters only grow, so read them twice, 30 seconds apart:
 
-### d. Data flowing under the wrong tenant
+- `sent_...{exporter="nats"}` is growing and there are no `send_failed` lines: the spoke is
+  healthy. Go to step b.
+- `send_failed_...` is growing: read the gateway log for the error.
+  ```bash
+  kubectl logs -n monitoring deploy/appscode-otel-stack-gateway-collector --tail=100 | grep -iE 'error|nats'
+  ```
+  A TLS error points at the `otel-client-cert` secret. A connection error points at the
+  monitoring cluster address (the `hostAliases` entry on the gateway pod, or DNS).
+- Everything is flat: nothing is being scraped. Check the target allocator and that
+  `ServiceMonitor` or `PodMonitor` objects exist (`kubectl get servicemonitors,podmonitors -A`).
 
-Metrics may be arriving in Thanos but under a different tenant than the one you're
-querying. The gateway derives the tenant from resource attributes: it defaults to
-`default`, and is set to the source namespace name only for namespaces labeled
-`ace.appscode.com/client-org: "true"`; batches with no tenant attribute fall back to
-`anonymous`. Re-run the store/query checks from section 2 with `THANOS-TENANT: default`
-(and `anonymous`) before concluding data is missing.
+### b. Monitoring cluster: NATS is receiving
 
-After fixing whichever stage was broken, re-run the `prometheus_tsdb_head_max_time` check
-from section 2 over a couple of minutes to confirm the timestamp starts advancing.
+On the **monitoring** cluster, read the streams from each NATS pod. Only the leader of a
+stream prints, so run all three:
+
+```bash
+for p in otel-nats-0 otel-nats-1 otel-nats-2; do
+  kubectl exec -n monitoring $p -c nats -- wget -qO- '127.0.0.1:8222/jsz?streams=true&consumers=true' | python3 -c '
+import json,sys; d=json.load(sys.stdin); me=sys.argv[1]
+for a in d.get("account_details",[]):
+  for s in a.get("stream_detail",[]):
+    if s.get("cluster",{}).get("leader")==me:
+      st=s["state"]; print(me, s["name"], "msgs",st["messages"], "last",st.get("last_ts","")[:19])
+    for c in s.get("consumer_detail") or []:
+      if c.get("cluster",{}).get("leader")==me:
+        print("   ", c["name"], "pending",c["num_pending"], "redelivered",c["num_redelivered"])' $p
+done; date -u
+```
+
+- `last` of `OTEL_METRICS` and `OTEL_LOGS` is close to now: the spoke is publishing.
+- `pending` of `fwd-metrics` and `fwd-logs` is 0: the forwarders keep up.
+- `OTEL_DLQ` has 0 messages: nothing was rejected.
+
+If `last` is old, go back to step a. If `pending` keeps growing, go to step c.
+
+### c. Forwarders and the proxy
+
+```bash
+for p in $(kubectl get pods -n monitoring -o name | grep otel-forwarder); do
+  kubectl logs -n monitoring $p --since=15m
+done | grep -P '\terror\t|routing to DLQ' | tail
+kubectl logs -n monitoring deploy/prom-label-proxy --since=15m | tail
+```
+
+No output is healthy. Common errors:
+
+- `503` or `no backend account assigned yet`: the tenant has no storage instance yet. The
+  message stays in NATS and is retried. Check `kubectl get tenants`.
+- `400`: the tenant or the data was rejected. The message goes to `OTEL_DLQ`.
+- `AlreadyExists ... out of order sample` (Thanos): a few samples of one series arrived out
+  of order. Only those samples are lost. A small, steady rate is not a problem.
+- `Access Denied` from storage: check the S3 credentials of the TelemetryStack.
+
+### d. Data under the wrong tenant
+
+The gateway sets the tenant to `default` (the cluster owner), or to the namespace name for
+namespaces labeled `ace.appscode.com/client-org: "true"`. If data is stored but you cannot
+find it, look under the owner as well as under the client organization:
+
+```bash
+kubectl get tenants -o custom-columns=NAME:.metadata.name,ACCOUNT:.status.accountID
+```
+
+Then repeat the checks in sections 1 to 4 for each tenant.

@@ -100,10 +100,12 @@ In the final step, configure the telemetry settings that will be applied to the 
 
 - **Select Monitoring Cluster** — the observability cluster that will store this organization's telemetry. Its `tenant-operator` provisions a `Tenant` on the cluster's TelemetryStack, isolating the organization's data within the shared stack. See [OpenTelemetry Monitoring](../../cluster-management/otel-monitoring.md) for how the monitoring cluster is set up.
 - **Logs** — set the **Retention Period** for collected logs.
-- **Metrics** — set the retention periods for collected metrics:
-  - **Yearly Retention** — how long aggregated yearly metrics are kept.
-  - **Five Minute Retention** — how long five-minute resolution metrics are kept.
-  - **One Hour Retention** — how long one-hour resolution metrics are kept.
+- **Metrics** - set the retention for collected metrics. The fields depend on the storage backend of the selected monitoring cluster:
+  - **Thanos** - three fields:
+    - **Raw Retention** - how long raw (full resolution) metrics are kept.
+    - **5m Retention** - how long five-minute resolution metrics are kept.
+    - **1h Retention** - how long one-hour resolution metrics are kept.
+  - **VictoriaMetrics** - one **Retention** field. VictoriaMetrics does not downsample, so all samples are kept at full resolution for this period. Size the monitoring cluster's disks for it.
 
 Click **Submit** to create the client organization, or **Previous** to go back.
 
