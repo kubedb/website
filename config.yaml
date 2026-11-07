@@ -124,6 +124,20 @@ menu:
     url: /solutions/air-gapped/
     pre: lucide:shield-check
     title: Run DBaaS in secure, offline clusters
+  - name: BCDR / Near-Zero RPO and RTO
+    identifier: bcdr-solutions
+    parent: solutions
+    weight: 6
+    url: /solutions/bcdr/
+    pre: lucide:shield-alert
+    title: Near-zero RPO and RTO across data centers
+  - name: AI & Vector Search
+    identifier: ai-solutions
+    parent: solutions
+    weight: 7
+    url: /solutions/ai/
+    pre: lucide:brain-circuit
+    title: Run vector databases for RAG and AI apps
   - name: Databases
     identifier: database
     weight: 3
