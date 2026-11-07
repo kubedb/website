@@ -78,7 +78,7 @@
           <!-- trust / powered-by -->
           <div class="is-flex is-align-items-center has-gap-3" style="padding:0.6rem 1rem;background:#fff;border:1px solid hsl(var(--ds-gray-200));border-radius:999px;display:inline-flex;width:fit-content;">
             <span class="cs-ping-dot"></span>
-            <span class="has-text-grey-500 has-text-weight-semibold" style="font-size:0.78rem;">Powered by <strong class="has-text-heading">KubeDB</strong> &amp; <strong class="has-text-heading">KubeStash</strong> &middot; Enterprise Support</span>
+            <span class="has-text-grey-500 has-text-weight-semibold" style="font-size:0.78rem;">{{ with $p.hero_powered_by_html }}{{ . | safeHTML }}{{ else }}Powered by <strong class="has-text-heading">KubeDB</strong> &amp; <strong class="has-text-heading">KubeStash</strong> &middot; Enterprise Support{{ end }}</span>
           </div>
 
         </div>
@@ -204,6 +204,16 @@
                 </div>
                 {{ end }}
 
+                {{ if $p.customer_highlights }}
+                <ul class="has-no-bullets mb-0">
+                  {{ range $p.customer_highlights }}
+                  <li class="is-flex is-align-items-center has-gap-3 mb-4">
+                    <iconify-icon {{ printf "icon=%q" .icon | safeHTMLAttr }} width="16" height="16" class="has-text-{{ .color | default "primary" }} is-flex-shrink-0"></iconify-icon>
+                    <span class="is-text-sm has-text-grey-600">{{ .text }}</span>
+                  </li>
+                  {{ end }}
+                </ul>
+                {{ else }}
                 <ul class="has-no-bullets mb-0">
                   <li class="is-flex is-align-items-center has-gap-3 mb-4">
                     <iconify-icon icon="lucide:shield-check" width="16" height="16" class="has-text-primary is-flex-shrink-0"></iconify-icon>
@@ -218,6 +228,7 @@
                     <span class="is-text-sm has-text-grey-600">Full data sovereignty &amp; compliance</span>
                   </li>
                 </ul>
+                {{ end }}
 
                 {{ with $p.customer_website }}
                 <div class="mt-5 pt-5 has-border-top">
