@@ -8,43 +8,41 @@
   "capabilities": [
     {
       "id": "bcdr",
-      "title": "BCDR: Near-Zero RPO and RTO for Databases",
-      "description": "Survive the loss of an entire data center with near-zero RPO and RTO. Choose automatic failover decided by a 3-site quorum, or manual failover decided by your team, with zero data loss available through synchronous replication.",
+      "title": "BCDR: Near-Zero Downtime",
+      "description": "Keep applications running when an entire data center goes down, with automatic or approved failover and zero data loss for your most critical workloads.",
       "icon": "lucide:shield-check",
       "icon_gradient": "linear-gradient(135deg, #10b981, #059669)",
       "benefits": [
-        "Option A, automatic: a 3-site etcd quorum decides which data center is primary, with fail-closed split-brain protection and no human in the loop",
-        "Option B, manual: Remote Replica across two independent clusters, with synchronous mode for zero data loss",
-        "Cross-data-center DR for PostgreSQL, Redis, Kafka, MongoDB, and OpenSearch, plus active-active distributed SQL",
-        "Planned switchover with zero data loss, then failback with pg_rewind or re-seed",
-        "Integrated backup with point-in-time recovery"
+        "Automatic failover, or manual control when you prefer",
+        "Planned switchovers for maintenance and drills, no data lost",
+        "Only one site in charge, even when the network splits",
+        "Backup and point-in-time recovery built in, for added safety"
       ]
     },
     {
       "id": "migration",
-      "title": "Live Database Migration",
-      "description": "Move an existing database from AWS RDS, another cloud, or an on-premises host into a KubeDB-managed database while the source keeps serving traffic.",
+      "title": "Zero-Downtime Migration",
+      "description": "Move to KubeDB from another cloud or on-premises while your applications keep running. Your current system serves traffic until you decide to switch.",
       "icon": "lucide:arrow-right-left",
       "icon_gradient": "linear-gradient(135deg, #f59e0b, #ea580c)",
       "benefits": [
-        "Powered by KubeDB Courier, enabled with kubedb-courier.enabled=true",
-        "Schema copy, initial snapshot, then continuous change data capture",
-        "No maintenance window, the source stays live until cutover",
-        "Cut over once streaming lag reaches zero, typically within minutes",
-        "Supports PostgreSQL, MySQL, MariaDB, MongoDB, and MSSQL Server"
+        "Powered by KubeDB Courier, enabled with one Helm flag",
+        "No maintenance window: your users stay online throughout",
+        "Continuous sync keeps both sides in step until cutover",
+        "Cut over in minutes, with every step versioned and tracked"
       ]
     },
     {
       "id": "branching-cloning",
-      "title": "Database Cloning and Branching",
-      "description": "Clone production data safely for development and testing, on the same Kubernetes platform that runs your databases. Isolated, refreshable branches are on the roadmap.",
+      "title": "Cloning and Branching",
+      "description": "Give developers and test pipelines realistic production data without putting production at risk. Isolated, refreshable branches are coming next.",
       "icon": "lucide:git-branch",
       "icon_gradient": "linear-gradient(135deg, #06b6d4, #2563eb)",
       "benefits": [
-        "Built on KubeDB Courier, the data movement engine behind migration and branching",
-        "Safe copies of production data for dev, test, and upgrade rehearsal",
-        "Same declarative operating model as every other KubeDB database",
-        "Branching, with isolated writable copies, is on the roadmap"
+        "Built on KubeDB Courier, the engine behind migration",
+        "Realistic data for development, testing, and upgrades",
+        "Production stays untouched, protected, and fully isolated",
+        "Same simple, declarative experience as all of KubeDB"
       ]
     }
   ]
