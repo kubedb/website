@@ -1,6 +1,6 @@
 ---
 id: ai
-title: AI + KubeDB - Vector Databases and RAG Infrastructure
+title: Kubernetes-Native RAG and Vector Database Infrastructure
 description: Run Qdrant, Milvus, Weaviate, and pgvector on Kubernetes for AI and RAG applications
 layout: single
 url: /solutions/ai/

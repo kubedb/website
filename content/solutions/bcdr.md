@@ -1,7 +1,7 @@
 ---
 id: bcdr
-title: BCDR - Near-Zero RPO and RTO for Databases
-description: Near-zero RPO and RTO disaster recovery for databases across data centers
+title: Kubernetes Database Disaster Recovery with Near-Zero RPO and RTO
+description: Business continuity and disaster recovery (BCDR) for databases on Kubernetes, with automatic database failover across data centers and near-zero RPO and RTO
 layout: single
 url: /solutions/bcdr/
 data_id: bcdr
