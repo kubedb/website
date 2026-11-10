@@ -217,6 +217,13 @@ menu:
     pre: /assets/images/products/kubedb/partners/logo-maskot/suse.svg
     title: KubeDB on SUSE Rancher
     url: /solution-briefs/suse-rancher/
+  - name: VMware VKS
+    identifier: solution-briefs-vmware-vks
+    parent: solution-briefs
+    weight: 3
+    pre: /assets/images/products/kubedb/partners/logo-maskot/vmware.svg
+    title: KubeDB on VMware vSphere Kubernetes Service
+    url: /solution-briefs/vmware-vks/
   - name: Cassandra
     identifier: cassandra
     parent: database
