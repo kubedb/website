@@ -1,11 +1,14 @@
-{{ $section := site.GetPage "/case-studies" }}
+{{/* Case studies featured on the home page, in display order. */}}
+{{ $featured := slice "telecash" "public-dbaas" "telco" }}
+{{ $all := where site.RegularPages "Section" "case-studies" }}
 {{ $pages := slice }}
-{{ if $section }}
-{{ $pages = first 3 ($section.Pages.ByDate.Reverse) }}
-{{ else }}
-{{ $pages = first 3 ((where site.RegularPages "Section"
-"case-studies").ByDate.Reverse) }}
+{{ range $featured }}
+{{ $slug := . }}
+{{ range where $all "File.ContentBaseName" $slug }}
+{{ $pages = $pages | append . }}
 {{ end }}
+{{ end }}
+{{ $section := site.GetPage "/case-studies" }}
 
 {{ $sectionJson := dict }}
 {{ with index site.Data.products.kubedb "case-studies" }}
