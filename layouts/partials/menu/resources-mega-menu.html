@@ -97,7 +97,7 @@
             {{ end }}
 
           {{ else if eq $child.Identifier "case-studies" }}
-            {{ range first 3 (where $page.Site.RegularPages.ByWeight "Section" "case-studies") }}
+            {{ range first 4 (where $page.Site.RegularPages.ByWeight "Section" "case-studies") }}
               {{ partial "menu/resource-card.html" (dict
                 "url"   .RelPermalink
                 "title" .Title
