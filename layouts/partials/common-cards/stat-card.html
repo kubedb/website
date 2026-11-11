@@ -9,7 +9,7 @@
   </div>
   {{ end }}
   <h3 class="is-size-2-desktop is-size-3-tablet is-size-3-mobile has-text-weight-black mb-1 has-line-height-tight"
-    style="color: {{ $color }};">
+    style="color: {{ $color }};{{ if le (len (string $stat.value)) 12 }} white-space: nowrap;{{ end }}">
     {{ $stat.value }}
   </h3>
   <p class="has-text-grey-500 is-size-7 is-uppercase has-text-weight-bold has-tracking-widest">

@@ -12,6 +12,7 @@ data: "data/products/kubedb/products/kubedb-platform.json"
 {{< products/built-for-scale >}}
 {{< products/benefits >}}
 {{< products/platform-features >}}
+{{< products/advanced-capabilities >}}
 {{< products/database-support >}}
 {{< products/why-not-cloud-dbaas >}}
 {{< products/use-cases >}}

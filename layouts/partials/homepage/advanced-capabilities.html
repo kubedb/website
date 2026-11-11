@@ -1,0 +1,33 @@
+{{ $d := index $.Site.Data.products.kubedb.homepage "advanced-capabilities" }}
+
+{{ if $d }}
+<section class="core-platform-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">{{ $d.badge }}</span>
+      </div>
+      <h2 class="section-header-title">
+        {{ $d.title_plain }}<br>
+        <span class="text-gradient">{{ $d.title_gradient }}</span>
+      </h2>
+      <p class="section-header-desc">{{ $d.description }}</p>
+    </div>
+
+    <div class="columns is-multiline is-variable">
+      {{ range $d.capabilities }}
+      <div class="column is-4-desktop is-6-tablet">
+        <div class="feature-card ds-card-base is-fullheight">
+          <div class="mb-4 is-flex is-align-items-center is-justify-content-center" style="width: 56px; height: 56px; border-radius: 16px; background: {{ .icon_gradient | safeCSS }};">
+            {{ printf `<iconify-icon icon="%s" width="28" height="28" style="color: white;"></iconify-icon>` .icon | safeHTML }}
+          </div>
+          <h3 class="feature-card-title has-text-heading is-text-lg has-text-weight-extrabold mb-2">{{ .title }}</h3>
+          <p class="feature-card-desc has-text-body is-text-base">{{ .description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
