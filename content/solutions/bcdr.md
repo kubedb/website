@@ -10,7 +10,6 @@ data: 'data/products/kubedb/solutions/bcdr.json'
 
 {{< solutions/hero >}}
 {{< solutions/challenge-cards >}}
-{{< solutions/engine-dr-table >}}
 {{< solutions/layout-split-infra >}}
 {{< solutions/comparison-table >}}
 {{< solutions/feature-grid-scale >}}
