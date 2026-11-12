@@ -112,5 +112,26 @@
   </section>
   {{ end }}
 
+  {{/* ── Resources (optional external links) ───────────────── */}}
+  {{ with $d.resources }}
+  <section class="section-padding has-background-white">
+    <div class="container">
+      <div class="has-max-width-900 mx-auto">
+        <h2 class="heading-xl has-text-heading mb-5">{{ .title | default "Learn More" }}</h2>
+        <ul class="solutions-brief-resources has-no-bullets space-y-4">
+          {{ range .items }}
+          <li class="body-lg has-text-body is-flex has-gap-3 is-align-items-flex-start">
+            <span class="has-text-primary mt-1 is-flex-shrink-0">
+              <iconify-icon icon="lucide:external-link" width="20" height="20"></iconify-icon>
+            </span>
+            <a href="{{ .url }}" class="has-text-weight-semibold" target="_blank" rel="noopener">{{ .label }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
 </div>
 {{ end }}

@@ -1,0 +1,17 @@
+apiVersion: kafka.kubedb.com/v1alpha1
+kind: ConnectCluster
+metadata:
+  name: connectcluster-quickstart
+  namespace: demo
+spec:
+  version: 4.2.0
+  replicas: 3
+  connectorPlugins:
+    - mongodb-1.14.1
+    - mysql-3.0.5.final
+    - postgres-3.0.5.final
+    - jdbc-3.0.5.final
+  kafkaRef:
+    name: kafka-quickstart
+    namespace: demo
+  deletionPolicy: DoNotTerminate

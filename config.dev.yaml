@@ -91,6 +91,20 @@ menu:
     url: /solutions/air-gapped/
     pre: lucide:shield-check
     title: Run DBaaS in secure, offline clusters
+  - name: Disaster Recovery (BCDR)
+    identifier: bcdr-solutions
+    parent: solutions
+    weight: 6
+    url: /solutions/bcdr/
+    pre: lucide:shield-alert
+    title: Near-zero RPO and RTO across data centers
+  - name: AI & Vector Search
+    identifier: ai-solutions
+    parent: solutions
+    weight: 7
+    url: /solutions/ai/
+    pre: lucide:brain-circuit
+    title: Run vector databases for RAG and AI apps
   - name: Databases
     identifier: database
     weight: 3
@@ -110,11 +124,6 @@ menu:
     parent: database
     weight: 2
     pre: /assets/images/databases/logos/png/elasticsearches.png
-  - name: FerretDB
-    identifier: ferretdb
-    parent: database
-    weight: 3
-    pre: /assets/images/databases/logos/png/ferretdbs.png
   - name: Kafka
     identifier: kafka
     parent: database
@@ -288,6 +297,85 @@ menu:
     weight: 15
     url: /partner/#msp
     post: MSP partnership opportunities
+  - name: Resources
+    identifier: resources
+    weight: 6
+  - name: Documentation
+    identifier: documentation-resources
+    parent: resources
+    weight: 1
+    pre: lucide:book-open
+    title: Product guides, setup docs, and operator overview
+    url: /docs/latest/welcome/
+  - name: Case Studies
+    identifier: case-studies
+    parent: resources
+    weight: 2
+    pre: lucide:briefcase
+    title: Customer success stories and real-world use cases
+    url: /case-studies/
+  - name: Blog
+    identifier: blog
+    parent: resources
+    weight: 3
+    pre: lucide:pen-line
+    title: Insights from the team building KubeDB
+    url: https://appscode.com/blog
+  - name: Webinars
+    identifier: webinars
+    parent: resources
+    weight: 4
+    pre: lucide:video
+    title: Live and on-demand database sessions
+    url: https://appscode.com/webinar
+  - name: Videos
+    identifier: videos
+    parent: resources
+    weight: 5
+    pre: lucide:youtube
+    title: Tutorials, demos, and product walkthroughs
+    url: https://www.youtube.com/@AppsCode
+  - name: Solution Briefs
+    identifier: solution-briefs
+    parent: resources
+    weight: 6
+    pre: lucide:file-text
+    title: Platform-specific solution briefs
+  - name: Operator Documentation
+    identifier: resources-operator
+    parent: documentation-resources
+    weight: 1
+    pre: lucide:container
+    title: Product overview and capabilities
+    url: /docs/
+  - name: Platform Documentation
+    identifier: resources-documentation
+    parent: documentation-resources
+    weight: 2
+    pre: lucide:book-open
+    title: Setup, guides, and operations
+    url: /docs/platform/
+  - name: Red Hat OpenShift
+    identifier: solution-briefs-redhat-openshift
+    parent: solution-briefs
+    weight: 1
+    pre: /assets/images/products/kubedb/partners/logo-maskot/openshift.svg
+    title: KubeDB on Red Hat OpenShift
+    url: /solution-briefs/redhat-openshift/
+  - name: SUSE Rancher
+    identifier: solution-briefs-suse-rancher
+    parent: solution-briefs
+    weight: 2
+    pre: /assets/images/products/kubedb/partners/logo-maskot/suse.svg
+    title: KubeDB on SUSE Rancher
+    url: /solution-briefs/suse-rancher/
+  - name: VMware VKS
+    identifier: solution-briefs-vmware-vks
+    parent: solution-briefs
+    weight: 3
+    pre: /assets/images/products/kubedb/partners/logo-maskot/vmware.svg
+    title: KubeDB on VMware vSphere Kubernetes Service
+    url: /solution-briefs/vmware-vks/
 markup:
   goldmark:
     renderer:

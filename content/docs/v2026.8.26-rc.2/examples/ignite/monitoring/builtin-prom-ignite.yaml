@@ -1,0 +1,17 @@
+apiVersion: kubedb.com/v1alpha2
+kind: Ignite
+metadata:
+  name: builtin-prom-ignite
+  namespace: demo
+spec:
+  replicas: 3
+  version: 2.18.0
+  storage:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+  monitor:
+    agent: prometheus.io/builtin
+  deletionPolicy: WipeOut

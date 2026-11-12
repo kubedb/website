@@ -4,7 +4,7 @@ This file provides instructions for AI coding agents working in this Hugo-based 
 
 ## Project Overview
 
-Hugo static website for KubeDB (Kubernetes database operator platform). Aggregates documentation from 27+ database operators (Cassandra, ClickHouse, Druid, Elasticsearch, FerretDB, Kafka, MariaDB, MongoDB, MySQL, PostgreSQL, Redis, etc.) and provides marketing content, articles, and product information. Uses custom `hugo-product-theme` as a git submodule.
+Hugo static website for KubeDB (Kubernetes database operator platform). Aggregates documentation from 27+ database operators (Cassandra, ClickHouse, Druid, Elasticsearch, Kafka, MariaDB, MongoDB, MySQL, PostgreSQL, Redis, etc.) and provides marketing content, articles, and product information. Uses custom `hugo-product-theme` as a git submodule.
 
 ## Build & Development Commands
 

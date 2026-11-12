@@ -19,14 +19,26 @@ jobs:
         with:
           submodules: true
 
+      - name: Determine release tracker repo
+        id: tracker
+        run: |
+          # The Release-tracker URL in the commit body is the repo the script
+          # comments on. For +akp (ProductLine: ACE) releases this is
+          # appscode-cloud/CHANGELOG; otherwise it defaults to the current owner.
+          url=$(git show -s --format=%b | grep -i '^Release-tracker:' | head -n1 | sed -E 's/^[Rr]elease-tracker:[[:space:]]*//' | tr -d '\r\t ')
+          owner=$(echo "$url" | sed -nE 's#.*github.com/([^/]+)/([^/]+)/.*#\1#p')
+          repo=$(echo "$url" | sed -nE 's#.*github.com/([^/]+)/([^/]+)/.*#\2#p')
+          echo "owner=${owner:-${{ github.repository_owner }}}" >> "$GITHUB_OUTPUT"
+          echo "repo=${repo:-CHANGELOG}" >> "$GITHUB_OUTPUT"
+
       - name: Generate LGTM App token
         id: lgtm-app-token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
           client-id: ${{ secrets.LGTM_APP_CLIENT_ID }}
           private-key: ${{ secrets.LGTM_APP_PRIVATE_KEY }}
-          owner: ${{ github.repository_owner }}
-          repositories: CHANGELOG
+          owner: ${{ steps.tracker.outputs.owner }}
+          repositories: ${{ steps.tracker.outputs.repo }}
           permission-pull-requests: write
 
       - name: Update release tracker

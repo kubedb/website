@@ -1,0 +1,28 @@
+{{ $d := index .Site.Data.products.kubedb.homepage "advanced-capabilities" }}
+{{ if $d }}
+<section id="advanced-capabilities" class="home-section section-padding bg-white">
+  <div class="container">
+    {{ partial "common-sections/section-header.html" (dict
+      "title" $d.section_title
+      "subtitle" $d.section_subtitle
+      "align" "center"
+      "class" "mb-16"
+    ) }}
+    <div class="columns is-multiline">
+      {{ range $d.capabilities }}
+      <div class="column is-4-desktop is-12-tablet">
+        {{ partial "common-cards/feature-card.html" (dict
+          "card" (dict
+            "title" .title
+            "description" .description
+            "icon" .icon
+            "benefits" .benefits
+          )
+          "type" "benefit-scale"
+        ) }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

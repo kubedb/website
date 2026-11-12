@@ -124,6 +124,20 @@ menu:
     url: /solutions/air-gapped/
     pre: lucide:shield-check
     title: Run DBaaS in secure, offline clusters
+  - name: Disaster Recovery (BCDR)
+    identifier: bcdr-solutions
+    parent: solutions
+    weight: 6
+    url: /solutions/bcdr/
+    pre: lucide:shield-alert
+    title: Near-zero RPO and RTO across data centers
+  - name: AI & Vector Search
+    identifier: ai-solutions
+    parent: solutions
+    weight: 7
+    url: /solutions/ai/
+    pre: lucide:brain-circuit
+    title: Run vector databases for RAG and AI apps
   - name: Databases
     identifier: database
     weight: 3
@@ -203,6 +217,13 @@ menu:
     pre: /assets/images/products/kubedb/partners/logo-maskot/suse.svg
     title: KubeDB on SUSE Rancher
     url: /solution-briefs/suse-rancher/
+  - name: VMware VKS
+    identifier: solution-briefs-vmware-vks
+    parent: solution-briefs
+    weight: 3
+    pre: /assets/images/products/kubedb/partners/logo-maskot/vmware.svg
+    title: KubeDB on VMware vSphere Kubernetes Service
+    url: /solution-briefs/vmware-vks/
   - name: Cassandra
     identifier: cassandra
     parent: database
@@ -358,10 +379,15 @@ menu:
     parent: database
     weight: 31
     pre: /assets/images/databases/logos/png/weaviates.png
+  - name: Etcd
+    identifier: etcd
+    parent: database
+    weight: 32
+    pre: /assets/images/databases/logos/png/etcds.png
   - name: Aerospike
     identifier: aerospike
     parent: database
-    weight: 32
+    weight: 33
     pre: /assets/images/databases/logos/png/aerospikes.png
   - name: Amazon EKS
     identifier: amazon-eks
