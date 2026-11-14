@@ -1,0 +1,15 @@
+apiVersion: ops.kubedb.com/v1alpha1
+kind: MongoDBOpsRequest
+metadata:
+  name: mgops-rotate-auth-user
+  namespace: demo
+spec:
+  type: RotateAuth
+  databaseRef:
+    name: mgo-quickstart
+  authentication:
+    secretRef:
+      kind: Secret
+      name: quick-mg-user-auth
+  timeout: 5m
+  apply: IfReady

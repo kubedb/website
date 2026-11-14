@@ -1,0 +1,4 @@
+node:
+  name:  es-node-client
+path:
+  data: ["/usr/share/elasticsearch/data/elasticsearch/client-datadir"]

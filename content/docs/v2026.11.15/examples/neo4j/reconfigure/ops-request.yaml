@@ -1,0 +1,16 @@
+apiVersion: ops.kubedb.com/v1alpha1
+kind: Neo4jOpsRequest
+metadata:
+  name: neo4j-reconfigure
+  namespace: demo
+spec:
+  type: Reconfigure
+  databaseRef:
+    name: neo4j-test
+  configuration:
+    configSecret:
+      name: new-custom-config
+    applyConfig:
+      db.checkpoint.interval.time: "25m"
+  timeout: 5m
+  apply: IfReady
