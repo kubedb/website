@@ -1,0 +1,12 @@
+apiVersion: ops.kubedb.com/v1alpha1
+kind: MySQLOpsRequest
+metadata:
+  name: myops-reconfigure-remove
+  namespace: demo
+spec:
+  type: Reconfigure
+  databaseRef:
+    name: sample-mysql
+  configuration:
+    restart: auto
+    removeCustomConfig: true
