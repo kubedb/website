@@ -384,6 +384,11 @@ menu:
     parent: database
     weight: 32
     pre: /assets/images/databases/logos/png/etcds.png
+  - name: Aerospike
+    identifier: aerospike
+    parent: database
+    weight: 33
+    pre: /assets/images/databases/logos/png/aerospikes.png
   - name: Amazon EKS
     identifier: amazon-eks
     parent: partners
