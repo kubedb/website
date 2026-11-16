@@ -58,3 +58,6 @@ From the cluster list, click the **⋮** (three-dot) menu on any cluster card to
 |---|---|---|
 | **Remove** | Unregisters cluster from Cluster UI | No |
 | **Delete** | Destroys cluster + infrastructure | Yes |
+
+To remove a cluster through the API, or to remove an inactive cluster, see
+[Troubleshooting](../troubleshooting.md#removing-a-cluster).

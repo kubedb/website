@@ -123,7 +123,12 @@ Once deployed, access the **KubeDB Platform** using the configured IP (IP mode) 
   oc adm policy add-scc-to-user privileged -z kube-prometheus-stack-prometheus-node-exporter -n monitoring
   ```
 
-- We also run the cert-manager `csi-driver-cacerts` feature in privileged mode so that it can add CA certificates to the OS trusted certificate store. You don't need to do anything manually for this — it is handled automatically at the chart level.
+- The platform installs `cert-manager-csi-driver-cacerts`, an AppsCode-maintained CSI driver that runs as a DaemonSet (one pod per node) and injects the platform's private CA certificate into pods' OS trusted certificate store.
+  - Only its `driver` container runs with `privileged: true`. It registers with the kubelet through the hostPath directories `/var/lib/kubelet/plugins_registry` and `/var/lib/kubelet/plugins/cert-manager-csi-driver-cacerts`, and mounts volumes into `/var/lib/kubelet/pods` with `Bidirectional` mount propagation, which Kubernetes allows only for privileged containers. It also reads the node's container storage and SELinux configuration.
+  - You don't need to run any `oc adm policy` command for it. On OpenShift the chart creates a RoleBinding to the `system:openshift:scc:privileged` ClusterRole for the driver's ServiceAccount.
+  - The `node-driver-registrar` and `liveness-probe` sidecars are not privileged. The driver's RBAC is read-only on Secrets, Nodes and cert-manager Issuers, ClusterIssuers and Certificates (plus full access to its own `CAProviderClass` resources).
+  - Pods that mount its volumes don't need any extra SCC, because the `CSIDriver` object is labeled `security.openshift.io/csi-ephemeral-volume-profile: restricted`.
+  - It is only needed when the platform TLS uses a private CA (`ca`, `letsencrypt-staging`, or `external` with a CA certificate) or when KubeDB MSSQL client TLS is used. Otherwise you can disable it by setting `helm.releases.cert-manager-csi-driver-cacerts.enabled: false` in the installer values.
 
 ## Get Support
 
