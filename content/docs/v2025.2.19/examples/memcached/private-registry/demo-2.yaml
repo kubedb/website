@@ -1,0 +1,23 @@
+apiVersion: kubedb.com/v1
+kind: Memcached
+metadata:
+  name: memcd-pvt-reg
+  namespace: demo
+spec:
+  replicas: 3
+  version: "1.6.22"
+  podTemplate:
+    spec:
+      containers:
+        - name: memcached
+          resources:
+          limits:
+            cpu: 500m
+            memory: 128Mi
+          requests:
+            cpu: 250m
+            memory: 64Mi
+  podTemplate:
+    spec:
+      imagePullSecrets:
+      - name: myregistrykey

@@ -1,0 +1,28 @@
+apiVersion: kubedb.com/v1
+kind: Redis
+metadata:
+  name: redis-cluster
+  namespace: demo
+spec:
+  version: 7.0.14
+  mode: Cluster
+  cluster:
+    shards: 3
+    replicas: 1
+  storageType: Durable
+  storage:
+    resources:
+      requests:
+        storage: "1Gi"
+    storageClassName: "standard"
+    accessModes:
+      - ReadWriteOnce
+  podTemplate:
+    spec:
+      containers:
+        - name: redis
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "100Mi"
+  deletionPolicy: Halt

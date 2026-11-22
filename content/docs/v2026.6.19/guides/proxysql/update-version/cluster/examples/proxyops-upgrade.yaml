@@ -1,0 +1,11 @@
+apiVersion: ops.kubedb.com/v1alpha1
+kind: ProxySQLOpsRequest
+metadata:
+  name: proxyops-update
+  namespace: demo
+spec:
+  type: UpdateVersion
+  proxyRef:
+    name: proxy-server
+  updateVersion:
+    targetVersion: "3.0.1-debian"

@@ -1,0 +1,579 @@
+---
+title: PostgreSQL Quickstart
+menu:
+  docs_v2026.7.10:
+    identifier: pg-quickstart-quickstart
+    name: Overview
+    parent: pg-quickstart-postgres
+    weight: 10
+menu_name: docs_v2026.7.10
+section_menu_id: guides
+info:
+  autoscaler: v0.51.0
+  cli: v0.66.0
+  dashboard: v0.42.0
+  installer: v2026.7.10
+  ops-manager: v0.53.0
+  product: kubedb
+  provisioner: v0.66.0
+  schema-manager: v0.42.0
+  ui-server: v0.42.0
+  version: v2026.7.10
+  webhook-server: v0.42.0
+---
+
+> New to KubeDB? Please start [here](/docs/v2026.7.10/README).
+
+# Running PostgreSQL
+
+This tutorial will show you how to use KubeDB to run a PostgreSQL database.
+
+<p align="center">
+  <img alt="lifecycle"  src="/docs/v2026.7.10/images/postgres/lifecycle.png">
+</p>
+
+## Before You Begin
+
+At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
+
+Now, install KubeDB cli on your workstation and KubeDB operator in your cluster following the steps [here](/docs/v2026.7.10/setup/README).
+
+To keep things isolated, this tutorial uses a separate namespace called `demo` throughout this tutorial.
+
+```bash
+$ kubectl create ns demo
+namespace/demo created
+```
+
+> Note: YAML files used in this tutorial are stored in [docs/examples/postgres](https://github.com/kubedb/docs/tree/{{< param "info.version" >}}/docs/examples/postgres) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
+
+>We have designed this tutorial to demonstrate a production setup of KubeDB managed PostgreSQL. If you just want to try out KubeDB, you can bypass some of the safety features following the tips [here](/docs/v2026.7.10/guides/postgres/quickstart/quickstart#tips-for-testing).
+
+## Install pgAdmin
+
+This tutorial will also use a pgAdmin to connect and test PostgreSQL database, once it is running.
+
+Run the following command to install pgAdmin,
+
+```bash
+$ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/postgres/quickstart/pgadmin.yaml
+deployment.apps/pgadmin created
+service/pgadmin created
+
+$ kubectl get pods -n demo --watch
+NAME                      READY     STATUS              RESTARTS   AGE
+pgadmin-5b4b96779-lfpfh   0/1       ContainerCreating   0          1m
+pgadmin-5b4b96779-lfpfh   1/1       Running   0         2m
+^C⏎
+```
+
+Now, you can open pgAdmin on your browser using following address `http://<cluster ip>:<NodePort of pgadmin service>`.
+
+If you are using minikube then open pgAdmin in your browser by running `minikube service pgadmin -n demo`. Or you can get the URL of Service `pgadmin` by running following command
+
+```bash
+$ minikube service pgadmin -n demo --url
+http://192.168.99.100:31983
+```
+
+To log into the pgAdmin, use username __`admin`__ and password __`admin`__.
+
+## Find Available StorageClass
+
+We will have to provide `StorageClass` in Postgres crd specification. Check available `StorageClass` in your cluster using following command,
+
+```bash
+$ kubectl get storageclass
+NAME                 PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+standard (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  10d
+
+```
+
+Here, we have `standard` StorageClass in our cluster.
+
+## Find Available PostgresVersion
+
+When you have installed KubeDB, it has created `PostgresVersion` crd for all supported PostgreSQL versions. Let's check available PostgresVersions by,
+
+```bash
+$ kubectl get postgresversion
+NAME                      VERSION   DISTRIBUTION   DB_IMAGE                                                                DEPRECATED   AGE
+10.23                     10.23     Official       ghcr.io/appscode-images/postgres:10.23-alpine                                        8d
+10.23-bullseye            10.23     Official       ghcr.io/appscode-images/postgres:10.23-bullseye                                      8d
+11-bullseye-postgis       11.22     PostGIS        docker.io/postgis/postgis:11-3.3                                                     8d
+11.22                     11.22     Official       ghcr.io/appscode-images/postgres:11.22-alpine                                        8d
+11.22-bookworm            11.22     Official       ghcr.io/appscode-images/postgres:11.22-bookworm                                      8d
+12-bullseye-postgis       12.18     PostGIS        docker.io/postgis/postgis:12-3.4                                                     8d
+12.17                     12.17     Official       ghcr.io/appscode-images/postgres:12.17-alpine                                        8d
+12.17-bookworm            12.17     Official       ghcr.io/appscode-images/postgres:12.17-bookworm                                      8d
+12.22                     12.22     Official       ghcr.io/appscode-images/postgres:12.22-alpine                                        8d
+12.22-bookworm            12.22     Official       ghcr.io/appscode-images/postgres:12.22-bookworm                                      8d
+13-bullseye-postgis       13.14     PostGIS        docker.io/postgis/postgis:13-3.4                                                     8d
+13.13                     13.13     Official       ghcr.io/appscode-images/postgres:13.13-alpine                                        8d
+13.13-bookworm            13.13     Official       ghcr.io/appscode-images/postgres:13.13-bookworm                                      8d
+13.18                     13.18     Official       ghcr.io/appscode-images/postgres:13.18-alpine                                        8d
+13.18-bookworm            13.18     Official       ghcr.io/appscode-images/postgres:13.18-bookworm                                      8d
+13.20                     13.20     Official       ghcr.io/appscode-images/postgres:13.20-alpine                                        8d
+13.20-bookworm            13.20     Official       ghcr.io/appscode-images/postgres:13.20-bookworm                                      8d
+13.21                     13.21     Official       ghcr.io/appscode-images/postgres:13.21-alpine                                        8d
+13.21-bookworm            13.21     Official       ghcr.io/appscode-images/postgres:13.21-bookworm                                      8d
+14-bullseye-postgis       14.11     PostGIS        docker.io/postgis/postgis:14-3.4                                                     8d
+14.10                     14.10     Official       ghcr.io/appscode-images/postgres:14.10-alpine                                        8d
+14.10-bookworm            14.10     Official       ghcr.io/appscode-images/postgres:14.10-bookworm                                      8d
+14.13                     14.13     Official       ghcr.io/appscode-images/postgres:14.13-alpine                                        8d
+14.13-bookworm            14.13     Official       ghcr.io/appscode-images/postgres:14.13-bookworm                                      8d
+14.15                     14.15     Official       ghcr.io/appscode-images/postgres:14.15-alpine                                        8d
+14.15-bookworm            14.15     Official       ghcr.io/appscode-images/postgres:14.15-bookworm                                      8d
+14.17                     14.17     Official       ghcr.io/appscode-images/postgres:14.17-alpine                                        8d
+14.17-bookworm            14.17     Official       ghcr.io/appscode-images/postgres:14.17-bookworm                                      8d
+14.18                     14.18     Official       ghcr.io/appscode-images/postgres:14.18-alpine                                        8d
+14.18-bookworm            14.18     Official       ghcr.io/appscode-images/postgres:14.18-bookworm                                      8d
+14.21                     14.21     Official       ghcr.io/appscode-images/postgres:14.21-alpine                                        8d
+14.21-bookworm            14.21     Official       ghcr.io/appscode-images/postgres:14.21-bookworm                                      8d
+14.22                     14.22     Official       ghcr.io/appscode-images/postgres:14.22-alpine                                        8d
+14.22-bookworm            14.22     Official       ghcr.io/appscode-images/postgres:14.22-bookworm                                      8d
+15-bullseye-postgis       15.6      PostGIS        docker.io/postgis/postgis:15-3.4                                                     8d
+15.10                     15.10     Official       ghcr.io/appscode-images/postgres:15.10-alpine                                        8d
+15.10-bookworm            15.10     Official       ghcr.io/appscode-images/postgres:15.10-bookworm                                      8d
+15.12                     15.12     Official       ghcr.io/appscode-images/postgres:15.12-alpine                                        8d
+15.12-bookworm            15.12     Official       ghcr.io/appscode-images/postgres:15.12-bookworm                                      8d
+15.12-documentdb          15.12     DocumentDB     ghcr.io/appscode-images/postgres-documentdb:15-0.102.0-ferretdb-2.0.0                8d
+15.13                     15.13     Official       ghcr.io/appscode-images/postgres:15.13-alpine                                        8d
+15.13-bookworm            15.13     Official       ghcr.io/appscode-images/postgres:15.13-bookworm                                      8d
+15.16                     15.16     Official       ghcr.io/appscode-images/postgres:15.16-alpine                                        8d
+15.16-bookworm            15.16     Official       ghcr.io/appscode-images/postgres:15.16-bookworm                                      8d
+15.17                     15.17     Official       ghcr.io/appscode-images/postgres:15.17-alpine                                        8d
+15.17-bookworm            15.17     Official       ghcr.io/appscode-images/postgres:15.17-bookworm                                      8d
+15.5                      15.5      Official       ghcr.io/appscode-images/postgres:15.5-alpine                                         8d
+15.5-bookworm             15.5      Official       ghcr.io/appscode-images/postgres:15.5-bookworm                                       8d
+15.8                      15.8      Official       ghcr.io/appscode-images/postgres:15.8-alpine                                         8d
+15.8-bookworm             15.8      Official       ghcr.io/appscode-images/postgres:15.8-bookworm                                       8d
+16.1                      16.1      Official       ghcr.io/appscode-images/postgres:16.1-alpine                                         8d
+16.1-bookworm             16.1      Official       ghcr.io/appscode-images/postgres:16.1-bookworm                                       8d
+16.10                     16.10     Official       ghcr.io/appscode-images/postgres:16.10-alpine                                        8d
+16.10-bookworm            16.10     Official       ghcr.io/appscode-images/postgres:16.10-bookworm                                      8d
+16.12                     16.12     Official       ghcr.io/appscode-images/postgres:16.12-alpine                                        8d
+16.12-bookworm            16.12     Official       ghcr.io/appscode-images/postgres:16.12-bookworm                                      8d
+16.13                     16.13     Official       ghcr.io/appscode-images/postgres:16.13-alpine                                        8d
+16.13-bookworm            16.13     Official       ghcr.io/appscode-images/postgres:16.13-bookworm                                      8d
+16.2-bullseye-postgis     16.2      PostGIS        docker.io/postgis/postgis:16-3.4                                                     8d
+16.4                      16.4      Official       ghcr.io/appscode-images/postgres:16.4-alpine                                         8d
+16.4-bookworm             16.4      Official       ghcr.io/appscode-images/postgres:16.4-bookworm                                       8d
+16.6                      16.6      Official       ghcr.io/appscode-images/postgres:16.6-alpine                                         8d
+16.6-bookworm             16.6      Official       ghcr.io/appscode-images/postgres:16.6-bookworm                                       8d
+16.8                      16.8      Official       ghcr.io/appscode-images/postgres:16.8-alpine                                         8d
+16.8-bookworm             16.8      Official       ghcr.io/appscode-images/postgres:16.8-bookworm                                       8d
+16.8-documentdb           16.8      DocumentDB     ghcr.io/appscode-images/postgres-documentdb:16-0.102.0-ferretdb-2.0.0                8d
+16.9                      16.9      Official       ghcr.io/appscode-images/postgres:16.9-alpine                                         8d
+16.9-bookworm             16.9      Official       ghcr.io/appscode-images/postgres:16.9-bookworm                                       8d
+17.2                      17.2      Official       ghcr.io/appscode-images/postgres:17.2-alpine                                         8d
+17.2-bookworm             17.2      Official       ghcr.io/appscode-images/postgres:17.2-bookworm                                       8d
+17.4                      17.4      Official       ghcr.io/appscode-images/postgres:17.4-alpine                                         8d
+17.4-bookworm             17.4      Official       ghcr.io/appscode-images/postgres:17.4-bookworm                                       8d
+17.4-documentdb           17.4      DocumentDB     ghcr.io/appscode-images/postgres-documentdb:17-0.102.0-ferretdb-2.0.0                8d
+17.5                      17.5      Official       ghcr.io/appscode-images/postgres:17.5-alpine                                         8d
+17.5-bookworm             17.5      Official       ghcr.io/appscode-images/postgres:17.5-bookworm                                       8d
+17.8                      17.8      Official       ghcr.io/appscode-images/postgres:17.8-alpine                                         8d
+17.8-bookworm             17.8      Official       ghcr.io/appscode-images/postgres:17.8-bookworm                                       8d
+17.9                      17.9      Official       ghcr.io/appscode-images/postgres:17.9-alpine                                         8d
+17.9-bookworm             17.9      Official       ghcr.io/appscode-images/postgres:17.9-bookworm                                       8d
+18.2                      18.2      Official       ghcr.io/appscode-images/postgres:18.2-alpine                                         8d
+18.2-bookworm             18.2      Official       ghcr.io/appscode-images/postgres:18.2-bookworm                                       8d
+18.3                      18.3      Official       ghcr.io/appscode-images/postgres:18.3-alpine                                         8d
+18.3-bookworm             18.3      Official       ghcr.io/appscode-images/postgres:18.3-bookworm                                       8d
+timescaledb-2.14.2-pg13   13.14     TimescaleDB    docker.io/timescale/timescaledb:2.14.2-pg13-oss                                      8d
+timescaledb-2.14.2-pg14   14.11     TimescaleDB    docker.io/timescale/timescaledb:2.14.2-pg14-oss                                      8d
+timescaledb-2.14.2-pg15   15.6      Official       docker.io/timescale/timescaledb:2.14.2-pg15-oss                                      8d
+timescaledb-2.14.2-pg16   16.2      Official       docker.io/timescale/timescaledb:2.14.2-pg16-oss                                      8d
+
+```
+
+Notice the `DEPRECATED` column. Here, `true` means that this PostgresVersion is deprecated for current KubeDB version. KubeDB will not work for deprecated PostgresVersion.
+
+In this tutorial, we will use `18.3` PostgresVersion crd to create PostgreSQL database. To know more about what is `PostgresVersion` crd and why there is `18.3` and `18.3-debian` variation, please visit [here](/docs/v2026.7.10/guides/postgres/concepts/catalog). You can also see supported PostgresVersion [here](/docs/v2026.7.10/guides/postgres/README#supported-postgresversion-crd).
+
+## Create a PostgreSQL database
+
+KubeDB implements a Postgres CRD to define the specification of a PostgreSQL database.
+
+Below is the Postgres object created in this tutorial.
+
+`Note`: If your `KubeDB version` is less or equal to `v2024.6.4`, You have to use `v1alpha2` apiVersion.
+
+```yaml
+apiVersion: kubedb.com/v1
+kind: Postgres
+metadata:
+  name: quick-postgres
+  namespace: demo
+spec:
+  version: "18.3"
+  storageType: Durable
+  storage:
+    storageClassName: "standard"
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+  deletionPolicy: DoNotTerminate
+```
+
+```bash
+$ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/postgres/quickstart/quick-postgres-v1.yaml
+postgres.kubedb.com/quick-postgres created
+```
+
+```yaml
+apiVersion: kubedb.com/v1alpha2
+kind: Postgres
+metadata:
+  name: quick-postgres
+  namespace: demo
+spec:
+  version: "18.3"
+  storageType: Durable
+  storage:
+    storageClassName: "standard"
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+  terminationPolicy: Delete
+```
+
+```bash
+$ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/postgres/quickstart/quick-postgres-v1alpha2.yaml
+postgres.kubedb.com/quick-postgres created
+```
+
+Here,
+
+- `spec.version` is name of the PostgresVersion crd where the docker images are specified. In this tutorial, a PostgreSQL 18.3 database is created.
+- `spec.storageType` specifies the type of storage that will be used for Postgres database. It can be `Durable` or `Ephemeral`. Default value of this field is `Durable`. If `Ephemeral` is used then KubeDB will create Postgres database using `EmptyDir` volume. In this case, you don't have to specify `spec.storage` field. This is useful for testing purposes.
+- `spec.storage` specifies the size and StorageClass of PVC that will be dynamically allocated to store data for this database. This storage spec will be passed to the StatefulSet created by KubeDB operator to run database pods. You can specify any StorageClass available in your cluster with appropriate resource requests. If you don't specify `spec.storageType: Ephemeral`, then this field is required.
+- `spec.terminationPolicy` or `spec.deletionPolicy` specifies what KubeDB should do when user try to delete Postgres crd. Termination policy `DoNotTerminate` prevents a user from deleting this object if admission webhook is enabled.
+
+>Note: `spec.storage` section is used to create PVC for database pod. It will create PVC with storage size specified in`storage.resources.requests` field. Don't specify `limits` here. PVC does not get resized automatically.
+
+KubeDB operator watches for Postgres objects using Kubernetes api. When a Postgres object is created, KubeDB operator will create a new StatefulSet and two ClusterIP Service with the matching name. KubeDB operator will also create a governing service for StatefulSet with the name `kubedb`, if one is not already present.
+
+If you are using RBAC enabled cluster, PostgreSQL specific RBAC permission is required. For details, please visit [here](/docs/v2026.7.10/guides/postgres/quickstart/rbac).
+
+KubeDB operator sets the `status.phase` to `Running` once the database is successfully created.
+
+```bash
+$  kubectl get pg -n demo quick-postgres -o wide
+NAME             VERSION   STATUS     AGE
+quick-postgres   18.3      Creating   13s
+```
+
+Let's describe Postgres object `quick-postgres`
+
+```bash
+$ kubectl describe -n demo postgres quick-postgres 
+Name:         quick-postgres
+Namespace:    demo
+Labels:       <none>
+Annotations:  <none>
+API Version:  kubedb.com/v1
+Kind:         Postgres
+Metadata:
+  Creation Timestamp:  2022-05-30T09:15:36Z
+  Finalizers:
+    kubedb.com
+  Generation:  2
+  Managed Fields:
+    API Version:  kubedb.com/v1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .:
+          f:kubectl.kubernetes.io/last-applied-configuration:
+      f:spec:
+        .:
+        f:allowedSchemas:
+          .:
+          f:namespaces:
+            .:
+            f:from:
+        f:storage:
+          .:
+          f:accessModes:
+          f:resources:
+            .:
+            f:requests:
+              .:
+              f:storage:
+          f:storageClassName:
+        f:storageType:
+        f:deletionPolicy:
+        f:version:
+    Manager:      kubectl-client-side-apply
+    Operation:    Update
+    Time:         2022-05-30T09:15:36Z
+    API Version:  kubedb.com/v1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .:
+          v:"kubedb.com":
+      f:spec:
+        f:authSecret:
+          .:
+          f:name:
+    Manager:      pg-operator
+    Operation:    Update
+    Time:         2022-05-30T09:15:37Z
+    API Version:  kubedb.com/v1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+        f:observedGeneration:
+        f:phase:
+    Manager:         pg-operator
+    Operation:       Update
+    Subresource:     status
+    Time:            2022-05-30T09:16:26Z
+  Resource Version:  330717
+  UID:               aa9193d0-cd9b-4b63-8403-2b12ec1b04be
+Spec:
+  Allowed Schemas:
+    Namespaces:
+      From:  Same
+  Auth Secret:
+    Name:            quick-postgres-auth
+  Client Auth Mode:  md5
+  Coordinator:
+    Resources:
+      Limits:
+        Memory:  256Mi
+      Requests:
+        Cpu:     200m
+        Memory:  256Mi
+  Leader Election:
+    Election Tick:                10
+    Heartbeat Tick:               1
+    Maximum Lag Before Failover:  67108864
+    Period:                       300ms
+  Pod Template:
+    Controller:
+    Metadata:
+    Spec:
+      Resources:
+        Limits:
+          Memory:  1Gi
+        Requests:
+          Cpu:     500m
+          Memory:  1Gi
+      Security Context:
+        Fs Group:            70
+        Run As Group:        70
+        Run As User:         70
+      Service Account Name:  quick-postgres
+  Replicas:                  1
+  Ssl Mode:                  disable
+  Storage:
+    Access Modes:
+      ReadWriteOnce
+    Resources:
+      Requests:
+        Storage:         1Gi
+    Storage Class Name:  standard
+  Storage Type:          Durable
+  Termination Policy:    DoNotTerminate
+  Version:               18.3
+Status:
+  Conditions:
+    Last Transition Time:  2022-05-30T09:15:36Z
+    Message:               The KubeDB operator has started the provisioning of Postgres: demo/quick-postgres
+    Reason:                DatabaseProvisioningStartedSuccessfully
+    Status:                True
+    Type:                  ProvisioningStarted
+    Last Transition Time:  2022-05-30T09:16:26Z
+    Message:               All replicas are ready and in Running state
+    Observed Generation:   2
+    Reason:                AllReplicasReady
+    Status:                True
+    Type:                  ReplicaReady
+    Last Transition Time:  2022-05-30T09:16:26Z
+    Message:               The PostgreSQL: demo/quick-postgres is accepting client requests.
+    Observed Generation:   2
+    Reason:                DatabaseAcceptingConnectionRequest
+    Status:                True
+    Type:                  AcceptingConnection
+    Last Transition Time:  2022-05-30T09:16:26Z
+    Message:               DB is ready because of server getting Online and Running state
+    Observed Generation:   2
+    Reason:                ReadinessCheckSucceeded
+    Status:                True
+    Type:                  Ready
+    Last Transition Time:  2022-05-30T09:16:26Z
+    Message:               The PostgreSQL: demo/quick-postgres is successfully provisioned.
+    Observed Generation:   2
+    Reason:                DatabaseSuccessfullyProvisioned
+    Status:                True
+    Type:                  Provisioned
+  Observed Generation:     2
+  Phase:                   Ready
+Events:
+  Type    Reason      Age   From               Message
+  ----    ------      ----  ----               -------
+  Normal  Successful  106s  Postgres operator  Successfully created governing service
+  Normal  Successful  106s  Postgres operator  Successfully created Service
+  Normal  Successful  105s  Postgres operator  Successfully created appbinding
+```
+
+KubeDB has created two services for the Postgres object.
+
+```bash
+$ kubectl get service -n demo --selector=app.kubernetes.io/name=postgreses.kubedb.com,app.kubernetes.io/instance=quick-postgres
+NAME                  TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)                      AGE
+quick-postgres        ClusterIP   10.96.52.28   <none>        5432/TCP,2379/TCP            3m19s
+quick-postgres-pods   ClusterIP   None          <none>        5432/TCP,2380/TCP,2379/TCP   3m19s
+
+
+```
+
+Here,
+
+- Service *`quick-postgres`* targets only one Pod which is acting as *primary* server
+- Service *`quick-postgres-pods`* targets all Pods created by PetSet
+
+KubeDB supports PostgreSQL clustering where Pod can be either *primary* or *standby*. To learn how to configure highly available PostgreSQL cluster, click [here](/docs/v2026.7.10/guides/postgres/clustering/ha_cluster).
+
+Here, we have created a PostgreSQL database with single node, *primary* only.
+
+## Connect with PostgreSQL database
+
+KubeDB operator has created a new Secret called `quick-postgres-auth` for storing the *username* and *password* for `postgres` database.
+
+```yaml
+ $ kubectl get secret -n demo quick-postgres-auth -o yaml
+apiVersion: v1
+data:
+  password: REQ4aTU2VUJJY3M2M1BWTw==
+  username: cG9zdGdyZXM=
+kind: Secret
+metadata:
+  creationTimestamp: 2018-09-03T11:25:39Z
+  labels:
+    app.kubernetes.io/name: postgreses.kubedb.com
+    app.kubernetes.io/instance: quick-postgres
+  name: quick-postgres-auth
+  namespace: demo
+  resourceVersion: "1677"
+  uid: 15b3e8a1-af6c-11e8-996d-0800270d7bae
+type: kubernetes.io/basic-auth
+```
+
+This secret contains superuser name for `postgres` database as `username` key and
+password as `password` key. By default, superuser name is `postgres` and password is randomly generated.
+
+If you want to use custom password, please create the secret manually and specify that when creating the Postgres object using `spec.authSecret.name`. For more details see [here](/docs/v2026.7.10/guides/postgres/concepts/postgres#specdatabasesecret).
+
+> Note: Auth Secret name format: `{postgres-name}-auth`
+
+Now, you can connect to this database from the pgAdmin dashboard using `quick-postgres.demo` service and *username* and *password* created in `quick-postgres-auth` secret.
+
+**Connection information:**
+
+- Host name/address: you can use any of these
+  - Service: `quick-postgres.demo`
+  - Pod IP: (`$ kubectl get pods quick-postgres-0 -n demo -o yaml | grep podIP`)
+- Port: `5432`
+- Maintenance database: `postgres`
+
+- Username: Run following command to get *username*,
+
+  ```bash
+  $ kubectl get secrets -n demo quick-postgres-auth -o jsonpath='{.data.username}' | base64 -d
+  postgres
+  ```
+
+- Password: Run the following command to get *password*,
+
+  ```bash
+  $ kubectl get secrets -n demo quick-postgres-auth -o jsonpath='{.data.password}' | base64 -d
+  DD8i56UBIcs63PVO
+  ```
+
+Now, go to pgAdmin dashboard and connect to the database using the connection information as shown below,
+
+<p align="center">
+  <kbd>
+    <img alt="quick-postgres"  src="/docs/v2026.7.10/images/postgres/quick-postgres.gif">
+  </kbd>
+</p>
+
+## Halt Database
+
+KubeDB takes advantage of `ValidationWebhook` feature in Kubernetes 1.9.0 or later clusters to implement `DoNotTerminate` termination policy. If admission webhook is enabled, it prevents user from deleting the database as long as the `spec.deletionPolicy` is set `DoNotTerminate`.
+
+To halt the database, we have to set `spec.deletionPolicy:` to `Halt` by updating it,
+
+```bash
+$ kubectl edit pg -n demo quick-postgres
+spec:
+  deletionPolicy: Halt
+```
+
+Now, if you delete the Postgres object, the KubeDB operator will delete every resource created for this Postgres CR, but leaves the auth secrets, and PVCs.
+
+Let's delete the Postgres object,
+
+```bash
+$ kubectl delete pg -n demo quick-postgres
+postgres.kubedb.com "quick-postgres" deleted
+```
+Check resources:
+```bash
+$ kubectl get all,secret,pvc -n demo -l 'app.kubernetes.io/instance=quick-postgres'
+NAME                         TYPE                       DATA   AGE
+secret/quick-postgres-auth   kubernetes.io/basic-auth   2      27m
+
+NAME                                          STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+persistentvolumeclaim/data-quick-postgres-0   Bound    pvc-b30e3255-a7ea-4f61-8637-f60e283236b2   1Gi        RWO            standard       27m
+```
+
+## Resume Postgres
+Say, the Postgres CR was deleted with `spec.deletionPolicy` to `Halt` and you want to re-create the Postgres using the existing auth secrets and the PVCs.
+
+You can do it by simpily re-deploying the original Postgres object:
+```bash
+$ kubectl create -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/postgres/quickstart/quick-postgres-v1.yaml
+postgres.kubedb.com/quick-postgres created
+```
+## Cleaning up
+
+To cleanup the Kubernetes resources created by this tutorial, run:
+
+```bash
+kubectl patch -n demo pg/quick-postgres -p '{"spec":{"deletionPolicy":"WipeOut"}}' --type="merge"
+kubectl delete -n demo pg/quick-postgres
+
+kubectl delete ns demo
+```
+
+## Tips for Testing
+
+If you are just testing some basic functionalities, you might want to avoid additional hassles due to some safety features that are great for production environment. You can follow these tips to avoid them.
+
+1. **Use `storageType: Ephemeral`**. Databases are precious. You might not want to lose your data in your production environment if database pod fail. So, we recommend to use `spec.storageType: Durable` and provide storage spec in `spec.storage` section. For testing purpose, you can just use `spec.storageType: Ephemeral`. KubeDB will use [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) for storage. You will not require to provide `spec.storage` section.
+2. **Use `deletionPolicy: WipeOut`**. It is nice to be able to resume database from previous one. So, we preserve all your `PVCs`, `Secrets`, etc. If you don't want to resume database, you can just use `spec.deletionPolicy: WipeOut`. It will delete everything created by KubeDB for a particular Postgres crd when you delete the crd. For more details about termination policy, please visit [here](/docs/v2026.7.10/guides/postgres/concepts/postgres#specdeletionpolicy).
+
+## Next Steps
+
+- Learn about [backup and restore](/docs/v2026.7.10/guides/postgres/backup/stash/overview/) PostgreSQL database using Stash.
+- Learn about initializing [PostgreSQL with Script](/docs/v2026.7.10/guides/postgres/initialization/script_source).
+- Learn about [custom PostgresVersions](/docs/v2026.7.10/guides/postgres/custom-versions/setup).
+- Want to setup PostgreSQL cluster? Check how to [configure Highly Available PostgreSQL Cluster](/docs/v2026.7.10/guides/postgres/clustering/ha_cluster)
+- Monitor your PostgreSQL database with KubeDB using [built-in Prometheus](/docs/v2026.7.10/guides/postgres/monitoring/using-builtin-prometheus).
+- Monitor your PostgreSQL database with KubeDB using [Prometheus operator](/docs/v2026.7.10/guides/postgres/monitoring/using-prometheus-operator).
+- Detail concepts of [Postgres object](/docs/v2026.7.10/guides/postgres/concepts/postgres).
+- Use [private Docker registry](/docs/v2026.7.10/guides/postgres/private-registry/using-private-registry) to deploy PostgreSQL with KubeDB.
+- Want to hack on KubeDB? Check our [contribution guidelines](/docs/v2026.7.10/CONTRIBUTING).

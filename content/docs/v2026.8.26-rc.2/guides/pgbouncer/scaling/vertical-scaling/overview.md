@@ -1,0 +1,86 @@
+---
+title: PgBouncer Vertical Scaling Overview
+menu:
+  docs_v2026.8.26-rc.2:
+    identifier: pb-vertical-scaling-overview
+    name: Overview
+    parent: pb-vertical-scaling
+    weight: 10
+menu_name: docs_v2026.8.26-rc.2
+section_menu_id: guides
+info:
+  autoscaler: v0.52.0-rc.2
+  cli: v0.67.0-rc.2
+  dashboard: v0.43.0-rc.2
+  installer: v2026.8.26-rc.2
+  ops-manager: v0.54.0-rc.2
+  product: kubedb
+  provisioner: v0.67.0-rc.2
+  schema-manager: v0.43.0-rc.2
+  ui-server: v0.43.0-rc.2
+  version: v2026.8.26-rc.2
+  webhook-server: v0.43.0-rc.2
+---
+
+> New to KubeDB? Please start [here](/docs/v2026.8.26-rc.2/README).
+
+# PgBouncer Vertical Scaling
+
+This guide will give an overview on how KubeDB Ops-manager operator updates the resources(for example CPU and Memory etc.) of the `PgBouncer`.
+
+## Before You Begin
+
+- You should be familiar with the following `KubeDB` concepts:
+  - [PgBouncer](/docs/v2026.8.26-rc.2/guides/pgbouncer/concepts/pgbouncer)
+  - [PgBouncerOpsRequest](/docs/v2026.8.26-rc.2/guides/pgbouncer/concepts/opsrequest)
+
+## How Vertical Scaling Process Works
+
+The following diagram shows how KubeDB Ops-manager operator updates the resources of the `PgBouncer`. Open the image in a new tab to see the enlarged version.
+
+<figure align="center">
+  <img alt="Vertical scaling process of PgBouncer" src="/docs/v2026.8.26-rc.2/images/day-2-operation/pgbouncer/vertical-scaling.svg">
+<figcaption align="center">Fig: Vertical scaling process of PgBouncer</figcaption>
+</figure>
+
+The vertical scaling process consists of the following steps:
+
+1. At first, a user creates a `PgBouncer` Custom Resource (CR).
+
+2. `KubeDB` Provisioner  operator watches the `PgBouncer` CR.
+
+3. When the operator finds a `PgBouncer` CR, it creates `PetSet` and related necessary stuff like secrets, services, etc.
+
+4. Then, in order to update the resources(for example `CPU`, `Memory` etc.) of the `PgBouncer`, the user creates a `PgBouncerOpsRequest` CR with desired information.
+
+5. `KubeDB` Ops-manager operator watches the `PgBouncerOpsRequest` CR.
+
+6. When it finds a `PgBouncerOpsRequest` CR, it pauses the `PgBouncer` object which is referred from the `PgBouncerOpsRequest`. So, the `KubeDB` Provisioner  operator doesn't perform any operations on the `PgBouncer` object during the vertical scaling process.  
+
+7. Then the `KubeDB` Ops-manager operator will update resources of the PetSet to reach desired state.
+
+8. After the successful update of the resources of the PetSet's replica, the `KubeDB` Ops-manager operator updates the `PgBouncer` object to reflect the updated state.
+
+9. After the successful update  of the `PgBouncer` resources, the `KubeDB` Ops-manager operator resumes the `PgBouncer` object so that the `KubeDB` Provisioner  operator resumes its usual operations.
+
+## Vertical Scaling Modes
+
+KubeDB actuates vertical scaling in one of two modes, selected through the `spec.verticalScaling.mode`
+field of the `PgBouncerOpsRequest`:
+
+- **`Restart`** (default): The operator patches the `PetSet` with the new resources and restarts the
+  Pods (one at a time, honoring the database's failover rules) so they come back with the updated CPU
+  and Memory. This works on every Kubernetes cluster.
+- **`InPlace`**: The operator resizes the running containers in place using the Kubernetes
+  [in-place Pod resize](https://kubernetes.io/docs/tasks/configure-pod-container/resize-container-resources/)
+  (`pods/resize` subresource) — no Pod restart, so scaling happens without downtime or failover. If a
+  Node cannot accommodate the new resources (the resize is reported `Infeasible`), the operator
+  automatically falls back to the `Restart` behavior for that Pod.
+
+If `spec.verticalScaling.mode` is omitted, it defaults to `Restart`.
+
+> **Note:** `InPlace` mode relies on the Kubernetes `InPlacePodVerticalScaling` feature gate, which is
+> enabled by default from Kubernetes v1.33. On older clusters, or when the feature gate is disabled,
+> use `Restart` mode.
+
+In the next docs, we are going to show a step-by-step guide on updating resources of PgBouncer `PgBouncerOpsRequest` CRD.
